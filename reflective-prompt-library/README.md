@@ -26,7 +26,25 @@ Core identity prompt
 - `04-agent/`: agent selection, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
+- `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
+
+## Skills as Workflow
+
+The prompt files are the source material. The `skills/` directory is the operational layer: a small set of repeatable workflows that can be copied into `.claude/skills/`, `.codex/skills/`, or another SKILL.md-compatible environment when needed.
+
+| Workflow Need | Skill |
+| --- | --- |
+| Route a task to the smallest useful reflective workflow | `skills/reflective-dispatch/SKILL.md` |
+| Clarify goal, assumptions, scope, acceptance, falsifiability | `skills/reflective-brief/SKILL.md` |
+| Write spec, usage-first design, and task slices | `skills/reflective-spec-plan/SKILL.md` |
+| Implement code with verification and traceability | `skills/reflective-implement/SKILL.md` |
+| Review code, plans, specs, and AI outputs | `skills/reflective-review/SKILL.md` |
+| Research external docs, DeepWiki, and long sources | `skills/reflective-research/SKILL.md` |
+| Gate high-risk work before execution | `skills/reflective-risk/SKILL.md` |
+| Handoff, retro, and memory consolidation | `skills/reflective-handoff-retro/SKILL.md` |
+
+The design intentionally avoids one skill per prompt. Use the prompt library for nuance and the skills for execution shape.
 
 ## Recommended Defaults
 
@@ -88,4 +106,3 @@ research
 | You need to switch sessions | `03-context/context-handoff.md` |
 | A task is complete and you want process learning | `04-agent/retro.md` |
 | You need to decide Prompt vs Agent vs Workflow | `04-agent/agent-selection.md` |
-
