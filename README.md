@@ -13,6 +13,7 @@ The repository contains:
 - `reflective-prompt-library/`: reusable Markdown prompts for thinking, planning, implementation, review, research, risk handling, and context handoff.
 - `reflective-prompt-library/skills/`: concise `SKILL.md` workflow wrappers that turn the prompt library into practical agent workflows.
 - `reflective-prompt-library/plans/`: design notes and follow-up plans for code tooling or workflow automation.
+- `reflective-prompt-library/SKILL_INSTALLATION.md`: install instructions for Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
 
 ## Quick Start
 
@@ -26,8 +27,11 @@ Or copy a workflow skill into a compatible skills directory:
 
 ```text
 .claude/skills/<skill-name>/SKILL.md
-.codex/skills/<skill-name>/SKILL.md
+~/.codex/skills/<skill-name>/SKILL.md
+.agents/skills/<skill-name>/SKILL.md
 ```
+
+For host-specific paths, see [Skill Installation Guide](reflective-prompt-library/SKILL_INSTALLATION.md).
 
 Recommended starting points:
 
@@ -51,4 +55,3 @@ The workflow layer intentionally uses a small number of broad, composable skills
 ## License
 
 MIT. See [LICENSE](LICENSE).
-

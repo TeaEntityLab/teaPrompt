@@ -29,9 +29,11 @@ Core identity prompt
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
 
+Install the workflow skills with [SKILL_INSTALLATION.md](SKILL_INSTALLATION.md). It covers Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
+
 ## Skills as Workflow
 
-The prompt files are the source material. The `skills/` directory is the operational layer: a small set of repeatable workflows that can be copied into `.claude/skills/`, `.codex/skills/`, or another SKILL.md-compatible environment when needed.
+The prompt files are the source material. The `skills/` directory is the operational layer: a small set of repeatable workflows that can be copied into `.claude/skills/`, `~/.codex/skills/`, `.agents/skills/`, or another SKILL.md-compatible environment when needed.
 
 | Workflow Need | Skill |
 | --- | --- |
