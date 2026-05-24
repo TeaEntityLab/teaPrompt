@@ -1,6 +1,7 @@
 ---
 name: reflective-spec-plan
 description: Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.
+license: MIT
 ---
 
 # Reflective Spec Plan
@@ -80,4 +81,3 @@ When chat-only, use the same headings inline.
 - `02-engineering/usage-first.md`
 - `02-engineering/task-slicer.md`
 - `04-agent/workflow-engine.md`
-

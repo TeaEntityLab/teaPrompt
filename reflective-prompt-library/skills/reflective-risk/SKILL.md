@@ -1,6 +1,7 @@
 ---
 name: reflective-risk
 description: Use this before high-risk work involving security, privacy, auth, permissions, data deletion, migrations, production, billing, legal/medical/financial stakes, or irreversible decisions. It creates a dry-run, rollback, and Human Review gate before execution.
+license: MIT
 ---
 
 # Reflective Risk
@@ -65,4 +66,3 @@ Use before:
 - `05-domain/high-risk.md`
 - `02-engineering/local-feedback.md`
 - `01-thinking/critical-thinking-check.md`
-

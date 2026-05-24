@@ -1,6 +1,7 @@
 ---
 name: reflective-implement
 description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.
+license: MIT
 ---
 
 # Reflective Implement
@@ -73,4 +74,3 @@ Request Human Review for auth, permission changes, security-sensitive logic, pri
 - `02-engineering/test-designer.md`
 - `02-engineering/local-feedback.md`
 - `06-repo/codex-opencode.md`
-

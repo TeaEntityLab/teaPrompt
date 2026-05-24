@@ -1,6 +1,7 @@
 ---
 name: reflective-dispatch
 description: Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.
+license: MIT
 ---
 
 # Reflective Dispatch
@@ -50,4 +51,3 @@ Next Action:
 - If an irreversible or high-risk branch appears, stop for Human Review.
 - Prefer artifacts over conversation memory for any task that may resume later.
 - Prefer evidence over confidence. Do not claim tool execution, tests, source review, or verification that did not happen.
-

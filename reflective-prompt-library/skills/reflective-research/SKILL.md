@@ -1,6 +1,7 @@
 ---
 name: reflective-research
 description: Use this for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations. It separates evidence from inference and avoids dumping raw context.
+license: MIT
 ---
 
 # Reflective Research
@@ -65,4 +66,3 @@ When inspecting DeepWiki:
 - `03-context/context-engineering.md`
 - `03-context/large-context.md`
 - `03-context/gemini-long-document.md`
-

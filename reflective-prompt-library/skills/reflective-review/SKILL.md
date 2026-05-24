@@ -1,6 +1,7 @@
 ---
 name: reflective-review
 description: Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.
+license: MIT
 ---
 
 # Reflective Review
@@ -68,4 +69,3 @@ Use one:
 - `01-thinking/counterargument.md`
 - `02-engineering/code-reviewer.md`
 - `04-agent/review-rating-fix.md`
-

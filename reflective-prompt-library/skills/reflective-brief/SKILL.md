@@ -1,6 +1,7 @@
 ---
 name: reflective-brief
 description: Use this to start non-trivial tasks, clarify real goals, define assumptions, scope, acceptance criteria, falsifiability, and the minimal next step before planning or implementation. Especially useful when a request is broad but safe to proceed with explicit assumptions.
+license: MIT
 ---
 
 # Reflective Brief
@@ -63,4 +64,3 @@ Use these library prompts for exact wording when needed:
 - `02-engineering/task-start.md`
 - `01-thinking/why-what-how-done.md`
 - `01-thinking/falsifiability.md`
-
