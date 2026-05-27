@@ -28,8 +28,12 @@ Core identity prompt
 - `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
+- `METHODOLOGY_MAP.md`: maps the source methodology families to repo prompts and workflow skills.
+- `LANGUAGE_POLICY.md`: explains why operational docs are English while some prompt sources remain localized.
 
 Install the workflow skills with [SKILL_INSTALLATION.md](SKILL_INSTALLATION.md). It covers Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
+
+Use [METHODOLOGY_MAP.md](METHODOLOGY_MAP.md) before adding new prompts or skills. It keeps classification stronger than forced unification.
 
 ## Skills as Workflow
 

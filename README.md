@@ -14,6 +14,8 @@ The repository contains:
 - `reflective-prompt-library/skills/`: concise `SKILL.md` workflow wrappers that turn the prompt library into practical agent workflows.
 - `reflective-prompt-library/plans/`: design notes and follow-up plans for code tooling or workflow automation.
 - `reflective-prompt-library/SKILL_INSTALLATION.md`: install instructions for Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
+- `reflective-prompt-library/METHODOLOGY_MAP.md`: classification map for choosing the right strictness level.
+- `reflective-prompt-library/LANGUAGE_POLICY.md`: language policy for English operational docs and localized prompt sources.
 
 ## Quick Start
 
@@ -32,6 +34,9 @@ Or copy a workflow skill into a compatible skills directory:
 ```
 
 For host-specific paths, see [Skill Installation Guide](reflective-prompt-library/SKILL_INSTALLATION.md).
+
+For repository method boundaries, see [Methodology Map](reflective-prompt-library/METHODOLOGY_MAP.md).
+For language conventions, see [Language Policy](reflective-prompt-library/LANGUAGE_POLICY.md).
 
 Recommended starting points:
 
