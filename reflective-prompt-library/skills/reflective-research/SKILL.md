@@ -27,8 +27,12 @@ Produce a source-backed answer or artifact that can survive handoff and review.
    - Inference made from evidence
    - Unknowns
    - Claims needing fresh verification
-5. Synthesize a recommendation.
-6. Create a handoff or implementation implication if needed.
+5. If doing methodology mapping, classify findings into:
+   - Already present in current practice
+   - Adjacent but not systematized
+   - Recommended for core adoption
+6. Synthesize a recommendation.
+7. Create a handoff or implementation implication if needed.
 
 ## DeepWiki Use
 
@@ -56,6 +60,11 @@ When inspecting DeepWiki:
 ## Evidence vs Inference
 
 ## Risks / Unknowns
+
+## Classification (Optional)
+- Already Present:
+- Adjacent / Missing:
+- Recommended Core Additions:
 
 ## Handoff
 ```

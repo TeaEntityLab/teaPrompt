@@ -12,7 +12,14 @@ Produce just enough specification to guide execution and review. Avoid beautiful
 
 ## Workflow
 
-1. Write the spec.
+1. Validate entry criteria (Definition of Ready).
+   - Goal exists
+   - Intended outcome exists
+   - Scope and acceptance criteria are at least minimally defined
+   - Known high-risk constraints are identified
+   - If these are missing, route to `reflective-brief` first
+
+2. Write the spec.
    - Problem
    - Goals
    - Non-goals
@@ -24,7 +31,7 @@ Produce just enough specification to guide execution and review. Avoid beautiful
    - Failure modes
    - Open questions
 
-2. Write usage first.
+3. Write usage first.
    - Most common scenarios
    - CLI / API / UI examples
    - Success examples
@@ -32,7 +39,7 @@ Produce just enough specification to guide execution and review. Avoid beautiful
    - Confusing parts
    - Design issues revealed by usage
 
-3. Slice work.
+4. Slice work.
    - Vertical slices first
    - 30-120 minute tickets
    - One concern per ticket
@@ -40,7 +47,13 @@ Produce just enough specification to guide execution and review. Avoid beautiful
    - Tests per ticket
    - Human Review flag per ticket
 
-4. Stop at the smallest plan that can be executed and reviewed.
+5. Define completion checks (Definition of Done for planning).
+   - Spec has measurable acceptance criteria
+   - Usage examples cover normal and error paths
+   - Task slices are independently testable
+   - Human Review points are explicit
+
+6. Stop at the smallest plan that can be executed and reviewed.
 
 ## Artifact Output
 
@@ -74,6 +87,7 @@ When chat-only, use the same headings inline.
 - Do not turn every idea into a workflow engine.
 - Do not plan implementation details before acceptance criteria exist.
 - Mark unknowns instead of hiding them in vague wording.
+- Do not pass incomplete planning artifacts to implementation just to "start coding faster."
 
 ## Prompt Sources
 

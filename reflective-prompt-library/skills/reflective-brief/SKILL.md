@@ -13,14 +13,15 @@ Turn a request into a small, testable task brief before deeper work.
 ## Workflow
 
 1. Identify the real goal.
-2. Separate problem, symptom, and proposed solution.
-3. State assumptions and unknowns.
-4. Define scope in / scope out.
-5. Define inputs and outputs.
-6. Define failure conditions.
-7. Define acceptance criteria.
-8. Define falsifiability: what evidence would prove this direction wrong.
-9. Choose the minimal next step.
+2. Clarify the intended user outcome (job-to-be-done).
+3. Separate problem, symptom, and proposed solution.
+4. State assumptions and unknowns.
+5. Define scope in / scope out.
+6. Define inputs and outputs.
+7. Define failure conditions.
+8. Define acceptance criteria.
+9. Define falsifiability: what evidence would prove this direction wrong.
+10. Choose the minimal next step.
 
 ## Output
 
@@ -28,6 +29,8 @@ Turn a request into a small, testable task brief before deeper work.
 ## Goal
 
 ## Why
+
+## Intended Outcome (JTBD)
 
 ## Assumptions
 
@@ -55,6 +58,7 @@ Turn a request into a small, testable task brief before deeper work.
 - Ask only when missing information changes safety, architecture, cost, privacy, data loss, or irreversibility.
 - If ambiguity is safe, proceed with explicit assumptions.
 - Do not expose hidden chain-of-thought; provide concise reasoning summaries and clean artifacts.
+- If outcome is unclear, ask one direct question or state one reversible assumption and continue.
 
 ## Prompt Sources
 

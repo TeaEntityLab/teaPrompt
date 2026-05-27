@@ -32,12 +32,28 @@ Choose one primary workflow:
 
 If more than one applies, pick one primary workflow and one gate. Example: coding a privacy-sensitive feature uses `reflective-risk` as the gate and `reflective-implement` as the execution workflow.
 
+## Strictness Ladder
+
+Choose the lowest strictness level that still controls risk:
+
+| Level | Use When | Primary Workflow |
+| --- | --- | --- |
+| `L1` | Low-risk, short request, no state | `prompt-only` or `reflective-brief` |
+| `L2` | Non-trivial analysis, still low-risk | `reflective-brief` |
+| `L3` | Engineering work with files/tests | `reflective-spec-plan` -> `reflective-implement` |
+| `L4` | High-risk actions or irreversible impact | `reflective-risk` + execution workflow |
+| `L5` | Long-running, multi-tool, resumable work | `reflective-dispatch` + workflow artifacts |
+| `L6` | Strategy/education/business framing | Domain prompts as overlays, not core execution |
+
+Escalate only when needed. De-escalate once risk is controlled.
+
 ## Output
 
 For routing-only responses, keep it short:
 
 ```markdown
 Mode:
+Strictness:
 Goal:
 Assumptions:
 Workflow:

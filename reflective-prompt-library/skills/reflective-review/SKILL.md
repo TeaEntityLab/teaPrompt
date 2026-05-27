@@ -21,6 +21,17 @@ Find what would make the artifact fail in real use, then recommend the smallest 
 7. Scan for overengineering, reward hacking, and missing edge cases.
 8. Give a decision.
 
+## Review Modes
+
+Choose one mode first, then apply the common review flow:
+
+- `Code Review`: correctness, regressions, tests, security/privacy, maintainability.
+- `Plan/Spec Review`: scope clarity, acceptance criteria quality, sequencing, missing gates.
+- `Methodology Review`: classification quality, strictness mismatch, framework overreach.
+- `AI Output Review`: evidence quality, unsupported claims, hallucination risk, actionability.
+
+If the artifact spans multiple modes, declare a primary mode and list secondary checks.
+
 ## For Code Review
 
 Prioritize findings by severity:

@@ -47,7 +47,13 @@ Use before:
 
 ## Rollback Plan
 
+## Bounded Execution
+
+## Audit Log Plan
+
 ## Human Review Required
+
+## Human Approval Gate
 
 ## Acceptance Criteria
 
@@ -60,6 +66,8 @@ Use before:
 - Do not skip backup, dry-run, or rollback analysis.
 - Do not assume permissions, data correctness, or safety.
 - If the risk cannot be bounded, recommend no-go or human review.
+- Define explicit execution boundaries (tools, scope, timebox, blast radius) before any action.
+- Ensure an auditable record exists for high-risk steps and approvals.
 
 ## Prompt Sources
 

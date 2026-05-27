@@ -44,6 +44,23 @@ Run the checks that prove the claim:
 
 If verification fails, fix and rerun. If a check cannot run, report why.
 
+## Failure Loop (LOCAL_FEEDBACK)
+
+When blocked or failing, report and iterate with this structure:
+
+```markdown
+## Step
+## Evidence
+## Error Type
+## Root Cause
+## Correction
+## Next Action
+## Verification
+## Anti-regression Rule
+```
+
+Use this loop until acceptance criteria are met or a hard stop requires Human Review.
+
 ## Final Report
 
 ```markdown
