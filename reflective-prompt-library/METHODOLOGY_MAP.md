@@ -1,3 +1,5 @@
+Language: English | [繁體中文](METHODOLOGY_MAP.zh-TW.md)
+
 # Methodology Map
 
 ## Core Conclusion
@@ -122,4 +124,3 @@ Not recommended now:
 | Agent workflow needs state and artifacts | Aligned | Plans exist; no runtime needed yet |
 | Repo language should be clear | Gap | Add `LANGUAGE_POLICY.md` |
 | Evaluation/governance deserves explicit visibility | Partial | Document here; defer runnable evals |
-

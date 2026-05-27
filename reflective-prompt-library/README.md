@@ -1,3 +1,5 @@
+Language: English | [繁體中文](README.zh-TW.md)
+
 # Reflective Prompt Library
 
 This library collects reusable prompts for reflective engineering work: deciding what to do, turning ambiguity into specs, reviewing artifacts, designing tests, choosing agent workflows, and preserving context between sessions.
@@ -27,6 +29,8 @@ Core identity prompt
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
+- `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 8 workflow skills.
+- `skills/examples/`: two practical input/output examples per workflow skill.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
 - `METHODOLOGY_MAP.md`: maps the source methodology families to repo prompts and workflow skills.
 - `LANGUAGE_POLICY.md`: explains why operational docs are English while some prompt sources remain localized.

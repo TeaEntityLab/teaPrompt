@@ -1,3 +1,5 @@
+Language: English | [繁體中文](LANGUAGE_POLICY.zh-TW.md)
+
 # Language Policy
 
 ## Current Status
@@ -69,4 +71,3 @@ The repository language state is healthy when:
 - Skills remain English-only unless a tool-specific localization is explicitly needed.
 - README explains the language layering.
 - Future contributors know whether they are editing operational instructions or localized prompt content.
-

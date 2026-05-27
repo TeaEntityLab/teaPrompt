@@ -1,3 +1,5 @@
+Language: English | [繁體中文](README.zh-TW.md)
+
 # TeaPrompt
 
 TeaPrompt is a reflective prompt and workflow library for AI-assisted engineering work.

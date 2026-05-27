@@ -1,0 +1,122 @@
+Language: English | [繁體中文](SKILL_TRIGGER_CHEATSHEET.zh-TW.md)
+
+# Skill Trigger Cheatsheet
+
+This page is a fast selector for the 8 TeaPrompt workflow skills.
+
+Use it when you need quick routing instead of reading each `SKILL.md` in full.
+
+## `reflective-dispatch`
+
+Trigger cues:
+
+- "Help me choose prompt-only vs workflow."
+- "Route this task before doing implementation."
+- "This request mixes planning, risk, and execution."
+
+Do not use when:
+
+- The task is already clearly a single skill path.
+- You only need final execution and no routing decision.
+
+## `reflective-brief`
+
+Trigger cues:
+
+- "Clarify goal, scope, assumptions, and acceptance first."
+- "I know what I want roughly, but the task is still fuzzy."
+- "Define failure conditions and falsifiability before planning."
+
+Do not use when:
+
+- A complete reviewed spec already exists.
+- The task is only a quick factual lookup.
+
+## `reflective-spec-plan`
+
+Trigger cues:
+
+- "Write a spec / PRD / implementation plan."
+- "Turn this into tickets with dependencies and tests."
+- "Do usage-first design before coding."
+
+Do not use when:
+
+- Definition of Ready inputs are missing; use `reflective-brief` first.
+- The request is only to critique an existing plan; use `reflective-review`.
+
+## `reflective-implement`
+
+Trigger cues:
+
+- "Implement this change in the repo."
+- "Refactor or debug with acceptance criteria and tests."
+- "Ship a minimal safe patch with verification."
+
+Do not use when:
+
+- The task is high-risk and not yet gated; run `reflective-risk` first.
+- Requirements are still unclear; use `reflective-brief` or `reflective-spec-plan`.
+
+## `reflective-review`
+
+Trigger cues:
+
+- "Review this code / diff / plan / spec / output."
+- "Find risks, regressions, and missing tests."
+- "Audit assumptions and evidence quality."
+
+Do not use when:
+
+- You are still defining the first draft; use `reflective-brief` or `reflective-spec-plan`.
+- The task is pure implementation with no review ask.
+
+## `reflective-research`
+
+Trigger cues:
+
+- "Research current best practices with sources."
+- "Inspect docs, DeepWiki, and long references."
+- "Separate evidence from inference."
+
+Do not use when:
+
+- The answer is fully repo-local and needs no external grounding.
+- The task is only dependency selection; treat that as a dedicated evaluation lane.
+
+## `reflective-risk`
+
+Trigger cues:
+
+- "This touches auth, privacy, money, production, or deletion."
+- "Need dry-run, rollback, and approval gates."
+- "Assess blast radius before execution."
+
+Do not use when:
+
+- The task is low-risk and reversible with narrow blast radius.
+- You are trying to replace normal implementation planning.
+
+## `reflective-handoff-retro`
+
+Trigger cues:
+
+- "Prepare handoff for another agent/session."
+- "Run retro and capture process improvements."
+- "Convert repeated incidents into reusable rules."
+
+Do not use when:
+
+- Work is still in active implementation and no handoff is needed.
+- You only need a code review decision.
+
+## Fast Routing Rule
+
+If uncertain, apply this order:
+
+1. `reflective-dispatch`
+2. `reflective-risk` (if any high-risk signal appears)
+3. `reflective-brief` or `reflective-spec-plan`
+4. `reflective-implement`
+5. `reflective-review`
+6. `reflective-handoff-retro`

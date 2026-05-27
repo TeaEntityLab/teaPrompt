@@ -1,3 +1,5 @@
+Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
+
 # Skill Installation Guide
 
 Last verified: 2026-05-24
@@ -451,4 +453,3 @@ Use symlink installs only for your own workspace, not as the default team instal
 - OpenCode skills docs: https://opencode.ai/docs/skills
 - Cursor rules docs: https://docs.cursor.com/en/context
 - GitHub CLI `gh skill install`: https://cli.github.com/manual/gh_skill_install
-
