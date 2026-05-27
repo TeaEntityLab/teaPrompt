@@ -4,7 +4,7 @@ Language: English | [繁體中文](METHODOLOGY_MAP.zh-TW.md)
 
 ## Core Conclusion
 
-TeaPrompt should not unify every method into one master prompt.
+TeaPrompt should not unify every method into one master prompt. The core architecture is a **Feedback-Gated Engineering Workflow** rather than a single monolithic "Reflective Engineering Agent".
 
 The correct model is:
 
@@ -12,24 +12,25 @@ The correct model is:
 Classify the task
 -> choose the strictness level
 -> compose the smallest useful prompt or workflow
--> verify with evidence
+-> verify with evidence via Quality Gates
 ```
 
-The repository should stay as a map of methods plus a small workflow layer, not a single giant methodology.
+The repository serves as a structured substrate of methods, context artifacts, and composable workflow skills, rather than a single giant instruction set.
 
-## Method Families
+## The 10-Layer Taxonomy
 
-| Family | Source Tradition | Purpose | Repo Surface |
-| --- | --- | --- | --- |
-| Reflective engineering | Software engineering, requirements, TDD, RCA | Produce verifiable engineering artifacts | `00-core/`, `02-engineering/`, `reflective-implement` |
-| Why / What / How / Done gates | Product management, delivery governance | Decide direction before execution | `01-thinking/why-what-how-done.md`, `reflective-brief` |
-| Socratic and critical thinking | Philosophy, critical thinking, scientific method | Audit assumptions and evidence | `01-thinking/`, `reflective-review`, `reflective-risk` |
-| Prompting-only | LLM prompting practice | Improve one-shot or short-session outputs | `00-core/`, context prompts |
-| Agentic workflow | AI agents, tool use, orchestration | Handle long, stateful, multi-tool tasks | `04-agent/`, `skills/`, `plans/agent-workflows-plan.md` |
-| Evaluation and governance | QA, observability, AI safety | Prevent false success and unsafe actions | `reflective-review`, `reflective-risk`, `reflective-implement` |
-| Education and cognition | Learning science, language acquisition | Design learning systems and reduce cognitive load | `05-domain/learning-coach.md` |
-| Business and transformation | Product strategy, organization design, AI transformation | Analyze market, product, and organization choices | `05-domain/business-strategy.md` |
-| Systems and toolchain | Architecture, automation, durable execution | Design tool-enabled systems | `04-agent/workflow-engine.md`, `plans/code-followups-plan.md` |
+Instead of a single prompt, the methodology is formally structured into ten distinct layers:
+
+1. **Core Instruction Layer** (`00-core/`): Global custom instructions, system behaviors, and base settings.
+2. **Reasoning / Thinking Layer** (`01-thinking/`): Socratic inquiry, critical analysis, falsifiability, and assumption auditing.
+3. **Engineering / Execution Layer** (`02-engineering/`): Domain-specific engineering procedures (TDD, spec writing, implementation strategies).
+4. **Context Window Layer** (`03-context/`): Context window sizing, token management, and context handoff prompts.
+5. **Workflow & Agentic Layer** (`04-agent/`): Workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
+6. **Domain Pack Layer** (`05-domain/`): Specialized domain overlays (business strategy, learning coach, high-risk review, creative/writing).
+7. **Repository Template Layer** (`06-repo/`): Local repository instructions (`AGENTS.md`, `cursor-rules.md` templates).
+8. **Skill / Action Layer** (`skills/`): Modular, on-demand `SKILL.md` files acting as portable procedures executed when triggered.
+9. **Quality Gate / Verification Layer** (Evals/Review): Robust feedback loops, verification checklists, and rating/regression defense mechanisms.
+10. **Governance / Capability Risk Layer** (Risk/Compliance): Security boundaries, non-disclosure policies, high-risk review gates, and credential/tool protection.
 
 ## Strictness Levels
 
@@ -46,12 +47,12 @@ The repository should stay as a map of methods plus a small workflow layer, not 
 
 ### Reflective Engineering + Why / What / How / Done
 
-These belong together.
+These belong together in the execution flow.
 
-- Why: goal, user value, cost of wrong problem
-- What: scope, inputs, outputs, acceptance criteria
-- How: options, risks, tests, rollback
-- Done: evidence, verification, residual risk
+- **Why**: goal, user value, cost of wrong problem
+- **What**: scope, inputs, outputs, acceptance criteria
+- **How**: options, risks, tests, rollback
+- **Done**: evidence, verification, residual risk
 
 ### Socratic Review + High-risk Review
 
@@ -79,48 +80,27 @@ This is the best daily mode.
 
 ### Learning Science Is Not the Engineering Workflow
 
-Education and cognition concepts can inspire prompt design, but they should not become the default engineering agent process.
-
-Use them for learning systems, language practice, feedback loops, and cognitive-load control.
+Education and cognition concepts can inspire prompt design, but they should not become the default engineering agent process. Use them for learning systems, language practice, feedback loops, and cognitive-load control.
 
 ### Business Strategy Is Not the Prompt Core
 
-Business frameworks help define Why, but they should not be injected into every task.
-
-Use them when the task is product, market, organization, or transformation strategy.
+Business frameworks help define Why, but they should not be injected into every task. Use them when the task is product, market, organization, or transformation strategy.
 
 ### Multi-agent Workflow Is Not a Single Prompt
 
 Multi-agent work requires state, tools, logs, verification, and handoff artifacts. A prompt can describe the pattern but cannot replace the runtime.
 
-## Recommended Additions
-
-The current repo already covers the core workflow well. The useful additions are maps and guardrails, not more skills.
-
-Recommended:
-
-1. Keep `skills/` small.
-2. Keep operational docs English.
-3. Add this methodology map as the classification surface.
-4. Add a language policy to clarify bilingual prompt sources.
-5. Consider a future `EVALS.md` only after there are runnable evals.
-6. Consider a future `locales/zh-TW/` migration only if English-only publication becomes a requirement.
-
-Not recommended now:
-
-- Adding separate skills for every methodology.
-- Adding hooks or installers before usage pain is observed.
-- Translating all prompt source files without a clear publication requirement.
-- Adding agent runtime code before the workflows prove repetitive enough.
-
 ## Repo Fit Check
 
-| Claim From Review | Current Repo Fit | Needed Action |
-| --- | --- | --- |
-| Classification is better than unification | Mostly aligned | Keep 8 workflow skills; add this map |
-| Skills should be practical workflows | Aligned | No new skill explosion |
-| High-risk work should get extra critique | Aligned | `reflective-risk` already covers it |
-| Education/business should be overlays | Mostly aligned | Keep them in `05-domain/`, not core skills |
-| Agent workflow needs state and artifacts | Aligned | Plans exist; no runtime needed yet |
-| Repo language should be clear | Gap | Add `LANGUAGE_POLICY.md` |
-| Evaluation/governance deserves explicit visibility | Partial | Document here; defer runnable evals |
+| Category / Layer | Current Repo Fit | Status | Action Needed |
+| --- | --- | --- | --- |
+| Core Instruction Layer | Aligned | Complete | Maintain minimal base footprint. |
+| Reasoning / Thinking | Aligned | Complete | Keep prompts under `01-thinking/`. |
+| Engineering / Execution | Aligned | Complete | Prompts under `02-engineering/`. |
+| Context Window Layer | Aligned | Complete | Manage window-size & token configurations (`03-context/`). |
+| Workflow & Agentic Layer | Aligned | Complete | Workflows, planning engine, and memory consolidation (`04-agent/`). |
+| Domain Pack Layer | Aligned | Complete | Keep strategy and domain prompts in `05-domain/`. |
+| Repository Template Layer | Aligned | Complete | Maintain `AGENTS.md` and `cursor-rules.md` templates under `06-repo/`. |
+| Skill / Action Layer | Aligned | Complete | Maintain 8 core composable skills. |
+| Quality Gate / Verification | Aligned | Complete | Standardize skill-level quality checks. |
+| Governance / Capability Risk | Aligned | Complete | Use `reflective-risk` for high-risk boundaries. |

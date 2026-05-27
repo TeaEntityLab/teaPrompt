@@ -4,57 +4,103 @@ Language: [English](METHODOLOGY_MAP.md) | 繁體中文
 
 ## 核心結論
 
-不要把所有方法論壓成一條超大 Prompt。
+TeaPrompt 不應將所有方法整合為單一的 Master Prompt。核心架構應為 **反饋閘門工程工作流 (Feedback-Gated Engineering Workflow)**，而非單一龐大的「反思型工程智能體 (Reflective Engineering Agent)」。
 
-正確做法是：
+正確的模式是：
 
 ```text
-先分類任務
--> 選擇嚴格度
--> 套用最小可用 workflow
--> 用證據驗收
+分類任務
+-> 選擇嚴格度層次
+-> 組合最小可用的 Prompt 或工作流
+-> 透過品質閘門 (Quality Gates) 用證據進行驗收
 ```
 
-## 主要方法家族
+本專案是一個結構化的方法、上下文組件和可組合工作流技能的基底 (substrate)，而非單一的超大指令集。
 
-1. 工程規格：TDD/Spec/驗收/回歸防護
-2. 閘門治理：Why/What/How/Done
-3. 批判思考：假設、證據、反方、謬誤、可證偽
-4. Prompting-only：低風險、短任務
-5. Agent workflow：長任務、多工具、可恢復
-6. 評估治理：guardrails、approval、audit
-7. 教育認知：學習與認知負荷控制（覆蓋層）
-8. 商業策略：產品/組織/轉型（覆蓋層）
-9. 系統工具鏈：架構、自動化、可觀測性
+## 十層方法論分類法 (10-Layer Taxonomy)
+
+本方法論正式劃分為以下十個層級：
+
+1. **核心指令層 (Core Instruction Layer)** (`00-core/`): 全域自定義指令、系統行為與基礎設定。
+2. **推理與思考層 (Reasoning / Thinking Layer)** (`01-thinking/`): 核心認知框架，包含蘇格拉底式引導、批判性分析與假設審計。
+3. **工程與執行層 (Engineering / Execution Layer)** (`02-engineering/`): 特定領域的工程程序 (TDD、規格撰寫、實作策略)。
+4. **上下文窗口層 (Context Window Layer)** (`03-context/`): 上下文窗口大小、Token 管理與上下文交接提示詞。
+5. **工作流與智能體層 (Workflow & Agentic Layer)** (`04-agent/`): 工作流引擎、配方 (Review-Rating-Fix) 與記憶/知識整合提示詞。
+6. **領域套件層 (Domain Pack Layer)** (`05-domain/`): 專用策略與執行覆蓋層 (例如商業策略、教育與認知教練)。
+7. **專案模板層 (Repository Template Layer)** (`06-repo/`): 本地專案指令與規則模板 (例如 `AGENTS.md`, `cursor-rules.md`)。
+8. **技能與動作層 (Skill / Action Layer)** (`skills/`): 模組化、隨需載入的 `SKILL.md` 程序，在觸發時執行。
+9. **品質閘門與驗證層 (Quality Gate / Verification Layer)** (Evals/Review): 健全的反饋循環、驗收清單以及評分/回歸防禦機制。
+10. **治理與能力風險層 (Governance / Capability Risk Layer)** (Risk/Compliance): 安全邊界、非公開政策、高風險審查閘門以及憑證與工具保護。
 
 ## 嚴格度分級
 
-1. L1：日常低風險 prompt
-2. L2：反思型分析
-3. L3：工程任務（spec -> implement）
-4. L4：高風險 gate
-5. L5：長任務 workflow
-6. L6：策略/教育/商業覆蓋層
+| 等級 | 適用場景 | 主要表面 (Main Surface) |
+| --- | --- | --- |
+| 1. 日常低風險 prompt | 低風險、簡短回答、無狀態 | `00-core/daily-minimal.md` |
+| 2. 反思型分析 | 複雜推理或決策 | `reflective-brief` |
+| 3. 工程任務 | 代碼、系統設計、數據流、測試 | `reflective-spec-plan` -> `reflective-implement` |
+| 4. 高風險審查 | 安全、隱私、金流、刪除、生產環境 | `reflective-risk` |
+| 5. 智能體工作流 | 長時間運行、多工具、可恢復的工作 | `reflective-dispatch` + 工作流計畫 |
+| 6. 策略覆蓋層 | 商業、教育、組織、長期系統 | `05-domain/` prompts 作為覆蓋層 |
 
 ## 該合併與不該合併
 
-可合併：
+### 工程反思 + Why / What / How / Done
 
-- Reflective Engineering + Why/What/How/Done
-- Socratic/Critical thinking + High-risk review
+這些在執行流程中屬於同一個部分。
 
-不該硬合併：
+- **Why**: 目標、用戶價值、選錯問題的代價。
+- **What**: 範疇、輸入、輸出、驗收標準。
+- **How**: 選項、風險、測試、回滾。
+- **Done**: 證據、驗收、殘留風險。
 
-- 教育認知模型 into 核心工程 workflow
-- 商業轉型框架 into 每次執行 prompt
-- Multi-agent runtime into 單一提示詞
+### 蘇格拉底審查 + 高風險審查
 
-## 對 Repo 的實作建議
+僅在風險足夠高時，才啟用較重的批判性思考。
 
-- 維持 8 個 skill，不新增一堆方法論 skill
-- 先強化分流與 gate，再談自動化
-- 把高風險與審批流程寫成明確欄位
-- 以分類為核心，不做大一統
+- 假設審計
+- 證據檢查
+- 反方論點
+- 謬誤掃描
+- 可證偽性
+- 人工審查閘門
 
-詳細矩陣與完整英文版本請看：
-[METHODOLOGY_MAP.md](METHODOLOGY_MAP.md)
+### 純 Prompt + 評分規準 / 檢查清單
+
+這是日常使用的最佳模式。
+
+- 目標
+- 假設
+- 分類
+- 策略
+- 風險
+- 驗收標準
+
+## 不該強行合併的模組
+
+### 學習科學不等於工程工作流
+
+教育與認知概念可以啟發 Prompt 設計，但不應成為工程智能體的預設流程。將它們保留於學習系統、語言練習、反饋循環和認知負載控制中。
+
+### 商業策略不是 Prompt 核心
+
+商業框架有助於定義 Why，但不應注入到每個任務中。僅在任務涉及產品、市場、組織或轉型策略時使用。
+
+### 多智能體工作流不是單一 Prompt
+
+多智能體任務需要狀態、工具、日誌、驗證和交接產出。Prompt 可以描述模式，但無法取代運行時 (runtime)。
+
+## Repo 整合檢查
+
+| 分類 / 層級 | 目前 Repo 整合度 | 狀態 | 待辦動作 |
+| --- | --- | --- | --- |
+| 核心指令層 | 契合 | 完成 | 維持最小化基礎腳印。 |
+| 推理與思考層 | 契合 | 完成 | 保留 `01-thinking/` 底下的 prompt。 |
+| 工程與執行層 | 契合 | 完成 | 保留 `02-engineering/` 底下的 prompt。 |
+| 上下文窗口層 | 契合 | 完成 | 管理窗口大小與 Token 配置 (`03-context/`)。 |
+| 工作流與智能體層 | 契合 | 完成 | 工作流引擎、計畫與記憶整合 (`04-agent/`)。 |
+| 領域套件層 | 契合 | 完成 | 保留策略提示詞於 `05-domain/`。 |
+| 專案模板層 | 契合 | 完成 | 維持 `AGENTS.md` 和 `cursor-rules.md` 模板於 `06-repo/`。 |
+| 技能與動作層 | 契合 | 完成 | 維持 8 個核心可組合技能。 |
+| 品質閘門與驗證 | 契合 | 完成 | 標準化技能層級的品質檢查。 |
+| 治理與能力風險 | 契合 | 完成 | 使用 `reflective-risk` 處理高風險邊界。 |
