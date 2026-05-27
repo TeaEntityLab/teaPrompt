@@ -10,6 +10,32 @@ license: MIT
 
 Produce just enough specification to guide execution and review. Avoid beautiful but unused specs.
 
+## Module Contract
+
+Trigger:
+- Use when the user asks for a spec, PRD, implementation plan, workflow plan, usage design, or reviewable task slices.
+
+Methods:
+- Definition of Ready
+- Usage-first design
+- Acceptance criteria design
+- Vertical task slicing
+- Definition of Done
+
+Output:
+- When file tools are available, write `spec.md`, `usage.md`, and `task-plan.md`; otherwise use the same headings inline.
+- For tickets, use the `TASK-001` template with dependencies, tests, risk, and Human Review flags.
+
+Never:
+- Do not turn every idea into a workflow engine.
+- Do not plan implementation details before acceptance criteria exist.
+- Do not hide incomplete requirements as polished prose.
+- Do not pass incomplete planning artifacts to implementation just to start faster.
+
+Escalation:
+- Route missing Definition of Ready inputs to `reflective-brief`.
+- Route high-risk plans to `reflective-risk` before execution.
+
 ## Workflow
 
 1. Validate entry criteria (Definition of Ready).

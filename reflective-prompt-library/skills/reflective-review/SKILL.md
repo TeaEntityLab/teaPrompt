@@ -10,6 +10,31 @@ license: MIT
 
 Find what would make the artifact fail in real use, then recommend the smallest useful fix.
 
+## Module Contract
+
+Trigger:
+- Use to review code, diffs, specs, plans, AI outputs, articles, decisions, or methodology claims.
+
+Methods:
+- Requirement traceability
+- Assumption audit
+- Evidence and test integrity check
+- Steelman counterargument
+- Fallacy, overengineering, and reward-hacking scan
+
+Output:
+- Output `Findings`, `Traceability`, `Required Fixes`, `Decision`, and `Residual Risks`.
+
+Never:
+- Do not bury serious findings behind a summary.
+- Do not accept unsupported claims as evidence.
+- Do not treat missing tests or weak acceptance criteria as style issues.
+- Do not rewrite the artifact unless the task asks for edits.
+
+Escalation:
+- Mark `Human review required` when safety, privacy, financial, legal, medical, destructive, or irreversible risk is present.
+- Route implementation fixes to `reflective-implement` after review.
+
 ## Review Flow
 
 1. Identify the original requirement and acceptance criteria.

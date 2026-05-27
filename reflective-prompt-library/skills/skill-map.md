@@ -17,6 +17,18 @@ The library contains many prompts, but the workflow layer intentionally has only
 
 This keeps invocation simple while preserving prompt depth as source material.
 
+## Module Contract Standard
+
+Each workflow skill starts with the same compact contract:
+
+- `Trigger`: when to activate the skill.
+- `Methods`: the named reasoning or execution methods it uses.
+- `Output`: the minimum required artifact or response shape.
+- `Never`: failure behaviors the skill must avoid.
+- `Escalation`: when to route to another skill or require Human Review.
+
+This keeps the core kernel short while making each task module pluggable and reviewable.
+
 ## Prompt-to-Skill Mapping
 
 | Prompt Area | Workflow Skill |
@@ -39,4 +51,3 @@ For Claude Code project skills, copy each skill directory into:
 ```
 
 For Codex/OpenCode-style local libraries, keep the current directory as source and copy/adapt only the skills you actually use.
-

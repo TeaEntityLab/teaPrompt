@@ -10,6 +10,31 @@ license: MIT
 
 Preserve only the context needed for continuation and turn repeated lessons into maintainable process improvements.
 
+## Module Contract
+
+Trigger:
+- Use when work needs session transfer, agent handoff, context compaction, retrospective, reusable memory, or conversion of repeated patterns into rules, skills, scripts, or tests.
+
+Methods:
+- Context distillation
+- Decision capture
+- Remaining-work inventory
+- Retrospective root-cause analysis
+- Anti-regression rule extraction
+
+Output:
+- For handoff, output the handoff template with current state, decisions, artifacts, risks, blockers, tests, and next action.
+- For retro, output the retro template with process failures, reusable rules, and improvement candidates.
+
+Never:
+- Do not dump raw context when a compact continuation brief is enough.
+- Do not turn one-off accidents into permanent bureaucracy.
+- Do not omit blockers, skipped checks, or Human Review requirements.
+
+Escalation:
+- Route active implementation back to `reflective-implement`.
+- Route unresolved high-risk blockers to `reflective-risk`.
+
 ## Handoff Workflow
 
 Use when switching tools, agents, models, sessions, or context windows.

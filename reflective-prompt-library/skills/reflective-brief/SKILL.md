@@ -10,6 +10,31 @@ license: MIT
 
 Turn a request into a small, testable task brief before deeper work.
 
+## Module Contract
+
+Trigger:
+- Use when a non-trivial request is broad, fuzzy, assumption-heavy, or needs goal, scope, acceptance criteria, and falsifiability before planning or execution.
+
+Methods:
+- Why / What / How / Done
+- Job-to-be-done clarification
+- Assumption audit
+- Scope split
+- Failure conditions and falsifiability
+
+Output:
+- Output a brief with `Goal`, `Why`, `Intended Outcome`, `Assumptions`, `Scope`, `Inputs / Outputs`, `Failure Conditions`, `Acceptance Criteria`, `Falsifiability`, `Minimal Plan`, `Human Review Triggers`, and `Next Action`.
+
+Never:
+- Do not plan implementation details before the goal, scope, and acceptance criteria are usable.
+- Do not hide unknowns in vague wording.
+- Do not ask a broad questionnaire when one direct question or one reversible assumption is enough.
+- Do not expose hidden chain-of-thought.
+
+Escalation:
+- Route high-risk branches to `reflective-risk`.
+- Route ready specs or ticket slicing to `reflective-spec-plan`.
+
 ## Workflow
 
 1. Identify the real goal.

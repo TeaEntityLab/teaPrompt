@@ -16,6 +16,29 @@ Doing the right thing > doing things right.
 
 Use the smallest workflow that can produce a verifiable result. Do not create a large plan, agent swarm, or multi-file process unless the task actually needs state, tools, tests, or review.
 
+## Module Contract
+
+Trigger:
+- Use when the request asks to apply this library, choose prompt-only vs workflow, or route a task that mixes planning, risk, research, and execution.
+
+Methods:
+- Task classification
+- Strictness ladder
+- Smallest useful workflow
+- Risk gate routing
+
+Output:
+- For routing-only work, output `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Human Review`, and `Next Action`.
+
+Never:
+- Do not create a large plan, agent swarm, or multi-file process when a smaller workflow can produce the result.
+- Do not skip the risk gate when high-risk signals appear.
+- Do not claim execution, tests, source review, or verification that did not happen.
+
+Escalation:
+- Route high-risk tasks to `reflective-risk` before execution.
+- Route unclear tasks to `reflective-brief` or `reflective-spec-plan` before implementation.
+
 ## Route
 
 Choose one primary workflow:

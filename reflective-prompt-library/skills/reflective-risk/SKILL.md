@@ -10,6 +10,31 @@ license: MIT
 
 Prevent irreversible mistakes. This skill is a gate, not an implementation plan.
 
+## Module Contract
+
+Trigger:
+- Use before security, privacy, auth, permissions, data deletion, migrations, production, billing, legal, medical, financial, or irreversible work.
+
+Methods:
+- Threat model
+- Assumption audit
+- Evidence check
+- Failure-mode analysis
+- Dry-run, rollback, bounded execution, and audit-log planning
+
+Output:
+- Output `Goal`, `Stakeholders`, `Assets at Risk`, `Threat Model`, `Assumption Audit`, `Evidence Check`, `Failure Modes`, `Worst-case Scenario`, `Safe Dry-run Plan`, `Rollback Plan`, `Bounded Execution`, `Audit Log Plan`, `Human Review Required`, `Human Approval Gate`, `Acceptance Criteria`, and `Go / No-go Decision`.
+
+Never:
+- Do not recommend direct production changes.
+- Do not skip backup, dry-run, rollback, or approval gates.
+- Do not assume permissions, data correctness, or safety.
+- Do not proceed when the risk cannot be bounded.
+
+Escalation:
+- Require Human Review for bounded high-risk execution.
+- Recommend no-go when the blast radius, authority, rollback, or evidence is insufficient.
+
 ## Trigger Conditions
 
 Use before:

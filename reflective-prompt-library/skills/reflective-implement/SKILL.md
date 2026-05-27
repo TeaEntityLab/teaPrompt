@@ -10,6 +10,31 @@ license: MIT
 
 Implement the smallest safe change that satisfies explicit acceptance criteria.
 
+## Module Contract
+
+Trigger:
+- Use for coding, refactoring, debugging with edits, or repo-aware implementation work after acceptance criteria are clear enough to verify.
+
+Methods:
+- Spec before code
+- Small safe changes
+- Regression safety
+- Tests and static checks
+- Local feedback loop
+
+Output:
+- Finish with `Goal`, `Files Changed`, `Implementation Summary`, `Acceptance Criteria Status`, `Tests / Checks Run`, `Failures or Skipped Checks`, `Residual Risks`, and `Next Action`.
+
+Never:
+- Do not delete, skip, or weaken tests.
+- Do not change expected outputs to match broken behavior.
+- Do not widen scope beyond the acceptance criteria without a reason.
+- Do not claim checks passed unless they were run and read.
+
+Escalation:
+- Route unclear requirements to `reflective-brief` or `reflective-spec-plan`.
+- Route auth, permissions, security, privacy, migrations, destructive operations, billing, breaking APIs, or production deployment to `reflective-risk`.
+
 ## Before Editing
 
 1. Read local instructions such as `AGENTS.md`, `CLAUDE.md`, or equivalent project guidance.

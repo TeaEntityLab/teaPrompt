@@ -10,6 +10,31 @@ license: MIT
 
 Produce a source-backed answer or artifact that can survive handoff and review.
 
+## Module Contract
+
+Trigger:
+- Use for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations.
+
+Methods:
+- Definition check
+- Source hierarchy
+- Evidence vs inference split
+- Recency and version check
+- Cross-source synthesis
+
+Output:
+- Output `Research Question`, `Direct Recommendation`, `Evidence Used`, `Version / Date Context`, `Evidence vs Inference`, `Risks / Unknowns`, optional `Classification`, and `Handoff`.
+
+Never:
+- Do not present a single source as consensus.
+- Do not treat DeepWiki or summaries as the only authority for important implementation details.
+- Do not blur facts, claims, interpretations, and recommendations.
+- Do not omit date or version context when recency affects correctness.
+
+Escalation:
+- Route dependency choice or migration tradeoffs to a dedicated dependency evaluation lane when needed.
+- Route high-risk implementation implications to `reflective-risk`.
+
 ## Source Priority
 
 1. Official documentation, upstream repos, specs, release notes.
