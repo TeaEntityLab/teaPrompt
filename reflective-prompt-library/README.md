@@ -32,6 +32,8 @@ Core identity prompt
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 8 workflow skills.
 - `skills/examples/`: two practical input/output examples per workflow skill.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
+- `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
+- `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.
 - `METHODOLOGY_MAP.md`: maps the source methodology families to repo prompts and workflow skills.
 - `LANGUAGE_POLICY.md`: explains why operational docs are English while some prompt sources remain localized.
 

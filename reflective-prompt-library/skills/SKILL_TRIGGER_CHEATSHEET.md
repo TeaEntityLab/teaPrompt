@@ -6,6 +6,11 @@ This page is a fast selector for the 8 TeaPrompt workflow skills.
 
 Use it when you need quick routing instead of reading each `SKILL.md` in full.
 
+Routing fairness note:
+- Trigger cues below are examples, not required wording.
+- Equivalent intent should route equivalently even when phrasing differs.
+- Fast keyword routing is allowed, but it must not silently reduce quality for equivalent intent.
+
 ## `reflective-dispatch`
 
 Trigger cues:
@@ -120,3 +125,7 @@ If uncertain, apply this order:
 4. `reflective-implement`
 5. `reflective-review`
 6. `reflective-handoff-retro`
+
+When uncertain and low-risk:
+- Prefer a visible default-up to a silent downgrade.
+- Show available enhancements such as tests, security review, and performance checks.

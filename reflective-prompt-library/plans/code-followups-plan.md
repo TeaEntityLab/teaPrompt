@@ -80,6 +80,30 @@ The prompt library can be used manually today. Code becomes useful only if the l
   - Copyable prompt blocks.
   - Plan/workflow pages visible but separated from prompt files.
 
+### ROUTE-001: Paraphrase Routing Eval
+
+- Goal: Verify routing fairness across equivalent phrasings.
+- Inputs:
+  - Intent groups and paraphrase sets.
+  - Router config and enhancement policies.
+- Outputs:
+  - Route consistency report.
+  - Confidence and fallback report.
+  - Silent downgrade detection report.
+- Acceptance:
+  - Same intent group routes to the same canonical workflow for at least 95% of paraphrases.
+  - Equivalent high-rigor requests receive equivalent enhancement options or execution.
+  - Low-confidence routes always emit a visible route trace.
+- Tests:
+  - Native technical phrasing.
+  - Non-native and plain phrasing.
+  - PM and novice phrasing.
+  - Literal translation phrasing.
+  - Cost-aware and high-risk edge cases.
+- Seed artifacts:
+  - `plans/ROUTING_CONTRACT.md`
+  - `plans/route-001-paraphrase-eval.yaml`
+
 ## Human Review Triggers
 
 - Publishing the prompt library publicly.
@@ -100,4 +124,3 @@ The prompt library can be used manually today. Code becomes useful only if the l
 - The library is only used occasionally and manual navigation is sufficient.
 - The maintenance cost of tooling exceeds the time saved.
 - Prompt evaluation cannot be made reliable enough to justify automation.
-

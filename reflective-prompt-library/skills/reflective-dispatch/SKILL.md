@@ -23,21 +23,29 @@ Trigger:
 
 Methods:
 - Task classification
+- Intent normalization
 - Strictness ladder
+- Rigor inference
+- Risk and cost calibration
 - Smallest useful workflow
 - Risk gate routing
 
 Output:
 - For routing-only work, output `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Human Review`, and `Next Action`.
+- Include a short route trace with confidence and optional enhancements.
 
 Never:
 - Do not create a large plan, agent swarm, or multi-file process when a smaller workflow can produce the result.
 - Do not skip the risk gate when high-risk signals appear.
 - Do not claim execution, tests, source review, or verification that did not happen.
+- Do not treat trigger cues as exact phrase requirements.
+- Do not silently downgrade quality when intent is likely equivalent.
 
 Escalation:
 - Route high-risk tasks to `reflective-risk` before execution.
 - Route unclear tasks to `reflective-brief` or `reflective-spec-plan` before implementation.
+- If confidence is low and risk is low, use risk-based default-up.
+- If confidence is low and risk or cost is high, ask a lightweight intent probe.
 
 ## Route
 
@@ -80,6 +88,9 @@ Strictness:
 Goal:
 Assumptions:
 Workflow:
+Route Confidence:
+Enhancements Enabled:
+Enhancements Available:
 Human Review:
 Next Action:
 ```
@@ -90,3 +101,4 @@ Next Action:
 - If an irreversible or high-risk branch appears, stop for Human Review.
 - Prefer artifacts over conversation memory for any task that may resume later.
 - Prefer evidence over confidence. Do not claim tool execution, tests, source review, or verification that did not happen.
+- Apply risk-based default-up, not unconditional default-up.

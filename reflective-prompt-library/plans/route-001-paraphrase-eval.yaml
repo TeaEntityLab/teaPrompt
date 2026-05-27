@@ -1,0 +1,100 @@
+version: 1
+id: ROUTE-001
+name: Paraphrase Routing Eval
+description: Verify that equivalent intent routes to equivalent workflow and rigor.
+
+global_expectations:
+  route_consistency_min: 0.95
+  require_route_trace_on_low_confidence: true
+  forbid_silent_downgrade: true
+
+trace_required_fields:
+  - canonical_intent
+  - workflow
+  - confidence
+  - enhancements_enabled
+  - enhancements_available
+  - rationale
+
+intent_groups:
+  - intent: push_changes
+    expected_workflow: pr_workflow
+    expected_rigor: medium
+    expected_enhancements:
+      - basic_checks
+    phrases:
+      - push my changes
+      - send my work upstream
+      - upload my local commits
+      - open a PR
+      - get this branch into the remote repo
+
+  - intent: rigorous_code_review
+    expected_workflow: reflective_review
+    expected_rigor: high
+    expected_enhancements:
+      - tests
+      - security_review
+      - quality_review
+    phrases:
+      - thorough review
+      - check this carefully
+      - look over my code in detail
+      - make sure it actually works
+      - review this like it is going to production
+
+  - intent: release_readiness
+    expected_workflow: reflective_spec_plan
+    expected_rigor: medium
+    expected_enhancements:
+      - risk_scan
+      - verification_plan
+    phrases:
+      - prepare this for release
+      - help me make sure this won't break
+      - make this ready to ship
+      - confirm this is safe to release
+      - make it production ready
+
+adversarial_sets:
+  - name: native_engineering
+    phrases:
+      - run full review with tests and security checks
+      - push this branch and open a PR
+
+  - name: non_native_plain
+    phrases:
+      - send this up and check carefully
+      - help me confirm this has no problem
+
+  - name: pm_language
+    phrases:
+      - prepare this for launch and reduce risk
+      - check if this is good for customers
+
+  - name: novice_language
+    phrases:
+      - can you make sure this works
+      - help me avoid breaking things
+
+evaluation_rules:
+  - name: route_equivalence
+    assert: same_intent_group_same_workflow
+  - name: rigor_equivalence
+    assert: same_intent_group_same_rigor_or_explained_delta
+  - name: low_confidence_visibility
+    assert: low_confidence_has_route_trace
+  - name: enhancement_visibility
+    assert: enabled_and_available_enhancements_visible
+  - name: no_silent_downgrade
+    assert: downgrade_requires_explicit_rationale
+
+report_template:
+  sections:
+    - summary
+    - route_consistency
+    - rigor_consistency
+    - low_confidence_trace_coverage
+    - silent_downgrade_incidents
+    - failing_examples
+    - recommended_router_fixes

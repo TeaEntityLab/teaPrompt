@@ -21,13 +21,17 @@ This keeps invocation simple while preserving prompt depth as source material.
 
 Each workflow skill starts with the same compact contract:
 
-- `Trigger`: when to activate the skill.
+- `Trigger`: intent signals for activation, not exact magic words.
 - `Methods`: the named reasoning or execution methods it uses.
 - `Output`: the minimum required artifact or response shape.
 - `Never`: failure behaviors the skill must avoid.
 - `Escalation`: when to route to another skill or require Human Review.
 
 This keeps the core kernel short while making each task module pluggable and reviewable.
+
+Routing fairness rule:
+- Same intent should map to the same canonical route even when phrasing differs.
+- Trigger cues are examples, not a required phrase list.
 
 ## Prompt-to-Skill Mapping
 
