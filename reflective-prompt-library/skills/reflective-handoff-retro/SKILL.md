@@ -2,6 +2,9 @@
 name: reflective-handoff-retro
 description: Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.
 license: MIT
+risk_level: low
+human_review_required: false
+external_io: false
 ---
 
 # Reflective Handoff Retro

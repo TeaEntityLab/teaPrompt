@@ -2,6 +2,9 @@
 name: reflective-review
 description: Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.
 license: MIT
+risk_level: low
+human_review_required: false
+external_io: false
 ---
 
 # Reflective Review

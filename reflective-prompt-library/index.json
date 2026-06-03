@@ -1,0 +1,3259 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-06-03T11:56:38.161269",
+  "repo_root": ".",
+  "categories": {
+    "prompt-library": {
+      "path": "reflective-prompt-library",
+      "subcategories": {
+        "02-engineering": {
+          "path": "reflective-prompt-library/02-engineering",
+          "files": [
+            "code-reviewer.md",
+            "task-slicer.md",
+            "local-feedback.md",
+            "usage-first.md",
+            "task-start.md",
+            "spec-writer.md",
+            "implementation-agent.md",
+            "test-designer.md"
+          ]
+        },
+        "06-repo": {
+          "path": "reflective-prompt-library/06-repo",
+          "files": [
+            "codex-opencode.md",
+            "cursor-rules.md",
+            "AGENTS.md"
+          ]
+        },
+        "plans": {
+          "path": "reflective-prompt-library/plans",
+          "files": [
+            "agent-workflows-plan.md",
+            "code-followups-plan.md",
+            "QUALITY_GATES_SUMMARY.md",
+            "ROUTING_CONTRACT.md",
+            "skill-workflow-research-synthesis.md",
+            "prompt-library-build-plan.md"
+          ]
+        },
+        "04-agent": {
+          "path": "reflective-prompt-library/04-agent",
+          "files": [
+            "review-rating-fix.md",
+            "memory-consolidation.md",
+            "agent-selection.md",
+            "retro.md",
+            "workflow-recipes.md",
+            "workflow-engine.md"
+          ]
+        },
+        "03-context": {
+          "path": "reflective-prompt-library/03-context",
+          "files": [
+            "small-context.md",
+            "medium-context.md",
+            "large-context.md",
+            "context-handoff.md",
+            "low-token.md",
+            "gemini-long-document.md",
+            "context-engineering.md"
+          ]
+        },
+        "00-core": {
+          "path": "reflective-prompt-library/00-core",
+          "files": [
+            "custom-instruction-zh.md",
+            "custom-instruction-en.md",
+            "core-short.md",
+            "important-task-full.md",
+            "core-full.md",
+            "daily-minimal.md",
+            "core-minimal.md",
+            "master-prompt.md",
+            "global-controller.md"
+          ]
+        },
+        "skills": {
+          "path": "reflective-prompt-library/skills",
+          "files": [
+            "skill-map.md",
+            "SKILL_TRIGGER_CHEATSHEET.md",
+            "SKILL_TRIGGER_CHEATSHEET.zh-TW.md"
+          ]
+        },
+        "05-domain": {
+          "path": "reflective-prompt-library/05-domain",
+          "files": [
+            "creative-template.md",
+            "business-strategy.md",
+            "high-risk.md",
+            "research.md",
+            "learning-coach.md",
+            "deep-analysis.md",
+            "writing-article.md"
+          ]
+        },
+        "01-thinking": {
+          "path": "reflective-prompt-library/01-thinking",
+          "files": [
+            "socratic-reviewer.md",
+            "critical-thinking-check.md",
+            "falsifiability.md",
+            "counterargument.md",
+            "why-what-how-done.md"
+          ]
+        }
+      }
+    },
+    "skills": {
+      "path": "reflective-prompt-library/skills",
+      "subcategories": {
+        "reflective-dispatch": {
+          "path": "reflective-prompt-library/skills/reflective-dispatch",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-brief": {
+          "path": "reflective-prompt-library/skills/reflective-brief",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-research": {
+          "path": "reflective-prompt-library/skills/reflective-research",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-review": {
+          "path": "reflective-prompt-library/skills/reflective-review",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-implement": {
+          "path": "reflective-prompt-library/skills/reflective-implement",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-handoff-retro": {
+          "path": "reflective-prompt-library/skills/reflective-handoff-retro",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-risk": {
+          "path": "reflective-prompt-library/skills/reflective-risk",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-spec-plan": {
+          "path": "reflective-prompt-library/skills/reflective-spec-plan",
+          "files": [
+            "SKILL.md"
+          ]
+        }
+      }
+    }
+  },
+  "prompts": [
+    {
+      "path": "reflective-prompt-library/02-engineering/code-reviewer.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "code-reviewer",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Code Reviewer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "text": "Review Checklist"
+        },
+        {
+          "level": 3,
+          "text": "1. Correctness"
+        },
+        {
+          "level": 3,
+          "text": "2. Test Integrity"
+        },
+        {
+          "level": 3,
+          "text": "3. Architecture"
+        },
+        {
+          "level": 3,
+          "text": "4. Security / Privacy"
+        },
+        {
+          "level": 3,
+          "text": "5. Maintainability"
+        },
+        {
+          "level": 3,
+          "text": "6. Spec Traceability"
+        },
+        {
+          "level": 3,
+          "text": "7. Decision"
+        },
+        {
+          "level": 3,
+          "text": "8. Required Fixes"
+        }
+      ],
+      "line_count": 63,
+      "char_count": 1014
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/task-slicer.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "task-slicer",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Task Slicer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Spec"
+        },
+        {
+          "level": 1,
+          "text": "Task Plan"
+        },
+        {
+          "level": 2,
+          "text": "Dependency Graph"
+        },
+        {
+          "level": 2,
+          "text": "Tickets"
+        },
+        {
+          "level": 3,
+          "text": "TASK-001: {名稱}"
+        }
+      ],
+      "line_count": 40,
+      "char_count": 545
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/local-feedback.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "local-feedback",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "LOCAL_FEEDBACK Prompt"
+        },
+        {
+          "level": 2,
+          "text": "錯誤描述"
+        },
+        {
+          "level": 2,
+          "text": "請輸出"
+        }
+      ],
+      "line_count": 24,
+      "char_count": 357
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/usage-first.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "usage-first",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Usage-first Prompt"
+        },
+        {
+          "level": 2,
+          "text": "系統 / 功能"
+        }
+      ],
+      "line_count": 33,
+      "char_count": 416
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/task-start.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "task-start",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Task Start Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        },
+        {
+          "level": 2,
+          "text": "請輸出"
+        }
+      ],
+      "line_count": 32,
+      "char_count": 473
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/spec-writer.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "spec-writer",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Spec Writer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "需求"
+        },
+        {
+          "level": 1,
+          "text": "Spec"
+        },
+        {
+          "level": 2,
+          "text": "1. Problem"
+        },
+        {
+          "level": 2,
+          "text": "2. Goals"
+        },
+        {
+          "level": 2,
+          "text": "3. Non-goals"
+        },
+        {
+          "level": 2,
+          "text": "4. Users / Actors"
+        },
+        {
+          "level": 2,
+          "text": "5. Inputs"
+        },
+        {
+          "level": 2,
+          "text": "6. Outputs"
+        },
+        {
+          "level": 2,
+          "text": "7. Functional Requirements"
+        },
+        {
+          "level": 2,
+          "text": "8. Non-functional Requirements"
+        },
+        {
+          "level": 2,
+          "text": "9. Edge Cases"
+        },
+        {
+          "level": 2,
+          "text": "10. Failure Modes"
+        },
+        {
+          "level": 2,
+          "text": "11. Data / Schema"
+        },
+        {
+          "level": 2,
+          "text": "12. Open Questions"
+        },
+        {
+          "level": 2,
+          "text": "13. Human Review Required"
+        }
+      ],
+      "line_count": 66,
+      "char_count": 792
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/implementation-agent.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "implementation-agent",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Implementation Agent Prompt"
+        }
+      ],
+      "line_count": 43,
+      "char_count": 1135
+    },
+    {
+      "path": "reflective-prompt-library/02-engineering/test-designer.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "02-engineering",
+      "name": "test-designer",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Test Designer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Spec"
+        },
+        {
+          "level": 1,
+          "text": "Test Plan"
+        },
+        {
+          "level": 2,
+          "text": "1. Acceptance Tests"
+        },
+        {
+          "level": 2,
+          "text": "2. Edge Case Tests"
+        },
+        {
+          "level": 2,
+          "text": "3. Negative Tests"
+        },
+        {
+          "level": 2,
+          "text": "4. Regression Tests"
+        },
+        {
+          "level": 2,
+          "text": "5. Hidden Eval Candidates"
+        },
+        {
+          "level": 2,
+          "text": "6. Anti-cheating Checks"
+        },
+        {
+          "level": 2,
+          "text": "7. Minimal Test Set"
+        }
+      ],
+      "line_count": 50,
+      "char_count": 744
+    },
+    {
+      "path": "reflective-prompt-library/06-repo/codex-opencode.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "06-repo",
+      "name": "codex-opencode",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Codex / OpenCode Task Prompt"
+        }
+      ],
+      "line_count": 30,
+      "char_count": 578
+    },
+    {
+      "path": "reflective-prompt-library/06-repo/cursor-rules.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "06-repo",
+      "name": "cursor-rules",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Cursor Rules"
+        }
+      ],
+      "line_count": 35,
+      "char_count": 718
+    },
+    {
+      "path": "reflective-prompt-library/06-repo/AGENTS.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "06-repo",
+      "name": "AGENTS",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "AGENTS.md"
+        },
+        {
+          "level": 2,
+          "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Required Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Human Review Required"
+        },
+        {
+          "level": 2,
+          "text": "Anti-cheating Rules"
+        },
+        {
+          "level": 2,
+          "text": "Context Engineering"
+        },
+        {
+          "level": 2,
+          "text": "Review Standard"
+        }
+      ],
+      "line_count": 113,
+      "char_count": 2128
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-workflows-plan",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Plan: Agent Workflows"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Workflow 1: Engineering Delivery"
+        },
+        {
+          "level": 3,
+          "text": "Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "Gates"
+        },
+        {
+          "level": 3,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Workflow 2: High-risk Change"
+        },
+        {
+          "level": 3,
+          "text": "Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "Stop Conditions"
+        },
+        {
+          "level": 2,
+          "text": "Workflow 3: Long Research"
+        },
+        {
+          "level": 3,
+          "text": "Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "Gates"
+        },
+        {
+          "level": 2,
+          "text": "Workflow 4: Agent System Design"
+        },
+        {
+          "level": 3,
+          "text": "Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "Gates"
+        },
+        {
+          "level": 2,
+          "text": "Workflow 5: Context Handoff"
+        },
+        {
+          "level": 3,
+          "text": "Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "Gates"
+        },
+        {
+          "level": 2,
+          "text": "Implementation Notes"
+        }
+      ],
+      "line_count": 144,
+      "char_count": 2724
+    },
+    {
+      "path": "reflective-prompt-library/plans/code-followups-plan.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "code-followups-plan",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Plan: Code Follow-ups for Prompt Library"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Why Code May Be Needed"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Code Artifacts"
+        },
+        {
+          "level": 3,
+          "text": "CODE-001: Prompt Index Generator"
+        },
+        {
+          "level": 3,
+          "text": "CODE-002: Prompt Composer"
+        },
+        {
+          "level": 3,
+          "text": "CODE-003: Prompt Linter"
+        },
+        {
+          "level": 3,
+          "text": "CODE-004: Eval Harness"
+        },
+        {
+          "level": 3,
+          "text": "CODE-005: Static Site or Dashboard"
+        },
+        {
+          "level": 3,
+          "text": "ROUTE-001: Paraphrase Routing Eval"
+        },
+        {
+          "level": 2,
+          "text": "Human Review Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Recommended Sequence"
+        },
+        {
+          "level": 2,
+          "text": "Stop Conditions"
+        }
+      ],
+      "line_count": 126,
+      "char_count": 3910
+    },
+    {
+      "path": "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "QUALITY_GATES_SUMMARY",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [
+          "..."
+        ],
+        "ref_snippet": [],
+        "markdown_links": [
+          "url"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "TeaPrompt Quality Gates Implementation Summary"
+        },
+        {
+          "level": 2,
+          "text": "Overview"
+        },
+        {
+          "level": 2,
+          "text": "Completed Tasks"
+        },
+        {
+          "level": 3,
+          "text": "1. Link + Schema Validation ✅"
+        },
+        {
+          "level": 3,
+          "text": "2. Prompt/Skill Index Generator ✅"
+        },
+        {
+          "level": 3,
+          "text": "3. Prompt/Skill Linter ✅"
+        },
+        {
+          "level": 3,
+          "text": "4. Routing Paraphrase Eval ✅"
+        },
+        {
+          "level": 3,
+          "text": "5. Lightweight Governance Metadata ✅"
+        },
+        {
+          "level": 3,
+          "text": "6. CONTRIBUTING.md ✅"
+        },
+        {
+          "level": 3,
+          "text": "7. Small Benchmark Set ✅"
+        },
+        {
+          "level": 2,
+          "text": "Research Alignment"
+        },
+        {
+          "level": 2,
+          "text": "Key Metrics"
+        },
+        {
+          "level": 2,
+          "text": "Next Steps (Phase 2)"
+        },
+        {
+          "level": 2,
+          "text": "Files Created/Modified"
+        },
+        {
+          "level": 2,
+          "text": "Validation Commands"
+        },
+        {
+          "level": 1,
+          "text": "1. Validate links and schema"
+        },
+        {
+          "level": 1,
+          "text": "2. Run linter"
+        },
+        {
+          "level": 1,
+          "text": "3. Validate governance metadata"
+        },
+        {
+          "level": 1,
+          "text": "4. Regenerate index"
+        },
+        {
+          "level": 1,
+          "text": "5. Test routing"
+        },
+        {
+          "level": 2,
+          "text": "Conclusion"
+        }
+      ],
+      "line_count": 251,
+      "char_count": 8020
+    },
+    {
+      "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ROUTING_CONTRACT",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Routing Contract"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Core Rule"
+        },
+        {
+          "level": 2,
+          "text": "Contract Scope"
+        },
+        {
+          "level": 2,
+          "text": "Normative Terms"
+        },
+        {
+          "level": 2,
+          "text": "Requirements"
+        },
+        {
+          "level": 3,
+          "text": "R1: Intent Normalization"
+        },
+        {
+          "level": 3,
+          "text": "R2: Fairness by Phrasing"
+        },
+        {
+          "level": 3,
+          "text": "R3: Rigor Consistency"
+        },
+        {
+          "level": 3,
+          "text": "R4: Risk-based Default-up"
+        },
+        {
+          "level": 3,
+          "text": "R5: Route Observability"
+        },
+        {
+          "level": 3,
+          "text": "R6: Cost Governance"
+        },
+        {
+          "level": 2,
+          "text": "Router Output Contract"
+        },
+        {
+          "level": 2,
+          "text": "Failure Modes"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Related Artifacts"
+        }
+      ],
+      "line_count": 103,
+      "char_count": 3092
+    },
+    {
+      "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skill-workflow-research-synthesis",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Research Synthesis: Prompting to Skills as Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 3,
+          "text": "Claude / Anthropic Skill Model"
+        },
+        {
+          "level": 3,
+          "text": "obra/superpowers DeepWiki"
+        },
+        {
+          "level": 3,
+          "text": "mattpocock/skills DeepWiki"
+        },
+        {
+          "level": 3,
+          "text": "jnMetaCode/superpowers-zh GitHub"
+        },
+        {
+          "level": 2,
+          "text": "Design Decisions"
+        },
+        {
+          "level": 2,
+          "text": "Resulting Skills"
+        },
+        {
+          "level": 2,
+          "text": "Anti-overengineering Rules"
+        },
+        {
+          "level": 2,
+          "text": "Validation Checklist"
+        }
+      ],
+      "line_count": 74,
+      "char_count": 4562
+    },
+    {
+      "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "prompt-library-build-plan",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Plan: Reflective Prompt Library Build"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Scope In"
+        },
+        {
+          "level": 2,
+          "text": "Scope Out"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        }
+      ],
+      "line_count": 51,
+      "char_count": 1821
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "review-rating-fix",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Review -> Rating -> Fix Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Artifact"
+        },
+        {
+          "level": 2,
+          "text": "Original Requirement"
+        },
+        {
+          "level": 2,
+          "text": "Rubric"
+        },
+        {
+          "level": 2,
+          "text": "Step 1: Review"
+        },
+        {
+          "level": 2,
+          "text": "Step 2: Rating"
+        },
+        {
+          "level": 2,
+          "text": "Step 3: Why not lower?"
+        },
+        {
+          "level": 2,
+          "text": "Step 4: Path to 10"
+        },
+        {
+          "level": 2,
+          "text": "Step 5: Fix Plan"
+        },
+        {
+          "level": 2,
+          "text": "Step 6: Gate Decision"
+        }
+      ],
+      "line_count": 46,
+      "char_count": 604
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "memory-consolidation",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Memory / Knowledge Consolidation Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Logs / Retros"
+        }
+      ],
+      "line_count": 30,
+      "char_count": 421
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/agent-selection.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "agent-selection",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Selection Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        }
+      ],
+      "line_count": 43,
+      "char_count": 580
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/retro.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "retro",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Retro Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務結果"
+        }
+      ],
+      "line_count": 32,
+      "char_count": 691
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "workflow-recipes",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Workflow Recipes"
+        },
+        {
+          "level": 2,
+          "text": "General Thinking"
+        },
+        {
+          "level": 2,
+          "text": "Engineering Task"
+        },
+        {
+          "level": 2,
+          "text": "High-risk Task"
+        },
+        {
+          "level": 2,
+          "text": "Long Research Task"
+        },
+        {
+          "level": 2,
+          "text": "Agent System Design"
+        },
+        {
+          "level": 2,
+          "text": "Cost Modes"
+        },
+        {
+          "level": 2,
+          "text": "Practical Principle"
+        }
+      ],
+      "line_count": 117,
+      "char_count": 1514
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/workflow-engine.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "workflow-engine",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Workflow Engine Planning Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        },
+        {
+          "level": 2,
+          "text": "1. Workflow Goal"
+        },
+        {
+          "level": 2,
+          "text": "2. Trigger"
+        },
+        {
+          "level": 2,
+          "text": "3. Inputs"
+        },
+        {
+          "level": 2,
+          "text": "4. State Model"
+        },
+        {
+          "level": 2,
+          "text": "5. Steps"
+        },
+        {
+          "level": 2,
+          "text": "6. Agent Roles"
+        },
+        {
+          "level": 2,
+          "text": "7. Tools"
+        },
+        {
+          "level": 2,
+          "text": "8. Verification Gates"
+        },
+        {
+          "level": 2,
+          "text": "9. Recovery / Rollback"
+        },
+        {
+          "level": 2,
+          "text": "10. Human Review Gates"
+        },
+        {
+          "level": 2,
+          "text": "11. Observability"
+        },
+        {
+          "level": 2,
+          "text": "12. Anti Reward-Hacking"
+        },
+        {
+          "level": 2,
+          "text": "13. Minimal Implementation Plan"
+        }
+      ],
+      "line_count": 70,
+      "char_count": 1087
+    },
+    {
+      "path": "reflective-prompt-library/03-context/small-context.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "small-context",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Small Context Window Prompt"
+        }
+      ],
+      "line_count": 30,
+      "char_count": 403
+    },
+    {
+      "path": "reflective-prompt-library/03-context/medium-context.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "medium-context",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Medium Context Window Prompt"
+        }
+      ],
+      "line_count": 31,
+      "char_count": 441
+    },
+    {
+      "path": "reflective-prompt-library/03-context/large-context.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "large-context",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Large Context Window Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Stage 1: Index"
+        },
+        {
+          "level": 2,
+          "text": "Stage 2: Extract"
+        },
+        {
+          "level": 2,
+          "text": "Stage 3: Synthesize"
+        }
+      ],
+      "line_count": 47,
+      "char_count": 614
+    },
+    {
+      "path": "reflective-prompt-library/03-context/context-handoff.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "context-handoff",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Context Handoff Prompt"
+        }
+      ],
+      "line_count": 27,
+      "char_count": 433
+    },
+    {
+      "path": "reflective-prompt-library/03-context/low-token.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "low-token",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Low Token Mode Prompt"
+        }
+      ],
+      "line_count": 21,
+      "char_count": 218
+    },
+    {
+      "path": "reflective-prompt-library/03-context/gemini-long-document.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "gemini-long-document",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Gemini Long Document Prompt"
+        },
+        {
+          "level": 2,
+          "text": "1. Document Map"
+        },
+        {
+          "level": 2,
+          "text": "2. Relevant Sections"
+        },
+        {
+          "level": 2,
+          "text": "3. Key Claims"
+        },
+        {
+          "level": 2,
+          "text": "4. Evidence"
+        },
+        {
+          "level": 2,
+          "text": "5. Contradictions"
+        },
+        {
+          "level": 2,
+          "text": "6. Missing Information"
+        },
+        {
+          "level": 2,
+          "text": "7. Synthesis"
+        },
+        {
+          "level": 2,
+          "text": "8. Actionable Output"
+        }
+      ],
+      "line_count": 42,
+      "char_count": 482
+    },
+    {
+      "path": "reflective-prompt-library/03-context/context-engineering.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "03-context",
+      "name": "context-engineering",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Context Engineering Prompt"
+        }
+      ],
+      "line_count": 35,
+      "char_count": 547
+    },
+    {
+      "path": "reflective-prompt-library/00-core/custom-instruction-zh.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "custom-instruction-zh",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "中文 Custom Instruction"
+        }
+      ],
+      "line_count": 8,
+      "char_count": 237
+    },
+    {
+      "path": "reflective-prompt-library/00-core/custom-instruction-en.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "custom-instruction-en",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "English Custom Instruction"
+        }
+      ],
+      "line_count": 8,
+      "char_count": 700
+    },
+    {
+      "path": "reflective-prompt-library/00-core/core-short.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "core-short",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Core Prompt: Short Version"
+        }
+      ],
+      "line_count": 29,
+      "char_count": 731
+    },
+    {
+      "path": "reflective-prompt-library/00-core/important-task-full.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "important-task-full",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Important Task Full Prompt"
+        }
+      ],
+      "line_count": 43,
+      "char_count": 531
+    },
+    {
+      "path": "reflective-prompt-library/00-core/core-full.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "core-full",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Engineering Agent Protocol"
+        },
+        {
+          "level": 2,
+          "text": "Identity"
+        },
+        {
+          "level": 2,
+          "text": "Core Operating Mode"
+        },
+        {
+          "level": 3,
+          "text": "1. Why Gate"
+        },
+        {
+          "level": 3,
+          "text": "2. What Gate"
+        },
+        {
+          "level": 3,
+          "text": "3. How Gate"
+        },
+        {
+          "level": 3,
+          "text": "4. Done Gate"
+        },
+        {
+          "level": 2,
+          "text": "Output Requirements"
+        },
+        {
+          "level": 2,
+          "text": "Critical Thinking Requirements"
+        },
+        {
+          "level": 2,
+          "text": "Engineering Requirements"
+        },
+        {
+          "level": 2,
+          "text": "Context Engineering Rules"
+        },
+        {
+          "level": 2,
+          "text": "Safety / Human Review Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Anti Reward-Hacking Rules"
+        },
+        {
+          "level": 2,
+          "text": "Error Handling: LOCAL_FEEDBACK"
+        },
+        {
+          "level": 2,
+          "text": "Final Answer Style"
+        }
+      ],
+      "line_count": 174,
+      "char_count": 3663
+    },
+    {
+      "path": "reflective-prompt-library/00-core/daily-minimal.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "daily-minimal",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Daily Minimal Prompt"
+        }
+      ],
+      "line_count": 31,
+      "char_count": 378
+    },
+    {
+      "path": "reflective-prompt-library/00-core/core-minimal.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "core-minimal",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Core Minimal Prompt"
+        }
+      ],
+      "line_count": 16,
+      "char_count": 387
+    },
+    {
+      "path": "reflective-prompt-library/00-core/master-prompt.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "master-prompt",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Master Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        },
+        {
+          "level": 2,
+          "text": "請執行以下流程"
+        },
+        {
+          "level": 3,
+          "text": "1. Task Classification"
+        },
+        {
+          "level": 3,
+          "text": "2. Goal Definition"
+        },
+        {
+          "level": 3,
+          "text": "3. Socratic Clarification"
+        },
+        {
+          "level": 3,
+          "text": "4. Assumption Audit"
+        },
+        {
+          "level": 3,
+          "text": "5. Scope"
+        },
+        {
+          "level": 3,
+          "text": "6. Inputs / Outputs"
+        },
+        {
+          "level": 3,
+          "text": "7. Acceptance Criteria"
+        },
+        {
+          "level": 3,
+          "text": "8. Failure Conditions"
+        },
+        {
+          "level": 3,
+          "text": "9. Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "10. Options"
+        },
+        {
+          "level": 3,
+          "text": "11. Recommendation"
+        },
+        {
+          "level": 3,
+          "text": "12. Plan"
+        },
+        {
+          "level": 3,
+          "text": "13. Implementation / Answer"
+        },
+        {
+          "level": 3,
+          "text": "14. Critical Review"
+        },
+        {
+          "level": 3,
+          "text": "15. Self-check"
+        }
+      ],
+      "line_count": 114,
+      "char_count": 1308
+    },
+    {
+      "path": "reflective-prompt-library/00-core/global-controller.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "00-core",
+      "name": "global-controller",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Global Controller Prompt"
+        }
+      ],
+      "line_count": 55,
+      "char_count": 918
+    },
+    {
+      "path": "reflective-prompt-library/skills/skill-map.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "skills",
+      "name": "skill-map",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "reflective-review/SKILL.md#L13-L37"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Skill Map"
+        },
+        {
+          "level": 2,
+          "text": "Core Architecture"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract Standard"
+        },
+        {
+          "level": 3,
+          "text": "1. Active Core Contract (5-Field)"
+        },
+        {
+          "level": 3,
+          "text": "2. Target Design Schema (9-Field Specification)"
+        },
+        {
+          "level": 2,
+          "text": "Prompt-to-Skill Mapping"
+        },
+        {
+          "level": 2,
+          "text": "Installation Notes"
+        }
+      ],
+      "line_count": 75,
+      "char_count": 3407
+    },
+    {
+      "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "skills",
+      "name": "SKILL_TRIGGER_CHEATSHEET",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "SKILL_TRIGGER_CHEATSHEET.zh-TW.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill Trigger Cheatsheet"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-dispatch`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-brief`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-spec-plan`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-implement`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-review`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-research`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-risk`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-handoff-retro`"
+        },
+        {
+          "level": 2,
+          "text": "Fast Routing Rule"
+        }
+      ],
+      "line_count": 131,
+      "char_count": 3639
+    },
+    {
+      "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "skills",
+      "name": "SKILL_TRIGGER_CHEATSHEET.zh-TW",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "SKILL_TRIGGER_CHEATSHEET.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill 觸發口訣（速查版）"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-dispatch`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-brief`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-spec-plan`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-implement`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-review`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-research`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-risk`"
+        },
+        {
+          "level": 2,
+          "text": "`reflective-handoff-retro`"
+        },
+        {
+          "level": 2,
+          "text": "快速順序"
+        }
+      ],
+      "line_count": 95,
+      "char_count": 1052
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/creative-template.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "creative-template",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Creative Template Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Creative Intent"
+        }
+      ],
+      "line_count": 46,
+      "char_count": 676
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/business-strategy.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "business-strategy",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Business Strategy Prompt"
+        },
+        {
+          "level": 2,
+          "text": "方案"
+        }
+      ],
+      "line_count": 38,
+      "char_count": 561
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/high-risk.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "high-risk",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "High-risk Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        }
+      ],
+      "line_count": 33,
+      "char_count": 560
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/research.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "research",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Research Prompt"
+        },
+        {
+          "level": 2,
+          "text": "主題"
+        }
+      ],
+      "line_count": 33,
+      "char_count": 466
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/learning-coach.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "learning-coach",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Learning Coach Prompt"
+        },
+        {
+          "level": 2,
+          "text": "學習目標"
+        }
+      ],
+      "line_count": 31,
+      "char_count": 566
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/deep-analysis.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "deep-analysis",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Claude / ChatGPT Deep Analysis Prompt"
+        },
+        {
+          "level": 2,
+          "text": "問題"
+        }
+      ],
+      "line_count": 33,
+      "char_count": 335
+    },
+    {
+      "path": "reflective-prompt-library/05-domain/writing-article.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "05-domain",
+      "name": "writing-article",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Writing / Article Prompt"
+        },
+        {
+          "level": 2,
+          "text": "主題"
+        }
+      ],
+      "line_count": 34,
+      "char_count": 439
+    },
+    {
+      "path": "reflective-prompt-library/01-thinking/socratic-reviewer.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "01-thinking",
+      "name": "socratic-reviewer",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Socratic Reviewer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "1. Clarify"
+        },
+        {
+          "level": 2,
+          "text": "2. Purpose"
+        },
+        {
+          "level": 2,
+          "text": "3. Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "4. Evidence"
+        },
+        {
+          "level": 2,
+          "text": "5. Alternatives"
+        },
+        {
+          "level": 2,
+          "text": "6. Consequences"
+        },
+        {
+          "level": 2,
+          "text": "7. Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "8. Decision"
+        }
+      ],
+      "line_count": 55,
+      "char_count": 752
+    },
+    {
+      "path": "reflective-prompt-library/01-thinking/critical-thinking-check.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "01-thinking",
+      "name": "critical-thinking-check",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Critical Thinking Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "待審查內容"
+        },
+        {
+          "level": 2,
+          "text": "請依序分析"
+        },
+        {
+          "level": 3,
+          "text": "1. Claim Extraction"
+        },
+        {
+          "level": 3,
+          "text": "2. Assumption Audit"
+        },
+        {
+          "level": 3,
+          "text": "3. Evidence Check"
+        },
+        {
+          "level": 3,
+          "text": "4. Counterargument"
+        },
+        {
+          "level": 3,
+          "text": "5. Fallacy Scan"
+        },
+        {
+          "level": 3,
+          "text": "6. Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "7. Decision"
+        },
+        {
+          "level": 3,
+          "text": "8. Recommendation"
+        }
+      ],
+      "line_count": 64,
+      "char_count": 869
+    },
+    {
+      "path": "reflective-prompt-library/01-thinking/falsifiability.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "01-thinking",
+      "name": "falsifiability",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Falsifiability Prompt"
+        },
+        {
+          "level": 2,
+          "text": "想法"
+        }
+      ],
+      "line_count": 25,
+      "char_count": 403
+    },
+    {
+      "path": "reflective-prompt-library/01-thinking/counterargument.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "01-thinking",
+      "name": "counterargument",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Counterargument Architect Prompt"
+        },
+        {
+          "level": 2,
+          "text": "我的方案"
+        }
+      ],
+      "line_count": 33,
+      "char_count": 483
+    },
+    {
+      "path": "reflective-prompt-library/01-thinking/why-what-how-done.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "01-thinking",
+      "name": "why-what-how-done",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Why / What / How / Done Prompt"
+        },
+        {
+          "level": 2,
+          "text": "任務"
+        },
+        {
+          "level": 1,
+          "text": "1. Why Gate"
+        },
+        {
+          "level": 1,
+          "text": "2. What Gate"
+        },
+        {
+          "level": 1,
+          "text": "3. How Gate"
+        },
+        {
+          "level": 1,
+          "text": "4. Done Gate"
+        }
+      ],
+      "line_count": 55,
+      "char_count": 527
+    }
+  ],
+  "skills": [
+    {
+      "path": "reflective-prompt-library/skills/reflective-dispatch/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-dispatch",
+      "name": "reflective-dispatch",
+      "description": "Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-dispatch",
+        "description": "Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Core Rule"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Route"
+        },
+        {
+          "level": 2,
+          "text": "Strictness Ladder"
+        },
+        {
+          "level": 2,
+          "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "Guardrails"
+        }
+      ],
+      "line_count": 107,
+      "char_count": 4181
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-brief",
+      "name": "reflective-brief",
+      "description": "Use this to start non-trivial tasks, clarify real goals, define assumptions, scope, acceptance criteria, falsifiability, and the minimal next step before planning or implementation. Especially useful when a request is broad but safe to proceed with explicit assumptions.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-brief",
+        "description": "Use this to start non-trivial tasks, clarify real goals, define assumptions, scope, acceptance criteria, falsifiability, and the minimal next step before planning or implementation. Especially useful when a request is broad but safe to proceed with explicit assumptions.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "00-core/core-short.md",
+        "02-engineering/task-start.md",
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/falsifiability.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Brief"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Why"
+        },
+        {
+          "level": 2,
+          "text": "Intended Outcome (JTBD)"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Inputs / Outputs"
+        },
+        {
+          "level": 2,
+          "text": "Failure Conditions"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Minimal Plan"
+        },
+        {
+          "level": 2,
+          "text": "Human Review Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Next Action"
+        },
+        {
+          "level": 2,
+          "text": "Operating Rules"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 98,
+      "char_count": 2739
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-research",
+      "name": "reflective-research",
+      "description": "Use this for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations. It separates evidence from inference and avoids dumping raw context.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-research",
+        "description": "Use this for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations. It separates evidence from inference and avoids dumping raw context.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "true"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "05-domain/research.md",
+        "03-context/context-engineering.md",
+        "03-context/large-context.md",
+        "03-context/gemini-long-document.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Research"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Source Priority"
+        },
+        {
+          "level": 2,
+          "text": "Workflow"
+        },
+        {
+          "level": 2,
+          "text": "DeepWiki Use"
+        },
+        {
+          "level": 2,
+          "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Classification (Optional)"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 105,
+      "char_count": 3127
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-review",
+      "name": "reflective-review",
+      "description": "Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-review",
+        "description": "Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+        "02-engineering/code-reviewer.md",
+        "04-agent/review-rating-fix.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Review"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Review Flow"
+        },
+        {
+          "level": 2,
+          "text": "Review Modes"
+        },
+        {
+          "level": 2,
+          "text": "For Code Review"
+        },
+        {
+          "level": 2,
+          "text": "Traceability Table"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Output Shape"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 2,
+          "text": "Traceability"
+        },
+        {
+          "level": 2,
+          "text": "Required Fixes"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 110,
+      "char_count": 2993
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-implement",
+      "name": "reflective-implement",
+      "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-implement",
+        "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "02-engineering/implementation-agent.md",
+        "02-engineering/test-designer.md",
+        "02-engineering/local-feedback.md",
+        "06-repo/codex-opencode.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Implement"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Before Editing"
+        },
+        {
+          "level": 2,
+          "text": "During Editing"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Failure Loop (LOCAL_FEEDBACK)"
+        },
+        {
+          "level": 2,
+          "text": "Step"
+        },
+        {
+          "level": 2,
+          "text": "Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Error Type"
+        },
+        {
+          "level": 2,
+          "text": "Root Cause"
+        },
+        {
+          "level": 2,
+          "text": "Correction"
+        },
+        {
+          "level": 2,
+          "text": "Next Action"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Anti-regression Rule"
+        },
+        {
+          "level": 2,
+          "text": "Final Report"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Files Changed"
+        },
+        {
+          "level": 2,
+          "text": "Implementation Summary"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria Status"
+        },
+        {
+          "level": 2,
+          "text": "Tests / Checks Run"
+        },
+        {
+          "level": 2,
+          "text": "Failures or Skipped Checks"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Next Action"
+        },
+        {
+          "level": 2,
+          "text": "Hard Stop"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 121,
+      "char_count": 3476
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-handoff-retro",
+      "name": "reflective-handoff-retro",
+      "description": "Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-handoff-retro",
+        "description": "Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "03-context/context-handoff.md",
+        "04-agent/retro.md",
+        "04-agent/memory-consolidation.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Handoff Retro"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Handoff Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Current State"
+        },
+        {
+          "level": 2,
+          "text": "Decisions Made"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Files / Artifacts"
+        },
+        {
+          "level": 2,
+          "text": "Completed Work"
+        },
+        {
+          "level": 2,
+          "text": "Remaining Work"
+        },
+        {
+          "level": 2,
+          "text": "Risks"
+        },
+        {
+          "level": 2,
+          "text": "Blockers"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Commands / Tests Run"
+        },
+        {
+          "level": 2,
+          "text": "Next Recommended Action"
+        },
+        {
+          "level": 2,
+          "text": "Do Not Do"
+        },
+        {
+          "level": 2,
+          "text": "Human Review Required"
+        },
+        {
+          "level": 2,
+          "text": "Retro Workflow"
+        },
+        {
+          "level": 2,
+          "text": "What Went Well"
+        },
+        {
+          "level": 2,
+          "text": "What Went Wrong"
+        },
+        {
+          "level": 2,
+          "text": "Misunderstandings"
+        },
+        {
+          "level": 2,
+          "text": "Wrong Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Token or Time Waste"
+        },
+        {
+          "level": 2,
+          "text": "Weak Gates"
+        },
+        {
+          "level": 2,
+          "text": "Test Adequacy"
+        },
+        {
+          "level": 2,
+          "text": "Overengineering / Underspecification"
+        },
+        {
+          "level": 2,
+          "text": "Reusable Rules"
+        },
+        {
+          "level": 2,
+          "text": "Skill / Script / Test Candidates"
+        },
+        {
+          "level": 2,
+          "text": "Next Process Improvement"
+        },
+        {
+          "level": 2,
+          "text": "Memory Consolidation"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 96,
+      "char_count": 2460
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-risk",
+      "name": "reflective-risk",
+      "description": "Use this before high-risk work involving security, privacy, auth, permissions, data deletion, migrations, production, billing, legal/medical/financial stakes, or irreversible decisions. It creates a dry-run, rollback, and Human Review gate before execution.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-risk",
+        "description": "Use this before high-risk work involving security, privacy, auth, permissions, data deletion, migrations, production, billing, legal/medical/financial stakes, or irreversible decisions. It creates a dry-run, rollback, and Human Review gate before execution.",
+        "license": "MIT",
+        "risk_level": "high",
+        "human_review_required": "true",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "05-domain/high-risk.md",
+        "02-engineering/local-feedback.md",
+        "01-thinking/critical-thinking-check.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Risk"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Trigger Conditions"
+        },
+        {
+          "level": 2,
+          "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Stakeholders"
+        },
+        {
+          "level": 2,
+          "text": "Assets at Risk"
+        },
+        {
+          "level": 2,
+          "text": "Threat Model"
+        },
+        {
+          "level": 2,
+          "text": "Assumption Audit"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Check"
+        },
+        {
+          "level": 2,
+          "text": "Failure Modes"
+        },
+        {
+          "level": 2,
+          "text": "Worst-case Scenario"
+        },
+        {
+          "level": 2,
+          "text": "Safe Dry-run Plan"
+        },
+        {
+          "level": 2,
+          "text": "Rollback Plan"
+        },
+        {
+          "level": 2,
+          "text": "Bounded Execution"
+        },
+        {
+          "level": 2,
+          "text": "Audit Log Plan"
+        },
+        {
+          "level": 2,
+          "text": "Human Review Required"
+        },
+        {
+          "level": 2,
+          "text": "Human Approval Gate"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Go / No-go Decision"
+        },
+        {
+          "level": 2,
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 104,
+      "char_count": 2742
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-spec-plan",
+      "name": "reflective-spec-plan",
+      "description": "Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-spec-plan",
+        "description": "Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "spec.md",
+        "usage.md",
+        "task-plan.md",
+        "02-engineering/spec-writer.md",
+        "02-engineering/usage-first.md",
+        "02-engineering/task-slicer.md",
+        "04-agent/workflow-engine.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Spec Plan"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Artifact Output"
+        },
+        {
+          "level": 2,
+          "text": "Ticket Template"
+        },
+        {
+          "level": 3,
+          "text": "TASK-001: <name>"
+        },
+        {
+          "level": 2,
+          "text": "Guardrails"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 126,
+      "char_count": 3399
+    }
+  ],
+  "total_files": 62
+}

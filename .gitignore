@@ -16,3 +16,8 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+### TeaPrompt generated files
+# Test results and temporary generated files
+reflective-prompt-library/plans/route-001-results.json
+reflective-prompt-library/plans/benchmark-tasks.json

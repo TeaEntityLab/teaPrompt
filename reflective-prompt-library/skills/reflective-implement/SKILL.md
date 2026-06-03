@@ -2,6 +2,9 @@
 name: reflective-implement
 description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.
 license: MIT
+risk_level: low
+human_review_required: false
+external_io: false
 ---
 
 # Reflective Implement
