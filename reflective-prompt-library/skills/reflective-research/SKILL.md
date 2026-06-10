@@ -67,12 +67,12 @@ Escalation:
 
 ## State Ledger
 
-Long research fails when working memory lives only in the growing transcript: constraints get dropped, and claims read once are silently treated as verified. Externalize that state into a ledger and update it after each retrieval, so later steps read the ledger instead of re-deriving from conversation history.
+Long research fails when working memory lives only in the growing transcript: constraints get dropped, and claims read once are silently treated as verified. Externalize that state into a ledger and update it after each retrieval, so later steps read the ledger instead of re-deriving from conversation history. The ledger's other job is auditability: a reader should be able to see what was refuted or qualified without rereading the sources.
 
 | Claim / Item | Source | Status | Open Constraints |
 |---|---|---|---|
 
-- Status is one of `unverified`, `verified`, `refuted`, `stale`.
+- Status is one of `unverified`, `verified`, `refuted`, `needs-qualification`, `stale`. Use a narrower status when the situation demands it (e.g., `unknown` for items no source can settle) — but never loosen `verified`.
 - Mark a claim `verified` only after checking it against an official or upstream source, not a summary of one.
 - The final `Evidence vs Inference` section must be derivable from the ledger alone.
 
@@ -82,6 +82,7 @@ Before synthesizing, state why the evidence is sufficient to stop:
 
 - Every load-bearing claim is `verified` or explicitly listed as an unknown.
 - No open constraint in the ledger is unaddressed.
+- The recommendation is legible from the ledger alone — the test is not "how much was saved" but "is the decision auditable without rereading the sources."
 
 If the gate fails, name the missing evidence and keep searching. Once it passes, stop — do not pad the answer with more sources.
 
