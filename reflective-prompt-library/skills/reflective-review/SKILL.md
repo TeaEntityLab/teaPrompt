@@ -22,6 +22,7 @@ Methods:
 - Requirement traceability
 - Assumption audit
 - Evidence and test integrity check
+- Claims ledger with observable-evidence requirement
 - Steelman counterargument
 - Fallacy, overengineering, and reward-hacking scan
 
@@ -31,6 +32,7 @@ Output:
 Never:
 - Do not bury serious findings behind a summary.
 - Do not accept unsupported claims as evidence.
+- Do not treat stated reasoning — human or AI — as proof that a check ran; require observable evidence.
 - Do not treat missing tests or weak acceptance criteria as style issues.
 - Do not rewrite the artifact unless the task asks for edits.
 
@@ -44,10 +46,24 @@ Escalation:
 2. Extract the artifact's major claims or behavior.
 3. Check correctness against the requirement.
 4. Audit assumptions.
-5. Check evidence and test integrity.
+5. Check evidence and test integrity, recording each load-bearing claim in the Claims Ledger.
 6. Steelman the strongest counterargument.
 7. Scan for overengineering, reward hacking, and missing edge cases.
 8. Give a decision.
+
+## Claims Ledger
+
+A reasoning narrative is not evidence that anything was checked. Models (and people) routinely produce step-by-step explanations that do not reflect what actually drove the conclusion, and they omit influences from the final write-up even when aware of them. So review the artifact's claims against observable evidence — test output, diffs, reproduction, measurements — never against how convincing the explanation sounds.
+
+For reviews with more than a few load-bearing claims, keep a ledger and derive `Findings` and `Traceability` from it:
+
+| Claim | Checked How | Status |
+|---|---|---|
+| what the artifact asserts | the observable evidence examined | `asserted` / `verified` / `refuted` / `unverifiable` |
+
+- `asserted` means only the author's word supports it — treat as unverified, not as low-risk.
+- Mark `verified` only after examining the evidence yourself, not after reading a description of it.
+- `unverifiable` claims that are load-bearing belong in `Required Fixes` or `Residual Risks`, never silently accepted.
 
 ## Review Modes
 

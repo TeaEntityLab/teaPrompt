@@ -36,3 +36,21 @@ Mode: Plan/Spec Review
 ## Decision
 ```
 
+
+## Example 3
+
+Input:
+
+```text
+Review this PR description: "Refactored the cache layer; all edge cases tested and passing."
+```
+
+Expected mid-review Claims Ledger shape:
+
+```markdown
+| Claim | Checked How | Status |
+|---|---|---|
+| cache layer refactored, behavior preserved | diff read; public API unchanged | verified |
+| all edge cases tested | test files in diff | refuted (no new tests for eviction path) |
+| tests passing | CI run link | verified |
+```
