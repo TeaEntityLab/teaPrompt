@@ -17,6 +17,50 @@ Classify the task
 
 The repository serves as a structured substrate of methods, context artifacts, and composable workflow skills, rather than a single giant instruction set.
 
+## Positioning: Skills as Natural-Language Harness Policy
+
+The 2026 agent literature gives this library a precise external frame. In current
+usage (still contested — see the post-ICLR 2026 terminology debate):
+
+- **Harness** — the execution layer around a model: calls it, runs tools, decides
+  when to stop. *Agent = Model + Harness.*
+- **Scaffold** — the behavior-defining layer inside the harness: prompts, tool
+  descriptions, context management.
+- **Skills** — externalized procedural expertise, loaded on demand.
+
+Under this vocabulary, the `skills/` layer is **natural-language harness policy**:
+editable documents that describe run-level execution behavior, interpreted by the
+runtime (Claude Code, Codex, etc.) rather than hard-coded — the pattern formalized
+as Natural-Language Agent Harnesses (arXiv [2603.25723](https://arxiv.org/abs/2603.25723)).
+The library's broader bet — capability moved into memory, skills, and harness rather
+than weights — matches the Weights → Context → Harness progression described in the
+externalization review (arXiv [2604.08224](https://arxiv.org/abs/2604.08224)); see
+also the [HuggingFace agent glossary](https://huggingface.co/blog/agent-glossary).
+The State Ledger / Sufficiency Gate / Budget Rule sections in the long-horizon
+skills apply the state-externalizing-harness design from Harness-1
+(arXiv [2606.02373](https://arxiv.org/abs/2606.02373)); rationale in
+`plans/harness-1-state-ledger-research.md`.
+
+The NLAH paper — which cites `SKILL.md`-style files as a direct inspiration —
+distills five design principles for harness-policy documents that this library's
+skill contracts should continue to follow:
+
+1. **State the task contract first** — inputs, outputs, allowed tools, and the
+   condition under which the run is complete.
+2. **Separate stages from mechanisms** — name the phases; delegate exact
+   operations to scripts or tools.
+3. **Make state and evidence explicit** — say where state is stored and which
+   artifacts later steps must reopen.
+4. **Write module boundaries for ablation** — name each module so it can be
+   removed or tested cleanly.
+5. **Prefer simple and enforceable language** — *"Phrases such as 'be careful,'
+   'think deeply,' or 'act like an expert' are weak harness policy because they
+   do not define observable behavior."*
+
+The externalization review adds the matching success criterion for any
+memory/ledger artifact: not "how much did we save?" but **"did we make the
+current decision legible?"**
+
 ## The 10-Layer Taxonomy
 
 Instead of a single prompt, the methodology is formally structured into ten distinct layers:
