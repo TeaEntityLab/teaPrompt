@@ -25,7 +25,7 @@ The prompt library can be used manually today. Code becomes useful only if the l
   - Missing heading.
   - Non-prompt Markdown file.
 
-### CODE-002: Prompt Composer
+### CODE-002: Prompt Composer ✅
 
 - Goal: Compose core prompt + task prompt + context prompt + validation prompt.
 - Inputs: prompt slugs and optional task text.
@@ -55,7 +55,7 @@ The prompt library can be used manually today. Code becomes useful only if the l
   - Supports warnings and errors.
   - Exits non-zero on errors.
 
-### CODE-004: Eval Harness
+### CODE-004: Eval Harness ✅
 
 - Goal: Evaluate prompt outputs against rubric-based test cases.
 - Inputs:
@@ -71,7 +71,7 @@ The prompt library can be used manually today. Code becomes useful only if the l
   - Detects overconfident unsupported claims.
   - Keeps hidden eval answers separate from implementation prompts.
 
-### CODE-005: Static Site or Dashboard
+### CODE-005: Static Site or Dashboard ✅
 
 - Goal: Browse, search, tag, and compose prompts visually.
 - Acceptance:
@@ -113,11 +113,11 @@ The prompt library can be used manually today. Code becomes useful only if the l
 
 ## Recommended Sequence
 
-1. Start with Prompt Index Generator.
-2. Add Prompt Linter.
-3. Add Prompt Composer.
-4. Add Eval Harness.
-5. Add Dashboard only if manual use becomes painful.
+1. ✅ Start with Prompt Index Generator.
+2. ✅ Add Prompt Linter.
+3. ✅ Add Prompt Composer.
+4. ✅ Add Eval Harness.
+5. ✅ Add Static Site/Dashboard.
 
 ## Stop Conditions
 
