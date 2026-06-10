@@ -77,10 +77,16 @@ Only the harness design transfers to a prompt library.
 
 ## Open Follow-Ups
 
-- [ ] Eval: before/after benchmark (skill-creator loop) on a multi-source research
-      task — does the ledger measurably reduce dropped constraints and
-      unverified claims? Also covers the 2026-06-10 Claims Ledger addition to
-      `reflective-review`.
+- [ ] Eval: before/after benchmark (skill-creator loop) — **iteration 1 done
+      2026-06-10**: 3 research tasks × (new skill vs pre-ledger skill).
+      Result: new skill 18/18 assertions, old 15/18; all three old-skill
+      failures were the missing verification-status ledger; cost +~2.5% tokens,
+      +6s. Caveat: both configs passed all factual-trap assertions, so
+      iteration 1 proves the ledger appears reliably at negligible cost but NOT
+      that it prevents real errors. Remaining: (a) user review of iteration-1
+      outputs (workspace: /tmp/reflective-research-workspace), (b) iteration 2
+      with adversarial tasks (conflicting sources, planted misinformation)
+      where dropped constraints actually occur.
 - [x] Ledger pattern for `reflective-review` — added 2026-06-10 as Claims Ledger
       (`asserted/verified/refuted/unverifiable`), motivated by the CoT
       faithfulness literature (reasoning narratives are not verification records).
