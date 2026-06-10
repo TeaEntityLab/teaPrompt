@@ -79,10 +79,43 @@ Only the harness design transfers to a prompt library.
 
 - [ ] Eval: before/after benchmark (skill-creator loop) on a multi-source research
       task — does the ledger measurably reduce dropped constraints and
-      unverified claims?
-- [ ] Consider ledger pattern for `reflective-review` (claims checked vs asserted).
+      unverified claims? Also covers the 2026-06-10 Claims Ledger addition to
+      `reflective-review`.
+- [x] Ledger pattern for `reflective-review` — added 2026-06-10 as Claims Ledger
+      (`asserted/verified/refuted/unverifiable`), motivated by the CoT
+      faithfulness literature (reasoning narratives are not verification records).
 - [ ] Re-check Harness-1 for v2 / peer review / third-party replication before
       citing performance numbers anywhere load-bearing.
+      (Checked 2026-06-10: still v1, no replication or critique found — only
+      launch coverage (MarkTechPost, Digg, HF papers page). New detail: built on
+      `openai/gpt-oss-20b`; paper calls the pattern "stateful cognitive
+      offloading". Re-check in a month or two.)
+- [x] Read in full: NLAH (arXiv 2603.25723) and the externalization review
+      (arXiv 2604.08224) — done 2026-06-10; positioning section in both
+      methodology maps deepened with NLAH's five harness-policy design
+      principles and the review's ledger success criterion ("did we make the
+      current decision legible?"). Key extra findings:
+      - NLAH explicitly cites AGENTS.md / CLAUDE.md / SKILL.md as inspiration;
+        NLAH docs ≈ code harnesses on SWE-bench Verified / Terminal-Bench 2.0
+        at 10–20x fewer policy tokens (e.g., 60.1k → 2.9k).
+      - NLAH limitation relevant to us: parent→child Information Handoff Recall
+        drops from 1.00 (direct context) to 0.322–0.553 — supports keeping
+        handoff artifacts explicit (`reflective-handoff-retro`).
+      - Externalization review's skill failure modes worth a future audit pass
+        over this library: semantic alignment, portability/staleness, unsafe
+        composition, context-dependent degradation.
+- [x] Verify CoT-faithfulness numbers against the papers (done 2026-06-10):
+      - arXiv 2602.11201 **verified** — abstract states "a consistent Reasoning
+        Horizon (k*) at 70--85% of chain length, beyond which reasoning tokens
+        have little or negative effect on the final answer" (metric: NLDD).
+      - arXiv 2603.26410 **refuted** — the "87.5% vs 28.6%" figures from the
+        search summary do NOT appear in the abstract. Actual abstract figures:
+        55.4% of divergence cases have hint keywords in thinking tokens that the
+        visible answer omits; 0.5% reverse. Do not cite 87.5/28.6 anywhere.
+        (Object lesson: search-layer summaries can fabricate statistics — the
+        Claims Ledger rule exists for exactly this.)
+- [ ] Standing limitation: reddit.com blocks Anthropic's crawler — community
+      surveys must rely on secondary sources or manual browsing.
 
 ## Sources
 
