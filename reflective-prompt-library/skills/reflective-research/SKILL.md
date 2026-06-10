@@ -24,6 +24,8 @@ Methods:
 - Evidence vs inference split
 - Recency and version check
 - Cross-source synthesis
+- State ledger with per-claim verification status
+- Sufficiency gate before synthesis
 
 Output:
 - Output `Research Question`, `Direct Recommendation`, `Evidence Used`, `Version / Date Context`, `Evidence vs Inference`, `Risks / Unknowns`, optional `Classification`, and `Handoff`.
@@ -49,18 +51,43 @@ Escalation:
 
 1. Define the research question and scope.
 2. Build a source map.
-3. Extract only relevant claims, constraints, requirements, risks, and decisions.
-4. Separate:
+3. Extract only relevant claims, constraints, requirements, risks, and decisions, recording each in the State Ledger as it is found.
+4. After each retrieval, update the ledger. Use the ledger, not transcript memory, to decide the next search.
+5. Separate, from the ledger:
    - Evidence observed
    - Inference made from evidence
    - Unknowns
    - Claims needing fresh verification
-5. If doing methodology mapping, classify findings into:
+6. If doing methodology mapping, classify findings into:
    - Already present in current practice
    - Adjacent but not systematized
    - Recommended for core adoption
-6. Synthesize a recommendation.
-7. Create a handoff or implementation implication if needed.
+7. Pass the Sufficiency Gate, then synthesize a recommendation.
+8. Create a handoff or implementation implication if needed.
+
+## State Ledger
+
+Long research fails when working memory lives only in the growing transcript: constraints get dropped, and claims read once are silently treated as verified. Externalize that state into a ledger and update it after each retrieval, so later steps read the ledger instead of re-deriving from conversation history.
+
+| Claim / Item | Source | Status | Open Constraints |
+|---|---|---|---|
+
+- Status is one of `unverified`, `verified`, `refuted`, `stale`.
+- Mark a claim `verified` only after checking it against an official or upstream source, not a summary of one.
+- The final `Evidence vs Inference` section must be derivable from the ledger alone.
+
+### Sufficiency Gate
+
+Before synthesizing, state why the evidence is sufficient to stop:
+
+- Every load-bearing claim is `verified` or explicitly listed as an unknown.
+- No open constraint in the ledger is unaddressed.
+
+If the gate fails, name the missing evidence and keep searching. Once it passes, stop — do not pad the answer with more sources.
+
+### Budget Rule
+
+When fetched material outgrows the task, compress findings into the ledger and drop the raw text. Keep source identities, versions, and dates; discard full documents. For very large documents, apply `03-context/large-context.md`.
 
 ## DeepWiki Use
 
@@ -88,6 +115,10 @@ When inspecting DeepWiki:
 ## Evidence vs Inference
 
 ## Risks / Unknowns
+
+## State Ledger (Final, Optional for short tasks)
+| Claim / Item | Source | Status | Open Constraints |
+|---|---|---|---|
 
 ## Classification (Optional)
 - Already Present:

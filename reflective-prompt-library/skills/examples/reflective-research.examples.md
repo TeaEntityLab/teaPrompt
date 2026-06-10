@@ -37,3 +37,21 @@ Expected output shape:
 - Recommended Core Additions:
 ```
 
+
+## Example 3
+
+Input:
+
+```text
+Does library X support streaming responses in the current stable release?
+```
+
+Expected mid-task State Ledger shape:
+
+```markdown
+| Claim / Item | Source | Status | Open Constraints |
+|---|---|---|---|
+| X supports streaming since v2.3 | official changelog | verified | |
+| streaming requires async client | blog post | unverified | confirm in API reference |
+| v2.3 is current stable | GitHub releases | verified | |
+```

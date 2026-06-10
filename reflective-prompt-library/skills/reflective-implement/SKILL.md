@@ -24,6 +24,8 @@ Methods:
 - Regression safety
 - Tests and static checks
 - Local feedback loop
+- State ledger for multi-step tasks
+- Sufficiency gate before reporting done
 
 Output:
 - Finish with `Goal`, `Files Changed`, `Implementation Summary`, `Acceptance Criteria Status`, `Tests / Checks Run`, `Failures or Skipped Checks`, `Residual Risks`, and `Next Action`.
@@ -59,7 +61,27 @@ Escalation:
 - Add or update tests for each acceptance criterion.
 - Do not delete, skip, or weaken tests.
 - Do not change expected outputs to match broken behavior.
-- Keep notes in an artifact when the task spans multiple steps.
+- For multi-step tasks, maintain the State Ledger instead of loose notes.
+
+## State Ledger
+
+Multi-step implementation fails when progress lives only in the transcript: criteria silently drop, and "I ran that check earlier" replaces evidence. For any task spanning multiple files or steps, keep a ledger in an artifact and update it after each edit or check. Re-read the ledger before each step instead of trusting transcript memory.
+
+| Item | Status | Evidence |
+|---|---|---|
+| acceptance criterion, file, or check | `pending` / `done` / `verified` / `failed` | test output, diff, observation |
+
+- Mark an item `verified` only after the relevant check was run and its output read.
+- Open constraints and deferred decisions belong in the ledger, not only in prose.
+- The Final Report's `Acceptance Criteria Status` must be derivable from the ledger alone.
+
+### Sufficiency Gate
+
+Stop editing when every acceptance criterion is `verified` and no `failed` item remains. Do not keep "improving" past that point, and do not report done before it.
+
+### Budget Rule
+
+When investigation output grows (logs, file dumps, failed attempts), compress conclusions into the ledger and drop the raw material. Keep what changed and what was proven; discard how it looked along the way.
 
 ## Verification
 
