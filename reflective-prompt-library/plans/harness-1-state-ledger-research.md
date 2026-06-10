@@ -120,8 +120,8 @@ Only the harness design transfers to a prompt library.
         visible answer omits; 0.5% reverse. Do not cite 87.5/28.6 anywhere.
         (Object lesson: search-layer summaries can fabricate statistics — the
         Claims Ledger rule exists for exactly this.)
-- [ ] Standing limitation: reddit.com blocks Anthropic's crawler — community
-      surveys must rely on secondary sources or manual browsing.
+> **Standing constraint (not a task):** reddit.com blocks Anthropic's crawler —
+> community surveys must rely on secondary sources or manual browsing.
 
 ## Sources
 
