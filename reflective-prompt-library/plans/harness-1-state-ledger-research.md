@@ -87,6 +87,18 @@ Only the harness design transfers to a prompt library.
       outputs (workspace: /tmp/reflective-research-workspace), (b) iteration 2
       with adversarial tasks (conflicting sources, planted misinformation)
       where dropped constraints actually occur.
+      **Iteration 2 done 2026-06-10** (adversarial: planted false premises on
+      Python 3.13 GIL/asyncio; 6-constraint Caddy-vs-nginx with a rate-limit
+      direction trap; MySQL 8.4 claims needing tier qualification). Result:
+      new skill 18/18, old 15/18 — identical pattern to iteration 1; the only
+      discriminator is ledger presence. **Both configs passed every factual
+      trap**, so two iterations consistently show the ledger adds auditability
+      (explicit refuted/needs-qualification statuses) at +2–11% tokens, with
+      no measured error-rate difference at this task difficulty. Conclusion:
+      keep the ledger for auditability and handoff legibility; do not claim
+      error-prevention benefits without harder evidence (e.g., longer-horizon
+      tasks where context actually overflows, or noisier source environments).
+      User review of both iterations pending in the eval viewer.
 - [x] Ledger pattern for `reflective-review` — added 2026-06-10 as Claims Ledger
       (`asserted/verified/refuted/unverifiable`), motivated by the CoT
       faithfulness literature (reasoning narratives are not verification records).
