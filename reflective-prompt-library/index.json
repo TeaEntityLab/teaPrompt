@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-11T11:55:29.073387",
+  "generated_at": "2026-06-11T12:32:42.220455",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -32,6 +32,7 @@
           "files": [
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
+            "fable-5-scaffold-provenance-reflection-2026-06-11.md",
             "harness-1-state-ledger-research.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
@@ -47,6 +48,7 @@
           "path": "reflective-prompt-library/04-agent",
           "files": [
             "review-rating-fix.md",
+            "agent-scaffold-provenance.md",
             "memory-consolidation.md",
             "agent-selection.md",
             "runtime-trust-boundary.md",
@@ -723,6 +725,68 @@
       "char_count": 3817
     },
     {
+      "path": "reflective-prompt-library/plans/fable-5-scaffold-provenance-reflection-2026-06-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "fable-5-scaffold-provenance-reflection-2026-06-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Fable 5 Scaffold Provenance Reflection"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Project vs Artifact Differences"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Inquiry"
+        },
+        {
+          "level": 2,
+          "text": "Concepts Worth Learning"
+        },
+        {
+          "level": 2,
+          "text": "Concepts Not Worth Importing"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Local Changes"
+        },
+        {
+          "level": 2,
+          "text": "Verification Plan"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        }
+      ],
+      "line_count": 102,
+      "char_count": 7763
+    },
+    {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1036,7 +1100,7 @@
         }
       ],
       "line_count": 255,
-      "char_count": 8218
+      "char_count": 8249
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1407,6 +1471,56 @@
       "char_count": 604
     },
     {
+      "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "agent-scaffold-provenance",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Scaffold Provenance Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Artifact"
+        },
+        {
+          "level": 2,
+          "text": "1. Research Question"
+        },
+        {
+          "level": 2,
+          "text": "2. Provenance Ledger"
+        },
+        {
+          "level": 2,
+          "text": "3. Surface Distinction"
+        },
+        {
+          "level": 2,
+          "text": "4. Transferability Filter"
+        },
+        {
+          "level": 2,
+          "text": "5. Socratic Challenge"
+        },
+        {
+          "level": 2,
+          "text": "6. Recommendation"
+        }
+      ],
+      "line_count": 103,
+      "char_count": 2819
+    },
+    {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1509,8 +1623,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 96,
-      "char_count": 3466
+      "line_count": 97,
+      "char_count": 3614
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -2232,7 +2346,7 @@
         }
       ],
       "line_count": 75,
-      "char_count": 3509
+      "char_count": 3606
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -2291,8 +2405,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 136,
-      "char_count": 4152
+      "line_count": 138,
+      "char_count": 4300
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -2351,8 +2465,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 101,
-      "char_count": 1253
+      "line_count": 103,
+      "char_count": 1312
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -2942,7 +3056,8 @@
         "03-context/context-engineering.md",
         "03-context/large-context.md",
         "03-context/gemini-long-document.md",
-        "04-agent/runtime-trust-boundary.md"
+        "04-agent/runtime-trust-boundary.md",
+        "04-agent/agent-scaffold-provenance.md"
       ],
       "structure": [
         {
@@ -3026,8 +3141,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 143,
-      "char_count": 5583
+      "line_count": 146,
+      "char_count": 5794
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -3055,7 +3170,8 @@
         "01-thinking/counterargument.md",
         "02-engineering/code-reviewer.md",
         "04-agent/review-rating-fix.md",
-        "04-agent/runtime-trust-boundary.md"
+        "04-agent/runtime-trust-boundary.md",
+        "04-agent/agent-scaffold-provenance.md"
       ],
       "structure": [
         {
@@ -3127,8 +3243,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 136,
-      "char_count": 4755
+      "line_count": 139,
+      "char_count": 4957
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -3644,5 +3760,5 @@
       "char_count": 3696
     }
   ],
-  "total_files": 68
+  "total_files": 70
 }

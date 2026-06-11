@@ -86,6 +86,12 @@ Recent agent-runtime references reinforce that governance is not only a high-ris
 
 TeaPrompt should absorb these as a lightweight runtime governance sublayer, not as a monolithic agent constitution. Use `04-agent/runtime-trust-boundary.md` when a task involves external content, tool results, entity-like records, context assembly, or side-effectful actions.
 
+## Scaffold Provenance Addendum
+
+Public prompt mirrors and alleged system-prompt leaks are useful only as provenance-sensitive research artifacts. The elder-plinius `CLAUDE-FABLE-5.md` mirror is observable as a third-party GitHub artifact, while Anthropic's official docs separately confirm Claude app system prompts, Claude Fable 5 release behavior, long-run scaffolding guidance, refusal categories, and reasoning-output limits. That distinction matters.
+
+TeaPrompt should learn the taxonomy: identity, behavior, safety, memory, tool routing, artifact/workspace policy, evidence/citation/copyright, and reasoning protection. It should not copy leaked or mirrored scaffold text into operational skills. Use `04-agent/agent-scaffold-provenance.md` when comparing official docs, mirrors, user attachments, and community interpretations.
+
 ## Strictness Levels
 
 | Level | Use When | Main Surface |

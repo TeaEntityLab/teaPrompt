@@ -24,6 +24,7 @@ Methods:
 - Evidence and test integrity check
 - Claims ledger with observable-evidence requirement
 - Runtime trust-boundary review
+- Prompt/scaffold provenance review
 - Steelman counterargument
 - Fallacy, overengineering, and reward-hacking scan
 
@@ -75,6 +76,7 @@ Choose one mode first, then apply the common review flow:
 - `Methodology Review`: classification quality, strictness mismatch, framework overreach.
 - `AI Output Review`: evidence quality, unsupported claims, hallucination risk, actionability.
 - `Runtime Trust Boundary Review`: instruction/data separation, missing-data discipline, tool-result authority, side-effect gates.
+- `Scaffold Provenance Review`: official-vs-mirror evidence, surface distinctions, transferability, and no-copy boundaries.
 
 If the artifact spans multiple modes, declare a primary mode and list secondary checks.
 
@@ -134,3 +136,4 @@ Use one:
 - `02-engineering/code-reviewer.md`
 - `04-agent/review-rating-fix.md`
 - `04-agent/runtime-trust-boundary.md`
+- `04-agent/agent-scaffold-provenance.md`

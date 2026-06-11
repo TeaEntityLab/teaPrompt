@@ -18,7 +18,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 - Checks for required frontmatter fields (name, description)
 
 **Results:**
-- Scanned 80 markdown files
+- Scanned 91 markdown files
 - 0 errors found
 - All links and references are valid
 
@@ -39,9 +39,9 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Indexed 61 total files (53 prompts, 8 skills)
+- Indexed 70 total files (62 prompts, 8 skills)
 - 2 main categories (prompt-library, skills)
-- 9 prompt-library subcategories
+- 10 prompt-library subcategories
 - 8 skill subcategories
 - Output: `reflective-prompt-library/index.json`
 
@@ -63,9 +63,9 @@ python3 reflective-prompt-library/plans/generate_index.py
 - Provides actionable suggestions
 
 **Results:**
-- Scanned 80 files
+- Scanned 91 files
 - 0 errors, 0 warnings
-- 53 files with suggestions (mostly non-critical)
+- 68 files with suggestions (mostly non-critical)
 - All 8 skills pass validation
 
 **Usage:**
@@ -151,16 +151,16 @@ python3 reflective-prompt-library/plans/validate_governance.py
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
 
 **What it does:**
-- Defines 18 golden tasks for validation
+- Defines 19 golden tasks for validation
 - Covers all major workflows (7 different skills)
-- Balanced difficulty distribution (5 easy, 7 medium, 3 hard)
-- Diverse categories (9 different categories)
+- Balanced difficulty distribution (5 easy, 9 medium, 5 hard)
+- Diverse categories (11 different categories)
 - Clear acceptance criteria for each task
 - Expected workflow mapping
 
 **Results:**
-- 18 benchmark tasks created
-- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, and runtime governance
+- 19 benchmark tasks created
+- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, and scaffold provenance
 - Output: `plans/benchmark-tasks.json`
 
 **Usage:**
@@ -172,7 +172,7 @@ python3 reflective-prompt-library/plans/benchmark_tasks.py
 
 The implementation aligns with research findings:
 
-1. **Quality over quantity** - TeaPrompt maintains 61 files vs thousands in other repos
+1. **Quality over quantity** - TeaPrompt maintains 70 indexed files vs thousands in other repos
 2. **Hierarchical organization** - 6 categories with clear structure
 3. **Focused skills** - 8 core skills vs comprehensive documentation
 4. **Validation discipline** - Automated quality gates prevent degradation
@@ -182,10 +182,10 @@ The implementation aligns with research findings:
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 80 | ✅ All pass |
+| Files validated | 91 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 8/8 | ✅ Complete |
-| Benchmark tasks | 18 | ✅ Ready |
+| Benchmark tasks | 19 | ✅ Ready |
 | Routing consistency | 64.9% | ⚠️ Needs improvement |
 | Linting errors | 0 | ✅ Clean |
 
@@ -194,7 +194,7 @@ The implementation aligns with research findings:
 Based on the research and current implementation, suggested next steps:
 
 1. **Improve routing** - The 64.9% consistency indicates need for better routing algorithms
-2. **Run benchmark tests** - Execute the 18 tasks with/without skills to measure effectiveness
+2. **Run benchmark tests** - Execute the 19 tasks with/without skills to measure effectiveness
 3. **Add CI/CD** - Integrate validation scripts into automated pipeline
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
 5. **Iterate on routing** - Use paraphrase eval results to improve keyword matching

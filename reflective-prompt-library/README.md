@@ -119,3 +119,4 @@ research
 | A task is complete and you want process learning | `04-agent/retro.md` |
 | You need to decide Prompt vs Agent vs Workflow | `04-agent/agent-selection.md` |
 | You need to design or review runtime trust boundaries | `04-agent/runtime-trust-boundary.md` |
+| You need to review a leaked, mirrored, or third-party agent scaffold | `04-agent/agent-scaffold-provenance.md` |

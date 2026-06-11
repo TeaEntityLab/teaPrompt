@@ -298,6 +298,21 @@ class BenchmarkSet:
                     "Prompt injection tests are included",
                     "Human Review triggers are explicit"
                 ]
+            ),
+            BenchmarkTask(
+                id="B019",
+                name="Prompt scaffold provenance review",
+                description="Compare official model documentation, a third-party prompt mirror, and a user-provided analysis to decide what TeaPrompt should learn or change",
+                expected_workflow="reflective-research",
+                difficulty="medium",
+                category="scaffold-provenance",
+                acceptance_criteria=[
+                    "Official, third-party, user-provided, and inferred claims are separated",
+                    "Model, API, app, scaffold, tool, memory, and safety surfaces are not collapsed",
+                    "Leaked or mirrored prompt text is not copied into operational instructions",
+                    "Transferable ideas are filtered into adopt, study, caution, or do-not-copy categories",
+                    "Required local changes and residual uncertainty are documented"
+                ]
             )
         ]
     

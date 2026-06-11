@@ -74,6 +74,7 @@ Trigger cues:
 - "Find risks, regressions, and missing tests."
 - "Audit assumptions and evidence quality."
 - "Check whether external content is being treated as data instead of instructions."
+- "Review whether a prompt leak or mirror is trustworthy and transferable."
 
 Do not use when:
 
@@ -87,6 +88,7 @@ Trigger cues:
 - "Research current best practices with sources."
 - "Inspect docs, DeepWiki, and long references."
 - "Separate evidence from inference."
+- "Compare official docs, third-party mirrors, and community analysis."
 
 Do not use when:
 

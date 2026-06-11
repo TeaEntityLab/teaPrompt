@@ -60,7 +60,7 @@ Routing fairness rule:
 | Task start, spec writer, usage-first, task slicer, workflow engine | `reflective-spec-plan` |
 | Implementation agent, test designer, local feedback, Codex/OpenCode | `reflective-implement` |
 | Code reviewer, review-rating-fix | `reflective-review` |
-| Context engineering, long context, Gemini long document, research | `reflective-research` |
+| Context engineering, long context, Gemini long document, research, scaffold provenance | `reflective-research`, with `04-agent/agent-scaffold-provenance.md` as supporting source material |
 | High-risk and runtime trust boundaries | `reflective-risk`, with `04-agent/runtime-trust-boundary.md` as supporting source material |
 | Context handoff, retro, memory consolidation | `reflective-handoff-retro` |
 

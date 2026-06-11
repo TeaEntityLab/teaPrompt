@@ -55,6 +55,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 - 要 review code / plan / spec / AI output
 - 要檢查外部內容是否被當成資料而不是指令
+- 要判斷 prompt leak / mirror 是否可信、是否可移植
 
 不要用在：
 
@@ -65,6 +66,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 何時用：
 
 - 要做來源查證、DeepWiki 檢視、方法論盤點
+- 要比較官方文件、第三方鏡像與社群分析
 
 不要用在：
 
