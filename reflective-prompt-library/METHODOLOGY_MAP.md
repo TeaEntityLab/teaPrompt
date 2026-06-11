@@ -74,7 +74,17 @@ Instead of a single prompt, the methodology is formally structured into ten dist
 7. **Repository Template Layer** (`06-repo/`): Local repository instructions (`AGENTS.md`, `cursor-rules.md` templates).
 8. **Skill / Action Layer** (`skills/`): Modular, on-demand `SKILL.md` files acting as portable procedures executed when triggered.
 9. **Quality Gate / Verification Layer** (Evals/Review): Robust feedback loops, verification checklists, and rating/regression defense mechanisms.
-10. **Governance / Capability Risk Layer** (Risk/Compliance): Security boundaries, non-disclosure policies, high-risk review gates, and credential/tool protection.
+10. **Governance / Capability Risk Layer** (Risk/Compliance): Security boundaries, non-disclosure policies, high-risk review gates, credential/tool protection, and runtime trust boundaries for data, tools, context, and side effects.
+
+## Runtime Trust Boundary Addendum
+
+Recent agent-runtime references reinforce that governance is not only a high-risk review step. It is also a context assembly and authority problem:
+
+- The OpenAI Model Spec treats quoted text, attachments, multimodal content, and tool outputs as untrusted data by default unless higher-authority instructions explicitly delegate authority: [OpenAI Model Spec](https://model-spec.openai.com/2025-12-18.html).
+- MCP security guidance emphasizes consent for local servers, sandboxing, token audience separation, and progressive least-privilege scopes: [MCP Security Best Practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices).
+- Apple's Foundation Models update points toward task-specific models/adapters, guided generation, tool calling, feature-specific evaluation, and prompt injection mitigation: [Apple Foundation Models 2025 update](https://machinelearning.apple.com/research/apple-foundation-models-2025-updates).
+
+TeaPrompt should absorb these as a lightweight runtime governance sublayer, not as a monolithic agent constitution. Use `04-agent/runtime-trust-boundary.md` when a task involves external content, tool results, entity-like records, context assembly, or side-effectful actions.
 
 ## Strictness Levels
 
@@ -147,4 +157,4 @@ Multi-agent work requires state, tools, logs, verification, and handoff artifact
 | Repository Template Layer | Aligned | Complete | Maintain `AGENTS.md` and `cursor-rules.md` templates under `06-repo/`. |
 | Skill / Action Layer | Aligned | Complete | Maintain 8 core composable skills. |
 | Quality Gate / Verification | Aligned | Complete | Standardize skill-level quality checks. |
-| Governance / Capability Risk | Aligned | Complete | Use `reflective-risk` for high-risk boundaries. |
+| Governance / Capability Risk | Aligned | Extended | Use `reflective-risk` for high-risk boundaries and `04-agent/runtime-trust-boundary.md` for instruction/data/tool authority review. |

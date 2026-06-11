@@ -11,9 +11,9 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 **File:** `reflective-prompt-library/plans/validate_links.py`
 
 **What it does:**
-- Validates `ref_file` references (<ref_file file="..." />)
-- Validates `ref_snippet` references (<ref_snippet file="..." lines="..." />)
-- Validates markdown links ([text](url))
+- Validates `ref_file` references
+- Validates `ref_snippet` references
+- Validates markdown links
 - Validates SKILL.md frontmatter schema
 - Checks for required frontmatter fields (name, description)
 
@@ -57,7 +57,7 @@ python3 reflective-prompt-library/plans/generate_index.py
 **What it does:**
 - Checks for required skill sections (Module Contract, key subsections)
 - Validates frontmatter completeness
-- Detects dangerous operation patterns (rm -rf, drop table, etc.)
+- Detects dangerous operation patterns such as recursive deletion or destructive SQL
 - Identifies human review trigger patterns (production, auth, secret, etc.)
 - Checks skill body length (warns if >500 lines or >20k chars)
 - Provides actionable suggestions
@@ -151,7 +151,7 @@ python3 reflective-prompt-library/plans/validate_governance.py
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
 
 **What it does:**
-- Defines 15 golden tasks for validation
+- Defines 18 golden tasks for validation
 - Covers all major workflows (7 different skills)
 - Balanced difficulty distribution (5 easy, 7 medium, 3 hard)
 - Diverse categories (9 different categories)
@@ -159,8 +159,8 @@ python3 reflective-prompt-library/plans/validate_governance.py
 - Expected workflow mapping
 
 **Results:**
-- 15 benchmark tasks created
-- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective
+- 18 benchmark tasks created
+- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, and runtime governance
 - Output: `plans/benchmark-tasks.json`
 
 **Usage:**
@@ -185,7 +185,7 @@ The implementation aligns with research findings:
 | Files validated | 80 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 8/8 | ✅ Complete |
-| Benchmark tasks | 15 | ✅ Ready |
+| Benchmark tasks | 18 | ✅ Ready |
 | Routing consistency | 64.9% | ⚠️ Needs improvement |
 | Linting errors | 0 | ✅ Clean |
 
@@ -194,7 +194,7 @@ The implementation aligns with research findings:
 Based on the research and current implementation, suggested next steps:
 
 1. **Improve routing** - The 64.9% consistency indicates need for better routing algorithms
-2. **Run benchmark tests** - Execute the 15 tasks with/without skills to measure effectiveness
+2. **Run benchmark tests** - Execute the 18 tasks with/without skills to measure effectiveness
 3. **Add CI/CD** - Integrate validation scripts into automated pipeline
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
 5. **Iterate on routing** - Use paraphrase eval results to improve keyword matching

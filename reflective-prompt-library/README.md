@@ -118,3 +118,4 @@ research
 | You need to switch sessions | `03-context/context-handoff.md` |
 | A task is complete and you want process learning | `04-agent/retro.md` |
 | You need to decide Prompt vs Agent vs Workflow | `04-agent/agent-selection.md` |
+| You need to design or review runtime trust boundaries | `04-agent/runtime-trust-boundary.md` |

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-03T11:56:38.161269",
+  "generated_at": "2026-06-11T11:55:29.073387",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -30,12 +30,17 @@
         "plans": {
           "path": "reflective-prompt-library/plans",
           "files": [
+            "socratic-change-inquiry-2026-06-11.md",
+            "skill-optimization-reflection-2026-06-11.md",
+            "harness-1-state-ledger-research.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "QUALITY_GATES_SUMMARY.md",
             "ROUTING_CONTRACT.md",
             "skill-workflow-research-synthesis.md",
-            "prompt-library-build-plan.md"
+            "prompt-library-build-plan.md",
+            "runtime-governance-learning-plan-2026-06-11.md",
+            "project-adjustment-reflection-2026-06-11.md"
           ]
         },
         "04-agent": {
@@ -44,6 +49,7 @@
             "review-rating-fix.md",
             "memory-consolidation.md",
             "agent-selection.md",
+            "runtime-trust-boundary.md",
             "retro.md",
             "workflow-recipes.md",
             "workflow-engine.md"
@@ -60,6 +66,10 @@
             "gemini-long-document.md",
             "context-engineering.md"
           ]
+        },
+        "site": {
+          "path": "reflective-prompt-library/site",
+          "files": []
         },
         "00-core": {
           "path": "reflective-prompt-library/00-core",
@@ -605,6 +615,164 @@
       "char_count": 2128
     },
     {
+      "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "socratic-change-inquiry-2026-06-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Socratic Change Inquiry - 2026-06-11"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Intention Differences"
+        },
+        {
+          "level": 2,
+          "text": "Clarify"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Alternatives"
+        },
+        {
+          "level": 2,
+          "text": "Consequences"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        }
+      ],
+      "line_count": 77,
+      "char_count": 4272
+    },
+    {
+      "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skill-optimization-reflection-2026-06-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill Optimization Reflection - 2026-06-11"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Reflection"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Check"
+        },
+        {
+          "level": 2,
+          "text": "Files Updated"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        }
+      ],
+      "line_count": 74,
+      "char_count": 3817
+    },
+    {
+      "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "harness-1-state-ledger-research",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Harness-1 → State Ledger Adoption (Research Note)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Key Finding (and a Reframe)"
+        },
+        {
+          "level": 2,
+          "text": "What Transfers to Prompt-Only Skills"
+        },
+        {
+          "level": 2,
+          "text": "What Was Changed (2026-06-10)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Open Follow-Ups"
+        },
+        {
+          "level": 2,
+          "text": "Sources"
+        }
+      ],
+      "line_count": 142,
+      "char_count": 8254
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -734,7 +902,7 @@
         },
         {
           "level": 3,
-          "text": "CODE-002: Prompt Composer"
+          "text": "CODE-002: Prompt Composer ✅"
         },
         {
           "level": 3,
@@ -742,11 +910,11 @@
         },
         {
           "level": 3,
-          "text": "CODE-004: Eval Harness"
+          "text": "CODE-004: Eval Harness ✅"
         },
         {
           "level": 3,
-          "text": "CODE-005: Static Site or Dashboard"
+          "text": "CODE-005: Static Site or Dashboard ✅"
         },
         {
           "level": 3,
@@ -766,7 +934,7 @@
         }
       ],
       "line_count": 126,
-      "char_count": 3910
+      "char_count": 3903
     },
     {
       "path": "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
@@ -777,13 +945,9 @@
       "description": "",
       "frontmatter": {},
       "dependencies": {
-        "ref_file": [
-          "..."
-        ],
+        "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": [
-          "url"
-        ]
+        "markdown_links": []
       },
       "structure": [
         {
@@ -871,8 +1035,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 251,
-      "char_count": 8020
+      "line_count": 255,
+      "char_count": 8218
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1069,6 +1233,122 @@
       "char_count": 1821
     },
     {
+      "path": "reflective-prompt-library/plans/runtime-governance-learning-plan-2026-06-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "runtime-governance-learning-plan-2026-06-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Runtime Governance Learning Plan - 2026-06-11"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "What To Learn And Add"
+        },
+        {
+          "level": 2,
+          "text": "Work Plan"
+        },
+        {
+          "level": 3,
+          "text": "TASK-001: Add Runtime Trust Boundary Prompt"
+        },
+        {
+          "level": 3,
+          "text": "TASK-002: Update Navigation And Methodology"
+        },
+        {
+          "level": 3,
+          "text": "TASK-003: Record Reflection And Socratic Decision"
+        },
+        {
+          "level": 3,
+          "text": "TASK-004: Add Runtime Governance Eval Seeds"
+        },
+        {
+          "level": 3,
+          "text": "TASK-005: Optimize Core Skills With Runtime Governance Lens"
+        },
+        {
+          "level": 3,
+          "text": "TASK-006: Decide Whether To Promote To A Skill"
+        },
+        {
+          "level": 2,
+          "text": "Do Not Add Yet"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        }
+      ],
+      "line_count": 108,
+      "char_count": 5004
+    },
+    {
+      "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "project-adjustment-reflection-2026-06-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Project Adjustment Reflection - 2026-06-11"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        }
+      ],
+      "line_count": 61,
+      "char_count": 5232
+    },
+    {
       "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1177,6 +1457,60 @@
       ],
       "line_count": 43,
       "char_count": 580
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/runtime-trust-boundary.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "runtime-trust-boundary",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Runtime Trust Boundary Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Task"
+        },
+        {
+          "level": 2,
+          "text": "1. Objective"
+        },
+        {
+          "level": 2,
+          "text": "2. Authority Map"
+        },
+        {
+          "level": 2,
+          "text": "3. Data Policy"
+        },
+        {
+          "level": 2,
+          "text": "4. Tool And Action Policy"
+        },
+        {
+          "level": 2,
+          "text": "5. Context Assembly Check"
+        },
+        {
+          "level": 2,
+          "text": "6. Verification"
+        },
+        {
+          "level": 2,
+          "text": "Output"
+        }
+      ],
+      "line_count": 96,
+      "char_count": 3466
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -1898,7 +2232,7 @@
         }
       ],
       "line_count": 75,
-      "char_count": 3407
+      "char_count": 3509
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -1957,8 +2291,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 131,
-      "char_count": 3639
+      "line_count": 136,
+      "char_count": 4152
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -2017,8 +2351,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 95,
-      "char_count": 1052
+      "line_count": 101,
+      "char_count": 1253
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -2466,8 +2800,8 @@
           "text": "Guardrails"
         }
       ],
-      "line_count": 107,
-      "char_count": 4181
+      "line_count": 111,
+      "char_count": 4685
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -2494,7 +2828,8 @@
         "00-core/core-short.md",
         "02-engineering/task-start.md",
         "01-thinking/why-what-how-done.md",
-        "01-thinking/falsifiability.md"
+        "01-thinking/falsifiability.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -2532,6 +2867,10 @@
         {
           "level": 2,
           "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Authority / Missing Data Notes"
         },
         {
           "level": 2,
@@ -2574,8 +2913,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 98,
-      "char_count": 2739
+      "line_count": 104,
+      "char_count": 3076
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -2602,7 +2941,8 @@
         "05-domain/research.md",
         "03-context/context-engineering.md",
         "03-context/large-context.md",
-        "03-context/gemini-long-document.md"
+        "03-context/gemini-long-document.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -2624,6 +2964,18 @@
         {
           "level": 2,
           "text": "Workflow"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Sufficiency Gate"
+        },
+        {
+          "level": 3,
+          "text": "Budget Rule"
         },
         {
           "level": 2,
@@ -2659,6 +3011,10 @@
         },
         {
           "level": 2,
+          "text": "State Ledger (Final, Optional for short tasks)"
+        },
+        {
+          "level": 2,
           "text": "Classification (Optional)"
         },
         {
@@ -2670,8 +3026,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 105,
-      "char_count": 3127
+      "line_count": 143,
+      "char_count": 5583
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -2698,7 +3054,8 @@
         "01-thinking/critical-thinking-check.md",
         "01-thinking/counterargument.md",
         "02-engineering/code-reviewer.md",
-        "04-agent/review-rating-fix.md"
+        "04-agent/review-rating-fix.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -2719,11 +3076,19 @@
         },
         {
           "level": 2,
+          "text": "Claims Ledger"
+        },
+        {
+          "level": 2,
           "text": "Review Modes"
         },
         {
           "level": 2,
           "text": "For Code Review"
+        },
+        {
+          "level": 2,
+          "text": "Runtime Trust Boundary Checks"
         },
         {
           "level": 2,
@@ -2762,8 +3127,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 110,
-      "char_count": 2993
+      "line_count": 136,
+      "char_count": 4755
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -2790,7 +3155,8 @@
         "02-engineering/implementation-agent.md",
         "02-engineering/test-designer.md",
         "02-engineering/local-feedback.md",
-        "06-repo/codex-opencode.md"
+        "06-repo/codex-opencode.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -2812,6 +3178,18 @@
         {
           "level": 2,
           "text": "During Editing"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Sufficiency Gate"
+        },
+        {
+          "level": 3,
+          "text": "Budget Rule"
         },
         {
           "level": 2,
@@ -2898,8 +3276,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 121,
-      "char_count": 3476
+      "line_count": 148,
+      "char_count": 5173
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -2925,7 +3303,8 @@
       "prompt_sources": [
         "03-context/context-handoff.md",
         "04-agent/retro.md",
-        "04-agent/memory-consolidation.md"
+        "04-agent/memory-consolidation.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -2975,6 +3354,10 @@
         {
           "level": 2,
           "text": "Risks"
+        },
+        {
+          "level": 2,
+          "text": "Trust Boundaries / External Data"
         },
         {
           "level": 2,
@@ -3057,8 +3440,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 96,
-      "char_count": 2460
+      "line_count": 100,
+      "char_count": 2678
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -3084,7 +3467,8 @@
       "prompt_sources": [
         "05-domain/high-risk.md",
         "02-engineering/local-feedback.md",
-        "01-thinking/critical-thinking-check.md"
+        "01-thinking/critical-thinking-check.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -3130,6 +3514,10 @@
         {
           "level": 2,
           "text": "Evidence Check"
+        },
+        {
+          "level": 2,
+          "text": "Authority / Tool Boundary"
         },
         {
           "level": 2,
@@ -3180,8 +3568,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 104,
-      "char_count": 2742
+      "line_count": 110,
+      "char_count": 3086
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -3211,7 +3599,8 @@
         "02-engineering/spec-writer.md",
         "02-engineering/usage-first.md",
         "02-engineering/task-slicer.md",
-        "04-agent/workflow-engine.md"
+        "04-agent/workflow-engine.md",
+        "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
         {
@@ -3251,9 +3640,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 126,
-      "char_count": 3399
+      "line_count": 132,
+      "char_count": 3696
     }
   ],
-  "total_files": 62
+  "total_files": 68
 }
