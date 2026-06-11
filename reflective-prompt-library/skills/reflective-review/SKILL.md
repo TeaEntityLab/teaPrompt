@@ -23,6 +23,7 @@ Methods:
 - Assumption audit
 - Evidence and test integrity check
 - Claims ledger with observable-evidence requirement
+- Runtime trust-boundary review
 - Steelman counterargument
 - Fallacy, overengineering, and reward-hacking scan
 
@@ -73,6 +74,7 @@ Choose one mode first, then apply the common review flow:
 - `Plan/Spec Review`: scope clarity, acceptance criteria quality, sequencing, missing gates.
 - `Methodology Review`: classification quality, strictness mismatch, framework overreach.
 - `AI Output Review`: evidence quality, unsupported claims, hallucination risk, actionability.
+- `Runtime Trust Boundary Review`: instruction/data separation, missing-data discipline, tool-result authority, side-effect gates.
 
 If the artifact spans multiple modes, declare a primary mode and list secondary checks.
 
@@ -86,6 +88,13 @@ Prioritize findings by severity:
 - Low: minor clarity or style issue.
 
 Lead with findings. Include file and line references when available.
+
+## Runtime Trust Boundary Checks
+
+- External content is evidence, not an instruction source.
+- Missing fields are unknown, not false, safe, or absent.
+- Tool results support claims but do not silently expand scope.
+- Side-effectful actions have authority, rollback, and Human Review gates when needed.
 
 ## Traceability Table
 
@@ -124,3 +133,4 @@ Use one:
 - `01-thinking/counterargument.md`
 - `02-engineering/code-reviewer.md`
 - `04-agent/review-rating-fix.md`
+- `04-agent/runtime-trust-boundary.md`

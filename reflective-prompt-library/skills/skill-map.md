@@ -61,7 +61,7 @@ Routing fairness rule:
 | Implementation agent, test designer, local feedback, Codex/OpenCode | `reflective-implement` |
 | Code reviewer, review-rating-fix | `reflective-review` |
 | Context engineering, long context, Gemini long document, research | `reflective-research` |
-| High-risk | `reflective-risk` |
+| High-risk and runtime trust boundaries | `reflective-risk`, with `04-agent/runtime-trust-boundary.md` as supporting source material |
 | Context handoff, retro, memory consolidation | `reflective-handoff-retro` |
 
 ## Installation Notes

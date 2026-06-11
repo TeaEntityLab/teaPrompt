@@ -22,11 +22,12 @@ Methods:
 - Context distillation
 - Decision capture
 - Remaining-work inventory
+- Authority boundary preservation
 - Retrospective root-cause analysis
 - Anti-regression rule extraction
 
 Output:
-- For handoff, output the handoff template with current state, decisions, artifacts, risks, blockers, tests, and next action.
+- For handoff, output the handoff template with current state, decisions, artifacts, trust boundaries, risks, blockers, tests, and next action.
 - For retro, output the retro template with process failures, reusable rules, and improvement candidates.
 
 Never:
@@ -51,6 +52,7 @@ Use when switching tools, agents, models, sessions, or context windows.
 ## Completed Work
 ## Remaining Work
 ## Risks
+## Trust Boundaries / External Data
 ## Blockers
 ## Acceptance Criteria
 ## Commands / Tests Run
@@ -86,6 +88,7 @@ Only institutionalize repeated patterns:
 - New rule or checklist
 - New skill or script candidate
 - Anti-regression test
+- Trust-boundary lesson, if external data, tools, or side effects contributed to the issue
 
 Do not turn one-off accidents into permanent bureaucracy.
 
@@ -94,3 +97,4 @@ Do not turn one-off accidents into permanent bureaucracy.
 - `03-context/context-handoff.md`
 - `04-agent/retro.md`
 - `04-agent/memory-consolidation.md`
+- `04-agent/runtime-trust-boundary.md`
