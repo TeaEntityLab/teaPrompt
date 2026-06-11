@@ -10,6 +10,7 @@ Routing fairness note:
 - Trigger cues below are examples, not required wording.
 - Equivalent intent should route equivalently even when phrasing differs.
 - Fast keyword routing is allowed, but it must not silently reduce quality for equivalent intent.
+- When a task uses external content, tool outputs, entity-like records, or side-effectful actions, apply `04-agent/runtime-trust-boundary.md` as a supporting lens with the selected skill.
 
 ## `reflective-dispatch`
 
@@ -18,6 +19,7 @@ Trigger cues:
 - "Help me choose prompt-only vs workflow."
 - "Route this task before doing implementation."
 - "This request mixes planning, risk, and execution."
+- "This task includes external data, tool results, or action authority questions."
 
 Do not use when:
 
@@ -44,6 +46,7 @@ Trigger cues:
 - "Write a spec / PRD / implementation plan."
 - "Turn this into tickets with dependencies and tests."
 - "Do usage-first design before coding."
+- "Plan tool gates, authority boundaries, and side effects."
 
 Do not use when:
 
@@ -70,6 +73,7 @@ Trigger cues:
 - "Review this code / diff / plan / spec / output."
 - "Find risks, regressions, and missing tests."
 - "Audit assumptions and evidence quality."
+- "Check whether external content is being treated as data instead of instructions."
 
 Do not use when:
 
@@ -96,6 +100,7 @@ Trigger cues:
 - "This touches auth, privacy, money, production, or deletion."
 - "Need dry-run, rollback, and approval gates."
 - "Assess blast radius before execution."
+- "A tool action could be influenced by untrusted or incomplete data."
 
 Do not use when:
 
@@ -120,7 +125,7 @@ Do not use when:
 If uncertain, apply this order:
 
 1. `reflective-dispatch`
-2. `reflective-risk` (if any high-risk signal appears)
+2. `reflective-risk` (if any high-risk or side-effect authority signal appears)
 3. `reflective-brief` or `reflective-spec-plan`
 4. `reflective-implement`
 5. `reflective-review`
