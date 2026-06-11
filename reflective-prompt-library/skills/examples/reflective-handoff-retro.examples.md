@@ -18,6 +18,7 @@ Expected output shape:
 ## Completed Work
 ## Remaining Work
 ## Risks
+## Trust Boundaries / External Data
 ## Next Recommended Action
 ## Do Not Do
 ```
@@ -37,8 +38,8 @@ Expected output shape:
 ## What Went Wrong
 ## Wrong Assumptions
 ## Weak Gates
+## Trust-boundary lesson
 ## Reusable Rules
 ## Skill / Script / Test Candidates
 ## Next Process Improvement
 ```
-

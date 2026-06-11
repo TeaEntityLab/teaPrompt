@@ -34,5 +34,4 @@ Expected output shape:
 ### TASK-003: query and review UI
 ```
 
-Each ticket includes acceptance criteria, tests, dependencies, and human review flags.
-
+Each ticket includes acceptance criteria, tests, dependencies, authority/data boundaries, runtime/tool gates, and human review flags.

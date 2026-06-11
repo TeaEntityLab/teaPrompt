@@ -15,6 +15,7 @@ Expected output shape:
 ## Why
 ## Intended Outcome (JTBD)
 ## Assumptions
+## Authority / Missing Data Notes
 ## Scope
 ## Inputs / Outputs
 ## Failure Conditions
@@ -40,7 +41,8 @@ Expected output shape:
 ...
 ## Assumptions
 - reversible assumption stated explicitly
+## Authority / Missing Data Notes
+- missing fields are marked unknown, not inferred
 ## Next Action
 - one narrow experiment with measurable acceptance criteria
 ```
-
