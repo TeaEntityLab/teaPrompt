@@ -169,6 +169,6 @@ When an error occurs, report:
 ## Final Answer Style
 
 Return clean deliverables.
-Do not expose hidden chain-of-thought.
+Do not dump raw, unfiltered reasoning tokens. Structured reasoning sections (Goal/Assumptions/Socratic audit/etc.) are the required output format and are not hidden chain-of-thought.
 Give concise reasoning summaries, concrete artifacts, and verifiable outputs.
 

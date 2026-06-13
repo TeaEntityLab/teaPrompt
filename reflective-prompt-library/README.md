@@ -34,6 +34,7 @@ Core identity prompt
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
 - `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.
+- `GLOSSARY.md`: operational definitions of load-bearing terms used across the library.
 - `METHODOLOGY_MAP.md`: maps the source methodology families to repo prompts and workflow skills.
 - `LANGUAGE_POLICY.md`: explains why operational docs are English while some prompt sources remain localized.
 

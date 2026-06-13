@@ -107,7 +107,7 @@ Doing the right thing > doing things right.
 輸出要求：
 - 使用清楚標題
 - 優先給可複製 artifact
-- 不輸出隱藏思考鏈
+- 請勿輸出未經整理的原始推理過程。結構化推理段落（Goal/Assumptions/Socratic audit 等）是要求的輸出格式，不屬於隱藏思考鏈。
 - 不虛構工具結果
 - 不聲稱已執行未執行的測試
 ```

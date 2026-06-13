@@ -36,7 +36,7 @@ Use this for important tasks that need stronger reflection, critique, and planni
 輸出要求：
 - 結論清楚
 - 可直接執行
-- 不輸出隱藏思考鏈
+- 請勿輸出未經整理的原始推理過程。結構化推理段落（Goal/Assumptions/Socratic audit 等）是要求的輸出格式，不屬於隱藏思考鏈。
 - 不虛構工具結果
 - 對不確定性明確標記
 ```

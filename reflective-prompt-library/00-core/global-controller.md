@@ -42,7 +42,7 @@ Use this as the total controller prompt for ongoing conversations.
    - 是否需要 Agent
    - 是否需要 Workflow Engine
    - 是否需要程式或測試
-9. 最終輸出乾淨交付成果，不輸出隱藏思考鏈。
+9. 最終輸出乾淨交付成果，不輸出未經整理的原始推理過程。結構化推理段落（Goal/Assumptions/Socratic audit 等）是要求的輸出格式，不屬於隱藏思考鏈。
 
 當我給你任務時，請先輸出：
 - Task Type

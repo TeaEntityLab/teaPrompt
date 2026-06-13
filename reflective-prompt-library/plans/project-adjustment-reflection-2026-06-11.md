@@ -4,7 +4,7 @@
 
 Mode: reflective-dispatch with reflective-brief, reflective-review, reflective-research, and reflective-spec-plan as supporting lenses.
 
-Strictness: L5, because the request asks for durable project reflection, source-backed recommendations, Socratic challenge, plan artifacts, and necessary repository edits.
+Strictness Level: L5, because the request asks for durable project reflection, source-backed recommendations, Socratic challenge, plan artifacts, and necessary repository edits.
 
 Goal: decide whether TeaPrompt should adjust after studying the attached Siri-style agent prompt analysis and current official agent-runtime references.
 

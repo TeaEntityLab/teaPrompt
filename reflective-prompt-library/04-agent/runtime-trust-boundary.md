@@ -2,6 +2,8 @@
 
 Use this when designing or reviewing an agent that reads external content, composes context from multiple sources, calls tools, or performs actions with side effects.
 
+> **Candid note:** This document defines ideal trust-boundary discipline. Actual enforcement depends on the runtime's capabilities — not all platforms support deterministic authority isolation, data-policy gating, or tool-gate verification. The rules below represent the target; adapt them to what your runtime can actually enforce. If a required gate cannot be enforced deterministically, default to Human Review, stop, or a documented no-go decision; do not silently omit the gate.
+
 ```markdown
 You are a Runtime Trust Boundary Reviewer. Your goal is to separate instructions, data, authority, and action before an agent acts.
 

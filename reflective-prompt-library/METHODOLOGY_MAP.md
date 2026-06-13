@@ -109,6 +109,32 @@ TeaPrompt should adopt this as a planning lens, not a runtime dependency. The pr
 | 5. Agent workflow | Long-running, multi-tool, resumable work | `reflective-dispatch` + workflow plans |
 | 6. Strategy overlay | Business, education, organization, long-term systems | `05-domain/` prompts as overlays |
 
+## Level Taxonomy Reference
+
+The repository uses two distinct L-level taxonomies. To avoid ambiguity, every L-level reference should be qualified by its taxonomy name.
+
+| Canonical Taxonomy | Levels | Source | Purpose |
+| --- | --- | --- | --- |
+| Strictness Level | L1-L6 | `skills/reflective-dispatch/SKILL.md` (also the Strictness Levels table above) | Execution rigor: how deeply to validate, review, and gate the work. L1 = daily prompting, L6 = strategy overlay. |
+| Formalization Level | L0-L4 | `04-agent/sop-compiler.md` | Automation depth: how much of a process is codified into a machine-executable workflow. L0 = prompt-only, L4 = runner with gates and hook. |
+
+**Rule:** Write `Strictness L3` or `Formalization L3` — never bare `L3`. When the taxonomy is clear from surrounding context (e.g., a "Strictness:" field in a dispatch record), the qualifier may be omitted, but the first reference in any document should be explicit.
+
+> See [GLOSSARY.md](GLOSSARY.md) for operational definitions of both taxonomies
+> and a worked example of the distinction.
+
+## Classification Taxonomies Reference
+
+The repository defines three distinct classification taxonomies. Each answers a different question and should be used independently.
+
+| # | Canonical Taxonomy | Source | Question Answered | Levels |
+| --- | --- | --- | --- | --- |
+| 1 | Execution Mode Selection | `04-agent/agent-selection.md` | Which execution mode fits this task? | Prompt-only → Prompt+Artifact → Agentic Coding → Workflow Engine → Full Agent System |
+| 2 | Formalization Level | `04-agent/sop-compiler.md` | How much of this process should be codified? | L0 (prompt-only) → L4 (runner with gates and hook) |
+| 3 | Strictness Level | `skills/reflective-dispatch/SKILL.md` | How much validation and review does this task require? | L1 (daily prompting) → L6 (strategy overlay) |
+
+Use Taxonomy 1 when deciding whether to use a prompt, an artifact, a coding agent, or a full workflow engine. Use Taxonomy 2 when designing the automation depth of a repeatable process. Use Taxonomy 3 when routing a task to the appropriate reflective workflow skill.
+
 ## What Should Be Combined
 
 ### Reflective Engineering + Why / What / How / Done

@@ -29,7 +29,7 @@ Answer:
 - Which decisions must remain human-owned?
 - What evidence would prove this is not worth formalizing?
 
-## 3. Workflow Level
+## 3. Formalization Level
 
 Choose the smallest sufficient level:
 
@@ -94,7 +94,7 @@ Choose gates by what can actually be checked:
 - `cmd_gate`: command exits successfully and expected artifacts exist.
 - `review_gate`: subjective, high-risk, or policy-sensitive decisions stop for a human.
 
-LLM self-review may be advisory, but it is not a hard gate.
+LLM self-review may be advisory, but it is not a hard gate. (See `review-rating-fix.md` — artifact-review Gate Decisions from that workflow are also advisory unless independently verified.)
 
 ## 7. Regression And Stop Conditions
 

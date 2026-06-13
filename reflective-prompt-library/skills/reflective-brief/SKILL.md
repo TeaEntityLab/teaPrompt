@@ -33,7 +33,7 @@ Never:
 - Do not plan implementation details before the goal, scope, and acceptance criteria are usable.
 - Do not hide unknowns in vague wording.
 - Do not ask a broad questionnaire when one direct question or one reversible assumption is enough.
-- Do not expose hidden chain-of-thought.
+- Do not dump raw, unfiltered reasoning tokens. Structured reasoning sections (Goal/Assumptions/Socratic audit/etc.) are the required output format and are not hidden chain-of-thought.
 
 Escalation:
 - Route high-risk branches to `reflective-risk`.
@@ -90,7 +90,7 @@ Escalation:
 - Ask only when missing information changes safety, architecture, cost, privacy, data loss, or irreversibility.
 - Missing information is unknown, not negative evidence or permission to infer sensitive facts.
 - If ambiguity is safe, proceed with explicit assumptions.
-- Do not expose hidden chain-of-thought; provide concise reasoning summaries and clean artifacts.
+- Do not dump raw, unfiltered reasoning tokens; structured reasoning sections (Goal/Assumptions/Socratic audit/etc.) are the required output format and are not hidden chain-of-thought. Provide concise reasoning summaries and clean artifacts.
 - If outcome is unclear, ask one direct question or state one reversible assumption and continue.
 
 ## Prompt Sources

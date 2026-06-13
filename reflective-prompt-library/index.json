@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-13T09:23:13.764996",
+  "generated_at": "2026-06-14T03:06:10.728289",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -363,8 +363,8 @@
           "text": "請輸出"
         }
       ],
-      "line_count": 32,
-      "char_count": 473
+      "line_count": 34,
+      "char_count": 676
     },
     {
       "path": "reflective-prompt-library/02-engineering/spec-writer.md",
@@ -615,8 +615,8 @@
           "text": "Review Standard"
         }
       ],
-      "line_count": 113,
-      "char_count": 2128
+      "line_count": 116,
+      "char_count": 2465
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -802,7 +802,7 @@
         }
       ],
       "line_count": 74,
-      "char_count": 3817
+      "char_count": 3823
     },
     {
       "path": "reflective-prompt-library/plans/fable-5-scaffold-provenance-reflection-2026-06-11.md",
@@ -1143,6 +1143,10 @@
           "text": "Key Metrics"
         },
         {
+          "level": 3,
+          "text": "Routing Consistency Tracking"
+        },
+        {
           "level": 2,
           "text": "Next Steps (Phase 2)"
         },
@@ -1179,8 +1183,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 255,
-      "char_count": 8272
+      "line_count": 259,
+      "char_count": 9023
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1262,7 +1266,7 @@
         }
       ],
       "line_count": 103,
-      "char_count": 3092
+      "char_count": 3153
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -1490,7 +1494,7 @@
         }
       ],
       "line_count": 61,
-      "char_count": 5232
+      "char_count": 5238
     },
     {
       "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
@@ -1547,8 +1551,8 @@
           "text": "Step 6: Gate Decision"
         }
       ],
-      "line_count": 46,
-      "char_count": 604
+      "line_count": 48,
+      "char_count": 823
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
@@ -1703,8 +1707,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 97,
-      "char_count": 3614
+      "line_count": 99,
+      "char_count": 4099
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -1892,7 +1896,7 @@
         },
         {
           "level": 2,
-          "text": "3. Workflow Level"
+          "text": "3. Formalization Level"
         },
         {
           "level": 2,
@@ -1916,7 +1920,7 @@
         }
       ],
       "line_count": 122,
-      "char_count": 3974
+      "char_count": 4109
     },
     {
       "path": "reflective-prompt-library/03-context/small-context.md",
@@ -1959,8 +1963,8 @@
           "text": "Medium Context Window Prompt"
         }
       ],
-      "line_count": 31,
-      "char_count": 441
+      "line_count": 33,
+      "char_count": 640
     },
     {
       "path": "reflective-prompt-library/03-context/large-context.md",
@@ -1993,8 +1997,8 @@
           "text": "Stage 3: Synthesize"
         }
       ],
-      "line_count": 47,
-      "char_count": 614
+      "line_count": 49,
+      "char_count": 897
     },
     {
       "path": "reflective-prompt-library/03-context/context-handoff.md",
@@ -2113,8 +2117,8 @@
           "text": "Context Engineering Prompt"
         }
       ],
-      "line_count": 35,
-      "char_count": 547
+      "line_count": 37,
+      "char_count": 819
     },
     {
       "path": "reflective-prompt-library/00-core/custom-instruction-zh.md",
@@ -2127,7 +2131,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "custom-instruction-en.md",
+          "../LANGUAGE_POLICY.md"
+        ]
       },
       "structure": [
         {
@@ -2135,8 +2142,8 @@
           "text": "中文 Custom Instruction"
         }
       ],
-      "line_count": 8,
-      "char_count": 237
+      "line_count": 10,
+      "char_count": 372
     },
     {
       "path": "reflective-prompt-library/00-core/custom-instruction-en.md",
@@ -2158,7 +2165,7 @@
         }
       ],
       "line_count": 8,
-      "char_count": 700
+      "char_count": 844
     },
     {
       "path": "reflective-prompt-library/00-core/core-short.md",
@@ -2180,7 +2187,7 @@
         }
       ],
       "line_count": 29,
-      "char_count": 731
+      "char_count": 797
     },
     {
       "path": "reflective-prompt-library/00-core/important-task-full.md",
@@ -2202,7 +2209,7 @@
         }
       ],
       "line_count": 43,
-      "char_count": 531
+      "char_count": 599
     },
     {
       "path": "reflective-prompt-library/00-core/core-full.md",
@@ -2280,7 +2287,7 @@
         }
       ],
       "line_count": 174,
-      "char_count": 3663
+      "char_count": 3807
     },
     {
       "path": "reflective-prompt-library/00-core/daily-minimal.md",
@@ -2324,7 +2331,7 @@
         }
       ],
       "line_count": 16,
-      "char_count": 387
+      "char_count": 453
     },
     {
       "path": "reflective-prompt-library/00-core/master-prompt.md",
@@ -2414,7 +2421,7 @@
         }
       ],
       "line_count": 114,
-      "char_count": 1308
+      "char_count": 1376
     },
     {
       "path": "reflective-prompt-library/00-core/global-controller.md",
@@ -2436,7 +2443,7 @@
         }
       ],
       "line_count": 55,
-      "char_count": 918
+      "char_count": 984
     },
     {
       "path": "reflective-prompt-library/skills/skill-map.md",
@@ -2558,7 +2565,9 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "SKILL_TRIGGER_CHEATSHEET.md"
+          "SKILL_TRIGGER_CHEATSHEET.md",
+          "SKILL_TRIGGER_CHEATSHEET.md",
+          "../LANGUAGE_POLICY.md"
         ]
       },
       "structure": [
@@ -2603,8 +2612,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 103,
-      "char_count": 1312
+      "line_count": 122,
+      "char_count": 1817
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -3166,7 +3175,7 @@
         }
       ],
       "line_count": 104,
-      "char_count": 3076
+      "char_count": 3364
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",

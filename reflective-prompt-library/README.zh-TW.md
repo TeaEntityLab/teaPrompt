@@ -1,5 +1,7 @@
 Language: [English](README.md) | 繁體中文
 
+> **翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](README.md)存在差異。**英文版包含完整的 Recommended Defaults、Use Case Selection 表格及 Skills as Workflow 詳細說明**，請以英文版為完整參考。翻譯管理見 [LANGUAGE_POLICY.md](LANGUAGE_POLICY.md)。
+
 # Reflective Prompt Library
 
 這個資料夾是 TeaPrompt 的主體，提供反思型工程提示詞與對應的 workflow skills。
@@ -23,6 +25,23 @@ Doing the right thing > doing things right.
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`：一頁式觸發口訣
 - `skills/examples/`：每個 skill 的兩組 input/output 示例
 - `plans/`：規劃與研究紀錄
+
+## Skills as Workflow
+
+提示檔是原始素材，`skills/` 目錄是操作層：一組可重複的工作流程，可複製到 `.claude/skills/`、`~/.codex/skills/`、`.agents/skills/` 或其他相容環境。
+
+| 需求 | Skill |
+| --- | --- |
+| 分流任務到最小適用 workflow | `skills/reflective-dispatch/SKILL.md` |
+| 釐清目標、假設、範圍、驗收、可證偽 | `skills/reflective-brief/SKILL.md` |
+| 寫 spec、usage-first 設計、task slices | `skills/reflective-spec-plan/SKILL.md` |
+| 實作程式碼，附驗證與可追蹤性 | `skills/reflective-implement/SKILL.md` |
+| 審查 code / plan / spec / AI output | `skills/reflective-review/SKILL.md` |
+| 研究外部文件、DeepWiki、長篇文章 | `skills/reflective-research/SKILL.md` |
+| 高風險任務執行前閘門 | `skills/reflective-risk/SKILL.md` |
+| 交接、復盤、記憶沉澱 | `skills/reflective-handoff-retro/SKILL.md` |
+
+設計上刻意避免一個 prompt 對應一個 skill。使用 prompt library 取得細膩判斷，使用 skills 取得執行框架。
 
 ## 延伸文件
 

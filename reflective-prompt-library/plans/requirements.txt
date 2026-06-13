@@ -1,0 +1,19 @@
+# TeaPrompt Validation Script Dependencies
+#
+# This file lists Python package dependencies for the validation
+# scripts under reflective-prompt-library/plans/.
+#
+# Currently all scripts use Python standard library only.
+# No external packages are required.
+#
+# Scripts covered:
+#   validate_links.py          — os, re, sys, pathlib, typing
+#   lint_skills.py             — re, pathlib, typing, datetime
+#   validate_governance.py     — re, pathlib, typing
+#   route_paraphrase_eval.py   — json, pathlib, typing, dataclasses
+#   generate_index.py          — os, re, json, pathlib, typing, datetime
+#
+# If a future script adds an external import, add it below with
+# a version constraint based on what the script actually uses.
+
+# No external dependencies; uses Python standard library only.

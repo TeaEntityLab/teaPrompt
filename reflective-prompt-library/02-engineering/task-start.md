@@ -30,3 +30,5 @@ Use this at the start of a new task before implementation.
 - 不建議現在做的事
 ```
 
+> **Composition note:** When composed with `03-context/medium-context.md`, this prompt serves as the primary output template and `medium-context.md` provides window-size guidance for 32K-128K contexts.
+

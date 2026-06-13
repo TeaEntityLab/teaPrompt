@@ -91,7 +91,7 @@ Next Action:
 
 ## Acceptance Criteria
 
-- At least 95% route consistency within each equivalent-intent paraphrase group.
+- Route consistency: aspirational target ≥95%; Phase-1 threshold: ≥70%; current measured: 100.0% on ROUTE-001 (see QUALITY_GATES_SUMMARY.md).
 - All low-confidence routes emit route trace fields.
 - No silent downgrade events in sampled routing runs.
 

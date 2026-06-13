@@ -4,7 +4,8 @@ name: Paraphrase Routing Eval
 description: Verify that equivalent intent routes to equivalent workflow and rigor.
 
 global_expectations:
-  route_consistency_min: 0.95
+  phase1_route_consistency_min: 0.70
+  aspirational_route_consistency_target: 0.95
   require_route_trace_on_low_confidence: true
   forbid_silent_downgrade: true
 

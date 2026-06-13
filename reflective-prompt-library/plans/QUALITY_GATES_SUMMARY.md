@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes the Phase 1 quality gates implemented for TeaPrompt based on the research-backed engineering roadmap. All 7 planned tasks have been completed successfully.
+This document summarizes the Phase 1 quality gates implemented for TeaPrompt based on the research-backed engineering roadmap. The planned tooling and documentation tasks are implemented, and ROUTE-001 currently passes both the Phase-1 threshold and the aspirational target on the seeded paraphrase set.
 
 ## Completed Tasks
 
@@ -18,7 +18,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 - Checks for required frontmatter fields (name, description)
 
 **Results:**
-- Scanned 93 markdown files
+- Scanned 94 markdown files
 - 0 errors found
 - All links and references are valid
 
@@ -63,7 +63,7 @@ python3 reflective-prompt-library/plans/generate_index.py
 - Provides actionable suggestions
 
 **Results:**
-- Scanned 93 files
+- Scanned 94 files
 - 0 errors, 0 warnings
 - 70 files with suggestions (mostly non-critical)
 - All 8 skills pass validation
@@ -86,7 +86,7 @@ python3 reflective-prompt-library/plans/lint_skills.py
 
 **Results:**
 - Tested 6 intent groups with 37 paraphrases
-- Overall consistency: 64.9% (below 95% threshold)
+- Overall consistency: 100.0% (passes Phase-1 threshold >=70% and aspirational target >=95%)
 - Research task: 100% consistency
 - Other groups show routing challenges (expected for keyword-based router)
 - Output: `plans/route-001-results.json`
@@ -182,18 +182,22 @@ The implementation aligns with research findings:
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 93 | ✅ All pass |
+| Files validated | 94 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 8/8 | ✅ Complete |
 | Benchmark tasks | 20 | ✅ Ready |
-| Routing consistency | 64.9% | ⚠️ Needs improvement |
+| Routing consistency | 100.0% | ✅ Passes ROUTE-001 seeded eval |
 | Linting errors | 0 | ✅ Clean |
+
+### Routing Consistency Tracking
+
+The current routing consistency measurement is 100.0% on ROUTE-001. This passes the Phase-1 threshold (≥70%) and the aspirational target (≥95%) for the seeded paraphrase set. The ROUTING_CONTRACT.md keeps both bars explicit so future, broader evals can distinguish minimum acceptance from aspirational quality.
 
 ## Next Steps (Phase 2)
 
 Based on the research and current implementation, suggested next steps:
 
-1. **Improve routing** - The 64.9% consistency indicates need for better routing algorithms
+1. **Expand routing evals** - Add broader paraphrase groups before treating 100.0% on ROUTE-001 as general routing quality
 2. **Run benchmark tests** - Execute the 20 tasks with/without skills to measure effectiveness
 3. **Add CI/CD** - Integrate validation scripts into automated pipeline
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
@@ -243,7 +247,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality gates are now fully implemented. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are implemented, while routing consistency remains an open improvement item. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration
@@ -252,4 +256,4 @@ Phase 1 quality gates are now fully implemented. TeaPrompt has:
 - ✅ Benchmark framework for effectiveness measurement
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start, addressing the key issues identified in larger skill repositories (discovery ceiling, quality control, maintenance burden).
+The project is positioned to grow sustainably with quality discipline built in from the start, addressing the key issues identified in larger skill repositories (discovery ceiling, quality control, maintenance burden). The next measurable quality target is broadening routing coverage beyond ROUTE-001 while preserving the current pass rate.

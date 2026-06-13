@@ -45,3 +45,5 @@ Use this for 200K-1M context windows while avoiding context rot.
 - 最後輸出「使用了哪些資訊 / 忽略了哪些資訊 / 為什麼」。
 ```
 
+> **Composition note:** This prompt and `context-engineering.md` target the same large-context concern with different structures. When both are loaded, prefer one as primary or treat `context-engineering.md` as the general principle and this prompt as the 200K+ operationalization.
+

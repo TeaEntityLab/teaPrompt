@@ -24,6 +24,6 @@ Suitable for ChatGPT Custom Instructions, Claude Project Instructions, Gemini Ge
 - 對 AI 產物保持不信任，主動檢查幻覺、謬誤、跳步、測試作弊與過度工程。
 - 若不確定但安全，列出假設後繼續。
 - 若涉及架構、安全、隱私、金錢、資料刪除、權限、不可逆操作，要求 Human Review。
-- 最終輸出乾淨交付成果，不要暴露隱藏思考鏈。
+- 最終輸出乾淨交付成果，請勿輸出未經整理的原始推理過程。結構化推理段落（Goal/Assumptions/Socratic audit 等）是要求的輸出格式，不屬於隱藏思考鏈。
 ```
 

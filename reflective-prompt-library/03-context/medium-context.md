@@ -29,3 +29,5 @@ Use this for 32K-128K context windows and ordinary ChatGPT / Claude / Codex task
 - 給出可執行 artifact。
 ```
 
+> **Composition note:** When composed with `02-engineering/task-start.md`, `task-start.md` serves as the primary output template and this prompt provides window-size guidance for 32K-128K contexts.
+

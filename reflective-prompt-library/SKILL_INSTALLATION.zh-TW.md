@@ -1,5 +1,7 @@
 Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
+> **⚠️ 翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](SKILL_INSTALLATION.md)存在差異。**完整的安全性注意事項、疑難排解檢查清單及平台對應細節請務必參閱英文版**，以確保安全安裝。翻譯管理見 [LANGUAGE_POLICY.md](LANGUAGE_POLICY.md)。
+
 # Skills 安裝指南
 
 最後確認日期：2026-05-27
@@ -82,11 +84,19 @@ cp -R reflective-prompt-library/skills/reflective-* .opencode/skills/
 find . -path './.git' -prune -o -name SKILL.md -print | rg 'reflective-'
 ```
 
+## 安全性注意事項
+
+- 第三方 skills 應視為可執行的操作指令，而非被動文件。
+- 安裝前請務必閱讀 `SKILL.md` 內容。
+- 避免大規模全域安裝，建議使用專案層級的少量 skill 集合。
+- 除非 skill 確實需要，否則不要授予工具權限或 hook。
+- 高風險工作流程請保留在 `reflective-risk` 之後再執行。
+
 ## 注意事項
 
 - 高風險任務先走 `reflective-risk`
 - 不要一次全域安裝大量第三方 skills
 - 若新建 skills 根目錄後看不到，重啟對應工具
 
-完整來源與平台差異請看英文完整版：
+完整來源、平台差異與疑難排解請看英文完整版：
 [SKILL_INSTALLATION.md](SKILL_INSTALLATION.md)

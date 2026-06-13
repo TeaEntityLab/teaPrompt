@@ -4,7 +4,7 @@
 
 Mode: reflective-dispatch with reflective-implement as the execution workflow.
 
-Strictness: L3/L5. The work touches all workflow skills and benchmark coverage, but remains documentation and local tooling only.
+Strictness Level: L3/L5. The work touches all workflow skills and benchmark coverage, but remains documentation and local tooling only.
 
 Goal: optimize all TeaPrompt skills according to the runtime governance recommendations without creating a new core skill or weakening the existing compact architecture.
 

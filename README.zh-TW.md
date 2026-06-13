@@ -1,5 +1,7 @@
 Language: [English](README.md) | 繁體中文
 
+> **翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](README.md)存在差異。完整、權威的內容請以英文版為準。翻譯管理見 [LANGUAGE_POLICY.md](reflective-prompt-library/LANGUAGE_POLICY.md)。
+
 # TeaPrompt
 
 TeaPrompt 是一套給 AI 協作工程使用的反思型 Prompt 與 Workflow Library。
@@ -35,6 +37,10 @@ reflective-prompt-library/README.md
 .agents/skills/<skill-name>/SKILL.md
 ```
 
+各平台安裝路徑請見 [Skill Installation Guide](reflective-prompt-library/SKILL_INSTALLATION.md)。
+方法論邊界請見 [Methodology Map](reflective-prompt-library/METHODOLOGY_MAP.md)。
+語言規範請見 [Language Policy](reflective-prompt-library/LANGUAGE_POLICY.md)。
+
 ## 推薦入口
 
 - 分流先用 `reflective-dispatch`
@@ -43,6 +49,16 @@ reflective-prompt-library/README.md
 - 實作用 `reflective-implement`
 - 審查用 `reflective-review`
 - 高風險先走 `reflective-risk`
+
+## 設計理念
+
+TeaPrompt 將 prompts 與 workflows 分離：
+
+- **Prompts** 提供細膩的判斷框架與可重用的措辭。
+- **Skills** 提供可重複的執行流程。
+- **Plans** 記錄未來程式或工作流自動化的規劃，避免過早過度設計。
+
+工作流層刻意使用數量少、可組合的 broad skills，而不是每個 prompt 對應一個 skill。
 
 ## License
 

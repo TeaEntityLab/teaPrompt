@@ -42,5 +42,7 @@ Use this as the small agentflow loop for improving an artifact.
 - Fix required
 - Human review required
 - Reject
+
+> **Note:** The Gate Decision is an LLM self-assessment and is advisory, not a hard enforcement gate. For production or high-risk artifacts, the Gate should be independently verified by a human or deterministic check.
 ```
 

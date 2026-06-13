@@ -17,10 +17,13 @@ Do not start implementation before understanding goal, scope, risk, and acceptan
 For every non-trivial task:
 
 1. Read relevant docs:
-   - `docs/intent.md`
-   - `docs/spec.md`
-   - `docs/usage.md`
-   - `tasks/*.md`
+   - `reflective-prompt-library/02-engineering/task-start.md`
+   - `reflective-prompt-library/02-engineering/spec-writer.md`
+   - `reflective-prompt-library/02-engineering/usage-first.md`
+   - `reflective-prompt-library/02-engineering/task-slicer.md`
+   - `reflective-prompt-library/README.md`
+
+   > **Note**: This template assumes a code-project structure and may need adaptation for your specific repository layout.
 
 2. Before implementation, produce:
    - goal

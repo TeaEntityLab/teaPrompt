@@ -33,3 +33,5 @@ Use this before long tasks where context discipline matters.
 - Recommended next read
 ```
 
+> **Composition note:** This prompt and `large-context.md` target the same large-context concern with different structures. When both are loaded, treat this prompt as the general principle and `large-context.md` as the 200K+ operationalization, or choose one as primary.
+
