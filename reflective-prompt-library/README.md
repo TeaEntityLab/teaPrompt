@@ -25,7 +25,7 @@ Core identity prompt
 - `01-thinking/`: Socratic questioning, critical thinking, counterarguments, falsifiability, and Why / What / How / Done gates.
 - `02-engineering/`: task start, specs, usage-first design, task slicing, implementation, review, tests, and local feedback.
 - `03-context/`: small / medium / large context prompts, low-token mode, context engineering, Gemini long-document handling, and handoff summaries.
-- `04-agent/`: agent selection, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
+- `04-agent/`: agent selection, SOP compiler design, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
@@ -118,5 +118,6 @@ research
 | You need to switch sessions | `03-context/context-handoff.md` |
 | A task is complete and you want process learning | `04-agent/retro.md` |
 | You need to decide Prompt vs Agent vs Workflow | `04-agent/agent-selection.md` |
+| You need to convert a repeatable human SOP into an agent workflow | `04-agent/sop-compiler.md` |
 | You need to design or review runtime trust boundaries | `04-agent/runtime-trust-boundary.md` |
 | You need to review a leaked, mirrored, or third-party agent scaffold | `04-agent/agent-scaffold-provenance.md` |

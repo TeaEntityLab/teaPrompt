@@ -313,6 +313,21 @@ class BenchmarkSet:
                     "Transferable ideas are filtered into adopt, study, caution, or do-not-copy categories",
                     "Required local changes and residual uncertainty are documented"
                 ]
+            ),
+            BenchmarkTask(
+                id="B020",
+                name="Human SOP compiler planning",
+                description="Turn a repeated human process into the smallest useful agent workflow level without overbuilding a full runtime",
+                expected_workflow="reflective-spec-plan",
+                difficulty="hard",
+                category="sop-compiler",
+                acceptance_criteria=[
+                    "Input is classified as formal SOP, partial SOP, natural-language need, or existing workflow",
+                    "Unknown requirements are marked as TBD instead of inferred",
+                    "Workflow level is justified from prompt-only through runner-and-hook options",
+                    "Artifact contract, deterministic gates, and human approval boundaries are defined",
+                    "Overengineering risks and promotion criteria are documented"
+                ]
             )
         ]
     

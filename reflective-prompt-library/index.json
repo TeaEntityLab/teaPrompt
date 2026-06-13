@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-11T12:32:42.220455",
+  "generated_at": "2026-06-13T09:23:13.764996",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -30,6 +30,7 @@
         "plans": {
           "path": "reflective-prompt-library/plans",
           "files": [
+            "agentic-sop-workflow-reflection-2026-06-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
@@ -54,7 +55,8 @@
             "runtime-trust-boundary.md",
             "retro.md",
             "workflow-recipes.md",
-            "workflow-engine.md"
+            "workflow-engine.md",
+            "sop-compiler.md"
           ]
         },
         "03-context": {
@@ -617,6 +619,84 @@
       "char_count": 2128
     },
     {
+      "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agentic-sop-workflow-reflection-2026-06-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agentic SOP Workflow Reflection"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Project Fit"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Critique"
+        },
+        {
+          "level": 2,
+          "text": "Critical Findings"
+        },
+        {
+          "level": 3,
+          "text": "1. The external project solves a narrower and harder problem than generic loop engineering."
+        },
+        {
+          "level": 3,
+          "text": "2. TeaPrompt already covers the reasoning layer but under-specifies the compiler layer."
+        },
+        {
+          "level": 3,
+          "text": "3. Pure text skills are not enough for high-risk repeatable workflows."
+        },
+        {
+          "level": 3,
+          "text": "4. A full runner would be premature."
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Future Promotion Gate"
+        },
+        {
+          "level": 2,
+          "text": "Implementation Plan"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        }
+      ],
+      "line_count": 117,
+      "char_count": 6656
+    },
+    {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1100,7 +1180,7 @@
         }
       ],
       "line_count": 255,
-      "char_count": 8249
+      "char_count": 8272
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1781,6 +1861,64 @@
       "char_count": 1087
     },
     {
+      "path": "reflective-prompt-library/04-agent/sop-compiler.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "sop-compiler",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "SOP Compiler Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Task"
+        },
+        {
+          "level": 2,
+          "text": "1. Intake Classification"
+        },
+        {
+          "level": 2,
+          "text": "2. Why / What Gate"
+        },
+        {
+          "level": 2,
+          "text": "3. Workflow Level"
+        },
+        {
+          "level": 2,
+          "text": "4. Artifact Contract"
+        },
+        {
+          "level": 2,
+          "text": "5. Stages"
+        },
+        {
+          "level": 2,
+          "text": "6. Gates"
+        },
+        {
+          "level": 2,
+          "text": "7. Regression And Stop Conditions"
+        },
+        {
+          "level": 2,
+          "text": "8. Output"
+        }
+      ],
+      "line_count": 122,
+      "char_count": 3974
+    },
+    {
       "path": "reflective-prompt-library/03-context/small-context.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2346,7 +2484,7 @@
         }
       ],
       "line_count": 75,
-      "char_count": 3606
+      "char_count": 3683
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -3716,6 +3854,7 @@
         "02-engineering/usage-first.md",
         "02-engineering/task-slicer.md",
         "04-agent/workflow-engine.md",
+        "04-agent/sop-compiler.md",
         "04-agent/runtime-trust-boundary.md"
       ],
       "structure": [
@@ -3756,9 +3895,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 132,
-      "char_count": 3696
+      "line_count": 135,
+      "char_count": 3909
     }
   ],
-  "total_files": 70
+  "total_files": 72
 }

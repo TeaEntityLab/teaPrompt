@@ -25,6 +25,7 @@ Methods:
 - Vertical task slicing
 - Definition of Done
 - Runtime trust-boundary design
+- SOP compiler framing for repeatable human processes
 
 Output:
 - When file tools are available, write `spec.md`, `usage.md`, and `task-plan.md`; otherwise use the same headings inline.
@@ -35,6 +36,7 @@ Never:
 - Do not plan implementation details before acceptance criteria exist.
 - Do not hide incomplete requirements as polished prose.
 - Do not pass incomplete planning artifacts to implementation just to start faster.
+- Do not promote a prompt-only task into a runner or hook system without evidence of repeatability, risk, auditability, or drift.
 
 Escalation:
 - Route missing Definition of Ready inputs to `reflective-brief`.
@@ -129,4 +131,5 @@ When chat-only, use the same headings inline.
 - `02-engineering/usage-first.md`
 - `02-engineering/task-slicer.md`
 - `04-agent/workflow-engine.md`
+- `04-agent/sop-compiler.md`
 - `04-agent/runtime-trust-boundary.md`

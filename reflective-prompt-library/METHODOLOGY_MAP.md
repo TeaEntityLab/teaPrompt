@@ -69,7 +69,7 @@ Instead of a single prompt, the methodology is formally structured into ten dist
 2. **Reasoning / Thinking Layer** (`01-thinking/`): Socratic inquiry, critical analysis, falsifiability, and assumption auditing.
 3. **Engineering / Execution Layer** (`02-engineering/`): Domain-specific engineering procedures (TDD, spec writing, implementation strategies).
 4. **Context Window Layer** (`03-context/`): Context window sizing, token management, and context handoff prompts.
-5. **Workflow & Agentic Layer** (`04-agent/`): Workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
+5. **Workflow & Agentic Layer** (`04-agent/`): SOP compiler prompts, workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
 6. **Domain Pack Layer** (`05-domain/`): Specialized domain overlays (business strategy, learning coach, high-risk review, creative/writing).
 7. **Repository Template Layer** (`06-repo/`): Local repository instructions (`AGENTS.md`, `cursor-rules.md` templates).
 8. **Skill / Action Layer** (`skills/`): Modular, on-demand `SKILL.md` files acting as portable procedures executed when triggered.
@@ -91,6 +91,12 @@ TeaPrompt should absorb these as a lightweight runtime governance sublayer, not 
 Public prompt mirrors and alleged system-prompt leaks are useful only as provenance-sensitive research artifacts. The elder-plinius `CLAUDE-FABLE-5.md` mirror is observable as a third-party GitHub artifact, while Anthropic's official docs separately confirm Claude app system prompts, Claude Fable 5 release behavior, long-run scaffolding guidance, refusal categories, and reasoning-output limits. That distinction matters.
 
 TeaPrompt should learn the taxonomy: identity, behavior, safety, memory, tool routing, artifact/workspace policy, evidence/citation/copyright, and reasoning protection. It should not copy leaked or mirrored scaffold text into operational skills. Use `04-agent/agent-scaffold-provenance.md` when comparing official docs, mirrors, user attachments, and community interpretations.
+
+## SOP Compiler Addendum
+
+`agentic-sop-to-work` demonstrates a useful adjacent pattern: treat human SOP as source material, compile it into single-purpose workflow stages, exchange typed artifacts, run deterministic gates, return DRAFT outputs for human approval, and use regression hooks only when the workflow has enough repeatability or risk to justify code-backed enforcement: [agentic-sop-to-work](https://github.com/s0912758806p/agentic-sop-to-work).
+
+TeaPrompt should adopt this as a planning lens, not a runtime dependency. The project remains a compact prompt and skill library until repeated workflows prove that runner code, hooks, and deterministic verifiers would reduce total cost. Use `04-agent/sop-compiler.md` before promoting a prompt-only or artifact-only process into a code-backed workflow engine.
 
 ## Strictness Levels
 
@@ -158,7 +164,7 @@ Multi-agent work requires state, tools, logs, verification, and handoff artifact
 | Reasoning / Thinking | Aligned | Complete | Keep prompts under `01-thinking/`. |
 | Engineering / Execution | Aligned | Complete | Prompts under `02-engineering/`. |
 | Context Window Layer | Aligned | Complete | Manage window-size & token configurations (`03-context/`). |
-| Workflow & Agentic Layer | Aligned | Complete | Workflows, planning engine, and memory consolidation (`04-agent/`). |
+| Workflow & Agentic Layer | Aligned | Extended | Workflows, SOP compiler planning, planning engine, and memory consolidation (`04-agent/`). |
 | Domain Pack Layer | Aligned | Complete | Keep strategy and domain prompts in `05-domain/`. |
 | Repository Template Layer | Aligned | Complete | Maintain `AGENTS.md` and `cursor-rules.md` templates under `06-repo/`. |
 | Skill / Action Layer | Aligned | Complete | Maintain 8 core composable skills. |
