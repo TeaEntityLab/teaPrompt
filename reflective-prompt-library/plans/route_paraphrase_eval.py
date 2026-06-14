@@ -177,7 +177,12 @@ def load_route_eval_config(config_path: Path) -> Dict[str, Any]:
 
 
 class ParaphraseRouter:
-    """Simple keyword-based router for testing."""
+    """Small deterministic router used by ROUTE-001.
+
+    The first pass counts workflow keywords. The boundary pass then applies
+    intent-level signals for cases where single words are ambiguous, such as
+    review language wrapped around production-risk phrasing.
+    """
     
     def __init__(self):
         # Define routing rules based on keywords
@@ -223,6 +228,47 @@ class ParaphraseRouter:
                 "agentic workflow"
             ]
         }
+
+    def boundary_adjustments(self, text_lower: str) -> Tuple[Dict[str, int], List[str]]:
+        """Return concept-level routing adjustments for ambiguous phrasing."""
+        adjustments: Dict[str, int] = {}
+        reasons = []
+
+        risk_signals = [
+            "production", "security", "credential", "deployment", "dangerous",
+            "not break", "breaking", "avoid breaking", "before changing"
+        ]
+        risk_context = ["check", "verify", "review", "make sure", "avoid", "before", "will not"]
+        production_review_style = "review this like" in text_lower
+        if (
+            not production_review_style
+            and any(signal in text_lower for signal in risk_signals)
+            and any(ctx in text_lower for ctx in risk_context)
+        ):
+            adjustments["reflective-risk"] = adjustments.get("reflective-risk", 0) + 2
+            reasons.append("risk boundary: safety-sensitive context")
+
+        if "security checks" in text_lower or "security implications" in text_lower:
+            adjustments["reflective-risk"] = adjustments.get("reflective-risk", 0) + 2
+            reasons.append("risk boundary: security verification")
+
+        planning_signals = [
+            "delivery plan", "acceptance criteria", "launch readiness",
+            "roadmap", "prd", "implementation plan"
+        ]
+        if any(signal in text_lower for signal in planning_signals):
+            adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 2
+            reasons.append("planning boundary: delivery artifact requested")
+
+        review_signals = [
+            "confirm this has no problem", "look if", "mistake",
+            "check carefully", "review this like"
+        ]
+        if any(signal in text_lower for signal in review_signals):
+            adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 2
+            reasons.append("review boundary: correctness inspection requested")
+
+        return adjustments, reasons
     
     def route(self, text: str) -> Tuple[str, float, List[str], str]:
         """Route text to a workflow based on keyword matching."""
@@ -234,6 +280,10 @@ class ParaphraseRouter:
             score = sum(1 for kw in keywords if kw in text_lower)
             if score > 0:
                 scores[workflow] = score
+
+        adjustments, boundary_reasons = self.boundary_adjustments(text_lower)
+        for workflow, adjustment in adjustments.items():
+            scores[workflow] = scores.get(workflow, 0) + adjustment
         
         if not scores:
             return "reflective-dispatch", 0.3, [], "No keywords matched, defaulting to dispatch"
@@ -253,7 +303,9 @@ class ParaphraseRouter:
         confidence = min(0.9, 0.4 + scores[best_workflow] * 0.1)
         
         # Generate trace
-        trace = f"Matched keywords for {best_workflow}: {scores[best_workflow]} matches"
+        trace = f"Matched signals for {best_workflow}: {scores[best_workflow]} score"
+        if boundary_reasons:
+            trace += f"; boundary: {', '.join(boundary_reasons)}"
         
         return best_workflow, confidence, [], trace
 
