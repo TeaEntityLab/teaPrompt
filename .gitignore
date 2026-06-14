@@ -19,6 +19,6 @@ Icon
 
 ### TeaPrompt generated files
 # Test results and temporary generated files
-reflective-prompt-library/plans/route-001-results.json
+reflective-prompt-library/plans/route-*-results.json
 reflective-prompt-library/plans/benchmark-tasks.json
 **/__pycache__

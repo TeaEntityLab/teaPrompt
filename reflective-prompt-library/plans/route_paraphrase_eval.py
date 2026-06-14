@@ -7,6 +7,7 @@ Tests that same intent groups route to the same canonical workflow.
 """
 
 import json
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 from dataclasses import dataclass, asdict, field
@@ -62,6 +63,7 @@ def load_route_eval_config(config_path: Path) -> Dict[str, Any]:
         "trace_required_fields": [],
         "intent_groups": [],
         "adversarial_sets": [],
+        "holdout_sets": [],
         "evaluation_rules": [],
     }
     section = None
@@ -126,7 +128,7 @@ def load_route_eval_config(config_path: Path) -> Dict[str, Any]:
                 current_group[current_list_key].append(line[2:].strip())
                 continue
 
-        if section == "adversarial_sets":
+        if section in ("adversarial_sets", "holdout_sets"):
             if indent == 2 and line.startswith("- "):
                 current_group = {}
                 config[section].append(current_group)
@@ -262,11 +264,20 @@ class ParaphraseRouter:
 
         review_signals = [
             "confirm this has no problem", "look if", "mistake",
-            "check carefully", "review this like"
+            "check carefully", "review this like", "regression", "regressions"
         ]
-        if any(signal in text_lower for signal in review_signals):
+        review_context = ["inspect", "check", "review", "find", "confirm", "before merge", "diff", "patch", "change"]
+        if any(signal in text_lower for signal in review_signals) and any(ctx in text_lower for ctx in review_context):
             adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 2
             reasons.append("review boundary: correctness inspection requested")
+
+        clarification_signals = ["do not know", "don't know", "unknown", "unclear", "not sure"]
+        clarification_targets = ["outcome", "goal", "intent", "objective", "scope", "assumption"]
+        if any(signal in text_lower for signal in clarification_signals) and any(
+            target in text_lower for target in clarification_targets
+        ):
+            adjustments["reflective-brief"] = adjustments.get("reflective-brief", 0) + 2
+            reasons.append("brief boundary: unresolved intent or outcome")
 
         return adjustments, reasons
     
@@ -313,7 +324,7 @@ class ParaphraseRouter:
 class ParaphraseEval:
     def __init__(self, repo_root: str, config_path: Path = None):
         self.repo_root = Path(repo_root).resolve()
-        self.config_path = config_path or Path(__file__).parent / "route-001-paraphrase-eval.yaml"
+        self.config_path = (config_path or Path(__file__).parent / "route-001-paraphrase-eval.yaml").resolve()
         self.config = load_route_eval_config(self.config_path)
         expectations = self.config.get("global_expectations", {})
         self.phase1_consistency_min = float(expectations.get("phase1_route_consistency_min", 0.70))
@@ -332,6 +343,7 @@ class ParaphraseEval:
             "summary": {
                 "total_groups": 0,
                 "adversarial_groups": 0,
+                "holdout_groups": 0,
                 "total_paraphrases": 0,
                 "consistency_rate": 0.0,
                 "avg_confidence": 0.0,
@@ -357,10 +369,10 @@ class ParaphraseEval:
             )
         return groups
 
-    def define_adversarial_groups(self) -> List[IntentGroup]:
-        """Load adversarial boundary cases from the ROUTE-001 YAML fixture."""
+    def define_named_groups(self, section_name: str, group_type: str) -> List[IntentGroup]:
+        """Load named eval groups from a ROUTE YAML fixture section."""
         groups = []
-        for group in self.config.get("adversarial_sets", []):
+        for group in self.config.get(section_name, []):
             groups.append(
                 IntentGroup(
                     name=group["name"],
@@ -368,7 +380,7 @@ class ParaphraseEval:
                     paraphrases=group.get("phrases", []),
                     risk_level=group.get("expected_rigor", "medium"),
                     expected_enhancements=group.get("expected_enhancements", []),
-                    group_type="adversarial",
+                    group_type=group_type,
                 )
             )
         return groups
@@ -406,12 +418,21 @@ class ParaphraseEval:
             if not group["phrases"]:
                 raise ValueError(f"intent group has no phrases: {group['intent']}")
 
-        for group in self.config.get("adversarial_sets", []):
-            for key in ("name", "expected_workflow", "phrases"):
-                if key not in group:
-                    raise ValueError(f"adversarial set missing required key: {key}")
-            if not group["phrases"]:
-                raise ValueError(f"adversarial set has no phrases: {group['name']}")
+        for section_name, label in (("adversarial_sets", "adversarial set"), ("holdout_sets", "holdout set")):
+            for group in self.config.get(section_name, []):
+                for key in ("name", "expected_workflow", "phrases"):
+                    if key not in group:
+                        raise ValueError(f"{label} missing required key: {key}")
+                if not group["phrases"]:
+                    raise ValueError(f"{label} has no phrases: {group['name']}")
+
+    def define_adversarial_groups(self) -> List[IntentGroup]:
+        """Load adversarial boundary cases from the ROUTE YAML fixture."""
+        return self.define_named_groups("adversarial_sets", "adversarial")
+
+    def define_holdout_groups(self) -> List[IntentGroup]:
+        """Load unseen holdout cases from the ROUTE YAML fixture."""
+        return self.define_named_groups("holdout_sets", "holdout")
 
     def has_required_trace(self, trace: Dict[str, Any]) -> bool:
         required_fields = self.config.get("trace_required_fields", [])
@@ -420,9 +441,14 @@ class ParaphraseEval:
     def run_eval(self) -> Dict:
         """Run the paraphrase routing evaluation."""
         self.validate_config()
-        intent_groups = self.define_intent_groups() + self.define_adversarial_groups()
+        intent_groups = (
+            self.define_intent_groups()
+            + self.define_adversarial_groups()
+            + self.define_holdout_groups()
+        )
         self.results["summary"]["total_groups"] = len(intent_groups)
         self.results["summary"]["adversarial_groups"] = len(self.define_adversarial_groups())
+        self.results["summary"]["holdout_groups"] = len(self.define_holdout_groups())
         
         total_paraphrases = 0
         total_matches = 0
@@ -522,7 +548,7 @@ class ParaphraseEval:
         """Generate a human-readable report."""
         lines = []
         lines.append("=" * 70)
-        lines.append("ROUTE-001: Paraphrase Routing Evaluation Report")
+        lines.append(f"{self.config.get('id', 'ROUTE')}: Paraphrase Routing Evaluation Report")
         lines.append("=" * 70)
         lines.append("")
         
@@ -539,6 +565,7 @@ class ParaphraseEval:
         lines.append("📊 Summary")
         lines.append(f"Total evaluated groups: {summary['total_groups']}")
         lines.append(f"Adversarial groups: {summary['adversarial_groups']}")
+        lines.append(f"Holdout groups: {summary['holdout_groups']}")
         lines.append(f"Total paraphrases tested: {summary['total_paraphrases']}")
         lines.append(f"Overall consistency rate: {summary['consistency_rate']:.1%}")
         lines.append(f"Average confidence: {summary['avg_confidence']:.2f}")
@@ -582,11 +609,11 @@ class ParaphraseEval:
 
 def main():
     repo_root = Path(__file__).parent.parent.parent
+    config_path = Path(sys.argv[1]) if len(sys.argv) > 1 else None
     
-    print(f"Running ROUTE-001 Paraphrase Routing Eval")
+    eval = ParaphraseEval(str(repo_root), config_path)
+    print(f"Running {eval.config.get('id', 'ROUTE')} Paraphrase Routing Eval")
     print("=" * 60)
-    
-    eval = ParaphraseEval(str(repo_root))
     results = eval.run_eval()
     
     # Generate and print report
@@ -594,7 +621,8 @@ def main():
     print(report)
     
     # Save results to JSON
-    output_file = Path(__file__).parent / "route-001-results.json"
+    config_id = str(eval.config.get("id", "route-eval")).lower()
+    output_file = Path(__file__).parent / f"{config_id}-results.json"
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     

@@ -1,0 +1,95 @@
+version: 1
+id: ROUTE-002
+name: Holdout Routing Eval
+description: Verify routing behavior on unseen boundary phrasing that is not part of ROUTE-001 tuning.
+
+global_expectations:
+  phase1_route_consistency_min: 0.80
+  aspirational_route_consistency_target: 0.90
+  require_route_trace_on_low_confidence: true
+  forbid_silent_downgrade: true
+
+trace_required_fields:
+  - canonical_intent
+  - workflow
+  - confidence
+  - enhancements_enabled
+  - enhancements_available
+  - rationale
+
+holdout_sets:
+  - name: implementation_holdout
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - wire this into the existing parser
+      - patch the failing behavior in code
+      - add the missing function
+      - change the implementation and verify it
+
+  - name: planning_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - turn this rough idea into tickets
+      - define the delivery plan before coding
+      - write the acceptance criteria and rollout tasks
+      - make a PRD-level breakdown
+
+  - name: review_holdout
+    expected_workflow: reflective-review
+    expected_rigor: high
+    expected_enhancements:
+      - quality_review
+    phrases:
+      - inspect this patch for regressions
+      - check whether the diff has mistakes
+      - review the behavior changes carefully
+      - find likely bugs before merge
+
+  - name: research_holdout
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - compare upstream guidance before we decide
+      - look up the official migration notes
+      - find source-backed examples for this API
+      - research whether this library changed recently
+
+  - name: risk_holdout
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - check rollback before touching production data
+      - verify this permission change will not expose secrets
+      - assess whether this migration can lose data
+      - pause before the irreversible billing change
+
+  - name: clarification_holdout
+    expected_workflow: reflective-brief
+    expected_rigor: low
+    expected_enhancements:
+      - assumption_log
+    phrases:
+      - I do not know what outcome we want yet
+      - first clarify the actual goal
+      - identify assumptions before planning
+      - scope this before choosing an approach
+
+evaluation_rules:
+  - name: route_equivalence
+    assert: same_intent_group_same_workflow
+  - name: low_confidence_visibility
+    assert: low_confidence_has_route_trace
+  - name: enhancement_visibility
+    assert: available_enhancements_visible_in_route_trace
+  - name: no_silent_downgrade
+    assert: downgrade_requires_explicit_rationale
