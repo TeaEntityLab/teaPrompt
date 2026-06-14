@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document summarizes the Phase 1 quality gates implemented for TeaPrompt based on the research-backed engineering roadmap. The planned tooling and documentation tasks are implemented, and ROUTE-001 currently passes both the Phase-1 threshold and the aspirational target on the seeded paraphrase set.
+This document summarizes the Phase 1 quality gates implemented for TeaPrompt based on the research-backed engineering roadmap. The planned tooling and documentation tasks are implemented, and ROUTE-001 currently passes the Phase-1 threshold on the expanded YAML-driven paraphrase set while exposing adversarial routing gaps below the aspirational target.
 
 ## Completed Tasks
 
@@ -65,7 +65,7 @@ python3 reflective-prompt-library/plans/generate_index.py
 **Results:**
 - Scanned 94 files
 - 0 errors, 0 warnings
-- 70 files with suggestions (mostly non-critical)
+- 73 files with suggestions (mostly non-critical)
 - All 8 skills pass validation
 
 **Usage:**
@@ -79,19 +79,20 @@ python3 reflective-prompt-library/plans/lint_skills.py
 
 **What it does:**
 - Implements ROUTE-001 from code-followups-plan.md
+- Loads intent groups, adversarial sets, thresholds, trace fields, and expected workflows from `route-001-paraphrase-eval.yaml`
 - Tests routing consistency across paraphrased intents
 - Validates that same intent routes to same workflow
-- Measures confidence and fallback behavior
+- Measures confidence, fallback behavior, low-confidence trace coverage, and silent downgrade incidents
 - Generates consistency reports
 
 **Results:**
-- Tested 6 intent groups with 37 paraphrases
-- Overall consistency: 100.0% (passes Phase-1 threshold >=70% and aspirational target >=95%)
-- Research task: 100% consistency
-- Other groups show routing challenges (expected for keyword-based router)
+- Tested 12 groups with 90 paraphrases, including 4 adversarial boundary groups
+- Overall consistency: 93.3% (passes Phase-1 threshold >=70%, below aspirational target >=95%)
+- Low-confidence route trace coverage: 100.0%
+- Adversarial groups expose known keyword-router gaps in non-native, PM, and novice phrasing
 - Output: `plans/route-001-results.json`
 
-**Key Finding:** The simple keyword router needs improvement, which validates the need for better routing mechanisms identified in the research.
+**Key Finding:** ROUTE-001 is now a fixture-driven quality gate rather than a hardcoded self-test. The router still remains keyword-based, so the current result proves Phase-1 routing adequacy and highlights adversarial gaps; it does not prove general semantic routing quality.
 
 **Usage:**
 ```bash
@@ -186,18 +187,29 @@ The implementation aligns with research findings:
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 8/8 | ✅ Complete |
 | Benchmark tasks | 20 | ✅ Ready |
-| Routing consistency | 100.0% | ✅ Passes ROUTE-001 seeded eval |
+| Routing consistency | 93.3% | ✅ Passes ROUTE-001 Phase-1, below aspirational |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
 
-The current routing consistency measurement is 100.0% on ROUTE-001. This passes the Phase-1 threshold (≥70%) and the aspirational target (≥95%) for the seeded paraphrase set. The ROUTING_CONTRACT.md keeps both bars explicit so future, broader evals can distinguish minimum acceptance from aspirational quality.
+The current routing consistency measurement is 93.3% on ROUTE-001 across 12 groups and 90 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) but remains below the aspirational target (>=95%) because adversarial phrasing exposes meaningful keyword-router gaps. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
+
+### Critical Reflection
+
+ROUTE-001 should not be interpreted as proof that keyword routing is sufficient. The useful project direction is not to keep adding isolated synonyms until the score is perfect, but to keep a compact fixture that exposes meaningful intent boundaries:
+- implementation vs spec planning
+- review vs risk gating
+- research vs local review
+- clarification vs planning
+- handoff vs dispatch
+
+The next router improvement should be judged against those boundaries. If new phrases only increase the fixture size without exposing a new failure mode, they add maintenance cost more than routing evidence. The current adversarial failures are useful because they show where a future router needs intent-level semantics rather than more keyword accumulation.
 
 ## Next Steps (Phase 2)
 
 Based on the research and current implementation, suggested next steps:
 
-1. **Expand routing evals** - Add broader paraphrase groups before treating 100.0% on ROUTE-001 as general routing quality
+1. **Add boundary-case routing evals** - Add focused adversarial examples before treating 100.0% on ROUTE-001 as general routing quality
 2. **Run benchmark tests** - Execute the 20 tasks with/without skills to measure effectiveness
 3. **Add CI/CD** - Integrate validation scripts into automated pipeline
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input

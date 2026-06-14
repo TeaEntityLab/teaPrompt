@@ -1,7 +1,7 @@
-version: 1
+version: 2
 id: ROUTE-001
 name: Paraphrase Routing Eval
-description: Verify that equivalent intent routes to equivalent workflow and rigor.
+description: Verify that equivalent intent routes to equivalent reflective workflow and rigor.
 
 global_expectations:
   phase1_route_consistency_min: 0.70
@@ -18,84 +18,192 @@ trace_required_fields:
   - rationale
 
 intent_groups:
-  - intent: push_changes
-    expected_workflow: pr_workflow
+  - intent: implementation_task
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - Write a function to parse JSON
+      - Implement a JSON parser
+      - Code a function that parses JSON data
+      - Create a JSON parsing function
+      - Add JSON parsing to the codebase
+      - Fix the JSON parser bug
+      - Refactor the JSON parsing logic
+      - Patch the parser so it handles empty input
+      - Build this feature in the code
+      - Make the code change directly
+
+  - intent: spec_planning
+    expected_workflow: reflective-spec-plan
     expected_rigor: medium
     expected_enhancements:
-      - basic_checks
+      - acceptance_criteria
+      - task_breakdown
     phrases:
-      - push my changes
-      - send my work upstream
-      - upload my local commits
-      - open a PR
-      - get this branch into the remote repo
+      - Write a spec for the new feature
+      - Create an implementation plan
+      - Design the feature specification
+      - Plan the development tickets
+      - Document the feature requirements
+      - Break down the feature into tasks
+      - Define acceptance criteria for this work
+      - Turn this idea into a PRD
+      - Create a roadmap for the workflow
+      - Prepare a release plan for this feature
 
-  - intent: rigorous_code_review
-    expected_workflow: reflective_review
+  - intent: code_review
+    expected_workflow: reflective-review
     expected_rigor: high
     expected_enhancements:
       - tests
       - security_review
       - quality_review
     phrases:
-      - thorough review
-      - check this carefully
-      - look over my code in detail
-      - make sure it actually works
-      - review this like it is going to production
+      - Review this pull request
+      - Check the code for issues
+      - Audit the implementation
+      - Analyze the code changes
+      - Examine the pull request
+      - Look for bugs in this code
+      - Thorough review
+      - Check this carefully
+      - Look over my code in detail
+      - Make sure it actually works
+      - Review this like it is going to production
 
-  - intent: release_readiness
-    expected_workflow: reflective_spec_plan
+  - intent: research_task
+    expected_workflow: reflective-research
     expected_rigor: medium
     expected_enhancements:
-      - risk_scan
-      - verification_plan
+      - source_check
+      - evidence_map
     phrases:
-      - prepare this for release
-      - help me make sure this won't break
-      - make this ready to ship
-      - confirm this is safe to release
-      - make it production ready
+      - Research the best practices for authentication
+      - Find documentation on React hooks
+      - Investigate the latest Python frameworks
+      - Look up the API documentation
+      - Search for information about Kubernetes
+      - Find external resources on this topic
+      - Compare the official docs with our current usage
+      - Check source-backed guidance for this package
+      - Find the current official recommendation
+      - Research whether this approach is still valid
+
+  - intent: risk_gating
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - rollback_plan
+      - human_review_gate
+    phrases:
+      - Review the security implications
+      - Check if this is safe for production
+      - Assess the privacy risks
+      - Verify the authentication changes
+      - Review the deployment plan for risks
+      - Check the migration safety
+      - Confirm rollback before the destructive step
+      - Make sure this delete operation is safe
+      - Evaluate compliance risk before shipping
+      - Check credential exposure risk
+      - Help me avoid breaking production
+
+  - intent: clarification
+    expected_workflow: reflective-brief
+    expected_rigor: low
+    expected_enhancements:
+      - assumption_log
+    phrases:
+      - Clarify the requirements
+      - Define the goals and assumptions
+      - What should we build?
+      - Start by defining the scope
+      - Kick off the project planning
+      - Begin with goal clarification
+      - I am not sure what the real objective is
+      - Before deciding, clarify the acceptance criteria
+      - The request is unclear; find the intent first
+      - Help me define scope before work starts
+
+  - intent: handoff_retro
+    expected_workflow: reflective-handoff-retro
+    expected_rigor: low
+    expected_enhancements:
+      - reusable_memory
+    phrases:
+      - Create a handoff summary
+      - Capture the session context for later
+      - Write a retrospective after this work
+      - Consolidate the lessons into memory
+      - Transfer the current state to the next agent
+      - Make a session summary so we can continue later
+      - Save the context and lessons learned
+      - Turn this experience into reusable rules
+
+  - intent: workflow_dispatch
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - Which skill should handle this?
+      - Choose the right reflective workflow
+      - Route this through the prompt library
+      - Select prompt-only or agentic workflow
+      - Apply the reflective library to this task
+      - Dispatch this to the best skill
+      - Decide whether this needs a workflow or just a prompt
+      - What skill is appropriate here?
 
 adversarial_sets:
   - name: native_engineering
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
     phrases:
       - run full review with tests and security checks
-      - push this branch and open a PR
+      - check production safety before launch
+      - verify credential risk before deployment
 
   - name: non_native_plain
+    expected_workflow: reflective-review
+    expected_rigor: medium
+    expected_enhancements:
+      - route_trace
     phrases:
       - send this up and check carefully
       - help me confirm this has no problem
+      - please look if the change has mistake
 
   - name: pm_language
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
     phrases:
-      - prepare this for launch and reduce risk
-      - check if this is good for customers
+      - turn launch readiness into a delivery plan
+      - define customer acceptance criteria
+      - turn this idea into a delivery plan
 
   - name: novice_language
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - rollback_plan
     phrases:
-      - can you make sure this works
+      - can you make sure this will not break production
       - help me avoid breaking things
+      - check if this is dangerous before changing it
 
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow
-  - name: rigor_equivalence
-    assert: same_intent_group_same_rigor_or_explained_delta
   - name: low_confidence_visibility
     assert: low_confidence_has_route_trace
   - name: enhancement_visibility
-    assert: enabled_and_available_enhancements_visible
+    assert: available_enhancements_visible_in_route_trace
   - name: no_silent_downgrade
     assert: downgrade_requires_explicit_rationale
-
-report_template:
-  sections:
-    - summary
-    - route_consistency
-    - rigor_consistency
-    - low_confidence_trace_coverage
-    - silent_downgrade_incidents
-    - failing_examples
-    - recommended_router_fixes

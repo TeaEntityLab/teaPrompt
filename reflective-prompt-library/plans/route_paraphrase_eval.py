@@ -8,8 +8,8 @@ Tests that same intent groups route to the same canonical workflow.
 
 import json
 from pathlib import Path
-from typing import Dict, List, Tuple
-from dataclasses import dataclass, asdict
+from typing import Any, Dict, List, Tuple
+from dataclasses import dataclass, asdict, field
 
 
 @dataclass
@@ -19,7 +19,8 @@ class IntentGroup:
     canonical_workflow: str
     paraphrases: List[str]
     risk_level: str = "low"
-    expected_enhancements: List[str] = None
+    expected_enhancements: List[str] = field(default_factory=list)
+    group_type: str = "intent"
 
 
 @dataclass
@@ -31,6 +32,148 @@ class RoutingResult:
     enhancements: List[str]
     matched_canonical: bool
     trace: str
+    route_trace: Dict[str, Any]
+
+
+def parse_scalar(value: str) -> Any:
+    """Parse the small scalar subset used by ROUTE-001 YAML."""
+    value = value.strip()
+    if value.lower() == "true":
+        return True
+    if value.lower() == "false":
+        return False
+    try:
+        if "." in value:
+            return float(value)
+        return int(value)
+    except ValueError:
+        return value.strip('"').strip("'")
+
+
+def load_route_eval_config(config_path: Path) -> Dict[str, Any]:
+    """Load ROUTE-001 YAML without adding a runtime dependency.
+
+    The fixture intentionally uses a small YAML subset: top-level sections,
+    scalar maps, and list blocks. Keeping this parser local avoids making a
+    dependency decision just for a development quality gate.
+    """
+    config: Dict[str, Any] = {
+        "global_expectations": {},
+        "trace_required_fields": [],
+        "intent_groups": [],
+        "adversarial_sets": [],
+        "evaluation_rules": [],
+    }
+    section = None
+    current_group = None
+    current_list_key = None
+
+    for raw_line in config_path.read_text(encoding="utf-8").splitlines():
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+
+        indent = len(raw_line) - len(raw_line.lstrip(" "))
+        line = raw_line.strip()
+
+        if indent == 0 and line.endswith(":"):
+            section = line[:-1]
+            current_group = None
+            current_list_key = None
+            if section not in config:
+                config[section] = []
+            continue
+
+        if indent == 0 and ":" in line:
+            key, value = line.split(":", 1)
+            config[key] = parse_scalar(value)
+            continue
+
+        if section == "global_expectations" and indent == 2 and ":" in line:
+            key, value = line.split(":", 1)
+            config[section][key] = parse_scalar(value)
+            continue
+
+        if section == "trace_required_fields" and line.startswith("- "):
+            config[section].append(line[2:].strip())
+            continue
+
+        if section == "intent_groups":
+            if indent == 2 and line.startswith("- "):
+                current_group = {}
+                config[section].append(current_group)
+                key_value = line[2:]
+                if ":" in key_value:
+                    key, value = key_value.split(":", 1)
+                    current_group[key.strip()] = parse_scalar(value)
+                current_list_key = None
+                continue
+
+            if current_group is None:
+                continue
+
+            if indent == 4 and line.endswith(":"):
+                current_list_key = line[:-1]
+                current_group[current_list_key] = []
+                continue
+
+            if indent == 4 and ":" in line:
+                key, value = line.split(":", 1)
+                current_group[key.strip()] = parse_scalar(value)
+                current_list_key = None
+                continue
+
+            if indent == 6 and current_list_key and line.startswith("- "):
+                current_group[current_list_key].append(line[2:].strip())
+                continue
+
+        if section == "adversarial_sets":
+            if indent == 2 and line.startswith("- "):
+                current_group = {}
+                config[section].append(current_group)
+                key_value = line[2:]
+                if ":" in key_value:
+                    key, value = key_value.split(":", 1)
+                    current_group[key.strip()] = parse_scalar(value)
+                current_list_key = None
+                continue
+
+            if current_group is None:
+                continue
+
+            if indent == 4 and line.endswith(":"):
+                current_list_key = line[:-1]
+                current_group[current_list_key] = []
+                continue
+
+            if indent == 4 and ":" in line:
+                key, value = line.split(":", 1)
+                current_group[key.strip()] = parse_scalar(value)
+                current_list_key = None
+                continue
+
+            if indent == 6 and current_list_key and line.startswith("- "):
+                current_group[current_list_key].append(line[2:].strip())
+                continue
+
+        if section == "evaluation_rules":
+            if indent == 2 and line.startswith("- "):
+                current_group = {}
+                config[section].append(current_group)
+                key_value = line[2:]
+                if ":" in key_value:
+                    key, value = key_value.split(":", 1)
+                    current_group[key.strip()] = parse_scalar(value)
+                current_list_key = None
+                continue
+
+            if current_group is not None and indent == 4 and ":" in line:
+                key, value = line.split(":", 1)
+                current_group[key.strip()] = parse_scalar(value)
+                continue
+
+        raise ValueError(f"Unsupported ROUTE-001 YAML line: {raw_line}")
+
+    return config
 
 
 class ParaphraseRouter:
@@ -41,35 +184,43 @@ class ParaphraseRouter:
         self.routing_rules = {
             "reflective-brief": [
                 "clarify", "goal", "assumption", "scope", "acceptance", "kickoff",
-                "kick off", "start", "begin", "ambiguous", "unclear", "what should"
+                "kick off", "start", "begin", "ambiguous", "unclear", "what should",
+                "not sure", "before deciding", "real objective"
             ],
             "reflective-spec-plan": [
                 "spec", "plan", "ticket", "design", "usage", "documentation",
-                "implementation plan", "workflow plan", "requirements", "break down", "tasks"
+                "implementation plan", "workflow plan", "requirements", "break down", "tasks",
+                "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd"
             ],
             "reflective-implement": [
                 "code", "implement", "refactor", "debug", "fix", "edit",
-                "programming", "development", "function", "parse"
+                "programming", "development", "function", "parse", "build", "add",
+                "change", "patch", "wire", "make the code"
             ],
             "reflective-review": [
                 "review", "critique", "check", "audit", "analyze", "examine",
-                "issues", "bugs", "pull request", "changes"
+                "issues", "bugs", "pull request", "changes", "look over",
+                "carefully", "make sure", "does this work", "review this like"
             ],
             "reflective-research": [
                 "research", "documentation", "docs", "investigate", "find",
-                "look up", "search", "external"
+                "look up", "search", "external", "compare", "best practice",
+                "official", "source", "source-backed", "guidance"
             ],
             "reflective-risk": [
                 "risk", "security", "privacy", "auth", "permission", "production",
-                "deployment", "migration", "destructive", "billing", "safe", "safety"
+                "deployment", "migration", "destructive", "billing", "safe", "safety",
+                "delete", "rollback", "compliance", "credential", "irreversible"
             ],
             "reflective-handoff-retro": [
                 "handoff", "retro", "retrospective", "memory", "context",
-                "consolidation", "transfer"
+                "consolidation", "transfer", "continue later", "session summary",
+                "lessons", "reusable rules"
             ],
             "reflective-dispatch": [
                 "route", "dispatch", "choose", "select", "apply library",
-                "workflow", "which skill"
+                "workflow", "which skill", "what skill", "best skill", "prompt-only",
+                "agentic workflow"
             ]
         }
     
@@ -108,115 +259,124 @@ class ParaphraseRouter:
 
 
 class ParaphraseEval:
-    PHASE1_CONSISTENCY_MIN = 0.70
-    ASPIRATIONAL_CONSISTENCY_TARGET = 0.95
-
-    def __init__(self, repo_root: str):
+    def __init__(self, repo_root: str, config_path: Path = None):
         self.repo_root = Path(repo_root).resolve()
+        self.config_path = config_path or Path(__file__).parent / "route-001-paraphrase-eval.yaml"
+        self.config = load_route_eval_config(self.config_path)
+        expectations = self.config.get("global_expectations", {})
+        self.phase1_consistency_min = float(expectations.get("phase1_route_consistency_min", 0.70))
+        self.aspirational_consistency_target = float(
+            expectations.get("aspirational_route_consistency_target", 0.95)
+        )
         self.router = ParaphraseRouter()
         self.results = {
+            "source": str(self.config_path.relative_to(self.repo_root)),
+            "thresholds": {
+                "phase1_route_consistency_min": self.phase1_consistency_min,
+                "aspirational_route_consistency_target": self.aspirational_consistency_target,
+            },
+            "implemented_rules": self.config.get("evaluation_rules", []),
             "intent_groups": [],
             "summary": {
                 "total_groups": 0,
+                "adversarial_groups": 0,
                 "total_paraphrases": 0,
                 "consistency_rate": 0.0,
                 "avg_confidence": 0.0,
+                "trace_coverage_rate": 0.0,
+                "low_confidence_trace_failures": [],
+                "silent_downgrade_incidents": [],
                 "groups_below_threshold": []
             }
         }
     
     def define_intent_groups(self) -> List[IntentGroup]:
-        """Define test intent groups with paraphrases."""
-        return [
-            IntentGroup(
-                name="implementation_task",
-                canonical_workflow="reflective-implement",
-                paraphrases=[
-                    "Write a function to parse JSON",
-                    "Implement a JSON parser",
-                    "Code a function that parses JSON data",
-                    "Create a JSON parsing function",
-                    "Add JSON parsing to the codebase",
-                    "Fix the JSON parser bug",
-                    "Refactor the JSON parsing logic"
-                ],
-                risk_level="low"
-            ),
-            IntentGroup(
-                name="spec_planning",
-                canonical_workflow="reflective-spec-plan",
-                paraphrases=[
-                    "Write a spec for the new feature",
-                    "Create an implementation plan",
-                    "Design the feature specification",
-                    "Plan the development tickets",
-                    "Document the feature requirements",
-                    "Break down the feature into tasks"
-                ],
-                risk_level="low"
-            ),
-            IntentGroup(
-                name="code_review",
-                canonical_workflow="reflective-review",
-                paraphrases=[
-                    "Review this pull request",
-                    "Check the code for issues",
-                    "Audit the implementation",
-                    "Analyze the code changes",
-                    "Examine the pull request",
-                    "Look for bugs in this code"
-                ],
-                risk_level="low"
-            ),
-            IntentGroup(
-                name="research_task",
-                canonical_workflow="reflective-research",
-                paraphrases=[
-                    "Research the best practices for authentication",
-                    "Find documentation on React hooks",
-                    "Investigate the latest Python frameworks",
-                    "Look up the API documentation",
-                    "Search for information about Kubernetes",
-                    "Find external resources on this topic"
-                ],
-                risk_level="low"
-            ),
-            IntentGroup(
-                name="risk_gating",
-                canonical_workflow="reflective-risk",
-                paraphrases=[
-                    "Review the security implications",
-                    "Check if this is safe for production",
-                    "Assess the privacy risks",
-                    "Verify the authentication changes",
-                    "Review the deployment plan for risks",
-                    "Check the migration safety"
-                ],
-                risk_level="high"
-            ),
-            IntentGroup(
-                name="clarification",
-                canonical_workflow="reflective-brief",
-                paraphrases=[
-                    "Clarify the requirements",
-                    "Define the goals and assumptions",
-                    "What should we build?",
-                    "Start by defining the scope",
-                    "Kick off the project planning",
-                    "Begin with goal clarification"
-                ],
-                risk_level="low"
+        """Load test intent groups from the ROUTE-001 YAML fixture."""
+        groups = []
+        for group in self.config.get("intent_groups", []):
+            groups.append(
+                IntentGroup(
+                    name=group["intent"],
+                    canonical_workflow=group["expected_workflow"],
+                    paraphrases=group.get("phrases", []),
+                    risk_level=group.get("risk_level", group.get("expected_rigor", "low")),
+                    expected_enhancements=group.get("expected_enhancements", []),
+                )
             )
-        ]
+        return groups
+
+    def define_adversarial_groups(self) -> List[IntentGroup]:
+        """Load adversarial boundary cases from the ROUTE-001 YAML fixture."""
+        groups = []
+        for group in self.config.get("adversarial_sets", []):
+            groups.append(
+                IntentGroup(
+                    name=group["name"],
+                    canonical_workflow=group["expected_workflow"],
+                    paraphrases=group.get("phrases", []),
+                    risk_level=group.get("expected_rigor", "medium"),
+                    expected_enhancements=group.get("expected_enhancements", []),
+                    group_type="adversarial",
+                )
+            )
+        return groups
+
+    def validate_config(self) -> None:
+        """Fail closed when the fixture omits fields the eval needs."""
+        supported_rules = {
+            "route_equivalence",
+            "low_confidence_visibility",
+            "enhancement_visibility",
+            "no_silent_downgrade",
+        }
+        configured_rules = {rule.get("name") for rule in self.config.get("evaluation_rules", [])}
+        unsupported_rules = configured_rules - supported_rules
+        if unsupported_rules:
+            raise ValueError(f"unsupported evaluation rules: {sorted(unsupported_rules)}")
+
+        required_trace_fields = set(self.config.get("trace_required_fields", []))
+        route_trace_fields = {
+            "canonical_intent",
+            "workflow",
+            "confidence",
+            "enhancements_enabled",
+            "enhancements_available",
+            "rationale",
+        }
+        if not required_trace_fields.issubset(route_trace_fields):
+            unknown = sorted(required_trace_fields - route_trace_fields)
+            raise ValueError(f"unsupported route trace fields: {unknown}")
+
+        for group in self.config.get("intent_groups", []):
+            for key in ("intent", "expected_workflow", "phrases"):
+                if key not in group:
+                    raise ValueError(f"intent group missing required key: {key}")
+            if not group["phrases"]:
+                raise ValueError(f"intent group has no phrases: {group['intent']}")
+
+        for group in self.config.get("adversarial_sets", []):
+            for key in ("name", "expected_workflow", "phrases"):
+                if key not in group:
+                    raise ValueError(f"adversarial set missing required key: {key}")
+            if not group["phrases"]:
+                raise ValueError(f"adversarial set has no phrases: {group['name']}")
+
+    def has_required_trace(self, trace: Dict[str, Any]) -> bool:
+        required_fields = self.config.get("trace_required_fields", [])
+        return all(field in trace and trace[field] not in (None, "") for field in required_fields)
     
     def run_eval(self) -> Dict:
         """Run the paraphrase routing evaluation."""
-        intent_groups = self.define_intent_groups()
+        self.validate_config()
+        intent_groups = self.define_intent_groups() + self.define_adversarial_groups()
         self.results["summary"]["total_groups"] = len(intent_groups)
+        self.results["summary"]["adversarial_groups"] = len(self.define_adversarial_groups())
         
         total_paraphrases = 0
         total_matches = 0
         total_confidence = 0.0
+        trace_checked = 0
+        trace_passed = 0
         
         for group in intent_groups:
             group_result = {
@@ -224,7 +384,10 @@ class ParaphraseEval:
                 "canonical_workflow": group.canonical_workflow,
                 "paraphrase_results": [],
                 "consistency_rate": 0.0,
-                "avg_confidence": 0.0
+                "avg_confidence": 0.0,
+                "risk_level": group.risk_level,
+                "expected_enhancements": group.expected_enhancements,
+                "group_type": group.group_type,
             }
             
             group_matches = 0
@@ -232,11 +395,39 @@ class ParaphraseEval:
             
             for paraphrase in group.paraphrases:
                 workflow, confidence, enhancements, trace = self.router.route(paraphrase)
+                route_trace = {
+                    "canonical_intent": group.name,
+                    "workflow": workflow,
+                    "confidence": confidence,
+                    "enhancements_enabled": bool(enhancements),
+                    "enhancements_available": group.expected_enhancements,
+                    "rationale": trace,
+                }
                 
                 matched = (workflow == group.canonical_workflow)
                 if matched:
                     group_matches += 1
                     total_matches += 1
+
+                if confidence < 0.5 and self.config["global_expectations"].get("require_route_trace_on_low_confidence", False):
+                    trace_checked += 1
+                    if self.has_required_trace(route_trace):
+                        trace_passed += 1
+                    else:
+                        self.results["summary"]["low_confidence_trace_failures"].append({
+                            "group": group.name,
+                            "paraphrase": paraphrase,
+                            "missing_trace": True,
+                        })
+
+                if not matched and self.config["global_expectations"].get("forbid_silent_downgrade", False):
+                    if not route_trace["rationale"]:
+                        self.results["summary"]["silent_downgrade_incidents"].append({
+                            "group": group.name,
+                            "paraphrase": paraphrase,
+                            "routed_workflow": workflow,
+                            "expected_workflow": group.canonical_workflow,
+                        })
                 
                 group_confidence += confidence
                 total_confidence += confidence
@@ -248,7 +439,8 @@ class ParaphraseEval:
                     confidence=confidence,
                     enhancements=enhancements,
                     matched_canonical=matched,
-                    trace=trace
+                    trace=trace,
+                    route_trace=route_trace,
                 )
                 
                 group_result["paraphrase_results"].append(asdict(result))
@@ -258,7 +450,7 @@ class ParaphraseEval:
             group_result["avg_confidence"] = group_confidence / len(group.paraphrases)
             
             # Check if below aspirational consistency target
-            if group_result["consistency_rate"] < self.ASPIRATIONAL_CONSISTENCY_TARGET:
+            if group_result["consistency_rate"] < self.aspirational_consistency_target:
                 self.results["summary"]["groups_below_threshold"].append({
                     "group": group.name,
                     "rate": group_result["consistency_rate"]
@@ -270,6 +462,7 @@ class ParaphraseEval:
         self.results["summary"]["total_paraphrases"] = total_paraphrases
         self.results["summary"]["consistency_rate"] = total_matches / total_paraphrases if total_paraphrases > 0 else 0
         self.results["summary"]["avg_confidence"] = total_confidence / total_paraphrases if total_paraphrases > 0 else 0
+        self.results["summary"]["trace_coverage_rate"] = trace_passed / trace_checked if trace_checked > 0 else 1.0
         
         return self.results
     
@@ -283,21 +476,31 @@ class ParaphraseEval:
         
         # Summary
         summary = self.results["summary"]
+        thresholds = self.results["thresholds"]
+        lines.append(f"Source fixture: {self.results['source']}")
+        lines.append(
+            "Thresholds: "
+            f"Phase-1 >= {thresholds['phase1_route_consistency_min']:.0%}, "
+            f"aspirational >= {thresholds['aspirational_route_consistency_target']:.0%}"
+        )
+        lines.append("")
         lines.append("📊 Summary")
-        lines.append(f"Total intent groups: {summary['total_groups']}")
+        lines.append(f"Total evaluated groups: {summary['total_groups']}")
+        lines.append(f"Adversarial groups: {summary['adversarial_groups']}")
         lines.append(f"Total paraphrases tested: {summary['total_paraphrases']}")
         lines.append(f"Overall consistency rate: {summary['consistency_rate']:.1%}")
         lines.append(f"Average confidence: {summary['avg_confidence']:.2f}")
+        lines.append(f"Low-confidence trace coverage: {summary['trace_coverage_rate']:.1%}")
         lines.append("")
         
         # Threshold check
         if summary["groups_below_threshold"]:
-            lines.append("⚠️ Groups below 95% aspirational consistency target:")
+            lines.append("⚠️ Groups below aspirational consistency target:")
             for item in summary["groups_below_threshold"]:
                 lines.append(f"  - {item['group']}: {item['rate']:.1%}")
             lines.append("")
         else:
-            lines.append("✅ All groups meet 95% aspirational consistency target")
+            lines.append("✅ All groups meet aspirational consistency target")
             lines.append("")
         
         # Per-group details
@@ -306,6 +509,7 @@ class ParaphraseEval:
         
         for group in self.results["intent_groups"]:
             lines.append(f"Group: {group['name']}")
+            lines.append(f"Type: {group['group_type']}")
             lines.append(f"Canonical workflow: {group['canonical_workflow']}")
             lines.append(f"Consistency: {group['consistency_rate']:.1%}")
             lines.append(f"Avg confidence: {group['avg_confidence']:.2f}")
@@ -345,13 +549,19 @@ def main():
     print(f"\n💾 Results saved to: {output_file}")
     
     # Exit with appropriate code
-    if results["summary"]["consistency_rate"] >= ParaphraseEval.PHASE1_CONSISTENCY_MIN:
+    hard_gates_pass = (
+        results["summary"]["consistency_rate"] >= eval.phase1_consistency_min
+        and results["summary"]["trace_coverage_rate"] == 1.0
+        and len(results["summary"]["silent_downgrade_incidents"]) == 0
+    )
+
+    if hard_gates_pass:
         print("✅ Eval passed: Phase-1 consistency threshold met")
         return 0
     else:
         print(
             f"❌ Eval failed: {results['summary']['consistency_rate']:.1%} "
-            f"consistency < {ParaphraseEval.PHASE1_CONSISTENCY_MIN:.0%} Phase-1 threshold"
+            f"consistency < {eval.phase1_consistency_min:.0%} Phase-1 threshold"
         )
         return 1
 
