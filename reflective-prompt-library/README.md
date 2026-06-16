@@ -29,7 +29,7 @@ Core identity prompt
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
-- `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 8 workflow skills.
+- `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 workflow skills.
 - `skills/examples/`: two practical input/output examples per workflow skill.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
@@ -52,6 +52,7 @@ The prompt files are the source material. The `skills/` directory is the operati
 | Clarify goal, assumptions, scope, acceptance, falsifiability | `skills/reflective-brief/SKILL.md` |
 | Write spec, usage-first design, and task slices | `skills/reflective-spec-plan/SKILL.md` |
 | Implement code with verification and traceability | `skills/reflective-implement/SKILL.md` |
+| Challenge unnecessary code, dependencies, abstractions, or scope before implementation | `skills/reflective-minimality/SKILL.md` |
 | Review code, plans, specs, and AI outputs | `skills/reflective-review/SKILL.md` |
 | Research external docs, DeepWiki, and long sources | `skills/reflective-research/SKILL.md` |
 | Gate high-risk work before execution | `skills/reflective-risk/SKILL.md` |

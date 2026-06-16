@@ -18,7 +18,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 - Checks for required frontmatter fields (name, description)
 
 **Results:**
-- Scanned 94 markdown files
+- Scanned 96 markdown files
 - 0 errors found
 - All links and references are valid
 
@@ -39,10 +39,10 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Indexed 72 total files (64 prompts, 8 skills)
+- Indexed 74 total files (65 prompts, 9 skills)
 - 2 main categories (prompt-library, skills)
 - 10 prompt-library subcategories
-- 8 skill subcategories
+- 9 skill subcategories
 - Output: `reflective-prompt-library/index.json`
 
 **Usage:**
@@ -63,10 +63,10 @@ python3 reflective-prompt-library/plans/generate_index.py
 - Provides actionable suggestions
 
 **Results:**
-- Scanned 94 files
+- Scanned 96 files
 - 0 errors, 0 warnings
-- 73 files with suggestions (mostly non-critical)
-- All 8 skills pass validation
+- 75 files with suggestions (mostly non-critical)
+- All 9 skills pass validation
 
 **Usage:**
 ```bash
@@ -87,7 +87,7 @@ python3 reflective-prompt-library/plans/lint_skills.py
 - Generates consistency reports
 
 **Results:**
-- Tested 12 groups with 90 paraphrases, including 4 adversarial boundary groups
+- Tested 13 groups with 100 paraphrases, including 4 adversarial boundary groups and the minimality gate group
 - Overall consistency: 100.0% (passes Phase-1 threshold >=70% and aspirational target >=95%)
 - Low-confidence route trace coverage: 100.0%
 - Adversarial groups now pass through boundary rules rather than isolated synonym matching
@@ -111,7 +111,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 6 holdout groups with 24 paraphrases
+- Tested 7 holdout groups with 28 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - Review phrasing around patches/regressions and clarification phrasing around unknown desired outcome now pass through boundary concepts
@@ -124,7 +124,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 
 ### 5. Lightweight Governance Metadata ✅
 
-**Files:** All 8 SKILL.md files updated
+**Files:** All 9 SKILL.md files updated
 
 **What was added:**
 - `risk_level`: low/medium/high
@@ -137,6 +137,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 - reflective-spec-plan (low, false, false)
 - reflective-implement (low, false, false)
 - reflective-review (low, false, false)
+- reflective-minimality (low, false, false)
 - reflective-research (low, false, true)
 - reflective-risk (high, true, false)
 - reflective-handoff-retro (low, false, false)
@@ -175,7 +176,7 @@ python3 reflective-prompt-library/plans/validate_governance.py
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
 
 **What it does:**
-- Defines 20 golden tasks for validation
+- Defines 21 golden tasks for validation
 - Covers all major workflows (7 different skills)
 - Balanced difficulty distribution (5 easy, 9 medium, 6 hard)
 - Diverse categories (12 different categories)
@@ -183,8 +184,8 @@ python3 reflective-prompt-library/plans/validate_governance.py
 - Expected workflow mapping
 
 **Results:**
-- 20 benchmark tasks created
-- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, and SOP compiler planning
+- 21 benchmark tasks created
+- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, SOP compiler planning, and minimality
 - Output: `plans/benchmark-tasks.json`
 
 **Usage:**
@@ -198,7 +199,7 @@ The implementation aligns with research findings:
 
 1. **Quality over quantity** - TeaPrompt maintains 72 indexed files vs thousands in other repos
 2. **Hierarchical organization** - 6 categories with clear structure
-3. **Focused skills** - 8 core skills vs comprehensive documentation
+3. **Focused skills** - 8 lifecycle skills plus 1 narrow minimality gate vs comprehensive documentation
 4. **Validation discipline** - Automated quality gates prevent degradation
 5. **Lightweight governance** - SRCP simplified to 3 critical fields
 
@@ -206,17 +207,17 @@ The implementation aligns with research findings:
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 94 | ✅ All pass |
+| Files validated | 96 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
-| Skills with governance | 8/8 | ✅ Complete |
-| Benchmark tasks | 20 | ✅ Ready |
+| Skills with governance | 9/9 | ✅ Complete |
+| Benchmark tasks | 21 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
 | Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
 
-The current routing consistency measurement is 100.0% on ROUTE-001 across 12 groups and 90 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
+The current routing consistency measurement is 100.0% on ROUTE-001 across 13 groups and 100 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set, including the minimality gate. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
 
 ### Critical Reflection
 
@@ -261,7 +262,7 @@ Based on the research and current implementation, suggested next steps:
 - `reflective-prompt-library/plans/benchmark-tasks.json` (test data, gitignored)
 
 **Modified:**
-- All 8 SKILL.md files (added governance metadata)
+- All 9 SKILL.md files (governance metadata covered)
 - `.gitignore` (added entries for generated test files)
 
 ## Validation Commands

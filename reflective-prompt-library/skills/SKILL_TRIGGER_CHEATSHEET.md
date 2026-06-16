@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_TRIGGER_CHEATSHEET.zh-TW.md)
 
 # Skill Trigger Cheatsheet
 
-This page is a fast selector for the 8 TeaPrompt workflow skills.
+This page is a fast selector for the 9 TeaPrompt workflow skills.
 
 Use it when you need quick routing instead of reading each `SKILL.md` in full.
 
@@ -65,6 +65,21 @@ Do not use when:
 
 - The task is high-risk and not yet gated; run `reflective-risk` first.
 - Requirements are still unclear; use `reflective-brief` or `reflective-spec-plan`.
+
+## `reflective-minimality`
+
+Trigger cues:
+
+- "Avoid overengineering, bloat, boilerplate, or unnecessary dependencies."
+- "Can this be deleted, narrowed, deferred, or solved with stdlib/native behavior?"
+- "Run a YAGNI / minimality / Ponytail-style gate before coding."
+- "Review this diff only for complexity we can cut."
+
+Do not use when:
+
+- Requirements are still unclear; use `reflective-brief` or `reflective-spec-plan` first.
+- The simplification may remove security, privacy, auth, data-loss prevention, accessibility, compatibility, or explicit requirements.
+- A full correctness review is needed; pair it with `reflective-review`.
 
 ## `reflective-review`
 
@@ -129,9 +144,10 @@ If uncertain, apply this order:
 1. `reflective-dispatch`
 2. `reflective-risk` (if any high-risk or side-effect authority signal appears)
 3. `reflective-brief` or `reflective-spec-plan`
-4. `reflective-implement`
-5. `reflective-review`
-6. `reflective-handoff-retro`
+4. `reflective-minimality` (if bloat, dependency, abstraction, or scope creep risk appears)
+5. `reflective-implement`
+6. `reflective-review`
+7. `reflective-handoff-retro`
 
 When uncertain and low-risk:
 - Prefer a visible default-up to a silent downgrade.

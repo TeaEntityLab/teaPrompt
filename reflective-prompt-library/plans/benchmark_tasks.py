@@ -2,7 +2,7 @@
 """
 Small Benchmark Set for TeaPrompt
 
-10-20 golden tasks to validate TeaPrompt skill effectiveness.
+About 20 golden tasks to validate TeaPrompt skill effectiveness.
 Compares baseline (no skill) vs skill-assisted performance.
 """
 
@@ -31,7 +31,7 @@ class BenchmarkSet:
         self.tasks = self.define_tasks()
     
     def define_tasks(self) -> List[BenchmarkTask]:
-        """Define 10-20 golden tasks."""
+        """Define the golden benchmark tasks."""
         return [
             BenchmarkTask(
                 id="B001",
@@ -327,6 +327,21 @@ class BenchmarkSet:
                     "Workflow level is justified from prompt-only through runner-and-hook options",
                     "Artifact contract, deterministic gates, and human approval boundaries are defined",
                     "Overengineering risks and promotion criteria are documented"
+                ]
+            ),
+            BenchmarkTask(
+                id="B021",
+                name="Minimal implementation challenge",
+                description="Evaluate whether a requested helper, wrapper, dependency, and configuration layer should exist before implementing a small formatting requirement",
+                expected_workflow="reflective-minimality",
+                difficulty="medium",
+                category="minimality",
+                acceptance_criteria=[
+                    "The need for new code is challenged before implementation",
+                    "Standard library, platform-native behavior, and existing dependencies are checked first",
+                    "Unneeded abstraction, dependency, and config surfaces are rejected or narrowed",
+                    "Safety-critical behavior and explicit requirements are preserved",
+                    "Any intentional shortcut records a ceiling and observable upgrade trigger"
                 ]
             )
         ]

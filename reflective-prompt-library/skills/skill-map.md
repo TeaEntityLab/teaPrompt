@@ -6,7 +6,8 @@ This file maps the prompt library into a small skill/workflow set.
 
 Prompt is the entry point, Skill is the action, Context is the memory, Quality Gate is the reality check, and Human Review is the high-risk insurance.
 
-The library contains many prompts, but the workflow layer intentionally has only eight skills:
+The library contains many prompts, but the workflow layer intentionally stays compact:
+eight lifecycle skills plus one cross-cutting minimality gate.
 
 1. `reflective-dispatch`
 2. `reflective-brief`
@@ -16,6 +17,7 @@ The library contains many prompts, but the workflow layer intentionally has only
 6. `reflective-research`
 7. `reflective-risk`
 8. `reflective-handoff-retro`
+9. `reflective-minimality`
 
 This keeps invocation simple while preserving prompt depth as source material.
 
@@ -24,7 +26,7 @@ This keeps invocation simple while preserving prompt depth as source material.
 To ensure structural consistency across the repository, two contract forms are supported:
 
 ### 1. Active Core Contract (5-Field)
-The active core implementation of the 8 workflow skills utilizes a highly compact, operational contract to maximize context efficiency during runtime execution:
+The active core implementation of the workflow skills utilizes a highly compact, operational contract to maximize context efficiency during runtime execution:
 
 *   **Trigger**: Intent signals for activation, not exact magic words.
 *   **Methods**: The named reasoning or execution procedures it utilizes.
@@ -60,6 +62,7 @@ Routing fairness rule:
 | Task start, spec writer, usage-first, task slicer, workflow engine, SOP compiler | `reflective-spec-plan`, with `04-agent/sop-compiler.md` as supporting source material |
 | Implementation agent, test designer, local feedback, Codex/OpenCode | `reflective-implement` |
 | Code reviewer, review-rating-fix | `reflective-review` |
+| Minimality, anti-overengineering, YAGNI, stdlib/native/dependency ladder | `reflective-minimality`, with `reflective-review` or `reflective-implement` as needed |
 | Context engineering, long context, Gemini long document, research, scaffold provenance | `reflective-research`, with `04-agent/agent-scaffold-provenance.md` as supporting source material |
 | High-risk and runtime trust boundaries | `reflective-risk`, with `04-agent/runtime-trust-boundary.md` as supporting source material |
 | Context handoff, retro, memory consolidation | `reflective-handoff-retro` |

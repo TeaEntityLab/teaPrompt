@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-14T03:06:10.728289",
+  "generated_at": "2026-06-17T00:28:52.614252",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -30,6 +30,7 @@
         "plans": {
           "path": "reflective-prompt-library/plans",
           "files": [
+            "ponytail-minimality-reflection-2026-06-17.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
@@ -126,6 +127,12 @@
       "subcategories": {
         "reflective-dispatch": {
           "path": "reflective-prompt-library/skills/reflective-dispatch",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "reflective-minimality": {
+          "path": "reflective-prompt-library/skills/reflective-minimality",
           "files": [
             "SKILL.md"
           ]
@@ -617,6 +624,56 @@
       ],
       "line_count": 116,
       "char_count": 2465
+    },
+    {
+      "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ponytail-minimality-reflection-2026-06-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Ponytail Minimality Reflection"
+        },
+        {
+          "level": 2,
+          "text": "Sources Checked"
+        },
+        {
+          "level": 2,
+          "text": "Core Finding"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Critique"
+        },
+        {
+          "level": 2,
+          "text": "Adopted Change"
+        },
+        {
+          "level": 2,
+          "text": "Rejected Changes"
+        },
+        {
+          "level": 2,
+          "text": "Updated Files"
+        },
+        {
+          "level": 2,
+          "text": "Future Promotion Criteria"
+        }
+      ],
+      "line_count": 91,
+      "char_count": 5496
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -1124,6 +1181,10 @@
         },
         {
           "level": 3,
+          "text": "4.1 Holdout Routing Eval ✅"
+        },
+        {
+          "level": 3,
           "text": "5. Lightweight Governance Metadata ✅"
         },
         {
@@ -1145,6 +1206,14 @@
         {
           "level": 3,
           "text": "Routing Consistency Tracking"
+        },
+        {
+          "level": 3,
+          "text": "Critical Reflection"
+        },
+        {
+          "level": 3,
+          "text": "Holdout Tracking"
         },
         {
           "level": 2,
@@ -1183,8 +1252,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 259,
-      "char_count": 9023
+      "line_count": 299,
+      "char_count": 11806
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -2490,8 +2559,8 @@
           "text": "Installation Notes"
         }
       ],
-      "line_count": 75,
-      "char_count": 3683
+      "line_count": 78,
+      "char_count": 3928
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -2531,6 +2600,10 @@
         },
         {
           "level": 2,
+          "text": "`reflective-minimality`"
+        },
+        {
+          "level": 2,
           "text": "`reflective-review`"
         },
         {
@@ -2550,8 +2623,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 138,
-      "char_count": 4300
+      "line_count": 154,
+      "char_count": 5032
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -2593,6 +2666,10 @@
         },
         {
           "level": 2,
+          "text": "`reflective-minimality`"
+        },
+        {
+          "level": 2,
           "text": "`reflective-review`"
         },
         {
@@ -2612,8 +2689,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 122,
-      "char_count": 1817
+      "line_count": 138,
+      "char_count": 2296
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -3063,6 +3140,77 @@
       ],
       "line_count": 111,
       "char_count": 4685
+    },
+    {
+      "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "reflective-minimality",
+      "name": "reflective-minimality",
+      "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild. It challenges whether code should exist, prefers deletion, standard library, platform-native features, existing dependencies, one-line or one-file solutions, and requires intentional shortcuts to carry explicit ceiling and upgrade triggers.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "reflective-minimality",
+        "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild. It challenges whether code should exist, prefers deletion, standard library, platform-native features, existing dependencies, one-line or one-file solutions, and requires intentional shortcuts to carry explicit ceiling and upgrade triggers.",
+        "license": "MIT",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reflective Minimality"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 2,
+          "text": "Minimality Ladder"
+        },
+        {
+          "level": 2,
+          "text": "Safety Floor"
+        },
+        {
+          "level": 2,
+          "text": "Debt Marker"
+        },
+        {
+          "level": 2,
+          "text": "Complexity-Only Review Format"
+        }
+      ],
+      "line_count": 112,
+      "char_count": 4968
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -3908,5 +4056,5 @@
       "char_count": 3909
     }
   ],
-  "total_files": 72
+  "total_files": 74
 }

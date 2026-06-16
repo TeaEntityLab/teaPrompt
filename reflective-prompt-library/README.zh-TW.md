@@ -21,7 +21,7 @@ Doing the right thing > doing things right.
 - `04-agent/`：agent 分級、workflow、retro、memory consolidation
 - `05-domain/`：高風險、研究、商業、學習、寫作、創意
 - `06-repo/`：AGENTS/Cursor/Codex/OpenCode 指令模板
-- `skills/`：8 個可執行工作流 skill
+- `skills/`：9 個可執行工作流 skill
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`：一頁式觸發口訣
 - `skills/examples/`：每個 skill 的兩組 input/output 示例
 - `plans/`：規劃與研究紀錄
@@ -36,6 +36,7 @@ Doing the right thing > doing things right.
 | 釐清目標、假設、範圍、驗收、可證偽 | `skills/reflective-brief/SKILL.md` |
 | 寫 spec、usage-first 設計、task slices | `skills/reflective-spec-plan/SKILL.md` |
 | 實作程式碼，附驗證與可追蹤性 | `skills/reflective-implement/SKILL.md` |
+| 實作前挑戰不必要 code、dependency、抽象層或 scope | `skills/reflective-minimality/SKILL.md` |
 | 審查 code / plan / spec / AI output | `skills/reflective-review/SKILL.md` |
 | 研究外部文件、DeepWiki、長篇文章 | `skills/reflective-research/SKILL.md` |
 | 高風險任務執行前閘門 | `skills/reflective-risk/SKILL.md` |

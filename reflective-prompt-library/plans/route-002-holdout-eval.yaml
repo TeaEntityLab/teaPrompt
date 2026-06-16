@@ -84,6 +84,17 @@ holdout_sets:
       - identify assumptions before planning
       - scope this before choosing an approach
 
+  - name: minimality_holdout
+    expected_workflow: reflective-minimality
+    expected_rigor: medium
+    expected_enhancements:
+      - complexity_cut_list
+    phrases:
+      - tell me what code we can avoid writing
+      - inspect this for bloat without doing a full correctness review
+      - prefer stdlib or native behavior over another package
+      - do a minimality gate before implementing the helper
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

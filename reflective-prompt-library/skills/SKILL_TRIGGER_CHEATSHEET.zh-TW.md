@@ -4,7 +4,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 # Skill 觸發口訣（速查版）
 
-這份是 8 個 workflow skills 的一頁式選用指南。
+這份是 9 個 workflow skills 的一頁式選用指南。
 
 分流公平性說明：
 - 下面的觸發提示只是範例，不是必要措辭。
@@ -60,6 +60,21 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 - 高風險尚未過 gate（先 `reflective-risk`）
 - 需求仍然不明確 → 先走 `reflective-brief` 或 `reflective-spec-plan`
 
+## `reflective-minimality`
+
+何時用：
+
+- 要避免過度設計、膨脹、樣板碼或不必要 dependency
+- 要判斷是否可刪除、縮小、延後，或用 stdlib / native capability 解決
+- 實作前需要 YAGNI / minimality / Ponytail-style gate
+- 只想從 diff 裡找可刪的複雜度
+
+不要用在：
+
+- 需求仍不清楚（先 `reflective-brief` 或 `reflective-spec-plan`）
+- 簡化可能移除 security / privacy / auth / data-loss prevention / accessibility / compatibility / explicit requirements
+- 需要完整 correctness review（應搭配 `reflective-review`）
+
 ## `reflective-review`
 
 何時用：
@@ -113,9 +128,10 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 1. `reflective-dispatch`
 2. `reflective-risk`（若有高風險或副作用權限訊號）
 3. `reflective-brief` / `reflective-spec-plan`
-4. `reflective-implement`
-5. `reflective-review`
-6. `reflective-handoff-retro`
+4. `reflective-minimality`（若有膨脹、dependency、抽象層或 scope creep 風險）
+5. `reflective-implement`
+6. `reflective-review`
+7. `reflective-handoff-retro`
 
 不確定且低風險時：
 - 優先選擇可見的向上分流（default-up），而不是靜默降級。

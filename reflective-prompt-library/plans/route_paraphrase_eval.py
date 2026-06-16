@@ -204,6 +204,16 @@ class ParaphraseRouter:
                 "programming", "development", "function", "parse", "build", "add",
                 "change", "patch", "wire", "make the code"
             ],
+            "reflective-minimality": [
+                "minimal", "minimality", "overengineering", "over-engineering",
+                "bloat", "boilerplate", "yagni", "delete", "deleted",
+                "narrow", "defer", "stdlib", "standard library", "native feature",
+                "native behavior", "existing dependency", "new dependency",
+                "dependency", "one file", "one-line", "one line", "smallest",
+                "wrapper", "abstraction", "factory", "unnecessary complexity",
+                "avoid writing", "avoid overengineering", "complexity-only",
+                "ceiling", "upgrade trigger"
+            ],
             "reflective-review": [
                 "review", "critique", "check", "audit", "analyze", "examine",
                 "issues", "bugs", "pull request", "changes", "look over",
@@ -279,6 +289,23 @@ class ParaphraseRouter:
             adjustments["reflective-brief"] = adjustments.get("reflective-brief", 0) + 2
             reasons.append("brief boundary: unresolved intent or outcome")
 
+        minimality_signals = [
+            "overengineering", "over-engineering", "bloat", "boilerplate", "yagni",
+            "standard library", "stdlib", "native feature", "native behavior",
+            "new dependency", "wrapper", "abstraction", "unnecessary complexity",
+            "avoid writing", "smallest implementation", "one file", "ceiling",
+            "upgrade trigger", "full correctness review"
+        ]
+        minimality_context = [
+            "avoid", "delete", "deleted", "covers", "run", "review", "diff",
+            "need", "challenge", "prefer", "minimality gate", "before implementing"
+        ]
+        if any(signal in text_lower for signal in minimality_signals) and any(
+            ctx in text_lower for ctx in minimality_context
+        ):
+            adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 2
+            reasons.append("minimality boundary: complexity reduction requested")
+
         return adjustments, reasons
     
     def route(self, text: str) -> Tuple[str, float, List[str], str]:
@@ -302,6 +329,7 @@ class ParaphraseRouter:
         # Return highest scoring workflow
         priority = [
             "reflective-risk",
+            "reflective-minimality",
             "reflective-review",
             "reflective-brief",
             "reflective-spec-plan",

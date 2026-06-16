@@ -157,6 +157,24 @@ intent_groups:
       - Decide whether this needs a workflow or just a prompt
       - What skill is appropriate here?
 
+  - intent: minimality_gate
+    expected_workflow: reflective-minimality
+    expected_rigor: medium
+    expected_enhancements:
+      - complexity_cut_list
+      - safety_floor
+    phrases:
+      - Avoid overengineering this change
+      - Can this be deleted instead of implemented?
+      - Check whether a standard library or native feature already covers this
+      - Run a YAGNI pass before coding
+      - Review this diff only for unnecessary complexity
+      - Do we need this wrapper and new dependency?
+      - Find the smallest implementation that preserves the requirements
+      - Challenge the abstraction before adding it
+      - Can this be one file instead of a framework?
+      - Mark any intentional shortcut with a ceiling and upgrade trigger
+
 adversarial_sets:
   - name: native_engineering
     expected_workflow: reflective-risk
