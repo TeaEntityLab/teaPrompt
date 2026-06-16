@@ -21,6 +21,7 @@ It is inspired by the Ponytail-style "lazy senior developer" pattern, but in thi
 - The user asks for minimality, YAGNI, anti-bloat, "do less," "can this be deleted," "avoid overengineering," or a Ponytail-like pass.
 - A proposed change introduces a new dependency, new framework, new interface, new factory, new config surface, or multiple files for a small requirement.
 - A code review needs complexity-only findings before or alongside correctness review.
+- A repo-wide complexity audit or intentional shortcut/debt ledger is requested.
 
 ### Methods
 
@@ -29,6 +30,8 @@ It is inspired by the Ponytail-style "lazy senior developer" pattern, but in thi
 - Capability ladder: prefer standard library, platform-native behavior, existing dependencies, then one-line or one-file solutions before custom code.
 - Safety floor: identify behavior that must not be simplified away.
 - Debt marker: when intentionally deferring robustness, record a ceiling and an observable upgrade trigger.
+- Debt ledger: collect intentional shortcut markers and flag entries without upgrade triggers.
+- Complexity audit: scan for one-implementation abstractions, avoidable dependencies, wrapper-only delegation, dead flags, and hand-rolled standard library behavior.
 - Runnable check: keep one minimal check for non-trivial logic.
 
 ### Output
@@ -39,6 +42,7 @@ It is inspired by the Ponytail-style "lazy senior developer" pattern, but in thi
 - Safety floor: validation, security, data-loss, accessibility, compatibility, and explicit requirements that must remain.
 - Verification: the smallest runnable check that proves non-trivial logic.
 - Debt markers: only when an intentional shortcut has a known ceiling and upgrade trigger.
+- Debt ledger: grouped marker list with no-trigger risks when requested.
 
 ### Never
 
@@ -110,3 +114,7 @@ If there is nothing meaningful to cut:
 ```text
 Lean already. Ship.
 ```
+
+For a repo-wide audit, rank the largest cuts first and use the same tags.
+
+For a debt ledger, scan intentional shortcut markers and flag any entry that lacks a ceiling or upgrade trigger.
