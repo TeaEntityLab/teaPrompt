@@ -1,5 +1,6 @@
 > **NOTE**: This root `AGENTS.md` remains an active repository instruction file. The section below is an auto-generated memory context snapshot managed by `claude-mem`; treat it as project context, not as a replacement for current user/developer instructions. For additional project guidance, see:
 > - `/Users/teee/dev/teaPrompt/reflective-prompt-library/06-repo/AGENTS.md` — repository-level instruction template
+> - `/Users/teee/dev/teaPrompt/reflective-prompt-library/PROJECT_KNOWLEDGE.md` — non-normative project rationale (read-first for architecture / governance / decision tasks)
 > - `/Users/teee/dev/teaPrompt/reflective-prompt-library/README.md` — full library documentation
 > - `/Users/teee/dev/teaPrompt/README.md` — project overview
 > - Individual skills under `reflective-prompt-library/skills/`

@@ -101,6 +101,35 @@ Avoid:
 
 ---
 
+## Project Knowledge Layer
+
+`PROJECT_KNOWLEDGE.md` is the project's curated *rationale* layer: why the
+project believes what it believes, where it is going, and what it has learned.
+It is **non-normative** — it never overrides this file or any `SKILL.md`.
+
+Read-first rule:
+
+- For non-trivial tasks touching architecture, workflow, governance, or an
+  existing decision, read the relevant section of `PROJECT_KNOWLEDGE.md` before
+  planning. No human invocation is required.
+
+Binding-migration rule:
+
+- This file (`AGENTS.md`) and `SKILL.md` files are the only sources of binding,
+  must-follow rules. If something in `PROJECT_KNOWLEDGE.md` starts prescribing
+  agent behavior, move it here instead of leaving it there.
+- The separation is enforced mechanically by
+  `plans/validate_project_knowledge.py`, which fails on normative language in
+  `PROJECT_KNOWLEDGE.md` outside explanatory blockquotes.
+
+Promotion path:
+
+- `reflective-handoff-retro` may propose knowledge-promotion candidates
+  (durable lessons, decisions). A candidate is promoted only with evidence of
+  recurrence; one-off incidents stay in plans, not in `PROJECT_KNOWLEDGE.md`.
+
+---
+
 ## Review Standard
 
 Every final report must include:
