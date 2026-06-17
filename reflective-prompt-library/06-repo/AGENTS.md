@@ -103,9 +103,12 @@ Avoid:
 
 ## Project Knowledge Layer
 
-`PROJECT_KNOWLEDGE.md` is the project's curated *rationale* layer: why the
+`PROJECT_KNOWLEDGE.md` is the project's curated *judgement* layer: why the
 project believes what it believes, where it is going, and what it has learned.
-It is **non-normative** — it never overrides this file or any `SKILL.md`.
+It is **non-authoritative**, not non-normative: project-design principles may
+guide product and architecture choices, but they never grant agent authority or
+override this file, higher-authority instructions, user authorization, or any
+`SKILL.md`.
 
 Read-first rule:
 
@@ -115,18 +118,24 @@ Read-first rule:
 
 Binding-migration rule:
 
-- This file (`AGENTS.md`) and `SKILL.md` files are the only sources of binding,
-  must-follow rules. If something in `PROJECT_KNOWLEDGE.md` starts prescribing
-  agent behavior, move it here instead of leaving it there.
+- This file (`AGENTS.md`) and `SKILL.md` files are the only repository sources of
+  agent operating rules. If `PROJECT_KNOWLEDGE.md` starts prescribing agent
+  execution, permissions, tools, or required workflow, move that rule here or
+  into the relevant skill. Keep project-design rationale and constraints in the
+  knowledge layer.
 - The separation is enforced mechanically by
-  `plans/validate_project_knowledge.py`, which fails on normative language in
-  `PROJECT_KNOWLEDGE.md` outside explanatory blockquotes.
+  `plans/validate_project_knowledge.py`, which verifies the authority boundary
+  and catches explicit agent-directed rules without banning ordinary normative
+  language used by project-design principles.
 
 Promotion path:
 
-- `reflective-handoff-retro` may propose knowledge-promotion candidates
-  (durable lessons, decisions). A candidate is promoted only with evidence of
-  recurrence; one-off incidents stay in plans, not in `PROJECT_KNOWLEDGE.md`.
+- `reflective-handoff-retro` owns the promotion-candidate contract: candidate,
+  evidence, destination, authority class, proposed action, approval state,
+  sources, and review/retirement trigger.
+- A candidate enters the long-term project-judgement layer only after explicit
+  human approval. One-off incidents stay in plans or retros. Repeated procedures
+  become project-local skill candidates rather than prose lessons.
 
 ---
 
@@ -142,4 +151,3 @@ Every final report must include:
 6. Spec-to-code traceability
 7. Remaining work
 8. Human review needs
-

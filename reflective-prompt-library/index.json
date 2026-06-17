@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-17T00:28:52.614252",
+  "generated_at": "2026-06-17T19:59:51.346709",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -24,6 +24,7 @@
           "files": [
             "codex-opencode.md",
             "cursor-rules.md",
+            "PROJECT_KNOWLEDGE.template.md",
             "AGENTS.md"
           ]
         },
@@ -35,11 +36,13 @@
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "knowie-project-knowledge-reflection-2026-06-17.md",
             "harness-1-state-ledger-research.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "QUALITY_GATES_SUMMARY.md",
             "ROUTING_CONTRACT.md",
+            "project-knowledge-authority-promotion-decision-2026-06-17.md",
             "skill-workflow-research-synthesis.md",
             "prompt-library-build-plan.md",
             "runtime-governance-learning-plan-2026-06-11.md",
@@ -580,6 +583,52 @@
       "char_count": 718
     },
     {
+      "path": "reflective-prompt-library/06-repo/PROJECT_KNOWLEDGE.template.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "06-repo",
+      "name": "PROJECT_KNOWLEDGE.template",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Project Knowledge — [Project Name]"
+        },
+        {
+          "level": 2,
+          "text": "Governing Principles"
+        },
+        {
+          "level": 2,
+          "text": "Current Direction"
+        },
+        {
+          "level": 2,
+          "text": "Durable Lessons"
+        },
+        {
+          "level": 3,
+          "text": "Lesson: [Name]"
+        },
+        {
+          "level": 2,
+          "text": "Decision Index"
+        },
+        {
+          "level": 2,
+          "text": "Growth Gate"
+        }
+      ],
+      "line_count": 70,
+      "char_count": 2088
+    },
+    {
       "path": "reflective-prompt-library/06-repo/AGENTS.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -619,11 +668,15 @@
         },
         {
           "level": 2,
+          "text": "Project Knowledge Layer"
+        },
+        {
+          "level": 2,
           "text": "Review Standard"
         }
       ],
-      "line_count": 116,
-      "char_count": 2465
+      "line_count": 153,
+      "char_count": 4170
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -672,8 +725,8 @@
           "text": "Future Promotion Criteria"
         }
       ],
-      "line_count": 91,
-      "char_count": 5496
+      "line_count": 100,
+      "char_count": 6747
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -922,6 +975,66 @@
       ],
       "line_count": 102,
       "char_count": 7763
+    },
+    {
+      "path": "reflective-prompt-library/plans/knowie-project-knowledge-reflection-2026-06-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "knowie-project-knowledge-reflection-2026-06-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "project-knowledge-authority-promotion-decision-2026-06-17.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Knowie / Project-Knowledge Reflection - 2026-06-17"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Follow-up (2026-06-17): verified against the upstream repo"
+        },
+        {
+          "level": 2,
+          "text": "Decision Refinement (2026-06-17)"
+        },
+        {
+          "level": 2,
+          "text": "Promotion Gate (for future escalation)"
+        }
+      ],
+      "line_count": 138,
+      "char_count": 8726
     },
     {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
@@ -1252,8 +1365,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 299,
-      "char_count": 11806
+      "line_count": 300,
+      "char_count": 11962
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1336,6 +1449,52 @@
       ],
       "line_count": 103,
       "char_count": 3153
+    },
+    {
+      "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "project-knowledge-authority-promotion-decision-2026-06-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Project-Knowledge Authority and Promotion Decision — 2026-06-17"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Evidence That Changed the Decision"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Rejected Alternatives"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        }
+      ],
+      "line_count": 75,
+      "char_count": 4131
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -3209,8 +3368,8 @@
           "text": "Complexity-Only Review Format"
         }
       ],
-      "line_count": 112,
-      "char_count": 4968
+      "line_count": 120,
+      "char_count": 5572
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -3715,7 +3874,8 @@
         "03-context/context-handoff.md",
         "04-agent/retro.md",
         "04-agent/memory-consolidation.md",
-        "04-agent/runtime-trust-boundary.md"
+        "04-agent/runtime-trust-boundary.md",
+        "06-repo/PROJECT_KNOWLEDGE.template.md"
       ],
       "structure": [
         {
@@ -3848,11 +4008,23 @@
         },
         {
           "level": 2,
+          "text": "Project-Knowledge Promotion Contract"
+        },
+        {
+          "level": 2,
+          "text": "Project-Knowledge Promotion Candidates"
+        },
+        {
+          "level": 3,
+          "text": "Candidate: <short name>"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 100,
-      "char_count": 2678
+      "line_count": 137,
+      "char_count": 4491
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -4056,5 +4228,5 @@
       "char_count": 3909
     }
   ],
-  "total_files": 74
+  "total_files": 77
 }

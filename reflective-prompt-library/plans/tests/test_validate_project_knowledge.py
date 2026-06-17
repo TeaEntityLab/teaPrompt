@@ -15,7 +15,9 @@ VALID_DOC = """Language: English
 
 # Project Knowledge — Test
 
-> NON-NORMATIVE. Banner prose may say must and shall freely.
+> **NON-AUTHORITATIVE FILE.** Project-design principles may guide choices, but
+> this file does not authorize agents. Agent operating rules live in
+> [AGENTS.md](AGENTS.md) and [SKILL.md](skills/example/SKILL.md).
 
 ## Governing Principles
 
@@ -73,20 +75,49 @@ def test_missing_section_fails(tmp_path):
     assert any("Decision Index" in e for e in result["errors"])
 
 
-def test_binding_language_in_body_fails(tmp_path):
+def test_explicit_agent_directive_in_body_fails(tmp_path):
     doc = VALID_DOC.replace(
         "- A principle pointer — see [x](METHODOLOGY_MAP.md)",
-        "- Agents must always re-read this file first",
+        "- Agents must re-read this file first",
     )
     result = _write(tmp_path, doc).validate()
     assert not result["valid"]
-    assert any("binding language" in e.lower() for e in result["errors"])
+    assert any("agent-directed rule" in e.lower() for e in result["errors"])
 
 
-def test_binding_language_in_blockquote_is_exempt(tmp_path):
-    # The banner already contains "must" and "shall"; that must not trip the check.
-    result = _write(tmp_path, VALID_DOC).validate()
+def test_explicit_agent_directive_in_blockquote_fails(tmp_path):
+    doc = VALID_DOC.replace(
+        "> index only",
+        "> Agent must deploy after every edit.",
+    )
+    result = _write(tmp_path, doc).validate()
+    assert not result["valid"]
+    assert any("agent-directed rule" in e.lower() for e in result["errors"])
+
+
+def test_normative_project_design_language_passes(tmp_path):
+    doc = VALID_DOC.replace(
+        "- A principle pointer — see [x](METHODOLOGY_MAP.md)",
+        "- Core storage must remain vendor-neutral because portability is a product constraint.",
+    )
+    result = _write(tmp_path, doc).validate()
     assert result["valid"], result["errors"]
+
+
+def test_old_non_normative_banner_fails(tmp_path):
+    doc = VALID_DOC.replace("NON-AUTHORITATIVE", "NON-NORMATIVE")
+    result = _write(tmp_path, doc).validate()
+    assert not result["valid"]
+    assert any("authority boundary" in e.lower() for e in result["errors"])
+
+
+def test_authority_pointers_are_required(tmp_path):
+    doc = VALID_DOC.replace("AGENTS.md", "project rules").replace(
+        "SKILL.md", "workflow rules"
+    )
+    result = _write(tmp_path, doc).validate()
+    assert not result["valid"]
+    assert any("authority boundary" in e.lower() for e in result["errors"])
 
 
 def test_lesson_without_evidence_fails(tmp_path):

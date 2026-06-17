@@ -27,7 +27,8 @@ Core identity prompt
 - `03-context/`: small / medium / large context prompts, low-token mode, context engineering, Gemini long-document handling, and handoff summaries.
 - `04-agent/`: agent selection, SOP compiler design, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
-- `06-repo/`: repository-level instruction templates for AGENTS.md, Cursor, Codex, and OpenCode.
+- `06-repo/`: repository-level instruction templates plus a reusable
+  `PROJECT_KNOWLEDGE.template.md` for project-specific design judgement.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 workflow skills.
 - `skills/examples/`: two practical input/output examples per workflow skill.
@@ -123,3 +124,4 @@ research
 | You need to convert a repeatable human SOP into an agent workflow | `04-agent/sop-compiler.md` |
 | You need to design or review runtime trust boundaries | `04-agent/runtime-trust-boundary.md` |
 | You need to review a leaked, mirrored, or third-party agent scaffold | `04-agent/agent-scaffold-provenance.md` |
+| You need a project-specific design-judgement layer without creating a second agent rulebook | `06-repo/PROJECT_KNOWLEDGE.template.md` + `skills/reflective-handoff-retro/SKILL.md` |

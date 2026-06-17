@@ -2,18 +2,20 @@
 """
 PROJECT_KNOWLEDGE.md Contract Validator
 
-Enforces the contract-specific invariants that keep PROJECT_KNOWLEDGE.md a
-*non-normative project-rationale* layer rather than a second rulebook. Dead-link
-and markdown-reference checks are intentionally left to validate_links.py; this
-validator only checks what that one cannot:
+Enforces structural invariants that keep PROJECT_KNOWLEDGE.md a
+*non-authoritative project-judgement* layer rather than a second agent
+rulebook. Project-design principles may still be normative for product and
+architecture choices. Dead-link and markdown-reference checks are intentionally
+left to validate_links.py; this validator checks only narrow, observable signals:
 
 1. Required sections exist (Governing Principles, Current Direction,
    Durable Lessons, Decision Index).
-2. No binding/normative language outside explanatory blockquotes. Such language
-   belongs in AGENTS.md, not here. (The hard separation rule.)
-3. Every Durable Lesson has a non-empty `Evidence:` pointer.
-4. Every milestone has a valid `Status:` (active/planned/done).
-5. The Decision Index is non-empty and every entry carries a link pointer.
+2. The preamble declares the authority boundary and points to AGENTS.md / SKILL.md.
+3. No explicit agent-directed rules, including inside blockquotes. This is a
+   high-precision guardrail, not proof of semantic authority separation.
+4. Every Durable Lesson has a non-empty `Evidence:` pointer.
+5. Every milestone has a valid `Status:` (active/planned/done).
+6. The Decision Index is non-empty and every entry carries a link pointer.
 
 Exit code 0 when valid, 1 when any error is found, so it can gate CI.
 """
@@ -30,16 +32,14 @@ REQUIRED_SECTIONS = [
     "Decision Index",
 ]
 
-# High-precision binding modals. "always"/"never" are deliberately excluded:
-# they are too often descriptive ("the bug always reproduced") to flag safely.
-BINDING_PATTERNS = [
-    r"\bmust not\b",
-    r"\bmust\b",
-    r"\bshall\b",
-    r"\bmandatory\b",
-    r"\brequired to\b",
-    r"\bprohibited\b",
-    r"\bforbidden\b",
+# These patterns intentionally require an agent-like subject or an operational
+# imperative. Generic modal words are valid in project-design principles and do
+# not, by themselves, establish authority.
+AGENT_DIRECTIVE_PATTERNS = [
+    r"\b(?:the\s+)?(?:agent|agents|assistant|assistants|model|models|codex|claude|you)\s+"
+    r"(?:must(?:\s+not)?|shall|(?:is|are)\s+required\s+to)\b",
+    r"^\s*(?:[-*]\s+|>\s*)?(?:always|never)\s+"
+    r"(?:run|execute|invoke|call|read|write|edit|delete|commit|push|deploy|install|use)\b",
 ]
 
 VALID_STATUSES = {"active", "planned", "done"}
@@ -65,7 +65,8 @@ class ProjectKnowledgeValidator:
         lines = content.splitlines()
 
         self._check_required_sections(content)
-        self._check_no_binding_language(lines)
+        self._check_authority_boundary(content)
+        self._check_no_agent_directives(lines)
         self._check_lessons_have_evidence(content)
         self._check_milestone_status(content)
         self._check_stale_done_milestones(content)
@@ -79,18 +80,29 @@ class ProjectKnowledgeValidator:
             if section not in headers:
                 self.errors.append(f"Missing required section: ## {section}")
 
-    def _check_no_binding_language(self, lines: List[str]) -> None:
+    def _check_authority_boundary(self, content: str) -> None:
+        first_section = re.search(r"^##\s+", content, re.MULTILINE)
+        preamble = content[: first_section.start()] if first_section else content
+
+        if "NON-AUTHORITATIVE" not in preamble.upper():
+            self.errors.append(
+                "Authority boundary missing: preamble must declare this file "
+                "NON-AUTHORITATIVE"
+            )
+        if "AGENTS.md" not in preamble or "SKILL.md" not in preamble:
+            self.errors.append(
+                "Authority boundary incomplete: preamble must point agent operating "
+                "rules to both AGENTS.md and SKILL.md"
+            )
+
+    def _check_no_agent_directives(self, lines: List[str]) -> None:
         for i, raw in enumerate(lines, start=1):
-            stripped = raw.lstrip()
-            # Explanatory blockquotes are exempt; that is where prose guidance lives.
-            if stripped.startswith(">"):
-                continue
-            for pat in BINDING_PATTERNS:
+            for pat in AGENT_DIRECTIVE_PATTERNS:
                 m = re.search(pat, raw, re.IGNORECASE)
                 if m:
                     self.errors.append(
-                        f"Line {i}: binding language '{m.group(0)}' is normative; "
-                        f"move it to AGENTS.md or rephrase as rationale -> {raw.strip()!r}"
+                        f"Line {i}: explicit agent-directed rule '{m.group(0)}' "
+                        f"belongs in AGENTS.md or SKILL.md -> {raw.strip()!r}"
                     )
                     break
 

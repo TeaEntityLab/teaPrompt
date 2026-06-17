@@ -55,6 +55,9 @@ beyond adding a read-first/migration section to the `06-repo/AGENTS.md` template
 
 ## Decision
 
+> Historical decision as implemented in the first pass. Its authority model and
+> promotion conclusion are refined in the 2026-06-17 section below.
+
 Adopt a repo-native project-judgement contract as a single batch:
 
 - Add `reflective-prompt-library/PROJECT_KNOWLEDGE.md` — non-normative, four sections
@@ -108,6 +111,24 @@ file tree) to check the decision against ground truth.
 
 Net judgment: the project-judgement layer is sufficient for current scale; no further
 Knowie mechanism is necessary now beyond the stale-milestone check added here.
+
+## Decision Refinement (2026-06-17)
+
+The net judgment above is partially superseded after inspecting Knowie's full
+upstream scaffold and lifecycle rather than only its internal knowledge files.
+The single TeaPrompt project-knowledge file remains a valid seed, but three
+conclusions changed:
+
+- `non-normative` was the wrong boundary; project principles may be normative
+  for design judgement while remaining non-authoritative for agent behavior;
+- the declared promotion path needs an actual output contract in
+  `reflective-handoff-retro`, including a stricter project-local skill gate; and
+- TeaPrompt should publish a reusable scaffold for other repositories because
+  creating project-specific knowledge architecture is part of Knowie's original
+  product intent.
+
+The corrective decision, rejected alternatives, and verification criteria are
+recorded in [Project-Knowledge Authority and Promotion Decision](project-knowledge-authority-promotion-decision-2026-06-17.md).
 
 ## Promotion Gate (for future escalation)
 

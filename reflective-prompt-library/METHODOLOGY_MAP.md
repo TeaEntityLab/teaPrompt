@@ -71,7 +71,9 @@ Instead of a single prompt, the methodology is formally structured into ten dist
 4. **Context Window Layer** (`03-context/`): Context window sizing, token management, and context handoff prompts.
 5. **Workflow & Agentic Layer** (`04-agent/`): SOP compiler prompts, workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
 6. **Domain Pack Layer** (`05-domain/`): Specialized domain overlays (business strategy, learning coach, high-risk review, creative/writing).
-7. **Repository Template Layer** (`06-repo/`): Local repository instructions (`AGENTS.md`, `cursor-rules.md` templates).
+7. **Repository Template Layer** (`06-repo/`): Local repository instructions
+   (`AGENTS.md`, `cursor-rules.md`) and a non-authoritative project-knowledge
+   scaffold for project-specific design judgement.
 8. **Skill / Action Layer** (`skills/`): Modular, on-demand `SKILL.md` files acting as portable procedures executed when triggered.
 9. **Quality Gate / Verification Layer** (Evals/Review): Robust feedback loops, verification checklists, and rating/regression defense mechanisms.
 10. **Governance / Capability Risk Layer** (Risk/Compliance): Security boundaries, non-disclosure policies, high-risk review gates, credential/tool protection, and runtime trust boundaries for data, tools, context, and side effects.
@@ -97,6 +99,22 @@ TeaPrompt should learn the taxonomy: identity, behavior, safety, memory, tool ro
 `agentic-sop-to-work` demonstrates a useful adjacent pattern: treat human SOP as source material, compile it into single-purpose workflow stages, exchange typed artifacts, run deterministic gates, return DRAFT outputs for human approval, and use regression hooks only when the workflow has enough repeatability or risk to justify code-backed enforcement: [agentic-sop-to-work](https://github.com/s0912758806p/agentic-sop-to-work).
 
 TeaPrompt should adopt this as a planning lens, not a runtime dependency. The project remains a compact prompt and skill library until repeated workflows prove that runner code, hooks, and deterministic verifiers would reduce total cost. Use `04-agent/sop-compiler.md` before promoting a prompt-only or artifact-only process into a code-backed workflow engine.
+
+## Project-Knowledge Addendum
+
+A project can need normative product and architecture principles without giving
+those principles agent-instruction authority. TeaPrompt therefore separates two
+questions: what should guide project-design judgement, and what authorizes an
+agent to act. The first may live in project knowledge; the second belongs in
+`AGENTS.md`, `SKILL.md`, higher-authority instructions, and explicit user
+authorization.
+
+Start with [`06-repo/PROJECT_KNOWLEDGE.template.md`](06-repo/PROJECT_KNOWLEDGE.template.md)
+rather than a full memory taxonomy. Use `reflective-handoff-retro` to propose
+evidence-backed promotions with destination, authority class, provenance,
+approval, and retirement trigger. Promote a repeated operation to a
+project-local skill only after its inputs, outputs, failure signals, and checks
+are stable and a human confirms the promotion.
 
 ## Strictness Levels
 
@@ -192,7 +210,7 @@ Multi-agent work requires state, tools, logs, verification, and handoff artifact
 | Context Window Layer | Aligned | Complete | Manage window-size & token configurations (`03-context/`). |
 | Workflow & Agentic Layer | Aligned | Extended | Workflows, SOP compiler planning, planning engine, and memory consolidation (`04-agent/`). |
 | Domain Pack Layer | Aligned | Complete | Keep strategy and domain prompts in `05-domain/`. |
-| Repository Template Layer | Aligned | Complete | Maintain `AGENTS.md` and `cursor-rules.md` templates under `06-repo/`. |
+| Repository Template Layer | Aligned | Extended | Maintain instruction templates and the reusable project-knowledge scaffold under `06-repo/`. |
 | Skill / Action Layer | Aligned | Extended | Maintain 8 lifecycle skills plus a narrow minimality gate for anti-bloat decisions. |
 | Quality Gate / Verification | Aligned | Complete | Standardize skill-level quality checks. |
 | Governance / Capability Risk | Aligned | Extended | Use `reflective-risk` for high-risk boundaries and `04-agent/runtime-trust-boundary.md` for instruction/data/tool authority review. |

@@ -2,21 +2,25 @@ Language: English
 
 # Project Knowledge — TeaPrompt
 
-> **NON-NORMATIVE FILE.** This file records *why* the project believes what it
-> believes, *where* it is going, and *what* it has learned. It does not tell an
-> agent *what to do*. Binding, must-follow rules live in
-> [`06-repo/AGENTS.md`](06-repo/AGENTS.md) and [`skills/*/SKILL.md`](skills/).
-> If an entry here starts prescribing agent behavior, migrate it to AGENTS.md.
+> **NON-AUTHORITATIVE FILE.** This file records *why* the project believes what
+> it believes, *where* it is going, and *what* it has learned. Its project-design
+> principles may guide product and architecture choices, including choices not
+> already covered by an operating rule. It does not grant authority to an agent,
+> authorize actions, or override system/developer instructions, the user's
+> request, [`06-repo/AGENTS.md`](06-repo/AGENTS.md), or
+> [`skills/*/SKILL.md`](skills/). Agent operating rules belong in AGENTS.md or a
+> SKILL.md; project-design judgement belongs here.
 >
-> This separation is enforced mechanically: a binding-language scan in
 > [`plans/validate_project_knowledge.py`](plans/validate_project_knowledge.py)
-> fails the build if normative modals appear outside these explanatory
-> blockquotes. Dead links are caught separately by `plans/validate_links.py`.
+> verifies this authority declaration and catches explicit agent-directed rules.
+> It does not pretend to infer authority from modal words alone. Dead links are
+> caught separately by `plans/validate_links.py`.
 
 ## Governing Principles
 
-> Principles are **pointed to**, not restated, so there is exactly one source of
-> truth. This section is an index, not a second rulebook.
+> Existing principles are **pointed to**, not restated, so there is exactly one
+> source of truth. Project-specific principles may be stated here when no
+> canonical source exists; include their rationale and practical implication.
 
 - Doing the right thing > doing things right — see [METHODOLOGY_MAP.md](METHODOLOGY_MAP.md)
 - Smallest useful workflow; escalate strictness only when risk demands it — see [skills/reflective-dispatch/SKILL.md](skills/reflective-dispatch/SKILL.md)
@@ -41,7 +45,7 @@ Language: English
 - Status: active
 - Problem: the repo had an authoritative instruction layer (AGENTS + skills) and a task/session memory layer (handoff-retro, plans, ledgers) but no curated, auto-loaded *project rationale* layer — so cross-session "why" lived only in scattered plans.
 - Non-goals: importing Knowie's full toolchain; adding a tenth core workflow skill; auto-harvesting long-term memory from every conversation.
-- Target: this file plus its validator and an AGENTS read-first rule, kept honest by deterministic checks rather than by memory hygiene feel.
+- Target: a reusable project-judgement scaffold, an explicit authority boundary, an evidence-gated promotion contract, and deterministic structural checks that do not masquerade as semantic review.
 
 ## Durable Lessons
 
@@ -65,4 +69,5 @@ Language: English
 > not duplicated here; this is a map, not an archive.
 
 - 2026-06-11 Add `runtime-trust-boundary` as a lens, not a ninth skill → [record](plans/project-adjustment-reflection-2026-06-11.md)
-- 2026-06-17 Adopt a project-judgment contract (this file) instead of importing Knowie → [record](plans/knowie-project-knowledge-reflection-2026-06-17.md)
+- 2026-06-17 Adopt a minimal project-judgment contract instead of importing Knowie → [initial record](plans/knowie-project-knowledge-reflection-2026-06-17.md)
+- 2026-06-17 Refine the contract from non-normative to non-authoritative, connect promotion, and publish a reusable scaffold → [decision](plans/project-knowledge-authority-promotion-decision-2026-06-17.md)

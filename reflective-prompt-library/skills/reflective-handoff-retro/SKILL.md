@@ -29,6 +29,7 @@ Methods:
 Output:
 - For handoff, output the handoff template with current state, decisions, artifacts, trust boundaries, risks, blockers, tests, and next action.
 - For retro, output the retro template with process failures, reusable rules, and improvement candidates.
+- When durable project knowledge may have formed, append the Project-Knowledge Promotion Candidates contract below.
 
 Never:
 - Do not dump raw context when a compact continuation brief is enough.
@@ -92,9 +93,45 @@ Only institutionalize repeated patterns:
 
 Do not turn one-off accidents into permanent bureaucracy.
 
+## Project-Knowledge Promotion Contract
+
+Use this only when the repository has a project-knowledge layer or the user asks
+to establish one. A retro may *propose* long-term knowledge; it does not silently
+promote it.
+
+```markdown
+## Project-Knowledge Promotion Candidates
+
+### Candidate: <short name>
+- Claim / Procedure:
+- Evidence of recurrence: <at least two independent occurrences, or one explicit project decision>
+- Destination: governing principle | current direction | durable lesson | decision index | project-local skill
+- Authority class: project-design judgement | agent operating rule
+- Proposed action: add | amend | supersede | retire | keep in draft
+- Human approval: required | explicitly granted in this task | pending
+- Source artifacts: <plans, tests, commits, incidents, or decisions>
+- Review / retirement trigger:
+```
+
+Promotion rules:
+
+- `project-design judgement` belongs in the project-knowledge artifact. It may
+  guide product and architecture decisions but cannot authorize agent actions.
+- `agent operating rule` belongs in `AGENTS.md` or the relevant `SKILL.md`, not
+  in project knowledge.
+- A repeated operation becomes a `project-local skill` candidate only when its
+  recurrence, inputs, outputs, failure signals, and verification are concrete.
+  Promotion requires human confirmation because executable knowledge has a
+  larger failure surface than prose.
+- A one-off event remains in its plan, retro, or draft. Do not manufacture a
+  permanent lesson merely to fill the knowledge file.
+- Superseded decisions remain traceable through the decision index; record the
+  transition instead of deleting the old rationale.
+
 ## Prompt Sources
 
 - `03-context/context-handoff.md`
 - `04-agent/retro.md`
 - `04-agent/memory-consolidation.md`
 - `04-agent/runtime-trust-boundary.md`
+- `06-repo/PROJECT_KNOWLEDGE.template.md`
