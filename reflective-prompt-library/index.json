@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-17T19:59:51.346709",
+  "generated_at": "2026-06-18T12:48:32.147691",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -32,6 +32,7 @@
           "path": "reflective-prompt-library/plans",
           "files": [
             "ponytail-minimality-reflection-2026-06-17.md",
+            "storm-perspective-discovery-reflection-2026-06-18.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
@@ -727,6 +728,60 @@
       ],
       "line_count": 100,
       "char_count": 6747
+    },
+    {
+      "path": "reflective-prompt-library/plans/storm-perspective-discovery-reflection-2026-06-18.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "storm-perspective-discovery-reflection-2026-06-18",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "STORM Perspective-Discovery Reflection — 2026-06-18"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Rejected Alternatives"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        }
+      ],
+      "line_count": 79,
+      "char_count": 4337
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -2952,8 +3007,8 @@
           "text": "主題"
         }
       ],
-      "line_count": 33,
-      "char_count": 466
+      "line_count": 34,
+      "char_count": 507
     },
     {
       "path": "reflective-prompt-library/05-domain/learning-coach.md",
@@ -3595,8 +3650,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 146,
-      "char_count": 5794
+      "line_count": 149,
+      "char_count": 6531
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -4228,5 +4283,5 @@
       "char_count": 3909
     }
   ],
-  "total_files": 77
+  "total_files": 78
 }
