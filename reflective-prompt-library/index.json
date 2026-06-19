@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-18T12:48:32.147691",
+  "generated_at": "2026-06-20T01:12:57.570926",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -42,6 +42,7 @@
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "QUALITY_GATES_SUMMARY.md",
+            "external-adoption-case-studies-2026-06-20.md",
             "ROUTING_CONTRACT.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
             "skill-workflow-research-synthesis.md",
@@ -1422,6 +1423,73 @@
       ],
       "line_count": 300,
       "char_count": 11962
+    },
+    {
+      "path": "reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "external-adoption-case-studies-2026-06-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agentic-sop-workflow-reflection-2026-06-13.md",
+          "knowie-project-knowledge-reflection-2026-06-17.md",
+          "storm-perspective-discovery-reflection-2026-06-18.md",
+          "agentic-sop-workflow-reflection-2026-06-13.md",
+          "../PROJECT_KNOWLEDGE.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-dispatch/SKILL.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "External-Adoption Case Studies — 2026-06-20"
+        },
+        {
+          "level": 2,
+          "text": "Dispatch"
+        },
+        {
+          "level": 2,
+          "text": "Why This Record Exists"
+        },
+        {
+          "level": 2,
+          "text": "Case Comparison"
+        },
+        {
+          "level": 2,
+          "text": "The Recurring Evaluation Procedure"
+        },
+        {
+          "level": 2,
+          "text": "Signal Accounting (do not miscount)"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Rejected Alternatives"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        }
+      ],
+      "line_count": 94,
+      "char_count": 5676
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -4283,5 +4351,5 @@
       "char_count": 3909
     }
   ],
-  "total_files": 78
+  "total_files": 79
 }
