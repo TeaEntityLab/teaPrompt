@@ -343,6 +343,21 @@ class BenchmarkSet:
                     "Safety-critical behavior and explicit requirements are preserved",
                     "Any intentional shortcut records a ceiling and observable upgrade trigger"
                 ]
+            ),
+            BenchmarkTask(
+                id="B022",
+                name="No-code test plan",
+                description="Design a rigorous Test Plan from an approved feature spec without writing implementation code",
+                expected_workflow="reflective-spec-plan",
+                difficulty="medium",
+                category="test-planning",
+                acceptance_criteria=[
+                    "Every requirement is traceable to at least one test",
+                    "Acceptance scenarios include Given, When, Then, Expected, and Failure Signal",
+                    "Edge, negative, and regression coverage is explicit and proportional to risk",
+                    "Adversarial or anti-cheating checks are included when relevant",
+                    "Unknowns and false-positive guards are recorded without changing production code"
+                ]
             )
         ]
     

@@ -1,6 +1,6 @@
 ---
 name: reflective-spec-plan
-description: Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.
+description: Use this to turn a requirement into a practical spec, usage-first design, reviewable task plan, or no-code Test Plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, rigorous test design before implementation, or wants to avoid building the wrong thing.
 license: MIT
 risk_level: low
 human_review_required: false
@@ -16,12 +16,14 @@ Produce just enough specification to guide execution and review. Avoid beautiful
 ## Module Contract
 
 Trigger:
-- Use when the user asks for a spec, PRD, implementation plan, workflow plan, usage design, or reviewable task slices.
+- Use when the user asks for a spec, PRD, implementation plan, workflow plan, usage design, reviewable task slices, or a Test Plan without implementation.
 
 Methods:
 - Definition of Ready
 - Usage-first design
 - Acceptance criteria design
+- Requirement-to-test traceability
+- Negative, edge, regression, adversarial, and anti-cheating test design
 - Vertical task slicing
 - Definition of Done
 - Runtime trust-boundary design
@@ -29,6 +31,7 @@ Methods:
 
 Output:
 - When file tools are available, write `spec.md`, `usage.md`, and `task-plan.md`; otherwise use the same headings inline.
+- In Test Plan mode, write `test-plan.md` instead of production code.
 - For tickets, use the `TASK-001` template with dependencies, tests, risk, and Human Review flags.
 
 Never:
@@ -41,6 +44,18 @@ Never:
 Escalation:
 - Route missing Definition of Ready inputs to `reflective-brief`.
 - Route high-risk plans to `reflective-risk` before execution.
+
+## Implementation Decision Gate
+
+Before recommending implement, defer, or reject, make the decision traceable:
+
+1. Start with local authority and evidence: user intent, project instructions, existing contracts, code, tests, history, and verified structural gaps.
+2. Add current external or official evidence when the claim depends on changing facts, unfamiliar technology, external standards, comparisons, or high-risk guidance. Do not require web research for a self-contained repo-local claim.
+3. Use logic, Socratic questions, counterarguments, and falsifiability to challenge the interpretation. These are reasoning methods, not evidence sources.
+4. Record unavailable evidence as `unknown`. Never convert missing usage data into zero demand or a permanent veto.
+5. Calibrate action by reversibility, blast radius, cost of delay, and testability. Recurrence gates govern promotion into a new skill, directory, runner, or other durable surface; they do not block a narrow repair to an existing declared contract.
+
+For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counterargument`, `Decision`, and `Falsifier / Verification`.
 
 ## Workflow
 
@@ -88,6 +103,37 @@ Escalation:
 
 6. Stop at the smallest plan that can be executed and reviewed.
 
+## Test Plan Mode
+
+Activate this mode when the user asks to design tests from a requirement or spec without writing implementation code. If the request also asks to edit code or add executable tests, route the execution phase to `reflective-implement`.
+
+1. Build a requirement-to-test matrix. Give every requirement and acceptance criterion a stable ID.
+2. Define the smallest sufficient test set, proportional to risk:
+   - acceptance scenarios with `Given / When / Then / Expected / Failure Signal`
+   - edge and boundary cases
+   - negative and permission-denial cases
+   - regression cases for existing behavior
+   - adversarial, hidden-evaluation, or anti-cheating checks when relevant
+3. Separate observable behavior from implementation details so tests do not merely mirror the proposed code.
+4. Identify fixtures, environment assumptions, test doubles, and data boundaries without inventing unavailable values.
+5. Mark coverage gaps and unknowns explicitly. Define what result would falsify the requirement or reveal a false positive.
+6. Stop before production-code changes. Hand off executable test or implementation work to `reflective-implement`.
+
+Use this per-test template:
+
+```markdown
+### TEST-001: <name>
+- Requirement:
+- Type: acceptance / edge / negative / regression / adversarial
+- Given:
+- When:
+- Then:
+- Expected:
+- Failure Signal:
+- Fixtures / Environment:
+- False-positive guard:
+```
+
 ## Artifact Output
 
 When file tools are available, write:
@@ -128,6 +174,7 @@ When chat-only, use the same headings inline.
 ## Prompt Sources
 
 - `02-engineering/spec-writer.md`
+- `02-engineering/test-designer.md`
 - `02-engineering/usage-first.md`
 - `02-engineering/task-slicer.md`
 - `04-agent/workflow-engine.md`

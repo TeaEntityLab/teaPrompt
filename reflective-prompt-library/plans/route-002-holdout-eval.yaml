@@ -40,6 +40,29 @@ holdout_sets:
       - write the acceptance criteria and rollout tasks
       - make a PRD-level breakdown
 
+  - name: test_planning_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - requirement_traceability
+    phrases:
+      - map observable behavior to test cases but leave code untouched
+      - produce a test plan with failure signals from the requirements
+      - define the smallest regression test matrix, planning only
+      - write adversarial checks from acceptance criteria with no implementation changes
+
+  - name: executable_test_holdout
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - add tests to the repository and run them
+      - implement the regression test suite
+      - update unit tests alongside the code change
+      - fix the failing integration test
+      - turn this test plan into executable tests in the repository
+
   - name: review_holdout
     expected_workflow: reflective-review
     expected_rigor: high

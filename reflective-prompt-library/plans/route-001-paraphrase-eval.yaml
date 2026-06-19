@@ -53,6 +53,35 @@ intent_groups:
       - Create a roadmap for the workflow
       - Prepare a release plan for this feature
 
+  - intent: test_plan_only
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - requirement_traceability
+      - negative_and_regression_tests
+      - anti_cheating_checks
+    phrases:
+      - Design a test plan from this spec without writing code
+      - Produce acceptance test cases before implementation
+      - Create a test matrix for the requirements, plan only
+      - Write Given/When/Then scenarios and failure signals
+      - Define negative edge and regression tests; do not implement
+      - Turn acceptance criteria into tests without changing code
+      - Prepare a no-code test strategy
+      - Design anti-cheating checks before coding
+
+  - intent: executable_test_work
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - Add executable regression tests to the codebase
+      - Implement the test cases and run them
+      - Write unit tests in the repository and verify they pass
+      - Update the integration tests and fix any failures
+      - Implement the tests described in this test plan
+
   - intent: code_review
     expected_workflow: reflective-review
     expected_rigor: high

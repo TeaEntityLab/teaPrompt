@@ -46,12 +46,14 @@ Trigger cues:
 - "Write a spec / PRD / implementation plan."
 - "Turn this into tickets with dependencies and tests."
 - "Do usage-first design before coding."
+- "Design a rigorous Test Plan from this spec without writing code."
 - "Plan tool gates, authority boundaries, and side effects."
 
 Do not use when:
 
 - Definition of Ready inputs are missing; use `reflective-brief` first.
 - The request is only to critique an existing plan; use `reflective-review`.
+- The request includes executable test or production-code edits; use `reflective-implement` for that phase.
 
 ## `reflective-implement`
 

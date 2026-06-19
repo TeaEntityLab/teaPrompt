@@ -87,7 +87,7 @@ python3 reflective-prompt-library/plans/lint_skills.py
 - Generates consistency reports
 
 **Results:**
-- Tested 13 groups with 100 paraphrases, including 4 adversarial boundary groups and the minimality gate group
+- Tested 15 groups with 113 paraphrases, including 4 adversarial boundary groups, the minimality gate, and both sides of the Test Plan / executable-test boundary
 - Overall consistency: 100.0% (passes Phase-1 threshold >=70% and aspirational target >=95%)
 - Low-confidence route trace coverage: 100.0%
 - Adversarial groups now pass through boundary rules rather than isolated synonym matching
@@ -111,7 +111,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 7 holdout groups with 28 paraphrases
+- Tested 9 holdout groups with 37 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - Review phrasing around patches/regressions and clarification phrasing around unknown desired outcome now pass through boundary concepts
@@ -217,7 +217,7 @@ The implementation aligns with research findings:
 
 ### Routing Consistency Tracking
 
-The current routing consistency measurement is 100.0% on ROUTE-001 across 13 groups and 100 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set, including the minimality gate. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
+The current routing consistency measurement is 100.0% on ROUTE-001 across 15 groups and 113 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set, including the minimality gate and the Test Plan / executable-test boundary. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
 
 ### Critical Reflection
 

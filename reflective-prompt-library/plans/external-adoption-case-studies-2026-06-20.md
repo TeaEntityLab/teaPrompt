@@ -36,11 +36,17 @@ This is the transferable output. When evaluating a new external tool or method:
    reject runtimes, retrievers, citation pipelines, dashboards, and quotas.
 3. **Gate any change on a verified *local* structural gap.** STORM had one and
    warranted a change; Loop-Skill, preflight, and Record & Replay did not, so
-   they warranted none. "Interesting" is not a gap.
+   they warranted none. "Interesting" is not a gap. When desired usage data
+   cannot be observed, record it as `unknown`; absence of data is not zero
+   demand and cannot become a permanent veto. Use the best available local
+   structural evidence and prefer a bounded, reversible repair when it is
+   directly testable.
 4. **Check against standing non-goals** (runtime engine, vendor lock-in,
    RAG/vector store). An out-of-scope capability is not a missing capability.
-5. **Apply the promotion gate** (≥3 cross-session recurrences before a new skill
-   or directory). Prefer folding into an existing skill or a supporting lens.
+5. **Apply the promotion gate only to new durable surface area** (≥3
+   cross-session recurrences before a new skill, directory, runner, or similar
+   surface). Prefer folding into an existing skill or a supporting lens. The
+   gate does not block a narrow repair to an existing skill's declared contract.
 6. **Record the outcome — including "no change"** — so the next session does not
    re-evaluate a settled item.
 7. **No-copy boundary:** until an upstream repo carries a license, learn the
@@ -54,6 +60,42 @@ and Loop-Skill. These are **external signals**. They do **not** advance the
 workflows (each repeated ~5×, with observed drift or rework). Keep the two counts
 separate: external interest is not local evidence. The runner stays deferred.
 See the runner gate in [agentic-sop](agentic-sop-workflow-reflection-2026-06-13.md).
+
+## Decision-Rule Correction
+
+The earlier rule overreached in two ways: it treated unavailable local usage
+data as if it proved no demand, and it applied a promotion gate for new surface
+area to an in-place repair. The corrected rule is proportional and traceable:
+
+1. Local project authority and verified repository evidence come first.
+2. Current external or official evidence is required when the claim depends on
+   changing facts, unfamiliar technology, standards, comparisons, or high-risk
+   guidance; it is not mandatory ceremony for self-contained repo-local facts.
+3. Logic, Socratic questioning, counterargument, and critical thinking test the
+   evidence and expose assumptions. They do not create evidence.
+4. Unmeasurable or unavailable evidence remains `unknown` and is documented.
+5. Reversibility, blast radius, cost of delay, and testability determine whether
+   to implement a bounded repair, defer, or reject.
+6. Every material decision records a falsifier and the check that would verify
+   or overturn it.
+
+This follows mixed-evidence guidance from
+[Google Research](https://research.google/pubs/bridging-the-gap-from-research-to-practical-advice/)
+and NIST's guidance to combine qualitative and quantitative methods, document
+uncertainty and unmeasurable risks, and prioritize by impact, likelihood, and
+available resources in the
+[AI RMF Core](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/).
+
+### Applied Counterexample: Test Plan Routing
+
+The source prompt `02-engineering/test-designer.md` declares test design without
+implementation, while its only operational mapping was an implementation skill
+whose trigger requires edits. Installation copies `SKILL.md`, so a Prompt
+Sources pointer alone does not provide the mode to installed users. This is a
+verified local structural gap. Adding a conditional no-code Test Plan mode to
+`reflective-spec-plan` is a narrow, reversible, route-tested repair; it does not
+create a new skill or runtime and therefore does not require three observed
+sessions.
 
 ## Methodology Layer vs Operationalization Layer
 
@@ -79,11 +121,12 @@ output feeds `sop-compiler` review → `reflective-review` — not *build it in*
 
 ## Decision
 
-No code or skill change. Record the three previously-unrecorded outcomes
-(Loop-Skill, preflight, Record & Replay) here, add one Durable Lesson and one
-Decision Index entry to [PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md), and keep
-the evaluation procedure above as the reusable artifact. The procedure lives as a
-lesson, not a new skill, because it is a specialization of existing
+The external-adoption decision remains unchanged for Loop-Skill,
+preflight-checker, and Record & Replay: do not add their runtime or a new skill.
+The corrected rule does require one separate in-place repair: operationalize a
+conditional no-code Test Plan mode in `reflective-spec-plan` and test its route.
+Keep the adoption procedure as a lesson, not a new skill, because it is a
+specialization of existing
 [reflective-research](../skills/reflective-research/SKILL.md),
 [reflective-minimality](../skills/reflective-minimality/SKILL.md), and
 [reflective-dispatch](../skills/reflective-dispatch/SKILL.md).
@@ -113,4 +156,6 @@ skill) or correct the gap. Until then it stays a lesson plus this case study.
 | Three no-change outcomes recorded | done | Case Comparison table |
 | Recurring procedure captured | done | this file + PROJECT_KNOWLEDGE Durable Lesson |
 | Durable Lesson + Decision Index added | done | PROJECT_KNOWLEDGE.md |
-| No new skill/dir/route created | done | Rejected Alternatives |
+| No new skill or directory created | done | Rejected Alternatives |
+| Evidence/promotion rule corrected | done | Decision-Rule Correction |
+| No-code Test Plan route repaired | done | `reflective-spec-plan` + ROUTE fixtures |

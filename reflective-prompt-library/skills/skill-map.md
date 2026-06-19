@@ -59,8 +59,8 @@ Routing fairness rule:
 | --- | --- |
 | Core minimal, core short, master, daily minimal, global controller | `reflective-dispatch`, `reflective-brief` |
 | Socratic, critical thinking, counterargument, falsifiability, Why/What/How/Done | `reflective-brief`, `reflective-review` |
-| Task start, spec writer, usage-first, task slicer, workflow engine, SOP compiler | `reflective-spec-plan`, with `04-agent/sop-compiler.md` as supporting source material |
-| Implementation agent, test designer, local feedback, Codex/OpenCode | `reflective-implement` |
+| Task start, spec writer, usage-first, task slicer, test designer (plan-only), workflow engine, SOP compiler | `reflective-spec-plan`, with `04-agent/sop-compiler.md` as supporting source material |
+| Implementation agent, executable tests, test design during code work, local feedback, Codex/OpenCode | `reflective-implement` |
 | Code reviewer, review-rating-fix | `reflective-review` |
 | Minimality, anti-overengineering, YAGNI, stdlib/native/dependency ladder | `reflective-minimality`, with `reflective-review` or `reflective-implement` as needed |
 | Context engineering, long context, Gemini long document, research, scaffold provenance | `reflective-research`, with `04-agent/agent-scaffold-provenance.md` as supporting source material |

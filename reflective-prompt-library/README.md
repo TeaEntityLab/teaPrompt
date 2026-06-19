@@ -51,7 +51,7 @@ The prompt files are the source material. The `skills/` directory is the operati
 | --- | --- |
 | Route a task to the smallest useful reflective workflow | `skills/reflective-dispatch/SKILL.md` |
 | Clarify goal, assumptions, scope, acceptance, falsifiability | `skills/reflective-brief/SKILL.md` |
-| Write spec, usage-first design, and task slices | `skills/reflective-spec-plan/SKILL.md` |
+| Write spec, usage-first design, task slices, or a no-code Test Plan | `skills/reflective-spec-plan/SKILL.md` |
 | Implement code with verification and traceability | `skills/reflective-implement/SKILL.md` |
 | Challenge unnecessary code, dependencies, abstractions, or scope before implementation | `skills/reflective-minimality/SKILL.md` |
 | Review code, plans, specs, and AI outputs | `skills/reflective-review/SKILL.md` |

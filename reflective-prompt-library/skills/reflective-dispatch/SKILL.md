@@ -58,7 +58,7 @@ Choose one primary workflow:
 | Task shape | Use |
 | --- | --- |
 | Ambiguous request, decision, task kickoff | `reflective-brief` |
-| Spec, usage design, ticket slicing, planning | `reflective-spec-plan` |
+| Spec, usage design, ticket slicing, planning, or Test Plan without code | `reflective-spec-plan` |
 | Coding, refactor, debugging with edits | `reflective-implement` |
 | Code/artifact/plan review, critique, rating | `reflective-review` |
 | Current external research, DeepWiki, docs, long sources | `reflective-research` |
@@ -67,6 +67,8 @@ Choose one primary workflow:
 | External content, tool output, entity fields, or side-effectful action authority | Primary workflow plus `04-agent/runtime-trust-boundary.md` as a supporting lens |
 
 If more than one applies, pick one primary workflow and one gate. Example: coding a privacy-sensitive feature uses `reflective-risk` as the gate and `reflective-implement` as the execution workflow.
+
+Test-design boundary: producing a rigorous Test Plan from requirements without writing code uses `reflective-spec-plan`. Adding executable tests or changing implementation uses `reflective-implement`.
 
 ## Strictness Ladder
 

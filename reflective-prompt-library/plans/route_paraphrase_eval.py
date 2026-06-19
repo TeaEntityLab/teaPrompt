@@ -197,12 +197,14 @@ class ParaphraseRouter:
             "reflective-spec-plan": [
                 "spec", "plan", "ticket", "design", "usage", "documentation",
                 "implementation plan", "workflow plan", "requirements", "break down", "tasks",
-                "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd"
+                "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd",
+                "test plan", "test strategy", "test matrix", "given/when/then"
             ],
             "reflective-implement": [
                 "code", "implement", "refactor", "debug", "fix", "edit",
                 "programming", "development", "function", "parse", "build", "add",
-                "change", "patch", "wire", "make the code"
+                "change", "patch", "wire", "make the code", "unit test",
+                "integration test", "executable test", "add tests", "update tests"
             ],
             "reflective-minimality": [
                 "minimal", "minimality", "overengineering", "over-engineering",
@@ -271,6 +273,34 @@ class ParaphraseRouter:
         if any(signal in text_lower for signal in planning_signals):
             adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 2
             reasons.append("planning boundary: delivery artifact requested")
+
+        test_plan_signals = [
+            "test plan", "test strategy", "test matrix", "test cases",
+            "design tests", "regression tests", "anti-cheating",
+            "given/when/then", "acceptance criteria"
+        ]
+        no_code_context = [
+            "without writing code", "without changing code", "do not write code",
+            "do not implement", "no code", "no-code", "before implementation",
+            "before coding", "from this spec", "from the spec", "plan only",
+            "planning only", "leave code untouched"
+        ]
+        if any(signal in text_lower for signal in test_plan_signals) and any(
+            ctx in text_lower for ctx in no_code_context
+        ):
+            adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 3
+            reasons.append("test-plan boundary: test design requested without implementation")
+
+        executable_test_signals = [
+            "implement the tests", "implement tests", "add tests", "update tests",
+            "write unit tests", "write integration tests", "executable tests",
+            "fix the failing test", "run the tests"
+        ]
+        if any(signal in text_lower for signal in executable_test_signals) and not any(
+            ctx in text_lower for ctx in no_code_context
+        ):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
+            reasons.append("test-execution boundary: repository test changes requested")
 
         review_signals = [
             "confirm this has no problem", "look if", "mistake",

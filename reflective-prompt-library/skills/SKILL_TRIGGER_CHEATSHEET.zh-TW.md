@@ -42,12 +42,14 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 何時用：
 
 - 需要 spec、usage-first、task slicing
+- 要從 spec 設計嚴謹 Test Plan，但不寫實作程式碼
 - 需要規劃工具 gate、權限邊界或副作用
 
 不要用在：
 
 - DoR 不足（先回 `reflective-brief`）
 - 僅是批判現有 plan → 用 `reflective-review`
+- 要新增可執行測試或修改程式碼 → 該階段用 `reflective-implement`
 
 ## `reflective-implement`
 
