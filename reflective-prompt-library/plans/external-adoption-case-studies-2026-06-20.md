@@ -24,7 +24,7 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 | 2026-06-18 | STORM / Co-STORM | README + NAACL/EMNLP papers | **yes** — no question-space expansion | Fold optional perspective-discovery into `reflective-research` | [storm](storm-perspective-discovery-reflection-2026-06-18.md) |
 | 2026-06-20 | Loop-Skill | GitHub API (created 2026-06-17, no LICENSE, 19★, single-day) | no | No change — methodology complete, runtime is a non-goal, gate unmet | this file |
 | 2026-06-20 | preflight-checker | GitHub API (created 2026-06-19, no LICENSE, 0★, 0.1.0) | no | No change — UX patterns already in `reflective-review`; missing items out of scope | this file |
-| 2026-06-20 | Codex Record & Replay | OpenAI official docs | no | No change — out of scope (vendor lock-in non-goal); `sop-compiler` intake already source-agnostic; does not close the runtime gap | this file |
+| 2026-06-20 | Codex Record & Replay | OpenAI official docs | operational, not methodological | No change *to TeaPrompt* — the gap is real but operational (acquisition / persistence / replay), which is a standing non-goal; R&R is vendor-locked and uncopyable. Worth using as an external acquisition front-end | this file |
 
 ## The Recurring Evaluation Procedure
 
@@ -54,6 +54,28 @@ and Loop-Skill. These are **external signals**. They do **not** advance the
 workflows (each repeated ~5×, with observed drift or rework). Keep the two counts
 separate: external interest is not local evidence. The runner stays deferred.
 See the runner gate in [agentic-sop](agentic-sop-workflow-reflection-2026-06-13.md).
+
+## Methodology Layer vs Operationalization Layer
+
+Correction (2026-06-20): an earlier framing treated "the SOP Compiler spec
+exists" as equivalent to "the capability exists." It is not. Two distinct layers:
+
+- **Methodology layer** — prompts, design lenses, triggerable skills
+  ([sop-compiler.md](../04-agent/sop-compiler.md),
+  [reflective-review](../skills/reflective-review/SKILL.md)). TeaPrompt is
+  effectively complete here.
+- **Operationalization layer** — a recorder that captures a real workflow, a
+  skill generator, persisted execution state, and replay verification (what
+  Record & Replay does; what immutable iteration / event log / feedback reopen
+  would *guarantee*). TeaPrompt deliberately does not provide this.
+
+So "complete" is true only of the methodology layer. A source-agnostic *prompt*
+does not become an acquisition or persistence *capability* by being
+source-agnostic — that earlier reasoning was an overclaim. This does not flip the
+decision: the operational/runtime layer stays a standing non-goal (not an
+oversight), the local promotion gate is unmet, and Record & Replay is
+vendor-locked and uncopyable. "Learn it" therefore means *use it externally* — its
+output feeds `sop-compiler` review → `reflective-review` — not *build it in*.
 
 ## Decision
 

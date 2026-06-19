@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T01:12:57.570926",
+  "generated_at": "2026-06-20T01:31:58.655885",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1440,6 +1440,8 @@
           "knowie-project-knowledge-reflection-2026-06-17.md",
           "storm-perspective-discovery-reflection-2026-06-18.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
+          "../04-agent/sop-compiler.md",
+          "../skills/reflective-review/SKILL.md",
           "../PROJECT_KNOWLEDGE.md",
           "../skills/reflective-research/SKILL.md",
           "../skills/reflective-minimality/SKILL.md",
@@ -1473,6 +1475,10 @@
         },
         {
           "level": 2,
+          "text": "Methodology Layer vs Operationalization Layer"
+        },
+        {
+          "level": 2,
           "text": "Decision"
         },
         {
@@ -1488,8 +1494,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 94,
-      "char_count": 5676
+      "line_count": 116,
+      "char_count": 7057
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
