@@ -58,7 +58,7 @@ Choose one primary workflow:
 | Task shape | Use |
 | --- | --- |
 | Ambiguous request, decision, task kickoff | `reflective-brief` |
-| Spec, usage design, ticket slicing, planning, or Test Plan without code | `reflective-spec-plan` |
+| Spec, usage design, ticket slicing, planning, Test Plan without code, or agent workflow design without runtime code | `reflective-spec-plan` |
 | Coding, refactor, debugging with edits | `reflective-implement` |
 | Code/artifact/plan review, critique, rating | `reflective-review` |
 | Current external research, DeepWiki, docs, long sources | `reflective-research` |
@@ -69,6 +69,8 @@ Choose one primary workflow:
 If more than one applies, pick one primary workflow and one gate. Example: coding a privacy-sensitive feature uses `reflective-risk` as the gate and `reflective-implement` as the execution workflow.
 
 Test-design boundary: producing a rigorous Test Plan from requirements without writing code uses `reflective-spec-plan`. Adding executable tests or changing implementation uses `reflective-implement`.
+
+Workflow-design boundary: a no-code workflow specification, state model, transition design, or orchestration plan uses `reflective-spec-plan`. An executable runner or graph uses `reflective-implement`; current framework comparison uses `reflective-research`; review of an existing workflow uses `reflective-review`; deciding whether a workflow is needed at all remains with `reflective-dispatch`.
 
 ## Strictness Ladder
 

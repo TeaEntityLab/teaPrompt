@@ -28,6 +28,7 @@ holdout_sets:
       - patch the failing behavior in code
       - add the missing function
       - change the implementation and verify it
+      - turn the accepted state model into an executable workflow
 
   - name: planning_holdout
     expected_workflow: reflective-spec-plan
@@ -39,6 +40,17 @@ holdout_sets:
       - define the delivery plan before coding
       - write the acceptance criteria and rollout tasks
       - make a PRD-level breakdown
+
+  - name: workflow_design_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - transition_ownership
+    phrases:
+      - specify a resumable workflow with checkpoints and cancellation but no runtime code
+      - map the control flow and name whether code model or human owns each transition
+      - design the state and artifact contracts for a gated multi-stage process
+      - prepare a workflow specification covering retries compensation and observability
 
   - name: test_planning_holdout
     expected_workflow: reflective-spec-plan
@@ -73,6 +85,7 @@ holdout_sets:
       - check whether the diff has mistakes
       - review the behavior changes carefully
       - find likely bugs before merge
+      - audit this workflow architecture for unsafe retry behavior
 
   - name: research_holdout
     expected_workflow: reflective-research
@@ -84,6 +97,16 @@ holdout_sets:
       - look up the official migration notes
       - find source-backed examples for this API
       - research whether this library changed recently
+      - compare current workflow architecture guidance from official sources
+
+  - name: workflow_selection_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - decide whether this process needs a prompt a fixed workflow or an autonomous agent
+      - choose the smallest orchestration level for this repeated task
 
   - name: risk_holdout
     expected_workflow: reflective-risk

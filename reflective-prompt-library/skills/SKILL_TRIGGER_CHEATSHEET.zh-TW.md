@@ -44,6 +44,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 - 需要 spec、usage-first、task slicing
 - 要從 spec 設計嚴謹 Test Plan，但不寫實作程式碼
 - 需要規劃工具 gate、權限邊界或副作用
+- 只設計可恢復 workflow、state model 或 orchestration plan，不寫 runtime code
 
 不要用在：
 
@@ -96,6 +97,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 - 要做來源查證、DeepWiki 檢視、方法論盤點
 - 要比較官方文件、第三方鏡像與社群分析
+- 要研究目前 workflow framework 或 orchestration pattern
 
 不要用在：
 

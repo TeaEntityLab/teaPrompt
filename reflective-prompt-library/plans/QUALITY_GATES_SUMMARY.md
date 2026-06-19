@@ -18,7 +18,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 - Checks for required frontmatter fields (name, description)
 
 **Results:**
-- Scanned 96 markdown files
+- Scanned 103 files
 - 0 errors found
 - All links and references are valid
 
@@ -63,9 +63,9 @@ python3 reflective-prompt-library/plans/generate_index.py
 - Provides actionable suggestions
 
 **Results:**
-- Scanned 96 files
+- Scanned 103 files
 - 0 errors, 0 warnings
-- 75 files with suggestions (mostly non-critical)
+- 81 files with suggestions (mostly non-critical)
 - All 9 skills pass validation
 
 **Usage:**
@@ -80,14 +80,14 @@ python3 reflective-prompt-library/plans/lint_skills.py
 **What it does:**
 - Implements ROUTE-001 from code-followups-plan.md
 - Loads intent groups, adversarial sets, thresholds, trace fields, and expected workflows from `route-001-paraphrase-eval.yaml`
-- Applies a small deterministic boundary classifier for ambiguous review/risk/planning phrasing
+- Applies a small deterministic boundary classifier for ambiguous review/risk/planning and workflow-design phrasing
 - Tests routing consistency across paraphrased intents
 - Validates that same intent routes to same workflow
 - Measures confidence, fallback behavior, low-confidence trace coverage, and silent downgrade incidents
 - Generates consistency reports
 
 **Results:**
-- Tested 15 groups with 113 paraphrases, including 4 adversarial boundary groups, the minimality gate, and both sides of the Test Plan / executable-test boundary
+- Tested 16 groups with 128 paraphrases, including 4 adversarial boundary groups, the minimality gate, and the Test Plan, executable-test, and workflow-design boundaries
 - Overall consistency: 100.0% (passes Phase-1 threshold >=70% and aspirational target >=95%)
 - Low-confidence route trace coverage: 100.0%
 - Adversarial groups now pass through boundary rules rather than isolated synonym matching
@@ -111,10 +111,10 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 9 holdout groups with 37 paraphrases
+- Tested 11 holdout groups with 46 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
-- Review phrasing around patches/regressions and clarification phrasing around unknown desired outcome now pass through boundary concepts
+- Review, clarification, workflow-design, workflow-implementation, research, and orchestration-selection phrasing now pass through boundary concepts
 - Output: `plans/route-002-results.json`
 
 **Usage:**
@@ -176,16 +176,16 @@ python3 reflective-prompt-library/plans/validate_governance.py
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
 
 **What it does:**
-- Defines 21 golden tasks for validation
-- Covers all major workflows (7 different skills)
-- Balanced difficulty distribution (5 easy, 9 medium, 6 hard)
-- Diverse categories (12 different categories)
+- Defines 23 golden tasks for validation
+- Covers all major benchmarked workflows (8 different skills)
+- Balanced difficulty distribution (5 easy, 11 medium, 7 hard)
+- Diverse categories (15 different categories)
 - Clear acceptance criteria for each task
 - Expected workflow mapping
 
 **Results:**
-- 21 benchmark tasks created
-- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, SOP compiler planning, and minimality
+- 23 benchmark tasks created
+- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, SOP compiler planning, minimality, test planning, and workflow design
 - Output: `plans/benchmark-tasks.json`
 
 **Usage:**
@@ -207,17 +207,17 @@ The implementation aligns with research findings:
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 96 | ✅ All pass |
+| Files validated | 103 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 9/9 | ✅ Complete |
-| Benchmark tasks | 21 | ✅ Ready |
+| Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
 | Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
 
-The current routing consistency measurement is 100.0% on ROUTE-001 across 15 groups and 113 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set, including the minimality gate and the Test Plan / executable-test boundary. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
+The current routing consistency measurement is 100.0% on ROUTE-001 across 16 groups and 128 paraphrases. The eval fixture is now the single source of truth for thresholds, expected workflows, trace fields, and adversarial sets, while `route_paraphrase_eval.py` is responsible for loading the fixture and measuring the current router. This passes the Phase-1 threshold (>=70%) and aspirational target (>=95%) for the expanded seeded boundary set, including the minimality gate and the Test Plan, executable-test, and workflow-design boundaries. The ROUTING_CONTRACT.md keeps both bars explicit so future evals can distinguish minimum acceptance from aspirational quality.
 
 ### Critical Reflection
 
@@ -227,19 +227,22 @@ ROUTE-001 should not be interpreted as proof that routing is solved. The useful 
 - research vs local review
 - clarification vs planning
 - handoff vs dispatch
+- workflow design vs executable orchestration
+- workflow research or review vs first-draft design
+- workflow formalization selection vs committing to a workflow
 
 The latest router improvement uses concept-level boundary rules for these cases instead of raw synonym accumulation. Future improvements should add unseen holdout cases or baseline-vs-skill evaluation before claiming general routing quality.
 
 ### Holdout Tracking
 
-ROUTE-002 currently measures unseen phrasing separately from ROUTE-001. It passes the holdout aspirational target with 100.0% consistency after adding concept-level review and clarification boundaries. This should still be treated as a seeded holdout, not proof of broad semantic routing; the next useful step is adding fresh holdout cases before further router tuning.
+ROUTE-002 currently measures unseen phrasing separately from ROUTE-001. It passes the holdout aspirational target with 100.0% consistency after adding concept-level review, clarification, workflow-design, and orchestration-selection boundaries. This should still be treated as a seeded holdout, not proof of broad semantic routing; the next useful step is adding fresh holdout cases before further router tuning.
 
 ## Next Steps (Phase 2)
 
 Based on the research and current implementation, suggested next steps:
 
 1. **Expand ROUTE-002 with fresh holdout cases** - Add unseen cases before further router tuning
-2. **Run benchmark tests** - Execute the 20 tasks with/without skills to measure effectiveness
+2. **Run benchmark tests** - Execute the 23 tasks with/without skills to measure effectiveness
 3. **Add CI/CD** - Integrate validation scripts into automated pipeline
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
 5. **Iterate on routing** - Use paraphrase eval results to improve keyword matching

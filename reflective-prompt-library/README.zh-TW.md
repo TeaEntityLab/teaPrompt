@@ -34,7 +34,7 @@ Doing the right thing > doing things right.
 | --- | --- |
 | 分流任務到最小適用 workflow | `skills/reflective-dispatch/SKILL.md` |
 | 釐清目標、假設、範圍、驗收、可證偽 | `skills/reflective-brief/SKILL.md` |
-| 寫 spec、usage-first 設計、task slices，或不寫程式碼的 Test Plan | `skills/reflective-spec-plan/SKILL.md` |
+| 寫 spec、usage-first 設計、task slices、不寫程式碼的 Test Plan，或不寫 runtime code 的 agent workflow design | `skills/reflective-spec-plan/SKILL.md` |
 | 實作程式碼，附驗證與可追蹤性 | `skills/reflective-implement/SKILL.md` |
 | 實作前挑戰不必要 code、dependency、抽象層或 scope | `skills/reflective-minimality/SKILL.md` |
 | 審查 code / plan / spec / AI output | `skills/reflective-review/SKILL.md` |

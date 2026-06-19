@@ -34,6 +34,8 @@ intent_groups:
       - Patch the parser so it handles empty input
       - Build this feature in the code
       - Make the code change directly
+      - Implement a LangGraph workflow with persistence
+      - Build the runner from this workflow design
 
   - intent: spec_planning
     expected_workflow: reflective-spec-plan
@@ -52,6 +54,23 @@ intent_groups:
       - Turn this idea into a PRD
       - Create a roadmap for the workflow
       - Prepare a release plan for this feature
+
+  - intent: workflow_design_only
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - state_and_artifact_contracts
+      - transition_ownership
+      - recovery_and_observability
+    phrases:
+      - Design a resumable agent workflow with persisted state, gates, recovery, and human review
+      - Turn this SOP into a gated workflow specification without implementing a runner
+      - Create a workflow design with sequential parallel routing and evaluator loops
+      - Define the state model transitions checkpoints and rollback for this process
+      - Plan a manager-and-handoff workflow without writing code
+      - Map this process into stages artifacts gates and stop conditions
+      - Produce an orchestration plan that separates deterministic and model-decided control
+      - Specify a human-in-the-loop workflow with observable failure recovery
 
   - intent: test_plan_only
     expected_workflow: reflective-spec-plan
@@ -101,6 +120,7 @@ intent_groups:
       - Look over my code in detail
       - Make sure it actually works
       - Review this like it is going to production
+      - Review this workflow design for missing recovery paths
 
   - intent: research_task
     expected_workflow: reflective-research
@@ -119,6 +139,8 @@ intent_groups:
       - Check source-backed guidance for this package
       - Find the current official recommendation
       - Research whether this approach is still valid
+      - Research current workflow orchestration patterns
+      - Compare official framework docs for durable workflow design
 
   - intent: risk_gating
     expected_workflow: reflective-risk
@@ -185,6 +207,8 @@ intent_groups:
       - Dispatch this to the best skill
       - Decide whether this needs a workflow or just a prompt
       - What skill is appropriate here?
+      - Choose between a deterministic workflow and a dynamic agent for this process
+      - Decide whether this needs a prompt workflow or full agent
 
   - intent: minimality_gate
     expected_workflow: reflective-minimality

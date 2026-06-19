@@ -198,7 +198,9 @@ class ParaphraseRouter:
                 "spec", "plan", "ticket", "design", "usage", "documentation",
                 "implementation plan", "workflow plan", "requirements", "break down", "tasks",
                 "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd",
-                "test plan", "test strategy", "test matrix", "given/when/then"
+                "test plan", "test strategy", "test matrix", "given/when/then",
+                "workflow specification", "workflow architecture", "state model", "control flow",
+                "orchestration plan", "resumable workflow"
             ],
             "reflective-implement": [
                 "code", "implement", "refactor", "debug", "fix", "edit",
@@ -281,7 +283,7 @@ class ParaphraseRouter:
         ]
         no_code_context = [
             "without writing code", "without changing code", "do not write code",
-            "do not implement", "no code", "no-code", "before implementation",
+            "do not implement", "without implementing", "no code", "no-code", "before implementation",
             "before coding", "from this spec", "from the spec", "plan only",
             "planning only", "leave code untouched"
         ]
@@ -301,6 +303,53 @@ class ParaphraseRouter:
         ):
             adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
             reasons.append("test-execution boundary: repository test changes requested")
+
+        workflow_design_signals = [
+            "workflow design", "workflow specification", "workflow architecture",
+            "resumable workflow", "state model", "control flow",
+            "orchestration plan", "checkpoint", "stop conditions",
+            "gated workflow", "human-in-the-loop workflow", "persisted state"
+        ]
+        workflow_execution_context = [
+            "implement", "build the runner", "write the runner", "executable workflow",
+            "code the workflow", "wire the workflow", "make it run", "langgraph"
+        ]
+        workflow_research_context = [
+            "research", "compare official", "compare current", "look up",
+            "current patterns", "best practices", "framework docs", "official sources"
+        ]
+        workflow_review_context = [
+            "review this workflow", "critique this workflow", "audit this workflow",
+            "inspect this workflow", "review the state model", "audit the state model"
+        ]
+        workflow_selection_signals = [
+            "decide whether", "choose between", "choose the smallest",
+            "which orchestration", "what orchestration"
+        ]
+        workflow_selection_targets = [
+            "workflow", "agent", "orchestration level", "prompt"
+        ]
+        if any(signal in text_lower for signal in workflow_selection_signals) and any(
+            target in text_lower for target in workflow_selection_targets
+        ):
+            adjustments["reflective-dispatch"] = adjustments.get("reflective-dispatch", 0) + 3
+            reasons.append("workflow boundary: formalization or control model selection requested")
+
+        if any(signal in text_lower for signal in workflow_design_signals):
+            if any(ctx in text_lower for ctx in workflow_execution_context) and not any(
+                ctx in text_lower for ctx in no_code_context
+            ):
+                adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
+                reasons.append("workflow boundary: executable orchestration requested")
+            elif any(ctx in text_lower for ctx in workflow_research_context):
+                adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
+                reasons.append("workflow boundary: current external guidance requested")
+            elif any(ctx in text_lower for ctx in workflow_review_context):
+                adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 3
+                reasons.append("workflow boundary: existing design review requested")
+            else:
+                adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 3
+                reasons.append("workflow boundary: no-code workflow design requested")
 
         review_signals = [
             "confirm this has no problem", "look if", "mistake",

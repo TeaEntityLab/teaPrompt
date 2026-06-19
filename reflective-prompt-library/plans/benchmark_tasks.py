@@ -358,6 +358,21 @@ class BenchmarkSet:
                     "Adversarial or anti-cheating checks are included when relevant",
                     "Unknowns and false-positive guards are recorded without changing production code"
                 ]
+            ),
+            BenchmarkTask(
+                id="B023",
+                name="No-code agent workflow design",
+                description="Design a resumable human-in-the-loop agent workflow without implementing a runner",
+                expected_workflow="reflective-spec-plan",
+                difficulty="hard",
+                category="workflow-design",
+                acceptance_criteria=[
+                    "The lowest sufficient formalization level is selected and justified",
+                    "Fixed workflow, dynamic agent, and selected orchestration patterns are distinguished",
+                    "State, artifacts, checkpoints, and transition control ownership are explicit",
+                    "Side effects define authority, idempotency, retry caps, compensation, and hard stops",
+                    "Observability and scenario tests separate specified behavior from unproven runtime guarantees"
+                ]
             )
         ]
     

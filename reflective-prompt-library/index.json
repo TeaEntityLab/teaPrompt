@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T01:31:58.655885",
+  "generated_at": "2026-06-20T02:33:36.899079",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1421,8 +1421,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 300,
-      "char_count": 11962
+      "line_count": 303,
+      "char_count": 12363
     },
     {
       "path": "reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md",
@@ -1442,7 +1442,6 @@
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
-          "../PROJECT_KNOWLEDGE.md",
           "../skills/reflective-research/SKILL.md",
           "../skills/reflective-minimality/SKILL.md",
           "../skills/reflective-dispatch/SKILL.md"
@@ -1475,6 +1474,14 @@
         },
         {
           "level": 2,
+          "text": "Decision-Rule Correction"
+        },
+        {
+          "level": 3,
+          "text": "Applied Counterexample: Test Plan Routing"
+        },
+        {
+          "level": 2,
           "text": "Methodology Layer vs Operationalization Layer"
         },
         {
@@ -1494,8 +1501,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 116,
-      "char_count": 7057
+      "line_count": 161,
+      "char_count": 9690
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -2848,7 +2855,7 @@
         }
       ],
       "line_count": 78,
-      "char_count": 3928
+      "char_count": 4051
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -2911,8 +2918,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 154,
-      "char_count": 5032
+      "line_count": 158,
+      "char_count": 5367
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -2977,8 +2984,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 138,
-      "char_count": 2296
+      "line_count": 142,
+      "char_count": 2495
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -3426,8 +3433,8 @@
           "text": "Guardrails"
         }
       ],
-      "line_count": 111,
-      "char_count": 4685
+      "line_count": 115,
+      "char_count": 5356
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -3975,8 +3982,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 148,
-      "char_count": 5173
+      "line_count": 156,
+      "char_count": 6005
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -4289,11 +4296,11 @@
       "category": "skills",
       "subcategory": "reflective-spec-plan",
       "name": "reflective-spec-plan",
-      "description": "Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.",
+      "description": "Use this to turn a requirement into a practical spec, usage-first design, reviewable task plan, no-code Test Plan, or agent workflow design. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, stateful or resumable workflow specification, rigorous test design before implementation, or wants to avoid building the wrong thing.",
       "license": "MIT",
       "frontmatter": {
         "name": "reflective-spec-plan",
-        "description": "Use this to turn a requirement into a practical spec, usage-first design, and small reviewable task plan. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, or wants to avoid building the wrong thing.",
+        "description": "Use this to turn a requirement into a practical spec, usage-first design, reviewable task plan, no-code Test Plan, or agent workflow design. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, stateful or resumable workflow specification, rigorous test design before implementation, or wants to avoid building the wrong thing.",
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
@@ -4308,7 +4315,10 @@
         "spec.md",
         "usage.md",
         "task-plan.md",
+        "test-plan.md",
+        "workflow-spec.md",
         "02-engineering/spec-writer.md",
+        "02-engineering/test-designer.md",
         "02-engineering/usage-first.md",
         "02-engineering/task-slicer.md",
         "04-agent/workflow-engine.md",
@@ -4330,7 +4340,23 @@
         },
         {
           "level": 2,
+          "text": "Implementation Decision Gate"
+        },
+        {
+          "level": 2,
           "text": "Workflow"
+        },
+        {
+          "level": 2,
+          "text": "Test Plan Mode"
+        },
+        {
+          "level": 3,
+          "text": "TEST-001: <name>"
+        },
+        {
+          "level": 2,
+          "text": "Workflow Design Mode"
         },
         {
           "level": 2,
@@ -4353,8 +4379,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 135,
-      "char_count": 3909
+      "line_count": 230,
+      "char_count": 10292
     }
   ],
   "total_files": 79

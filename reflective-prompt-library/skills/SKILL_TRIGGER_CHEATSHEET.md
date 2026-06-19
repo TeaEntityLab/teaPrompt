@@ -48,6 +48,7 @@ Trigger cues:
 - "Do usage-first design before coding."
 - "Design a rigorous Test Plan from this spec without writing code."
 - "Plan tool gates, authority boundaries, and side effects."
+- "Design a resumable workflow, state model, or orchestration plan without runtime code."
 
 Do not use when:
 
@@ -106,6 +107,7 @@ Trigger cues:
 - "Inspect docs, DeepWiki, and long references."
 - "Separate evidence from inference."
 - "Compare official docs, third-party mirrors, and community analysis."
+- "Research current workflow frameworks or orchestration patterns."
 
 Do not use when:
 
