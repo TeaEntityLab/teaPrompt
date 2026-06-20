@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-20T02:33:36.899079",
+  "generated_at": "2026-06-20T16:43:00.922515",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3114,8 +3114,8 @@
           "text": "學習目標"
         }
       ],
-      "line_count": 31,
-      "char_count": 566
+      "line_count": 37,
+      "char_count": 925
     },
     {
       "path": "reflective-prompt-library/05-domain/deep-analysis.md",
