@@ -25,6 +25,7 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 | 2026-06-20 | Loop-Skill | GitHub API (created 2026-06-17, no LICENSE, 19★, single-day) | no | No change — methodology complete, runtime is a non-goal, gate unmet | this file |
 | 2026-06-20 | preflight-checker | GitHub API (created 2026-06-19, no LICENSE, 0★, 0.1.0) | no | No change — UX patterns already in `reflective-review`; missing items out of scope | this file |
 | 2026-06-20 | Codex Record & Replay | OpenAI official docs | operational, not methodological | No change *to TeaPrompt* — the gap is real but operational (acquisition / persistence / replay), which is a standing non-goal; R&R is vendor-locked and uncopyable. Worth using as an external acquisition front-end | this file |
+| 2026-06-21 | Hyperplan / multi-agent adversarial planning (OMO) | GitHub repo (code-yeongyu/oh-my-openagent) SKILL.md | no — runtime hits non-goals; methodology mostly covered | No change — Hyperplan runtime is agent swarm + runtime engine (both non-goals); methodology layer overlaps existing lenses; three possible gaps (Defend/Refine/Concede, Evidence Grade, Assumption Ledger) not promoted | this file |
 
 ## The Recurring Evaluation Procedure
 
@@ -153,7 +154,7 @@ skill) or correct the gap. Until then it stays a lesson plus this case study.
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Three no-change outcomes recorded | done | Case Comparison table |
+| Four no-change outcomes recorded | done | Case Comparison table |
 | Recurring procedure captured | done | this file + PROJECT_KNOWLEDGE Durable Lesson |
 | Durable Lesson + Decision Index added | done | PROJECT_KNOWLEDGE.md |
 | No new skill or directory created | done | Rejected Alternatives |
