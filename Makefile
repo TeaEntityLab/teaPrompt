@@ -10,5 +10,6 @@ validate:
 	python3 $(PLANS)/lint_skills.py
 	python3 $(PLANS)/validate_governance.py
 	python3 $(PLANS)/validate_project_knowledge.py
+	python3 $(PLANS)/route_paraphrase_eval.py
 
 all: test validate
