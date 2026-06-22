@@ -31,7 +31,7 @@ Core identity prompt
   `PROJECT_KNOWLEDGE.template.md` for project-specific design judgement.
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 workflow skills.
-- `skills/examples/`: two practical input/output examples per workflow skill.
+- `skills/examples/`: worked input/output examples for each workflow skill.
 - `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
 - `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.
@@ -60,6 +60,8 @@ The prompt files are the source material. The `skills/` directory is the operati
 | Handoff, retro, and memory consolidation | `skills/reflective-handoff-retro/SKILL.md` |
 
 The design intentionally avoids one skill per prompt. Use the prompt library for nuance and the skills for execution shape.
+
+> Skills are prompt-level workflow wrappers: natural-language procedures interpreted by the host runtime (Claude Code, Codex, OpenCode, etc.). They do not provide a multi-agent runtime, async messaging, or role isolation.
 
 ## Recommended Defaults
 

@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Handoff Retro
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Preserve only the context needed for continuation and turn repeated lessons into maintainable process improvements.

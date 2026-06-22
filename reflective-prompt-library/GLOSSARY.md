@@ -166,3 +166,22 @@ review) with Formalization L0 (prompt-only, no runner). A routine ETL
 pipeline might use Strictness L1 (low rigor) with Formalization L4 (runner
 with deterministic gates). Always qualify bare L-level references with the taxonomy name:
 write "Strictness L3" or "Formalization L3", never bare "L3".
+
+---
+
+## Skill (Workflow Skill)
+
+A reusable `SKILL.md` file that encodes a repeatable agent workflow as
+natural-language instructions interpreted by the host runtime.
+
+**What it is:** A prompt-level workflow descriptor — a procedure for the
+model to follow, not a runtime module with its own process, state,
+messaging, or lifecycle.
+
+**Operational test:** A skill can be loaded, read, and followed by any
+compatible agent runtime (Claude Code, Codex, OpenCode, Cursor, etc.)
+as a text document. If a workflow requires asynchronous messaging between
+independent agents, role-specific context isolation, or a persistent
+runtime process, a single skill alone is insufficient — those require a
+dedicated orchestration layer outside this library's scope. See
+`PROJECT_KNOWLEDGE.md` for the full list of non-goals.

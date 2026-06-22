@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Implement
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Implement the smallest safe change that satisfies explicit acceptance criteria.
@@ -143,7 +145,7 @@ Use this loop until acceptance criteria are met or a hard stop requires Human Re
 ## Next Action
 ```
 
-## Hard Stop
+## Operating Rules
 
 Request Human Review for auth, permission changes, security-sensitive logic, privacy-sensitive data, database migrations, destructive operations, billing/cost changes, public API breaking changes, or production deployment.
 

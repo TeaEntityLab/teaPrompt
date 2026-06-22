@@ -1,0 +1,25 @@
+name: Python Tools
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'reflective-prompt-library/**'
+      - 'Makefile'
+      - '.github/workflows/python-tools.yml'
+  pull_request:
+    paths:
+      - 'reflective-prompt-library/**'
+      - 'Makefile'
+      - '.github/workflows/python-tools.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install -r reflective-prompt-library/requirements-dev.txt
+      - run: make all

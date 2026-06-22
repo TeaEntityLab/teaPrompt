@@ -54,7 +54,7 @@ Recommended starting points:
 TeaPrompt keeps prompts and workflows separate:
 
 - Prompts provide nuance, judgment frames, and reusable wording.
-- Skills provide repeatable execution shape.
+- Skills provide repeatable execution shape — they are prompt-level workflow descriptors interpreted by the user's agent runtime, not a multi-agent orchestration layer.
 - Plans capture future code or workflow automation without overengineering the current library.
 
 The workflow layer intentionally uses a small number of broad, composable skills instead of one skill per prompt.

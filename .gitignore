@@ -22,3 +22,7 @@ Icon
 reflective-prompt-library/plans/route-*-results.json
 reflective-prompt-library/plans/benchmark-tasks.json
 **/__pycache__
+.pytest_cache/
+.env
+.venv/
+*.pyc

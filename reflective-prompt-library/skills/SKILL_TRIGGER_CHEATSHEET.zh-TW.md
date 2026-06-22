@@ -6,6 +6,8 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 這份是 9 個 workflow skills 的一頁式選用指南。
 
+> **輸出慣例**：精簡的交付規格應放在 Module Contract 的 `Output:` 欄位。僅當 skill 產生實質的輸出範本（例如 markdown 區塊、多欄位結構）時，才額外加入獨立的 `## Output` 區段。具有程序步驟（before/during/after）的 skill 通常不需要獨立的 Output 區段。
+
 分流公平性說明：
 - 下面的觸發提示只是範例，不是必要措辭。
 - 相近意圖即使措辭不同，也應該獲得相近的分流結果。

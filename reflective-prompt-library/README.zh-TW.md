@@ -44,6 +44,8 @@ Doing the right thing > doing things right.
 
 設計上刻意避免一個 prompt 對應一個 skill。使用 prompt library 取得細膩判斷，使用 skills 取得執行框架。
 
+> Skills 是 prompt 層級的工作流程包裝：由宿主 runtime（Claude Code、Codex、OpenCode 等）解譯執行的自然語言程序。它們不提供多 agent 執行時期、非同步訊息傳遞、或角色隔離。
+
 ## 延伸文件
 
 - 安裝： [SKILL_INSTALLATION.zh-TW.md](SKILL_INSTALLATION.zh-TW.md)

@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Review
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Find what would make the artifact fail in real use, then recommend the smallest useful fix.

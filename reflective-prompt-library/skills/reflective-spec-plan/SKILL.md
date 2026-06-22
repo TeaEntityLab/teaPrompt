@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Spec Plan
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Produce just enough specification to guide execution and review. Avoid beautiful but unused specs.
@@ -211,7 +213,7 @@ When chat-only, use the same headings inline.
 - Human Review Required: yes/no
 ```
 
-## Guardrails
+## Operating Rules
 
 - Do not turn every idea into a workflow engine.
 - Do not plan implementation details before acceptance criteria exist.

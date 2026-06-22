@@ -158,6 +158,15 @@ Contributions must pass these quality gates:
 - **Translations** welcome - maintain both versions
 - See `LANGUAGE_POLICY.md` for details
 
+### Translation Completeness
+
+Translation files (`.zh-TW.md`) must cover:
+- All section headings
+- All code blocks
+- All warning, note, and callout boxes
+
+Narrative sections may be summarised if a disclaimer at the top of the file notes the editorial choice. Translations that omit entire sections without an editorial note should not be merged. Existing abridged translations are grandfathered under this policy.
+
 ## Testing Your Changes
 
 ### Manual Testing

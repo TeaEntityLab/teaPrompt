@@ -9,6 +9,8 @@ external_io: true
 
 # Reflective Research
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Produce a source-backed answer or artifact that can survive handoff and review.

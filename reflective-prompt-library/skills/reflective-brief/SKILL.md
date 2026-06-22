@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Brief
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Turn a request into a small, testable task brief before deeper work.

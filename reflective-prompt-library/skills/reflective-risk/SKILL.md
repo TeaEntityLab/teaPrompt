@@ -9,6 +9,8 @@ external_io: false
 
 # Reflective Risk
 
+**Type:** Prompt-level workflow
+
 ## Purpose
 
 Prevent irreversible mistakes. This skill is a gate, not an implementation plan.

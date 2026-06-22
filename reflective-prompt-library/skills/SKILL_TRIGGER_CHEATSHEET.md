@@ -4,6 +4,12 @@ Language: English | [繁體中文](SKILL_TRIGGER_CHEATSHEET.zh-TW.md)
 
 This page is a fast selector for the 9 TeaPrompt workflow skills.
 
+> **Output conventions:** A compact deliverable specification belongs in the
+> Module Contract's `Output:` field. Add a standalone `## Output` section only
+> when the skill produces a substantive output template (e.g., markdown block,
+> multi-field structure). Skills with procedural steps (before/during/after)
+> generally do not need a standalone Output section.
+
 Use it when you need quick routing instead of reading each `SKILL.md` in full.
 
 Routing fairness note:

@@ -55,7 +55,7 @@ reflective-prompt-library/README.md
 TeaPrompt 將 prompts 與 workflows 分離：
 
 - **Prompts** 提供細膩的判斷框架與可重用的措辭。
-- **Skills** 提供可重複的執行流程。
+- **Skills** 提供可重複的執行流程——它們是 prompt 層級的工作流程描述，由使用者的 agent runtime 解譯執行，而非多 agent 編排層。
 - **Plans** 記錄未來程式或工作流自動化的規劃，避免過早過度設計。
 
 工作流層刻意使用數量少、可組合的 broad skills，而不是每個 prompt 對應一個 skill。

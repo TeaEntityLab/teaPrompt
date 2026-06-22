@@ -9,13 +9,17 @@ external_io: false
 
 # Reflective Minimality
 
-Use this skill to prevent unnecessary code, abstractions, dependencies, files, and prose while preserving explicit requirements and safety-critical behavior.
+**Type:** Prompt-level workflow
+
+## Purpose
+
+Prevent unnecessary code, abstractions, dependencies, files, and prose while preserving explicit requirements and safety-critical behavior.
 
 It is inspired by the Ponytail-style "lazy senior developer" pattern, but in this library it is a narrow gate: it does not replace spec, risk, implementation, or review workflows.
 
 ## Module Contract
 
-### Trigger
+Trigger:
 
 - The task risks overengineering, speculative abstraction, dependency sprawl, wrapper layers, or scaffolding "for later."
 - The user asks for minimality, YAGNI, anti-bloat, "do less," "can this be deleted," "avoid overengineering," or a Ponytail-like pass.
@@ -23,7 +27,7 @@ It is inspired by the Ponytail-style "lazy senior developer" pattern, but in thi
 - A code review needs complexity-only findings before or alongside correctness review.
 - A repo-wide complexity audit or intentional shortcut/debt ledger is requested.
 
-### Methods
+Methods:
 
 - Existence challenge: ask whether the thing needs to exist at all.
 - Scope reduction: delete, narrow, or defer before adding.
@@ -118,3 +122,10 @@ Lean already. Ship.
 For a repo-wide audit, rank the largest cuts first and use the same tags.
 
 For a debt ledger, scan intentional shortcut markers and flag any entry that lacks a ceiling or upgrade trigger.
+
+## Prompt Sources
+
+- `01-thinking/counterargument.md`
+- `02-engineering/code-reviewer.md`
+- `04-agent/runtime-trust-boundary.md`
+- `02-engineering/implementation-agent.md`

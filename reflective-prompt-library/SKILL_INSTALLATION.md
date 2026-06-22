@@ -14,6 +14,7 @@ reflective-prompt-library/skills/
   reflective-dispatch/
   reflective-handoff-retro/
   reflective-implement/
+  reflective-minimality/    # gate skill — anti-bloat review, not a lifecycle workflow
   reflective-research/
   reflective-review/
   reflective-risk/
@@ -252,6 +253,7 @@ Prefer:
 - reflective-brief for goal/scope/acceptance
 - reflective-spec-plan for specs and task slicing
 - reflective-implement for coding
+- reflective-minimality as a gate before implementation
 - reflective-review for review
 - reflective-research for docs/research
 - reflective-risk for high-risk gates
