@@ -79,6 +79,15 @@ This contract applies to:
 - `validate_route_fixture.py` enforces minimum group and phrase counts in CI.
 - Holdout expansion is maintenance, not proof of broad semantic routing.
 
+### R9: Production-negation and plan-only boundaries
+
+- Phrases that **negate** production risk (e.g. "not production deploy", 不是正式環境風險)
+  must not auto-route to `reflective-risk` when the user requests plain code review.
+- Planning-only requests with explicit no-code context route to `reflective-spec-plan`,
+  even when incidental words like "change" appear in "code changes".
+- Add holdout cases for these boundaries before tuning router keyword lists.
+
+
 ## Router Output Contract
 
 Use this minimal output shape for routing responses:

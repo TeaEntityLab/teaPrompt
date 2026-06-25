@@ -260,8 +260,8 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (28 groups, 82 paraphrases) |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (9 groups, 20 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (32 groups, 91 paraphrases) |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (11 groups, 24 paraphrases) |
 | Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
 | Linting errors | 0 | ✅ Clean |
 
@@ -292,7 +292,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 ### Done ✅
 
 1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
-2. **ROUTE-001/002/003 in CI** — 128 + 82 + 20 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
+2. **ROUTE-001/002/003 in CI** — 128 + 91 + 24 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
 

@@ -296,6 +296,44 @@ holdout_sets:
       - clarify the goal and assumptions before we pick a workflow
       - what should we optimize for before choosing skills
 
+  - name: plan_only_no_code_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - draft rollout plan only no code changes
+      - write tickets and acceptance criteria without touching the repo
+      - spec the delivery plan before any implementation starts
+
+  - name: plain_review_not_risk_holdout
+    expected_workflow: reflective-review
+    expected_rigor: high
+    expected_enhancements:
+      - quality_review
+    phrases:
+      - review this PR for style and logic before merge
+      - check the diff for readability not production deploy
+      - inspect the patch for regressions without production risk assessment
+
+  - name: zh_tw_plan_only_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - 把規格寫出來但不要改程式
+      - 只寫工單和驗收標準不要動 code
+
+  - name: zh_tw_plain_review_holdout
+    expected_workflow: reflective-review
+    expected_rigor: high
+    expected_enhancements:
+      - quality_review
+    phrases:
+      - 審查 PR 的可讀性不是正式環境風險
+
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

@@ -259,6 +259,22 @@ class ParaphraseRouter:
         adjustments: Dict[str, int] = {}
         reasons = []
 
+        no_code_context = [
+            "without writing code", "without changing code", "do not write code",
+            "do not implement", "without implementing", "no code", "no-code", "before implementation",
+            "before coding", "from this spec", "from the spec", "plan only",
+            "planning only", "leave code untouched", "without touching the repo",
+            "不要改程式", "不要動 code", "不要動程式",
+        ]
+        production_negated = any(
+            neg in text_lower
+            for neg in [
+                "not production", "not a production", "without production risk",
+                "not production risk", "not production deploy",
+                "不是正式環境", "非正式環境", "不是正式環境風險",
+            ]
+        )
+
         risk_signals = [
             "production", "security", "credential", "deployment", "dangerous",
             "not break", "breaking", "avoid breaking", "before changing"
@@ -267,6 +283,7 @@ class ParaphraseRouter:
         production_review_style = "review this like" in text_lower
         if (
             not production_review_style
+            and not production_negated
             and any(signal in text_lower for signal in risk_signals)
             and any(ctx in text_lower for ctx in risk_context)
         ):
@@ -290,12 +307,17 @@ class ParaphraseRouter:
             "design tests", "regression tests", "anti-cheating",
             "given/when/then", "acceptance criteria"
         ]
-        no_code_context = [
-            "without writing code", "without changing code", "do not write code",
-            "do not implement", "without implementing", "no code", "no-code", "before implementation",
-            "before coding", "from this spec", "from the spec", "plan only",
-            "planning only", "leave code untouched"
+        plan_only_signals = [
+            "rollout plan", "delivery plan", "write tickets", "break down",
+            "acceptance criteria", "before any implementation", "spec the delivery",
+            "工單", "驗收標準",
         ]
+        if any(signal in text_lower for signal in plan_only_signals) and any(
+            ctx in text_lower for ctx in no_code_context
+        ):
+            adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 4
+            reasons.append("plan boundary: planning artifact without code changes")
+
         if any(signal in text_lower for signal in test_plan_signals) and any(
             ctx in text_lower for ctx in no_code_context
         ):
@@ -375,6 +397,20 @@ class ParaphraseRouter:
             "check carefully", "review this like", "regression", "regressions"
         ]
         review_context = ["inspect", "check", "review", "find", "confirm", "before merge", "diff", "patch", "change"]
+        plain_review_signals = [
+            "readability", "style and logic", "not production deploy",
+            "without production risk", "not production risk",
+            "不是正式環境風險", "可讀性",
+        ]
+        plain_review_context = [
+            "review", "inspect", "check", "diff", "patch", "pr", "regression", "審查",
+        ]
+        if any(signal in text_lower for signal in plain_review_signals) and any(
+            ctx in text_lower for ctx in plain_review_context
+        ):
+            adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 3
+            reasons.append("review boundary: non-production correctness inspection")
+
         if (
             not trivial_fix_active
             and any(signal in text_lower for signal in review_signals)

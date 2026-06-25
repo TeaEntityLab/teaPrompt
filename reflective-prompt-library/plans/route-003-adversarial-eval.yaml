@@ -100,6 +100,25 @@ adversarial_sets:
       - lessons learned retro after this sprint
       - sprint retrospective with lessons learned
 
+  - name: implement_not_plan_trap
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - ship the code fix for the off-by-one bug
+      - implement the approved spec in the repository
+
+  - name: research_not_brief_trap
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - compare official docs for both libraries before deciding
+      - source-backed comparison of migration paths
+
+
 
 evaluation_rules:
   - name: route_equivalence

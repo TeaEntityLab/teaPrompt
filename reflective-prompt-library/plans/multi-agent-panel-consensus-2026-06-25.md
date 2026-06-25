@@ -811,8 +811,209 @@ User directive: continue Socratic panel for as many rounds as feasible.
 
 - `make all`: **62 pytest**, ROUTE-001 **100%** (16 groups / 128), ROUTE-002 **100%** (28 / 82), ROUTE-003 **100%** (9 / 20), governance **9/9**, skill examples **9/9**, route fixture gate **pass**
 
+
+## Round 36 — Plan-only holdout (2026-06-25)
+
+User directive: continue Socratic panel for as many rounds as feasible.
+
+### BC: Add `plan_only_no_code_holdout` to ROUTE-002?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — "code changes" in plan-only phrasing misroutes without holdout |
+| Opus | **Agree** — falsifiable boundary before keyword tuning |
+| Gemini | **Agree** — plan-only saves implement context cost |
+| Composer | **Agree** — IDE users mix plan + code words casually |
+| Sakana | **Agree** — boundary clarity over new skill |
+| GLM | **Agree** — TW plan-only phrases need parity |
+
+**Consensus:** **Agree** — ROUTE-002 group + plan-only boundary rule.
+
+## Round 37 — Plain review vs risk (2026-06-25)
+
+### BD: Add `plain_review_not_risk_holdout`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — production keyword false positives on plain PR review |
+
+**Socratic Q:** What fails if every "production" mention routes to risk?
+**Answer:** Readability/regression reviews get over-rigor and wrong workflow.
+
+**Consensus:** **Agree** — holdout group + production-negation boundary.
+
+## Round 38 — Router boundary repair (2026-06-25)
+
+### BE: Plan-only and production-negation rules in `route_paraphrase_eval.py`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — holdout added first (R8); then boundary repair |
+
+**Consensus:** **Agree** — `no_code_context` hoist, `production_negated`, `plan_only_signals`, `plain_review_signals`.
+
+## Round 39 — Adversarial implement/research traps (2026-06-25)
+
+### BF: ROUTE-003 `implement_not_plan_trap` and `research_not_brief_trap`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — separate adversarial traps from holdout tuning set |
+
+**Consensus:** **Agree** — +2 ROUTE-003 groups.
+
+## Round 40 — ROUTING_CONTRACT R9 (2026-06-25)
+
+### BG: Codify production-negation and plan-only as normative?
+
+| Lens | Position |
+| --- | --- |
+| Opus/Codex | **Agree** — contract documents fairness edge cases |
+| All | **Agree** — R9 in `ROUTING_CONTRACT.md` |
+
+**Consensus:** **Agree** — R9 added.
+
+## Round 41 — Fixture minimum bump (2026-06-25)
+
+### BH: Raise `validate_route_fixture.py` minimums?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — prevents accidental holdout shrinkage |
+| All | **Agree** — ROUTE-002 32/91, ROUTE-003 11/24 |
+
+**Consensus:** **Agree** — minimum constants updated; existing pytest covers.
+
+## Round 42 — zh-TW plan/review holdouts (2026-06-25)
+
+### BI: TW fairness groups for plan-only and plain review?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree** — 不是正式環境風險 must not force risk workflow |
+| All | **Agree** — `zh_tw_plan_only_holdout`, `zh_tw_plain_review_holdout` |
+
+**Consensus:** **Agree**.
+
+## Round 43 — GLOSSARY boundary terms (2026-06-25)
+
+### BJ: Operational definitions for plan-only and plain review?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — EN definitions; TW headings in glossary |
+
+**Consensus:** **Agree** — GLOSSARY entries + playbook rounds 1–50.
+
+## Round 44 — Metrics sync (2026-06-25)
+
+### BK: QUALITY_GATES_SUMMARY metrics?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — 32/91 and 11/24 |
+
+**Consensus:** **Agree**.
+
+## Round 45 — Decision Index (2026-06-25)
+
+### BL: PROJECT_KNOWLEDGE entry for Rounds 36–50?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — single Decision Index pointer |
+
+**Consensus:** **Agree**.
+
+## Round 46 — Cheatsheet cues (2026-06-25)
+
+### BM: SKILL_TRIGGER_CHEATSHEET EN/TW boundary lines?
+
+| Lens | Position |
+| --- | --- |
+| Composer/GLM | **Agree** — progressive disclosure for adopters |
+| All | **Agree** |
+
+**Consensus:** **Agree**.
+
+## Round 47 — Tenth skill reaffirm (2026-06-25)
+
+### BN: Re-open tenth core skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — promotion gate unchanged |
+
+**Consensus:** **Reject**.
+
+## Round 48 — Benchmark CI reaffirm (2026-06-25)
+
+### BO: LLM benchmark in CI?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — fixture gate only |
+
+**Consensus:** **Reject**.
+
+## Round 49 — CONTRIBUTING R8–R9 pointer (2026-06-25)
+
+### BP: Routing maintenance checklist extension?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — plan-only/review-vs-risk holdout-before-tune step |
+
+**Consensus:** **Agree**.
+
+## Round 50 — Final extended seal (2026-06-25)
+
+### BQ: Close panel at Round 50?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — options A–BQ resolved; maintenance only remains |
+
+**Consensus:** **Agree close** — panel sealed at **Round 50**; Decision Index entry.
+
+### Rounds 36–50 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| BC | Plan-only holdout | **Agree** | ROUTE-002 group |
+| BD | Plain review holdout | **Agree** | ROUTE-002 group |
+| BE | Router boundaries | **Agree** | plan-only + production-negation |
+| BF | Adversarial traps | **Agree** | ROUTE-003 +2 groups |
+| BG | R9 contract | **Agree** | ROUTING_CONTRACT.md |
+| BH | Fixture minimums | **Agree** | validate_route_fixture.py |
+| BI | zh-TW holdouts | **Agree** | ROUTE-002 TW groups |
+| BJ | GLOSSARY terms | **Agree** | plan-only + plain review |
+| BK | Metrics sync | **Agree** | QUALITY_GATES_SUMMARY |
+| BL | Decision Index | **Agree** | PROJECT_KNOWLEDGE |
+| BM | Cheatsheet cues | **Agree** | EN + zh-TW |
+| BN | Tenth skill | **Reject** | — |
+| BO | Benchmark CI | **Reject** | — |
+| BP | CONTRIBUTING | **Agree** | R8–R9 step |
+| BQ | Final seal | **Agree** | Panel sealed Round 50 |
+
+**All roles agree.**
+
+## Implemented Changes (Rounds 36–50)
+
+- `route-002-holdout-eval.yaml`: plan-only, plain-review, zh-TW plan/review groups (91 paraphrases / 32 groups)
+- `route-003-adversarial-eval.yaml`: implement-not-plan, research-not-brief traps (24 paraphrases / 11 groups)
+- `route_paraphrase_eval.py`: production-negation, plan-only, plain-review boundaries
+- `validate_route_fixture.py`: minimum coverage 32/91 and 11/24
+- `ROUTING_CONTRACT.md`: R9
+- `GLOSSARY.md`, `QUALITY_GATES_SUMMARY.md`, `PROJECT_KNOWLEDGE.md`, `CONTRIBUTING.md`
+- `SKILL_TRIGGER_CHEATSHEET.md` + `.zh-TW.md`
+
+## Verification (Rounds 36–50)
+
+- `make all`: **62 pytest**, ROUTE-001 **100%** (16/128), ROUTE-002 **100%** (32/91), ROUTE-003 **100%** (11/24)
+
 ## Panel status (final)
 
-**Sealed 2026-06-25** after **Round 35** (options A–BB). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook — expand holdout before router tuning; no open implementation blockers.
+**Sealed 2026-06-25** after **Round 50** (options A–BQ). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook — expand holdout before router tuning; no open implementation blockers.
 
-_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — `validate_route_fixture.py` + ROUTE-002/003 holdout expansion before `route_paraphrase_eval.py` tuning._
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — `validate_route_fixture.py` + ROUTE-002/003 holdout expansion before `route_paraphrase_eval.py` tuning (R8–R9)._

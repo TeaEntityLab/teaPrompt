@@ -41,3 +41,17 @@ def test_route_fixtures_use_known_workflows():
         config = load_route_eval_config(PLANS / fixture_name)
         for group in config[section]:
             assert group["expected_workflow"] in VALID_WORKFLOWS, group["name"]
+
+def test_route_fixture_minimums_match_validator_constants():
+    """Anti-drift: fixture actuals must meet exported minimum constants."""
+    route_002 = load_route_eval_config(PLANS / "route-002-holdout-eval.yaml")
+    route_003 = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    r2_groups = len(route_002["holdout_sets"])
+    r2_phrases = sum(len(g.get("phrases", [])) for g in route_002["holdout_sets"])
+    r3_groups = len(route_003["adversarial_sets"])
+    r3_phrases = sum(len(g.get("phrases", [])) for g in route_003["adversarial_sets"])
+    assert r2_groups == ROUTE_002_MIN_HOLDOUT_GROUPS
+    assert r2_phrases == ROUTE_002_MIN_PHRASES
+    assert r3_groups == ROUTE_003_MIN_ADVERSARIAL_GROUPS
+    assert r3_phrases == ROUTE_003_MIN_PHRASES
+

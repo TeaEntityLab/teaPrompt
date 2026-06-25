@@ -28,6 +28,7 @@ Before tuning `route_paraphrase_eval.py`:
 
 1. Add fresh holdout phrases to `route-002-holdout-eval.yaml` and/or adversarial cases to `route-003-adversarial-eval.yaml`.
 2. Run `make all` — `validate_route_fixture.py` enforces minimum fixture coverage.
+3. When fixing review-vs-risk or plan-only boundaries, add holdout phrases **before** editing `route_paraphrase_eval.py` (see `ROUTING_CONTRACT.md` R8–R9).
 3. Record governance-surface decisions in `PROJECT_KNOWLEDGE.md` Decision Index when routing contract changes.
 
 See [ROUTING_CONTRACT R8](reflective-prompt-library/plans/ROUTING_CONTRACT.md) and the [Governance Maintenance Playbook](reflective-prompt-library/GLOSSARY.md).

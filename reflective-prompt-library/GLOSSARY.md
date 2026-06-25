@@ -282,9 +282,30 @@ its English equivalent intent group.
 
 ---
 
+
+## Plan-Only Without Code / 僅規劃不寫程式
+
+A request for tickets, acceptance criteria, rollout plans, or specs with explicit
+no-code context. Routes to `reflective-spec-plan`, not `reflective-implement`.
+
+**Operational test:** Phrase includes planning artifact signals **and** no-code
+context (e.g. "plan only", "without touching the repo", 不要改程式).
+
+---
+
+## Plain Review (Non-Production) / 非正式環境審查
+
+Code or diff review for correctness, readability, or regressions **without**
+production-risk assessment. Routes to `reflective-review`, not `reflective-risk`.
+
+**Operational test:** Review/diff/PR context plus production negation (e.g.
+"not production deploy", 不是正式環境風險) or readability-only scope.
+
+---
+
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–35). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–50). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make validate`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
