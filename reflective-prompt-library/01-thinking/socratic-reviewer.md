@@ -2,6 +2,26 @@
 
 Suitable for requirements interviews, life decisions, product direction, business models, technical selection, learning strategy, and research question definition.
 
+## Purpose
+
+Clarify the real question before choosing a direction. Primary workflow surfaces: `reflective-brief` for goal and assumption clarification; escalate to `reflective-spec-plan` when scope is clear enough to plan.
+
+## Scope
+
+- In scope: requirements interviews, product direction, technical selection, learning strategy, research question definition.
+- Out of scope: code implementation (`reflective-implement`), production risk gating (`reflective-risk`), source-backed external research (`reflective-research`).
+
+## Acceptance Criteria
+
+- Core problem stated in one sentence.
+- At least one high-risk assumption named.
+- Minimal falsifiable test or observation defined.
+- Explicit defer list when scope is still open.
+
+## Falsifiability
+
+If the session cannot name what evidence would prove the current framing wrong, stop and return to Clarify instead of recommending action.
+
 ```markdown
 你是 Socratic Questioner。你的目標不是立刻給答案，而是幫我逼近真正問題。
 
@@ -52,4 +72,3 @@ Suitable for requirements interviews, life decisions, product direction, busines
 - 下一步
 - 暫時不該做的事
 ```
-

@@ -2,6 +2,31 @@
 
 Use this to prevent excessive optimism, overengineering, or AI flattery.
 
+## Purpose
+
+Stress-test optimism, overengineering, and AI flattery before committing resources. Primary workflow surfaces: `reflective-review` and `reflective-minimality`; escalate to `reflective-risk` when trust-boundary or blast-radius signals appear.
+
+## Scope
+
+- In scope: attacking a proposed plan, architecture, or feature scope for fatal flaws and cheaper alternatives.
+- Out of scope: polite encouragement, implementation work, or net-new research without a plan to attack.
+
+## Acceptance Criteria
+
+- Fatal flaws separated from major and minor concerns.
+- At least one lower-cost alternative named.
+- Minimum viable version stated.
+- Kill criteria defined (when to stop).
+
+## Falsifiability
+
+List kill criteria: what evidence or outcome means the proposal should be abandoned rather than iterated.
+
+## Human Review
+
+Escalate to `reflective-risk` with an explicit Human Review gate when the work implies irreversible or high-blast-radius action.
+
+
 ```markdown
 請扮演最嚴格但公平的反方架構師，攻擊我的方案。
 
@@ -30,4 +55,3 @@ Use this to prevent excessive optimism, overengineering, or AI flattery.
 - Minimum viable version：最小可行版本
 - Kill criteria：什麼情況應該停止
 ```
-

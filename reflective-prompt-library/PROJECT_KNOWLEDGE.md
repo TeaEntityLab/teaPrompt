@@ -72,10 +72,11 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
-- 2026-06-25 Post-Round 68 holdout expansion — ROUTE-003 minimality trap + thin adversarial group refresh (15 groups / 53 phrases) → [QUALITY_GATES_SUMMARY.md](plans/QUALITY_GATES_SUMMARY.md)
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
 
+- 2026-06-25 Round 69 panel — standardize `01-thinking/` prompt contracts (Purpose/Scope/Acceptance/Falsifiability) + eval_harness anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
+- 2026-06-25 Post-Round 68 holdout expansion — ROUTE-003 minimality trap + thin adversarial group refresh (15 groups / 53 phrases) → [QUALITY_GATES_SUMMARY.md](plans/QUALITY_GATES_SUMMARY.md)
 - 2026-06-11 Add `runtime-trust-boundary` as a lens, not a ninth skill → [record](plans/project-adjustment-reflection-2026-06-11.md)
 - 2026-06-17 Adopt a minimal project-judgment contract instead of importing Knowie → [initial record](plans/knowie-project-knowledge-reflection-2026-06-17.md)
 - 2026-06-17 Refine the contract from non-normative to non-authoritative, connect promotion, and publish a reusable scaffold → [decision](plans/project-knowledge-authority-promotion-decision-2026-06-17.md)

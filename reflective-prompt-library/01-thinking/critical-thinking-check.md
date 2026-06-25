@@ -2,6 +2,31 @@
 
 Use this to review articles, strategies, product ideas, technical choices, or AI-generated claims.
 
+## Purpose
+
+Audit claims, assumptions, and evidence quality before accepting a plan, article, or AI output. Primary workflow surface: `reflective-review`; pair with `reflective-research` when external sources are required.
+
+## Scope
+
+- In scope: articles, strategies, product ideas, technical choices, AI-generated claims, diff/plan review prep.
+- Out of scope: writing first-draft specs (`reflective-spec-plan`), repository implementation (`reflective-implement`), formal-environment gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Major and minor claims listed separately.
+- Assumption audit distinguishes explicit vs implicit risks.
+- Strongest counterargument stated (not a strawman).
+- Each conclusion tagged: supported, plausible-but-unproven, or unsupported.
+
+## Falsifiability
+
+Name at least one observation, dataset, or experiment that would overturn the strongest supported conclusion.
+
+## Human Review
+
+Escalate to `reflective-risk` with an explicit Human Review gate when the work implies irreversible or high-blast-radius action.
+
+
 ```markdown
 請用 Critical Thinking Review 嚴格審查以下內容：
 
@@ -61,4 +86,3 @@ Use this to review articles, strategies, product ideas, technical choices, or AI
 - 需要更多證據部分
 - 不建議採用部分
 ```
-

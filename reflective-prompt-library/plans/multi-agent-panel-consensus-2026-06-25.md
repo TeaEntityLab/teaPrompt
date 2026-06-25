@@ -1475,3 +1475,56 @@ User directive: **review all docs** — reopen six-lens panel for cross-surface 
 
 _Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R12)._
 
+
+
+## Round 69 — Thinking prompt contract review (2026-06-25)
+
+User directive: review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DA: Standardize `01-thinking/` prompt contracts?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — eval_harness fails without document-level Purpose/Scope/Acceptance/Falsifiability |
+| Codex | **Agree** — map each lens to frozen workflow skills; no tenth skill |
+| Gemini | **Agree** — keep zh-TW templates; add English contract outside code block |
+| Composer | **Agree** — bounded to five thinking prompts, not all 39 prompts |
+| Sakana | **Agree** — aligns with evidence-over-confidence in PROJECT_KNOWLEDGE |
+| GLM | **Agree** — skill-map already routes thinking lenses to brief/review |
+
+**Socratic Q:** Does this duplicate skills?
+**Answer:** No — prompts are composable lenses; skills are workflow contracts. Purpose sections name routing, not replace SKILL.md.
+
+**Consensus:** **Agree** — add Purpose/Scope/Acceptance Criteria/Falsifiability to all five `01-thinking/` prompts; add `test_thinking_prompts_eval_harness.py`.
+
+### DB: Expand to all prompt categories now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated; 01-thinking is highest-leverage for this review |
+
+**Consensus:** **Reject** — defer 00-core/02-engineering Purpose sweep.
+
+### Round 69 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DA | Thinking prompt contracts | **Agree** | 5 files + pytest anti-drift |
+| DB | All-category Purpose sweep | **Reject** | backlog |
+
+**All roles agree.**
+
+## Implemented Changes (Round 69)
+
+- `01-thinking/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping
+- `plans/tests/test_thinking_prompts_eval_harness.py`: structural + score floor anti-drift
+- `QUALITY_GATES_SUMMARY.md`: 200+ pytest floor; thinking prompt test mention
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 69 entry
+
+## Verification (Round 69)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 69** (options DA–DB). Thinking-prompt contract pass complete; broader prompt-category sweep remains recurrence-gated.

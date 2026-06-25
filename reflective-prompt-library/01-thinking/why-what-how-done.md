@@ -2,6 +2,26 @@
 
 Use this as the core gate prompt before committing to a direction.
 
+## Purpose
+
+Gate a task through Why / What / How / Done before choosing strictness or workflow depth. Primary workflow surfaces: `reflective-brief` then `reflective-dispatch` for orchestration level selection.
+
+## Scope
+
+- In scope: pre-commitment checks on goal, scope, method, and completion evidence for a single task or feature.
+- Out of scope: post-hoc code review (`reflective-review`), handoff retros (`reflective-handoff-retro`), or detailed test implementation.
+
+## Acceptance Criteria
+
+- Why gate answers cost of doing nothing and doing wrong.
+- What gate lists scope in/out, outputs, and acceptance criteria.
+- How gate names minimal method, risks, and human review triggers.
+- Done gate ties completion to observable evidence.
+
+## Falsifiability
+
+Done gate must name evidence that would prove the task should not proceed or should be rolled back.
+
 ```markdown
 請把任務通過 Why / What / How / Done 四層檢查。
 
@@ -52,4 +72,3 @@ Use this as the core gate prompt before committing to a direction.
 - 應該做到哪個層級
 - Prompting 即可，還是需要 Agent / Workflow / 程式
 ```
-
