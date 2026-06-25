@@ -137,6 +137,7 @@ Trigger cues:
 - "Review this diff only for complexity we can cut."
 
 - "What dependencies can we remove from this module?"
+- "Dependency removal review for this module."
 
 Do not use when:
 

@@ -72,6 +72,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-06-25 Post-Round 68 holdout expansion — ROUTE-003 minimality trap + thin adversarial group refresh (15 groups / 53 phrases) → [QUALITY_GATES_SUMMARY.md](plans/QUALITY_GATES_SUMMARY.md)
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
 

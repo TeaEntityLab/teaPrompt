@@ -108,6 +108,12 @@ DISPATCH_META_SKILL_TRAP_PROBES = (
     "which reflective workflow skill should handle routing-only mixed intent",
 )
 
+MINIMALITY_NOT_IMPLEMENT_TRAP_PROBES = (
+    "dependency removal review for this module",
+    "which dependencies can we remove without breaking tests",
+    "cut unnecessary abstraction before shipping the feature",
+)
+
 ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
     ("design a handoff workflow specification without runtime code", "reflective-spec-plan"),
     ("patch the trivial null check in code", "reflective-implement"),
@@ -247,3 +253,16 @@ def test_dispatch_meta_skill_trap_covers_probes():
     missing = [p for p in DISPATCH_META_SKILL_TRAP_PROBES if p not in fixture_phrases]
     assert not missing, f"dispatch_meta_skill_trap missing probes: {missing}"
 
+def _minimality_not_implement_trap_phrases() -> set[str]:
+    config = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    for group in config["adversarial_sets"]:
+        if group["name"] == "minimality_not_implement_trap":
+            return set(group.get("phrases", []))
+    raise AssertionError("missing ROUTE-003 minimality_not_implement_trap group")
+
+
+def test_minimality_not_implement_trap_covers_probes():
+    """Anti-drift: ROUTE-003 minimality boundary probes live in dedicated trap group."""
+    fixture_phrases = _minimality_not_implement_trap_phrases()
+    missing = [p for p in MINIMALITY_NOT_IMPLEMENT_TRAP_PROBES if p not in fixture_phrases]
+    assert not missing, f"minimality_not_implement_trap missing probes: {missing}"

@@ -98,6 +98,7 @@ def test_holdout_tracking_paragraph_matches_fixture_minimums(summary_text: str):
     ) in section
     assert "approved_spec_plan_not_implement_trap" in section
     assert "dispatch_meta_skill_trap" in section
+    assert "minimality_not_implement_trap" in section
     assert "100 phrases" not in section
 
 

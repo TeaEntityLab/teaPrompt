@@ -135,6 +135,7 @@ Minimality 訊號掃描（skill 內建）：
 - 只想從 diff 裡找可刪的複雜度
 
 - 「What dependencies can we remove from this module？」
+- 「Dependency removal review for this module。」
 
 不要用在：
 

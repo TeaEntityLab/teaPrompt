@@ -46,6 +46,8 @@ adversarial_sets:
     phrases:
       - verify production auth change will not expose secrets
       - check rollback before touching production billing data
+      - verify production deploy will not leak secrets
+      - production auth change rollback plan before merge
 
   - name: plain_review_not_risk
     expected_workflow: reflective-review
@@ -55,6 +57,8 @@ adversarial_sets:
     phrases:
       - inspect this patch for regressions before merge
       - review the behavior changes carefully in the diff
+      - check this patch for readability not security
+      - inspect patch for regressions not production deploy risk
 
   - name: multi_voice_not_dispatch
     expected_workflow: reflective-research
@@ -64,6 +68,8 @@ adversarial_sets:
     phrases:
       - six-lens debate on whether to merge these skills
       - multi-perspective strategic rethink with explicit persona lenses
+      - six-lens panel debate with explicit persona lenses
+      - source-backed library comparison before choosing
 
   - name: mixed_language_implement
     expected_workflow: reflective-implement
@@ -99,6 +105,8 @@ adversarial_sets:
     phrases:
       - lessons learned retro after this sprint
       - sprint retrospective with lessons learned
+      - capture lessons learned and promotion candidates from this sprint
+      - session handoff summary with reusable rules for next agent
 
   - name: implement_not_plan_trap
     expected_workflow: reflective-implement
@@ -145,6 +153,21 @@ adversarial_sets:
       - which reflective workflow skill covers handoff retro
       - which reflective workflow skill fits a routing-only mixed intent
       - which reflective workflow skill should handle routing-only mixed intent
+
+  - name: minimality_not_implement_trap
+    expected_workflow: reflective-minimality
+    expected_rigor: medium
+    expected_enhancements:
+      - complexity_cut_list
+    phrases:
+      - challenge whether this abstraction layer is needed
+      - run a minimality gate before adding another helper
+      - can we delete this wrapper and use stdlib instead
+      - avoid overengineering this small formatting helper
+      - which dependencies can we remove without breaking tests
+      - cut unnecessary abstraction before shipping the feature
+      - dependency removal review for this module
+      - 少寫程式 surface area in this module
 
   - name: brief_not_plan_trap
     expected_workflow: reflective-brief
