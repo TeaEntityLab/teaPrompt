@@ -1935,3 +1935,62 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ## Panel status (updated)
 
 **Resealed 2026-06-25** after **Round 76** (options DU–DW). Repository-template contract pass complete; full prompt-library contract sweep (`00-core`–`06-repo`) finished. Governance pytest mirrors remain recurrence-gated.
+
+## Round 77 — Governance pytest mirrors (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DX: Pytest mirrors for `validate_governance`, `validate_links`, `lint_skills`?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — `CANONICAL_CONTEXT_LOAD` table must be pytest-guarded; mirrors catch drift before `make validate` |
+| Codex | **Agree** — negative fixtures falsify without duplicating validator logic; live-repo smoke tests |
+| Gemini | **Agree** — context_load deferral is cost-relevant; pytest mirrors are cheap |
+| Composer | **Agree** — IDE sessions edit SKILL frontmatter; mirrors close DH backlog |
+| Sakana | **Agree** — no tenth skill; mirrors protect existing nine |
+| GLM | **Agree** — English canonical metadata; TW routing unaffected |
+
+**Socratic Q:** Why mirrors now after Round 76 rejected DV?
+**Answer:** Full prompt-library contract sweep is complete; user re-triggered panel cycle; recurrence gate for DH backlog is satisfied.
+
+**Consensus:** **Agree** — add `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py` with live-repo pass checks + negative tmp_path cases; sync QUALITY_GATES pytest floor.
+
+### DY: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### DZ: LLM benchmark in CI?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — manual `benchmark_tasks.py` only (Rounds 5–6) |
+
+### Round 77 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DX | Governance pytest mirrors | **Agree** | 3 test modules + QUALITY_GATES sync |
+| DY | Router/holdout/tenth skill | **Reject** | no change |
+| DZ | LLM benchmark in CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 77)
+
+- `plans/tests/test_validate_governance.py`: `CANONICAL_CONTEXT_LOAD` parity + live 9/9 pass + negative fixtures
+- `plans/tests/test_validate_links.py`: live-repo zero errors + broken link / frontmatter negatives
+- `plans/tests/test_lint_skills.py`: live-repo zero lint errors + nine SKILL.md detection + negative fixture
+- `QUALITY_GATES_SUMMARY.md`: governance mirror tests; pytest floor 410+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 77 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 77 sync
+
+## Verification (Round 77)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 77** (options DX–DZ). Governance validator pytest mirrors complete; prompt-library contract sweep and governance anti-drift suite closed. Holdout expansion before router tuning remains recurrence-gated maintenance.
