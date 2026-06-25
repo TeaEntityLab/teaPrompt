@@ -80,6 +80,10 @@ Trigger cues:
 
 - "Implement this change in the repo."
 - "Implement the approved spec in the repository."
+- "在 repository 實作已核准 spec."
+- "Implement 已核准 spec in the repository."
+- "Land the approved spec into the codebase."
+- "落地已核准規格到 codebase."
 - "Refactor or debug with acceptance criteria and tests."
 - "Ship a minimal safe patch with verification."
 

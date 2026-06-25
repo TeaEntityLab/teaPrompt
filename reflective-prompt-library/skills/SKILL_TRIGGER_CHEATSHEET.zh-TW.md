@@ -75,6 +75,7 @@ L1 快速路徑：
 觸發提示：
 
 - 「在 repo 實作這個變更。」
+- 「Implement the approved spec in the repository。」
 - 「在 repository 實作已核准 spec。」
 - 「implement 已核准 spec in the repository。」
 - 「落地已核准規格到 codebase。」

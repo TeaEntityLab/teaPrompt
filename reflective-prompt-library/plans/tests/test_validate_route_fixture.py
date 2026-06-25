@@ -103,6 +103,13 @@ def test_implement_not_plan_trap_holdout_covers_router_probes():
     assert not missing, f"implement_not_plan_trap missing implement probes: {missing}"
 
 
+def test_implement_not_plan_trap_excludes_spec_plan_probes():
+    """Anti-drift: plan-only probes must not live in the implement trap group."""
+    fixture_phrases = _implement_not_plan_trap_phrases()
+    overlap = [p for p in IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES if p in fixture_phrases]
+    assert not overlap, f"implement_not_plan_trap must not include spec-plan probes: {overlap}"
+
+
 def test_implement_approved_spec_not_plan_boundary():
     """Anti-drift: ROUTE-003 implement_not_plan_trap approved-spec delivery."""
     from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
