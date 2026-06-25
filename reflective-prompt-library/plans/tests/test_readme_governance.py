@@ -8,6 +8,7 @@ LIBRARY_README = Path(__file__).parent.parent.parent / "README.md"
 ROOT_README = Path(__file__).parent.parent.parent.parent / "README.md"
 METHODOLOGY_MAP_ZH = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.zh-TW.md"
 METHODOLOGY_MAP_EN = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.md"
+SKILL_MAP = Path(__file__).parent.parent.parent / "skills" / "skill-map.md"
 
 CURRENT_PANEL_ROUND = "68"
 CURRENT_PANEL_OPTIONS = "A–CZ"
@@ -35,6 +36,12 @@ def methodology_map_zh_text() -> str:
 def methodology_map_en_text() -> str:
     assert METHODOLOGY_MAP_EN.is_file(), f"missing {METHODOLOGY_MAP_EN}"
     return METHODOLOGY_MAP_EN.read_text(encoding="utf-8")
+
+
+@pytest.fixture(scope="module")
+def skill_map_text() -> str:
+    assert SKILL_MAP.is_file(), f"missing {SKILL_MAP}"
+    return SKILL_MAP.read_text(encoding="utf-8")
 
 
 def test_library_readme_panel_record_current(library_readme_text: str):
@@ -65,3 +72,10 @@ def test_methodology_map_en_lists_nine_frozen_skills(methodology_map_en_text: st
     fit_check = methodology_map_en_text.split("## Repo Fit Check", 1)[1]
     assert "nine frozen workflow skills" in fit_check
     assert "8 lifecycle skills" not in fit_check
+
+
+def test_skill_map_lists_nine_frozen_skills(skill_map_text: str):
+    core = skill_map_text.split("## Core Architecture", 1)[1].split("##", 1)[0]
+    assert "nine frozen workflow skills" in core
+    assert "eight lifecycle skills" not in core
+    assert skill_map_text.count("`reflective-") >= 9
