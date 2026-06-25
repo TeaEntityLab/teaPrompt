@@ -2632,3 +2632,48 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 91** (options GC–GG). Human Review frozen sets are now cross-checked by a single library registry (`00-core`–`06-repo`). Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 92 — cross-category skill/thinking cross-link library registry (2026-06-25)
+
+**Options GH–GL** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 92 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| GH | Missing `test_all_{agent,context,domain,repo}_prompts_have_skill_link` completeness guards in `test_prompt_cross_links.py` | **Agree** |
+| GI | `test_prompt_skill_links_library_registry.py` cross-category `*_SKILL_LINKS` / `*_THINKING_LINKS` registry + library glob parity | **Agree** |
+| GJ | GLOSSARY playbook step 24 + governance sync | **Agree** |
+| GK | ROUTE holdout expansion | **Defer** |
+| GL | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 92 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| GH | Skill link completeness | **Agree** | four missing per-category `have_skill_link` tests |
+| GI | Cross-link library registry | **Agree** | registry for composable categories + thinking consumer map |
+| GJ | Playbook + docs | **Agree** | step 24; panel round 92 sync |
+| GK | Holdout expansion | **Defer** | maintenance |
+| GL | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 92)
+
+- `plans/tests/test_prompt_cross_links.py`: `test_all_{agent,context,domain,repo}_prompts_have_skill_link`
+- `plans/tests/test_prompt_skill_links_library_registry.py`: cross-category skill/thinking link registry + library glob parity
+- `GLOSSARY.md`: playbook Rounds 1–92; step 24 for cross-link library registry
+- `QUALITY_GATES_SUMMARY.md`: cross-link registry note; panel Rounds 1–92; 600+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 92 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 92 sync
+
+## Verification (Round 92)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 92** (options GH–GL). Primary workflow surface cross-links are now library-registry checked (`00-core`, `02-engineering`–`06-repo`) with thinking-lens consumer map parity for `01-thinking`. Holdout expansion remains recurrence-gated maintenance.
+

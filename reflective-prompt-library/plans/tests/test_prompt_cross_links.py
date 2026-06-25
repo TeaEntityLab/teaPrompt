@@ -463,6 +463,10 @@ def test_all_agent_prompts_have_thinking_cross_link():
     assert set(AGENT_THINKING_LINKS) == {p.name for p in AGENT_PROMPTS}
 
 
+def test_all_agent_prompts_have_skill_link():
+    assert set(AGENT_SKILL_LINKS) == {p.name for p in AGENT_PROMPTS}
+
+
 @pytest.mark.parametrize("prompt_name,skill_refs", AGENT_SKILL_LINKS.items())
 def test_agent_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
     preamble = _preamble(AGENT_DIR / prompt_name)
@@ -512,6 +516,10 @@ def test_all_context_prompts_have_thinking_cross_link():
     assert set(CONTEXT_THINKING_LINKS) == {p.name for p in CONTEXT_PROMPTS}
 
 
+def test_all_context_prompts_have_skill_link():
+    assert set(CONTEXT_SKILL_LINKS) == {p.name for p in CONTEXT_PROMPTS}
+
+
 @pytest.mark.parametrize("prompt_name,skill_refs", CONTEXT_SKILL_LINKS.items())
 def test_context_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
     preamble = _preamble(CONTEXT_DIR / prompt_name)
@@ -547,6 +555,10 @@ def test_all_domain_prompts_have_thinking_cross_link():
     assert set(DOMAIN_THINKING_LINKS) == {p.name for p in DOMAIN_PROMPTS}
 
 
+def test_all_domain_prompts_have_skill_link():
+    assert set(DOMAIN_SKILL_LINKS) == {p.name for p in DOMAIN_PROMPTS}
+
+
 @pytest.mark.parametrize("prompt_name,skill_refs", DOMAIN_SKILL_LINKS.items())
 def test_domain_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
     preamble = _preamble(DOMAIN_DIR / prompt_name)
@@ -580,6 +592,10 @@ def test_repo_prompt_links_thinking_lens(prompt_name: str, thinking_refs: tuple[
 
 def test_all_repo_prompts_have_thinking_cross_link():
     assert set(REPO_THINKING_LINKS) == {p.name for p in REPO_PROMPTS}
+
+
+def test_all_repo_prompts_have_skill_link():
+    assert set(REPO_SKILL_LINKS) == {p.name for p in REPO_PROMPTS}
 
 
 @pytest.mark.parametrize("prompt_name,skill_refs", REPO_SKILL_LINKS.items())
