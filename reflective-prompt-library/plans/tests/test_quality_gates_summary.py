@@ -8,6 +8,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from validate_benchmark_fixture import MIN_TASK_COUNT  # noqa: E402
 from validate_route_fixture import (  # noqa: E402
     ROUTE_001_MIN_PHRASES,
     ROUTE_002_MIN_HOLDOUT_GROUPS,
@@ -109,4 +110,8 @@ def test_benchmark_section_covers_nine_workflows(summary_text: str):
     assert "nine frozen workflow skills" in section
     assert "8 different skills" not in section
     assert "24 golden tasks" in section or "24 benchmark tasks" in section
+
+def test_key_metrics_benchmark_task_count_matches_fixture(summary_text: str):
+    metrics = _section_between(summary_text, "## Key Metrics", "### Routing Consistency Tracking")
+    assert f"| Benchmark tasks | {MIN_TASK_COUNT} |" in metrics
 

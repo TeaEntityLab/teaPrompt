@@ -23,7 +23,7 @@ VALID_WORKFLOWS = {
 }
 
 VALID_DIFFICULTIES = {"easy", "medium", "hard"}
-MIN_TASK_COUNT = 20
+MIN_TASK_COUNT = 24
 
 
 def main() -> int:
@@ -42,6 +42,14 @@ def main() -> int:
     if len(benchmark.tasks) < MIN_TASK_COUNT:
         errors.append(
             f"Expected at least {MIN_TASK_COUNT} benchmark tasks; found {len(benchmark.tasks)}"
+        )
+
+    workflows = {task.expected_workflow for task in benchmark.tasks}
+    missing_workflows = VALID_WORKFLOWS - workflows
+    if missing_workflows:
+        errors.append(
+            "Benchmark tasks missing workflows: "
+            + ", ".join(sorted(missing_workflows))
         )
 
     seen_ids = set()

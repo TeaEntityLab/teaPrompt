@@ -31,3 +31,10 @@ def test_benchmark_covers_all_nine_workflows():
         f"unexpected: {sorted(workflows - VALID_WORKFLOWS)}"
     )
 
+def test_benchmark_minimum_matches_actual_count():
+    tasks = BenchmarkSet().tasks
+    assert len(tasks) == MIN_TASK_COUNT, (
+        f"expected MIN_TASK_COUNT {MIN_TASK_COUNT} to match actual {len(tasks)}; "
+        "bump MIN_TASK_COUNT when adding golden tasks"
+    )
+
