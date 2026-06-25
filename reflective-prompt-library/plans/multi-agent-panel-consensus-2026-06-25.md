@@ -2829,4 +2829,55 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 ---
 
-**Resealed 2026-06-25** after **Round 95** (options GW–HA). Workflow skill coverage is now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_category_workflow_skill_coverage` and frozen tuples per harness (`01-thinking` exempt via empty tuple). Holdout expansion remains recurrence-gated maintenance.
+## Round 96 — cross-category eval_harness score floor library registry (2026-06-25)
+
+**Options HB–HF** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 96 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| HB | DRY `assert_prompt_meets_eval_harness_floor` in `prompt_eval_helpers.py` | **Agree** |
+| HC | `test_prompt_eval_harness_score_library_registry.py` — score floor registry + library-wide sweep | **Agree** |
+| HD | GLOSSARY playbook step 28 + governance sync | **Agree** |
+| HE | ROUTE holdout expansion | **Defer** |
+| HF | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 96 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| HB | DRY eval_harness score floor helper | **Agree** | `assert_prompt_meets_eval_harness_floor` |
+| HC | Score floor library registry | **Agree** | `test_prompt_eval_harness_score_library_registry.py` |
+| HD | Playbook + docs | **Agree** | step 28; panel round 96 sync |
+| HE | Holdout expansion | **Defer** | maintenance |
+| HF | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 96)
+
+- **Opus:** Rounds 91–95 closed HR, cross-link, contract, primary-surface, and workflow-coverage registries; per-category `meets_eval_harness_floor` guards remain duplicated with no library-wide falsifiability.
+- **Codex:** Centralizing `assert_prompt_meets_eval_harness_floor` prevents score-floor drift; registry sweep catches regressions across all 49 prompts in one place.
+- **Gemini:** Reject duplicating `EvalHarness.evaluate_file` logic in seven harness files — token/cost of maintenance, not runtime.
+- **Composer:** IDE adopters need one playbook step when bumping `PROMPT_EVAL_MIN_SCORE`; library registry mirrors R93 contract pattern.
+- **Sakana:** Score floor is orthogonal to thinking consumer graph — all seven categories including `01-thinking` belong in registry.
+- **GLM:** TW surface unchanged; score floor stays English-only harness policy.
+
+**All roles agree.**
+
+## Implemented Changes (Round 96)
+
+- `plans/tests/prompt_eval_helpers.py`: `assert_prompt_meets_eval_harness_floor`
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY eval_harness score floor guards
+- `plans/tests/test_prompt_eval_harness_score_library_registry.py`: cross-category registry + library glob parity + library-wide sweep
+- `GLOSSARY.md`: playbook Rounds 1–96; step 28 for eval_harness score floor library registry
+- `QUALITY_GATES_SUMMARY.md`: score floor registry note; panel Rounds 1–96; 650+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 96 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 96 sync
+
+## Verification (Round 96)
+
+- `make all`: 652 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 96** (options HB–HF). Eval_harness score floors are now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_prompt_meets_eval_harness_floor` and per-category `MIN_SCORE` aliases to `PROMPT_EVAL_MIN_SCORE`. Holdout expansion remains recurrence-gated maintenance.

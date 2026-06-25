@@ -11,6 +11,7 @@ from prompt_eval_helpers import (
     PROMPT_EVAL_MIN_SCORE,
     assert_primary_workflow_surface_preamble,
     assert_prompt_contract_headings,
+    assert_prompt_meets_eval_harness_floor,
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
     assert_human_review_required_matches_detection,
@@ -53,12 +54,7 @@ def test_thinking_prompt_has_contract_headings(prompt_path: Path):
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
 def test_thinking_prompt_meets_eval_harness_floor(prompt_path: Path, harness: EvalHarness):
-    rel = str(prompt_path.relative_to(REPO_ROOT))
-    result = harness.evaluate_file(rel)
-    assert result["score"] >= MIN_SCORE, (
-        f"{prompt_path.name} eval_harness score {result['score']}% < {MIN_SCORE}%: "
-        f"{[(c['id'], c['result']) for c in result['checks']]}"
-    )
+    assert_prompt_meets_eval_harness_floor(prompt_path, harness, REPO_ROOT, MIN_SCORE)
 
 
 def test_thinking_prompts_reference_workflow_skills():

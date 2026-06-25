@@ -128,3 +128,17 @@ def assert_category_workflow_skill_coverage(
     for skill in required_skills:
         assert skill in text, f"{category_label} should reference {skill}"
 
+def assert_prompt_meets_eval_harness_floor(
+    prompt_path: Path,
+    harness,
+    repo_root: str,
+    min_score: float = PROMPT_EVAL_MIN_SCORE,
+) -> None:
+    """Prompt must meet eval_harness score floor (default PROMPT_EVAL_MIN_SCORE)."""
+    rel = str(prompt_path.relative_to(repo_root))
+    result = harness.evaluate_file(rel)
+    assert result["score"] >= min_score, (
+        f"{prompt_path.name} eval_harness score {result['score']}% < {min_score}%: "
+        f"{[(c['id'], c['result']) for c in result['checks']]}"
+    )
+
