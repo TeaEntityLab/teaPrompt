@@ -57,19 +57,29 @@ def test_route_fixture_minimums_match_validator_constants():
     assert r3_phrases == ROUTE_003_MIN_PHRASES
 
 
+ROUND_51_BOUNDARY_PROBES = (
+    ("narrow scope and assumptions before writing the PRD", "reflective-brief"),
+    ("what dependencies can we remove from this module", "reflective-minimality"),
+    ("which skill handles session handoff in this library", "reflective-dispatch"),
+    ("review the README for clarity not security", "reflective-review"),
+    ("比較兩個 API 設計方案但不要寫 code", "reflective-spec-plan"),
+)
+
+# ROUTE-002 holdout phrases that should appear in EN/zh-TW cheatsheets (anti-drift).
+BOUNDARY_CHEATSHEET_CUES = tuple(text for text, _ in ROUND_51_BOUNDARY_PROBES) + (
+    "write tickets and acceptance criteria without touching the repo",
+    "check the diff for readability not production deploy",
+    "審查 README 清晰度不是安全風險",
+    "把規格寫出來但不要改程式",
+)
+
+
 def test_round_51_boundary_probes():
     """Anti-drift: Rounds 51–55 router boundaries for brief/plan/review/dispatch."""
     from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
 
     router = ParaphraseRouter()
-    probes = [
-        ("narrow scope and assumptions before writing the PRD", "reflective-brief"),
-        ("what dependencies can we remove from this module", "reflective-minimality"),
-        ("which skill handles session handoff in this library", "reflective-dispatch"),
-        ("review the README for clarity not security", "reflective-review"),
-        ("比較兩個 API 設計方案但不要寫 code", "reflective-spec-plan"),
-    ]
-    for text, expected in probes:
+    for text, expected in ROUND_51_BOUNDARY_PROBES:
         workflow, _, _, _ = router.route(text)
         assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
 

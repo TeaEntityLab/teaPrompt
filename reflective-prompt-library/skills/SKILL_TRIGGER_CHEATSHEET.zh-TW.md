@@ -35,6 +35,8 @@ Skill 契約語言：
 - 任務混合規劃、實作、風險
 - 任務包含外部資料、工具結果或行動權限問題
 
+- 「Which skill handles session handoff in this library？」
+
 不要用在：
 
 - 任務已明確只需單一 skill
@@ -49,6 +51,9 @@ L1 快速路徑：
 何時用：
 
 - 需求模糊，需要先定義 goal/scope/acceptance
+
+- 「Narrow scope and assumptions before writing the PRD。」
+- 「Stakeholder alignment before choosing architecture。」
 
 不要用在：
 
@@ -66,6 +71,11 @@ L1 快速路徑：
 - 「Write tickets from the approved spec without implementing。」
 - 「Plan the approved spec without repo changes。」
 - 「Plan 已核准 spec without repo changes。」
+
+- 「Write tickets and acceptance criteria without touching the repo。」
+- 「Compare two API designs on paper only no implementation。」
+- 「比較兩個 API 設計方案但不要寫 code。」
+- 「把規格寫出來但不要改程式。」
 
 不要用在：
 
@@ -107,6 +117,8 @@ Minimality 訊號掃描（skill 內建）：
 - 實作前需要 YAGNI / minimality / Ponytail-style gate
 - 只想從 diff 裡找可刪的複雜度
 
+- 「What dependencies can we remove from this module？」
+
 不要用在：
 
 - 需求仍不清楚（先 `reflective-brief` 或 `reflective-spec-plan`）
@@ -120,6 +132,10 @@ Minimality 訊號掃描（skill 內建）：
 - 要 review code / plan / spec / AI output
 - 要檢查外部內容是否被當成資料而不是指令
 - 要判斷 prompt leak / mirror 是否可信、是否可移植
+
+- 「Review the README for clarity not security。」
+- 「Check the diff for readability not production deploy。」
+- 「審查 README 清晰度不是安全風險。」
 
 不要用在：
 

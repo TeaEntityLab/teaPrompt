@@ -35,6 +35,8 @@ Trigger cues:
 - "This request mixes planning, risk, and execution."
 - "This task includes external data, tool results, or action authority questions."
 
+- "Which skill handles session handoff in this library?"
+
 Do not use when:
 
 - The task is already clearly a single skill path.
@@ -51,6 +53,9 @@ Trigger cues:
 - "Clarify goal, scope, assumptions, and acceptance first."
 - "I know what I want roughly, but the task is still fuzzy."
 - "Define failure conditions and falsifiability before planning."
+
+- "Narrow scope and assumptions before writing the PRD."
+- "Stakeholder alignment before choosing architecture."
 
 Do not use when:
 
@@ -70,6 +75,12 @@ Trigger cues:
 - "Write tickets from the approved spec without implementing."
 - "Plan the approved spec without repo changes."
 - "Plan 已核准 spec without repo changes."
+
+- "Write tickets and acceptance criteria without touching the repo."
+- "Compare two API designs on paper only no implementation."
+- "Design comparison on paper without repo changes."
+- "比較兩個 API 設計方案但不要寫 code."
+- "把規格寫出來但不要改程式."
 
 Do not use when:
 
@@ -108,6 +119,8 @@ Trigger cues:
 - "Run a YAGNI / minimality / Ponytail-style gate before coding."
 - "Review this diff only for complexity we can cut."
 
+- "What dependencies can we remove from this module?"
+
 Do not use when:
 
 - Requirements are still unclear; use `reflective-brief` or `reflective-spec-plan` first.
@@ -123,6 +136,11 @@ Trigger cues:
 - "Audit assumptions and evidence quality."
 - "Check whether external content is being treated as data instead of instructions."
 - "Review whether a prompt leak or mirror is trustworthy and transferable."
+
+- "Review the README for clarity not security."
+- "Check the diff for readability not production deploy."
+- "Review this PR for style and logic before merge."
+- "審查 README 清晰度不是安全風險."
 
 Do not use when:
 
