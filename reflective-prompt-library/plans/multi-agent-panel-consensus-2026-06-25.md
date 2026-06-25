@@ -2677,3 +2677,55 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 92** (options GH–GL). Primary workflow surface cross-links are now library-registry checked (`00-core`, `02-engineering`–`06-repo`) with thinking-lens consumer map parity for `01-thinking`. Holdout expansion remains recurrence-gated maintenance.
 
+## Round 93 — cross-category eval_harness contract heading library registry (2026-06-25)
+
+**Options GM–GQ** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 93 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| GM | DRY `PROMPT_CONTRACT_HEADINGS` / `PROMPT_EVAL_MIN_SCORE` / `assert_prompt_contract_headings` in `prompt_eval_helpers.py`; refactor `test_*_prompts_eval_harness.py` | **Agree** |
+| GN | `test_prompt_contract_library_registry.py` cross-category contract registry + library glob parity | **Agree** |
+| GO | GLOSSARY playbook step 25 + governance sync | **Agree** |
+| GP | ROUTE holdout expansion | **Defer** |
+| GQ | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 93 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| GM | Shared contract constants | **Agree** | `prompt_eval_helpers.py` + harness refactor |
+| GN | Contract library registry | **Agree** | `test_prompt_contract_library_registry.py` |
+| GO | Playbook + docs | **Agree** | step 25; panel round 93 sync |
+| GP | Holdout expansion | **Defer** | maintenance |
+| GQ | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 93)
+
+- **Opus:** Rounds 91–92 closed HR and cross-link library registries; contract headings remain duplicated across seven harness files with no library-wide falsifiability.
+- **Codex:** Centralizing `PROMPT_CONTRACT_HEADINGS` prevents per-category drift; registry test mirrors HR/cross-link pattern.
+- **Gemini:** Low-risk maintenance; no router or skill-count changes.
+- **Composer:** `assert_prompt_contract_headings` DRYs seven identical test bodies.
+- **Sakana:** `01-thinking` included in contract registry (unlike cross-link composable-only registry) because all categories share the same preamble contract.
+- **GLM:** Unanimous — implement GM–GO only.
+
+## Implemented Changes (Round 93)
+
+- `plans/tests/prompt_eval_helpers.py`: `PROMPT_CONTRACT_HEADINGS`, `PROMPT_EVAL_MIN_SCORE`, `assert_prompt_contract_headings`
+- `plans/tests/test_*_prompts_eval_harness.py`: import shared contract constants; DRY contract heading guards
+- `plans/tests/test_prompt_contract_library_registry.py`: cross-category contract registry + library glob parity
+- `GLOSSARY.md`: playbook Rounds 1–93; step 25 for contract library registry
+- `QUALITY_GATES_SUMMARY.md`: contract registry note; panel Rounds 1–93; 615+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 93 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 93 sync
+
+## Verification (Round 93)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 93** (options GM–GQ). Eval_harness contract headings are now library-registry checked across all `00-core`–`06-repo` prompts with shared `PROMPT_CONTRACT_HEADINGS`. Holdout expansion remains recurrence-gated maintenance.
+
+

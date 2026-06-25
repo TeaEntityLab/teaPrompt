@@ -15,6 +15,24 @@ PROMPT_LIBRARY_CATEGORIES = (
     "06-repo",
 )
 
+PROMPT_CONTRACT_HEADINGS = (
+    "## Purpose",
+    "## Scope",
+    "## Acceptance Criteria",
+    "## Falsifiability",
+)
+
+PROMPT_EVAL_MIN_SCORE = 80.0
+
+
+def assert_prompt_contract_headings(prompt_path: Path) -> None:
+    """Contract headings must appear in preamble outside fenced template blocks."""
+    preamble = prompt_preamble(prompt_path)
+    for heading in PROMPT_CONTRACT_HEADINGS:
+        assert heading in preamble, (
+            f"{prompt_path.name} missing {heading} outside template block"
+        )
+
 
 def prompt_preamble(prompt_path: Path) -> str:
     return prompt_path.read_text(encoding="utf-8").split("```", 1)[0]

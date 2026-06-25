@@ -7,6 +7,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
 from prompt_eval_helpers import (
+    PROMPT_CONTRACT_HEADINGS,
+    PROMPT_EVAL_MIN_SCORE,
+    assert_prompt_contract_headings,
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
     assert_human_review_required_matches_detection,
@@ -18,16 +21,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from eval_harness import EvalHarness  # noqa: E402
 
+REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
+MIN_SCORE = PROMPT_EVAL_MIN_SCORE
+
 THINKING_DIR = Path(__file__).parent.parent.parent / "01-thinking"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
-MIN_SCORE = 80.0
-
-REQUIRED_HEADINGS = (
-    "## Purpose",
-    "## Scope",
-    "## Acceptance Criteria",
-    "## Falsifiability",
-)
 
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
 THINKING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(THINKING_PROMPTS)
@@ -48,10 +46,7 @@ def harness() -> EvalHarness:
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
 def test_thinking_prompt_has_contract_headings(prompt_path: Path):
-    text = prompt_path.read_text(encoding="utf-8")
-    preamble = text.split("```", 1)[0]
-    for heading in REQUIRED_HEADINGS:
-        assert heading in preamble, f"{prompt_path.name} missing {heading} outside template block"
+    assert_prompt_contract_headings(prompt_path)
 
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)

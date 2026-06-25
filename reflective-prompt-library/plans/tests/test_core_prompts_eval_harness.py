@@ -9,7 +9,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import (  # noqa: E402
+from prompt_eval_helpers import (
+    PROMPT_CONTRACT_HEADINGS,
+    PROMPT_EVAL_MIN_SCORE,
+    assert_prompt_contract_headings,  # noqa: E402
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
     assert_human_review_required_matches_detection,
@@ -17,16 +20,11 @@ from prompt_eval_helpers import (  # noqa: E402
     prompts_with_human_review,
 )
 
+REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
+MIN_SCORE = PROMPT_EVAL_MIN_SCORE
+
 CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
-MIN_SCORE = 80.0
-
-REQUIRED_HEADINGS = (
-    "## Purpose",
-    "## Scope",
-    "## Acceptance Criteria",
-    "## Falsifiability",
-)
 
 CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
 CORE_HUMAN_REVIEW_REQUIRED = frozenset({
@@ -53,10 +51,7 @@ def harness() -> EvalHarness:
 
 @pytest.mark.parametrize("prompt_path", CORE_PROMPTS, ids=lambda p: p.name)
 def test_core_prompt_has_contract_headings(prompt_path: Path):
-    text = prompt_path.read_text(encoding="utf-8")
-    preamble = text.split("```", 1)[0]
-    for heading in REQUIRED_HEADINGS:
-        assert heading in preamble, f"{prompt_path.name} missing {heading} outside template block"
+    assert_prompt_contract_headings(prompt_path)
 
 
 @pytest.mark.parametrize("prompt_path", CORE_PROMPTS, ids=lambda p: p.name)
