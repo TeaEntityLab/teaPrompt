@@ -28,6 +28,10 @@ TeaPrompt helps humans and host agents choose the **right amount of rigor** for 
 Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSSARY.md](GLOSSARY.md)), then the skill phase. Skills declare `context_load: low|medium|high` in frontmatter so cost-aware hosts can defer heavy skills when Strictness is low.
 
 
+## Governance Panel Record
+
+Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–20, options A–AJ) is recorded in [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md). Run `make validate` before claiming routing or governance changes.
+
 ## Directory Map
 
 - `00-core/`: core identity, custom instructions, master prompts, and controller prompts.

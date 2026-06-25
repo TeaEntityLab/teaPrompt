@@ -14,6 +14,19 @@ from pathlib import Path
 from typing import Dict, List
 
 
+CANONICAL_CONTEXT_LOAD = {
+    "reflective-dispatch": "low",
+    "reflective-brief": "low",
+    "reflective-minimality": "low",
+    "reflective-implement": "medium",
+    "reflective-review": "medium",
+    "reflective-risk": "medium",
+    "reflective-handoff-retro": "medium",
+    "reflective-spec-plan": "high",
+    "reflective-research": "high",
+}
+
+
 class GovernanceValidator:
     def __init__(self, repo_root: str):
         self.repo_root = Path(repo_root).resolve()
@@ -68,6 +81,13 @@ class GovernanceValidator:
                     if value not in valid_values:
                         skill_errors.append(f"Invalid value for {field}: {frontmatter[field]} (must be one of {valid_values})")
             
+            skill_name = skill_file.parent.name
+            expected_load = CANONICAL_CONTEXT_LOAD.get(skill_name)
+            if expected_load and frontmatter.get("context_load", "").lower() != expected_load:
+                skill_errors.append(
+                    f"context_load must be {expected_load!r} for {skill_name} (panel table)"
+                )
+
             if skill_errors:
                 self.results["invalid_skills"] += 1
                 self.results["errors"].append({

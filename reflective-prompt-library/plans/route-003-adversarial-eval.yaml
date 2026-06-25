@@ -1,0 +1,94 @@
+version: 1
+id: ROUTE-003
+name: Adversarial Routing Eval
+description: Fresh adversarial boundary phrasing separate from ROUTE-001 tuning and ROUTE-002 holdout.
+
+global_expectations:
+  phase1_route_consistency_min: 0.80
+  aspirational_route_consistency_target: 0.90
+  require_route_trace_on_low_confidence: true
+  forbid_silent_downgrade: true
+
+trace_required_fields:
+  - canonical_intent
+  - workflow
+  - confidence
+  - enhancements_enabled
+  - enhancements_available
+  - rationale
+
+adversarial_sets:
+  - name: handoff_workflow_design_trap
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - transition_ownership
+    phrases:
+      - design a handoff workflow specification without runtime code
+      - plan a manager-and-handoff workflow without writing code
+      - specify session transfer checkpoints in a workflow doc only
+
+  - name: trivial_fix_not_review
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - patch the trivial null check in code
+      - quick typo fix in the implementation
+      - small one-line bug fix in the repo
+
+  - name: production_review_risk
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - verify production auth change will not expose secrets
+      - check rollback before touching production billing data
+
+  - name: plain_review_not_risk
+    expected_workflow: reflective-review
+    expected_rigor: high
+    expected_enhancements:
+      - quality_review
+    phrases:
+      - inspect this patch for regressions before merge
+      - review the behavior changes carefully in the diff
+
+  - name: multi_voice_not_dispatch
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - six-lens debate on whether to merge these skills
+      - multi-perspective strategic rethink with explicit persona lenses
+
+  - name: mixed_language_implement
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - 幫我 patch 這個 trivial null check and run tests
+      - implement 這個小 fix in the repo
+
+  - name: mixed_language_spec_plan
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - 把這個 idea break down into tickets with acceptance criteria
+      - write a test plan from the spec without code changes
+
+evaluation_rules:
+  - name: route_equivalence
+    assert: same_intent_group_same_workflow
+  - name: low_confidence_visibility
+    assert: low_confidence_has_route_trace
+  - name: enhancement_visibility
+    assert: available_enhancements_visible_in_route_trace
+  - name: no_silent_downgrade
+    assert: downgrade_requires_explicit_rationale

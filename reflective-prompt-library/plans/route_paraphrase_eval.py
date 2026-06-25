@@ -361,11 +361,11 @@ class ParaphraseRouter:
                 reasons.append("workflow boundary: no-code workflow design requested")
 
         trivial_fix_signals = [
-            "typo", "one-liner", "one liner", "quick fix", "small fix", "trivial fix",
-            "trivial code change", "trivial null",
+            "typo", "one-liner", "one liner", "one-line", "quick fix", "small fix", "trivial fix",
+            "trivial code change", "trivial null", "bug fix",
             "小修正", "錯字"
         ]
-        trivial_fix_context = ["patch", "fix", "change", "bug", "code"]
+        trivial_fix_context = ["patch", "fix", "change", "bug", "code", "repo"]
         trivial_fix_active = any(signal in text_lower for signal in trivial_fix_signals) or (
             "trivial" in text_lower and any(ctx in text_lower for ctx in trivial_fix_context)
         )
@@ -402,8 +402,10 @@ class ParaphraseRouter:
             "avoid", "delete", "deleted", "covers", "run", "review", "diff",
             "need", "challenge", "prefer", "minimality gate", "before implementing"
         ]
-        if any(signal in text_lower for signal in minimality_signals) and any(
-            ctx in text_lower for ctx in minimality_context
+        if (
+            not trivial_fix_active
+            and any(signal in text_lower for signal in minimality_signals)
+            and any(ctx in text_lower for ctx in minimality_context)
         ):
             adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 2
             reasons.append("minimality boundary: complexity reduction requested")

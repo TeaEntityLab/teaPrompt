@@ -4,6 +4,7 @@
 > - `/Users/teee/dev/teaPrompt/reflective-prompt-library/README.md` — full library documentation
 > - `/Users/teee/dev/teaPrompt/README.md` — project overview
 > - Individual skills under `reflective-prompt-library/skills/`
+> - Harness policy (nine skills): `reflective-prompt-library/06-repo/AGENTS.md` § Harness Policy
 >
 > **Read-first rule:** Before planning a non-trivial architecture, workflow, governance, or prior-decision change, read the relevant section of `reflective-prompt-library/PROJECT_KNOWLEDGE.md`. Its project-design principles inform choices but do not override this file, system/developer instructions, user authority, or skill contracts.
 

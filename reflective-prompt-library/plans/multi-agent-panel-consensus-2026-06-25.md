@@ -367,11 +367,182 @@ User re-requested full multi-agent Socratic loop. Panel identified residual gaps
 - `SKILL_TRIGGER_CHEATSHEET.zh-TW.md`: ROUTE-002 fairness note
 - `PROJECT_KNOWLEDGE.md`: Decision Index Round 7 entry
 
+
+
+## Rounds 8–20 — Milestone close and maintenance layer (2026-06-25)
+
+User directive: continue the multi-agent Socratic panel through **Round 20** (options X–AJ), implement unanimous agreements, verify with `make all`.
+
+### Round 8 — X: Close Governance layer maturity milestone?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — evidence-backed gates now run on every change |
+| Codex | **Agree** — ROUTE-001/002/003 + governance validators are falsifiable |
+| Gemini | **Agree** — mark `done`; retire from Current Direction |
+| Composer | **Agree** — operators use `make all`, not ad-hoc checks |
+| Sakana | **Agree** — no new runtime; harness policy only |
+| GLM | **Agree** — TW fairness covered by holdout, not new skills |
+
+**Socratic Q:** What fails if we leave the milestone `active` forever?
+**Answer:** PROJECT_KNOWLEDGE validator warns; direction section stops reflecting real work.
+
+**Consensus:** **Agree** — milestone `done`; record in Decision Index Round 8.
+
+### Round 9 — Y: Close Project judgment layer milestone?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — scaffold, authority boundary, promotion contract, and `validate_project_knowledge.py` are shipped |
+
+**Consensus:** **Agree** — milestone `done`; reflow into Decision Index; remove from Current Direction.
+
+### Round 10 — Z: Mixed-language ROUTE-002 holdout?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree** — EN+zh-TW code-switching is real IDE usage |
+| Opus/Codex | **Agree compromise** — one group per workflow; no multi-intent phrases in a single group |
+| Gemini | **Agree** — implement + spec-plan holdouts sufficient for v1 |
+| Composer | **Agree** — phrases must not embed `clarify`/`review` when expecting implement |
+| Sakana | **Agree** — mixed language ≠ multi-voice panel |
+
+**Socratic Q:** Why did an early draft phrase fail routing?
+**Answer:** `"clarify 目標後 implement"` correctly routes to brief — group design error, not router bug.
+
+**Consensus:** **Agree** — `mixed_language_implement_holdout` + `mixed_language_plan_holdout` (27 groups / 80 paraphrases).
+
+### Round 11 — AA: CI gate for skill examples?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — deterministic; each skill needs worked examples |
+| Opus | **Agree** — complements lint, not replacement |
+| All | **Agree** — `validate_skill_examples.py` in `make validate` |
+
+**Consensus:** **Agree** — 9/9 `skills/examples/*.examples.md` with ≥200 chars.
+
+### Round 12 — AB: CONTRIBUTING harness policy?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — contributor onboarding must mention nine-skill freeze + `make all` |
+
+**Consensus:** **Agree** — Harness Policy section in root `CONTRIBUTING.md`.
+
+### Round 13 — AC: Root AGENTS harness pointer?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — root `AGENTS.md` NOTE block links `06-repo/AGENTS.md` harness section |
+
+**Consensus:** **Agree** — pointer only; no skill duplication.
+
+### Round 14 — AD: Manual benchmark documentation?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — CI stays fixture-only; docstring + QUALITY_GATES distinguish manual LLM runs |
+
+**Consensus:** **Agree** — document `validate_benchmark_fixture.py` vs `benchmark_tasks.py`.
+
+### Round 15 — AE: ROUTE-003 adversarial eval?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — fresh boundary phrases separate from ROUTE-001/002 |
+| Opus | **Agree** — trivial-fix vs minimality boundary needs adversarial coverage |
+| All | **Agree** — third routing gate in CI |
+
+**Consensus:** **Agree** — `route-003-adversarial-eval.yaml` (7 groups / 16 paraphrases); router fix for `one-line bug fix in the repo`.
+
+### Round 16 — AF: Canonical `context_load` enforcement?
+
+| Lens | Position |
+| --- | --- |
+| Gemini | **Agree** — metadata useless if drift allowed |
+| Codex | **Agree** — `CANONICAL_CONTEXT_LOAD` in `validate_governance.py` |
+| All | **Agree** — matches dispatch deferral table |
+
+**Consensus:** **Agree** — governance validator rejects non-canonical `context_load`.
+
+### Round 17 — AG: README governance pointer?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — README links panel record + `make validate` |
+
+**Consensus:** **Agree** — Governance Panel Record section.
+
+### Round 18 — AH: SKILL_INSTALLATION harness line?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — installers see harness policy before copying skills |
+
+**Consensus:** **Agree** — one-line pointer to AGENTS + cheatsheet.
+
+### Round 19 — AI: Glossary maintenance playbook?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — operator checklist, not agent instructions |
+| Sakana | **Agree** — holdout-before-tuning rule prevents overfitting |
+| All | **Agree** — EN + zh-TW heading in GLOSSARY |
+
+**Consensus:** **Agree** — Governance Maintenance Playbook appendix.
+
+### Round 20 — AJ: Final panel close?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree close** — options A–AJ resolved; no tenth skill; no runtime; no full SKILL i18n |
+
+**Socratic Q:** What remains open?
+**Answer:** Recurrence-gated promotions only (`reflective-implement` → minimality default, localized triggers beyond cheatsheet).
+
+**Consensus:** **Agree close** — panel sealed at Round 20; maintenance via playbook.
+
+### Rounds 8–20 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| X | Close governance milestone | **Agree** | PROJECT_KNOWLEDGE `done` + Decision Index |
+| Y | Close project-judgment milestone | **Agree** | Retire from Current Direction |
+| Z | Mixed-language holdout | **Agree** | ROUTE-002 +2 groups; phrase hygiene |
+| AA | Skill examples CI | **Agree** | `validate_skill_examples.py` |
+| AB | CONTRIBUTING harness | **Agree** | Root CONTRIBUTING section |
+| AC | Root AGENTS pointer | **Agree** | NOTE block link |
+| AD | Manual benchmark docs | **Agree** | benchmark_tasks docstring + QUALITY_GATES |
+| AE | ROUTE-003 adversarial | **Agree** | YAML + Makefile + router trivial-fix fix |
+| AF | Canonical context_load | **Agree** | `validate_governance.py` table |
+| AG | README pointer | **Agree** | Governance Panel Record |
+| AH | SKILL_INSTALLATION | **Agree** | Harness policy line |
+| AI | Maintenance playbook | **Agree** | GLOSSARY appendix |
+| AJ | Final close | **Agree** | Panel sealed Round 20 |
+
+**All roles agree.**
+
+## Implemented Changes (Rounds 8–20)
+
+- `PROJECT_KNOWLEDGE.md`: milestones closed; Decision Index Rounds 8–20 entry; Current Direction reflow
+- `route-002-holdout-eval.yaml`: `mixed_language_implement_holdout`, `mixed_language_plan_holdout` (80 paraphrases)
+- `route-003-adversarial-eval.yaml`: adversarial boundary set (16 paraphrases)
+- `route_paraphrase_eval.py`: trivial-fix signals (`one-line`, `bug fix`, `repo`); skip minimality when trivial-fix active
+- `validate_skill_examples.py` + tests; `Makefile` validate step
+- `validate_governance.py`: `CANONICAL_CONTEXT_LOAD` enforcement
+- `CONTRIBUTING.md`, root `AGENTS.md`, `README.md`, `SKILL_INSTALLATION.md`, `GLOSSARY.md`, `QUALITY_GATES_SUMMARY.md`, `benchmark_tasks.py`
+
+## Verification (Rounds 8–20)
+
+- `make all`: **59 pytest** passed; ROUTE-001 **100%**; ROUTE-002 **100%** (27 groups / 80); ROUTE-003 **100%** (7 / 16); governance **9/9**; skill examples **9/9**
+
+
 ## Panel status (updated)
 
-**Closed 2026-06-25** after Round 7 (options A–W). Future promotions still require the three-recurrence gate.
+**Closed 2026-06-25** after **Round 20** (options A–AJ). Future promotions still require the three-recurrence gate.
 
-_Ongoing maintenance: add fresh ROUTE-002 holdout cases before further router tuning; monitor undocumented-decision warnings in CI logs._
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before router tuning; run `make all`; monitor undocumented-decision warnings._
 
 
 ## Residual Open Questions (after Round 5) — superseded by Round 6
@@ -386,5 +557,5 @@ _Ongoing maintenance: add fresh ROUTE-002 holdout cases before further router tu
 ## Evidence
 
 - Prior decision: Hyperplan / multi-agent planning — no change ([external-adoption-case-studies-2026-06-20.md](external-adoption-case-studies-2026-06-20.md))
-- Routing CI: `Makefile` `validate` runs ROUTE-001 and ROUTE-002 via `route_paraphrase_eval.py`
+- Routing CI: `Makefile` `validate` runs ROUTE-001, ROUTE-002 (80 holdout), ROUTE-003 (16 adversarial) via `route_paraphrase_eval.py`
 - Governance: `validate_governance.py` after this change

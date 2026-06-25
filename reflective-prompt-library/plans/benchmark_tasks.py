@@ -4,6 +4,12 @@ Small Benchmark Set for TeaPrompt
 
 About 20 golden tasks to validate TeaPrompt skill effectiveness.
 Compares baseline (no skill) vs skill-assisted performance.
+
+Manual execution only (Round 14 panel): CI runs validate_benchmark_fixture.py
+for shape checks; LLM-assisted runs stay optional local experiments.
+
+Usage:
+  python3 reflective-prompt-library/plans/benchmark_tasks.py
 """
 
 import json

@@ -21,6 +21,8 @@ reflective-prompt-library/skills/
   reflective-spec-plan/
 ```
 
+**Harness policy:** Nine frozen workflow skills with strictness-first routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills) and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
+
 Each install target expects this shape:
 
 ```text

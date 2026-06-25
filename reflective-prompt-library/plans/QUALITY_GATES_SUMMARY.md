@@ -185,6 +185,27 @@ python3 reflective-prompt-library/plans/validate_governance.py
 python3 reflective-prompt-library/plans/validate_benchmark_fixture.py
 ```
 
+### 7.2 Skill Examples Validator ✅
+
+**File:** `reflective-prompt-library/plans/validate_skill_examples.py`
+
+**What it does:**
+- Ensures each of the nine core skills has `skills/examples/<skill>.examples.md`
+- Minimum content length gate (200 chars)
+
+**Usage:**
+```bash
+python3 reflective-prompt-library/plans/validate_skill_examples.py
+```
+
+### 7.3 ROUTE-003 Adversarial Eval ✅
+
+**File:** `reflective-prompt-library/plans/route-003-adversarial-eval.yaml`
+
+**What it does:**
+- Fresh adversarial boundary phrasing separate from ROUTE-001/002
+- Runs in `make validate` as third routing gate
+
 ### 7. Small Benchmark Set ✅
 
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
@@ -204,6 +225,10 @@ python3 reflective-prompt-library/plans/validate_benchmark_fixture.py
 
 **Usage:**
 ```bash
+# CI: fixture shape only
+python3 reflective-prompt-library/plans/validate_benchmark_fixture.py
+
+# Manual (optional, LLM-cost): compare baseline vs skill-assisted runs
 python3 reflective-prompt-library/plans/benchmark_tasks.py
 ```
 
@@ -226,7 +251,9 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval (25 groups, 76 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (27 groups, 80 paraphrases) |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (7 groups, 16 paraphrases) |
+| Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
@@ -255,7 +282,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 
 Based on the research and current implementation, suggested next steps:
 
-1. **Expand ROUTE-002 with fresh holdout cases** - Ongoing; Round 7 added zh-TW boundary groups (25 groups, 76 paraphrases)
+1. **Expand ROUTE-002/003 holdout** - Ongoing; ROUTE-002 at 27 groups / 80 paraphrases; ROUTE-003 adversarial at 7 groups / 16
 2. **Run benchmark tests** - Manual via `benchmark_tasks.py`; not in CI (non-deterministic / LLM-cost)
 3. **CI/CD** - Done: `.github/workflows/python-tools.yml` runs `make all` on push/PR
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input

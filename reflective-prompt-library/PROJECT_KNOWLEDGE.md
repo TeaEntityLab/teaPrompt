@@ -38,21 +38,12 @@ prompt layers and nine workflow skills as natural-language harness policy, witho
 operating its own agent runtime. See [README.md](README.md#north-star).
 
 > The active problem the project is solving now, with explicit non-goals so scope
-> does not silently expand. Each milestone carries a `Status:` of
-> `active`, `planned`, or `done`. A `done` milestone is a candidate for removal,
-> not a permanent record (history belongs in the Decision Index).
+> does not silently expand. Completed milestones are retired from this section;
+> their outcomes live in the Decision Index.
 
-### Milestone: Governance layer maturity
-- Status: active
-- Problem: keep the routing contract, quality gates, and minimality gate trustworthy as the skill set grows, without turning the library into a monolith.
-- Non-goals: a runtime engine, an agent swarm, a vector/RAG memory store, vendor lock-in.
-- Target: routing and minimality gates remain evidence-backed and pass on every change; core skill count stays at nine unless promotion gate met.
-
-### Milestone: Project judgment layer
-- Status: active
-- Problem: the repo had an authoritative instruction layer (AGENTS + skills) and a task/session memory layer (handoff-retro, plans, ledgers) but no curated, auto-loaded *project rationale* layer — so cross-session "why" lived only in scattered plans.
-- Non-goals: importing Knowie's full toolchain; adding a tenth core workflow skill; auto-harvesting long-term memory from every conversation.
-- Target: a reusable project-judgement scaffold, an explicit authority boundary, an evidence-gated promotion contract, and deterministic structural checks that do not masquerade as semantic review.
+**Ongoing (post Round 20):** maintain ROUTE-001/002/003 evals, governance validators,
+and holdout expansion before router tuning — see [GLOSSARY.md](GLOSSARY.md) Governance
+Maintenance Playbook and [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md).
 
 ## Durable Lessons
 
@@ -88,6 +79,7 @@ operating its own agent runtime. See [README.md](README.md#north-star).
 - 2026-06-18 Adopt STORM's source-grounded perspective discovery as an optional `reflective-research` method, not a new skill → [record](plans/storm-perspective-discovery-reflection-2026-06-18.md)
 - 2026-06-20 Synthesize external-adoption case studies, then correct the evidence and promotion-gate scope after the Test Plan routing counterexample → [record](plans/external-adoption-case-studies-2026-06-20.md)
 - 2026-06-21 Evaluate Hyperplan / multi-agent adversarial planning — no change (runtime = non-goal; methodology overlaps; possible gaps not promoted) → [record](plans/external-adoption-case-studies-2026-06-20.md)
+- 2026-06-25 Rounds 8–20 panel — milestones closed, ROUTE-003 adversarial eval, skill examples gate, maintenance playbook → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 7 panel — AGENTS harness-policy alignment, zh-TW ROUTE-002 holdout, metrics sync → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 6 panel — undocumented-decisions warning, ROUTE-002 holdout expansion, benchmark fixture CI, reject full SKILL i18n → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 5 panel — ROUTE-002 holdout expansion, context_load deferral rule, reject benchmark-in-CI → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

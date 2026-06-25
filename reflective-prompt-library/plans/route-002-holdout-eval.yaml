@@ -269,6 +269,25 @@ holdout_sets:
     phrases:
       - 這裡可以少寫程式嗎
 
+  - name: mixed_language_implement_holdout
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - 幫我 implement 這個小 fix in the repo and run tests
+      - patch 這個 off-by-one bug 然後跑測試
+
+  - name: mixed_language_plan_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - 把這個 idea 拆成 tickets with acceptance criteria
+      - write test plan from spec 但不要改 code
+
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow
