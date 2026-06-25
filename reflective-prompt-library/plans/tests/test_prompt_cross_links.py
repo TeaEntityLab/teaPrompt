@@ -1,5 +1,6 @@
 """Anti-drift: thinking lenses, engineering/agent/context/domain/repo prompts, and workflow skills cross-link."""
 
+import re
 from pathlib import Path
 
 import pytest
@@ -239,6 +240,16 @@ def _preamble(path: Path) -> str:
     return path.read_text(encoding="utf-8").split("```", 1)[0]
 
 
+
+def _primary_workflow_surfaces_skills(preamble: str) -> tuple[str, ...]:
+    """Skills named on the Purpose Primary workflow surfaces line only."""
+    purpose = preamble.split("## Scope", 1)[0]
+    match = re.search(r"Primary workflow surfaces:(.*)", purpose, re.DOTALL)
+    assert match, "missing Primary workflow surfaces line in Purpose preamble"
+    line = match.group(1).split("\n", 1)[0]
+    return tuple(sorted(set(re.findall(r"`(reflective-[a-z-]+)`", line))))
+
+
 def _prompt_sources_section(skill_path: Path) -> str:
     text = skill_path.read_text(encoding="utf-8")
     marker = "## Prompt Sources"
@@ -301,6 +312,19 @@ def test_thinking_lens_preamble_lists_consumer_skills(lens_ref: str, consumer_sk
     for skill in consumer_skills:
         assert skill in preamble, f"{lens_ref} preamble should reference consumer {skill}"
 
+
+
+
+@pytest.mark.parametrize("lens_ref,consumer_skills", THINKING_LENS_SKILL_CONSUMERS.items())
+def test_thinking_lens_primary_surfaces_match_consumer_graph(
+    lens_ref: str, consumer_skills: tuple[str, ...]
+):
+    """Primary workflow surfaces must list exactly the skills that cite this lens."""
+    preamble = _preamble(THINKING_DIR / Path(lens_ref).name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == consumer_skills, (
+        f"{lens_ref} Primary workflow surfaces {listed} != graph {consumer_skills}"
+    )
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
 def test_thinking_prompt_maps_to_workflow_skill(prompt_path: Path):

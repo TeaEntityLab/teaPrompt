@@ -4,12 +4,13 @@ Use this as the core gate prompt before committing to a direction.
 
 ## Purpose
 
-Gate a task through Why / What / How / Done before choosing strictness or workflow depth. Primary workflow surfaces: `reflective-brief` then `reflective-dispatch` for orchestration level selection; `reflective-spec-plan` when framing becomes ticket or spec work.
+Gate a task through Why / What / How / Done before choosing strictness or workflow depth. Primary workflow surfaces: `reflective-brief` for pre-commitment gating; `reflective-spec-plan` when framing becomes ticket or spec work.
 
 ## Scope
 
 - In scope: pre-commitment checks on goal, scope, method, and completion evidence for a single task or feature.
 - Out of scope: post-hoc code review (`reflective-review`), handoff retros (`reflective-handoff-retro`), or detailed test implementation.
+- Adjacent: after brief framing, `reflective-dispatch` selects orchestration level before deeper spec or implement work.
 
 ## Acceptance Criteria
 

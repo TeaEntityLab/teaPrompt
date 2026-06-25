@@ -4,12 +4,13 @@ Suitable for requirements interviews, life decisions, product direction, busines
 
 ## Purpose
 
-Clarify the real question before choosing a direction. Primary workflow surfaces: `reflective-brief` for goal and assumption clarification; `reflective-dispatch` for routing; `reflective-research` for multi-voice synthesis; `reflective-handoff-retro` for session transfer; escalate to `reflective-spec-plan` when scope is clear enough to plan.
+Clarify the real question before choosing a direction. Primary workflow surfaces: `reflective-dispatch` for routing; `reflective-research` for multi-voice synthesis; `reflective-handoff-retro` for session transfer.
 
 ## Scope
 
 - In scope: requirements interviews, product direction, technical selection, learning strategy, research question definition.
-- Out of scope: code implementation (`reflective-implement`), production risk gating (`reflective-risk`), source-backed external research (`reflective-research`).
+- Out of scope: code implementation (`reflective-implement`), production risk gating (`reflective-risk`), source-backed external research (`reflective-research`), ticket/spec drafting (`reflective-spec-plan` — use after dispatch when scope is clear).
+- Adjacent: pair with `reflective-brief` when assumptions are still open; dispatch selects strictness before spec or implement work.
 
 ## Acceptance Criteria
 

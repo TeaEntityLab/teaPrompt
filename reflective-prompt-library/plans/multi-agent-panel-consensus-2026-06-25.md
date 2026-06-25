@@ -2196,3 +2196,46 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 **Resealed 2026-06-25** after **Round 81** (options EM–EP). Thinking-lens Human Review preambles complete; Escalation route-target anti-drift closed. Holdout expansion remains recurrence-gated maintenance.
 
 
+---
+
+## Round 82 — Strict Primary workflow surfaces graph parity (2026-06-25)
+
+**Options EQ–ET** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 82 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EQ | Strict `Primary workflow surfaces` ↔ `SKILL_THINKING_SOURCES` parity + preamble trim + pytest | **Agree** |
+| ER | Expand skill Prompt Sources to match narrative overlisting | **Reject** |
+| ES | ROUTE holdout expansion | **Defer** |
+| ET | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 82 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EQ | Primary surfaces exact graph | **Agree** | trim preambles + `test_thinking_lens_primary_surfaces_match_consumer_graph` |
+| ER | Expand graph to match prose | **Reject** | `SKILL_THINKING_SOURCES` stays authoritative from skill Prompt Sources |
+| ES | Holdout expansion | **Defer** | maintenance |
+| ET | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 82)
+
+- `01-thinking/counterargument.md`, `socratic-reviewer.md`, `why-what-how-done.md`: Primary workflow surfaces trimmed to graph consumers; adjacent workflow notes moved to Scope
+- `plans/tests/test_prompt_cross_links.py`: `_primary_workflow_surfaces_skills` + `test_thinking_lens_primary_surfaces_match_consumer_graph`
+- `GLOSSARY.md`: playbook Rounds 1–82; step 14 for strict primary-surfaces parity
+- `QUALITY_GATES_SUMMARY.md`: primary-surfaces parity note; panel Rounds 1–82
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 82 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 82 sync
+
+## Verification (Round 82)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 82** (options EQ–ET). Thinking-lens Primary workflow surfaces now match the inverted skill graph exactly. Holdout expansion remains recurrence-gated maintenance.
+

@@ -75,6 +75,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
 
+- 2026-06-25 Round 82 panel — strict Primary workflow surfaces ↔ skill graph parity + preamble trim → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 81 panel — thinking-lens Human Review preamble guards + Escalation route-target anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 80 panel — Module Contract Escalation anti-drift + thinking-lens preamble consumer guards → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 79 panel — bidirectional thinking-lens ↔ workflow skill preamble cross-links + reciprocal pytest → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
