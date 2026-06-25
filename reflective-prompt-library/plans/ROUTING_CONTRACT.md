@@ -147,5 +147,7 @@ Next Action:
 
 - `plans/code-followups-plan.md` (`ROUTE-001`)
 - `plans/route-001-paraphrase-eval.yaml`
+- `plans/route-002-holdout-eval.yaml`, `plans/route-003-adversarial-eval.yaml`
 - `skills/reflective-dispatch/SKILL.md`
-- `skills/SKILL_TRIGGER_CHEATSHEET.md`
+- `skills/SKILL_TRIGGER_CHEATSHEET.md`, `skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md`
+- `plans/tests/test_cheatsheet_boundary_quick_cues.py`, `plans/tests/test_cheatsheet_*_parity.py`

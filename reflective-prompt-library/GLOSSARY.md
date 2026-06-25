@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–66). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–67). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make validate`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -347,4 +347,5 @@ Ongoing upkeep after panel close (Rounds 1–66). Not agent instructions — ope
 4. Keep manual `benchmark_tasks.py` runs optional — fixture gate only in CI.
 5. Reject tenth skill / full `SKILL.md` i18n unless promotion gate met (panel A, Q, W, AJ).
 6. When cheatsheet boundary quick cues change, update `BOUNDARY_QUICK_CUE_*` markers and probe snippets in `test_validate_route_fixture.py`; run `test_cheatsheet_boundary_quick_cues.py`.
+7. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.
 

@@ -41,7 +41,7 @@ operating its own agent runtime. See [README.md](README.md#north-star).
 > does not silently expand. Completed milestones are retired from this section;
 > their outcomes live in the Decision Index.
 
-**Ongoing (post Round 66 panel):** maintain ROUTE-001/002/003 evals, governance validators,
+**Ongoing (post Round 67 panel):** maintain ROUTE-001/002/003 evals, governance validators,
 and holdout expansion before router tuning — see [GLOSSARY.md](GLOSSARY.md) Governance
 Maintenance Playbook. Post-panel maintenance (e.g. ROUTING_CONTRACT R11 approved-spec delivery)
 follows the same holdout-before-tune rule. No open implementation blockers from Rounds 8–20;
@@ -81,6 +81,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 - 2026-06-18 Adopt STORM's source-grounded perspective discovery as an optional `reflective-research` method, not a new skill → [record](plans/storm-perspective-discovery-reflection-2026-06-18.md)
 - 2026-06-20 Synthesize external-adoption case studies, then correct the evidence and promotion-gate scope after the Test Plan routing counterexample → [record](plans/external-adoption-case-studies-2026-06-20.md)
 - 2026-06-21 Evaluate Hyperplan / multi-agent adversarial planning — no change (runtime = non-goal; methodology overlaps; possible gaps not promoted) → [record](plans/external-adoption-case-studies-2026-06-20.md)
+- 2026-06-25 Round 67 panel — CONTRIBUTING R8–R12 sync, ROUTING_CONTRACT related artifacts, contract anti-drift tests → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 66 panel — R12 boundary quick-cue contract, probe-snippet anti-drift, reject quick-cue expansion → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 R11 zh-TW approved-spec delivery holdout — mixed-language ROUTE-003 phrases + router fairness → [ROUTING_CONTRACT.md](plans/ROUTING_CONTRACT.md#r11-approved-spec-delivery)
 - 2026-06-25 R11 approved-spec delivery routing — `implement_not_plan_trap` fix, ROUTE-003 back to 100%, contract + anti-drift test → [ROUTING_CONTRACT.md](plans/ROUTING_CONTRACT.md#r11-approved-spec-delivery)

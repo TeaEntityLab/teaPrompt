@@ -1262,8 +1262,102 @@ User directive: **do anything you want** — reopen panel for post-`cb6ea2b` bou
 
 - `make all`: pytest + ROUTE-001/002/003 100%
 
+
+
+## Round 67 — Contributor doc parity (2026-06-25)
+
+User directive: **do anything you want** — reopen panel for post-Round-66 operator/contributor doc drift.
+
+### CM: CONTRIBUTING Routing Maintenance sync (R8–R12)?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — duplicate step 3 and stale R8–R9 pointer are governance drift |
+| Codex | **Agree** — cheatsheet parity belongs in contributor path, not only playbook |
+| Gemini | **Agree** — fix numbering before adding steps |
+| Composer | **Agree** — IDE contributors read CONTRIBUTING first |
+| Sakana | **Agree** — no new skill; doc alignment only |
+| GLM | **Agree** — zh-TW cheatsheet parity step explicit |
+
+**Socratic Q:** Does CONTRIBUTING duplicate GLOSSARY playbook?
+**Answer:** CONTRIBUTING is the fork/PR entry point; playbook stays operator-deep. Cross-link only.
+
+**Consensus:** **Agree** — fix duplicate step 3; extend to R8–R12; add cheatsheet parity step.
+
+### CN: ROUTING_CONTRACT Related Artifacts expansion?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — holdout YAMLs, zh-TW cheatsheet, parity pytest files |
+
+**Consensus:** **Agree**.
+
+### CO: `test_routing_contract.py` anti-drift?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — R8–R12 presence is falsifiable |
+| Codex | **Agree** — mirrors `test_quality_gates_summary.py` pattern |
+| Gemini | **Agree** — Related Artifacts drift is recurring |
+| Composer | **Agree** — low-cost CI guard |
+| Sakana | **Agree** — contract structure, not router logic |
+| GLM | **Agree** — includes zh-TW cheatsheet artifact |
+
+**Consensus:** **Agree** — structural pytest for R8–R12 + related artifacts.
+
+### CP: Expand ROUTE holdout or tune router?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; no new boundary evidence |
+
+**Consensus:** **Reject** — maintenance only.
+
+### CQ: GLOSSARY playbook step 7 (CONTRIBUTING alignment)?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — step 7 when R8–R12 or cheatsheet steps change |
+
+**Consensus:** **Agree**.
+
+### CR: Re-litigate backlog?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Unchanged** — recurrence-gated backlog stands |
+
+**Consensus:** **Agree** — no backlog changes.
+
+### Round 67 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| CM | CONTRIBUTING R8–R12 sync | **Agree** | `CONTRIBUTING.md` |
+| CN | Related Artifacts expansion | **Agree** | `ROUTING_CONTRACT.md` |
+| CO | Contract anti-drift pytest | **Agree** | `test_routing_contract.py` |
+| CP | Holdout/router expansion | **Reject** | — |
+| CQ | Playbook step 7 | **Agree** | `GLOSSARY.md` |
+| CR | Final seal | **Agree** | Panel resealed Round 67 |
+
+**All roles agree.**
+
+## Implemented Changes (Round 67)
+
+- `CONTRIBUTING.md`: Routing Maintenance R8–R12, cheatsheet parity step, fix duplicate numbering
+- `ROUTING_CONTRACT.md`: Related Artifacts — holdout YAMLs, zh-TW cheatsheet, parity tests
+- `plans/tests/test_routing_contract.py`: R8–R12 + related-artifacts anti-drift
+- `GLOSSARY.md`: playbook Rounds 1–67 + step 7
+- `test_glossary_structure.py`: Round 67 reference guard
+- `PROJECT_KNOWLEDGE.md`: Decision Index entry
+
+## Verification (Round 67)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
 ## Panel status (updated)
 
-**Sealed 2026-06-25** after **Round 66** (options A–CL). Post-`cb6ea2b` quick-cue governance complete. Future work remains recurrence-gated maintenance per playbook.
+**Sealed 2026-06-25** after **Round 67** (options A–CR). Contributor/operator doc parity complete. Future work remains recurrence-gated maintenance per playbook.
 
 _Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R12)._
+
