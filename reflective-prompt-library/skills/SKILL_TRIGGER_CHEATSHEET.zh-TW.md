@@ -22,10 +22,14 @@ Skill 契約語言：
 若任務包含外部內容、工具輸出、entity-like records 或有副作用的行動，請把 `04-agent/runtime-trust-boundary.md` 作為所選 skill 的輔助檢查鏡頭。
 
 
-邊界速查（ROUTE-002 holdout）：
+邊界速查（ROUTE-002 holdout + ROUTE-003 adversarial）：
 - **僅規劃不寫程式** → `reflective-spec-plan` — 工單、驗收標準或 rollout 計畫且明確不要改程式。
 - **非正式環境審查** → `reflective-review` — 審查 PR/diff 可讀性或 regression，且明確排除正式環境風險評估。
 - **已核准規格落地** → `reflective-implement` — 在 repository 實作或落地已核准 spec；不是僅規劃。
+- **規劃前先釐清** → `reflective-brief` — 在 PRD/工單前先收窄 scope 或對齊利害關係人。
+- **研究不是釐清** → `reflective-research` — 多視角辯論或來源查證，不是 goal clarification。
+- **小修不是審查** → `reflective-implement` — repo 內小 patch，不是 diff review。
+- **正式環境風險不是一般審查** → `reflective-risk` — auth/production/billing 變更需要 risk gate。
 
 ## `reflective-dispatch`
 

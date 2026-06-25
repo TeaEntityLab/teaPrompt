@@ -21,10 +21,14 @@ Routing fairness note:
 - When a task uses external content, tool outputs, entity-like records, or side-effectful actions, apply `04-agent/runtime-trust-boundary.md` as a supporting lens with the selected skill.
 
 
-Boundary quick cues (ROUTE-002 holdout):
+Boundary quick cues (ROUTE-002 holdout + ROUTE-003 adversarial):
 - **Plan-only (no code)** → `reflective-spec-plan` — tickets, rollout plans, or acceptance criteria with explicit no-code context.
 - **Plain review (non-production)** → `reflective-review` — diff/PR review for readability or regressions when production risk is out of scope.
 - **Approved spec delivery** → `reflective-implement` — implement or land an approved spec in the repository; not plan-only.
+- **Brief before plan** → `reflective-brief` — narrow scope or stakeholder alignment before PRD/tickets.
+- **Research not brief** → `reflective-research` — multi-voice debates or source-backed comparisons, not goal clarification.
+- **Trivial fix not review** → `reflective-implement` — small code patches in the repo, not diff review.
+- **Production risk not plain review** → `reflective-risk` — auth/production/billing changes need a risk gate, not readability review.
 
 ## `reflective-dispatch`
 

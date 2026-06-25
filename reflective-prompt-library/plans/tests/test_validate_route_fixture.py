@@ -116,6 +116,29 @@ ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
 # One canonical phrase per ROUTE-003 adversarial group (excluding implement_not_plan_trap / R11).
 ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES = tuple(text for text, _ in ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES)
 
+# Top-of-cheatsheet boundary quick-cue summary markers (ROUTE-002 holdout + ROUTE-003 adversarial).
+BOUNDARY_QUICK_CUE_EN_MARKERS = (
+    "Boundary quick cues (ROUTE-002 holdout + ROUTE-003 adversarial):",
+    "**Plan-only (no code)**",
+    "**Plain review (non-production)**",
+    "**Approved spec delivery**",
+    "**Brief before plan**",
+    "**Research not brief**",
+    "**Trivial fix not review**",
+    "**Production risk not plain review**",
+)
+
+BOUNDARY_QUICK_CUE_ZH_MARKERS = (
+    "邊界速查（ROUTE-002 holdout + ROUTE-003 adversarial）：",
+    "**僅規劃不寫程式**",
+    "**非正式環境審查**",
+    "**已核准規格落地**",
+    "**規劃前先釐清**",
+    "**研究不是釐清**",
+    "**小修不是審查**",
+    "**正式環境風險不是一般審查**",
+)
+
 
 def test_route_003_adversarial_boundary_probes():
     """Anti-drift: ROUTE-003 adversarial boundaries route as fixture expects."""
