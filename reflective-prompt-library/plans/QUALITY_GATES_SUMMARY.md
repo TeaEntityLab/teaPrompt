@@ -111,7 +111,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 11 holdout groups with 46 paraphrases
+- Tested 36 holdout groups with 100 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - Review, clarification, workflow-design, workflow-implementation, research, and orchestration-selection phrasing now pass through boundary concepts
@@ -260,8 +260,8 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (32 groups, 91 paraphrases) |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (11 groups, 24 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 100 paraphrases) |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (13 groups, 28 paraphrases) |
 | Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
 | Linting errors | 0 | ✅ Clean |
 
@@ -272,7 +272,7 @@ The current routing consistency measurement is 100.0% on ROUTE-001 across 16 gro
 ### Critical Reflection
 
 ROUTE-001 should not be interpreted as proof that routing is solved. The useful project direction is not to keep adding isolated synonyms until the score is perfect, but to keep a compact fixture that exposes meaningful intent boundaries:
-- implementation vs spec planning
+- implementation vs spec planning (including approved-spec delivery in repository)
 - review vs risk gating
 - research vs local review
 - clarification vs planning
@@ -285,14 +285,14 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ### Holdout Tracking
 
-ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
+ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 groups / 100 phrases; post-panel maintenance added ROUTING_CONTRACT **R11** (approved-spec delivery) with ROUTE-003 `implement_not_plan_trap` at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
 ## Phase 2 Status (Round 21 audit)
 
 ### Done ✅
 
 1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
-2. **ROUTE-001/002/003 in CI** — 128 + 91 + 24 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
+2. **ROUTE-001/002/003 in CI** — 128 + 100 + 28 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
 
@@ -355,7 +355,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 65; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 65 plus R11 approved-spec delivery maintenance; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration
