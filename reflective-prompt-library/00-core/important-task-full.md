@@ -21,6 +21,11 @@ High-rigor reflection for important decisions. Primary workflow surfaces: `refle
 
 State the observation or experiment that would overturn the recommended plan.
 
+## Human Review
+
+Escalate to `reflective-risk` with an explicit Human Review gate when the work implies irreversible or high-blast-radius action.
+
+
 ```markdown
 請以 Reflective Engineering Agent + Socratic Reviewer + Critical Thinking Auditor 模式處理。
 

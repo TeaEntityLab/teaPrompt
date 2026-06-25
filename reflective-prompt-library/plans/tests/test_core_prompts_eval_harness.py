@@ -6,8 +6,10 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
 
 CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -21,6 +23,7 @@ REQUIRED_HEADINGS = (
 )
 
 CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
+CORE_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CORE_PROMPTS)
 
 
 @pytest.fixture(scope="module")
@@ -65,3 +68,11 @@ def test_core_prompts_have_primary_workflow_surfaces_line():
         assert "Primary workflow surface" in preamble, (
             f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
         )
+
+
+@pytest.mark.parametrize(
+    "prompt_path", CORE_PROMPTS_WITH_HUMAN_REVIEW, ids=lambda p: p.name
+)
+def test_core_prompt_has_human_review_section(prompt_path: Path):
+    """Risk-bearing 00-core prompts declare Human Review escalation outside zh-TW templates."""
+    assert_human_review_preamble(prompt_path)

@@ -2455,3 +2455,46 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 87** (options FK–FO). Human Review guards now share one helper across thinking lenses and composable prompts; GLOSSARY playbook formatting anti-drift closed. Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 88 — `00-core` Human Review preamble guards (2026-06-25)
+
+**Options FP–FS** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 88 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FP | `## Human Review` preamble on risk-bearing `00-core/` prompts + `test_core_prompts_eval_harness.py` guards | **Agree** |
+| FQ | GLOSSARY playbook step 20 + governance sync | **Agree** |
+| FR | ROUTE holdout expansion | **Defer** |
+| FS | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 88 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FP | Core Human Review preambles | **Agree** | six risk-bearing prompts; shared `prompt_eval_helpers` guard |
+| FQ | Playbook + docs | **Agree** | step 20; panel round 88 sync |
+| FR | Holdout expansion | **Defer** | maintenance |
+| FS | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 88)
+
+- `00-core/{core-minimal,core-short,core-full,custom-instruction-en,custom-instruction-zh,important-task-full}.md`: `## Human Review` preamble routes to `reflective-risk`
+- `plans/tests/test_core_prompts_eval_harness.py`: Human Review guards via `prompt_eval_helpers`
+- `GLOSSARY.md`: playbook Rounds 1–88; step 20 for `00-core` Human Review guards
+- `QUALITY_GATES_SUMMARY.md`: `00-core` HR guard note; panel Rounds 1–88; 560+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 88 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 88 sync
+
+## Verification (Round 88)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 88** (options FP–FS). Full prompt library now has Human Review preamble guards on thinking lenses (R81), composable prompts (R86), and risk-bearing `00-core` prompts (R88). Holdout expansion remains recurrence-gated maintenance.
+
