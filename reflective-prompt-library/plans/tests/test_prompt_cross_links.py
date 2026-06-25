@@ -288,6 +288,11 @@ def _invert_skill_thinking_sources() -> dict[str, tuple[str, ...]]:
 
 THINKING_LENS_SKILL_CONSUMERS = _invert_skill_thinking_sources()
 
+def test_all_thinking_lenses_tracked_in_consumer_map():
+    """Every 01-thinking file cited by a skill must appear in the reciprocal map."""
+    expected = {f"01-thinking/{path.name}" for path in THINKING_PROMPTS}
+    assert set(THINKING_LENS_SKILL_CONSUMERS) == expected
+
 
 @pytest.mark.parametrize("lens_ref,consumer_skills", THINKING_LENS_SKILL_CONSUMERS.items())
 def test_thinking_lens_preamble_lists_consumer_skills(lens_ref: str, consumer_skills: tuple[str, ...]):

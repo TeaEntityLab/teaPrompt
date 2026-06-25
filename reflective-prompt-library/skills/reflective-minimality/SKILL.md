@@ -39,7 +39,7 @@ Methods:
 - Complexity audit: scan for one-implementation abstractions, avoidable dependencies, wrapper-only delegation, dead flags, and hand-rolled standard library behavior.
 - Runnable check: keep one minimal check for non-trivial logic.
 
-### Output
+Output:
 
 - Minimality decision: skip, delete, reuse, shrink, or implement minimum.
 - Cut list: unnecessary files, abstractions, dependencies, flags, wrappers, or prose.
@@ -49,7 +49,7 @@ Methods:
 - Debt markers: only when an intentional shortcut has a known ceiling and upgrade trigger.
 - Debt ledger: grouped marker list with no-trigger risks when requested.
 
-### Never
+Never:
 
 - Do not use minimality to avoid explicit acceptance criteria.
 - Do not remove trust-boundary validation, auth, privacy, security, data-loss prevention, required accessibility, compatibility constraints, or required tests.
@@ -57,7 +57,7 @@ Methods:
 - Do not add an abstraction for one implementation, a factory for one product, or config for a value that does not vary.
 - Do not mark a shortcut without both a ceiling and an observable upgrade trigger.
 
-### Escalation
+Escalation:
 
 - If the goal or acceptance criteria are unclear, route to `reflective-brief` or `reflective-spec-plan`.
 - If simplification touches high-risk behavior, route to `reflective-risk`.

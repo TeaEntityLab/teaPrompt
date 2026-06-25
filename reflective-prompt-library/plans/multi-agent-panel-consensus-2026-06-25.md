@@ -2106,5 +2106,48 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 79** (options EE–EH). Bidirectional thinking-lens ↔ workflow skill cross-links complete; reciprocal pytest guards Purpose preambles. Holdout expansion and Escalation subsection anti-drift remain recurrence-gated maintenance.
 
+---
 
+## Round 80 — Escalation subsection anti-drift + thinking-lens preamble guards (2026-06-25)
+
+**Options EI–EL** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 80 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EI | Escalation subsection anti-drift for all nine `SKILL.md` Module Contracts + canonical `Escalation:` format on `reflective-minimality` | **Agree** |
+| EJ | Require `Primary workflow surfaces` on all `01-thinking/` lenses + consumer-map completeness pytest | **Agree** |
+| EK | ROUTE holdout expansion | **Defer** |
+| EL | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 80 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EI | Escalation anti-drift | **Agree** | `test_skill_module_contract.py` + minimality format |
+| EJ | Thinking-lens preamble guards | **Agree** | `test_thinking_prompts_eval_harness.py` + consumer-map test |
+| EK | Holdout expansion | **Defer** | maintenance |
+| EL | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 80)
+
+- `skills/reflective-minimality/SKILL.md`: canonical `Output:` / `Never:` / `Escalation:` Module Contract subsections
+- `plans/tests/test_skill_module_contract.py`: require `Escalation` alongside Trigger/Methods/Output/Never
+- `plans/tests/test_thinking_prompts_eval_harness.py`: `Primary workflow surfaces` preamble guard
+- `plans/tests/test_prompt_cross_links.py`: `test_all_thinking_lenses_tracked_in_consumer_map`
+- `GLOSSARY.md`: playbook Rounds 1–80; step 11 for Module Contract Escalation upkeep
+- `QUALITY_GATES_SUMMARY.md`: Escalation anti-drift note; panel Rounds 1–80
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 80 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 80 sync
+
+## Verification (Round 80)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 80** (options EI–EL). Module Contract Escalation anti-drift closed; thinking-lens preamble consumer guards complete. Holdout expansion remains recurrence-gated maintenance.
 

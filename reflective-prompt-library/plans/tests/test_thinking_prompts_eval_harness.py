@@ -50,3 +50,12 @@ def test_thinking_prompts_reference_workflow_skills():
     for prompt_path in THINKING_PROMPTS:
         text = prompt_path.read_text(encoding="utf-8")
         assert "reflective-" in text, f"{prompt_path.name} should map to at least one workflow skill"
+
+def test_thinking_prompts_have_primary_workflow_surfaces_line():
+    """All 01-thinking lenses name consumer workflow skills in Purpose preambles."""
+    for prompt_path in THINKING_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        assert "Primary workflow surfaces" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surfaces"
+        )
+

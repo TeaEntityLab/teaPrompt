@@ -12,7 +12,7 @@ from validate_skill_examples import CORE_SKILLS  # noqa: E402
 
 SKILLS_DIR = Path(__file__).parent.parent.parent / "skills"
 
-REQUIRED_SUBSECTIONS = ("Trigger", "Methods", "Output", "Never")
+REQUIRED_SUBSECTIONS = ("Trigger", "Methods", "Output", "Never", "Escalation")
 
 
 @pytest.mark.parametrize("skill_name", CORE_SKILLS)
