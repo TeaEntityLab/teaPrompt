@@ -110,6 +110,7 @@ adversarial_sets:
       - implement the approved spec in the repository
       - 在 repository 實作已核准 spec
       - implement 已核准 spec in the repository
+      - 落地已核准規格到 codebase
 
   - name: research_not_brief_trap
     expected_workflow: reflective-research

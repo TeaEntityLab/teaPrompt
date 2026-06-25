@@ -77,6 +77,7 @@ L1 快速路徑：
 - 「在 repo 實作這個變更。」
 - 「在 repository 實作已核准 spec。」
 - 「implement 已核准 spec in the repository。」
+- 「落地已核准規格到 codebase。」
 - 「用驗收標準與測試重構或除錯。」
 - 「交付最小安全修補並附驗證。」
 
