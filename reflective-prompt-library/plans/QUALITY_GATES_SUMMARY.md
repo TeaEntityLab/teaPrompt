@@ -199,21 +199,39 @@ python3 reflective-prompt-library/plans/validate_skill_examples.py
 ```
 
 ### 7.3 ROUTE-003 Adversarial Eval ✅
+**File:** `reflective-prompt-library/plans/route-003-adversarial-eval.yaml`
+
+**What it does:**
+- Fresh adversarial boundary phrasing separate from ROUTE-001 tuning cases and ROUTE-002 holdout phrases
+- Reuses `route_paraphrase_eval.py` with an explicit config path
+- Third routing gate in `make validate`; catches regressions on traps such as implement-vs-plan, plain-review vs risk, multi-voice research, and mixed-language phrasing
+- Post-panel maintenance: ROUTING_CONTRACT **R11** approved-spec delivery (`implement_not_plan_trap`) at 100%
+
+**Results:**
+- Tested 13 adversarial groups with 28 paraphrases
+- Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
+- Low-confidence route trace coverage: 100.0%
+- Output: `plans/route-003-results.json`
+
+**Usage:**
+```bash
+python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prompt-library/plans/route-003-adversarial-eval.yaml
+```
+
 ### 7.4 Route Fixture Gate ✅
 
 **File:** `reflective-prompt-library/plans/validate_route_fixture.py`
 
-- Enforces minimum ROUTE-001/002/003 group and phrase counts before paraphrase eval runs
-- Round 22 panel compromise: deterministic hygiene without YAML dependency
-- Integrated in `make validate` after skill examples gate
-
-
-
-**File:** `reflective-prompt-library/plans/route-003-adversarial-eval.yaml`
-
 **What it does:**
-- Fresh adversarial boundary phrasing separate from ROUTE-001/002
-- Runs in `make validate` as third routing gate
+- Enforces minimum ROUTE-001/002/003 group and phrase counts before paraphrase eval runs
+- Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (36 holdout groups, 100 phrases); ROUTE-003 (13 adversarial groups, 28 phrases)
+- Round 22 panel compromise: deterministic hygiene without YAML dependency explosion
+- Integrated in `make validate` after skill examples gate; mirrored by pytest in `test_validate_route_fixture.py`
+
+**Usage:**
+```bash
+python3 reflective-prompt-library/plans/validate_route_fixture.py
+```
 
 ### 7. Small Benchmark Set ✅
 
