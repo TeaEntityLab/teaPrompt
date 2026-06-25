@@ -61,3 +61,12 @@ def test_context_prompts_cover_context_workflow_surfaces():
         "reflective-research",
     ):
         assert skill in text, f"03-context should reference {skill}"
+
+def test_context_prompts_have_primary_workflow_surfaces_line():
+    """All 03-context prompts declare Primary workflow surface(s) in Purpose preambles."""
+    for prompt_path in CONTEXT_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        assert "Primary workflow surface" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+        )
+

@@ -66,3 +66,12 @@ def test_agents_md_retains_harness_policy_section():
     text = (REPO_DIR / "AGENTS.md").read_text(encoding="utf-8")
     assert "## Harness Policy (Nine Skills)" in text
     assert "make all" in text
+
+def test_repo_prompts_have_primary_workflow_surfaces_line():
+    """All 06-repo prompts declare Primary workflow surface(s) in Purpose preambles."""
+    for prompt_path in REPO_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        assert "Primary workflow surface" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+        )
+

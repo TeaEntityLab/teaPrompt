@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–84). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–85). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 

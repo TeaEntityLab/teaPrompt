@@ -21,6 +21,7 @@ REQUIRED_HEADINGS = (
 )
 
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
+SUPPORTING_LENS_AGENT_PROMPTS = frozenset({"runtime-trust-boundary.md"})
 
 
 @pytest.fixture(scope="module")
@@ -62,3 +63,17 @@ def test_agent_prompts_cover_agent_workflow_surfaces():
         "reflective-research",
     ):
         assert skill in text, f"04-agent should reference {skill}"
+
+def test_agent_prompts_have_workflow_surface_preamble_line():
+    """04-agent prompts use Primary workflow surface(s) or Supporting lens (trust boundary)."""
+    for prompt_path in AGENT_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        if prompt_path.name in SUPPORTING_LENS_AGENT_PROMPTS:
+            assert "Supporting lens for" in preamble, (
+                f"{prompt_path.name} Purpose should use Supporting lens for workflow skills"
+            )
+        else:
+            assert "Primary workflow surface" in preamble, (
+                f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+            )
+

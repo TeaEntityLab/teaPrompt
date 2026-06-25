@@ -62,3 +62,12 @@ def test_engineering_prompts_cover_core_workflows():
         "reflective-review",
     ):
         assert skill in text, f"02-engineering should reference {skill}"
+
+def test_engineering_prompts_have_primary_workflow_surfaces_line():
+    """All 02-engineering prompts declare Primary workflow surface(s) in Purpose preambles."""
+    for prompt_path in ENGINEERING_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        assert "Primary workflow surface" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+        )
+

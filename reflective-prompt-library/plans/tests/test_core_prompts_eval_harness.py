@@ -56,3 +56,12 @@ def test_core_prompts_cover_brief_and_dispatch():
     text = "\n".join(p.read_text(encoding="utf-8") for p in CORE_PROMPTS)
     assert "reflective-brief" in text
     assert "reflective-dispatch" in text
+
+
+def test_core_prompts_have_primary_workflow_surfaces_line():
+    """All 00-core prompts declare Primary workflow surface(s) in Purpose preambles."""
+    for prompt_path in CORE_PROMPTS:
+        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+        assert "Primary workflow surface" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+        )

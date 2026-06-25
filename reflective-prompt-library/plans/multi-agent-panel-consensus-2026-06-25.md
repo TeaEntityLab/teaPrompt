@@ -2321,8 +2321,46 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 - `make all`: pytest + ROUTE-001/002/003 100%
 
+---
+
+## Round 85 — Composable prompt Primary workflow surface preamble guards (2026-06-25)
+
+**Options FC–FF** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 85 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FC | `Primary workflow surface(s)` / Supporting-lens preamble guards in all composable `test_*_prompts_eval_harness.py` files | **Agree** |
+| FD | GLOSSARY playbook step 17 + governance sync | **Agree** |
+| FE | ROUTE holdout expansion | **Defer** |
+| FF | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 85 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FC | Composable preamble guards | **Agree** | mirror `test_thinking_prompts_eval_harness.py`; Supporting-lens exemption for `runtime-trust-boundary.md` |
+| FD | Playbook + docs | **Agree** | step 17; panel round 85 sync |
+| FE | Holdout expansion | **Defer** | maintenance |
+| FF | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 85)
+
+- `plans/tests/test_core_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`: Primary workflow surface preamble guard
+- `plans/tests/test_agent_prompts_eval_harness.py`: Primary vs Supporting-lens preamble guard (`runtime-trust-boundary.md` exemption)
+- `GLOSSARY.md`: playbook Rounds 1–85; step 17 for composable preamble guards
+- `QUALITY_GATES_SUMMARY.md`: preamble guard note; panel Rounds 1–85; 530+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 85 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 85 sync
+
+## Verification (Round 85)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
 ## Panel status (updated)
 
-**Resealed 2026-06-25** after **Round 84** (options EY–FB). `00-core` Primary workflow surface lines now match `CORE_SKILL_LINKS` exactly; full prompt library (`00-core`–`06-repo` + `01-thinking` graph parity) closed. Holdout expansion remains recurrence-gated maintenance.
-
+**Resealed 2026-06-25** after **Round 85** (options FC–FF). Composable prompts now have eval_harness preamble guards matching thinking-lens pattern; full library parity (graph + preamble) closed. Holdout expansion remains recurrence-gated maintenance.
 
