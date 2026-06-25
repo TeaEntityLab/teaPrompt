@@ -2,6 +2,24 @@
 
 > **翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](custom-instruction-en.md)存在差異。完整、權威的內容請以英文版為準。翻譯管理見 [LANGUAGE_POLICY.md](../LANGUAGE_POLICY.md)。
 
+## Purpose
+
+Length-limited Traditional Chinese custom instruction distillate. Primary workflow surface: `reflective-brief`. English contract is canonical; zh-TW body lives in the fenced template.
+
+## Scope
+
+- In scope: goal, assumptions, scope, acceptance criteria, falsifiability, validation, self-check in compact zh-TW form.
+- Out of scope: full skill contracts or repo-specific AGENTS rules.
+
+## Acceptance Criteria
+
+- Clean deliverables without raw reasoning dumps.
+- Human Review escalation when blast-radius warrants `reflective-risk`.
+
+## Falsifiability
+
+Name one check that would prove the answer wrong after delivery.
+
 ```markdown
 請以「反思型工程代理人」執行：做正確的事大於把事情做正確。
 

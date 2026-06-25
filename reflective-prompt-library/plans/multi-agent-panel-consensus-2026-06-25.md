@@ -1647,3 +1647,60 @@ Parallel scouts (**SocraticLens**, **PromptScout2**, **SkillPlanAuditor**) after
 
 **Resealed 2026-06-25** after **Round 71** (options DF–DH). Thinking ↔ engineering cross-link pass complete; 00-core Purpose sweep remains recurrence-gated.
 
+## Round 72 — Core prompt contract review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DI: Standardize `00-core/` prompt contracts?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — host-instruction layer is highest install surface; contracts prevent silent rigor downgrade |
+| Codex | **Agree** — eval_harness scores 50–67% without preamble; falsifiable via pytest |
+| Gemini | **Agree** — bounded to nine files; defer 03–05 |
+| Composer | **Agree** — IDE users paste core prompts into host settings |
+| Sakana | **Agree** — links brief/dispatch + thinking lenses without new skill |
+| GLM | **Agree** — English contracts outside zh-TW fences per LANGUAGE_POLICY |
+
+**Socratic Q:** Why 00-core before 03-context?
+**Answer:** Installed host instructions affect every task; context prompts are composable overlays.
+
+**Consensus:** **Agree** — Purpose/Scope/Acceptance Criteria/Falsifiability on all nine `00-core/` prompts; `test_core_prompts_eval_harness.py`.
+
+### DJ: Expand to 03–05 categories now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated after core layer |
+
+### DK: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### Round 72 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DI | Core prompt contracts | **Agree** | 9 files + pytest anti-drift |
+| DJ | 03–05 Purpose sweep | **Reject** | backlog |
+| DK | Router/holdout/tenth skill | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 72)
+
+- `00-core/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping; thinking lens links where applicable
+- `plans/tests/test_core_prompts_eval_harness.py`: structural + 80%+ score floor anti-drift
+- `QUALITY_GATES_SUMMARY.md`: core prompt test mention; pytest floor 260+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 72 entry
+
+## Verification (Round 72)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 72** (options DI–DK). Core-prompt contract pass complete; 03–05 Purpose sweep remains recurrence-gated.
+

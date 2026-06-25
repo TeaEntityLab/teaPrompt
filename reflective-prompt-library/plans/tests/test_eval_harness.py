@@ -44,19 +44,20 @@ class TestPassCase:
         assert len(result["checks"]) == len(expected)
 
 
+FAIL_FIXTURE = (
+    "reflective-prompt-library/plans/tests/fixtures/eval_harness_bare_prompt.md"
+)
+
+
 class TestFailCase:
     def test_minimal_file_scores_low(self, harness):
-        result = harness.evaluate_file(
-            "reflective-prompt-library/00-core/core-minimal.md"
-        )
+        result = harness.evaluate_file(FAIL_FIXTURE)
         assert result["score"] <= 70.0, (
-            f"Expected score <= 70 for minimal file, got {result['score']}"
+            f"Expected score <= 70 for bare fixture, got {result['score']}"
         )
 
     def test_minimal_file_has_goal(self, harness):
-        result = harness.evaluate_file(
-            "reflective-prompt-library/00-core/core-minimal.md"
-        )
+        result = harness.evaluate_file(FAIL_FIXTURE)
         goal_check = [
             c for c in result["checks"] if c["id"] == "has-goal"
         ]
@@ -64,9 +65,7 @@ class TestFailCase:
         assert goal_check[0]["result"] in ("pass", "fail", "warn")
 
     def test_minimal_file_lacks_acceptance_criteria(self, harness):
-        result = harness.evaluate_file(
-            "reflective-prompt-library/00-core/core-minimal.md"
-        )
+        result = harness.evaluate_file(FAIL_FIXTURE)
         check = [c for c in result["checks"] if c["id"] == "has-acceptance-criteria"][0]
         assert check["result"] == "fail", (
             f"Expected 'fail' for acceptance criteria check, got '{check['result']}'"

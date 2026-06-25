@@ -2,6 +2,24 @@
 
 Use this as the most complete opening prompt for important tasks.
 
+## Purpose
+
+Full opening protocol for important tasks. Primary workflow surfaces: `reflective-brief` then `reflective-dispatch`; pair with `01-thinking/socratic-reviewer.md` and `01-thinking/critical-thinking-check.md` for multi-lens critique.
+
+## Scope
+
+- In scope: classification, Socratic clarification, assumption audit, options, phased plan, critical review.
+- Out of scope: repository implementation (`reflective-implement`) without acceptance criteria.
+
+## Acceptance Criteria
+
+- Task classification (prompt-only vs artifact vs agent vs workflow) with rationale.
+- At least three options compared; recommendation tied to acceptance criteria and falsifiability.
+
+## Falsifiability
+
+Name what evidence would reverse the recommended option before Phase 1 starts.
+
 ```markdown
 請以 Reflective Engineering Agent 模式處理以下任務。
 

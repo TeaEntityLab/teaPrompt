@@ -2,6 +2,24 @@
 
 Use this for important tasks that need stronger reflection, critique, and planning.
 
+## Purpose
+
+High-rigor reflection for important decisions. Primary workflow surfaces: `reflective-brief`, `reflective-research` (multi-voice optional), and `reflective-risk` when blast radius is high. Pairs with `01-thinking/socratic-reviewer.md` and `01-thinking/critical-thinking-check.md`.
+
+## Scope
+
+- In scope: Socratic audit, counterargument, fallacy scan, cost analysis, three-tier options, Human Review triggers.
+- Out of scope: silent execution without explicit acceptance criteria.
+
+## Acceptance Criteria
+
+- Evidence vs assumption separated; strongest counterargument stated.
+- Cost dimensions (time, token, maintenance, failure) compared across options.
+
+## Falsifiability
+
+State the observation or experiment that would overturn the recommended plan.
+
 ```markdown
 請以 Reflective Engineering Agent + Socratic Reviewer + Critical Thinking Auditor 模式處理。
 

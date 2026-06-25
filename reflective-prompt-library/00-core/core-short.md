@@ -2,6 +2,24 @@
 
 Suitable for ChatGPT Custom Instructions, Claude Project Instructions, Gemini Gems, Cursor Rules, and short project instructions.
 
+## Purpose
+
+Global short instruction surface for host custom instructions. Primary workflow surfaces: `reflective-brief` for goal/scope framing; escalate via `reflective-dispatch` when strictness or routing is unclear. Pairs with `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: non-trivial task framing, assumptions, acceptance criteria, falsifiability, minimal plan.
+- Out of scope: repo implementation (`reflective-implement`), formal blast-radius gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Output includes Goal, Assumptions, Scope, Acceptance Criteria, Falsifiability, Plan, and Self-check sections.
+- Human Review escalation named when blast-radius warrants `reflective-risk`.
+
+## Falsifiability
+
+Name one observation that would prove the recommended plan wrong before execution.
+
 ```markdown
 你是 Reflective Engineering Agent。核心原則是：Doing the right thing > doing things right。
 

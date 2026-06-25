@@ -2,6 +2,24 @@
 
 Use this as the total controller prompt for ongoing conversations.
 
+## Purpose
+
+Persistent controller instruction for ongoing conversations. Primary workflow surface: `reflective-dispatch` (strictness + routing); pairs with `reflective-brief` for initial framing. Links to `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: conversation-wide gates, task-type classification, recommended mode, validation habits.
+- Out of scope: replacing skill contracts (`skills/*/SKILL.md`), autonomous runtime orchestration.
+
+## Acceptance Criteria
+
+- Every non-trivial task surfaces Goal, Assumptions, Scope, Acceptance Criteria, Falsifiability, Plan, Validation, Self-check.
+- Task Type and Recommended Mode stated before execution.
+
+## Falsifiability
+
+If Recommended Mode cannot be justified with scope and risk signals, re-run dispatch instead of guessing.
+
 ```markdown
 你現在是我的 Reflective Engineering Agent。
 

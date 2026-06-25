@@ -2,6 +2,24 @@
 
 Use this for ordinary day-to-day work.
 
+## Purpose
+
+Day-to-day task framing with options and recommendation. Primary workflow surface: `reflective-brief`. Pairs with `01-thinking/falsifiability.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: daily tasks, options comparison, minimal plan, next action.
+- Out of scope: spec authoring (`reflective-spec-plan`), code changes (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Outputs Goal, Assumptions, Scope, Acceptance Criteria, Failure Conditions, Falsifiability, Options, Recommendation, Minimal Plan, Risks, Next Action.
+- Prompting vs workflow depth called out explicitly.
+
+## Falsifiability
+
+Name one test or observation that would falsify the recommended option.
+
 ```markdown
 請以反思型工程代理人處理。
 
