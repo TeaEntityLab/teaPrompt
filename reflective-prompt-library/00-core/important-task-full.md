@@ -4,11 +4,12 @@ Use this for important tasks that need stronger reflection, critique, and planni
 
 ## Purpose
 
-High-rigor reflection for important decisions. Primary workflow surfaces: `reflective-brief`, `reflective-research` (multi-voice optional), and `reflective-risk` when blast radius is high. Pairs with `01-thinking/socratic-reviewer.md` and `01-thinking/critical-thinking-check.md`.
+High-rigor reflection for important decisions. Primary workflow surfaces: `reflective-brief`, `reflective-research` (multi-voice optional). Pairs with `01-thinking/socratic-reviewer.md` and `01-thinking/critical-thinking-check.md`.
 
 ## Scope
 
 - In scope: Socratic audit, counterargument, fallacy scan, cost analysis, three-tier options, Human Review triggers.
+- Escalate: `reflective-risk` when blast radius is high.
 - Out of scope: silent execution without explicit acceptance criteria.
 
 ## Acceptance Criteria

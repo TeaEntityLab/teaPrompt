@@ -4,11 +4,12 @@ Use this as the total controller prompt for ongoing conversations.
 
 ## Purpose
 
-Persistent controller instruction for ongoing conversations. Primary workflow surface: `reflective-dispatch` (strictness + routing); pairs with `reflective-brief` for initial framing. Links to `01-thinking/why-what-how-done.md`.
+Persistent controller instruction for ongoing conversations. Primary workflow surface: `reflective-dispatch` (strictness + routing). Links to `01-thinking/why-what-how-done.md`.
 
 ## Scope
 
 - In scope: conversation-wide gates, task-type classification, recommended mode, validation habits.
+- Pair with: `reflective-brief` for initial framing before dispatch.
 - Out of scope: replacing skill contracts (`skills/*/SKILL.md`), autonomous runtime orchestration.
 
 ## Acceptance Criteria

@@ -2282,3 +2282,47 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 83** (options EU–EX). Composable prompts (`02-engineering`–`06-repo`) Primary workflow surface lines now match `*_SKILL_LINKS` exactly; supporting-lens pattern documented for `runtime-trust-boundary.md`. Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 84 — Core prompt Primary workflow surface parity (2026-06-25)
+
+**Options EY–FB** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 84 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EY | Strict `Primary workflow surface(s)` ↔ `CORE_SKILL_LINKS` parity for `00-core` + pytest | **Agree** |
+| EZ | Trim overlisted primary skills (`global-controller`, `important-task-full`) | **Agree** |
+| FA | ROUTE holdout expansion | **Defer** |
+| FB | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 84 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EY | Core primary-surface parity | **Agree** | `CORE_SKILL_LINKS` + `CORE_THINKING_LINKS` + primary tests |
+| EZ | Primary-line trim | **Agree** | Move brief pairing and risk escalation to Scope |
+| FA | Holdout expansion | **Defer** | maintenance |
+| FB | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 84)
+
+- `00-core/global-controller.md`, `00-core/important-task-full.md`: Primary lines trimmed; adjacent/escalation skills in Scope
+- `plans/tests/test_prompt_cross_links.py`: `CORE_SKILL_LINKS`, `CORE_THINKING_LINKS`, core primary-surface parity tests
+- `GLOSSARY.md`: playbook Rounds 1–84; step 16 for `00-core` primary-surface parity
+- `QUALITY_GATES_SUMMARY.md`: core primary-surface parity note; panel Rounds 1–84; 520+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 84 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 84 sync
+
+## Verification (Round 84)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 84** (options EY–FB). `00-core` Primary workflow surface lines now match `CORE_SKILL_LINKS` exactly; full prompt library (`00-core`–`06-repo` + `01-thinking` graph parity) closed. Holdout expansion remains recurrence-gated maintenance.
+
+

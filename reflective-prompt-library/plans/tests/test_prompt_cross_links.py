@@ -1,4 +1,4 @@
-"""Anti-drift: thinking lenses, engineering/agent/context/domain/repo prompts, and workflow skills cross-link."""
+"""Anti-drift: thinking lenses, core/engineering/agent/context/domain/repo prompts, and workflow skills cross-link."""
 
 import re
 from pathlib import Path
@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 LIBRARY_ROOT = Path(__file__).parent.parent.parent
+CORE_DIR = LIBRARY_ROOT / "00-core"
 THINKING_DIR = LIBRARY_ROOT / "01-thinking"
 ENGINEERING_DIR = LIBRARY_ROOT / "02-engineering"
 AGENT_DIR = LIBRARY_ROOT / "04-agent"
@@ -13,6 +14,42 @@ CONTEXT_DIR = LIBRARY_ROOT / "03-context"
 DOMAIN_DIR = LIBRARY_ROOT / "05-domain"
 REPO_DIR = LIBRARY_ROOT / "06-repo"
 SKILLS_DIR = LIBRARY_ROOT / "skills"
+
+CORE_THINKING_LINKS: dict[str, tuple[str, ...]] = {
+    "core-full.md": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/critical-thinking-check.md",
+    ),
+    "core-minimal.md": ("01-thinking/why-what-how-done.md",),
+    "core-short.md": ("01-thinking/why-what-how-done.md",),
+    "custom-instruction-en.md": (),
+    "custom-instruction-zh.md": (),
+    "daily-minimal.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "global-controller.md": ("01-thinking/why-what-how-done.md",),
+    "important-task-full.md": (
+        "01-thinking/socratic-reviewer.md",
+        "01-thinking/critical-thinking-check.md",
+    ),
+    "master-prompt.md": (
+        "01-thinking/socratic-reviewer.md",
+        "01-thinking/critical-thinking-check.md",
+    ),
+}
+
+CORE_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "core-full.md": ("reflective-brief", "reflective-dispatch"),
+    "core-minimal.md": ("reflective-brief",),
+    "core-short.md": ("reflective-brief", "reflective-dispatch"),
+    "custom-instruction-en.md": ("reflective-brief",),
+    "custom-instruction-zh.md": ("reflective-brief",),
+    "daily-minimal.md": ("reflective-brief",),
+    "global-controller.md": ("reflective-dispatch",),
+    "important-task-full.md": ("reflective-brief", "reflective-research"),
+    "master-prompt.md": ("reflective-brief", "reflective-dispatch"),
+}
 
 ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
     "task-start.md": (
@@ -159,6 +196,7 @@ CONTEXT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
 }
 
 
+CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
 ENGINEERING_PROMPTS = tuple(sorted(ENGINEERING_DIR.glob("*.md")))
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
@@ -275,6 +313,47 @@ def _prompt_sources_section(skill_path: Path) -> str:
     marker = "## Prompt Sources"
     assert marker in text, f"{skill_path.parent.name} missing {marker}"
     return text.split(marker, 1)[1].split("##", 1)[0]
+
+
+
+@pytest.mark.parametrize("prompt_name,thinking_refs", CORE_THINKING_LINKS.items())
+def test_core_prompt_links_thinking_lens(prompt_name: str, thinking_refs: tuple[str, ...]):
+    path = CORE_DIR / prompt_name
+    preamble = _preamble(path)
+    for ref in thinking_refs:
+        assert ref in preamble, f"{prompt_name} preamble should reference {ref}"
+
+
+def test_all_core_prompts_have_thinking_cross_link():
+    assert set(CORE_THINKING_LINKS) == {p.name for p in CORE_PROMPTS}
+
+
+def test_all_core_prompts_have_skill_link():
+    assert set(CORE_SKILL_LINKS) == {p.name for p in CORE_PROMPTS}
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", CORE_SKILL_LINKS.items())
+def test_core_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
+    preamble = _preamble(CORE_DIR / prompt_name)
+    for skill in skill_refs:
+        assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", CORE_SKILL_LINKS.items())
+def test_core_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(CORE_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surfaces {listed} != {skill_refs}"
+    )
+
+
+def test_thinking_lens_files_exist_for_core_links():
+    linked = {ref for refs in CORE_THINKING_LINKS.values() for ref in refs}
+    for ref in linked:
+        assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 
 
 @pytest.mark.parametrize("prompt_name,thinking_refs", ENGINEERING_THINKING_LINKS.items())
