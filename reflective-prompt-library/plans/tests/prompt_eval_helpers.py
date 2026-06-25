@@ -91,3 +91,30 @@ def assert_human_review_sets_partition(
         f"required ∪ exempt {sorted(required | exempt)} != all prompts {sorted(all_names)}"
     )
     assert not required & exempt, "required and exempt Human Review sets must not overlap"
+
+SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY: dict[str, frozenset[str]] = {
+    "04-agent": frozenset({"runtime-trust-boundary.md"}),
+}
+
+
+def supporting_lens_exempt_for_category(category: str) -> frozenset[str]:
+    """Prompts that declare Supporting lens for instead of Primary workflow surface(s)."""
+    return SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY.get(category, frozenset())
+
+
+def assert_primary_workflow_surface_preamble(
+    prompt_path: Path,
+    *,
+    category: str,
+) -> None:
+    """Purpose preambles must declare Primary workflow surface(s) or Supporting lens."""
+    preamble = prompt_preamble(prompt_path)
+    if prompt_path.name in supporting_lens_exempt_for_category(category):
+        assert "Supporting lens for" in preamble, (
+            f"{prompt_path.name} Purpose should use Supporting lens for workflow skills"
+        )
+    else:
+        assert "Primary workflow surface" in preamble, (
+            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
+        )
+

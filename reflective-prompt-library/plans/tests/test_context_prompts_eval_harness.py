@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -73,10 +73,7 @@ def test_context_prompts_cover_context_workflow_surfaces():
 def test_context_prompts_have_primary_workflow_surfaces_line():
     """All 03-context prompts declare Primary workflow surface(s) in Purpose preambles."""
     for prompt_path in CONTEXT_PROMPTS:
-        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
-        assert "Primary workflow surface" in preamble, (
-            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
-        )
+        assert_primary_workflow_surface_preamble(prompt_path, category="03-context")
 
 
 @pytest.mark.parametrize(

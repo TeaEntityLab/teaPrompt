@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from prompt_eval_helpers import (
     PROMPT_CONTRACT_HEADINGS,
     PROMPT_EVAL_MIN_SCORE,
+    assert_primary_workflow_surface_preamble,
     assert_prompt_contract_headings,
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
@@ -68,10 +69,7 @@ def test_thinking_prompts_reference_workflow_skills():
 def test_thinking_prompts_have_primary_workflow_surfaces_line():
     """All 01-thinking lenses name consumer workflow skills in Purpose preambles."""
     for prompt_path in THINKING_PROMPTS:
-        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
-        assert "Primary workflow surfaces" in preamble, (
-            f"{prompt_path.name} Purpose should list Primary workflow surfaces"
-        )
+        assert_primary_workflow_surface_preamble(prompt_path, category="01-thinking")
 
 
 @pytest.mark.parametrize(

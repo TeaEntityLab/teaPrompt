@@ -2728,4 +2728,54 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 93** (options GM–GQ). Eval_harness contract headings are now library-registry checked across all `00-core`–`06-repo` prompts with shared `PROMPT_CONTRACT_HEADINGS`. Holdout expansion remains recurrence-gated maintenance.
 
+## Round 94 — cross-category Primary workflow surface preamble library registry (2026-06-25)
+
+**Options GR–GV** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 94 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| GR | DRY `assert_primary_workflow_surface_preamble` + `SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY` in `prompt_eval_helpers.py` | **Agree** |
+| GS | `test_prompt_primary_workflow_surface_library_registry.py` cross-category registry + library glob parity | **Agree** |
+| GT | GLOSSARY playbook step 26 + governance sync | **Agree** |
+| GU | ROUTE holdout expansion | **Defer** |
+| GV | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 94 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| GR | Primary surface preamble helper | **Agree** | shared helper + supporting-lens map |
+| GS | Primary surface library registry | **Agree** | `test_prompt_primary_workflow_surface_library_registry.py` |
+| GT | Playbook + docs | **Agree** | step 26; panel round 94 sync |
+| GU | Holdout expansion | **Defer** | maintenance |
+| GV | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 94)
+
+- **Opus:** Rounds 91–93 closed HR, cross-link, and contract registries; Primary workflow surface preamble guards remain duplicated across seven harness files with no library-wide falsifiability.
+- **Codex:** Centralizing `assert_primary_workflow_surface_preamble` prevents per-category drift; `runtime-trust-boundary.md` Supporting-lens exemption belongs in one map.
+- **Gemini:** Registry adds one sweep over 49 prompts without extra CI cost beyond pytest.
+- **Composer:** IDE contributors edit Purpose preambles often — one helper matches Round 87 HR DRY pattern.
+- **Sakana:** Thinking lenses use plural "surfaces"; substring guard still matches without a separate code path.
+- **GLM:** Supporting-lens map is English-canonical; no TW SKILL translation needed.
+
+## Implemented Changes (Round 94)
+
+- `plans/tests/prompt_eval_helpers.py`: `SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY`, `assert_primary_workflow_surface_preamble`
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY primary-surface preamble guards
+- `plans/tests/test_prompt_primary_workflow_surface_library_registry.py`: cross-category registry + library glob parity
+- `GLOSSARY.md`: playbook Rounds 1–94; step 26 for primary-surface library registry
+- `QUALITY_GATES_SUMMARY.md`: primary-surface registry note; panel Rounds 1–94; 630+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 94 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 94 sync
+
+## Verification (Round 94)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 94** (options GR–GV). Primary workflow surface preambles are now library-registry checked across all `00-core`–`06-repo` prompts with shared `assert_primary_workflow_surface_preamble` and Supporting-lens exemptions in one map. Holdout expansion remains recurrence-gated maintenance.
 

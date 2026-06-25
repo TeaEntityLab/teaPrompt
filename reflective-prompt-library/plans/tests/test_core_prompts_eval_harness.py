@@ -12,6 +12,7 @@ from eval_harness import EvalHarness  # noqa: E402
 from prompt_eval_helpers import (
     PROMPT_CONTRACT_HEADINGS,
     PROMPT_EVAL_MIN_SCORE,
+    assert_primary_workflow_surface_preamble,
     assert_prompt_contract_headings,  # noqa: E402
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
@@ -79,10 +80,7 @@ def test_core_prompts_cover_brief_and_dispatch():
 def test_core_prompts_have_primary_workflow_surfaces_line():
     """All 00-core prompts declare Primary workflow surface(s) in Purpose preambles."""
     for prompt_path in CORE_PROMPTS:
-        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
-        assert "Primary workflow surface" in preamble, (
-            f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
-        )
+        assert_primary_workflow_surface_preamble(prompt_path, category="00-core")
 
 
 @pytest.mark.parametrize(

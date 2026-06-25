@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -19,7 +19,6 @@ REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
 AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
-SUPPORTING_LENS_AGENT_PROMPTS = frozenset({"runtime-trust-boundary.md"})
 AGENT_HUMAN_REVIEW_REQUIRED = frozenset({
     "agent-scaffold-provenance.md",
     "agent-selection.md",
@@ -77,15 +76,7 @@ def test_agent_prompts_cover_agent_workflow_surfaces():
 def test_agent_prompts_have_workflow_surface_preamble_line():
     """04-agent prompts use Primary workflow surface(s) or Supporting lens (trust boundary)."""
     for prompt_path in AGENT_PROMPTS:
-        preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
-        if prompt_path.name in SUPPORTING_LENS_AGENT_PROMPTS:
-            assert "Supporting lens for" in preamble, (
-                f"{prompt_path.name} Purpose should use Supporting lens for workflow skills"
-            )
-        else:
-            assert "Primary workflow surface" in preamble, (
-                f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
-            )
+        assert_primary_workflow_surface_preamble(prompt_path, category="04-agent")
 
 
 @pytest.mark.parametrize(
