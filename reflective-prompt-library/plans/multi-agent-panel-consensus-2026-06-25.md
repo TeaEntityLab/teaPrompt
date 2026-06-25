@@ -2779,3 +2779,54 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 94** (options GR–GV). Primary workflow surface preambles are now library-registry checked across all `00-core`–`06-repo` prompts with shared `assert_primary_workflow_surface_preamble` and Supporting-lens exemptions in one map. Holdout expansion remains recurrence-gated maintenance.
 
+
+## Round 95 — cross-category workflow skill coverage library registry (2026-06-25)
+
+**Options GW–HA** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 95 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| GW | DRY `assert_category_workflow_skill_coverage` + frozen `*_COVER_WORKFLOW_SKILLS` per harness | **Agree** |
+| GX | `test_workflow_skill_coverage_library_registry.py` — coverage registry; `01-thinking` exempt (empty tuple, consumer graph) | **Agree** |
+| GY | GLOSSARY playbook step 27 + governance sync | **Agree** |
+| GZ | ROUTE holdout expansion | **Defer** |
+| HA | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 95 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| GW | Workflow skill coverage helper | **Agree** | shared helper + frozen tuples per category |
+| GX | Workflow skill coverage library registry | **Agree** | `test_workflow_skill_coverage_library_registry.py` |
+| GY | Playbook + docs | **Agree** | step 27; panel round 95 sync |
+| GZ | Holdout expansion | **Defer** | maintenance |
+| HA | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 95)
+
+- **Opus:** Rounds 91–94 closed HR, cross-link, contract, and primary-surface registries; per-category `cover_*` workflow skill guards remain duplicated with no library-wide falsifiability.
+- **Codex:** Centralizing `assert_category_workflow_skill_coverage` prevents per-category drift; `01-thinking` empty tuple documents consumer-graph exemption explicitly.
+- **Gemini:** Registry adds one sweep over seven categories without extra CI cost beyond pytest.
+- **Composer:** IDE contributors edit workflow skill references often — one helper matches Round 94 primary-surface DRY pattern.
+- **Sakana:** Thinking lenses route via consumer graph; empty frozen tuple is clearer than omitting the category.
+- **GLM:** Coverage tuples are English-canonical skill filenames; no TW SKILL translation needed.
+
+## Implemented Changes (Round 95)
+
+- `plans/tests/prompt_eval_helpers.py`: `assert_category_workflow_skill_coverage`
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY workflow skill coverage guards + frozen `*_COVER_WORKFLOW_SKILLS`
+- `plans/tests/test_workflow_skill_coverage_library_registry.py`: cross-category registry + library glob parity
+- `GLOSSARY.md`: playbook Rounds 1–95; step 27 for workflow skill coverage library registry
+- `QUALITY_GATES_SUMMARY.md`: workflow skill coverage registry note; panel Rounds 1–95; 640+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 95 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 95 sync
+
+## Verification (Round 95)
+
+- `make all`: 641 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 95** (options GW–HA). Workflow skill coverage is now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_category_workflow_skill_coverage` and frozen tuples per harness (`01-thinking` exempt via empty tuple). Holdout expansion remains recurrence-gated maintenance.
