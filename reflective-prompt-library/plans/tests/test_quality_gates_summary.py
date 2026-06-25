@@ -84,3 +84,13 @@ def test_ci_paraphrase_totals_match_route_minimums(summary_text: str):
         f"{ROUTE_001_MIN_PHRASES} + {ROUTE_002_MIN_PHRASES} + {ROUTE_003_MIN_PHRASES}"
     )
     assert expected_total in summary_text
+
+def test_route_fixture_gate_mentions_cheatsheet_parity_tests(summary_text: str):
+    section = _section_between(
+        summary_text,
+        "### 7.4 Route Fixture Gate ✅",
+        "### 7. Small Benchmark Set ✅",
+    )
+    assert "test_cheatsheet_boundary_quick_cues.py" in section
+    assert "test_cheatsheet_" in section and "_parity.py" in section
+

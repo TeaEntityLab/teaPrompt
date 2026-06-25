@@ -1162,8 +1162,108 @@ User directive: continue Socratic panel for as many rounds as feasible.
 
 - `make all`: **64 pytest**, ROUTE-001 **100%** (16/128), ROUTE-002 **100%** (36/100), ROUTE-003 **100%** (13/28)
 
-## Panel status (final)
+## Round 66 — Post quick-cue maintenance (2026-06-25)
 
-**Sealed 2026-06-25** after **Round 65** (options A–CF). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook.
+User directive: **do anything you want** — reopen panel for post-`cb6ea2b` boundary quick-cue governance.
 
-_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R11)._
+### CG: ROUTING_CONTRACT R12 — boundary quick-cue summary?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — curated quick-cue block is now a contract surface; document curated-not-exhaustive rule |
+| Codex | **Agree** — links holdout parity tests to routing contract |
+| Gemini | **Agree** — operators need explicit R12 before adding bullets ad hoc |
+| Composer | **Agree** — matches R8–R11 maintenance pattern |
+| Sakana | **Agree** — no new skill; contract only |
+| GLM | **Agree** — zh-TW cheatsheet included in R12 scope |
+
+**Socratic Q:** Does R12 duplicate cheatsheet content?
+**Answer:** No — it states *maintenance policy* (curated summary, holdout-first), not trigger cues.
+
+**Consensus:** **Agree** — add R12 to `ROUTING_CONTRACT.md`.
+
+### CH: Probe-linked anti-drift for quick-cue block?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — marker-only tests allow label drift from probe meaning |
+| Codex | **Agree** — `BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_*` tied to bullet descriptions |
+| Gemini | **Agree** — stronger than bold-label checks alone |
+| Composer | **Agree** — extend `test_cheatsheet_boundary_quick_cues.py` |
+| Sakana | **Agree** — exported from `test_validate_route_fixture.py` |
+| GLM | **Agree** — separate EN/zh-TW snippet tuples |
+
+**Consensus:** **Agree** — probe-snippet pytest guard.
+
+### CI: Expand quick cues (minimality, dispatch-meta, design comparison)?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Reject** — seven bullets suffice; skill sections + parity tests cover rest |
+| Codex | **Reject** — quick means quick; exhaustive list defeats purpose |
+| Gemini | **Defer** — would add three bullets |
+| Composer | **Reject** — R12 documents curated subset |
+| Sakana | **Reject** — holdout parity tests already guard full cues |
+| GLM | **Reject** — zh-TW summary already long enough |
+
+**Socratic Q:** If users miss minimality traps, do we expand quick cues?
+**Answer:** Per-skill sections and `test_cheatsheet_boundary_parity.py` already enforce those probes; expand holdout before router tune (R8), not quick-cue list.
+
+**Consensus:** **Reject expansion** — keep seven curated bullets.
+
+### CJ: GLOSSARY + maintenance playbook step?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — Boundary Quick Cues section + playbook step 6 |
+
+**Consensus:** **Agree**.
+
+### CK: QUALITY_GATES 7.4 mentions cheatsheet parity tests?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — document `test_cheatsheet_boundary_quick_cues.py` + `test_cheatsheet_*_parity.py` |
+
+**Consensus:** **Agree**.
+
+### CL: Re-litigate backlog (tenth skill, default minimality, benchmark CI, full i18n)?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject / Defer unchanged** — recurrence-gated backlog stands |
+
+**Consensus:** **Agree** — no backlog changes.
+
+### Round 66 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| CG | R12 boundary quick-cue contract | **Agree** | `ROUTING_CONTRACT.md` |
+| CH | Probe-snippet anti-drift | **Agree** | `test_validate_route_fixture.py` + `test_cheatsheet_boundary_quick_cues.py` |
+| CI | Expand quick-cue bullets | **Reject** | Keep curated seven |
+| CJ | GLOSSARY + playbook | **Agree** | Boundary Quick Cues + step 6 |
+| CK | QUALITY_GATES 7.4 sync | **Agree** | Cheatsheet parity pytest mention |
+| CL | Final seal | **Agree** | Panel resealed Round 66 |
+
+**All roles agree.**
+
+## Implemented Changes (Round 66)
+
+- `ROUTING_CONTRACT.md`: R12 Boundary quick-cue summary
+- `GLOSSARY.md`: Boundary Quick Cues section; playbook Rounds 1–66 + step 6
+- `test_validate_route_fixture.py`: `BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_EN/ZH`
+- `test_cheatsheet_boundary_quick_cues.py`: probe-snippet + count anti-drift tests
+- `test_glossary_structure.py`: Boundary Quick Cues section + Round 66 reference
+- `test_quality_gates_summary.py`: 7.4 cheatsheet parity mention guard
+- `QUALITY_GATES_SUMMARY.md`: 7.4 cheatsheet parity bullets
+
+## Verification (Round 66)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Sealed 2026-06-25** after **Round 66** (options A–CL). Post-`cb6ea2b` quick-cue governance complete. Future work remains recurrence-gated maintenance per playbook.
+
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R12)._

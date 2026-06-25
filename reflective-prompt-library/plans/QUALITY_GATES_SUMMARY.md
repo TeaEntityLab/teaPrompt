@@ -227,6 +227,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 - Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (36 holdout groups, 100 phrases); ROUTE-003 (13 adversarial groups, 31 phrases)
 - Round 22 panel compromise: deterministic hygiene without YAML dependency explosion
 - Integrated in `make validate` after skill examples gate; mirrored by pytest in `test_validate_route_fixture.py`
+- Cheatsheet parity anti-drift: `test_cheatsheet_boundary_quick_cues.py` (R12 quick-cue summary), `test_cheatsheet_*_parity.py` (holdout probe cues in EN/zh-TW cheatsheets)
 
 **Usage:**
 ```bash

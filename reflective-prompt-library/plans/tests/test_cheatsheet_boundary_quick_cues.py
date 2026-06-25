@@ -9,6 +9,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from test_validate_route_fixture import (  # noqa: E402
     BOUNDARY_QUICK_CUE_EN_MARKERS,
+    BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_EN,
+    BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_ZH,
     BOUNDARY_QUICK_CUE_ZH_MARKERS,
 )
 
@@ -44,3 +46,22 @@ def test_boundary_quick_cues_present_in_english_summary(en_boundary_quick_cues: 
 @pytest.mark.parametrize("marker", BOUNDARY_QUICK_CUE_ZH_MARKERS)
 def test_boundary_quick_cues_present_in_zh_tw_summary(zh_boundary_quick_cues: str, marker: str):
     assert marker in zh_boundary_quick_cues, f"zh-TW boundary quick-cue summary missing: {marker!r}"
+
+@pytest.mark.parametrize("snippet", BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_EN)
+def test_boundary_quick_cue_probe_snippets_in_english_summary(en_boundary_quick_cues: str, snippet: str):
+    assert snippet.lower() in en_boundary_quick_cues.lower(), (
+        f"English boundary quick-cue summary missing probe snippet: {snippet!r}"
+    )
+
+
+@pytest.mark.parametrize("snippet", BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_ZH)
+def test_boundary_quick_cue_probe_snippets_in_zh_tw_summary(zh_boundary_quick_cues: str, snippet: str):
+    assert snippet.lower() in zh_boundary_quick_cues.lower(), (
+        f"zh-TW boundary quick-cue summary missing probe snippet: {snippet!r}"
+    )
+
+
+def test_boundary_quick_cue_probe_snippet_counts_match_markers():
+    assert len(BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_EN) == len(BOUNDARY_QUICK_CUE_EN_MARKERS) - 1
+    assert len(BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_ZH) == len(BOUNDARY_QUICK_CUE_ZH_MARKERS) - 1
+

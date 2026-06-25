@@ -100,6 +100,18 @@ This contract applies to:
   still route to `reflective-spec-plan`.
 - Add ROUTE-003 `implement_not_plan_trap` holdout phrases (including mixed zh-TW + English approved-spec delivery) before tuning this boundary.
 
+### R12: Boundary quick-cue summary
+
+- `SKILL_TRIGGER_CHEATSHEET.md` and `.zh-TW.md` include a **curated** boundary quick-cue block
+  before the per-skill sections. It summarizes high-confusion ROUTE-002 holdout and ROUTE-003
+  adversarial traps; it is not an exhaustive list of all holdout phrases.
+- When adding a new routing boundary (R8–R11 pattern), update holdout fixtures and per-skill
+  trigger cues first; add a quick-cue bullet only when the trap is frequent enough to merit
+  top-of-page visibility.
+- Anti-drift: `plans/tests/test_cheatsheet_boundary_quick_cues.py` guards marker labels and
+  probe-linked snippets in the quick-cue block; `test_cheatsheet_*_parity.py` guards full
+  cheatsheet coverage.
+
 
 ## Router Output Contract
 

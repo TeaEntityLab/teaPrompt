@@ -139,6 +139,27 @@ BOUNDARY_QUICK_CUE_ZH_MARKERS = (
     "**正式環境風險不是一般審查**",
 )
 
+# Probe-linked snippets that must appear in each quick-cue bullet description (R12 anti-drift).
+BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_EN = (
+    "explicit no-code context",
+    "production risk is out of scope",
+    "approved spec in the repository",
+    "before PRD/tickets",
+    "multi-voice debates",
+    "small code patches",
+    "auth/production/billing",
+)
+
+BOUNDARY_QUICK_CUE_PROBE_SNIPPETS_ZH = (
+    "明確不要改程式",
+    "排除正式環境風險",
+    "已核准 spec",
+    "PRD/工單前",
+    "多視角",
+    "小 patch",
+    "auth/production/billing",
+)
+
 
 def test_route_003_adversarial_boundary_probes():
     """Anti-drift: ROUTE-003 adversarial boundaries route as fixture expects."""
