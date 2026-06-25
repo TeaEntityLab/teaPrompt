@@ -39,7 +39,6 @@ AGENT_HUMAN_REVIEW_EXEMPT = frozenset({
     "workflow-recipes.md",
 })
 
-AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
 
 
 

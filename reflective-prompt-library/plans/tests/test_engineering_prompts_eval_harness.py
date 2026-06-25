@@ -37,7 +37,6 @@ ENGINEERING_HUMAN_REVIEW_EXEMPT = frozenset({
     "usage-first.md",
 })
 
-ENGINEERING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(ENGINEERING_PROMPTS)
 
 
 

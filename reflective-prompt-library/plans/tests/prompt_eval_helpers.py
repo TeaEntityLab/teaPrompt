@@ -5,6 +5,16 @@ from pathlib import Path
 
 HUMAN_REVIEW_HEADING = re.compile(r"^## Human Review\s*$", re.MULTILINE)
 
+PROMPT_LIBRARY_CATEGORIES = (
+    "00-core",
+    "01-thinking",
+    "02-engineering",
+    "03-context",
+    "04-agent",
+    "05-domain",
+    "06-repo",
+)
+
 
 def prompt_preamble(prompt_path: Path) -> str:
     return prompt_path.read_text(encoding="utf-8").split("```", 1)[0]

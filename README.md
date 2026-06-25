@@ -21,7 +21,7 @@ Full library docs: [reflective-prompt-library/README.md](reflective-prompt-libra
 ## Governance
 
 - **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) — quality gates, routing maintenance (R8–R12), `make all`
-- **Panel record:** [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md) — six-lens Socratic consensus (Rounds 1–90)
+- **Panel record:** [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md) — six-lens Socratic consensus (Rounds 1–91)
 - **Operator playbook:** [GLOSSARY.md](reflective-prompt-library/GLOSSARY.md) — Governance Maintenance Playbook
 
 The repository contains:

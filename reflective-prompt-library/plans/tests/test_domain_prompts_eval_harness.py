@@ -36,7 +36,6 @@ DOMAIN_HUMAN_REVIEW_EXEMPT = frozenset({
     "writing-article.md",
 })
 
-DOMAIN_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(DOMAIN_PROMPTS)
 
 
 

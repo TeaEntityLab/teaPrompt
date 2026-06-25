@@ -2586,3 +2586,49 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 90** (options FX–GB). Human Review coverage is now explicit via frozen required/exempt sets across all prompt categories (`00-core`–`06-repo`). Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 91 — cross-category Human Review library registry (2026-06-25)
+
+**Options GC–GG** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 91 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| GC | `PROMPT_LIBRARY_CATEGORIES` + `test_human_review_library_registry.py` cross-category HR registry pytest | **Agree** |
+| GD | Remove duplicate `*_PROMPTS_WITH_HUMAN_REVIEW` assignments in composable harness files | **Agree** |
+| GE | GLOSSARY playbook step 23 + governance sync | **Agree** |
+| GF | ROUTE holdout expansion | **Defer** |
+| GG | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 91 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| GC | HR library registry | **Agree** | `PROMPT_LIBRARY_CATEGORIES`; registry imports all frozen HR sets; library glob parity |
+| GD | Harness dedupe | **Agree** | drop duplicate `prompts_with_human_review` lines |
+| GE | Playbook + docs | **Agree** | step 23; panel round 91 sync |
+| GF | Holdout expansion | **Defer** | maintenance |
+| GG | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 91)
+
+- `plans/tests/prompt_eval_helpers.py`: `PROMPT_LIBRARY_CATEGORIES` tuple
+- `plans/tests/test_human_review_library_registry.py`: cross-category HR registry + library glob parity
+- `plans/tests/test_{agent,context,domain,engineering,repo}_prompts_eval_harness.py`: dedupe duplicate HR prompt tuples
+- `GLOSSARY.md`: playbook Rounds 1–91; step 23 for HR library registry
+- `QUALITY_GATES_SUMMARY.md`: HR registry note; panel Rounds 1–91; 590+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 91 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 91 sync
+
+## Verification (Round 91)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 91** (options GC–GG). Human Review frozen sets are now cross-checked by a single library registry (`00-core`–`06-repo`). Holdout expansion remains recurrence-gated maintenance.
+

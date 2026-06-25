@@ -36,7 +36,6 @@ CONTEXT_HUMAN_REVIEW_EXEMPT = frozenset({
     "medium-context.md",
 })
 
-CONTEXT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CONTEXT_PROMPTS)
 
 
 

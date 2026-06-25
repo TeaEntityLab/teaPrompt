@@ -33,7 +33,6 @@ REPO_HUMAN_REVIEW_EXEMPT = frozenset({
     "codex-opencode.md",
 })
 
-REPO_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(REPO_PROMPTS)
 
 
 
