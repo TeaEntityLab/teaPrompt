@@ -2,6 +2,24 @@
 
 Use this for research reports, trend analysis, platform comparison, and evidence mapping.
 
+## Purpose
+
+Structure research reports, trend analysis, platform comparison, and evidence mapping. Primary workflow surface: `reflective-research`. Pairs with `01-thinking/falsifiability.md`, `01-thinking/critical-thinking-check.md`, and `01-thinking/counterargument.md`.
+
+## Scope
+
+- In scope: research question, evidence map, competing views, blind spots, decision framework.
+- Out of scope: repository edits (`reflective-implement`) or ticket slicing (`reflective-spec-plan`).
+
+## Acceptance Criteria
+
+- Claims separated into supported, inferred, unverified, and needs fresh verification.
+- Blind-spot output names at least one gap no competing view touched.
+
+## Falsifiability
+
+State what new evidence would overturn the strongest claim in the synthesis.
+
 ```markdown
 你是 Research Analyst。請對以下主題做結構化研究分析。
 

@@ -2,6 +2,28 @@
 
 Use this for security, privacy, money, destructive operations, and production-sensitive work.
 
+## Purpose
+
+Gate security, privacy, billing, destructive, and production-sensitive work before irreversible action. Primary workflow surfaces: `reflective-risk` and `reflective-review`. Pairs with `01-thinking/critical-thinking-check.md`, `01-thinking/counterargument.md`, and `01-thinking/falsifiability.md`.
+
+## Scope
+
+- In scope: threat model, assumption audit, rollback/dry-run plan, go/no-go framing.
+- Out of scope: silent execution of irreversible changes (`reflective-implement` without review).
+
+## Acceptance Criteria
+
+- Human confirmation required before irreversible or high-blast-radius recommendations.
+- Rollback and dry-run paths explicit when delivery is contemplated.
+
+## Falsifiability
+
+Name one threat or failure mode that would change the go/no-go decision.
+
+## Human Review
+
+Require human approval before any irreversible recommendation or production-facing change.
+
 ```markdown
 這是高風險任務。請啟用 High-risk Review Mode。
 

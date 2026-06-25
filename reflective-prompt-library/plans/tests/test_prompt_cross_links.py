@@ -1,4 +1,4 @@
-"""Anti-drift: thinking lenses, engineering/agent/context prompts, and workflow skills cross-link."""
+"""Anti-drift: thinking lenses, engineering/agent/context/domain prompts, and workflow skills cross-link."""
 
 from pathlib import Path
 
@@ -9,6 +9,7 @@ THINKING_DIR = LIBRARY_ROOT / "01-thinking"
 ENGINEERING_DIR = LIBRARY_ROOT / "02-engineering"
 AGENT_DIR = LIBRARY_ROOT / "04-agent"
 CONTEXT_DIR = LIBRARY_ROOT / "03-context"
+DOMAIN_DIR = LIBRARY_ROOT / "05-domain"
 SKILLS_DIR = LIBRARY_ROOT / "skills"
 
 ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
@@ -133,6 +134,55 @@ CONTEXT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
 ENGINEERING_PROMPTS = tuple(sorted(ENGINEERING_DIR.glob("*.md")))
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
+
+DOMAIN_THINKING_LINKS: dict[str, tuple[str, ...]] = {
+    "business-strategy.md": (
+        "01-thinking/counterargument.md",
+        "01-thinking/falsifiability.md",
+        "01-thinking/socratic-reviewer.md",
+    ),
+    "creative-template.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "deep-analysis.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+        "01-thinking/socratic-reviewer.md",
+    ),
+    "high-risk.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "learning-coach.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "research.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+    ),
+    "writing-article.md": (
+        "01-thinking/counterargument.md",
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/socratic-reviewer.md",
+    ),
+}
+
+DOMAIN_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "business-strategy.md": ("reflective-brief", "reflective-research"),
+    "creative-template.md": ("reflective-spec-plan",),
+    "deep-analysis.md": ("reflective-research", "reflective-spec-plan"),
+    "high-risk.md": ("reflective-risk", "reflective-review"),
+    "learning-coach.md": ("reflective-brief",),
+    "research.md": ("reflective-research",),
+    "writing-article.md": ("reflective-brief", "reflective-review"),
+}
+
+DOMAIN_PROMPTS = tuple(sorted(DOMAIN_DIR.glob("*.md")))
+
 CONTEXT_PROMPTS = tuple(sorted(CONTEXT_DIR.glob("*.md")))
 
 
@@ -223,6 +273,30 @@ def test_context_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[
 
 def test_thinking_lens_files_exist_for_context_links():
     linked = {ref for refs in CONTEXT_THINKING_LINKS.values() for ref in refs}
+    for ref in linked:
+        assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
+
+@pytest.mark.parametrize("prompt_name,thinking_refs", DOMAIN_THINKING_LINKS.items())
+def test_domain_prompt_links_thinking_lens(prompt_name: str, thinking_refs: tuple[str, ...]):
+    path = DOMAIN_DIR / prompt_name
+    preamble = _preamble(path)
+    for ref in thinking_refs:
+        assert ref in preamble, f"{prompt_name} preamble should reference {ref}"
+
+
+def test_all_domain_prompts_have_thinking_cross_link():
+    assert set(DOMAIN_THINKING_LINKS) == {p.name for p in DOMAIN_PROMPTS}
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", DOMAIN_SKILL_LINKS.items())
+def test_domain_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
+    preamble = _preamble(DOMAIN_DIR / prompt_name)
+    for skill in skill_refs:
+        assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+def test_thinking_lens_files_exist_for_domain_links():
+    linked = {ref for refs in DOMAIN_THINKING_LINKS.values() for ref in refs}
     for ref in linked:
         assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 

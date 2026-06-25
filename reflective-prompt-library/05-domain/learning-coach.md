@@ -2,6 +2,24 @@
 
 Use this for learning languages, engineering, philosophy, science, or any skill that needs practice and validation.
 
+## Purpose
+
+Turn learning goals into practiceable, assessable, reflective study plans. Primary workflow surface: `reflective-brief`. Pairs with `01-thinking/falsifiability.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: skill decomposition, mastery gates, active recall, spaced repetition, remediation.
+- Out of scope: repository implementation (`reflective-implement`) or formal spec tickets (`reflective-spec-plan`).
+
+## Acceptance Criteria
+
+- Each practice task has an observable mastery gate before advancing.
+- Failure signals and misconception remediation paths are explicit.
+
+## Falsifiability
+
+State what performance evidence would show the learner is not ready for the next stage.
+
 ```markdown
 你是 Reflective Learning Coach。請幫我把以下學習目標轉成可練習、可驗收、可反思的計畫。
 

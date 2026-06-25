@@ -1820,4 +1820,61 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 ## Panel status (updated)
 
-**Resealed 2026-06-25** after **Round 74** (options DO–DQ). Context-prompt contract pass complete; `05-domain` Purpose sweep remains recurrence-gated.
+## Round 75 — Domain prompt contract review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DR: Standardize `05-domain/` prompt contracts + cross-links?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — domain overlays were disconnected (58–64% eval_harness); contracts close the last prompt-category gap |
+| Codex | **Agree** — seven files bounded; falsifiable via `test_domain_prompts_eval_harness.py` + cross-link pytest |
+| Gemini | **Agree** — strategy/risk/research overlays are L6 surfaces; defer `06-repo` templates |
+| Composer | **Agree** — high-risk and research prompts already cited in skills; reciprocal links needed |
+| Sakana | **Agree** — no tenth skill; supporting lenses for existing nine |
+| GLM | **Agree** — English contracts outside zh-TW fences; Human Review on high-risk and creative brand outputs |
+
+**Socratic Q:** Why `05-domain` before `06-repo`?
+**Answer:** Domain overlays compose with frozen workflow skills; repo templates are host-install artifacts with different governance surface.
+
+**Consensus:** **Agree** — Purpose/Scope/Acceptance Criteria/Falsifiability on all seven `05-domain/` prompts; thinking + workflow cross-links; `test_domain_prompts_eval_harness.py`; extend `test_prompt_cross_links.py`.
+
+### DS: Expand to `06-repo/` Purpose sweep now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated; repo templates are install scaffolds not composable prompt contracts |
+
+### DT: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### Round 75 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DR | Domain prompt contracts + cross-links | **Agree** | 7 files + pytest anti-drift |
+| DS | 06-repo Purpose sweep | **Reject** | backlog |
+| DT | Router/holdout/tenth skill | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 75)
+
+- `05-domain/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping; thinking lens links; Human Review where applicable
+- `plans/tests/test_domain_prompts_eval_harness.py`: structural + 80%+ score floor anti-drift
+- `plans/tests/test_prompt_cross_links.py`: domain ↔ thinking ↔ skill cross-links
+- `QUALITY_GATES_SUMMARY.md`: domain prompt test mention; pytest floor update
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 75 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 75 sync
+
+## Verification (Round 75)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 75** (options DR–DT). Domain-prompt contract pass complete; all composable prompt categories (`00-core`–`05-domain`) now standardized. `06-repo` template Purpose sweep remains recurrence-gated.

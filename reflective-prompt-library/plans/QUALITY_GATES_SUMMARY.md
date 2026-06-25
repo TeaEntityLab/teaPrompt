@@ -314,7 +314,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 2. **ROUTE-001/002/003 in CI** — 128 + 102 + 53 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
-5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py` (330+ pytest anti-drift suite in CI)
+5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py` (370+ pytest anti-drift suite in CI)
 
 ### Ongoing maintenance (not blockers)
 
@@ -384,4 +384,4 @@ Phase 1 quality-gate tooling and documentation are **complete**. Routing consist
 - ✅ Benchmark fixture gate plus optional manual benchmark runs
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from panel Rounds 1–73; work is recurrence-gated maintenance per playbook. The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.
+The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from panel Rounds 1–75; work is recurrence-gated maintenance per playbook. The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.

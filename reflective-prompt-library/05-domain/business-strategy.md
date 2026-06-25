@@ -2,6 +2,24 @@
 
 Use this for business models, product positioning, transition strategy, or venture review.
 
+## Purpose
+
+Review business models, product positioning, transition strategy, and venture proposals. Primary workflow surfaces: `reflective-brief` and `reflective-research`. Pairs with `01-thinking/counterargument.md`, `01-thinking/falsifiability.md`, and `01-thinking/socratic-reviewer.md`.
+
+## Scope
+
+- In scope: value proposition, alternatives, moat, kill criteria, counterarguments.
+- Out of scope: implementation delivery (`reflective-implement`) without approved spec.
+
+## Acceptance Criteria
+
+- Paid demand and distribution costs challenged explicitly.
+- Kill criteria and MVP path stated before scaling recommendations.
+
+## Falsifiability
+
+Name one assumption that, if false, would invalidate the proposed business model.
+
 ```markdown
 你是 Strategy Reviewer。請分析以下商業 / 產品方案。
 
