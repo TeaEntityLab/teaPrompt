@@ -152,7 +152,82 @@ This is a **judgment artifact**, not an agent instruction source.
 
 ## Residual Open Questions
 
-_None — panel closed 2026-06-25. Future promotions still require the three-recurrence gate._
+_None — panel closed 2026-06-25 after Round 5. Future promotions still require the three-recurrence gate._
+
+## Round 5 — Post-close follow-ups (2026-06-25)
+
+### K: Expand ROUTE-002 with fresh holdout cases?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — add cases before more router tuning; keep deterministic eval |
+| Opus | **Agree** — handoff vs workflow-design and multi-voice vs dispatch are real boundaries |
+| Gemini | **Agree** — trivial implement vs minimality is cost-relevant |
+| Composer | **Agree** — IDE users phrase handoffs and quick fixes inconsistently |
+| Sakana | **Agree** — multi-voice holdout validates Round 3 G without new skill |
+| GLM | **Agree** — TW adopters need stable routing on session transfer phrasing |
+
+**Socratic Q:** What fails if we tune ROUTE-001 only?
+**Answer:** Holdout stops measuring unseen boundaries; regressions hide until manual use.
+
+**Consensus:** **Agree** — add `handoff_holdout`, `multi_voice_research_holdout`, `trivial_implement_holdout` plus router boundary rules. Narrow handoff signals so workflow-design phrases (e.g. "handoff workflow" in a spec) do not misroute.
+
+### L: Operationalize `context_load` at dispatch time?
+
+| Lens | Position |
+| --- | --- |
+| Gemini | **Agree** — metadata is useless without a deferral rule |
+| Opus | **Agree** — must appear in route trace (R7), not silent skip |
+| Codex | **Agree** — falsifiable via ROUTING_CONTRACT + dispatch Output fields |
+| Composer | **Agree** — L1–L2 hosts need explicit deferral, not guesswork |
+| Sakana/GLM | **Agree** — deferral ≠ downgrade when trace is visible |
+
+**Consensus:** **Agree** — `Context Load Deferral` section in `reflective-dispatch`; **R7** in `ROUTING_CONTRACT.md`; cheatsheet + glossary lines.
+
+### M: Run 23-task benchmark eval in CI?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Reject** — benchmark needs LLM runs; CI must stay deterministic |
+| Opus | **Reject** — promotion gate not met; manual `benchmark_tasks.py` suffices |
+| Gemini | **Reject** — cost and flake risk outweigh signal |
+| All | **Agree reject** — document manual path only |
+
+**Consensus:** **Reject** — keep `benchmark_tasks.py` manual; no CI job.
+
+### N: QUALITY_GATES still lists "Add CI/CD"?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — mark done; `.github/workflows/python-tools.yml` already runs `make all` |
+
+**Consensus:** **Agree** — update QUALITY_GATES Next Steps.
+
+### Round 5 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| K | Fresh ROUTE-002 holdout | **Agree** | 3 new holdout groups + router boundaries |
+| L | context_load deferral | **Agree** | dispatch skill + R7 + glossary/cheatsheet |
+| M | Benchmark in CI | **Reject** | Manual benchmark only |
+| N | CI/CD documentation | **Agree** | QUALITY_GATES update |
+
+**All roles agree.**
+
+## Implemented Changes (Round 5)
+
+- `route-002-holdout-eval.yaml`: handoff, multi-voice research, trivial implement holdouts (58 paraphrases)
+- `route_paraphrase_eval.py`: handoff, multi-voice, trivial-implement boundary rules
+- `reflective-dispatch/SKILL.md`: Context Load Deferral section
+- `ROUTING_CONTRACT.md`: R7 Context Load Deferral
+- `GLOSSARY.md`, cheatsheets EN/TW: deferral terms
+- `QUALITY_GATES_SUMMARY.md`: CI done, holdout metrics, benchmark manual
+
+## Residual Open Questions (after Round 5)
+
+1. Undocumented-decisions git check (Knowie-style) — **defer** until decision-drift recurrence (panel unanimous).
+2. Fresh ROUTE-002 cases beyond Round 5 seed — **ongoing** before further router tuning.
+3. Full `SKILL.md` localization — **still reject** (English canonical).
 
 ## Superseded Open Questions
 

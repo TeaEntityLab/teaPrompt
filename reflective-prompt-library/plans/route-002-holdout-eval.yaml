@@ -141,6 +141,40 @@ holdout_sets:
       - prefer stdlib or native behavior over another package
       - do a minimality gate before implementing the helper
 
+  - name: handoff_holdout
+    expected_workflow: reflective-handoff-retro
+    expected_rigor: low
+    expected_enhancements:
+      - promotion_candidate
+    phrases:
+      - capture session lessons for the next agent
+      - write a handoff summary before I switch tasks
+      - consolidate what we learned into reusable memory
+      - prepare a retro before ending this session
+
+  - name: multi_voice_research_holdout
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - multi-perspective strategic rethink of our architecture
+      - run a multi-voice panel on adoption options
+      - six-lens debate on whether to merge these skills
+      - compare strategic options using explicit persona lenses
+
+  - name: trivial_implement_holdout
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - quick one-liner fix for the typo
+      - small fix for the off-by-one bug
+      - patch the trivial null check
+      - make a trivial code change to fix the label
+
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

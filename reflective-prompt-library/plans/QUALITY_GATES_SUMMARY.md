@@ -212,7 +212,7 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval |
+| Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval (14 groups, 58 paraphrases) |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
@@ -235,15 +235,15 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ### Holdout Tracking
 
-ROUTE-002 currently measures unseen phrasing separately from ROUTE-001. It passes the holdout aspirational target with 100.0% consistency after adding concept-level review, clarification, workflow-design, and orchestration-selection boundaries. This should still be treated as a seeded holdout, not proof of broad semantic routing; the next useful step is adding fresh holdout cases before further router tuning.
+ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 5 (2026-06-25) added handoff, multi-voice research, and trivial-implement holdout groups with matching router boundaries. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
 ## Next Steps (Phase 2)
 
 Based on the research and current implementation, suggested next steps:
 
-1. **Expand ROUTE-002 with fresh holdout cases** - Add unseen cases before further router tuning
-2. **Run benchmark tests** - Execute the 23 tasks with/without skills to measure effectiveness
-3. **Add CI/CD** - Integrate validation scripts into automated pipeline
+1. **Expand ROUTE-002 with fresh holdout cases** - Ongoing; Round 5 added 3 groups (handoff, multi-voice, trivial implement)
+2. **Run benchmark tests** - Manual via `benchmark_tasks.py`; not in CI (non-deterministic / LLM-cost)
+3. **CI/CD** - Done: `.github/workflows/python-tools.yml` runs `make all` on push/PR
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
 5. **Iterate on routing** - Use paraphrase eval results to improve keyword matching
 

@@ -234,3 +234,14 @@ signal is present and the smaller path is disputed, route to `reflective-minimal
 Routing equivalent intent to lower rigor without making the downgrade visible in
 the route trace or output. Prohibited by `plans/ROUTING_CONTRACT.md` R4–R6.
 
+---
+
+## Context Load Deferral / 上下文負載延後
+
+At Strictness L1–L2, hosts may defer skills with `context_load: high` when a
+smaller workflow still satisfies intent. Deferred skills must appear in the route
+trace under available enhancements with rationale — not as a silent downgrade.
+
+**Operational test:** A cost-sensitive L1 request still names which heavy skills
+were deferred and why.
+

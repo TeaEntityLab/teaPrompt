@@ -64,6 +64,13 @@ This contract applies to:
 
 - Cost controls may change depth, but must not silently reduce baseline quality for equivalent intent.
 - Cost-based fallback decisions must be explicit in route trace.
+### R7: Context Load Deferral
+
+- Skills declare `context_load: low|medium|high` in frontmatter.
+- At Strictness `L1`–`L2`, hosts may defer `high` context_load skills when a smaller workflow still satisfies intent.
+- Deferred skills must appear in route trace under available enhancements with rationale.
+- Deferral is not a silent downgrade: equivalent high-rigor intent must still receive equivalent outcomes or an explicit escalation path.
+
 
 ## Router Output Contract
 

@@ -385,6 +385,35 @@ class ParaphraseRouter:
             adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 2
             reasons.append("minimality boundary: complexity reduction requested")
 
+        handoff_signals = [
+            "handoff summary", "hand off", "hand-off", "write a handoff",
+            "session summary", "switch tasks", "continue later",
+            "memory consolidation", "reusable memory", "session lessons",
+            "next agent", "ending this session", "prepare a retro"
+        ]
+        if any(signal in text_lower for signal in handoff_signals):
+            adjustments["reflective-handoff-retro"] = adjustments.get("reflective-handoff-retro", 0) + 3
+            reasons.append("handoff boundary: session transfer or memory consolidation")
+
+        multi_voice_signals = [
+            "multi-voice", "multi voice", "multi-perspective", "multi perspective",
+            "strategic rethink", "panel on", "six-lens", "six lens"
+        ]
+        if any(signal in text_lower for signal in multi_voice_signals):
+            adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
+            reasons.append("research boundary: multi-voice or strategic perspective synthesis")
+
+        trivial_fix_signals = [
+            "typo", "one-liner", "one liner", "quick fix", "small fix", "trivial fix",
+            "trivial code change", "trivial null"
+        ]
+        trivial_fix_context = ["patch", "fix", "change", "bug", "code"]
+        if any(signal in text_lower for signal in trivial_fix_signals) or (
+            "trivial" in text_lower and any(ctx in text_lower for ctx in trivial_fix_context)
+        ):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
+            reasons.append("implementation boundary: trivial code fix")
+
         return adjustments, reasons
     
     def route(self, text: str) -> Tuple[str, float, List[str], str]:

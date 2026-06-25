@@ -100,6 +100,16 @@ When **all** of the following are true, skip a separate `reflective-brief` and a
 
 Still emit a minimal route trace (`Mode`, `Strictness`, `Workflow: prompt-only`, `Next Action`). If any signal is ambiguous, default-up to `reflective-brief` instead of silent downgrade.
 
+## Context Load Deferral
+
+Skills declare `context_load: low|medium|high` in frontmatter. When Strictness is `L1` or `L2`:
+
+- Prefer `low` and `medium` context_load workflows first.
+- Defer `high` context_load skills (`reflective-research`, `reflective-spec-plan`) unless risk, acceptance criteria, or explicit user demand requires them.
+- List deferred high-load skills under `Enhancements Available` with a one-line rationale — do not silently skip them when equivalent intent would normally include them.
+
+Escalate to deferred skills when the task is non-trivial, needs external sources, or needs durable planning artifacts.
+
 ## Output
 
 For routing-only responses, keep it short:

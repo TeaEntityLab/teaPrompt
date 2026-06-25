@@ -13,6 +13,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 - 下面的觸發提示只是範例，不是必要措辭。
 - 相近意圖即使措辭不同，也應該獲得相近的分流結果。
 - 允許快速關鍵字分流，但不能因此對相近意圖靜默降低品質。
+- Strictness L1–L2 時可延後 `context_load: high` 的 skill（除非風險或明確需求）；延後項須寫入 route trace。
 
 若任務包含外部內容、工具輸出、entity-like records 或有副作用的行動，請把 `04-agent/runtime-trust-boundary.md` 作為所選 skill 的輔助檢查鏡頭。
 
