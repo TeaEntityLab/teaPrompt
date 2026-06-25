@@ -28,15 +28,30 @@ ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
 }
 
 SKILL_THINKING_SOURCES: dict[str, tuple[str, ...]] = {
+    "reflective-brief": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "reflective-dispatch": ("01-thinking/socratic-reviewer.md",),
+    "reflective-handoff-retro": ("01-thinking/socratic-reviewer.md",),
     "reflective-implement": (
         "01-thinking/counterargument.md",
         "01-thinking/critical-thinking-check.md",
     ),
+    "reflective-minimality": ("01-thinking/counterargument.md",),
+    "reflective-research": (
+        "01-thinking/socratic-reviewer.md",
+        "01-thinking/critical-thinking-check.md",
+    ),
+    "reflective-review": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+    ),
+    "reflective-risk": ("01-thinking/critical-thinking-check.md",),
     "reflective-spec-plan": (
         "01-thinking/falsifiability.md",
         "01-thinking/why-what-how-done.md",
     ),
-    "reflective-handoff-retro": ("01-thinking/socratic-reviewer.md",),
 }
 
 
@@ -249,6 +264,18 @@ def test_workflow_skill_lists_thinking_sources(skill_name: str, thinking_refs: t
     section = _prompt_sources_section(skill_path)
     for ref in thinking_refs:
         assert ref in section, f"{skill_name} Prompt Sources should list {ref}"
+
+
+def test_all_workflow_skills_have_thinking_cross_link():
+    from validate_skill_examples import CORE_SKILLS  # noqa: WPS433
+
+    assert set(SKILL_THINKING_SOURCES) == set(CORE_SKILLS)
+
+
+def test_thinking_lens_files_exist_for_skill_links():
+    linked = {ref for refs in SKILL_THINKING_SOURCES.values() for ref in refs}
+    for ref in linked:
+        assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)

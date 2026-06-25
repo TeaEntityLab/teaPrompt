@@ -163,3 +163,5 @@ Skip when the question is narrow, repo-local, and already has a single canonical
 - `03-context/gemini-long-document.md`
 - `04-agent/runtime-trust-boundary.md`
 - `04-agent/agent-scaffold-provenance.md`
+- `01-thinking/socratic-reviewer.md`
+- `01-thinking/critical-thinking-check.md`

@@ -72,6 +72,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-06-25 Round 78 panel — complete nine-skill thinking-lens cross-links + Module Contract anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
 

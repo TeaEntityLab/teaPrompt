@@ -314,7 +314,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 2. **ROUTE-001/002/003 in CI** — 128 + 102 + 53 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
-5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`, `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py` (410+ pytest anti-drift suite in CI)
+5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`, `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py`, `test_skill_module_contract.py` (430+ pytest anti-drift suite in CI)
 
 ### Ongoing maintenance (not blockers)
 

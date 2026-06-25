@@ -1994,3 +1994,72 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ## Panel status (updated)
 
 **Resealed 2026-06-25** after **Round 77** (options DX–DZ). Governance validator pytest mirrors complete; prompt-library contract sweep and governance anti-drift suite closed. Holdout expansion before router tuning remains recurrence-gated maintenance.
+
+## Round 78 — Workflow skill thinking cross-links (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### EA: Complete all nine workflow skill ↔ thinking-lens cross-links?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — Round 71 covered three skills; remaining six leave Socratic/critical lenses untested |
+| Codex | **Agree** — `SKILL_THINKING_SOURCES` parity with `CORE_SKILLS` is falsifiable |
+| Gemini | **Agree** — dispatch/brief/minimality lenses are cost-relevant entry points |
+| Composer | **Agree** — IDE users load skills with thinking lenses; reciprocal Prompt Sources required |
+| Sakana | **Agree** — research multi-voice method needs explicit socratic + critical-thinking links |
+| GLM | **Agree** — English canonical links; TW routing unaffected |
+
+**Socratic Q:** Why skills after prompt contract sweep?
+**Answer:** Skills are the harness-policy layer; thinking lenses must be traceable from every workflow skill Prompt Sources, not only implement/spec-plan/handoff.
+
+**Consensus:** **Agree** — extend `SKILL_THINKING_SOURCES` to all nine skills; add missing `reflective-research` Prompt Sources links; `test_all_workflow_skills_have_thinking_cross_link`.
+
+### EB: Skill Module Contract anti-drift for all nine skills?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — `lint_skills.py` warnings are not pytest-gated; bounded Trigger/Methods/Output/Never test |
+
+**Consensus:** **Agree** — `test_skill_module_contract.py` for all `CORE_SKILLS`.
+
+### EC: ROUTE-002/003 holdout expansion now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Defer** — maintenance playbook item; this round targets skill ↔ thinking linkage |
+
+### ED: Router / holdout / tenth skill / benchmark CI?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — unchanged |
+
+### Round 78 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EA | Nine-skill thinking cross-links | **Agree** | SKILL_THINKING_SOURCES + research Prompt Sources |
+| EB | Module Contract anti-drift | **Agree** | `test_skill_module_contract.py` |
+| EC | Holdout expansion | **Defer** | maintenance |
+| ED | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 78)
+
+- `skills/reflective-research/SKILL.md`: add `01-thinking/socratic-reviewer.md` + `critical-thinking-check.md` to Prompt Sources
+- `plans/tests/test_prompt_cross_links.py`: `SKILL_THINKING_SOURCES` covers all nine `CORE_SKILLS`; lens file existence test
+- `plans/tests/test_skill_module_contract.py`: Module Contract + Trigger/Methods/Output/Never anti-drift
+- `QUALITY_GATES_SUMMARY.md`: skill cross-link + module contract tests; pytest floor 430+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 78 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 78 sync
+
+## Verification (Round 78)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 78** (options EA–ED). Nine-skill thinking-lens cross-link pass complete; Module Contract anti-drift closed for core skills. Holdout expansion remains recurrence-gated maintenance.
+
