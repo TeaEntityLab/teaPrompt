@@ -303,9 +303,6 @@ production-risk assessment. Routes to `reflective-review`, not `reflective-risk`
 
 ---
 
-
----
-
 ## Brief-before-Plan / 規劃前先釐清
 
 Routing boundary: when intent is to narrow scope, assumptions, or stakeholder alignment **before** PRD/ticket breakdown, route to `reflective-brief` — not `reflective-spec-plan`.
@@ -328,9 +325,11 @@ Routing boundary: when intent is to **implement or land an approved spec in the 
 
 **Operational test:** ROUTE-003 `implement_not_plan_trap` — "implement the approved spec in the repository" routes to implement; "plan the approved spec without repo changes" routes to spec-plan.
 
+---
+
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–50). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–65). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make validate`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
