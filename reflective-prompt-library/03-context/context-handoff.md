@@ -2,6 +2,28 @@
 
 Use this when switching models, tools, agents, or sessions.
 
+## Purpose
+
+Produce session handoff summaries when switching models, tools, agents, or sessions. Primary workflow surface: `reflective-handoff-retro`. Pairs with `01-thinking/why-what-how-done.md` and `01-thinking/socratic-reviewer.md`.
+
+## Scope
+
+- In scope: goal, state, decisions, artifacts, risks, blockers, and next action for a successor agent.
+- Out of scope: full retrospective synthesis or repository edits (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Output follows the handoff field structure without narrative drift.
+- Do-not-do guidance explicit when blast-radius warrants `reflective-risk`.
+
+## Falsifiability
+
+Name one handoff field that would be wrong if the successor could not resume work.
+
+## Human Review
+
+Require human confirmation before handoff when irreversible or high-blast-radius work remains open.
+
 ```markdown
 請將目前任務整理成 Context Handoff Summary，供下一個 Agent 接手。
 

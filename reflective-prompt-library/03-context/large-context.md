@@ -2,6 +2,24 @@
 
 Use this for 200K-1M context windows while avoiding context rot.
 
+## Purpose
+
+Use 200K–1M windows without context rot via index-extract-synthesize. Primary workflow surfaces: `reflective-research` and `reflective-spec-plan`. Pairs with `01-thinking/falsifiability.md` and `01-thinking/critical-thinking-check.md`.
+
+## Scope
+
+- In scope: three-stage pipeline, selective extraction, and synthesis artifacts.
+- Out of scope: assuming long context equals reliable understanding.
+
+## Acceptance Criteria
+
+- All three stages are completed in order.
+- Pairs with `context-engineering.md` per the composition note below.
+
+## Falsifiability
+
+State what contradiction in source material would invalidate the synthesis.
+
 ```markdown
 你在大型 context window 中工作，但不要假設長 context 等於可靠理解。
 

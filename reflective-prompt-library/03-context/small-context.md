@@ -2,6 +2,28 @@
 
 Use this for 4K-16K context windows, small models, mobile, or low-cost model runs.
 
+## Purpose
+
+Operate under small context windows (4K–16K) or low-cost models. Primary workflow surfaces: `reflective-brief` and `reflective-dispatch`. Pairs with `01-thinking/critical-thinking-check.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: conclusion-first answers, minimal assumptions, and capped risks and plan steps.
+- Out of scope: long-chain reasoning or full engineering ticket packs.
+
+## Acceptance Criteria
+
+- At most three risks and three to five plan steps unless escalated.
+- Next action is directly executable.
+
+## Falsifiability
+
+State what evidence would require escalating to `medium-context.md`.
+
+## Human Review
+
+Escalate when window limits would hide safety-critical unknowns.
+
 ```markdown
 你在小 context window 中工作。請極度節省 token。
 

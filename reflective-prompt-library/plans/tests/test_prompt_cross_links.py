@@ -1,4 +1,4 @@
-"""Anti-drift: thinking lenses, engineering/agent prompts, and workflow skills cross-link."""
+"""Anti-drift: thinking lenses, engineering/agent/context prompts, and workflow skills cross-link."""
 
 from pathlib import Path
 
@@ -8,6 +8,7 @@ LIBRARY_ROOT = Path(__file__).parent.parent.parent
 THINKING_DIR = LIBRARY_ROOT / "01-thinking"
 ENGINEERING_DIR = LIBRARY_ROOT / "02-engineering"
 AGENT_DIR = LIBRARY_ROOT / "04-agent"
+CONTEXT_DIR = LIBRARY_ROOT / "03-context"
 SKILLS_DIR = LIBRARY_ROOT / "skills"
 
 ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
@@ -87,9 +88,52 @@ AGENT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
     ),
 }
 
+CONTEXT_THINKING_LINKS: dict[str, tuple[str, ...]] = {
+    "context-engineering.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "context-handoff.md": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/socratic-reviewer.md",
+    ),
+    "gemini-long-document.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "large-context.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/critical-thinking-check.md",
+    ),
+    "low-token.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "medium-context.md": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "small-context.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+}
+
+CONTEXT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "context-engineering.md": ("reflective-dispatch", "reflective-research"),
+    "context-handoff.md": ("reflective-handoff-retro",),
+    "gemini-long-document.md": ("reflective-research",),
+    "large-context.md": ("reflective-research", "reflective-spec-plan"),
+    "low-token.md": ("reflective-dispatch", "reflective-brief"),
+    "medium-context.md": ("reflective-spec-plan", "reflective-brief"),
+    "small-context.md": ("reflective-brief", "reflective-dispatch"),
+}
+
+
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
 ENGINEERING_PROMPTS = tuple(sorted(ENGINEERING_DIR.glob("*.md")))
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
+CONTEXT_PROMPTS = tuple(sorted(CONTEXT_DIR.glob("*.md")))
 
 
 def _preamble(path: Path) -> str:
@@ -155,6 +199,30 @@ def test_agent_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[st
 
 def test_thinking_lens_files_exist_for_agent_links():
     linked = {ref for refs in AGENT_THINKING_LINKS.values() for ref in refs}
+    for ref in linked:
+        assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
+
+@pytest.mark.parametrize("prompt_name,thinking_refs", CONTEXT_THINKING_LINKS.items())
+def test_context_prompt_links_thinking_lens(prompt_name: str, thinking_refs: tuple[str, ...]):
+    path = CONTEXT_DIR / prompt_name
+    preamble = _preamble(path)
+    for ref in thinking_refs:
+        assert ref in preamble, f"{prompt_name} preamble should reference {ref}"
+
+
+def test_all_context_prompts_have_thinking_cross_link():
+    assert set(CONTEXT_THINKING_LINKS) == {p.name for p in CONTEXT_PROMPTS}
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", CONTEXT_SKILL_LINKS.items())
+def test_context_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
+    preamble = _preamble(CONTEXT_DIR / prompt_name)
+    for skill in skill_refs:
+        assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+def test_thinking_lens_files_exist_for_context_links():
+    linked = {ref for refs in CONTEXT_THINKING_LINKS.values() for ref in refs}
     for ref in linked:
         assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 

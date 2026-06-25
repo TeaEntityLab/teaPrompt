@@ -2,6 +2,24 @@
 
 Use this for 32K-128K context windows and ordinary ChatGPT / Claude / Codex tasks.
 
+## Purpose
+
+Balance completeness and context cost for 32K–128K windows. Primary workflow surfaces: `reflective-spec-plan` and `reflective-brief`. Pairs with `01-thinking/why-what-how-done.md` and `01-thinking/falsifiability.md`.
+
+## Scope
+
+- In scope: goal through self-check with cited evidence, not full input duplication.
+- Out of scope: repository edits without `reflective-implement`.
+
+## Acceptance Criteria
+
+- Uncertainty is explicitly marked.
+- Composable with `02-engineering/task-start.md` as noted below.
+
+## Falsifiability
+
+Name one acceptance criterion that would fail if evidence were misquoted.
+
 ```markdown
 你在中型 context window 中工作。請平衡完整性與節省 context。
 

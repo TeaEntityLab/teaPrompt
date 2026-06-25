@@ -2,6 +2,24 @@
 
 Use this before long tasks where context discipline matters.
 
+## Purpose
+
+Enforce context discipline before long tasks. Primary workflow surfaces: `reflective-dispatch` (context-load deferral) and `reflective-research`. Pairs with `01-thinking/falsifiability.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: selective reads, artifact summaries, index-then-batch processing, and missing-info flags.
+- Out of scope: replacing frozen workflow skill contracts or router fairness rules.
+
+## Acceptance Criteria
+
+- Context-used, context-ignored, and missing-info sections appear at the end.
+- Large inputs are indexed before synthesis.
+
+## Falsifiability
+
+State what would prove the agent read irrelevant material anyway.
+
 ```markdown
 請以 Context Engineering 模式處理任務。
 
