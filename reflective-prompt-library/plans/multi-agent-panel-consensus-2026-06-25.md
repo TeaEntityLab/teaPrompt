@@ -2987,3 +2987,56 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ---
 
 **Resealed 2026-06-25** after **Round 98** (options HL–HP). Eval_harness fixtures are now library-registry checked across all `00-core`–`06-repo` categories with shared `make_category_eval_harness_fixture` and `PROMPT_LIBRARY_REPO_ROOT`. Holdout expansion remains recurrence-gated maintenance.
+
+## Round 99 — cross-category prompt path library registry + preamble fix (2026-06-25)
+
+**Options HQ–HU** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 99 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| HQ | DRY `category_prompt_dir` + `sorted_category_prompts` in `prompt_eval_helpers.py` | **Agree** |
+| HR | `test_prompt_category_paths_library_registry.py` — category dir + prompt tuple parity registry | **Agree** |
+| HS | Fix `assert_prompt_references_workflow_skill` to preamble scope + GLOSSARY step 31 + governance sync | **Agree** |
+| HT | ROUTE holdout expansion | **Defer** |
+| HU | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 99 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| HQ | Category prompt path DRY helpers | **Agree** | `category_prompt_dir` + `sorted_category_prompts` |
+| HR | Category path library registry | **Agree** | `test_prompt_category_paths_library_registry.py` |
+| HS | Preamble scope + playbook | **Agree** | `prompt_preamble` in workflow skill reference helper; step 31 |
+| HT | Holdout expansion | **Defer** | maintenance |
+| HU | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 99)
+
+- **Opus:** Round 98 closed eval_harness fixtures; seven harness files still duplicate `Path(__file__).parent.parent.parent / "0X-category"` glob tuples with no library-wide falsifiability; Round 97 docs claimed preamble-scoped workflow skill references but helper still scanned full file bodies.
+- **Codex:** Shared `PROMPT_LIBRARY_ROOT` + `category_prompt_dir` prevents off-by-one parent drift; preamble fix aligns implementation with `test_prompt_cross_links.py` and GLOSSARY step 29.
+- **Gemini:** Deterministic path registry; no prompt content churn.
+- **Composer:** Mirrors R91–R98 registry pattern; one helper pair + one registry file.
+- **Sakana:** Category path parity documents that all harness modules resolve the same composable prompt globs.
+- **GLM:** Preamble-scoped workflow skill check avoids false passes from fenced template mentions; playbook step 31 gives operators a single checklist line.
+
+**All roles agree.**
+
+## Implemented Changes (Round 99)
+
+- `plans/tests/prompt_eval_helpers.py`: `PROMPT_LIBRARY_ROOT`, `category_prompt_dir`, `sorted_category_prompts`; `assert_prompt_references_workflow_skill` preamble-scoped
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY category dirs + prompt tuples via shared helpers
+- `plans/tests/test_prompt_category_paths_library_registry.py`: cross-category path registry
+- `GLOSSARY.md`: playbook Rounds 1–99; step 31 for category path library registry
+- `QUALITY_GATES_SUMMARY.md`: category path registry note; preamble fix note; panel Rounds 1–99; 680+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 99 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 99 sync
+
+## Verification (Round 99)
+
+- `make all`: 682 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 99** (options HQ–HU). Composable prompt category paths are now library-registry checked across all `00-core`–`06-repo` categories with shared `category_prompt_dir` / `sorted_category_prompts`; workflow skill reference guards are preamble-scoped as documented. Holdout expansion remains recurrence-gated maintenance.

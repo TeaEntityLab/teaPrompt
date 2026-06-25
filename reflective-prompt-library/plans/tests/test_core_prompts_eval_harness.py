@@ -10,6 +10,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
 from prompt_eval_helpers import (
+    category_prompt_dir,
+    sorted_category_prompts,
     PROMPT_LIBRARY_REPO_ROOT,
     make_category_eval_harness_fixture,
     PROMPT_CONTRACT_HEADINGS,
@@ -28,10 +30,10 @@ from prompt_eval_helpers import (
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
 
-CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
+CORE_DIR = category_prompt_dir("00-core")
 REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
-CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
+CORE_PROMPTS = sorted_category_prompts("00-core")
 CORE_COVER_WORKFLOW_SKILLS = (
     "reflective-brief",
     "reflective-dispatch",

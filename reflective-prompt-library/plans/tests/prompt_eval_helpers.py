@@ -25,6 +25,19 @@ PROMPT_CONTRACT_HEADINGS = (
 PROMPT_EVAL_MIN_SCORE = 80.0
 
 PROMPT_LIBRARY_REPO_ROOT = str(Path(__file__).resolve().parent.parent.parent.parent)
+PROMPT_LIBRARY_ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+def category_prompt_dir(category: str) -> Path:
+    """Resolve a composable prompt category directory under the library root."""
+    if category not in PROMPT_LIBRARY_CATEGORIES:
+        raise ValueError(f"unknown prompt category: {category}")
+    return PROMPT_LIBRARY_ROOT / category
+
+
+def sorted_category_prompts(category: str) -> tuple[Path, ...]:
+    """Return sorted markdown prompt paths for a library category."""
+    return tuple(sorted(category_prompt_dir(category).glob("*.md")))
 
 CATEGORY_EVAL_HARNESS_FIXTURE_MARKER = "_from_category_eval_harness_fixture"
 
@@ -148,9 +161,9 @@ def assert_category_workflow_skill_coverage(
 
 
 def assert_prompt_references_workflow_skill(prompt_path: Path) -> None:
-    """Every composable prompt must mention at least one reflective-* workflow skill."""
-    body = prompt_path.read_text(encoding="utf-8")
-    assert "reflective-" in body, (
+    """Every composable prompt must mention at least one reflective-* workflow skill in preamble."""
+    preamble = prompt_preamble(prompt_path)
+    assert "reflective-" in preamble, (
         f"{prompt_path.name} should map to at least one workflow skill"
     )
 

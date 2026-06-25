@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–98). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–99). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -371,3 +371,4 @@ Ongoing upkeep after panel close (Rounds 1–98). Not agent instructions — ope
 28. When editing eval_harness score floors, keep `PROMPT_EVAL_MIN_SCORE` in `prompt_eval_helpers.py` and use `assert_prompt_meets_eval_harness_floor` in per-category `test_*_prompts_eval_harness.py` guards; run `test_prompt_eval_harness_score_library_registry.py`.
 29. When editing per-category `reference_workflow_skills` guards, use `assert_prompt_references_workflow_skill` in `prompt_eval_helpers.py` (preamble-scoped, not fenced templates); run `test_prompt_workflow_skill_reference_library_registry.py` plus per-category harness guards.
 30. When editing per-category eval_harness fixtures, keep `PROMPT_LIBRARY_REPO_ROOT` and `make_category_eval_harness_fixture` in `prompt_eval_helpers.py`; run `test_prompt_eval_harness_fixture_library_registry.py` plus per-category harness guards.
+31. When editing per-category `*_DIR` / `*_PROMPTS` tuples, use `category_prompt_dir` and `sorted_category_prompts` in `prompt_eval_helpers.py`; run `test_prompt_category_paths_library_registry.py` plus per-category harness guards.
