@@ -59,3 +59,12 @@ def test_thinking_prompts_have_primary_workflow_surfaces_line():
             f"{prompt_path.name} Purpose should list Primary workflow surfaces"
         )
 
+@pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
+def test_thinking_prompt_has_human_review_section(prompt_path: Path):
+    """All 01-thinking lenses declare Human Review escalation outside zh-TW templates."""
+    preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
+    assert "## Human Review" in preamble, f"{prompt_path.name} missing Human Review preamble"
+    assert "reflective-risk" in preamble, (
+        f"{prompt_path.name} Human Review should route to reflective-risk"
+    )
+

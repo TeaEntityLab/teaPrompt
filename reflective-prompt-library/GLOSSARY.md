@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–80). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–81). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -352,4 +352,5 @@ Ongoing upkeep after panel close (Rounds 1–80). Not agent instructions — ope
 9. When adding benchmark golden tasks, keep `test_benchmark_covers_all_nine_workflows` green and bump `MIN_TASK_COUNT` in `validate_benchmark_fixture.py` if the floor rises.
 10. When changing thinking-lens ↔ skill cross-links, update `SKILL_THINKING_SOURCES` and consumer lists in `01-thinking/` Purpose preambles; run `test_prompt_cross_links.py` (including reciprocal `THINKING_LENS_SKILL_CONSUMERS`).
 11. When changing Module Contract subsections on workflow skills, keep `Escalation:` present and run `test_skill_module_contract.py`.
-
+12. When adding or editing `01-thinking/` lenses, keep `## Human Review` in the preamble (routes to `reflective-risk`) and run `test_thinking_prompts_eval_harness.py`.
+13. When editing workflow skill Escalation bullets, cite only frozen `reflective-*` skills; run `test_skill_module_contract.py` escalation route guard.

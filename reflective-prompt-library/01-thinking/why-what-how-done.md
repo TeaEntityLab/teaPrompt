@@ -22,6 +22,10 @@ Gate a task through Why / What / How / Done before choosing strictness or workfl
 
 Done gate must name evidence that would prove the task should not proceed or should be rolled back.
 
+## Human Review
+
+Escalate to `reflective-risk` with an explicit Human Review gate when the work implies irreversible or high-blast-radius action.
+
 ```markdown
 請把任務通過 Why / What / How / Done 四層檢查。
 

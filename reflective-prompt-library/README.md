@@ -30,7 +30,7 @@ Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSS
 
 ## Governance Panel Record
 
-Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–80, options A–EL) is recorded in [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md). Run `make all` before claiming routing or governance changes are verified.
+Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–81, options A–EP) is recorded in [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md). Run `make all` before claiming routing or governance changes are verified.
 
 ## Directory Map
 

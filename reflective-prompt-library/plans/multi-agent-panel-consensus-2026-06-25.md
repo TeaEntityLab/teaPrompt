@@ -2151,3 +2151,48 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 80** (options EI–EL). Module Contract Escalation anti-drift closed; thinking-lens preamble consumer guards complete. Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 81 — Thinking-lens Human Review + Escalation route-target guards (2026-06-25)
+
+**Options EM–EP** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 81 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EM | `## Human Review` preamble on all `01-thinking/` lenses + pytest | **Agree** |
+| EN | Escalation route-target anti-drift (`reflective-*` cites only `CORE_SKILLS`; terminal `reflective-risk` exempt) | **Agree** |
+| EO | ROUTE holdout expansion | **Defer** |
+| EP | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 81 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EM | Human Review on thinking lenses | **Agree** | preamble + `test_thinking_prompt_has_human_review_section` |
+| EN | Escalation route targets | **Agree** | `test_core_skill_escalation_routes_to_valid_workflow_skills` |
+| EO | Holdout expansion | **Defer** | maintenance |
+| EP | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 81)
+
+- `01-thinking/socratic-reviewer.md`, `why-what-how-done.md`: `## Human Review` preamble routes to `reflective-risk`
+- `plans/tests/test_thinking_prompts_eval_harness.py`: Human Review preamble guard on all five lenses
+- `plans/tests/test_skill_module_contract.py`: Escalation route-target guard; `reflective-risk` terminal-gate exemption
+- `GLOSSARY.md`: playbook Rounds 1–81; steps 12–13 for Human Review + Escalation route targets
+- `QUALITY_GATES_SUMMARY.md`: 450+ pytest floor; Human Review / Escalation route notes; panel Rounds 1–81
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 81 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 81 sync
+
+## Verification (Round 81)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 81** (options EM–EP). Thinking-lens Human Review preambles complete; Escalation route-target anti-drift closed. Holdout expansion remains recurrence-gated maintenance.
+
+
