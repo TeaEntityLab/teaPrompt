@@ -10,6 +10,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
 from prompt_eval_helpers import (
+    PROMPT_LIBRARY_REPO_ROOT,
+    make_category_eval_harness_fixture,
     PROMPT_CONTRACT_HEADINGS,
     PROMPT_EVAL_MIN_SCORE,
     assert_primary_workflow_surface_preamble,
@@ -27,7 +29,7 @@ REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
 
 CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
-REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
+REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
 CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
 CORE_COVER_WORKFLOW_SKILLS = (
@@ -51,9 +53,7 @@ CORE_HUMAN_REVIEW_EXEMPT = frozenset({
 CORE_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CORE_PROMPTS)
 
 
-@pytest.fixture(scope="module")
-def harness() -> EvalHarness:
-    return EvalHarness(repo_root=REPO_ROOT)
+harness = make_category_eval_harness_fixture(REPO_ROOT)
 
 
 @pytest.mark.parametrize("prompt_path", CORE_PROMPTS, ids=lambda p: p.name)

@@ -9,13 +9,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings, assert_prompt_references_workflow_skill, assert_prompt_meets_eval_harness_floor  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_REPO_ROOT, make_category_eval_harness_fixture, assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings, assert_prompt_references_workflow_skill, assert_prompt_meets_eval_harness_floor  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
 
 REPO_DIR = Path(__file__).parent.parent.parent / "06-repo"
-REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
+REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
 REPO_PROMPTS = tuple(sorted(REPO_DIR.glob("*.md")))
 REPO_COVER_WORKFLOW_SKILLS = (
@@ -36,9 +36,7 @@ REPO_HUMAN_REVIEW_EXEMPT = frozenset({
 
 
 
-@pytest.fixture(scope="module")
-def harness() -> EvalHarness:
-    return EvalHarness(repo_root=REPO_ROOT)
+harness = make_category_eval_harness_fixture(REPO_ROOT)
 
 
 @pytest.mark.parametrize("prompt_path", REPO_PROMPTS, ids=lambda p: p.name)

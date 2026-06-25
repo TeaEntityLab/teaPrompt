@@ -7,6 +7,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
 from prompt_eval_helpers import (
+    PROMPT_LIBRARY_REPO_ROOT,
+    make_category_eval_harness_fixture,
     PROMPT_CONTRACT_HEADINGS,
     PROMPT_EVAL_MIN_SCORE,
     assert_primary_workflow_surface_preamble,
@@ -28,7 +30,7 @@ REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
 
 THINKING_DIR = Path(__file__).parent.parent.parent / "01-thinking"
-REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
+REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
 THINKING_COVER_WORKFLOW_SKILLS: tuple[str, ...] = ()  # consumer graph in test_prompt_cross_links.py
@@ -43,9 +45,7 @@ THINKING_HUMAN_REVIEW_REQUIRED = frozenset({
 THINKING_HUMAN_REVIEW_EXEMPT = frozenset()
 
 
-@pytest.fixture(scope="module")
-def harness() -> EvalHarness:
-    return EvalHarness(repo_root=REPO_ROOT)
+harness = make_category_eval_harness_fixture(REPO_ROOT)
 
 
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)

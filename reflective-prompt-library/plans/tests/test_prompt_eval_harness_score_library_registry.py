@@ -12,7 +12,9 @@ from eval_harness import EvalHarness  # noqa: E402
 from prompt_eval_helpers import (  # noqa: E402
     PROMPT_EVAL_MIN_SCORE,
     PROMPT_LIBRARY_CATEGORIES,
+    PROMPT_LIBRARY_REPO_ROOT,
     assert_prompt_meets_eval_harness_floor,
+    make_category_eval_harness_fixture,
 )
 from test_agent_prompts_eval_harness import (  # noqa: E402
     AGENT_PROMPTS,
@@ -44,7 +46,7 @@ from test_thinking_prompts_eval_harness import (  # noqa: E402
 )
 
 LIBRARY_ROOT = Path(__file__).parent.parent.parent
-REPO_ROOT = str(LIBRARY_ROOT.parent)
+REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
 SCORE_CATEGORY_REGISTRY = (
     ("00-core", CORE_PROMPTS, CORE_MIN_SCORE),
@@ -61,10 +63,7 @@ SCORE_CATEGORY_REGISTRY = (
 )
 
 
-@pytest.fixture(scope="module")
-def harness() -> EvalHarness:
-    return EvalHarness(repo_root=REPO_ROOT)
-
+harness = make_category_eval_harness_fixture(REPO_ROOT)
 
 def test_score_registry_lists_all_prompt_categories():
     assert tuple(cat for cat, *_ in SCORE_CATEGORY_REGISTRY) == PROMPT_LIBRARY_CATEGORIES

@@ -2935,3 +2935,55 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 97** (options HG–HK). Workflow skill references are now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_prompt_references_workflow_skill` (preamble-scoped). Holdout expansion remains recurrence-gated maintenance.
 
+## Round 98 — cross-category eval_harness fixture library registry (2026-06-25)
+
+**Options HL–HP** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 98 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| HL | DRY `make_category_eval_harness_fixture` + `PROMPT_LIBRARY_REPO_ROOT` in `prompt_eval_helpers.py` | **Agree** |
+| HM | `test_prompt_eval_harness_fixture_library_registry.py` — fixture + `REPO_ROOT` parity registry | **Agree** |
+| HN | GLOSSARY playbook step 30 + governance sync | **Agree** |
+| HO | ROUTE holdout expansion | **Defer** |
+| HP | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 98 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| HL | EvalHarness fixture DRY factory | **Agree** | `make_category_eval_harness_fixture` + `PROMPT_LIBRARY_REPO_ROOT` |
+| HM | EvalHarness fixture library registry | **Agree** | `test_prompt_eval_harness_fixture_library_registry.py` |
+| HN | Playbook + docs | **Agree** | step 30; panel round 98 sync |
+| HO | Holdout expansion | **Defer** | maintenance |
+| HP | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 98)
+
+- **Opus:** Round 97 closed workflow skill references; seven per-category harness files still duplicate identical module-scoped `EvalHarness` fixtures with no library-wide falsifiability.
+- **Codex:** Centralizing `make_category_eval_harness_fixture` prevents `repo_root` drift; `PROMPT_LIBRARY_REPO_ROOT` object-identity checks catch path miscalculations.
+- **Gemini:** Zero runtime cost; removes boilerplate only.
+- **Composer:** Mirrors R91–R97 registry pattern; one factory + one registry file.
+- **Sakana:** Fixture parity documents that all categories evaluate prompts against the same TeaPrompt root.
+- **GLM:** Playbook step 30 gives operators a single checklist line for harness fixture edits.
+
+**All roles agree.**
+
+## Implemented Changes (Round 98)
+
+- `plans/tests/prompt_eval_helpers.py`: `PROMPT_LIBRARY_REPO_ROOT`, `make_category_eval_harness_fixture`
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY harness fixtures via shared factory
+- `plans/tests/test_prompt_eval_harness_fixture_library_registry.py`: cross-category fixture registry
+- `GLOSSARY.md`: playbook Rounds 1–98; step 30 for eval_harness fixture library registry; dedupe step 28
+- `QUALITY_GATES_SUMMARY.md`: fixture registry note; panel Rounds 1–98; 670+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 98 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 98 sync
+
+## Verification (Round 98)
+
+- `make all`: 672 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 98** (options HL–HP). Eval_harness fixtures are now library-registry checked across all `00-core`–`06-repo` categories with shared `make_category_eval_harness_fixture` and `PROMPT_LIBRARY_REPO_ROOT`. Holdout expansion remains recurrence-gated maintenance.

@@ -24,6 +24,24 @@ PROMPT_CONTRACT_HEADINGS = (
 
 PROMPT_EVAL_MIN_SCORE = 80.0
 
+PROMPT_LIBRARY_REPO_ROOT = str(Path(__file__).resolve().parent.parent.parent.parent)
+
+CATEGORY_EVAL_HARNESS_FIXTURE_MARKER = "_from_category_eval_harness_fixture"
+
+
+def make_category_eval_harness_fixture(repo_root: str):
+    """Return a module-scoped EvalHarness pytest fixture bound to repo_root."""
+    import pytest
+    from eval_harness import EvalHarness
+
+    @pytest.fixture(scope="module")
+    def harness() -> EvalHarness:
+        return EvalHarness(repo_root=repo_root)
+
+    setattr(harness, CATEGORY_EVAL_HARNESS_FIXTURE_MARKER, True)
+    return harness
+
+
 
 def assert_prompt_contract_headings(prompt_path: Path) -> None:
     """Contract headings must appear in preamble outside fenced template blocks."""

@@ -72,6 +72,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-06-25 Round 98 panel — cross-category eval_harness fixture library registry (`test_prompt_eval_harness_fixture_library_registry.py`, DRY `make_category_eval_harness_fixture`, `PROMPT_LIBRARY_REPO_ROOT`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 97 panel — cross-category workflow skill reference library registry (`test_prompt_workflow_skill_reference_library_registry.py`, DRY `assert_prompt_references_workflow_skill`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 96 panel — cross-category eval_harness score floor library registry (`test_prompt_eval_harness_score_library_registry.py`, DRY `assert_prompt_meets_eval_harness_floor`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 85 panel — composable prompt Primary workflow surface preamble guards (`test_*_prompts_eval_harness.py`) + Supporting-lens exemption → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
