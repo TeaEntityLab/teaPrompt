@@ -25,6 +25,7 @@ Skill 契約語言：
 邊界速查（ROUTE-002 holdout）：
 - **僅規劃不寫程式** → `reflective-spec-plan` — 工單、驗收標準或 rollout 計畫且明確不要改程式。
 - **非正式環境審查** → `reflective-review` — 審查 PR/diff 可讀性或 regression，且明確排除正式環境風險評估。
+- **已核准規格落地** → `reflective-implement` — 在 repository 實作或落地已核准 spec；不是僅規劃。
 
 ## `reflective-dispatch`
 

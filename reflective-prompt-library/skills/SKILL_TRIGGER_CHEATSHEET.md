@@ -24,6 +24,7 @@ Routing fairness note:
 Boundary quick cues (ROUTE-002 holdout):
 - **Plan-only (no code)** → `reflective-spec-plan` — tickets, rollout plans, or acceptance criteria with explicit no-code context.
 - **Plain review (non-production)** → `reflective-review` — diff/PR review for readability or regressions when production risk is out of scope.
+- **Approved spec delivery** → `reflective-implement` — implement or land an approved spec in the repository; not plan-only.
 
 ## `reflective-dispatch`
 
@@ -78,6 +79,7 @@ Do not use when:
 Trigger cues:
 
 - "Implement this change in the repo."
+- "Implement the approved spec in the repository."
 - "Refactor or debug with acceptance criteria and tests."
 - "Ship a minimal safe patch with verification."
 

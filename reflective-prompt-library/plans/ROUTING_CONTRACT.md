@@ -92,6 +92,14 @@ This contract applies to:
   even when incidental words like "change" appear in "code changes".
 - Add holdout cases for these boundaries before tuning router keyword lists.
 
+### R11: Approved-spec delivery
+
+- Phrases that request **implementing or landing an approved spec in the repository**
+  route to `reflective-implement`, not `reflective-spec-plan`, even when the word `spec` appears.
+- Plan-only variants (tickets, rollout, or acceptance criteria with explicit no-code context)
+  still route to `reflective-spec-plan`.
+- Add ROUTE-003 `implement_not_plan_trap` holdout phrases before tuning this boundary.
+
 
 ## Router Output Contract
 

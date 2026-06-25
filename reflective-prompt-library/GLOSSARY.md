@@ -320,6 +320,14 @@ Paper-only API or architecture comparisons without repository changes route to `
 
 **Operational test:** ROUTE-002 `design_comparison_plan_holdout` phrases route to spec-plan at 100%.
 
+---
+
+## Approved-Spec Delivery / 已核准規格落地
+
+Routing boundary: when intent is to **implement or land an approved spec in the repository**, route to `reflective-implement` — not `reflective-spec-plan`, even when `spec` appears in the phrase.
+
+**Operational test:** ROUTE-003 `implement_not_plan_trap` — "implement the approved spec in the repository" routes to implement; "plan the approved spec without repo changes" routes to spec-plan.
+
 ## Governance Maintenance Playbook / 治理維護手冊
 
 Ongoing upkeep after panel close (Rounds 1–50). Not agent instructions — operator checklist.
