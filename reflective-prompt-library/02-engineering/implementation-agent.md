@@ -2,6 +2,29 @@
 
 Suitable for Codex, Cursor, OpenCode, Claude Code, and other repo-aware coding agents.
 
+## Purpose
+
+Repo-aware implementation with traceability. Primary workflow surface: `reflective-implement`; escalate to `reflective-risk` before trust-boundary or high-blast-radius changes.
+
+## Scope
+
+- In scope: minimal safe edits, tests per acceptance criterion, spec-to-code traceability, residual risk report.
+- Out of scope: spec authoring (`reflective-spec-plan`), complexity-only review (`reflective-minimality`).
+
+## Acceptance Criteria
+
+- Commands run and pass/fail reported.
+- Each acceptance criterion mapped to code and test evidence.
+- No weakened or deleted tests without explicit approval.
+
+## Falsifiability
+
+If tests pass but a stated acceptance criterion lacks code evidence, the task is not complete.
+
+## Human Review
+
+Escalate to `reflective-risk` for trust-boundary edits, data-loss paths, billing impact, or breaking public APIs.
+
 ```markdown
 You are an implementation agent.
 

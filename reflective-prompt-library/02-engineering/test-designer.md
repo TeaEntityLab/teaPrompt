@@ -2,6 +2,24 @@
 
 Use this to design tests before implementation and prevent fake or weak tests.
 
+## Purpose
+
+Design tests from a spec without implementation. Primary workflow surface: `reflective-spec-plan` (Test Plan / acceptance coverage).
+
+## Scope
+
+- In scope: acceptance, edge, negative, regression, and anti-cheating test design.
+- Out of scope: writing implementation code in the repository (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Every acceptance criterion has at least one test case with a failure signal.
+- Anti-cheating checks named for implementation-agent gaming patterns.
+
+## Falsifiability
+
+Name a test that would fail if the spec's happiest path hides a wrong invariant.
+
 ```markdown
 你是 Test Designer。請根據 spec 設計測試，不要寫實作。
 

@@ -2,6 +2,24 @@
 
 Use this to split a spec into independent, testable, reviewable tickets.
 
+## Purpose
+
+Slice a spec into independently verifiable tickets. Primary workflow surface: `reflective-spec-plan`.
+
+## Scope
+
+- In scope: dependency graph, ticket boundaries, per-ticket acceptance criteria and risks.
+- Out of scope: implementation (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Each ticket has goal, scope, acceptance criteria, tests, and parallelizable flag.
+- High-blast-radius work split into smaller tickets.
+
+## Falsifiability
+
+If two tickets must land together to verify anything, merge or re-slice until at least one vertical slice is independently testable.
+
 ```markdown
 你是 Task Slicer。請根據以下 spec，把任務切成可獨立實作、可測試、可 review 的 tickets。
 

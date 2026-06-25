@@ -1525,6 +1525,63 @@ User directive: review prompts, plans, skills, and Socratic/critical-thinking le
 
 - `make all`: pytest + ROUTE-001/002/003 100%
 
+## Round 70 — Engineering prompt contract review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+Parallel scouts (PromptScout2, SkillPlanAuditor, SocraticLens) confirmed Round 69 closed `01-thinking/`; highest remaining eval_harness gap is `02-engineering/` (8 prompts scoring ~50–67% before contracts).
+
+### DC: Standardize `02-engineering/` prompt contracts?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — execution prompts must name workflow skills like thinking lenses |
+| Codex | **Agree** — mirrors Round 69 pattern; avoid `production`/`auth` in preamble (eval_harness risk false positives) |
+| Gemini | **Agree** — links engineering prompts to brief/spec-plan/implement/review surfaces |
+| Composer | **Agree** — bounded eight-file batch + pytest anti-drift |
+| Sakana | **Agree** — closes thinking→engineering handoff gap without router changes |
+| GLM | **Agree** — pair code-reviewer with `01-thinking/critical-thinking-check.md` |
+
+**Socratic Q:** Why engineering before 00-core?
+**Answer:** Skills and benchmark tasks route through engineering execution; thinking contracts already done in Round 69.
+
+**Consensus:** **Agree** — add Purpose/Scope/Acceptance Criteria/Falsifiability (+ Human Review where eval_harness risk triggers) to all eight `02-engineering/` prompts; add `test_engineering_prompts_eval_harness.py`.
+
+### DD: Expand to 00-core / 03–05 categories now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated; engineering batch is highest leverage |
+
+**Consensus:** **Reject** — defer remaining prompt categories.
+
+### DE: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### Round 70 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DC | Engineering prompt contracts | **Agree** | 8 files + pytest anti-drift |
+| DD | All remaining prompt categories | **Reject** | backlog |
+| DE | Router/holdout/tenth skill | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 70)
+
+- `02-engineering/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping; Human Review where required
+- `plans/tests/test_engineering_prompts_eval_harness.py`: structural + 80%+ score floor anti-drift
+- `QUALITY_GATES_SUMMARY.md`: engineering prompt test mention; pytest floor 220+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 70 entry
+
+## Verification (Round 70)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
 ## Panel status (updated)
 
-**Resealed 2026-06-25** after **Round 69** (options DA–DB). Thinking-prompt contract pass complete; broader prompt-category sweep remains recurrence-gated.
+**Resealed 2026-06-25** after **Round 70** (options DC–DE). Engineering-prompt contract pass complete; 00-core and 03–05 Purpose sweep remains recurrence-gated.

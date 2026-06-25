@@ -2,6 +2,29 @@
 
 Use this when something fails.
 
+## Purpose
+
+Structured LOCAL_FEEDBACK loop for failures during implementation. Primary workflow surface: `reflective-implement`; escalate to `reflective-review` when the failure implicates spec or test adequacy.
+
+## Scope
+
+- In scope: step, evidence, root cause, correction, verification, anti-regression rule.
+- Out of scope: spec rewriting (`reflective-spec-plan`), formal blast-radius gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Root cause separated from symptom.
+- Verification step names an observable pass signal.
+- Rollback decision explicit.
+
+## Falsifiability
+
+If the proposed correction cannot be verified with a named command or observation, treat it as hypothesis not fix.
+
+## Human Review
+
+Escalate to `reflective-risk` when rollback or correction implies trust-boundary or data-loss blast radius.
+
 ```markdown
 請用 LOCAL_FEEDBACK 流程分析錯誤。
 

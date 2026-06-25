@@ -2,6 +2,24 @@
 
 Use this to avoid specs that look good but are awkward in practice.
 
+## Purpose
+
+Derive usage-driven spec fixes before implementation. Primary workflow surface: `reflective-spec-plan`; pair with `reflective-brief` when goals are still fuzzy.
+
+## Scope
+
+- In scope: personas, scenarios, I/O examples, confusion points, spec revisions from usage narrative.
+- Out of scope: code changes (`reflective-implement`).
+
+## Acceptance Criteria
+
+- At least five usage scenarios and both success and failure examples.
+- Spec revision recommendations tied to observed user confusion.
+
+## Falsifiability
+
+Name one scenario where the proposed UX would fail a naive user despite matching written requirements.
+
 ```markdown
 請假設這個系統已經完成，先不要寫實作，請先寫使用手冊。
 

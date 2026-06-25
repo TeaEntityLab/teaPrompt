@@ -2,6 +2,28 @@
 
 Use this to review a PR, diff, code sample, or AI-generated code against spec, acceptance criteria, tests, and risks.
 
+## Purpose
+
+Review diffs against spec, tests, and risks. Primary workflow surface: `reflective-review`; pair with `reflective-minimality` for complexity-only findings and `01-thinking/critical-thinking-check.md` for claim audits.
+
+## Scope
+
+- In scope: correctness, test integrity, architecture fit, spec traceability, required fixes.
+- Out of scope: writing the spec (`reflective-spec-plan`), implementing fixes (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Spec traceability table completed.
+- Decision is Approve, Request changes, or Reject with non-empty required fixes when not Approve.
+
+## Falsifiability
+
+If no failing acceptance criterion can be tied to code or test evidence, state an explicit pass rationale (for example, lean already).
+
+## Human Review
+
+Escalate to `reflective-risk` when findings imply trust-boundary or high-blast-radius issues this review cannot sign off alone.
+
 ```markdown
 你是嚴格的 Code Reviewer。請不要只看程式是否能跑，請對照 spec、acceptance criteria、測試與風險。
 

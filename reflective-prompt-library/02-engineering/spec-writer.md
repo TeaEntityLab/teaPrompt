@@ -2,6 +2,25 @@
 
 Use this to convert requirements into an implementable, testable, reviewable spec.
 
+## Purpose
+
+Convert requirements into an implementable, testable spec. Primary workflow surface: `reflective-spec-plan`. Pairs with `01-thinking/falsifiability.md` for hypothesis framing.
+
+## Scope
+
+- In scope: problem, goals, non-goals, requirements with acceptance criteria per REQ, edge cases, failure modes.
+- Out of scope: code changes (`reflective-implement`), complexity-only cuts (`reflective-minimality`).
+
+## Acceptance Criteria
+
+- Each functional requirement has acceptance criteria and a test idea.
+- Non-goals and open questions listed.
+- Owner sign-off points flagged when specs need human decision.
+
+## Falsifiability
+
+Name at least one REQ whose failure in a pilot would invalidate the proposed approach.
+
 ```markdown
 你是 Spec Writer。請將以下需求轉成可實作、可測試、可審查的 spec。
 

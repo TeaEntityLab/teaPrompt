@@ -2,6 +2,25 @@
 
 Use this at the start of a new task before implementation.
 
+## Purpose
+
+Establish a task brief before implementation. Primary workflow surface: `reflective-brief`; escalate to `reflective-spec-plan` when the brief is ready for ticket slicing. Pairs with `01-thinking/why-what-how-done.md` and `01-thinking/falsifiability.md`.
+
+## Scope
+
+- In scope: goal, assumptions, scope boundaries, acceptance criteria, falsifiability, minimal plan before coding.
+- Out of scope: repository edits (`reflective-implement`), formal blast-radius gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Goal and scope in/out stated.
+- Acceptance criteria and falsifiability each named once.
+- Minimal next step and defer list included.
+
+## Falsifiability
+
+If the brief cannot name evidence that would prove the framing wrong, stop and clarify before planning.
+
 ```markdown
 請先不要直接實作。請先為以下任務建立任務規格：
 
