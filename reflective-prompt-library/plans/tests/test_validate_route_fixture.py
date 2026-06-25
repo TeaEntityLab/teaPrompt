@@ -109,6 +109,7 @@ ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
     ("lessons learned retro after this sprint", "reflective-handoff-retro"),
     ("compare official docs for both libraries before deciding", "reflective-research"),
     ("which reflective workflow skill covers handoff retro", "reflective-dispatch"),
+    ("plan the approved spec without repo changes", "reflective-spec-plan"),
     ("align stakeholders on goals before writing tickets", "reflective-brief"),
     ("釐清目標再拆工單", "reflective-brief"),
 )
@@ -206,4 +207,18 @@ def test_implement_approved_spec_not_plan_boundary():
     for text, expected in probes:
         workflow, _, _, _ = router.route(text)
         assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
+
+def _approved_spec_plan_not_implement_trap_phrases() -> set[str]:
+    config = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    for group in config["adversarial_sets"]:
+        if group["name"] == "approved_spec_plan_not_implement_trap":
+            return set(group.get("phrases", []))
+    raise AssertionError("missing ROUTE-003 approved_spec_plan_not_implement_trap group")
+
+
+def test_approved_spec_plan_not_implement_trap_covers_probes():
+    """Anti-drift: ROUTE-003 plan-only approved-spec probes live in dedicated trap group."""
+    fixture_phrases = _approved_spec_plan_not_implement_trap_phrases()
+    missing = [p for p in IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES if p not in fixture_phrases]
+    assert not missing, f"approved_spec_plan_not_implement_trap missing probes: {missing}"
 

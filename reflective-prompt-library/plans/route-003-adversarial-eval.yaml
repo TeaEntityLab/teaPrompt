@@ -124,6 +124,16 @@ adversarial_sets:
 
 
 
+  - name: approved_spec_plan_not_implement_trap
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - write tickets from the approved spec without implementing
+      - plan the approved spec without repo changes
+      - plan 已核准 spec without repo changes
+
   - name: dispatch_meta_skill_trap
     expected_workflow: reflective-dispatch
     expected_rigor: low
@@ -132,6 +142,7 @@ adversarial_sets:
     phrases:
       - which skill handles session handoff in this library
       - which reflective workflow skill covers handoff retro
+      - which reflective workflow skill fits a routing-only mixed intent
 
   - name: brief_not_plan_trap
     expected_workflow: reflective-brief
