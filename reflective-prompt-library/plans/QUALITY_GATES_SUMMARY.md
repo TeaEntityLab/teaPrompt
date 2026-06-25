@@ -171,6 +171,20 @@ python3 reflective-prompt-library/plans/validate_governance.py
 - Review process explanation
 - Testing guidelines
 
+### 7.1 Benchmark Fixture Validator ✅
+
+**File:** `reflective-prompt-library/plans/validate_benchmark_fixture.py`
+
+**What it does:**
+- Validates golden-task shape in `benchmark_tasks.py` (workflow, criteria, uniqueness)
+- Regenerates `benchmark-tasks.json` for local/manual runs
+- Runs in `make validate` — **does not** execute LLM benchmark comparisons
+
+**Usage:**
+```bash
+python3 reflective-prompt-library/plans/validate_benchmark_fixture.py
+```
+
 ### 7. Small Benchmark Set ✅
 
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`

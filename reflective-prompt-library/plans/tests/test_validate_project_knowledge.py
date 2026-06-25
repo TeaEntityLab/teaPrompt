@@ -161,3 +161,42 @@ def test_repo_project_knowledge_is_valid():
     """The real committed PROJECT_KNOWLEDGE.md must satisfy the contract."""
     result = ProjectKnowledgeValidator(str(REPO_ROOT)).validate()
     assert result["valid"], result["errors"]
+
+
+def test_undocumented_governance_commits_warns(tmp_path, monkeypatch):
+    doc = VALID_DOC.replace(
+        "- 2026-01-01 Old entry → [record](plans/old.md)",
+        "- 2026-06-25 Latest entry → [record](plans/latest.md)",
+    )
+    validator = _write(tmp_path, doc)
+
+    def fake_commits(self, after):
+        return [("abc1234", "chore: tweak routing keywords", "2026-06-26")]
+
+    monkeypatch.setattr(
+        ProjectKnowledgeValidator,
+        "_git_governance_commits_after",
+        fake_commits,
+    )
+    result = validator.validate()
+    assert result["valid"], result["errors"]
+    assert any("undocumented" in w.lower() or "decision index" in w.lower() for w in result["warnings"])
+
+
+def test_documented_governance_commit_subject_suppresses_warning(tmp_path, monkeypatch):
+    doc = VALID_DOC.replace(
+        "- 2026-01-01 Old entry → [record](plans/old.md)",
+        "- 2026-06-25 Latest entry → [record](plans/latest.md)",
+    )
+    validator = _write(tmp_path, doc)
+
+    def fake_commits(self, after):
+        return [("def5678", "feat(governance): panel consensus update", "2026-06-26")]
+
+    monkeypatch.setattr(
+        ProjectKnowledgeValidator,
+        "_git_governance_commits_after",
+        fake_commits,
+    )
+    result = validator.validate()
+    assert not any("Governance-surface commit" in w for w in result["warnings"])

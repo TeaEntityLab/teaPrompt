@@ -351,12 +351,25 @@ class ParaphraseRouter:
                 adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 3
                 reasons.append("workflow boundary: no-code workflow design requested")
 
+        trivial_fix_signals = [
+            "typo", "one-liner", "one liner", "quick fix", "small fix", "trivial fix",
+            "trivial code change", "trivial null"
+        ]
+        trivial_fix_context = ["patch", "fix", "change", "bug", "code"]
+        trivial_fix_active = any(signal in text_lower for signal in trivial_fix_signals) or (
+            "trivial" in text_lower and any(ctx in text_lower for ctx in trivial_fix_context)
+        )
+
         review_signals = [
             "confirm this has no problem", "look if", "mistake",
             "check carefully", "review this like", "regression", "regressions"
         ]
         review_context = ["inspect", "check", "review", "find", "confirm", "before merge", "diff", "patch", "change"]
-        if any(signal in text_lower for signal in review_signals) and any(ctx in text_lower for ctx in review_context):
+        if (
+            not trivial_fix_active
+            and any(signal in text_lower for signal in review_signals)
+            and any(ctx in text_lower for ctx in review_context)
+        ):
             adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 2
             reasons.append("review boundary: correctness inspection requested")
 
@@ -403,16 +416,36 @@ class ParaphraseRouter:
             adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
             reasons.append("research boundary: multi-voice or strategic perspective synthesis")
 
-        trivial_fix_signals = [
-            "typo", "one-liner", "one liner", "quick fix", "small fix", "trivial fix",
-            "trivial code change", "trivial null"
-        ]
-        trivial_fix_context = ["patch", "fix", "change", "bug", "code"]
-        if any(signal in text_lower for signal in trivial_fix_signals) or (
-            "trivial" in text_lower and any(ctx in text_lower for ctx in trivial_fix_context)
-        ):
+        if trivial_fix_active:
             adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
             reasons.append("implementation boundary: trivial code fix")
+
+        scaffold_signals = [
+            "scaffold provenance", "prompt mirror", "leaked prompt", "system prompt leak",
+            "third-party mirror", "mirrored prompt", "agent scaffold", "prompt leak",
+            "mirror is trustworthy", "official docs with a third-party",
+        ]
+        scaffold_context = [
+            "review", "compare", "official", "trustworthy", "transferable", "adopt",
+            "learn", "research", "provenance", "without copying",
+        ]
+        if any(signal in text_lower for signal in scaffold_signals) and any(
+            ctx in text_lower for ctx in scaffold_context
+        ):
+            adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
+            reasons.append("research boundary: scaffold provenance or mirror review")
+        elif "mirrored system prompt" in text_lower or "mirrored prompt" in text_lower:
+            adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
+            reasons.append("research boundary: mirrored prompt learning request")
+
+        context_defer_signals = [
+            "context_load", "defer heavy planning", "defer heavy", "route this l1",
+            "no spec-plan load", "minimal route trace", "skipping spec-plan",
+            "note which high context_load", "high context_load skills you are skipping",
+        ]
+        if any(signal in text_lower for signal in context_defer_signals):
+            adjustments["reflective-dispatch"] = adjustments.get("reflective-dispatch", 0) + 4
+            reasons.append("dispatch boundary: context_load deferral or strictness-first routing")
 
         return adjustments, reasons
     

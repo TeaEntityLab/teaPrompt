@@ -223,11 +223,88 @@ _None — panel closed 2026-06-25 after Round 5. Future promotions still require
 - `GLOSSARY.md`, cheatsheets EN/TW: deferral terms
 - `QUALITY_GATES_SUMMARY.md`: CI done, holdout metrics, benchmark manual
 
-## Residual Open Questions (after Round 5)
 
-1. Undocumented-decisions git check (Knowie-style) — **defer** until decision-drift recurrence (panel unanimous).
-2. Fresh ROUTE-002 cases beyond Round 5 seed — **ongoing** before further router tuning.
-3. Full `SKILL.md` localization — **still reject** (English canonical).
+
+## Round 6 — Close deferred follow-ups (2026-06-25)
+
+User directive: run Socratic consensus on **all** remaining deferred items and implement unanimous agreements.
+
+### O: Knowie-style undocumented-decisions git check?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree compromise** — warning only; mirrors stale-milestone boundary |
+| Codex | **Agree** — falsifiable via governance-surface path list + subject cues |
+| Gemini | **Agree** — non-blocking; avoids CI flake on every doc edit |
+| Composer | **Agree** — helps IDE sessions notice missing Decision Index entries |
+| Sakana | **Agree** — drift hint without new skill |
+| GLM | **Agree** — TW adopters still read English Decision Index; warning is EN-only OK |
+
+**Socratic Q:** What fails if this blocks CI?
+**Answer:** Routine governance commits false-positive; **reject blocking**.
+
+**Consensus:** **Agree compromise** — `_check_undocumented_governance_commits` warning in `validate_project_knowledge.py`.
+
+### P: More ROUTE-002 holdout before router tuning?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — add `scaffold_provenance_holdout`, `context_load_defer_holdout`; router boundaries for scaffold + context_load deferral + trivial-fix vs review |
+
+**Consensus:** **Agree** — 66 holdout paraphrases; ROUTE-002 remains 100% after boundary repair.
+
+### Q: Full `SKILL.md` localization?
+
+| Lens | Position |
+| --- | --- |
+| GLM | Wants parity eventually |
+| Opus/Codex/Gemini/Composer/Sakana | **Reject** — English canonical; cheatsheet + glossary sufficient |
+
+**Consensus:** **Reject** — document boundary in `LANGUAGE_POLICY.md` + TW cheatsheet note.
+
+### R: Benchmark eval in CI?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** full LLM benchmark in CI (Round 5) |
+| Codex/Opus | **Compromise** — deterministic `validate_benchmark_fixture.py` in `make validate` |
+
+**Consensus:** **Compromise** — fixture gate in CI; manual `benchmark_tasks.py` execution stays optional.
+
+### Round 6 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| O | Undocumented-decisions check | **Compromise** | Non-blocking warning in project-knowledge validator |
+| P | ROUTE-002 expansion | **Agree** | 2 holdout groups + router boundaries |
+| Q | Full SKILL i18n | **Reject** | LANGUAGE_POLICY + TW cheatsheet boundary |
+| R | Benchmark in CI | **Compromise** | Fixture validator only |
+
+**All roles agree.**
+
+## Implemented Changes (Round 6)
+
+- `validate_project_knowledge.py`: undocumented governance-commit warning
+- `validate_benchmark_fixture.py` + `Makefile` validate step
+- `route-002-holdout-eval.yaml`: scaffold provenance + context_load defer holdouts
+- `route_paraphrase_eval.py`: scaffold, context_load deferral, trivial-fix vs review
+- `LANGUAGE_POLICY.md`, `GLOSSARY.md`, `SKILL_TRIGGER_CHEATSHEET.zh-TW.md`
+- `QUALITY_GATES_SUMMARY.md`: benchmark fixture section
+- Tests: `test_validate_benchmark_fixture.py`, undocumented-commit warnings
+
+## Residual Open Questions (after Round 6)
+
+_Superseded by Round 6 close below._
+
+## Panel status
+
+**Closed 2026-06-25** after Round 6 (options A–R). Future promotions still require the three-recurrence gate.
+
+_Ongoing maintenance: add fresh ROUTE-002 holdout cases before further router tuning; monitor undocumented-decision warnings in CI logs._
+
+
+## Residual Open Questions (after Round 5) — superseded by Round 6
+
 
 ## Superseded Open Questions
 

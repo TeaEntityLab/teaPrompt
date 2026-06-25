@@ -245,3 +245,25 @@ trace under available enhancements with rationale — not as a silent downgrade.
 **Operational test:** A cost-sensitive L1 request still names which heavy skills
 were deferred and why.
 
+
+
+---
+
+## Undocumented Decision Hint / 未記錄決策提示
+
+A **non-blocking** validator warning when git shows governance-surface commits after
+the latest `PROJECT_KNOWLEDGE.md` Decision Index date without a decision-record cue in
+the commit subject. Mirrors Knowie's drift hint without blocking CI.
+
+**Operational test:** Warning only; exit code stays 0. Add a Decision Index entry or
+use a subject cue (`governance`, `panel`, `record`, `route-002`, etc.) to clear it.
+
+---
+
+## Benchmark Fixture Gate / 基準任務固定欄位閘門
+
+Deterministic CI check on `benchmark_tasks.py` golden tasks (workflow mapping,
+acceptance criteria, minimum count). Does **not** run LLM benchmark executions.
+
+**Operational test:** `make validate` runs `validate_benchmark_fixture.py`; failures
+block merge; manual skill-vs-baseline runs stay optional.

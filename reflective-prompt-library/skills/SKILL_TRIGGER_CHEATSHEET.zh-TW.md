@@ -8,6 +8,9 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 > **輸出慣例**：精簡的交付規格應放在 Module Contract 的 `Output:` 欄位。僅當 skill 產生實質的輸出範本（例如 markdown 區塊、多欄位結構）時，才額外加入獨立的 `## Output` 區段。具有程序步驟（before/during/after）的 skill 通常不需要獨立的 Output 區段。
 
+Skill 契約語言：
+- 九個 `skills/*/SKILL.md` 以**英文**為權威；本繁中 cheatsheet 與 [GLOSSARY.md](../GLOSSARY.md) 供 L1–L2 分流與成本決策，不取代完整 skill 契約。
+
 分流公平性說明：
 - 各 skill frontmatter 含 `context_load: low|medium|high`，供成本敏感分流。
 - 下面的觸發提示只是範例，不是必要措辭。

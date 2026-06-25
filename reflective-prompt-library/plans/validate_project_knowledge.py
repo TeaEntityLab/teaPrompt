@@ -16,14 +16,20 @@ left to validate_links.py; this validator checks only narrow, observable signals
 4. Every Durable Lesson has a non-empty `Evidence:` pointer.
 5. Every milestone has a valid `Status:` (active/planned/done).
 6. The Decision Index is non-empty and every entry carries a link pointer.
+7. Optional warning: governance-surface git commits after the latest Decision
+   Index date may lack a matching record (Knowie-style undocumented-decisions
+   hint; non-blocking).
 
 Exit code 0 when valid, 1 when any error is found, so it can gate CI.
+Warnings do not change the exit code.
 """
 
 import re
+import subprocess
 import sys
+from datetime import date, datetime
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional, Tuple
 
 REQUIRED_SECTIONS = [
     "Governing Principles",
@@ -43,6 +49,23 @@ AGENT_DIRECTIVE_PATTERNS = [
 ]
 
 VALID_STATUSES = {"active", "planned", "done"}
+
+GOVERNANCE_SURFACE_PATHS = [
+    "Makefile",
+    "reflective-prompt-library/PROJECT_KNOWLEDGE.md",
+    "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
+    "reflective-prompt-library/plans/route-001-paraphrase-eval.yaml",
+    "reflective-prompt-library/plans/route-002-holdout-eval.yaml",
+    "reflective-prompt-library/plans/route_paraphrase_eval.py",
+    "reflective-prompt-library/plans/validate_governance.py",
+    "reflective-prompt-library/plans/validate_project_knowledge.py",
+    "reflective-prompt-library/plans/lint_skills.py",
+    "reflective-prompt-library/skills",
+]
+
+SKIP_UNDOCUMENTED_SUBJECT = re.compile(
+    r"(?i)^(?:merge\b|revert\b|wip\b|format\b|style\b|typo\b|whitespace\b|bump\b)"
+)
 
 
 class ProjectKnowledgeValidator:
@@ -71,6 +94,7 @@ class ProjectKnowledgeValidator:
         self._check_milestone_status(content)
         self._check_stale_done_milestones(content)
         self._check_decision_index(content)
+        self._check_undocumented_governance_commits(content)
 
         return self._result()
 
@@ -160,7 +184,104 @@ class ProjectKnowledgeValidator:
                     f"Decision Index entry lacks a link pointer -> {entry.strip()!r}"
                 )
 
-    # --- helpers -----------------------------------------------------------
+    def _check_undocumented_governance_commits(self, content: str) -> None:
+        """Warn when git shows governance edits after the latest Decision Index date."""
+        latest = self._latest_decision_index_date(content)
+        if latest is None:
+            return
+
+        commits = self._git_governance_commits_after(latest)
+        undocumented = [
+            c for c in commits if not self._commit_subject_documents_decision(c[1])
+        ]
+        if not undocumented:
+            return
+
+        summary = "; ".join(
+            f"{sha} ({when}) {subject}" for sha, subject, when in undocumented[:5]
+        )
+        extra = f" (+{len(undocumented) - 5} more)" if len(undocumented) > 5 else ""
+        self.warnings.append(
+            f"Governance-surface commit(s) after latest Decision Index date "
+            f"({latest.isoformat()}) with no decision-record cue in subject: "
+            f"{summary}{extra}. Consider adding a Decision Index entry."
+        )
+
+    def _latest_decision_index_date(self, content: str) -> Optional[date]:
+        section = self._section_body(content, "Decision Index")
+        if section is None:
+            return None
+        dates: List[date] = []
+        for match in re.finditer(r"(\d{4}-\d{2}-\d{2})", section):
+            try:
+                dates.append(datetime.strptime(match.group(1), "%Y-%m-%d").date())
+            except ValueError:
+                continue
+        return max(dates) if dates else None
+
+    def _git_governance_commits_after(
+        self, after: date
+    ) -> List[Tuple[str, str, str]]:
+        """Return (sha, subject, commit_date) tuples strictly after `after`."""
+        cmd = [
+            "git",
+            "log",
+            f"--after={after.isoformat()}",
+            "--format=%h|%s|%ad",
+            "--date=short",
+            "--",
+            *GOVERNANCE_SURFACE_PATHS,
+        ]
+        try:
+            proc = subprocess.run(
+                cmd,
+                cwd=self.repo_root,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        except (FileNotFoundError, OSError):
+            return []
+
+        if proc.returncode != 0 or not proc.stdout.strip():
+            return []
+
+        commits: List[Tuple[str, str, str]] = []
+        for line in proc.stdout.splitlines():
+            parts = line.split("|", 2)
+            if len(parts) != 3:
+                continue
+            sha, subject, when = parts
+            try:
+                commit_date = datetime.strptime(when, "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if commit_date <= after:
+                continue
+            if SKIP_UNDOCUMENTED_SUBJECT.search(subject.strip()):
+                continue
+            commits.append((sha.strip(), subject.strip(), when.strip()))
+        return commits
+
+    @staticmethod
+    def _commit_subject_documents_decision(subject: str) -> bool:
+        lowered = subject.lower()
+        cues = (
+            "decision",
+            "record",
+            "panel",
+            "consensus",
+            "reflection",
+            "reflect",
+            "governance",
+            "route-00",
+            "benchmark fixture",
+            "project knowledge",
+            "i18n",
+            "localization",
+            "undocumented",
+        )
+        return any(cue in lowered for cue in cues)
 
     def _split_blocks(self, content: str, label: str):
         """Yield (name, body) for each '### <label>: <name>' block."""
@@ -172,7 +293,6 @@ class ProjectKnowledgeValidator:
         for idx, m in enumerate(matches):
             start = m.end()
             end = matches[idx + 1].start() if idx + 1 < len(matches) else len(content)
-            # stop at next ## section if it comes first
             next_section = re.search(r"^##\s+", content[start:end], re.MULTILINE)
             if next_section:
                 end = start + next_section.start()
@@ -205,7 +325,7 @@ def main() -> int:
     result = validator.validate()
 
     if result["warnings"]:
-        print(f"\n⚠️  {len(result['warnings'])} reflow suggestion(s):")
+        print(f"\n⚠️  {len(result['warnings'])} contract warning(s):")
         for warn in result["warnings"]:
             print(f"  - {warn}")
 

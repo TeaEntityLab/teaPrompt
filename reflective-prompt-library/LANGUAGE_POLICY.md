@@ -71,3 +71,18 @@ The repository language state is healthy when:
 - Skills remain English-only unless a tool-specific localization is explicitly needed.
 - README explains the language layering.
 - Future contributors know whether they are editing operational instructions or localized prompt content.
+
+
+## Localization Boundary (2026-06-25)
+
+Panel consensus (Round 6):
+
+- **English remains canonical** for all `skills/*/SKILL.md` contracts and governance plans.
+- **Traditional Chinese** is supported for navigation (`README.zh-TW.md`), cheatsheets
+  (`SKILL_TRIGGER_CHEATSHEET.zh-TW.md`), and glossary routing lines — not full skill
+  contract translation.
+- Prompt source files under `00-core/`–`05-domain/` may stay localized when the
+  artifact itself is language-specific content.
+
+**Operational test:** A TW adopter can route L1–L2 tasks using cheatsheet + glossary
+without a translated `SKILL.md`; deeper contracts load in English.
