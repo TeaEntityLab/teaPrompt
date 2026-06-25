@@ -239,16 +239,16 @@ python3 reflective-prompt-library/plans/validate_route_fixture.py
 **File:** `reflective-prompt-library/plans/benchmark_tasks.py`
 
 **What it does:**
-- Defines 23 golden tasks for validation
-- Covers all major benchmarked workflows (8 different skills)
-- Balanced difficulty distribution (5 easy, 11 medium, 7 hard)
+- Defines 24 golden tasks for validation
+- Covers all nine frozen workflow skills
+- Balanced difficulty distribution (6 easy, 11 medium, 7 hard)
 - Diverse categories (15 different categories)
 - Clear acceptance criteria for each task
 - Expected workflow mapping
 
 **Results:**
-- 23 benchmark tasks created
-- Tasks cover: implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, SOP compiler planning, minimality, test planning, and workflow design
+- 24 benchmark tasks created
+- Tasks cover: routing, implementation, planning, review, research, risk, handoff, debugging, refactoring, retrospective, runtime governance, scaffold provenance, SOP compiler planning, minimality, test planning, and workflow design
 - Output: `plans/benchmark-tasks.json`
 
 **Usage:**
@@ -277,7 +277,7 @@ The implementation aligns with research findings:
 | Files validated | 103 | ✅ All pass |
 | Links validated | 0 broken | ✅ Perfect |
 | Skills with governance | 9/9 | ✅ Complete |
-| Benchmark tasks | 23 | ✅ Ready |
+| Benchmark tasks | 24 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
 | Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 100 paraphrases) |
 | Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (13 groups, 31 paraphrases) |

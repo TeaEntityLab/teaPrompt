@@ -379,6 +379,21 @@ class BenchmarkSet:
                     "Side effects define authority, idempotency, retry caps, compensation, and hard stops",
                     "Observability and scenario tests separate specified behavior from unproven runtime guarantees"
                 ]
+            ),
+            BenchmarkTask(
+                id="B024",
+                name="Workflow skill selection for mixed intent",
+                description="Classify a mixed user request and select the smallest useful reflective workflow skill with explicit route trace",
+                expected_workflow="reflective-dispatch",
+                difficulty="easy",
+                category="routing",
+                acceptance_criteria=[
+                    "Primary workflow skill is named with rationale tied to intent signals",
+                    "Strictness level is stated with risk and cost calibration",
+                    "Route trace includes confidence and at least one rejected alternate route",
+                    "Smallest sufficient workflow is chosen over plan-orchestration bloat",
+                    "Next action is explicit and matches the selected workflow"
+                ]
             )
         ]
     

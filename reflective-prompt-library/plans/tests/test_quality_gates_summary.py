@@ -104,3 +104,9 @@ def test_research_alignment_lists_nine_frozen_skills(summary_text: str):
     assert "nine frozen workflow skills" in section
     assert "8 lifecycle skills" not in section
 
+def test_benchmark_section_covers_nine_workflows(summary_text: str):
+    section = summary_text.split("### 7. Small Benchmark Set", 1)[1].split("## Research Alignment", 1)[0]
+    assert "nine frozen workflow skills" in section
+    assert "8 different skills" not in section
+    assert "24 golden tasks" in section or "24 benchmark tasks" in section
+

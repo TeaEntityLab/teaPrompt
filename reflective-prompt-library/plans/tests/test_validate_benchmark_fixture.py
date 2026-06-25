@@ -23,3 +23,11 @@ def test_every_task_maps_to_known_workflow():
 def test_benchmark_ids_are_unique():
     ids = [task.id for task in BenchmarkSet().tasks]
     assert len(ids) == len(set(ids))
+
+def test_benchmark_covers_all_nine_workflows():
+    workflows = {task.expected_workflow for task in BenchmarkSet().tasks}
+    assert workflows == VALID_WORKFLOWS, (
+        f"missing workflows: {sorted(VALID_WORKFLOWS - workflows)}; "
+        f"unexpected: {sorted(workflows - VALID_WORKFLOWS)}"
+    )
+
