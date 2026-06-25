@@ -72,3 +72,19 @@ def test_round_51_boundary_probes():
     for text, expected in probes:
         workflow, _, _, _ = router.route(text)
         assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
+
+def test_implement_approved_spec_not_plan_boundary():
+    """Anti-drift: ROUTE-003 implement_not_plan_trap approved-spec delivery."""
+    from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
+
+    router = ParaphraseRouter()
+    probes = [
+        ("implement the approved spec in the repository", "reflective-implement"),
+        ("ship the code fix for the off-by-one bug", "reflective-implement"),
+        ("write tickets from the approved spec without implementing", "reflective-spec-plan"),
+        ("plan the approved spec without repo changes", "reflective-spec-plan"),
+    ]
+    for text, expected in probes:
+        workflow, _, _, _ = router.route(text)
+        assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
+

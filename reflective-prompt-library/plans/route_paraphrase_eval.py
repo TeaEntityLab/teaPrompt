@@ -356,6 +356,29 @@ class ParaphraseRouter:
             adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
             reasons.append("test-execution boundary: repository test changes requested")
 
+        implement_approved_spec_signals = [
+            "implement the approved spec",
+            "implement approved spec",
+            "code the approved spec",
+            "land the approved spec",
+        ]
+        repository_delivery_context = [
+            "repository", "repo", "codebase", "in the repo", "to production code",
+        ]
+        if (
+            not any(ctx in text_lower for ctx in no_code_context)
+            and (
+                any(signal in text_lower for signal in implement_approved_spec_signals)
+                or (
+                    "implement" in text_lower
+                    and "approved spec" in text_lower
+                    and any(ctx in text_lower for ctx in repository_delivery_context)
+                )
+            )
+        ):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 4
+            reasons.append("implement boundary: approved spec delivery in repository")
+
         workflow_design_signals = [
             "workflow design", "workflow specification", "workflow architecture",
             "resumable workflow", "state model", "control flow",
