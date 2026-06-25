@@ -116,6 +116,14 @@ approval, and retirement trigger. Promote a repeated operation to a
 project-local skill only after its inputs, outputs, failure signals, and checks
 are stable and a human confirms the promotion.
 
+## Multi-Agent Panel Consensus Addendum
+
+The 2026-06-25 multi-lens Socratic panel (six provider perspectives, single host)
+reaffirmed the north star: **nine frozen workflow skills**, strictness-first routing,
+evidence-backed evals in CI, optional multi-voice synthesis in `reflective-research`
+— not a swarm runtime. Judgment record:
+[plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md).
+
 ## Strictness Levels
 
 | Level | Use When | Main Surface |

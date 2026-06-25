@@ -226,7 +226,7 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval (14 groups, 58 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ Passes ROUTE-002 holdout eval (25 groups, 76 paraphrases) |
 | Linting errors | 0 | ✅ Clean |
 
 ### Routing Consistency Tracking
@@ -249,13 +249,13 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ### Holdout Tracking
 
-ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 5 (2026-06-25) added handoff, multi-voice research, and trivial-implement holdout groups with matching router boundaries. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
+ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
 ## Next Steps (Phase 2)
 
 Based on the research and current implementation, suggested next steps:
 
-1. **Expand ROUTE-002 with fresh holdout cases** - Ongoing; Round 5 added 3 groups (handoff, multi-voice, trivial implement)
+1. **Expand ROUTE-002 with fresh holdout cases** - Ongoing; Round 7 added zh-TW boundary groups (25 groups, 76 paraphrases)
 2. **Run benchmark tests** - Manual via `benchmark_tasks.py`; not in CI (non-deterministic / LLM-cost)
 3. **CI/CD** - Done: `.github/workflows/python-tools.yml` runs `make all` on push/PR
 4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input

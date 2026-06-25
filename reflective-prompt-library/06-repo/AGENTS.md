@@ -12,6 +12,27 @@ Do not start implementation before understanding goal, scope, risk, and acceptan
 
 ---
 
+## Harness Policy (Nine Skills)
+
+TeaPrompt workflow skills are **natural-language harness policy** — not a multi-agent
+runtime. For non-trivial routing, governance, or skill-selection work:
+
+1. **Strictness before skills** — pick L1–L6 first, then the smallest workflow.
+   See [README.md](../README.md#strictness-before-skills) and [GLOSSARY.md](../GLOSSARY.md).
+2. **Nine frozen workflow skills** — do not add a tenth core skill without the
+   three-recurrence promotion gate ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md)).
+3. **Fast routing** — [skills/SKILL_TRIGGER_CHEATSHEET.md](../skills/SKILL_TRIGGER_CHEATSHEET.md)
+   (繁中: [`.zh-TW.md`](../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)).
+4. **Fairness contract** — equivalent intent must route equivalently with visible
+   route trace; see [plans/ROUTING_CONTRACT.md](../plans/ROUTING_CONTRACT.md).
+5. **Panel / multi-voice rethink** — optional method inside
+   `reflective-research` (single host, persona lenses); judgment record at
+   [plans/multi-agent-panel-consensus-2026-06-25.md](../plans/multi-agent-panel-consensus-2026-06-25.md).
+
+Run `make validate` before claiming routing or governance changes are verified.
+
+---
+
 ## Required Workflow
 
 For every non-trivial task:

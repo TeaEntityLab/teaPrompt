@@ -196,6 +196,79 @@ holdout_sets:
       - pick strictness first and note which high context_load skills you are skipping
       - trivial question with minimal route trace and no spec-plan load
 
+  - name: zh_tw_implement_holdout
+    expected_workflow: reflective-implement
+    expected_rigor: low
+    expected_enhancements:
+      - tests
+    phrases:
+      - 實作這個修改並跑測試
+      - 修一下這個 typo 的小修正
+
+  - name: zh_tw_spec_plan_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - 把這個粗略想法拆成工單
+
+  - name: zh_tw_brief_holdout
+    expected_workflow: reflective-brief
+    expected_rigor: low
+    expected_enhancements:
+      - assumption_log
+    phrases:
+      - 還不確定目標，先釐清範圍
+
+  - name: zh_tw_review_holdout
+    expected_workflow: reflective-review
+    expected_rigor: high
+    expected_enhancements:
+      - quality_review
+    phrases:
+      - 審查這個 patch 有沒有 regression
+
+  - name: zh_tw_research_holdout
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - 查官方 migration 文件再決定
+
+  - name: zh_tw_risk_holdout
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - 改權限前先評估正式環境風險
+
+  - name: zh_tw_handoff_holdout
+    expected_workflow: reflective-handoff-retro
+    expected_rigor: low
+    expected_enhancements:
+      - promotion_candidate
+    phrases:
+      - 寫交接摘要給下一個 agent
+
+  - name: zh_tw_dispatch_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - 幫我選 prompt 還是 workflow
+
+  - name: zh_tw_minimality_holdout
+    expected_workflow: reflective-minimality
+    expected_rigor: medium
+    expected_enhancements:
+      - complexity_cut_list
+    phrases:
+      - 這裡可以少寫程式嗎
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

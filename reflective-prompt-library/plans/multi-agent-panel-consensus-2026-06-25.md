@@ -296,9 +296,80 @@ User directive: run Socratic consensus on **all** remaining deferred items and i
 
 _Superseded by Round 6 close below._
 
-## Panel status
+## Round 7 — Post-close alignment (2026-06-25)
 
-**Closed 2026-06-25** after Round 6 (options A–R). Future promotions still require the three-recurrence gate.
+User re-requested full multi-agent Socratic loop. Panel identified residual gaps after Round 6 close: AGENTS.md lacked harness-policy pointers; QUALITY_GATES metrics were stale; zh-TW routing fairness was undocumented in evals.
+
+### T: AGENTS.md harness-policy alignment?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — pointers only; do not duplicate skill contracts in AGENTS |
+| Codex | **Agree** — falsifiable via existing `make validate` |
+| Gemini | **Agree** — one section; strictness + context_load deferral reference |
+| Composer | **Agree** — IDE hosts load AGENTS first; cheatsheet link essential |
+| Sakana | **Agree** — multi-voice panel pointer to research method + consensus record |
+| GLM | **Agree** — link TW cheatsheet alongside EN |
+
+**Socratic Q:** What fails if we paste full skills into AGENTS?
+**Answer:** Dual source of truth; governance drift.
+
+**Consensus:** **Agree** — `Harness Policy (Nine Skills)` section in `06-repo/AGENTS.md`.
+
+### U: Sync stale QUALITY_GATES / holdout metrics?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — ROUTE-002 is 25 groups / 76 paraphrases after Rounds 6–7 |
+
+**Consensus:** **Agree** — update `QUALITY_GATES_SUMMARY.md` holdout tracking.
+
+### V: zh-TW ROUTE-002 holdout without full SKILL i18n?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree compromise** — TW phrases in holdout + router keywords |
+| Opus/Codex | **Agree** — intent normalization only; English canonical contracts unchanged |
+| Gemini | **Agree** — small keyword set; no translation maintenance burden |
+| Composer | **Agree** — cheatsheet TW already covers L1–L2 |
+| Sakana | **Agree** — multi-voice TW can wait; per-workflow holdout sufficient |
+
+**Socratic Q:** Does TW holdout replace translated skills?
+**Answer:** No — Round 6 Q rejection stands; holdout tests router fairness only.
+
+**Consensus:** **Agree compromise** — nine `zh_tw_*` holdout groups + TW intent keywords in `route_paraphrase_eval.py`.
+
+### W: Re-open SKILL.zh-TW.md companions or tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — Round 6 Q + skill-freeze A still binding |
+
+**Consensus:** **Reject** — no new skill files; no companion SKILL translations.
+
+### Round 7 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| T | AGENTS harness-policy section | **Agree** | `06-repo/AGENTS.md` pointers |
+| U | Metrics sync | **Agree** | QUALITY_GATES holdout counts |
+| V | zh-TW holdout + router keywords | **Compromise** | ROUTE-002 + router + glossary |
+| W | SKILL.zh-TW / tenth skill | **Reject** | Closed |
+
+**All roles agree.**
+
+## Implemented Changes (Round 7)
+
+- `06-repo/AGENTS.md`: Harness Policy (Nine Skills) section
+- `route_paraphrase_eval.py`: Traditional Chinese intent keywords + boundaries
+- `route-002-holdout-eval.yaml`: nine `zh_tw_*` holdout groups (76 paraphrases total)
+- `QUALITY_GATES_SUMMARY.md`, `LANGUAGE_POLICY.md`, `GLOSSARY.md`
+- `SKILL_TRIGGER_CHEATSHEET.zh-TW.md`: ROUTE-002 fairness note
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 7 entry
+
+## Panel status (updated)
+
+**Closed 2026-06-25** after Round 7 (options A–W). Future promotions still require the three-recurrence gate.
 
 _Ongoing maintenance: add fresh ROUTE-002 holdout cases before further router tuning; monitor undocumented-decision warnings in CI logs._
 

@@ -192,7 +192,8 @@ class ParaphraseRouter:
             "reflective-brief": [
                 "clarify", "goal", "assumption", "scope", "acceptance", "kickoff",
                 "kick off", "start", "begin", "ambiguous", "unclear", "what should",
-                "not sure", "before deciding", "real objective"
+                "not sure", "before deciding", "real objective",
+                "釐清", "目標", "範圍", "假設", "驗收"
             ],
             "reflective-spec-plan": [
                 "spec", "plan", "ticket", "design", "usage", "documentation",
@@ -200,13 +201,15 @@ class ParaphraseRouter:
                 "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd",
                 "test plan", "test strategy", "test matrix", "given/when/then",
                 "workflow specification", "workflow architecture", "state model", "control flow",
-                "orchestration plan", "resumable workflow"
+                "orchestration plan", "resumable workflow",
+                "規格", "計畫", "需求", "工單", "驗收標準"
             ],
             "reflective-implement": [
                 "code", "implement", "refactor", "debug", "fix", "edit",
                 "programming", "development", "function", "parse", "build", "add",
                 "change", "patch", "wire", "make the code", "unit test",
-                "integration test", "executable test", "add tests", "update tests"
+                "integration test", "executable test", "add tests", "update tests",
+                "實作", "修復", "程式碼", "重構", "除錯", "補丁", "修改"
             ],
             "reflective-minimality": [
                 "minimal", "minimality", "overengineering", "over-engineering",
@@ -216,32 +219,38 @@ class ParaphraseRouter:
                 "dependency", "one file", "one-line", "one line", "smallest",
                 "wrapper", "abstraction", "factory", "unnecessary complexity",
                 "avoid writing", "avoid overengineering", "complexity-only",
-                "ceiling", "upgrade trigger"
+                "ceiling", "upgrade trigger",
+                "最小化", "過度工程", "刪減", "少寫"
             ],
             "reflective-review": [
                 "review", "critique", "check", "audit", "analyze", "examine",
                 "issues", "bugs", "pull request", "changes", "look over",
-                "carefully", "make sure", "does this work", "review this like"
+                "carefully", "make sure", "does this work", "review this like",
+                "審查", "檢查", "程式碼審查"
             ],
             "reflective-research": [
                 "research", "documentation", "docs", "investigate", "find",
                 "look up", "search", "external", "compare", "best practice",
-                "official", "source", "source-backed", "guidance"
+                "official", "source", "source-backed", "guidance",
+                "研究", "查詢", "官方", "比較", "文件"
             ],
             "reflective-risk": [
                 "risk", "security", "privacy", "auth", "permission", "production",
                 "deployment", "migration", "destructive", "billing", "safe", "safety",
-                "delete", "rollback", "compliance", "credential", "irreversible"
+                "delete", "rollback", "compliance", "credential", "irreversible",
+                "風險", "安全", "正式環境", "權限"
             ],
             "reflective-handoff-retro": [
                 "handoff", "retro", "retrospective", "memory", "context",
                 "consolidation", "transfer", "continue later", "session summary",
-                "lessons", "reusable rules"
+                "lessons", "reusable rules",
+                "交接", "回顧", "摘要", "教訓"
             ],
             "reflective-dispatch": [
                 "route", "dispatch", "choose", "select", "apply library",
                 "workflow", "which skill", "what skill", "best skill", "prompt-only",
-                "agentic workflow"
+                "agentic workflow",
+                "路由", "分派", "選擇", "工作流"
             ]
         }
 
@@ -353,7 +362,8 @@ class ParaphraseRouter:
 
         trivial_fix_signals = [
             "typo", "one-liner", "one liner", "quick fix", "small fix", "trivial fix",
-            "trivial code change", "trivial null"
+            "trivial code change", "trivial null",
+            "小修正", "錯字"
         ]
         trivial_fix_context = ["patch", "fix", "change", "bug", "code"]
         trivial_fix_active = any(signal in text_lower for signal in trivial_fix_signals) or (
@@ -373,7 +383,7 @@ class ParaphraseRouter:
             adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 2
             reasons.append("review boundary: correctness inspection requested")
 
-        clarification_signals = ["do not know", "don't know", "unknown", "unclear", "not sure"]
+        clarification_signals = ["do not know", "don't know", "unknown", "unclear", "not sure", "還不確定", "不確定"]
         clarification_targets = ["outcome", "goal", "intent", "objective", "scope", "assumption"]
         if any(signal in text_lower for signal in clarification_signals) and any(
             target in text_lower for target in clarification_targets
@@ -402,7 +412,8 @@ class ParaphraseRouter:
             "handoff summary", "hand off", "hand-off", "write a handoff",
             "session summary", "switch tasks", "continue later",
             "memory consolidation", "reusable memory", "session lessons",
-            "next agent", "ending this session", "prepare a retro"
+            "next agent", "ending this session", "prepare a retro",
+            "交接摘要", "寫交接", "下一個代理"
         ]
         if any(signal in text_lower for signal in handoff_signals):
             adjustments["reflective-handoff-retro"] = adjustments.get("reflective-handoff-retro", 0) + 3
@@ -437,6 +448,16 @@ class ParaphraseRouter:
         elif "mirrored system prompt" in text_lower or "mirrored prompt" in text_lower:
             adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
             reasons.append("research boundary: mirrored prompt learning request")
+
+        if ("官方" in text_lower or "查官方" in text_lower) and (
+            "migration" in text_lower or "文件" in text_lower
+        ):
+            adjustments["reflective-research"] = adjustments.get("reflective-research", 0) + 3
+            reasons.append("research boundary: official documentation lookup")
+
+        if "少寫程式" in text_lower or ("少寫" in text_lower and "程式" in text_lower):
+            adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 3
+            reasons.append("minimality boundary: reduce code surface requested")
 
         context_defer_signals = [
             "context_load", "defer heavy planning", "defer heavy", "route this l1",

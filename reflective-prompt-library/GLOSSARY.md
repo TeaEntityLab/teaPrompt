@@ -267,3 +267,14 @@ acceptance criteria, minimum count). Does **not** run LLM benchmark executions.
 
 **Operational test:** `make validate` runs `validate_benchmark_fixture.py`; failures
 block merge; manual skill-vs-baseline runs stay optional.
+
+---
+
+## Intent Normalization (zh-TW) / 意圖正規化（繁中）
+
+The deterministic router in `route_paraphrase_eval.py` includes Traditional Chinese
+intent keywords alongside English cues. ROUTE-002 holdout groups test zh-TW phrasing
+fairness without translating canonical `SKILL.md` contracts.
+
+**Operational test:** A TW phrase in the holdout fixture routes to the same workflow as
+its English equivalent intent group.

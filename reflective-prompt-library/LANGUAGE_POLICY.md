@@ -85,4 +85,6 @@ Panel consensus (Round 6):
   artifact itself is language-specific content.
 
 **Operational test:** A TW adopter can route L1–L2 tasks using cheatsheet + glossary
-without a translated `SKILL.md`; deeper contracts load in English.
+without a translated `SKILL.md`; deeper contracts load in English. ROUTE-002
+includes Traditional Chinese holdout phrases to test intent-normalization fairness
+in the deterministic router — not full skill contract translation.
