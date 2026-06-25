@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–96). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–97). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -369,3 +369,5 @@ Ongoing upkeep after panel close (Rounds 1–96). Not agent instructions — ope
 26. When editing composable prompt Purpose preambles, keep `Primary workflow surface(s)` / Supporting-lens lines via `assert_primary_workflow_surface_preamble` in `prompt_eval_helpers.py`; update `SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY` for exemptions; run `test_prompt_primary_workflow_surface_library_registry.py` plus per-category `test_*_prompts_eval_harness.py` guards.
 27. When editing category workflow skill coverage tuples, keep frozen `*_COVER_WORKFLOW_SKILLS` in `test_*_prompts_eval_harness.py` aligned with `assert_category_workflow_skill_coverage`; `01-thinking` stays exempt (consumer graph); run `test_workflow_skill_coverage_library_registry.py`.
 28. When editing eval_harness score floors, keep `PROMPT_EVAL_MIN_SCORE` in `prompt_eval_helpers.py` and use `assert_prompt_meets_eval_harness_floor` in per-category `test_*_prompts_eval_harness.py` guards; run `test_prompt_eval_harness_score_library_registry.py`.
+28. When editing eval_harness score floors, keep `PROMPT_EVAL_MIN_SCORE` in `prompt_eval_helpers.py` and use `assert_prompt_meets_eval_harness_floor` in per-category `test_*_prompts_eval_harness.py` guards; run `test_prompt_eval_harness_score_library_registry.py`.
+29. When editing per-category `reference_workflow_skills` guards, use `assert_prompt_references_workflow_skill` in `prompt_eval_helpers.py` (preamble-scoped, not fenced templates); run `test_prompt_workflow_skill_reference_library_registry.py` plus per-category harness guards.

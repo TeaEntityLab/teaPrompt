@@ -14,6 +14,7 @@ from prompt_eval_helpers import (
     PROMPT_EVAL_MIN_SCORE,
     assert_primary_workflow_surface_preamble,
     assert_category_workflow_skill_coverage, assert_prompt_contract_headings,
+    assert_prompt_references_workflow_skill,
     assert_prompt_meets_eval_harness_floor,  # noqa: E402
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
@@ -67,8 +68,7 @@ def test_core_prompt_meets_eval_harness_floor(prompt_path: Path, harness: EvalHa
 
 def test_core_prompts_reference_workflow_skills():
     for prompt_path in CORE_PROMPTS:
-        text = prompt_path.read_text(encoding="utf-8")
-        assert "reflective-" in text, f"{prompt_path.name} should map to at least one workflow skill"
+        assert_prompt_references_workflow_skill(prompt_path)
 
 
 def test_core_prompts_cover_brief_and_dispatch():

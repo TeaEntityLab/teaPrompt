@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings, assert_prompt_meets_eval_harness_floor  # noqa: E402
+from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings, assert_prompt_references_workflow_skill, assert_prompt_meets_eval_harness_floor  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -57,8 +57,7 @@ def test_domain_prompt_meets_eval_harness_floor(prompt_path: Path, harness: Eval
 
 def test_domain_prompts_reference_workflow_skills():
     for prompt_path in DOMAIN_PROMPTS:
-        text = prompt_path.read_text(encoding="utf-8")
-        assert "reflective-" in text, f"{prompt_path.name} should map to at least one workflow skill"
+        assert_prompt_references_workflow_skill(prompt_path)
 
 
 def test_domain_prompts_cover_domain_workflow_surfaces():

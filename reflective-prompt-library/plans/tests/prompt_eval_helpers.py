@@ -128,6 +128,14 @@ def assert_category_workflow_skill_coverage(
     for skill in required_skills:
         assert skill in text, f"{category_label} should reference {skill}"
 
+
+def assert_prompt_references_workflow_skill(prompt_path: Path) -> None:
+    """Every composable prompt must mention at least one reflective-* workflow skill."""
+    body = prompt_path.read_text(encoding="utf-8")
+    assert "reflective-" in body, (
+        f"{prompt_path.name} should map to at least one workflow skill"
+    )
+
 def assert_prompt_meets_eval_harness_floor(
     prompt_path: Path,
     harness,

@@ -2881,3 +2881,57 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ---
 
 **Resealed 2026-06-25** after **Round 96** (options HB–HF). Eval_harness score floors are now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_prompt_meets_eval_harness_floor` and per-category `MIN_SCORE` aliases to `PROMPT_EVAL_MIN_SCORE`. Holdout expansion remains recurrence-gated maintenance.
+
+## Round 97 — cross-category workflow skill reference library registry (2026-06-25)
+
+**Options HG–HK** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 97 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| HG | DRY `assert_prompt_references_workflow_skill` in `prompt_eval_helpers.py` (preamble-scoped) | **Agree** |
+| HH | `test_prompt_workflow_skill_reference_library_registry.py` — library-wide preamble skill-reference sweep | **Agree** |
+| HI | GLOSSARY playbook step 29 + governance sync | **Agree** |
+| HJ | ROUTE holdout expansion | **Defer** |
+| HK | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 97 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| HG | Workflow skill reference DRY helper | **Agree** | `assert_prompt_references_workflow_skill` |
+| HH | Workflow skill reference library registry | **Agree** | `test_prompt_workflow_skill_reference_library_registry.py` |
+| HI | Playbook + docs | **Agree** | step 29; panel round 97 sync |
+| HJ | Holdout expansion | **Defer** | maintenance |
+| HK | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 97)
+
+- **Opus:** Round 96 closed eval_harness score floors; seven per-category `reference_workflow_skills` guards still duplicate `"reflective-" in text` with no library-wide falsifiability and weaker preamble scoping than cross-link tests.
+- **Codex:** Preamble-scoped helper aligns with `test_prompt_cross_links.py` engineering guard; registry sweep catches template-only skill mentions across all 49 prompts.
+- **Gemini:** Cheap deterministic check; no router or prompt content churn.
+- **Composer:** Mirrors R91–R96 registry pattern; one helper + one registry file.
+- **Sakana:** Thinking lenses already require consumer skills in preambles; library registry documents that invariant explicitly.
+- **GLM:** Preamble scope avoids false passes from fenced zh-TW templates; playbook step 29 gives operators a single checklist line.
+
+**All roles agree.**
+
+## Implemented Changes (Round 97)
+
+- `plans/tests/prompt_eval_helpers.py`: `assert_prompt_references_workflow_skill`
+- `plans/tests/test_*_prompts_eval_harness.py`: DRY workflow skill reference guards
+- `plans/tests/test_prompt_workflow_skill_reference_library_registry.py`: cross-category registry + library glob parity
+- `GLOSSARY.md`: playbook Rounds 1–97; step 29 for workflow skill reference library registry
+- `QUALITY_GATES_SUMMARY.md`: workflow skill reference registry note; panel Rounds 1–97; 660+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 97 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 97 sync
+
+## Verification (Round 97)
+
+- `make all`: 663 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 97** (options HG–HK). Workflow skill references are now library-registry checked across all `00-core`–`06-repo` categories with shared `assert_prompt_references_workflow_skill` (preamble-scoped). Holdout expansion remains recurrence-gated maintenance.
+
