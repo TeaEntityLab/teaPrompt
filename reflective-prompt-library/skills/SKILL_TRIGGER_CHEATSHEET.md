@@ -20,6 +20,11 @@ Routing fairness note:
 - At Strictness L1–L2, defer `context_load: high` skills unless risk or explicit demand requires them; list deferred skills in route trace.
 - When a task uses external content, tool outputs, entity-like records, or side-effectful actions, apply `04-agent/runtime-trust-boundary.md` as a supporting lens with the selected skill.
 
+
+Boundary quick cues (ROUTE-002 holdout):
+- **Plan-only (no code)** → `reflective-spec-plan` — tickets, rollout plans, or acceptance criteria with explicit no-code context.
+- **Plain review (non-production)** → `reflective-review` — diff/PR review for readability or regressions when production risk is out of scope.
+
 ## `reflective-dispatch`
 
 Trigger cues:
