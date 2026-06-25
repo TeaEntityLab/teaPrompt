@@ -86,6 +86,21 @@ def test_ci_paraphrase_totals_match_route_minimums(summary_text: str):
     )
     assert expected_total in summary_text
 
+
+def test_holdout_tracking_paragraph_matches_fixture_minimums(summary_text: str):
+    section = _section_between(
+        summary_text, "### Holdout Tracking", "## Phase 2 Status (post-Round 68 maintenance)"
+    )
+    assert f"{ROUTE_002_MIN_PHRASES} ROUTE-002 phrases" in section
+    assert (
+        f"{ROUTE_003_MIN_ADVERSARIAL_GROUPS} ROUTE-003 adversarial groups / "
+        f"{ROUTE_003_MIN_PHRASES} phrases"
+    ) in section
+    assert "approved_spec_plan_not_implement_trap" in section
+    assert "dispatch_meta_skill_trap" in section
+    assert "100 phrases" not in section
+
+
 def test_route_fixture_gate_mentions_cheatsheet_parity_tests(summary_text: str):
     section = _section_between(
         summary_text,

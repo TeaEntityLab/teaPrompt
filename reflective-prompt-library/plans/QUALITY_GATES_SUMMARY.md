@@ -304,7 +304,7 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ### Holdout Tracking
 
-ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 groups / 100 phrases; post-panel maintenance added ROUTING_CONTRACT **R11** (approved-spec delivery) with ROUTE-003 `implement_not_plan_trap` at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
+ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 holdout groups; post-Round 68 maintenance added ROUTING_CONTRACT **R11** boundaries (101 ROUTE-002 phrases, 14 ROUTE-003 adversarial groups / 35 phrases including `implement_not_plan_trap`, `approved_spec_plan_not_implement_trap`, and `dispatch_meta_skill_trap`) at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
 ## Phase 2 Status (post-Round 68 maintenance)
 
