@@ -1166,4 +1166,4 @@ User directive: continue Socratic panel for as many rounds as feasible.
 
 **Sealed 2026-06-25** after **Round 65** (options A–CF). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook.
 
-_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R10)._
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R11)._

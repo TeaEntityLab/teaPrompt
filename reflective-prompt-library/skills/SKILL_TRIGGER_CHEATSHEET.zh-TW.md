@@ -72,6 +72,14 @@ L1 快速路徑：
 
 ## `reflective-implement`
 
+觸發提示：
+
+- 「在 repo 實作這個變更。」
+- 「在 repository 實作已核准 spec。」
+- 「implement 已核准 spec in the repository。」
+- 「用驗收標準與測試重構或除錯。」
+- 「交付最小安全修補並附驗證。」
+
 何時用：
 
 - 要實作、除錯、重構並驗證

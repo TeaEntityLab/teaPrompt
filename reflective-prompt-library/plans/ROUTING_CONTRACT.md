@@ -98,7 +98,7 @@ This contract applies to:
   route to `reflective-implement`, not `reflective-spec-plan`, even when the word `spec` appears.
 - Plan-only variants (tickets, rollout, or acceptance criteria with explicit no-code context)
   still route to `reflective-spec-plan`.
-- Add ROUTE-003 `implement_not_plan_trap` holdout phrases before tuning this boundary.
+- Add ROUTE-003 `implement_not_plan_trap` holdout phrases (including mixed zh-TW + English approved-spec delivery) before tuning this boundary.
 
 
 ## Router Output Contract

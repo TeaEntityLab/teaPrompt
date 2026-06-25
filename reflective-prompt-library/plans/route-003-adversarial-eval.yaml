@@ -108,6 +108,8 @@ adversarial_sets:
     phrases:
       - ship the code fix for the off-by-one bug
       - implement the approved spec in the repository
+      - 在 repository 實作已核准 spec
+      - implement 已核准 spec in the repository
 
   - name: research_not_brief_trap
     expected_workflow: reflective-research

@@ -361,7 +361,18 @@ class ParaphraseRouter:
             "implement approved spec",
             "code the approved spec",
             "land the approved spec",
+            "implement 已核准 spec in the repository",
+            "在 repository 實作已核准 spec",
         ]
+        implement_delivery_verbs = (
+            "implement", "code", "land", "實作", "落地",
+        )
+        approved_spec_markers = (
+            "approved spec",
+            "已核准 spec",
+            "已核准的 spec",
+            "已核准規格",
+        )
         repository_delivery_context = [
             "repository", "repo", "codebase", "in the repo", "to production code",
         ]
@@ -370,8 +381,8 @@ class ParaphraseRouter:
             and (
                 any(signal in text_lower for signal in implement_approved_spec_signals)
                 or (
-                    "implement" in text_lower
-                    and "approved spec" in text_lower
+                    any(verb in text_lower for verb in implement_delivery_verbs)
+                    and any(marker in text_lower for marker in approved_spec_markers)
                     and any(ctx in text_lower for ctx in repository_delivery_context)
                 )
             )

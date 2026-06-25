@@ -80,9 +80,13 @@ def test_implement_approved_spec_not_plan_boundary():
     router = ParaphraseRouter()
     probes = [
         ("implement the approved spec in the repository", "reflective-implement"),
+        ("在 repository 實作已核准 spec", "reflective-implement"),
+        ("implement 已核准 spec in the repository", "reflective-implement"),
+        ("落地已核准規格到 codebase", "reflective-implement"),
         ("ship the code fix for the off-by-one bug", "reflective-implement"),
         ("write tickets from the approved spec without implementing", "reflective-spec-plan"),
         ("plan the approved spec without repo changes", "reflective-spec-plan"),
+        ("plan 已核准 spec without repo changes", "reflective-spec-plan"),
     ]
     for text, expected in probes:
         workflow, _, _, _ = router.route(text)

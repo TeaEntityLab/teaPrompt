@@ -323,7 +323,7 @@ Paper-only API or architecture comparisons without repository changes route to `
 
 Routing boundary: when intent is to **implement or land an approved spec in the repository**, route to `reflective-implement` — not `reflective-spec-plan`, even when `spec` appears in the phrase.
 
-**Operational test:** ROUTE-003 `implement_not_plan_trap` — "implement the approved spec in the repository" routes to implement; "plan the approved spec without repo changes" routes to spec-plan.
+**Operational test:** ROUTE-003 `implement_not_plan_trap` — "implement the approved spec in the repository" and "在 repository 實作已核准 spec" route to implement; "plan the approved spec without repo changes" routes to spec-plan.
 
 ---
 
