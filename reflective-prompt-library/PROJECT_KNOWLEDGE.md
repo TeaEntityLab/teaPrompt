@@ -73,6 +73,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 ## Decision Index
 
 - 2026-06-25 Round 85 panel — composable prompt Primary workflow surface preamble guards (`test_*_prompts_eval_harness.py`) + Supporting-lens exemption → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
+- 2026-06-25 Round 89 panel — `00-core` Human Review required/exempt set parity (`CORE_HUMAN_REVIEW_REQUIRED` / `CORE_HUMAN_REVIEW_EXEMPT`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 88 panel — `00-core` Human Review preamble guards on risk-bearing prompts + `test_core_prompts_eval_harness.py` → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 87 panel — Human Review helper DRY + GLOSSARY playbook step repair → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 86 panel — composable Human Review preamble guards + `reflective-risk` routing alignment → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

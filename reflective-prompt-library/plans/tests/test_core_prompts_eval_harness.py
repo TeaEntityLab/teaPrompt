@@ -9,7 +9,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
+from prompt_eval_helpers import (  # noqa: E402
+    assert_human_review_preamble,
+    has_human_review_preamble,
+    prompts_with_human_review,
+)
 
 CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -23,6 +27,20 @@ REQUIRED_HEADINGS = (
 )
 
 CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
+CORE_HUMAN_REVIEW_REQUIRED = frozenset({
+    "core-full.md",
+    "core-minimal.md",
+    "core-short.md",
+    "custom-instruction-en.md",
+    "custom-instruction-zh.md",
+    "important-task-full.md",
+})
+CORE_HUMAN_REVIEW_EXEMPT = frozenset({
+    "daily-minimal.md",
+    "global-controller.md",
+    "master-prompt.md",
+})
+
 CORE_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CORE_PROMPTS)
 
 
@@ -76,3 +94,24 @@ def test_core_prompts_have_primary_workflow_surfaces_line():
 def test_core_prompt_has_human_review_section(prompt_path: Path):
     """Risk-bearing 00-core prompts declare Human Review escalation outside zh-TW templates."""
     assert_human_review_preamble(prompt_path)
+
+
+def test_core_human_review_required_set_matches_detection():
+    """Frozen required set must match prompts that declare ## Human Review in preambles."""
+    detected = {p.name for p in CORE_PROMPTS_WITH_HUMAN_REVIEW}
+    assert detected == CORE_HUMAN_REVIEW_REQUIRED
+
+
+def test_core_human_review_exempt_prompts_have_no_preamble_section():
+    """L1 opener prompts keep Human Review cues in fenced templates only."""
+    for name in CORE_HUMAN_REVIEW_EXEMPT:
+        assert not has_human_review_preamble(CORE_DIR / name), (
+            f"{name} should not declare ## Human Review in preamble (exempt opener)"
+        )
+
+
+def test_core_human_review_sets_partition_core_prompts():
+    """Required + exempt sets must cover all 00-core prompts without overlap."""
+    all_names = {p.name for p in CORE_PROMPTS}
+    assert CORE_HUMAN_REVIEW_REQUIRED | CORE_HUMAN_REVIEW_EXEMPT == all_names
+    assert not CORE_HUMAN_REVIEW_REQUIRED & CORE_HUMAN_REVIEW_EXEMPT

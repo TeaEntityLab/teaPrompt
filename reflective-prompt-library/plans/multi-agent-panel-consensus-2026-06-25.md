@@ -2498,3 +2498,44 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 88** (options FP–FS). Full prompt library now has Human Review preamble guards on thinking lenses (R81), composable prompts (R86), and risk-bearing `00-core` prompts (R88). Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 89 — `00-core` Human Review required/exempt set parity (2026-06-25)
+
+**Options FT–FW** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 89 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FT | Frozen `CORE_HUMAN_REVIEW_REQUIRED` / `CORE_HUMAN_REVIEW_EXEMPT` sets + pytest parity in `test_core_prompts_eval_harness.py` | **Agree** |
+| FU | GLOSSARY playbook step 21 + governance sync | **Agree** |
+| FV | ROUTE holdout expansion | **Defer** |
+| FW | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 89 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FT | Core HR set parity | **Agree** | codify 6 required + 3 exempt opener prompts |
+| FU | Playbook + docs | **Agree** | step 21; panel round 89 sync |
+| FV | Holdout expansion | **Defer** | maintenance |
+| FW | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 89)
+
+- `plans/tests/test_core_prompts_eval_harness.py`: `CORE_HUMAN_REVIEW_REQUIRED`, `CORE_HUMAN_REVIEW_EXEMPT`, partition + detection parity tests
+- `GLOSSARY.md`: playbook Rounds 1–89; step 21 for core HR required/exempt sets
+- `QUALITY_GATES_SUMMARY.md`: core HR set parity note; panel Rounds 1–89; 560+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 89 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 89 sync
+
+## Verification (Round 89)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 89** (options FT–FW). `00-core` Human Review coverage is now explicit via frozen required/exempt sets; full library HR contract parity closed (thinking R81, composable R86, core R88–R89). Holdout expansion remains recurrence-gated maintenance.
