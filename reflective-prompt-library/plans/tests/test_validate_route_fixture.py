@@ -66,12 +66,16 @@ ROUND_51_BOUNDARY_PROBES = (
 )
 
 # ROUTE-002 holdout phrases that should appear in EN/zh-TW cheatsheets (anti-drift).
+DESIGN_COMPARISON_HOLDOUT_PROBE = (
+    "compare API designs on paper without touching the repository",
+)
+
 BOUNDARY_CHEATSHEET_CUES = tuple(text for text, _ in ROUND_51_BOUNDARY_PROBES) + (
     "write tickets and acceptance criteria without touching the repo",
     "check the diff for readability not production deploy",
     "審查 README 清晰度不是安全風險",
     "把規格寫出來但不要改程式",
-)
+) + DESIGN_COMPARISON_HOLDOUT_PROBE
 
 
 def test_round_51_boundary_probes():
@@ -95,6 +99,10 @@ IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES = (
     "write tickets from the approved spec without implementing",
     "plan the approved spec without repo changes",
     "plan 已核准 spec without repo changes",
+)
+
+DISPATCH_META_SKILL_TRAP_PROBES = (
+    "which reflective workflow skill fits a routing-only mixed intent",
 )
 
 ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
@@ -221,4 +229,18 @@ def test_approved_spec_plan_not_implement_trap_covers_probes():
     fixture_phrases = _approved_spec_plan_not_implement_trap_phrases()
     missing = [p for p in IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES if p not in fixture_phrases]
     assert not missing, f"approved_spec_plan_not_implement_trap missing probes: {missing}"
+
+def _dispatch_meta_skill_trap_phrases() -> set[str]:
+    config = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    for group in config["adversarial_sets"]:
+        if group["name"] == "dispatch_meta_skill_trap":
+            return set(group.get("phrases", []))
+    raise AssertionError("missing ROUTE-003 dispatch_meta_skill_trap group")
+
+
+def test_dispatch_meta_skill_trap_covers_probes():
+    """Anti-drift: ROUTE-003 dispatch-meta probes live in dedicated trap group."""
+    fixture_phrases = _dispatch_meta_skill_trap_phrases()
+    missing = [p for p in DISPATCH_META_SKILL_TRAP_PROBES if p not in fixture_phrases]
+    assert not missing, f"dispatch_meta_skill_trap missing probes: {missing}"
 

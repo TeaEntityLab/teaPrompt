@@ -126,7 +126,36 @@ def test_benchmark_section_covers_nine_workflows(summary_text: str):
     assert "8 different skills" not in section
     assert "24 golden tasks" in section or "24 benchmark tasks" in section
 
+
+
+def _pytest_item_count() -> int:
+    import subprocess
+
+    result = subprocess.run(
+        ["python3", "-m", "pytest", str(Path(__file__).parent), "--collect-only", "-q"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    for line in reversed(result.stdout.splitlines()):
+        if " tests collected" in line:
+            return int(line.split()[0])
+    raise AssertionError("could not determine pytest collection count")
+
+
 def test_key_metrics_benchmark_task_count_matches_fixture(summary_text: str):
     metrics = _section_between(summary_text, "## Key Metrics", "### Routing Consistency Tracking")
     assert f"| Benchmark tasks | {MIN_TASK_COUNT} |" in metrics
 
+def test_phase2_pytest_floor_matches_collection(summary_text: str):
+    """Anti-drift: Phase 2 Done bullet must not under-report collected pytest count."""
+    collected = _pytest_item_count()
+    match = re.search(r"(\d+)\+ pytest anti-drift suite in CI", summary_text)
+    assert match, "missing pytest floor in Phase 2 Done bullet"
+    documented = int(match.group(1))
+    assert documented <= collected, (
+        f"QUALITY_GATES documents {documented}+ pytest but {collected} collected"
+    )
+    assert documented >= collected - 20, (
+        f"QUALITY_GATES pytest floor {documented} is stale vs {collected} collected"
+    )
