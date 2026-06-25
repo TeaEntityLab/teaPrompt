@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-21T23:28:08.802356",
+  "generated_at": "2026-06-25T14:45:30.377580",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -46,6 +46,7 @@
             "ROUTING_CONTRACT.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
             "skill-workflow-research-synthesis.md",
+            "multi-agent-panel-consensus-2026-06-25.md",
             "prompt-library-build-plan.md",
             "runtime-governance-learning-plan-2026-06-11.md",
             "project-adjustment-reflection-2026-06-11.md"
@@ -641,7 +642,15 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../README.md#strictness-before-skills",
+          "../GLOSSARY.md",
+          "../PROJECT_KNOWLEDGE.md",
+          "../skills/SKILL_TRIGGER_CHEATSHEET.md",
+          "../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
+          "../plans/ROUTING_CONTRACT.md",
+          "../plans/multi-agent-panel-consensus-2026-06-25.md"
+        ]
       },
       "structure": [
         {
@@ -651,6 +660,10 @@
         {
           "level": 2,
           "text": "Mission"
+        },
+        {
+          "level": 2,
+          "text": "Harness Policy (Nine Skills)"
         },
         {
           "level": 2,
@@ -677,8 +690,8 @@
           "text": "Review Standard"
         }
       ],
-      "line_count": 153,
-      "char_count": 4170
+      "line_count": 174,
+      "char_count": 5350
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -1317,7 +1330,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
+        ]
       },
       "structure": [
         {
@@ -1362,7 +1377,31 @@
         },
         {
           "level": 3,
+          "text": "7.1 Benchmark Fixture Validator ✅"
+        },
+        {
+          "level": 3,
+          "text": "7.2 Skill Examples Validator ✅"
+        },
+        {
+          "level": 3,
+          "text": "7.3 ROUTE-003 Adversarial Eval ✅"
+        },
+        {
+          "level": 3,
+          "text": "7.4 Route Fixture Gate ✅"
+        },
+        {
+          "level": 3,
           "text": "7. Small Benchmark Set ✅"
+        },
+        {
+          "level": 1,
+          "text": "CI: fixture shape only"
+        },
+        {
+          "level": 1,
+          "text": "Manual (optional, LLM-cost): compare baseline vs skill-assisted runs"
         },
         {
           "level": 2,
@@ -1386,7 +1425,19 @@
         },
         {
           "level": 2,
-          "text": "Next Steps (Phase 2)"
+          "text": "Phase 2 Status (post-Round 68 maintenance)"
+        },
+        {
+          "level": 3,
+          "text": "Done ✅"
+        },
+        {
+          "level": 3,
+          "text": "Ongoing maintenance (not blockers)"
+        },
+        {
+          "level": 3,
+          "text": "Recurrence-gated (deferred by panel consensus)"
         },
         {
           "level": 2,
@@ -1421,8 +1472,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 303,
-      "char_count": 12363
+      "line_count": 387,
+      "char_count": 16796
     },
     {
       "path": "reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md",
@@ -1567,6 +1618,30 @@
           "text": "R6: Cost Governance"
         },
         {
+          "level": 3,
+          "text": "R7: Context Load Deferral"
+        },
+        {
+          "level": 3,
+          "text": "R8: Holdout-before-tune"
+        },
+        {
+          "level": 3,
+          "text": "R10: Brief-before-plan"
+        },
+        {
+          "level": 3,
+          "text": "R9: Production-negation and plan-only boundaries"
+        },
+        {
+          "level": 3,
+          "text": "R11: Approved-spec delivery"
+        },
+        {
+          "level": 3,
+          "text": "R12: Boundary quick-cue summary"
+        },
+        {
           "level": 2,
           "text": "Router Output Contract"
         },
@@ -1583,8 +1658,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 103,
-      "char_count": 3153
+      "line_count": 153,
+      "char_count": 6099
     },
     {
       "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
@@ -1693,6 +1768,792 @@
       ],
       "line_count": 74,
       "char_count": 4562
+    },
+    {
+      "path": "reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "multi-agent-panel-consensus-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../GLOSSARY.md",
+          "external-adoption-case-studies-2026-06-20.md",
+          "../GLOSSARY.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Multi-Agent Panel Consensus — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Options Under Debate"
+        },
+        {
+          "level": 2,
+          "text": "Deliberation Loop"
+        },
+        {
+          "level": 3,
+          "text": "Round 1 — Socratic challenge"
+        },
+        {
+          "level": 3,
+          "text": "Round 2 — Proposed compromises"
+        },
+        {
+          "level": 3,
+          "text": "Round 3 — Agreement check"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (this session)"
+        },
+        {
+          "level": 2,
+          "text": "Stop-Doing List"
+        },
+        {
+          "level": 2,
+          "text": "Round 4 — Close all residual options (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "H: Default `reflective-minimality` inside `reflective-implement`?"
+        },
+        {
+          "level": 3,
+          "text": "I: ROUTE-002 holdout as merge gate?"
+        },
+        {
+          "level": 3,
+          "text": "J: Localized cues beyond TW cheatsheet?"
+        },
+        {
+          "level": 3,
+          "text": "Round 4 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 4)"
+        },
+        {
+          "level": 2,
+          "text": "Residual Open Questions"
+        },
+        {
+          "level": 2,
+          "text": "Round 5 — Post-close follow-ups (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "K: Expand ROUTE-002 with fresh holdout cases?"
+        },
+        {
+          "level": 3,
+          "text": "L: Operationalize `context_load` at dispatch time?"
+        },
+        {
+          "level": 3,
+          "text": "M: Run 23-task benchmark eval in CI?"
+        },
+        {
+          "level": 3,
+          "text": "N: QUALITY_GATES still lists \"Add CI/CD\"?"
+        },
+        {
+          "level": 3,
+          "text": "Round 5 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 5)"
+        },
+        {
+          "level": 2,
+          "text": "Round 6 — Close deferred follow-ups (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "O: Knowie-style undocumented-decisions git check?"
+        },
+        {
+          "level": 3,
+          "text": "P: More ROUTE-002 holdout before router tuning?"
+        },
+        {
+          "level": 3,
+          "text": "Q: Full `SKILL.md` localization?"
+        },
+        {
+          "level": 3,
+          "text": "R: Benchmark eval in CI?"
+        },
+        {
+          "level": 3,
+          "text": "Round 6 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 6)"
+        },
+        {
+          "level": 2,
+          "text": "Residual Open Questions (after Round 6)"
+        },
+        {
+          "level": 2,
+          "text": "Round 7 — Post-close alignment (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "T: AGENTS.md harness-policy alignment?"
+        },
+        {
+          "level": 3,
+          "text": "U: Sync stale QUALITY_GATES / holdout metrics?"
+        },
+        {
+          "level": 3,
+          "text": "V: zh-TW ROUTE-002 holdout without full SKILL i18n?"
+        },
+        {
+          "level": 3,
+          "text": "W: Re-open SKILL.zh-TW.md companions or tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 7 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 7)"
+        },
+        {
+          "level": 2,
+          "text": "Rounds 8–20 — Milestone close and maintenance layer (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 8 — X: Close Governance layer maturity milestone?"
+        },
+        {
+          "level": 3,
+          "text": "Round 9 — Y: Close Project judgment layer milestone?"
+        },
+        {
+          "level": 3,
+          "text": "Round 10 — Z: Mixed-language ROUTE-002 holdout?"
+        },
+        {
+          "level": 3,
+          "text": "Round 11 — AA: CI gate for skill examples?"
+        },
+        {
+          "level": 3,
+          "text": "Round 12 — AB: CONTRIBUTING harness policy?"
+        },
+        {
+          "level": 3,
+          "text": "Round 13 — AC: Root AGENTS harness pointer?"
+        },
+        {
+          "level": 3,
+          "text": "Round 14 — AD: Manual benchmark documentation?"
+        },
+        {
+          "level": 3,
+          "text": "Round 15 — AE: ROUTE-003 adversarial eval?"
+        },
+        {
+          "level": 3,
+          "text": "Round 16 — AF: Canonical `context_load` enforcement?"
+        },
+        {
+          "level": 3,
+          "text": "Round 17 — AG: README governance pointer?"
+        },
+        {
+          "level": 3,
+          "text": "Round 18 — AH: SKILL_INSTALLATION harness line?"
+        },
+        {
+          "level": 3,
+          "text": "Round 19 — AI: Glossary maintenance playbook?"
+        },
+        {
+          "level": 3,
+          "text": "Round 20 — AJ: Final panel close?"
+        },
+        {
+          "level": 3,
+          "text": "Rounds 8–20 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Rounds 8–20)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Rounds 8–20)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 21 — Post-Round-20 audit (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AK: Open implementation blockers from Rounds 8–20?"
+        },
+        {
+          "level": 3,
+          "text": "AL: Reclassify “Superseded Open Questions”?"
+        },
+        {
+          "level": 3,
+          "text": "AM: QUALITY_GATES Phase 2 drift?"
+        },
+        {
+          "level": 3,
+          "text": "AN: Decision Index + final seal?"
+        },
+        {
+          "level": 3,
+          "text": "Round 21 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Recurrence-Gated Backlog (not panel blockers)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Round 22 — Route fixture hygiene gate (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AO: Deterministic `validate_route_fixture.py` in CI?"
+        },
+        {
+          "level": 2,
+          "text": "Round 23 — Brief vs dispatch holdout (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AP: Add `brief_vs_dispatch_holdout` to ROUTE-002?"
+        },
+        {
+          "level": 2,
+          "text": "Round 24 — Adversarial dispatch/retro traps (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AQ: Expand ROUTE-003 with dispatch-vs-brief and retro-lessons groups?"
+        },
+        {
+          "level": 2,
+          "text": "Round 25 — Router boundary repair (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AR: Boundary rules for skill-selection dispatch and retro lessons?"
+        },
+        {
+          "level": 2,
+          "text": "Round 26 — Pytest for fixture gate (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AS: `test_validate_route_fixture.py`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 27 — ROUTING_CONTRACT R8 (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AT: Codify holdout-before-tune as normative requirement?"
+        },
+        {
+          "level": 2,
+          "text": "Round 28 — METHODOLOGY_MAP panel pointer (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AU: Discoverability for panel record?"
+        },
+        {
+          "level": 2,
+          "text": "Round 29 — zh-TW README pointer (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AV: TW adopters need panel link?"
+        },
+        {
+          "level": 2,
+          "text": "Round 30 — Metrics sync + interim seal (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AW: Update QUALITY_GATES metrics and GLOSSARY playbook?"
+        },
+        {
+          "level": 2,
+          "text": "Round 31 — Tenth skill reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AX: Re-open tenth core skill?"
+        },
+        {
+          "level": 2,
+          "text": "Round 32 — In-repo swarm reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AY: Add multi-agent orchestrator?"
+        },
+        {
+          "level": 2,
+          "text": "Round 33 — Default minimality reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "AZ: Force `reflective-minimality` on every implement?"
+        },
+        {
+          "level": 2,
+          "text": "Round 34 — CONTRIBUTING routing maintenance (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BA: Operator checklist in CONTRIBUTING?"
+        },
+        {
+          "level": 2,
+          "text": "Round 35 — Final extended seal (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BB: Close extended panel at Round 35?"
+        },
+        {
+          "level": 3,
+          "text": "Rounds 22–35 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Rounds 22–35)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Rounds 22–35)"
+        },
+        {
+          "level": 2,
+          "text": "Round 36 — Plan-only holdout (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BC: Add `plan_only_no_code_holdout` to ROUTE-002?"
+        },
+        {
+          "level": 2,
+          "text": "Round 37 — Plain review vs risk (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BD: Add `plain_review_not_risk_holdout`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 38 — Router boundary repair (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BE: Plan-only and production-negation rules in `route_paraphrase_eval.py`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 39 — Adversarial implement/research traps (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BF: ROUTE-003 `implement_not_plan_trap` and `research_not_brief_trap`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 40 — ROUTING_CONTRACT R9 (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BG: Codify production-negation and plan-only as normative?"
+        },
+        {
+          "level": 2,
+          "text": "Round 41 — Fixture minimum bump (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BH: Raise `validate_route_fixture.py` minimums?"
+        },
+        {
+          "level": 2,
+          "text": "Round 42 — zh-TW plan/review holdouts (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BI: TW fairness groups for plan-only and plain review?"
+        },
+        {
+          "level": 2,
+          "text": "Round 43 — GLOSSARY boundary terms (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BJ: Operational definitions for plan-only and plain review?"
+        },
+        {
+          "level": 2,
+          "text": "Round 44 — Metrics sync (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BK: QUALITY_GATES_SUMMARY metrics?"
+        },
+        {
+          "level": 2,
+          "text": "Round 45 — Decision Index (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BL: PROJECT_KNOWLEDGE entry for Rounds 36–50?"
+        },
+        {
+          "level": 2,
+          "text": "Round 46 — Cheatsheet cues (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BM: SKILL_TRIGGER_CHEATSHEET EN/TW boundary lines?"
+        },
+        {
+          "level": 2,
+          "text": "Round 47 — Tenth skill reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BN: Re-open tenth core skill?"
+        },
+        {
+          "level": 2,
+          "text": "Round 48 — Benchmark CI reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BO: LLM benchmark in CI?"
+        },
+        {
+          "level": 2,
+          "text": "Round 49 — CONTRIBUTING R8–R9 pointer (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BP: Routing maintenance checklist extension?"
+        },
+        {
+          "level": 2,
+          "text": "Round 50 — Interim seal (2026-06-25)"
+        },
+        {
+          "level": 2,
+          "text": "Round 51 — Brief-before-plan holdout (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BR: Add `brief_before_plan_holdout` to ROUTE-002?"
+        },
+        {
+          "level": 2,
+          "text": "Round 52 — Dependency removal holdout (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BS: Add `dependency_removal_holdout`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 53 — Design comparison plan-only (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BT: Add `design_comparison_plan_holdout`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 54 — README plain review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BU: Add `readme_plain_review_holdout`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 55 — Router boundary repair (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BV: Boundaries for brief/plan/review/dispatch meta?"
+        },
+        {
+          "level": 2,
+          "text": "Round 56 — Adversarial dispatch/brief traps (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BW: ROUTE-003 dispatch-meta + brief-not-plan?"
+        },
+        {
+          "level": 2,
+          "text": "Round 57 — ROUTING_CONTRACT R10 (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BX: Codify brief-before-plan norm?"
+        },
+        {
+          "level": 2,
+          "text": "Round 58 — Fixture minimums (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BY: Bump validate_route_fixture minimums?"
+        },
+        {
+          "level": 2,
+          "text": "Round 59 — Anti-drift pytest (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "BZ: `test_round_51_boundary_probes`?"
+        },
+        {
+          "level": 2,
+          "text": "Round 60 — GLOSSARY terms (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CA: Brief-before-plan + design comparison entries?"
+        },
+        {
+          "level": 2,
+          "text": "Round 61 — Metrics sync (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CB: QUALITY_GATES ROUTE-002/003 counts?"
+        },
+        {
+          "level": 2,
+          "text": "Round 62 — Decision Index (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CC: PROJECT_KNOWLEDGE Round 51–65 entry?"
+        },
+        {
+          "level": 2,
+          "text": "Round 63 — Tenth skill reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CD: Re-open tenth core skill?"
+        },
+        {
+          "level": 2,
+          "text": "Round 64 — Default minimality reaffirm (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CE: Force minimality on every implement?"
+        },
+        {
+          "level": 2,
+          "text": "Round 65 — Final extended seal (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CF: Close panel at Round 65?"
+        },
+        {
+          "level": 3,
+          "text": "Rounds 51–65 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Rounds 51–65)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Rounds 51–65)"
+        },
+        {
+          "level": 2,
+          "text": "Round 66 — Post quick-cue maintenance (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CG: ROUTING_CONTRACT R12 — boundary quick-cue summary?"
+        },
+        {
+          "level": 3,
+          "text": "CH: Probe-linked anti-drift for quick-cue block?"
+        },
+        {
+          "level": 3,
+          "text": "CI: Expand quick cues (minimality, dispatch-meta, design comparison)?"
+        },
+        {
+          "level": 3,
+          "text": "CJ: GLOSSARY + maintenance playbook step?"
+        },
+        {
+          "level": 3,
+          "text": "CK: QUALITY_GATES 7.4 mentions cheatsheet parity tests?"
+        },
+        {
+          "level": 3,
+          "text": "CL: Re-litigate backlog (tenth skill, default minimality, benchmark CI, full i18n)?"
+        },
+        {
+          "level": 3,
+          "text": "Round 66 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 66)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 66)"
+        },
+        {
+          "level": 2,
+          "text": "Round 67 — Contributor doc parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CM: CONTRIBUTING Routing Maintenance sync (R8–R12)?"
+        },
+        {
+          "level": 3,
+          "text": "CN: ROUTING_CONTRACT Related Artifacts expansion?"
+        },
+        {
+          "level": 3,
+          "text": "CO: `test_routing_contract.py` anti-drift?"
+        },
+        {
+          "level": 3,
+          "text": "CP: Expand ROUTE holdout or tune router?"
+        },
+        {
+          "level": 3,
+          "text": "CQ: GLOSSARY playbook step 7 (CONTRIBUTING alignment)?"
+        },
+        {
+          "level": 3,
+          "text": "CR: Re-litigate backlog?"
+        },
+        {
+          "level": 3,
+          "text": "Round 67 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 67)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 67)"
+        },
+        {
+          "level": 2,
+          "text": "Round 68 — Full-doc drift sync (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "CS: Sync library README panel record?"
+        },
+        {
+          "level": 3,
+          "text": "CT: Fix METHODOLOGY_MAP.zh-TW skill count?"
+        },
+        {
+          "level": 3,
+          "text": "CU: Root README North Star + governance pointers?"
+        },
+        {
+          "level": 3,
+          "text": "CV: Refresh QUALITY_GATES Phase 2 section?"
+        },
+        {
+          "level": 3,
+          "text": "CW: `test_readme_governance.py`?"
+        },
+        {
+          "level": 3,
+          "text": "CX: Expand ROUTE holdout / tune router?"
+        },
+        {
+          "level": 3,
+          "text": "CY: GLOSSARY playbook `make all` + round bump?"
+        },
+        {
+          "level": 3,
+          "text": "CZ: Final seal?"
+        },
+        {
+          "level": 3,
+          "text": "Round 68 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 68)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 68)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        }
+      ],
+      "line_count": 1477,
+      "char_count": 55970
     },
     {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
@@ -2855,7 +3716,7 @@
         }
       ],
       "line_count": 78,
-      "char_count": 4051
+      "char_count": 4056
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -2918,8 +3779,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 158,
-      "char_count": 5367
+      "line_count": 230,
+      "char_count": 9463
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -2935,7 +3796,8 @@
         "markdown_links": [
           "SKILL_TRIGGER_CHEATSHEET.md",
           "SKILL_TRIGGER_CHEATSHEET.md",
-          "../LANGUAGE_POLICY.md"
+          "../LANGUAGE_POLICY.md",
+          "../GLOSSARY.md"
         ]
       },
       "structure": [
@@ -2984,8 +3846,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 142,
-      "char_count": 2495
+      "line_count": 217,
+      "char_count": 5814
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -3395,14 +4257,21 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "low"
       },
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": []
       },
-      "prompt_sources": [],
+      "prompt_sources": [
+        "00-core/core-short.md",
+        "04-agent/agent-selection.md",
+        "04-agent/runtime-trust-boundary.md",
+        "01-thinking/socratic-reviewer.md",
+        "02-engineering/task-start.md"
+      ],
       "structure": [
         {
           "level": 1,
@@ -3410,7 +4279,7 @@
         },
         {
           "level": 2,
-          "text": "Core Rule"
+          "text": "Purpose"
         },
         {
           "level": 2,
@@ -3426,15 +4295,27 @@
         },
         {
           "level": 2,
+          "text": "L1 Fast Path"
+        },
+        {
+          "level": 2,
+          "text": "Context Load Deferral"
+        },
+        {
+          "level": 2,
           "text": "Output"
         },
         {
           "level": 2,
-          "text": "Guardrails"
+          "text": "Operating Rules"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
         }
       ],
-      "line_count": 115,
-      "char_count": 5356
+      "line_count": 146,
+      "char_count": 6713
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -3450,14 +4331,20 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "low"
       },
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": []
       },
-      "prompt_sources": [],
+      "prompt_sources": [
+        "01-thinking/counterargument.md",
+        "02-engineering/code-reviewer.md",
+        "04-agent/runtime-trust-boundary.md",
+        "02-engineering/implementation-agent.md"
+      ],
       "structure": [
         {
           "level": 1,
@@ -3465,15 +4352,11 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
           "text": "Module Contract"
-        },
-        {
-          "level": 3,
-          "text": "Trigger"
-        },
-        {
-          "level": 3,
-          "text": "Methods"
         },
         {
           "level": 3,
@@ -3502,10 +4385,14 @@
         {
           "level": 2,
           "text": "Complexity-Only Review Format"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
         }
       ],
-      "line_count": 120,
-      "char_count": 5572
+      "line_count": 132,
+      "char_count": 5784
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -3521,7 +4408,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "low"
       },
       "dependencies": {
         "ref_file": [],
@@ -3617,8 +4505,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 104,
-      "char_count": 3364
+      "line_count": 107,
+      "char_count": 3415
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -3634,7 +4522,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "true"
+        "external_io": "true",
+        "context_load": "high"
       },
       "dependencies": {
         "ref_file": [],
@@ -3688,6 +4577,10 @@
         },
         {
           "level": 2,
+          "text": "Optional Method: Multi-Voice Panel"
+        },
+        {
+          "level": 2,
           "text": "Output"
         },
         {
@@ -3731,8 +4624,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 149,
-      "char_count": 6531
+      "line_count": 165,
+      "char_count": 7453
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -3748,7 +4641,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "medium"
       },
       "dependencies": {
         "ref_file": [],
@@ -3833,8 +4727,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 139,
-      "char_count": 4957
+      "line_count": 142,
+      "char_count": 5011
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -3850,7 +4744,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "medium"
       },
       "dependencies": {
         "ref_file": [],
@@ -3880,6 +4775,10 @@
         {
           "level": 2,
           "text": "Before Editing"
+        },
+        {
+          "level": 2,
+          "text": "Minimality Signal Scan"
         },
         {
           "level": 2,
@@ -3975,15 +4874,15 @@
         },
         {
           "level": 2,
-          "text": "Hard Stop"
+          "text": "Operating Rules"
         },
         {
           "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 156,
-      "char_count": 6005
+      "line_count": 175,
+      "char_count": 7026
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -3999,7 +4898,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "medium"
       },
       "dependencies": {
         "ref_file": [],
@@ -4159,8 +5059,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 137,
-      "char_count": 4491
+      "line_count": 140,
+      "char_count": 4545
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -4176,7 +5076,8 @@
         "license": "MIT",
         "risk_level": "high",
         "human_review_required": "true",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "medium"
       },
       "dependencies": {
         "ref_file": [],
@@ -4287,8 +5188,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 110,
-      "char_count": 3086
+      "line_count": 113,
+      "char_count": 3140
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -4304,7 +5205,8 @@
         "license": "MIT",
         "risk_level": "low",
         "human_review_required": "false",
-        "external_io": "false"
+        "external_io": "false",
+        "context_load": "high"
       },
       "dependencies": {
         "ref_file": [],
@@ -4372,16 +5274,16 @@
         },
         {
           "level": 2,
-          "text": "Guardrails"
+          "text": "Operating Rules"
         },
         {
           "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 230,
-      "char_count": 10292
+      "line_count": 233,
+      "char_count": 10349
     }
   ],
-  "total_files": 79
+  "total_files": 80
 }
