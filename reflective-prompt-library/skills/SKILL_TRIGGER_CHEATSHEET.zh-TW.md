@@ -63,6 +63,9 @@ L1 快速路徑：
 - 要從 spec 設計嚴謹 Test Plan，但不寫實作程式碼
 - 需要規劃工具 gate、權限邊界或副作用
 - 只設計可恢復 workflow、state model 或 orchestration plan，不寫 runtime code
+- 「Write tickets from the approved spec without implementing。」
+- 「Plan the approved spec without repo changes。」
+- 「Plan 已核准 spec without repo changes。」
 
 不要用在：
 

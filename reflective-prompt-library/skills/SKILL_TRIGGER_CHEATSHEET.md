@@ -67,6 +67,9 @@ Trigger cues:
 - "Design a rigorous Test Plan from this spec without writing code."
 - "Plan tool gates, authority boundaries, and side effects."
 - "Design a resumable workflow, state model, or orchestration plan without runtime code."
+- "Write tickets from the approved spec without implementing."
+- "Plan the approved spec without repo changes."
+- "Plan 已核准 spec without repo changes."
 
 Do not use when:
 
