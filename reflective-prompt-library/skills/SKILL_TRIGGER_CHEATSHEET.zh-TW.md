@@ -36,6 +36,8 @@ Skill 契約語言：
 - 任務包含外部資料、工具結果或行動權限問題
 
 - 「Which skill handles session handoff in this library？」
+- 「Which workflow skill should run for this library task？」
+- 「Which reflective workflow skill covers handoff retro？」
 
 不要用在：
 
@@ -54,6 +56,8 @@ L1 快速路徑：
 
 - 「Narrow scope and assumptions before writing the PRD。」
 - 「Stakeholder alignment before choosing architecture。」
+- 「Align stakeholders on goals before writing tickets。」
+- 「釐清目標再拆工單。」
 
 不要用在：
 
@@ -76,6 +80,8 @@ L1 快速路徑：
 - 「Compare two API designs on paper only no implementation。」
 - 「比較兩個 API 設計方案但不要寫 code。」
 - 「把規格寫出來但不要改程式。」
+- 「Design a handoff workflow specification without runtime code。」
+- 「把這個 idea break down into tickets with acceptance criteria。」
 
 不要用在：
 
@@ -94,6 +100,8 @@ L1 快速路徑：
 - 「落地已核准規格到 codebase。」
 - 「用驗收標準與測試重構或除錯。」
 - 「交付最小安全修補並附驗證。」
+- 「Patch the trivial null check in code。」
+- 「幫我 patch 這個 trivial null check and run tests。」
 
 何時用：
 
@@ -136,6 +144,7 @@ Minimality 訊號掃描（skill 內建）：
 - 「Review the README for clarity not security。」
 - 「Check the diff for readability not production deploy。」
 - 「審查 README 清晰度不是安全風險。」
+- 「Inspect this patch for regressions before merge。」
 
 不要用在：
 
@@ -150,6 +159,8 @@ Minimality 訊號掃描（skill 內建）：
 - 要比較官方文件、第三方鏡像與社群分析
 - 要研究目前 workflow framework 或 orchestration pattern
 - 多視角戰略重思（使用 skill 內 Optional Method: Multi-Voice Panel）
+- 「Six-lens debate on whether to merge these skills。」
+- 「Compare official docs for both libraries before deciding。」
 
 不要用在：
 
@@ -162,6 +173,7 @@ Minimality 訊號掃描（skill 內建）：
 
 - auth / privacy / money / deletion / prod 等高風險
 - 工具行動可能受到不可信或不完整資料影響
+- 「Verify production auth change will not expose secrets。」
 
 不要用在：
 
@@ -173,6 +185,7 @@ Minimality 訊號掃描（skill 內建）：
 何時用：
 
 - 要交接、復盤、沉澱規則
+- 「Lessons learned retro after this sprint。」
 
 不要用在：
 

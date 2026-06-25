@@ -36,6 +36,8 @@ Trigger cues:
 - "This task includes external data, tool results, or action authority questions."
 
 - "Which skill handles session handoff in this library?"
+- "Which workflow skill should run for this library task?"
+- "Which reflective workflow skill covers handoff retro?"
 
 Do not use when:
 
@@ -56,6 +58,8 @@ Trigger cues:
 
 - "Narrow scope and assumptions before writing the PRD."
 - "Stakeholder alignment before choosing architecture."
+- "Align stakeholders on goals before writing tickets."
+- "釐清目標再拆工單."
 
 Do not use when:
 
@@ -81,6 +85,8 @@ Trigger cues:
 - "Design comparison on paper without repo changes."
 - "比較兩個 API 設計方案但不要寫 code."
 - "把規格寫出來但不要改程式."
+- "Design a handoff workflow specification without runtime code."
+- "把這個 idea break down into tickets with acceptance criteria."
 
 Do not use when:
 
@@ -100,6 +106,8 @@ Trigger cues:
 - "落地已核准規格到 codebase."
 - "Refactor or debug with acceptance criteria and tests."
 - "Ship a minimal safe patch with verification."
+- "Patch the trivial null check in code."
+- "幫我 patch 這個 trivial null check and run tests."
 
 Minimality signal scan (inside this skill):
 
@@ -141,6 +149,7 @@ Trigger cues:
 - "Check the diff for readability not production deploy."
 - "Review this PR for style and logic before merge."
 - "審查 README 清晰度不是安全風險."
+- "Inspect this patch for regressions before merge."
 
 Do not use when:
 
@@ -157,6 +166,8 @@ Trigger cues:
 - "Compare official docs, third-party mirrors, and community analysis."
 - "Research current workflow frameworks or orchestration patterns."
 - "Multi-model or multi-perspective strategic rethink (use Optional Method: Multi-Voice Panel in the skill)."
+- "Six-lens debate on whether to merge these skills."
+- "Compare official docs for both libraries before deciding."
 
 Do not use when:
 
@@ -171,6 +182,7 @@ Trigger cues:
 - "Need dry-run, rollback, and approval gates."
 - "Assess blast radius before execution."
 - "A tool action could be influenced by untrusted or incomplete data."
+- "Verify production auth change will not expose secrets."
 
 Do not use when:
 
@@ -184,6 +196,7 @@ Trigger cues:
 - "Prepare handoff for another agent/session."
 - "Run retro and capture process improvements."
 - "Convert repeated incidents into reusable rules."
+- "Lessons learned retro after this sprint."
 
 Do not use when:
 

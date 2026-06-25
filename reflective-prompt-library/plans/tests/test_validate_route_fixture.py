@@ -97,6 +97,36 @@ IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES = (
     "plan 已核准 spec without repo changes",
 )
 
+ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
+    ("design a handoff workflow specification without runtime code", "reflective-spec-plan"),
+    ("patch the trivial null check in code", "reflective-implement"),
+    ("verify production auth change will not expose secrets", "reflective-risk"),
+    ("inspect this patch for regressions before merge", "reflective-review"),
+    ("six-lens debate on whether to merge these skills", "reflective-research"),
+    ("幫我 patch 這個 trivial null check and run tests", "reflective-implement"),
+    ("把這個 idea break down into tickets with acceptance criteria", "reflective-spec-plan"),
+    ("which workflow skill should run for this library task", "reflective-dispatch"),
+    ("lessons learned retro after this sprint", "reflective-handoff-retro"),
+    ("compare official docs for both libraries before deciding", "reflective-research"),
+    ("which reflective workflow skill covers handoff retro", "reflective-dispatch"),
+    ("align stakeholders on goals before writing tickets", "reflective-brief"),
+    ("釐清目標再拆工單", "reflective-brief"),
+)
+
+# One canonical phrase per ROUTE-003 adversarial group (excluding implement_not_plan_trap / R11).
+ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES = tuple(text for text, _ in ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES)
+
+
+def test_route_003_adversarial_boundary_probes():
+    """Anti-drift: ROUTE-003 adversarial boundaries route as fixture expects."""
+    from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
+
+    router = ParaphraseRouter()
+    for text, expected in ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES:
+        workflow, _, _, _ = router.route(text)
+        assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
+
+
 
 def _implement_not_plan_trap_phrases() -> set[str]:
     config = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
