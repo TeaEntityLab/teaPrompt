@@ -306,7 +306,7 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 groups / 100 phrases; post-panel maintenance added ROUTING_CONTRACT **R11** (approved-spec delivery) with ROUTE-003 `implement_not_plan_trap` at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
-## Phase 2 Status (Round 21 audit)
+## Phase 2 Status (post-Round 68 maintenance)
 
 ### Done ✅
 
@@ -314,6 +314,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 2. **ROUTE-001/002/003 in CI** — 128 + 100 + 31 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
+5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py` (170+ pytest in CI)
 
 ### Ongoing maintenance (not blockers)
 
@@ -374,7 +375,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 65 plus R11 approved-spec delivery maintenance; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 68 (R11 approved-spec delivery + R12 boundary quick-cue maintenance); treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration
@@ -383,4 +384,4 @@ Phase 1 quality-gate tooling and documentation are **complete**. Routing consist
 - ✅ Benchmark fixture gate plus optional manual benchmark runs
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from the Rounds 8–20 panel work (Round 21 audit). The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.
+The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from panel Rounds 1–68; work is recurrence-gated maintenance per playbook. The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.

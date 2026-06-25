@@ -30,10 +30,10 @@ def test_round_boundary_terms_present(glossary_text: str):
         assert heading in glossary_text, f"missing glossary section: {heading}"
 
 
-def test_maintenance_playbook_references_round_67(glossary_text: str):
+def test_maintenance_playbook_references_round_68(glossary_text: str):
     playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
-    assert "Rounds 1–67" in playbook or "Rounds 1-67" in playbook
-    assert "Rounds 1–66" not in playbook and "Rounds 1-66" not in playbook
+    assert "Rounds 1–68" in playbook or "Rounds 1-68" in playbook
+    assert "Rounds 1–67" not in playbook and "Rounds 1-67" not in playbook
 
 
 def test_approved_spec_delivery_separated_from_playbook(glossary_text: str):

@@ -1355,9 +1355,123 @@ User directive: **do anything you want** — reopen panel for post-Round-66 oper
 
 - `make all`: pytest + ROUTE-001/002/003 100%
 
+## Round 68 — Full-doc drift sync (2026-06-25)
+
+User directive: **review all docs** — reopen six-lens panel for cross-surface drift after Round 67.
+
+### CS: Sync library README panel record?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — "Rounds 1–20" stale; update to Rounds 1–68, options A–CZ |
+| Codex | **Agree** — `make all` for verified claims, not `make validate` alone |
+| Gemini | **Agree** — entry README is governance discoverability surface |
+| Composer | **Agree** — anti-drift via `test_readme_governance.py` |
+| Sakana | **Agree** — panel record is historical truth, must track seal round |
+| GLM | **Agree** — minimal one-line fix |
+
+**Consensus:** **Agree** — `reflective-prompt-library/README.md` Governance Panel Record.
+
+### CT: Fix METHODOLOGY_MAP.zh-TW skill count?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — "8 個生命週期技能" contradicts frozen nine-skill policy |
+
+**Consensus:** **Agree** — update to nine frozen workflow skills.
+
+### CU: Root README North Star + governance pointers?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — root is fork entry; link CONTRIBUTING + panel + playbook |
+| Codex | **Agree** — brief North Star, link to library README for depth |
+| Gemini | **Agree** — README.zh-TW parity (北極星 + 治理) |
+| Composer | **Agree** — do not duplicate full skill tables at root |
+| Sakana | **Reject** duplicating panel methodology essay at root |
+| GLM | **Agree** — pointers only |
+
+**Consensus:** **Agree** — root `README.md` + `README.zh-TW.md` North Star and governance sections.
+
+### CV: Refresh QUALITY_GATES Phase 2 section?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — "Round 21 audit" header stale after R12 + Round 67 |
+| Codex | **Agree** — add doc anti-drift pytest bullet; restore if corrupted |
+| Gemini | **Agree** — conclusion should say maintenance mode, not blockers |
+| Composer | **Agree** — `test_quality_gates_summary.py` guards Phase 2 header |
+| Sakana | **Reject** re-litigating Phase 1 completeness |
+| GLM | **Agree** — metrics unchanged; narrative only |
+
+**Consensus:** **Agree** — Phase 2 → post-Round 68 maintenance; anti-drift test mention.
+
+### CW: `test_readme_governance.py`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — guard README round refs, root governance, zh-TW skill count |
+
+**Consensus:** **Agree** — new pytest module.
+
+### CX: Expand ROUTE holdout / tune router?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 remain 100% |
+
+**Consensus:** **Reject** — no router changes.
+
+### CY: GLOSSARY playbook `make all` + round bump?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — operational test line must match playbook step 1 |
+
+**Consensus:** **Agree** — Rounds 1–68; `make all` in operational test.
+
+### CZ: Final seal?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — reseal at Round 68 |
+
+**Consensus:** **Agree close** — panel resealed Round 68.
+
+### Round 68 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| CS | Library README panel sync | **Agree** | Rounds 1–68, `make all` |
+| CT | zh-TW methodology map | **Agree** | Nine skills |
+| CU | Root README governance | **Agree** | EN + zh-TW North Star |
+| CV | QUALITY_GATES Phase 2 | **Agree** | Maintenance narrative |
+| CW | README governance pytest | **Agree** | `test_readme_governance.py` |
+| CX | Holdout/router expansion | **Reject** | — |
+| CY | Playbook make all | **Agree** | `GLOSSARY.md` |
+| CZ | Final seal | **Agree** | Panel resealed Round 68 |
+
+**All roles agree.**
+
+## Implemented Changes (Round 68)
+
+- `reflective-prompt-library/README.md`: Governance Panel Record Rounds 1–68
+- `METHODOLOGY_MAP.zh-TW.md`: nine frozen workflow skills
+- `README.md`, `README.zh-TW.md`: North Star + governance pointers
+- `QUALITY_GATES_SUMMARY.md`: Phase 2 post-Round 68 maintenance narrative
+- `GLOSSARY.md`: playbook Rounds 1–68; operational test `make all`
+- `06-repo/AGENTS.md`: `make all` for verified claims
+- `plans/tests/test_readme_governance.py`: README + zh-TW anti-drift
+- `test_glossary_structure.py`, `test_quality_gates_summary.py`: Round 68 guards
+- `PROJECT_KNOWLEDGE.md`: Decision Index entry
+
+## Verification (Round 68)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
 ## Panel status (updated)
 
-**Sealed 2026-06-25** after **Round 67** (options A–CR). Contributor/operator doc parity complete. Future work remains recurrence-gated maintenance per playbook.
+**Sealed 2026-06-25** after **Round 68** (options A–CZ). Full-doc drift sync complete. Future work remains recurrence-gated maintenance per playbook.
 
 _Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R12)._
 

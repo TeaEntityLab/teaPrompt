@@ -41,7 +41,7 @@ operating its own agent runtime. See [README.md](README.md#north-star).
 > does not silently expand. Completed milestones are retired from this section;
 > their outcomes live in the Decision Index.
 
-**Ongoing (post Round 67 panel):** maintain ROUTE-001/002/003 evals, governance validators,
+**Ongoing (post Round 68 panel):** maintain ROUTE-001/002/003 evals, governance validators,
 and holdout expansion before router tuning — see [GLOSSARY.md](GLOSSARY.md) Governance
 Maintenance Playbook. Post-panel maintenance (e.g. ROUTING_CONTRACT R11 approved-spec delivery)
 follows the same holdout-before-tune rule. No open implementation blockers from Rounds 8–20;

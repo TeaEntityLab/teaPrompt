@@ -29,7 +29,7 @@ runtime. For non-trivial routing, governance, or skill-selection work:
    `reflective-research` (single host, persona lenses); judgment record at
    [plans/multi-agent-panel-consensus-2026-06-25.md](../plans/multi-agent-panel-consensus-2026-06-25.md).
 
-Run `make validate` before claiming routing or governance changes are verified.
+Run `make all` before claiming routing or governance changes are verified.
 
 ---
 

@@ -12,6 +12,20 @@ TeaPrompt 是一套給 AI 協作工程使用的反思型 Prompt 與 Workflow Lib
 Doing the right thing > doing things right.
 ```
 
+
+
+## 北極星（North Star）
+
+TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，記錄**決策理由**，並以**證據**驗證結果 —— 透過可組合的 prompt 層與九個 workflow skills 作為自然語言 harness policy，**不**自建 agent runtime。
+
+完整庫文件：[reflective-prompt-library/README.zh-TW.md](reflective-prompt-library/README.zh-TW.md)。
+
+## 治理與貢獻
+
+- **貢獻指南：** [CONTRIBUTING.md](CONTRIBUTING.md)（英文）— 品質閘門、路由維護、`make all`
+- **多視角共識紀錄：** [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md)（Rounds 1–68）
+- **維護手冊：** [GLOSSARY.md](reflective-prompt-library/GLOSSARY.md) — Governance Maintenance Playbook
+
 此 repository 包含：
 
 - `reflective-prompt-library/`：可重用的提示詞文件（思考、規劃、實作、審查、研究、風險、交接）。

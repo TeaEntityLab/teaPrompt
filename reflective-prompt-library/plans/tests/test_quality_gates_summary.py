@@ -94,3 +94,8 @@ def test_route_fixture_gate_mentions_cheatsheet_parity_tests(summary_text: str):
     assert "test_cheatsheet_boundary_quick_cues.py" in section
     assert "test_cheatsheet_" in section and "_parity.py" in section
 
+def test_phase2_status_references_post_round_68_maintenance(summary_text: str):
+    assert "## Phase 2 Status (post-Round 68 maintenance)" in summary_text
+    assert "Round 21 audit" not in summary_text
+    assert "test_readme_governance.py" in summary_text
+
