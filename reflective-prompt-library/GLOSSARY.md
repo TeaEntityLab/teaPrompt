@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–82). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–83). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -355,3 +355,4 @@ Ongoing upkeep after panel close (Rounds 1–82). Not agent instructions — ope
 12. When adding or editing `01-thinking/` lenses, keep `## Human Review` in the preamble (routes to `reflective-risk`) and run `test_thinking_prompts_eval_harness.py`.
 13. When editing workflow skill Escalation bullets, cite only frozen `reflective-*` skills; run `test_skill_module_contract.py` escalation route guard.
 14. When editing `01-thinking/` Purpose preambles, keep `Primary workflow surfaces` aligned exactly with `SKILL_THINKING_SOURCES` via `test_thinking_lens_primary_surfaces_match_consumer_graph`; put escalations and adjacent workflow notes in Scope or Human Review, not on the primary line.
+15. When editing composable prompts (`02-engineering`–`06-repo`), keep `Primary workflow surface(s)` aligned with `*_SKILL_LINKS` in `test_prompt_cross_links.py`; use Supporting lens for cross-cutting lenses like `runtime-trust-boundary.md`; put escalate/pair notes in Scope.

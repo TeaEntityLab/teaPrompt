@@ -4,11 +4,12 @@ Use this at the start of a new task before implementation.
 
 ## Purpose
 
-Establish a task brief before implementation. Primary workflow surface: `reflective-brief`; escalate to `reflective-spec-plan` when the brief is ready for ticket slicing. Pairs with `01-thinking/why-what-how-done.md` and `01-thinking/falsifiability.md`.
+Establish a task brief before implementation. Primary workflow surface: `reflective-brief`. Pairs with `01-thinking/why-what-how-done.md` and `01-thinking/falsifiability.md`.
 
 ## Scope
 
 - In scope: goal, assumptions, scope boundaries, acceptance criteria, falsifiability, minimal plan before coding.
+- Escalate: route to `reflective-spec-plan` when the brief is ready for ticket slicing.
 - Out of scope: repository edits (`reflective-implement`), formal blast-radius gating (`reflective-risk`).
 
 ## Acceptance Criteria

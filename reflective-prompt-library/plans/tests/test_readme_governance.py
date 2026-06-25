@@ -10,8 +10,8 @@ METHODOLOGY_MAP_ZH = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.zh-T
 METHODOLOGY_MAP_EN = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.md"
 SKILL_MAP = Path(__file__).parent.parent.parent / "skills" / "skill-map.md"
 
-CURRENT_PANEL_ROUND = "82"
-CURRENT_PANEL_OPTIONS = "A–ET"
+CURRENT_PANEL_ROUND = "83"
+CURRENT_PANEL_OPTIONS = "A–EU"
 
 
 @pytest.fixture(scope="module")

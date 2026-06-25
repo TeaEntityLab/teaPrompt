@@ -4,11 +4,12 @@ Use this to avoid specs that look good but are awkward in practice.
 
 ## Purpose
 
-Derive usage-driven spec fixes before implementation. Primary workflow surface: `reflective-spec-plan`; pair with `reflective-brief` when goals are still fuzzy. Pairs with `01-thinking/socratic-reviewer.md` to clarify the real user problem.
+Derive usage-driven spec fixes before implementation. Primary workflow surface: `reflective-spec-plan`. Pairs with `01-thinking/socratic-reviewer.md` to clarify the real user problem.
 
 ## Scope
 
 - In scope: personas, scenarios, I/O examples, confusion points, spec revisions from usage narrative.
+- Adjacent: pair with `reflective-brief` when goals are still fuzzy.
 - Out of scope: code changes (`reflective-implement`).
 
 ## Acceptance Criteria

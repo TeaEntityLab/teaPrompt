@@ -4,11 +4,12 @@ Use this when something fails.
 
 ## Purpose
 
-Structured LOCAL_FEEDBACK loop for failures during implementation. Primary workflow surface: `reflective-implement`; escalate to `reflective-review` when the failure implicates spec or test adequacy. Pairs with `01-thinking/critical-thinking-check.md` for evidence and assumption audits.
+Structured LOCAL_FEEDBACK loop for failures during implementation. Primary workflow surface: `reflective-implement`. Pairs with `01-thinking/critical-thinking-check.md` for evidence and assumption audits.
 
 ## Scope
 
 - In scope: step, evidence, root cause, correction, verification, anti-regression rule.
+- Escalate: route to `reflective-review` when the failure implicates spec or test adequacy.
 - Out of scope: spec rewriting (`reflective-spec-plan`), formal blast-radius gating (`reflective-risk`).
 
 ## Acceptance Criteria

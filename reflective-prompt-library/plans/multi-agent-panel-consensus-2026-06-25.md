@@ -2239,3 +2239,46 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 82** (options EQ–ET). Thinking-lens Primary workflow surfaces now match the inverted skill graph exactly. Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 83 — Composable prompt Primary workflow surface parity (2026-06-25)
+
+**Options EU–EX** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 83 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EU | Strict `Primary workflow surface(s)` ↔ `*_SKILL_LINKS` parity for `02-engineering`–`06-repo` + engineering trim + pytest | **Agree** |
+| EV | Supporting-lens exemption for `runtime-trust-boundary.md` (no Primary line) | **Agree** |
+| EW | ROUTE holdout expansion | **Defer** |
+| EX | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 83 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EU | Composable primary-surface parity | **Agree** | `ENGINEERING_SKILL_LINKS` + category primary tests; trim engineering escalations to Scope |
+| EV | Supporting lens pattern | **Agree** | `_supporting_lens_skills` + `test_runtime_trust_boundary_supporting_lens_lists_skills` |
+| EW | Holdout expansion | **Defer** | maintenance |
+| EX | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 83)
+
+- `02-engineering/*.md`: Primary workflow surface trimmed (escalate/pair skills moved to Scope); five prompts updated
+- `plans/tests/test_prompt_cross_links.py`: `ENGINEERING_SKILL_LINKS`; `Primary workflow surfaces?` regex; primary parity tests for engineering/agent/context/domain/repo; supporting-lens guard for `runtime-trust-boundary.md`
+- `GLOSSARY.md`: playbook Rounds 1–83; step 15 for composable prompt primary-surface parity
+- `QUALITY_GATES_SUMMARY.md`: composable primary-surface parity note; panel Rounds 1–83; 470+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 83 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 83 sync
+
+## Verification (Round 83)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 83** (options EU–EX). Composable prompts (`02-engineering`–`06-repo`) Primary workflow surface lines now match `*_SKILL_LINKS` exactly; supporting-lens pattern documented for `runtime-trust-boundary.md`. Holdout expansion remains recurrence-gated maintenance.
+

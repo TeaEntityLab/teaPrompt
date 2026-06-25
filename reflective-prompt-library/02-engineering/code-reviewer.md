@@ -4,11 +4,12 @@ Use this to review a PR, diff, code sample, or AI-generated code against spec, a
 
 ## Purpose
 
-Review diffs against spec, tests, and risks. Primary workflow surface: `reflective-review`; pair with `reflective-minimality` for complexity-only findings and `01-thinking/critical-thinking-check.md` for claim audits.
+Review diffs against spec, tests, and risks. Primary workflow surface: `reflective-review`. Pairs with `01-thinking/critical-thinking-check.md` for claim audits.
 
 ## Scope
 
 - In scope: correctness, test integrity, architecture fit, spec traceability, required fixes.
+- Escalate: pair with `reflective-minimality` for complexity-only findings.
 - Out of scope: writing the spec (`reflective-spec-plan`), implementing fixes (`reflective-implement`).
 
 ## Acceptance Criteria

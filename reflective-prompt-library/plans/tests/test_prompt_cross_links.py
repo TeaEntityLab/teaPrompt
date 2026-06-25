@@ -28,6 +28,17 @@ ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
     "local-feedback.md": ("01-thinking/critical-thinking-check.md",),
 }
 
+ENGINEERING_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "code-reviewer.md": ("reflective-review",),
+    "implementation-agent.md": ("reflective-implement",),
+    "local-feedback.md": ("reflective-implement",),
+    "spec-writer.md": ("reflective-spec-plan",),
+    "task-slicer.md": ("reflective-spec-plan",),
+    "task-start.md": ("reflective-brief",),
+    "test-designer.md": ("reflective-spec-plan",),
+    "usage-first.md": ("reflective-spec-plan",),
+}
+
 SKILL_THINKING_SOURCES: dict[str, tuple[str, ...]] = {
     "reflective-brief": (
         "01-thinking/why-what-how-done.md",
@@ -244,8 +255,17 @@ def _preamble(path: Path) -> str:
 def _primary_workflow_surfaces_skills(preamble: str) -> tuple[str, ...]:
     """Skills named on the Purpose Primary workflow surfaces line only."""
     purpose = preamble.split("## Scope", 1)[0]
-    match = re.search(r"Primary workflow surfaces:(.*)", purpose, re.DOTALL)
+    match = re.search(r"Primary workflow surfaces?:(.*)", purpose, re.DOTALL)
     assert match, "missing Primary workflow surfaces line in Purpose preamble"
+    line = match.group(1).split("\n", 1)[0]
+    return tuple(sorted(set(re.findall(r"`(reflective-[a-z-]+)`", line))))
+
+
+def _supporting_lens_skills(preamble: str) -> tuple[str, ...]:
+    """Skills named on the Purpose Supporting lens line (no Primary workflow surface)."""
+    purpose = preamble.split("## Scope", 1)[0]
+    match = re.search(r"Supporting lens for(.*)", purpose, re.DOTALL)
+    assert match, "missing Supporting lens for line in Purpose preamble"
     line = match.group(1).split("\n", 1)[0]
     return tuple(sorted(set(re.findall(r"`(reflective-[a-z-]+)`", line))))
 
@@ -267,6 +287,21 @@ def test_engineering_prompt_links_thinking_lens(prompt_name: str, thinking_refs:
 
 def test_all_engineering_prompts_have_thinking_cross_link():
     assert set(ENGINEERING_THINKING_LINKS) == {p.name for p in ENGINEERING_PROMPTS}
+
+
+def test_all_engineering_prompts_have_skill_link():
+    assert set(ENGINEERING_SKILL_LINKS) == {p.name for p in ENGINEERING_PROMPTS}
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", ENGINEERING_SKILL_LINKS.items())
+def test_engineering_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(ENGINEERING_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surface {listed} != {skill_refs}"
+    )
 
 
 @pytest.mark.parametrize("skill_name,thinking_refs", SKILL_THINKING_SOURCES.items())
@@ -356,6 +391,31 @@ def test_agent_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[st
         assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
 
 
+@pytest.mark.parametrize(
+    "prompt_name,skill_refs",
+    [
+        (name, refs)
+        for name, refs in AGENT_SKILL_LINKS.items()
+        if name != "runtime-trust-boundary.md"
+    ],
+)
+def test_agent_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(AGENT_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surface {listed} != {skill_refs}"
+    )
+
+
+def test_runtime_trust_boundary_supporting_lens_lists_skills():
+    preamble = _preamble(AGENT_DIR / "runtime-trust-boundary.md")
+    listed = _supporting_lens_skills(preamble)
+    expected = AGENT_SKILL_LINKS["runtime-trust-boundary.md"]
+    assert listed == tuple(sorted(expected)), f"Supporting lens {listed} != {expected}"
+
+
 def test_thinking_lens_files_exist_for_agent_links():
     linked = {ref for refs in AGENT_THINKING_LINKS.values() for ref in refs}
     for ref in linked:
@@ -378,6 +438,17 @@ def test_context_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[
     preamble = _preamble(CONTEXT_DIR / prompt_name)
     for skill in skill_refs:
         assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", CONTEXT_SKILL_LINKS.items())
+def test_context_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(CONTEXT_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surface {listed} != {skill_refs}"
+    )
 
 
 def test_thinking_lens_files_exist_for_context_links():
@@ -404,6 +475,17 @@ def test_domain_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[s
         assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
 
 
+@pytest.mark.parametrize("prompt_name,skill_refs", DOMAIN_SKILL_LINKS.items())
+def test_domain_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(DOMAIN_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surface {listed} != {skill_refs}"
+    )
+
+
 def test_thinking_lens_files_exist_for_domain_links():
     linked = {ref for refs in DOMAIN_THINKING_LINKS.values() for ref in refs}
     for ref in linked:
@@ -426,6 +508,17 @@ def test_repo_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str
     preamble = _preamble(REPO_DIR / prompt_name)
     for skill in skill_refs:
         assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", REPO_SKILL_LINKS.items())
+def test_repo_prompt_primary_surfaces_match_skill_links(
+    prompt_name: str, skill_refs: tuple[str, ...]
+):
+    preamble = _preamble(REPO_DIR / prompt_name)
+    listed = _primary_workflow_surfaces_skills(preamble)
+    assert listed == tuple(sorted(skill_refs)), (
+        f"{prompt_name} Primary workflow surface {listed} != {skill_refs}"
+    )
 
 
 def test_thinking_lens_files_exist_for_repo_links():
