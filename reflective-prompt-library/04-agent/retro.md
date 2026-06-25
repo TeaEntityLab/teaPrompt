@@ -23,7 +23,7 @@ Name one proposed rule that would be rejected if the failure cannot recur.
 
 ## Human Review
 
-Escalate promotion candidates that would change agent operating rules to explicit human approval.
+Escalate to `reflective-risk` when promotion candidates would change agent operating rules.
 
 
 ```markdown

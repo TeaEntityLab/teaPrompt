@@ -2364,3 +2364,49 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 85** (options FC–FF). Composable prompts now have eval_harness preamble guards matching thinking-lens pattern; full library parity (graph + preamble) closed. Holdout expansion remains recurrence-gated maintenance.
 
+
+---
+
+## Round 86 — Composable Human Review preamble guards (2026-06-25)
+
+**Options FG–FJ** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 86 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FG | `## Human Review` preamble guards on composable prompts (`02-engineering`–`06-repo`) that declare the heading + route to `reflective-risk` | **Agree** |
+| FH | GLOSSARY playbook step 17 backfill (R85 preamble guards) + step 18 (composable Human Review guards) + governance sync | **Agree** |
+| FI | ROUTE holdout expansion | **Defer** |
+| FJ | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 86 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FG | Composable Human Review guards | **Agree** | parametrized tests via `prompt_eval_helpers.py`; align HR copy to `reflective-risk` |
+| FH | Playbook + docs | **Agree** | steps 17–18; panel round 86 sync |
+| FI | Holdout expansion | **Defer** | maintenance |
+| FJ | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 86)
+
+- `plans/tests/prompt_eval_helpers.py`: exact `## Human Review` heading detection (avoids `## Human Review Required` false positives)
+- `plans/tests/test_{engineering,context,agent,domain,repo}_prompts_eval_harness.py`: Human Review preamble guards on prompts that declare the section
+- Prompt copy aligned to `reflective-risk` in `memory-consolidation.md`, `retro.md`, `small-context.md`, `creative-template.md`, `cursor-rules.md`, `PROJECT_KNOWLEDGE.template.md`; contract `## Human Review` added to `AGENTS.md`
+- `GLOSSARY.md`: playbook Rounds 1–86; step 17 (R85 backfill) + step 18 (composable Human Review guards)
+- `QUALITY_GATES_SUMMARY.md`: Human Review guard note; panel Rounds 1–86; 550+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 86 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 86 sync
+
+## Verification (Round 86)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 86** (options FG–FJ). Composable prompts with `## Human Review` now have eval_harness preamble guards matching thinking-lens pattern (R81); full library contract parity closed (graph + primary surface + Human Review). Holdout expansion remains recurrence-gated maintenance.
+
+

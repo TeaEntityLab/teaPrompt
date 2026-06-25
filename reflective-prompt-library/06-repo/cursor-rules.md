@@ -20,7 +20,7 @@ State what test or diff review would reject the change as out of scope.
 
 ## Human Review
 
-Require human approval before editing credential handling, schema, billing, public API, or destructive operations.
+Escalate to `reflective-risk` before editing credential handling, schema, billing, public API, or destructive operations.
 
 ```markdown
 You are working inside an IDE. Prioritize small, safe, reviewable edits.

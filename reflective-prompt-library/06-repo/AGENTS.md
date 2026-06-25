@@ -18,6 +18,10 @@ Repository-level harness policy for reflective engineering agents. Primary workf
 
 Name one task that would fail if this harness policy were ignored at session start.
 
+## Human Review
+
+Escalate to `reflective-risk` for irreversible or high-blast-radius work; see **Human Review Required** below for category triggers.
+
 ## Mission
 
 This repository uses Reflective Engineering Agent Protocol.

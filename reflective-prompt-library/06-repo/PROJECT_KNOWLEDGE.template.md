@@ -20,7 +20,7 @@ State what evidence would retire a recorded principle as stale.
 
 ## Human Review
 
-Require human approval before promoting lessons into executable skills or overriding `AGENTS.md`.
+Escalate to `reflective-risk` before promoting lessons into executable skills or overriding `AGENTS.md`.
 
 
 # Project Knowledge — [Project Name]

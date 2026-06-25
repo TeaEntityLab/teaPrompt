@@ -23,7 +23,7 @@ State what would disprove a pattern's claimed recurrence.
 
 ## Human Review
 
-Require human approval before promoting executable knowledge (skills, hooks, runners).
+Escalate to `reflective-risk` before promoting executable knowledge (skills, hooks, runners).
 
 
 ```markdown

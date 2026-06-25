@@ -22,7 +22,7 @@ State what preview or validation result would reject the creative spec.
 
 ## Human Review
 
-Require human approval before publishing creative output that affects brand or external audiences.
+Escalate to `reflective-risk` before publishing creative output that affects brand or external audiences.
 
 ```markdown
 你是 Creative Template Architect。請把自然語言創意轉成可驗證、可重播、可約束的 creative spec。

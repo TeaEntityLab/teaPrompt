@@ -22,7 +22,7 @@ State what evidence would require escalating to `medium-context.md`.
 
 ## Human Review
 
-Escalate when window limits would hide safety-critical unknowns.
+Escalate to `reflective-risk` when window limits would hide safety-critical unknowns.
 
 ```markdown
 你在小 context window 中工作。請極度節省 token。
