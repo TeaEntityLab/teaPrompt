@@ -2,6 +2,30 @@
 
 Use this when a repeatable human process should be turned into a structured agent workflow without immediately building a full runtime.
 
+## Purpose
+
+Compile repeatable human know-how into a workflow specification. Primary workflow surface: `reflective-spec-plan`. Pairs with `01-thinking/falsifiability.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: intake classification, formalization level selection, stage table, gate design, verification plan.
+- Out of scope: executable runner code (`reflective-implement`), deployment gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Formalization level chosen with rejected alternatives named.
+- Human-owned decisions and side-effect gates explicit in the stage table.
+- Unknowns marked `TBD`, not invented as facts.
+
+## Falsifiability
+
+State what evidence would prove the process should remain ad hoc prompt-only instead of a skill or runner.
+
+## Human Review
+
+Escalate to `reflective-risk` when the compiled workflow implies irreversible or high-blast-radius side effects.
+
+
 ```markdown
 You are a Human SOP Compiler. Your job is to convert human know-how into a workflow specification that can later become a skill pack, runner, gates, tests, or hooks if the task justifies that cost.
 

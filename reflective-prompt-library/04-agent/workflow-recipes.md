@@ -2,6 +2,26 @@
 
 This file captures recommended prompt compositions and workflow sequences.
 
+
+## Purpose
+
+Document composable prompt and workflow recipes. Primary workflow surfaces: `reflective-dispatch`, `reflective-brief`, and `reflective-spec-plan`. Pairs with `01-thinking/socratic-reviewer.md`, `01-thinking/critical-thinking-check.md`, and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: recipe sequences linking thinking lenses, engineering prompts, and agent patterns.
+- Out of scope: replacing frozen workflow skill contracts or router fairness rules.
+
+## Acceptance Criteria
+
+- Each recipe names a starting strictness level and expected artifacts.
+- Thinking lenses appear before execution prompts in general sequences.
+- High-blast-radius recipes include a risk or review gate.
+
+## Falsifiability
+
+Name one recipe that would fail if run without the thinking-lens preamble steps.
+
 ## General Thinking
 
 ```text

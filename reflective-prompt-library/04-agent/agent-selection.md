@@ -2,6 +2,30 @@
 
 Use this to decide whether a task should use prompting, artifacts, coding agents, workflow engines, or a full agent system.
 
+## Purpose
+
+Choose the smallest sufficient execution layer for a task. Primary workflow surface: `reflective-dispatch`. Pairs with `01-thinking/socratic-reviewer.md` and `01-thinking/why-what-how-done.md`.
+
+## Scope
+
+- In scope: complexity, tooling, state, risk, cost, and repeatability comparison across layers.
+- Out of scope: implementation (`reflective-implement`), formal blast-radius gating (`reflective-risk`).
+
+## Acceptance Criteria
+
+- Each layer (prompt-only, artifact, agentic coding, workflow engine, full agent system) rated with rationale.
+- Recommended layer maps to a frozen workflow skill where applicable.
+- Failure cost and repeatability inform the recommendation.
+
+## Falsifiability
+
+State what observation would prove the recommended layer is over- or under-powered for the task.
+
+## Human Review
+
+Escalate to `reflective-risk` when the task implies irreversible side effects regardless of selected layer.
+
+
 ```markdown
 請判斷以下任務應該用 Prompting、文件 workflow、Agentic Coding、Workflow Engine，還是完整 Agent System。
 

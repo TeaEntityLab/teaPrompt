@@ -1704,3 +1704,63 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 72** (options DI–DK). Core-prompt contract pass complete; 03–05 Purpose sweep remains recurrence-gated.
 
+
+
+## Round 73 — Agent prompt contract review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DL: Standardize `04-agent/` prompt contracts + cross-links?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — agent layer was disconnected (50–64% eval_harness); contracts + skill mapping close the gap |
+| Codex | **Agree** — nine files bounded; falsifiable via `test_agent_prompts_eval_harness.py` + cross-link pytest |
+| Gemini | **Agree** — defer 03-context/05-domain; agent prompts are highest orchestration surface |
+| Composer | **Agree** — runtime-trust-boundary already cited in PROJECT_KNOWLEDGE; reciprocal links needed |
+| Sakana | **Agree** — no tenth skill; supporting lenses for existing nine |
+| GLM | **Agree** — English contracts outside zh-TW fences; Human Review sections where eval risk triggers |
+
+**Socratic Q:** Why 04-agent before 03-context?
+**Answer:** Agent prompts define orchestration, trust boundaries, and workflow selection — they bridge thinking lenses and frozen skills.
+
+**Consensus:** **Agree** — Purpose/Scope/Acceptance Criteria/Falsifiability on all nine `04-agent/` prompts; thinking + workflow cross-links; `test_agent_prompts_eval_harness.py`; extend `test_prompt_cross_links.py`.
+
+### DM: Expand to 03-context / 05-domain now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated after agent layer |
+
+### DN: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### Round 73 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DL | Agent prompt contracts + cross-links | **Agree** | 9 files + pytest anti-drift |
+| DM | 03-context / 05-domain Purpose sweep | **Reject** | backlog |
+| DN | Router/holdout/tenth skill | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 73)
+
+- `04-agent/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping; thinking lens links; Human Review where applicable
+- `plans/tests/test_agent_prompts_eval_harness.py`: structural + 80%+ score floor anti-drift
+- `plans/tests/test_prompt_cross_links.py`: agent ↔ thinking ↔ skill cross-links
+- `QUALITY_GATES_SUMMARY.md`: agent prompt test mention; pytest floor 290+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 73 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 73 sync
+
+## Verification (Round 73)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 73** (options DL–DN). Agent-prompt contract pass complete; 03-context / 05-domain Purpose sweep remains recurrence-gated.

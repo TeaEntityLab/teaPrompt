@@ -2,6 +2,30 @@
 
 Use this after a task completes. The goal is process improvement, not self-congratulation.
 
+## Purpose
+
+Extract reusable process improvements from a completed task. Primary workflow surface: `reflective-handoff-retro`. Pairs with `01-thinking/socratic-reviewer.md`.
+
+## Scope
+
+- In scope: what went well/wrong, weak gates, reusable rules, skill/script/test candidates.
+- Out of scope: active implementation (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Root causes separated from symptoms.
+- At least one reusable rule or anti-regression candidate.
+- One-off accidents not promoted to permanent bureaucracy without recurrence evidence.
+
+## Falsifiability
+
+Name one proposed rule that would be rejected if the failure cannot recur.
+
+## Human Review
+
+Escalate promotion candidates that would change agent operating rules to explicit human approval.
+
+
 ```markdown
 請做 Retrospective。目標是改進下次流程，而不是自我稱讚。
 

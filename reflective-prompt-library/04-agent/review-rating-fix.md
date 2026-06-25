@@ -2,6 +2,30 @@
 
 Use this as the small agentflow loop for improving an artifact.
 
+## Purpose
+
+Run a Review → Rating → Fix loop on an artifact. Primary workflow surface: `reflective-review`. Pairs with `01-thinking/critical-thinking-check.md` and `01-thinking/counterargument.md`.
+
+## Scope
+
+- In scope: rubric scoring, required fixes, residual risks, decision (approve / request changes / reject).
+- Out of scope: repository implementation (`reflective-implement`).
+
+## Acceptance Criteria
+
+- Each rubric dimension scored with evidence, not vibes.
+- Required fixes are concrete and testable.
+- Strongest counterargument stated before final decision.
+
+## Falsifiability
+
+Name one rating change that would flip the approve/reject decision.
+
+## Human Review
+
+Escalate to `reflective-risk` when fixes touch trust boundaries, sensitive data, or irreversible operations.
+
+
 ```markdown
 請執行 Review → Rating → Fix 建議流程。
 

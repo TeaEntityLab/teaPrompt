@@ -75,6 +75,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
 
+- 2026-06-25 Round 73 panel — standardize `04-agent/` prompt contracts (Purpose/Scope/Acceptance/Falsifiability) + thinking/workflow cross-links + `test_agent_prompts_eval_harness.py` → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 72 panel — standardize `00-core/` prompt contracts (Purpose/Scope/Acceptance/Falsifiability) + eval_harness anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 71 panel — thinking ↔ engineering cross-links (`01-thinking/` in all 8 engineering prompts; thinking Prompt Sources on implement/spec-plan/handoff-retro) + `test_prompt_cross_links.py` → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 70 panel — standardize `02-engineering/` prompt contracts (Purpose/Scope/Acceptance/Falsifiability) + eval_harness anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

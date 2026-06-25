@@ -2,6 +2,26 @@
 
 Use this when a task is too stateful or repeatable for prompt-only work and needs an explicit workflow engine.
 
+## Purpose
+
+Design a stateful, resumable workflow specification. Primary workflow surface: `reflective-spec-plan` (Workflow Design mode). Pairs with `01-thinking/falsifiability.md`.
+
+## Scope
+
+- In scope: state model, transitions, checkpoints, recovery, observability events.
+- Out of scope: writing orchestration runtime code (`reflective-implement`).
+
+## Acceptance Criteria
+
+- State fields, transition owners, and gate conditions documented.
+- Resume, cancel, and failure recovery paths named.
+- Persistence/replay guarantees marked unproven until implementation tests exist.
+
+## Falsifiability
+
+Name one failure mode the workflow cannot recover from under the proposed state model.
+
+
 ```markdown
 你是 Workflow Engine Architect。請把以下任務轉成可保存狀態、可恢復、可驗證、可審查的 workflow。
 
