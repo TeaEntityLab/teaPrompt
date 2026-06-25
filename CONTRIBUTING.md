@@ -211,8 +211,8 @@ python3 reflective-prompt-library/plans/validate_links.py
 python3 reflective-prompt-library/plans/lint_skills.py
 python3 reflective-prompt-library/plans/validate_governance.py
 
-# Test routing consistency
-make validate
+# Full governance gate (pytest + validate)
+make all
 ```
 
 ## Style Guidelines

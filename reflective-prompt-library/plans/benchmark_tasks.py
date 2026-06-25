@@ -2,11 +2,12 @@
 """
 Small Benchmark Set for TeaPrompt
 
-About 20 golden tasks to validate TeaPrompt skill effectiveness.
+24 golden tasks covering all nine frozen workflow skills.
 Compares baseline (no skill) vs skill-assisted performance.
 
 Manual execution only (Round 14 panel): CI runs validate_benchmark_fixture.py
-for shape checks; LLM-assisted runs stay optional local experiments.
+for shape checks (task count + 9/9 workflow coverage); LLM-assisted runs stay
+optional local experiments.
 
 Usage:
   python3 reflective-prompt-library/plans/benchmark_tasks.py
@@ -419,6 +420,8 @@ class BenchmarkSet:
         # Summary
         lines.append("📊 Summary")
         lines.append(f"Total tasks: {len(self.tasks)}")
+        workflow_count = len({task.expected_workflow for task in self.tasks})
+        lines.append(f"Workflow skills covered: {workflow_count}/9")
         
         # Count by difficulty
         difficulty_counts = {}

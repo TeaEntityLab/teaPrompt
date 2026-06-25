@@ -85,7 +85,10 @@ def main() -> int:
             print(f"  - {err}")
         return 1
 
-    print(f"\n✅ Benchmark fixture valid: {len(benchmark.tasks)} tasks")
+    print(
+        f"\n✅ Benchmark fixture valid: {len(benchmark.tasks)} tasks, "
+        f"{len(workflows)}/{len(VALID_WORKFLOWS)} workflow skills"
+    )
     print(f"💾 Wrote {output_file.relative_to(repo_root)}")
     return 0
 

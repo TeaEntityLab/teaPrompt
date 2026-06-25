@@ -38,3 +38,11 @@ def test_benchmark_minimum_matches_actual_count():
         "bump MIN_TASK_COUNT when adding golden tasks"
     )
 
+def test_benchmark_module_docstring_matches_fixture():
+    module_path = Path(__file__).parent.parent / "benchmark_tasks.py"
+    docstring = module_path.read_text(encoding="utf-8").split('"""', 2)[1]
+    assert str(MIN_TASK_COUNT) in docstring
+    assert "nine frozen workflow skills" in docstring
+    assert "About 20" not in docstring
+    assert "8 different skills" not in docstring
+
