@@ -73,20 +73,44 @@ def test_round_51_boundary_probes():
         workflow, _, _, _ = router.route(text)
         assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"
 
+IMPLEMENT_NOT_PLAN_IMPLEMENT_PROBES = (
+    "implement the approved spec in the repository",
+    "在 repository 實作已核准 spec",
+    "implement 已核准 spec in the repository",
+    "落地已核准規格到 codebase",
+    "ship the code fix for the off-by-one bug",
+)
+
+IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES = (
+    "write tickets from the approved spec without implementing",
+    "plan the approved spec without repo changes",
+    "plan 已核准 spec without repo changes",
+)
+
+
+def _implement_not_plan_trap_phrases() -> set[str]:
+    config = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    for group in config["adversarial_sets"]:
+        if group["name"] == "implement_not_plan_trap":
+            return set(group.get("phrases", []))
+    raise AssertionError("missing ROUTE-003 implement_not_plan_trap group")
+
+
+def test_implement_not_plan_trap_holdout_covers_router_probes():
+    """Anti-drift: ROUTE-003 holdout must include implement boundary probes."""
+    fixture_phrases = _implement_not_plan_trap_phrases()
+    missing = [p for p in IMPLEMENT_NOT_PLAN_IMPLEMENT_PROBES if p not in fixture_phrases]
+    assert not missing, f"implement_not_plan_trap missing implement probes: {missing}"
+
+
 def test_implement_approved_spec_not_plan_boundary():
     """Anti-drift: ROUTE-003 implement_not_plan_trap approved-spec delivery."""
     from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
 
     router = ParaphraseRouter()
     probes = [
-        ("implement the approved spec in the repository", "reflective-implement"),
-        ("在 repository 實作已核准 spec", "reflective-implement"),
-        ("implement 已核准 spec in the repository", "reflective-implement"),
-        ("落地已核准規格到 codebase", "reflective-implement"),
-        ("ship the code fix for the off-by-one bug", "reflective-implement"),
-        ("write tickets from the approved spec without implementing", "reflective-spec-plan"),
-        ("plan the approved spec without repo changes", "reflective-spec-plan"),
-        ("plan 已核准 spec without repo changes", "reflective-spec-plan"),
+        *((text, "reflective-implement") for text in IMPLEMENT_NOT_PLAN_IMPLEMENT_PROBES),
+        *((text, "reflective-spec-plan") for text in IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES),
     ]
     for text, expected in probes:
         workflow, _, _, _ = router.route(text)
