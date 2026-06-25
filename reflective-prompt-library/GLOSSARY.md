@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–68). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–79). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -350,4 +350,5 @@ Ongoing upkeep after panel close (Rounds 1–68). Not agent instructions — ope
 7. When holdout probe tuples change in `test_validate_route_fixture.py`, mirror cues in EN/zh-TW cheatsheets and run `test_cheatsheet_*_parity.py` (e.g. `test_cheatsheet_dispatch_meta_parity.py`).
 8. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.
 9. When adding benchmark golden tasks, keep `test_benchmark_covers_all_nine_workflows` green and bump `MIN_TASK_COUNT` in `validate_benchmark_fixture.py` if the floor rises.
+10. When changing thinking-lens ↔ skill cross-links, update `SKILL_THINKING_SOURCES` and consumer lists in `01-thinking/` Purpose preambles; run `test_prompt_cross_links.py` (including reciprocal `THINKING_LENS_SKILL_CONSUMERS`).
 

@@ -278,6 +278,25 @@ def test_thinking_lens_files_exist_for_skill_links():
         assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 
 
+def _invert_skill_thinking_sources() -> dict[str, tuple[str, ...]]:
+    consumers: dict[str, set[str]] = {}
+    for skill, lenses in SKILL_THINKING_SOURCES.items():
+        for lens in lenses:
+            consumers.setdefault(lens, set()).add(skill)
+    return {lens: tuple(sorted(skills)) for lens, skills in sorted(consumers.items())}
+
+
+THINKING_LENS_SKILL_CONSUMERS = _invert_skill_thinking_sources()
+
+
+@pytest.mark.parametrize("lens_ref,consumer_skills", THINKING_LENS_SKILL_CONSUMERS.items())
+def test_thinking_lens_preamble_lists_consumer_skills(lens_ref: str, consumer_skills: tuple[str, ...]):
+    """Reciprocal anti-drift: lenses name every workflow skill that cites them."""
+    preamble = _preamble(THINKING_DIR / Path(lens_ref).name)
+    for skill in consumer_skills:
+        assert skill in preamble, f"{lens_ref} preamble should reference consumer {skill}"
+
+
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
 def test_thinking_prompt_maps_to_workflow_skill(prompt_path: Path):
     preamble = _preamble(prompt_path)

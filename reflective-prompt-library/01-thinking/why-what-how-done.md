@@ -4,7 +4,7 @@ Use this as the core gate prompt before committing to a direction.
 
 ## Purpose
 
-Gate a task through Why / What / How / Done before choosing strictness or workflow depth. Primary workflow surfaces: `reflective-brief` then `reflective-dispatch` for orchestration level selection.
+Gate a task through Why / What / How / Done before choosing strictness or workflow depth. Primary workflow surfaces: `reflective-brief` then `reflective-dispatch` for orchestration level selection; `reflective-spec-plan` when framing becomes ticket or spec work.
 
 ## Scope
 

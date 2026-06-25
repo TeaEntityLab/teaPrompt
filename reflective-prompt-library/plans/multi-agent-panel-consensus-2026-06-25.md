@@ -2063,3 +2063,48 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 78** (options EA–ED). Nine-skill thinking-lens cross-link pass complete; Module Contract anti-drift closed for core skills. Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 79 — Bidirectional thinking-lens ↔ workflow skill cross-links (2026-06-25)
+
+**Options EE–EH** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 79 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| EE | Bidirectional thinking-lens ↔ workflow-skill links (`01-thinking/` Purpose lists consumer skills; pytest inverts `SKILL_THINKING_SOURCES`) | **Agree** |
+| EF | Escalation subsection anti-drift (`lint_skills` suggestion only today) | **Defer** |
+| EG | ROUTE holdout expansion | **Defer** |
+| EH | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 79 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| EE | Bidirectional cross-links | **Agree** | Purpose preambles + reciprocal pytest |
+| EF | Escalation anti-drift | **Defer** | maintenance |
+| EG | Holdout expansion | **Defer** | maintenance |
+| EH | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 79)
+
+- `01-thinking/socratic-reviewer.md`, `counterargument.md`, `critical-thinking-check.md`, `why-what-how-done.md`: Purpose preambles list primary consumer workflow skills
+- `plans/tests/test_prompt_cross_links.py`: `THINKING_LENS_SKILL_CONSUMERS` + `test_thinking_lens_preamble_lists_consumer_skills` reciprocal anti-drift
+- `GLOSSARY.md`: playbook Rounds 1–79; step 10 for reciprocal cross-links
+- `QUALITY_GATES_SUMMARY.md`: 440+ pytest floor; reciprocal cross-link note; panel Rounds 1–79
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 79 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 79 sync
+
+## Verification (Round 79)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 79** (options EE–EH). Bidirectional thinking-lens ↔ workflow skill cross-links complete; reciprocal pytest guards Purpose preambles. Holdout expansion and Escalation subsection anti-drift remain recurrence-gated maintenance.
+
+
+

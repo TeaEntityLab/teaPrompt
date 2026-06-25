@@ -72,9 +72,11 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
-- 2026-06-25 Round 78 panel — complete nine-skill thinking-lens cross-links + Module Contract anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
 > not duplicated here; this is a map, not an archive.
+
+- 2026-06-25 Round 79 panel — bidirectional thinking-lens ↔ workflow skill preamble cross-links + reciprocal pytest → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
+- 2026-06-25 Round 78 panel — complete nine-skill thinking-lens cross-links + Module Contract anti-drift → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 
 - 2026-06-25 Round 77 panel — governance pytest mirrors (`test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 76 panel — standardize `06-repo/` prompt contracts (Purpose/Scope/Acceptance/Falsifiability) + thinking/workflow cross-links + `test_repo_prompts_eval_harness.py` → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

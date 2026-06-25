@@ -4,7 +4,7 @@ Use this to review articles, strategies, product ideas, technical choices, or AI
 
 ## Purpose
 
-Audit claims, assumptions, and evidence quality before accepting a plan, article, or AI output. Primary workflow surface: `reflective-review`; pair with `reflective-research` when external sources are required.
+Audit claims, assumptions, and evidence quality before accepting a plan, article, or AI output. Primary workflow surfaces: `reflective-review` for diff/plan critique; `reflective-implement` for evidence before material commits; `reflective-risk` for high-blast-radius checks; pair with `reflective-research` when external sources are required.
 
 ## Scope
 

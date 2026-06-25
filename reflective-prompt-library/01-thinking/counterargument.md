@@ -4,7 +4,7 @@ Use this to prevent excessive optimism, overengineering, or AI flattery.
 
 ## Purpose
 
-Stress-test optimism, overengineering, and AI flattery before committing resources. Primary workflow surfaces: `reflective-review` and `reflective-minimality`; escalate to `reflective-risk` when trust-boundary or blast-radius signals appear.
+Stress-test optimism, overengineering, and AI flattery before committing resources. Primary workflow surfaces: `reflective-implement` for disputed implementation choices; `reflective-review` and `reflective-minimality` for critique and anti-bloat; escalate to `reflective-risk` when trust-boundary or blast-radius signals appear.
 
 ## Scope
 
