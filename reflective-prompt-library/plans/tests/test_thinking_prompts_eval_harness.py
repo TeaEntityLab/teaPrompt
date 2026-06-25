@@ -5,6 +5,9 @@ from pathlib import Path
 
 import pytest
 
+sys.path.insert(0, str(Path(__file__).parent))
+from prompt_eval_helpers import assert_human_review_preamble
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from eval_harness import EvalHarness  # noqa: E402
@@ -62,9 +65,5 @@ def test_thinking_prompts_have_primary_workflow_surfaces_line():
 @pytest.mark.parametrize("prompt_path", THINKING_PROMPTS, ids=lambda p: p.name)
 def test_thinking_prompt_has_human_review_section(prompt_path: Path):
     """All 01-thinking lenses declare Human Review escalation outside zh-TW templates."""
-    preamble = prompt_path.read_text(encoding="utf-8").split("```", 1)[0]
-    assert "## Human Review" in preamble, f"{prompt_path.name} missing Human Review preamble"
-    assert "reflective-risk" in preamble, (
-        f"{prompt_path.name} Human Review should route to reflective-risk"
-    )
+    assert_human_review_preamble(prompt_path)
 

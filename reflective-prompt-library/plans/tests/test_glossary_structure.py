@@ -30,10 +30,20 @@ def test_round_boundary_terms_present(glossary_text: str):
         assert heading in glossary_text, f"missing glossary section: {heading}"
 
 
-def test_maintenance_playbook_references_round_86(glossary_text: str):
+def test_maintenance_playbook_references_round_87(glossary_text: str):
     playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
-    assert "Rounds 1–86" in playbook
-    assert "Rounds 1–85" not in playbook and "Rounds 1-85" not in playbook
+    assert "Rounds 1–87" in playbook
+    assert "Rounds 1–86" not in playbook and "Rounds 1-86" not in playbook
+
+
+def test_maintenance_playbook_steps_on_separate_lines(glossary_text: str):
+    """Numbered playbook steps must not merge onto one line (Round 86 corruption guard)."""
+    playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
+    assert re.search(r"guards\.\d+\.", playbook) is None, (
+        "playbook steps merged without newline between numbers"
+    )
+    for step in ("17.", "18.", "19."):
+        assert step in playbook
 
 
 

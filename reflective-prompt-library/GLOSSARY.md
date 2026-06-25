@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–86). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–87). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -357,4 +357,6 @@ Ongoing upkeep after panel close (Rounds 1–86). Not agent instructions — ope
 14. When editing `01-thinking/` Purpose preambles, keep `Primary workflow surfaces` aligned exactly with `SKILL_THINKING_SOURCES` via `test_thinking_lens_primary_surfaces_match_consumer_graph`; put escalations and adjacent workflow notes in Scope or Human Review, not on the primary line.
 15. When editing composable prompts (`02-engineering`–`06-repo`), keep `Primary workflow surface(s)` aligned with `*_SKILL_LINKS` in `test_prompt_cross_links.py`; use Supporting lens for cross-cutting lenses like `runtime-trust-boundary.md`; put escalate/pair notes in Scope.
 16. When editing `00-core/` prompts, keep `Primary workflow surface(s)` aligned with `CORE_SKILL_LINKS` in `test_prompt_cross_links.py`; put pair/escalation skills in Scope or Human Review, not on the primary line.
-17. When editing composable prompts (`00-core`–`06-repo`), keep `Primary workflow surface(s)` / Supporting-lens preamble lines and run `test_*_prompts_eval_harness.py` primary-surface guards.18. When adding or editing composable prompts (`02-engineering`–`06-repo`) with `## Human Review`, keep preamble escalation routed to `reflective-risk` and run Human Review guards in `test_*_prompts_eval_harness.py` (exact heading match via `prompt_eval_helpers.py`).
+17. When editing composable prompts (`00-core`–`06-repo`), keep `Primary workflow surface(s)` / Supporting-lens preamble lines and run `test_*_prompts_eval_harness.py` primary-surface guards.
+18. When adding or editing composable prompts (`02-engineering`–`06-repo`) with `## Human Review`, keep preamble escalation routed to `reflective-risk` and run Human Review guards in `test_*_prompts_eval_harness.py` (exact heading match via `prompt_eval_helpers.py`).
+19. When editing Human Review guards, use `prompt_eval_helpers.assert_human_review_preamble` in all `test_*_prompts_eval_harness.py` files (thinking lenses + composable categories).

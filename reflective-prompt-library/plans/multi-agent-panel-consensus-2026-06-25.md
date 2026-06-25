@@ -2409,4 +2409,49 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 **Resealed 2026-06-25** after **Round 86** (options FG–FJ). Composable prompts with `## Human Review` now have eval_harness preamble guards matching thinking-lens pattern (R81); full library contract parity closed (graph + primary surface + Human Review). Holdout expansion remains recurrence-gated maintenance.
 
+---
+
+## Round 87 — Human Review helper DRY + GLOSSARY playbook repair (2026-06-25)
+
+**Options FK–FO** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 87 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FK | Fix GLOSSARY playbook step 17/18 newline merge + `test_maintenance_playbook_steps_on_separate_lines` | **Agree** |
+| FL | DRY Human Review guards via `prompt_eval_helpers.assert_human_review_preamble` across all `test_*_prompts_eval_harness.py` | **Agree** |
+| FM | GLOSSARY playbook step 19 + governance sync | **Agree** |
+| FN | ROUTE holdout expansion | **Defer** |
+| FO | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 87 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FK | Playbook repair | **Agree** | split merged steps; anti-drift pytest |
+| FL | Shared HR helper | **Agree** | migrate thinking + composable harness files |
+| FM | Playbook + docs | **Agree** | step 19; panel round 87 sync |
+| FN | Holdout expansion | **Defer** | maintenance |
+| FO | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 87)
+
+- `GLOSSARY.md`: repaired step 17/18 newline merge; playbook step 19 for shared Human Review helper
+- `plans/tests/test_glossary_structure.py`: `test_maintenance_playbook_steps_on_separate_lines`
+- `plans/tests/prompt_eval_helpers.py`: `assert_human_review_preamble`
+- `plans/tests/test_{thinking,engineering,context,agent,domain,repo}_prompts_eval_harness.py`: use shared Human Review helper
+- `QUALITY_GATES_SUMMARY.md`: shared HR helper note; panel Rounds 1–87; 550+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 87 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 87 sync
+
+## Verification (Round 87)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 87** (options FK–FO). Human Review guards now share one helper across thinking lenses and composable prompts; GLOSSARY playbook formatting anti-drift closed. Holdout expansion remains recurrence-gated maintenance.
 
