@@ -1,11 +1,17 @@
 """Regression checks for the project-knowledge promotion surface."""
 
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
-HANDOFF_SKILL = LIBRARY_ROOT / "skills" / "reflective-handoff-retro" / "SKILL.md"
-PROJECT_TEMPLATE = LIBRARY_ROOT / "06-repo" / "PROJECT_KNOWLEDGE.template.md"
+from prompt_eval_helpers import (  # noqa: E402
+    category_prompt_dir,
+    library_skills_dir,
+)
+
+HANDOFF_SKILL = library_skills_dir() / "reflective-handoff-retro" / "SKILL.md"
+PROJECT_TEMPLATE = category_prompt_dir("06-repo") / "PROJECT_KNOWLEDGE.template.md"
 
 
 def test_handoff_skill_exposes_complete_promotion_candidate_contract():

@@ -12,6 +12,9 @@ from prompt_eval_helpers import (  # noqa: E402
     CATEGORY_EVAL_HARNESS_FIXTURE_MARKER,
     PROMPT_LIBRARY_CATEGORIES,
     PROMPT_LIBRARY_REPO_ROOT,
+    assert_registry_matches_library_glob,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
 )
 from test_agent_prompts_eval_harness import (  # noqa: E402
     AGENT_PROMPTS,
@@ -86,9 +89,15 @@ def test_harness_fixture_registry_category_uses_shared_constants(
 
 
 def test_harness_fixture_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, prompts, _repo_root, _harness_fixture in HARNESS_FIXTURE_CATEGORY_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
+    registry_paths = [p for _category, prompts, _repo_root, _harness_fixture in HARNESS_FIXTURE_CATEGORY_REGISTRY for p in prompts]
+    assert_library_wide_unique_basenames(registry_paths)
+
+
+def test_harness_fixture_registry_matches_library_glob():
+    registry_paths = [
+        p
+        for _category, prompts, _repo_root, _harness_fixture
+        in HARNESS_FIXTURE_CATEGORY_REGISTRY
+        for p in prompts
+    ]
+    assert_registry_matches_library_glob(registry_paths)

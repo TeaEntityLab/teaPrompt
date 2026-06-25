@@ -12,6 +12,8 @@ from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_ROOT,
     category_prompt_dir,
     sorted_category_prompts,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
 )
 from test_agent_prompts_eval_harness import AGENT_DIR, AGENT_PROMPTS  # noqa: E402
 from test_context_prompts_eval_harness import CONTEXT_DIR, CONTEXT_PROMPTS  # noqa: E402
@@ -53,17 +55,10 @@ def test_category_path_registry_uses_shared_helpers(
 
 
 def test_category_path_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, _category_dir, prompts in CATEGORY_PATH_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
+    registry_paths = [p for _category, _category_dir, prompts in CATEGORY_PATH_REGISTRY for p in prompts]
+    assert_library_wide_unique_basenames(registry_paths)
 
 
 def test_category_path_registry_matches_library_glob():
-    globbed: list[Path] = []
-    for category in PROMPT_LIBRARY_CATEGORIES:
-        globbed.extend(sorted_category_prompts(category))
     registry_paths = [p for _category, _category_dir, prompts in CATEGORY_PATH_REGISTRY for p in prompts]
-    assert sorted(globbed) == sorted(registry_paths)
+    assert_registry_matches_library_glob(registry_paths)

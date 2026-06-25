@@ -7,7 +7,11 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_CATEGORIES  # noqa: E402
+from prompt_eval_helpers import (  # noqa: E402
+    PROMPT_LIBRARY_CATEGORIES,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
+)
 from test_prompt_cross_links import (  # noqa: E402
     AGENT_PROMPTS,
     AGENT_SKILL_LINKS,
@@ -31,7 +35,6 @@ from test_prompt_cross_links import (  # noqa: E402
     THINKING_PROMPTS,
 )
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
 
 CROSS_LINK_CATEGORY_REGISTRY = (
     ("00-core", CORE_PROMPTS, CORE_SKILL_LINKS, CORE_THINKING_LINKS),
@@ -83,26 +86,23 @@ def test_cross_link_registry_category_dicts_cover_prompts(
 
 
 def test_cross_link_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, prompts, _skill_links, _thinking_links in CROSS_LINK_CATEGORY_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    basenames.extend(p.name for p in THINKING_PROMPTS)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
-
-
-def test_cross_link_registry_matches_library_glob():
-    globbed: list[Path] = []
-    for category in PROMPT_LIBRARY_CATEGORIES:
-        globbed.extend(sorted((LIBRARY_ROOT / category).glob("*.md")))
     registry_paths = [
         p
         for _category, prompts, _skill_links, _thinking_links in CROSS_LINK_CATEGORY_REGISTRY
         for p in prompts
     ]
     registry_paths.extend(THINKING_PROMPTS)
-    assert sorted(globbed) == sorted(registry_paths)
+    assert_library_wide_unique_basenames(registry_paths)
+
+
+def test_cross_link_registry_matches_library_glob():
+    registry_paths = [
+        p
+        for _category, prompts, _skill_links, _thinking_links in CROSS_LINK_CATEGORY_REGISTRY
+        for p in prompts
+    ]
+    registry_paths.extend(THINKING_PROMPTS)
+    assert_registry_matches_library_glob(registry_paths)
 
 
 def test_thinking_lenses_tracked_in_consumer_map():

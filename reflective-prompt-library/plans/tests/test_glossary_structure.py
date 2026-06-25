@@ -32,8 +32,8 @@ def test_round_boundary_terms_present(glossary_text: str):
 
 def test_maintenance_playbook_references_round_99(glossary_text: str):
     playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
-    assert "Rounds 1–99" in playbook
-    assert "Rounds 1–98" not in playbook and "Rounds 1-91" not in playbook
+    assert "Rounds 1–100" in playbook
+    assert "Rounds 1–99" not in playbook and "Rounds 1-91" not in playbook
 
 
 
@@ -44,7 +44,7 @@ def test_maintenance_playbook_steps_on_separate_lines(glossary_text: str):
     assert re.search(r"guards\.\d+\.", playbook) is None, (
         "playbook steps merged without newline between numbers"
     )
-    for step in ("17.", "18.", "19.", "20.", "21.", "22.", "23.", "24.", "25.", "26.", "27.", "28.", "29.", "30.", "31."):
+    for step in ("17.", "18.", "19.", "20.", "21.", "22.", "23.", "24.", "25.", "26.", "27.", "28.", "29.", "30.", "31.", "32."):
         assert step in playbook
 
 

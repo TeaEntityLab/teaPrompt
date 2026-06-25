@@ -15,6 +15,8 @@ from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_REPO_ROOT,
     assert_prompt_meets_eval_harness_floor,
     make_category_eval_harness_fixture,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
 )
 from test_agent_prompts_eval_harness import (  # noqa: E402
     AGENT_PROMPTS,
@@ -45,7 +47,6 @@ from test_thinking_prompts_eval_harness import (  # noqa: E402
     THINKING_PROMPTS,
 )
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
 REPO_ROOT = PROMPT_LIBRARY_REPO_ROOT
 
 SCORE_CATEGORY_REGISTRY = (
@@ -84,22 +85,13 @@ def test_score_registry_category_uses_shared_min_score(
 
 
 def test_score_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, prompts, _min_score in SCORE_CATEGORY_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
+    registry_paths = [p for _category, prompts, _min_score in SCORE_CATEGORY_REGISTRY for p in prompts]
+    assert_library_wide_unique_basenames(registry_paths)
 
 
 def test_score_registry_matches_library_glob():
-    globbed: list[Path] = []
-    for category in PROMPT_LIBRARY_CATEGORIES:
-        globbed.extend(sorted((LIBRARY_ROOT / category).glob("*.md")))
-    registry_paths = [
-        p for _category, prompts, _min_score in SCORE_CATEGORY_REGISTRY for p in prompts
-    ]
-    assert sorted(globbed) == sorted(registry_paths)
+    registry_paths = [p for _category, prompts, _min_score in SCORE_CATEGORY_REGISTRY for p in prompts]
+    assert_registry_matches_library_glob(registry_paths)
 
 
 def test_score_registry_all_prompts_meet_floor(harness: EvalHarness):

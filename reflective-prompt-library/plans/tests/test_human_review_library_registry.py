@@ -10,6 +10,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_CATEGORIES,
     prompts_with_human_review,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
 )
 from test_agent_prompts_eval_harness import (  # noqa: E402
     AGENT_HUMAN_REVIEW_EXEMPT,
@@ -47,7 +49,6 @@ from test_thinking_prompts_eval_harness import (  # noqa: E402
     THINKING_PROMPTS,
 )
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
 
 HUMAN_REVIEW_CATEGORY_REGISTRY = (
     ("00-core", CORE_PROMPTS, CORE_HUMAN_REVIEW_REQUIRED, CORE_HUMAN_REVIEW_EXEMPT),
@@ -98,23 +99,13 @@ def test_human_review_registry_category_partition(
 
 
 def test_human_review_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, prompts, _required, _exempt in HUMAN_REVIEW_CATEGORY_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
+    registry_paths = [p for _category, prompts, _required, _exempt in HUMAN_REVIEW_CATEGORY_REGISTRY for p in prompts]
+    assert_library_wide_unique_basenames(registry_paths)
 
 
 def test_human_review_registry_matches_library_glob():
-    globbed: list[Path] = []
-    for category in PROMPT_LIBRARY_CATEGORIES:
-        globbed.extend(sorted((LIBRARY_ROOT / category).glob("*.md")))
-    registry_paths = [
-        p for _category, prompts, _required, _exempt in HUMAN_REVIEW_CATEGORY_REGISTRY
-        for p in prompts
-    ]
-    assert sorted(globbed) == sorted(registry_paths)
+    registry_paths = [p for _category, prompts, _required, _exempt in HUMAN_REVIEW_CATEGORY_REGISTRY for p in prompts]
+    assert_registry_matches_library_glob(registry_paths)
 
 
 def test_human_review_registry_required_union_matches_detection():

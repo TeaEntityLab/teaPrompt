@@ -3040,3 +3040,57 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ---
 
 **Resealed 2026-06-25** after **Round 99** (options HQ–HU). Composable prompt category paths are now library-registry checked across all `00-core`–`06-repo` categories with shared `category_prompt_dir` / `sorted_category_prompts`; workflow skill reference guards are preamble-scoped as documented. Holdout expansion remains recurrence-gated maintenance.
+
+## Round 100 — cross-category library registry helper DRY (2026-06-25)
+
+**Options HV–HZ** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 100 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| HV | DRY `assert_library_wide_unique_basenames` + `assert_registry_matches_library_glob` + `sorted_all_library_prompts` in `prompt_eval_helpers.py` | **Agree** |
+| HW | `test_prompt_library_registry_helpers_library_registry.py` — registry helper parity + module guard | **Agree** |
+| HX | Migrate all `*_library_registry.py` glob/unique guards + `test_prompt_cross_links.py` paths; GLOSSARY step 32 + governance sync | **Agree** |
+| HY | ROUTE holdout expansion | **Defer** |
+| HZ | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 100 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| HV | Library registry helper DRY | **Agree** | `assert_library_wide_unique_basenames` + `assert_registry_matches_library_glob` |
+| HW | Registry helper library registry | **Agree** | `test_prompt_library_registry_helpers_library_registry.py` |
+| HX | Registry migration + playbook | **Agree** | DRY all `*_library_registry.py`; step 32 |
+| HY | Holdout expansion | **Defer** | maintenance |
+| HZ | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 100)
+
+- **Opus:** Round 99 closed category path helpers; nine cross-category registry files still duplicated library-wide unique-basename and glob-parity loops with local `LIBRARY_ROOT` paths.
+- **Codex:** Shared `assert_registry_matches_library_glob` ensures every registry uses `sorted_category_prompts` semantics; `sorted_all_library_prompts` gives one canonical library-wide tuple.
+- **Gemini:** Deterministic helper extraction; no prompt content churn.
+- **Composer:** Mirrors R91–R99 registry pattern; one helper trio + one registry test file + migration sweep.
+- **Sakana:** Registry glob parity now falsifies if any module reintroduces ad-hoc `Path(__file__).parent` globs.
+- **GLM:** Playbook step 32 gives operators a single checklist line for library registry edits.
+
+**All roles agree.**
+
+## Implemented Changes (Round 100)
+
+- `plans/tests/prompt_eval_helpers.py`: `sorted_all_library_prompts`, `library_skills_dir`, `assert_library_wide_unique_basenames`, `assert_registry_matches_library_glob`
+- `plans/tests/test_*_library_registry.py`: DRY unique/glob guards via shared helpers; remove local `LIBRARY_ROOT`
+- `plans/tests/test_prompt_library_registry_helpers_library_registry.py`: cross-category registry helper registry
+- `plans/tests/test_prompt_cross_links.py`, `test_project_knowledge_promotion_contract.py`: shared `category_prompt_dir` / `library_skills_dir`
+- `GLOSSARY.md`: playbook Rounds 1–100; step 32 for library registry helper registry
+- `QUALITY_GATES_SUMMARY.md`: registry helper note; panel Rounds 1–100; 690+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 100 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 100 sync
+
+## Verification (Round 100)
+
+- `make all`: 702 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 100** (options HV–HZ). Cross-category library registries now share `assert_library_wide_unique_basenames` and `assert_registry_matches_library_glob` with a library-wide helper registry guard. Holdout expansion remains recurrence-gated maintenance.

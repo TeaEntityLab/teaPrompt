@@ -1,19 +1,28 @@
 """Anti-drift: thinking lenses, core/engineering/agent/context/domain/repo prompts, and workflow skills cross-link."""
 
 import re
+import sys
 from pathlib import Path
 
 import pytest
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
-CORE_DIR = LIBRARY_ROOT / "00-core"
-THINKING_DIR = LIBRARY_ROOT / "01-thinking"
-ENGINEERING_DIR = LIBRARY_ROOT / "02-engineering"
-AGENT_DIR = LIBRARY_ROOT / "04-agent"
-CONTEXT_DIR = LIBRARY_ROOT / "03-context"
-DOMAIN_DIR = LIBRARY_ROOT / "05-domain"
-REPO_DIR = LIBRARY_ROOT / "06-repo"
-SKILLS_DIR = LIBRARY_ROOT / "skills"
+sys.path.insert(0, str(Path(__file__).parent))
+
+from prompt_eval_helpers import (  # noqa: E402
+    PROMPT_LIBRARY_ROOT,
+    category_prompt_dir,
+    library_skills_dir,
+)
+
+LIBRARY_ROOT = PROMPT_LIBRARY_ROOT
+CORE_DIR = category_prompt_dir("00-core")
+THINKING_DIR = category_prompt_dir("01-thinking")
+ENGINEERING_DIR = category_prompt_dir("02-engineering")
+AGENT_DIR = category_prompt_dir("04-agent")
+CONTEXT_DIR = category_prompt_dir("03-context")
+DOMAIN_DIR = category_prompt_dir("05-domain")
+REPO_DIR = category_prompt_dir("06-repo")
+SKILLS_DIR = library_skills_dir()
 
 CORE_THINKING_LINKS: dict[str, tuple[str, ...]] = {
     "core-full.md": (

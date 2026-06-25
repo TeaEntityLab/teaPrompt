@@ -12,6 +12,8 @@ from prompt_eval_helpers import (  # noqa: E402
     PROMPT_EVAL_MIN_SCORE,
     PROMPT_LIBRARY_CATEGORIES,
     assert_prompt_contract_headings,
+    assert_library_wide_unique_basenames,
+    assert_registry_matches_library_glob,
 )
 from test_agent_prompts_eval_harness import (  # noqa: E402
     AGENT_PROMPTS,
@@ -49,7 +51,6 @@ from test_thinking_prompts_eval_harness import (  # noqa: E402
     THINKING_PROMPTS,
 )
 
-LIBRARY_ROOT = Path(__file__).parent.parent.parent
 
 CONTRACT_CATEGORY_REGISTRY = (
     ("00-core", CORE_PROMPTS, CORE_HEADINGS, CORE_MIN_SCORE),
@@ -88,22 +89,13 @@ def test_contract_registry_category_uses_shared_constants(
 
 
 def test_contract_registry_library_wide_unique_filenames():
-    basenames: list[str] = []
-    for _category, prompts, _headings, _min_score in CONTRACT_CATEGORY_REGISTRY:
-        basenames.extend(p.name for p in prompts)
-    assert len(basenames) == len(frozenset(basenames)), (
-        "duplicate prompt basenames across categories"
-    )
+    registry_paths = [p for _category, prompts, _headings, _min_score in CONTRACT_CATEGORY_REGISTRY for p in prompts]
+    assert_library_wide_unique_basenames(registry_paths)
 
 
 def test_contract_registry_matches_library_glob():
-    globbed: list[Path] = []
-    for category in PROMPT_LIBRARY_CATEGORIES:
-        globbed.extend(sorted((LIBRARY_ROOT / category).glob("*.md")))
-    registry_paths = [
-        p for _category, prompts, _headings, _min_score in CONTRACT_CATEGORY_REGISTRY for p in prompts
-    ]
-    assert sorted(globbed) == sorted(registry_paths)
+    registry_paths = [p for _category, prompts, _headings, _min_score in CONTRACT_CATEGORY_REGISTRY for p in prompts]
+    assert_registry_matches_library_glob(registry_paths)
 
 
 def test_contract_registry_all_prompts_have_preamble_headings():

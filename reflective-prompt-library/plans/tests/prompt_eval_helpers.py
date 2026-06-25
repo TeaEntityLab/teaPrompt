@@ -39,6 +39,36 @@ def sorted_category_prompts(category: str) -> tuple[Path, ...]:
     """Return sorted markdown prompt paths for a library category."""
     return tuple(sorted(category_prompt_dir(category).glob("*.md")))
 
+
+def sorted_all_library_prompts() -> tuple[Path, ...]:
+    """Return every composable prompt path across all library categories."""
+    paths: list[Path] = []
+    for category in PROMPT_LIBRARY_CATEGORIES:
+        paths.extend(sorted_category_prompts(category))
+    return tuple(paths)
+
+
+def library_skills_dir() -> Path:
+    """Resolve the workflow skills directory under the prompt library root."""
+    return PROMPT_LIBRARY_ROOT / "skills"
+
+
+def assert_library_wide_unique_basenames(
+    prompt_paths: tuple[Path, ...] | list[Path],
+) -> None:
+    """Composable prompt basenames must be unique across all categories."""
+    basenames = [p.name for p in prompt_paths]
+    assert len(basenames) == len(frozenset(basenames)), (
+        "duplicate prompt basenames across categories"
+    )
+
+
+def assert_registry_matches_library_glob(
+    registry_paths: tuple[Path, ...] | list[Path],
+) -> None:
+    """Registry prompt tuples must match sorted_category_prompts across the library."""
+    assert sorted(sorted_all_library_prompts()) == sorted(registry_paths)
+
 CATEGORY_EVAL_HARNESS_FIXTURE_MARKER = "_from_category_eval_harness_fixture"
 
 
