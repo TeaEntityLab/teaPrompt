@@ -1,5 +1,28 @@
 Language: English
 
+## Purpose
+
+Scaffold for project-design judgement layer (non-authoritative). Primary workflow surfaces: `reflective-handoff-retro` and `reflective-brief`. Pairs with `01-thinking/socratic-reviewer.md` and `01-thinking/falsifiability.md`.
+
+## Scope
+
+- In scope: governing principles, active direction, durable lessons, decision index, growth gate.
+- Out of scope: agent operating rules (belong in `AGENTS.md` or `SKILL.md`).
+
+## Acceptance Criteria
+
+- Each lesson and principle has evidence and a review or retirement trigger.
+- Milestones carry verifiable targets; done milestones reflow before retirement.
+
+## Falsifiability
+
+State what evidence would retire a recorded principle as stale.
+
+## Human Review
+
+Require human approval before promoting lessons into executable skills or overriding `AGENTS.md`.
+
+
 # Project Knowledge — [Project Name]
 
 > **NON-AUTHORITATIVE FILE.** This artifact records project-design judgement:

@@ -1,4 +1,4 @@
-"""Anti-drift: thinking lenses, engineering/agent/context/domain prompts, and workflow skills cross-link."""
+"""Anti-drift: thinking lenses, engineering/agent/context/domain/repo prompts, and workflow skills cross-link."""
 
 from pathlib import Path
 
@@ -10,6 +10,7 @@ ENGINEERING_DIR = LIBRARY_ROOT / "02-engineering"
 AGENT_DIR = LIBRARY_ROOT / "04-agent"
 CONTEXT_DIR = LIBRARY_ROOT / "03-context"
 DOMAIN_DIR = LIBRARY_ROOT / "05-domain"
+REPO_DIR = LIBRARY_ROOT / "06-repo"
 SKILLS_DIR = LIBRARY_ROOT / "skills"
 
 ENGINEERING_THINKING_LINKS: dict[str, tuple[str, ...]] = {
@@ -183,6 +184,39 @@ DOMAIN_SKILL_LINKS: dict[str, tuple[str, ...]] = {
 
 DOMAIN_PROMPTS = tuple(sorted(DOMAIN_DIR.glob("*.md")))
 
+REPO_THINKING_LINKS: dict[str, tuple[str, ...]] = {
+    "AGENTS.md": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/socratic-reviewer.md",
+    ),
+    "cursor-rules.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "codex-opencode.md": (
+        "01-thinking/why-what-how-done.md",
+        "01-thinking/falsifiability.md",
+    ),
+    "PROJECT_KNOWLEDGE.template.md": (
+        "01-thinking/socratic-reviewer.md",
+        "01-thinking/falsifiability.md",
+    ),
+}
+
+REPO_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "AGENTS.md": (
+        "reflective-dispatch",
+        "reflective-implement",
+        "reflective-spec-plan",
+    ),
+    "cursor-rules.md": ("reflective-implement", "reflective-review"),
+    "codex-opencode.md": ("reflective-implement", "reflective-dispatch"),
+    "PROJECT_KNOWLEDGE.template.md": ("reflective-handoff-retro", "reflective-brief"),
+}
+
+REPO_PROMPTS = tuple(sorted(REPO_DIR.glob("*.md")))
+
 CONTEXT_PROMPTS = tuple(sorted(CONTEXT_DIR.glob("*.md")))
 
 
@@ -300,3 +334,26 @@ def test_thinking_lens_files_exist_for_domain_links():
     for ref in linked:
         assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"
 
+@pytest.mark.parametrize("prompt_name,thinking_refs", REPO_THINKING_LINKS.items())
+def test_repo_prompt_links_thinking_lens(prompt_name: str, thinking_refs: tuple[str, ...]):
+    path = REPO_DIR / prompt_name
+    preamble = _preamble(path)
+    for ref in thinking_refs:
+        assert ref in preamble, f"{prompt_name} preamble should reference {ref}"
+
+
+def test_all_repo_prompts_have_thinking_cross_link():
+    assert set(REPO_THINKING_LINKS) == {p.name for p in REPO_PROMPTS}
+
+
+@pytest.mark.parametrize("prompt_name,skill_refs", REPO_SKILL_LINKS.items())
+def test_repo_prompt_maps_workflow_skill(prompt_name: str, skill_refs: tuple[str, ...]):
+    preamble = _preamble(REPO_DIR / prompt_name)
+    for skill in skill_refs:
+        assert skill in preamble, f"{prompt_name} preamble should reference {skill}"
+
+
+def test_thinking_lens_files_exist_for_repo_links():
+    linked = {ref for refs in REPO_THINKING_LINKS.values() for ref in refs}
+    for ref in linked:
+        assert (LIBRARY_ROOT / ref).is_file(), f"missing thinking lens file {ref}"

@@ -1,5 +1,23 @@
 # AGENTS.md
 
+## Purpose
+
+Repository-level harness policy for reflective engineering agents. Primary workflow surfaces: `reflective-dispatch`, `reflective-implement`, and `reflective-spec-plan`. Pairs with `01-thinking/why-what-how-done.md`, `01-thinking/critical-thinking-check.md`, and `01-thinking/socratic-reviewer.md`.
+
+## Scope
+
+- In scope: strictness-first routing, nine frozen workflow skills, evidence-backed completion, project-knowledge authority boundary.
+- Out of scope: multi-agent runtime, tenth core skill without promotion gate, silent rigor downgrade.
+
+## Acceptance Criteria
+
+- Non-trivial tasks produce goal, scope, acceptance criteria, and test-backed completion evidence.
+- High-blast-radius work stops for human review before irreversible action.
+
+## Falsifiability
+
+Name one task that would fail if this harness policy were ignored at session start.
+
 ## Mission
 
 This repository uses Reflective Engineering Agent Protocol.

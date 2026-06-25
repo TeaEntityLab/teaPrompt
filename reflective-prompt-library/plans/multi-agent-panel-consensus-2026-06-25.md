@@ -1877,4 +1877,61 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 
 ## Panel status (updated)
 
-**Resealed 2026-06-25** after **Round 75** (options DR–DT). Domain-prompt contract pass complete; all composable prompt categories (`00-core`–`05-domain`) now standardized. `06-repo` template Purpose sweep remains recurrence-gated.
+## Round 76 — Repository template contract review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+### DU: Standardize `06-repo/` prompt contracts + cross-links?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — host-install templates are the last unstructured prompt layer; AGENTS.md is canonical harness surface |
+| Codex | **Agree** — four files bounded; falsifiable via `test_repo_prompts_eval_harness.py` + cross-link pytest |
+| Gemini | **Agree** — IDE/Codex templates are cost-relevant entry points; defer governance pytest mirrors |
+| Composer | **Agree** — AGENTS harness policy already cited; contract headers close eval_harness gap |
+| Sakana | **Agree** — no tenth skill; repo templates support existing nine |
+| GLM | **Agree** — English contracts outside localized fences; Human Review on high-blast-radius templates |
+
+**Socratic Q:** Why `06-repo` after `05-domain`?
+**Answer:** Repo templates are host-install artifacts with distinct authority boundaries (`AGENTS.md` vs `PROJECT_KNOWLEDGE.md`); completing them finishes the prompt-library contract sweep.
+
+**Consensus:** **Agree** — Purpose/Scope/Acceptance Criteria/Falsifiability on all four `06-repo/` templates; thinking + workflow cross-links; `test_repo_prompts_eval_harness.py`; extend `test_prompt_cross_links.py`; preserve existing Harness Policy section in AGENTS.md.
+
+### DV: Governance pytest mirrors (`validate_links`, `validate_governance`, `lint_skills`) now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated (option DH); `make validate` already covers these |
+
+### DW: Router / holdout / tenth skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — ROUTE-001/002/003 at 100%; nine-skill freeze holds |
+
+### Round 76 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DU | Repo template contracts + cross-links | **Agree** | 4 files + pytest anti-drift |
+| DV | Governance pytest mirrors | **Reject** | backlog (DH) |
+| DW | Router/holdout/tenth skill | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 76)
+
+- `06-repo/*.md`: Purpose, Scope, Acceptance Criteria, Falsifiability + workflow skill mapping; thinking lens links; Human Review where applicable
+- `plans/tests/test_repo_prompts_eval_harness.py`: structural + 80%+ score floor anti-drift; AGENTS harness-policy guard
+- `plans/tests/test_prompt_cross_links.py`: repo ↔ thinking ↔ skill cross-links
+- `QUALITY_GATES_SUMMARY.md`: repo prompt test mention; pytest floor 400+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 76 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 76 sync
+
+## Verification (Round 76)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 76** (options DU–DW). Repository-template contract pass complete; full prompt-library contract sweep (`00-core`–`06-repo`) finished. Governance pytest mirrors remain recurrence-gated.
