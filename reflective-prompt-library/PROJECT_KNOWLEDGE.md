@@ -81,6 +81,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 - 2026-06-18 Adopt STORM's source-grounded perspective discovery as an optional `reflective-research` method, not a new skill → [record](plans/storm-perspective-discovery-reflection-2026-06-18.md)
 - 2026-06-20 Synthesize external-adoption case studies, then correct the evidence and promotion-gate scope after the Test Plan routing counterexample → [record](plans/external-adoption-case-studies-2026-06-20.md)
 - 2026-06-21 Evaluate Hyperplan / multi-agent adversarial planning — no change (runtime = non-goal; methodology overlaps; possible gaps not promoted) → [record](plans/external-adoption-case-studies-2026-06-20.md)
+- 2026-06-25 Post-Round 68 holdout refresh — ROUTE-002 design-comparison variant; ROUTE-003 approved-spec plan-only + dispatch-meta paraphrases → [QUALITY_GATES_SUMMARY.md](plans/QUALITY_GATES_SUMMARY.md)
 - 2026-06-25 Post-Round 68 cheatsheet parity — ROUTE-002 design-comparison holdout phrase + ROUTE-003 dispatch-meta probe in EN/zh-TW cheatsheets → [QUALITY_GATES_SUMMARY.md](plans/QUALITY_GATES_SUMMARY.md)
 - 2026-06-25 Post-Round 68 holdout expansion — ROUTE-002 design comparison phrase; ROUTE-003 approved-spec plan-only trap + dispatch routing probe → [ROUTING_CONTRACT.md](plans/ROUTING_CONTRACT.md#r11-approved-spec-delivery)
 - 2026-06-25 Round 68 panel — full-doc drift sync, README/methodology-map anti-drift, reject holdout expansion at 100% → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

@@ -347,6 +347,7 @@ Ongoing upkeep after panel close (Rounds 1–68). Not agent instructions — ope
 4. Keep manual `benchmark_tasks.py` runs optional — fixture gate only in CI.
 5. Reject tenth skill / full `SKILL.md` i18n unless promotion gate met (panel A, Q, W, AJ).
 6. When cheatsheet boundary quick cues change, update `BOUNDARY_QUICK_CUE_*` markers and probe snippets in `test_validate_route_fixture.py`; run `test_cheatsheet_boundary_quick_cues.py`.
-7. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.
-8. When adding benchmark golden tasks, keep `test_benchmark_covers_all_nine_workflows` green and bump `MIN_TASK_COUNT` in `validate_benchmark_fixture.py` if the floor rises.
+7. When holdout probe tuples change in `test_validate_route_fixture.py`, mirror cues in EN/zh-TW cheatsheets and run `test_cheatsheet_*_parity.py` (e.g. `test_cheatsheet_dispatch_meta_parity.py`).
+8. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.
+9. When adding benchmark golden tasks, keep `test_benchmark_covers_all_nine_workflows` green and bump `MIN_TASK_COUNT` in `validate_benchmark_fixture.py` if the floor rises.
 

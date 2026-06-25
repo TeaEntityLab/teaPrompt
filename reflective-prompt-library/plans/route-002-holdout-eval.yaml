@@ -363,6 +363,7 @@ holdout_sets:
       - design comparison on paper without repo changes
       - 比較兩個 API 設計方案但不要寫 code
       - compare API designs on paper without touching the repository
+      - compare API design options on paper without touching the repository
 
   - name: readme_plain_review_holdout
     expected_workflow: reflective-review

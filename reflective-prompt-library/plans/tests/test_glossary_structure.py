@@ -43,6 +43,14 @@ def test_maintenance_playbook_mentions_benchmark_nine_skill_coverage(glossary_te
     assert "test_benchmark_covers_all_nine_workflows" in playbook
     assert "MIN_TASK_COUNT" in playbook
 
+
+def test_maintenance_playbook_mentions_cheatsheet_probe_parity_tests(glossary_text: str):
+    playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
+    assert "test_validate_route_fixture.py" in playbook
+    assert "test_cheatsheet_" in playbook and "_parity.py" in playbook
+    assert "test_cheatsheet_dispatch_meta_parity.py" in playbook
+
+
 def test_approved_spec_delivery_separated_from_playbook(glossary_text: str):
     """Playbook must not run into Approved-Spec without a separator."""
     pattern = re.compile(

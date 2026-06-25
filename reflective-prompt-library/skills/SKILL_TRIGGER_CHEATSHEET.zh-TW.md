@@ -43,6 +43,7 @@ Skill 契約語言：
 - 「Which workflow skill should run for this library task？」
 - 「Which reflective workflow skill covers handoff retro？」
 - 「Which reflective workflow skill fits a routing-only mixed intent？」
+- 「Which reflective workflow skill should handle routing-only mixed intent？」
 
 不要用在：
 
@@ -80,10 +81,12 @@ L1 快速路徑：
 - 「Write tickets from the approved spec without implementing。」
 - 「Plan the approved spec without repo changes。」
 - 「Plan 已核准 spec without repo changes。」
+- 「Draft rollout plan from approved spec without repo edits。」
 
 - 「Write tickets and acceptance criteria without touching the repo。」
 - 「Compare two API designs on paper only no implementation。」
 - 「Compare API designs on paper without touching the repository。」
+- 「Compare API design options on paper without touching the repository。」
 - 「比較兩個 API 設計方案但不要寫 code。」
 - 「把規格寫出來但不要改程式。」
 - 「Design a handoff workflow specification without runtime code。」

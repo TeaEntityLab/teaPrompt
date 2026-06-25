@@ -111,7 +111,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 36 holdout groups with 101 paraphrases
+- Tested 36 holdout groups with 102 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - Review, clarification, workflow-design, workflow-implementation, research, and orchestration-selection phrasing now pass through boundary concepts
@@ -208,7 +208,7 @@ python3 reflective-prompt-library/plans/validate_skill_examples.py
 - Post-panel maintenance: ROUTING_CONTRACT **R11** approved-spec delivery (`implement_not_plan_trap`) at 100%
 
 **Results:**
-- Tested 14 adversarial groups with 35 paraphrases
+- Tested 14 adversarial groups with 37 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - Output: `plans/route-003-results.json`
@@ -224,7 +224,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 
 **What it does:**
 - Enforces minimum ROUTE-001/002/003 group and phrase counts before paraphrase eval runs
-- Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (36 holdout groups, 101 phrases); ROUTE-003 (14 adversarial groups, 35 phrases)
+- Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (36 holdout groups, 102 phrases); ROUTE-003 (14 adversarial groups, 37 phrases)
 - Round 22 panel compromise: deterministic hygiene without YAML dependency explosion
 - Integrated in `make validate` after skill examples gate; mirrored by pytest in `test_validate_route_fixture.py`
 - Cheatsheet parity anti-drift: `test_cheatsheet_boundary_quick_cues.py` (R12 quick-cue summary), `test_cheatsheet_*_parity.py` (holdout probe cues in EN/zh-TW cheatsheets)
@@ -279,8 +279,8 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 24 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 101 paraphrases) |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (14 groups, 35 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 102 paraphrases) |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (14 groups, 37 paraphrases) |
 | Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
 | Linting errors | 0 | ✅ Clean |
 
@@ -304,17 +304,17 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ### Holdout Tracking
 
-ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 holdout groups; post-Round 68 maintenance added ROUTING_CONTRACT **R11** boundaries (101 ROUTE-002 phrases, 14 ROUTE-003 adversarial groups / 35 phrases including `implement_not_plan_trap`, `approved_spec_plan_not_implement_trap`, and `dispatch_meta_skill_trap`) at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
+ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Round 65 expanded to 36 holdout groups; post-Round 68 maintenance added ROUTING_CONTRACT **R11** boundaries (102 ROUTE-002 phrases, 14 ROUTE-003 adversarial groups / 37 phrases including `implement_not_plan_trap`, `approved_spec_plan_not_implement_trap`, and `dispatch_meta_skill_trap`) at 100%. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
 ## Phase 2 Status (post-Round 68 maintenance)
 
 ### Done ✅
 
 1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
-2. **ROUTE-001/002/003 in CI** — 128 + 101 + 35 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
+2. **ROUTE-001/002/003 in CI** — 128 + 102 + 37 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
-5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py` (180+ pytest anti-drift suite in CI)
+5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py` (190+ pytest anti-drift suite in CI)
 
 ### Ongoing maintenance (not blockers)
 

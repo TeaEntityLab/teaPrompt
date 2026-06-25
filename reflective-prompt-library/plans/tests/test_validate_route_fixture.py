@@ -68,6 +68,7 @@ ROUND_51_BOUNDARY_PROBES = (
 # ROUTE-002 holdout phrases that should appear in EN/zh-TW cheatsheets (anti-drift).
 DESIGN_COMPARISON_HOLDOUT_PROBE = (
     "compare API designs on paper without touching the repository",
+    "compare API design options on paper without touching the repository",
 )
 
 BOUNDARY_CHEATSHEET_CUES = tuple(text for text, _ in ROUND_51_BOUNDARY_PROBES) + (
@@ -99,10 +100,12 @@ IMPLEMENT_NOT_PLAN_SPEC_PLAN_PROBES = (
     "write tickets from the approved spec without implementing",
     "plan the approved spec without repo changes",
     "plan 已核准 spec without repo changes",
+    "draft rollout plan from approved spec without repo edits",
 )
 
 DISPATCH_META_SKILL_TRAP_PROBES = (
     "which reflective workflow skill fits a routing-only mixed intent",
+    "which reflective workflow skill should handle routing-only mixed intent",
 )
 
 ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
