@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition  # noqa: E402
 
 ENGINEERING_DIR = Path(__file__).parent.parent.parent / "02-engineering"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -24,6 +24,21 @@ REQUIRED_HEADINGS = (
 
 ENGINEERING_PROMPTS = tuple(sorted(ENGINEERING_DIR.glob("*.md")))
 ENGINEERING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(ENGINEERING_PROMPTS)
+ENGINEERING_HUMAN_REVIEW_REQUIRED = frozenset({
+    "code-reviewer.md",
+    "implementation-agent.md",
+    "local-feedback.md",
+})
+ENGINEERING_HUMAN_REVIEW_EXEMPT = frozenset({
+    "spec-writer.md",
+    "task-slicer.md",
+    "task-start.md",
+    "test-designer.md",
+    "usage-first.md",
+})
+
+ENGINEERING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(ENGINEERING_PROMPTS)
+
 
 
 @pytest.fixture(scope="module")
@@ -81,3 +96,27 @@ def test_engineering_prompts_have_primary_workflow_surfaces_line():
 def test_engineering_prompt_has_human_review_section(prompt_path: Path):
     """Prompts with Human Review declare escalation outside zh-TW templates."""
     assert_human_review_preamble(prompt_path)
+
+def test_engineering_human_review_required_set_matches_detection():
+    """Frozen required set must match prompts that declare ## Human Review in preambles."""
+    assert_human_review_required_matches_detection(
+        ENGINEERING_HUMAN_REVIEW_REQUIRED, ENGINEERING_PROMPTS
+    )
+
+
+def test_engineering_human_review_exempt_prompts_have_no_preamble_section():
+    """Exempt prompts keep Human Review cues in fenced templates only."""
+    assert_human_review_exempt_have_no_preamble_section(
+        ENGINEERING_HUMAN_REVIEW_EXEMPT, ENGINEERING_PROMPTS
+    )
+
+
+def test_engineering_human_review_sets_partition_prompts():
+    """Required + exempt sets must cover all prompts without overlap."""
+    all_names = frozenset(p.name for p in ENGINEERING_PROMPTS)
+    assert_human_review_sets_partition(
+        all_names,
+        ENGINEERING_HUMAN_REVIEW_REQUIRED,
+        ENGINEERING_HUMAN_REVIEW_EXEMPT,
+    )
+

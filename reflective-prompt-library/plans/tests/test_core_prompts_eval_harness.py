@@ -10,8 +10,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
 from prompt_eval_helpers import (  # noqa: E402
+    assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
-    has_human_review_preamble,
+    assert_human_review_required_matches_detection,
+    assert_human_review_sets_partition,
     prompts_with_human_review,
 )
 
@@ -98,20 +100,23 @@ def test_core_prompt_has_human_review_section(prompt_path: Path):
 
 def test_core_human_review_required_set_matches_detection():
     """Frozen required set must match prompts that declare ## Human Review in preambles."""
-    detected = {p.name for p in CORE_PROMPTS_WITH_HUMAN_REVIEW}
-    assert detected == CORE_HUMAN_REVIEW_REQUIRED
+    assert_human_review_required_matches_detection(
+        CORE_HUMAN_REVIEW_REQUIRED, CORE_PROMPTS
+    )
 
 
 def test_core_human_review_exempt_prompts_have_no_preamble_section():
     """L1 opener prompts keep Human Review cues in fenced templates only."""
-    for name in CORE_HUMAN_REVIEW_EXEMPT:
-        assert not has_human_review_preamble(CORE_DIR / name), (
-            f"{name} should not declare ## Human Review in preamble (exempt opener)"
-        )
+    assert_human_review_exempt_have_no_preamble_section(
+        CORE_HUMAN_REVIEW_EXEMPT, CORE_PROMPTS
+    )
 
 
 def test_core_human_review_sets_partition_core_prompts():
     """Required + exempt sets must cover all 00-core prompts without overlap."""
-    all_names = {p.name for p in CORE_PROMPTS}
-    assert CORE_HUMAN_REVIEW_REQUIRED | CORE_HUMAN_REVIEW_EXEMPT == all_names
-    assert not CORE_HUMAN_REVIEW_REQUIRED & CORE_HUMAN_REVIEW_EXEMPT
+    all_names = frozenset(p.name for p in CORE_PROMPTS)
+    assert_human_review_sets_partition(
+        all_names,
+        CORE_HUMAN_REVIEW_REQUIRED,
+        CORE_HUMAN_REVIEW_EXEMPT,
+    )

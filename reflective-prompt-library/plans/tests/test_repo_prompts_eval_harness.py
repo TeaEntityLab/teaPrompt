@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition  # noqa: E402
 
 REPO_DIR = Path(__file__).parent.parent.parent / "06-repo"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -24,6 +24,17 @@ REQUIRED_HEADINGS = (
 
 REPO_PROMPTS = tuple(sorted(REPO_DIR.glob("*.md")))
 REPO_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(REPO_PROMPTS)
+REPO_HUMAN_REVIEW_REQUIRED = frozenset({
+    "AGENTS.md",
+    "PROJECT_KNOWLEDGE.template.md",
+    "cursor-rules.md",
+})
+REPO_HUMAN_REVIEW_EXEMPT = frozenset({
+    "codex-opencode.md",
+})
+
+REPO_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(REPO_PROMPTS)
+
 
 
 @pytest.fixture(scope="module")
@@ -85,3 +96,27 @@ def test_repo_prompts_have_primary_workflow_surfaces_line():
 def test_repo_prompt_has_human_review_section(prompt_path: Path):
     """Prompts with Human Review declare escalation outside zh-TW templates."""
     assert_human_review_preamble(prompt_path)
+
+def test_repo_human_review_required_set_matches_detection():
+    """Frozen required set must match prompts that declare ## Human Review in preambles."""
+    assert_human_review_required_matches_detection(
+        REPO_HUMAN_REVIEW_REQUIRED, REPO_PROMPTS
+    )
+
+
+def test_repo_human_review_exempt_prompts_have_no_preamble_section():
+    """Exempt prompts keep Human Review cues in fenced templates only."""
+    assert_human_review_exempt_have_no_preamble_section(
+        REPO_HUMAN_REVIEW_EXEMPT, REPO_PROMPTS
+    )
+
+
+def test_repo_human_review_sets_partition_prompts():
+    """Required + exempt sets must cover all prompts without overlap."""
+    all_names = frozenset(p.name for p in REPO_PROMPTS)
+    assert_human_review_sets_partition(
+        all_names,
+        REPO_HUMAN_REVIEW_REQUIRED,
+        REPO_HUMAN_REVIEW_EXEMPT,
+    )
+

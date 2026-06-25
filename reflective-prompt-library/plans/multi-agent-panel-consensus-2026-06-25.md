@@ -2539,3 +2539,50 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ## Panel status (updated)
 
 **Resealed 2026-06-25** after **Round 89** (options FT–FW). `00-core` Human Review coverage is now explicit via frozen required/exempt sets; full library HR contract parity closed (thinking R81, composable R86, core R88–R89). Holdout expansion remains recurrence-gated maintenance.
+
+---
+
+## Round 90 — library-wide Human Review required/exempt set parity (2026-06-25)
+
+**Options FX–GB** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 90 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| FX | DRY Human Review set parity helpers in `prompt_eval_helpers.py` + refactor `test_core_prompts_eval_harness.py` | **Agree** |
+| FY | Frozen `*_HUMAN_REVIEW_REQUIRED` / `*_HUMAN_REVIEW_EXEMPT` sets + pytest parity for `01-thinking`–`06-repo` | **Agree** |
+| FZ | GLOSSARY playbook step 22 + governance sync | **Agree** |
+| GA | ROUTE holdout expansion | **Defer** |
+| GB | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 90 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| FX | HR set parity helpers | **Agree** | `assert_human_review_required_matches_detection`, `assert_human_review_exempt_have_no_preamble_section`, `assert_human_review_sets_partition` |
+| FY | Library HR frozen sets | **Agree** | codify required/exempt per category in all `test_*_prompts_eval_harness.py` files |
+| FZ | Playbook + docs | **Agree** | step 22; panel round 90 sync |
+| GA | Holdout expansion | **Defer** | maintenance |
+| GB | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+**All roles agree.**
+
+## Implemented Changes (Round 90)
+
+- `plans/tests/prompt_eval_helpers.py`: shared Human Review set parity helpers
+- `plans/tests/test_core_prompts_eval_harness.py`: refactor to shared helpers
+- `plans/tests/test_{thinking,engineering,context,agent,domain,repo}_prompts_eval_harness.py`: frozen HR required/exempt sets + partition parity tests
+- `GLOSSARY.md`: playbook Rounds 1–90; step 22 for library-wide HR set parity
+- `QUALITY_GATES_SUMMARY.md`: HR set parity note; panel Rounds 1–90; 580+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 90 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 90 sync
+
+## Verification (Round 90)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 90** (options FX–GB). Human Review coverage is now explicit via frozen required/exempt sets across all prompt categories (`00-core`–`06-repo`). Holdout expansion remains recurrence-gated maintenance.
+

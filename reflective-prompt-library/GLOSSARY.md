@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–89). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–90). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -362,3 +362,4 @@ Ongoing upkeep after panel close (Rounds 1–89). Not agent instructions — ope
 19. When editing Human Review guards, use `prompt_eval_helpers.assert_human_review_preamble` in all `test_*_prompts_eval_harness.py` files (thinking lenses + composable categories).
 20. When adding or editing risk-bearing `00-core/` prompts with `## Human Review`, keep preamble escalation routed to `reflective-risk` and run `test_core_prompts_eval_harness.py` Human Review guards via `prompt_eval_helpers.py`.
 21. When editing `00-core/` Human Review coverage, keep `CORE_HUMAN_REVIEW_REQUIRED` and `CORE_HUMAN_REVIEW_EXEMPT` in `test_core_prompts_eval_harness.py` aligned with preamble `## Human Review` sections; run core HR parity tests.
+22. When editing Human Review coverage on thinking lenses or composable prompts (`01-thinking`–`06-repo`), keep frozen `*_HUMAN_REVIEW_REQUIRED` / `*_HUMAN_REVIEW_EXEMPT` sets in `test_*_prompts_eval_harness.py` aligned with preamble `## Human Review` sections; use `prompt_eval_helpers.assert_human_review_*` parity helpers and run HR set partition tests.

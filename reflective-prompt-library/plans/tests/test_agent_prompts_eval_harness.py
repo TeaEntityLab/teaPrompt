@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition  # noqa: E402
 
 AGENT_DIR = Path(__file__).parent.parent.parent / "04-agent"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -25,6 +25,22 @@ REQUIRED_HEADINGS = (
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
 AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
 SUPPORTING_LENS_AGENT_PROMPTS = frozenset({"runtime-trust-boundary.md"})
+AGENT_HUMAN_REVIEW_REQUIRED = frozenset({
+    "agent-scaffold-provenance.md",
+    "agent-selection.md",
+    "memory-consolidation.md",
+    "retro.md",
+    "review-rating-fix.md",
+    "runtime-trust-boundary.md",
+    "sop-compiler.md",
+})
+AGENT_HUMAN_REVIEW_EXEMPT = frozenset({
+    "workflow-engine.md",
+    "workflow-recipes.md",
+})
+
+AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
+
 
 
 @pytest.fixture(scope="module")
@@ -87,3 +103,27 @@ def test_agent_prompts_have_workflow_surface_preamble_line():
 def test_agent_prompt_has_human_review_section(prompt_path: Path):
     """Prompts with Human Review declare escalation outside zh-TW templates."""
     assert_human_review_preamble(prompt_path)
+
+def test_agent_human_review_required_set_matches_detection():
+    """Frozen required set must match prompts that declare ## Human Review in preambles."""
+    assert_human_review_required_matches_detection(
+        AGENT_HUMAN_REVIEW_REQUIRED, AGENT_PROMPTS
+    )
+
+
+def test_agent_human_review_exempt_prompts_have_no_preamble_section():
+    """Exempt prompts keep Human Review cues in fenced templates only."""
+    assert_human_review_exempt_have_no_preamble_section(
+        AGENT_HUMAN_REVIEW_EXEMPT, AGENT_PROMPTS
+    )
+
+
+def test_agent_human_review_sets_partition_prompts():
+    """Required + exempt sets must cover all prompts without overlap."""
+    all_names = frozenset(p.name for p in AGENT_PROMPTS)
+    assert_human_review_sets_partition(
+        all_names,
+        AGENT_HUMAN_REVIEW_REQUIRED,
+        AGENT_HUMAN_REVIEW_EXEMPT,
+    )
+

@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review  # noqa: E402
+from prompt_eval_helpers import assert_human_review_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition  # noqa: E402
 
 CONTEXT_DIR = Path(__file__).parent.parent.parent / "03-context"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
@@ -24,6 +24,20 @@ REQUIRED_HEADINGS = (
 
 CONTEXT_PROMPTS = tuple(sorted(CONTEXT_DIR.glob("*.md")))
 CONTEXT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CONTEXT_PROMPTS)
+CONTEXT_HUMAN_REVIEW_REQUIRED = frozenset({
+    "context-handoff.md",
+    "low-token.md",
+    "small-context.md",
+})
+CONTEXT_HUMAN_REVIEW_EXEMPT = frozenset({
+    "context-engineering.md",
+    "gemini-long-document.md",
+    "large-context.md",
+    "medium-context.md",
+})
+
+CONTEXT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(CONTEXT_PROMPTS)
+
 
 
 @pytest.fixture(scope="module")
@@ -80,3 +94,27 @@ def test_context_prompts_have_primary_workflow_surfaces_line():
 def test_context_prompt_has_human_review_section(prompt_path: Path):
     """Prompts with Human Review declare escalation outside zh-TW templates."""
     assert_human_review_preamble(prompt_path)
+
+def test_context_human_review_required_set_matches_detection():
+    """Frozen required set must match prompts that declare ## Human Review in preambles."""
+    assert_human_review_required_matches_detection(
+        CONTEXT_HUMAN_REVIEW_REQUIRED, CONTEXT_PROMPTS
+    )
+
+
+def test_context_human_review_exempt_prompts_have_no_preamble_section():
+    """Exempt prompts keep Human Review cues in fenced templates only."""
+    assert_human_review_exempt_have_no_preamble_section(
+        CONTEXT_HUMAN_REVIEW_EXEMPT, CONTEXT_PROMPTS
+    )
+
+
+def test_context_human_review_sets_partition_prompts():
+    """Required + exempt sets must cover all prompts without overlap."""
+    all_names = frozenset(p.name for p in CONTEXT_PROMPTS)
+    assert_human_review_sets_partition(
+        all_names,
+        CONTEXT_HUMAN_REVIEW_REQUIRED,
+        CONTEXT_HUMAN_REVIEW_EXEMPT,
+    )
+
