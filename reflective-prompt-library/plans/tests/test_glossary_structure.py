@@ -36,6 +36,13 @@ def test_maintenance_playbook_references_round_68(glossary_text: str):
     assert "Rounds 1–67" not in playbook and "Rounds 1-67" not in playbook
 
 
+
+
+def test_maintenance_playbook_mentions_benchmark_nine_skill_coverage(glossary_text: str):
+    playbook = glossary_text.split("## Governance Maintenance Playbook", 1)[1]
+    assert "test_benchmark_covers_all_nine_workflows" in playbook
+    assert "MIN_TASK_COUNT" in playbook
+
 def test_approved_spec_delivery_separated_from_playbook(glossary_text: str):
     """Playbook must not run into Approved-Spec without a separator."""
     pattern = re.compile(
