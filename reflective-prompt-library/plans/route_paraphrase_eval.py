@@ -263,14 +263,15 @@ class ParaphraseRouter:
             "without writing code", "without changing code", "do not write code",
             "do not implement", "without implementing", "no code", "no-code", "before implementation",
             "before coding", "from this spec", "from the spec", "plan only",
-            "planning only", "leave code untouched", "without touching the repo",
-            "不要改程式", "不要動 code", "不要動程式",
+            "planning only", "leave code untouched", "without touching the repo", "without repo changes",
+            "不要改程式", "不要動 code", "不要動程式", "不要寫 code", "不要寫程式",
         ]
         production_negated = any(
             neg in text_lower
             for neg in [
                 "not production", "not a production", "without production risk",
                 "not production risk", "not production deploy",
+                "not security", "not a security", "不是安全", "不是安全風險",
                 "不是正式環境", "非正式環境", "不是正式環境風險",
             ]
         )
@@ -310,6 +311,7 @@ class ParaphraseRouter:
         plan_only_signals = [
             "rollout plan", "delivery plan", "write tickets", "break down",
             "acceptance criteria", "before any implementation", "spec the delivery",
+            "design comparison", "api designs", "on paper", "設計方案",
             "工單", "驗收標準",
         ]
         if any(signal in text_lower for signal in plan_only_signals) and any(
@@ -317,6 +319,25 @@ class ParaphraseRouter:
         ):
             adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 4
             reasons.append("plan boundary: planning artifact without code changes")
+
+        if "design comparison" in text_lower and any(
+            ctx in text_lower for ctx in no_code_context + ["on paper", "paper only"]
+        ):
+            adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 4
+            reasons.append("plan boundary: paper-only design comparison")
+
+        brief_before_plan_signals = [
+            "before writing the prd",
+            "before breaking into tickets",
+            "stakeholder alignment",
+            "align stakeholders",
+            "narrow scope and assumptions",
+            "scope the outcome before",
+            "釐清目標再拆工單",
+        ]
+        if any(signal in text_lower for signal in brief_before_plan_signals):
+            adjustments["reflective-brief"] = adjustments.get("reflective-brief", 0) + 3
+            reasons.append("brief boundary: clarify scope before planning artifacts")
 
         if any(signal in text_lower for signal in test_plan_signals) and any(
             ctx in text_lower for ctx in no_code_context
@@ -400,7 +421,8 @@ class ParaphraseRouter:
         plain_review_signals = [
             "readability", "style and logic", "not production deploy",
             "without production risk", "not production risk",
-            "不是正式環境風險", "可讀性",
+            "not security", "clarity", "不是正式環境風險", "不是安全風險",
+            "可讀性", "清晰度",
         ]
         plain_review_context = [
             "review", "inspect", "check", "diff", "patch", "pr", "regression", "審查",
@@ -445,6 +467,28 @@ class ParaphraseRouter:
         ):
             adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 2
             reasons.append("minimality boundary: complexity reduction requested")
+
+        dependency_removal_signals = [
+            "dependencies can we remove",
+            "packages can we delete",
+            "remove from this module",
+            "remove dependency",
+            "移除依賴", "卸載套件",
+        ]
+        if any(signal in text_lower for signal in dependency_removal_signals):
+            adjustments["reflective-minimality"] = adjustments.get("reflective-minimality", 0) + 3
+            reasons.append("minimality boundary: dependency removal requested")
+
+        dispatch_meta_signals = [
+            "which skill handles",
+            "which reflective workflow skill covers",
+            "which workflow skill covers",
+            "what skill handles",
+            "哪個 skill 負責",
+        ]
+        if any(signal in text_lower for signal in dispatch_meta_signals):
+            adjustments["reflective-dispatch"] = adjustments.get("reflective-dispatch", 0) + 4
+            reasons.append("dispatch boundary: skill catalog or selection question")
 
         handoff_signals = [
             "handoff summary", "hand off", "hand-off", "write a handoff",

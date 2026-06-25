@@ -303,6 +303,23 @@ production-risk assessment. Routes to `reflective-review`, not `reflective-risk`
 
 ---
 
+
+---
+
+## Brief-before-Plan / 規劃前先釐清
+
+Routing boundary: when intent is to narrow scope, assumptions, or stakeholder alignment **before** PRD/ticket breakdown, route to `reflective-brief` — not `reflective-spec-plan`.
+
+**Operational test:** "narrow scope before writing the PRD" routes to brief; "write tickets without code" routes to spec-plan.
+
+---
+
+## Design Comparison (Plan-Only) / 設計比較（僅規劃）
+
+Paper-only API or architecture comparisons without repository changes route to `reflective-spec-plan`, including mixed zh-TW + English phrasing with 不要寫 code cues.
+
+**Operational test:** ROUTE-002 `design_comparison_plan_holdout` phrases route to spec-plan at 100%.
+
 ## Governance Maintenance Playbook / 治理維護手冊
 
 Ongoing upkeep after panel close (Rounds 1–50). Not agent instructions — operator checklist.

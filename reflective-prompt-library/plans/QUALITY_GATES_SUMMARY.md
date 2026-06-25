@@ -355,7 +355,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 35; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 65; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration

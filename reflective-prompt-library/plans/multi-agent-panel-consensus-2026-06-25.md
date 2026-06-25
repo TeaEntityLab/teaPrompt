@@ -966,54 +966,204 @@ User directive: continue Socratic panel for as many rounds as feasible.
 
 **Consensus:** **Agree**.
 
-## Round 50 — Final extended seal (2026-06-25)
+## Round 50 — Interim seal (2026-06-25)
 
-### BQ: Close panel at Round 50?
+**Superseded by Round 65 final seal below.** Was sealed at Round 50 (options A–BQ).
+
+## Round 51 — Brief-before-plan holdout (2026-06-25)
+
+User directive: continue Socratic panel for as many rounds as feasible.
+
+### BR: Add `brief_before_plan_holdout` to ROUTE-002?
 
 | Lens | Position |
 | --- | --- |
-| All six | **Agree** — options A–BQ resolved; maintenance only remains |
+| All six | **Agree** — scope/alignment before PRD must not misroute to spec-plan |
 
-**Consensus:** **Agree close** — panel sealed at **Round 50**; Decision Index entry.
+**Consensus:** **Agree** — 2 phrases; brief-before-plan boundary in router.
 
-### Rounds 36–50 verdict table
+## Round 52 — Dependency removal holdout (2026-06-25)
+
+### BS: Add `dependency_removal_holdout`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — dependency removal is minimality, not dispatch |
+
+**Consensus:** **Agree**.
+
+## Round 53 — Design comparison plan-only (2026-06-25)
+
+### BT: Add `design_comparison_plan_holdout`?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree** — mixed-language 不要寫 code must route to spec-plan |
+| All | **Agree** — paper-only API comparison is planning |
+
+**Consensus:** **Agree** — 3 phrases including zh-TW.
+
+## Round 54 — README plain review (2026-06-25)
+
+### BU: Add `readme_plain_review_holdout`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — clarity-not-security must not trigger risk |
+
+**Consensus:** **Agree** — extend production/security negation.
+
+## Round 55 — Router boundary repair (2026-06-25)
+
+### BV: Boundaries for brief/plan/review/dispatch meta?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — dispatch-meta before handoff keyword collision |
+| All | **Agree** |
+
+**Consensus:** **Agree** — router boundary pass.
+
+## Round 56 — Adversarial dispatch/brief traps (2026-06-25)
+
+### BW: ROUTE-003 dispatch-meta + brief-not-plan?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — skill-catalog questions are dispatch |
+
+**Consensus:** **Agree** — 2 adversarial groups.
+
+## Round 57 — ROUTING_CONTRACT R10 (2026-06-25)
+
+### BX: Codify brief-before-plan norm?
+
+| Lens | Position |
+| --- | --- |
+| Opus | **Agree** — complements R9 plan-only |
+| All | **Agree** |
+
+**Consensus:** **Agree** — R10 in ROUTING_CONTRACT.md.
+
+## Round 58 — Fixture minimums (2026-06-25)
+
+### BY: Bump validate_route_fixture minimums?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — 36/100 and 13/28 |
+| All | **Agree** |
+
+**Consensus:** **Agree**.
+
+## Round 59 — Anti-drift pytest (2026-06-25)
+
+### BZ: `test_round_51_boundary_probes`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — lock new boundaries |
+
+**Consensus:** **Agree**.
+
+## Round 60 — GLOSSARY terms (2026-06-25)
+
+### CA: Brief-before-plan + design comparison entries?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree** — TW fairness for mixed phrases |
+| All | **Agree** |
+
+**Consensus:** **Agree**.
+
+## Round 61 — Metrics sync (2026-06-25)
+
+### CB: QUALITY_GATES ROUTE-002/003 counts?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — 36 groups / 100 phrases; 13 / 28 |
+
+**Consensus:** **Agree**.
+
+## Round 62 — Decision Index (2026-06-25)
+
+### CC: PROJECT_KNOWLEDGE Round 51–65 entry?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** |
+
+**Consensus:** **Agree**.
+
+## Round 63 — Tenth skill reaffirm (2026-06-25)
+
+### CD: Re-open tenth core skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** |
+
+**Consensus:** **Reject**.
+
+## Round 64 — Default minimality reaffirm (2026-06-25)
+
+### CE: Force minimality on every implement?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Defer** — recurrence gate not met |
+
+**Consensus:** **Defer**.
+
+## Round 65 — Final extended seal (2026-06-25)
+
+### CF: Close panel at Round 65?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — options A–CF resolved |
+
+**Consensus:** **Agree close** — panel sealed at **Round 65**.
+
+### Rounds 51–65 verdict table
 
 | ID | Option | Verdict | Action |
 | --- | --- | --- | --- |
-| BC | Plan-only holdout | **Agree** | ROUTE-002 group |
-| BD | Plain review holdout | **Agree** | ROUTE-002 group |
-| BE | Router boundaries | **Agree** | plan-only + production-negation |
-| BF | Adversarial traps | **Agree** | ROUTE-003 +2 groups |
-| BG | R9 contract | **Agree** | ROUTING_CONTRACT.md |
-| BH | Fixture minimums | **Agree** | validate_route_fixture.py |
-| BI | zh-TW holdouts | **Agree** | ROUTE-002 TW groups |
-| BJ | GLOSSARY terms | **Agree** | plan-only + plain review |
-| BK | Metrics sync | **Agree** | QUALITY_GATES_SUMMARY |
-| BL | Decision Index | **Agree** | PROJECT_KNOWLEDGE |
-| BM | Cheatsheet cues | **Agree** | EN + zh-TW |
-| BN | Tenth skill | **Reject** | — |
-| BO | Benchmark CI | **Reject** | — |
-| BP | CONTRIBUTING | **Agree** | R8–R9 step |
-| BQ | Final seal | **Agree** | Panel sealed Round 50 |
+| BR | Brief-before-plan holdout | **Agree** | ROUTE-002 group |
+| BS | Dependency removal | **Agree** | ROUTE-002 group |
+| BT | Design comparison plan | **Agree** | ROUTE-002 + zh-TW |
+| BU | README plain review | **Agree** | ROUTE-002 group |
+| BV | Router boundaries | **Agree** | brief/plan/review/dispatch-meta |
+| BW | Adversarial traps | **Agree** | ROUTE-003 +2 groups |
+| BX | R10 contract | **Agree** | ROUTING_CONTRACT.md |
+| BY | Fixture minimums | **Agree** | 36/100, 13/28 |
+| BZ | Boundary pytest | **Agree** | test_round_51_boundary_probes |
+| CA | GLOSSARY | **Agree** | brief-before-plan terms |
+| CB | Metrics | **Agree** | QUALITY_GATES_SUMMARY |
+| CC | Decision Index | **Agree** | PROJECT_KNOWLEDGE |
+| CD | Tenth skill | **Reject** | — |
+| CE | Default minimality | **Defer** | backlog |
+| CF | Final seal | **Agree** | Panel sealed Round 65 |
 
 **All roles agree.**
 
-## Implemented Changes (Rounds 36–50)
+## Implemented Changes (Rounds 51–65)
 
-- `route-002-holdout-eval.yaml`: plan-only, plain-review, zh-TW plan/review groups (91 paraphrases / 32 groups)
-- `route-003-adversarial-eval.yaml`: implement-not-plan, research-not-brief traps (24 paraphrases / 11 groups)
-- `route_paraphrase_eval.py`: production-negation, plan-only, plain-review boundaries
-- `validate_route_fixture.py`: minimum coverage 32/91 and 11/24
-- `ROUTING_CONTRACT.md`: R9
-- `GLOSSARY.md`, `QUALITY_GATES_SUMMARY.md`, `PROJECT_KNOWLEDGE.md`, `CONTRIBUTING.md`
-- `SKILL_TRIGGER_CHEATSHEET.md` + `.zh-TW.md`
+- `route-002-holdout-eval.yaml`: brief-before-plan, dependency removal, design comparison, readme plain review (100 phrases / 36 groups)
+- `route-003-adversarial-eval.yaml`: dispatch-meta, brief-not-plan traps (28 phrases / 13 groups)
+- `route_paraphrase_eval.py`: brief-before-plan, dependency removal, design comparison, security negation, dispatch-meta
+- `validate_route_fixture.py`: minimums 36/100 and 13/28
+- `ROUTING_CONTRACT.md`: R10 Brief-before-plan
+- `GLOSSARY.md`, `QUALITY_GATES_SUMMARY.md`, `PROJECT_KNOWLEDGE.md`
 
-## Verification (Rounds 36–50)
+## Verification (Rounds 51–65)
 
-- `make all`: **62 pytest**, ROUTE-001 **100%** (16/128), ROUTE-002 **100%** (32/91), ROUTE-003 **100%** (11/24)
+- `make all`: **64 pytest**, ROUTE-001 **100%** (16/128), ROUTE-002 **100%** (36/100), ROUTE-003 **100%** (13/28)
 
 ## Panel status (final)
 
-**Sealed 2026-06-25** after **Round 50** (options A–BQ). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook — expand holdout before router tuning; no open implementation blockers.
+**Sealed 2026-06-25** after **Round 65** (options A–CF). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook.
 
-_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — `validate_route_fixture.py` + ROUTE-002/003 holdout expansion before `route_paraphrase_eval.py` tuning (R8–R9)._
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before `route_paraphrase_eval.py` tuning (R8–R10)._

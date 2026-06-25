@@ -42,6 +42,7 @@ def test_route_fixtures_use_known_workflows():
         for group in config[section]:
             assert group["expected_workflow"] in VALID_WORKFLOWS, group["name"]
 
+
 def test_route_fixture_minimums_match_validator_constants():
     """Anti-drift: fixture actuals must meet exported minimum constants."""
     route_002 = load_route_eval_config(PLANS / "route-002-holdout-eval.yaml")
@@ -55,3 +56,19 @@ def test_route_fixture_minimums_match_validator_constants():
     assert r3_groups == ROUTE_003_MIN_ADVERSARIAL_GROUPS
     assert r3_phrases == ROUTE_003_MIN_PHRASES
 
+
+def test_round_51_boundary_probes():
+    """Anti-drift: Rounds 51–55 router boundaries for brief/plan/review/dispatch."""
+    from route_paraphrase_eval import ParaphraseRouter  # noqa: E402
+
+    router = ParaphraseRouter()
+    probes = [
+        ("narrow scope and assumptions before writing the PRD", "reflective-brief"),
+        ("what dependencies can we remove from this module", "reflective-minimality"),
+        ("which skill handles session handoff in this library", "reflective-dispatch"),
+        ("review the README for clarity not security", "reflective-review"),
+        ("比較兩個 API 設計方案但不要寫 code", "reflective-spec-plan"),
+    ]
+    for text, expected in probes:
+        workflow, _, _, _ = router.route(text)
+        assert workflow == expected, f"{text!r} -> {workflow}, want {expected}"

@@ -79,6 +79,11 @@ This contract applies to:
 - `validate_route_fixture.py` enforces minimum group and phrase counts in CI.
 - Holdout expansion is maintenance, not proof of broad semantic routing.
 
+### R10: Brief-before-plan
+
+- Phrases that scope goals, assumptions, or stakeholder alignment **before** PRD/ticket artifacts route to `reflective-brief`, not `reflective-spec-plan`.
+- Skill-catalog questions (which skill handles X) route to `reflective-dispatch`, not execution workflows.
+
 ### R9: Production-negation and plan-only boundaries
 
 - Phrases that **negate** production risk (e.g. "not production deploy", 不是正式環境風險)
