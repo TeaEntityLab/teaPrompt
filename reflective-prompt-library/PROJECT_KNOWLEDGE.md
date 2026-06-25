@@ -41,7 +41,7 @@ operating its own agent runtime. See [README.md](README.md#north-star).
 > does not silently expand. Completed milestones are retired from this section;
 > their outcomes live in the Decision Index.
 
-**Ongoing (post Round 21 audit):** maintain ROUTE-001/002/003 evals, governance validators,
+**Ongoing (post Round 35 panel):** maintain ROUTE-001/002/003 evals, governance validators,
 and holdout expansion before router tuning — see [GLOSSARY.md](GLOSSARY.md) Governance
 Maintenance Playbook. No open implementation blockers from Rounds 8–20; deferred promotions
 are recurrence-gated — see [panel backlog](plans/multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers).

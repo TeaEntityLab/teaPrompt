@@ -470,6 +470,36 @@ class ParaphraseRouter:
             adjustments["reflective-dispatch"] = adjustments.get("reflective-dispatch", 0) + 4
             reasons.append("dispatch boundary: context_load deferral or strictness-first routing")
 
+        dispatch_skill_signals = [
+            "reflective workflow skill",
+            "workflow skill should run",
+            "pick the right reflective",
+            "reflective skill should",
+            "which skill should run for this library",
+            "help me dispatch the right reflective skill",
+        ]
+        if any(signal in text_lower for signal in dispatch_skill_signals):
+            adjustments["reflective-dispatch"] = adjustments.get("reflective-dispatch", 0) + 3
+            reasons.append("dispatch boundary: reflective skill selection requested")
+
+        brief_before_route_signals = [
+            "before we pick a workflow",
+            "before choosing skills",
+            "optimize for before choosing",
+        ]
+        if any(signal in text_lower for signal in brief_before_route_signals):
+            adjustments["reflective-brief"] = adjustments.get("reflective-brief", 0) + 2
+            reasons.append("brief boundary: clarify goal before workflow selection")
+
+        retro_lessons_signals = [
+            "lessons learned retro",
+            "sprint retrospective",
+            "retrospective on what worked",
+        ]
+        if any(signal in text_lower for signal in retro_lessons_signals):
+            adjustments["reflective-handoff-retro"] = adjustments.get("reflective-handoff-retro", 0) + 3
+            reasons.append("handoff boundary: lessons-learned retrospective")
+
         return adjustments, reasons
     
     def route(self, text: str) -> Tuple[str, float, List[str], str]:

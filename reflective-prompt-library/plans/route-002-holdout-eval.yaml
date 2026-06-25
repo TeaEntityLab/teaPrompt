@@ -287,6 +287,14 @@ holdout_sets:
       - 把這個 idea 拆成 tickets with acceptance criteria
       - write test plan from spec 但不要改 code
 
+  - name: brief_vs_dispatch_holdout
+    expected_workflow: reflective-brief
+    expected_rigor: low
+    expected_enhancements:
+      - goal_clarification
+    phrases:
+      - clarify the goal and assumptions before we pick a workflow
+      - what should we optimize for before choosing skills
 
 evaluation_rules:
   - name: route_equivalence

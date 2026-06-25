@@ -72,6 +72,13 @@ This contract applies to:
 - Deferral is not a silent downgrade: equivalent high-rigor intent must still receive equivalent outcomes or an explicit escalation path.
 
 
+### R8: Holdout-before-tune
+
+- Add fresh ROUTE-002 holdout and ROUTE-003 adversarial phrases **before** tuning
+  `route_paraphrase_eval.py` keyword or boundary rules.
+- `validate_route_fixture.py` enforces minimum group and phrase counts in CI.
+- Holdout expansion is maintenance, not proof of broad semantic routing.
+
 ## Router Output Contract
 
 Use this minimal output shape for routing responses:

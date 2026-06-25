@@ -17,6 +17,12 @@ Classify the task
 
 The repository serves as a structured substrate of methods, context artifacts, and composable workflow skills, rather than a single giant instruction set.
 
+## Governance Panel Record
+
+Multi-voice Socratic deliberation (single host, six lenses) is recorded at
+[plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md).
+It is a judgment method inside `reflective-research`, not a runtime orchestrator.
+
 ## Positioning: Skills as Natural-Language Harness Policy
 
 The 2026 agent literature gives this library a precise external frame. In current

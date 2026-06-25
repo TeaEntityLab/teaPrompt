@@ -540,7 +540,7 @@ User directive: continue the multi-agent Socratic panel through **Round 20** (op
 
 ## Panel status (updated)
 
-**Sealed 2026-06-25** after **Round 21 audit** (options A–AN). No open implementation blockers from Rounds 8–20. Future promotions still require the three-recurrence gate.
+**Superseded — see final seal at Round 35 below.** Was sealed after Round 21 audit (options A–AN). No open implementation blockers from Rounds 8–20. Future promotions still require the three-recurrence gate.
 
 _Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before router tuning; run `make all`; monitor undocumented-decision warnings._
 
@@ -618,3 +618,201 @@ User directive: confirm all panel problems are done or run another Socratic roun
 - Routing CI: `Makefile` `validate` runs ROUTE-001, ROUTE-002 (80 holdout), ROUTE-003 (16 adversarial) via `route_paraphrase_eval.py`
 - Governance: `validate_governance.py` with `CANONICAL_CONTEXT_LOAD`
 - Round 21 audit: `make all` — 59 pytest, ROUTE-001/002/003 100%, governance 9/9, skill examples 9/9
+
+
+## Round 22 — Route fixture hygiene gate (2026-06-25)
+
+User directive: continue Socratic panel for as many rounds as feasible.
+
+### AO: Deterministic `validate_route_fixture.py` in CI?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — mirrors `validate_benchmark_fixture.py`; blocks accidental shrinkage |
+| Opus | **Agree** — holdout counts should only grow via explicit constant bumps |
+| Gemini | **Agree** — run before expensive paraphrase eval |
+| Composer | **Agree** — unique group names + workflow validation |
+| Sakana | **Agree** — no new YAML dependency |
+| GLM | **Agree** — zh-TW holdout groups protected by minimum counts |
+
+**Socratic Q:** What fails if we skip this gate?
+**Answer:** Router tuning could silently delete holdout coverage; regressions hide until manual audit.
+
+**Consensus:** **Agree** — `validate_route_fixture.py` + `Makefile` step before ROUTE evals.
+
+## Round 23 — Brief vs dispatch holdout (2026-06-25)
+
+### AP: Add `brief_vs_dispatch_holdout` to ROUTE-002?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — clarify-goal-before-route must not collapse into dispatch |
+
+**Consensus:** **Agree** — 2 phrases; brief boundary reinforcement in router.
+
+## Round 24 — Adversarial dispatch/retro traps (2026-06-25)
+
+### AQ: Expand ROUTE-003 with dispatch-vs-brief and retro-lessons groups?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — separate fixture from ROUTE-002 holdout |
+| Opus | **Agree** — retro must not drift to implement when "code" appears nearby |
+| All | **Agree** — 2 new adversarial groups, 4 phrases |
+
+**Consensus:** **Agree** — `dispatch_vs_brief_adversarial`, `retro_lessons_adversarial`.
+
+## Round 25 — Router boundary repair (2026-06-25)
+
+### AR: Boundary rules for skill-selection dispatch and retro lessons?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — only when new holdout phrases require it |
+
+**Consensus:** **Agree** — dispatch-skill, brief-before-route, retro-lessons boundaries in `route_paraphrase_eval.py`.
+
+## Round 26 — Pytest for fixture gate (2026-06-25)
+
+### AS: `test_validate_route_fixture.py`?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — minimum coverage constants tested |
+
+**Consensus:** **Agree** — 3 pytest cases.
+
+## Round 27 — ROUTING_CONTRACT R8 (2026-06-25)
+
+### AT: Codify holdout-before-tune as normative requirement?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — pairs with playbook step 2 |
+| Opus | **Agree** — R8 makes maintenance auditable |
+| All | **Agree** — R8 in `ROUTING_CONTRACT.md` |
+
+**Consensus:** **Agree** — **R8: Holdout-before-tune**.
+
+## Round 28 — METHODOLOGY_MAP panel pointer (2026-06-25)
+
+### AU: Discoverability for panel record?
+
+| Lens | Position |
+| --- | --- |
+| Sakana | **Agree** — multi-voice is research method, not runtime |
+| All | **Agree** — one section in `METHODOLOGY_MAP.md` |
+
+**Consensus:** **Agree** — Governance Panel Record section.
+
+## Round 29 — zh-TW README pointer (2026-06-25)
+
+### AV: TW adopters need panel link?
+
+| Lens | Position |
+| --- | --- |
+| GLM | **Agree** — one line under `plans/` |
+| All | **Agree** — `README.zh-TW.md` pointer |
+
+**Consensus:** **Agree** — single-line TW pointer; English panel record stays canonical.
+
+## Round 30 — Metrics sync + interim seal (2026-06-25)
+
+### AW: Update QUALITY_GATES metrics and GLOSSARY playbook?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — 28/82 and 9/20 metrics; playbook mentions fixture gate |
+
+**Consensus:** **Agree** — metrics + playbook update; interim seal at Round 30 superseded by Round 35 below.
+
+## Round 31 — Tenth skill reaffirm (2026-06-25)
+
+### AX: Re-open tenth core skill?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — promotion gate unchanged (A, W, AJ) |
+
+**Consensus:** **Reject** — no tenth skill.
+
+## Round 32 — In-repo swarm reaffirm (2026-06-25)
+
+### AY: Add multi-agent orchestrator?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — north star is harness policy, not runtime |
+
+**Consensus:** **Reject** — panel/multi-voice stays inside `reflective-research`.
+
+## Round 33 — Default minimality reaffirm (2026-06-25)
+
+### AZ: Force `reflective-minimality` on every implement?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Defer** — signal scan sufficient; three-recurrence gate not met |
+
+**Consensus:** **Defer** — recurrence-gated backlog unchanged.
+
+## Round 34 — CONTRIBUTING routing maintenance (2026-06-25)
+
+### BA: Operator checklist in CONTRIBUTING?
+
+| Lens | Position |
+| --- | --- |
+| Composer | **Agree** — contributors need holdout-before-tune steps |
+| All | **Agree** — Routing Maintenance section |
+
+**Consensus:** **Agree** — root `CONTRIBUTING.md` section + R8 link.
+
+## Round 35 — Final extended seal (2026-06-25)
+
+### BB: Close extended panel at Round 35?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — options A–BB resolved; maintenance only remains |
+
+**Consensus:** **Agree close** — panel sealed at **Round 35**; Decision Index entry.
+
+### Rounds 22–35 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| AO | Route fixture gate | **Agree** | `validate_route_fixture.py` + Makefile |
+| AP | Brief vs dispatch holdout | **Agree** | ROUTE-002 +1 group |
+| AQ | Adversarial expansion | **Agree** | ROUTE-003 +2 groups |
+| AR | Router boundaries | **Agree** | dispatch/brief/retro boundaries |
+| AS | Fixture pytest | **Agree** | `test_validate_route_fixture.py` |
+| AT | R8 holdout-before-tune | **Agree** | `ROUTING_CONTRACT.md` |
+| AU | METHODOLOGY_MAP pointer | **Agree** | Governance Panel Record |
+| AV | README.zh-TW pointer | **Agree** | plans panel link |
+| AW | Metrics sync | **Agree** | QUALITY_GATES + GLOSSARY |
+| AX | Tenth skill | **Reject** | — |
+| AY | Swarm runtime | **Reject** | — |
+| AZ | Default minimality | **Defer** | backlog |
+| BA | CONTRIBUTING maintenance | **Agree** | Routing Maintenance section |
+| BB | Final seal | **Agree** | Panel sealed Round 35 |
+
+**All roles agree.**
+
+## Implemented Changes (Rounds 22–35)
+
+- `validate_route_fixture.py`, `tests/test_validate_route_fixture.py`, `Makefile` validate step
+- `route-002-holdout-eval.yaml`: `brief_vs_dispatch_holdout` (82 paraphrases / 28 groups)
+- `route-003-adversarial-eval.yaml`: `dispatch_vs_brief_adversarial`, `retro_lessons_adversarial` (20 paraphrases / 9 groups)
+- `route_paraphrase_eval.py`: dispatch-skill, brief-before-route, retro-lessons boundaries
+- `ROUTING_CONTRACT.md`: R8 Holdout-before-tune
+- `METHODOLOGY_MAP.md`, `README.zh-TW.md`, `CONTRIBUTING.md`, `GLOSSARY.md`, `QUALITY_GATES_SUMMARY.md`, `PROJECT_KNOWLEDGE.md`
+
+## Verification (Rounds 22–35)
+
+- `make all`: **62 pytest**, ROUTE-001 **100%** (16 groups / 128), ROUTE-002 **100%** (28 / 82), ROUTE-003 **100%** (9 / 20), governance **9/9**, skill examples **9/9**, route fixture gate **pass**
+
+## Panel status (final)
+
+**Sealed 2026-06-25** after **Round 35** (options A–BB). Extended deliberation complete. Future work is recurrence-gated maintenance per playbook — expand holdout before router tuning; no open implementation blockers.
+
+_Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — `validate_route_fixture.py` + ROUTE-002/003 holdout expansion before `route_paraphrase_eval.py` tuning._

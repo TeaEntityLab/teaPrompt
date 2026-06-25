@@ -199,6 +199,15 @@ python3 reflective-prompt-library/plans/validate_skill_examples.py
 ```
 
 ### 7.3 ROUTE-003 Adversarial Eval ✅
+### 7.4 Route Fixture Gate ✅
+
+**File:** `reflective-prompt-library/plans/validate_route_fixture.py`
+
+- Enforces minimum ROUTE-001/002/003 group and phrase counts before paraphrase eval runs
+- Round 22 panel compromise: deterministic hygiene without YAML dependency
+- Integrated in `make validate` after skill examples gate
+
+
 
 **File:** `reflective-prompt-library/plans/route-003-adversarial-eval.yaml`
 
@@ -251,8 +260,8 @@ The implementation aligns with research findings:
 | Skills with governance | 9/9 | ✅ Complete |
 | Benchmark tasks | 23 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (27 groups, 80 paraphrases) |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (7 groups, 16 paraphrases) |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (28 groups, 82 paraphrases) |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (9 groups, 20 paraphrases) |
 | Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
 | Linting errors | 0 | ✅ Clean |
 
@@ -283,7 +292,7 @@ ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-2
 ### Done ✅
 
 1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
-2. **ROUTE-001/002/003 in CI** — 128 + 80 + 16 paraphrases at 100% consistency (seeded fixtures)
+2. **ROUTE-001/002/003 in CI** — 128 + 82 + 20 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
 
@@ -346,7 +355,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 20; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 35; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration

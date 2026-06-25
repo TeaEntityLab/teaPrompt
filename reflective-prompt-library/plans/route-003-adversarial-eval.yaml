@@ -82,6 +82,24 @@ adversarial_sets:
     phrases:
       - 把這個 idea break down into tickets with acceptance criteria
       - write a test plan from the spec without code changes
+  - name: dispatch_vs_brief_adversarial
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - which workflow skill should run for this library task
+      - help me pick the right reflective workflow skill
+
+  - name: retro_lessons_adversarial
+    expected_workflow: reflective-handoff-retro
+    expected_rigor: low
+    expected_enhancements:
+      - promotion_candidate
+    phrases:
+      - lessons learned retro after this sprint
+      - sprint retrospective with lessons learned
+
 
 evaluation_rules:
   - name: route_equivalence
