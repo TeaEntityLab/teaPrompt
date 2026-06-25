@@ -228,6 +228,8 @@ When chat-only, use the same headings inline.
 - `02-engineering/test-designer.md`
 - `02-engineering/usage-first.md`
 - `02-engineering/task-slicer.md`
+- `01-thinking/falsifiability.md`
+- `01-thinking/why-what-how-done.md`
 - `04-agent/workflow-engine.md`
 - `04-agent/sop-compiler.md`
 - `04-agent/runtime-trust-boundary.md`

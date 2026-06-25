@@ -4,7 +4,7 @@ Use this to design tests before implementation and prevent fake or weak tests.
 
 ## Purpose
 
-Design tests from a spec without implementation. Primary workflow surface: `reflective-spec-plan` (Test Plan / acceptance coverage).
+Design tests from a spec without implementation. Primary workflow surface: `reflective-spec-plan` (Test Plan / acceptance coverage). Pairs with `01-thinking/falsifiability.md` for observable failure conditions.
 
 ## Scope
 

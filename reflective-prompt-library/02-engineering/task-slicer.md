@@ -4,7 +4,7 @@ Use this to split a spec into independent, testable, reviewable tickets.
 
 ## Purpose
 
-Slice a spec into independently verifiable tickets. Primary workflow surface: `reflective-spec-plan`.
+Slice a spec into independently verifiable tickets. Primary workflow surface: `reflective-spec-plan`. Pairs with `01-thinking/why-what-how-done.md` for goal-to-ticket framing.
 
 ## Scope
 

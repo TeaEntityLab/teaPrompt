@@ -4,7 +4,7 @@ Use this to avoid specs that look good but are awkward in practice.
 
 ## Purpose
 
-Derive usage-driven spec fixes before implementation. Primary workflow surface: `reflective-spec-plan`; pair with `reflective-brief` when goals are still fuzzy.
+Derive usage-driven spec fixes before implementation. Primary workflow surface: `reflective-spec-plan`; pair with `reflective-brief` when goals are still fuzzy. Pairs with `01-thinking/socratic-reviewer.md` to clarify the real user problem.
 
 ## Scope
 

@@ -171,5 +171,7 @@ Request Human Review for auth, permission changes, security-sensitive logic, pri
 - `02-engineering/implementation-agent.md`
 - `02-engineering/test-designer.md`
 - `02-engineering/local-feedback.md`
+- `01-thinking/counterargument.md`
+- `01-thinking/critical-thinking-check.md`
 - `06-repo/codex-opencode.md`
 - `04-agent/runtime-trust-boundary.md`

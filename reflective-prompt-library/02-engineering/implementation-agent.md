@@ -4,7 +4,7 @@ Suitable for Codex, Cursor, OpenCode, Claude Code, and other repo-aware coding a
 
 ## Purpose
 
-Repo-aware implementation with traceability. Primary workflow surface: `reflective-implement`; escalate to `reflective-risk` before trust-boundary or high-blast-radius changes.
+Repo-aware implementation with traceability. Primary workflow surface: `reflective-implement`; escalate to `reflective-risk` before trust-boundary or high-blast-radius changes. Pairs with `01-thinking/counterargument.md` for simpler alternatives before adding code.
 
 ## Scope
 

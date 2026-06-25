@@ -1584,4 +1584,66 @@ Parallel scouts (PromptScout2, SkillPlanAuditor, SocraticLens) confirmed Round 6
 
 ## Panel status (updated)
 
-**Resealed 2026-06-25** after **Round 70** (options DC–DE). Engineering-prompt contract pass complete; 00-core and 03–05 Purpose sweep remains recurrence-gated.
+## Round 71 — Thinking ↔ engineering cross-link review (2026-06-25)
+
+User directive (repeat): review prompts, plans, skills, and Socratic/critical-thinking lenses in parallel until all roles agree, then implement.
+
+Parallel scouts (**SocraticLens**, **PromptScout2**, **SkillPlanAuditor**) after Round 70.
+
+### DF: Complete thinking ↔ engineering cross-links?
+
+| Lens | Position |
+| --- | --- |
+| Sakana | **Agree** — Socratic lenses must be discoverable from engineering prompts |
+| Opus | **Agree** — bidirectional Prompt Sources closes the epistemic loop |
+| Codex | **Agree** — anti-drift test with explicit mapping table |
+| Gemini | **Agree** — low-cost doc pass; no router change |
+| Composer | **Agree** — IDE users follow engineering prompts first |
+| GLM | **Agree** — English canonical links; zh-TW bodies unchanged |
+
+**Socratic Q:** What fails if we only link thinking → workflow (Round 69) but not engineering → thinking?
+**Answer:** Hosts load engineering templates without reaching falsifiability / Socratic lenses.
+
+**Consensus:** **Agree** — all 8 `02-engineering/` prompts name `01-thinking/` lenses; add thinking refs to `reflective-implement`, `reflective-spec-plan`, `reflective-handoff-retro` Prompt Sources; `test_prompt_cross_links.py` anti-drift.
+
+### DG: 00-core Purpose sweep now?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Reject** — recurrence-gated; cross-link pass is bounded |
+
+### DH: Skill frontmatter pytest suite (SkillPlanAuditor)?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Defer** — `validate_governance.py` already enforces context_load in `make validate` |
+| Opus | **Defer** — mirror in pytest only after a governance regression |
+
+**Consensus:** **Defer** — no duplicate validator tests this round.
+
+### Round 71 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| DF | Thinking ↔ engineering cross-links | **Agree** | 8 engineering + 3 skills + pytest |
+| DG | 00-core Purpose sweep | **Reject** | backlog |
+| DH | Skill frontmatter pytest | **Defer** | recurrence-gated |
+
+**All roles agree.**
+
+## Implemented Changes (Round 71)
+
+- `02-engineering/*.md`: `01-thinking/` lens links in Purpose for all 8 prompts
+- `skills/reflective-implement`, `reflective-spec-plan`, `reflective-handoff-retro`: thinking Prompt Sources
+- `plans/tests/test_prompt_cross_links.py`: explicit cross-link anti-drift
+- `QUALITY_GATES_SUMMARY.md`: cross-link test mention; pytest floor 240+
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 71 entry
+
+## Verification (Round 71)
+
+- `make all`: pytest + ROUTE-001/002/003 100%
+
+## Panel status (updated)
+
+**Resealed 2026-06-25** after **Round 71** (options DF–DH). Thinking ↔ engineering cross-link pass complete; 00-core Purpose sweep remains recurrence-gated.
+
