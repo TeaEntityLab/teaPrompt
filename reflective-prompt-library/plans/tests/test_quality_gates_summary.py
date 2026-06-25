@@ -99,3 +99,8 @@ def test_phase2_status_references_post_round_68_maintenance(summary_text: str):
     assert "Round 21 audit" not in summary_text
     assert "test_readme_governance.py" in summary_text
 
+def test_research_alignment_lists_nine_frozen_skills(summary_text: str):
+    section = _section_between(summary_text, "## Research Alignment", "## Key Metrics")
+    assert "nine frozen workflow skills" in section
+    assert "8 lifecycle skills" not in section
+

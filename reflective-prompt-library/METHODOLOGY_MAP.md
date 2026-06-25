@@ -225,6 +225,6 @@ Multi-agent work requires state, tools, logs, verification, and handoff artifact
 | Workflow & Agentic Layer | Aligned | Extended | Workflows, SOP compiler planning, planning engine, and memory consolidation (`04-agent/`). |
 | Domain Pack Layer | Aligned | Complete | Keep strategy and domain prompts in `05-domain/`. |
 | Repository Template Layer | Aligned | Extended | Maintain instruction templates and the reusable project-knowledge scaffold under `06-repo/`. |
-| Skill / Action Layer | Aligned | Extended | Maintain 8 lifecycle skills plus a narrow minimality gate for anti-bloat decisions. |
+| Skill / Action Layer | Aligned | Extended | Maintain nine frozen workflow skills (including reflective-minimality gate) for anti-bloat decisions. |
 | Quality Gate / Verification | Aligned | Complete | Standardize skill-level quality checks. |
 | Governance / Capability Risk | Aligned | Extended | Use `reflective-risk` for high-risk boundaries and `04-agent/runtime-trust-boundary.md` for instruction/data/tool authority review. |

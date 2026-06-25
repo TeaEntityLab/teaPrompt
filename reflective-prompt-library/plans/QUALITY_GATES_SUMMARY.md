@@ -266,7 +266,7 @@ The implementation aligns with research findings:
 
 1. **Quality over quantity** - TeaPrompt maintains 72 indexed files vs thousands in other repos
 2. **Hierarchical organization** - 6 categories with clear structure
-3. **Focused skills** - 8 lifecycle skills plus 1 narrow minimality gate vs comprehensive documentation
+3. **Focused skills** - nine frozen workflow skills (including reflective-minimality gate) vs comprehensive documentation
 4. **Validation discipline** - Automated quality gates prevent degradation
 5. **Lightweight governance** - SRCP simplified to 3 critical fields
 
