@@ -5,6 +5,7 @@ license: MIT
 risk_level: low
 human_review_required: false
 external_io: false
+context_load: low
 ---
 
 # Reflective Dispatch
@@ -88,6 +89,16 @@ Choose the lowest strictness level that still controls risk:
 | `L6` | Strategy/education/business framing | Domain prompts as overlays, not core execution |
 
 Escalate only when needed. De-escalate once risk is controlled.
+
+## L1 Fast Path
+
+When **all** of the following are true, skip a separate `reflective-brief` and answer directly:
+
+- Strictness is `L1` (low-risk, short, no state to preserve).
+- The task is trivial or a single obvious action.
+- No high-risk, trust-boundary, or side-effect authority signals appear.
+
+Still emit a minimal route trace (`Mode`, `Strictness`, `Workflow: prompt-only`, `Next Action`). If any signal is ambiguous, default-up to `reflective-brief` instead of silent downgrade.
 
 ## Output
 

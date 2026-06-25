@@ -5,6 +5,7 @@ license: MIT
 risk_level: high
 human_review_required: true
 external_io: false
+context_load: medium
 ---
 
 # Reflective Risk

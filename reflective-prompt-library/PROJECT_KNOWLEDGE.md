@@ -30,6 +30,13 @@ Language: English
 
 ## Current Direction
 
+### North Star (2026-06-25)
+
+TeaPrompt helps humans and host agents choose the right amount of rigor for a task,
+record why decisions were made, and verify outcomes with evidence — using composable
+prompt layers and nine workflow skills as natural-language harness policy, without
+operating its own agent runtime. See [README.md](README.md#north-star).
+
 > The active problem the project is solving now, with explicit non-goals so scope
 > does not silently expand. Each milestone carries a `Status:` of
 > `active`, `planned`, or `done`. A `done` milestone is a candidate for removal,
@@ -39,7 +46,7 @@ Language: English
 - Status: active
 - Problem: keep the routing contract, quality gates, and minimality gate trustworthy as the skill set grows, without turning the library into a monolith.
 - Non-goals: a runtime engine, an agent swarm, a vector/RAG memory store, vendor lock-in.
-- Target: routing and minimality gates remain evidence-backed and pass on every change.
+- Target: routing and minimality gates remain evidence-backed and pass on every change; core skill count stays at nine unless promotion gate met.
 
 ### Milestone: Project judgment layer
 - Status: active
@@ -81,3 +88,5 @@ Language: English
 - 2026-06-18 Adopt STORM's source-grounded perspective discovery as an optional `reflective-research` method, not a new skill → [record](plans/storm-perspective-discovery-reflection-2026-06-18.md)
 - 2026-06-20 Synthesize external-adoption case studies, then correct the evidence and promotion-gate scope after the Test Plan routing counterexample → [record](plans/external-adoption-case-studies-2026-06-20.md)
 - 2026-06-21 Evaluate Hyperplan / multi-agent adversarial planning — no change (runtime = non-goal; methodology overlaps; possible gaps not promoted) → [record](plans/external-adoption-case-studies-2026-06-20.md)
+- 2026-06-25 Round 4 panel close — Minimality Signal Scan, ROUTE-002 in CI, partial TW localization → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
+- 2026-06-25 Multi-agent panel rethink — consensus: freeze nine skills, L1 fast path, context_load metadata, optional multi-voice in research; reject reflective-panel skill → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

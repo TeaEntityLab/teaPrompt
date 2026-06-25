@@ -9,6 +9,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 > **輸出慣例**：精簡的交付規格應放在 Module Contract 的 `Output:` 欄位。僅當 skill 產生實質的輸出範本（例如 markdown 區塊、多欄位結構）時，才額外加入獨立的 `## Output` 區段。具有程序步驟（before/during/after）的 skill 通常不需要獨立的 Output 區段。
 
 分流公平性說明：
+- 各 skill frontmatter 含 `context_load: low|medium|high`，供成本敏感分流。
 - 下面的觸發提示只是範例，不是必要措辭。
 - 相近意圖即使措辭不同，也應該獲得相近的分流結果。
 - 允許快速關鍵字分流，但不能因此對相近意圖靜默降低品質。
@@ -27,6 +28,10 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 - 任務已明確只需單一 skill
 - 只需最終執行，無需分流決策
+
+L1 快速路徑：
+
+- Strictness 為 L1 且任務瑣碎時，直接回答並附最小路由軌跡，不必另走 `reflective-brief`。
 
 ## `reflective-brief`
 
@@ -59,6 +64,10 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 何時用：
 
 - 要實作、除錯、重構並驗證
+
+Minimality 訊號掃描（skill 內建）：
+
+- 出現膨脹訊號（新 dependency、多餘檔案、新抽象層）時，編輯前先跑 skill 內 Minimality Signal Scan；爭議時升級到 `reflective-minimality`。
 
 不要用在：
 
@@ -100,6 +109,7 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 - 要做來源查證、DeepWiki 檢視、方法論盤點
 - 要比較官方文件、第三方鏡像與社群分析
 - 要研究目前 workflow framework 或 orchestration pattern
+- 多視角戰略重思（使用 skill 內 Optional Method: Multi-Voice Panel）
 
 不要用在：
 

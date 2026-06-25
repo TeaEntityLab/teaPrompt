@@ -19,6 +19,15 @@ Core identity prompt
 + validation prompt
 ```
 
+## North Star
+
+TeaPrompt helps humans and host agents choose the **right amount of rigor** for a task, record **why** decisions were made, and verify outcomes with **evidence** — using composable prompt layers and nine workflow skills as natural-language harness policy, **without** operating its own agent runtime.
+
+## Strictness Before Skills
+
+Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSSARY.md](GLOSSARY.md)), then the skill phase. Skills declare `context_load: low|medium|high` in frontmatter so cost-aware hosts can defer heavy skills when Strictness is low.
+
+
 ## Directory Map
 
 - `00-core/`: core identity, custom instructions, master prompts, and controller prompts.

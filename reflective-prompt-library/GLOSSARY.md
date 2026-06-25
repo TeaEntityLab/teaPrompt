@@ -185,3 +185,52 @@ independent agents, role-specific context isolation, or a persistent
 runtime process, a single skill alone is insufficient — those require a
 dedicated orchestration layer outside this library's scope. See
 `PROJECT_KNOWLEDGE.md` for the full list of non-goals.
+
+---
+
+## Context Load / 上下文負載
+
+Estimated prompt-and-artifact cost of loading and following a workflow skill.
+Declared in each `SKILL.md` frontmatter as `low`, `medium`, or `high`.
+
+**Operational test:** A host with tight token budget may defer `high` skills when
+Strictness is L1–L2 and route trace shows no need for deep planning or research.
+
+---
+
+## Route Trace / 路由軌跡
+
+User-visible routing record emitted when workflow selection is uncertain or when
+`reflective-dispatch` runs. Must include canonical workflow, confidence, and
+enabled vs available enhancements.
+
+**Operational test:** A different session can see whether quality was downgraded
+and why, without reading hidden reasoning.
+
+---
+
+## Enhancement / 增強檢查
+
+Optional rigor layer beyond the baseline workflow (e.g., security review,
+performance check, extra tests). May be disabled for cost, but disabling must
+appear in the route trace — not silently.
+
+---
+
+## Minimality Signal Scan / 最小化訊號掃描
+
+A lightweight check inside `reflective-implement`, triggered only when bloat
+signals appear (new dependency, extra files, new abstraction, explicit YAGNI ask).
+It applies the minimality ladder without requiring a separate `reflective-minimality`
+run on every edit.
+
+**Operational test:** If no bloat signal is present, the scan is skipped. If a
+signal is present and the smaller path is disputed, route to `reflective-minimality`.
+
+---
+
+## Silent Downgrade / 靜默降級
+
+Routing equivalent intent to lower rigor without making the downgrade visible in
+the route trace or output. Prohibited by `plans/ROUTING_CONTRACT.md` R4–R6.
+

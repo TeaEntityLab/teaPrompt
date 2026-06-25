@@ -5,6 +5,7 @@ license: MIT
 risk_level: low
 human_review_required: false
 external_io: false
+context_load: low
 ---
 
 # Reflective Minimality

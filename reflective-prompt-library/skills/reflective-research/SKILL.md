@@ -5,6 +5,7 @@ license: MIT
 risk_level: low
 human_review_required: false
 external_io: true
+context_load: high
 ---
 
 # Reflective Research
@@ -110,6 +111,19 @@ When inspecting DeepWiki:
 - Prefer DeepWiki for architecture maps, workflows, and file relationships.
 - Confirm important implementation details with official docs or upstream source when possible.
 - Record the DeepWiki page and last indexed date if shown.
+
+## Optional Method: Multi-Voice Panel
+
+Use for strategic rethink, architecture review, or adoption decisions where one lens hides tradeoffs. This is **not** a multi-agent runtime — one host swaps explicit persona lenses, then synthesizes.
+
+1. Name 3–6 lenses (e.g., governance, harness design, cost, IDE UX, diversity, localization). Do not pretend they are separate live models unless they are.
+2. For each lens: state position, strongest objection (Socratic), and falsifiable test.
+3. Run a critical-thinking pass: evidence vs inference, counterargument, silent-downgrade check.
+4. Loop until dissent is recorded or resolved; unresolved items go to `Human Review` or `Next Action`.
+5. Output: consensus table, rejected options with reason, and implemented changes (if any).
+
+Skip when the question is narrow, repo-local, and already has a single canonical workflow.
+
 
 ## Output
 

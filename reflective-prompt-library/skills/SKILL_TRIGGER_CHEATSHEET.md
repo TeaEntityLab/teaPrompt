@@ -13,6 +13,7 @@ This page is a fast selector for the 9 TeaPrompt workflow skills.
 Use it when you need quick routing instead of reading each `SKILL.md` in full.
 
 Routing fairness note:
+- Each skill frontmatter includes `context_load: low|medium|high` for cost-aware routing.
 - Trigger cues below are examples, not required wording.
 - Equivalent intent should route equivalently even when phrasing differs.
 - Fast keyword routing is allowed, but it must not silently reduce quality for equivalent intent.
@@ -31,6 +32,10 @@ Do not use when:
 
 - The task is already clearly a single skill path.
 - You only need final execution and no routing decision.
+
+L1 fast path:
+
+- When Strictness is L1 and the task is trivial, answer directly with a minimal route trace instead of routing to `reflective-brief`.
 
 ## `reflective-brief`
 
@@ -69,6 +74,10 @@ Trigger cues:
 - "Implement this change in the repo."
 - "Refactor or debug with acceptance criteria and tests."
 - "Ship a minimal safe patch with verification."
+
+Minimality signal scan (inside this skill):
+
+- When bloat signals appear (new dependency, extra files, new abstraction), run the Minimality Signal Scan in the skill before editing; escalate to `reflective-minimality` if the cut is disputed.
 
 Do not use when:
 
@@ -114,6 +123,7 @@ Trigger cues:
 - "Separate evidence from inference."
 - "Compare official docs, third-party mirrors, and community analysis."
 - "Research current workflow frameworks or orchestration patterns."
+- "Multi-model or multi-perspective strategic rethink (use Optional Method: Multi-Voice Panel in the skill)."
 
 Do not use when:
 

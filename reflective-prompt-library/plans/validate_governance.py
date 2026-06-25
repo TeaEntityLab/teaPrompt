@@ -6,6 +6,7 @@ Validates that all SKILL.md files have required governance metadata:
 - risk_level (low/medium/high)
 - human_review_required (true/false)
 - external_io (true/false)
+- context_load (low/medium/high)
 """
 
 import re
@@ -53,7 +54,8 @@ class GovernanceValidator:
             required_fields = {
                 'risk_level': ['low', 'medium', 'high'],
                 'human_review_required': ['true', 'false'],
-                'external_io': ['true', 'false']
+                'external_io': ['true', 'false'],
+                'context_load': ['low', 'medium', 'high'],
             }
             
             skill_errors = []

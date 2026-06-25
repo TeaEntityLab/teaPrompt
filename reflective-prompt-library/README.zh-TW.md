@@ -12,6 +12,14 @@ Language: [English](README.md) | 繁體中文
 Doing the right thing > doing things right.
 ```
 
+## 北極星（North Star）
+
+TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，記錄**決策理由**，並以**證據**驗證結果 —— 透過可組合的 prompt 層與九個 workflow skills 作為自然語言 harness policy，**不**自建 agent runtime。
+
+## 嚴謹度優先於 Skills
+
+先選 **Strictness L1–L6**（見 `skills/reflective-dispatch/SKILL.md`、[GLOSSARY.md](GLOSSARY.md)），再選 skill 階段。各 skill 的 frontmatter 含 `context_load: low|medium|high`，供成本敏感的宿主在 L1–L2 時延後高負載 skill。
+
 ## 目錄說明
 
 - `00-core/`：核心人格與主控提示詞
