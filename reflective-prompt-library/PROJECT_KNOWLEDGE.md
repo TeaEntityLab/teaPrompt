@@ -41,9 +41,10 @@ operating its own agent runtime. See [README.md](README.md#north-star).
 > does not silently expand. Completed milestones are retired from this section;
 > their outcomes live in the Decision Index.
 
-**Ongoing (post Round 20):** maintain ROUTE-001/002/003 evals, governance validators,
+**Ongoing (post Round 21 audit):** maintain ROUTE-001/002/003 evals, governance validators,
 and holdout expansion before router tuning — see [GLOSSARY.md](GLOSSARY.md) Governance
-Maintenance Playbook and [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md).
+Maintenance Playbook. No open implementation blockers from Rounds 8–20; deferred promotions
+are recurrence-gated — see [panel backlog](plans/multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers).
 
 ## Durable Lessons
 
@@ -79,6 +80,7 @@ Maintenance Playbook and [plans/multi-agent-panel-consensus-2026-06-25.md](plans
 - 2026-06-18 Adopt STORM's source-grounded perspective discovery as an optional `reflective-research` method, not a new skill → [record](plans/storm-perspective-discovery-reflection-2026-06-18.md)
 - 2026-06-20 Synthesize external-adoption case studies, then correct the evidence and promotion-gate scope after the Test Plan routing counterexample → [record](plans/external-adoption-case-studies-2026-06-20.md)
 - 2026-06-21 Evaluate Hyperplan / multi-agent adversarial planning — no change (runtime = non-goal; methodology overlaps; possible gaps not promoted) → [record](plans/external-adoption-case-studies-2026-06-20.md)
+- 2026-06-25 Round 21 panel audit — no implementation blockers; recurrence-gated backlog formalized; QUALITY_GATES drift fixed → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Rounds 8–20 panel — milestones closed, ROUTE-003 adversarial eval, skill examples gate, maintenance playbook → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 7 panel — AGENTS harness-policy alignment, zh-TW ROUTE-002 holdout, metrics sync → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 6 panel — undocumented-decisions warning, ROUTE-002 holdout expansion, benchmark fixture CI, reject full SKILL i18n → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

@@ -540,22 +540,81 @@ User directive: continue the multi-agent Socratic panel through **Round 20** (op
 
 ## Panel status (updated)
 
-**Closed 2026-06-25** after **Round 20** (options A–AJ). Future promotions still require the three-recurrence gate.
+**Sealed 2026-06-25** after **Round 21 audit** (options A–AN). No open implementation blockers from Rounds 8–20. Future promotions still require the three-recurrence gate.
 
 _Ongoing maintenance: [GLOSSARY.md](../GLOSSARY.md) Governance Maintenance Playbook — expand ROUTE-002/003 holdout before router tuning; run `make all`; monitor undocumented-decision warnings._
 
+## Round 21 — Post-Round-20 audit (2026-06-25)
 
-## Residual Open Questions (after Round 5) — superseded by Round 6
+User directive: confirm all panel problems are done or run another Socratic round.
 
+### AK: Open implementation blockers from Rounds 8–20?
 
-## Superseded Open Questions
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree none** — `make all` green; ROUTE-001/002/003 at 100%; governance 9/9 |
+| Opus | **Agree none** — deferred items are promotion-gated, not forgotten work |
+| Gemini | **Agree none** — ongoing holdout expansion is maintenance, not a blocker |
+| Composer | **Agree none** — doc drift was the real confusion, not missing code |
+| Sakana | **Agree none** — multi-voice path covered without tenth skill |
+| GLM | **Agree none** — zh-TW fairness covered by holdout + cheatsheet boundary |
 
-1. Should `reflective-implement` default-invoke `reflective-minimality`? (Deferred — needs recurrence evidence.)
-2. Should ROUTE-002 holdout eval block merge? (Already in fixture; monitor in CI.)
-3. Localized trigger cues beyond cheatsheet TW? (Defer until adoption signal.)
+**Socratic Q:** What fails if we treat deferred promotions as open bugs?
+**Answer:** Scope creep — tenth skill, full i18n, and default minimality re-litigate without recurrence evidence.
+
+**Consensus:** **Agree** — no implementation blockers remain from Rounds 8–20.
+
+### AL: Reclassify “Superseded Open Questions”?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — rename to **Recurrence-Gated Backlog**; mark ROUTE-002 CI item **done** |
+
+**Consensus:** **Agree** — backlog table below; not panel blockers.
+
+### AM: QUALITY_GATES Phase 2 drift?
+
+| Lens | Position |
+| --- | --- |
+| Codex | **Agree** — conclusion still said “open routing item” after ROUTE-002/003 shipped |
+| Opus | **Agree** — split Done / Ongoing Maintenance / Recurrence-Gated |
+| All | **Agree** — update conclusion to match Round 20 metrics |
+
+**Consensus:** **Agree** — QUALITY_GATES_SUMMARY.md cleanup.
+
+### AN: Decision Index + final seal?
+
+| Lens | Position |
+| --- | --- |
+| All six | **Agree** — PROJECT_KNOWLEDGE Round 21 audit entry; panel sealed at Round 21 |
+
+**Consensus:** **Agree close** — options A–AN resolved.
+
+### Round 21 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| AK | Implementation blockers | **Agree none** | Record audit; no new code required |
+| AL | Backlog reclassification | **Agree** | Recurrence-Gated Backlog table |
+| AM | QUALITY_GATES drift | **Agree** | Done / Ongoing / Backlog sections |
+| AN | Final seal | **Agree** | Decision Index + panel status |
+
+**All roles agree.**
+
+## Recurrence-Gated Backlog (not panel blockers)
+
+| Item | Status | Gate |
+| --- | --- | --- |
+| `reflective-implement` default-invokes `reflective-minimality` | **Deferred** | Three cross-session recurrences; signal scan suffices today |
+| ROUTE-002 holdout blocks merge | **Done** | In `Makefile validate` since Round 4 |
+| Localized trigger cues beyond cheatsheet / glossary | **Deferred** | Adoption signal; English `SKILL.md` stays canonical |
+| Tenth core workflow skill | **Rejected** | Promotion gate not met (panel A, W, AJ) |
+| Full `SKILL.md` i18n | **Rejected** | Cheatsheet + glossary + router keywords sufficient |
+| LLM benchmark in CI | **Rejected** | Fixture gate only; manual `benchmark_tasks.py` |
 
 ## Evidence
 
 - Prior decision: Hyperplan / multi-agent planning — no change ([external-adoption-case-studies-2026-06-20.md](external-adoption-case-studies-2026-06-20.md))
 - Routing CI: `Makefile` `validate` runs ROUTE-001, ROUTE-002 (80 holdout), ROUTE-003 (16 adversarial) via `route_paraphrase_eval.py`
-- Governance: `validate_governance.py` after this change
+- Governance: `validate_governance.py` with `CANONICAL_CONTEXT_LOAD`
+- Round 21 audit: `make all` — 59 pytest, ROUTE-001/002/003 100%, governance 9/9, skill examples 9/9

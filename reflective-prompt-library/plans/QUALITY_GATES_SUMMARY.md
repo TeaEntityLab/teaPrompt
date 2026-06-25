@@ -278,15 +278,29 @@ The latest router improvement uses concept-level boundary rules for these cases 
 
 ROUTE-002 measures unseen phrasing separately from ROUTE-001. Round 7 (2026-06-25) added Traditional Chinese holdout groups with matching router intent keywords — fairness test without full `SKILL.md` translation. Treat this as a seeded holdout, not proof of broad semantic routing; add fresh cases before further router tuning.
 
-## Next Steps (Phase 2)
+## Phase 2 Status (Round 21 audit)
 
-Based on the research and current implementation, suggested next steps:
+### Done ✅
 
-1. **Expand ROUTE-002/003 holdout** - Ongoing; ROUTE-002 at 27 groups / 80 paraphrases; ROUTE-003 adversarial at 7 groups / 16
-2. **Run benchmark tests** - Manual via `benchmark_tasks.py`; not in CI (non-deterministic / LLM-cost)
-3. **CI/CD** - Done: `.github/workflows/python-tools.yml` runs `make all` on push/PR
-4. **Collect feedback** - Use CONTRIBUTING.md process to gather community input
-5. **Iterate on routing** - Use paraphrase eval results to improve keyword matching
+1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
+2. **ROUTE-001/002/003 in CI** — 128 + 80 + 16 paraphrases at 100% consistency (seeded fixtures)
+3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
+4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
+
+### Ongoing maintenance (not blockers)
+
+1. **Expand ROUTE-002/003 holdout** before router tuning — add fresh phrases, then adjust rules
+2. **Collect feedback** — CONTRIBUTING.md process
+3. **Monitor** — undocumented-decision warnings from `validate_project_knowledge.py`
+
+### Recurrence-gated (deferred by panel consensus)
+
+1. **Manual benchmark runs** — `benchmark_tasks.py`; not in CI (non-deterministic / LLM-cost)
+2. **Default minimality in implement** — needs three cross-session recurrences; signal scan active
+3. **Full SKILL.md i18n** — rejected; cheatsheet + glossary + router keywords suffice
+4. **Tenth core skill** — rejected without promotion gate evidence
+
+See [panel Recurrence-Gated Backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers).
 
 ## Files Created/Modified
 
@@ -332,13 +346,13 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are implemented, while routing consistency remains an open improvement item. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 20; treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration
 - ✅ Governance metadata for risk management
 - ✅ Clear contribution process
-- ✅ Benchmark framework for effectiveness measurement
+- ✅ Benchmark fixture gate plus optional manual benchmark runs
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start, addressing the key issues identified in larger skill repositories (discovery ceiling, quality control, maintenance burden). The next measurable quality target is broadening routing coverage beyond ROUTE-001 while preserving the current pass rate.
+The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from the Rounds 8–20 panel work (Round 21 audit). The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.
