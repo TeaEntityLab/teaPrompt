@@ -3094,3 +3094,56 @@ User directive (repeat): review prompts, plans, skills, and Socratic/critical-th
 ---
 
 **Resealed 2026-06-25** after **Round 100** (options HV–HZ). Cross-category library registries now share `assert_library_wide_unique_basenames` and `assert_registry_matches_library_glob` with a library-wide helper registry guard. Holdout expansion remains recurrence-gated maintenance.
+
+## Round 101 — governance surface path helper registry (2026-06-25)
+
+**Options IA–IE** | Six-lens panel (Opus, Codex, Gemini, Composer, Sakana, GLM)
+
+### Round 101 options
+
+| ID | Proposal | Verdict |
+| --- | --- | --- |
+| IA | DRY governance-surface path helpers in `prompt_eval_helpers.py` | **Agree** |
+| IB | `test_prompt_governance_surface_paths_library_registry.py` — helper parity + module guard | **Agree** |
+| IC | Migrate cheatsheet/glossary/README/skill-module path guards + GLOSSARY step 33 + governance sync | **Agree** |
+| ID | ROUTE holdout expansion | **Defer** |
+| IE | Router / tenth skill / benchmark CI | **Reject** |
+
+### Round 101 verdict table
+
+| ID | Option | Verdict | Action |
+| --- | --- | --- | --- |
+| IA | Governance surface path helpers | **Agree** | `cheatsheet_en_path`, `cheatsheet_zh_tw_path`, `glossary_path`, README/map helpers |
+| IB | Governance path registry | **Agree** | `test_prompt_governance_surface_paths_library_registry.py` |
+| IC | Test migration + playbook | **Agree** | DRY cheatsheet/glossary/README/skill-module path tests; step 33 |
+| ID | Holdout expansion | **Defer** | maintenance |
+| IE | Router/tenth skill/benchmark CI | **Reject** | no change |
+
+### Socratic rationale (Round 101)
+
+- **Opus:** Round 100 closed cross-category registry paths; governance-surface tests still duplicated skills, glossary, README, and skill-map path construction with no dedicated falsifier.
+- **Codex:** Shared path helpers keep cheatsheet parity, glossary, README governance, and skill-module contract tests rooted in the same library constants.
+- **Gemini:** Deterministic helper extraction only; no prompt or router behavior churn.
+- **Composer:** Mirrors R98–R100 pattern: helper additions, registry guard, migration sweep, playbook step.
+- **Sakana:** Governance path parity prevents future agents from reintroducing ad-hoc repository-root arithmetic in operator-facing checks.
+- **GLM:** Cheatsheet EN/zh-TW path helpers make bilingual governance tests share the same source of truth.
+
+**All roles agree.**
+
+## Implemented Changes (Round 101)
+
+- `plans/tests/prompt_eval_helpers.py`: governance-surface path helpers for cheatsheets, glossary, READMEs, methodology maps, and skill map
+- `plans/tests/test_prompt_governance_surface_paths_library_registry.py`: governance path helper registry and module guard
+- `plans/tests/test_cheatsheet_*`, `test_glossary_structure.py`, `test_readme_governance.py`, `test_skill_module_contract.py`: shared path helpers
+- `GLOSSARY.md`: playbook Rounds 1–101; step 33 for governance-surface path helpers
+- `QUALITY_GATES_SUMMARY.md`: governance path registry note; panel Rounds 1–101; 700+ pytest floor
+- `PROJECT_KNOWLEDGE.md`: Decision Index Round 101 entry
+- `README.md`, `reflective-prompt-library/README.md`, `test_readme_governance.py`: panel round 101 sync
+
+## Verification (Round 101)
+
+- `make all`: 712 pytest + ROUTE-001/002/003 100%
+
+---
+
+**Resealed 2026-06-25** after **Round 101** (options IA–IE). Governance-surface path tests now share `cheatsheet_en_path`, `cheatsheet_zh_tw_path`, `glossary_path`, `library_readme_path`, `repo_readme_path`, and `library_skills_dir` with a dedicated path-helper registry guard. Holdout expansion remains recurrence-gated maintenance.

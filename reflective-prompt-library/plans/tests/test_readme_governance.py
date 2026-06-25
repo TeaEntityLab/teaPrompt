@@ -4,14 +4,22 @@ from pathlib import Path
 
 import pytest
 
-LIBRARY_README = Path(__file__).parent.parent.parent / "README.md"
-ROOT_README = Path(__file__).parent.parent.parent.parent / "README.md"
-METHODOLOGY_MAP_ZH = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.zh-TW.md"
-METHODOLOGY_MAP_EN = Path(__file__).parent.parent.parent / "METHODOLOGY_MAP.md"
-SKILL_MAP = Path(__file__).parent.parent.parent / "skills" / "skill-map.md"
+from prompt_eval_helpers import (  # noqa: E402
+    library_readme_path,
+    methodology_map_en_path,
+    methodology_map_zh_tw_path,
+    repo_readme_path,
+    skill_map_path,
+)
 
-CURRENT_PANEL_ROUND = "100"
-CURRENT_PANEL_OPTIONS = "A–HV"
+LIBRARY_README = library_readme_path()
+ROOT_README = repo_readme_path()
+METHODOLOGY_MAP_ZH = methodology_map_zh_tw_path()
+METHODOLOGY_MAP_EN = methodology_map_en_path()
+SKILL_MAP = skill_map_path()
+
+CURRENT_PANEL_ROUND = "101"
+CURRENT_PANEL_OPTIONS = "A–IE"
 
 
 @pytest.fixture(scope="module")

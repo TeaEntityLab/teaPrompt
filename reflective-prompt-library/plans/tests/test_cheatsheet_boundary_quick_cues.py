@@ -14,9 +14,13 @@ from test_validate_route_fixture import (  # noqa: E402
     BOUNDARY_QUICK_CUE_ZH_MARKERS,
 )
 
-SKILLS = Path(__file__).parent.parent.parent / "skills"
-EN_CHEATSHEET = SKILLS / "SKILL_TRIGGER_CHEATSHEET.md"
-ZH_CHEATSHEET = SKILLS / "SKILL_TRIGGER_CHEATSHEET.zh-TW.md"
+from prompt_eval_helpers import (  # noqa: E402
+    cheatsheet_en_path,
+    cheatsheet_zh_tw_path,
+)
+
+EN_CHEATSHEET = cheatsheet_en_path()
+ZH_CHEATSHEET = cheatsheet_zh_tw_path()
 DISPATCH_HEADER = "## `reflective-dispatch`"
 
 

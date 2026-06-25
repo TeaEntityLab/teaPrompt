@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–100). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–101). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -373,3 +373,4 @@ Ongoing upkeep after panel close (Rounds 1–100). Not agent instructions — op
 30. When editing per-category eval_harness fixtures, keep `PROMPT_LIBRARY_REPO_ROOT` and `make_category_eval_harness_fixture` in `prompt_eval_helpers.py`; run `test_prompt_eval_harness_fixture_library_registry.py` plus per-category harness guards.
 31. When editing per-category `*_DIR` / `*_PROMPTS` tuples, use `category_prompt_dir` and `sorted_category_prompts` in `prompt_eval_helpers.py`; run `test_prompt_category_paths_library_registry.py` plus per-category harness guards.
 32. When editing cross-category library registries, use `assert_library_wide_unique_basenames`, `assert_registry_matches_library_glob`, and `sorted_all_library_prompts` in `prompt_eval_helpers.py`; run `test_prompt_library_registry_helpers_library_registry.py` plus per-registry glob/unique guards.
+33. When editing governance-surface path tests, use `cheatsheet_en_path`, `cheatsheet_zh_tw_path`, `glossary_path`, `library_readme_path`, `repo_readme_path`, and `library_skills_dir` in `prompt_eval_helpers.py`; run `test_prompt_governance_surface_paths_library_registry.py` plus affected cheatsheet/glossary/README/skill contract tests.

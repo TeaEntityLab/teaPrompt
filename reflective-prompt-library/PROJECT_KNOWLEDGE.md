@@ -72,6 +72,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-06-25 Round 101 panel — governance surface path helper registry (`test_prompt_governance_surface_paths_library_registry.py`, `cheatsheet_en_path`, `cheatsheet_zh_tw_path`, `glossary_path`, `library_readme_path`; migrate cheatsheet/glossary/README/skill-module path guards) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 100 panel — cross-category library registry helper DRY (`test_prompt_library_registry_helpers_library_registry.py`, `assert_library_wide_unique_basenames`, `assert_registry_matches_library_glob`, `sorted_all_library_prompts`; migrate all `*_library_registry.py` glob/unique guards) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 99 panel — cross-category prompt path library registry (`test_prompt_category_paths_library_registry.py`, DRY `category_prompt_dir` / `sorted_category_prompts`; preamble-scoped `assert_prompt_references_workflow_skill`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)
 - 2026-06-25 Round 98 panel — cross-category eval_harness fixture library registry (`test_prompt_eval_harness_fixture_library_registry.py`, DRY `make_category_eval_harness_fixture`, `PROMPT_LIBRARY_REPO_ROOT`) → [record](plans/multi-agent-panel-consensus-2026-06-25.md)

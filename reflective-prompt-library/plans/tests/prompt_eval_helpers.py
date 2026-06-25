@@ -53,6 +53,46 @@ def library_skills_dir() -> Path:
     return PROMPT_LIBRARY_ROOT / "skills"
 
 
+def glossary_path() -> Path:
+    """Resolve GLOSSARY.md under the prompt library root."""
+    return PROMPT_LIBRARY_ROOT / "GLOSSARY.md"
+
+
+def cheatsheet_en_path() -> Path:
+    """Resolve the English skill trigger cheatsheet."""
+    return library_skills_dir() / "SKILL_TRIGGER_CHEATSHEET.md"
+
+
+def cheatsheet_zh_tw_path() -> Path:
+    """Resolve the Traditional Chinese skill trigger cheatsheet."""
+    return library_skills_dir() / "SKILL_TRIGGER_CHEATSHEET.zh-TW.md"
+
+
+def library_readme_path() -> Path:
+    """Resolve reflective-prompt-library/README.md."""
+    return PROMPT_LIBRARY_ROOT / "README.md"
+
+
+def repo_readme_path() -> Path:
+    """Resolve TeaPrompt repository root README.md."""
+    return Path(PROMPT_LIBRARY_REPO_ROOT) / "README.md"
+
+
+def methodology_map_en_path() -> Path:
+    """Resolve METHODOLOGY_MAP.md under the prompt library root."""
+    return PROMPT_LIBRARY_ROOT / "METHODOLOGY_MAP.md"
+
+
+def methodology_map_zh_tw_path() -> Path:
+    """Resolve METHODOLOGY_MAP.zh-TW.md under the prompt library root."""
+    return PROMPT_LIBRARY_ROOT / "METHODOLOGY_MAP.zh-TW.md"
+
+
+def skill_map_path() -> Path:
+    """Resolve skills/skill-map.md under the prompt library root."""
+    return library_skills_dir() / "skill-map.md"
+
+
 def assert_library_wide_unique_basenames(
     prompt_paths: tuple[Path, ...] | list[Path],
 ) -> None:

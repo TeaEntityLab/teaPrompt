@@ -7,10 +7,12 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent))
 
+from prompt_eval_helpers import library_skills_dir  # noqa: E402
 from validate_skill_examples import CORE_SKILLS  # noqa: E402
 
-SKILLS_DIR = Path(__file__).parent.parent.parent / "skills"
+SKILLS_DIR = library_skills_dir()
 
 REQUIRED_SUBSECTIONS = ("Trigger", "Methods", "Output", "Never", "Escalation")
 
