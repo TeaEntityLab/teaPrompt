@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -18,6 +18,12 @@ ENGINEERING_DIR = Path(__file__).parent.parent.parent / "02-engineering"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 ENGINEERING_PROMPTS = tuple(sorted(ENGINEERING_DIR.glob("*.md")))
+ENGINEERING_COVER_WORKFLOW_SKILLS = (
+    "reflective-brief",
+    "reflective-spec-plan",
+    "reflective-implement",
+    "reflective-review",
+)
 ENGINEERING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(ENGINEERING_PROMPTS)
 ENGINEERING_HUMAN_REVIEW_REQUIRED = frozenset({
     "code-reviewer.md",
@@ -62,14 +68,9 @@ def test_engineering_prompts_reference_workflow_skills():
 
 def test_engineering_prompts_cover_core_workflows():
     """At least one prompt per implement/review/spec-plan/brief surface."""
-    text = "\n".join(p.read_text(encoding="utf-8") for p in ENGINEERING_PROMPTS)
-    for skill in (
-        "reflective-brief",
-        "reflective-spec-plan",
-        "reflective-implement",
-        "reflective-review",
-    ):
-        assert skill in text, f"02-engineering should reference {skill}"
+    assert_category_workflow_skill_coverage(
+        ENGINEERING_PROMPTS, ENGINEERING_COVER_WORKFLOW_SKILLS, "02-engineering"
+    )
 
 
 def test_engineering_prompts_have_primary_workflow_surfaces_line():

@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -18,6 +18,13 @@ DOMAIN_DIR = Path(__file__).parent.parent.parent / "05-domain"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 DOMAIN_PROMPTS = tuple(sorted(DOMAIN_DIR.glob("*.md")))
+DOMAIN_COVER_WORKFLOW_SKILLS = (
+    "reflective-risk",
+    "reflective-research",
+    "reflective-brief",
+    "reflective-spec-plan",
+    "reflective-review",
+)
 DOMAIN_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(DOMAIN_PROMPTS)
 DOMAIN_HUMAN_REVIEW_REQUIRED = frozenset({
     "creative-template.md",
@@ -60,15 +67,9 @@ def test_domain_prompts_reference_workflow_skills():
 
 
 def test_domain_prompts_cover_domain_workflow_surfaces():
-    text = "\n".join(p.read_text(encoding="utf-8") for p in DOMAIN_PROMPTS)
-    for skill in (
-        "reflective-risk",
-        "reflective-research",
-        "reflective-brief",
-        "reflective-spec-plan",
-        "reflective-review",
-    ):
-        assert skill in text, f"05-domain should reference {skill}"
+    assert_category_workflow_skill_coverage(
+        DOMAIN_PROMPTS, DOMAIN_COVER_WORKFLOW_SKILLS, "05-domain"
+    )
 
 
 def test_domain_prompts_have_primary_workflow_surfaces_line():

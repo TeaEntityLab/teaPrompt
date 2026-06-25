@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -18,6 +18,11 @@ REPO_DIR = Path(__file__).parent.parent.parent / "06-repo"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 REPO_PROMPTS = tuple(sorted(REPO_DIR.glob("*.md")))
+REPO_COVER_WORKFLOW_SKILLS = (
+    "reflective-dispatch",
+    "reflective-implement",
+    "reflective-handoff-retro",
+)
 REPO_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(REPO_PROMPTS)
 REPO_HUMAN_REVIEW_REQUIRED = frozenset({
     "AGENTS.md",
@@ -57,13 +62,9 @@ def test_repo_prompts_reference_workflow_skills():
 
 
 def test_repo_prompts_cover_harness_surfaces():
-    text = "\n".join(p.read_text(encoding="utf-8") for p in REPO_PROMPTS)
-    for skill in (
-        "reflective-dispatch",
-        "reflective-implement",
-        "reflective-handoff-retro",
-    ):
-        assert skill in text, f"06-repo should reference {skill}"
+    assert_category_workflow_skill_coverage(
+        REPO_PROMPTS, REPO_COVER_WORKFLOW_SKILLS, "06-repo"
+    )
 
 
 def test_agents_md_retains_harness_policy_section():

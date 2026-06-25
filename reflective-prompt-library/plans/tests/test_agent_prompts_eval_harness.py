@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from eval_harness import EvalHarness  # noqa: E402
-from prompt_eval_helpers import assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
+from prompt_eval_helpers import assert_category_workflow_skill_coverage, assert_human_review_preamble, assert_primary_workflow_surface_preamble, prompts_with_human_review, assert_human_review_required_matches_detection, assert_human_review_exempt_have_no_preamble_section, assert_human_review_sets_partition, PROMPT_CONTRACT_HEADINGS, PROMPT_EVAL_MIN_SCORE, assert_prompt_contract_headings  # noqa: E402
 
 REQUIRED_HEADINGS = PROMPT_CONTRACT_HEADINGS
 MIN_SCORE = PROMPT_EVAL_MIN_SCORE
@@ -18,6 +18,13 @@ AGENT_DIR = Path(__file__).parent.parent.parent / "04-agent"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 AGENT_PROMPTS = tuple(sorted(AGENT_DIR.glob("*.md")))
+AGENT_COVER_WORKFLOW_SKILLS = (
+    "reflective-dispatch",
+    "reflective-spec-plan",
+    "reflective-review",
+    "reflective-handoff-retro",
+    "reflective-research",
+)
 AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
 AGENT_HUMAN_REVIEW_REQUIRED = frozenset({
     "agent-scaffold-provenance.md",
@@ -62,15 +69,9 @@ def test_agent_prompts_reference_workflow_skills():
 
 
 def test_agent_prompts_cover_agent_workflow_surfaces():
-    text = "\n".join(p.read_text(encoding="utf-8") for p in AGENT_PROMPTS)
-    for skill in (
-        "reflective-dispatch",
-        "reflective-spec-plan",
-        "reflective-review",
-        "reflective-handoff-retro",
-        "reflective-research",
-    ):
-        assert skill in text, f"04-agent should reference {skill}"
+    assert_category_workflow_skill_coverage(
+        AGENT_PROMPTS, AGENT_COVER_WORKFLOW_SKILLS, "04-agent"
+    )
 
 
 def test_agent_prompts_have_workflow_surface_preamble_line():

@@ -337,7 +337,7 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ## Governance Maintenance Playbook / 治理維護手冊
 
-Ongoing upkeep after panel close (Rounds 1–94). Not agent instructions — operator checklist.
+Ongoing upkeep after panel close (Rounds 1–95). Not agent instructions — operator checklist.
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
@@ -367,3 +367,4 @@ Ongoing upkeep after panel close (Rounds 1–94). Not agent instructions — ope
 24. When adding composable prompts or editing `*_SKILL_LINKS` / `*_THINKING_LINKS`, keep per-category dict keys aligned with prompt globs and run `test_prompt_skill_links_library_registry.py` plus `test_all_*_prompts_have_skill_link` in `test_prompt_cross_links.py`.
 25. When adding composable prompts or editing eval_harness contract preambles, keep `PROMPT_CONTRACT_HEADINGS` / `PROMPT_EVAL_MIN_SCORE` in `prompt_eval_helpers.py` and run `test_prompt_contract_library_registry.py` plus per-category `test_*_prompts_eval_harness.py` guards.
 26. When editing composable prompt Purpose preambles, keep `Primary workflow surface(s)` / Supporting-lens lines via `assert_primary_workflow_surface_preamble` in `prompt_eval_helpers.py`; update `SUPPORTING_LENS_PRIMARY_SURFACE_BY_CATEGORY` for exemptions; run `test_prompt_primary_workflow_surface_library_registry.py` plus per-category `test_*_prompts_eval_harness.py` guards.
+27. When editing category workflow skill coverage tuples, keep frozen `*_COVER_WORKFLOW_SKILLS` in `test_*_prompts_eval_harness.py` aligned with `assert_category_workflow_skill_coverage`; `01-thinking` stays exempt (consumer graph); run `test_workflow_skill_coverage_library_registry.py`.

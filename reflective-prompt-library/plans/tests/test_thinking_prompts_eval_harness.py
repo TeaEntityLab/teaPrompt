@@ -29,6 +29,7 @@ THINKING_DIR = Path(__file__).parent.parent.parent / "01-thinking"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 THINKING_PROMPTS = tuple(sorted(THINKING_DIR.glob("*.md")))
+THINKING_COVER_WORKFLOW_SKILLS: tuple[str, ...] = ()  # consumer graph in test_prompt_cross_links.py
 THINKING_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(THINKING_PROMPTS)
 THINKING_HUMAN_REVIEW_REQUIRED = frozenset({
     "counterargument.md",

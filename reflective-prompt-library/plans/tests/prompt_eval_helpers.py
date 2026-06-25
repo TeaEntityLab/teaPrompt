@@ -118,3 +118,13 @@ def assert_primary_workflow_surface_preamble(
             f"{prompt_path.name} Purpose should list Primary workflow surface(s)"
         )
 
+def assert_category_workflow_skill_coverage(
+    prompts: tuple[Path, ...],
+    required_skills: tuple[str, ...],
+    category_label: str,
+) -> None:
+    """Category corpus must mention each required workflow skill at least once."""
+    text = "\n".join(p.read_text(encoding="utf-8") for p in prompts)
+    for skill in required_skills:
+        assert skill in text, f"{category_label} should reference {skill}"
+

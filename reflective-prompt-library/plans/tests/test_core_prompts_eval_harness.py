@@ -13,7 +13,7 @@ from prompt_eval_helpers import (
     PROMPT_CONTRACT_HEADINGS,
     PROMPT_EVAL_MIN_SCORE,
     assert_primary_workflow_surface_preamble,
-    assert_prompt_contract_headings,  # noqa: E402
+    assert_category_workflow_skill_coverage, assert_prompt_contract_headings,  # noqa: E402
     assert_human_review_exempt_have_no_preamble_section,
     assert_human_review_preamble,
     assert_human_review_required_matches_detection,
@@ -28,6 +28,10 @@ CORE_DIR = Path(__file__).parent.parent.parent / "00-core"
 REPO_ROOT = str(Path(__file__).parent.parent.parent.parent)
 
 CORE_PROMPTS = tuple(sorted(CORE_DIR.glob("*.md")))
+CORE_COVER_WORKFLOW_SKILLS = (
+    "reflective-brief",
+    "reflective-dispatch",
+)
 CORE_HUMAN_REVIEW_REQUIRED = frozenset({
     "core-full.md",
     "core-minimal.md",
@@ -72,9 +76,9 @@ def test_core_prompts_reference_workflow_skills():
 
 
 def test_core_prompts_cover_brief_and_dispatch():
-    text = "\n".join(p.read_text(encoding="utf-8") for p in CORE_PROMPTS)
-    assert "reflective-brief" in text
-    assert "reflective-dispatch" in text
+    assert_category_workflow_skill_coverage(
+        CORE_PROMPTS, CORE_COVER_WORKFLOW_SKILLS, "00-core"
+    )
 
 
 def test_core_prompts_have_primary_workflow_surfaces_line():
