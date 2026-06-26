@@ -27,6 +27,8 @@ AGENT_COVER_WORKFLOW_SKILLS = (
 )
 AGENT_PROMPTS_WITH_HUMAN_REVIEW = prompts_with_human_review(AGENT_PROMPTS)
 AGENT_HUMAN_REVIEW_REQUIRED = frozenset({
+    "artifact-promotion.md",
+    "external-adoption-review.md",
     "agent-scaffold-provenance.md",
     "agent-selection.md",
     "memory-consolidation.md",
@@ -34,6 +36,7 @@ AGENT_HUMAN_REVIEW_REQUIRED = frozenset({
     "review-rating-fix.md",
     "runtime-trust-boundary.md",
     "sop-compiler.md",
+    "workflow-acquisition.md",
 })
 AGENT_HUMAN_REVIEW_EXEMPT = frozenset({
     "workflow-engine.md",

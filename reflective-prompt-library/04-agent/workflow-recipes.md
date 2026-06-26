@@ -80,6 +80,22 @@ Agent Selection Prompt
 -> Review-Rating-Fix
 ```
 
+## Parallel Lens Review
+
+Use this only when a conclusion needs adversarial multi-lens consensus before it becomes a decision, adoption recommendation, architecture direction, or project-knowledge entry. Do not use it for ordinary low-risk review.
+
+```text
+reflective-dispatch
++ evidence packet
++ parallel specialist lenses
++ synthesis with disagreements preserved
++ reflective-handoff-retro if the conclusion becomes durable knowledge
+```
+
+Expected artifacts: `local://<topic>-review-packet.md`, reviewer verdicts, and a consensus summary that separates observed evidence, author claims, and inference.
+
+Falsifier: if one `reflective-review` or `reflective-research` pass would produce the same decision with enough evidence, this recipe is ceremony and should not run.
+
 ## Cost Modes
 
 Low-cost daily mode:

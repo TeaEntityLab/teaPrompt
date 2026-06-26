@@ -114,6 +114,14 @@ SKILL_THINKING_SOURCES: dict[str, tuple[str, ...]] = {
 
 
 AGENT_THINKING_LINKS: dict[str, tuple[str, ...]] = {
+    "artifact-promotion.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
+    "external-adoption-review.md": (
+        "01-thinking/critical-thinking-check.md",
+        "01-thinking/counterargument.md",
+    ),
     "runtime-trust-boundary.md": (
         "01-thinking/critical-thinking-check.md",
         "01-thinking/counterargument.md",
@@ -123,6 +131,10 @@ AGENT_THINKING_LINKS: dict[str, tuple[str, ...]] = {
         "01-thinking/why-what-how-done.md",
     ),
     "workflow-engine.md": ("01-thinking/falsifiability.md",),
+    "workflow-acquisition.md": (
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
+    ),
     "agent-selection.md": (
         "01-thinking/socratic-reviewer.md",
         "01-thinking/why-what-how-done.md",
@@ -142,6 +154,15 @@ AGENT_THINKING_LINKS: dict[str, tuple[str, ...]] = {
 }
 
 AGENT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
+    "artifact-promotion.md": (
+        "reflective-dispatch",
+        "reflective-handoff-retro",
+    ),
+    "external-adoption-review.md": (
+        "reflective-dispatch",
+        "reflective-minimality",
+        "reflective-research",
+    ),
     "runtime-trust-boundary.md": (
         "reflective-implement",
         "reflective-review",
@@ -151,6 +172,11 @@ AGENT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
     ),
     "sop-compiler.md": ("reflective-spec-plan",),
     "workflow-engine.md": ("reflective-spec-plan",),
+    "workflow-acquisition.md": (
+        "reflective-handoff-retro",
+        "reflective-implement",
+        "reflective-spec-plan",
+    ),
     "agent-selection.md": ("reflective-dispatch",),
     "agent-scaffold-provenance.md": ("reflective-research",),
     "review-rating-fix.md": ("reflective-review",),

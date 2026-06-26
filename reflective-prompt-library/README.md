@@ -38,7 +38,7 @@ Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–
 - `01-thinking/`: Socratic questioning, critical thinking, counterarguments, falsifiability, and Why / What / How / Done gates.
 - `02-engineering/`: task start, specs, usage-first design, task slicing, implementation, review, tests, and local feedback.
 - `03-context/`: small / medium / large context prompts, low-token mode, context engineering, Gemini long-document handling, and handoff summaries.
-- `04-agent/`: agent selection, SOP compiler design, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
+- `04-agent/`: agent selection, artifact promotion, external adoption review, workflow acquisition, SOP compiler design, workflow engine design, review-rating-fix loops, retros, and memory consolidation.
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates plus a reusable
   `PROJECT_KNOWLEDGE.template.md` for project-specific design judgement.
@@ -137,6 +137,9 @@ research
 | A task is complete and you want process learning | `04-agent/retro.md` |
 | You need to decide Prompt vs Agent vs Workflow | `04-agent/agent-selection.md` |
 | You need to convert a repeatable human SOP into an agent workflow | `04-agent/sop-compiler.md` |
+| You need to classify memories, discussions, or repeated procedures into knowledge, prompt, skill, verifier, runtime, or no-change | `04-agent/artifact-promotion.md` |
+| You need to capture and replay an observed workflow before turning it into a skill, verifier, or runner | `04-agent/workflow-acquisition.md` |
+| You need to evaluate whether an external tool, paper, repo, or workflow method should change TeaPrompt | `04-agent/external-adoption-review.md` |
 | You need to design or review runtime trust boundaries | `04-agent/runtime-trust-boundary.md` |
 | You need to review a leaked, mirrored, or third-party agent scaffold | `04-agent/agent-scaffold-provenance.md` |
 | You need a project-specific design-judgement layer without creating a second agent rulebook | `06-repo/PROJECT_KNOWLEDGE.template.md` + `skills/reflective-handoff-retro/SKILL.md` |

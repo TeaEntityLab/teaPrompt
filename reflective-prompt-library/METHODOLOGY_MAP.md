@@ -75,7 +75,7 @@ Instead of a single prompt, the methodology is formally structured into ten dist
 2. **Reasoning / Thinking Layer** (`01-thinking/`): Socratic inquiry, critical analysis, falsifiability, and assumption auditing.
 3. **Engineering / Execution Layer** (`02-engineering/`): Domain-specific engineering procedures (TDD, spec writing, implementation strategies).
 4. **Context Window Layer** (`03-context/`): Context window sizing, token management, and context handoff prompts.
-5. **Workflow & Agentic Layer** (`04-agent/`): SOP compiler prompts, workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
+5. **Workflow & Agentic Layer** (`04-agent/`): artifact-promotion review, external-adoption review, workflow acquisition, SOP compiler prompts, workflow engines, recipes (Review-Rating-Fix), and memory/knowledge consolidation prompts.
 6. **Domain Pack Layer** (`05-domain/`): Specialized domain overlays (business strategy, learning coach, high-risk review, creative/writing).
 7. **Repository Template Layer** (`06-repo/`): Local repository instructions
    (`AGENTS.md`, `cursor-rules.md`) and a non-authoritative project-knowledge
@@ -105,6 +105,10 @@ TeaPrompt should learn the taxonomy: identity, behavior, safety, memory, tool ro
 `agentic-sop-to-work` demonstrates a useful adjacent pattern: treat human SOP as source material, compile it into single-purpose workflow stages, exchange typed artifacts, run deterministic gates, return DRAFT outputs for human approval, and use regression hooks only when the workflow has enough repeatability or risk to justify code-backed enforcement: [agentic-sop-to-work](https://github.com/s0912758806p/agentic-sop-to-work).
 
 TeaPrompt should adopt this as a planning lens, not a runtime dependency. The project remains a compact prompt and skill library until repeated workflows prove that runner code, hooks, and deterministic verifiers would reduce total cost. Use `04-agent/sop-compiler.md` before promoting a prompt-only or artifact-only process into a code-backed workflow engine.
+
+## Artifact Promotion And Workflow Acquisition Addendum
+
+Memory, retros, external sources, and successful sessions should be routed to the smallest durable artifact that preserves their value. Use `04-agent/artifact-promotion.md` to classify candidate material as decision, durable lesson, prompt lens, workflow skill, verifier/test, runtime/orchestration, or no change. Use `04-agent/workflow-acquisition.md` when the candidate is an observed process that needs trace capture, SOP extraction, dry replay, and a promotion gate before becoming a skill, verifier, or runner. Use `04-agent/external-adoption-review.md` when the input is an external tool, paper, repo, or method; external interest is not local promotion evidence, and no-change outcomes should be recorded when they settle a repeated question.
 
 ## Project-Knowledge Addendum
 
