@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-25T14:45:30.377580",
+  "generated_at": "2026-06-30T15:25:50.699183",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -37,16 +37,24 @@
             "socratic-change-inquiry-2026-06-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
+            "openfugu-research-record-2026-06-25.md",
             "harness-1-state-ledger-research.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "QUALITY_GATES_SUMMARY.md",
+            "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "ROUTING_CONTRACT.md",
+            "openfugu-reference-plan-2026-06-25.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
+            "openfugu-technical-brief-2026-06-25.md",
             "skill-workflow-research-synthesis.md",
             "multi-agent-panel-consensus-2026-06-25.md",
+            "memory-mechanisms-research-2026-06-25.md",
+            "skills-and-spec-systems-research-2026-06-25.md",
+            "vllm-micro-agent-research-record-2026-06-30.md",
             "prompt-library-build-plan.md",
             "runtime-governance-learning-plan-2026-06-11.md",
             "project-adjustment-reflection-2026-06-11.md"
@@ -57,11 +65,14 @@
           "files": [
             "review-rating-fix.md",
             "agent-scaffold-provenance.md",
+            "external-adoption-review.md",
             "memory-consolidation.md",
             "agent-selection.md",
             "runtime-trust-boundary.md",
             "retro.md",
+            "artifact-promotion.md",
             "workflow-recipes.md",
+            "workflow-acquisition.md",
             "workflow-engine.md",
             "sop-compiler.md"
           ]
@@ -209,6 +220,26 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "Inputs"
         },
         {
@@ -248,8 +279,8 @@
           "text": "8. Required Fixes"
         }
       ],
-      "line_count": 63,
-      "char_count": 1014
+      "line_count": 86,
+      "char_count": 1935
     },
     {
       "path": "reflective-prompt-library/02-engineering/task-slicer.md",
@@ -268,6 +299,22 @@
         {
           "level": 1,
           "text": "Task Slicer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -290,8 +337,8 @@
           "text": "TASK-001: {名稱}"
         }
       ],
-      "line_count": 40,
-      "char_count": 545
+      "line_count": 58,
+      "char_count": 1208
     },
     {
       "path": "reflective-prompt-library/02-engineering/local-feedback.md",
@@ -313,6 +360,26 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "錯誤描述"
         },
         {
@@ -320,8 +387,8 @@
           "text": "請輸出"
         }
       ],
-      "line_count": 24,
-      "char_count": 357
+      "line_count": 48,
+      "char_count": 1277
     },
     {
       "path": "reflective-prompt-library/02-engineering/usage-first.md",
@@ -343,11 +410,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "系統 / 功能"
         }
       ],
-      "line_count": 33,
-      "char_count": 416
+      "line_count": 52,
+      "char_count": 1134
     },
     {
       "path": "reflective-prompt-library/02-engineering/task-start.md",
@@ -369,6 +452,22 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "任務"
         },
         {
@@ -376,8 +475,8 @@
           "text": "請輸出"
         }
       ],
-      "line_count": 34,
-      "char_count": 676
+      "line_count": 54,
+      "char_count": 1468
     },
     {
       "path": "reflective-prompt-library/02-engineering/spec-writer.md",
@@ -396,6 +495,22 @@
         {
           "level": 1,
           "text": "Spec Writer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -458,8 +573,8 @@
           "text": "13. Human Review Required"
         }
       ],
-      "line_count": 66,
-      "char_count": 792
+      "line_count": 85,
+      "char_count": 1514
     },
     {
       "path": "reflective-prompt-library/02-engineering/implementation-agent.md",
@@ -478,10 +593,30 @@
         {
           "level": 1,
           "text": "Implementation Agent Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 43,
-      "char_count": 1135
+      "line_count": 67,
+      "char_count": 2085
     },
     {
       "path": "reflective-prompt-library/02-engineering/test-designer.md",
@@ -500,6 +635,22 @@
         {
           "level": 1,
           "text": "Test Designer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -538,8 +689,8 @@
           "text": "7. Minimal Test Set"
         }
       ],
-      "line_count": 50,
-      "char_count": 744
+      "line_count": 68,
+      "char_count": 1426
     },
     {
       "path": "reflective-prompt-library/06-repo/codex-opencode.md",
@@ -558,10 +709,26 @@
         {
           "level": 1,
           "text": "Codex / OpenCode Task Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 30,
-      "char_count": 578
+      "line_count": 48,
+      "char_count": 1273
     },
     {
       "path": "reflective-prompt-library/06-repo/cursor-rules.md",
@@ -580,10 +747,30 @@
         {
           "level": 1,
           "text": "Cursor Rules"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 35,
-      "char_count": 718
+      "line_count": 57,
+      "char_count": 1606
     },
     {
       "path": "reflective-prompt-library/06-repo/PROJECT_KNOWLEDGE.template.md",
@@ -599,6 +786,26 @@
         "markdown_links": []
       },
       "structure": [
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
         {
           "level": 1,
           "text": "Project Knowledge — [Project Name]"
@@ -628,8 +835,8 @@
           "text": "Growth Gate"
         }
       ],
-      "line_count": 70,
-      "char_count": 2088
+      "line_count": 93,
+      "char_count": 2904
     },
     {
       "path": "reflective-prompt-library/06-repo/AGENTS.md",
@@ -656,6 +863,26 @@
         {
           "level": 1,
           "text": "AGENTS.md"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -690,8 +917,8 @@
           "text": "Review Standard"
         }
       ],
-      "line_count": 174,
-      "char_count": 5350
+      "line_count": 196,
+      "char_count": 6362
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -1046,6 +1273,121 @@
       "char_count": 7763
     },
     {
+      "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "vllm-micro-agent-technical-brief-2026-06-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "vllm-micro-agent-research-record-2026-06-30.md",
+          "openfugu-technical-brief-2026-06-25.md",
+          "openfugu-research-record-2026-06-25.md",
+          "multi-agent-panel-consensus-2026-06-25.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "vLLM Micro-Agent Technical Brief — 2026-06-30"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Route Trace (how this was handled)"
+        },
+        {
+          "level": 2,
+          "text": "Core Concept"
+        },
+        {
+          "level": 2,
+          "text": "Architecture Map"
+        },
+        {
+          "level": 3,
+          "text": "Semantic Router (the control plane)"
+        },
+        {
+          "level": 3,
+          "text": "Looper (the micro-agent runtime)"
+        },
+        {
+          "level": 2,
+          "text": "The Five Looper Recipes (mechanism detail)"
+        },
+        {
+          "level": 3,
+          "text": "1. Confidence — sequential escalation"
+        },
+        {
+          "level": 3,
+          "text": "2. Ratings — bounded fan-out"
+        },
+        {
+          "level": 3,
+          "text": "3. ReMoM — breadth with a contract"
+        },
+        {
+          "level": 3,
+          "text": "4. Fusion — disagreement as signal"
+        },
+        {
+          "level": 3,
+          "text": "5. Workflows / Router Flow — roles under a budget"
+        },
+        {
+          "level": 3,
+          "text": "Auto recipes"
+        },
+        {
+          "level": 2,
+          "text": "Relation to the Cited Research"
+        },
+        {
+          "level": 2,
+          "text": "Fit / Anti-Fit"
+        },
+        {
+          "level": 2,
+          "text": "Implementation Lessons (if ever adopting the concept)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Verification Status (2026-06-30)"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiers"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Documentation Maintenance Note"
+        }
+      ],
+      "line_count": 354,
+      "char_count": 16382
+    },
+    {
       "path": "reflective-prompt-library/plans/knowie-project-knowledge-reflection-2026-06-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1104,6 +1446,95 @@
       ],
       "line_count": 138,
       "char_count": 8726
+    },
+    {
+      "path": "reflective-prompt-library/plans/openfugu-research-record-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openfugu-research-record-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "openfugu-technical-brief-2026-06-25.md",
+          "openfugu-reference-plan-2026-06-25.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenFugu Research Record — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Decision"
+        },
+        {
+          "level": 2,
+          "text": "Sources Checked"
+        },
+        {
+          "level": 2,
+          "text": "Commands / Checks Run"
+        },
+        {
+          "level": 2,
+          "text": "Architecture Notes"
+        },
+        {
+          "level": 3,
+          "text": "TRINITY / Fugu line"
+        },
+        {
+          "level": 3,
+          "text": "Conductor / Fugu-Ultra line"
+        },
+        {
+          "level": 2,
+          "text": "Parallel Lens Review"
+        },
+        {
+          "level": 2,
+          "text": "Consensus Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Decision by Use Case"
+        },
+        {
+          "level": 2,
+          "text": "Required Risk Block for Future Mentions"
+        },
+        {
+          "level": 2,
+          "text": "Uncertainties / Open Questions"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiers"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 230,
+      "char_count": 13120
     },
     {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
@@ -1473,7 +1904,77 @@
         }
       ],
       "line_count": 387,
-      "char_count": 16796
+      "char_count": 19392
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-tooling-research-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "skills-and-spec-systems-research-2026-06-25.md",
+          "memory-mechanisms-research-2026-06-25.md",
+          "external-adoption-case-studies-2026-06-20.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Tooling Research — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources Checked"
+        },
+        {
+          "level": 2,
+          "text": "Topic Findings"
+        },
+        {
+          "level": 3,
+          "text": "Hermes Agent"
+        },
+        {
+          "level": 3,
+          "text": "Oh My Pi / `oh my pip`"
+        },
+        {
+          "level": 3,
+          "text": "Oh My OpenAgent / OmO"
+        },
+        {
+          "level": 2,
+          "text": "Comparison"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 204,
+      "char_count": 9771
     },
     {
       "path": "reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md",
@@ -1490,6 +1991,12 @@
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "knowie-project-knowledge-reflection-2026-06-17.md",
           "storm-perspective-discovery-reflection-2026-06-18.md",
+          "openfugu-research-record-2026-06-25.md",
+          "openfugu-technical-brief-2026-06-25.md",
+          "openfugu-reference-plan-2026-06-25.md",
+          "skills-and-spec-systems-research-2026-06-25.md",
+          "memory-mechanisms-research-2026-06-25.md",
+          "agent-tooling-research-2026-06-25.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -1552,8 +2059,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 162,
-      "char_count": 10099
+      "line_count": 164,
+      "char_count": 11176
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -1662,6 +2169,92 @@
       "char_count": 6099
     },
     {
+      "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openfugu-reference-plan-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenFugu Reference Plan — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Goal"
+        },
+        {
+          "level": 2,
+          "text": "Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Decision Summary"
+        },
+        {
+          "level": 2,
+          "text": "Work Plan"
+        },
+        {
+          "level": 3,
+          "text": "TASK-001: Preserve research record"
+        },
+        {
+          "level": 3,
+          "text": "TASK-002: Record adoption decision"
+        },
+        {
+          "level": 3,
+          "text": "TASK-003: Optional upstream follow-up if hands-on TRINITY is desired"
+        },
+        {
+          "level": 3,
+          "text": "TASK-004: Optional TeaPrompt citation/use"
+        },
+        {
+          "level": 2,
+          "text": "No-Code Test Plan"
+        },
+        {
+          "level": 3,
+          "text": "TEST-001: Fresh-clone TRINITY gate"
+        },
+        {
+          "level": 3,
+          "text": "TEST-002: Conductor smoke-scope gate"
+        },
+        {
+          "level": 3,
+          "text": "TEST-003: License and egress gate"
+        },
+        {
+          "level": 2,
+          "text": "Runtime Trust Boundaries"
+        },
+        {
+          "level": 2,
+          "text": "Open Questions"
+        },
+        {
+          "level": 2,
+          "text": "Completion Criteria for This Plan"
+        }
+      ],
+      "line_count": 163,
+      "char_count": 8246
+    },
+    {
       "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1706,6 +2299,79 @@
       ],
       "line_count": 75,
       "char_count": 4131
+    },
+    {
+      "path": "reflective-prompt-library/plans/openfugu-technical-brief-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openfugu-technical-brief-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "openfugu-research-record-2026-06-25.md",
+          "openfugu-reference-plan-2026-06-25.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenFugu Technical Brief — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "What OpenFugu Is"
+        },
+        {
+          "level": 2,
+          "text": "The Two Orchestrator Lines"
+        },
+        {
+          "level": 2,
+          "text": "TRINITY Mechanism (source-verified in `openfugu/mini.py`)"
+        },
+        {
+          "level": 2,
+          "text": "Conductor Mechanism (source-verified in `openfugu/ultra.py`)"
+        },
+        {
+          "level": 2,
+          "text": "Training Recipes (from docs/source, not independently retrained)"
+        },
+        {
+          "level": 2,
+          "text": "Benchmark Tiers (from `results/README.md` — read these by tier)"
+        },
+        {
+          "level": 2,
+          "text": "The Requested Seven-Model Pool"
+        },
+        {
+          "level": 2,
+          "text": "Reproducibility State (the blocking finding)"
+        },
+        {
+          "level": 2,
+          "text": "Portability / Security Notes"
+        },
+        {
+          "level": 2,
+          "text": "What Runs Today vs What Is Blocked"
+        },
+        {
+          "level": 2,
+          "text": "Bottom Line"
+        }
+      ],
+      "line_count": 161,
+      "char_count": 8579
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -2550,10 +3216,1095 @@
         {
           "level": 2,
           "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 69 — Thinking prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DA: Standardize `01-thinking/` prompt contracts?"
+        },
+        {
+          "level": 3,
+          "text": "DB: Expand to all prompt categories now?"
+        },
+        {
+          "level": 3,
+          "text": "Round 69 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 69)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 69)"
+        },
+        {
+          "level": 2,
+          "text": "Round 70 — Engineering prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DC: Standardize `02-engineering/` prompt contracts?"
+        },
+        {
+          "level": 3,
+          "text": "DD: Expand to 00-core / 03–05 categories now?"
+        },
+        {
+          "level": 3,
+          "text": "DE: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 70 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 70)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 70)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 71 — Thinking ↔ engineering cross-link review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DF: Complete thinking ↔ engineering cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "DG: 00-core Purpose sweep now?"
+        },
+        {
+          "level": 3,
+          "text": "DH: Skill frontmatter pytest suite (SkillPlanAuditor)?"
+        },
+        {
+          "level": 3,
+          "text": "Round 71 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 71)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 71)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 72 — Core prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DI: Standardize `00-core/` prompt contracts?"
+        },
+        {
+          "level": 3,
+          "text": "DJ: Expand to 03–05 categories now?"
+        },
+        {
+          "level": 3,
+          "text": "DK: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 72 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 72)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 72)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 73 — Agent prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DL: Standardize `04-agent/` prompt contracts + cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "DM: Expand to 03-context / 05-domain now?"
+        },
+        {
+          "level": 3,
+          "text": "DN: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 73 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 73)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 73)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 74 — Context prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DO: Standardize `03-context/` prompt contracts + cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "DP: Expand to `05-domain/` now?"
+        },
+        {
+          "level": 3,
+          "text": "DQ: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 74 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 74)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 74)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 75 — Domain prompt contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DR: Standardize `05-domain/` prompt contracts + cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "DS: Expand to `06-repo/` Purpose sweep now?"
+        },
+        {
+          "level": 3,
+          "text": "DT: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 75 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 75)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 75)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 76 — Repository template contract review (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DU: Standardize `06-repo/` prompt contracts + cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "DV: Governance pytest mirrors (`validate_links`, `validate_governance`, `lint_skills`) now?"
+        },
+        {
+          "level": 3,
+          "text": "DW: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "Round 76 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 76)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 76)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 77 — Governance pytest mirrors (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "DX: Pytest mirrors for `validate_governance`, `validate_links`, `lint_skills`?"
+        },
+        {
+          "level": 3,
+          "text": "DY: Router / holdout / tenth skill?"
+        },
+        {
+          "level": 3,
+          "text": "DZ: LLM benchmark in CI?"
+        },
+        {
+          "level": 3,
+          "text": "Round 77 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 77)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 77)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 78 — Workflow skill thinking cross-links (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "EA: Complete all nine workflow skill ↔ thinking-lens cross-links?"
+        },
+        {
+          "level": 3,
+          "text": "EB: Skill Module Contract anti-drift for all nine skills?"
+        },
+        {
+          "level": 3,
+          "text": "EC: ROUTE-002/003 holdout expansion now?"
+        },
+        {
+          "level": 3,
+          "text": "ED: Router / holdout / tenth skill / benchmark CI?"
+        },
+        {
+          "level": 3,
+          "text": "Round 78 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 78)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 78)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 79 — Bidirectional thinking-lens ↔ workflow skill cross-links (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 79 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 79 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 79)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 79)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 80 — Escalation subsection anti-drift + thinking-lens preamble guards (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 80 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 80 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 80)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 80)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 81 — Thinking-lens Human Review + Escalation route-target guards (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 81 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 81 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 81)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 81)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 82 — Strict Primary workflow surfaces graph parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 82 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 82 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 82)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 82)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 83 — Composable prompt Primary workflow surface parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 83 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 83 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 83)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 83)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 84 — Core prompt Primary workflow surface parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 84 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 84 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 84)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 84)"
+        },
+        {
+          "level": 2,
+          "text": "Round 85 — Composable prompt Primary workflow surface preamble guards (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 85 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 85 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 85)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 85)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 86 — Composable Human Review preamble guards (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 86 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 86 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 86)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 86)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 87 — Human Review helper DRY + GLOSSARY playbook repair (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 87 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 87 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 87)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 87)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 88 — `00-core` Human Review preamble guards (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 88 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 88 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 88)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 88)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 89 — `00-core` Human Review required/exempt set parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 89 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 89 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 89)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 89)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 90 — library-wide Human Review required/exempt set parity (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 90 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 90 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 90)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 90)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 91 — cross-category Human Review library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 91 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 91 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 91)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 91)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 92 — cross-category skill/thinking cross-link library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 92 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 92 verdict table"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 92)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 92)"
+        },
+        {
+          "level": 2,
+          "text": "Panel status (updated)"
+        },
+        {
+          "level": 2,
+          "text": "Round 93 — cross-category eval_harness contract heading library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 93 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 93 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 93)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 93)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 93)"
+        },
+        {
+          "level": 2,
+          "text": "Round 94 — cross-category Primary workflow surface preamble library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 94 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 94 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 94)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 94)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 94)"
+        },
+        {
+          "level": 2,
+          "text": "Round 95 — cross-category workflow skill coverage library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 95 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 95 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 95)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 95)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 95)"
+        },
+        {
+          "level": 2,
+          "text": "Round 96 — cross-category eval_harness score floor library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 96 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 96 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 96)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 96)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 96)"
+        },
+        {
+          "level": 2,
+          "text": "Round 97 — cross-category workflow skill reference library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 97 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 97 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 97)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 97)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 97)"
+        },
+        {
+          "level": 2,
+          "text": "Round 98 — cross-category eval_harness fixture library registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 98 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 98 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 98)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 98)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 98)"
+        },
+        {
+          "level": 2,
+          "text": "Round 99 — cross-category prompt path library registry + preamble fix (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 99 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 99 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 99)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 99)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 99)"
+        },
+        {
+          "level": 2,
+          "text": "Round 100 — cross-category library registry helper DRY (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 100 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 100 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 100)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 100)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 100)"
+        },
+        {
+          "level": 2,
+          "text": "Round 101 — governance surface path helper registry (2026-06-25)"
+        },
+        {
+          "level": 3,
+          "text": "Round 101 options"
+        },
+        {
+          "level": 3,
+          "text": "Round 101 verdict table"
+        },
+        {
+          "level": 3,
+          "text": "Socratic rationale (Round 101)"
+        },
+        {
+          "level": 2,
+          "text": "Implemented Changes (Round 101)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (Round 101)"
         }
       ],
-      "line_count": 1477,
-      "char_count": 55970
+      "line_count": 3149,
+      "char_count": 140180
+    },
+    {
+      "path": "reflective-prompt-library/plans/memory-mechanisms-research-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "memory-mechanisms-research-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "skills-and-spec-systems-research-2026-06-25.md",
+          "agent-tooling-research-2026-06-25.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Memory Mechanisms Research — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources Checked"
+        },
+        {
+          "level": 2,
+          "text": "Topic Findings"
+        },
+        {
+          "level": 3,
+          "text": "mem0"
+        },
+        {
+          "level": 3,
+          "text": "ChatGPT Memory"
+        },
+        {
+          "level": 3,
+          "text": "LLM Wiki"
+        },
+        {
+          "level": 3,
+          "text": "MemPalace (`memplace`)"
+        },
+        {
+          "level": 2,
+          "text": "Comparison"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Required Risk Block for Future Mentions"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 220,
+      "char_count": 10689
+    },
+    {
+      "path": "reflective-prompt-library/plans/skills-and-spec-systems-research-2026-06-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-and-spec-systems-research-2026-06-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "memory-mechanisms-research-2026-06-25.md",
+          "agent-tooling-research-2026-06-25.md",
+          "skill-workflow-research-synthesis.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skills and Spec Systems Research — 2026-06-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources Checked"
+        },
+        {
+          "level": 2,
+          "text": "Topic Findings"
+        },
+        {
+          "level": 3,
+          "text": "Superpowers (`obra/superpowers`)"
+        },
+        {
+          "level": 3,
+          "text": "GitHub Spec Kit (`github/spec-kit`)"
+        },
+        {
+          "level": 3,
+          "text": "Karpathy skills / Karpathy-style coding guardrails"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Classification"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 204,
+      "char_count": 9236
+    },
+    {
+      "path": "reflective-prompt-library/plans/vllm-micro-agent-research-record-2026-06-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "vllm-micro-agent-research-record-2026-06-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "openfugu-research-record-2026-06-25.md",
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "vllm-micro-agent-technical-brief-2026-06-30.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "vLLM Micro-Agent Research Record — 2026-06-30"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Source"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Route Trace (how this was handled)"
+        },
+        {
+          "level": 2,
+          "text": "1. Core Thesis of the Article"
+        },
+        {
+          "level": 2,
+          "text": "2. The Five Looper Topologies"
+        },
+        {
+          "level": 2,
+          "text": "3. Evidence vs Inference Separation"
+        },
+        {
+          "level": 2,
+          "text": "4. Critical-Thinking Check"
+        },
+        {
+          "level": 2,
+          "text": "5. Fugu vs vLLM (abstraction-layer difference)"
+        },
+        {
+          "level": 2,
+          "text": "6. Gap Audit — vLLM Requirements vs TeaPrompt Skills"
+        },
+        {
+          "level": 2,
+          "text": "7. Decision"
+        },
+        {
+          "level": 2,
+          "text": "8. Falsifiability of This Record"
+        }
+      ],
+      "line_count": 165,
+      "char_count": 9770
     },
     {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
@@ -2741,6 +4492,26 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "Artifact"
         },
         {
@@ -2776,8 +4547,8 @@
           "text": "Step 6: Gate Decision"
         }
       ],
-      "line_count": 48,
-      "char_count": 823
+      "line_count": 72,
+      "char_count": 1608
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
@@ -2796,6 +4567,26 @@
         {
           "level": 1,
           "text": "Agent Scaffold Provenance Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -2826,8 +4617,82 @@
           "text": "6. Recommendation"
         }
       ],
-      "line_count": 103,
-      "char_count": 2819
+      "line_count": 127,
+      "char_count": 3657
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/external-adoption-review.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "external-adoption-review",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "External Adoption Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "External Source"
+        },
+        {
+          "level": 2,
+          "text": "1. Decision Question"
+        },
+        {
+          "level": 2,
+          "text": "2. Source Ledger"
+        },
+        {
+          "level": 2,
+          "text": "3. Mechanism Extraction"
+        },
+        {
+          "level": 2,
+          "text": "4. Local Gap Test"
+        },
+        {
+          "level": 2,
+          "text": "5. Signal Accounting"
+        },
+        {
+          "level": 2,
+          "text": "6. Adoption Decision"
+        },
+        {
+          "level": 2,
+          "text": "7. Output"
+        }
+      ],
+      "line_count": 135,
+      "char_count": 4767
     },
     {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
@@ -2849,11 +4714,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "Logs / Retros"
         }
       ],
-      "line_count": 30,
-      "char_count": 421
+      "line_count": 54,
+      "char_count": 1251
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-selection.md",
@@ -2875,11 +4760,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "任務"
         }
       ],
-      "line_count": 43,
-      "char_count": 580
+      "line_count": 67,
+      "char_count": 1509
     },
     {
       "path": "reflective-prompt-library/04-agent/runtime-trust-boundary.md",
@@ -2898,6 +4803,26 @@
         {
           "level": 1,
           "text": "Runtime Trust Boundary Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -2932,8 +4857,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 99,
-      "char_count": 4099
+      "line_count": 123,
+      "char_count": 5121
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -2955,11 +4880,101 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "任務結果"
         }
       ],
-      "line_count": 32,
-      "char_count": 691
+      "line_count": 56,
+      "char_count": 1449
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/artifact-promotion.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "artifact-promotion",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Artifact Promotion Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Material"
+        },
+        {
+          "level": 2,
+          "text": "1. Intent"
+        },
+        {
+          "level": 2,
+          "text": "2. Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "3. Destination Classifier"
+        },
+        {
+          "level": 2,
+          "text": "4. Promotion Gates"
+        },
+        {
+          "level": 2,
+          "text": "5. Minimality Gate"
+        },
+        {
+          "level": 2,
+          "text": "6. Output"
+        }
+      ],
+      "line_count": 104,
+      "char_count": 4245
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
@@ -2978,6 +4993,22 @@
         {
           "level": 1,
           "text": "Workflow Recipes"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -3001,6 +5032,10 @@
         },
         {
           "level": 2,
+          "text": "Parallel Lens Review"
+        },
+        {
+          "level": 2,
           "text": "Cost Modes"
         },
         {
@@ -3008,8 +5043,86 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 117,
-      "char_count": 1514
+      "line_count": 153,
+      "char_count": 3094
+    },
+    {
+      "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "04-agent",
+      "name": "workflow-acquisition",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Workflow Acquisition Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Source Material"
+        },
+        {
+          "level": 2,
+          "text": "1. Acquisition Goal"
+        },
+        {
+          "level": 2,
+          "text": "2. Trace Boundary"
+        },
+        {
+          "level": 2,
+          "text": "3. SOP Extraction"
+        },
+        {
+          "level": 2,
+          "text": "4. Artifact Schema"
+        },
+        {
+          "level": 2,
+          "text": "5. Replay Plan"
+        },
+        {
+          "level": 2,
+          "text": "6. Promotion Decision"
+        },
+        {
+          "level": 2,
+          "text": "7. Verification And Anti-cheating"
+        },
+        {
+          "level": 2,
+          "text": "8. Output"
+        }
+      ],
+      "line_count": 148,
+      "char_count": 5291
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -3028,6 +5141,22 @@
         {
           "level": 1,
           "text": "Workflow Engine Planning Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -3086,8 +5215,8 @@
           "text": "13. Minimal Implementation Plan"
         }
       ],
-      "line_count": 70,
-      "char_count": 1087
+      "line_count": 90,
+      "char_count": 1775
     },
     {
       "path": "reflective-prompt-library/04-agent/sop-compiler.md",
@@ -3106,6 +5235,26 @@
         {
           "level": 1,
           "text": "SOP Compiler Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -3144,8 +5293,8 @@
           "text": "8. Output"
         }
       ],
-      "line_count": 122,
-      "char_count": 4109
+      "line_count": 146,
+      "char_count": 5016
     },
     {
       "path": "reflective-prompt-library/03-context/small-context.md",
@@ -3164,10 +5313,30 @@
         {
           "level": 1,
           "text": "Small Context Window Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 30,
-      "char_count": 403
+      "line_count": 52,
+      "char_count": 1145
     },
     {
       "path": "reflective-prompt-library/03-context/medium-context.md",
@@ -3186,10 +5355,26 @@
         {
           "level": 1,
           "text": "Medium Context Window Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 33,
-      "char_count": 640
+      "line_count": 51,
+      "char_count": 1251
     },
     {
       "path": "reflective-prompt-library/03-context/large-context.md",
@@ -3211,6 +5396,22 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "Stage 1: Index"
         },
         {
@@ -3222,8 +5423,8 @@
           "text": "Stage 3: Synthesize"
         }
       ],
-      "line_count": 49,
-      "char_count": 897
+      "line_count": 67,
+      "char_count": 1541
     },
     {
       "path": "reflective-prompt-library/03-context/context-handoff.md",
@@ -3242,10 +5443,30 @@
         {
           "level": 1,
           "text": "Context Handoff Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 27,
-      "char_count": 433
+      "line_count": 49,
+      "char_count": 1268
     },
     {
       "path": "reflective-prompt-library/03-context/low-token.md",
@@ -3264,10 +5485,30 @@
         {
           "level": 1,
           "text": "Low Token Mode Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 21,
-      "char_count": 218
+      "line_count": 43,
+      "char_count": 965
     },
     {
       "path": "reflective-prompt-library/03-context/gemini-long-document.md",
@@ -3286,6 +5527,22 @@
         {
           "level": 1,
           "text": "Gemini Long Document Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -3320,8 +5577,8 @@
           "text": "8. Actionable Output"
         }
       ],
-      "line_count": 42,
-      "char_count": 482
+      "line_count": 60,
+      "char_count": 1081
     },
     {
       "path": "reflective-prompt-library/03-context/context-engineering.md",
@@ -3340,10 +5597,26 @@
         {
           "level": 1,
           "text": "Context Engineering Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 37,
-      "char_count": 819
+      "line_count": 55,
+      "char_count": 1492
     },
     {
       "path": "reflective-prompt-library/00-core/custom-instruction-zh.md",
@@ -3365,10 +5638,30 @@
         {
           "level": 1,
           "text": "中文 Custom Instruction"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 10,
-      "char_count": 372
+      "line_count": 33,
+      "char_count": 1149
     },
     {
       "path": "reflective-prompt-library/00-core/custom-instruction-en.md",
@@ -3387,10 +5680,30 @@
         {
           "level": 1,
           "text": "English Custom Instruction"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 8,
-      "char_count": 844
+      "line_count": 31,
+      "char_count": 1590
     },
     {
       "path": "reflective-prompt-library/00-core/core-short.md",
@@ -3409,10 +5722,30 @@
         {
           "level": 1,
           "text": "Core Prompt: Short Version"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 29,
-      "char_count": 797
+      "line_count": 52,
+      "char_count": 1753
     },
     {
       "path": "reflective-prompt-library/00-core/important-task-full.md",
@@ -3431,10 +5764,30 @@
         {
           "level": 1,
           "text": "Important Task Full Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 43,
-      "char_count": 599
+      "line_count": 67,
+      "char_count": 1520
     },
     {
       "path": "reflective-prompt-library/00-core/core-full.md",
@@ -3453,6 +5806,26 @@
         {
           "level": 1,
           "text": "Reflective Engineering Agent Protocol"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -3511,8 +5884,8 @@
           "text": "Final Answer Style"
         }
       ],
-      "line_count": 174,
-      "char_count": 3807
+      "line_count": 197,
+      "char_count": 4701
     },
     {
       "path": "reflective-prompt-library/00-core/daily-minimal.md",
@@ -3531,10 +5904,26 @@
         {
           "level": 1,
           "text": "Daily Minimal Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 31,
-      "char_count": 378
+      "line_count": 49,
+      "char_count": 1078
     },
     {
       "path": "reflective-prompt-library/00-core/core-minimal.md",
@@ -3553,10 +5942,30 @@
         {
           "level": 1,
           "text": "Core Minimal Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         }
       ],
-      "line_count": 16,
-      "char_count": 453
+      "line_count": 39,
+      "char_count": 1255
     },
     {
       "path": "reflective-prompt-library/00-core/master-prompt.md",
@@ -3575,6 +5984,22 @@
         {
           "level": 1,
           "text": "Master Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         },
         {
           "level": 2,
@@ -3645,8 +6070,8 @@
           "text": "15. Self-check"
         }
       ],
-      "line_count": 114,
-      "char_count": 1376
+      "line_count": 132,
+      "char_count": 2144
     },
     {
       "path": "reflective-prompt-library/00-core/global-controller.md",
@@ -3665,10 +6090,26 @@
         {
           "level": 1,
           "text": "Global Controller Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 55,
-      "char_count": 984
+      "line_count": 74,
+      "char_count": 1790
     },
     {
       "path": "reflective-prompt-library/skills/skill-map.md",
@@ -3869,11 +6310,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "Creative Intent"
         }
       ],
-      "line_count": 46,
-      "char_count": 676
+      "line_count": 68,
+      "char_count": 1509
     },
     {
       "path": "reflective-prompt-library/05-domain/business-strategy.md",
@@ -3895,11 +6356,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "方案"
         }
       ],
-      "line_count": 38,
-      "char_count": 561
+      "line_count": 56,
+      "char_count": 1292
     },
     {
       "path": "reflective-prompt-library/05-domain/high-risk.md",
@@ -3921,11 +6398,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "任務"
         }
       ],
-      "line_count": 33,
-      "char_count": 560
+      "line_count": 55,
+      "char_count": 1449
     },
     {
       "path": "reflective-prompt-library/05-domain/research.md",
@@ -3947,11 +6444,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "主題"
         }
       ],
-      "line_count": 34,
-      "char_count": 507
+      "line_count": 52,
+      "char_count": 1267
     },
     {
       "path": "reflective-prompt-library/05-domain/learning-coach.md",
@@ -3973,11 +6486,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "學習目標"
         }
       ],
-      "line_count": 37,
-      "char_count": 925
+      "line_count": 55,
+      "char_count": 1635
     },
     {
       "path": "reflective-prompt-library/05-domain/deep-analysis.md",
@@ -3999,11 +6528,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "問題"
         }
       ],
-      "line_count": 33,
-      "char_count": 335
+      "line_count": 51,
+      "char_count": 1080
     },
     {
       "path": "reflective-prompt-library/05-domain/writing-article.md",
@@ -4025,11 +6570,27 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
           "text": "主題"
         }
       ],
-      "line_count": 34,
-      "char_count": 439
+      "line_count": 52,
+      "char_count": 1164
     },
     {
       "path": "reflective-prompt-library/01-thinking/socratic-reviewer.md",
@@ -4048,6 +6609,26 @@
         {
           "level": 1,
           "text": "Socratic Reviewer Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -4082,8 +6663,8 @@
           "text": "8. Decision"
         }
       ],
-      "line_count": 55,
-      "char_count": 752
+      "line_count": 79,
+      "char_count": 2012
     },
     {
       "path": "reflective-prompt-library/01-thinking/critical-thinking-check.md",
@@ -4102,6 +6683,26 @@
         {
           "level": 1,
           "text": "Critical Thinking Review Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -4144,8 +6745,8 @@
           "text": "8. Recommendation"
         }
       ],
-      "line_count": 64,
-      "char_count": 869
+      "line_count": 88,
+      "char_count": 2053
     },
     {
       "path": "reflective-prompt-library/01-thinking/falsifiability.md",
@@ -4167,11 +6768,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "想法"
         }
       ],
-      "line_count": 25,
-      "char_count": 403
+      "line_count": 49,
+      "char_count": 1375
     },
     {
       "path": "reflective-prompt-library/01-thinking/counterargument.md",
@@ -4193,11 +6814,31 @@
         },
         {
           "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
           "text": "我的方案"
         }
       ],
-      "line_count": 33,
-      "char_count": 483
+      "line_count": 57,
+      "char_count": 1443
     },
     {
       "path": "reflective-prompt-library/01-thinking/why-what-how-done.md",
@@ -4216,6 +6857,26 @@
         {
           "level": 1,
           "text": "Why / What / How / Done Prompt"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
         },
         {
           "level": 2,
@@ -4238,8 +6899,8 @@
           "text": "4. Done Gate"
         }
       ],
-      "line_count": 55,
-      "char_count": 527
+      "line_count": 79,
+      "char_count": 1684
     }
   ],
   "skills": [
@@ -4359,18 +7020,6 @@
           "text": "Module Contract"
         },
         {
-          "level": 3,
-          "text": "Output"
-        },
-        {
-          "level": 3,
-          "text": "Never"
-        },
-        {
-          "level": 3,
-          "text": "Escalation"
-        },
-        {
           "level": 2,
           "text": "Minimality Ladder"
         },
@@ -4392,7 +7041,7 @@
         }
       ],
       "line_count": 132,
-      "char_count": 5784
+      "char_count": 5775
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -4536,7 +7185,9 @@
         "03-context/large-context.md",
         "03-context/gemini-long-document.md",
         "04-agent/runtime-trust-boundary.md",
-        "04-agent/agent-scaffold-provenance.md"
+        "04-agent/agent-scaffold-provenance.md",
+        "01-thinking/socratic-reviewer.md",
+        "01-thinking/critical-thinking-check.md"
       ],
       "structure": [
         {
@@ -4624,8 +7275,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 165,
-      "char_count": 7453
+      "line_count": 167,
+      "char_count": 7533
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -4756,6 +7407,8 @@
         "02-engineering/implementation-agent.md",
         "02-engineering/test-designer.md",
         "02-engineering/local-feedback.md",
+        "01-thinking/counterargument.md",
+        "01-thinking/critical-thinking-check.md",
         "06-repo/codex-opencode.md",
         "04-agent/runtime-trust-boundary.md"
       ],
@@ -4881,8 +7534,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 175,
-      "char_count": 7026
+      "line_count": 177,
+      "char_count": 7104
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -4909,6 +7562,7 @@
       "prompt_sources": [
         "03-context/context-handoff.md",
         "04-agent/retro.md",
+        "01-thinking/socratic-reviewer.md",
         "04-agent/memory-consolidation.md",
         "04-agent/runtime-trust-boundary.md",
         "06-repo/PROJECT_KNOWLEDGE.template.md"
@@ -5059,8 +7713,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 140,
-      "char_count": 4545
+      "line_count": 141,
+      "char_count": 4582
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -5223,6 +7877,8 @@
         "02-engineering/test-designer.md",
         "02-engineering/usage-first.md",
         "02-engineering/task-slicer.md",
+        "01-thinking/falsifiability.md",
+        "01-thinking/why-what-how-done.md",
         "04-agent/workflow-engine.md",
         "04-agent/sop-compiler.md",
         "04-agent/runtime-trust-boundary.md"
@@ -5281,9 +7937,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 233,
-      "char_count": 10349
+      "line_count": 235,
+      "char_count": 10420
     }
   ],
-  "total_files": 80
+  "total_files": 91
 }
