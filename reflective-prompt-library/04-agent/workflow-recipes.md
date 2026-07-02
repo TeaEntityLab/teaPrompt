@@ -24,6 +24,8 @@ Name one recipe that would fail if run without the thinking-lens preamble steps.
 
 ## General Thinking
 
+Start: L1–L2. Artifacts: a decision note with explicit assumptions.
+
 ```text
 Socratic Prompt
 -> Critical Thinking Prompt
@@ -32,6 +34,9 @@ Socratic Prompt
 ```
 
 ## Engineering Task
+
+Start: L3. Artifacts: spec, task slices, implementation diff with tests,
+review notes, retro entry.
 
 ```text
 Task Start Prompt
@@ -46,6 +51,10 @@ Task Start Prompt
 
 ## High-risk Task
 
+Start: L4. Artifacts: assumption audit, threat model, dry-run plan, Human
+Review record, rollback check. The Human Review gate is mandatory, not
+optional.
+
 ```text
 High-risk Prompt
 -> Assumption Audit
@@ -59,6 +68,9 @@ High-risk Prompt
 
 ## Long Research Task
 
+Start: L2. Artifacts: document map, evidence-vs-inference synthesis, context
+handoff note.
+
 ```text
 Research Prompt
 -> Document Map
@@ -69,6 +81,9 @@ Research Prompt
 ```
 
 ## Agent System Design
+
+Start: L3; move to L5 when the work is long-running and resumable. Artifacts:
+agent selection record, spec, workflow engine plan, review ratings.
 
 ```text
 Agent Selection Prompt
@@ -112,6 +127,8 @@ should be removed — see
 
 Use this only when a conclusion needs adversarial multi-lens consensus before it becomes a decision, adoption recommendation, architecture direction, or project-knowledge entry. Do not use it for ordinary low-risk review.
 
+Start: L2, or the gated level of the decision under review if higher.
+
 ```text
 reflective-dispatch
 + evidence packet
@@ -125,6 +142,10 @@ Expected artifacts: `local://<topic>-review-packet.md`, reviewer verdicts, and a
 Falsifier: if one `reflective-review` or `reflective-research` pass would produce the same decision with enough evidence, this recipe is ceremony and should not run.
 
 ## Cost Modes
+
+Strictness mapping: low-cost starts at L1–L2, medium-cost at L3, high-cost
+strict at L4, agent/workflow at L5. Artifacts follow the recipes above at the
+matching level.
 
 Low-cost daily mode:
 
