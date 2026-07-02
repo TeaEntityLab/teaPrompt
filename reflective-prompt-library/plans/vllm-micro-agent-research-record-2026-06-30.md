@@ -156,7 +156,10 @@ marked as such in the skills — not omissions.
    (Confidence / Ratings / ReMoM / Fusion / Workflows) -> task-shape signals ->
    existing skills, so TeaPrompt's recipe vocabulary aligns with the emerging
    field vocabulary (Fugu / vLLM). Pure prompt-layer, no runtime, routes to
-   `reflective-spec-plan`. **Status: proposed, awaiting go/no-go.**
+   `reflective-spec-plan`. **Status: done 2026-07-02** — "Looper Topologies"
+   section added to `04-agent/workflow-recipes.md` (five patterns -> task-shape
+   signals -> existing skills, weight-not-filter caution transfer, §8 falsifier
+   linked in place).
 
 ## 8. Falsifiability of This Record
 

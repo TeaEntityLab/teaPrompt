@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-06-30T15:25:50.699183",
+  "generated_at": "2026-07-02T16:27:33.921997",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1583,8 +1583,8 @@
           "text": "Sources"
         }
       ],
-      "line_count": 142,
-      "char_count": 8254
+      "line_count": 150,
+      "char_count": 8806
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -4303,8 +4303,8 @@
           "text": "8. Falsifiability of This Record"
         }
       ],
-      "line_count": 165,
-      "char_count": 9770
+      "line_count": 168,
+      "char_count": 9960
     },
     {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
@@ -4987,7 +4987,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/vllm-micro-agent-research-record-2026-06-30.md"
+        ]
       },
       "structure": [
         {
@@ -5032,6 +5034,10 @@
         },
         {
           "level": 2,
+          "text": "Looper Topologies"
+        },
+        {
+          "level": 2,
           "text": "Parallel Lens Review"
         },
         {
@@ -5043,8 +5049,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 153,
-      "char_count": 3094
+      "line_count": 181,
+      "char_count": 5298
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",

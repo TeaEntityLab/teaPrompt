@@ -80,6 +80,34 @@ Agent Selection Prompt
 -> Review-Rating-Fix
 ```
 
+## Looper Topologies
+
+Shared vocabulary with serving-layer micro-agent runtimes (Sakana Fugu, vLLM
+Semantic Router loopers). Their core lesson: **the best loop is task-shaped** —
+identify the task shape first, then pick the smallest topology. At the prompt
+layer, `reflective-dispatch` is the recipe selector; these rows align its
+routing vocabulary with the field's named patterns. Numeric budgets, runtime
+traces, and enforcement belong to a serving runtime and stay out of scope here.
+
+| Topology | Task-shape signal | Prompt-layer equivalent |
+| --- | --- | --- |
+| Confidence (escalate on low confidence) | High volume, easy-vs-hard mix, cost or latency pressure | `reflective-dispatch` Strictness Ladder: start L1/L2, escalate only when risk or ambiguity demands |
+| Ratings (bounded parallel candidates) | Several plausible candidates under a hard concurrency cap | Parallel Lens Review with a fixed lens count; keep its falsifier |
+| ReMoM (breadth, then synthesis contract) | High reasoning variance plus a strict output format | Multi-angle `reflective-research` passes, then synthesis against Acceptance Criteria from `reflective-brief` |
+| Fusion (disagreement as signal) | Contested factual or judgment calls where one confident answer is brittle | Parallel Lens Review with disagreements preserved and counterargument before consensus |
+| Workflows (roles under a budget) | Multi-step engineering with distinct planner/patcher/verifier roles | Engineering Task recipe + `workflow-engine.md` state model via `reflective-spec-plan` |
+
+Caution transfer: consensus can amplify shared error. vLLM's grounded-fusion
+findings default to *weighting* rather than *dropping* the least-consistent
+response — three models can be confidently wrong together while the lone
+dissenter is right. Mirror that in Parallel Lens Review: preserve
+disagreements; never discard a dissent solely for being in the minority.
+
+Falsifier: if these rows merely rename existing recipes without changing a
+routing decision or improving shared vocabulary, this section is ceremony and
+should be removed — see
+[plans/vllm-micro-agent-research-record-2026-06-30.md](../plans/vllm-micro-agent-research-record-2026-06-30.md).
+
 ## Parallel Lens Review
 
 Use this only when a conclusion needs adversarial multi-lens consensus before it becomes a decision, adoption recommendation, architecture direction, or project-knowledge entry. Do not use it for ordinary low-risk review.

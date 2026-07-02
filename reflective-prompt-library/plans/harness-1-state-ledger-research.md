@@ -108,6 +108,14 @@ Only the harness design transfers to a prompt library.
       launch coverage (MarkTechPost, Digg, HF papers page). New detail: built on
       `openai/gpt-oss-20b`; paper calls the pattern "stateful cognitive
       offloading". Re-check in a month or two.)
+      (Re-checked 2026-07-02: still v1 on arXiv (2606.02373); no peer review,
+      third-party replication, or critique found. Material change: authors
+      released the full checkpoint and training data on 2026-06-15 — weights at
+      https://huggingface.co/pat-jj/harness-1, code at
+      https://github.com/pat-jj/harness-1, 899 SFT trajectories, 3,453 RL SEC
+      train examples, corpus shards. Reproducibility standing improved;
+      performance numbers remain author-reported. Next re-check when citing
+      numbers anywhere load-bearing.)
 - [x] Read in full: NLAH (arXiv 2603.25723) and the externalization review
       (arXiv 2604.08224) — done 2026-06-10; positioning section in both
       methodology maps deepened with NLAH's five harness-policy design
