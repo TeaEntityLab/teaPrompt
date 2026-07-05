@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 # Skill Installation Guide
 
-Last verified: 2026-05-24
+Last verified: 2026-07-06
 
 This guide explains how to install the TeaPrompt workflow skills into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
 

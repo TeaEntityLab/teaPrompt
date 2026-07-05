@@ -153,7 +153,6 @@ Trigger cues:
 - "Find risks, regressions, and missing tests."
 - "Audit assumptions and evidence quality."
 - "Check whether external content is being treated as data instead of instructions."
-- "Review whether a prompt leak or mirror is trustworthy and transferable."
 
 - "Review the README for clarity not security."
 - "Check the diff for readability not production deploy."
@@ -174,6 +173,7 @@ Trigger cues:
 - "Inspect docs, DeepWiki, and long references."
 - "Separate evidence from inference."
 - "Compare official docs, third-party mirrors, and community analysis."
+- "Review whether a prompt leak or mirror is trustworthy and transferable before adoption."
 - "Research current workflow frameworks or orchestration patterns."
 - "Multi-model or multi-perspective strategic rethink (use Optional Method: Multi-Voice Panel in the skill)."
 - "Six-lens debate on whether to merge these skills."
@@ -182,7 +182,7 @@ Trigger cues:
 Do not use when:
 
 - The answer is fully repo-local and needs no external grounding.
-- The task is only dependency selection; treat that as a dedicated evaluation lane.
+- The task is fully repo-local dependency removal or anti-bloat; use `reflective-minimality`. Use `reflective-spec-plan` for paper-only architecture tradeoffs.
 
 ## `reflective-risk`
 
@@ -220,10 +220,11 @@ If uncertain, apply this order:
 1. `reflective-dispatch`
 2. `reflective-risk` (if any high-risk or side-effect authority signal appears)
 3. `reflective-brief` or `reflective-spec-plan`
-4. `reflective-minimality` (if bloat, dependency, abstraction, or scope creep risk appears)
-5. `reflective-implement`
-6. `reflective-review`
-7. `reflective-handoff-retro`
+4. `reflective-research` (if current external sources, source-backed comparison, multi-voice synthesis, or scaffold provenance evidence is load-bearing)
+5. `reflective-minimality` (if bloat, dependency, abstraction, or scope creep risk appears)
+6. `reflective-implement`
+7. `reflective-review`
+8. `reflective-handoff-retro`
 
 When uncertain and low-risk:
 - Prefer a visible default-up to a silent downgrade.

@@ -62,6 +62,7 @@ Escalation:
 - If the goal or acceptance criteria are unclear, route to `reflective-brief` or `reflective-spec-plan`.
 - If simplification touches high-risk behavior, route to `reflective-risk`.
 - If implementation is required after the gate, route to `reflective-implement`.
+- If the question is whether to create or promote a skill, prompt lens, verifier, or runtime surface, use `04-agent/artifact-promotion.md` instead of treating minimality as promotion approval.
 - If reviewing an existing diff, combine with `reflective-review` for correctness and test adequacy.
 
 ## Minimality Ladder

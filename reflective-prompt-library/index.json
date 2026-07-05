@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-02T16:33:05.093400",
+  "generated_at": "2026-07-06T01:06:47.030275",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -35,6 +35,7 @@
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "socratic-change-inquiry-2026-06-11.md",
+            "five-layer-agent-sop-reference-record-2026-07-04.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1165,6 +1166,96 @@
       "char_count": 4272
     },
     {
+      "path": "reflective-prompt-library/plans/five-layer-agent-sop-reference-record-2026-07-04.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "five-layer-agent-sop-reference-record-2026-07-04",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Five-Layer Agent SOP Reference Record — 2026-07-04"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Source Artifacts"
+        },
+        {
+          "level": 2,
+          "text": "Review 1: Delivery Artifact Check"
+        },
+        {
+          "level": 3,
+          "text": "Finding"
+        },
+        {
+          "level": 3,
+          "text": "Action Taken"
+        },
+        {
+          "level": 3,
+          "text": "Verification Performed"
+        },
+        {
+          "level": 3,
+          "text": "Residual Note"
+        },
+        {
+          "level": 2,
+          "text": "Review 2: Prompt / Skill Promotion Decision"
+        },
+        {
+          "level": 3,
+          "text": "Direct Decision"
+        },
+        {
+          "level": 2,
+          "text": "Worthy Concepts Preserved"
+        },
+        {
+          "level": 2,
+          "text": "Concept Candidates To Watch"
+        },
+        {
+          "level": 2,
+          "text": "Concepts Not Worth Promoting Now"
+        },
+        {
+          "level": 2,
+          "text": "Decision Ledger"
+        },
+        {
+          "level": 2,
+          "text": "No-Change Record"
+        },
+        {
+          "level": 2,
+          "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "2026-07-05 Promotion Update"
+        }
+      ],
+      "line_count": 133,
+      "char_count": 12372
+    },
+    {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1880,31 +1971,19 @@
         },
         {
           "level": 1,
-          "text": "1. Validate links and schema"
+          "text": "1. Regenerate committed prompt/skill index when docs, skills, or plans change"
         },
         {
           "level": 1,
-          "text": "2. Run linter"
-        },
-        {
-          "level": 1,
-          "text": "3. Validate governance metadata"
-        },
-        {
-          "level": 1,
-          "text": "4. Regenerate index"
-        },
-        {
-          "level": 1,
-          "text": "5. Test routing"
+          "text": "2. Run the full CI-equivalent gate"
         },
         {
           "level": 2,
           "text": "Conclusion"
         }
       ],
-      "line_count": 387,
-      "char_count": 19392
+      "line_count": 382,
+      "char_count": 20353
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -4973,8 +5052,8 @@
           "text": "6. Output"
         }
       ],
-      "line_count": 104,
-      "char_count": 4245
+      "line_count": 106,
+      "char_count": 4448
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
@@ -5128,7 +5207,7 @@
         }
       ],
       "line_count": 148,
-      "char_count": 5291
+      "char_count": 5363
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -6129,7 +6208,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "reflective-review/SKILL.md#L13-L37"
+          "reflective-review/SKILL.md#L19-L48"
         ]
       },
       "structure": [
@@ -6226,8 +6305,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 230,
-      "char_count": 9463
+      "line_count": 231,
+      "char_count": 9708
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -6293,8 +6372,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 217,
-      "char_count": 5814
+      "line_count": 222,
+      "char_count": 6165
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -6981,8 +7060,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 146,
-      "char_count": 6713
+      "line_count": 150,
+      "char_count": 7305
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -7046,8 +7125,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 132,
-      "char_count": 5775
+      "line_count": 133,
+      "char_count": 5968
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -7161,7 +7240,7 @@
         }
       ],
       "line_count": 107,
-      "char_count": 3415
+      "char_count": 3489
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -7230,6 +7309,10 @@
         },
         {
           "level": 2,
+          "text": "High-Volatility Facts"
+        },
+        {
+          "level": 2,
           "text": "DeepWiki Use"
         },
         {
@@ -7281,8 +7364,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 167,
-      "char_count": 7533
+      "line_count": 180,
+      "char_count": 9177
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -7336,6 +7419,10 @@
           "text": "Claims Ledger"
         },
         {
+          "level": 3,
+          "text": "Four Evidence Dimensions"
+        },
+        {
           "level": 2,
           "text": "Review Modes"
         },
@@ -7384,8 +7471,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 142,
-      "char_count": 5011
+      "line_count": 158,
+      "char_count": 6610
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -7570,6 +7657,7 @@
         "04-agent/retro.md",
         "01-thinking/socratic-reviewer.md",
         "04-agent/memory-consolidation.md",
+        "04-agent/artifact-promotion.md",
         "04-agent/runtime-trust-boundary.md",
         "06-repo/PROJECT_KNOWLEDGE.template.md"
       ],
@@ -7719,8 +7807,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 141,
-      "char_count": 4582
+      "line_count": 142,
+      "char_count": 4617
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -7849,7 +7937,7 @@
         }
       ],
       "line_count": 113,
-      "char_count": 3140
+      "char_count": 3238
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -7947,5 +8035,5 @@
       "char_count": 10420
     }
   ],
-  "total_files": 91
+  "total_files": 92
 }

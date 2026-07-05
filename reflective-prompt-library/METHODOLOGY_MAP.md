@@ -69,6 +69,8 @@ current decision legible?"**
 
 ## The 10-Layer Taxonomy
 
+The taxonomy has ten layers for project surfaces; the execution routing set remains the nine frozen workflow skills under `skills/`. Skill-count decisions follow the nine-skill policy, not the layer count.
+
 Instead of a single prompt, the methodology is formally structured into ten distinct layers:
 
 1. **Core Instruction Layer** (`00-core/`): Global custom instructions, system behaviors, and base settings.

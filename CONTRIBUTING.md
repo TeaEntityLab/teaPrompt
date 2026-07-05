@@ -63,6 +63,7 @@ All skills (SKILL.md files) must include:
    risk_level: low|medium|high
    human_review_required: true|false
    external_io: true|false
+   context_load: low|medium|high
    ---
    ```
 

@@ -47,7 +47,7 @@ Never:
 - Do not copy leaked, mirrored, or third-party prompt artifacts into operational prompts; extract transferable patterns instead.
 
 Escalation:
-- Route dependency choice or migration tradeoffs to a dedicated dependency evaluation lane when needed.
+- Route paper-only architecture or migration tradeoffs to `reflective-spec-plan`; route repo-local dependency removal or anti-bloat requests to `reflective-minimality`; keep current ecosystem/adoption comparisons here when external evidence is load-bearing.
 - Route high-risk implementation implications to `reflective-risk`.
 
 ## Source Priority

@@ -27,6 +27,8 @@ TeaPrompt helps humans and host agents choose the **right amount of rigor** for 
 
 Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSSARY.md](GLOSSARY.md)), then the skill phase. Skills declare `context_load: low|medium|high` in frontmatter so cost-aware hosts can defer heavy skills when Strictness is low.
 
+Standing non-goals are explicit: no TeaPrompt-owned runtime/swarm, no tenth core workflow skill without promotion evidence, no full `SKILL.md` i18n by default, and no silent rigor downgrade. See [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md#standing-non-goals).
+
 
 ## Governance Panel Record
 
@@ -45,7 +47,7 @@ Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–
 - `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 workflow skills.
 - `skills/examples/`: worked input/output examples for each workflow skill.
-- `plans/`: plan files for code-bearing or multi-agent/workflow follow-up work.
+- `plans/`: decision records, research reflections, eval fixtures, and governance contracts; live pointers are summarized in [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md).
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
 - `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.
 - `GLOSSARY.md`: operational definitions of load-bearing terms used across the library.

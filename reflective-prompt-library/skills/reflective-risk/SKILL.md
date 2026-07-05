@@ -19,7 +19,7 @@ Prevent irreversible mistakes. This skill is a gate, not an implementation plan.
 ## Module Contract
 
 Trigger:
-- Use before security, privacy, auth, permissions, data deletion, migrations, production, billing, legal, medical, financial, or irreversible work.
+- Use before security, privacy, auth, permissions, data deletion, migrations, production, billing, legal, medical, financial, irreversible work, or side-effectful tool actions that could be influenced by untrusted or incomplete external content.
 
 Methods:
 - Threat model

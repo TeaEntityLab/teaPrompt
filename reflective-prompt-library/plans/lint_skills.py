@@ -271,9 +271,11 @@ def main():
             print("✅ No warnings either!")
         else:
             print(f"⚠️  But {results['total_warnings']} warnings found")
-    else:
-        print(f"\n❌ Linting failed with {results['total_errors']} errors")
+        return 0
+
+    print(f"\n❌ Linting failed with {results['total_errors']} errors")
+    return 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

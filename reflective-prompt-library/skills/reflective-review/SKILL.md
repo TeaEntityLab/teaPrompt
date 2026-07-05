@@ -46,6 +46,7 @@ Never:
 Escalation:
 - Mark `Human review required` when safety, privacy, financial, legal, medical, destructive, or irreversible risk is present.
 - Route implementation fixes to `reflective-implement` after review.
+- Route prompt/scaffold provenance source gathering or adoption decisions to `reflective-research`; use review after the evidence set exists and the task asks for critique or required fixes.
 
 ## Review Flow
 
@@ -94,7 +95,7 @@ Choose one mode first, then apply the common review flow:
 - `Methodology Review`: classification quality, strictness mismatch, framework overreach.
 - `AI Output Review`: evidence quality, unsupported claims, hallucination risk, actionability.
 - `Runtime Trust Boundary Review`: instruction/data separation, missing-data discipline, tool-result authority, side-effect gates.
-- `Scaffold Provenance Review`: official-vs-mirror evidence, surface distinctions, transferability, and no-copy boundaries.
+- `Scaffold Provenance Review`: critique an already gathered evidence set for official-vs-mirror support, surface distinctions, transferability, and no-copy boundaries; source discovery or adoption decisions route to `reflective-research`.
 
 If the artifact spans multiple modes, declare a primary mode and list secondary checks.
 

@@ -137,5 +137,6 @@ Promotion rules:
 - `04-agent/retro.md`
 - `01-thinking/socratic-reviewer.md`
 - `04-agent/memory-consolidation.md`
+- `04-agent/artifact-promotion.md`
 - `04-agent/runtime-trust-boundary.md`
 - `06-repo/PROJECT_KNOWLEDGE.template.md`

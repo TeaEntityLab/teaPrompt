@@ -4,7 +4,7 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 # Skills 安裝指南
 
-最後確認日期：2026-05-27
+最後確認日期：2026-07-06
 
 本文件說明如何把 TeaPrompt 的 workflow skills 安裝到：
 
@@ -17,8 +17,19 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 Skill 原始位置：
 
 ```text
-reflective-prompt-library/skills/reflective-*/
+reflective-prompt-library/skills/
+  reflective-brief/
+  reflective-dispatch/
+  reflective-handoff-retro/
+  reflective-implement/
+  reflective-minimality/    # gate skill — anti-bloat review, not a lifecycle workflow
+  reflective-research/
+  reflective-review/
+  reflective-risk/
+  reflective-spec-plan/
 ```
+
+**Harness policy:** 九個凍結 workflow skills，採嚴謹度優先分流。見 [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills) 與 [skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md](skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)。
 
 每個平台都需要：
 

@@ -47,6 +47,14 @@ Maintenance Playbook. Post-panel maintenance (e.g. ROUTING_CONTRACT R11 approved
 follows the same holdout-before-tune rule. No open implementation blockers from Rounds 8–20;
 deferred promotions are recurrence-gated — see [panel backlog](plans/multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers).
 
+### Standing Non-Goals
+- TeaPrompt does not operate its own multi-agent runtime, swarm, async peer messaging layer, recorder, replay engine, or side-effect enforcer; runtime designs remain references unless project direction changes.
+- The core workflow layer remains nine frozen workflow skills; a tenth core skill needs the three-recurrence promotion gate and explicit human approval.
+- Full `SKILL.md` localization is not current direction; zh-TW supports navigation, cheatsheet routing, and glossary lines while English stays canonical for skill contracts.
+- Seeded routing evals are regression guards, not proof of general semantic routing quality; holdout expansion precedes router tuning.
+- "Methodology-complete" does not mean "operationally complete"; prompt/spec coverage does not promise persistence, replay, cancellation, idempotency, or role isolation.
+
+
 ## Durable Lessons
 
 > Only patterns that recurred or carry concrete evidence belong here. A one-off
@@ -72,6 +80,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-07-06 Goals and skill-routing review — parallel-lens review clarified Standing Non-Goals, aligned minimality/scaffold-provenance/dependency routing in existing skills, refreshed quality-gate/index truth, and preserved nine-skill/no-runtime scope → [quality gates](plans/QUALITY_GATES_SUMMARY.md), [dispatch](skills/reflective-dispatch/SKILL.md)
 - 2026-07-05 Five-layer SOP candidate promotion — explicit project decision fired the reference record's re-promotion trigger; high-volatility fact discipline promoted in place into `skills/reflective-research/SKILL.md`, four-dimensional evidence split into `skills/reflective-review/SKILL.md`; all other five-layer concepts stay no-change → [record](plans/five-layer-agent-sop-reference-record-2026-07-04.md)
 - 2026-07-04 Five-layer Agent SOP reference internalization — temporary root `five_layer_agent*` delivery files distilled into a no-change / recurrence-gated reference record; preserve high-volatility fact discipline and four-dimensional evidence ledger as concept candidates, reject new skills/runtime commitments → [record](plans/five-layer-agent-sop-reference-record-2026-07-04.md)
 - 2026-07-02 vLLM Micro-Agent §7.3 applied — "Looper Topologies" section in [workflow-recipes](04-agent/workflow-recipes.md) maps the five looper patterns to task-shape signals and existing skills; runtime gaps (budgets, trace/replay, contract-repair) confirmed as non-goals → [research](plans/vllm-micro-agent-research-record-2026-06-30.md), [brief](plans/vllm-micro-agent-technical-brief-2026-06-30.md)

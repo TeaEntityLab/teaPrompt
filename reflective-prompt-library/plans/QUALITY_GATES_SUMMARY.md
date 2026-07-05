@@ -18,9 +18,8 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
 - Checks for required frontmatter fields (name, description)
 
 **Results:**
-- Scanned 103 files
-- 0 errors found
-- All links and references are valid
+- Latest observed `validate_links.py` scan: 121 files, 0 errors (snapshot-sensitive).
+- All links and schema references were valid in that run.
 
 **Usage:**
 ```bash
@@ -39,7 +38,7 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Indexed 74 total files (65 prompts, 9 skills)
+- Current generated index target: 92 total files (83 prompts, 9 skills) after `generate_index.py`.
 - 2 main categories (prompt-library, skills)
 - 10 prompt-library subcategories
 - 9 skill subcategories
@@ -63,9 +62,9 @@ python3 reflective-prompt-library/plans/generate_index.py
 - Provides actionable suggestions
 
 **Results:**
-- Scanned 103 files
-- 0 errors, 0 warnings
-- 81 files with suggestions (mostly non-critical)
+- Latest observed lint run: scanned 121 files
+- 0 errors, 5 warnings (length warnings on large markdown records)
+- 88 files with suggestions (mostly non-critical)
 - All 9 skills pass validation
 
 **Usage:**
@@ -130,17 +129,18 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 - `risk_level`: low/medium/high
 - `human_review_required`: true/false
 - `external_io`: true/false
+- `context_load`: low/medium/high
 
-**Applied to:**
-- reflective-dispatch (low, false, false)
-- reflective-brief (low, false, false)
-- reflective-spec-plan (low, false, false)
-- reflective-implement (low, false, false)
-- reflective-review (low, false, false)
-- reflective-minimality (low, false, false)
-- reflective-research (low, false, true)
-- reflective-risk (high, true, false)
-- reflective-handoff-retro (low, false, false)
+**Applied to (risk_level, human_review_required, external_io, context_load):**
+- reflective-dispatch (low, false, false, low)
+- reflective-brief (low, false, false, low)
+- reflective-spec-plan (low, false, false, high)
+- reflective-implement (low, false, false, medium)
+- reflective-review (low, false, false, medium)
+- reflective-minimality (low, false, false, low)
+- reflective-research (low, false, true, high)
+- reflective-risk (high, true, false, medium)
+- reflective-handoff-retro (low, false, false, medium)
 
 **Validation:** Created `validate_governance.py` to ensure compliance
 
@@ -264,25 +264,25 @@ python3 reflective-prompt-library/plans/benchmark_tasks.py
 
 The implementation aligns with research findings:
 
-1. **Quality over quantity** - TeaPrompt maintains 72 indexed files vs thousands in other repos
-2. **Hierarchical organization** - 6 categories with clear structure
+1. **Quality over quantity** - TeaPrompt maintains a compact generated index (92 files after regeneration) vs thousands in other repos.
+2. **Hierarchical organization** - 7 prompt-source directories plus skills/plans map onto the 10-layer taxonomy.
 3. **Focused skills** - nine frozen workflow skills (including reflective-minimality gate) vs comprehensive documentation
-4. **Validation discipline** - Automated quality gates prevent degradation
-5. **Lightweight governance** - SRCP simplified to 3 critical fields
+4. **Validation discipline** - Automated quality gates catch structural regressions; semantic quality still needs review evidence.
+5. **Lightweight governance** - 4 governance fields (`risk_level`, `human_review_required`, `external_io`, `context_load`)
 
 ## Key Metrics
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 103 | ✅ All pass |
-| Links validated | 0 broken | ✅ Perfect |
-| Skills with governance | 9/9 | ✅ Complete |
+| Files validated | 121 snapshot | ✅ 0 link/schema errors in latest observed run |
+| Links validated | 0 broken | ✅ Pass |
+| Skills with governance | 9/9 | ✅ 4-field governance metadata complete |
 | Benchmark tasks | 24 | ✅ Ready |
-| Routing consistency | 100.0% | ✅ Passes ROUTE-001 expanded boundary eval |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 102 paraphrases) |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (15 groups, 53 paraphrases) |
+| Routing consistency | 100.0% | ✅ ROUTE-001 seeded deterministic ParaphraseRouter fixture, not live dispatch proof |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (36 groups, 102 paraphrases), seeded holdout fixture |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (15 groups, 53 paraphrases), seeded adversarial fixture |
 | Skill example coverage | 9/9 | ✅ validate_skill_examples.py |
-| Linting errors | 0 | ✅ Clean |
+| Linting | 0 errors / 5 warnings | ✅ Errors clean; warnings tracked separately |
 
 ### Routing Consistency Tracking
 
@@ -343,10 +343,12 @@ See [panel Recurrence-Gated Backlog](multi-agent-panel-consensus-2026-06-25.md#r
 - `CONTRIBUTING.md`
 - `reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md`
 
-**Generated (gitignored):**
-- `reflective-prompt-library/index.json` (uses relative paths, safe to commit)
-- `reflective-prompt-library/plans/route-*-results.json` (test results, gitignored)
-- `reflective-prompt-library/plans/benchmark-tasks.json` (test data, gitignored)
+**Committed generated artifact:**
+- `reflective-prompt-library/index.json` (uses relative paths, safe to commit; regenerate with `python3 reflective-prompt-library/plans/generate_index.py`; not run by `make validate`)
+
+**Generated (gitignored run outputs):**
+- `reflective-prompt-library/plans/route-*-results.json` (test results)
+- `reflective-prompt-library/plans/benchmark-tasks.json` (test data)
 
 **Modified:**
 - All 9 SKILL.md files (governance metadata covered)
@@ -354,24 +356,17 @@ See [panel Recurrence-Gated Backlog](multi-agent-panel-consensus-2026-06-25.md#r
 
 ## Validation Commands
 
-To validate the entire project:
+To refresh the committed catalog and validate the entire project:
 
 ```bash
-# 1. Validate links and schema
-python3 reflective-prompt-library/plans/validate_links.py
-
-# 2. Run linter
-python3 reflective-prompt-library/plans/lint_skills.py
-
-# 3. Validate governance metadata
-python3 reflective-prompt-library/plans/validate_governance.py
-
-# 4. Regenerate index
+# 1. Regenerate committed prompt/skill index when docs, skills, or plans change
 python3 reflective-prompt-library/plans/generate_index.py
 
-# 5. Test routing
-python3 reflective-prompt-library/plans/route_paraphrase_eval.py
+# 2. Run the full CI-equivalent gate
+make all
 ```
+
+`make all` runs pytest plus link/schema validation, linting, governance metadata checks, project-knowledge validation, benchmark fixture validation, skill-example validation, route fixture validation, and ROUTE-001/002/003 deterministic routing evals.
 
 ## Conclusion
 
@@ -384,4 +379,4 @@ Phase 1 quality-gate tooling and documentation are **complete**. Routing consist
 - ✅ Benchmark fixture gate plus optional manual benchmark runs
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start. **No open implementation blockers** remain from panel Rounds 1–101; work is recurrence-gated maintenance per playbook. The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.
+The project is positioned to grow sustainably with quality discipline built in from the start. No blocking validation failures remain from panel Rounds 1–101; non-blocking governance warnings should still be resolved through Decision Index hygiene. The next measurable quality target is **holdout expansion before router tuning** and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.

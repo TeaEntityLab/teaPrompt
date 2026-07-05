@@ -184,7 +184,8 @@ as a text document. If a workflow requires asynchronous messaging between
 independent agents, role-specific context isolation, or a persistent
 runtime process, a single skill alone is insufficient — those require a
 dedicated orchestration layer outside this library's scope. See
-`PROJECT_KNOWLEDGE.md` for the full list of non-goals.
+`PROJECT_KNOWLEDGE.md` Standing Non-Goals and the panel
+[Stop-Doing List](plans/multi-agent-panel-consensus-2026-06-25.md#stop-doing-list).
 
 ---
 

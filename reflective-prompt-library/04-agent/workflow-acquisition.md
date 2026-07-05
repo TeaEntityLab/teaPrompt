@@ -114,13 +114,13 @@ Include:
 
 Choose the smallest sufficient destination:
 
-| Level | Use when | Deliverable | Required proof |
+| Acquisition Level | Use when | Deliverable | Required proof |
 | --- | --- | --- | --- |
-| L0 no change | one-off, cheap, low risk | record only | no recurrence or value |
-| L1 SOP artifact | human-run repeatable process | SOP / checklist | one successful dry replay |
-| L2 skill draft | agent-assisted repeatable process | SKILL.md draft + examples | stable trigger and outputs |
-| L3 skill plus verifier | objective pass/fail exists | skill + schema/test script | replay passes verifier |
-| L4 runner | needs persistence, cancellation, idempotency, or enforced transitions | workflow spec + implementation plan | repeated local workflows and accepted risk gate |
+| Acquisition L0 no change | one-off, cheap, low risk | record only | no recurrence or value |
+| Acquisition L1 SOP artifact | human-run repeatable process | SOP / checklist | one successful dry replay |
+| Acquisition L2 skill draft | agent-assisted repeatable process | SKILL.md draft + examples | stable trigger and outputs |
+| Acquisition L3 skill plus verifier | objective pass/fail exists | skill + schema/test script | replay passes verifier |
+| Acquisition L4 runner | needs persistence, cancellation, idempotency, or enforced transitions | workflow spec + implementation plan | repeated local workflows and accepted risk gate |
 
 A prompt or skill cannot by itself guarantee persistence, replay, cancellation, idempotency, role isolation, or side-effect enforcement. If those guarantees are required, mark them unproven until runtime code and tests exist.
 

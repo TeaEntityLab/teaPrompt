@@ -59,6 +59,8 @@ L1 快速路徑：
 何時用：
 
 - 需求模糊，需要先定義 goal/scope/acceptance
+- 需要先釐清 goal、scope、assumptions、acceptance criteria。
+- 規劃前需要定義 failure conditions 與 falsifiability。
 
 - 「Narrow scope and assumptions before writing the PRD。」
 - 「Stakeholder alignment before choosing architecture。」
@@ -148,8 +150,8 @@ Minimality 訊號掃描（skill 內建）：
 何時用：
 
 - 要 review code / plan / spec / AI output
+- 要找出風險、regression、缺漏測試與證據品質問題
 - 要檢查外部內容是否被當成資料而不是指令
-- 要判斷 prompt leak / mirror 是否可信、是否可移植
 
 - 「Review the README for clarity not security。」
 - 「Check the diff for readability not production deploy。」
@@ -167,6 +169,7 @@ Minimality 訊號掃描（skill 內建）：
 
 - 要做來源查證、DeepWiki 檢視、方法論盤點
 - 要比較官方文件、第三方鏡像與社群分析
+- 要判斷 prompt leak / mirror 是否可信、是否可移植，並比較官方文件與第三方 scaffold
 - 要研究目前 workflow framework 或 orchestration pattern
 - 多視角戰略重思（使用 skill 內 Optional Method: Multi-Voice Panel）
 - 「Six-lens debate on whether to merge these skills。」
@@ -175,13 +178,14 @@ Minimality 訊號掃描（skill 內建）：
 不要用在：
 
 - 完全 repo-local、不需要外部證據
-- 僅為 dependency selection（應視為獨立評估流程）
+- 僅為 repo-local dependency removal 或 anti-bloat → 用 `reflective-minimality`；僅紙上架構取捨 → 用 `reflective-spec-plan`
 
 ## `reflective-risk`
 
 何時用：
 
 - auth / privacy / money / deletion / prod 等高風險
+- 需要 dry-run、rollback、approval gate 或 blast-radius 評估
 - 工具行動可能受到不可信或不完整資料影響
 - 「Verify production auth change will not expose secrets。」
 
@@ -207,10 +211,11 @@ Minimality 訊號掃描（skill 內建）：
 1. `reflective-dispatch`
 2. `reflective-risk`（若有高風險或副作用權限訊號）
 3. `reflective-brief` / `reflective-spec-plan`
-4. `reflective-minimality`（若有膨脹、dependency、抽象層或 scope creep 風險）
-5. `reflective-implement`
-6. `reflective-review`
-7. `reflective-handoff-retro`
+4. `reflective-research`（若外部最新來源、來源查證、多視角綜合或 scaffold provenance 是關鍵證據）
+5. `reflective-minimality`（若有膨脹、dependency、抽象層或 scope creep 風險）
+6. `reflective-implement`
+7. `reflective-review`
+8. `reflective-handoff-retro`
 
 不確定且低風險時：
 - 優先選擇可見的向上分流（default-up），而不是靜默降級。

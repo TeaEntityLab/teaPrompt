@@ -51,6 +51,7 @@ Never:
 Escalation:
 - Route high-risk tasks to `reflective-risk` before execution.
 - Route unclear tasks to `reflective-brief` or `reflective-spec-plan` before implementation.
+- Route disputed bloat, dependency sprawl, or complexity-only cut requests to `reflective-minimality` before or alongside implementation.
 - If confidence is low and risk is low, use risk-based default-up.
 - If confidence is low and risk or cost is high, ask a lightweight intent probe.
 
@@ -64,6 +65,7 @@ Choose one primary workflow:
 | Spec, usage design, ticket slicing, planning, Test Plan without code, or agent workflow design without runtime code | `reflective-spec-plan` |
 | Coding, refactor, debugging with edits | `reflective-implement` |
 | Code/artifact/plan review, critique, rating | `reflective-review` |
+| Overengineering, YAGNI, anti-bloat, delete-before-add, dependency removal, or complexity-only review | `reflective-minimality` |
 | Current external research, DeepWiki, docs, long sources | `reflective-research` |
 | Security, privacy, money, data loss, auth, production | `reflective-risk` first |
 | Handoff, retro, memory consolidation | `reflective-handoff-retro` |
@@ -74,6 +76,8 @@ If more than one applies, pick one primary workflow and one gate. Example: codin
 Test-design boundary: producing a rigorous Test Plan from requirements without writing code uses `reflective-spec-plan`. Adding executable tests or changing implementation uses `reflective-implement`.
 
 Workflow-design boundary: a no-code workflow specification, state model, transition design, or orchestration plan uses `reflective-spec-plan`. An executable runner or graph uses `reflective-implement`; current framework comparison uses `reflective-research`; review of an existing workflow uses `reflective-review`; deciding whether a workflow is needed at all remains with `reflective-dispatch`.
+
+Promotion boundary: deciding whether repeated material should become a note, prompt lens, skill, verifier, or runtime surface uses `04-agent/artifact-promotion.md`, `04-agent/workflow-acquisition.md`, or `04-agent/external-adoption-review.md` as supporting lenses; do not create a new workflow skill as the default route.
 
 ## Strictness Ladder
 

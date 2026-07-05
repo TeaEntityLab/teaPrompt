@@ -34,7 +34,7 @@ The active core implementation of the workflow skills utilizes a highly compact,
 *   **Never**: Specific failure behaviors the skill must avoid.
 *   **Escalation**: When to route to another skill or require Human Review.
 
-*Example: [reflective-review/SKILL.md](reflective-review/SKILL.md#L13-L37).*
+*Example: [reflective-review/SKILL.md](reflective-review/SKILL.md#L19-L48).*
 
 ### 2. Target Design Schema (9-Field Specification)
 For complex domain packs, external workflows, or future evolutions of the core library, the recommended standard specification is expanded to support thorough governance:

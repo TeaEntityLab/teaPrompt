@@ -19,7 +19,7 @@ Turn a request into a small, testable task brief before deeper work.
 ## Module Contract
 
 Trigger:
-- Use when a non-trivial request is broad, fuzzy, assumption-heavy, or needs goal, scope, acceptance criteria, and falsifiability before planning or execution.
+- Use when a non-trivial request is broad, fuzzy, assumption-heavy, or needs goal, scope, assumptions, stakeholder alignment, acceptance criteria, failure conditions, and falsifiability before planning, PRD/ticket work, or execution.
 
 Methods:
 - Why / What / How / Done

@@ -91,6 +91,8 @@ Ask:
 
 Prefer the first sufficient destination.
 
+For implementation, dependency, prose, or code cuts on an existing change, route to `reflective-minimality`. This gate classifies durable artifact destinations; it does not approve promotion by itself.
+
 ## 6. Output
 
 Return:

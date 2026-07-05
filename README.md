@@ -28,7 +28,7 @@ The repository contains:
 
 - `reflective-prompt-library/`: reusable Markdown prompts for thinking, planning, implementation, review, research, risk handling, and context handoff.
 - `reflective-prompt-library/skills/`: concise `SKILL.md` workflow wrappers that turn the prompt library into practical agent workflows.
-- `reflective-prompt-library/plans/`: design notes and follow-up plans for code tooling or workflow automation.
+- `reflective-prompt-library/plans/`: decision records, research archive, eval fixtures, and deferred automation candidates.
 - `reflective-prompt-library/SKILL_INSTALLATION.md`: install instructions for Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
 - `reflective-prompt-library/METHODOLOGY_MAP.md`: classification map for choosing the right strictness level.
 - `reflective-prompt-library/LANGUAGE_POLICY.md`: language policy for English operational docs and localized prompt sources.
@@ -53,6 +53,7 @@ Or copy a workflow skill into a compatible skills directory:
 For host-specific paths, see [Skill Installation Guide](reflective-prompt-library/SKILL_INSTALLATION.md).
 
 For repository method boundaries, see [Methodology Map](reflective-prompt-library/METHODOLOGY_MAP.md).
+For workflow-skill trigger cues, see [Skill Trigger Cheatsheet](reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md).
 For language conventions, see [Language Policy](reflective-prompt-library/LANGUAGE_POLICY.md).
 
 Recommended starting points:
@@ -70,7 +71,7 @@ TeaPrompt keeps prompts and workflows separate:
 
 - Prompts provide nuance, judgment frames, and reusable wording.
 - Skills provide repeatable execution shape — they are prompt-level workflow descriptors interpreted by the user's agent runtime, not a multi-agent orchestration layer.
-- Plans capture future code or workflow automation without overengineering the current library.
+- Plans preserve research, decision records, and deferred automation candidates without turning archive notes into current operating rules.
 
 The workflow layer intentionally uses a small number of broad, composable skills instead of one skill per prompt.
 
