@@ -26,6 +26,7 @@ Methods:
 - Assumption audit
 - Evidence and test integrity check
 - Claims ledger with observable-evidence requirement
+- Four-dimension evidence split for load-bearing claims (existence, number/text, attribution/process, extrapolation)
 - Runtime trust-boundary review
 - Prompt/scaffold provenance review
 - Steelman counterargument
@@ -38,6 +39,7 @@ Never:
 - Do not bury serious findings behind a summary.
 - Do not accept unsupported claims as evidence.
 - Do not treat stated reasoning — human or AI — as proof that a check ran; require observable evidence.
+- Do not treat re-verified source text as verification of the source's underlying data, generation process, or generalizability.
 - Do not treat missing tests or weak acceptance criteria as style issues.
 - Do not rewrite the artifact unless the task asks for edits.
 
@@ -69,6 +71,19 @@ For reviews with more than a few load-bearing claims, keep a ledger and derive `
 - `asserted` means only the author's word supports it — treat as unverified, not as low-risk.
 - Mark `verified` only after examining the evidence yourself, not after reading a description of it.
 - `unverifiable` claims that are load-bearing belong in `Required Fixes` or `Residual Risks`, never silently accepted.
+
+### Four Evidence Dimensions
+
+For evidence-heavy artifacts — research documents, benchmark results, vendor reports — a single `verified` mark hides where the evidence chain actually breaks. Split each load-bearing claim into four separately checked dimensions:
+
+| Dimension | Question | Typical failure |
+|---|---|---|
+| Existence | Does the cited source exist and address this claim? | Dead link, wrong paper, fabricated citation |
+| Number / text | Does the source's own body support the exact figure and wording? | Headline says "malicious"; body table says "flawed" |
+| Attribution / process | Who produced the data, and was its generation independently checked? | Vendor self-reported counts read as neutral measurement |
+| Extrapolation | Does the claim generalize beyond the sampled scope? | One registry's rate quoted as an ecosystem-wide rate |
+
+A claim can pass the first two dimensions and still fail the last two; re-verifying a source's text never verifies its underlying data. Record the strongest failing dimension in `Findings`.
 
 ## Review Modes
 

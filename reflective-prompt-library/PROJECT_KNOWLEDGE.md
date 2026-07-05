@@ -72,6 +72,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-07-05 Five-layer SOP candidate promotion — explicit project decision fired the reference record's re-promotion trigger; high-volatility fact discipline promoted in place into `skills/reflective-research/SKILL.md`, four-dimensional evidence split into `skills/reflective-review/SKILL.md`; all other five-layer concepts stay no-change → [record](plans/five-layer-agent-sop-reference-record-2026-07-04.md)
 - 2026-07-04 Five-layer Agent SOP reference internalization — temporary root `five_layer_agent*` delivery files distilled into a no-change / recurrence-gated reference record; preserve high-volatility fact discipline and four-dimensional evidence ledger as concept candidates, reject new skills/runtime commitments → [record](plans/five-layer-agent-sop-reference-record-2026-07-04.md)
 - 2026-07-02 vLLM Micro-Agent §7.3 applied — "Looper Topologies" section in [workflow-recipes](04-agent/workflow-recipes.md) maps the five looper patterns to task-shape signals and existing skills; runtime gaps (budgets, trace/replay, contract-repair) confirmed as non-goals → [research](plans/vllm-micro-agent-research-record-2026-06-30.md), [brief](plans/vllm-micro-agent-technical-brief-2026-06-30.md)
 - 2026-07-02 Harness-1 re-check — still v1, no replication/peer review; authors released full checkpoint + training data 2026-06-15; performance numbers stay author-reported → [research](plans/harness-1-state-ledger-research.md)

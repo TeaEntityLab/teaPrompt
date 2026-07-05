@@ -120,3 +120,14 @@ Not required for this reference record. Human approval is required before any fu
 ## Handoff
 
 After this record exists and the Decision Index points to it, the root-level `five_layer_agent*` files can be removed without losing the TeaPrompt-relevant concepts. Removal itself was not performed in this task.
+
+## 2026-07-05 Promotion Update
+
+The Decision Ledger row "No prompt or skill should be changed now" carried the review trigger "three independent local recurrences or explicit project decision to update research/review prompts". On 2026-07-05 the project owner issued that explicit decision against the v6-RC mother document ("check this and update skills"), firing the trigger.
+
+Scope of the resulting change — the two recurrence-gated candidates only, promoted in place:
+
+1. **High-volatility fact discipline** → `skills/reflective-research/SKILL.md`: new `High-Volatility Facts` section (check date, tracking point, coexisting official/pending values, maturity stage, `stale` downgrade), a Methods bullet, a Never rule, and a `verified`-scope note in the State Ledger.
+2. **Four-dimensional evidence ledger** → `skills/reflective-review/SKILL.md`: new `Four Evidence Dimensions` subsection under Claims Ledger (existence, number/text, attribution/process, extrapolation), a Methods bullet, and a Never rule. The research State Ledger points at this table instead of duplicating it.
+
+Everything else in this record keeps its 2026-07-04 status: no new workflow skill, no new strictness ladder, no runtime commitments (effect outbox, commit gates, memory write ACLs, signing), no full fallacy table, no slice/manifest conventions. The `evidence-calibrated-revision` v1.2 procedure remains a composite of `reflective-research` + `reflective-review`; these in-place refinements are that composite treatment, not a tenth skill. The empty-source rule and delivery anchoring stay covered by runtime trust-boundary missing-data discipline and delivery-review practice.
