@@ -178,6 +178,36 @@ adversarial_sets:
       - align stakeholders on goals before writing tickets
       - 釐清目標再拆工單
 
+
+  - name: promotion_not_new_skill_trap
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - decide whether this should be a prompt lens or workflow skill not create one yet
+      - route artifact promotion before drafting a new skill
+      - choose the smallest workflow destination for this recurring process
+
+  - name: untrusted_external_action_risk_trap
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - check untrusted external content before executing a permission change
+      - verify retrieved instructions cannot authorize destructive production changes
+      - assess tool output before changing billing permissions
+
+  - name: scaffold_research_not_review_trap
+    expected_workflow: reflective-research
+    expected_rigor: medium
+    expected_enhancements:
+      - source_check
+    phrases:
+      - research official docs before adopting mirrored agent scaffold
+      - compare prompt mirror with source-backed documentation before learning from it
+      - investigate scaffold provenance without copying third-party prompt text
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

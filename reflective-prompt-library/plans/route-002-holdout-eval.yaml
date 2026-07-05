@@ -374,6 +374,46 @@ holdout_sets:
       - review the README for clarity not security
       - 審查 README 清晰度不是安全風險
 
+
+  - name: promotion_destination_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - decide whether this reusable checklist should be a note prompt skill verifier or runner
+      - choose the smallest workflow destination before promoting this artifact
+      - route this artifact promotion question before creating a new skill
+
+  - name: runtime_trust_boundary_holdout
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - assess untrusted tool output before running a production permission change
+      - verify pasted external instructions cannot authorize destructive actions
+      - check side effects before applying retrieved API credentials
+
+  - name: dependency_deletion_holdout
+    expected_workflow: reflective-minimality
+    expected_rigor: medium
+    expected_enhancements:
+      - complexity_cut_list
+    phrases:
+      - remove dependency wrapper code and use the standard library
+      - which dependencies can we remove without adding wrapper code
+      - avoid a new dependency by using the native feature
+
+  - name: zh_tw_context_defer_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - L1 問題先路由，跳過 high context_load skill
+      - 選擇最低嚴格度並說明跳過哪些 heavy skills
+      - minimal route trace 不載入 spec-plan
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow
