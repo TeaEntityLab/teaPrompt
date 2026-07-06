@@ -70,6 +70,7 @@ Choose one primary workflow:
 | Security, privacy, money, data loss, auth, production | `reflective-risk` first |
 | Handoff, retro, memory consolidation | `reflective-handoff-retro` |
 | External content, tool output, entity fields, or side-effectful action authority | Primary workflow plus `04-agent/runtime-trust-boundary.md` as a supporting lens |
+| Recurring task with objective deterministic pass/fail check | Primary workflow plus a verifier/test artifact; do not jump to a runner unless a prompt-impossible guarantee is required |
 
 If more than one applies, pick one primary workflow and one gate. Example: coding a privacy-sensitive feature uses `reflective-risk` as the gate and `reflective-implement` as the execution workflow.
 
@@ -78,6 +79,7 @@ Test-design boundary: producing a rigorous Test Plan from requirements without w
 Workflow-design boundary: a no-code workflow specification, state model, transition design, or orchestration plan uses `reflective-spec-plan`. An executable runner or graph uses `reflective-implement`; current framework comparison uses `reflective-research`; review of an existing workflow uses `reflective-review`; deciding whether a workflow is needed at all remains with `reflective-dispatch`.
 
 Promotion boundary: deciding whether repeated material should become a note, prompt lens, skill, verifier, or runtime surface uses `04-agent/artifact-promotion.md`, `04-agent/workflow-acquisition.md`, or `04-agent/external-adoption-review.md` as supporting lenses; do not create a new workflow skill as the default route.
+Frozen skill boundary: nine frozen workflow skills means gated, not never. A tenth core workflow skill needs recurrence evidence and explicit human approval; otherwise fold material into an existing skill, supporting lens, verifier/test, or no-change record.
 
 ## Strictness Ladder
 

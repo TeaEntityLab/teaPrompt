@@ -86,6 +86,13 @@ For evidence-heavy artifacts — research documents, benchmark results, vendor r
 
 A claim can pass the first two dimensions and still fail the last two; re-verifying a source's text never verifies its underlying data. Record the strongest failing dimension in `Findings`.
 
+### Evidence Tiers
+
+- Model or panel consensus is advisory evidence; it does not prove operational behavior.
+- Routing fixtures are regression guards for covered phrases; they do not prove general semantic routing.
+- External surveys are stale unless refreshed before adoption or deployment recommendations.
+- Vendor or maintainer benchmark numbers are attributed claims unless reproduced locally.
+
 ## Review Modes
 
 Choose one mode first, then apply the common review flow:

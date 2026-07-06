@@ -150,10 +150,12 @@ Do not start by drawing a graph. First choose the lowest formalization level tha
 1. prompt only,
 2. SOP or checklist artifact,
 3. skill plus artifact,
-4. skill plus verifier or gate,
+4. skill plus deterministic verifier or gate,
 5. executable runner with persisted state and enforced transitions.
 
 If the required guarantees depend on persistence, replay, cancellation, idempotency, or enforced authority, state explicitly that a prompt or specification alone cannot provide them.
+
+A verifier must be deterministic code, schema, test, static check, replay diff, or equivalent executable check; a prompt, self-reflection, or model judge is not sufficient as the only gate.
 
 Then design the workflow:
 
