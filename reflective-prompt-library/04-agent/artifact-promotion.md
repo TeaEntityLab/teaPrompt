@@ -16,6 +16,7 @@ Classify reusable material into the smallest durable artifact that preserves val
 - Every candidate is classified as decision, lens, workflow, orchestration/runtime, verifier, or no-change.
 - Skill promotion requires stable trigger, inputs, outputs, failure signals, and checks.
 - Runtime promotion requires guarantees that prompt-only or skill-only artifacts cannot provide.
+- Runtime candidates distinguish guarantees TeaPrompt can specify from guarantees only a host runtime can enforce; unproven enforcement is a Human Review / stop / no-go boundary, not a prompt wording gap.
 
 ## Falsifiability
 
@@ -63,7 +64,7 @@ Destinations:
 - `prompt lens`: composable prompt or source doc when it improves judgment but does not define a repeatable execution workflow.
 - `workflow skill`: `SKILL.md` only when trigger, procedure, inputs, outputs, failure signals, and verification are stable.
 - `verifier/test`: deterministic guard when drift can be mechanically detected.
-- `runtime/orchestration`: runner, hook, persisted state, replay, cancellation, or multi-agent control when required guarantees cannot be achieved by prompt text.
+- `runtime/orchestration`: runner, hook, persisted state, replay, cancellation, role isolation, side-effect gating, or multi-agent control when required guarantees cannot be achieved by prompt text and must be proven by host-runtime code and tests.
 - `no change`: already covered, one-off, unsupported, or outside project goals.
 
 ## 4. Promotion Gates
@@ -79,6 +80,15 @@ For every non-`no change` candidate, answer:
 - Human approval: required, already granted, or pending?
 - Retirement trigger: when should this artifact be amended or deleted?
 
+For every `runtime/orchestration` candidate, also answer:
+
+- Required guarantee: what persistence, replay, cancellation, idempotency, role isolation, enforced transition, side-effect gate, audit trail, or memory / identity ACL is missing from prompt, skill, and verifier layers?
+- Deterministic verifier: what non-prompt schema, test, script, replay diff, static check, or policy-as-code gate proves objective pass/fail before runtime promotion?
+- Enforcement owner: which host runtime or separately accepted module enforces the guarantee? TeaPrompt may specify the precondition; it does not provide the guarantee.
+- Proof: what runtime code, tests, dry replay, rollback proof, idempotency proof, and audit-log evidence show the guarantee works? A plan, prompt, or model judge alone is not proof.
+- No-go fallback: if any required gate cannot be deterministically enforced, is the decision Human Review, stop, or documented no-go?
+- Retirement trigger: when should the runtime demote back to skill plus verifier because the host provides the guarantee natively, recurrence stops, or the guarantee fails?
+
 ## 5. Minimality Gate
 
 Ask:
@@ -88,6 +98,8 @@ Ask:
 3. Can it be a prompt instead of a skill?
 4. Can it be a skill instead of a runner?
 5. Can an existing skill or doc absorb it?
+
+Also ask the converse: if prompt / skill / verifier cannot provide a safety-critical guarantee, would refusing runtime silently drop the safety floor? Minimality prevents both overengineering and fake safety.
 
 Prefer the first sufficient destination.
 

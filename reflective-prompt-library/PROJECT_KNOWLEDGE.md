@@ -53,6 +53,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 - Full `SKILL.md` localization is not current direction; zh-TW supports navigation, cheatsheet routing, and glossary lines while English stays canonical for skill contracts.
 - Seeded routing evals are regression guards, not proof of general semantic routing quality; holdout expansion precedes router tuning.
 - "Methodology-complete" does not mean "operationally complete"; prompt/spec coverage does not promise persistence, replay, cancellation, idempotency, or role isolation.
+- Skills and prompt lenses may specify required runtime guarantees as preconditions, but TeaPrompt does not enforce or warrant them; host-runtime code and tests are the authority for operational guarantees, and missing enforcement evidence is `unknown` / no-go.
 
 
 ## Durable Lessons
@@ -80,6 +81,7 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ## Decision Index
 
+- 2026-07-06 Skills runtime legitimacy panel — parallel-lens review decided that skills may declare required runtime guarantees but TeaPrompt does not enforce them; runtime is legitimate only for prompt-impossible guarantees proven by deterministic verifier/runtime code, accepted risk gates, Human Review for high-risk side effects, and host-runtime enforcement → [record](plans/skills-runtime-legitimacy-panel-record-2026-07-06.md)
 - 2026-07-06 Goals and skill-routing review — parallel-lens review clarified Standing Non-Goals, aligned minimality/scaffold-provenance/dependency routing in existing skills, refreshed quality-gate/index truth, and preserved nine-skill/no-runtime scope → [quality gates](plans/QUALITY_GATES_SUMMARY.md), [dispatch](skills/reflective-dispatch/SKILL.md)
 - 2026-07-06 Post-goals route holdout expansion — raised ROUTE-002 to 40 holdout groups / 114 phrases and ROUTE-003 to 18 adversarial groups / 62 phrases before any router tuning; added promotion-routing, runtime-trust side-effect, scaffold-provenance, dependency-deletion, and zh-TW context-load deferral probes → [quality gates](plans/QUALITY_GATES_SUMMARY.md)
 - 2026-07-06 Five-layer concept verification — verified the 5+1 frame as a risk-routed reference lens, added scope / analogy / TeaPrompt-boundary caveats, disambiguated cognitive L1-L5 from engineering α-ζ, and kept runtime and memory-ACL mechanisms reference-only → [record](plans/five-layer-agent-sop-reference-record-2026-07-04.md#2026-07-06-concept-verification-update)

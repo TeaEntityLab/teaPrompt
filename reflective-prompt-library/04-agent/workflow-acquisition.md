@@ -14,8 +14,8 @@ Convert observed work into an auditable workflow acquisition specification witho
 ## Acceptance Criteria
 
 - Captured observations are separated from model-drafted SOP steps and human decisions.
-- Replay success criteria and failure signals are objective enough to evaluate.
-- Promotion path distinguishes prompt lens, skill, skill plus verifier, and runtime runner.
+- Replay success criteria and failure signals are objective enough to evaluate, with deterministic checks before runtime promotion.
+- Promotion path distinguishes prompt lens, skill, skill plus deterministic verifier, and runtime runner.
 
 ## Falsifiability
 
@@ -119,10 +119,20 @@ Choose the smallest sufficient destination:
 | Acquisition L0 no change | one-off, cheap, low risk | record only | no recurrence or value |
 | Acquisition L1 SOP artifact | human-run repeatable process | SOP / checklist | one successful dry replay |
 | Acquisition L2 skill draft | agent-assisted repeatable process | SKILL.md draft + examples | stable trigger and outputs |
-| Acquisition L3 skill plus verifier | objective pass/fail exists | skill + schema/test script | replay passes verifier |
-| Acquisition L4 runner | needs persistence, cancellation, idempotency, or enforced transitions | workflow spec + implementation plan | repeated local workflows and accepted risk gate |
+| Acquisition L3 skill plus verifier | objective deterministic pass/fail exists | skill + schema/test script | replay passes verifier; a model-only judge is not sufficient |
+| Acquisition L4 runner | needs persistence, replay, cancellation, idempotency, role isolation, enforced transitions, side-effect gating, or memory / identity ACLs | workflow spec + implementation plan + host-runtime module | repeated local workflows, accepted risk gate, and runtime code/tests proving the guarantee |
 
 A prompt or skill cannot by itself guarantee persistence, replay, cancellation, idempotency, role isolation, or side-effect enforcement. If those guarantees are required, mark them unproven until runtime code and tests exist.
+
+Runtime legitimacy rules:
+
+- TeaPrompt may specify required runtime guarantees as preconditions, but host-runtime code and tests must provide enforcement.
+- Runtime is overengineering when prompt, SOP, skill, deterministic verifier, or host-native features already provide the required guarantee.
+- Runtime refusal is fake safety when a safety-critical workflow needs a prompt-impossible guarantee and the skill would otherwise rely on prose.
+- Rollback plan is not rollback proof; idempotency spec is not idempotency proof; runtime design is not runtime guarantee.
+- Mock / sandbox replay is useful evidence, not production approval. Keep mock/sandbox and production paths separable and auditable.
+- If a required gate cannot be deterministically enforced, default to Human Review, stop, or documented no-go.
+- Demote the runner back to skill plus verifier when host-native features supply the guarantee, local recurrence stops, or replay/adversarial checks falsify the guarantee.
 
 ## 7. Verification And Anti-cheating
 
