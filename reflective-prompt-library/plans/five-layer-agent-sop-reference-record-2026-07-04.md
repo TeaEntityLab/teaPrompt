@@ -131,3 +131,45 @@ Scope of the resulting change — the two recurrence-gated candidates only, prom
 2. **Four-dimensional evidence ledger** → `skills/reflective-review/SKILL.md`: new `Four Evidence Dimensions` subsection under Claims Ledger (existence, number/text, attribution/process, extrapolation), a Methods bullet, and a Never rule. The research State Ledger points at this table instead of duplicating it.
 
 Everything else in this record keeps its 2026-07-04 status: no new workflow skill, no new strictness ladder, no runtime commitments (effect outbox, commit gates, memory write ACLs, signing), no full fallacy table, no slice/manifest conventions. The `evidence-calibrated-revision` v1.2 procedure remains a composite of `reflective-research` + `reflective-review`; these in-place refinements are that composite treatment, not a tenth skill. The empty-source rule and delivery anchoring stay covered by runtime trust-boundary missing-data discipline and delivery-review practice.
+
+## 2026-07-06 Concept Verification Update
+
+The follow-up concept review verified the five-layer material as a reference lens, with these publication and project-boundary corrections. This section is still a reference artifact: it is not a standard, compliance guide, runtime guarantee, operating rule, new strictness ladder, or TeaPrompt-owned runtime commitment. Any deterministic enforcement requires host-runtime support, tests, policy gates, or Human Review.
+
+### Canonical Distinctions
+
+Use two separate names so the concept does not collide with TeaPrompt's Strictness L1-L6 routing:
+
+| Surface | Correct label | Meaning |
+| --- | --- | --- |
+| Cognitive / educational analogy | L1 Goal, L2 Spec, L3 Evidence, L4 Execution, L5 Verification, +1 Governed Learning / Memory | Rational-correction model for how a reasoner checks itself. |
+| Agent engineering architecture | α Flow Gate, β Formal SOP, γ Durable Runtime, δ Adversarial Evaluation, ε Governance Shell, ζ Memory / Identity Integrity | Risk-routed defense stack for tool-using or memory-writing digital actors. |
+
+The stack is not a waterfall. Each item is a failure surface; risk routing controls depth, not existence. Low-risk tasks may use compact gates, while high-risk or irreversible-effect workflows require explicit artifacts, runtime gates, heterogeneous evaluation, auditability, and Human Review.
+
+### Layer Corrections
+
+| Layer | Verified correction |
+| --- | --- |
+| α Flow Gate | Always present as the success / failure / done-condition baseline; depth varies from compact checklist to signed-off acceptance criteria plus commit gate. |
+| β Formal SOP | Does not always mean a full DAG. Maturity ranges from β0 markdown checklist, β1 structured schema, β2 DAG + static validation, to β3 planner verification or model checking. |
+| γ Durable Runtime | Solves execution liveness, retry, resume, state, and idempotency boundaries; it does not prove the goal, evidence, or conclusion is correct. |
+| δ Adversarial Evaluation | Value comes from heterogeneous checks — tests, schema, static analysis, retrieval-grounded fact checks, citation audits, red teams, human review, and model judges — not from model voting alone. |
+| ε Governance Shell | Covers authorization, provenance, policy, audit, external effects, accountability, rollback, and approval gates. |
+| ζ Memory / Identity Integrity | Covers durable state that changes future interpretation, authority, identity, preference, or policy. Memory writes are not ordinary data writes. |
+
+### Memory / Identity Gate
+
+Any state that changes future interpretation, authority, identity, or policy must be governed separately from ordinary files or notes. A minimal memory-write gate should name source, reason, scope, expiry or review date, confidence, evidence pointer, user visibility, rollback / invalidation path, and policy impact. Preference, factual, procedural, policy, identity, and tool-authority memories should be treated as different state classes.
+
+### Analogy and AI-Scope Caveats
+
+The education comparison is an analogy to institutional correction mechanisms — rubrics, proof, protocol, review, ethics, precedent, and institutional memory. It is not evidence that education is reducible to these mechanisms, and it is not a claim that these mechanisms are unique to Western traditions.
+
+For humans, the 5+1 frame is a rational / professional correction skeleton, not full education: embodiment, imitation, attachment, emotion, character, aesthetics, belonging, courage, love, and meaning remain outside the taxonomy. For AI agents, the frame is a governance skeleton for tool use, external effects, durable memory, and high-stakes decisions, not complete AI safety. Deployed AI systems lack human embodied accountability, socialization, legal personhood, and intrinsic responsibility by default; operators, runtimes, institutions, and policy must supply those controls.
+
+Outer governance still remains outside the stack: model supply-chain governance, data governance, organizational responsibility, social externalities, and value-conflict adjudication.
+
+### TeaPrompt Boundary
+
+For TeaPrompt, this verified concept remains a reference lens. TeaPrompt may express pieces of α, β, δ, ε, and ζ as prompt-level methods, review checklists, route fixtures, or governance records, but it does not implement γ runtime durability, ε enforcement, ζ memory ACLs, replay, signing, outbox, or commit gates. The existing in-place promotions remain the only live skill changes from this source: high-volatility fact discipline in `reflective-research` and the four-dimensional evidence split in `reflective-review`.
