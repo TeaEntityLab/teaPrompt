@@ -220,6 +220,27 @@ adversarial_sets:
       - add a deterministic verifier test for the recurring format check
       - make the recurring checklist a deterministic test not a new runner
 
+  - name: goal_mode_not_plan_trap
+    expected_workflow: reflective-implement
+    expected_rigor: medium
+    expected_enhancements:
+      - tests
+    phrases:
+      - keep working until every test in test/auth passes
+      - don't stop until lint is clean and the build exits 0
+      - finish the migration - completion means zero deprecated imports left
+      - 持續修到整個測試套件全綠為止
+
+  - name: loop_script_authoring_trap
+    expected_workflow: reflective-implement
+    expected_rigor: medium
+    expected_enhancements:
+      - tests
+    phrases:
+      - write a bash loop that reruns the agent until the verifier passes
+      - generate a fix-until-green script with an iteration cap
+      - script a writer-critic round harness
+
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

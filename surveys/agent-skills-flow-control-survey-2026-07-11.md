@@ -82,9 +82,10 @@ but reads nested and parent directories.
 governance frontmatter (`human_review_required`, `external_io`) anticipates —
 but under different, host-specific field names. TeaPrompt's four governance
 fields are top-level frontmatter, which the spec does not define; the spec's
-designated extension point is the `metadata` map. Whether `skills-ref` warns on
-unknown top-level fields is **untested** (open verification task S1 in the
-skills-surface plan).
+designated extension point is the `metadata` map. **Outcome (same day):**
+`skills-ref` 0.1.1 *rejects* unknown top-level fields (observed FAIL on all 11
+skills); the fields were migrated under `metadata:` and 11/11 now validate —
+see the skills-surface plan Execution Ledger (S1).
 
 ### Skill-generating and skill-acquiring machinery
 
@@ -143,10 +144,10 @@ item for SKILL_INSTALLATION host coverage.
 
 | Finding | Existing surface it touches | Disposition |
 | --- | --- | --- |
-| `/goal` native + confirmed | Pack record demotion trigger ("host-native flow feature") | Evaluation scheduled — flow-control roadmap F1 |
+| `/goal` native + confirmed | Pack record demotion trigger ("host-native flow feature") | Evaluated 2026-07-11: **not fired** → [record](../reflective-prompt-library/plans/flow-pack-demotion-evaluation-2026-07-11.md) |
 | `/loop`, Stop hooks, `/schedule` | Same trigger family; looper-topology vocabulary in [workflow-recipes](../reflective-prompt-library/04-agent/workflow-recipes.md) | Watch + F1 input |
 | `/batch` worktree fan-out | Orchestrator-workers template; P12 DAG deferral | No change; P12 trigger unchanged |
-| Spec `metadata` map vs top-level governance fields | All 11 SKILL.md frontmatter; `validate_links.py` schema | Verification task S1 before any migration |
+| Spec `metadata` map vs top-level governance fields | All 11 SKILL.md frontmatter; `validate_links.py` schema | S1 executed: skills-ref FAIL observed → fields migrated under `metadata:`; 11/11 validate |
 | Spec `compatibility` field | Pack host-precondition prose | Candidate S5 (gated) |
 | Description/context budgets | Skill descriptions; cheatsheet | Conformant today; guard candidate S2 |
 | `.agents/skills/` convention | [SKILL_INSTALLATION](../reflective-prompt-library/SKILL_INSTALLATION.md), README quick start | Parity check S4 |
@@ -163,9 +164,9 @@ item for SKILL_INSTALLATION host coverage.
   for skills, commands, goal; learn.chatgpt.com build-skills; geminicli.com
   skills; openai.github.io/openai-agents-python index.
 - **Not verified:** AgentKit wind-down (unknown); `/loop` full skill body
-  behavior beyond the commands-reference entry; `skills-ref` handling of unknown
-  top-level frontmatter fields (untested — S1); every claim about hosts not
-  listed in "Read" above.
+  behavior beyond the commands-reference entry; every claim about hosts not
+  listed in "Read" above. (The formerly untested skills-ref unknown-field
+  behavior was settled same-day: strict rejection, observed — see S1.)
 
 ## Falsifiability
 

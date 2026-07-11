@@ -160,60 +160,76 @@ class LinkValidator:
                     "error": "Target not found"
                 })
     
+    # Agent Skills spec (agentskills.io/specification, checked 2026-07-11):
+    # only these top-level frontmatter fields are defined; extra properties
+    # belong under the `metadata:` map. Governance fields (risk_level,
+    # human_review_required, external_io, context_load) migrated there
+    # 2026-07-11; validate_governance.py reads them via its flattening parser.
+    SPEC_TOP_LEVEL_FIELDS = {
+        'name', 'description', 'license', 'compatibility', 'metadata', 'allowed-tools',
+    }
+    SPEC_NAME_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
+    SPEC_NAME_MAX = 64
+    SPEC_DESCRIPTION_MAX = 1024
+
     def validate_skill_frontmatter(self, content: str, file_path: Path, relative_path: Path, results: Dict):
-        """Validate SKILL.md frontmatter schema."""
+        """Validate SKILL.md frontmatter against the Agent Skills spec."""
+        def err(message: str):
+            results["frontmatter_errors"].append({
+                "file": str(relative_path),
+                "error": message,
+            })
+
         if not content.startswith('---'):
-            results["frontmatter_errors"].append({
-                "file": str(relative_path),
-                "error": "Missing frontmatter delimiter (---)"
-            })
+            err("Missing frontmatter delimiter (---)")
             return
-        
-        # Extract frontmatter
-        try:
-            frontmatter_end = content.find('---', 3)
-            if frontmatter_end == -1:
-                results["frontmatter_errors"].append({
-                    "file": str(relative_path),
-                    "error": "Unclosed frontmatter delimiter"
-                })
-                return
-            
-            frontmatter_text = content[3:frontmatter_end].strip()
-            frontmatter_data = self.parse_simple_yaml(frontmatter_text)
-            
-            if not isinstance(frontmatter_data, dict):
-                results["frontmatter_errors"].append({
-                    "file": str(relative_path),
-                    "error": "Frontmatter is not a valid YAML object"
-                })
-                return
-            
-            # Required fields
-            required_fields = ['name', 'description', 'license']
-            for field in required_fields:
-                if field not in frontmatter_data:
-                    results["frontmatter_errors"].append({
-                        "file": str(relative_path),
-                        "error": f"Missing required field: {field}"
-                    })
-            
-                    
-        except Exception as e:
-            results["frontmatter_errors"].append({
-                "file": str(relative_path),
-                "error": f"Invalid YAML in frontmatter: {e}"
-            })
-    
-    def parse_simple_yaml(self, text: str) -> dict:
-        """Simple YAML parser for basic key-value pairs."""
-        result = {}
-        for line in text.split('\n'):
-            line = line.strip()
-            if ':' in line and not line.startswith('#'):
-                key, value = line.split(':', 1)
-                result[key.strip()] = value.strip()
-        return result
+
+        frontmatter_end = content.find('---', 3)
+        if frontmatter_end == -1:
+            err("Unclosed frontmatter delimiter")
+            return
+
+        # Top-level-aware parse: a top-level key starts at column 0; indented
+        # lines belong to the preceding key (e.g. the metadata map).
+        top_level: Dict[str, str] = {}
+        for line in content[3:frontmatter_end].split('\n'):
+            if not line or line.startswith((' ', '\t', '#')):
+                continue
+            if ':' not in line:
+                continue
+            key, value = line.split(':', 1)
+            top_level[key.strip()] = value.strip()
+
+        for field in ('name', 'description', 'license'):
+            if field not in top_level:
+                err(f"Missing required field: {field}")
+
+        for field in sorted(set(top_level) - self.SPEC_TOP_LEVEL_FIELDS):
+            err(
+                f"Spec-unknown top-level field: {field} "
+                f"(allowed: {sorted(self.SPEC_TOP_LEVEL_FIELDS)}; "
+                "put extra properties under metadata:)"
+            )
+
+        name = top_level.get('name', '')
+        if name:
+            if len(name) > self.SPEC_NAME_MAX or not self.SPEC_NAME_RE.match(name):
+                err(
+                    f"Spec-invalid name: {name!r} (lowercase alphanumerics and "
+                    "single hyphens, no leading/trailing hyphen, max 64 chars)"
+                )
+            if name != file_path.parent.name:
+                err(
+                    f"name {name!r} must match skill directory "
+                    f"{file_path.parent.name!r}"
+                )
+
+        description = top_level.get('description', '').strip('"\'')
+        if description and len(description) > self.SPEC_DESCRIPTION_MAX:
+            err(
+                f"description exceeds spec cap: {len(description)} chars "
+                f"(max {self.SPEC_DESCRIPTION_MAX})"
+            )
 
 
 def main():

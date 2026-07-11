@@ -2,10 +2,11 @@
 name: reflective-minimality
 description: Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild. It challenges whether code should exist, prefers deletion, standard library, platform-native features, existing dependencies, one-line or one-file solutions, and requires intentional shortcuts to carry explicit ceiling and upgrade triggers.
 license: MIT
-risk_level: low
-human_review_required: false
-external_io: false
-context_load: low
+metadata:
+  risk_level: low
+  human_review_required: false
+  external_io: false
+  context_load: low
 ---
 
 # Reflective Minimality

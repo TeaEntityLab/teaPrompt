@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-11T18:31:55.215407",
+  "generated_at": "2026-07-11T19:07:31.852106",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -69,8 +69,10 @@
             "flow-coverage-panel-record-2026-07-11.md",
             "skills-and-spec-systems-research-2026-06-25.md",
             "vllm-micro-agent-research-record-2026-06-30.md",
+            "flow-pack-demotion-evaluation-2026-07-11.md",
             "prompt-library-build-plan.md",
             "runtime-governance-learning-plan-2026-06-11.md",
+            "flow-pack-usage-log.md",
             "project-adjustment-reflection-2026-06-11.md"
           ]
         },
@@ -1132,6 +1134,10 @@
         },
         {
           "level": 2,
+          "text": "Execution Ledger (2026-07-11, user-approved implementation)"
+        },
+        {
+          "level": 2,
           "text": "Sequencing"
         },
         {
@@ -1143,8 +1149,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 126,
-      "char_count": 6709
+      "line_count": 140,
+      "char_count": 8594
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -1442,9 +1448,10 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-pack-usage-log.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
-          "flow-control-roadmap-2026-07-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-roadmap-2026-07-11.md"
         ]
@@ -1532,7 +1539,7 @@
         }
       ],
       "line_count": 194,
-      "char_count": 13579
+      "char_count": 13425
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -1714,8 +1721,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 111,
-      "char_count": 6025
+      "line_count": 128,
+      "char_count": 7939
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1908,8 +1915,10 @@
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md",
           "../skills/reflective-spec-plan/SKILL.md",
           "../04-agent/runtime-trust-boundary.md",
+          "flow-pack-usage-log.md",
           "routing-holdout-plan-2026-07-11.md",
           "../04-agent/workflow-acquisition.md",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
@@ -1927,11 +1936,11 @@
         },
         {
           "level": 2,
-          "text": "F1 — Demotion-trigger evaluation for `flow-loop-harness` (Now; the new item)"
+          "text": "F1 — Demotion-trigger evaluation for `flow-loop-harness` (**Done 2026-07-11 — not fired**)"
         },
         {
           "level": 2,
-          "text": "F2 — Usage evidence for the 2026-10-11 checkpoint (Now)"
+          "text": "F2 — Usage evidence for the 2026-10-11 checkpoint (**Done 2026-07-11**: [usage log](flow-pack-usage-log.md) with zero-state)"
         },
         {
           "level": 2,
@@ -1950,8 +1959,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 88,
-      "char_count": 6065
+      "line_count": 95,
+      "char_count": 6573
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -2562,7 +2571,8 @@
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
-          "flow-control-roadmap-2026-07-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md",
+          "flow-pack-usage-log.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan",
           "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -2627,7 +2637,7 @@
         }
       ],
       "line_count": 126,
-      "char_count": 11340
+      "char_count": 11366
     },
     {
       "path": "reflective-prompt-library/plans/agent-flow-control-research-2026-07-11.md",
@@ -3030,8 +3040,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 386,
-      "char_count": 21835
+      "line_count": 393,
+      "char_count": 22647
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -5559,6 +5569,58 @@
       "char_count": 9960
     },
     {
+      "path": "reflective-prompt-library/plans/flow-pack-demotion-evaluation-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "flow-pack-demotion-evaluation-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "agent-flow-control-research-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "flow-pack-usage-log.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Flow-Loop-Harness Demotion-Trigger Evaluation — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Trigger under evaluation"
+        },
+        {
+          "level": 2,
+          "text": "Template-by-template analysis"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 63,
+      "char_count": 4261
+    },
+    {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5677,6 +5739,45 @@
       ],
       "line_count": 111,
       "char_count": 5312
+    },
+    {
+      "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "flow-pack-usage-log",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "governance-necessity-panel-record-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Flow-Pack Usage Log"
+        },
+        {
+          "level": 2,
+          "text": "Convention"
+        },
+        {
+          "level": 2,
+          "text": "Entries"
+        },
+        {
+          "level": 2,
+          "text": "Review checkpoints"
+        }
+      ],
+      "line_count": 40,
+      "char_count": 1909
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -7491,8 +7592,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 239,
-      "char_count": 10628
+      "line_count": 242,
+      "char_count": 10774
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -7561,8 +7662,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 224,
-      "char_count": 6698
+      "line_count": 227,
+      "char_count": 6844
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -8190,6 +8291,7 @@
         "name": "reflective-dispatch",
         "description": "Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -8249,8 +8351,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 153,
-      "char_count": 8050
+      "line_count": 154,
+      "char_count": 8068
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -8264,6 +8366,7 @@
         "name": "reflective-minimality",
         "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild. It challenges whether code should exist, prefers deletion, standard library, platform-native features, existing dependencies, one-line or one-file solutions, and requires intentional shortcuts to carry explicit ceiling and upgrade triggers.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -8314,8 +8417,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 133,
-      "char_count": 5968
+      "line_count": 134,
+      "char_count": 5986
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -8329,6 +8432,8 @@
         "name": "flow-control-generator",
         "description": "Use when a task needs an executable flow-control script that coordinates agent steps — sequential pipelines, parallel fan-out/fan-in, conditional routing, or orchestrator-worker delegation — over a host agent CLI or SDK. It classifies the task shape, picks the smallest topology, and writes a deterministic script with state files, verification gates, and budgets. For iterate-until-done loops, use flow-loop-harness.",
         "license": "MIT",
+        "compatibility": "Requires a POSIX host with bash 3.2+ (python3 for the orchestrator template) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.",
+        "metadata": "",
         "risk_level": "medium",
         "human_review_required": "false",
         "external_io": "false",
@@ -8430,8 +8535,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 275,
-      "char_count": 16048
+      "line_count": 277,
+      "char_count": 16242
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -8445,6 +8550,7 @@
         "name": "reflective-brief",
         "description": "Use this to start non-trivial tasks, clarify real goals, define assumptions, scope, acceptance criteria, falsifiability, and the minimal next step before planning or implementation. Especially useful when a request is broad but safe to proceed with explicit assumptions.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -8544,8 +8650,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 107,
-      "char_count": 3366
+      "line_count": 108,
+      "char_count": 3384
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -8559,6 +8665,7 @@
         "name": "reflective-research",
         "description": "Use this for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations. It separates evidence from inference and avoids dumping raw context.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "true",
@@ -8673,8 +8780,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 189,
-      "char_count": 9762
+      "line_count": 190,
+      "char_count": 9780
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -8688,6 +8795,7 @@
         "name": "reflective-review",
         "description": "Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -8784,8 +8892,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 165,
-      "char_count": 7009
+      "line_count": 166,
+      "char_count": 7027
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -8799,6 +8907,7 @@
         "name": "reflective-implement",
         "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -8940,8 +9049,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 177,
-      "char_count": 7104
+      "line_count": 178,
+      "char_count": 7122
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -8955,6 +9064,7 @@
         "name": "reflective-handoff-retro",
         "description": "Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -9120,8 +9230,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 144,
-      "char_count": 5229
+      "line_count": 145,
+      "char_count": 5247
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -9135,6 +9245,7 @@
         "name": "reflective-risk",
         "description": "Use this before high-risk work involving security, privacy, auth, permissions, data deletion, migrations, production, billing, legal/medical/financial stakes, or irreversible decisions. It creates a dry-run, rollback, and Human Review gate before execution.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "high",
         "human_review_required": "true",
         "external_io": "false",
@@ -9249,8 +9360,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 115,
-      "char_count": 3616
+      "line_count": 116,
+      "char_count": 3634
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -9264,6 +9375,7 @@
         "name": "reflective-spec-plan",
         "description": "Use this to turn a requirement into a practical spec, usage-first design, reviewable task plan, no-code Test Plan, or agent workflow design. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, stateful or resumable workflow specification, rigorous test design before implementation, or wants to avoid building the wrong thing.",
         "license": "MIT",
+        "metadata": "",
         "risk_level": "low",
         "human_review_required": "false",
         "external_io": "false",
@@ -9344,8 +9456,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 237,
-      "char_count": 10625
+      "line_count": 238,
+      "char_count": 10643
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -9359,6 +9471,8 @@
         "name": "flow-loop-harness",
         "description": "Use when an agent must iterate until a condition is verified — fix-until-tests-pass, writer-critic refinement, backlog burn-down, ralph-style loops — over a host agent CLI in headless mode. It writes loop scripts whose stop conditions are external deterministic verifiers, with iteration and budget caps, no-progress detection, human-review gates before unattended or side-effectful runs, and state ledgers as a resume convention the host must honor.",
         "license": "MIT",
+        "compatibility": "Requires a POSIX host with bash 3.2+ and a headless host agent CLI; git enables progress detection; unattended or side-effectful loop runs stay human-gated.",
+        "metadata": "",
         "risk_level": "medium",
         "human_review_required": "true",
         "external_io": "false",
@@ -9426,6 +9540,10 @@
         },
         {
           "level": 2,
+          "text": "Host-Native Alternatives"
+        },
+        {
+          "level": 2,
           "text": "Demotion Triggers"
         },
         {
@@ -9433,9 +9551,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 227,
-      "char_count": 15020
+      "line_count": 243,
+      "char_count": 16075
     }
   ],
-  "total_files": 107
+  "total_files": 109
 }

@@ -2,10 +2,11 @@
 name: reflective-spec-plan
 description: Use this to turn a requirement into a practical spec, usage-first design, reviewable task plan, no-code Test Plan, or agent workflow design. Trigger when the user asks for a spec, PRD, tickets, implementation plan, workflow plan, stateful or resumable workflow specification, rigorous test design before implementation, or wants to avoid building the wrong thing.
 license: MIT
-risk_level: low
-human_review_required: false
-external_io: false
-context_load: high
+metadata:
+  risk_level: low
+  human_review_required: false
+  external_io: false
+  context_load: high
 ---
 
 # Reflective Spec Plan

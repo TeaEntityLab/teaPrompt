@@ -115,6 +115,8 @@ MINIMALITY_NOT_IMPLEMENT_TRAP_PROBES = (
 )
 
 ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
+    ("keep working until every test in test/auth passes", "reflective-implement"),
+    ("write a bash loop that reruns the agent until the verifier passes", "reflective-implement"),
     ("design a handoff workflow specification without runtime code", "reflective-spec-plan"),
     ("patch the trivial null check in code", "reflective-implement"),
     ("verify production auth change will not expose secrets", "reflective-risk"),

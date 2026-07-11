@@ -99,9 +99,26 @@ Every "expected" below is a **hypothesis** until the pre-tune observation run;
 
 ## Ledger
 
-| Group | Status | Observation evidence | Fixture change |
+Executed 2026-07-11 (user-approved survey implementation). Pre-tune observation
+run against the untuned router, then adoption per the checklist; post-tune all
+adopted phrases route as canonized; `make all` green (790 pytest, ROUTE-001/002/003
+at 100% with floors raised to 42/118 and 21/73).
+
+| Group | Status | Observation evidence (pre-tune → post-tune) | Fixture change |
 | --- | --- | --- | --- |
-| H1–H6 | Proposed 2026-07-11 | none yet — pre-tune run pending | none |
+| H1 `goal_mode_not_plan_trap` | **Adopted (ROUTE-003)** | scattered risk/implement/dispatch (conf 0.30–0.50) → implement 0.80–0.90; the `test/auth` path fragment falsely triggering the risk guard was the observed defect (guard keyword `auth` dropped) | +4 phrases; router `goal_delivery` boundary (+4 implement, risk-context guarded) |
+| H2 `loop_script_authoring_trap` | **Adopted (ROUTE-003)** | implement/dispatch fallback (0.30–0.50) → implement 0.80–0.90 | +3 phrases; router `loop_script` boundary |
+| H3 scheduled-check | **Deferred** | minimality + review scatter; canonical route genuinely ambiguous (design vs implement) — forcing a route would be fixture-fitting | none; revisit on real scheduled-check misroute reports |
+| H4 skill-authoring | **Deferred** | dispatch/review scatter; spec-plan vs implement contested (sop-compiler framing vs transcription) | none; revisit with real skill-authoring demand |
+| H5 `skill_install_holdout` | **Adopted (ROUTE-002)** | dispatch fallback ×2 (0.30) → implement 0.80 | +2 phrases; router `skill_install` boundary |
+| H6 `goal_condition_design_holdout` | **Adopted (ROUTE-002)** | brief/dispatch split → brief 0.80–0.90 | +2 phrases; router `completion_condition` boundary |
+
+Parity executed per playbook: two new ROUTE-003 canonical probes in
+`tests/test_validate_route_fixture.py` (flowing into EN/zh-TW cheatsheet parity
+tests); implement-section trigger cues added to both cheatsheets; quick-cue
+summary untouched (Round 66 expansion rejection honored); floors bumped in
+`validate_route_fixture.py`; QUALITY_GATES counts synced. These observations are
+the standing holdout evidence for the P7/N12 re-litigation.
 
 ## Falsifiability
 

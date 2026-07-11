@@ -115,6 +115,9 @@ L1 快速路徑：
 - 「Patch the trivial null check in code。」
 - 「幫我 patch 這個 trivial null check and run tests。」
 - 「Automate the recurring manual release check as a deterministic test in the repo。」
+- 「Keep working until every test in test/auth passes。」
+- 「Write a bash loop that reruns the agent until the verifier passes。」
+- 「持續修到整個測試套件全綠為止。」
 
 何時用：
 

@@ -101,6 +101,20 @@ tasks with evidence gates — the survey is interest evidence, not demand.
 - Gate: human approval for governed-doc edits; keep it a pointer table, not new
   policy. TeaPrompt declares, hosts enforce (runtime-trust-boundary).
 
+## Execution Ledger (2026-07-11, user-approved implementation)
+
+| Task | Status | Evidence |
+| --- | --- | --- |
+| S1 conformance run | **Done — FAIL observed, migration executed** | `skills-ref` 0.1.1 rejected all 11 skills (unexpected top-level fields: the four governance fields; only name/description/license/compatibility/metadata/allowed-tools allowed). Decision rule fired: governance fields migrated under `metadata:` in all 11 SKILL.md files; post-migration `agentskills validate` passes 11/11. Consumers kept working via flattening parsers; `validate_governance.py` docstring documents the canonical form. |
+| S2 spec-constraint guard | **Done** | `validate_links.py` now enforces the spec top-level whitelist, name regex + directory match, description ≤1024; four negative/positive tests added in `tests/test_validate_links.py`. |
+| S3 distribution channels | **Cheap subset done; packaging still trigger-gated** | `gemini skills link/list` smoke-verified on macOS 2026-07-11 (consent prompt observed; `~/.agents/skills` tier confirmed live); documented in SKILL_INSTALLATION. Marketplace/plugin packaging unchanged — demand still `unknown`. |
+| S4 installation parity | **Done** | SKILL_INSTALLATION.md: Codex `.agents/skills` tiers note, user-scope helper, new Gemini CLI section, spec-validation troubleshooting item, refreshed sources; zh-TW guide host list + Gemini section + date synced. |
+| S5 pack `compatibility` | **Done** | Both pack SKILL.md files carry spec `compatibility` (bash 3.2+/host CLI preconditions); validates under skills-ref. |
+| S6 invocation-control mapping | **Done** | SKILL_INSTALLATION §Security Notes "Enforcing TeaPrompt's review gates host-side" table (Claude/Codex/Gemini mechanisms; declare-vs-enforce boundary stated). |
+
+Full-gate evidence: `make all` green after each wave (final: 790 pytest, all
+validators, ROUTE-001/002/003 100%).
+
 ## Sequencing
 
 S1 → (S2 candidate informed by S1's validator experience) → S4 → S5/S6 as one

@@ -2,10 +2,11 @@
 name: reflective-risk
 description: Use this before high-risk work involving security, privacy, auth, permissions, data deletion, migrations, production, billing, legal/medical/financial stakes, or irreversible decisions. It creates a dry-run, rollback, and Human Review gate before execution.
 license: MIT
-risk_level: high
-human_review_required: true
-external_io: false
-context_load: medium
+metadata:
+  risk_level: high
+  human_review_required: true
+  external_io: false
+  context_load: medium
 ---
 
 # Reflective Risk

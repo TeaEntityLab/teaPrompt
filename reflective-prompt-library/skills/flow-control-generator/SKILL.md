@@ -2,10 +2,12 @@
 name: flow-control-generator
 description: Use when a task needs an executable flow-control script that coordinates agent steps — sequential pipelines, parallel fan-out/fan-in, conditional routing, or orchestrator-worker delegation — over a host agent CLI or SDK. It classifies the task shape, picks the smallest topology, and writes a deterministic script with state files, verification gates, and budgets. For iterate-until-done loops, use flow-loop-harness.
 license: MIT
-risk_level: medium
-human_review_required: false
-external_io: false
-context_load: medium
+compatibility: Requires a POSIX host with bash 3.2+ (python3 for the orchestrator template) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.
+metadata:
+  risk_level: medium
+  human_review_required: false
+  external_io: false
+  context_load: medium
 ---
 
 # Flow Control Generator

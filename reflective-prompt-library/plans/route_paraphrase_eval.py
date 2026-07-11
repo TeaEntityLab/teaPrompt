@@ -631,6 +631,46 @@ class ParaphraseRouter:
             adjustments["reflective-handoff-retro"] = adjustments.get("reflective-handoff-retro", 0) + 3
             reasons.append("handoff boundary: lessons-learned retrospective")
 
+        goal_delivery_signals = [
+            "keep working until", "don't stop until", "do not stop until",
+            "until every test", "until tests pass", "until the build",
+            "until lint is clean", "completion means", "為止",
+        ]
+        goal_delivery_risk_context = [
+            "production", "security", "credential", "billing",
+            "database", "資料庫", "正式環境",
+        ]
+        if any(signal in text_lower for signal in goal_delivery_signals) and not any(
+            ctx in text_lower for ctx in goal_delivery_risk_context
+        ):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 4
+            reasons.append("implement boundary: keep-working-until-verified delivery request")
+
+        loop_script_signals = [
+            "bash loop", "loop that reruns", "loop that re-runs", "loop script",
+            "fix-until-green script", "iteration cap", "writer-critic round harness",
+            "reruns the agent",
+        ]
+        if any(signal in text_lower for signal in loop_script_signals):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 4
+            reasons.append("implement boundary: executable loop-script authoring requested")
+
+        skill_install_signals = [
+            "install these skills", "install skills into", ".agents/skills",
+            "symlink the skill", "skill pack into",
+        ]
+        if any(signal in text_lower for signal in skill_install_signals):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 4
+            reasons.append("implement boundary: mechanical skill install or symlink")
+
+        completion_condition_signals = [
+            "completion condition", "falsifiable end state", "verifiable end state",
+            "condition the evaluator",
+        ]
+        if any(signal in text_lower for signal in completion_condition_signals):
+            adjustments["reflective-brief"] = adjustments.get("reflective-brief", 0) + 4
+            reasons.append("brief boundary: completion-condition or end-state design")
+
         return adjustments, reasons
     
     def route(self, text: str) -> Tuple[str, float, List[str], str]:

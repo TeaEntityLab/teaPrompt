@@ -4,7 +4,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 Last verified: 2026-07-11
 
-This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
+This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Gemini CLI, Google Antigravity CLI / IDE, and OpenCode.
 
 The source skills live here:
 
@@ -212,6 +212,12 @@ Codex-native install uses `$CODEX_HOME/skills`; when `CODEX_HOME` is unset, the 
 ~/.codex/skills/<skill-name>/SKILL.md
 ```
 
+Current Codex docs (checked 2026-07-11) additionally document Agent Skills tiers:
+repository `.agents/skills` scanned from the working directory up to the repo
+root, user `$HOME/.agents/skills`, and admin `/etc/codex/skills`; `$skill-installer`
+installs curated skills. The `~/.codex/skills` path below is the Codex-native
+location that predates those tiers.
+
 Personal Codex install (copy):
 
 ```bash
@@ -245,6 +251,14 @@ install_core_skills_symlink .agents/skills
 ```
 
 Use `.agents/skills` when you want one project-local skill location that can also be read by other Agent Skills-compatible tools. If your Codex build does not show these skills, use the Codex-native `~/.codex/skills` path.
+
+User-scope shared option (works for every `.agents/skills`-aware host):
+
+```bash
+install_core_skills_copy "$HOME/.agents/skills"
+# or
+install_core_skills_symlink "$HOME/.agents/skills"
+```
 
 ## Cursor
 
@@ -320,6 +334,42 @@ Prefer:
 ```
 
 This is not a native skill install, but it preserves the workflow behavior in Cursor's official Rules system.
+
+## Gemini CLI
+
+Gemini CLI implements the Agent Skills standard with these discovery tiers
+(lowest to highest precedence: built-in, extension, user, workspace; within a
+tier the `.agents/skills` alias beats `.gemini/skills`):
+
+| Scope | Path |
+| --- | --- |
+| Workspace | `.gemini/skills/<skill-name>/SKILL.md` or `.agents/skills/<skill-name>/SKILL.md` |
+| User | `~/.gemini/skills/<skill-name>/SKILL.md` or `~/.agents/skills/<skill-name>/SKILL.md` |
+
+The shared helpers work as for other hosts:
+
+```bash
+install_core_skills_copy .agents/skills          # workspace
+install_core_skills_symlink "$HOME/.agents/skills"  # user
+```
+
+Gemini CLI also manages skills natively:
+
+```bash
+gemini skills list --all
+gemini skills link "$(pwd)/reflective-prompt-library/skills/reflective-brief" --scope user
+gemini skills install <git-url> --path reflective-prompt-library/skills/reflective-brief --consent
+gemini skills uninstall reflective-brief --scope user
+```
+
+Notes (verified on macOS, 2026-07-11): `gemini skills list` reads
+`~/.agents/skills`; `link` asks an interactive security confirmation (`install`
+accepts `--consent` to skip it); duplicate names across tiers are reported as
+conflicts with the higher tier winning; skill activation in-session shows a
+consent prompt naming the skill and the directory it gains access to. Google
+has announced that unpaid-tier and Google One users' Gemini CLI is being
+replaced by Antigravity CLI (see the next section), so free-tier users should
+prefer the Antigravity paths.
 
 ## Antigravity CLI / Antigravity IDE
 
@@ -480,6 +530,11 @@ Use symlink installs only for your own workspace, not as the default team instal
 6. Ask the host to list available skills.
 7. If a skill triggers too often, make the `description` narrower.
 8. If a skill never triggers, make the `description` more explicit and include likely user phrases.
+9. Validate spec conformance: `python3 reflective-prompt-library/plans/validate_links.py`
+   in this repo, or the reference tool (`pip install skills-ref`, then
+   `agentskills validate <skill-dir>`). Only `name`, `description`, `license`,
+   `compatibility`, `metadata`, and `allowed-tools` are spec-valid top-level
+   frontmatter fields; TeaPrompt's governance fields live under `metadata:`.
 
 ## Security Notes
 
@@ -489,11 +544,29 @@ Use symlink installs only for your own workspace, not as the default team instal
 - Do not grant tool permissions or hooks unless the skill genuinely needs them.
 - Keep high-risk workflows behind `reflective-risk`.
 
+### Enforcing TeaPrompt's review gates host-side
+
+TeaPrompt skills declare intent via `metadata.human_review_required`; hosts, not
+TeaPrompt, enforce it. When installing `reflective-risk` or `flow-loop-harness`
+(both `human_review_required: true`), map the declaration to your host's
+invocation control:
+
+| Host | Mechanism |
+| --- | --- |
+| Claude Code | add `disable-model-invocation: true` to your installed copy so only explicit `/skill-name` runs it |
+| Codex | `agents/openai.yaml` with `policy.allow_implicit_invocation: false` |
+| Gemini CLI | activation already shows a per-skill consent prompt; keep it enabled |
+
+These are host features documented at the sources below; TeaPrompt cannot
+verify or enforce them (runtime-trust boundary).
+
 ## Sources
 
+- Agent Skills specification: https://agentskills.io/specification
 - Claude Code skills docs: https://code.claude.com/docs/en/skills
+- Codex skills docs: https://learn.chatgpt.com/docs/build-skills
+- Gemini CLI skills docs: https://geminicli.com/docs/cli/skills/
 - OpenAI skills repository: https://github.com/openai/skills
-- OpenAI Codex use cases: https://developers.openai.com/codex/use-cases
 - Google Antigravity skills docs: https://antigravity.google/docs/skills
 - OpenCode skills docs: https://opencode.ai/docs/skills
 - Cursor rules docs: https://docs.cursor.com/en/context

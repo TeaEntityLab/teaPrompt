@@ -2,10 +2,12 @@
 name: flow-loop-harness
 description: Use when an agent must iterate until a condition is verified — fix-until-tests-pass, writer-critic refinement, backlog burn-down, ralph-style loops — over a host agent CLI in headless mode. It writes loop scripts whose stop conditions are external deterministic verifiers, with iteration and budget caps, no-progress detection, human-review gates before unattended or side-effectful runs, and state ledgers as a resume convention the host must honor.
 license: MIT
-risk_level: medium
-human_review_required: true
-external_io: false
-context_load: medium
+compatibility: Requires a POSIX host with bash 3.2+ and a headless host agent CLI; git enables progress detection; unattended or side-effectful loop runs stay human-gated.
+metadata:
+  risk_level: medium
+  human_review_required: true
+  external_io: false
+  context_load: medium
 ---
 
 # Flow Loop Harness
@@ -209,6 +211,20 @@ Before the first unattended run, a human must approve: the verifier, the caps, t
 4. Report dry-run evidence with the deliverable.
 
 Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed L3 gates of `04-agent/artifact-promotion.md` §4 before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any loop script to a team standard.
+
+## Host-Native Alternatives
+
+Some hosts now ship native keep-working surfaces (2026-07: Claude Code `/goal`
+condition loops, `/loop` interval re-runs, script-backed Stop hooks). Reach for
+them instead of a generated loop when the task is transcript-judgeable, single
+run, and low blast radius — a `/goal` condition the model can demonstrate in its
+own output is cheaper than a harness. Generate a loop script when the stop
+condition must be a deterministic external verifier, or when caps, no-progress
+detection, backlog retirement, or a resume ledger matter: native goal modes
+evaluate completion with a model judge over the transcript, which is exactly
+the stop-condition class this skill's verifier rule forbids trusting alone.
+First demotion-trigger evaluation against these surfaces: **not fired**
+(`../../plans/flow-pack-demotion-evaluation-2026-07-11.md`).
 
 ## Demotion Triggers
 

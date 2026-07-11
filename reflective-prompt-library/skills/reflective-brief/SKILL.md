@@ -2,10 +2,11 @@
 name: reflective-brief
 description: Use this to start non-trivial tasks, clarify real goals, define assumptions, scope, acceptance criteria, falsifiability, and the minimal next step before planning or implementation. Especially useful when a request is broad but safe to proceed with explicit assumptions.
 license: MIT
-risk_level: low
-human_review_required: false
-external_io: false
-context_load: low
+metadata:
+  risk_level: low
+  human_review_required: false
+  external_io: false
+  context_load: low
 ---
 
 # Reflective Brief

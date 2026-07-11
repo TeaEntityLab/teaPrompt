@@ -20,7 +20,14 @@ schedulers (`/schedule` routines, scheduled tasks). The pack's demotion trigger
 — "a host-native flow feature covering all pack templates with enforcement →
 demote the loop skill first" — is now a live question instead of a hypothetical.
 
-## F1 — Demotion-trigger evaluation for `flow-loop-harness` (Now; the new item)
+## F1 — Demotion-trigger evaluation for `flow-loop-harness` (**Done 2026-07-11 — not fired**)
+
+> Executed same day under the user-approved survey implementation: verdict
+> **not fired** (model-judge stop fails the deterministic bar; script Stop hooks
+> are unpackaged primitives); Host-Native Alternatives note added to the loop
+> skill → [evaluation record](flow-pack-demotion-evaluation-2026-07-11.md).
+> Re-runs are owned by the F4 watch table. Original brief kept below for the
+> next evaluator.
 
 Run a focused evaluation record (own ledger; human approval for any outcome
 that edits pack surfaces). Seed analysis from the survey, to be tested not
@@ -43,10 +50,10 @@ not enforcement by TeaPrompt's verifier rule
 ([reflective-spec-plan](../skills/reflective-spec-plan/SKILL.md) Workflow Design
 Mode; [runtime-trust-boundary](../04-agent/runtime-trust-boundary.md)).
 
-Timing: before or at the 2026-10-11 checkpoint, so the P6 merge re-litigation
-and this evaluation land on the same evidence base.
+Timing: first run completed 2026-07-11; subsequent runs fire from the F4 watch
+table and land on the same evidence base as the 2026-10-11 P6 review.
 
-## F2 — Usage evidence for the 2026-10-11 checkpoint (Now)
+## F2 — Usage evidence for the 2026-10-11 checkpoint (**Done 2026-07-11**: [usage log](flow-pack-usage-log.md) with zero-state)
 
 Unchanged from the whole-project plan's T3: establish the manual usage-log
 convention now; record the zero-state. Without it, P6 (merge) and F1 (demotion)

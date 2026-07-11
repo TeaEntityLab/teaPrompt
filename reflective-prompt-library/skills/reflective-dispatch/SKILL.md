@@ -2,10 +2,11 @@
 name: reflective-dispatch
 description: Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.
 license: MIT
-risk_level: low
-human_review_required: false
-external_io: false
-context_load: low
+metadata:
+  risk_level: low
+  human_review_required: false
+  external_io: false
+  context_load: low
 ---
 
 # Reflective Dispatch

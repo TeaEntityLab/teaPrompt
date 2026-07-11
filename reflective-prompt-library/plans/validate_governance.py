@@ -8,6 +8,13 @@ Validates that all SKILL.md files have required governance metadata:
 - external_io (true/false)
 - context_load (low/medium/high)
 
+Canonical position since the 2026-07-11 spec-conformance migration: nested under
+the Agent Skills `metadata:` map (agentskills.io allows only name/description/
+license/compatibility/metadata/allowed-tools at top level; validate_links.py
+enforces that whitelist). This validator's line-based parser flattens the
+metadata map, so it reads the fields in either position; spec conformance is
+validate_links.py's job, semantics are this validator's job.
+
 Also enforces the skills-directory registry: every SKILL.md under skills/
 must be one of the nine frozen CORE_SKILLS or a registered domain-pack skill
 (2026-07-11 flow-control pack panel, Option B). Domain packs must self-label

@@ -2,10 +2,11 @@
 name: reflective-research
 description: Use this for current external research, official documentation checks, DeepWiki inspection, long-document synthesis, platform comparison, or source-backed recommendations. It separates evidence from inference and avoids dumping raw context.
 license: MIT
-risk_level: low
-human_review_required: false
-external_io: true
-context_load: high
+metadata:
+  risk_level: low
+  human_review_required: false
+  external_io: true
+  context_load: high
 ---
 
 # Reflective Research

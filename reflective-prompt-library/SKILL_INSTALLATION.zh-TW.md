@@ -4,12 +4,13 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 # Skills 安裝指南
 
-最後確認日期：2026-07-06
+最後確認日期：2026-07-11
 
 本文件說明如何把 TeaPrompt 的 workflow skills 安裝到：
 
 - Claude Code
 - Codex
+- Gemini CLI
 - Cursor
 - Antigravity CLI / IDE
 - OpenCode
@@ -56,6 +57,18 @@ cp -R reflective-prompt-library/skills/reflective-* .claude/skills/
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 cp -R reflective-prompt-library/skills/reflective-* "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
+
+## Gemini CLI
+
+- 工作區層：`.gemini/skills/` 或 `.agents/skills/`（`.agents/skills` 優先）
+- 使用者層：`~/.gemini/skills/` 或 `~/.agents/skills/`
+
+```bash
+gemini skills link "$(pwd)/reflective-prompt-library/skills/reflective-brief" --scope user
+gemini skills list --all
+```
+
+啟用 skill 時會出現安全確認提示；免費層 Gemini CLI 將由 Antigravity CLI 取代（詳見英文版）。
 
 ## Cursor
 
