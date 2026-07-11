@@ -2,9 +2,12 @@
 """
 Skill Examples Validator (deterministic, CI-safe)
 
-Ensures every core workflow skill has a matching worked example under
-skills/examples/. Round 11 panel compromise: gate example parity without
-adding new skill surface area.
+Ensures every core workflow skill and registered domain-pack skill has a
+matching worked example under skills/examples/. Round 11 panel compromise:
+gate example parity without adding new skill surface area. Domain packs were
+registered by the 2026-07-11 flow-control pack panel (Option B): CORE_SKILLS
+stays the frozen nine; DOMAIN_PACK_SKILLS is the only other legitimate set of
+SKILL.md directories under skills/.
 """
 
 import sys
@@ -20,6 +23,14 @@ CORE_SKILLS = [
     "reflective-research",
     "reflective-risk",
     "reflective-handoff-retro",
+]
+
+# Registered domain packs: host-invoked script-generation skills. Not core
+# routing surface; not selectable by reflective-dispatch route rows. See
+# plans/flow-control-pack-panel-record-2026-07-11.md before extending.
+DOMAIN_PACK_SKILLS = [
+    "flow-control-generator",
+    "flow-loop-harness",
 ]
 
 MIN_EXAMPLE_CHARS = 200
@@ -39,7 +50,7 @@ def main() -> int:
         print(f"\n❌ Missing examples directory: {examples_dir.relative_to(repo_root)}")
         return 1
 
-    for skill in CORE_SKILLS:
+    for skill in CORE_SKILLS + DOMAIN_PACK_SKILLS:
         skill_file = skills_dir / skill / "SKILL.md"
         example_file = examples_dir / f"{skill}.examples.md"
 
@@ -63,7 +74,10 @@ def main() -> int:
             print(f"  - {err}")
         return 1
 
-    print(f"\n✅ All {len(CORE_SKILLS)} core skills have example files")
+    print(
+        f"\n✅ All {len(CORE_SKILLS)} core + {len(DOMAIN_PACK_SKILLS)} "
+        "domain-pack skills have example files"
+    )
     return 0
 
 

@@ -1,8 +1,11 @@
 """Anti-drift tests for README governance surface and skill-count wording."""
 
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from prompt_eval_helpers import (  # noqa: E402
     library_readme_path,
@@ -12,6 +15,7 @@ from prompt_eval_helpers import (  # noqa: E402
     repo_readme_path,
     skill_map_path,
 )
+from validate_skill_examples import CORE_SKILLS, DOMAIN_PACK_SKILLS  # noqa: E402
 
 LIBRARY_README = library_readme_path()
 ROOT_README = repo_readme_path()
@@ -81,8 +85,11 @@ def test_methodology_map_en_lists_nine_frozen_skills(methodology_map_en_text: st
     fit_check = methodology_map_en_text.split("## Repo Fit Check", 1)[1]
     assert "nine frozen workflow skills" in fit_check
     assert "8 lifecycle skills" not in fit_check
-    # Wording must match reality: exactly nine SKILL.md contracts on disk.
-    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
+    # Wording must match reality: nine frozen core contracts on disk, plus
+    # registered domain packs only (Option B, 2026-07-11 flow-control panel).
+    on_disk = {p.parent.name for p in library_skills_dir().glob("*/SKILL.md")}
+    assert on_disk == set(CORE_SKILLS) | set(DOMAIN_PACK_SKILLS)
+    assert len(CORE_SKILLS) == 9
     # Candidate #1 (2026-07-06): the frozen gloss must accompany the phrase.
     assert "gated, not never" in methodology_map_en_text
 
@@ -92,5 +99,16 @@ def test_skill_map_lists_nine_frozen_skills(skill_map_text: str):
     assert "nine frozen workflow skills" in core
     assert "eight lifecycle skills" not in core
     assert skill_map_text.count("`reflective-") >= 9
-    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
+    on_disk = {p.parent.name for p in library_skills_dir().glob("*/SKILL.md")}
+    assert on_disk == set(CORE_SKILLS) | set(DOMAIN_PACK_SKILLS)
+    assert len(CORE_SKILLS) == 9
     assert "gated, not never" in core
+
+
+def test_skill_map_lists_domain_packs(skill_map_text: str):
+    """2026-07-11 flow-control pack panel: registered packs stay discoverable."""
+    assert "## Registered domain packs" in skill_map_text
+    section = skill_map_text.split("## Registered domain packs", 1)[1].split("\n## ", 1)[0]
+    for pack in DOMAIN_PACK_SKILLS:
+        assert f"`{pack}`" in section, pack
+    assert "not selected by `reflective-dispatch`" in section

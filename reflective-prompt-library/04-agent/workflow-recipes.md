@@ -105,6 +105,11 @@ identify the task shape first, then pick the smallest topology. At the prompt
 layer, `reflective-dispatch` is the recipe selector; these rows align its
 routing vocabulary with the field's named patterns. Numeric budgets, runtime
 traces, and enforcement belong to a serving runtime and stay out of scope here.
+See also: `sop-compiler.md` (deterministic stage gates), `workflow-engine.md`
+§4–§6 (state model, steps, roles), `runtime-trust-boundary.md` (per-action
+gates), and — when the user explicitly wants an executable script rather than a
+prompt recipe — the `flow-control-generator` / `flow-loop-harness` domain packs
+(registered outside core routing; see `skills/skill-map.md`).
 
 | Topology | Task-shape signal | Prompt-layer equivalent |
 | --- | --- | --- |
@@ -139,7 +144,7 @@ reflective-dispatch
 + reflective-handoff-retro if the conclusion becomes durable knowledge
 ```
 
-Expected artifacts: `local://<topic>-review-packet.md`, reviewer verdicts, and a consensus summary that separates observed evidence, author claims, and inference.
+Expected artifacts: `local://<topic>-review-packet.md`, reviewer verdicts, and a consensus summary that separates observed evidence, author claims, and inference. Lens fan-out follows an input contract (each lens gets the same packet plus a disjoint slice or role) under a fixed lens cap; synthesis has one named merge owner — for a compiled, auditable version of that contract see `sop-compiler.md` §4 and `workflow-engine.md` §6.
 
 Falsifier: if one `reflective-review` or `reflective-research` pass would produce the same decision with enough evidence, this recipe is ceremony and should not run.
 

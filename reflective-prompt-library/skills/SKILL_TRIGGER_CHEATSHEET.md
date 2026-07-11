@@ -231,3 +231,9 @@ If uncertain, apply this order:
 When uncertain and low-risk:
 - Prefer a visible default-up to a silent downgrade.
 - Show available enhancements such as tests, security review, and performance checks.
+
+## Domain packs (host-invoked; not core routing)
+
+- **Runnable one-pass flow script** → `flow-control-generator` — chain, pipeline, fan-out, orchestrate agent CLI steps as a script; not plan-only workflow design (`reflective-spec-plan`).
+- **Runnable loop script** → `flow-loop-harness` — loop until, ralph, fix-until-green with external verifier; not an in-repo `verifier/test` artifact on the primary workflow (Acquisition L3 quick cue above).
+- **Workflow choice / library routing** → still `reflective-dispatch`; this section does not replace the nine-skill Fast Routing Rule.

@@ -76,3 +76,14 @@ For Claude Code project skills, copy each skill directory into:
 ```
 
 For Codex/OpenCode-style local libraries, keep the current directory as source and copy/adapt only the skills you actually use.
+
+## Registered domain packs (not core routing)
+
+These are script-generation skills for host agent CLIs. They are not a tenth core workflow skill and are not selected by `reflective-dispatch` route rows; the host harness may invoke them directly. Registry and guards: `plans/validate_skill_examples.py` (`DOMAIN_PACK_SKILLS`), `plans/validate_governance.py`. Decision record: [flow-control pack panel](../plans/flow-control-pack-panel-record-2026-07-11.md).
+
+| Pack skill | Use when | Route elsewhere when |
+| --- | --- | --- |
+| `flow-control-generator` | User wants a **runnable one-pass** flow script (pipeline, fan-out/fan-in, conditional routing, orchestrator-workers) over a host CLI | No-code workflow spec → `reflective-spec-plan` with `04-agent/workflow-engine.md`; iterative loops → `flow-loop-harness` |
+| `flow-loop-harness` | User wants a **runnable loop** script (loop until verified, ralph-style backlog, writer–critic rounds) with external verifiers and caps | Recurring objective check → primary workflow + in-repo `verifier/test` artifact (Acquisition L3); durable multi-session workflow → `reflective-spec-plan` |
+
+Trigger fairness: words like "orchestration plan", "resumable workflow", or "pipeline" without explicit script/runner/loop intent still follow the nine core routes per `plans/ROUTING_CONTRACT.md`.

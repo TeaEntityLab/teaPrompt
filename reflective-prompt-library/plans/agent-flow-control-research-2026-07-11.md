@@ -38,10 +38,10 @@ Web research on 2026-07-11 (six searches across vendor docs, engineering blogs, 
 
 ## Convergent Concepts (safe to build on)
 
-1. Deterministic code owns control flow; the model owns step content. All five vendors now separate "workflow" (code-driven) from "agent" (model-driven) and recommend moving unreliable orchestration into scripts.
+1. Deterministic code owns control flow; the model owns step content. The surveyed vendor docs separate "workflow" (code-driven) from "agent" (model-driven) and recommend moving unreliable orchestration into scripts. Scope caveat: "surveyed" means the six sources below, not the whole field.
 2. Six recurring topologies: sequential pipeline, parallel fan-out/fan-in, conditional routing, loop-until-verified, orchestrator-workers, handoff. Names differ; semantics converge.
 3. External verification as stop condition ("truth layer"): never trust the model's self-reported "done"; gate on exit codes of deterministic checks.
-4. State files / checkpoints between steps enable resume; every platform ships checkpointing or a state-ledger convention.
+4. State files / checkpoints between steps enable resume; each surveyed framework documents checkpointing or a state-ledger convention (a host guarantee where enforced by runtime code, a convention otherwise).
 5. Budgets and caps (max iterations, concurrency caps, cost ceilings) are mandatory loop hygiene.
 6. Human-in-the-loop pause points are first-class for side-effectful steps.
 
@@ -60,19 +60,42 @@ Existing TeaPrompt surfaces cover adjacent needs but not this one:
 - `04-agent/sop-compiler.md`, `04-agent/workflow-acquisition.md` — extract/replay SOPs from observed work; not forward script generation.
 - `04-agent/workflow-recipes.md` — prompt-layer sequencing and looper-topology vocabulary; no execution layer.
 
-Verified gap: no surface tells an agent how to *write an executable flow-control script* (pipeline/parallel/router/orchestrator/loop) for a host agent CLI with gates, budgets, and resumable state. User instruction on 2026-07-11 explicitly requested such skills, supplying the human authorization the promotion gate requires.
+Gap verdict (corrected by the 2026-07-11 panel): **user-directed, structurally plausible, recurrence evidence unknown.** No surface tells an agent how to *write an executable flow-control script* (pipeline/parallel/router/orchestrator/loop) for a host agent CLI with gates, budgets, and a resume-convention state ledger — but this does not meet the STORM/Test-Plan bar of "verified" (no recurring local demand is on record; adjacent methodology exists in `workflow-recipes.md` and `reflective-implement`). Signal accounting (`external-adoption-case-studies-2026-06-20.md`): external platform convergence on these patterns is interest evidence, never local recurrence evidence — the two ledgers stay separate. The explicit user instruction of 2026-07-11 supplies the human-approval half of the promotion gate; the recurrence half is waived only under the user-directed exception below, and the Demotion Triggers are the corresponding falsifiers.
 
 ## Promotion Decision
 
-- Destination: two domain-pack skills under `skills/` — `flow-control-generator` (one-pass DAG flows) and `flow-loop-harness` (iterative loops; separate because runaway-cost/side-effect risk differs and triggers are disjoint).
-- Acquisition level: L2 (skill draft) with an L3 property built in: every generated script must support a stub dry run (`AGENT_CMD` override) as a deterministic verifier.
-- Explicitly **not** core workflow skills: the nine-skill routing surface and cheatsheet are unchanged; the pack is reachable by host-harness skill discovery and by escalation notes inside the pack.
+- Destination: two domain-pack skills under `skills/` — `flow-control-generator` (one-pass DAG flows) and `flow-loop-harness` (iterative loops; separate because runaway-cost/side-effect risk differs, triggers are disjoint, and the harness-readable `human_review_required` split would be lost in a merge).
+- Status: **user-directed Acquisition L2 exception** (skill drafts), recorded with demotion triggers instead of recurrence evidence. The stub dry-run (`AGENT_CMD` override) is an L3-style verifier artifact only; full Acquisition L3 additionally requires the fail-closed security gates of `04-agent/artifact-promotion.md` §4 and replay evidence from a real task.
+- Explicitly **not** core workflow skills: the nine-skill routing surface is unchanged; `reflective-dispatch` gains no route row. Discoverability is provided by the registered-domain-pack sections in `skills/skill-map.md` and the trigger cheatsheet, plus escalation notes inside the pack (2026-07-11 panel, RoutingDiscovery lens).
+- Registration: `DOMAIN_PACK_SKILLS` in `plans/validate_skill_examples.py`, enforced by `plans/validate_governance.py` (unregistered-directory check, domain-pack self-label, no core context-load row) and the amended nine-core guard tests.
 - TeaPrompt still operates no runtime: generated scripts run on the host; their operational guarantees are the host's to prove.
 
 ## Demotion Triggers
 
 - Zero invocations after three months, or generated scripts repeatedly fail stub dry runs → fold both skills back into a reference section of `workflow-recipes.md` and retire the pack.
 - A host-native flow feature (e.g., a first-party goal/loop mode) covering all pack templates with enforcement → demote the loop skill first (host-native beats local scripts).
+
+## Panel Review and Candidate Adoption Ledger (2026-07-11)
+
+The pack was adversarially reviewed the same day by a six-lens parallel panel — see [flow-control-pack-panel-record-2026-07-11.md](flow-control-pack-panel-record-2026-07-11.md). Consensus `AGREE WITH CHANGES` (6/6). A second six-lens panel the same day reviewed pack COVERAGE against the whole `plans/` survey corpus — see [flow-coverage-panel-record-2026-07-11.md](flow-coverage-panel-record-2026-07-11.md) (rows P8+). Panel ceremony is proportionate by design: pack-wide governance or coverage changes get a parallel-lens panel; routine L1–L2 template tweaks do not (`workflow-possibilities-constraints-review-2026-07-06.md`, Constraints Judged Too Rigid #6). Adoption state of the panels' candidates:
+
+| # | Candidate | Status | Evidence | Next action / trigger |
+| --- | --- | --- | --- | --- |
+| P1 | Option B placement: CORE_SKILLS vs DOMAIN_PACK_SKILLS registry + guard amendment | Adopted 2026-07-11 | `plans/validate_skill_examples.py`, `plans/validate_governance.py`, amended tests in `plans/tests/` | none |
+| P2 | Fix nine confirmed template bugs (B1–B9) | Adopted 2026-07-11 | Both SKILL.md templates; rig transcript in panel record | none |
+| P3 | Runtime-boundary wording C1–C6 (resume convention, L2/L3 relabel, permission boundary, §4 gates) | Adopted 2026-07-11 | Both SKILL.md files; this record | none |
+| P4 | Evidence relabel: gap = user-directed exception, tier caveats propagated | Adopted 2026-07-11 | This record, Convergent Concepts + Local Gap Analysis | none |
+| P5 | Discoverability: skill-map + EN cheatsheet domain-pack sections; no dispatch route row | Adopted 2026-07-11 | `skills/skill-map.md`, `skills/SKILL_TRIGGER_CHEATSHEET.md`, guard test `test_skill_map_lists_domain_packs` | zh-TW cheatsheet parity when EN stable |
+| P6 | Merge to one skill (Minimality lens) | Deferred | Panel record, Disagreements | Re-litigate if either skill sees zero solo invocations by 2026-10-11 |
+| P7 | Router/quick-cue integration for pack boundaries | Deferred | Panel record (RoutingDiscovery) | New ROUTE-002/003 holdout groups first; holdout-before-tune |
+| P8 | Coverage-panel governance wording: methodology-vs-operationalization in both Purposes; Never additions (platform-vocabulary mandate ban, gate tampering, epistemic-vs-execution fan-out, no last-response fallback, run-state ≠ project memory); demotion-trigger sections; stub≠deploy tier; recurrence-before-team-standard; generated-by provenance comment; timeout wording; orchestrator data-not-authority + Stop-Doing boundary | Adopted 2026-07-11 | Both SKILL.md files; guard `plans/tests/test_flow_pack_adoption_state.py` | none |
+| P9 | Parallel quorum gate: `MIN_OK` explicit partial-failure policy (ReMoM `min_successful_responses`); strict default counts failures and non-empty outputs | Adopted 2026-07-11 | `flow-control-generator` parallel template; rig transcript in coverage panel record | none |
+| P10 | Router route-trace observability + explicit fail-closed vs default-up policy comment (ROUTING_CONTRACT R4/R5) | Adopted 2026-07-11 | `flow-control-generator` router template; rig transcript | none |
+| P11 | Loop state hygiene: RESUMED restart stanza, tail-as-compaction-budget wording, disposable `state/`, writer-critic deviation label, backlog constraint-tail comment | Adopted 2026-07-11 | `flow-loop-harness` Loop Anatomy + templates; rig transcript | none |
+| P12 | Conductor-style DAG executor template (OpenFugu, stdlib topological order + visibility-scoped prompts) | Deferred | Coverage panel record (HCM-024/025) | Add when a local task needs dependency-gated fan-out that pipeline/parallel/orchestrator cannot express |
+| P13 | Dedicated multi-wave ReMoM template | Deferred — composition note adopted instead (parallel template inside a loop) | Coverage panel record (HCM-004); `flow-control-generator` Topology Selection | Recurrence of real multi-wave runs |
+| P14 | `workflow-recipes.md` cross-references: Looper Topologies see-also block; Parallel Lens Review input-contract/merge-owner line | Adopted 2026-07-11 | `04-agent/workflow-recipes.md` | none |
+| P15 | Frozen-core parity items (reflective-research Blind Spots section; historical-banner forward pointers) | Escalated — outside pack scope | Coverage panel record (RFM-05) | Own review with core-skill promotion gate |
 
 ## Sources
 

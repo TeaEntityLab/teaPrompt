@@ -7,11 +7,18 @@ Validates that all SKILL.md files have required governance metadata:
 - human_review_required (true/false)
 - external_io (true/false)
 - context_load (low/medium/high)
+
+Also enforces the skills-directory registry: every SKILL.md under skills/
+must be one of the nine frozen CORE_SKILLS or a registered domain-pack skill
+(2026-07-11 flow-control pack panel, Option B). Domain packs must self-label
+as domain packs and never claim a core context-load row.
 """
 
 import re
 from pathlib import Path
 from typing import Dict, List
+
+from validate_skill_examples import CORE_SKILLS, DOMAIN_PACK_SKILLS
 
 
 CANONICAL_CONTEXT_LOAD = {
@@ -47,6 +54,19 @@ class GovernanceValidator:
         
         # Find all SKILL.md files
         skill_files = list(skills_dir.rglob("SKILL.md"))
+
+        registered = set(CORE_SKILLS) | set(DOMAIN_PACK_SKILLS)
+        found = {f.parent.name for f in skill_files}
+        for name in sorted(found - registered):
+            self.results["invalid_skills"] += 1
+            self.results["errors"].append({
+                "file": f"reflective-prompt-library/skills/{name}/SKILL.md",
+                "errors": [
+                    "Unregistered skill directory: add to CORE_SKILLS (nine, "
+                    "frozen, promotion-gated) or DOMAIN_PACK_SKILLS in "
+                    "validate_skill_examples.py with a panel/decision record"
+                ],
+            })
         self.results["total_skills"] = len(skill_files)
         
         for skill_file in skill_files:
@@ -87,6 +107,19 @@ class GovernanceValidator:
                 skill_errors.append(
                     f"context_load must be {expected_load!r} for {skill_name} (panel table)"
                 )
+
+            if skill_name in DOMAIN_PACK_SKILLS:
+                if skill_name in CANONICAL_CONTEXT_LOAD:
+                    skill_errors.append(
+                        f"{skill_name} is a domain pack and must not appear in "
+                        "CANONICAL_CONTEXT_LOAD (core table)"
+                    )
+                if "domain-pack" not in content.lower():
+                    skill_errors.append(
+                        "Domain-pack skill must self-label: body must state it "
+                        "is a domain pack, not one of the nine core workflow "
+                        "skills"
+                    )
 
             if skill_errors:
                 self.results["invalid_skills"] += 1

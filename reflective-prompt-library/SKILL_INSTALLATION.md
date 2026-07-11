@@ -48,7 +48,7 @@ For this repository, project-local install is the safest default.
 From the repo root:
 
 ```bash
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   test -d "$skill" || continue
   echo "$(basename "$skill")"
 done
@@ -72,7 +72,7 @@ Install all reflective skills into a target directory:
 install_skills_symlink() {
   local dest="$1"
   mkdir -p "$dest"
-  for skill in reflective-prompt-library/skills/reflective-*; do
+  for skill in reflective-prompt-library/skills/*; do
     name="$(basename "$skill")"
     ln -sfn "$(pwd)/$skill" "$dest/$name"
   done
@@ -94,7 +94,7 @@ Project install (copy):
 
 ```bash
 mkdir -p .claude/skills
-cp -R reflective-prompt-library/skills/reflective-* .claude/skills/
+cp -R reflective-prompt-library/skills/* .claude/skills/
 ```
 
 Project install (symlink):
@@ -107,14 +107,14 @@ Personal install (copy):
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R reflective-prompt-library/skills/reflective-* ~/.claude/skills/
+cp -R reflective-prompt-library/skills/* ~/.claude/skills/
 ```
 
 Personal install (symlink):
 
 ```bash
 mkdir -p ~/.claude/skills
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$(pwd)/$skill" "$HOME/.claude/skills/$name"
 done
@@ -150,7 +150,7 @@ Personal Codex install (copy):
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R reflective-prompt-library/skills/reflective-* "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R reflective-prompt-library/skills/* "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
 Personal Codex install (symlink):
@@ -158,7 +158,7 @@ Personal Codex install (symlink):
 ```bash
 CODEX_SKILLS="${CODEX_HOME:-$HOME/.codex}/skills"
 mkdir -p "$CODEX_SKILLS"
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$(pwd)/$skill" "$CODEX_SKILLS/$name"
 done
@@ -176,7 +176,7 @@ Project-shared option (copy):
 
 ```bash
 mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/reflective-* .agents/skills/
+cp -R reflective-prompt-library/skills/* .agents/skills/
 ```
 
 Project-shared option (symlink):
@@ -200,7 +200,7 @@ Prefer the shared project location when available (copy):
 
 ```bash
 mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/reflective-* .agents/skills/
+cp -R reflective-prompt-library/skills/* .agents/skills/
 ```
 
 Shared project location (symlink):
@@ -213,7 +213,7 @@ Cursor-specific project location, if supported by your build (copy):
 
 ```bash
 mkdir -p .cursor/skills
-cp -R reflective-prompt-library/skills/reflective-* .cursor/skills/
+cp -R reflective-prompt-library/skills/* .cursor/skills/
 ```
 
 Cursor-specific project location (symlink):
@@ -277,7 +277,7 @@ Workspace install (copy):
 
 ```bash
 mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/reflective-* .agents/skills/
+cp -R reflective-prompt-library/skills/* .agents/skills/
 ```
 
 Workspace install (symlink):
@@ -290,14 +290,14 @@ Global install (copy):
 
 ```bash
 mkdir -p ~/.gemini/antigravity/skills
-cp -R reflective-prompt-library/skills/reflective-* ~/.gemini/antigravity/skills/
+cp -R reflective-prompt-library/skills/* ~/.gemini/antigravity/skills/
 ```
 
 Global install (symlink):
 
 ```bash
 mkdir -p ~/.gemini/antigravity/skills
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$(pwd)/$skill" "$HOME/.gemini/antigravity/skills/$name"
 done
@@ -334,7 +334,7 @@ Project install (copy):
 
 ```bash
 mkdir -p .opencode/skills
-cp -R reflective-prompt-library/skills/reflective-* .opencode/skills/
+cp -R reflective-prompt-library/skills/* .opencode/skills/
 ```
 
 Project install (symlink):
@@ -347,14 +347,14 @@ Global install (copy):
 
 ```bash
 mkdir -p ~/.config/opencode/skills
-cp -R reflective-prompt-library/skills/reflective-* ~/.config/opencode/skills/
+cp -R reflective-prompt-library/skills/* ~/.config/opencode/skills/
 ```
 
 Global install (symlink):
 
 ```bash
 mkdir -p ~/.config/opencode/skills
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$(pwd)/$skill" "$HOME/.config/opencode/skills/$name"
 done
@@ -364,7 +364,7 @@ Shared project install (copy):
 
 ```bash
 mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/reflective-* .agents/skills/
+cp -R reflective-prompt-library/skills/* .agents/skills/
 ```
 
 Shared project install (symlink):
@@ -403,7 +403,7 @@ From the TeaPrompt repo root (equivalent to `install_skills_symlink .agents/skil
 
 ```bash
 mkdir -p .agents/skills
-for skill in reflective-prompt-library/skills/reflective-*; do
+for skill in reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$(pwd)/$skill" ".agents/skills/$name"
 done
@@ -415,7 +415,7 @@ Symlink into another project that vendors TeaPrompt as a submodule or sibling ch
 TEAPROMPT=/path/to/teaPrompt
 PROJECT=/path/to/your-app
 mkdir -p "$PROJECT/.agents/skills"
-for skill in "$TEAPROMPT"/reflective-prompt-library/skills/reflective-*; do
+for skill in "$TEAPROMPT"/reflective-prompt-library/skills/*; do
   name="$(basename "$skill")"
   ln -sfn "$skill" "$PROJECT/.agents/skills/$name"
 done
