@@ -108,3 +108,47 @@ description: test
         for item in results["errors"]
         for err in item["errors"]
     )
+
+
+def test_domain_pack_missing_self_label_fails_validation(tmp_path):
+    skills_dir = (
+        tmp_path
+        / "reflective-prompt-library"
+        / "skills"
+        / "flow-control-generator"
+    )
+    skills_dir.mkdir(parents=True)
+    skills_dir.joinpath("SKILL.md").write_text(
+        """---
+name: flow-control-generator
+description: test
+license: MIT
+risk_level: medium
+human_review_required: false
+external_io: false
+context_load: medium
+---
+# Test
+""",
+        encoding="utf-8",
+    )
+    results = GovernanceValidator(str(tmp_path)).validate_all()
+    assert results["invalid_skills"] == 1
+    assert any(
+        "Domain-pack skill must self-label" in err
+        for item in results["errors"]
+        for err in item["errors"]
+    )
+
+
+def test_domain_packs_are_absent_from_dispatch_route_table():
+    dispatch = (
+        REPO_ROOT
+        / "reflective-prompt-library"
+        / "skills"
+        / "reflective-dispatch"
+        / "SKILL.md"
+    ).read_text(encoding="utf-8")
+    route = dispatch.split("## Route", 1)[1].split("## Strictness Ladder", 1)[0]
+    for pack in DOMAIN_PACK_SKILLS:
+        assert pack not in route, f"{pack} must remain outside core dispatch routes"

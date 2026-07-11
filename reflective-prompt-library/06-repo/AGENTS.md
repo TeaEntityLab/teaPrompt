@@ -51,8 +51,10 @@ runtime. For non-trivial routing, governance, or skill-selection work:
    outside the core set. They are host-invoked contracts, not selectable by
    `reflective-dispatch` route rows. Adding or extending one requires explicit
    human approval, a panel/decision record with Candidate Adoption Ledger,
-   demotion triggers, and registry/guard updates. An explicit user instruction
-   may supply approval, but recurrence evidence stays `unknown` unless observed;
+   demotion triggers, and registry/guard updates. Persistent guards follow
+   [Adoption Guard Closure](../GLOSSARY.md#adoption-guard-closure). An explicit
+   user instruction may supply approval, but recurrence evidence stays `unknown`
+   unless observed;
    this exception never waives the tenth-core promotion gate. See
    [skills/skill-map.md](../skills/skill-map.md#registered-domain-packs-not-core-routing).
 4. **Fast routing** — [skills/SKILL_TRIGGER_CHEATSHEET.md](../skills/SKILL_TRIGGER_CHEATSHEET.md)

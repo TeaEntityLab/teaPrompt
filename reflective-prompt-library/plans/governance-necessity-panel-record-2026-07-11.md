@@ -4,7 +4,7 @@
 
 Record the adversarial review requested as: **"The necessary reasons of nine frozen core + two registered domain packs, if not why keep these rules. Fully exam all the rules and constraints of this project."**
 
-This is a governance/methodology judgment artifact, not an agent operating rule. It does not amend `06-repo/AGENTS.md`, any `SKILL.md`, or the skill registries. Canonical policy changes remain subject to Human Review; candidates below are explicitly deferred rather than mislabeled adopted.
+This remains a governance/methodology judgment artifact, not an agent operating rule by itself. After the review, the user explicitly directed **"Do the consensus now"**, satisfying Human Review for actionable candidates N2–N7, N9, and N10. Their authority comes from the amended canonical policy, consumer surfaces, validators, and guards named below—not from this record alone.
 
 ## Scope and packet
 
@@ -187,23 +187,46 @@ Mechanical proxies for those would create false confidence.
 
 ## Candidate Adoption Ledger
 
-No policy wording is adopted by this review alone. Existing keep/no-change decisions are recorded separately from proposed edits.
+The review initially deferred policy edits for Human Review. The user's subsequent explicit instruction adopted the actionable consensus; the ledger now distinguishes implemented rows from rejected and still-trigger-gated rows.
 
 | ID | Candidate | Status | Evidence | Next action or trigger |
 | --- | --- | --- | --- | --- |
 | N1 | Keep a bounded nine-name core registry and keep the two current packs outside core routing | **No-change / keep** | Six-lens consensus; current registry, dispatch, and route fixtures | Re-open only on a verified core gap, pack demotion, or a replacement tier-aware router. |
-| N2 | Amend `06-repo/AGENTS.md` with one binding domain-pack admission rule: registered, host-invoked, not dispatch-routed; explicit Human Review + panel ledger + demotion trigger; user direction may establish approval but recurrence remains `unknown` | **Deferred — Human Review required** | T1: mechanism exists in validators/panel record but not canonical policy | User explicitly approves harness-policy change. Do not generalize the flow-pack exception before then. |
-| N3 | Add one canonical two-tier gloss and pointers in root/library README, `CONTRIBUTING.md`, `METHODOLOGY_MAP.md`, and PK; avoid duplicating the full rule everywhere | **Deferred with N2** | T8 wording drift; `skill-map.md` already owns the detailed map | Apply only after N2 wording is approved. |
-| N4 | Repair `SKILL_INSTALLATION.md`: core-only default; explicit optional domain-pack install; copy/symlink only directories containing `SKILL.md` | **Deferred — consumer behavior change** | Repeated `skills/*` commands currently install packs and non-skill entries | Human chooses default install semantics (core-only recommended versus all registered skills). |
-| N5 | Add cheap structural guards: pack names absent from dispatch route rows; domain-pack self-label negative test; pack example pytest mirror; full Module Contract parity for packs | **Deferred with N2/N4** | Enforcement audit found deterministic silent gaps | Implement with the approved tier contract; do not add a meaningless "pack context_load must differ" guard. |
-| N6 | Reframe "nine" as current core cardinality, not optimal number | **Deferred with N2** | June record froze existing set; no cardinality derivation | Use one canonical wording and pointer; preserve exact count guard while set stays nine. |
-| N7 | Define adoption-guard closure: temporary phrase pins retire or become structural after adoption; permanent guards must defend structure, registry parity, executable behavior, or stable protocol tokens | **Deferred — governance-test policy** | T5 mixed guard audit; 314 lines across three adoption modules | Audit individual assertions; do not blanket-delete feature/source-contract checks. |
+| N2 | Amend `06-repo/AGENTS.md` with one binding domain-pack admission rule: registered, host-invoked, not dispatch-routed; explicit Human Review + panel ledger + demotion trigger; user direction may establish approval but recurrence remains `unknown` | **Adopted 2026-07-11 — explicit Human Review** | `06-repo/AGENTS.md` item 3; `GLOSSARY.md` Adoption Guard Closure | Future pack additions must satisfy this rule; it never waives tenth-core promotion. |
+| N3 | Add one canonical two-tier gloss and pointers in root/library README, `CONTRIBUTING.md`, `METHODOLOGY_MAP.md`, and PK; avoid duplicating the full rule everywhere | **Adopted 2026-07-11** | Public surfaces point to `skills/skill-map.md` or canonical policy | Detailed admission wording remains single-source in `06-repo/AGENTS.md`. |
+| N4 | Repair `SKILL_INSTALLATION.md`: core-only default; explicit optional domain-pack install; copy/symlink only directories containing `SKILL.md` | **Adopted 2026-07-11** | Four core/pack copy/symlink helpers; macOS `/bin/bash` smoke matrix produced exactly 9 core + 2 pack directories | Keep default core-only; registry-parity test guards explicit pack names. |
+| N5 | Add cheap structural guards: pack names absent from dispatch route rows; domain-pack self-label negative test; pack example pytest mirror; full Module Contract parity for packs | **Adopted 2026-07-11** | Existing `test_validate_governance.py`, `test_validate_skill_examples.py`, `test_skill_module_contract.py`, and `test_readme_governance.py` strengthened | Do not add a meaningless "pack context_load must differ" guard. |
+| N6 | Reframe "nine" as current core cardinality, not optimal number | **Adopted 2026-07-11** | Canonical policy, README surfaces, methodology map, PK, skill map, and cheatsheet introductions | Exact registry count remains mechanically guarded while the set stays nine. |
+| N7 | Define adoption-guard closure: temporary phrase pins retire or become structural after adoption; permanent guards must defend structure, registry parity, executable behavior, or stable protocol tokens | **Adopted 2026-07-11** | `GLOSSARY.md` § Adoption Guard Closure; adoption tests narrowed; touched governance tests made order-independent | Audit each assertion; do not blanket-delete feature/source-contract checks. |
 | N8 | Replace the historical ~2.45 meta:product claim with 1.844 | **Rejected** | Formulas are not comparable; the recovered lens initially measured the wrong denominator | If this metric remains useful, first define and guard a stable numerator/denominator; otherwise retire it. |
-| N9 | Fold duplicate E5 wording to a pointer to B3/ROUTING_CONTRACT R8 | **Deferred — low priority** | Same mechanism; no independent rule | Apply during the next edit touching Standing Non-Goals, not as a standalone churn patch. |
-| N10 | Reconcile `license` frontmatter: required versus recommended | **Deferred — schema decision** | `CONTRIBUTING.md` and `validate_links.py` disagree | Decide whether independently copied skill dirs require explicit license; then align validator + contributor docs. |
+| N9 | Fold duplicate E5 wording to a pointer to B3/ROUTING_CONTRACT R8 | **Adopted 2026-07-11** | PK Standing Non-Goals now points to R8 and retains the regression-guard caveat | `ROUTING_CONTRACT.md` remains canonical. |
+| N10 | Reconcile `license` frontmatter: required versus recommended | **Adopted 2026-07-11 — license required** | `validate_links.py` requires `name`, `description`, `license`; focused negative pytest | Preserve portable licensing for independently copied skill directories. |
 | N11 | Merge/demote one of the two packs now | **Deferred under existing P6** | Distinct Human Review defaults; no usage evidence | Re-litigate 2026-10-11 if either skill has zero solo invocations; instrument evidence manually because TeaPrompt has no telemetry. |
 | N12 | Add pack trigger phrases to core router now | **Deferred under existing P7** | Trigger collision is plausible but unmeasured | Holdout-before-tune: first add ROUTE-002/003 groups, then decide whether dispatch should route to packs at all. |
 | N13 | Add same-host evidence-tier caveat to every historical panel record | **No mass edit** | Several records already state the same-host/advisory caveat; rewriting history adds churn | This record states it. Add caveat to future records through the existing packet contract. |
+
+## Adoption Update — Explicit Human Review
+
+The adopted scope is deliberately narrower than "change everything":
+
+- N2–N7, N9, and N10 are implemented at their named surfaces.
+- N8 remains rejected because the historical ratio is not reproducible under a matching formula.
+- N11/P6 remains deferred until the 2026-10-11 solo-invocation trigger.
+- N12/P7 remains deferred until fresh ROUTE-002/003 holdouts exist before tuning.
+- N13 remains no-mass-edit; future records inherit the evidence-tier contract.
+- No pack was merged, promoted into the nine core routes, or added to `reflective-dispatch`.
+
+Focused implementation evidence before the full repository gate:
+
+- macOS `/bin/bash` copy/symlink smoke matrix: exactly nine core directories and two optional pack directories; the first run caught and corrected BSD `cp -R` trailing-slash flattening;
+- license validator: 3 focused tests passed;
+- domain-pack/Module Contract/README/adoption guards: 76 focused tests passed;
+- isolated governance/adoption modules: 55 focused tests passed after removing test-order dependence.
+
+Full repository gate after adoption: `make all` collected and passed 782 tests;
+all validators passed; ROUTE-001/002/003 remained at 100% seeded-fixture
+consistency (128 / 114 / 66 phrases). This is regression evidence, not semantic
+routing proof.
 
 ## Falsifiability audit
 

@@ -354,6 +354,27 @@ Curated top-of-cheatsheet summary of high-confusion routing traps (ROUTE-002 hol
 
 ---
 
+## Adoption Guard Closure
+
+繁中：採用守門收束。
+
+An adoption-state guard is a migration guard, not a permanent license to pin
+paragraph prose:
+
+- **Open or partial ledger row:** a temporary phrase/token assertion may prove
+  that named wording reached its named surface.
+- **Adopted ledger row:** retain permanent checks only for structural invariants,
+  registry parity, executable behavior, or stable protocol tokens. Replace or
+  retire exact paragraph pins once a structural contract owns the behavior.
+- **Deferred or rejected row:** guard ledger presence and trigger state only;
+  never assert the deferred content as though it were adopted.
+
+This closure rule does not weaken safety gates: prompt-injection, supply-chain,
+memory-write, routing, and runtime-boundary checks remain wherever their stable
+contract or executable behavior is load-bearing.
+
+---
+
 ## Governance Maintenance Playbook / 治理維護手冊
 
 Ongoing upkeep after panel close (Rounds 1–101). Not agent instructions — operator checklist.
@@ -364,7 +385,7 @@ Ongoing upkeep after panel close (Rounds 1–101). Not agent instructions — op
 2. Add holdout cases **before** tuning `route_paraphrase_eval.py` keyword rules; `validate_route_fixture.py` blocks accidental shrinkage.
 3. Watch non-blocking undocumented-decision warnings from `validate_project_knowledge.py`.
 4. Keep manual `benchmark_tasks.py` runs optional — fixture gate only in CI.
-5. Reject tenth skill / full `SKILL.md` i18n unless promotion gate met (panel A, Q, W, AJ).
+5. Reject a tenth **core** skill / full `SKILL.md` i18n unless its promotion gate is met; registered domain packs instead follow `06-repo/AGENTS.md` item 3 and never enter core routing by implication.
 6. When cheatsheet boundary quick cues change, update `BOUNDARY_QUICK_CUE_*` markers and probe snippets in `test_validate_route_fixture.py`; run `test_cheatsheet_boundary_quick_cues.py`.
 7. When holdout probe tuples change in `test_validate_route_fixture.py`, mirror cues in EN/zh-TW cheatsheets and run `test_cheatsheet_*_parity.py` (e.g. `test_cheatsheet_dispatch_meta_parity.py`).
 8. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.

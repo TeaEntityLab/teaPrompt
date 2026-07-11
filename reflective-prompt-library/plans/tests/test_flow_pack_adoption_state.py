@@ -1,14 +1,18 @@
-"""Guard: 2026-07-11 flow-pack coverage-panel adoptions stay adopted at their named surfaces.
+"""Guard adopted flow-pack contracts at their named surfaces.
 
-Mirrors test_candidate_adoption_state.py: each adopted ledger row (P8-P15 in
-plans/agent-flow-control-research-2026-07-11.md) that pins wording at a named
-surface gets one deterministic check. Deferred rows are guarded only for
-ledger presence, never for content.
+Mirrors test_candidate_adoption_state.py: adopted ledger rows (P8-P15 in
+plans/agent-flow-control-research-2026-07-11.md) get structural, executable-
+symbol, or stable-protocol checks. Deferred rows are guarded only for ledger
+presence, never content, per GLOSSARY Adoption Guard Closure.
 """
 
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 
 from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa: E402
 
@@ -22,12 +26,13 @@ def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-# P8 - methodology-vs-operationalization boundary in both Purposes.
+# P8 - methodology/operationalization boundary in both Purposes.
 @pytest.mark.parametrize("path", [GENERATOR, HARNESS])
 def test_p8_methodology_boundary_in_purpose(path: Path):
     text = _read(path)
-    assert "methodology-vs-operationalization boundary" in text
-    assert "external-adoption-case-studies-2026-06-20.md" in text
+    purpose = text.split("## Purpose", 1)[1].split("\n## ", 1)[0].lower()
+    assert "methodology" in purpose and "operational" in purpose
+    assert "external-adoption-case-studies-2026-06-20.md" in purpose
 
 
 # P8 - demotion triggers section in both skills.
@@ -39,8 +44,9 @@ def test_p8_demotion_triggers_section(path: Path):
 # P8 - run state is not project memory (harness Never).
 def test_p8_run_state_not_project_memory():
     text = _read(HARNESS)
-    assert "Never treat run state as project memory" in text
-    assert "reflective-handoff-retro" in text
+    never = text.split("Never:", 1)[1].split("Escalation:", 1)[0].lower()
+    assert "run state" in never and "project memory" in never
+    assert "reflective-handoff-retro" in never
 
 
 # P9 - parallel quorum gate is an explicit policy.

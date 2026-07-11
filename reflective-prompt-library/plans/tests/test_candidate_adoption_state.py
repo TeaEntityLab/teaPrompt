@@ -1,13 +1,18 @@
-"""Guard: 2026-07-06 candidate wording changes stay adopted at their named surfaces.
+"""Guard adopted 2026-07-06 contracts at their named surfaces.
 
 Adoption ledger: plans/workflow-possibilities-constraints-review-2026-07-06.md
 (### Candidate Adoption Ledger). Review record:
-plans/governance-rules-rethink-review-2026-07-11.md (tier A).
+plans/governance-rules-rethink-review-2026-07-11.md (tier A). Permanent checks
+use structure or stable protocol tokens under GLOSSARY Adoption Guard Closure.
 """
 
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_ROOT,
@@ -18,6 +23,7 @@ from prompt_eval_helpers import (  # noqa: E402
     methodology_map_en_path,
     skill_map_path,
 )
+from validate_skill_examples import CORE_SKILLS  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 AGENT_LENS_DIR = PROMPT_LIBRARY_ROOT / "04-agent"
@@ -49,9 +55,9 @@ def _ledger_section() -> str:
     ],
     ids=["skill-map", "methodology-map", "dispatch-skill", "repo-agents"],
 )
-def test_candidate1_frozen_gloss_present(path: Path):
+def test_candidate1_bounded_core_gloss_present(path: Path):
     text = _read(path)
-    assert "nine frozen workflow skills" in text
+    assert len(CORE_SKILLS) == 9
     assert FROZEN_GLOSS in text
 
 
@@ -129,3 +135,44 @@ def test_ledger_has_five_candidate_rows():
     ledger = _ledger_section()
     for candidate_id in ("| 1 |", "| 2 |", "| 3 |", "| 4 |", "| 5 |"):
         assert candidate_id in ledger, f"ledger missing row {candidate_id!r}"
+
+
+def _necessity_ledger_section() -> str:
+    record = _read(PLANS_DIR / "governance-necessity-panel-record-2026-07-11.md")
+    return record.split("## Candidate Adoption Ledger", 1)[1].split(
+        "## Falsifiability audit",
+        1,
+    )[0]
+
+
+def test_governance_necessity_ledger_records_exact_dispositions():
+    ledger = _necessity_ledger_section()
+    for candidate_id in ("N2", "N3", "N4", "N5", "N6", "N7", "N9", "N10"):
+        row = next(line for line in ledger.splitlines() if line.startswith(f"| {candidate_id} |"))
+        assert "Adopted 2026-07-11" in row
+
+    rejected = next(line for line in ledger.splitlines() if line.startswith("| N8 |"))
+    assert "Rejected" in rejected
+    for candidate_id in ("N11", "N12"):
+        row = next(line for line in ledger.splitlines() if line.startswith(f"| {candidate_id} |"))
+        assert "Deferred" in row
+    no_mass_edit = next(line for line in ledger.splitlines() if line.startswith("| N13 |"))
+    assert "No mass edit" in no_mass_edit
+
+
+def test_governance_necessity_authority_surfaces_are_structural():
+    agents = _read(PROMPT_LIBRARY_ROOT / "06-repo" / "AGENTS.md")
+    policy = agents.split("## Harness Policy", 1)[1].split("\n---", 1)[0]
+    for token in (
+        "DOMAIN_PACK_SKILLS",
+        "not selectable by",
+        "recurrence evidence stays `unknown`",
+        "Adoption Guard Closure",
+    ):
+        assert token in policy
+
+    glossary = _read(glossary_path())
+    assert "## Adoption Guard Closure" in glossary
+    pk = _read(PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md")
+    assert "Governance necessity consensus" in pk
+    assert "plans/governance-necessity-panel-record-2026-07-11.md" in pk

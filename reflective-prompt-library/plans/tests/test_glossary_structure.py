@@ -1,9 +1,13 @@
 """Anti-drift checks for GLOSSARY.md structure and round references."""
 
-from pathlib import Path
 import re
+import sys
+from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 
 from prompt_eval_helpers import glossary_path  # noqa: E402
 
@@ -27,6 +31,7 @@ def test_round_boundary_terms_present(glossary_text: str):
         "## Approved-Spec Delivery",
         "## Boundary Quick Cues",
         "## Governance Maintenance Playbook",
+        "## Adoption Guard Closure",
     )
     for heading in required:
         assert heading in glossary_text, f"missing glossary section: {heading}"
@@ -74,3 +79,20 @@ def test_approved_spec_delivery_separated_from_playbook(glossary_text: str):
     assert not pattern.search(glossary_text), (
         "missing --- between Approved-Spec Delivery and Governance Maintenance Playbook"
     )
+
+
+def test_adoption_guard_closure_distinguishes_ledger_states(glossary_text: str):
+    section = glossary_text.split("## Adoption Guard Closure", 1)[1].split(
+        "\n---",
+        1,
+    )[0]
+    for state in ("Open or partial ledger row", "Adopted ledger row", "Deferred or rejected row"):
+        assert state in section
+    for durable_contract in (
+        "structural invariants",
+        "registry parity",
+        "executable behavior",
+        "stable protocol tokens",
+    ):
+        assert durable_contract in section
+    assert "exact paragraph pins" in section

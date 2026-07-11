@@ -7,9 +7,13 @@ for ledger presence only, never content. D1 discipline: headings, tokens, and li
 targets - not paragraph pins.
 """
 
+import sys
 from pathlib import Path
 
 import pytest
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 
 from prompt_eval_helpers import PROMPT_LIBRARY_ROOT  # noqa: E402
 
