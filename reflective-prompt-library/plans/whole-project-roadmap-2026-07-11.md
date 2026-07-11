@@ -38,9 +38,13 @@ does not support.
 | Optional manual benchmark run | Operator discretion (never CI) | `benchmark_tasks.py` baseline-vs-skill comparison | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
 
 Near-term actionable tasks T1 (P15 parity review), T2 (zh-TW pack-appendix parity),
-and T3 (manual pack-usage evidence convention) are defined with acceptance criteria
-in the [plan's open-work register](whole-project-plan-2026-07-11.md#consolidated-open-work-register);
-T3 must land before the Horizon 2 checkpoint to make P6 evidential.
+T3 (manual pack-usage evidence convention), and T4 (loop-pack demotion-trigger
+evaluation, added 2026-07-11 after the
+[skills/flow-control survey](../../surveys/agent-skills-flow-control-survey-2026-07-11.md))
+are defined with acceptance criteria in the
+[plan's open-work register](whole-project-plan-2026-07-11.md#consolidated-open-work-register);
+T3 must land before the Horizon 2 checkpoint to make P6 evidential, and T4's
+seed analysis lives in the [flow-control roadmap](flow-control-roadmap-2026-07-11.md).
 
 ## Horizon 2 — Date-gated checkpoint: 2026-10-11
 
@@ -51,6 +55,7 @@ The only calendar commitment currently on record. Agenda:
 | P6 / N11 — pack merge re-litigation | Did either `flow-control-generator` or `flow-loop-harness` see zero solo invocations? If yes, re-open merge-to-one-skill (Minimality dissent preserved) | Manual usage log (task T3); `unknown` must be recorded as `unknown` | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md), [Necessity N11](governance-necessity-panel-record-2026-07-11.md) |
 | Pack utility claims re-verification | Utility claims above template correctness were labeled `[INFERENCE]` until this review | Same usage log | [Pack record §Disagreements](flow-control-pack-panel-record-2026-07-11.md) |
 | T2 stability check | EN pack appendix unedited since 2026-07-11? Then zh-TW parity qualifies as due | Git history of the EN cheatsheet | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md) |
+| T4 / F1 — loop-pack demotion evaluation | Did host-native `/goal`/`/loop`/Stop-hook surfaces fire the pack's demotion trigger (fully, partially, not at all)? | Evaluation record per [flow-control roadmap F1](flow-control-roadmap-2026-07-11.md); same usage log as P6 | [Pack record §Demotion Triggers](flow-control-pack-panel-record-2026-07-11.md) |
 | Roadmap self-review | Any trigger below fired unnoticed? Any staleness falsifier hit? | This file vs Decision Index diff | [Plan §Falsifiability](whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan) |
 
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next
@@ -60,7 +65,7 @@ governance panel, whenever that occurs ([managed-skill record](managed-skill-pro
 
 | Item | Wakes when | Destination surface | Source |
 | --- | --- | --- | --- |
-| P7 / N12 — pack trigger phrases in core router + quick cues | New ROUTE-002/003 holdout groups covering pack/core collisions exist first (holdout-before-tune); then decide whether dispatch should route to packs at all | Route fixtures, router, cheatsheets | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md), [Necessity N12](governance-necessity-panel-record-2026-07-11.md) |
+| P7 / N12 — pack trigger phrases in core router + quick cues | New ROUTE-002/003 holdout groups covering pack/core collisions exist first (holdout-before-tune); then decide whether dispatch should route to packs at all. Candidate groups + pre-tune procedure: [routing-holdout plan](routing-holdout-plan-2026-07-11.md) | Route fixtures, router, cheatsheets | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md), [Necessity N12](governance-necessity-panel-record-2026-07-11.md) |
 | P12 — Conductor-style DAG executor template | First local task needing dependency-gated fan-out that pipeline/parallel/orchestrator templates cannot express | `flow-control-generator` | [Flow-coverage §Deferred](flow-coverage-panel-record-2026-07-11.md) |
 | P13 — dedicated multi-wave ReMoM template | Recurrence of real multi-wave runs (composition note already adopted) | `flow-loop-harness` | [Flow-coverage §Deferred](flow-coverage-panel-record-2026-07-11.md) |
 | M4 — ephemeral-source internalization deltas | Third documented local occurrence (count today: 1) | [`04-agent/workflow-acquisition.md`](../04-agent/workflow-acquisition.md) | [Managed-skill M4](managed-skill-promotion-panel-record-2026-07-11.md) |

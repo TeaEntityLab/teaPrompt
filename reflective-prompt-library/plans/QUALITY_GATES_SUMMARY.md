@@ -38,7 +38,7 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Current generated index snapshot: 104 total files after `generate_index.py` (2026-07-11 snapshot; includes prompt-library docs, skills, plans records, and the whole-project plan/roadmap).
+- Current generated index snapshot: 107 total files after `generate_index.py` (2026-07-11 snapshot; includes prompt-library docs, skills, plans records, and the active planning artifacts).
 - 2 main categories (prompt-library, skills)
 - 10 prompt-library subcategories
 - 11 skill subcategories (9 core + 2 registered domain packs)

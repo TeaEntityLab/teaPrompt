@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-11T18:18:19.963447",
+  "generated_at": "2026-07-11T18:31:55.215407",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -33,14 +33,17 @@
           "files": [
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
+            "skills-surface-plan-2026-07-11.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "routing-holdout-plan-2026-07-11.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
+            "flow-control-roadmap-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "openfugu-research-record-2026-06-25.md",
             "harness-1-state-ledger-research.md",
@@ -1067,6 +1070,83 @@
       "char_count": 4645
     },
     {
+      "path": "reflective-prompt-library/plans/skills-surface-plan-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-surface-plan-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "whole-project-plan-2026-07-11.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "../06-repo/AGENTS.md",
+          "routing-holdout-plan-2026-07-11.md",
+          "validate_links.py",
+          "../SKILL_INSTALLATION.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skills-Surface Plan — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Why"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Tasks"
+        },
+        {
+          "level": 3,
+          "text": "S1 — skills-ref conformance verification (unblocked; do first)"
+        },
+        {
+          "level": 3,
+          "text": "S2 — spec-constraint guard candidate (small, deterministic)"
+        },
+        {
+          "level": 3,
+          "text": "S3 — distribution channels (trigger-gated)"
+        },
+        {
+          "level": 3,
+          "text": "S4 — installation-doc parity check (small, unblocked)"
+        },
+        {
+          "level": 3,
+          "text": "S5 — `compatibility` frontmatter for the packs (gated candidate)"
+        },
+        {
+          "level": 3,
+          "text": "S6 — invocation-control mapping note (gated candidate)"
+        },
+        {
+          "level": 2,
+          "text": "Sequencing"
+        },
+        {
+          "level": 2,
+          "text": "Risks"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 126,
+      "char_count": 6709
+    },
+    {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1363,6 +1443,9 @@
           "flow-coverage-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-roadmap-2026-07-11.md"
         ]
       },
@@ -1448,8 +1531,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 193,
-      "char_count": 12979
+      "line_count": 194,
+      "char_count": 13579
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -1558,6 +1641,81 @@
       ],
       "line_count": 105,
       "char_count": 8071
+    },
+    {
+      "path": "reflective-prompt-library/plans/routing-holdout-plan-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "routing-holdout-plan-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "ROUTING_CONTRACT.md",
+          "governance-rules-rethink-review-2026-07-11.md#adoption-update-3-2026-07-11",
+          "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Routing Holdout Expansion Plan — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Rules this plan operates under (pointers)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate ROUTE-003 groups (adversarial traps)"
+        },
+        {
+          "level": 3,
+          "text": "H1 `goal_mode_not_plan_trap`"
+        },
+        {
+          "level": 3,
+          "text": "H2 `loop_script_authoring_trap`"
+        },
+        {
+          "level": 3,
+          "text": "H3 `scheduled_check_boundary_trap`"
+        },
+        {
+          "level": 2,
+          "text": "Candidate ROUTE-002 groups (holdout)"
+        },
+        {
+          "level": 3,
+          "text": "H4 `skill_authoring_holdout`"
+        },
+        {
+          "level": 3,
+          "text": "H5 `skill_install_holdout`"
+        },
+        {
+          "level": 3,
+          "text": "H6 `goal_condition_design_holdout`"
+        },
+        {
+          "level": 2,
+          "text": "Execution checklist (for the change that adopts any of H1–H6)"
+        },
+        {
+          "level": 2,
+          "text": "Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 111,
+      "char_count": 6025
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1733,6 +1891,67 @@
       ],
       "line_count": 138,
       "char_count": 8726
+    },
+    {
+      "path": "reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "flow-control-roadmap-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "whole-project-roadmap-2026-07-11.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-coverage-panel-record-2026-07-11.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "routing-holdout-plan-2026-07-11.md",
+          "../04-agent/workflow-acquisition.md",
+          "../06-repo/AGENTS.md#harness-policy-nine-skills",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Flow-Control Roadmap — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "What changed today"
+        },
+        {
+          "level": 2,
+          "text": "F1 — Demotion-trigger evaluation for `flow-loop-harness` (Now; the new item)"
+        },
+        {
+          "level": 2,
+          "text": "F2 — Usage evidence for the 2026-10-11 checkpoint (Now)"
+        },
+        {
+          "level": 2,
+          "text": "F3 — Template evolution queue (trigger-gated; unchanged triggers, new context)"
+        },
+        {
+          "level": 2,
+          "text": "F4 — Host-feature watch table (standing; re-check before reliance)"
+        },
+        {
+          "level": 2,
+          "text": "Non-goals restated (pointers)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 88,
+      "char_count": 6065
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -2336,13 +2555,18 @@
           "governance-necessity-panel-record-2026-07-11.md",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#consolidated-open-work-register",
+          "flow-control-roadmap-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan",
           "managed-skill-promotion-panel-record-2026-07-11.md",
+          "routing-holdout-plan-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
@@ -2402,8 +2626,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 117,
-      "char_count": 10400
+      "line_count": 126,
+      "char_count": 11340
     },
     {
       "path": "reflective-prompt-library/plans/agent-flow-control-research-2026-07-11.md",
@@ -2807,7 +3031,7 @@
         }
       ],
       "line_count": 386,
-      "char_count": 21764
+      "char_count": 21835
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -9213,5 +9437,5 @@
       "char_count": 15020
     }
   ],
-  "total_files": 104
+  "total_files": 107
 }
