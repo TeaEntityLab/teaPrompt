@@ -1,6 +1,6 @@
 # Plan: Code Follow-ups for Prompt Library
 
-> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions. Open-work successor: [whole-project-plan-2026-07-11.md](whole-project-plan-2026-07-11.md) (register) and [whole-project-roadmap-2026-07-11.md](whole-project-roadmap-2026-07-11.md) (scheduling).
 
 
 ## Goal

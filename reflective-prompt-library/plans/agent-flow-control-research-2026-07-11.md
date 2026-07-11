@@ -95,7 +95,7 @@ The pack was adversarially reviewed the same day by a six-lens parallel panel �
 | P12 | Conductor-style DAG executor template (OpenFugu, stdlib topological order + visibility-scoped prompts) | Deferred | Coverage panel record (HCM-024/025) | Add when a local task needs dependency-gated fan-out that pipeline/parallel/orchestrator cannot express |
 | P13 | Dedicated multi-wave ReMoM template | Deferred — composition note adopted instead (parallel template inside a loop) | Coverage panel record (HCM-004); `flow-control-generator` Topology Selection | Recurrence of real multi-wave runs |
 | P14 | `workflow-recipes.md` cross-references: Looper Topologies see-also block; Parallel Lens Review input-contract/merge-owner line | Adopted 2026-07-11 | `04-agent/workflow-recipes.md` | none |
-| P15 | Frozen-core parity items (reflective-research Blind Spots section; historical-banner forward pointers) | Escalated — outside pack scope | Coverage panel record (RFM-05) | Own review with core-skill promotion gate |
+| P15 | Frozen-core parity items (reflective-research Blind Spots section; historical-banner forward pointers) | **Resolved 2026-07-11** — prompt-layer change + no-change pair; frozen-surface gate not fired | [Parity review record](frozen-core-parity-review-2026-07-11.md) | none |
 
 ## Sources
 

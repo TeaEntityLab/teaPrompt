@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-11T19:07:31.852106",
+  "generated_at": "2026-07-11T21:12:57.682192",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -61,6 +61,7 @@
             "ROUTING_CONTRACT.md",
             "openfugu-reference-plan-2026-06-25.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
+            "frozen-core-parity-review-2026-07-11.md",
             "openfugu-technical-brief-2026-06-25.md",
             "skill-workflow-research-synthesis.md",
             "multi-agent-panel-consensus-2026-06-25.md",
@@ -1446,6 +1447,7 @@
           "../GLOSSARY.md#adoption-guard-closure",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "flow-control-pack-panel-record-2026-07-11.md",
+          "frozen-core-parity-review-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-usage-log.md",
@@ -1539,7 +1541,7 @@
         }
       ],
       "line_count": 194,
-      "char_count": 13425
+      "char_count": 13578
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -2390,7 +2392,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md"
+        ]
       },
       "structure": [
         {
@@ -2471,7 +2476,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 3032
+      "char_count": 3226
     },
     {
       "path": "reflective-prompt-library/plans/code-followups-plan.md",
@@ -2484,7 +2489,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md"
+        ]
       },
       "structure": [
         {
@@ -2541,7 +2549,7 @@
         }
       ],
       "line_count": 129,
-      "char_count": 4211
+      "char_count": 4405
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md",
@@ -2652,7 +2660,8 @@
         "ref_snippet": [],
         "markdown_links": [
           "flow-control-pack-panel-record-2026-07-11.md",
-          "flow-coverage-panel-record-2026-07-11.md"
+          "flow-coverage-panel-record-2026-07-11.md",
+          "frozen-core-parity-review-2026-07-11.md"
         ]
       },
       "structure": [
@@ -2714,7 +2723,7 @@
         }
       ],
       "line_count": 115,
-      "char_count": 14243
+      "char_count": 14302
     },
     {
       "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
@@ -3436,6 +3445,67 @@
       ],
       "line_count": 75,
       "char_count": 4131
+    },
+    {
+      "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "frozen-core-parity-review-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "flow-coverage-panel-record-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "storm-perspective-discovery-reflection-2026-06-18.md",
+          "governance-rules-rethink-review-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "P15 Frozen-Core Parity Review — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Item 1 — `reflective-research` Blind Spots parity with `05-domain/research.md`"
+        },
+        {
+          "level": 3,
+          "text": "Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Divergence and decision"
+        },
+        {
+          "level": 2,
+          "text": "Item 2 — Historical-banner forward pointers in June plans"
+        },
+        {
+          "level": 3,
+          "text": "Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 90,
+      "char_count": 4968
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-technical-brief-2026-06-25.md",
@@ -5372,7 +5442,8 @@
         "ref_snippet": [],
         "markdown_links": [
           "flow-control-pack-panel-record-2026-07-11.md",
-          "agent-flow-control-research-2026-07-11.md"
+          "agent-flow-control-research-2026-07-11.md",
+          "frozen-core-parity-review-2026-07-11.md"
         ]
       },
       "structure": [
@@ -5422,7 +5493,7 @@
         }
       ],
       "line_count": 78,
-      "char_count": 12933
+      "char_count": 13202
     },
     {
       "path": "reflective-prompt-library/plans/skills-and-spec-systems-research-2026-06-25.md",
@@ -5631,7 +5702,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md"
+        ]
       },
       "structure": [
         {
@@ -5668,7 +5742,7 @@
         }
       ],
       "line_count": 54,
-      "char_count": 2129
+      "char_count": 2323
     },
     {
       "path": "reflective-prompt-library/plans/runtime-governance-learning-plan-2026-06-11.md",
@@ -5681,7 +5755,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md"
+        ]
       },
       "structure": [
         {
@@ -5738,7 +5815,7 @@
         }
       ],
       "line_count": 111,
-      "char_count": 5312
+      "char_count": 5506
     },
     {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
@@ -7839,7 +7916,7 @@
         }
       ],
       "line_count": 52,
-      "char_count": 1267
+      "char_count": 1351
     },
     {
       "path": "reflective-prompt-library/05-domain/learning-coach.md",
@@ -9555,5 +9632,5 @@
       "char_count": 16075
     }
   ],
-  "total_files": 109
+  "total_files": 110
 }

@@ -14,7 +14,7 @@ Structure research reports, trend analysis, platform comparison, and evidence ma
 ## Acceptance Criteria
 
 - Claims separated into supported, inferred, unverified, and needs fresh verification.
-- Blind-spot output names at least one gap no competing view touched.
+- Blind-spot output names at least one gap no competing view touched, or explicitly states that none was found — never a fabricated gap.
 
 ## Falsifiability
 
@@ -36,7 +36,7 @@ State what new evidence would overturn the strongest claim in the synthesis.
 6. Strong Claims
 7. Weak Claims
 8. Unknowns
-9. Blind Spots（沒有任何視角觸及之處）
+9. Blind Spots（沒有任何視角觸及之處；若確實沒有，請明確說明，不可虛構）
 10. Practical Implications
 11. Risks / Misinterpretations
 12. Decision Framework
