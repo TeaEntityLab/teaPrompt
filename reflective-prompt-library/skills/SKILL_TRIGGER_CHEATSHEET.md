@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_TRIGGER_CHEATSHEET.zh-TW.md)
 
 # Skill Trigger Cheatsheet
 
-This page is a fast selector for the 9 TeaPrompt workflow skills.
+This page is a fast selector for the 9 TeaPrompt **core** workflow skills; optional host-invoked domain packs are listed separately at the end.
 
 > **Output conventions:** A compact deliverable specification belongs in the
 > Module Contract's `Output:` field. Add a standalone `## Output` section only

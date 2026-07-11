@@ -10,10 +10,11 @@ TeaPrompt is a **reflective engineering prompt library** focused on quality over
 
 ## Harness Policy (Nine Skills)
 
-TeaPrompt ships **nine frozen workflow skills** as natural-language harness policy — not a multi-agent runtime.
+TeaPrompt ships **nine frozen core workflow skills** as natural-language harness policy — not a multi-agent runtime. Nine is the current bounded routing set, not an optimality claim; optional registered domain packs remain outside core routing.
 
-- Pick **Strictness L1–L6** before choosing a skill ([reflective-dispatch](reflective-prompt-library/skills/reflective-dispatch/SKILL.md)).
-- Do **not** add a tenth core skill without the three-recurrence promotion gate ([PROJECT_KNOWLEDGE](reflective-prompt-library/PROJECT_KNOWLEDGE.md)).
+- Pick **Strictness L1–L6** before choosing a core skill ([reflective-dispatch](reflective-prompt-library/skills/reflective-dispatch/SKILL.md)).
+- Do **not** add a tenth core skill without the three-recurrence promotion gate and explicit human approval ([PROJECT_KNOWLEDGE](reflective-prompt-library/PROJECT_KNOWLEDGE.md)).
+- Add or extend a domain pack only through the canonical admission rule in [`06-repo/AGENTS.md`](reflective-prompt-library/06-repo/AGENTS.md#harness-policy-nine-skills); keep it out of `reflective-dispatch` routes and update `DOMAIN_PACK_SKILLS`, its ledger, demotion triggers, and structural guards.
 - Routing fairness: [ROUTING_CONTRACT](reflective-prompt-library/plans/ROUTING_CONTRACT.md); panel record: [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md).
 
 ```bash

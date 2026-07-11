@@ -46,15 +46,14 @@ def test_broken_markdown_link_is_detected(tmp_path):
     assert results["markdown_link_errors"]
 
 
-def test_skill_frontmatter_requires_name_and_description(tmp_path):
+def test_skill_frontmatter_requires_name_description_and_license(tmp_path):
     skill_dir = tmp_path / "reflective-prompt-library" / "skills" / "reflective-dispatch"
     skill_dir.mkdir(parents=True)
     skill_file = skill_dir / "SKILL.md"
     skill_file.write_text(
         """---
-license: MIT
 ---
-# Missing name and description
+# Missing name, description, and license
 """,
         encoding="utf-8",
     )
@@ -75,3 +74,4 @@ license: MIT
     errors = [item["error"] for item in results["frontmatter_errors"]]
     assert any("Missing required field: name" in err for err in errors)
     assert any("Missing required field: description" in err for err in errors)
+    assert any("Missing required field: license" in err for err in errors)

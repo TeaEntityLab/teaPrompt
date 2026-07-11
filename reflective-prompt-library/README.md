@@ -21,13 +21,13 @@ Core identity prompt
 
 ## North Star
 
-TeaPrompt helps humans and host agents choose the **right amount of rigor** for a task, record **why** decisions were made, and verify outcomes with **evidence** — using composable prompt layers and nine workflow skills as natural-language harness policy, **without** operating its own agent runtime.
+TeaPrompt helps humans and host agents choose the **right amount of rigor** for a task, record **why** decisions were made, and verify outcomes with **evidence** — using composable prompt layers, [nine core workflow skills plus optional registered domain packs](skills/skill-map.md) as natural-language harness policy, **without** operating its own agent runtime.
 
 ## Strictness Before Skills
 
 Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSSARY.md](GLOSSARY.md)), then the skill phase. Skills declare `context_load: low|medium|high` in frontmatter so cost-aware hosts can defer heavy skills when Strictness is low.
 
-Standing non-goals are explicit: no TeaPrompt-owned runtime/swarm, no tenth core workflow skill without promotion evidence (frozen means gated, not never), no full `SKILL.md` i18n by default, and no silent rigor downgrade. Seeded routing evals are regression guards, not semantic-routing proof; methodology-complete does not mean operationally complete; skills may declare required runtime guarantees as preconditions, but host-runtime code and tests must enforce them. See [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md#standing-non-goals).
+Standing non-goals are explicit: no TeaPrompt-owned runtime/swarm, no tenth core workflow skill without promotion evidence (frozen means gated, not never), and no domain pack inside core routing; optional packs follow the admission rule in `06-repo/AGENTS.md`. Full `SKILL.md` i18n is not a default, and silent rigor downgrade is forbidden. Seeded routing evals are regression guards, not semantic-routing proof; methodology-complete does not mean operationally complete; skills may declare required runtime guarantees as preconditions, but host-runtime code and tests must enforce them. See [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md#standing-non-goals).
 
 
 ## Governance Panel Record
@@ -44,9 +44,9 @@ Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–
 - `05-domain/`: high-risk review, research, business strategy, learning, writing, and creative template prompts.
 - `06-repo/`: repository-level instruction templates plus a reusable
   `PROJECT_KNOWLEDGE.template.md` for project-specific design judgement.
-- `skills/`: concise `SKILL.md` workflow wrappers that map the prompt library into practical agent workflows.
-- `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 workflow skills.
-- `skills/examples/`: worked input/output examples for each workflow skill.
+- `skills/`: nine core `SKILL.md` workflow wrappers plus optional registered domain packs; [skill-map.md](skills/skill-map.md) is the tier map.
+- `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 core workflow skills, with a host-invoked domain-pack appendix.
+- `skills/examples/`: worked input/output examples for every registered core or domain-pack skill.
 - `plans/`: decision records, research reflections, eval fixtures, and governance contracts; live pointers are summarized in [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md).
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
 - `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.

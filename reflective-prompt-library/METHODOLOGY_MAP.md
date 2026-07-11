@@ -69,7 +69,7 @@ current decision legible?"**
 
 ## The 10-Layer Taxonomy
 
-The taxonomy has ten layers for project surfaces; the execution routing set remains the nine frozen workflow skills under `skills/`. Skill-count decisions follow the nine-skill policy, not the layer count. Frozen means gated, not never: a tenth core workflow skill needs the three-recurrence promotion gate and explicit human approval.
+The taxonomy has ten layers for project surfaces; the execution routing set remains nine frozen **core** workflow skills under `skills/`. Nine is the current bounded-set cardinality, not an optimality claim. Frozen means gated, not never: a tenth core workflow skill needs the three-recurrence promotion gate and explicit human approval. Optional registered domain packs are host-invoked contracts outside this routing set; see [`skills/skill-map.md`](skills/skill-map.md#registered-domain-packs-not-core-routing).
 
 Instead of a single prompt, the methodology is formally structured into ten distinct layers:
 
@@ -131,9 +131,9 @@ are stable and a human confirms the promotion.
 ## Multi-Agent Panel Consensus Addendum
 
 The 2026-06-25 multi-lens Socratic panel (six provider perspectives, single host)
-reaffirmed the north star: **nine frozen workflow skills**, strictness-first routing,
-evidence-backed evals in CI, optional multi-voice synthesis in `reflective-research`
-— not a swarm runtime. Judgment record:
+reaffirmed the north star: a bounded set of **nine frozen core workflow skills**,
+strictness-first routing, evidence-backed evals in CI, and optional multi-voice
+synthesis in `reflective-research` — not a swarm runtime. Judgment record:
 [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md).
 
 ## Strictness Levels
@@ -233,6 +233,6 @@ Multi-agent work requires state, tools, logs, verification, and handoff artifact
 | Workflow & Agentic Layer | Aligned | Extended | Workflows, SOP compiler planning, planning engine, and memory consolidation (`04-agent/`). |
 | Domain Pack Layer | Aligned | Complete | Keep strategy and domain prompts in `05-domain/`. |
 | Repository Template Layer | Aligned | Extended | Maintain instruction templates and the reusable project-knowledge scaffold under `06-repo/`. |
-| Skill / Action Layer | Aligned | Extended | Maintain nine frozen workflow skills (including reflective-minimality gate) for anti-bloat decisions. |
+| Skill / Action Layer | Aligned | Extended | Maintain nine frozen core workflow skills (including reflective-minimality gate) plus separately registered, host-invoked domain packs outside core routing. |
 | Quality Gate / Verification | Aligned | Complete | Standardize skill-level quality checks. |
 | Governance / Capability Risk | Aligned | Extended | Use `reflective-risk` for high-risk boundaries and `04-agent/runtime-trust-boundary.md` for instruction/data/tool authority review. |

@@ -34,8 +34,9 @@ Language: English
 
 TeaPrompt helps humans and host agents choose the right amount of rigor for a task,
 record why decisions were made, and verify outcomes with evidence — using composable
-prompt layers and nine workflow skills as natural-language harness policy, without
-operating its own agent runtime. See [README.md](README.md#north-star).
+prompt layers, nine core workflow skills, and optional registered domain packs as
+natural-language harness policy, without operating its own agent runtime. See
+[README.md](README.md#north-star).
 
 > The active problem the project is solving now, with explicit non-goals so scope
 > does not silently expand. Completed milestones are retired from this section;
@@ -49,9 +50,10 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 
 ### Standing Non-Goals
 - TeaPrompt does not operate its own multi-agent runtime, swarm, async peer messaging layer, recorder, replay engine, or side-effect enforcer; runtime designs remain references unless project direction changes.
-- The core workflow layer remains nine frozen workflow skills; a tenth core skill needs the three-recurrence promotion gate and explicit human approval.
+- The core routing layer remains nine frozen workflow skills; nine is the current bounded-set cardinality, not an optimality claim. A tenth core skill needs the three-recurrence promotion gate and explicit human approval.
+- Registered domain packs are host-invoked contracts outside core routing and follow the binding admission rule in [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills); a user-directed exception records recurrence as `unknown`, never as proof of recurrence.
 - Full `SKILL.md` localization is not current direction; zh-TW supports navigation, cheatsheet routing, and glossary lines while English stays canonical for skill contracts.
-- Seeded routing evals are regression guards, not proof of general semantic routing quality; holdout expansion precedes router tuning.
+- Router tuning follows [ROUTING_CONTRACT.md](plans/ROUTING_CONTRACT.md) R8: add holdout evidence before tuning. Seeded routing evals are regression guards, not proof of general semantic routing quality.
 - "Methodology-complete" does not mean "operationally complete"; prompt/spec coverage does not promise persistence, replay, cancellation, idempotency, or role isolation.
 - Skills and prompt lenses may specify required runtime guarantees as preconditions, but TeaPrompt does not enforce or warrant them; host-runtime code and tests are the authority for operational guarantees, and missing enforcement evidence is `unknown` / no-go.
 

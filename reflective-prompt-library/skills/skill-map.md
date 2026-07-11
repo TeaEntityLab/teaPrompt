@@ -6,8 +6,8 @@ This file maps the prompt library into a small skill/workflow set.
 
 Prompt is the entry point, Skill is the action, Context is the memory, Quality Gate is the reality check, and Human Review is the high-risk insurance.
 
-The library contains many prompts, but the workflow layer intentionally stays compact:
-nine frozen workflow skills (including reflective-minimality gate). Frozen means gated, not never: a tenth core workflow skill requires recurrence evidence and explicit human approval.
+The library contains many prompts, but the core routing layer intentionally stays
+bounded at nine registered workflow skills (including the reflective-minimality gate). Nine is the current cardinality, not an optimality claim. Frozen means gated, not never: a tenth core workflow skill requires recurrence evidence and explicit human approval.
 
 1. `reflective-dispatch`
 2. `reflective-brief`

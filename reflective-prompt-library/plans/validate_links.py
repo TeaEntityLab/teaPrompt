@@ -190,7 +190,7 @@ class LinkValidator:
                 return
             
             # Required fields
-            required_fields = ['name', 'description']
+            required_fields = ['name', 'description', 'license']
             for field in required_fields:
                 if field not in frontmatter_data:
                     results["frontmatter_errors"].append({
@@ -198,11 +198,6 @@ class LinkValidator:
                         "error": f"Missing required field: {field}"
                     })
             
-            # Optional but recommended fields
-            recommended_fields = ['license']
-            for field in recommended_fields:
-                if field not in frontmatter_data:
-                    self.warnings.append(f"{relative_path}: Missing recommended field: {field}")
                     
         except Exception as e:
             results["frontmatter_errors"].append({

@@ -2,9 +2,9 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 # Skill Installation Guide
 
-Last verified: 2026-07-06
+Last verified: 2026-07-11
 
-This guide explains how to install the TeaPrompt workflow skills into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
+This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
 
 The source skills live here:
 
@@ -19,9 +19,13 @@ reflective-prompt-library/skills/
   reflective-review/
   reflective-risk/
   reflective-spec-plan/
+
+  # Optional registered domain packs (host-invoked; not core routing)
+  flow-control-generator/
+  flow-loop-harness/
 ```
 
-**Harness policy:** Nine frozen workflow skills with strictness-first routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills) and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
+**Harness policy:** Nine frozen **core** workflow skills with strictness-first routing; registered domain packs are opt-in and remain outside core routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills), [skills/skill-map.md](skills/skill-map.md#registered-domain-packs-not-core-routing), and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
 
 Each install target expects this shape:
 
@@ -43,43 +47,111 @@ For this repository, project-local install is the safest default.
 
 **Copy vs symlink:** use `cp -R` for team installs and published repos. Use `ln -s` or `ln -sfn` when you develop TeaPrompt in place and want the host to read skills directly from this checkout (see [Symlink install](#symlink-install) below).
 
-## Install All TeaPrompt Skills
+## Choose an Install Tier
 
-From the repo root:
+The default commands below install only the nine core `reflective-*` skills. This
+keeps optional script-generation packs out of host auto-discovery unless you
+choose them.
+
+From the repository root, list the core skills:
 
 ```bash
-for skill in reflective-prompt-library/skills/*; do
-  test -d "$skill" || continue
+for skill in reflective-prompt-library/skills/reflective-*/; do
+  test -f "$skill/SKILL.md" || continue
   echo "$(basename "$skill")"
 done
 ```
 
-Then copy or symlink the skill directories into the target tool path shown below.
+The optional domain-pack registry currently contains:
+
+```text
+flow-control-generator
+flow-loop-harness
+```
+
+Use the core helpers for the default install. Afterward, call the matching
+`install_domain_packs_*` helper with the same destination only when those
+host-invoked script generators are wanted.
 
 ## Symlink install
 
-Run these from the TeaPrompt repo root. `ln -sfn` replaces an existing link; use `ln -sf` if your shell's `ln` does not support `-n`.
-
-Install one skill (example: `reflective-dispatch`):
-
-```bash
-ln -sfn "$(pwd)/reflective-prompt-library/skills/reflective-dispatch" .claude/skills/reflective-dispatch
-```
-
-Install all reflective skills into a target directory:
+Run these definitions from the TeaPrompt repository root. Every helper accepts
+the destination first and an optional TeaPrompt `skills/` source directory
+second. It copies or links only directories containing `SKILL.md`.
 
 ```bash
-install_skills_symlink() {
+install_core_skills_copy() {
   local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for skill in reflective-prompt-library/skills/*; do
+  for skill in "$source_root"/reflective-*/; do
+    skill="${skill%/}"
+    test -f "$skill/SKILL.md" || continue
+    cp -R "$skill" "$dest/"
+  done
+}
+
+install_core_skills_symlink() {
+  local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  mkdir -p "$dest"
+  for skill in "$source_root"/reflective-*/; do
+    skill="${skill%/}"
+    test -f "$skill/SKILL.md" || continue
     name="$(basename "$skill")"
-    ln -sfn "$(pwd)/$skill" "$dest/$name"
+    ln -sfn "$skill" "$dest/$name"
+  done
+}
+
+install_domain_packs_copy() {
+  local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  mkdir -p "$dest"
+  for name in flow-control-generator flow-loop-harness; do
+    skill="$source_root/$name"
+    test -f "$skill/SKILL.md" || return 1
+    cp -R "$skill" "$dest/"
+  done
+}
+
+install_domain_packs_symlink() {
+  local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  mkdir -p "$dest"
+  for name in flow-control-generator flow-loop-harness; do
+    skill="$source_root/$name"
+    test -f "$skill/SKILL.md" || return 1
+    ln -sfn "$skill" "$dest/$name"
   done
 }
 ```
 
-Run that function definition once in your shell (or paste it before the commands below). Examples in later sections call `install_skills_symlink <dest>`.
+Run these definitions once (or paste them before a command below).
+`ln -sfn` replaces an existing link; use `ln -sf` if the host `ln` lacks `-n`.
+Examples below install core skills by default:
+
+```bash
+install_core_skills_copy <destination>
+install_core_skills_symlink <destination>
+```
+
+Opt in to both registered domain packs with:
+
+```bash
+install_domain_packs_copy <destination>
+# or
+install_domain_packs_symlink <destination>
+```
+
+Install one skill directly when needed:
+
+```bash
+ln -sfn "$(pwd)/reflective-prompt-library/skills/reflective-dispatch" .claude/skills/reflective-dispatch
+```
 
 ## Claude Code
 
@@ -93,31 +165,25 @@ Claude Code discovers skills from:
 Project install (copy):
 
 ```bash
-mkdir -p .claude/skills
-cp -R reflective-prompt-library/skills/* .claude/skills/
+install_core_skills_copy .claude/skills
 ```
 
 Project install (symlink):
 
 ```bash
-install_skills_symlink .claude/skills
+install_core_skills_symlink .claude/skills
 ```
 
 Personal install (copy):
 
 ```bash
-mkdir -p ~/.claude/skills
-cp -R reflective-prompt-library/skills/* ~/.claude/skills/
+install_core_skills_copy "$HOME/.claude/skills"
 ```
 
 Personal install (symlink):
 
 ```bash
-mkdir -p ~/.claude/skills
-for skill in reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$(pwd)/$skill" "$HOME/.claude/skills/$name"
-done
+install_core_skills_symlink "$HOME/.claude/skills"
 ```
 
 Validate:
@@ -149,19 +215,13 @@ Codex-native install uses `$CODEX_HOME/skills`; when `CODEX_HOME` is unset, the 
 Personal Codex install (copy):
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R reflective-prompt-library/skills/* "${CODEX_HOME:-$HOME/.codex}/skills/"
+install_core_skills_copy "${CODEX_HOME:-$HOME/.codex}/skills"
 ```
 
 Personal Codex install (symlink):
 
 ```bash
-CODEX_SKILLS="${CODEX_HOME:-$HOME/.codex}/skills"
-mkdir -p "$CODEX_SKILLS"
-for skill in reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$(pwd)/$skill" "$CODEX_SKILLS/$name"
-done
+install_core_skills_symlink "${CODEX_HOME:-$HOME/.codex}/skills"
 ```
 
 Validate:
@@ -175,14 +235,13 @@ Restart Codex after installing so it can pick up the new skills.
 Project-shared option (copy):
 
 ```bash
-mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/* .agents/skills/
+install_core_skills_copy .agents/skills
 ```
 
 Project-shared option (symlink):
 
 ```bash
-install_skills_symlink .agents/skills
+install_core_skills_symlink .agents/skills
 ```
 
 Use `.agents/skills` when you want one project-local skill location that can also be read by other Agent Skills-compatible tools. If your Codex build does not show these skills, use the Codex-native `~/.codex/skills` path.
@@ -199,27 +258,25 @@ Cursor has two relevant instruction surfaces:
 Prefer the shared project location when available (copy):
 
 ```bash
-mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/* .agents/skills/
+install_core_skills_copy .agents/skills
 ```
 
 Shared project location (symlink):
 
 ```bash
-install_skills_symlink .agents/skills
+install_core_skills_symlink .agents/skills
 ```
 
 Cursor-specific project location, if supported by your build (copy):
 
 ```bash
-mkdir -p .cursor/skills
-cp -R reflective-prompt-library/skills/* .cursor/skills/
+install_core_skills_copy .cursor/skills
 ```
 
 Cursor-specific project location (symlink):
 
 ```bash
-install_skills_symlink .cursor/skills
+install_core_skills_symlink .cursor/skills
 ```
 
 Validate:
@@ -276,31 +333,25 @@ Antigravity supports Agent Skills in these locations:
 Workspace install (copy):
 
 ```bash
-mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/* .agents/skills/
+install_core_skills_copy .agents/skills
 ```
 
 Workspace install (symlink):
 
 ```bash
-install_skills_symlink .agents/skills
+install_core_skills_symlink .agents/skills
 ```
 
 Global install (copy):
 
 ```bash
-mkdir -p ~/.gemini/antigravity/skills
-cp -R reflective-prompt-library/skills/* ~/.gemini/antigravity/skills/
+install_core_skills_copy "$HOME/.gemini/antigravity/skills"
 ```
 
 Global install (symlink):
 
 ```bash
-mkdir -p ~/.gemini/antigravity/skills
-for skill in reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$(pwd)/$skill" "$HOME/.gemini/antigravity/skills/$name"
-done
+install_core_skills_symlink "$HOME/.gemini/antigravity/skills"
 ```
 
 Validate:
@@ -333,50 +384,43 @@ OpenCode discovers skills from several locations:
 Project install (copy):
 
 ```bash
-mkdir -p .opencode/skills
-cp -R reflective-prompt-library/skills/* .opencode/skills/
+install_core_skills_copy .opencode/skills
 ```
 
 Project install (symlink):
 
 ```bash
-install_skills_symlink .opencode/skills
+install_core_skills_symlink .opencode/skills
 ```
 
 Global install (copy):
 
 ```bash
-mkdir -p ~/.config/opencode/skills
-cp -R reflective-prompt-library/skills/* ~/.config/opencode/skills/
+install_core_skills_copy "$HOME/.config/opencode/skills"
 ```
 
 Global install (symlink):
 
 ```bash
-mkdir -p ~/.config/opencode/skills
-for skill in reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$(pwd)/$skill" "$HOME/.config/opencode/skills/$name"
-done
+install_core_skills_symlink "$HOME/.config/opencode/skills"
 ```
 
 Shared project install (copy):
 
 ```bash
-mkdir -p .agents/skills
-cp -R reflective-prompt-library/skills/* .agents/skills/
+install_core_skills_copy .agents/skills
 ```
 
 Shared project install (symlink):
 
 ```bash
-install_skills_symlink .agents/skills
+install_core_skills_symlink .agents/skills
 ```
 
 OpenCode also reads Claude-compatible paths. Symlink there if you rely on that discovery mode:
 
 ```bash
-install_skills_symlink .claude/skills
+install_core_skills_symlink .claude/skills
 ```
 
 Validate:
@@ -399,14 +443,12 @@ For active development in this repo, symlinks keep `.claude/skills`, `.agents/sk
 
 Copy is safer for teammates and CI; some hosts do not follow symlinks consistently.
 
-From the TeaPrompt repo root (equivalent to `install_skills_symlink .agents/skills`):
+From the TeaPrompt repository root:
 
 ```bash
-mkdir -p .agents/skills
-for skill in reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$(pwd)/$skill" ".agents/skills/$name"
-done
+install_core_skills_symlink .agents/skills
+# Optional:
+install_domain_packs_symlink .agents/skills
 ```
 
 Symlink into another project that vendors TeaPrompt as a submodule or sibling checkout:
@@ -414,11 +456,10 @@ Symlink into another project that vendors TeaPrompt as a submodule or sibling ch
 ```bash
 TEAPROMPT=/path/to/teaPrompt
 PROJECT=/path/to/your-app
-mkdir -p "$PROJECT/.agents/skills"
-for skill in "$TEAPROMPT"/reflective-prompt-library/skills/*; do
-  name="$(basename "$skill")"
-  ln -sfn "$skill" "$PROJECT/.agents/skills/$name"
-done
+SOURCE="$TEAPROMPT/reflective-prompt-library/skills"
+install_core_skills_symlink "$PROJECT/.agents/skills" "$SOURCE"
+# Optional:
+install_domain_packs_symlink "$PROJECT/.agents/skills" "$SOURCE"
 ```
 
 Use symlink installs only for your own workspace, not as the default team install.

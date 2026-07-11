@@ -4,12 +4,12 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 # Skill 觸發口訣（速查版）
 
-這份是 9 個 workflow skills 的一頁式選用指南。
+這份是 9 個 **core** workflow skills 的一頁式選用指南；可選的 host-invoked domain packs 另見[英文版](SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing)。
 
 > **輸出慣例**：精簡的交付規格應放在 Module Contract 的 `Output:` 欄位。僅當 skill 產生實質的輸出範本（例如 markdown 區塊、多欄位結構）時，才額外加入獨立的 `## Output` 區段。具有程序步驟（before/during/after）的 skill 通常不需要獨立的 Output 區段。
 
 Skill 契約語言：
-- 九個 `skills/*/SKILL.md` 以**英文**為權威；本繁中 cheatsheet 與 [GLOSSARY.md](../GLOSSARY.md) 供 L1–L2 分流與成本決策，不取代完整 skill 契約。
+- 九個 core `skills/reflective-*/SKILL.md` 以**英文**為權威；registered domain packs 不屬於 core 分流。完整 domain-pack 契約與選用提示見[英文版](SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing)及 [skill-map.md](skill-map.md#registered-domain-packs-not-core-routing)；本繁中 cheatsheet 與 [GLOSSARY.md](../GLOSSARY.md) 供 L1–L2 分流與成本決策，不取代完整 skill 契約。
 
 分流公平性說明：
 - 各 skill frontmatter 含 `context_load: low|medium|high`，供成本敏感分流。

@@ -14,7 +14,7 @@ Doing the right thing > doing things right.
 
 ## North Star
 
-TeaPrompt helps humans and host agents choose the **right amount of rigor** for a task, record **why** decisions were made, and verify outcomes with **evidence** — using composable prompt layers and nine workflow skills as natural-language harness policy, **without** operating its own agent runtime.
+TeaPrompt helps humans and host agents choose the **right amount of rigor** for a task, record **why** decisions were made, and verify outcomes with **evidence** — using composable prompt layers, [nine core workflow skills plus optional registered domain packs](reflective-prompt-library/skills/skill-map.md) as natural-language harness policy, **without** operating its own agent runtime.
 
 Full library docs: [reflective-prompt-library/README.md](reflective-prompt-library/README.md).
 

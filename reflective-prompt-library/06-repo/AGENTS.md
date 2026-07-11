@@ -6,8 +6,8 @@ Repository-level harness policy for reflective engineering agents. Primary workf
 
 ## Scope
 
-- In scope: strictness-first routing, nine frozen workflow skills (frozen means gated, not never), evidence-backed completion, project-knowledge authority boundary.
-- Out of scope: multi-agent runtime, tenth core skill without promotion gate, silent rigor downgrade.
+- In scope: strictness-first routing, nine frozen core workflow skills (the current bounded routing set; frozen means gated, not never), registered domain packs outside core routing, evidence-backed completion, project-knowledge authority boundary.
+- Out of scope: multi-agent runtime, tenth core skill without promotion gate, unregistered or silently core-routed domain packs, silent rigor downgrade.
 
 ## Acceptance Criteria
 
@@ -41,14 +41,26 @@ runtime. For non-trivial routing, governance, or skill-selection work:
 
 1. **Strictness before skills** — pick L1–L6 first, then the smallest workflow.
    See [README.md](../README.md#strictness-before-skills) and [GLOSSARY.md](../GLOSSARY.md).
-2. **Nine frozen workflow skills** — do not add a tenth core skill without the
-   three-recurrence promotion gate ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md)).
-3. **Fast routing** — [skills/SKILL_TRIGGER_CHEATSHEET.md](../skills/SKILL_TRIGGER_CHEATSHEET.md)
+2. **Nine frozen core workflow skills** — nine is the current cardinality, not
+   an optimality claim; the load-bearing invariant is a bounded registered core
+   routing set. Do not add a tenth core skill without the three-recurrence
+   promotion gate and explicit human approval
+   ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md)).
+3. **Registered domain packs (not core routing)** — only skills listed in
+   `plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS` may extend `skills/`
+   outside the core set. They are host-invoked contracts, not selectable by
+   `reflective-dispatch` route rows. Adding or extending one requires explicit
+   human approval, a panel/decision record with Candidate Adoption Ledger,
+   demotion triggers, and registry/guard updates. An explicit user instruction
+   may supply approval, but recurrence evidence stays `unknown` unless observed;
+   this exception never waives the tenth-core promotion gate. See
+   [skills/skill-map.md](../skills/skill-map.md#registered-domain-packs-not-core-routing).
+4. **Fast routing** — [skills/SKILL_TRIGGER_CHEATSHEET.md](../skills/SKILL_TRIGGER_CHEATSHEET.md)
    (繁中: [`.zh-TW.md`](../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)).
-4. **Fairness contract** — equivalent intent must route equivalently with visible
+5. **Fairness contract** — equivalent intent must route equivalently with visible
    route trace; see [plans/ROUTING_CONTRACT.md](../plans/ROUTING_CONTRACT.md).
-5. **Panel / multi-voice rethink** — optional method inside
-   `reflective-research` (single host, persona lenses); judgment record at
+6. **Panel / multi-voice rethink** — optional method inside
+   `reflective-research` (single host, role-based lenses); judgment record at
    [plans/multi-agent-panel-consensus-2026-06-25.md](../plans/multi-agent-panel-consensus-2026-06-25.md).
 
 Run `make all` from the repository root before claiming routing or governance changes are verified.
