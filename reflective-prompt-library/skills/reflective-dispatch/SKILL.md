@@ -80,6 +80,7 @@ Workflow-design boundary: a no-code workflow specification, state model, transit
 
 Promotion boundary: deciding whether repeated material should become a note, prompt lens, skill, verifier, or runtime surface uses `04-agent/artifact-promotion.md`, `04-agent/workflow-acquisition.md`, or `04-agent/external-adoption-review.md` as supporting lenses; do not create a new workflow skill as the default route.
 Frozen skill boundary: nine frozen workflow skills means gated, not never. A tenth core workflow skill needs recurrence evidence and explicit human approval; otherwise fold material into an existing skill, supporting lens, verifier/test, or no-change record.
+Contract boundaries: phrase-level routing rules R1–R12 — including production-negation (R9), brief-before-plan (R10), and approved-spec delivery (R11) — live in `plans/ROUTING_CONTRACT.md` and the cheatsheet boundary quick cues; equivalent intent must route equivalently with a visible route trace.
 
 ## Strictness Ladder
 

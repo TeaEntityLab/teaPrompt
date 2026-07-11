@@ -1,7 +1,7 @@
 # Harness-1 → State Ledger Adoption (Research Note)
 
 Date: 2026-06-10
-Status: Implemented (reflective-research, reflective-implement)
+Status: Prompt pattern implemented (reflective-research, reflective-implement); upstream Harness-1 performance claims remain author-reported and non-load-bearing until independently replicated
 
 ## Research Question
 

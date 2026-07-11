@@ -129,6 +129,7 @@ ROUTE_003_ADVERSARIAL_BOUNDARY_PROBES = (
     ("plan the approved spec without repo changes", "reflective-spec-plan"),
     ("align stakeholders on goals before writing tickets", "reflective-brief"),
     ("釐清目標再拆工單", "reflective-brief"),
+    ("automate the recurring manual release check as a deterministic test in the repo", "reflective-implement"),
 )
 
 # One canonical phrase per ROUTE-003 adversarial group (excluding implement_not_plan_trap / R11).

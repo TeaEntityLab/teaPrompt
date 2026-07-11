@@ -1,5 +1,8 @@
 # Project Adjustment Reflection - 2026-06-11
 
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+
+
 ## Dispatch
 
 Mode: reflective-dispatch with reflective-brief, reflective-review, reflective-research, and reflective-spec-plan as supporting lenses.

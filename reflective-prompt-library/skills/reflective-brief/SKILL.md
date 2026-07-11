@@ -93,7 +93,7 @@ Escalation:
 - Ask only when missing information changes safety, architecture, cost, privacy, data loss, or irreversibility.
 - Missing information is unknown, not negative evidence or permission to infer sensitive facts.
 - If ambiguity is safe, proceed with explicit assumptions.
-- Do not dump raw, unfiltered reasoning tokens; structured reasoning sections (Goal/Assumptions/Socratic audit/etc.) are the required output format and are not hidden chain-of-thought. Provide concise reasoning summaries and clean artifacts.
+- Provide concise reasoning summaries and clean artifacts; the raw-reasoning-token rule is defined once under `Never`.
 - If outcome is unclear, ask one direct question or state one reversible assumption and continue.
 
 ## Prompt Sources

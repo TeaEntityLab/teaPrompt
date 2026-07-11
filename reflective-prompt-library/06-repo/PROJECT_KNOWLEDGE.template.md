@@ -13,6 +13,7 @@ Scaffold for project-design judgement layer (non-authoritative). Primary workflo
 
 - Each lesson and principle has evidence and a review or retirement trigger.
 - Milestones carry verifiable targets; done milestones reflow before retirement.
+- Records that propose candidate changes carry an adoption ledger with per-candidate status.
 
 ## Falsifiability
 
@@ -77,6 +78,17 @@ Point to causal records; do not duplicate them. Preserve superseded decisions
 and link the transition.
 
 - YYYY-MM-DD [Decision] -> `<record path>`
+
+Adoption integrity: when a record proposes candidate changes, give it a
+Candidate Adoption Ledger (ID | candidate | status: adopted/partial/deferred |
+evidence | next action or trigger) and mirror per-candidate status in this
+index. Where a test suite exists, add a deterministic guard asserting adopted
+wording at its named surfaces. A falsifiability clause ("wrong if never adopted
+and never re-litigated") is dead text without a ledger.
+
+Evidence tiers for records: model/panel consensus = advisory; seeded fixtures =
+regression-guard; external surveys = stale-unless-refreshed; maintainer
+benchmarks = attributed claims until independently reproduced.
 -->
 
 ## Growth Gate

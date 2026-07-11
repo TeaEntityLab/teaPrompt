@@ -356,6 +356,23 @@ class ParaphraseRouter:
             adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 3
             reasons.append("test-execution boundary: repository test changes requested")
 
+        verifier_artifact_signals = [
+            "deterministic test", "deterministic verifier", "verifier test",
+            "repeatable test", "deterministic check",
+        ]
+        verifier_recurring_context = [
+            "recurring", "every release", "each release", "manual check",
+            "manual verification", "checklist",
+        ]
+        if any(signal in text_lower for signal in verifier_artifact_signals) and any(
+            ctx in text_lower for ctx in verifier_recurring_context
+        ):
+            adjustments["reflective-implement"] = adjustments.get("reflective-implement", 0) + 4
+            reasons.append(
+                "verifier-artifact boundary: recurring deterministic check becomes a "
+                "test artifact on the primary workflow, not a runner or review pass"
+            )
+
         implement_approved_spec_signals = [
             "implement the approved spec",
             "implement approved spec",

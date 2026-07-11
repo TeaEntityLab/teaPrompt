@@ -1,5 +1,8 @@
 # Research Synthesis: Prompting to Skills as Workflow
 
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+
+
 ## Goal
 
 Design a concise, maintainable skills-as-workflow layer for the Reflective Prompt Library.

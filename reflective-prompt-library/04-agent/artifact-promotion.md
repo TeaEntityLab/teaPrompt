@@ -80,6 +80,12 @@ For every non-`no change` candidate, answer:
 - Human approval: required, already granted, or pending?
 - Retirement trigger: when should this artifact be amended or deleted?
 
+For every `verifier/test` (Acquisition L3) candidate, also answer; a relevant gate that cannot be answered fails closed (Human Review, stop, or documented no-go):
+
+- Authority boundary: does the workflow touch external content, tool output, or entity-like fields? If yes, record the data-not-instruction / prompt-injection check the verifier or reviewer performs.
+- Supply chain: does the workflow add or run third-party code, models, or data? If yes, record provenance, license, dependency/SBOM notes, and telemetry defaults.
+- Memory writes: does the workflow persist lessons, memories, or knowledge entries? If yes, tag each write with source, authority class, evidence-vs-instruction, scope, expiry/review trigger, and rollback path.
+
 For every `runtime/orchestration` candidate, also answer:
 
 - Required guarantee: what persistence, replay, cancellation, idempotency, role isolation, enforced transition, side-effect gate, audit trail, or memory / identity ACL is missing from prompt, skill, and verifier layers?

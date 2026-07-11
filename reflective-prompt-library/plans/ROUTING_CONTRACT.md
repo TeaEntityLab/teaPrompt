@@ -139,7 +139,7 @@ Next Action:
 
 ## Acceptance Criteria
 
-- Route consistency: aspirational target ≥95%; Phase-1 threshold: ≥70%; current measured: 100.0% on ROUTE-001 (see QUALITY_GATES_SUMMARY.md).
+- Route consistency: aspirational target ≥95%; Phase-1 threshold: ≥70%; current measured: 100.0% on ROUTE-001 (seeded deterministic fixture — regression-guard tier, not semantic routing proof; see QUALITY_GATES_SUMMARY.md).
 - All low-confidence routes emit route trace fields.
 - No silent downgrade events in sampled routing runs.
 

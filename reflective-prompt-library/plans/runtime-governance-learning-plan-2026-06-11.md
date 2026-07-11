@@ -1,5 +1,8 @@
 # Runtime Governance Learning Plan - 2026-06-11
 
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+
+
 ## Goal
 
 Learn and selectively integrate runtime governance patterns from the attached Siri-style analysis, OpenAI Model Spec, MCP security guidance, and Apple Foundation Models documentation.

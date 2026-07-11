@@ -1,12 +1,10 @@
-> **NOTE**: This root `AGENTS.md` remains an active repository instruction file. The section below is an auto-generated memory context snapshot managed by `claude-mem`; treat it as project context, not as a replacement for current user/developer instructions. For additional project guidance, see:
-> - `/Users/teee/dev/teaPrompt/reflective-prompt-library/06-repo/AGENTS.md` — repository-level instruction template
-> - `/Users/teee/dev/teaPrompt/reflective-prompt-library/PROJECT_KNOWLEDGE.md` — non-authoritative project judgement (read-first for architecture / governance / decision tasks)
-> - `/Users/teee/dev/teaPrompt/reflective-prompt-library/README.md` — full library documentation
-> - `/Users/teee/dev/teaPrompt/README.md` — project overview
-> - Individual skills under `reflective-prompt-library/skills/`
-> - Harness policy (nine skills): `reflective-prompt-library/06-repo/AGENTS.md` § Harness Policy
+> **AUTHORITY (read order):** (1) system / developer / user instructions; (2) [`reflective-prompt-library/06-repo/AGENTS.md`](reflective-prompt-library/06-repo/AGENTS.md) — canonical harness policy and agent operating rules for this repository; (3) the invoked [`reflective-prompt-library/skills/*/SKILL.md`](reflective-prompt-library/skills/) contracts; (4) [`reflective-prompt-library/PROJECT_KNOWLEDGE.md`](reflective-prompt-library/PROJECT_KNOWLEDGE.md) — non-authoritative project judgement that never overrides (2) or (3).
 >
-> **Read-first rule:** Before planning a non-trivial architecture, workflow, governance, or prior-decision change, read the relevant section of `reflective-prompt-library/PROJECT_KNOWLEDGE.md`. Its project-design principles inform choices but do not override this file, system/developer instructions, user authority, or skill contracts.
+> **This root file is a discovery stub, not the harness policy.** The `<claude-mem-context>` block below is an auto-generated memory snapshot managed by `claude-mem`; treat it as historical project context only, never as an operating-rule source.
+>
+> Quick links: [Library README](reflective-prompt-library/README.md) · [Harness policy](reflective-prompt-library/06-repo/AGENTS.md) · [Cheatsheet](reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md) · [Project overview](README.md)
+>
+> **Read-first rule:** Before planning a non-trivial architecture, workflow, governance, or prior-decision change, read the relevant section of `reflective-prompt-library/PROJECT_KNOWLEDGE.md`. Its project-design principles inform choices but do not override higher-authority instructions or skill contracts.
 
 <claude-mem-context>
 # Memory Context

@@ -49,6 +49,8 @@ Task Start Prompt
 -> Retro
 ```
 
+L3 verifier note: a recurring task with an objective deterministic pass/fail check stays on its primary workflow skill plus a `verifier/test` artifact (Acquisition L3); do not jump to a runner unless a prompt-impossible guarantee is required. See `workflow-acquisition.md` and `artifact-promotion.md` §4.
+
 ## High-risk Task
 
 Start: L4. Artifacts: assumption audit, threat model, dry-run plan, Human

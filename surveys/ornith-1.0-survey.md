@@ -6,6 +6,8 @@
 > - HF model card: https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B
 >
 > Status of benchmark numbers: **maintainer-reported, not independently reproduced.**
+>
+> Record class: reference-only survey. Benchmark numbers are non-load-bearing for TeaPrompt workflow constraints unless independently reproduced.
 
 ---
 

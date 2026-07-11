@@ -1,5 +1,8 @@
 # Plan: Agent Workflows
 
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+
+
 ## Goal
 
 Define reusable agent workflows implied by the prompt library without implementing a full workflow engine yet.

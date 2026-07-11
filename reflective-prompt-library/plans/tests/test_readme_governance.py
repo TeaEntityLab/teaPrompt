@@ -6,6 +6,7 @@ import pytest
 
 from prompt_eval_helpers import (  # noqa: E402
     library_readme_path,
+    library_skills_dir,
     methodology_map_en_path,
     methodology_map_zh_tw_path,
     repo_readme_path,
@@ -80,6 +81,10 @@ def test_methodology_map_en_lists_nine_frozen_skills(methodology_map_en_text: st
     fit_check = methodology_map_en_text.split("## Repo Fit Check", 1)[1]
     assert "nine frozen workflow skills" in fit_check
     assert "8 lifecycle skills" not in fit_check
+    # Wording must match reality: exactly nine SKILL.md contracts on disk.
+    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
+    # Candidate #1 (2026-07-06): the frozen gloss must accompany the phrase.
+    assert "gated, not never" in methodology_map_en_text
 
 
 def test_skill_map_lists_nine_frozen_skills(skill_map_text: str):
@@ -87,3 +92,5 @@ def test_skill_map_lists_nine_frozen_skills(skill_map_text: str):
     assert "nine frozen workflow skills" in core
     assert "eight lifecycle skills" not in core
     assert skill_map_text.count("`reflective-") >= 9
+    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
+    assert "gated, not never" in core

@@ -156,6 +156,8 @@ a machine-executable workflow. Defined in `04-agent/sop-compiler.md`.
 | **L3** | Skill + verifier: repeatable task with objective checks. |
 | **L4** | Runner + gates + hook: high-risk, audited, or frequently repeated workflow. |
 
+**Acquisition Level (L0-L4)** (`04-agent/workflow-acquisition.md`) is the promotion-time view of this same automation-depth ladder: Acquisition L3 and Formalization L3 both mean skill plus deterministic verifier. Do not introduce a fourth L-ladder.
+
 ## Distinction between Strictness and Formalization
 
 Strictness levels answer **"How carefully should we do this work?"**
@@ -215,6 +217,22 @@ and why, without reading hidden reasoning.
 Optional rigor layer beyond the baseline workflow (e.g., security review,
 performance check, extra tests). May be disabled for cost, but disabling must
 appear in the route trace — not silently.
+
+---
+
+## Evidence Tier / 證據層級
+
+The weight a class of evidence can carry in governance decisions. Canonical
+wording lives in `skills/reflective-review/SKILL.md` (Evidence Tiers).
+
+- Model or panel consensus is advisory evidence; it does not prove operational behavior.
+- Routing fixtures (ROUTE-001/002/003) are regression guards for covered phrases; they do not prove general semantic routing.
+- External surveys are stale unless refreshed before adoption or deployment recommendations.
+- Vendor or maintainer benchmark numbers are attributed claims unless reproduced locally.
+
+**Operational test:** A decision record naming its evidence tier can be audited
+without re-running the panel; a load-bearing claim resting on advisory-tier
+evidence alone is flagged, not silently accepted.
 
 ---
 
@@ -342,7 +360,7 @@ Ongoing upkeep after panel close (Rounds 1–101). Not agent instructions — op
 
 **Operational test:** Before router tuning, add fresh ROUTE-002/003 holdout phrases; run `make all`; record decisions in `PROJECT_KNOWLEDGE.md` Decision Index when governance surface changes.
 
-1. Run `make all` on every governance/routing change.
+1. Run `make all` from the repository root on every governance/routing change.
 2. Add holdout cases **before** tuning `route_paraphrase_eval.py` keyword rules; `validate_route_fixture.py` blocks accidental shrinkage.
 3. Watch non-blocking undocumented-decision warnings from `validate_project_knowledge.py`.
 4. Keep manual `benchmark_tasks.py` runs optional — fixture gate only in CI.

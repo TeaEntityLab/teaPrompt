@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-06T01:06:47.030275",
+  "generated_at": "2026-07-11T08:55:21.657265",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -40,10 +40,13 @@
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
+            "workflow-possibilities-constraints-review-2026-07-06.md",
             "openfugu-research-record-2026-06-25.md",
             "harness-1-state-ledger-research.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
+            "governance-rules-rethink-review-2026-07-11.md",
+            "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "QUALITY_GATES_SUMMARY.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
@@ -836,8 +839,8 @@
           "text": "Growth Gate"
         }
       ],
-      "line_count": 93,
-      "char_count": 2904
+      "line_count": 105,
+      "char_count": 3654
     },
     {
       "path": "reflective-prompt-library/06-repo/AGENTS.md",
@@ -857,7 +860,8 @@
           "../skills/SKILL_TRIGGER_CHEATSHEET.md",
           "../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
           "../plans/ROUTING_CONTRACT.md",
-          "../plans/multi-agent-panel-consensus-2026-06-25.md"
+          "../plans/multi-agent-panel-consensus-2026-06-25.md",
+          "../GLOSSARY.md"
         ]
       },
       "structure": [
@@ -898,6 +902,22 @@
           "text": "Required Workflow"
         },
         {
+          "level": 3,
+          "text": "L1 — trivial, single-step, no state"
+        },
+        {
+          "level": 3,
+          "text": "L2 — non-trivial, low blast radius"
+        },
+        {
+          "level": 3,
+          "text": "L3 — engineering work with files and tests (default for code changes)"
+        },
+        {
+          "level": 3,
+          "text": "L4+ — high-risk, governance, or architecture impact"
+        },
+        {
           "level": 2,
           "text": "Human Review Required"
         },
@@ -918,8 +938,8 @@
           "text": "Review Standard"
         }
       ],
-      "line_count": 196,
-      "char_count": 6362
+      "line_count": 191,
+      "char_count": 7715
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -968,8 +988,8 @@
           "text": "Future Promotion Criteria"
         }
       ],
-      "line_count": 100,
-      "char_count": 6747
+      "line_count": 103,
+      "char_count": 7055
     },
     {
       "path": "reflective-prompt-library/plans/storm-perspective-discovery-reflection-2026-06-18.md",
@@ -1022,8 +1042,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 79,
-      "char_count": 4337
+      "line_count": 82,
+      "char_count": 4645
     },
     {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
@@ -1162,8 +1182,8 @@
           "text": "Decision"
         }
       ],
-      "line_count": 77,
-      "char_count": 4272
+      "line_count": 80,
+      "char_count": 4580
     },
     {
       "path": "reflective-prompt-library/plans/five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -1250,10 +1270,34 @@
         {
           "level": 2,
           "text": "2026-07-05 Promotion Update"
+        },
+        {
+          "level": 2,
+          "text": "2026-07-06 Concept Verification Update"
+        },
+        {
+          "level": 3,
+          "text": "Canonical Distinctions"
+        },
+        {
+          "level": 3,
+          "text": "Layer Corrections"
+        },
+        {
+          "level": 3,
+          "text": "Memory / Identity Gate"
+        },
+        {
+          "level": 3,
+          "text": "Analogy and AI-Scope Caveats"
+        },
+        {
+          "level": 3,
+          "text": "TeaPrompt Boundary"
         }
       ],
-      "line_count": 133,
-      "char_count": 12372
+      "line_count": 175,
+      "char_count": 17017
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -1298,8 +1342,8 @@
           "text": "Residual Risks"
         }
       ],
-      "line_count": 74,
-      "char_count": 3823
+      "line_count": 77,
+      "char_count": 4131
     },
     {
       "path": "reflective-prompt-library/plans/fable-5-scaffold-provenance-reflection-2026-06-11.md",
@@ -1360,8 +1404,8 @@
           "text": "Residual Risks"
         }
       ],
-      "line_count": 102,
-      "char_count": 7763
+      "line_count": 105,
+      "char_count": 8071
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1539,6 +1583,76 @@
       "char_count": 8726
     },
     {
+      "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "workflow-possibilities-constraints-review-2026-07-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Workflow Possibilities and Constraints Review — 2026-07-06"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Constraints Judged Reasonable (keep)"
+        },
+        {
+          "level": 2,
+          "text": "Constraints Judged Too Rigid Only If Read As Absolute (qualify, do not remove)"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (candidates; not applied by this record)"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger (2026-07-11)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 111,
+      "char_count": 12253
+    },
+    {
       "path": "reflective-prompt-library/plans/openfugu-research-record-2026-06-25.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1675,7 +1789,7 @@
         }
       ],
       "line_count": 150,
-      "char_count": 8806
+      "char_count": 8935
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -1768,8 +1882,8 @@
           "text": "Implementation Notes"
         }
       ],
-      "line_count": 144,
-      "char_count": 2724
+      "line_count": 147,
+      "char_count": 3032
     },
     {
       "path": "reflective-prompt-library/plans/code-followups-plan.md",
@@ -1838,8 +1952,191 @@
           "text": "Stop Conditions"
         }
       ],
-      "line_count": 126,
-      "char_count": 3903
+      "line_count": 129,
+      "char_count": 4211
+    },
+    {
+      "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "governance-rules-rethink-review-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../06-repo/AGENTS.md",
+          "workflow-possibilities-constraints-review-2026-07-06.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governance Rules Rethink Review — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "2026-07-06 Candidate Adoption State (T1 — the top finding)"
+        },
+        {
+          "level": 2,
+          "text": "Constraints Judged Reasonable (keep, unchanged)"
+        },
+        {
+          "level": 2,
+          "text": "Required Changes (candidates; not applied by this record)"
+        },
+        {
+          "level": 3,
+          "text": "A. Adoption integrity (highest priority)"
+        },
+        {
+          "level": 3,
+          "text": "B. Authority and usability"
+        },
+        {
+          "level": 3,
+          "text": "C. Wording parity and labels"
+        },
+        {
+          "level": 3,
+          "text": "D. Test mechanism (replace phrase-pins with contract checks)"
+        },
+        {
+          "level": 3,
+          "text": "E. Archive hygiene (recurrence-gated; human approval required; disputed scope)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Adoption Update (2026-07-11)"
+        },
+        {
+          "level": 2,
+          "text": "Adoption Update 2 (2026-07-11)"
+        },
+        {
+          "level": 2,
+          "text": "Adoption Update 3 (2026-07-11)"
+        }
+      ],
+      "line_count": 175,
+      "char_count": 24990
+    },
+    {
+      "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-runtime-legitimacy-panel-record-2026-07-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skills Runtime Legitimacy Panel Record — 2026-07-06"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "Contract / enforcement split"
+        },
+        {
+          "level": 3,
+          "text": "Skill → verifier → runtime path"
+        },
+        {
+          "level": 3,
+          "text": "Runtime necessity"
+        },
+        {
+          "level": 3,
+          "text": "Runtime proof"
+        },
+        {
+          "level": 3,
+          "text": "Safety and no-go gates"
+        },
+        {
+          "level": 3,
+          "text": "Under-automation guard"
+        },
+        {
+          "level": 3,
+          "text": "Retirement / demotion trigger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Checks For Future Runtime Proposals"
+        },
+        {
+          "level": 2,
+          "text": "Final Rule"
+        }
+      ],
+      "line_count": 179,
+      "char_count": 9583
     },
     {
       "path": "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
@@ -1982,8 +2279,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 382,
-      "char_count": 20353
+      "line_count": 386,
+      "char_count": 21764
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -2245,7 +2542,7 @@
         }
       ],
       "line_count": 153,
-      "char_count": 6099
+      "char_count": 6181
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -2511,8 +2808,8 @@
           "text": "Validation Checklist"
         }
       ],
-      "line_count": 74,
-      "char_count": 4562
+      "line_count": 77,
+      "char_count": 4870
     },
     {
       "path": "reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md",
@@ -4432,8 +4729,8 @@
           "text": "Residual Risks"
         }
       ],
-      "line_count": 51,
-      "char_count": 1821
+      "line_count": 54,
+      "char_count": 2129
     },
     {
       "path": "reflective-prompt-library/plans/runtime-governance-learning-plan-2026-06-11.md",
@@ -4502,8 +4799,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 108,
-      "char_count": 5004
+      "line_count": 111,
+      "char_count": 5312
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -4548,8 +4845,8 @@
           "text": "Acceptance Criteria"
         }
       ],
-      "line_count": 61,
-      "char_count": 5238
+      "line_count": 64,
+      "char_count": 5546
     },
     {
       "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
@@ -4936,8 +5233,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 123,
-      "char_count": 5121
+      "line_count": 128,
+      "char_count": 6054
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -5052,8 +5349,8 @@
           "text": "6. Output"
         }
       ],
-      "line_count": 106,
-      "char_count": 4448
+      "line_count": 124,
+      "char_count": 6793
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
@@ -5128,8 +5425,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 202,
-      "char_count": 6104
+      "line_count": 204,
+      "char_count": 6410
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -5206,8 +5503,8 @@
           "text": "8. Output"
         }
       ],
-      "line_count": 148,
-      "char_count": 5363
+      "line_count": 158,
+      "char_count": 6755
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -6242,7 +6539,7 @@
         }
       ],
       "line_count": 78,
-      "char_count": 4056
+      "char_count": 4173
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -6305,8 +6602,8 @@
           "text": "Fast Routing Rule"
         }
       ],
-      "line_count": 231,
-      "char_count": 9708
+      "line_count": 233,
+      "char_count": 9968
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -6372,8 +6669,8 @@
           "text": "快速順序"
         }
       ],
-      "line_count": 222,
-      "char_count": 6165
+      "line_count": 224,
+      "char_count": 6355
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -7060,8 +7357,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 150,
-      "char_count": 7305
+      "line_count": 153,
+      "char_count": 8050
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -7240,7 +7537,7 @@
         }
       ],
       "line_count": 107,
-      "char_count": 3489
+      "char_count": 3366
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -7290,6 +7587,10 @@
         {
           "level": 2,
           "text": "Source Priority"
+        },
+        {
+          "level": 2,
+          "text": "External Adoption Checks"
         },
         {
           "level": 2,
@@ -7364,8 +7665,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 180,
-      "char_count": 9177
+      "line_count": 189,
+      "char_count": 9762
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -7423,6 +7724,10 @@
           "text": "Four Evidence Dimensions"
         },
         {
+          "level": 3,
+          "text": "Evidence Tiers"
+        },
+        {
           "level": 2,
           "text": "Review Modes"
         },
@@ -7471,8 +7776,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 158,
-      "char_count": 6610
+      "line_count": 165,
+      "char_count": 7009
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -7807,8 +8112,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 142,
-      "char_count": 4617
+      "line_count": 144,
+      "char_count": 5229
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -7936,8 +8241,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 113,
-      "char_count": 3238
+      "line_count": 115,
+      "char_count": 3616
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -8031,9 +8336,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 235,
-      "char_count": 10420
+      "line_count": 237,
+      "char_count": 10625
     }
   ],
-  "total_files": 92
+  "total_files": 95
 }

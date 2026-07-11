@@ -29,6 +29,7 @@ Boundary quick cues (ROUTE-002 holdout + ROUTE-003 adversarial):
 - **Research not brief** → `reflective-research` — multi-voice debates or source-backed comparisons, not goal clarification.
 - **Trivial fix not review** → `reflective-implement` — small code patches in the repo, not diff review.
 - **Production risk not plain review** → `reflective-risk` — auth/production/billing changes need a risk gate, not readability review.
+- **Recurring deterministic check** → primary workflow + `verifier/test` artifact (Acquisition L3) — do not jump to a runner unless a prompt-impossible guarantee is required.
 
 ## `reflective-dispatch`
 
@@ -117,6 +118,7 @@ Trigger cues:
 - "Ship a minimal safe patch with verification."
 - "Patch the trivial null check in code."
 - "幫我 patch 這個 trivial null check and run tests."
+- "Automate the recurring manual release check as a deterministic test in the repo."
 
 Minimality signal scan (inside this skill):
 

@@ -30,6 +30,7 @@ Skill 契約語言：
 - **研究不是釐清** → `reflective-research` — 多視角辯論或來源查證，不是 goal clarification。
 - **小修不是審查** → `reflective-implement` — repo 內小 patch，不是 diff review。
 - **正式環境風險不是一般審查** → `reflective-risk` — auth/production/billing 變更需要 risk gate。
+- **重複性且有客觀判定** → 主 workflow + `verifier/test` artifact（Acquisition L3）— 除非需要 prompt 做不到的保證，才升級到 runner。
 
 ## `reflective-dispatch`
 
@@ -113,6 +114,7 @@ L1 快速路徑：
 - 「交付最小安全修補並附驗證。」
 - 「Patch the trivial null check in code。」
 - 「幫我 patch 這個 trivial null check and run tests。」
+- 「Automate the recurring manual release check as a deterministic test in the repo。」
 
 何時用：
 

@@ -1,5 +1,8 @@
 # Ponytail Minimality Reflection
 
+> **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+
+
 Date: 2026-06-17
 Skill route: `reflective-dispatch` -> `reflective-research` + `reflective-review` + `reflective-implement`
 Strictness Level: L3/L5. This changes workflow-skill routing and benchmark coverage, but stays within documentation and local validation tooling.

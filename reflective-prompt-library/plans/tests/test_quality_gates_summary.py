@@ -16,6 +16,7 @@ from validate_route_fixture import (  # noqa: E402
     ROUTE_003_MIN_ADVERSARIAL_GROUPS,
     ROUTE_003_MIN_PHRASES,
 )
+from prompt_eval_helpers import library_skills_dir  # noqa: E402
 
 SUMMARY_PATH = Path(__file__).parent.parent / "QUALITY_GATES_SUMMARY.md"
 
@@ -120,12 +121,15 @@ def test_research_alignment_lists_nine_frozen_skills(summary_text: str):
     section = _section_between(summary_text, "## Research Alignment", "## Key Metrics")
     assert "nine frozen workflow skills" in section
     assert "8 lifecycle skills" not in section
+    # Wording must match reality: exactly nine SKILL.md contracts on disk.
+    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
 
 def test_benchmark_section_covers_nine_workflows(summary_text: str):
     section = summary_text.split("### 7. Small Benchmark Set", 1)[1].split("## Research Alignment", 1)[0]
     assert "nine frozen workflow skills" in section
     assert "8 different skills" not in section
     assert "24 golden tasks" in section or "24 benchmark tasks" in section
+    assert len(list(library_skills_dir().glob("*/SKILL.md"))) == 9
 
 
 

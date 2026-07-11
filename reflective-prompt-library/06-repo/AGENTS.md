@@ -6,7 +6,7 @@ Repository-level harness policy for reflective engineering agents. Primary workf
 
 ## Scope
 
-- In scope: strictness-first routing, nine frozen workflow skills, evidence-backed completion, project-knowledge authority boundary.
+- In scope: strictness-first routing, nine frozen workflow skills (frozen means gated, not never), evidence-backed completion, project-knowledge authority boundary.
 - Out of scope: multi-agent runtime, tenth core skill without promotion gate, silent rigor downgrade.
 
 ## Acceptance Criteria
@@ -51,46 +51,41 @@ runtime. For non-trivial routing, governance, or skill-selection work:
    `reflective-research` (single host, persona lenses); judgment record at
    [plans/multi-agent-panel-consensus-2026-06-25.md](../plans/multi-agent-panel-consensus-2026-06-25.md).
 
-Run `make all` before claiming routing or governance changes are verified.
+Run `make all` from the repository root before claiming routing or governance changes are verified.
 
 ---
 
 ## Required Workflow
 
-For every non-trivial task:
+Scale rigor to **Strictness L1–L6** (see [GLOSSARY.md](../GLOSSARY.md) and the strictness ladder in `skills/reflective-dispatch/SKILL.md`). Do not apply the full workflow to trivial tasks; do not skip gates on high-risk ones.
 
-1. Read relevant docs:
-   - `reflective-prompt-library/02-engineering/task-start.md`
-   - `reflective-prompt-library/02-engineering/spec-writer.md`
-   - `reflective-prompt-library/02-engineering/usage-first.md`
-   - `reflective-prompt-library/02-engineering/task-slicer.md`
-   - `reflective-prompt-library/README.md`
+> **Note**: This template assumes a code-project structure and may need adaptation for your specific repository layout.
 
-   > **Note**: This template assumes a code-project structure and may need adaptation for your specific repository layout.
+### L1 — trivial, single-step, no state
 
-2. Before implementation, produce:
-   - goal
-   - assumptions
-   - scope
-   - acceptance criteria
-   - failure conditions
-   - plan
-   - files likely to change
+- Restate the goal and expected outcome, execute, and report command or diff evidence in chat.
+- No pre-read bundle; no on-disk final report.
 
-3. During implementation:
-   - make small changes
-   - preserve existing behavior unless instructed
-   - write tests
-   - do not delete or weaken tests
-   - do not change acceptance criteria
-   - do not hide failures
+### L2 — non-trivial, low blast radius
 
-4. Before completion:
-   - run available checks
-   - report commands run
-   - report test results
-   - produce spec-to-code traceability
-   - write `review/final-report.md`
+- Read only what the task needs: `reflective-prompt-library/02-engineering/task-start.md` or the invoked skill's Prompt Sources; consult `skills/SKILL_TRIGGER_CHEATSHEET.md` when routing is uncertain.
+- Before implementation, state goal, acceptance criteria, and files likely to change (chat or task artifact).
+- Before completion, report checks run and results in chat.
+
+### L3 — engineering work with files and tests (default for code changes)
+
+- Read the invoked `skills/*/SKILL.md` plus its listed Prompt Sources; for spec-shaped work also `reflective-prompt-library/02-engineering/spec-writer.md`, `usage-first.md`, and `task-slicer.md`.
+- Before implementation, produce: goal, assumptions, scope, acceptance criteria, failure conditions, plan, files likely to change.
+- During implementation: make small changes; preserve existing behavior unless instructed; write tests; do not delete or weaken tests; do not change acceptance criteria; do not hide failures.
+- Before completion: run available checks; report commands and test results; produce spec-to-code traceability. Write `review/final-report.md` when the work spans sessions or hands off; otherwise the invoked skill's Final Report in chat suffices.
+
+### L4+ — high-risk, governance, or architecture impact
+
+- Read the Harness Policy above, the relevant `PROJECT_KNOWLEDGE.md` section, and `GLOSSARY.md` strictness and risk terms.
+- Produce the full L3 artifact set plus explicit Human Review triggers checked (see **Human Review Required** below).
+- Before completion, write `review/final-report.md` covering every **Review Standard** section.
+
+At every level, the Anti-cheating Rules and Context Engineering sections apply: read only what the selected strictness and skill require.
 
 ---
 

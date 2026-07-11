@@ -27,12 +27,12 @@ TeaPrompt helps humans and host agents choose the **right amount of rigor** for 
 
 Pick **Strictness L1–L6** first (`skills/reflective-dispatch/SKILL.md`, [GLOSSARY.md](GLOSSARY.md)), then the skill phase. Skills declare `context_load: low|medium|high` in frontmatter so cost-aware hosts can defer heavy skills when Strictness is low.
 
-Standing non-goals are explicit: no TeaPrompt-owned runtime/swarm, no tenth core workflow skill without promotion evidence, no full `SKILL.md` i18n by default, and no silent rigor downgrade. See [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md#standing-non-goals).
+Standing non-goals are explicit: no TeaPrompt-owned runtime/swarm, no tenth core workflow skill without promotion evidence (frozen means gated, not never), no full `SKILL.md` i18n by default, and no silent rigor downgrade. Seeded routing evals are regression guards, not semantic-routing proof; methodology-complete does not mean operationally complete; skills may declare required runtime guarantees as preconditions, but host-runtime code and tests must enforce them. See [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md#standing-non-goals).
 
 
 ## Governance Panel Record
 
-Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–101, options A–IE) is recorded in [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md). Run `make all` before claiming routing or governance changes are verified.
+Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–101, options A–IE) is recorded in [plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md). Run `make all` from the repository root before claiming routing or governance changes are verified.
 
 ## Directory Map
 

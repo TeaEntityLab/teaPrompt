@@ -119,7 +119,7 @@ Choose the smallest sufficient destination:
 | Acquisition L0 no change | one-off, cheap, low risk | record only | no recurrence or value |
 | Acquisition L1 SOP artifact | human-run repeatable process | SOP / checklist | one successful dry replay |
 | Acquisition L2 skill draft | agent-assisted repeatable process | SKILL.md draft + examples | stable trigger and outputs |
-| Acquisition L3 skill plus verifier | objective deterministic pass/fail exists | skill + schema/test script | replay passes verifier; a model-only judge is not sufficient |
+| Acquisition L3 skill plus verifier | objective deterministic pass/fail exists | skill + schema/test script | replay passes verifier; a model-only judge is not sufficient; relevant security gates fail closed (prompt-injection authority boundary, supply-chain provenance, memory-write provenance — see `artifact-promotion.md` §4) |
 | Acquisition L4 runner | needs persistence, replay, cancellation, idempotency, role isolation, enforced transitions, side-effect gating, or memory / identity ACLs | workflow spec + implementation plan + host-runtime module | repeated local workflows, accepted risk gate, and runtime code/tests proving the guarantee |
 
 A prompt or skill cannot by itself guarantee persistence, replay, cancellation, idempotency, role isolation, or side-effect enforcement. If those guarantees are required, mark them unproven until runtime code and tests exist.

@@ -73,6 +73,18 @@ Three reviewer lenses returned usable output:
 4. **Make security gates fail-closed at L3, not only L4.** The L3 verifier definition (panel record and `artifact-promotion.md`) should require, when relevant: (a) a data-not-instruction / prompt-injection authority-boundary check; (b) a supply-chain provenance / license / SBOM / telemetry-default record; (c) a memory-write provenance tag (source, authority class, evidence-vs-instruction, scope, expiry/review, rollback path).
 5. **Tier the evidence explicitly.** Label panel consensus as advisory / model-vote-tier (not operational proof), ROUTE fixtures as regression-guard-tier, external surveys as stale-unless-refreshed before adopt/deploy, and Ornith benchmark numbers as non-load-bearing for workflow constraints.
 
+### Candidate Adoption Ledger (2026-07-11)
+
+Added by the 2026-07-11 governance rules rethink (user-approved tier A adoption); see `governance-rules-rethink-review-2026-07-11.md`. Guard: `plans/tests/test_candidate_adoption_state.py`.
+
+| # | Candidate | Status | Evidence | Next action |
+| --- | --- | --- | --- | --- |
+| 1 | Qualify "frozen" at entry points | Adopted 2026-07-11 | `skills/skill-map.md`, `skills/reflective-dispatch/SKILL.md`, `METHODOLOGY_MAP.md` 10-Layer Taxonomy intro, `06-repo/AGENTS.md` Scope | none |
+| 2 | Disambiguate three L-ladders | Adopted 2026-07-11 | `GLOSSARY.md` Formalization section note; `METHODOLOGY_MAP.md` Level Taxonomy Reference note | none |
+| 3 | Surface L3 verifier path in routing | Adopted 2026-07-11 (second pass) | `reflective-dispatch/SKILL.md` Route table; EN/zh-TW cheatsheet boundary quick cues; `04-agent/workflow-recipes.md` L3 verifier note; ROUTE-003 `verifier_artifact_not_runner_trap` (4 phrases) + router verifier-artifact boundary | none |
+| 4 | Fail-closed security gates at L3 | Adopted 2026-07-11 | `04-agent/artifact-promotion.md` §4 verifier/test gates; `04-agent/workflow-acquisition.md` Acquisition L3 row | none |
+| 5 | Explicit evidence tiering | Adopted 2026-07-11 | `GLOSSARY.md` Evidence Tier section; `QUALITY_GATES_SUMMARY.md` Key Metrics tier note; canonical wording stays in `reflective-review/SKILL.md` | none |
+
 ## Shared Findings
 
 1. The compact nine-skill surface and no-owned-runtime default remain correct as defaults.

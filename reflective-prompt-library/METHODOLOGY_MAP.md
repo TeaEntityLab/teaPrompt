@@ -69,7 +69,7 @@ current decision legible?"**
 
 ## The 10-Layer Taxonomy
 
-The taxonomy has ten layers for project surfaces; the execution routing set remains the nine frozen workflow skills under `skills/`. Skill-count decisions follow the nine-skill policy, not the layer count.
+The taxonomy has ten layers for project surfaces; the execution routing set remains the nine frozen workflow skills under `skills/`. Skill-count decisions follow the nine-skill policy, not the layer count. Frozen means gated, not never: a tenth core workflow skill needs the three-recurrence promotion gate and explicit human approval.
 
 Instead of a single prompt, the methodology is formally structured into ten distinct layers:
 
@@ -155,6 +155,8 @@ The repository uses two distinct L-level taxonomies. To avoid ambiguity, every L
 | --- | --- | --- | --- |
 | Strictness Level | L1-L6 | `skills/reflective-dispatch/SKILL.md` (also the Strictness Levels table above) | Execution rigor: how deeply to validate, review, and gate the work. L1 = daily prompting, L6 = strategy overlay. |
 | Formalization Level | L0-L4 | `04-agent/sop-compiler.md` | Automation depth: how much of a process is codified into a machine-executable workflow. L0 = prompt-only, L4 = runner with gates and hook. |
+
+Acquisition L0-L4 (`04-agent/workflow-acquisition.md`) is the promotion-time view of the same automation-depth ladder as Formalization L0-L4; Acquisition L3 and Formalization L3 both mean skill plus deterministic verifier. It is not a third taxonomy — do not introduce a fourth L-ladder.
 
 **Rule:** Write `Strictness L3` or `Formalization L3` — never bare `L3`. When the taxonomy is clear from surrounding context (e.g., a "Strictness:" field in a dispatch record), the qualifier may be omitted, but the first reference in any document should be explicit.
 
