@@ -12,11 +12,11 @@ metadata:
 
 # Flow Loop Harness
 
-**Type:** Domain-pack skill (script generation) — registered in `plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS`, not one of the nine frozen core workflow skills, and not selected by `reflective-dispatch` route rows. Companion to `flow-control-generator`, which owns one-pass (non-looping) topologies.
+**Type:** Domain-pack skill (script generation) — registered in the TeaPrompt source repo's domain-pack registry (`plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS`), not one of the nine frozen core workflow skills, and not selected by `reflective-dispatch` route rows. Companion to `flow-control-generator`, which owns one-pass (non-looping) topologies.
 
 ## Purpose
 
-Generate loop scripts that re-invoke a host agent until a deterministic condition holds. The loop body is model work; the loop control — stop condition, caps, progress accounting, resume — is script code. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (`plans/external-adoption-case-studies-2026-06-20.md`): the generated loop is a host-operationalized artifact, not a TeaPrompt-operated runner. The cross-platform loop vocabulary referenced here (ADK `LoopAgent`, LangGraph cycles, MAF checkpointed workflows, Anthropic evaluator-optimizer, practitioner "ralph" harnesses) is advisory-tier reference material; the one load-bearing rule is: never trust the model's own "done"; gate on an external verifier (see `../../plans/agent-flow-control-research-2026-07-11.md`).
+Generate loop scripts that re-invoke a host agent until a deterministic condition holds. The loop body is model work; the loop control — stop condition, caps, progress accounting, resume — is script code. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (source repo: `plans/external-adoption-case-studies-2026-06-20.md`): the generated loop is a host-operationalized artifact, not a TeaPrompt-operated runner. The cross-platform loop vocabulary referenced here (ADK `LoopAgent`, LangGraph cycles, MAF checkpointed workflows, Anthropic evaluator-optimizer, practitioner "ralph" harnesses) is advisory-tier reference material; the one load-bearing rule is: never trust the model's own "done"; gate on an external verifier (source repo: `plans/agent-flow-control-research-2026-07-11.md`).
 
 ## Module Contract
 
@@ -43,19 +43,19 @@ Output:
 Never:
 
 - Never emit an unbounded loop; `MAX_ITER` is mandatory and small by default (≤ 10 unless justified).
-- Never let the loop weaken the verifier to exit — no editing tests, thresholds, or expected outputs from inside the loop body prompt (anti-reward-hacking; mirrors `06-repo/AGENTS.md` Anti-cheating Rules).
+- Never let the loop weaken the verifier to exit — no editing tests, thresholds, or expected outputs from inside the loop body prompt (anti-reward-hacking; mirrors the source repo's `06-repo/AGENTS.md` Anti-cheating Rules).
 - Never grant the loop body broader permissions than the task needs; permission pre-approval flags are part of the reviewed config, not improvised.
 - Never run a side-effectful loop (deploy, billing, data mutation outside the workspace, third-party calls) unattended without an explicit human approval recorded first.
-- Never claim crash-safety or idempotency: the ledger is a resume convention; the host runtime owns real durability guarantees (`04-agent/runtime-trust-boundary.md`).
-- Never return the last unverified output as the result when a cap is exhausted — cap exhaustion is exit 2 and a human decision, not a soft success (negative example: OpenFugu's max-turns "return last response", `plans/openfugu-technical-brief-2026-06-25.md`).
-- Never treat run state as project memory: `state/` is a per-run operational ledger, distinct from the in-task semantic State Ledger of the reflective skills and from durable repo knowledge; promoting run notes into durable knowledge goes through `reflective-handoff-retro` plus the memory-write provenance gate of `04-agent/artifact-promotion.md` §4.
+- Never claim crash-safety or idempotency: the ledger is a resume convention; the host runtime owns real durability guarantees (source lens: `04-agent/runtime-trust-boundary.md`).
+- Never return the last unverified output as the result when a cap is exhausted — cap exhaustion is exit 2 and a human decision, not a soft success (negative example: OpenFugu's max-turns "return last response", source repo: `plans/openfugu-technical-brief-2026-06-25.md`).
+- Never treat run state as project memory: `state/` is a per-run operational ledger, distinct from the in-task semantic State Ledger of the reflective skills and from durable repo knowledge; promoting run notes into durable knowledge goes through `reflective-handoff-retro` plus the memory-write provenance gate (source lens: `04-agent/artifact-promotion.md` §4).
 
 Escalation:
 
 - Known fixed stages without iteration → `flow-control-generator`.
 - No objective verifier exists → the loop is not safe to automate; route to `reflective-brief` to define acceptance criteria, or keep the human in the loop each round.
 - Side effects on credentials, permissions, privacy-sensitive data, billing, production, or destructive operations → `reflective-risk` before first run; add an in-loop pause step for each side-effectful action.
-- Multi-session, cancellable, replayable workflow requirements → `reflective-spec-plan` with `04-agent/workflow-engine.md`; a shell loop cannot provide those guarantees.
+- Multi-session, cancellable, replayable workflow requirements → `reflective-spec-plan` (source-repo companion: `04-agent/workflow-engine.md`); a shell loop cannot provide those guarantees.
 - Loop keeps hitting the cap without converging → stop; escalate to `reflective-review` on the artifacts rather than raising the cap.
 
 ## Loop Anatomy
@@ -157,7 +157,7 @@ done
 exit 2  # rounds exhausted without ACCEPT; human decides next
 ```
 
-Caution: a model critic is a soft, advisory-tier verifier — this template's ACCEPT gate is a model judgment, not the deterministic truth layer the other templates use. Prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (`04-agent/workflow-recipes.md` Looper Topologies caution).
+Caution: a model critic is a soft, advisory-tier verifier — this template's ACCEPT gate is a model judgment, not the deterministic truth layer the other templates use. Prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (source repo: `04-agent/workflow-recipes.md` Looper Topologies caution).
 
 ### Deterministic companion check (raise the ACCEPT floor)
 
@@ -274,11 +274,11 @@ echo "- cap $MAX_WAVES waves exhausted" >> "$LEDGER"; exit 2
 ```
 
 Do not add a memory backend or semantic ledger columns — `state/` stays
-disposable per run (`plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
+disposable per run (source repo: `plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
 
 ## Human Review Boundary
 
-Before the first unattended run, a human must approve: the verifier, the caps, the permission flags, and the blast radius of the loop body. Record the approval in the run note. Attended runs (human watches each iteration) may relax this to reviewing the verifier and caps only. Any loop step matching the `06-repo/AGENTS.md` Human Review list (auth, migrations, destructive ops, billing, production, privacy) keeps a per-action pause regardless of mode.
+Before the first unattended run, a human must approve: the verifier, the caps, the permission flags, and the blast radius of the loop body. Record the approval in the run note. Attended runs (human watches each iteration) may relax this to reviewing the verifier and caps only. Any loop step matching the source repo's `06-repo/AGENTS.md` Human Review list (auth, migrations, destructive ops, billing, production, privacy) keeps a per-action pause regardless of mode.
 
 ## Verification
 
@@ -287,7 +287,7 @@ Before the first unattended run, a human must approve: the verifier, the caps, t
 3. Confirm the verifier is committed and deterministic, and record the host permission mode that keeps `checks/` (and the canonical task copy) outside the loop body's editable paths — a host-runtime precondition this script cannot enforce.
 4. Report dry-run evidence with the deliverable.
 
-Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed L3 gates of `04-agent/artifact-promotion.md` §4 before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any loop script to a team standard.
+Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed L3 gates (source lens: `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any loop script to a team standard.
 
 ## Host-Native Alternatives
 
@@ -301,20 +301,22 @@ detection, backlog retirement, or a resume ledger matter: native goal modes
 evaluate completion with a model judge over the transcript, which is exactly
 the stop-condition class this skill's verifier rule forbids trusting alone.
 First demotion-trigger evaluation against these surfaces: **not fired**
-(`../../plans/flow-pack-demotion-evaluation-2026-07-11.md`).
+(source repo: `plans/flow-pack-demotion-evaluation-2026-07-11.md`).
 
 ## Demotion Triggers
 
 - Loop scripts are disposable: when the verifier, host CLI, or task shape changes, regenerate from the template rather than patching a drifted copy.
-- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in `../../plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
+- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
 
 ## Prompt Sources
 
-- `../../plans/agent-flow-control-research-2026-07-11.md`
-- `../../plans/flow-control-pack-panel-record-2026-07-11.md`
-- `../../plans/flow-coverage-panel-record-2026-07-11.md`
-- `../../plans/harness-1-state-ledger-research.md` (three-layer split: project memory in repo Markdown; in-task semantic State Ledger in reflective skills; per-run operational ledger here)
-- `../../04-agent/workflow-recipes.md`
-- `../../04-agent/runtime-trust-boundary.md`
-- `../../04-agent/artifact-promotion.md`
-- `../../06-repo/AGENTS.md`
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
+- `plans/agent-flow-control-research-2026-07-11.md`
+- `plans/flow-control-pack-panel-record-2026-07-11.md`
+- `plans/flow-coverage-panel-record-2026-07-11.md`
+- `plans/harness-1-state-ledger-research.md` (three-layer split: project memory in repo Markdown; in-task semantic State Ledger in reflective skills; per-run operational ledger here)
+- `04-agent/workflow-recipes.md`
+- `04-agent/runtime-trust-boundary.md`
+- `04-agent/artifact-promotion.md`
+- `06-repo/AGENTS.md`

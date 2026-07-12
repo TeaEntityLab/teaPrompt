@@ -138,6 +138,8 @@ Promotion rules:
 
 ## Prompt Sources
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `03-context/context-handoff.md`
 - `04-agent/retro.md`
 - `01-thinking/socratic-reviewer.md`

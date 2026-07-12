@@ -158,6 +158,8 @@ Use one:
 
 ## Prompt Sources
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `01-thinking/critical-thinking-check.md`
 - `01-thinking/counterargument.md`
 - `02-engineering/code-reviewer.md`

@@ -185,6 +185,35 @@ AGREE WITH CHANGES (LONG-1 applied; LONG-2 deferred).
   provider-parallel review (quota-blocked; see Execution mode). Claims resting
   on those are tagged [INFERENCE] above.
 
+## Addendum — Install-portability pass (2026-07-12, user-directed)
+
+Post-synthesis, the user pointed out that in real deployments only the skill
+directories are visible (`<skills-root>/<skill-name>/SKILL.md`; the install
+helpers copy nothing else), so skill-body references to `plans/…`,
+`04-agent/…`, cheatsheets, or `../../…` dangle on the host. An audit of all 11
+shipped bodies confirmed three defect classes (observed):
+
+1. Load-bearing lens instructions pointing at repo docs — including this very
+   panel's ENT-2 cross-link ("apply `04-agent/external-adoption-review.md`
+   §2a"), dispatch's promotion and trust-boundary lens rows, minimality's
+   promotion escalation, and both packs' gate/escalation references.
+2. Parent-relative paths (`../../plans/…`) in pack bodies that resolve nowhere
+   outside this repository.
+3. `## Prompt Sources` lists that read as runtime dependencies, with nothing
+   marking them as source-repo provenance (the installation guide's fallback
+   section already treats them as provenance).
+
+Fix convention applied to all 11 bodies: every `## Prompt Sources` opens with a
+provenance disclaimer (source-repository paths, not runtime dependencies; the
+installed skill is self-contained); every load-bearing reference now inlines
+its operative rule and keeps the repo path as attribution ("source repo:" /
+"source lens:"); promotion boundaries fail closed where the lenses are not
+installed (no promotion without recurrence evidence and explicit human
+approval); parent-relative paths normalized to repo-root-relative attribution.
+ENT-2's adopted wording was revised the same day to inline
+redact/minimize/manifest rather than only cross-linking. Guards: PORT-1 tests
+in `plans/tests/test_skill_scenario_panel_adoption_state.py`.
+
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Status | Evidence | Next action / trigger |
@@ -199,6 +228,7 @@ AGREE WITH CHANGES (LONG-1 applied; LONG-2 deferred).
 | GREEN-2 | spike boundary cue (EN+zh) | **adopted 2026-07-12** | same as GREEN-1 | guard: cue in both cheatsheets |
 | LONG-1 | handoff ledger bridge | **adopted 2026-07-12** | observed three unbridged ledger conventions | guard: bridge sentence |
 | HOST-1 | install fallback for no-skill hosts | **adopted 2026-07-12** | observed doc gap; failure evidence none | guard: fallback heading |
+| PORT-1 | install-portability pass over all 11 shipped SKILL.md bodies | **adopted 2026-07-12** | observed: install unit is the skill directory alone (`SKILL_INSTALLATION.md`); load-bearing repo-path instructions and `../../` links dangle on hosts | guard: provenance preamble everywhere, no parent-relative paths, inlined egress/promotion/trust rules |
 | ENT-1 | incident/break-glass clause in risk | **deferred** | would weaken a safety gate; [INFERENCE] demand | re-open on a real incident-response deadlock + explicit Human Review |
 | LONG-2 | dispatch mid-task re-route cue | **deferred** | partially duplicates existing trigger; [INFERENCE] | re-open on observed mid-session re-route confusion |
 | ZH-2 | per-skill zh localization beyond cheatsheet | **deferred** | existing roadmap gate unchanged; no new evidence | re-open on zh-user routing-failure evidence |
@@ -217,3 +247,6 @@ DOC-1/DOC-2 cues are dead text and should be re-litigated); if deferred rows
 re-litigation (ledger discipline failure); or if a future panel reproduces this
 review with true parallel lenses and overturns a consensus item (single-host
 execution bias made material).
+Also wrong if: a shipped `SKILL.md` re-grows a load-bearing repo-path
+instruction or parent-relative link without inlining its operative rule (the
+PORT-1 guards contradict).

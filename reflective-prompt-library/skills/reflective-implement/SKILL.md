@@ -179,6 +179,8 @@ Request Human Review for auth, permission changes, security-sensitive logic, pri
 
 ## Prompt Sources
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `02-engineering/implementation-agent.md`
 - `02-engineering/test-designer.md`
 - `02-engineering/local-feedback.md`

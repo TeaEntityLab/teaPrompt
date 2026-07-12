@@ -57,7 +57,7 @@ Use before:
 - Production deployment
 - Legal, medical, or financial high-stakes advice
 - Any workflow where untrusted external content can influence side-effectful tool actions
-- Sending internal code, data, or evidence to external services or reviewers (data egress); apply `04-agent/external-adoption-review.md` §2a (sensitive-evidence packet handling) as the packet-handling lens
+- Sending internal code, data, or evidence to external services or reviewers (data egress): redact secrets and identifiers first, send only the minimum evidence the question needs, and record a manifest of exactly what left the boundary (packet-handling lens: `04-agent/external-adoption-review.md` §2a in the TeaPrompt source repository)
 
 ## Output
 
@@ -110,6 +110,8 @@ Use before:
 - Ensure an auditable record exists for high-risk steps and approvals.
 
 ## Prompt Sources
+
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
 
 - `05-domain/high-risk.md`
 - `02-engineering/local-feedback.md`

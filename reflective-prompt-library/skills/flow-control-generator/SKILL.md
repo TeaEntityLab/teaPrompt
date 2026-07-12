@@ -12,11 +12,11 @@ metadata:
 
 # Flow Control Generator
 
-**Type:** Domain-pack skill (script generation) — registered in `plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS`, not one of the nine frozen core workflow skills, and not selected by `reflective-dispatch` route rows; the host harness may invoke it directly.
+**Type:** Domain-pack skill (script generation) — registered in the TeaPrompt source repo's domain-pack registry (`plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS`), not one of the nine frozen core workflow skills, and not selected by `reflective-dispatch` route rows; the host harness may invoke it directly.
 
 ## Purpose
 
-Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow (order, branching, concurrency, gates, budgets); the model owns step content. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (`plans/external-adoption-case-studies-2026-06-20.md`): the generated script is a host-operationalized artifact, not a TeaPrompt-operated runtime. The platform vocabulary this skill uses is reference material at advisory tier — see `../../plans/agent-flow-control-research-2026-07-11.md` for sources, evidence tiers, and demotion triggers.
+Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow (order, branching, concurrency, gates, budgets); the model owns step content. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (source repo: `plans/external-adoption-case-studies-2026-06-20.md`): the generated script is a host-operationalized artifact, not a TeaPrompt-operated runtime. The platform vocabulary this skill uses is advisory-tier reference material; sources and evidence tiers: `plans/agent-flow-control-research-2026-07-11.md` (source repo).
 
 ## Module Contract
 
@@ -24,7 +24,7 @@ Trigger:
 
 - The user asks to "chain", "pipeline", "fan out", "parallelize", "route", "orchestrate", or "script" agent steps, or asks for a flow/workflow script that calls an agent CLI more than once.
 - A task decomposes into ordered or independent agent steps whose sequencing should not be left to model improvisation.
-- An existing prompt-only recipe (see `04-agent/workflow-recipes.md`) keeps failing on ordering, skipped gates, or lost intermediate outputs.
+- An existing prompt-only recipe (source repo: `04-agent/workflow-recipes.md`) keeps failing on ordering, skipped gates, or lost intermediate outputs.
 
 Methods:
 
@@ -46,7 +46,7 @@ Never:
 - Never script epistemic perspective expansion (STORM-style multi-voice discovery) as a parallel topology — that is an optional method inside `reflective-research`; parallel fan-out here is for independent executable subtasks only.
 - Never treat an agent's self-reported success as a gate; gates are exit codes of deterministic checks.
 - Never embed secrets, auto-approve destructive permissions, or widen tool allowlists beyond what the steps need.
-- Never claim persistence, crash-safety, or idempotency for a generated script; the state directory is a resume convention that the host must honor, not a runtime guarantee (`04-agent/runtime-trust-boundary.md`).
+- Never claim persistence, crash-safety, or idempotency for a generated script; the state directory is a resume convention that the host must honor, not a runtime guarantee (source lens: `04-agent/runtime-trust-boundary.md`).
 - Never let a generated stage edit its own gates, checks, or plan file mid-run; gate tampering voids the run.
 - Never treat surveyed platform vocabulary as an adoption mandate; topology choice follows the task's structure and a local need, not platform prestige.
 
@@ -54,7 +54,7 @@ Escalation:
 
 - Iterative refinement or fix-until-green loops → `flow-loop-harness`.
 - Unclear goal or acceptance criteria → `reflective-brief` first.
-- Long-running, resumable, multi-session workflow design → `reflective-spec-plan` with `04-agent/workflow-engine.md`.
+- Long-running, resumable, multi-session workflow design → `reflective-spec-plan` (source-repo companion: `04-agent/workflow-engine.md`).
 - Steps touching credentials, permissions, privacy-sensitive data, billing, production, data deletion, destructive operations, or third parties → `reflective-risk` before the script is run; insert an explicit human-approval pause step.
 - Whether the flow should exist at all (one agent call might do) → `reflective-minimality`.
 
@@ -193,7 +193,7 @@ run_agent "$STATE/route-prompt.md" "$STATE/final.md"
 
 ## Template: Orchestrator-Workers (Python, stdlib only)
 
-Boundary: this is a planner prompt plus capped worker calls inside ONE host-executed script. It is not the in-repo multi-agent orchestrator/swarm the 2026-06-25 panel rejected (`plans/multi-agent-panel-consensus-2026-06-25.md`, Stop-Doing list) — do not grow it toward one.
+Boundary: this is a planner prompt plus capped worker calls inside ONE host-executed script. It is not the in-repo multi-agent orchestrator/swarm the 2026-06-25 panel rejected (source repo: `plans/multi-agent-panel-consensus-2026-06-25.md`, Stop-Doing list) — do not grow it toward one.
 
 ```python
 #!/usr/bin/env python3
@@ -334,7 +334,7 @@ sys.exit(0 if not bad else 2)                           # strict default
 
 Boundary: one host-executed script, not a TeaPrompt runtime. Rejected extras
 stay rejected: no retry-with-backoff, memory backend, or per-node provenance
-headers (`plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
+headers (source repo: `plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
 
 ## Verification
 
@@ -345,19 +345,21 @@ Before handing a generated script to the user:
 3. Confirm every stage has a gate or an explicit `# gate: none (accepted)`.
 4. Report the dry-run evidence in the completion note; an unexercised script is not done.
 
-Promoting a generated flow into a durable, recurring artifact is an Acquisition-ladder step: apply the fail-closed L3 security gates of `04-agent/artifact-promotion.md` §4 (prompt-injection authority boundary, supply-chain provenance, memory-write provenance) before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any script to a team standard.
+Promoting a generated flow into a durable, recurring artifact is an Acquisition-ladder step: apply the fail-closed L3 security gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; source lens: `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any script to a team standard.
 
 ## Demotion Triggers
 
 - Generated scripts are disposable: when the host CLI, task shape, or gates change, regenerate from the template rather than patching a drifted copy.
-- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in `../../plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
+- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
 
 ## Prompt Sources
 
-- `../../plans/agent-flow-control-research-2026-07-11.md`
-- `../../plans/flow-control-pack-panel-record-2026-07-11.md`
-- `../../plans/flow-coverage-panel-record-2026-07-11.md`
-- `../../04-agent/workflow-recipes.md`
-- `../../04-agent/workflow-engine.md`
-- `../../04-agent/runtime-trust-boundary.md`
-- `../../04-agent/artifact-promotion.md`
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
+- `plans/agent-flow-control-research-2026-07-11.md`
+- `plans/flow-control-pack-panel-record-2026-07-11.md`
+- `plans/flow-coverage-panel-record-2026-07-11.md`
+- `04-agent/workflow-recipes.md`
+- `04-agent/workflow-engine.md`
+- `04-agent/runtime-trust-boundary.md`
+- `04-agent/artifact-promotion.md`

@@ -103,6 +103,8 @@ Spike / exploration framing: when acceptance criteria can only emerge from build
 
 Use these library prompts for exact wording when needed:
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `00-core/core-short.md`
 - `02-engineering/task-start.md`
 - `01-thinking/why-what-how-done.md`

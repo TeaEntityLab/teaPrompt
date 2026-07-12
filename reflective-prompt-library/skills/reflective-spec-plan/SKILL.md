@@ -227,6 +227,8 @@ When chat-only, use the same headings inline.
 
 ## Prompt Sources
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `02-engineering/spec-writer.md`
 - `02-engineering/test-designer.md`
 - `02-engineering/usage-first.md`

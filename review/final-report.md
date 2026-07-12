@@ -76,13 +76,17 @@ wording-level updates adopted (implement Small-Change Fast Path + doc-edit
 scope, dispatch ladder note, risk data-egress trigger + M7 cross-link, brief
 spike framing, handoff ledger bridge, two bilingual boundary cues, install
 fallback); ENT-1 / LONG-2 / ZH-2 deferred with named triggers. Guards:
-`plans/tests/test_skill_scenario_panel_adoption_state.py` (13 tests).
+`plans/tests/test_skill_scenario_panel_adoption_state.py` (18 tests). Addendum
+PORT-1 (user-directed, same day): all 11 shipped SKILL.md bodies made
+install-portable — provenance disclaimers under every `## Prompt Sources`,
+load-bearing repo-path instructions inlined with source-repo attribution,
+promotion boundaries fail closed without the lenses, `../../` paths removed.
 
 ### Final repository gate
 
 Command: `make all` from repository root.
 
-- **912 pytest tests passed**.
+- **917 pytest tests passed**.
 - Link + Agent Skills schema validation: 148 files, 0 errors.
 - Lint: 148 files, 0 errors, 0 warnings.
 - Governance: 11/11 skills valid.

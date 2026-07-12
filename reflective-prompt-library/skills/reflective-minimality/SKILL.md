@@ -63,7 +63,7 @@ Escalation:
 - If the goal or acceptance criteria are unclear, route to `reflective-brief` or `reflective-spec-plan`.
 - If simplification touches high-risk behavior, route to `reflective-risk`.
 - If implementation is required after the gate, route to `reflective-implement`.
-- If the question is whether to create or promote a skill, prompt lens, verifier, or runtime surface, use `04-agent/artifact-promotion.md` instead of treating minimality as promotion approval.
+- If the question is whether to create or promote a skill, prompt lens, verifier, or runtime surface, use the artifact-promotion lens (`04-agent/artifact-promotion.md` in the TeaPrompt source repository) instead of treating minimality as promotion approval; without that lens, fail closed — no promotion without recurrence evidence and explicit human approval.
 - If reviewing an existing diff, combine with `reflective-review` for correctness and test adequacy.
 
 ## Minimality Ladder
@@ -127,6 +127,8 @@ For a repo-wide audit, rank the largest cuts first and use the same tags.
 For a debt ledger, scan intentional shortcut markers and flag any entry that lacks a ceiling or upgrade trigger.
 
 ## Prompt Sources
+
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
 
 - `01-thinking/counterargument.md`
 - `02-engineering/code-reviewer.md`

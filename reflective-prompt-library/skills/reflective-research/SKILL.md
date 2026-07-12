@@ -180,6 +180,8 @@ Skip when the question is narrow, repo-local, and already has a single canonical
 
 ## Prompt Sources
 
+*Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
+
 - `05-domain/research.md`
 - `03-context/context-engineering.md`
 - `03-context/large-context.md`
