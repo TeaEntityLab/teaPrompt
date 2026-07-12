@@ -10,6 +10,7 @@ validate:
 	python3 $(PLANS)/lint_skills.py
 	python3 $(PLANS)/validate_governance.py
 	python3 $(PLANS)/validate_project_knowledge.py
+	python3 $(PLANS)/validate_record_hygiene.py
 	python3 $(PLANS)/validate_benchmark_fixture.py
 	python3 $(PLANS)/validate_skill_examples.py
 	python3 $(PLANS)/validate_route_fixture.py

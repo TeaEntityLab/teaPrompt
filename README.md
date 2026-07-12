@@ -18,6 +18,18 @@ TeaPrompt helps humans and host agents choose the **right amount of rigor** for 
 
 Full library docs: [reflective-prompt-library/README.md](reflective-prompt-library/README.md).
 
+## Orientation
+
+New here? Read in this order:
+
+1. `README.md` — North Star: what TeaPrompt is and is not.
+2. [reflective-prompt-library/README.md](reflective-prompt-library/README.md) — the layers and how to compose them.
+3. [reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md](reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md) — pick a workflow skill fast.
+4. [reflective-prompt-library/METHODOLOGY_MAP.md](reflective-prompt-library/METHODOLOGY_MAP.md) — the principles behind the layers.
+5. [reflective-prompt-library/SKILL_INSTALLATION.md](reflective-prompt-library/SKILL_INSTALLATION.md) — install the skills into your agent host.
+
+Maintainers and governance operators start at [reflective-prompt-library/06-repo/AGENTS.md](reflective-prompt-library/06-repo/AGENTS.md) and the GLOSSARY's Governance Maintenance Playbook instead.
+
 ## Governance
 
 - **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) — quality gates, routing maintenance (R8–R12), `make all`

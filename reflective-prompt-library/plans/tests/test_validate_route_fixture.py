@@ -12,7 +12,7 @@ from validate_route_fixture import (  # noqa: E402
     ROUTE_003_MIN_PHRASES,
     VALID_WORKFLOWS,
 )
-from route_paraphrase_eval import load_route_eval_config  # noqa: E402
+from route_paraphrase_eval import ParaphraseRouter, load_route_eval_config  # noqa: E402
 
 PLANS = Path(__file__).parent.parent
 
@@ -55,6 +55,58 @@ def test_route_fixture_minimums_match_validator_constants():
     assert r2_phrases == ROUTE_002_MIN_PHRASES
     assert r3_groups == ROUTE_003_MIN_ADVERSARIAL_GROUPS
     assert r3_phrases == ROUTE_003_MIN_PHRASES
+
+P7_PACK_COLLISION_PROBES = (
+    (
+        "design an orchestration plan for a multi-step agent pipeline without writing code",
+        "reflective-spec-plan",
+    ),
+    (
+        "write a workflow specification for fan-out and fan-in before coding",
+        "reflective-spec-plan",
+    ),
+    (
+        "break down an agent pipeline into tickets and acceptance criteria without implementing it",
+        "reflective-spec-plan",
+    ),
+    ("which skill should handle an agent pipeline script request", "reflective-dispatch"),
+    (
+        "route this orchestrate-agent-steps request without generating a script",
+        "reflective-dispatch",
+    ),
+    (
+        "choose between workflow design and a host-invoked flow-control domain pack",
+        "reflective-dispatch",
+    ),
+    (
+        "build a runnable agent pipeline script and verify it with tests",
+        "reflective-implement",
+    ),
+    (
+        "implement a flow-control script that fans out agent CLI steps and verifies their outputs",
+        "reflective-implement",
+    ),
+    (
+        "add a Python orchestrator-worker script with bounded concurrency and an exit-code gate",
+        "reflective-implement",
+    ),
+)
+
+
+def test_p7_pack_collision_groups_are_fixture_backed():
+    route_002 = load_route_eval_config(PLANS / "route-002-holdout-eval.yaml")
+    route_003 = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    route_002_names = {group["name"] for group in route_002["holdout_sets"]}
+    route_003_names = {group["name"] for group in route_003["adversarial_sets"]}
+    assert {"pack_vocab_plan_holdout", "pack_vocab_route_holdout"} <= route_002_names
+    assert "pack_vocab_implement_not_plan_trap" in route_003_names
+
+
+def test_p7_pack_collision_probes_preserve_core_routes():
+    router = ParaphraseRouter()
+    for phrase, expected in P7_PACK_COLLISION_PROBES:
+        workflow, _, _, _ = router.route(phrase)
+        assert workflow == expected, f"{phrase!r} -> {workflow}, want {expected}"
 
 
 ROUND_51_BOUNDARY_PROBES = (

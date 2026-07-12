@@ -39,6 +39,46 @@ def test_all_nine_core_skills_are_linted_as_skills(lint_results):
         expected = f"reflective-prompt-library/skills/{skill}/SKILL.md"
         assert expected in skill_files, skill
 
+def test_composable_category_file_is_linted_as_prompt(lint_results):
+    by_file = {item["file"]: item for item in lint_results["file_results"]}
+    assert by_file["reflective-prompt-library/00-core/core-short.md"]["type"] == "prompt"
+
+
+def test_docs_and_plans_are_classified_as_documents(lint_results):
+    by_file = {item["file"]: item for item in lint_results["file_results"]}
+    for path in (
+        "reflective-prompt-library/PROJECT_KNOWLEDGE.md",
+        "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
+        "review/final-report.md",
+    ):
+        result = by_file[path]
+        assert result["type"] == "document"
+        assert result["warnings"] == []
+
+
+def test_long_document_skips_prompt_and_skill_heuristics(tmp_path):
+    path = tmp_path / "reflective-prompt-library" / "plans" / "long-record.md"
+    path.parent.mkdir(parents=True)
+    path.write_text(("# Record\nproduction auth evidence\n" * 300), encoding="utf-8")
+    result = SkillLinter(str(tmp_path)).lint_file(path)
+    assert result == {
+        "file": "reflective-prompt-library/plans/long-record.md",
+        "type": "document",
+        "errors": [],
+        "warnings": [],
+        "suggestions": [],
+    }
+
+
+def test_long_composable_prompt_has_type_correct_warning(tmp_path):
+    path = tmp_path / "reflective-prompt-library" / "00-core" / "long-prompt.md"
+    path.parent.mkdir(parents=True)
+    path.write_text("# Purpose\n" + ("instruction\n" * 501), encoding="utf-8")
+    result = SkillLinter(str(tmp_path)).lint_file(path)
+    assert result["type"] == "prompt"
+    assert any(warning.startswith("Prompt body is very long") for warning in result["warnings"])
+    assert not any(warning.startswith("Skill body") for warning in result["warnings"])
+
 
 def test_skill_missing_description_reports_error(tmp_path):
     skill_dir = tmp_path / "reflective-prompt-library" / "skills" / "reflective-brief"

@@ -1,14 +1,14 @@
 # Routing Holdout Expansion Plan — 2026-07-11
 
-> **Status: active planning artifact (non-authoritative).** Design pre-work for
-> the next ROUTE-002/003 holdout expansion, motivated by the
-> [2026-07-11 survey](../../surveys/agent-skills-flow-control-survey-2026-07-11.md):
-> host-native goal/loop/schedule vocabulary is about to appear in user phrasing,
-> and P7 (pack routing integration) is blocked on exactly this evidence. This
-> plan lists **candidate** groups with hypothesis routes; nothing is added to the
-> fixtures here. Execution follows [ROUTING_CONTRACT](ROUTING_CONTRACT.md) R8 and
-> the observed pre-tune procedure from
+> **Status: active planning artifact plus execution ledger (non-authoritative).**
+> H1/H2/H5/H6 and the P7 collision groups are adopted; H3/H4 remain deferred.
+> The work began as design pre-work motivated by the
+> [2026-07-11 survey](../../surveys/agent-skills-flow-control-survey-2026-07-11.md)
+> and follows [ROUTING_CONTRACT](ROUTING_CONTRACT.md) R8 plus the observed
+> pre-tune procedure from
 > [Adoption Update 3, P1](governance-rules-rethink-review-2026-07-11.md#adoption-update-3-2026-07-11).
+> P7/N12 consumed the evidence and resolved no core-router integration in the
+> [successor decision](p7-pack-routing-decision-2026-07-11.md).
 
 ## Rules this plan operates under (pointers)
 
@@ -16,11 +16,11 @@
   router first; observations recorded; the fixture group is added; only then may
   a router rule change, and only if a meaningful boundary actually fails.
 - **Floors ratchet:** `validate_route_fixture.py` minimums only go up
-  (currently ROUTE-002 ≥40 groups/114 phrases; ROUTE-003 ≥19 groups/66 phrases).
-- **P7 is not decided here:** these fixtures test that pack-adjacent vocabulary
-  does not destabilize the nine core routes. Whether `reflective-dispatch`
-  should ever route to packs is the deferred P7/N12 question that will *consume*
-  these observations.
+  (currently ROUTE-002 ≥44 groups/124 phrases; ROUTE-003 ≥22 groups/76 phrases).
+- **P7 is decided by its successor record:** these fixtures test that
+  pack-adjacent vocabulary does not destabilize the nine core routes. Nine fresh
+  collision phrases passed pre-tune, so `reflective-dispatch` does not route to
+  packs; the packs remain host-invoked.
 - **Parity mechanics:** any adopted group follows the
   [playbook](../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊) items
   6–8 (probe tuples, EN/zh-TW cheatsheet cues, CONTRIBUTING R8–R12 sync).
@@ -117,12 +117,28 @@ Parity executed per playbook: two new ROUTE-003 canonical probes in
 `tests/test_validate_route_fixture.py` (flowing into EN/zh-TW cheatsheet parity
 tests); implement-section trigger cues added to both cheatsheets; quick-cue
 summary untouched (Round 66 expansion rejection honored); floors bumped in
-`validate_route_fixture.py`; QUALITY_GATES counts synced. These observations are
-the standing holdout evidence for the P7/N12 re-litigation.
+`validate_route_fixture.py`; QUALITY_GATES counts synced. These observations
+fed the P7/N12 re-litigation below.
+
+## P7/N12 execution update (2026-07-11)
+
+User-authorized re-litigation added three fresh groups after a pre-tune
+observation against the unchanged router:
+
+| Group | Fixture | Pre-tune observation | Change |
+| --- | --- | --- | --- |
+| `pack_vocab_plan_holdout` | ROUTE-002 | 3/3 → `reflective-spec-plan` (100%) | +3 phrases |
+| `pack_vocab_route_holdout` | ROUTE-002 | 3/3 → `reflective-dispatch` (100%) | +3 phrases |
+| `pack_vocab_implement_not_plan_trap` | ROUTE-003 | 3/3 → `reflective-implement` (100%) | +3 phrases |
+
+No boundary failed, so no router rule, `VALID_WORKFLOWS`, dispatch row, or
+quick-cue changed. Floors rose to 44/124 and 22/76. P7/N12 resolved as
+**no core-router integration**; see the
+[decision record](p7-pack-routing-decision-2026-07-11.md).
 
 ## Falsifiability
 
-This plan fails its purpose if a router rule for goal/loop/schedule vocabulary
-lands before the observation run (R8 violation), or if P7 is re-litigated
-without citing these observations. It is stale if the checklist has not started
-by the 2026-10-11 checkpoint while pack-adjacent misroutes are being reported.
+This plan fails its purpose if any router rule lands before its observation run
+(R8 violation); if the P7 successor decision is cited without the initial H1–H6
+and later 9-phrase observations; or if H3/H4 land before their genuinely
+ambiguous boundaries are decided from real evidence.

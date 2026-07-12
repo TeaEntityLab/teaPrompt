@@ -19,9 +19,10 @@
   retired; their milestones are complete and recorded in the
   [Decision Index](../PROJECT_KNOWLEDGE.md#decision-index).
 - Open work now lives scattered across panel records as deferred candidates with
-  named triggers (P6/P7/P12/P13/P15, M4–M7, E2, D4, N8, June backlog). Nothing
+  named triggers (P6/P12/P13, M4–M7, E2, D4, N8, June backlog). Nothing
   aggregates them, so trigger drift — the failure mode every panel record's
-  falsifiability clause warns about — is the main planning risk.
+  falsifiability clause warns about — is the main planning risk. P7/P15 are
+  resolved and point to successor records below.
 - This plan aggregates; it does not re-decide. Every row points at the record that
   owns the decision.
 
@@ -44,8 +45,8 @@
 | `00-core/`–`06-repo/` | Composable prompt sources (thinking, engineering, context, agent, domain, repo templates) | Complete; guarded by contract/cross-link/HR registries in `plans/tests/` |
 | `skills/` core | Nine frozen core workflow skills (bounded routing set; frozen = gated, not never) | Complete; 4-field governance metadata on 9/9 ([skill-map](../skills/skill-map.md)) |
 | `skills/` packs | Two registered domain packs outside core routing: `flow-control-generator`, `flow-loop-harness` | Adopted 2026-07-11 via user-directed exception; demotion triggers live ([record](flow-control-pack-panel-record-2026-07-11.md)) |
-| Routing | Deterministic seeded router + [ROUTING_CONTRACT.md](ROUTING_CONTRACT.md) R1–R12 | ROUTE-001/002/003 at 100% on seeded fixtures (128/114/66 phrases) — regression-guard tier, not semantic proof |
-| Governance tooling | `make all`: pytest suite + 9 validators + 3 route evals; CI via `.github/workflows/python-tools.yml` | Green; last recorded full run 782 tests ([necessity record](governance-necessity-panel-record-2026-07-11.md)); re-verified below |
+| Routing | Deterministic seeded router + [ROUTING_CONTRACT.md](ROUTING_CONTRACT.md) R1–R12 | ROUTE-001/002/003 at 100% on seeded fixtures (128/124/76 phrases); P7 collision evidence resolved no core-router integration — regression-guard tier, not semantic proof |
+| Governance tooling | `make all`: pytest suite + validators + 3 route evals; CI via `.github/workflows/python-tools.yml` | Green; current evidence lives in [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md) and the latest session report |
 | Docs & distribution | READMEs (EN/zh-TW), [CONTRIBUTING](../../CONTRIBUTING.md), [SKILL_INSTALLATION](../SKILL_INSTALLATION.md) core-only default with opt-in packs, cheatsheets EN/zh-TW | Current as of the 2026-07-11 adoption wave |
 | Knowledge layer | [PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) (principles, direction, lessons, Decision Index), [GLOSSARY](../GLOSSARY.md) playbook | Validated by `validate_project_knowledge.py`; Rounds 69–101 rolled up |
 | Evidence archive | `plans/` records + [surveys/](../../surveys/ornith-1.0-survey.md) | Eleven retired records carry historical-status headers (rethink E3) |
@@ -56,8 +57,8 @@
 `lint_skills.py`, `validate_governance.py` (core/pack registry parity),
 `validate_project_knowledge.py` (authority boundary), `validate_benchmark_fixture.py`
 (24 golden tasks), `validate_skill_examples.py` (`CORE_SKILLS` ∪ `DOMAIN_PACK_SKILLS`),
-`validate_route_fixture.py` (coverage floors: ROUTE-002 ≥ 40 groups / 114 phrases,
-ROUTE-003 ≥ 19 groups / 66 phrases), then ROUTE-001/002/003 evals. Details:
+`validate_route_fixture.py` (coverage floors: ROUTE-002 ≥ 44 groups / 124 phrases,
+ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
 [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md).
 
 ## Operating constraints (pointers, not restatements)
@@ -86,13 +87,14 @@ ROUTE-003 ≥ 19 groups / 66 phrases), then ROUTE-001/002/003 evals. Details:
 
 - Objective: preserve routing fairness (R1–R12) without untested tuning.
 - Planned work: expand ROUTE-002/003 holdouts before any router change (R8);
-  build P7 pack-trigger holdout groups when pack routing integration is
-  re-litigated; keep cheatsheet quick-cue parity (playbook items 6–8).
+  keep cheatsheet quick-cue parity (playbook items 6–8). P7 closed on
+  2026-07-11 after three collision groups / 9 phrases passed 100% pre-tune:
+  packs remain host-invoked, with no core router or quick-cue integration
+  ([decision](p7-pack-routing-decision-2026-07-11.md)).
 - Acceptance: any router tune lands with pre-added holdout evidence in the same
-  change; ROUTE evals stay at 100% or the failure is analyzed, not patched around.
-- Known unmeasured risk: trigger-phrase collisions ("pipeline", "loop until",
-  "orchestrate") between pack triggers and core routes until P7 holdouts exist
-  ([pack record §Disagreements](flow-control-pack-panel-record-2026-07-11.md)).
+  change; ROUTE evals stay at 100% or the failure is analyzed, not patched around;
+  pack names remain absent from core route targets unless P7's successor trigger
+  fires and a new decision record reverses the no-change outcome.
 
 ### WS3 — Skills surface (core + packs)
 
@@ -125,9 +127,9 @@ ROUTE-003 ≥ 19 groups / 66 phrases), then ROUTE-001/002/003 evals. Details:
 
 - Objective: consumers can install core-only or core+packs deterministically;
   zh-TW navigation surfaces stay in sync.
-- Planned work: T2 (zh-TW cheatsheet pack-appendix parity once the EN appendix is
-  stable); keep SKILL_INSTALLATION registry parity (N4); README orientation
-  section stays deferred (M6) unless the newcomer-orientation gap recurs.
+- Planned work: keep SKILL_INSTALLATION registry parity (N4); T2 zh-TW pack
+  appendix and README Orientation were adopted 2026-07-12 as user-directed
+  documentation improvements with recurrence recorded `unknown`.
 - Acceptance: install helpers produce exactly 9 core + optionally 2 pack
   directories; cheatsheet parity tests green.
 
@@ -136,9 +138,11 @@ ROUTE-003 ≥ 19 groups / 66 phrases), then ROUTE-001/002/003 evals. Details:
 - Objective: Decision Index stays a map, not an archive; plans/ records carry
   honest status headers.
 - Planned work: watch undocumented-decision warnings; roll up future mechanical
-  round series; E2-class destructive restructuring stays recurrence-gated.
-- Acceptance: zero blocking PK validation errors; new records follow the
-  historical-header convention when retired.
+  round series; D4 record-hygiene validation is now forward-enforced for records
+  dated ≥2026-07-12; E2-class destructive restructuring stays recurrence-gated.
+- Acceptance: zero blocking PK/record-hygiene validation errors; new records follow
+  the status/evidence/ledger/falsifiability convention; retired records keep the
+  historical-header convention.
 
 ### WS8 — Evidence and benchmarks
 
@@ -156,7 +160,7 @@ Near-term actionable (unblocked today; smallest real work first):
 | ID | Task | Source | Acceptance |
 | --- | --- | --- | --- |
 | T1 | **Done 2026-07-11.** Escalated P15 parity review executed: `research.md` blind-spot acceptance aligned to the STORM-decided none-found contract (prompt-layer; `reflective-research` already conformant, frozen-surface gate not fired); the four retired plans' historical banners gained open-work successor pointers; seven reflection banners no-change → [review record](frozen-core-parity-review-2026-07-11.md). | [flow-coverage record §Deferred](flow-coverage-panel-record-2026-07-11.md) | Met: record + ledger + change/no-change decisions recorded |
-| T2 | zh-TW cheatsheet domain-pack appendix parity, once the EN appendix is stable (no edits between now and the next checkpoint qualifies as stable). | [pack record §Required Changes item 6](flow-control-pack-panel-record-2026-07-11.md) | zh-TW cheatsheet carries the pack section; parity tests green |
+| T2 | **Done 2026-07-12 (user-directed; recurrence `unknown`).** zh-TW cheatsheet domain-pack appendix added after explicit user instruction; EN appendix remains the canonical source. | [adoption record](dormant-items-user-directed-adoption-2026-07-12.md) | Met: zh-TW cheatsheet carries the pack section; parity tests green |
 | T3 | **Done 2026-07-11.** Manual pack-usage evidence convention established with zero-state recorded → [usage log](flow-pack-usage-log.md). TeaPrompt has no telemetry; the log is the P6 evidence base. | [necessity record N11](governance-necessity-panel-record-2026-07-11.md) | Met: convention + zero-state on record |
 | T4 | **Done 2026-07-11 — trigger not fired.** Demotion-trigger evaluation executed against host-native `/goal`/`/loop`/Stop-hook surfaces (verified in the [survey](../../surveys/agent-skills-flow-control-survey-2026-07-11.md)); the model-judge stop fails the pack's deterministic bar; Host-Native Alternatives note added to the loop skill → [evaluation record](flow-pack-demotion-evaluation-2026-07-11.md). | [pack record §Demotion Triggers](flow-control-pack-panel-record-2026-07-11.md) | Met: record + not-fired decision before 2026-10-11 |
 
@@ -168,7 +172,7 @@ tables.
 
 - **Trigger drift** (highest): deferred items whose triggers fire unnoticed. Mitigation: roadmap checkpoint review; falsifiability clauses in each record.
 - **Guard ossification**: adoption-state phrase pins outliving their ledger rows. Mitigation: Adoption Guard Closure audits (WS1).
-- **Routing collision debt**: pack trigger phrases unmeasured until P7. Accepted until holdouts exist; documented in both pack records.
+- **Routing collision regression:** P7's former unmeasured debt is closed by three groups / 9 phrases at 100% pre-tune; permanent guards keep packs outside core routing. Re-open on the decision record's successor trigger, not on seeded confidence alone.
 - **Evidence-tier laundering**: seeded-fixture 100% or advisory panel votes cited as semantic proof. Mitigation: tier labels required by the packet contract (N13).
 - **Single-maintainer bus factor / no usage telemetry**: adoption decisions rest on manually recorded evidence; `unknown` stays `unknown` (T3 reduces, does not remove).
 

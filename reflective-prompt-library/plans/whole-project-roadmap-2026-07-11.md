@@ -63,19 +63,28 @@ governance panel, whenever that occurs ([managed-skill record](managed-skill-pro
 
 ## Horizon 3 — Trigger-gated queue (dormant until the named event)
 
+### Adopted 2026-07-12 (user-directed; recurrence `unknown`)
+
+Closed out of the queue under an explicit user instruction; recurrence stays
+`unknown`, guards migrated from absence to activation → [adoption record](dormant-items-user-directed-adoption-2026-07-12.md).
+
+| Item | Surface | Guard |
+| --- | --- | --- |
+| P12 — DAG executor template | `flow-control-generator` | `test_dormant_item_watch.py`, `test_dormant_conditional_contracts.py` |
+| P13 — multi-wave template | `flow-loop-harness` | same |
+| M4 — ephemeral-source internalization | [`04-agent/workflow-acquisition.md`](../04-agent/workflow-acquisition.md) | `test_dormant_conditional_contracts.py` |
+| M6 — README `## Orientation` | Root README (EN + zh-TW) | `test_dormant_conditional_contracts.py` |
+| M7 — sensitive-evidence packet handling | [`04-agent/external-adoption-review.md`](../04-agent/external-adoption-review.md) | `test_dormant_conditional_contracts.py` |
+| D4 — record-hygiene validator | [`validate_record_hygiene.py`](validate_record_hygiene.py) + Makefile | `test_validate_record_hygiene.py` |
+| Writer-critic deterministic companion | `flow-loop-harness` guidance | template-set pin |
+
+### Still trigger-gated
+
 | Item | Wakes when | Destination surface | Source |
 | --- | --- | --- | --- |
-| P7 / N12 — pack trigger phrases in core router + quick cues | New ROUTE-002/003 holdout groups covering pack/core collisions exist first (holdout-before-tune); then decide whether dispatch should route to packs at all. Candidate groups + pre-tune procedure: [routing-holdout plan](routing-holdout-plan-2026-07-11.md) | Route fixtures, router, cheatsheets | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md), [Necessity N12](governance-necessity-panel-record-2026-07-11.md) |
-| P12 — Conductor-style DAG executor template | First local task needing dependency-gated fan-out that pipeline/parallel/orchestrator templates cannot express | `flow-control-generator` | [Flow-coverage §Deferred](flow-coverage-panel-record-2026-07-11.md) |
-| P13 — dedicated multi-wave ReMoM template | Recurrence of real multi-wave runs (composition note already adopted) | `flow-loop-harness` | [Flow-coverage §Deferred](flow-coverage-panel-record-2026-07-11.md) |
-| M4 — ephemeral-source internalization deltas | Third documented local occurrence (count today: 1) | [`04-agent/workflow-acquisition.md`](../04-agent/workflow-acquisition.md) | [Managed-skill M4](managed-skill-promotion-panel-record-2026-07-11.md) |
-| M6 — README `## Orientation` section | Newcomer-orientation gap recurs in future session records | Root README | [Managed-skill M6](managed-skill-promotion-panel-record-2026-07-11.md) |
-| M7 — redaction methodology | First TeaPrompt-local sensitive-evidence external review | [`04-agent/external-adoption-review.md`](../04-agent/external-adoption-review.md) | [Managed-skill M7](managed-skill-promotion-panel-record-2026-07-11.md) |
 | E2 — archive restructuring (panel-transcript demotion, `00-core`/`03-context` merges) | Second independent archive-weight complaint, or a maintainer hits real navigation failure attributable to these surfaces | `plans/`, prompt categories | [Rethink Adoption Update 2](governance-rules-rethink-review-2026-07-11.md) |
-| D4 — record-hygiene lint | A new record ships without evidence separation or fact-check dating | New validator | [Rethink Adoption Update 2](governance-rules-rethink-review-2026-07-11.md) |
 | `reflective-implement` default-invokes `reflective-minimality` | Three cross-session recurrences (signal scan suffices today) | `reflective-implement` skill | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
 | Localized trigger cues beyond cheatsheet/glossary | Adoption signal from zh-TW users | zh-TW navigation surfaces | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
-| Writer-critic deterministic companion check | User demand for a non-model gate beside the advisory-tier critic (open design question) | `flow-loop-harness` guidance | [Flow-coverage §Disagreements](flow-coverage-panel-record-2026-07-11.md) |
 
 Queue discipline: when a trigger fires, the item gets its own review/panel record
 with a Candidate Adoption Ledger — a fired trigger authorizes *re-litigation*, not
@@ -98,13 +107,20 @@ Standing Non-Goals; reopened only by an explicit human direction change recorded
 ## Rejected — do not re-litigate without new evidence
 
 Recorded no-change/reject outcomes, kept visible so they are not silently re-argued:
-M8 blanket other-project skill promotion ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md));
-N8 meta:product ratio unless a stable guarded formula is defined first
-([necessity record](governance-necessity-panel-record-2026-07-11.md)); STORM fan-out
-as a generator topology, per-script provenance ledger headers, semantic ledger
-columns in loop state, memory backends for loop state, retry-with-backoff and other
-serving-layer features ([flow-coverage §Rejected](flow-coverage-panel-record-2026-07-11.md));
-`skills/packs/` nesting and repo-root pack placement ([pack record](flow-control-pack-panel-record-2026-07-11.md)).
+- P7/N12 pack routing integration — **no-change decided 2026-07-11** after
+  three fresh collision groups / 9 phrases passed 100% pre-tune: packs remain
+  host-invoked and outside core routing. Re-open only on the successor evidence
+  trigger in the [decision record](p7-pack-routing-decision-2026-07-11.md).
+- M8 blanket other-project skill promotion
+  ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md)).
+- N8 meta:product ratio unless a stable guarded formula is defined first
+  ([necessity record](governance-necessity-panel-record-2026-07-11.md)).
+- STORM fan-out as a generator topology, per-script provenance ledger headers,
+  semantic ledger columns in loop state, memory backends for loop state,
+  retry-with-backoff, and other serving-layer features
+  ([flow-coverage §Rejected](flow-coverage-panel-record-2026-07-11.md)).
+- `skills/packs/` nesting and repo-root pack placement
+  ([pack record](flow-control-pack-panel-record-2026-07-11.md)).
 
 ## Falsifiability
 

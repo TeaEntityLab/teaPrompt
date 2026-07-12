@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from validate_benchmark_fixture import MIN_TASK_COUNT  # noqa: E402

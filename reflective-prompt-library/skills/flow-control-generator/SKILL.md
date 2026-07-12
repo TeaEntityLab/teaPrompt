@@ -250,6 +250,92 @@ run_agent("Synthesize worker outputs into one deliverable.\n\n" + merged,
 print(STATE / "final.md")
 ```
 
+## Template: DAG Executor (Python, stdlib only)
+
+Use only when dependency-gated fan-out cannot be expressed by pipeline,
+parallel, or orchestrator. If a host primitive such as `/batch` solves it, use
+that instead. Honors the Script Contract.
+
+```python
+#!/usr/bin/env python3
+"""DAG executor: topological order, bounded concurrency, per-node gates.
+generated-by: flow-control-generator / dag / 2026-07-12 / dry-run-first
+"""
+import os, pathlib, shlex, subprocess, sys
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
+
+AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p"))
+STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(exist_ok=True)
+MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))   # budget: concurrency cap
+MIN_OK = os.environ.get("MIN_OK", "")                    # quorum: empty = strict
+
+# node -> (deps, prompt-file). Edit for the task; deps are node names.
+NODES = {
+    "spec":     ((), "prompts/spec.md"),
+    "api":      (("spec",), "prompts/api.md"),
+    "client":   (("spec",), "prompts/client.md"),
+    "assemble": (("api", "client"), "prompts/assemble.md"),
+}
+
+def toposort(nodes):
+    order, seen, temp = [], set(), set()
+    def visit(n):
+        if n in seen: return
+        if n in temp: sys.exit(4)                        # cycle: broken config
+        temp.add(n)
+        for d in nodes[n][0]:
+            if d not in nodes: sys.exit(4)               # dangling dep
+            visit(d)
+        temp.discard(n); seen.add(n); order.append(n)
+    for n in nodes: visit(n)
+    return order
+
+def run_agent(prompt_file, out):
+    r = subprocess.run(AGENT_CMD + [pathlib.Path(prompt_file).read_text()],
+                       capture_output=True, text=True, timeout=1800)
+    if r.returncode != 0:
+        raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+    out.write_text(r.stdout)
+
+order = toposort(NODES)
+status = {}                                              # node -> done|failed|blocked
+ledger = (STATE / "dag-ledger.tsv").open("w")
+
+def ready(n):
+    return all(status.get(d) == "done" for d in NODES[n][0])
+
+remaining = list(order)
+with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+    running = {}
+    while remaining or running:
+        for n in [n for n in remaining if ready(n) and len(running) < MAX_WORKERS]:
+            remaining.remove(n)
+            running[pool.submit(run_agent, NODES[n][1], STATE / f"{n}.out")] = n
+        if not running:                                  # nothing runnable => blocked rest
+            for n in remaining: status[n] = "blocked"
+            break
+        done, _ = wait(running, return_when=FIRST_COMPLETED)
+        for fut in done:
+            n = running.pop(fut)
+            try:
+                fut.result(); status[n] = "done"
+            except Exception as exc:                     # descendants unblock-fail
+                status[n] = "failed"
+                print(f"{n} failed: {exc}", file=sys.stderr)
+            ledger.write(f"{n}\t{status[n]}\n")
+
+ledger.close()
+ok = sum(1 for v in status.values() if v == "done")
+bad = [n for n, v in status.items() if v != "done"]
+if MIN_OK:
+    sys.exit(0 if ok >= int(MIN_OK) else 2)             # explicit quorum
+sys.exit(0 if not bad else 2)                           # strict default
+```
+
+Boundary: one host-executed script, not a TeaPrompt runtime. Rejected extras
+stay rejected: no retry-with-backoff, memory backend, or per-node provenance
+headers (`plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
+
 ## Verification
 
 Before handing a generated script to the user:

@@ -159,6 +159,29 @@ exit 2  # rounds exhausted without ACCEPT; human decides next
 
 Caution: a model critic is a soft, advisory-tier verifier — this template's ACCEPT gate is a model judgment, not the deterministic truth layer the other templates use. Prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (`04-agent/workflow-recipes.md` Looper Topologies caution).
 
+### Deterministic companion check (raise the ACCEPT floor)
+
+For unattended writer-critic loops, require the critic verdict **and** a
+deterministic floor. The floor fail-closes regardless of critic output and is
+listed in the run note for human review.
+
+```bash
+# gate: ACCEPT requires the critic contract AND a deterministic floor.
+floor_ok() {  # task-specific scriptable checks; extend per deliverable
+  local f="$1"
+  test -s "$f" || return 1                       # non-empty
+  ! grep -qiE 'TODO|TBD|PLACEHOLDER' "$f" || return 1   # no stubs
+  ./checks/links-resolve.sh "$f" || return 1     # e.g. links/citations resolve
+}
+if grep -qx 'ACCEPT' "$STATE/round-$r-critique.md" && floor_ok "$STATE/draft.md"; then
+  cp "$STATE/draft.md" "$STATE/final.md"; exit 0
+fi
+```
+
+The floor is deterministic but partial: it catches vacuous/malformed drafts,
+not wrong-but-plausible ones. Model-tier options (dual critics, verdict schemas)
+reduce variance, not tier. This is guidance, not a new template or runtime.
+
 ## Template: Task-Ledger Backlog Loop (bash, ralph-style)
 
 ```bash
@@ -198,6 +221,60 @@ for i in $(seq 1 "$MAX_ITER"); do
 done
 exit 2
 ```
+
+## Template: Multi-Wave Fan-out (bash)
+
+Use only when repeated breadth is real: fan out, compact state, fan out again.
+Compose a parallel template inside a loop first; use this when that becomes
+clumsy. Keeps all six Loop Anatomy parts.
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+AGENT_CMD="${AGENT_CMD:-claude -p}"        # override for other hosts or a stub
+VERIFY="${VERIFY:-./checks/converged.sh}"  # truth layer: exit 0 = converged
+MAX_WAVES="${MAX_WAVES:-4}"                 # cap: distinct exit, not a failure
+MAX_JOBS="${MAX_JOBS:-4}"                   # per-wave concurrency budget
+STATE="${STATE:-./state}"; mkdir -p "$STATE"
+LEDGER="$STATE/ledger.md"; touch "$LEDGER"
+
+[ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }
+
+if [ -s "$LEDGER" ]; then echo "- RESUMED $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$LEDGER"; fi
+
+prev_summary=""
+for w in $(seq 1 "$MAX_WAVES"); do
+  pids=(); i=0
+  for prompt in prompts/wave/*.md; do
+    [ -e "$prompt" ] || { echo "no wave prompts found" >&2; exit 2; }
+    out="$STATE/w${w}-$(basename "$prompt" .md).md"
+    { cat "$prompt"; echo; echo "## Prior wave summary"; cat "$STATE/summary.md" 2>/dev/null || true; } \
+      | $AGENT_CMD "$(cat -)" > "$out" &
+    pids+=($!); i=$((i+1))
+    if [ $((i % MAX_JOBS)) -eq 0 ]; then for p in "${pids[@]}"; do wait "$p" || true; done; pids=(); fi
+  done
+  for p in "${pids[@]}"; do wait "$p" || true; done          # wave fan-in barrier
+
+  # Compaction: truncate the wave's branch outputs into ONE summary file so the
+  # next wave's context stays bounded (harness-1 Budget Rule).
+  { echo "# Wave $w summary"; for f in "$STATE"/w${w}-*.md; do
+      echo "## $(basename "$f")"; head -n 40 "$f"; done; } > "$STATE/summary.md"
+  summary="$(cksum < "$STATE/summary.md")"
+  echo "- wave $w: sig ${summary}" >> "$LEDGER"
+
+  if "$VERIFY" > "$STATE/verify-out.txt" 2>&1; then
+    echo "- wave $w: CONVERGED" >> "$LEDGER"; cp "$STATE/summary.md" "$STATE/final.md"; exit 0
+  fi
+  if [ "$summary" = "$prev_summary" ]; then                  # progress detector
+    echo "- wave $w: NO PROGRESS, aborting" >> "$LEDGER"; exit 3
+  fi
+  prev_summary="$summary"
+done
+echo "- cap $MAX_WAVES waves exhausted" >> "$LEDGER"; exit 2
+```
+
+Do not add a memory backend or semantic ledger columns — `state/` stays
+disposable per run (`plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
 
 ## Human Review Boundary
 

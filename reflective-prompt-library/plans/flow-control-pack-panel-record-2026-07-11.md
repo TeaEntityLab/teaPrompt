@@ -52,7 +52,7 @@ The host session independently executed all seven templates against stub agents 
 3. **Runtime-boundary wording C1–C6.** Ledger described as resume *convention* the host must honor (frontmatter + Methods); Acquisition claim corrected to "L2 exception with L3-style verifier artifact; full L3 requires `artifact-promotion.md` §4 fail-closed gates + replay evidence"; generator Escalation extended to privacy/permissions; permission boundary added to the generator Script Contract; verifier non-writability labeled a host-runtime precondition; §4 gates cross-referenced from both Verification sections.
 4. **Evidence relabels.** "Verified gap" → "user-directed, structurally plausible, recurrence evidence unknown"; "all five vendors" / "every platform" absolutism scoped to the six surveyed sources; platform tables labeled advisory-tier reference vocabulary.
 5. **Discoverability.** `skill-map.md` "Registered domain packs (not core routing)" table and an EN cheatsheet "Domain packs" section appended (test-safe: pinned gloss lines and boundary quick-cue block untouched); no `reflective-dispatch` route row; PROJECT_KNOWLEDGE Decision Index line added.
-6. **Deferred (with triggers).** P6 merge-to-one-skill (Minimality dissent) — re-litigate if either skill sees zero solo invocations by 2026-10-11. P7 router/quick-cue integration — requires new ROUTE-002/003 holdout groups first (holdout-before-tune). zh-TW cheatsheet parity — when the EN appendix is stable.
+6. **Deferred / resolved items.** P6 merge-to-one-skill (Minimality dissent) — re-litigate if either skill sees zero solo invocations by 2026-10-11. P7 router/quick-cue integration — **resolved 2026-07-11 as no core-router integration** after three ROUTE-002/003 collision groups (9/9 phrases) passed pre-tune; see [decision record](p7-pack-routing-decision-2026-07-11.md). zh-TW cheatsheet parity — when the EN appendix is stable.
 
 ## Shared Findings
 
@@ -65,7 +65,7 @@ The host session independently executed all seven templates against stub agents 
 
 - **Granularity:** Minimality lens holds one merged skill is sufficient and two directories duplicate contract boilerplate; Governance and Routing lenses hold the machine-readable `human_review_required` split (false for one-pass generation, true for loops) is load-bearing for host gating. Ruled: two skills, dissent preserved, deferred re-litigation trigger P6 recorded.
 - **Evaluator-optimizer template:** Minimality wanted it cut (model critic contradicts the external-truth-layer principle); ruled: kept with an explicit advisory-tier caution, since bounded writer-critic rounds are a real user ask and `workflow-recipes.md` already carries the shared-error warning.
-- **Residual:** trigger-phrase collisions ("pipeline", "loop until", "orchestrate") between the packs and core routes remain unmeasured until P7 holdout groups exist; until then equivalent intent may route non-equivalently for hosts that only consult the nine-skill cheatsheet body.
+- **Resolved residual — trigger-phrase collisions:** `pipeline` / `orchestrate` / flow-script vocabulary is now covered by three P7 collision groups (9/9 pre-tune, no router defect); packs remain host-invoked and outside core routing. Re-open only on the successor trigger in the [P7 decision](p7-pack-routing-decision-2026-07-11.md).
 - No fresh operator-usage data exists for the pack (it is new); every utility claim above template correctness is `[INFERENCE]` until the 2026-10-11 review.
 
 ## Evidence Actually Checked
@@ -76,4 +76,4 @@ The host session independently executed all seven templates against stub agents 
 
 ## Falsifiability
 
-This record is wrong if the pack's guards pass while an unregistered skill directory ships, if the adopted wording is absent from its named surfaces (ledger P1–P5), or if the deferred candidates (P6, P7) are never re-litigated by their triggers. Any of those signals means the adoption ledger mechanism failed and the 2026-07-11 governance-rethink A1/A3 discipline must be re-applied here.
+This record is wrong if the pack's guards pass while an unregistered skill directory ships, if the adopted wording is absent from its named surfaces (ledger P1–P5), if P6 is never re-litigated when its trigger fires, or if P7's successor trigger fires without a new decision record. Any of those signals means the adoption ledger mechanism failed and the 2026-07-11 governance-rethink A1/A3 discipline must be re-applied here.

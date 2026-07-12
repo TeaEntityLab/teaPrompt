@@ -225,3 +225,9 @@ Minimality 訊號掃描（skill 內建）：
 不確定且低風險時：
 - 優先選擇可見的向上分流（default-up），而不是靜默降級。
 - 主動提示可加入的強化環節，例如測試、安全審查、效能檢查。
+
+## 領域包（host 直接呼叫；不屬於核心路由）
+
+- **可執行的一次性流程腳本** → `flow-control-generator` — 串接、pipeline、fan-out、把 agent CLI 步驟編排成腳本；純工作流程設計（不產腳本）仍走 `reflective-spec-plan`。
+- **可執行的迴圈腳本** → `flow-loop-harness` — loop until、ralph、fix-until-green 搭配外部驗證器；若要的是主要工作流程上的 repo 內 `verifier/test` 產物，走上方的 Acquisition L3 速查。
+- **工作流程選擇／函式庫路由** → 仍是 `reflective-dispatch`；本節不取代九技能 Fast Routing Rule。

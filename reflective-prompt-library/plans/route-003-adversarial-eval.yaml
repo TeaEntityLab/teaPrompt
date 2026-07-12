@@ -241,6 +241,16 @@ adversarial_sets:
       - generate a fix-until-green script with an iteration cap
       - script a writer-critic round harness
 
+
+  - name: pack_vocab_implement_not_plan_trap
+    expected_workflow: reflective-implement
+    expected_rigor: medium
+    expected_enhancements:
+      - tests
+    phrases:
+      - build a runnable agent pipeline script and verify it with tests
+      - implement a flow-control script that fans out agent CLI steps and verifies their outputs
+      - add a Python orchestrator-worker script with bounded concurrency and an exit-code gate
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

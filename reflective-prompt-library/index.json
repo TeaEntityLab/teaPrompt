@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-11T21:12:57.682192",
+  "generated_at": "2026-07-12T00:51:10.622784",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -44,14 +44,17 @@
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
             "flow-control-roadmap-2026-07-11.md",
+            "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "openfugu-research-record-2026-06-25.md",
+            "dormant-items-user-directed-adoption-2026-07-12.md",
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
             "governance-necessity-panel-record-2026-07-11.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "whole-project-roadmap-2026-07-11.md",
+            "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
             "governance-rules-rethink-review-2026-07-11.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -59,6 +62,7 @@
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "ROUTING_CONTRACT.md",
+            "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
             "frozen-core-parity-review-2026-07-11.md",
@@ -1432,7 +1436,7 @@
           "../skills/skill-map.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "ROUTING_CONTRACT.md",
-          "governance-necessity-panel-record-2026-07-11.md",
+          "QUALITY_GATES_SUMMARY.md",
           "../../CONTRIBUTING.md",
           "../SKILL_INSTALLATION.md",
           "../PROJECT_KNOWLEDGE.md",
@@ -1446,10 +1450,10 @@
           "../04-agent/artifact-promotion.md",
           "../GLOSSARY.md#adoption-guard-closure",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
-          "flow-control-pack-panel-record-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md",
           "frozen-core-parity-review-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
-          "flow-control-pack-panel-record-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
           "flow-pack-usage-log.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
@@ -1540,8 +1544,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 194,
-      "char_count": 13578
+      "line_count": 198,
+      "char_count": 14008
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -1666,7 +1670,9 @@
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "ROUTING_CONTRACT.md",
           "governance-rules-rethink-review-2026-07-11.md#adoption-update-3-2026-07-11",
-          "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊"
+          "p7-pack-routing-decision-2026-07-11.md",
+          "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
+          "p7-pack-routing-decision-2026-07-11.md"
         ]
       },
       "structure": [
@@ -1720,11 +1726,15 @@
         },
         {
           "level": 2,
+          "text": "P7/N12 execution update (2026-07-11)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         }
       ],
-      "line_count": 128,
-      "char_count": 7939
+      "line_count": 144,
+      "char_count": 8621
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1921,9 +1931,11 @@
           "../skills/reflective-spec-plan/SKILL.md",
           "../04-agent/runtime-trust-boundary.md",
           "flow-pack-usage-log.md",
-          "routing-holdout-plan-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
+          "p7-pack-routing-decision-2026-07-11.md",
           "../04-agent/workflow-acquisition.md",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
+          "p7-pack-routing-decision-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals"
         ]
       },
@@ -1946,7 +1958,7 @@
         },
         {
           "level": 2,
-          "text": "F3 — Template evolution queue (trigger-gated; unchanged triggers, new context)"
+          "text": "F3 — Template evolution queue"
         },
         {
           "level": 2,
@@ -1961,8 +1973,181 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 95,
-      "char_count": 6573
+      "line_count": 100,
+      "char_count": 6392
+    },
+    {
+      "path": "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "dormant-work-specs-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "whole-project-roadmap-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "whole-project-plan-2026-07-11.md",
+          "../GLOSSARY.md#adoption-guard-closure",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "governance-necessity-panel-record-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md",
+          "flow-coverage-panel-record-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "flow-coverage-panel-record-2026-07-11.md",
+          "managed-skill-promotion-panel-record-2026-07-11.md",
+          "../04-agent/workflow-acquisition.md",
+          "managed-skill-promotion-panel-record-2026-07-11.md",
+          "managed-skill-promotion-panel-record-2026-07-11.md",
+          "managed-skill-promotion-panel-record-2026-07-11.md",
+          "../04-agent/external-adoption-review.md",
+          "governance-rules-rethink-review-2026-07-11.md",
+          "governance-rules-rethink-review-2026-07-11.md",
+          "flow-coverage-panel-record-2026-07-11.md",
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "skills-surface-plan-2026-07-11.md",
+          "routing-holdout-plan-2026-07-11.md",
+          "governance-necessity-panel-record-2026-07-11.md",
+          "managed-skill-promotion-panel-record-2026-07-11.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Dormant-Work Specs — TeaPrompt (2026-07-11)"
+        },
+        {
+          "level": 2,
+          "text": "Why"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Adoption update (2026-07-12)"
+        },
+        {
+          "level": 2,
+          "text": "How the register hangs together (inference)"
+        },
+        {
+          "level": 2,
+          "text": "Spec template"
+        },
+        {
+          "level": 2,
+          "text": "Date-gated items (Horizon 2)"
+        },
+        {
+          "level": 3,
+          "text": "P6 — pack merge re-litigation (with N11)"
+        },
+        {
+          "level": 3,
+          "text": "T2 — zh-TW cheatsheet domain-pack appendix parity"
+        },
+        {
+          "level": 2,
+          "text": "Trigger-gated queue (Horizon 3)"
+        },
+        {
+          "level": 3,
+          "text": "P7 — pack trigger phrases in core router + quick cues (**resolved no-change**)"
+        },
+        {
+          "level": 3,
+          "text": "P12 — Conductor-style DAG executor template"
+        },
+        {
+          "level": 3,
+          "text": "P13 — dedicated multi-wave ReMoM template"
+        },
+        {
+          "level": 3,
+          "text": "M4 — ephemeral-source internalization deltas"
+        },
+        {
+          "level": 3,
+          "text": "M5 — managed-skill re-audit (event-gated)"
+        },
+        {
+          "level": 3,
+          "text": "M6 — README `## Orientation` section"
+        },
+        {
+          "level": 3,
+          "text": "M7 — redaction methodology"
+        },
+        {
+          "level": 3,
+          "text": "E2 — archive restructuring (panel-transcript demotion, category merges)"
+        },
+        {
+          "level": 3,
+          "text": "D4 — record-hygiene lint"
+        },
+        {
+          "level": 3,
+          "text": "Writer-critic deterministic companion check"
+        },
+        {
+          "level": 3,
+          "text": "`reflective-implement` default-invokes `reflective-minimality`"
+        },
+        {
+          "level": 3,
+          "text": "Localized trigger cues beyond cheatsheet/glossary"
+        },
+        {
+          "level": 3,
+          "text": "S3 — distribution packaging (beyond copy/symlink/git-install)"
+        },
+        {
+          "level": 3,
+          "text": "H3/H4 — deferred holdout groups (genuinely ambiguous)"
+        },
+        {
+          "level": 2,
+          "text": "Rejected items — precondition specs (do not re-litigate without these)"
+        },
+        {
+          "level": 3,
+          "text": "N8 — meta:product ratio (rejected; formula precondition)"
+        },
+        {
+          "level": 3,
+          "text": "M8 — blanket other-project skill promotion (rejected)"
+        },
+        {
+          "level": 2,
+          "text": "New deterministic guards (what the four test files defend)"
+        },
+        {
+          "level": 2,
+          "text": "Risks"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability (retirement/staleness triggers for this book)"
+        },
+        {
+          "level": 2,
+          "text": "Verification (this change)"
+        }
+      ],
+      "line_count": 763,
+      "char_count": 46446
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -2124,6 +2309,56 @@
       "char_count": 13120
     },
     {
+      "path": "reflective-prompt-library/plans/dormant-items-user-directed-adoption-2026-07-12.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "dormant-items-user-directed-adoption-2026-07-12",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Dormant-Item User-Directed Adoption — 2026-07-12"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 74,
+      "char_count": 4795
+    },
+    {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2225,7 +2460,7 @@
         }
       ],
       "line_count": 65,
-      "char_count": 10436
+      "char_count": 10647
     },
     {
       "path": "reflective-prompt-library/plans/governance-necessity-panel-record-2026-07-11.md",
@@ -2238,7 +2473,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "p7-pack-routing-decision-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md"
+        ]
       },
       "structure": [
         {
@@ -2379,7 +2617,7 @@
         }
       ],
       "line_count": 319,
-      "char_count": 31820
+      "char_count": 32425
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -2584,22 +2822,15 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan",
           "managed-skill-promotion-panel-record-2026-07-11.md",
-          "routing-holdout-plan-2026-07-11.md",
-          "flow-control-pack-panel-record-2026-07-11.md",
-          "governance-necessity-panel-record-2026-07-11.md",
-          "flow-coverage-panel-record-2026-07-11.md",
-          "flow-coverage-panel-record-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
           "../04-agent/workflow-acquisition.md",
-          "managed-skill-promotion-panel-record-2026-07-11.md",
-          "managed-skill-promotion-panel-record-2026-07-11.md",
           "../04-agent/external-adoption-review.md",
-          "managed-skill-promotion-panel-record-2026-07-11.md",
-          "governance-rules-rethink-review-2026-07-11.md",
+          "validate_record_hygiene.py",
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
-          "flow-coverage-panel-record-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "p7-pack-routing-decision-2026-07-11.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
@@ -2628,6 +2859,14 @@
           "text": "Horizon 3 — Trigger-gated queue (dormant until the named event)"
         },
         {
+          "level": 3,
+          "text": "Adopted 2026-07-12 (user-directed; recurrence `unknown`)"
+        },
+        {
+          "level": 3,
+          "text": "Still trigger-gated"
+        },
+        {
           "level": 2,
           "text": "Horizon 4 — Direction-gated (never-unless)"
         },
@@ -2644,8 +2883,69 @@
           "text": "Verification"
         }
       ],
-      "line_count": 126,
-      "char_count": 11366
+      "line_count": 142,
+      "char_count": 10795
+    },
+    {
+      "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "p7-pack-routing-decision-2026-07-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../06-repo/AGENTS.md",
+          "../PROJECT_KNOWLEDGE.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "P7 / N12 Pack-Routing Decision — 2026-07-11"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Decision Analysis"
+        },
+        {
+          "level": 2,
+          "text": "Decision"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 130,
+      "char_count": 7075
     },
     {
       "path": "reflective-prompt-library/plans/agent-flow-control-research-2026-07-11.md",
@@ -2661,6 +2961,7 @@
         "markdown_links": [
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md",
           "frozen-core-parity-review-2026-07-11.md"
         ]
       },
@@ -2723,7 +3024,7 @@
         }
       ],
       "line_count": 115,
-      "char_count": 14302
+      "char_count": 14644
     },
     {
       "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
@@ -2824,7 +3125,7 @@
         }
       ],
       "line_count": 175,
-      "char_count": 24990
+      "char_count": 25441
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -3049,8 +3350,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 393,
-      "char_count": 22647
+      "line_count": 405,
+      "char_count": 23524
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -3313,6 +3614,78 @@
       ],
       "line_count": 153,
       "char_count": 6181
+    },
+    {
+      "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "checkpoint-2026-10-11-runbook",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "whole-project-roadmap-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md",
+          "flow-pack-usage-log.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "../PROJECT_KNOWLEDGE.md",
+          "governance-necessity-panel-record-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Checkpoint Runbook — 2026-10-11 (P6 / T2 / F4 / roadmap self-review)"
+        },
+        {
+          "level": 2,
+          "text": "Pre-checkpoint evidence checklist (run first, before any discussion)"
+        },
+        {
+          "level": 2,
+          "text": "Agenda item 1 — P6 / N11: pack merge re-litigation"
+        },
+        {
+          "level": 2,
+          "text": "Agenda item 2 — pack utility claims re-verification"
+        },
+        {
+          "level": 2,
+          "text": "Agenda item 3 — T2: zh-TW pack-appendix parity"
+        },
+        {
+          "level": 2,
+          "text": "Agenda item 4 — T4/F1 residue: F4 watch-table re-check"
+        },
+        {
+          "level": 2,
+          "text": "Agenda item 5 — roadmap self-review"
+        },
+        {
+          "level": 2,
+          "text": "Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability (this runbook)"
+        }
+      ],
+      "line_count": 123,
+      "char_count": 7600
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -5304,7 +5677,9 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "agent-flow-control-research-2026-07-11.md#panel-review-and-candidate-adoption-ledger-2026-07-11"
+          "agent-flow-control-research-2026-07-11.md#panel-review-and-candidate-adoption-ledger-2026-07-11",
+          "p7-pack-routing-decision-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md"
         ]
       },
       "structure": [
@@ -5350,7 +5725,7 @@
         }
       ],
       "line_count": 79,
-      "char_count": 10709
+      "char_count": 10919
     },
     {
       "path": "reflective-prompt-library/plans/memory-mechanisms-research-2026-06-25.md",
@@ -5443,7 +5818,8 @@
         "markdown_links": [
           "flow-control-pack-panel-record-2026-07-11.md",
           "agent-flow-control-research-2026-07-11.md",
-          "frozen-core-parity-review-2026-07-11.md"
+          "frozen-core-parity-review-2026-07-11.md",
+          "p7-pack-routing-decision-2026-07-11.md"
         ]
       },
       "structure": [
@@ -5493,7 +5869,7 @@
         }
       ],
       "line_count": 78,
-      "char_count": 13202
+      "char_count": 13952
     },
     {
       "path": "reflective-prompt-library/plans/skills-and-spec-systems-research-2026-06-25.md",
@@ -6101,6 +6477,10 @@
           "text": "2. Source Ledger"
         },
         {
+          "level": 3,
+          "text": "2a. Sensitive-evidence packet handling"
+        },
+        {
           "level": 2,
           "text": "3. Mechanism Extraction"
         },
@@ -6121,8 +6501,8 @@
           "text": "7. Output"
         }
       ],
-      "line_count": 135,
-      "char_count": 4767
+      "line_count": 155,
+      "char_count": 5845
     },
     {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
@@ -6537,6 +6917,10 @@
           "text": "2. Trace Boundary"
         },
         {
+          "level": 3,
+          "text": "2a. Ephemeral-source internalization"
+        },
+        {
           "level": 2,
           "text": "3. SOP Extraction"
         },
@@ -6561,8 +6945,8 @@
           "text": "8. Output"
         }
       ],
-      "line_count": 158,
-      "char_count": 6755
+      "line_count": 178,
+      "char_count": 7873
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -7737,10 +8121,14 @@
         {
           "level": 2,
           "text": "快速順序"
+        },
+        {
+          "level": 2,
+          "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 227,
-      "char_count": 6844
+      "line_count": 233,
+      "char_count": 7216
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -8601,6 +8989,14 @@
         },
         {
           "level": 2,
+          "text": "Template: DAG Executor (Python, stdlib only)"
+        },
+        {
+          "level": 1,
+          "text": "node -> (deps, prompt-file). Edit for the task; deps are node names."
+        },
+        {
+          "level": 2,
           "text": "Verification"
         },
         {
@@ -8612,8 +9008,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 277,
-      "char_count": 16242
+      "line_count": 363,
+      "char_count": 19758
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -9596,6 +9992,14 @@
           "text": "Template: Evaluator-Optimizer / Writer-Critic (bash)"
         },
         {
+          "level": 3,
+          "text": "Deterministic companion check (raise the ACCEPT floor)"
+        },
+        {
+          "level": 1,
+          "text": "gate: ACCEPT requires the critic contract AND a deterministic floor."
+        },
+        {
           "level": 2,
           "text": "Template: Task-Ledger Backlog Loop (bash, ralph-style)"
         },
@@ -9606,6 +10010,10 @@
         {
           "level": 1,
           "text": "to the original backlog cannot reorder or drop queued work mid-run."
+        },
+        {
+          "level": 2,
+          "text": "Template: Multi-Wave Fan-out (bash)"
         },
         {
           "level": 2,
@@ -9628,9 +10036,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 243,
-      "char_count": 16075
+      "line_count": 320,
+      "char_count": 19473
     }
   ],
-  "total_files": 110
+  "total_files": 114
 }

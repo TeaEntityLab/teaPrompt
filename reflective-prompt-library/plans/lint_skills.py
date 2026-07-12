@@ -2,19 +2,27 @@
 """
 Prompt/Skill Linter for TeaPrompt
 
-Checks:
+Checks actual composable prompts and skills:
 - Acceptance criteria presence
 - Human Review triggers
 - Dangerous tool behavior patterns
-- Skill body length
+- Prompt/skill body length
 - Required sections
 - Quality signals
+
+Repository documentation and plans are inventoried as ``document`` entries but
+are not routing inputs, so prompt/skill heuristics do not apply to them.
 """
 
 import re
 from pathlib import Path
 from typing import Dict, List, Any
 from datetime import datetime
+
+
+PROMPT_CATEGORY_DIRS = frozenset(
+    {"00-core", "01-thinking", "02-engineering", "03-context", "04-agent", "05-domain", "06-repo"}
+)
 
 
 class SkillLinter:
@@ -92,16 +100,17 @@ class SkillLinter:
                 "suggestions": []
             }
             
-            # Run checks based on file type
+            # Run prompt/skill checks only on routing inputs. Documentation and
+            # plans remain visible in the inventory without false routing noise.
             if result["type"] == "skill":
                 self.lint_skill(content, result)
-            else:
+            elif result["type"] == "prompt":
                 self.lint_prompt(content, result)
-            
-            # Common checks for all files
-            self.check_dangerous_patterns(content, result)
-            self.check_human_review_triggers(content, result)
-            self.check_body_length(content, result)
+
+            if result["type"] in {"skill", "prompt"}:
+                self.check_dangerous_patterns(content, result)
+                self.check_human_review_triggers(content, result)
+                self.check_body_length(content, result)
             
             return result
             
@@ -115,12 +124,24 @@ class SkillLinter:
             }
     
     def detect_file_type(self, file_path: Path, content: str) -> str:
-        """Detect if file is a skill or prompt."""
+        """Classify a SKILL.md, composable category prompt, or documentation."""
         if file_path.name == "SKILL.md":
             return "skill"
         if content.startswith('---') and 'name:' in content[:500]:
             return "skill"
-        return "prompt"
+
+        try:
+            relative = file_path.resolve().relative_to(self.repo_root)
+        except ValueError:
+            return "document"
+        parts = relative.parts
+        if (
+            len(parts) >= 2
+            and parts[0] == "reflective-prompt-library"
+            and parts[1] in PROMPT_CATEGORY_DIRS
+        ):
+            return "prompt"
+        return "document"
     
     def lint_skill(self, content: str, result: Dict):
         """Lint a skill file."""
@@ -185,18 +206,28 @@ class SkillLinter:
                 result["suggestions"].append(f"Found human review trigger pattern: {pattern} (ensure Human Review gate is present)")
     
     def check_body_length(self, content: str, result: Dict):
-        """Check if body length is appropriate."""
+        """Check routing-input body length with type-correct diagnostics."""
         line_count = len(content.splitlines())
         char_count = len(content)
-        
+        label = "Skill" if result["type"] == "skill" else "Prompt"
+
         if line_count > 500:
-            result["warnings"].append(f"Skill body is very long ({line_count} lines). Consider splitting into smaller skills")
-        
+            result["warnings"].append(
+                f"{label} body is very long ({line_count} lines). "
+                f"Consider splitting into smaller {label.lower()}s"
+            )
+
         if char_count > 20000:
-            result["warnings"].append(f"Skill body is very long ({char_count} chars). May impact routing performance")
-        
+            result["warnings"].append(
+                f"{label} body is very long ({char_count} chars). "
+                "May impact routing performance"
+            )
+
         if line_count < 10 and result["type"] == "skill":
-            result["errors"].append(f"Skill body is too short ({line_count} lines). Skills should have substantive content")
+            result["errors"].append(
+                f"Skill body is too short ({line_count} lines). "
+                "Skills should have substantive content"
+            )
     
     def extract_frontmatter(self, content: str) -> Dict:
         """Extract YAML frontmatter."""

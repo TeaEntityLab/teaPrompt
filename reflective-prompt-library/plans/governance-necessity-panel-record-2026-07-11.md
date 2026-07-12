@@ -202,7 +202,7 @@ The review initially deferred policy edits for Human Review. The user's subseque
 | N9 | Fold duplicate E5 wording to a pointer to B3/ROUTING_CONTRACT R8 | **Adopted 2026-07-11** | PK Standing Non-Goals now points to R8 and retains the regression-guard caveat | `ROUTING_CONTRACT.md` remains canonical. |
 | N10 | Reconcile `license` frontmatter: required versus recommended | **Adopted 2026-07-11 — license required** | `validate_links.py` requires `name`, `description`, `license`; focused negative pytest | Preserve portable licensing for independently copied skill directories. |
 | N11 | Merge/demote one of the two packs now | **Deferred under existing P6** | Distinct Human Review defaults; no usage evidence | Re-litigate 2026-10-11 if either skill has zero solo invocations; instrument evidence manually because TeaPrompt has no telemetry. |
-| N12 | Add pack trigger phrases to core router now | **Deferred under existing P7** | Trigger collision is plausible but unmeasured | Holdout-before-tune: first add ROUTE-002/003 groups, then decide whether dispatch should route to packs at all. |
+| N12 | Add pack trigger phrases to core router now | **Resolved 2026-07-11 — no core-router integration** | [P7 decision](p7-pack-routing-decision-2026-07-11.md): three collision groups / 9 phrases routed 100% pre-tune; no router defect; packs already host-invoked | Keep pack names absent from core route targets. Re-open only on a documented local misroute/discoverability failure attributable to exclusion, or a host unable to invoke registered packs directly. |
 | N13 | Add same-host evidence-tier caveat to every historical panel record | **No mass edit** | Several records already state the same-host/advisory caveat; rewriting history adds churn | This record states it. Add caveat to future records through the existing packet contract. |
 
 ## Adoption Update — Explicit Human Review
@@ -212,7 +212,7 @@ The adopted scope is deliberately narrower than "change everything":
 - N2–N7, N9, and N10 are implemented at their named surfaces.
 - N8 remains rejected because the historical ratio is not reproducible under a matching formula.
 - N11/P6 remains deferred until the 2026-10-11 solo-invocation trigger.
-- N12/P7 remains deferred until fresh ROUTE-002/003 holdouts exist before tuning.
+- N12/P7 is resolved as no core-router integration: 9/9 fresh collision phrases preserved the intended core workflows pre-tune, so no router or quick-cue change was justified ([decision](p7-pack-routing-decision-2026-07-11.md)).
 - N13 remains no-mass-edit; future records inherit the evidence-tier contract.
 - No pack was merged, promoted into the nine core routes, or added to `reflective-dispatch`.
 
@@ -236,7 +236,7 @@ The five reviewed records have testable clauses, but most are live future condit
 | --- | --- | --- |
 | `workflow-possibilities-constraints-review-2026-07-06.md` | constraints block a qualifying workflow; candidates never adopted/re-litigated | Candidate-drift half was honestly re-litigated. Workflow-blocking half remains live. |
 | `governance-rules-rethink-review-2026-07-11.md` | ledger drift, blocked workflow, workflow-toil counterevidence, successful disputed merges | Clause (b) did **not** fire: the flow packs did not meet the recurrence gate and were admitted through a separate user-directed exception. The exception exposes ambiguity, not a logically fired falsifier. |
-| `flow-control-pack-panel-record-2026-07-11.md` | unregistered skill ships, adopted surfaces disappear, P6/P7 triggers ignored | Registry/surface guards are currently green; P6/P7 remain live. Green now is not final discharge. |
+| `flow-control-pack-panel-record-2026-07-11.md` | unregistered skill ships, adopted surfaces disappear, P6/P7 triggers ignored | Registry/surface guards are green; P6 remains live. P7 was re-litigated and resolved no-change after 9/9 pre-tune collision phrases; its successor trigger is live in the decision record. |
 | `flow-coverage-panel-record-2026-07-11.md` | missed worthy mechanism; P12/P13 triggers ignored | Coverage was reviewed, but both clauses remain falsifiable by future evidence. |
 | `managed-skill-promotion-panel-record-2026-07-11.md` | missed recurring skill; M1 ceremony; deferral-trigger drift | All remain live. M1 is not ritual merely because its future ceremony falsifier has not fired. |
 
@@ -248,7 +248,7 @@ The strongest valid circularity criticism is narrower: the **specific nine count
 | --- | --- | --- | --- |
 | No freeze; semver/deprecate arbitrary skills | Honest evolution, no sacred count | Expands routing, metadata, fixture, docs, and collision surface without a qualifying gap | Reject now; migration trigger N1. |
 | Flat registry with `tier` metadata | One registry, honest 11-count | Current hosts/install docs do not reliably filter tiers; requires a real tier contract | Plausible future replacement; trigger when host filtering is portable or packs grow materially. |
-| Treat packs as core skills 10–11 | Disk count equals routing count | Trigger collisions and route fairness are unmeasured; changes product semantics | Reject until P7 holdouts justify it. |
+| Treat packs as core skills 10–11 | Disk count equals routing count | Changes bounded-core product semantics and duplicates host skill selection without an observed route defect | Reject: P7 holdouts passed 9/9 pre-tune and the decision preserves host-invoked packs. Re-open only under the successor evidence trigger. |
 | Keep packs only as `04-agent` recipes | Restores nine-only skill tree | Removes requested installable script-generation contracts and metadata | Demotion option if P6 fires. |
 | Keep packs only as host managed skills | No TeaPrompt pack governance | Not portable to library consumers; user-directed repo deliverable disappears | Reject while the repo pack remains used. |
 | CI only; no panels/ledgers | Lower meta overhead | Repeats the observed 2026-07-06 candidate-adoption drift; loses decision rationale | Reject wholesale; slim guards under N7 instead. |
@@ -313,7 +313,7 @@ This record is wrong if any of the following occurs and the conclusion is not co
 
 1. a tenth core workflow repeatedly meets the local promotion gate and cannot be represented by the existing nine, but the bounded-core rule still blocks it;
 2. domain packs can be safely flattened into a portable tier-aware registry without route/install ambiguity, yet this record's provisional firewall rationale is still cited to prevent migration;
-3. P6 or P7 triggers fire and no re-litigation occurs;
+3. the P6 trigger or P7 successor trigger fires and no re-litigation occurs;
 4. the installation commands are shown to install exactly the intended tier for every documented host despite the current `skills/*` behavior;
 5. a stable, documented cost formula reproduces the historical baseline and demonstrates a trend opposite to this record's agnostic conclusion;
 6. a supposedly structural guard passes while its named contract is behaviorally absent, or a phrase pin is removed and the predicted adoption drift does not recur—evidence for revising N7 either way.

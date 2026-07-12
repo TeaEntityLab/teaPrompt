@@ -432,6 +432,26 @@ holdout_sets:
     phrases:
       - help me write a completion condition the evaluator can actually judge
       - what's a falsifiable end state for this refactor goal?
+
+  - name: pack_vocab_plan_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - design an orchestration plan for a multi-step agent pipeline without writing code
+      - write a workflow specification for fan-out and fan-in before coding
+      - break down an agent pipeline into tickets and acceptance criteria without implementing it
+
+  - name: pack_vocab_route_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - which skill should handle an agent pipeline script request
+      - route this orchestrate-agent-steps request without generating a script
+      - choose between workflow design and a host-invoked flow-control domain pack
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

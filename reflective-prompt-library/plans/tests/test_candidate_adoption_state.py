@@ -153,9 +153,10 @@ def test_governance_necessity_ledger_records_exact_dispositions():
 
     rejected = next(line for line in ledger.splitlines() if line.startswith("| N8 |"))
     assert "Rejected" in rejected
-    for candidate_id in ("N11", "N12"):
-        row = next(line for line in ledger.splitlines() if line.startswith(f"| {candidate_id} |"))
-        assert "Deferred" in row
+    n11 = next(line for line in ledger.splitlines() if line.startswith("| N11 |"))
+    assert "Deferred" in n11
+    n12 = next(line for line in ledger.splitlines() if line.startswith("| N12 |"))
+    assert "Resolved 2026-07-11 — no core-router integration" in n12
     no_mass_edit = next(line for line in ledger.splitlines() if line.startswith("| N13 |"))
     assert "No mass edit" in no_mass_edit
 

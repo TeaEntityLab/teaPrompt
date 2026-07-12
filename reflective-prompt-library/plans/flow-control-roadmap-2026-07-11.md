@@ -59,14 +59,18 @@ Unchanged from the whole-project plan's T3: establish the manual usage-log
 convention now; record the zero-state. Without it, P6 (merge) and F1 (demotion)
 both re-litigate on `unknown`. One log serves both.
 
-## F3 — Template evolution queue (trigger-gated; unchanged triggers, new context)
+## F3 — Template evolution queue
 
-| Item | Trigger (owned by cited record) | New context from the survey |
-| --- | --- | --- |
-| P12 Conductor-style DAG executor | First local task needing dependency-gated fan-out beyond pipeline/parallel/orchestrator | `/batch` covers the *host-side* worktree fan-out case; a local task solved acceptably by `/batch` does **not** fire P12 — note this in the eventual evaluation |
-| P13 multi-wave ReMoM template | Recurrence of real multi-wave runs | Composition note (parallel template inside loop harness) remains the answer until recurrence |
-| Writer-critic deterministic companion | User demand for a non-model gate | Host offers none either; unchanged |
-| P7 pack routing integration | Fresh ROUTE-002/003 holdout groups first | Holdout design pre-work now exists: [routing-holdout plan](routing-holdout-plan-2026-07-11.md) |
+P12, P13, and the writer-critic deterministic companion left the queue on
+2026-07-12 as user-directed additions with recurrence recorded `unknown`:
+[adoption record](dormant-items-user-directed-adoption-2026-07-12.md).
+
+The remaining pack evolution queue is empty. Future template changes use the
+same guard discipline: ledger row, named surface, focused tests, and `make all`.
+
+P7/N12 left the queue on 2026-07-11: three ROUTE-002/003 collision groups
+(9 phrases) passed 100% pre-tune, so the decision was **no core-router
+integration** and no router/quick-cue change ([record](p7-pack-routing-decision-2026-07-11.md)).
 
 ## F4 — Host-feature watch table (standing; re-check before reliance)
 
@@ -83,8 +87,9 @@ both re-litigate on `unknown`. One log serves both.
 
 No TeaPrompt-owned runtime, recorder, replay engine, or side-effect enforcer;
 no third pack without the [AGENTS item-3 admission rule](../06-repo/AGENTS.md#harness-policy-nine-skills);
-no pack trigger phrases in the core router before P7's holdouts
-([Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals)).
+no domain-pack targets in the bounded core router after P7's measured
+no-integration decision ([record](p7-pack-routing-decision-2026-07-11.md);
+[Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals)).
 
 ## Falsifiability
 
