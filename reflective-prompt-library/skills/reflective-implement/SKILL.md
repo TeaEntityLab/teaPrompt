@@ -1,6 +1,6 @@
 ---
 name: reflective-implement
-description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.
+description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks, including repository documentation and content edits. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.
 license: MIT
 metadata:
   risk_level: low
@@ -20,7 +20,7 @@ Implement the smallest safe change that satisfies explicit acceptance criteria.
 ## Module Contract
 
 Trigger:
-- Use for coding, refactoring, debugging with edits, or repo-aware implementation work after acceptance criteria are clear enough to verify.
+- Use for coding, refactoring, debugging with edits, or repo-aware implementation work — including repository documentation and content edits — after acceptance criteria are clear enough to verify.
 
 Methods:
 - Spec before code
@@ -45,6 +45,16 @@ Never:
 Escalation:
 - Route unclear requirements to `reflective-brief` or `reflective-spec-plan`.
 - Route auth, permissions, security, privacy, migrations, destructive operations, billing, breaking APIs, or production deployment to `reflective-risk`.
+
+## Small-Change Fast Path
+
+For a single-file, low-risk change with no bloat signals and an obvious verification (a trivial null check, a typo-level doc fix):
+
+- Collapse the Before-Editing restatement to one line: the goal plus the check that will prove it.
+- Skip the State Ledger; it exists for multi-step tasks where criteria could silently drop, not for one-step patches.
+- Collapse the Final Report to `Goal`, `Change`, and `Verification`.
+- Never collapse verification itself: the proving check is still run and its output read.
+- Any high-risk signal, bloat signal, or scope growth exits the fast path back to the full contract.
 
 ## Before Editing
 

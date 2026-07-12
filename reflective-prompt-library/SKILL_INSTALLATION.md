@@ -33,6 +33,10 @@ Each install target expects this shape:
 <skills-root>/<skill-name>/SKILL.md
 ```
 
+## No Agent Skills support?
+
+If your host cannot discover `SKILL.md` files at all, fall back to the library's prompt layer: every skill ends with a `## Prompt Sources` list naming the `00-core`–`06-repo` prompts it compiles. Paste the relevant skill body (or its listed source prompts) directly into the host's system/custom-instruction surface. The skills are prompt-level workflows by design, so this degrades cleanly — you lose auto-triggering by description, not the method.
+
 ## Recommended Install Strategy
 
 Use one of these scopes:

@@ -4,7 +4,7 @@ Use this when deciding whether an external tool, paper, repo, agent pattern, mem
 
 ## Purpose
 
-Evaluate external mechanisms by local structural gap, reversibility, and verification instead of novelty. Primary workflow surfaces: `reflective-research`, `reflective-minimality`, and `reflective-dispatch`. Pairs with `01-thinking/critical-thinking-check.md` and `01-thinking/counterargument.md`.
+Evaluate external mechanisms by local structural gap, reversibility, and verification instead of novelty. Primary workflow surfaces: `reflective-research`, `reflective-minimality`, `reflective-risk`, and `reflective-dispatch`. Pairs with `01-thinking/critical-thinking-check.md` and `01-thinking/counterargument.md`.
 
 ## Scope
 

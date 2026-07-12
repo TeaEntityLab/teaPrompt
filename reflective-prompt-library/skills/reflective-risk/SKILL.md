@@ -57,6 +57,7 @@ Use before:
 - Production deployment
 - Legal, medical, or financial high-stakes advice
 - Any workflow where untrusted external content can influence side-effectful tool actions
+- Sending internal code, data, or evidence to external services or reviewers (data egress); apply `04-agent/external-adoption-review.md` §2a (sensitive-evidence packet handling) as the packet-handling lens
 
 ## Output
 

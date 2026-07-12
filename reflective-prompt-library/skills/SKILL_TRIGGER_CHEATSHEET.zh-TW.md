@@ -31,6 +31,8 @@ Skill 契約語言：
 - **小修不是審查** → `reflective-implement` — repo 內小 patch，不是 diff review。
 - **正式環境風險不是一般審查** → `reflective-risk` — auth/production/billing 變更需要 risk gate。
 - **重複性且有客觀判定** → 主 workflow + `verifier/test` artifact（Acquisition L3）— 除非需要 prompt 做不到的保證，才升級到 runner。
+- **文件修訂不是審查** → `reflective-implement` — 依驗收標準修訂 repo 內文件或內容；僅評論仍走 `reflective-review`。
+- **原型／spike（標準邊做邊浮現）** → 先 `reflective-brief` — 把 spike 定義成可證偽的問題加上 timebox，再以可拋棄產物標記走 `reflective-implement`；方向穩定後才進 `reflective-spec-plan`。
 
 ## `reflective-dispatch`
 

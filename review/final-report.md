@@ -35,7 +35,7 @@ evidence-gated. No trigger evidence was fabricated to “finish” them.
 | AC-4 | Do not silently adopt gated work | **Met** | P7 fired its named holdout trigger and received a decision record; all other gated items stayed dormant |
 | AC-5 | Fix remaining feasible defects | **Met** | P7 collision debt measured/closed; T2 section parity strengthened; linter misclassification fixed; isolated quality-test import fixed |
 | AC-6 | Preserve bounded core routing | **Met** | Packs absent from router targets, `VALID_WORKFLOWS`, and dispatch rows; P7 decision is no integration |
-| AC-7 | Preserve full quality gates | **Met** | Final `make all`: 899 pytest tests; every validator passed; ROUTE-001/002/003 100% |
+| AC-7 | Preserve full quality gates | **Met** | Final `make all`: 912 pytest tests; every validator passed; ROUTE-001/002/003 100% |
 | AC-8 | Keep unavailable evidence honest | **Met** | P6 and E2 retain their original gates; adopted items record recurrence `unknown` rather than fabricated demand |
 
 ## Tests / checks run
@@ -60,27 +60,40 @@ evidence-gated. No trigger evidence was fabricated to “finish” them.
 ### Linter evidence
 
 - Focused linter tests: **8 passed**.
-- Live linter: 147 Markdown files inventoried; 0 errors; 0 warnings;
+- Live linter: 148 Markdown files inventoried; 0 errors; 0 warnings;
   38 composable prompt/skill files with non-blocking suggestions.
 - Tests prove category prompts remain prompt-checked, skills remain
   skill-checked, long documents skip routing heuristics, and long prompts receive
   type-correct `Prompt body` warnings.
 
+### Skill scenario panel (2026-07-12, user-invoked)
+
+A seven-lens Parallel Lens Review of the skill layer (record:
+`reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md`).
+Provider quota blocked true parallel fan-out (two `resource_exhausted`
+failures); lenses ran sequentially on one host and the record says so. Ten
+wording-level updates adopted (implement Small-Change Fast Path + doc-edit
+scope, dispatch ladder note, risk data-egress trigger + M7 cross-link, brief
+spike framing, handoff ledger bridge, two bilingual boundary cues, install
+fallback); ENT-1 / LONG-2 / ZH-2 deferred with named triggers. Guards:
+`plans/tests/test_skill_scenario_panel_adoption_state.py` (13 tests).
+
 ### Final repository gate
 
 Command: `make all` from repository root.
 
-- **899 pytest tests passed**.
-- Link + Agent Skills schema validation: 147 files, 0 errors.
-- Lint: 147 files, 0 errors, 0 warnings.
+- **912 pytest tests passed**.
+- Link + Agent Skills schema validation: 148 files, 0 errors.
+- Lint: 148 files, 0 errors, 0 warnings.
 - Governance: 11/11 skills valid.
 - PROJECT_KNOWLEDGE contract: passed.
+- Record hygiene: 2 enforced records, 0 errors.
 - Benchmark fixture: 24 tasks, 9/9 core workflows.
 - Skill examples: 9 core + 2 domain packs.
 - ROUTE-001: 128 phrases, 100%.
 - ROUTE-002: 44 groups / 124 phrases, 100%.
 - ROUTE-003: 22 groups / 76 phrases, 100%.
-- Generated index: 114 files (103 prompts, 11 skills).
+- Generated index: 115 files (104 prompts, 11 skills).
 
 ## Failures or skipped checks
 
@@ -89,7 +102,7 @@ No check was skipped.
 Observed and repaired:
 
 1. Original documentation pass raised collection from 790-era snapshots to 881;
-   the `780+` pytest floor failed and was ratcheted upward; the latest floor is `890+` after this adoption wave.
+   the `780+` pytest floor failed and was ratcheted upward; the latest floor is `900+` after the scenario-panel wave (912 collected).
 2. P7 full-gate run initially failed because the Holdout Tracking paragraph did
    not include the new 44/124 and 22/76 floor step; the historical paragraph was
    extended rather than rewriting prior snapshots.

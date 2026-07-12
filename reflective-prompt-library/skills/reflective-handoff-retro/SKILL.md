@@ -48,6 +48,8 @@ Escalation:
 
 Use when switching tools, agents, models, sessions, or context windows.
 
+When the session kept a State Ledger (`reflective-implement`), a research ledger (`reflective-research`), or a loop ledger (`flow-loop-harness` state files), attach or summarize it under `Files / Artifacts` instead of re-deriving state from the transcript.
+
 ```markdown
 ## Goal
 ## Current State

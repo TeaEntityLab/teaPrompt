@@ -96,6 +96,8 @@ Choose the lowest strictness level that still controls risk:
 | `L5` | Long-running, multi-tool, resumable work | `reflective-dispatch` + workflow artifacts |
 | `L6` | Strategy/education/business framing | Domain prompts as overlays, not core execution |
 
+L3's `reflective-spec-plan` stage is for work that needs a plan artifact; a small, clear change routes directly to `reflective-implement` and may use its Small-Change Fast Path (cheatsheet cues: "Trivial fix not review", "Doc edit not review").
+
 Escalate only when needed. De-escalate once risk is controlled.
 
 ## L1 Fast Path

@@ -162,6 +162,7 @@ AGENT_SKILL_LINKS: dict[str, tuple[str, ...]] = {
         "reflective-dispatch",
         "reflective-minimality",
         "reflective-research",
+        "reflective-risk",
     ),
     "runtime-trust-boundary.md": (
         "reflective-implement",

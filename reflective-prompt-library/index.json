@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-12T00:51:10.622784",
+  "generated_at": "2026-07-12T09:19:53.892269",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -68,6 +68,7 @@
             "frozen-core-parity-review-2026-07-11.md",
             "openfugu-technical-brief-2026-06-25.md",
             "skill-workflow-research-synthesis.md",
+            "skill-scenario-panel-record-2026-07-12.md",
             "multi-agent-panel-consensus-2026-06-25.md",
             "flow-control-pack-panel-record-2026-07-11.md",
             "memory-mechanisms-research-2026-06-25.md",
@@ -4016,6 +4017,96 @@
       "char_count": 4870
     },
     {
+      "path": "reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skill-scenario-panel-record-2026-07-12",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill Scenario/Usage Panel — 2026-07-12"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Execution mode (honesty note)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (mandated by lens verdicts; all applied)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Per-lens summaries"
+        },
+        {
+          "level": 3,
+          "text": "SoloRapidFix — solo developer, 10-minute window"
+        },
+        {
+          "level": 3,
+          "text": "NonEngineerUser — PM/writer/analyst, non-code deliverables"
+        },
+        {
+          "level": 3,
+          "text": "BilingualOperator — zh-TW mixed-language routing"
+        },
+        {
+          "level": 3,
+          "text": "MultiHostInstaller — Claude Code / Codex / Cursor / bare hosts"
+        },
+        {
+          "level": 3,
+          "text": "HighStakesEnterprise — regulated, audited environments"
+        },
+        {
+          "level": 3,
+          "text": "GreenfieldIterator — fast-cycle exploratory builder"
+        },
+        {
+          "level": 3,
+          "text": "LongSessionOperator — multi-day autonomous sessions"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 219,
+      "char_count": 14130
+    },
+    {
       "path": "reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6502,7 +6593,7 @@
         }
       ],
       "line_count": 155,
-      "char_count": 5845
+      "char_count": 5864
     },
     {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
@@ -8053,8 +8144,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 242,
-      "char_count": 10774
+      "line_count": 244,
+      "char_count": 11201
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -8127,8 +8218,8 @@
           "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 233,
-      "char_count": 7216
+      "line_count": 235,
+      "char_count": 7448
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -8816,8 +8907,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 154,
-      "char_count": 8068
+      "line_count": 156,
+      "char_count": 8314
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -9123,8 +9214,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 108,
-      "char_count": 3384
+      "line_count": 110,
+      "char_count": 3818
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -9374,11 +9465,11 @@
       "category": "skills",
       "subcategory": "reflective-implement",
       "name": "reflective-implement",
-      "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
+      "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks, including repository documentation and content edits. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
       "license": "MIT",
       "frontmatter": {
         "name": "reflective-implement",
-        "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
+        "description": "Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks, including repository documentation and content edits. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.",
         "license": "MIT",
         "metadata": "",
         "risk_level": "low",
@@ -9412,6 +9503,10 @@
         {
           "level": 2,
           "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Small-Change Fast Path"
         },
         {
           "level": 2,
@@ -9522,8 +9617,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 178,
-      "char_count": 7122
+      "line_count": 188,
+      "char_count": 7870
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -9703,8 +9798,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 145,
-      "char_count": 5247
+      "line_count": 147,
+      "char_count": 5505
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -9833,8 +9928,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 116,
-      "char_count": 3634
+      "line_count": 117,
+      "char_count": 3840
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -10040,5 +10135,5 @@
       "char_count": 19473
     }
   ],
-  "total_files": 114
+  "total_files": 115
 }

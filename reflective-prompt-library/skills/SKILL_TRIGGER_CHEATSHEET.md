@@ -30,6 +30,8 @@ Boundary quick cues (ROUTE-002 holdout + ROUTE-003 adversarial):
 - **Trivial fix not review** → `reflective-implement` — small code patches in the repo, not diff review.
 - **Production risk not plain review** → `reflective-risk` — auth/production/billing changes need a risk gate, not readability review.
 - **Recurring deterministic check** → primary workflow + `verifier/test` artifact (Acquisition L3) — do not jump to a runner unless a prompt-impossible guarantee is required.
+- **Doc edit not review** → `reflective-implement` — revising repository documents or content against acceptance criteria; critique-only stays `reflective-review`.
+- **Prototype/spike (criteria emerge by building)** → `reflective-brief` first — frame the spike as a falsifiable question plus a timebox, then `reflective-implement` with a disposable-artifact label; full `reflective-spec-plan` waits until the direction sticks.
 
 ## `reflective-dispatch`
 
