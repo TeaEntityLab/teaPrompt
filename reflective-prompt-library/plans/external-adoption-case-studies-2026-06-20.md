@@ -28,6 +28,8 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 | 2026-06-21 | Hyperplan / multi-agent adversarial planning (OMO) | GitHub repo (code-yeongyu/oh-my-openagent) SKILL.md | no — runtime hits non-goals; methodology mostly covered | No change — Hyperplan runtime is agent swarm + runtime engine (both non-goals); methodology layer overlaps existing lenses; three possible gaps (Defend/Refine/Concede, Evidence Grade, Assumption Ledger) not promoted | this file |
 | 2026-06-25 | OpenFugu | GitHub repo + arXiv + HF APIs + local clone | no — mechanism useful, runtime/adoption blocked by artifact, license, and egress risks | No runtime adoption; reference-only; TRINITY hands-on deferred until `model_iter_60.npy` / safetensors boundary fixed | [research](openfugu-research-record-2026-06-25.md), [brief](openfugu-technical-brief-2026-06-25.md), [plan](openfugu-reference-plan-2026-06-25.md) |
 | 2026-06-25 | Skills, memory, and agent tooling survey | upstream repos/docs for Superpowers, Spec Kit, Karpathy skills/autoresearch, mem0, ChatGPT Memory, LLM Wiki, MemPalace, Hermes Agent, Oh My Pi, Oh My OpenAgent | mostly no — methodology already covered; memory/runtime surfaces are non-goals unless a local app/runtime gap appears | No new core skill, runtime, or memory dependency; keep as references and reuse existing `reflective-*` workflows plus Markdown project knowledge | [skills](skills-and-spec-systems-research-2026-06-25.md), [memory](memory-mechanisms-research-2026-06-25.md), [tooling](agent-tooling-research-2026-06-25.md) |
+| 2026-07-13 | Baton / `baton-dispatch` v0.1.1 | GitHub repository/API + pinned skill/reference files + Anthropic official article | no — methodology present/adjacent; consolidated-checklist recurrence `unknown` | Study/reference only; no TeaPrompt skill, lens, verifier, dependency, or runtime adoption; empirical reproduction deferred | [survey](baton-dispatch-survey-2026-07-13.md) |
+| 2026-07-13 | DilinAI Nuwa + Jiyao / team memory officer | five public share/API snapshots + platform terms + NASA, Anthropic, and Claude official sources | no — methodology present/adjacent; source-lineage recurrence `unknown`; runtime is a non-goal | Study traceability and artifact separation; no TeaPrompt prompt, skill, role, verifier, dependency, or runtime adoption; outcome reproduction and installation blocked | [survey](dilinai-nuwa-jiyao-survey-2026-07-13.md) |
 
 ## The Recurring Evaluation Procedure
 
@@ -134,6 +136,12 @@ specialization of existing
 [reflective-minimality](../skills/reflective-minimality/SKILL.md), and
 [reflective-dispatch](../skills/reflective-dispatch/SKILL.md).
 
+The 2026-07-13 Baton survey applies the same rule: its dispatch brake and
+ownership/verification vocabulary are useful reference material, but no verified
+local gap or recurrence warrants a new or repaired TeaPrompt surface. The
+candidate dispositions and re-evaluation triggers are recorded in the
+[Baton survey](baton-dispatch-survey-2026-07-13.md).
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -162,3 +170,5 @@ skill) or correct the gap. Until then it stays a lesson plus this case study.
 | No new skill or directory created | done | Rejected Alternatives |
 | Evidence/promotion rule corrected | done | Decision-Rule Correction |
 | No-code Test Plan route repaired | done | `reflective-spec-plan` + ROUTE fixtures |
+| Baton no-change outcome recorded | done | `baton-dispatch-survey-2026-07-13.md` + Case Comparison table |
+| DilinAI Nuwa/Jiyao no-change outcome recorded | done | `dilinai-nuwa-jiyao-survey-2026-07-13.md` + Case Comparison table |
