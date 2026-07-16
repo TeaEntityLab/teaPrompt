@@ -133,6 +133,7 @@ Run the checks that prove the claim:
 - Integration or manual verification when user-facing behavior changes.
 - Static review for security/privacy when relevant.
 - Prompt-injection, missing-data, or side-effect checks when external content or tool actions shape the change.
+- Twin sweep, whenever a defect was fixed: a bug found in one place is presumed to recur elsewhere until you have searched. Name the exact wrong construct, search the whole project for it, and include this line verbatim in the Final Report: `TWINS: searched <pattern> - found <N> other sites: <files, or "none">`. Fix in-scope twins; list out-of-scope ones under `Residual Risks` instead of silently widening scope. (Adopted 2026-07-16 after local reproduction; see `plans/fable-method-survey-2026-07-16.md` FM1.)
 
 If verification fails, fix and rerun. If a check cannot run, report why.
 
