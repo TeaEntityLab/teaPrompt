@@ -85,5 +85,6 @@ These are script-generation skills for host agent CLIs. They are not a tenth cor
 | --- | --- | --- |
 | `flow-control-generator` | User wants a **runnable one-pass** flow script (pipeline, fan-out/fan-in, conditional routing, orchestrator-workers) over a host CLI | No-code workflow spec → `reflective-spec-plan` with `04-agent/workflow-engine.md`; iterative loops → `flow-loop-harness` |
 | `flow-loop-harness` | User wants a **runnable loop** script (loop until verified, ralph-style backlog, writer–critic rounds) with external verifiers and caps | Recurring objective check → primary workflow + in-repo `verifier/test` artifact (Acquisition L3); durable multi-session workflow → `reflective-spec-plan` |
+| `agent-governance-scaffold` | User wants **governance scaffolding** for an effect-producing agent (four-power split, capability tokens, broker receipts, lease-keyed effect budgets, L0–L5 acceptance ladder, constitutional paths, named approval, mutation/canary set) | Flow/loop control scripts → `flow-control-generator` / `flow-loop-harness`; no-code governance design → `reflective-spec-plan`; high-risk auth/permission review → `reflective-risk` |
 
 Trigger fairness: words like "orchestration plan", "resumable workflow", or "pipeline" without explicit script/runner/loop intent still follow the nine core routes per `plans/ROUTING_CONTRACT.md`.

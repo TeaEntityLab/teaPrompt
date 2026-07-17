@@ -23,6 +23,7 @@ reflective-prompt-library/skills/
   # Optional registered domain packs (host-invoked; not core routing)
   flow-control-generator/
   flow-loop-harness/
+  agent-governance-scaffold/
 ```
 
 **Harness policy:** Nine frozen **core** workflow skills with strictness-first routing; registered domain packs are opt-in and remain outside core routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills), [skills/skill-map.md](skills/skill-map.md#registered-domain-packs-not-core-routing), and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
@@ -71,6 +72,7 @@ The optional domain-pack registry currently contains:
 ```text
 flow-control-generator
 flow-loop-harness
+agent-governance-scaffold
 ```
 
 Use the core helpers for the default install. Afterward, call the matching
@@ -114,7 +116,7 @@ install_domain_packs_copy() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     cp -R "$skill" "$dest/"
@@ -126,7 +128,7 @@ install_domain_packs_symlink() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     ln -sfn "$skill" "$dest/$name"

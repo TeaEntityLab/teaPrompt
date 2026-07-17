@@ -188,7 +188,7 @@ def _all_shipped_skill_bodies() -> dict[str, str]:
 
 def test_port1_prompt_sources_marked_as_provenance_everywhere():
     bodies = _all_shipped_skill_bodies()
-    assert len(bodies) == 11
+    assert len(bodies) == 12
     for name, text in bodies.items():
         assert "## Prompt Sources" in text, name
         section = text.split("## Prompt Sources", 1)[1]

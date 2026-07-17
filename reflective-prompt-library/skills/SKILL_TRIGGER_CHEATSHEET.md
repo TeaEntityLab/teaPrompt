@@ -241,4 +241,5 @@ When uncertain and low-risk:
 
 - **Runnable one-pass flow script** → `flow-control-generator` — chain, pipeline, fan-out, orchestrate agent CLI steps as a script; not plan-only workflow design (`reflective-spec-plan`).
 - **Runnable loop script** → `flow-loop-harness` — loop until, ralph, fix-until-green with external verifier; not an in-repo `verifier/test` artifact on the primary workflow (Acquisition L3 quick cue above).
+- **Governance scaffolding for an effect-producing agent** → `agent-governance-scaffold` — split proposal/authorization/effect/acceptance authority, capability tokens, broker receipts, lease-keyed effect budgets, constitutional paths; emits host-run contracts, does not enforce them; high-risk artifacts still gate through `reflective-risk`.
 - **Workflow choice / library routing** → still `reflective-dispatch`; this section does not replace the nine-skill Fast Routing Rule.
