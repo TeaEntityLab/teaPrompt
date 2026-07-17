@@ -178,6 +178,10 @@ Skip when the question is narrow, repo-local, and already has a single canonical
 ## Handoff
 ```
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-research.examples.md` tree when examples are co-installed. They show expected evidence-tier output shapes, not source-backed evidence by themselves.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

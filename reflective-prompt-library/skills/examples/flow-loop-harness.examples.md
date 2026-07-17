@@ -19,8 +19,8 @@ Expected output shape:
 ## Human review boundary
 - attended run: verifier + caps reviewed; unattended: full approval recorded first
 ## Verification
-- stub dry run proves all four exits: toggling verifier (0), always-fail (2),
-  no-progress stub (3), chmod -x verifier (4)
+- Rig-tier only: stub dry run proves all four exits: toggling verifier (0), always-fail (2), no-progress stub (3), chmod -x verifier (4). This approves loop control flow, not production or host-enforcement e2e.
+
 ```
 
 ## Example 2

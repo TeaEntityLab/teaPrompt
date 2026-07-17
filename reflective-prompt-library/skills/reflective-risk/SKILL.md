@@ -110,6 +110,10 @@ Use before:
 - Define explicit execution boundaries (tools, scope, timebox, blast radius) before any action.
 - Ensure an auditable record exists for high-risk steps and approvals.
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-risk.examples.md` tree when examples are co-installed. They show expected risk-gate shapes, not approval or execution proof.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

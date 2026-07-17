@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 # Skill Installation Guide
 
-Last verified: 2026-07-11
+Last verified: 2026-07-18
 
 This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Gemini CLI, Google Antigravity CLI / IDE, and OpenCode.
 
@@ -77,7 +77,10 @@ agent-governance-scaffold
 
 Use the core helpers for the default install. Afterward, call the matching
 `install_domain_packs_*` helper with the same destination only when those
-host-invoked script generators are wanted.
+host-invoked generator packs (flow scripts, loop harnesses, governance
+scaffolding) are wanted.
+
+Companion examples live under `reflective-prompt-library/skills/examples/` and are part of the host-facing documentation surface. Co-install them when the target host supports companion files or when operators need example output shapes; the examples are not semantic execution proof.
 
 ## Symlink install
 
@@ -134,6 +137,28 @@ install_domain_packs_symlink() {
     ln -sfn "$skill" "$dest/$name"
   done
 }
+
+install_skill_examples_copy() {
+  local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  test -d "$source_root/examples" || return 1
+  mkdir -p "$dest"
+  cp -R "$source_root/examples" "$dest/"
+}
+
+install_skill_examples_symlink() {
+  local dest="$1"
+  local source_root
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  test -d "$source_root/examples" || return 1
+  mkdir -p "$dest"
+  if [ -e "$dest/examples" ] && [ ! -L "$dest/examples" ]; then
+    echo "refusing to replace existing non-symlink examples directory: $dest/examples" >&2
+    return 1
+  fi
+  ln -sfn "$source_root/examples" "$dest/examples"
+}
 ```
 
 Run these definitions once (or paste them before a command below).
@@ -145,13 +170,24 @@ install_core_skills_copy <destination>
 install_core_skills_symlink <destination>
 ```
 
-Opt in to both registered domain packs with:
+Opt in to registered domain packs with:
 
 ```bash
 install_domain_packs_copy <destination>
 # or
 install_domain_packs_symlink <destination>
 ```
+
+Co-install companion examples when wanted:
+
+```bash
+install_skill_examples_copy <destination>
+# or
+install_skill_examples_symlink <destination>
+```
+
+The installed examples appear at `<destination>/examples/<skill-name>.examples.md`.
+
 
 Install one skill directly when needed:
 
@@ -553,8 +589,9 @@ Use symlink installs only for your own workspace, not as the default team instal
 ### Enforcing TeaPrompt's review gates host-side
 
 TeaPrompt skills declare intent via `metadata.human_review_required`; hosts, not
-TeaPrompt, enforce it. When installing `reflective-risk` or `flow-loop-harness`
-(both `human_review_required: true`), map the declaration to your host's
+TeaPrompt, enforce it. When installing `reflective-risk`, `flow-loop-harness`, or
+`agent-governance-scaffold` (all `human_review_required: true`), map the
+declaration to your host's
 invocation control:
 
 | Host | Mechanism |

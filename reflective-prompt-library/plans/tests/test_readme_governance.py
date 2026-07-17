@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from prompt_eval_helpers import (  # noqa: E402
+    cheatsheet_en_path,
     library_readme_path,
     library_skills_dir,
     methodology_map_en_path,
@@ -25,6 +26,7 @@ METHODOLOGY_MAP_ZH = methodology_map_zh_tw_path()
 METHODOLOGY_MAP_EN = methodology_map_en_path()
 SKILL_MAP = skill_map_path()
 INSTALLATION_GUIDE = LIBRARY_README.parent / "SKILL_INSTALLATION.md"
+INSTALLATION_GUIDE_ZH = LIBRARY_README.parent / "SKILL_INSTALLATION.zh-TW.md"
 
 CURRENT_PANEL_ROUND = "101"
 CURRENT_PANEL_OPTIONS = "A–IE"
@@ -133,13 +135,52 @@ def test_installation_defaults_to_core_and_opts_into_registered_packs(
     assert "install_core_skills_symlink()" in installation_guide_text
     assert "install_domain_packs_copy()" in installation_guide_text
     assert "install_domain_packs_symlink()" in installation_guide_text
+    assert "install_skill_examples_copy()" in installation_guide_text
+    assert "install_skill_examples_symlink()" in installation_guide_text
+    assert "<destination>/examples/<skill-name>.examples.md" in installation_guide_text
     assert "cp -R reflective-prompt-library/skills/*" not in installation_guide_text
     assert "for skill in reflective-prompt-library/skills/*;" not in installation_guide_text
 
-    pack_loop = re.search(
-        r"install_domain_packs_copy\(\).*?for name in ([^;]+); do",
-        installation_guide_text,
-        re.DOTALL,
-    )
-    assert pack_loop, "domain-pack copy helper loop missing"
-    assert set(pack_loop.group(1).split()) == set(DOMAIN_PACK_SKILLS)
+    for helper in ("copy", "symlink"):
+        pack_loop = re.search(
+            rf"install_domain_packs_{helper}\(\).*?for name in ([^;]+); do",
+            installation_guide_text,
+            re.DOTALL,
+        )
+        assert pack_loop, f"domain-pack {helper} helper loop missing"
+        assert set(pack_loop.group(1).split()) == set(DOMAIN_PACK_SKILLS)
+
+
+def test_en_cheatsheet_domain_pack_appendix_lists_registry():
+    text = cheatsheet_en_path().read_text(encoding="utf-8")
+    section = text.split(
+        "## Domain packs (host-invoked; not core routing)", 1
+    )[1].split("\n## ", 1)[0]
+    for pack in DOMAIN_PACK_SKILLS:
+        assert f"`{pack}`" in section, pack
+    assert "`reflective-dispatch`" in section
+
+
+def test_installation_human_review_set_matches_skill_metadata(
+    installation_guide_text: str,
+):
+    review_required = {
+        path.parent.name
+        for path in library_skills_dir().glob("*/SKILL.md")
+        if "human_review_required: true" in path.read_text(encoding="utf-8")
+    }
+    assert review_required
+
+    en_section = installation_guide_text.split(
+        "### Enforcing TeaPrompt's review gates host-side", 1
+    )[1].split("\n### ", 1)[0]
+    zh_section = INSTALLATION_GUIDE_ZH.read_text(encoding="utf-8").split(
+        "## 安全性注意事項", 1
+    )[1].split("\n## ", 1)[0]
+    for skill in review_required:
+        assert f"`{skill}`" in en_section
+        assert f"`{skill}`" in zh_section
+    assert "`human_review_required: true`" in zh_section
+    assert "examples/*.examples.md" in zh_section
+
+    assert "host" in zh_section

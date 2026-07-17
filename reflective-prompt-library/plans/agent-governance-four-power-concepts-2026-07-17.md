@@ -2,12 +2,13 @@
 
 > **Status: recorded (non-authoritative); concepts + feature→artifact map.** This
 > record captures the concepts of the user-provided *代理治理四權架構 spec
-> v1.1-RC1* (attachment, 2026-07-17) and maps each declarable feature to a
-> scaffold artifact so the `agent-governance-scaffold` domain pack has a single
+> v1.1-RC1* (attachment, 2026-07-17) and — as its own `[INFERENCE]` — maps each
+> declarable feature to a scaffold artifact so the `agent-governance-scaffold` domain pack has a single
 > source for its concept vocabulary. Authority chain unchanged:
 > `06-repo/AGENTS.md` and the invoked `SKILL.md` contracts govern; this record is
 > evidence and design judgement, not an operating rule. If it and a governed
 > surface disagree, the governed surface wins.
+> Concept-transcription completeness is **author-claimed** and was not independently audited against the attachment.
 
 ## Purpose
 
@@ -32,7 +33,8 @@ concepts only.
 ## Evidence vs Inference
 
 - **Source (given):** the spec text is a user-provided attachment dated
-  2026-07-17. Every concept below is transcribed or condensed from it.
+  2026-07-17. **Author-claimed:** every concept below is transcribed or condensed
+  from it; completeness was not independently audited against the attachment.
 - **Evidence tier:** architecture/methodology tier. The spec self-declares (its
   §0, §12, §13) that its claims are *proposals* whose final status is decided by
   unrun experiments; it is not empirical evidence. This record inherits that
@@ -209,7 +211,7 @@ replacing a function re-correlates previously independent failures.
   Per-layer broker receipts generalize "shell holds verification, CLI does not" to
   every layer — each layer's evidence is produced by that layer's infrastructure,
   not self-reported, or the self-report problem is merely deferred one level.
-- **Adversarial model — Kerckhoffs razor (§9.1):** policy sits inside the agent's
+- **Adversarial model — Kerckhoffs razor (§9.1; spec-stated, attribution not re-verified):** policy sits inside the agent's
   context, so governance is structurally fully disclosed to the governed. Keep
   only controls that survive full disclosure — **passes:** sandbox, effect broker,
   cryptographic verification, out-of-band approval; **fails:** behavioral
@@ -276,7 +278,7 @@ remediation duty、named gate、moral crumple zone。
   execution, acceptance, and meta-governance become one versioned, testable,
   auditable protocol. This is recorded as a product/architecture framing, not
   empirical proof.
-- **Roadmap interpretation:** heartbeat lease renewal, Kerckhoffs-surviving
+- **Roadmap interpretation `[INFERENCE]`:** heartbeat lease renewal, Kerckhoffs-surviving
   controls, formal proposal-state/control-decision separation, constitutional
   paths, broker receipts, cumulative-effect accounting, mutation suite, approver
   canary, Twin Check, and heterogeneous evidence reconciliation are features the
@@ -285,30 +287,30 @@ remediation duty、named gate、moral crumple zone。
 ## Feature → Scaffold Artifact Map `[INFERENCE]`
 
 This is this record's design judgement, mapping the spec's §14.3 declarable
-features and §15 skeleton to the artifacts the `agent-governance-scaffold` domain
-pack emits. It is not a spec claim.
+features and §15 skeleton to the pack's Artifact Set menu. A task emits only the
+subset its risk and host wiring require. This is not a spec claim.
 
-| Spec feature (§) | Scaffold artifact the pack emits |
+| Spec feature (§) | Artifact Set representation |
 | --- | --- |
-| Proposal lifecycle and control decision separation (§1.4) | `proposal_state` + `control_decision` schema |
-| Seven-layer stack, semantic interfaces, backend replaceability (§1.3, §7.5) | `semantic_interface` + `conformance_suite` manifest |
+| Proposal lifecycle and control decision separation (§1.4) | `proposal_state` + `control_decision` contract template |
+| Seven-layer stack, semantic interfaces, backend replaceability (§1.3, §7.5) | `semantic_interface` + `conformance_suite` contract template |
 | Gate 2.0 risk-thickness sizing (§5.4, §5.5, §5.6) | Gate-thickness sizing method + handover note |
 | Evidence by effect type, phantom-source discipline, Twin Check, heterogeneous evidence (§7.1, §7.3) | `verification_plan` with evidence map, `twin_check`, and `heterogeneous_evidence_reconciliation` |
-| H1–H6 experiments, baseline ladder A–E, task strata, pre-registration (§13) | `experiment_protocol` stubs for `hypotheses_yaml` + `analysis_plan` |
+| H1–H6 experiments, baseline ladder A–E, task strata, pre-registration (§13) | `experiment_protocol` stubs (`hypotheses_yaml` + `analysis_plan`) — concepts-plan reference; emitted only for a planned experiment, never a default emit |
 | Wrapper / bounded-policy agent, three-no contract (§6.4, §15.1) | Wrapper agent contract file |
 | Read-only / workspace-write run interface (§6.4, §15.2) | `run-<cli>.sh` interface stub |
-| Mechanized escalate predicates (§5.8, §15.3) | `escalate_if` predicate list |
-| AuthorityPolicy, capability token (§5.1, §5.3) | Authorization + capability objects |
-| Broker receipt, per-layer receipts (§6.2, §8) | Effect-receipt schema |
-| Cumulative effect accounting (§6.3) | `cumulative_effect_key` + `effect_budget` (lease-keyed) |
+| Machine-readable escalate predicates (§5.8, §15.3) | `escalate_if` predicate list (host-enforced) |
+| AuthorityPolicy semantics, capability token (§5.1, §5.3) | Capability-token + host-policy-binding contract |
+| Broker receipt, per-layer receipts (§6.2, §8) | Broker-owned effect-receipt contract template |
+| Cumulative effect accounting (§6.3) | `cumulative_effect_key` + lease-local `effect_budget` + principal × resource-domain aggregate budget |
 | Checker profile, failure independence (§5.2) | `checker_profile` multi-axis object |
 | Lease / heartbeat renewal (§5.7) | State-predicate lease + heartbeat semantics |
 | Acceptance ladder L0–L5, verifier split (§7.2, §7.4) | `constitutional_verifiers` vs `task_mutable_tests` |
-| Constitutional paths, out-of-band activation, monotonicity (§10) | `constitutional_paths` + `policy_activation` |
+| Constitutional paths, out-of-band activation, monotonicity (§10) | `constitutional_paths` + `worker_writable_exclusions` + `policy_activation` |
 | Named accountability gate, five-part decomposition (§11) | Named `approval` object |
 | Agenda check, counterproposals, intent–spec trace (§4.2) | `agenda_check` object |
 | Mutation suite (H3 five items + approver canary) (§9.4, §13) | Mutation-check scaffold |
-| Fifteen invariants | Invariant checklist embedded in the scaffold |
+| Fifteen invariants | Per-emitted-object invariant/host-enforcer mapping template |
 
 ## Residual Risk (spec §12, condensed)
 
@@ -335,7 +337,7 @@ implementation and must be re-reconciled.
 
 ## Prompt / Source Pointers
 
-- User-provided spec *代理治理四權架構 v1.1-RC1* (attachment, 2026-07-17) — the source of every concept above.
+- User-provided spec *代理治理四權架構 v1.1-RC1* (attachment, 2026-07-17) — the attachment the concepts above were transcribed or condensed from (completeness author-claimed).
 - [agent-governance-scaffold-adoption-2026-07-17.md](agent-governance-scaffold-adoption-2026-07-17.md) — adoption decision + candidate ledger + demotion triggers.
 - [../skills/agent-governance-scaffold/SKILL.md](../skills/agent-governance-scaffold/SKILL.md) — the domain-pack skill that emits these artifacts.
 - [../04-agent/runtime-trust-boundary.md](../04-agent/runtime-trust-boundary.md) — instruction/data separation and least-privilege lens (adjacent methodology).

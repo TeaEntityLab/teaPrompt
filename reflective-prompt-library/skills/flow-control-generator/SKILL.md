@@ -16,15 +16,14 @@ metadata:
 
 ## Purpose
 
-Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow (order, branching, concurrency, gates, budgets); the model owns step content. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (source repo: `plans/external-adoption-case-studies-2026-06-20.md`): the generated script is a host-operationalized artifact, not a TeaPrompt-operated runtime. The platform vocabulary this skill uses is advisory-tier reference material; sources and evidence tiers: `plans/agent-flow-control-research-2026-07-11.md` (source repo).
+Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow; the model owns step content. TeaPrompt stays methodology-side and emits host-operationalized artifacts only, not a runtime (`plans/external-adoption-case-studies-2026-06-20.md`). Surveyed platform vocabulary is advisory-tier provenance (`plans/agent-flow-control-research-2026-07-11.md`), never an adoption mandate.
 
 ## Module Contract
 
 Trigger:
 
-- The user asks to "chain", "pipeline", "fan out", "parallelize", "route", "orchestrate", or "script" agent steps, or asks for a flow/workflow script that calls an agent CLI more than once.
-- A task decomposes into ordered or independent agent steps whose sequencing should not be left to model improvisation.
-- An existing prompt-only recipe (source repo: `04-agent/workflow-recipes.md`) keeps failing on ordering, skipped gates, or lost intermediate outputs.
+- The user asks to chain, pipeline, fan out, route, orchestrate, or script multiple agent-CLI steps.
+- The task decomposes into ordered or independent steps whose sequencing should not be left to model improvisation, or a prompt-only recipe keeps losing ordering, gates, or intermediate outputs.
 
 Methods:
 
@@ -41,14 +40,13 @@ Output:
 
 Never:
 
-- Never generate a loop that re-invokes an agent until a condition is met — that is `flow-loop-harness` scope; route there.
-- Never let the model decide control flow at runtime when the flow is known at generation time; encode it in the script.
-- Never script epistemic perspective expansion (STORM-style multi-voice discovery) as a parallel topology — that is an optional method inside `reflective-research`; parallel fan-out here is for independent executable subtasks only.
-- Never treat an agent's self-reported success as a gate; gates are exit codes of deterministic checks.
-- Never embed secrets, auto-approve destructive permissions, or widen tool allowlists beyond what the steps need.
-- Never claim persistence, crash-safety, or idempotency for a generated script; the state directory is a resume convention that the host must honor, not a runtime guarantee (source lens: `04-agent/runtime-trust-boundary.md`).
-- Never let a generated stage edit its own gates, checks, or plan file mid-run; gate tampering voids the run.
-- Never treat surveyed platform vocabulary as an adoption mandate; topology choice follows the task's structure and a local need, not platform prestige.
+- Never generate a fix-until-green loop here; use `flow-loop-harness`.
+- Never let the model decide known control flow at runtime; encode it in the script.
+- Never script epistemic perspective expansion (STORM-style discovery) as parallel execution; that belongs inside `reflective-research`.
+- Never treat agent self-report as a gate; gates are deterministic exit codes.
+- Never embed secrets, auto-approve destructive permissions, widen tool allowlists, or let a stage edit its own gates/checks/plan.
+- Never claim persistence, crash-safety, or idempotency; `state/` is only a host-honored resume convention.
+- Never choose topology from platform prestige; choose from task shape and local need.
 
 Escalation:
 
@@ -60,15 +58,15 @@ Escalation:
 
 ## Topology Selection
 
-Pick the smallest topology that fits the task shape. Composition is allowed (a pipeline stage may itself fan out), but justify each layer. Multi-wave breadth patterns (ReMoM-style: fan out, compact state files, fan out again) are the parallel template composed inside a `flow-loop-harness` loop — compose them; do not build a bespoke runner. Platform names are reference vocabulary (advisory tier), not adoption targets: external pattern popularity is not local recurrence evidence, so pick from task structure, and record a local-gap note when a topology exists here only because a platform names it.
+Pick the smallest topology that fits the task shape. Composition is allowed, but justify each layer. Multi-wave breadth belongs inside `flow-loop-harness`; compose it, do not build a bespoke runner.
 
-| Task shape | Topology | Platform equivalents (2026-07 survey) |
-| --- | --- | --- |
-| Fixed known stages, each consumes the previous output | Sequential pipeline | Anthropic prompt chaining; ADK `SequentialAgent`; MAF Sequential |
-| Independent subtasks, results merged once | Parallel fan-out/fan-in | Anthropic parallelization; ADK `ParallelAgent`; MAF Concurrent; LangGraph Send |
-| Input classes need different handling | Conditional router | Anthropic routing; LangGraph conditional edges; OpenAI handoffs |
-| Subtasks unknown until a planner sees the task | Orchestrator-workers | Anthropic orchestrator-workers; OpenAI orchestrator-worker; MAF Magentic (manager re-plans) |
-| Quality must converge over rounds | Loop | Not here — `flow-loop-harness` |
+| Task shape | Topology |
+| --- | --- |
+| Fixed known stages, each consumes the previous output | Sequential pipeline |
+| Independent subtasks, results merged once | Parallel fan-out/fan-in |
+| Input classes need different handling | Conditional router |
+| Subtasks unknown until a planner sees the task | Orchestrator-workers |
+| Quality must converge over rounds | Loop → `flow-loop-harness` |
 
 If no row fits, the task is probably a single agent call. Stop and say so.
 
@@ -336,6 +334,10 @@ Boundary: one host-executed script, not a TeaPrompt runtime. Rejected extras
 stay rejected: no retry-with-backoff, memory backend, or per-node provenance
 headers (source repo: `plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
 
+## Human Review Boundary
+
+Before the first unattended run of any generated script with side effects, a human must approve gates, caps, permission flags, blast radius, and every auth/permission/destructive/billing/production/privacy/migration/API/third-party effect step. Record the approval in the run note. Attended runs may review only gates and caps, but side-effectful steps still need a per-action pause.
+
 ## Verification
 
 Before handing a generated script to the user:
@@ -351,6 +353,10 @@ Promoting a generated flow into a durable, recurring artifact is an Acquisition-
 
 - Generated scripts are disposable: when the host CLI, task shape, or gates change, regenerate from the template rather than patching a drifted copy.
 - Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
+
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/flow-control-generator.examples.md` tree when examples are co-installed. They show expected script shapes and rig-tier checks; they are not production or unattended-run proof.
 
 ## Prompt Sources
 

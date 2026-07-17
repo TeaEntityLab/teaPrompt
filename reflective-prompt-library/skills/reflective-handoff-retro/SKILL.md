@@ -136,6 +136,10 @@ Promotion rules:
 - Superseded decisions remain traceable through the decision index; record the
   transition instead of deleting the old rationale.
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-handoff-retro.examples.md` tree when examples are co-installed. They show expected handoff/retro shapes, not a separate runtime contract.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

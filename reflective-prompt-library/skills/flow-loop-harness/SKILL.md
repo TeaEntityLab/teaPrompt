@@ -308,6 +308,10 @@ First demotion-trigger evaluation against these surfaces: **not fired**
 - Loop scripts are disposable: when the verifier, host CLI, or task shape changes, regenerate from the template rather than patching a drifted copy.
 - Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
 
+## Examples
+
+Companion examples live at `<skills-root>/examples/flow-loop-harness.examples.md` when co-installed. They show loop shapes and rig-tier checks, not production proof.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

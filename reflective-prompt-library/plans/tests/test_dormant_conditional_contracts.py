@@ -22,7 +22,9 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402
 from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_ROOT,
     cheatsheet_en_path,
@@ -38,7 +40,7 @@ HARNESS = library_skills_dir() / "flow-loop-harness" / "SKILL.md"
 RESEARCH_LEDGER = PLANS_DIR / "agent-flow-control-research-2026-07-11.md"
 MANAGED_LEDGER = PLANS_DIR / "managed-skill-promotion-panel-record-2026-07-11.md"
 
-PACK_NAMES = ("flow-control-generator", "flow-loop-harness")
+PACK_NAMES = tuple(DOMAIN_PACK_SKILLS)  # registry-driven (2026-07-18 panel R9)
 RESOLUTION_TOKENS = ("Adopted", "Resolved", "Superseded", "Re-litigated")
 
 

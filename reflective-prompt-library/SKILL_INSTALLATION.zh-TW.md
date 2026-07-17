@@ -4,7 +4,7 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 # Skills 安裝指南
 
-最後確認日期：2026-07-11
+最後確認日期：2026-07-18
 
 本文件說明如何把 TeaPrompt 的 workflow skills 安裝到：
 
@@ -36,6 +36,12 @@ reflective-prompt-library/skills/
 
 ```text
 <skills-root>/<skill-name>/SKILL.md
+```
+
+範例檔屬於輔助說明面，建議一併放在：
+
+```text
+<skills-root>/examples/<skill-name>.examples.md
 ```
 
 ## Claude Code
@@ -108,6 +114,12 @@ cp -R reflective-prompt-library/skills/reflective-* .opencode/skills/
 find . -path './.git' -prune -o -name SKILL.md -print | rg 'reflective-'
 ```
 
+若有安裝範例檔，可另外檢查：
+
+```bash
+find . -path './.git' -prune -o -path '*/skills/examples/*.examples.md' -print
+```
+
 ## 安全性注意事項
 
 - 第三方 skills 應視為可執行的操作指令，而非被動文件。
@@ -115,6 +127,11 @@ find . -path './.git' -prune -o -name SKILL.md -print | rg 'reflective-'
 - 避免大規模全域安裝，建議使用專案層級的少量 skill 集合。
 - 除非 skill 確實需要，否則不要授予工具權限或 hook。
 - 高風險工作流程請保留在 `reflective-risk` 之後再執行。
+- `reflective-risk`、`flow-loop-harness` 與 `agent-governance-scaffold` 的
+  metadata 都設為 `human_review_required: true`；這只是意圖宣告，安裝後仍須由
+  host 的呼叫控制實際執行 Human Review，TeaPrompt 本身不會強制執行。
+- `examples/*.examples.md` 只示範輸入/輸出形狀與證據層級，不代表已實際執行、已核准，或 host 已完成強制執行。
+
 
 ## 注意事項
 

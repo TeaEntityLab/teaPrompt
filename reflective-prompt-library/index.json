@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-07-18T01:15:09.817391",
+  "generated_at": "2026-07-18T07:54:48.067488",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -41,6 +41,7 @@
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
@@ -49,6 +50,7 @@
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "openfugu-research-record-2026-06-25.md",
+            "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -56,6 +58,7 @@
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "fable-method-survey-2026-07-16.md",
+            "agent-governance-scaffold-panel-record-2026-07-18.md",
             "whole-project-roadmap-2026-07-11.md",
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
@@ -1260,6 +1263,7 @@
         "ref_snippet": [],
         "markdown_links": [
           "agent-governance-four-power-concepts-2026-07-17.md",
+          "agent-governance-scaffold-panel-record-2026-07-18.md",
           "../06-repo/AGENTS.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "agent-governance-four-power-concepts-2026-07-17.md",
@@ -1279,6 +1283,10 @@
         },
         {
           "level": 2,
+          "text": "Acceptance provenance"
+        },
+        {
+          "level": 2,
           "text": "Decision"
         },
         {
@@ -1288,6 +1296,10 @@
         {
           "level": 2,
           "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Demotion Triggers"
         },
         {
           "level": 2,
@@ -1306,8 +1318,8 @@
           "text": "Prompt / Source Pointers"
         }
       ],
-      "line_count": 126,
-      "char_count": 8656
+      "line_count": 164,
+      "char_count": 11998
     },
     {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
@@ -1728,6 +1740,84 @@
       ],
       "line_count": 105,
       "char_count": 8071
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-governance-scaffold-field-use-panel-2026-07-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent-Governance-Scaffold Field-Use Panel Record — 2026-07-17"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Decision"
+        },
+        {
+          "level": 3,
+          "text": "Use-case recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "TrustBoundary R17-S crosswalk (IRC full deliverable)"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Next Action"
+        }
+      ],
+      "line_count": 231,
+      "char_count": 15508
     },
     {
       "path": "reflective-prompt-library/plans/routing-holdout-plan-2026-07-11.md",
@@ -2481,6 +2571,68 @@
       "char_count": 13120
     },
     {
+      "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "all-skills-panel-record-2026-07-18",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "All-Skill Layer Panel Record — 2026-07-18"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 152,
+      "char_count": 9267
+    },
+    {
       "path": "reflective-prompt-library/plans/dormant-items-user-directed-adoption-2026-07-12.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -3068,6 +3220,124 @@
       "char_count": 27902
     },
     {
+      "path": "reflective-prompt-library/plans/agent-governance-scaffold-panel-record-2026-07-18.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-governance-scaffold-panel-record-2026-07-18",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent-Governance-Scaffold Pack Panel Record — 2026-07-18"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Panel Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Post-Remediation Verification Panel"
+        },
+        {
+          "level": 3,
+          "text": "Scope and execution"
+        },
+        {
+          "level": 3,
+          "text": "Decision"
+        },
+        {
+          "level": 3,
+          "text": "Shared findings"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements preserved"
+        },
+        {
+          "level": 3,
+          "text": "Evidence checked in this pass"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability extension"
+        },
+        {
+          "level": 2,
+          "text": "Closure Readiness Verification Panel"
+        },
+        {
+          "level": 3,
+          "text": "Scope and execution"
+        },
+        {
+          "level": 3,
+          "text": "Decision"
+        },
+        {
+          "level": 3,
+          "text": "Shared findings"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements preserved"
+        },
+        {
+          "level": 3,
+          "text": "Evidence checked in this pass"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability extension"
+        }
+      ],
+      "line_count": 380,
+      "char_count": 27307
+    },
+    {
       "path": "reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -3628,8 +3898,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 405,
-      "char_count": 23573
+      "line_count": 409,
+      "char_count": 23995
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -4300,8 +4570,8 @@
           "text": "Prompt / Source Pointers"
         }
       ],
-      "line_count": 342,
-      "char_count": 21360
+      "line_count": 344,
+      "char_count": 22006
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -8564,7 +8834,7 @@
         }
       ],
       "line_count": 90,
-      "char_count": 6027
+      "char_count": 6063
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -9391,11 +9661,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 158,
-      "char_count": 8772
+      "line_count": 176,
+      "char_count": 10403
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -9457,11 +9731,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 136,
-      "char_count": 6301
+      "line_count": 140,
+      "char_count": 6530
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -9469,18 +9747,18 @@
       "category": "skills",
       "subcategory": "agent-governance-scaffold",
       "name": "agent-governance-scaffold",
-      "description": "Use when a task needs governance scaffolding for an agent that produces external effects — separating proposal, authorization, effect, and acceptance authority with capability tokens, broker-issued effect receipts, lease-keyed cumulative-effect budgets, an L0–L5 acceptance ladder, constitutional (control-plane) paths with out-of-band activation, named accountability gates, and a mutation/canary check set. It emits host-runnable contract files and object schemas from the four-power spec; it does not run or enforce them. For flow scripts use flow-control-generator; for loop scripts use flow-loop-harness.",
+      "description": "Use when an external-effect agent needs governance scaffolding that separates proposal, authorization, effect, and acceptance authority with capability tokens, broker receipts, lease-keyed budgets, approval gates, constitutional paths, and adversarial checks. It emits static host-run contract templates; it does not enforce them. For runnable flow or loop scripts use flow-control-generator or flow-loop-harness.",
       "license": "MIT",
       "frontmatter": {
         "name": "agent-governance-scaffold",
-        "description": "Use when a task needs governance scaffolding for an agent that produces external effects — separating proposal, authorization, effect, and acceptance authority with capability tokens, broker-issued effect receipts, lease-keyed cumulative-effect budgets, an L0–L5 acceptance ladder, constitutional (control-plane) paths with out-of-band activation, named accountability gates, and a mutation/canary check set. It emits host-runnable contract files and object schemas from the four-power spec; it does not run or enforce them. For flow scripts use flow-control-generator; for loop scripts use flow-loop-harness.",
+        "description": "Use when an external-effect agent needs governance scaffolding that separates proposal, authorization, effect, and acceptance authority with capability tokens, broker receipts, lease-keyed budgets, approval gates, constitutional paths, and adversarial checks. It emits static host-run contract templates; it does not enforce them. For runnable flow or loop scripts use flow-control-generator or flow-loop-harness.",
         "license": "MIT",
-        "compatibility": "Emits static governance scaffolding (Markdown contracts, YAML/JSON object schemas, a bash run-interface stub) for a POSIX host with bash 3.2+ and a headless agent CLI; the host owns the effect broker, policy engine, verifiers, and approval gates — TeaPrompt runs none of them.",
+        "compatibility": "Emits static governance scaffolding (Markdown contracts, typed YAML/JSON contract templates, and a bash run-interface stub) for a POSIX host with bash 3.2+ and a headless agent CLI; the host owns the effect broker, policy engine, verifiers, and approval gates — TeaPrompt runs none of them.",
         "metadata": "",
         "risk_level": "high",
         "human_review_required": "true",
         "external_io": "false",
-        "context_load": "medium"
+        "context_load": "high"
       },
       "dependencies": {
         "ref_file": [],
@@ -9529,12 +9807,16 @@
           "text": "Semantic interface + conformance suite (§1.3, §7.5)"
         },
         {
+          "level": 1,
+          "text": "host-run spec — artifact presence does not prove conformance passed"
+        },
+        {
           "level": 3,
           "text": "Verification plan: Twin Check + heterogeneous evidence (§7.1, §7.3)"
         },
         {
           "level": 3,
-          "text": "Experiment protocol stubs (§13)"
+          "text": "Experiment protocol (§13) — concepts-plan reference, not a default emit"
         },
         {
           "level": 3,
@@ -9546,19 +9828,11 @@
         },
         {
           "level": 3,
-          "text": "Run interface (§15.2)"
-        },
-        {
-          "level": 1,
-          "text": "read-only vs workspace-write separated; workdir fenced with --cd; prompt via stdin;"
-        },
-        {
-          "level": 1,
-          "text": "empty params inherit config defaults. bash -n clean before use."
+          "text": "Run interface contract (§15.2)"
         },
         {
           "level": 3,
-          "text": "Escalate predicates (§15.3) — mechanized, not introspective"
+          "text": "Escalate predicates (§15.3) — machine-readable, not introspective"
         },
         {
           "level": 3,
@@ -9567,6 +9841,10 @@
         {
           "level": 3,
           "text": "Checker profile (§5.2) — failure independence, not just role names"
+        },
+        {
+          "level": 1,
+          "text": "illustrative placeholders — not calibrated benchmark scores"
         },
         {
           "level": 1,
@@ -9583,14 +9861,6 @@
         {
           "level": 3,
           "text": "Cumulative-effect budget (§6.3) — keyed on the lease, not the session"
-        },
-        {
-          "level": 1,
-          "text": "Also cap a cross-purpose budget on principal x resource_domain so splitting the"
-        },
-        {
-          "level": 1,
-          "text": "purpose string cannot re-run the salami attack at the aggregation layer."
         },
         {
           "level": 3,
@@ -9654,11 +9924,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 363,
-      "char_count": 21525
+      "line_count": 404,
+      "char_count": 25773
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -9772,6 +10046,10 @@
         },
         {
           "level": 2,
+          "text": "Human Review Boundary"
+        },
+        {
+          "level": 2,
           "text": "Verification"
         },
         {
@@ -9780,11 +10058,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 365,
-      "char_count": 19995
+      "line_count": 371,
+      "char_count": 19061
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -9895,11 +10177,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 112,
-      "char_count": 3965
+      "line_count": 116,
+      "char_count": 4184
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -10025,11 +10311,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 192,
-      "char_count": 9927
+      "line_count": 196,
+      "char_count": 10166
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -10137,11 +10427,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 168,
-      "char_count": 7174
+      "line_count": 172,
+      "char_count": 7410
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -10298,11 +10592,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 191,
-      "char_count": 8531
+      "line_count": 195,
+      "char_count": 8764
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -10479,11 +10777,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 149,
-      "char_count": 5652
+      "line_count": 153,
+      "char_count": 5880
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -10609,11 +10911,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 120,
-      "char_count": 4683
+      "line_count": 124,
+      "char_count": 4898
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -10705,11 +11011,15 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 240,
-      "char_count": 10790
+      "line_count": 244,
+      "char_count": 11009
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -10812,12 +11122,16 @@
         },
         {
           "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 322,
-      "char_count": 19786
+      "line_count": 326,
+      "char_count": 19966
     }
   ],
-  "total_files": 121
+  "total_files": 124
 }

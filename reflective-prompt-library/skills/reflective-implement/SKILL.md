@@ -178,6 +178,10 @@ Use this loop until acceptance criteria are met or a hard stop requires Human Re
 
 Request Human Review for auth, permission changes, security-sensitive logic, privacy-sensitive data, database migrations, destructive operations, billing/cost changes, public API breaking changes, or production deployment.
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-implement.examples.md` tree when examples are co-installed. They show expected implementation-report shapes, not proof that code was executed.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

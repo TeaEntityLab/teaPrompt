@@ -126,6 +126,10 @@ For a repo-wide audit, rank the largest cuts first and use the same tags.
 
 For a debt ledger, scan intentional shortcut markers and flag any entry that lacks a ceiling or upgrade trigger.
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-minimality.examples.md` tree when examples are co-installed. They show expected anti-bloat review shapes, not a separate runtime contract.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*

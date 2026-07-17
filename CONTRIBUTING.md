@@ -55,16 +55,17 @@ All prompts must include:
 
 All skills (SKILL.md files) must include:
 
-1. **Frontmatter** with required fields:
+1. **Frontmatter** with required fields (governance metadata is nested under the Agent Skills `metadata:` extension point):
    ```yaml
    ---
    name: skill-name
    description: Clear one-line description
    license: MIT
-   risk_level: low|medium|high
-   human_review_required: true|false
-   external_io: true|false
-   context_load: low|medium|high
+   metadata:
+     risk_level: low|medium|high
+     human_review_required: true|false
+     external_io: true|false
+     context_load: low|medium|high
    ---
    ```
 

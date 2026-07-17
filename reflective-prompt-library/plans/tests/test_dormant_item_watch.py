@@ -24,7 +24,9 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402
 from prompt_eval_helpers import (  # noqa: E402
     PROMPT_LIBRARY_ROOT,
     cheatsheet_en_path,
@@ -39,7 +41,11 @@ GENERATOR = library_skills_dir() / "flow-control-generator" / "SKILL.md"
 HARNESS = library_skills_dir() / "flow-loop-harness" / "SKILL.md"
 DISPATCH = library_skills_dir() / "reflective-dispatch" / "SKILL.md"
 
-PACK_NAMES = ("flow-control-generator", "flow-loop-harness")
+# Registry-driven since the 2026-07-18 governance-pack panel (R9): the
+# routing-surface-absence guard protects against EVERY registered pack name.
+# P7/N12 decided the two flow packs; G9 (adoption ledger) defers the
+# governance pack's collision measurement with its own trigger.
+PACK_NAMES = tuple(DOMAIN_PACK_SKILLS)
 
 ROUTING_SURFACES = (
     DISPATCH,

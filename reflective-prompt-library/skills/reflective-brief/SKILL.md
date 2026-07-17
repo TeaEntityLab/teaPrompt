@@ -99,6 +99,10 @@ Spike / exploration framing: when acceptance criteria can only emerge from build
 - Provide concise reasoning summaries and clean artifacts; the raw-reasoning-token rule is defined once under `Never`.
 - If outcome is unclear, ask one direct question or state one reversible assumption and continue.
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-brief.examples.md` tree when examples are co-installed. They show expected input/output shapes, not a separate runtime contract.
+
 ## Prompt Sources
 
 Use these library prompts for exact wording when needed:

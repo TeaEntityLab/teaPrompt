@@ -70,6 +70,15 @@ def main() -> int:
                 f"({len(content)} chars; minimum {MIN_EXAMPLE_CHARS})"
             )
 
+        pointer = f"<skills-root>/examples/{skill}.examples.md"
+        skill_text = skill_file.read_text(encoding="utf-8")
+        if pointer not in skill_text:
+            errors.append(
+                f"{skill_file.relative_to(repo_root)}: missing installed examples "
+                f"pointer {pointer!r}"
+            )
+
+
     if errors:
         print(f"\n❌ {len(errors)} skill example violation(s):")
         for err in errors:

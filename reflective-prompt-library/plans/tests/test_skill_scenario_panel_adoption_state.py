@@ -19,6 +19,8 @@ from prompt_eval_helpers import (  # noqa: E402
 
 PLANS = Path(__file__).parent.parent
 RECORD = PLANS / "skill-scenario-panel-record-2026-07-12.md"
+ALL_SKILLS_RECORD = PLANS / "all-skills-panel-record-2026-07-18.md"
+
 
 
 def _read(path: Path) -> str:
@@ -174,6 +176,24 @@ def test_panel_record_declares_single_host_execution():
     assert "sequentially by one agent" in text
 
 
+def test_all_skills_panel_record_shape_and_ledger():
+    text = _read(ALL_SKILLS_RECORD)
+    for heading in (
+        "## Panel Consensus",
+        "## Required Wording Changes",
+        "## Candidate Adoption Ledger",
+        "## Shared Findings",
+        "## Disagreements / Residual Risks",
+        "## Evidence Actually Checked",
+        "## Falsifiability",
+    ):
+        assert heading in text
+    for candidate_id in ("AS1", "AS2", "AS3", "AS4", "AS5", "AS6", "AS7", "AS8", "AS9", "AS10"):
+        assert f"| {candidate_id} |" in text
+    assert "AGREE WITH CHANGES" in text
+
+
+
 # ---------------------------------------------------------------------------
 # PORT-1 — install-portability of shipped skill bodies
 # ---------------------------------------------------------------------------
@@ -194,6 +214,48 @@ def test_port1_prompt_sources_marked_as_provenance_everywhere():
         section = text.split("## Prompt Sources", 1)[1]
         assert "not runtime dependencies" in section, name
         assert "the installed skill is self-contained" in section, name
+
+
+
+def test_port1_shipped_skills_point_to_installed_examples_tree():
+    for name, text in _all_shipped_skill_bodies().items():
+        assert f"<skills-root>/examples/{name}.examples.md" in text, name
+
+
+def test_port1_dispatch_boundary_quick_cues_are_inline():
+    text = _skill("reflective-dispatch")
+    for cue in (
+        "Plan-only (no code)",
+        "Approved spec delivery",
+        "Brief before plan",
+        "Production risk not plain review",
+        "Doc edit not review",
+    ):
+        assert cue in text
+
+
+def test_port1_flow_control_human_review_boundary_present():
+    text = _skill("flow-control-generator")
+    assert "## Human Review Boundary" in text
+    assert "Before the first unattended run" in text
+    assert "per-action pause" in text
+
+
+def test_port1_flow_examples_label_rig_tier_only():
+    examples = _read(library_skills_dir() / "examples" / "flow-control-generator.examples.md")
+    loop_examples = _read(library_skills_dir() / "examples" / "flow-loop-harness.examples.md")
+    assert examples.count("Rig-tier only") >= 3
+    assert "human approval pause" in examples
+    assert "No production e2e proof is claimed" in examples
+    assert "Rig-tier only" in loop_examples
+
+
+def test_port1_contributing_uses_nested_metadata_template():
+    text = _read(PROMPT_LIBRARY_ROOT.parent / "CONTRIBUTING.md")
+    skill_block = text.split("### Skill Quality Requirements", 1)[1].split("### Technical Requirements", 1)[0]
+    assert "metadata:" in skill_block
+    assert "  risk_level:" in skill_block
+    assert "\n   risk_level:" not in skill_block
 
 
 def test_port1_no_parent_relative_paths_in_shipped_bodies():

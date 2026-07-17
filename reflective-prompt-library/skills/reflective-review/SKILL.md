@@ -156,6 +156,10 @@ Use one:
 ## Residual Risks
 ```
 
+## Examples
+
+Companion examples live in the installed `<skills-root>/examples/reflective-review.examples.md` tree when examples are co-installed. They show expected review output shapes, not proof of a reviewed artifact by themselves.
+
 ## Prompt Sources
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
