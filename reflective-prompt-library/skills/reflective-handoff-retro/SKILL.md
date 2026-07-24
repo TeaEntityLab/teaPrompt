@@ -99,6 +99,9 @@ Only institutionalize repeated patterns:
 
 Do not turn one-off accidents into permanent bureaucracy.
 
+- Quality gate: preserve a memory only when it is future-useful, durable beyond the current task, and self-contained for a reader without the original session. Exclude live task state and facts a routine source lookup can recover.
+- Revalidation: treat recalled memory as a dated lead; re-check changeable facts against the current authoritative source before acting.
+
 ## Project-Knowledge Promotion Contract
 
 Use this only when the repository has a project-knowledge layer or the user asks

@@ -31,6 +31,7 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 | 2026-07-13 | Baton / `baton-dispatch` v0.1.1 | GitHub repository/API + pinned skill/reference files + Anthropic official article | no — methodology present/adjacent; consolidated-checklist recurrence `unknown` | Study/reference only; no TeaPrompt skill, lens, verifier, dependency, or runtime adoption; empirical reproduction deferred | [survey](baton-dispatch-survey-2026-07-13.md) |
 | 2026-07-13 | DilinAI Nuwa + Jiyao / team memory officer | five public share/API snapshots + platform terms + NASA, Anthropic, and Claude official sources | no — methodology present/adjacent; source-lineage recurrence `unknown`; runtime is a non-goal | Study traceability and artifact separation; no TeaPrompt prompt, skill, role, verifier, dependency, or runtime adoption; outcome reproduction and installation blocked | [survey](dilinai-nuwa-jiyao-survey-2026-07-13.md) |
 | 2026-07-16 | fable-method v1.4.0 | GitHub repo/API + pinned clone + arXiv + upstream issue #3 | yes, narrow — forced-artifact gates absent from `reflective-implement`/`reflective-risk`; demonstrated by same-day deterministic reproduction (capable-tier control ran the unauthorized deploy 3/3; treatment 0/3) | Study strongly; FM1/FM2 adopted 2026-07-16 as narrow wording repairs to `reflective-implement` / `reflective-risk`; FM3 deferred; FM4 rejected; no new TeaPrompt skill, lens, verifier, dependency, or runtime surface | [survey](fable-method-survey-2026-07-16.md) |
+| 2026-07-24 | Claude Code v2.1.218 prompt snapshot | Piebald pinned repo + public extractor/updater + official npm/native package spot-check | yes, three narrow contract gaps; runtime/product mechanisms remain out of scope | Study; partially adopt original CCSP1–CCSP3 wording repairs; defer digest binding; reject auto-mutation/micro-fragment architecture; no new skill, route, dependency, or runtime | [survey](claude-code-system-prompts-survey-2026-07-24.md) |
 
 ## The Recurring Evaluation Procedure
 
@@ -143,6 +144,15 @@ local gap or recurrence warrants a new or repaired TeaPrompt surface. The
 candidate dispositions and re-evaluation triggers are recorded in the
 [Baton survey](baton-dispatch-survey-2026-07-13.md).
 
+The 2026-07-24 Claude Code prompt snapshot survey also applies the corrected
+rule: selected prompt mechanisms are study evidence, not local promotion
+evidence. Three verified omissions warranted narrow repairs to existing skills;
+conditional runtime composition, agent lifecycle heuristics, automatic skill
+mutation, and unenforced digest fields did not warrant new surfaces. Full
+extraction reproduction remains partial (603 published bodies, 416 in a fresh
+public-extractor run); see the
+[survey](claude-code-system-prompts-survey-2026-07-24.md).
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -175,3 +185,4 @@ skill) or correct the gap. Until then it stays a lesson plus this case study.
 | DilinAI Nuwa/Jiyao no-change outcome recorded | done | `dilinai-nuwa-jiyao-survey-2026-07-13.md` + Case Comparison table |
 | fable-method survey outcome recorded | done | `fable-method-survey-2026-07-16.md` + Case Comparison table |
 | fable-method FM1/FM2 reproduction and adoption recorded | done | `fable-method-survey-2026-07-16.md` §Local Reproduction + wording pins in `test_fable_method_survey_record.py` |
+| Claude Code prompt snapshot outcome recorded | done | `claude-code-system-prompts-survey-2026-07-24.md` + wording pins in `test_claude_code_system_prompts_survey_record.py` |

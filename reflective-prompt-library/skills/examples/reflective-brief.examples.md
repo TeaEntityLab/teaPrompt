@@ -43,6 +43,7 @@ Expected output shape:
 - reversible assumption stated explicitly
 ## Authority / Missing Data Notes
 - missing fields are marked unknown, not inferred
+- before any clarification, name the local evidence checked and the material fork left unresolved
 ## Next Action
 - one narrow experiment with measurable acceptance criteria
 ```

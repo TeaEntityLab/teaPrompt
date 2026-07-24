@@ -43,3 +43,22 @@ Expected output shape:
 ## Skill / Script / Test Candidates
 ## Next Process Improvement
 ```
+
+## Example 3
+
+Input:
+
+```text
+Consolidate the durable lessons from this completed session.
+```
+
+Expected output shape:
+
+```markdown
+## Retain
+- future-useful, durable, self-contained lesson
+## Exclude
+- live task state or lookup-recoverable fact
+## Revalidate
+- dated, changeable claim and its current authoritative source
+```

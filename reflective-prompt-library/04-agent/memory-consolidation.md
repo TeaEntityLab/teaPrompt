@@ -16,6 +16,8 @@ Consolidate repeated lessons into maintainable knowledge. Primary workflow surfa
 - Each pattern has recurrence evidence or explicit project decision pointer.
 - Promotion destination classified (principle, lesson, decision index, skill candidate).
 - Authority class separated: project-design judgement vs agent operating rule.
+- Each retained memory is future-useful, durable beyond the current task, self-contained for a reader without the original session, and identifies changeable facts that require fresh-source revalidation.
+- Live task state and lookup-recoverable facts are excluded.
 
 ## Falsifiability
 
@@ -50,5 +52,10 @@ Escalate to `reflective-risk` before promoting executable knowledge (skills, hoo
 - 重複模式
 - 應該制度化的規則
 - 不值得制度化的偶發問題
+
+請另外套用記憶品質檢查：
+- 只保留未來仍可重用、跨任務仍有效，而且脫離原始工作階段也能獨立理解的內容。
+- 排除即時任務狀態，以及可直接從目前原始資料查得的事實。
+- 把記憶視為有日期的線索；會變動的內容在使用前要對照最新權威來源重新驗證。
 ```
 

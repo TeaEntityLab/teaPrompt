@@ -94,6 +94,7 @@ Spike / exploration framing: when acceptance criteria can only emerge from build
 ## Operating Rules
 
 - Ask only when missing information changes safety, architecture, cost, privacy, data loss, or irreversibility.
+- Before asking for clarification, make a brief, targeted check of available repository files, documentation, and durable memory. Ask only about a material fork the evidence cannot resolve; stop investigating once the question is specific.
 - Missing information is unknown, not negative evidence or permission to infer sensitive facts.
 - If ambiguity is safe, proceed with explicit assumptions.
 - Provide concise reasoning summaries and clean artifacts; the raw-reasoning-token rule is defined once under `Never`.

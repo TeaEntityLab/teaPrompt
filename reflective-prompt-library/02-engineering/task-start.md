@@ -17,6 +17,7 @@ Establish a task brief before implementation. Primary workflow surface: `reflect
 - Goal and scope in/out stated.
 - Acceptance criteria and falsifiability each named once.
 - Minimal next step and defer list included.
+- Any clarifying question names the local evidence checked and the material fork it could not resolve.
 
 ## Falsifiability
 
@@ -27,6 +28,7 @@ If the brief cannot name evidence that would prove the framing wrong, stop and c
 
 ## 任務
 {貼上任務}
+若需要提問，請先簡短查閱可用的專案檔案、文件與既有記憶；只詢問查閱後仍無法判定，而且會影響方向的分歧。
 
 ## 請輸出
 

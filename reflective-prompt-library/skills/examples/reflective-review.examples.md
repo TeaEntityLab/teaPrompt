@@ -12,6 +12,7 @@ Expected output shape:
 
 ```markdown
 ## Findings
+- <file>:L<line>: <severity> — <defect>; failure scenario or violated invariant: <reachable evidence>
 ## Traceability
 | Acceptance Criteria | Artifact Evidence | Test Evidence | Status |
 ## Required Fixes

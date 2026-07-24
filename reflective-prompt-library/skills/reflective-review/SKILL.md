@@ -116,6 +116,8 @@ Prioritize findings by severity:
 - Medium: maintainability, edge case, test gap.
 - Low: minor clarity or style issue.
 
+- Every reported code defect must name either a reachable failure scenario (triggering input, state, timing, or platform plus the observable wrong result) or a violated invariant supported by code evidence. If reachability or the invariant is not established, label the claim unverified rather than confirmed.
+
 Lead with findings. Include file and line references when available.
 
 ## Runtime Trust Boundary Checks

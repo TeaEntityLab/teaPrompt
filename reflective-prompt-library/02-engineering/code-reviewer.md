@@ -16,6 +16,7 @@ Review diffs against spec, tests, and risks. Primary workflow surface: `reflecti
 
 - Spec traceability table completed.
 - Decision is Approve, Request changes, or Reject with non-empty required fixes when not Approve.
+- Every reported defect names a reachable failure scenario or code-supported violated invariant; uncertainty stays explicitly unverified.
 
 ## Falsifiability
 
@@ -42,6 +43,7 @@ Escalate to `reflective-risk` when findings imply trust-boundary or high-blast-r
 {貼上測試結果，如有}
 
 ## Review Checklist
+每項程式缺陷都要指出可到達的失敗情境（輸入、狀態、時序或平台，以及可觀察到的錯誤結果），或以程式碼證據指出被破壞的不變量；否則要標示為未驗證，不能當成已確認的缺陷。
 
 ### 1. Correctness
 - 是否滿足每個 acceptance criterion？
