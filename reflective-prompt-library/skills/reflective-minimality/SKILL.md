@@ -1,6 +1,6 @@
 ---
 name: reflective-minimality
-description: Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild. It challenges whether code should exist, prefers deletion, standard library, platform-native features, existing dependencies, one-line or one-file solutions, and requires intentional shortcuts to carry explicit ceiling and upgrade triggers.
+description: Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild.
 license: MIT
 metadata:
   risk_level: low
@@ -33,7 +33,7 @@ Methods:
 
 - Existence challenge: ask whether the thing needs to exist at all.
 - Scope reduction: delete, narrow, or defer before adding.
-- Capability ladder: prefer standard library, platform-native behavior, existing dependencies, then one-line or one-file solutions before custom code.
+- Capability ladder: stop at the first sufficient rung (see Minimality Ladder).
 - Safety floor: identify behavior that must not be simplified away.
 - Debt marker: when intentionally deferring robustness, record a ceiling and an observable upgrade trigger.
 - Debt ledger: collect intentional shortcut markers and flag entries without upgrade triggers.

@@ -1,6 +1,6 @@
 ---
 name: reflective-review
-description: Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions. It combines critical thinking, counterargument, test integrity, spec traceability, and actionable required fixes.
+description: Use this to review code, diffs, specs, plans, AI outputs, articles, or decisions.
 license: MIT
 metadata:
   risk_level: low
@@ -40,7 +40,7 @@ Never:
 - Do not bury serious findings behind a summary.
 - Do not accept unsupported claims as evidence.
 - Do not treat stated reasoning — human or AI — as proof that a check ran; require observable evidence.
-- Do not treat re-verified source text as verification of the source's underlying data, generation process, or generalizability.
+- Do not treat re-verified source text as verification of its underlying data (see Four Evidence Dimensions).
 - Do not treat missing tests or weak acceptance criteria as style issues.
 - Do not rewrite the artifact unless the task asks for edits.
 

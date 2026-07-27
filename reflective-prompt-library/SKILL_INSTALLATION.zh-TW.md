@@ -32,6 +32,8 @@ reflective-prompt-library/skills/
 
 **Harness policy:** 九個凍結 workflow skills，採嚴謹度優先分流。見 [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills) 與 [skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md](skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)。
 
+**Domain packs 與觸發模式：** 三個 domain packs（`flow-control-generator`、`flow-loop-harness`、`agent-governance-scaffold`）是 host 直接呼叫的選配 contracts，不屬於九技能核心分流。若 host 支援使用者手動觸發模式（例如 Claude Code 的 `disable-model-invocation: true`），可將 domain packs 以該模式安裝，減少常駐 context 負擔；請在安裝副本上設定，倉庫內的 `SKILL.md` frontmatter 保持跨平台通用。九個核心 skills 維持可被模型自動觸發。
+
 每個平台都需要：
 
 ```text

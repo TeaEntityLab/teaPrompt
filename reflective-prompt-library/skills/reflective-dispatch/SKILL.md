@@ -1,6 +1,6 @@
 ---
 name: reflective-dispatch
-description: Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution. It selects the smallest useful reflective workflow and keeps Doing the right thing > doing things right.
+description: Use this when a user asks to apply the Reflective Prompt Library, convert prompts into skills or workflows, choose prompt-only vs artifact vs agentic workflow, or route a non-trivial task before execution.
 license: MIT
 metadata:
   risk_level: low
@@ -21,7 +21,7 @@ Start with intent, not procedure:
 Doing the right thing > doing things right.
 ```
 
-Use the smallest workflow that can produce a verifiable result. Do not create a large plan, agent swarm, or multi-file process unless the task actually needs state, tools, tests, or review.
+Use the smallest workflow that can produce a verifiable result.
 
 ## Module Contract
 

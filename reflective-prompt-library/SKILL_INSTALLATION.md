@@ -80,6 +80,15 @@ Use the core helpers for the default install. Afterward, call the matching
 host-invoked generator packs (flow scripts, loop harnesses, governance
 scaffolding) are wanted.
 
+Invocation-mode note (context-load control): on hosts that support user-invoked
+skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the three
+domain packs may be installed user-invoked so their long descriptions stop loading
+into every turn's context — they are host-invoked contracts, not
+`reflective-dispatch` routes, so core routing never depends on their
+auto-discovery. Keep the nine core skills model-invoked; dispatch and the other
+core skills reach them by description. Apply the toggle in the installed copy:
+the shipped `SKILL.md` frontmatter stays host-portable.
+
 Companion examples live under `reflective-prompt-library/skills/examples/` and are part of the host-facing documentation surface. Co-install them when the target host supports companion files or when operators need example output shapes; the examples are not semantic execution proof.
 
 ## Symlink install

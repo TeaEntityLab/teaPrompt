@@ -1,6 +1,6 @@
 ---
 name: reflective-implement
-description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks, including repository documentation and content edits. It enforces small safe changes, acceptance criteria traceability, tests, verification, and a final report without weakening requirements.
+description: Use this for coding, refactoring, debugging with edits, or repo-aware implementation tasks, including repository documentation and content edits.
 license: MIT
 metadata:
   risk_level: low
@@ -95,13 +95,11 @@ Run this quick check **only** when one or more bloat signals are present:
 
 ## During Editing
 
-- Make the smallest reviewable change.
+- Make the smallest safe change.
 - Preserve existing behavior unless explicitly allowed.
 - Prefer existing patterns and utilities.
 - Add or update tests for each acceptance criterion.
 - Keep action parameters traceable to user input, trusted project instructions, or verified tool results.
-- Do not delete, skip, or weaken tests.
-- Do not change expected outputs to match broken behavior.
 - For multi-step tasks, maintain the State Ledger instead of loose notes.
 
 ## State Ledger

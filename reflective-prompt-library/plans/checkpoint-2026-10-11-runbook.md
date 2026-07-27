@@ -96,6 +96,25 @@ Owning gate: [plan §Falsifiability](whole-project-plan-2026-07-11.md) and
   M5 event (managed-skill re-audit) — run the
   [M5 audit procedure](dormant-work-specs-2026-07-11.md) in the same session.
 
+## Agenda item 6 — AS8 / R10: governance-pack size re-litigation
+
+Owning gate: [all-skill panel AS8](all-skills-panel-record-2026-07-18.md)
+(deferred 2026-07-18: shrink or demote if still oversized/low-recurrence), with
+the R10 ledger in the
+[governance adoption record](agent-governance-scaffold-adoption-2026-07-17.md).
+
+- Re-measure: `python3 reflective-prompt-library/plans/lint_skills.py` — does
+  `agent-governance-scaffold` still trip the length warning?
+- **Still oversized** → weigh the pre-staged disclosure design in
+  [skill-improvement plan WGS-GOV-1](skill-improvement-plan-2026-07-24.md)
+  (SKILL.md keeps Module Contract + Four-Power Split + Gate 2.0 + artifact menu;
+  object templates move to a co-installed `ARTIFACTS.md` behind a context
+  pointer) against demotion; either path opens its own decision record.
+- **Within bounds or recurrence evidence changed** → record the measurement and
+  the branch not taken; WGS-GOV-1's premise is falsified and its row closes.
+- Outcome lands under `## Ledger and index updates` in the outcome record; the
+  required-section contract below is unchanged.
+
 ## Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)
 
 Required sections — the conditional guard in
