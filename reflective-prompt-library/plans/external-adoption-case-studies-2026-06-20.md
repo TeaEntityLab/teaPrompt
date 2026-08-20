@@ -44,25 +44,35 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 This is the transferable output. When evaluating a new external tool or method:
 
 1. **Verify from the one-hand source** (repo API, official docs), not the
-   circulating summary or "N-prompts" re-telling.
+   circulating summary or "N-prompts" re-telling. Pin the exact commit or
+   artifact digest actually checked. If a tag, registry revision, and reviewed
+   branch diverge, record each identity and scope every claim/test to the checked
+   bytes; identity difference alone is not behavioral divergence.
 2. **Separate transferable mechanism from product form.** Adopt mechanisms;
    reject runtimes, retrievers, citation pipelines, dashboards, and quotas.
-3. **Gate any change on a verified *local* structural gap.** STORM had one and
+3. **Tier repository-owned checks correctly.** A self-test or green CI run
+   establishes only its tested assertions at that revision; it is not general
+   safety, end-to-end correctness, or agent-outcome efficacy evidence.
+4. **Probe state mutation, not just happy paths.** For tools that write files or
+   shared configuration, test canonical-root containment through parent
+   symlinks/junctions, per-install ownership receipts before cleanup, and
+   concurrent writers.
+5. **Gate any change on a verified *local* structural gap.** STORM had one and
    warranted a change; Loop-Skill, preflight, and Record & Replay did not, so
    they warranted none. "Interesting" is not a gap. When desired usage data
    cannot be observed, record it as `unknown`; absence of data is not zero
    demand and cannot become a permanent veto. Use the best available local
    structural evidence and prefer a bounded, reversible repair when it is
    directly testable.
-4. **Check against standing non-goals** (runtime engine, vendor lock-in,
+6. **Check against standing non-goals** (runtime engine, vendor lock-in,
    RAG/vector store). An out-of-scope capability is not a missing capability.
-5. **Apply the promotion gate only to new durable surface area** (≥3
+7. **Apply the promotion gate only to new durable surface area** (≥3
    cross-session recurrences before a new skill, directory, runner, or similar
    surface). Prefer folding into an existing skill or a supporting lens. The
    gate does not block a narrow repair to an existing skill's declared contract.
-6. **Record the outcome — including "no change"** — so the next session does not
+8. **Record the outcome — including "no change"** — so the next session does not
    re-evaluate a settled item.
-7. **No-copy boundary:** until an upstream repo carries a license, learn the
+9. **No-copy boundary:** until an upstream repo carries a license, learn the
    concept only; do not copy text, checklists, or code.
 
 ## Signal Accounting (do not miscount)
@@ -159,6 +169,26 @@ extraction reproduction remains partial (603 published bodies, 416 in a fresh
 public-extractor run); see the
 [survey](claude-code-system-prompts-survey-2026-07-24.md).
 
+## 2026-08-20 Cross-Survey Method Promotion
+
+The 3xa-harness, J-Space Cognition Suite, and Code Recall surveys independently
+exposed the same four review-method gaps. This is recurrence in TeaPrompt's own
+evaluation workflow, not local demand for any upstream runtime or mechanism.
+The user's direction to update skills authorizes these narrow in-place repairs;
+it does not fire any named 3XA, JS, or CR adoption trigger.
+
+### Candidate Adoption Ledger
+
+| ID | Candidate | Status | Evidence | Next action or trigger |
+| --- | --- | --- | --- | --- |
+| XM-1 | Exact revision/digest identity and claim scoping | Adopted in place 2026-08-20 | All three surveys needed commit-level pins; Code Recall's `2.10.0` label resolved to distinct tag, npm `gitHead`, and master identities without material runtime divergence | Guard `reflective-research`, `external-adoption-review`, and Parallel Lens Review packet fields; retire only if later reviews show revision identity never affects evidence scope |
+| XM-2 | Repository-owned self-test/CI evidence tier | Adopted in place 2026-08-20 | Green or repository-owned checks coexisted with adversarial false passes, boundary defects, and absent baseline/treatment efficacy evidence across the three surveys | Keep repository checks `observed` only for tested assertions; require boundary probes or reproducible outcome evaluation before safety/efficacy claims |
+| XM-3 | State-mutating-tool boundary probes | Adopted in place 2026-08-20 | The three reproductions exposed containment, shared-configuration ownership, or concurrent-write gaps not established by happy paths | Guard the existing research skill and adoption lens; widen only after a repeated failure class escapes these probes |
+| XM-4 | Complete lens deliverable before terminal verdict | Adopted in place 2026-08-20 | Five scout yields were schema-coerced in every survey; Code Recall also had a reviewer schema failure, with full deliverables recovered before synthesis | Canonical recipe marks incomplete yields unavailable rather than inferring verdicts; host manual retains recovery mechanics |
+| XM-5 | Flip 3XA/JS/CR mechanism candidates because skills were requested | No change 2026-08-20 | Every survey records candidate-specific local triggers that remain unfired; generic method-update approval is not per-candidate adoption evidence | Re-open only the named row after its recorded trigger fires or explicit candidate-specific Human Review changes its status |
+
+Deterministic guard: `plans/tests/test_managed_skill_promotion_adoption_state.py`.
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -172,10 +202,12 @@ public-extractor run); see the
 
 ## Falsifiability
 
-This record is wrong if the procedure is never consulted on the next external
-evaluation, or if a future tool reveals a real local gap that this synthesis
-caused us to dismiss. Either signal means promote the procedure into a lens (or a
-skill) or correct the gap. Until then it stays a lesson plus this case study.
+This record is wrong if later external reviews scope evidence safely without
+exact identities, repository-check tiering, state-mutation probes, or complete
+lens deliverables; remove any repair that adds ceremony without changing a
+decision or catching drift. It is too weak if a repeated failure class still
+escapes these checks; repair the existing lens before proposing another skill.
+No method repair is evidence that any 3XA, JS, or CR trigger fired.
 
 ## State Ledger
 
@@ -198,3 +230,7 @@ skill) or correct the gap. Until then it stays a lesson plus this case study.
 | 3xa-harness survey outcome recorded | done | `3xa-harness-survey-2026-08-20.md` + Case Comparison table + pins in `test_3xa_harness_survey_record.py` |
 | J-Space Cognition Suite survey outcome recorded | done | `jspace-cognition-survey-2026-08-20.md` + Case Comparison table + pins in `test_jspace_cognition_survey_record.py` |
 | Code Recall survey outcome recorded | done | `code-recall-survey-2026-08-20.md` + Case Comparison table + pins in `test_code_recall_survey_record.py` |
+| Cross-survey method promotion recorded | done | XM-1–XM-5 Candidate Adoption Ledger |
+| Research skill and adoption lens repaired | done | exact identity + evidence tier + state-mutation probes |
+| Parallel Lens Review completeness gate repaired | done | `04-agent/workflow-recipes.md` + host-manual recovery note |
+| Survey candidate statuses preserved | done | `test_managed_skill_promotion_adoption_state.py` guards 3XA/JS/CR ledger rows |

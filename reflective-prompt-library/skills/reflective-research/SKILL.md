@@ -68,6 +68,9 @@ When evaluating an external tool, paper, repo, memory system, or workflow method
 - Treat external interest as evidence to inspect, not local promotion evidence.
 - Recommend a new skill, verifier, or runtime only for a verified local structural gap; otherwise fold the lesson into an existing skill/lens or record no change.
 - Refresh high-volatility, install, telemetry, license, and deploy facts before adoption or deployment claims.
+- For executable sources, pin the exact commit or artifact digest actually checked; record divergent tag, registry, and branch identities separately, scope claims to the checked revision, and do not infer behavioral difference from identity difference alone.
+- Treat repository-owned self-tests and green CI as evidence only for their tested assertions; safety, end-to-end correctness, and agent efficacy require adversarial boundary probes or a reproducible baseline/treatment evaluation.
+- For tools that write files or shared configuration, probe canonical-root containment across parent symlinks/junctions, per-install ownership receipts before cleanup, and concurrent-write behavior.
 
 ## Workflow
 

@@ -150,8 +150,9 @@ Expected artifacts: a shared review packet at a path every reviewer can actually
 
 Method lens (non-authoritative; provenance: managed skill `parallel-lens-review-packet`, promoted 2026-07-11 under the `artifact-promotion.md` §4 memory-write gate — recurrence evidence: the `plans/*-panel-record-*` files, not managed-skill authority).
 
-- Packet fields: target + version/date, prior conclusion, commands actually run, unverified claims, blockers, and exact reviewer questions — every claim tagged `observed`, `author-claimed`, or `[INFERENCE]`; synthesis must not upgrade a tier.
+- Packet fields: target + exact commit/artifact digest + version label/date (record any label-to-revision split and scope evidence to the checked identity), prior conclusion, commands actually run, unverified claims, blockers, and exact reviewer questions — every claim tagged `observed`, `author-claimed`, or `[INFERENCE]`; synthesis must not upgrade a tier.
 - Lens deliverable: read-only findings, ≥3 Socratic questions, a strongest objection, and a terminal verdict — `AGREE`, `AGREE WITH CHANGES`, or `DISAGREE` with exact wording changes.
+- Completeness gate: summary-only, truncated, schema-coerced, or schema-failed output is not a lens verdict. Recover all four deliverable fields before synthesis; if recovery fails, mark that lens unavailable and never infer its terminal verdict.
 - Role labels are review perspectives; never claim named provider models or personas were literally invoked unless logged provider calls exist.
 - Synthesis record headings: Panel Consensus; Required Wording Changes; Shared Findings; Disagreements / Residual Risks; Evidence Actually Checked — classify the recommendation by use case (study / reproduce / adopt / deploy).
 - When synthesis proposes durable wording or structure changes, the record MUST carry a Candidate Adoption Ledger (ID / candidate / status / evidence / next action or trigger) with deterministic guards at named surfaces — the discipline adopted in `plans/governance-rules-rethink-review-2026-07-11.md` A1/A3.

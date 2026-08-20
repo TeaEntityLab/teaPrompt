@@ -1,10 +1,9 @@
-"""Guard: 2026-07-11 managed-skill promotion panel adoptions stay adopted at their named surfaces.
+"""Guard managed-skill promotions and their named canonical surfaces.
 
-Mirrors test_candidate_adoption_state.py / test_flow_pack_adoption_state.py:
-adopted ledger rows (M1-M2 in plans/managed-skill-promotion-panel-record-2026-07-11.md)
-get structural checks at their named surfaces; deferred rows (M4/M6/M7) are guarded
-for ledger presence only, never content. D1 discipline: headings, tokens, and link
-targets - not paragraph pins.
+The 2026-07-11 M1-M2 panel adoptions stay structurally pinned. The 2026-08-20
+cross-survey method repairs extend the same packet/adoption contract without
+adding a test item or changing any deferred 3XA/JS/CR candidate status.
+D1 discipline: headings, tokens, and link targets, not paragraph pins.
 """
 
 import sys
@@ -29,6 +28,11 @@ def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def _ledger_row(text: str, candidate_id: str) -> str:
+    prefix = f"| {candidate_id} |"
+    return next(line for line in text.splitlines() if line.startswith(prefix))
+
+
 def _plr_section() -> str:
     text = _read(RECIPES)
     marker = "## Parallel Lens Review"
@@ -37,9 +41,67 @@ def _plr_section() -> str:
 
 
 # M1 - packet and verdict contract subsection inside the recipe section.
-def test_m1_packet_contract_subsection_present():
+def test_m1_packet_contract_and_cross_survey_method_repairs_present():
     section = _plr_section()
+    research = _read(
+        PROMPT_LIBRARY_ROOT / "skills" / "reflective-research" / "SKILL.md"
+    )
+    adoption = _read(AGENT_LENS_DIR / "external-adoption-review.md")
+    record = _read(
+        PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
+    )
+    knowledge = _read(PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md")
+
     assert "### Packet and verdict contract" in section
+    for token in (
+        "label-to-revision split",
+        "schema-failed output is not a lens verdict",
+        "never infer its terminal verdict",
+    ):
+        assert token in section, f"workflow-recipes lost {token!r}"
+
+    for token in (
+        "exact commit or artifact digest",
+        "repository-owned self-tests and green CI",
+        "parent symlinks/junctions",
+        "per-install ownership receipts",
+        "concurrent-write behavior",
+    ):
+        assert token in research, f"reflective-research lost {token!r}"
+
+    for token in (
+        "exact commit or artifact digest",
+        "| Repository self-test / CI passes | no, alone |",
+        "parent symlinks/junctions",
+        "per-install ownership receipts",
+        "concurrent writers",
+    ):
+        assert token in adoption, f"external-adoption-review lost {token!r}"
+
+    for candidate_id in ("XM-1", "XM-2", "XM-3", "XM-4", "XM-5"):
+        assert f"| {candidate_id} |" in record
+    assert "test_managed_skill_promotion_adoption_state.py" in record
+    assert "Cross-survey external-adoption method repair" in knowledge
+
+    survey_expectations = {
+        "3xa-harness-survey-2026-08-20.md": (
+            ("3XA-1", "Deferred / study-only"),
+            ("3XA-4", "Rejected"),
+        ),
+        "jspace-cognition-survey-2026-08-20.md": (
+            ("JS-1", "Deferred / study-only"),
+            ("JS-5", "Rejected"),
+        ),
+        "code-recall-survey-2026-08-20.md": (
+            ("CR-1", "Deferred / study-only"),
+            ("CR-5", "Rejected"),
+        ),
+    }
+    for filename, expected_rows in survey_expectations.items():
+        survey = _read(PLANS_DIR / filename)
+        assert "No candidate created or changed a TeaPrompt skill" in survey
+        for candidate_id, expected_status in expected_rows:
+            assert expected_status in _ledger_row(survey, candidate_id)
 
 
 def test_m1_verdict_vocabulary_present():
