@@ -6,7 +6,8 @@
 ._*
 
 # Custom folder icons
-Icon
+Icon
+
 
 # Volume root files
 .DocumentRevisions-V100
@@ -16,11 +17,8 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-
-### TeaPrompt generated files
 # Test results and temporary generated files
 reflective-prompt-library/plans/route-*-results.json
-reflective-prompt-library/plans/benchmark-tasks.json
 **/__pycache__
 .pytest_cache/
 .env
