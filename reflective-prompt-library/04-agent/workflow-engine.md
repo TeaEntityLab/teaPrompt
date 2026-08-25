@@ -42,6 +42,7 @@ Name one failure mode the workflow cannot recover from under the proposed state 
 ## 4. State Model
 定義：
 - state fields
+- durable facts vs derived projections (state fields define operational contracts; durable facts require host persistence, not prompt context)
 - persisted artifacts
 - checkpoint points
 - resume behavior

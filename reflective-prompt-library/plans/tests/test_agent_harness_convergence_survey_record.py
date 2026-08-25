@@ -388,3 +388,10 @@ def test_ah19_effect_recovery_contract_is_repaired_in_place():
         "recurrence is `unknown`",
     ):
         assert token in decision, f"AH-19 decision lost {token!r}"
+
+def test_ah21_data_sanitized_durable_logging_guards():
+    trust = _read(TRUST_BOUNDARY)
+    assert "| Data protection | credentials, bearer tokens, and sensitive PII redacted" in trust
+    scaffold = _read(SKILLS_DIR / "agent-governance-scaffold" / "SKILL.md")
+    assert "Never store raw credentials, plaintext authentication tokens, or unredacted personal data (PII) inside durable intent payloads" in scaffold
+    assert "secret scrubbing and data-sanitization before committing contract artifacts" in scaffold

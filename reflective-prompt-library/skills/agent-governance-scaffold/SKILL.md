@@ -44,6 +44,7 @@ Output:
 
 Never:
 
+- Never store raw credentials, plaintext authentication tokens, or unredacted personal data (PII) inside durable intent payloads, broker receipts, or audit records; apply secret scrubbing and data-sanitization before committing contract artifacts (cross-ref: `04-agent/runtime-trust-boundary.md` §3).
 - Never claim TeaPrompt enforces the four powers, issues receipts, holds capabilities, or runs a broker/verifier/policy engine — the scaffolding is host-run; enforcement is a host precondition, never a TeaPrompt guarantee.
 - Never treat artifact presence or narrated host preconditions as evidence that privileged effects are broker-mediated. If any `model → privileged_tool` path remains, name it as a governance failure and do not claim four-power compliance.
 - Never let the executor self-issue its own effect receipt: broker evidence must come from a broker-owned, worker-nonwritable store; a worker-writable receipt is self-report even when it says `issued_by: broker` (invariants #1, #3, #4).

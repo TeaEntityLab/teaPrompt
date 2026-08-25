@@ -86,3 +86,16 @@ def test_coverage_panel_record_shape():
         "## Falsifiability",
     ):
         assert heading in text, f"panel record missing {heading!r}"
+
+# AH-20 — durable facts/WAL anti-collapse wording in workflow docs (2026-08-25 panel).
+def test_ah20_workflow_recipes_declares_host_wal_boundary():
+    text = " ".join(_read(PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-recipes.md").split())
+    assert "durable write-ahead logs (WAL)" in text
+    assert "Prompt text must never be treated as a durable write-ahead log" in text
+    assert "ephemeral skill state must never be confused with authoritative durable facts" in text
+
+
+def test_ah20_workflow_engine_distinguishes_facts_vs_projections():
+    text = _read(PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-engine.md")
+    assert "durable facts vs derived projections" in text
+    assert "durable facts require host persistence, not prompt context" in text

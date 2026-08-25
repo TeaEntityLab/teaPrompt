@@ -102,6 +102,7 @@ record:
 | Authority | principal, scope, approval source, issue/expiry time, cancellation state, and current owner/epoch |
 | Sink contract | idempotency-key scope and retention, parameter matching, response replay, query handle, and concurrency behavior actually enforced by the receiver |
 | Durable progress | intent committed, dispatch committed, receipt committed, reducer/projector advanced |
+| Data protection | credentials, bearer tokens, and sensitive PII redacted from durable intent/receipt payload logs |
 | Recovery | retry rule and cap, reconciliation adapter/evidence, compensation preconditions, unresolved owner/deadline, and Human Review path |
 | Acceptance | real receipt, expected postconditions, verifier, and explicit final disposition |
 

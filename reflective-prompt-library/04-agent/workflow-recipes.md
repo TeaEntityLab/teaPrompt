@@ -103,8 +103,11 @@ Shared vocabulary with serving-layer micro-agent runtimes (Sakana Fugu, vLLM
 Semantic Router loopers). Their core lesson: **the best loop is task-shaped** —
 identify the task shape first, then pick the smallest topology. At the prompt
 layer, `reflective-dispatch` is the recipe selector; these rows align its
-routing vocabulary with the field's named patterns. Numeric budgets, runtime
-traces, and enforcement belong to a serving runtime and stay out of scope here.
+routing vocabulary with the field's named patterns. Numeric budgets, runtime traces,
+durable write-ahead logs (WAL), event reduction, and persistence enforcement
+belong strictly to a host serving runtime and stay out of scope here. Prompt text
+must never be treated as a durable write-ahead log, and ephemeral skill state
+must never be confused with authoritative durable facts.
 See also: `sop-compiler.md` (deterministic stage gates), `workflow-engine.md`
 §4–§6 (state model, steps, roles), `runtime-trust-boundary.md` (per-action
 gates), and — when the user explicitly wants an executable script rather than a
