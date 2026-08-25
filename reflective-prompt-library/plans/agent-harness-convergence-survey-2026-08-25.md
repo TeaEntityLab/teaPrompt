@@ -560,11 +560,13 @@ This decision is wrong if any of the following becomes true:
 | AH-16 | Persist every accepted raw model output as permanently immutable execution history | No change / needs host retention design 2026-08-25 | Stable accepted-transition provenance is useful, but the proposal omits correction, supersession, privacy, redaction, retention, and precise-rewrite semantics | Reopen for a host-specific evidence schema with data classification, minimum retention, deletion/rewrite authority, audit trail, and migration tests |
 | AH-17 | Adopt the universal P0–P3 research priority order | Rejected as universal; use-case-specific 2026-08-25 | No incident, efficacy, cost, or latency data shows one order fits low-risk/read-only and high-risk/mutating systems | Revisit per product using measured failure frequency, effect severity, operator load, and current enforcement gaps |
 | AH-18 | Promote the guarded lineage synthesis into high-traffic docs and the trigger-gated roadmap | Adopted 2026-08-25 by explicit user direction; recurrence `unknown` | The user explicitly requested recording the conclusions in docs and roadmaps; the guarded addendum supplies the evidence/unknown split, while minimality rejects a new skill, prompt lens, runtime, glossary, or directory | Keep one concise three-contract reference in `METHODOLOGY_MAP.md`, source-triggered rows in the whole-project roadmap, and a Decision Index pointer; reopen additional surfaces only after a named local navigation or host-integration gap |
+| AH-19 | Promote risk-scaled external-effect recovery rules into the existing runtime trust-boundary lens and owning core skills | Adopted 2026-08-25 by explicit user direction; recurrence `unknown` | Coverage audit found no shared post-dispatch/no-receipt contract across the source lens and the risk, spec-plan, implement, review, and handoff skills; dispatch, brief, research, and minimality already own routing, goal clarity, evidence, and proportionality, so changing them would duplicate policy | Guard the six in-place surfaces: preserve `OUTCOME_UNKNOWN`, sink-scoped retry proof, adapter-specific reconciliation, fencing scope, risk-scaled verification, and handoff continuity; add no new skill/runtime and narrow or retire wording if field use shows ceremony without preventing blind retry |
 
-No AH-9–AH-18 row creates a TeaPrompt runtime, dependency, skill, prompt lens,
-MCP extension, or governing Project Knowledge rule. AH-9 is record-level
-wording; AH-18 adds reference documentation, roadmap triggers, and a Decision
-Index pointer only.
+No AH-9–AH-19 row creates a new core skill, runtime, dependency, MCP extension,
+or governing Project Knowledge rule. AH-9 is record-level wording; AH-18 adds
+reference documentation, roadmap triggers, and a Decision Index pointer; AH-19
+is a narrow in-place repair to the existing runtime trust-boundary lens and five
+owning core skills.
 
 
 ### Shared Findings

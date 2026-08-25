@@ -101,6 +101,7 @@ Run this quick check **only** when one or more bloat signals are present:
 - Add or update tests for each acceptance criterion.
 - Keep action parameters traceable to user input, trusted project instructions, or verified tool results.
 - For multi-step tasks, maintain the State Ledger instead of loose notes.
+- When implementing external-mutation recovery, preserve ambiguous post-dispatch outcomes as machine-readable `OUTCOME_UNKNOWN`; a missing receipt or synthetic error must not silently authorize retry.
 
 ## State Ledger
 
@@ -131,6 +132,7 @@ Run the checks that prove the claim:
 - Integration or manual verification when user-facing behavior changes.
 - Static review for security/privacy when relevant.
 - Prompt-injection, missing-data, or side-effect checks when external content or tool actions shape the change.
+- External-mutation retry/recovery changes: inject the post-dispatch/pre-receipt failure, observe the sink independently from the local log, verify parameter-bound sink idempotency or decisive reconciliation, and test stale epochs only at the authority that enforces them.
 - Twin sweep, whenever a defect was fixed: a bug found in one place is presumed to recur elsewhere until you have searched. Name the exact wrong construct, search the whole project for it, and include this line verbatim in the Final Report: `TWINS: searched <pattern> - found <N> other sites: <files, or "none">`. Fix in-scope twins; list out-of-scope ones under `Residual Risks` instead of silently widening scope. (Adopted 2026-07-16 after local reproduction; see `plans/fable-method-survey-2026-07-16.md` FM1.)
 
 If verification fails, fix and rerun. If a check cannot run, report why.

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-25T10:18:17.120842",
+  "generated_at": "2026-08-25T10:40:28.734975",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3806,6 +3806,10 @@
         },
         {
           "level": 3,
+          "text": "Adopted 2026-08-25 (user-directed; recurrence `unknown`)"
+        },
+        {
+          "level": 3,
           "text": "Still trigger-gated"
         },
         {
@@ -3825,8 +3829,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 154,
-      "char_count": 12853
+      "line_count": 164,
+      "char_count": 13423
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -4288,8 +4292,8 @@
           "text": "Addendum Falsifiability"
         }
       ],
-      "line_count": 836,
-      "char_count": 59624
+      "line_count": 838,
+      "char_count": 60515
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -8556,6 +8560,10 @@
         },
         {
           "level": 2,
+          "text": "4a. External Effect Recovery Boundary"
+        },
+        {
+          "level": 2,
           "text": "5. Context Assembly Check"
         },
         {
@@ -8567,8 +8575,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 128,
-      "char_count": 6054
+      "line_count": 163,
+      "char_count": 8434
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -11486,8 +11494,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 174,
-      "char_count": 7588
+      "line_count": 180,
+      "char_count": 8297
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -11651,8 +11659,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 193,
-      "char_count": 8521
+      "line_count": 195,
+      "char_count": 8995
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -11836,8 +11844,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 154,
-      "char_count": 6190
+      "line_count": 161,
+      "char_count": 6592
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -11919,6 +11927,10 @@
         },
         {
           "level": 2,
+          "text": "Effect Recovery Decision"
+        },
+        {
+          "level": 2,
           "text": "Failure Modes"
         },
         {
@@ -11970,8 +11982,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 121,
-      "char_count": 4619
+      "line_count": 129,
+      "char_count": 5666
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -12070,8 +12082,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 241,
-      "char_count": 10796
+      "line_count": 254,
+      "char_count": 11945
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",

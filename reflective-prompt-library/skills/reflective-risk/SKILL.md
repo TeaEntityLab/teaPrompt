@@ -28,10 +28,11 @@ Methods:
 - Evidence check
 - Authority and side-effect boundary mapping
 - Failure-mode analysis
+- Effect-outcome classification and sink-contract audit
 - Dry-run, rollback, bounded execution, and audit-log planning
 
 Output:
-- Output `Goal`, `Stakeholders`, `Assets at Risk`, `Threat Model`, `Assumption Audit`, `Evidence Check`, `Authority / Tool Boundary`, `Failure Modes`, `Worst-case Scenario`, `Safe Dry-run Plan`, `Rollback Plan`, `Bounded Execution`, `Audit Log Plan`, `Human Review Required`, `Human Approval Gate`, `Acceptance Criteria`, and `Go / No-go Decision`.
+- Output `Goal`, `Stakeholders`, `Assets at Risk`, `Threat Model`, `Assumption Audit`, `Evidence Check`, `Authority / Tool Boundary`, `Effect Recovery Decision`, `Failure Modes`, `Worst-case Scenario`, `Safe Dry-run Plan`, `Rollback Plan`, `Bounded Execution`, `Audit Log Plan`, `Human Review Required`, `Human Approval Gate`, `Acceptance Criteria`, and `Go / No-go Decision`.
 
 Never:
 - Do not recommend direct production changes.
@@ -76,6 +77,8 @@ Use before:
 
 ## Authority / Tool Boundary
 
+## Effect Recovery Decision
+
 ## Failure Modes
 
 ## Worst-case Scenario
@@ -106,6 +109,11 @@ Use before:
 - If the risk cannot be bounded, recommend no-go or human review.
 - Define explicit execution boundaries (tools, scope, timebox, blast radius) before any action.
 - Ensure an auditable record exists for high-risk steps and approvals.
+- For an external mutation, bind the durable intent to the exact parameters, resource/version, tool/schema/policy version, principal, approval scope, and authorization expiry.
+- A timeout, transport error, or process crash after dispatch is not failure evidence. Record `OUTCOME_UNKNOWN` and `retry_safe: false`; never authorize a blind retry from a missing receipt.
+- A stable operation ID permits retry only when the sink enforces that identity for the retained window with matching parameters, or decisive reconciliation evidence proves the operation never started.
+- Reconciliation observations are adapter- and sink-specific. When they cannot settle the outcome, name the compensation or Human Review owner, deadline, budget, audit record, and explicit unresolved/abandoned disposition.
+- Fencing protects only commits that consult the epoch authority; separately account for requests that already crossed into an external sink.
 
 ## Examples
 

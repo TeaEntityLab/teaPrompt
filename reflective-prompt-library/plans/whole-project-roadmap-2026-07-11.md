@@ -79,6 +79,16 @@ Closed out of the queue under an explicit user instruction; recurrence stays
 | D4 — record-hygiene validator | [`validate_record_hygiene.py`](validate_record_hygiene.py) + Makefile | `test_validate_record_hygiene.py` |
 | Writer-critic deterministic companion | `flow-loop-harness` guidance | template-set pin |
 
+### Adopted 2026-08-25 (user-directed; recurrence `unknown`)
+
+Explicit user direction promoted only the risk-scaled, prompt-level recovery
+contract; host enforcement and the deferred Effect Contract/benchmark remain
+unfired.
+
+| Item | Surface | Guard |
+| --- | --- | --- |
+| AH-19 — external-effect recovery skill repair | `04-agent/runtime-trust-boundary.md`; `reflective-risk`; `reflective-spec-plan`; `reflective-implement`; `reflective-review`; `reflective-handoff-retro` | `test_agent_harness_convergence_survey_record.py` + affected prompt/skill eval harnesses |
+
 ### Still trigger-gated
 
 | Item | Wakes when | Destination surface | Source |

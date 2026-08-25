@@ -19,10 +19,12 @@ Separate instructions, data, authority, and action before an agent acts. Support
 - Side-effectful actions name an explicit gate or Human Review trigger.
 - Retrieved content treated as data, not instructions.
 - Runtime guarantees separated from prompt or skill claims: TeaPrompt can specify required gates, but a host runtime or accepted module must enforce and test them.
+- Ambiguous post-dispatch outcomes remain machine-readable unknowns; losing a receipt never silently becomes proof of failure or permission to retry.
 
 ## Falsifiability
 
 Name one scenario where following retrieved content as instructions would violate the authority map.
+Name one crash window where an external mutation could complete without a durable receipt, and state the only safe next action.
 
 ## Human Review
 
@@ -89,6 +91,35 @@ Rules:
 - Tool failure must produce local feedback: step, evidence, error type, likely cause, correction, next action, verification.
 - Do not claim completion until the tool result or other evidence supports the claim.
 
+## 4a. External Effect Recovery Boundary
+
+For every action that can mutate state outside the local transaction boundary,
+record:
+
+| Field | Required check |
+| --- | --- |
+| Identity | `operation_id` bound to exact parameters, resource identity/version, tool/schema version, and approved plan/policy |
+| Authority | principal, scope, approval source, issue/expiry time, cancellation state, and current owner/epoch |
+| Sink contract | idempotency-key scope and retention, parameter matching, response replay, query handle, and concurrency behavior actually enforced by the receiver |
+| Durable progress | intent committed, dispatch committed, receipt committed, reducer/projector advanced |
+| Recovery | retry rule and cap, reconciliation adapter/evidence, compensation preconditions, unresolved owner/deadline, and Human Review path |
+| Acceptance | real receipt, expected postconditions, verifier, and explicit final disposition |
+
+Rules:
+
+- A stable operation ID is necessary but not sufficient. Retry is safe only when
+  the exact parameters and authorization remain valid and the sink enforces the
+  retained identity contract, or decisive query evidence proves `NOT_STARTED`.
+- Dispatch without a durable outcome receipt is `OUTCOME_UNKNOWN` with
+  `retry_safe: false`; do not coerce it to ordinary failure or blind-retry it.
+- A synthetic interrupted/error result can preserve tool-call protocol shape,
+  but it is not evidence that the external effect did not happen.
+- Fencing rejects stale commits only at authorities that check the epoch. It
+  cannot recall a request already accepted by an external sink.
+- An unknown outcome needs an owner, next action, deadline, attempt/cost budget,
+  audit trail, and a durable unresolved/abandoned disposition when certainty is
+  impossible.
+
 ## 5. Context Assembly Check
 
 Decide which context is necessary:
@@ -112,6 +143,9 @@ Define tests or checks for:
 - Tool failure honesty
 - Evidence-backed completion
 - Scope minimization
+- Post-dispatch / pre-receipt crash behavior, with the sink observed independently from the local log
+- Unknown-outcome retry suppression and adapter-specific reconciliation or Human Review
+- Stale-owner fencing at the actual commit authority, plus already-escaped external requests
 
 ## Output
 
@@ -121,8 +155,9 @@ Return:
 2. Authority Map
 3. Data Policy Decision
 4. Tool / Action Gate Table
-5. Context Assembly Decision
-6. Required Fixes
-7. Verification Plan
-8. Go / No-go Decision
+5. Effect Recovery Decision
+6. Context Assembly Decision
+7. Required Fixes
+8. Verification Plan
+9. Go / No-go Decision
 ```

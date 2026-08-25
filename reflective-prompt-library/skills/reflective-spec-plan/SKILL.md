@@ -158,15 +158,28 @@ If the required guarantees depend on persistence, replay, cancellation, idempote
 
 A verifier must be deterministic code, schema, test, static check, replay diff, or equivalent executable check; a prompt, self-reflection, or model judge is not sufficient as the only gate.
 
+For resumable or side-effectful workflow designs, specify only the contracts the
+risk requires rather than forcing one architecture:
+
+- **Control-state contract:** durable run identity, runtime-accepted transition,
+  total program counter or reducible facts, execution versions, and rebuildable
+  projections.
+- **Effect contract:** parameter- and authorization-bound intent, dispatch
+  boundary, actual sink contract, receipt, `OUTCOME_UNKNOWN`, reconciliation,
+  compensation, postcondition verification, and Human Review fallback.
+- **Ownership/liveness contract:** owner or lease identity, cancellation,
+  supervision/restart policy, fencing scope, and stale-writer rejection at the
+  authority that owns the commit.
+
 Then design the workflow:
 
 1. **Control model** — choose a fixed workflow, a dynamic agent, or a bounded combination. Explain why dynamic discretion is necessary wherever it is granted.
 2. **Pattern selection** — choose only the patterns the task needs: sequential chaining, routing, parallel work, orchestrator-worker, evaluator-optimizer, or a deliberate combination.
 3. **State and artifacts** — define raw state, artifact schemas, provenance, checkpoint boundaries, resume and cancel behavior, and versioning. Prefer observations and decisions over preformatted prose.
 4. **Transitions and ownership** — for every transition, name whether deterministic code or a rule, a model, or a human controls it. Do not hide authority inside vague language such as "the agent decides."
-5. **Side effects and recovery** — define authorization, idempotency or duplicate protection, timeout, retry cap, compensation or rollback, and the point at which repair stops.
+5. **Side effects and recovery** — distinguish local/transactionally coupled/runtime-mediated/raw external boundaries; define exact parameter and authority binding, the sink's idempotency/query contract, intent/dispatch/receipt states, `OUTCOME_UNKNOWN`, retry cap, adapter-specific reconciliation, compensation, unresolved owner/deadline, and the point at which repair stops.
 6. **Errors and gates** — distinguish transient, model-recoverable, user-fixable, and unexpected failures. Define entry, exit, escalation, and hard-stop conditions.
-7. **Verification** — define observable events, scenario tests, adversarial cases, and evidence that proves each transition and recovery path works.
+7. **Verification** — define observable events, scenario tests, and adversarial cases; for external mutations include the post-dispatch/pre-receipt crash window, stale-owner attempts, and sink-observed postconditions rather than relying only on the local log.
 
 Use this stage table as the central design artifact:
 
@@ -181,7 +194,7 @@ The completed `workflow-spec.md` should include:
 - selected orchestration patterns and rejected alternatives,
 - state and artifact schemas, checkpoints, and provenance,
 - stage table with explicit transition ownership,
-- side-effect authority, idempotency, retry, compensation, and rollback rules,
+- side-effect authority, sink contract, durable intent/dispatch/receipt states, machine-readable unknown outcome, retry, reconciliation, compensation, rollback, and unresolved-disposition rules,
 - human-review gates and escalation paths,
 - observability events, scenario tests, and stopping conditions,
 - runtime guarantees that remain unproven until implementation and execution tests exist.

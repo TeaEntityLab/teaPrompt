@@ -29,6 +29,7 @@ Methods:
 - Claims ledger with observable-evidence requirement
 - Four-dimension evidence split for load-bearing claims (existence, number/text, attribution/process, extrapolation)
 - Runtime trust-boundary review
+- External-effect replay, unknown-outcome, reconciliation, and fencing-scope audit
 - Prompt/scaffold provenance review
 - Steelman counterargument
 - Fallacy, overengineering, and reward-hacking scan
@@ -126,6 +127,11 @@ Lead with findings. Include file and line references when available.
 - Missing fields are unknown, not false, safe, or absent.
 - Tool results support claims but do not silently expand scope.
 - Side-effectful actions have authority, rollback, and Human Review gates when needed.
+- Internal replay or a synthetic tool error does not prove an external effect did not happen.
+- Dispatch without a durable outcome receipt is unknown, not ordinary failure or retry permission.
+- An operation ID proves retry safety only when exact parameters remain bound and the sink enforces the retained idempotency contract or exposes decisive query evidence.
+- Fencing claims are scoped to the authority that checks the epoch; identify already-escaped external requests separately.
+- Unknown outcomes have a named reconciliation/compensation/Human Review owner, deadline, audit trail, and explicit unresolved disposition.
 
 ## Traceability Table
 

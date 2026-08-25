@@ -14,6 +14,8 @@ CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
 METHODOLOGY_MAP = PROMPT_LIBRARY_ROOT / "METHODOLOGY_MAP.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 ROADMAP = PLANS_DIR / "whole-project-roadmap-2026-07-11.md"
+TRUST_BOUNDARY = PROMPT_LIBRARY_ROOT / "04-agent" / "runtime-trust-boundary.md"
+SKILLS_DIR = PROMPT_LIBRARY_ROOT / "skills"
 PACKET_SHA256 = "120dbf79376747e58c73c03202cbd689dfe79e5173c0b9ee3789bbe051aa8abe"
 LINEAGE_SOURCE_SHA256 = "b07cb166cd2345e7a04c7b79e922bc0a000f721c6a92b64585db06737fe2c8d9"
 LINEAGE_PACKET_SHA256 = "903527f5fe84498f1ce6191402c5292ec2fdc8ac6b4c5c3efa1232b01bdf939d"
@@ -81,6 +83,7 @@ def _lineage_ledger_rows() -> dict[str, str]:
         "AH-16",
         "AH-17",
         "AH-18",
+        "AH-19",
     ):
         rows[candidate_id] = next(
             line
@@ -234,16 +237,18 @@ def test_lineage_candidate_ledger_preserves_dispositions():
     assert "Rejected as universal; use-case-specific 2026-08-25" in rows["AH-17"]
     assert "Adopted 2026-08-25 by explicit user direction" in rows["AH-18"]
     assert "recurrence `unknown`" in rows["AH-18"]
+    assert "Adopted 2026-08-25 by explicit user direction" in rows["AH-19"]
+    assert "recurrence `unknown`" in rows["AH-19"]
 
 
 def test_lineage_addendum_creates_no_new_governed_surface():
     addendum = _lineage_addendum()
     assert (
-        "No AH-9–AH-18 row creates a TeaPrompt runtime, dependency, skill, prompt lens,\n"
-        "MCP extension, or governing Project Knowledge rule." in addendum
+        "No AH-9–AH-19 row creates a new core skill, runtime, dependency, MCP extension,\n"
+        "or governing Project Knowledge rule." in addendum
     )
     assert "AH-9 is record-level" in addendum
-    assert "AH-18 adds reference documentation, roadmap triggers, and a Decision\nIndex pointer only." in addendum
+    assert "AH-19\nis a narrow in-place repair" in addendum
 
 
 def test_external_adoption_case_study_indexes_lineage_addendum():
@@ -301,3 +306,85 @@ def test_ah18_promotes_only_reference_docs_roadmap_and_decision_pointer():
         "recurrence is `unknown`",
     ):
         assert token in decision, f"promotion decision lost {token!r}"
+
+
+def test_ah19_effect_recovery_contract_is_repaired_in_place():
+    trust = _read(TRUST_BOUNDARY)
+    for token in (
+        "## 4a. External Effect Recovery Boundary",
+        "`OUTCOME_UNKNOWN`",
+        "`retry_safe: false`",
+        "synthetic interrupted/error result",
+        "Fencing rejects stale commits only at authorities that check the epoch",
+        "Effect Recovery Decision",
+    ):
+        assert token in trust, f"runtime trust-boundary lost {token!r}"
+
+    risk = _read(SKILLS_DIR / "reflective-risk" / "SKILL.md")
+    for token in (
+        "## Effect Recovery Decision",
+        "process crash after dispatch is not failure evidence",
+        "`OUTCOME_UNKNOWN`",
+        "retained window with matching parameters",
+        "unresolved/abandoned disposition",
+        "Fencing protects only commits that consult the epoch authority",
+    ):
+        assert token in risk, f"reflective-risk lost {token!r}"
+
+    spec = _read(SKILLS_DIR / "reflective-spec-plan" / "SKILL.md")
+    for token in (
+        "**Control-state contract:**",
+        "**Effect contract:**",
+        "**Ownership/liveness contract:**",
+        "post-dispatch/pre-receipt crash window",
+        "machine-readable unknown outcome",
+        "sink-observed postconditions",
+    ):
+        assert token in spec, f"reflective-spec-plan lost {token!r}"
+
+    implement = _read(SKILLS_DIR / "reflective-implement" / "SKILL.md")
+    for token in (
+        "machine-readable `OUTCOME_UNKNOWN`",
+        "observe the sink independently from the local log",
+        "stale epochs only at the authority that enforces them",
+    ):
+        assert token in implement, f"reflective-implement lost {token!r}"
+
+    review = _read(SKILLS_DIR / "reflective-review" / "SKILL.md")
+    for token in (
+        "Internal replay or a synthetic tool error",
+        "Dispatch without a durable outcome receipt is unknown",
+        "An operation ID proves retry safety only when",
+        "Fencing claims are scoped to the authority that checks the epoch",
+        "explicit unresolved disposition",
+    ):
+        assert token in review, f"reflective-review lost {token!r}"
+
+    handoff = _read(SKILLS_DIR / "reflective-handoff-retro" / "SKILL.md")
+    for token in (
+        "If an external mutation's outcome is still unknown",
+        "operation ID, exact parameter/resource/version binding",
+        "Put blind retry",
+        "under `Do Not Do`",
+        "never summarize `OUTCOME_UNKNOWN`",
+    ):
+        assert token in handoff, f"reflective-handoff-retro lost {token!r}"
+
+    roadmap = _read(ROADMAP)
+    assert "AH-19 — external-effect recovery skill repair" in roadmap
+    assert "Adopted 2026-08-25 (user-directed; recurrence `unknown`)" in roadmap
+
+    knowledge = _read(PROJECT_KNOWLEDGE)
+    decision = next(
+        line
+        for line in knowledge.splitlines()
+        if line.startswith("- 2026-08-25 External-effect recovery skill repair")
+    )
+    for token in (
+        "AH-19",
+        "OUTCOME_UNKNOWN",
+        "adapter-specific reconciliation",
+        "no new skill, runtime, dependency, MCP extension, or governing rule",
+        "recurrence is `unknown`",
+    ):
+        assert token in decision, f"AH-19 decision lost {token!r}"
