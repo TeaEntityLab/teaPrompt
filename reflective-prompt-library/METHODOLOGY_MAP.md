@@ -96,6 +96,48 @@ Recent agent-runtime references reinforce that governance is not only a high-ris
 
 TeaPrompt should absorb these as a lightweight runtime governance sublayer, not as a monolithic agent constitution. Use `04-agent/runtime-trust-boundary.md` when a task involves external content, tool results, entity-like records, context assembly, or side-effectful actions.
 
+## Durable Agent Runtime Reference Addendum
+
+The 2026-08-25 durable-harness survey and technical-lineage panel compare Pi,
+Maka, Amplio, Ankole, Temporal, LangGraph, DBOS, Restate, Orleans, and Erlang/OTP.
+The evidence supports a **mechanism map**, not a product genealogy, industry
+consensus, or one mandatory runtime stack. This is a reference boundary for
+host-runtime design review; it is not a tenth workflow skill, a TeaPrompt-owned
+runtime, or proof of operational enforcement.
+
+Use three independently enforceable contracts instead of treating the panel's
+nine-layer discussion diagram as canonical:
+
+1. **Control-state contract** — durable run/task identity, the exact
+   runtime-accepted transition, a total program counter or reducible facts,
+   execution/schema versions, and rebuildable context/UI projections.
+2. **Effect contract** — parameter- and authorization-bound intent, a named
+   dispatch boundary, the actual sink contract, outcome receipt,
+   `OUTCOME_UNKNOWN`, adapter-specific reconciliation, compensation,
+   postcondition verification, and Human Review fallback.
+3. **Ownership/liveness contract** — owner or lease identity, epoch/fencing
+   scope, cancellation, supervision/restart policy, and stale-writer rejection
+   at the authority that owns the commit.
+
+Keep four distinctions explicit:
+
+- Workflow/reducer replay can recover local control state without safely
+  replaying an external effect.
+- Exactly-once is possible when the business write and durability record share
+  one transaction; a raw remote mutation remains outside that atomic boundary.
+- Fencing rejects only stale commits or messages that consult the epoch
+  authority; it cannot recall a request already accepted by an external sink.
+- Effect behavior is multi-axis. Read/write shape, transactional coupling,
+  sink-enforced idempotency, queryability, compensation, reversibility, privacy,
+  cost, rate limits, concurrency, and authorization lifetime cannot safely be
+  collapsed into one automatic-retry label.
+
+Scale the protocol to risk: pure local computation does not need mutation
+ceremony; high-risk cross-boundary effects need sink-observed fault tests and an
+owned operator path for unresolved outcomes. Full evidence, candidate states,
+falsifiers, and the smallest engineer checklist live in the
+[technical-lineage addendum](plans/agent-harness-convergence-survey-2026-08-25.md#2026-08-25-technical-lineage-addendum).
+
 ## Scaffold Provenance Addendum
 
 Public prompt mirrors and alleged system-prompt leaks are useful only as provenance-sensitive research artifacts. The elder-plinius `CLAUDE-FABLE-5.md` mirror is observable as a third-party GitHub artifact, while Anthropic's official docs separately confirm Claude app system prompts, Claude Fable 5 release behavior, long-run scaffolding guidance, refusal categories, and reasoning-output limits. That distinction matters.

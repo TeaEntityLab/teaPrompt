@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-20T14:40:56.394084",
+  "generated_at": "2026-08-25T10:18:17.120842",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -67,6 +67,7 @@
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
             "governance-rules-rethink-review-2026-07-11.md",
+            "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "QUALITY_GATES_SUMMARY.md",
             "agent-tooling-research-2026-06-25.md",
@@ -3746,6 +3747,7 @@
           "governance-necessity-panel-record-2026-07-11.md",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
+          "agent-harness-convergence-survey-2026-08-25.md#2026-08-25-technical-lineage-addendum",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#consolidated-open-work-register",
           "flow-control-roadmap-2026-07-11.md",
@@ -3765,12 +3767,16 @@
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
+          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
+          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "p7-pack-routing-decision-2026-07-11.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
-          "flow-control-pack-panel-record-2026-07-11.md"
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
+          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger"
         ]
       },
       "structure": [
@@ -3819,8 +3825,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 142,
-      "char_count": 10795
+      "line_count": 154,
+      "char_count": 12853
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -4062,6 +4068,228 @@
       ],
       "line_count": 175,
       "char_count": 25441
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-harness-convergence-survey-2026-08-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Harness Durable-State Convergence Survey — 2026-08-25"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Targets and Version Context"
+        },
+        {
+          "level": 2,
+          "text": "Panel Execution Mode"
+        },
+        {
+          "level": 2,
+          "text": "Lenses"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Exact Qualified Conclusion"
+        },
+        {
+          "level": 3,
+          "text": "Use-Case Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 3,
+          "text": "1. The common architecture is narrower than “OS + DB”"
+        },
+        {
+          "level": 3,
+          "text": "2. Tool-boundary evidence differs materially"
+        },
+        {
+          "level": 3,
+          "text": "3. Crash windows need different recovery actions"
+        },
+        {
+          "level": 3,
+          "text": "4. The literature supplies several mechanisms, not one silver bullet"
+        },
+        {
+          "level": 3,
+          "text": "5. The supplied recoverable-run fields are sound, with one structural caveat"
+        },
+        {
+          "level": 3,
+          "text": "6. Long pauses and deployment changes are state transitions"
+        },
+        {
+          "level": 3,
+          "text": "7. Context compression is a projection, never the only fact source"
+        },
+        {
+          "level": 3,
+          "text": "8. A falsifiable evaluation should include external-state evidence"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Executed by merge owner"
+        },
+        {
+          "level": 3,
+          "text": "Read but not executed"
+        },
+        {
+          "level": 3,
+          "text": "Unverified / blocked"
+        },
+        {
+          "level": 2,
+          "text": "Local TeaPrompt Fit"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "2026-08-25 Technical Lineage Addendum"
+        },
+        {
+          "level": 3,
+          "text": "Target and provenance"
+        },
+        {
+          "level": 3,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 4,
+          "text": "Exact qualified conclusion"
+        },
+        {
+          "level": 4,
+          "text": "Use-case recommendation"
+        },
+        {
+          "level": 3,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "Technical Lineage Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 4,
+          "text": "1. The lineage is a mechanism map, not a genealogy"
+        },
+        {
+          "level": 4,
+          "text": "2. Three contracts are smaller than nine mandatory layers"
+        },
+        {
+          "level": 4,
+          "text": "3. Effect behavior is multi-axis"
+        },
+        {
+          "level": 4,
+          "text": "4. `UNKNOWN` needs operations, not only a label"
+        },
+        {
+          "level": 4,
+          "text": "5. Fencing has a precise authority boundary"
+        },
+        {
+          "level": 4,
+          "text": "6. Runtime-accepted proposals need provenance and lifecycle"
+        },
+        {
+          "level": 4,
+          "text": "7. The smallest useful engineer checklist is risk-scaled"
+        },
+        {
+          "level": 4,
+          "text": "8. The benchmark remains a candidate test plan"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 4,
+          "text": "Coordinator-executed in this addendum phase"
+        },
+        {
+          "level": 4,
+          "text": "Read from the prior durable record, not re-run here"
+        },
+        {
+          "level": 4,
+          "text": "Not executed / still unknown"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        }
+      ],
+      "line_count": 836,
+      "char_count": 59624
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -4390,6 +4618,7 @@
           "3xa-harness-survey-2026-08-20.md",
           "jspace-cognition-survey-2026-08-20.md",
           "code-recall-survey-2026-08-20.md",
+          "agent-harness-convergence-survey-2026-08-25.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -4462,8 +4691,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 236,
-      "char_count": 23122
+      "line_count": 239,
+      "char_count": 24417
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -11956,5 +12185,5 @@
       "char_count": 19788
     }
   ],
-  "total_files": 132
+  "total_files": 133
 }

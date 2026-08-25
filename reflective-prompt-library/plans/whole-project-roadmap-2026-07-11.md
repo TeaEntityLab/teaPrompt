@@ -36,6 +36,7 @@ does not support.
 | Evidence-tier labels on new records | Every new panel/research record | Packet contract fields present; same-host caveat stated | [Necessity record N13](governance-necessity-panel-record-2026-07-11.md) |
 | Cheatsheet / cross-link / HR parity mechanics | When the named surfaces change | Playbook items 6–33 name the exact test per surface | [GLOSSARY playbook](../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊) |
 | Optional manual benchmark run | Operator discretion (never CI) | `benchmark_tasks.py` baseline-vs-skill comparison | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
+| Durable-runtime reference revalidation | Before a future implementation or deployment claim relies on Temporal, LangGraph, DBOS, Restate, Orleans, OTP, or another live runtime source | Pin the exact host/version; keep source-read, executed, process-kill, real-sink, failover, and power-loss evidence tiers separate | [Harness lineage addendum AH-9/AH-18](agent-harness-convergence-survey-2026-08-25.md#2026-08-25-technical-lineage-addendum) |
 
 Near-term actionable tasks T1 (P15 parity review), T2 (zh-TW pack-appendix parity),
 T3 (manual pack-usage evidence convention), and T4 (loop-pack demotion-trigger
@@ -85,6 +86,8 @@ Closed out of the queue under an explicit user instruction; recurrence stays
 | E2 — archive restructuring (panel-transcript demotion, `00-core`/`03-context` merges) | Second independent archive-weight complaint, or a maintainer hits real navigation failure attributable to these surfaces | `plans/`, prompt categories | [Rethink Adoption Update 2](governance-rules-rethink-review-2026-07-11.md) |
 | `reflective-implement` default-invokes `reflective-minimality` | Three cross-session recurrences (signal scan suffices today) | `reflective-implement` skill | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
 | Localized trigger cues beyond cheatsheet/glossary | Adoption signal from zh-TW users | zh-TW navigation surfaces | [June backlog](multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers) |
+| AH-11/AH-15 — multi-axis Effect Contract re-litigation | A named host integration exposes a mutation/recovery gap that the existing trust/risk contracts cannot express | Host-specific schema and enforcement owner; parameter/authority binding; representative adapters; negative retry/reconciliation tests; Human Review fallback | [Harness lineage addendum AH-11/AH-15](agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger) |
+| AH-14 — Harness Reliability Benchmark | A concrete runtime-adoption decision names the target host/version and external-effect scope | Pre-registered baselines; real idempotent, transactionally coupled, and non-idempotent sinks; externally observed postconditions; process-kill/network/zombie/power tiers; latency, cost, unresolved backlog, and operator-load measures | [Harness lineage addendum AH-14](agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger) |
 
 Queue discipline: when a trigger fires, the item gets its own review/panel record
 with a Candidate Adoption Ledger — a fired trigger authorizes *re-litigation*, not
@@ -121,6 +124,15 @@ Recorded no-change/reject outcomes, kept visible so they are not silently re-arg
   ([flow-coverage §Rejected](flow-coverage-panel-record-2026-07-11.md)).
 - `skills/packs/` nesting and repo-root pack placement
   ([pack record](flow-control-pack-panel-record-2026-07-11.md)).
+- AH-10 canonical nine-layer Agent Runtime architecture — study diagram only;
+  re-open after a pre-registered comparison shows it prevents a failure missed by
+  the smaller control/effect/ownership contracts at acceptable cost
+  ([lineage addendum AH-10](agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger)).
+- AH-13 prompt-level fencing/OTP enforcement and AH-17 universal P0–P3 research
+  order — runtime enforcement remains host-owned and priorities remain
+  use-case-specific
+  ([lineage addendum AH-13/AH-17](agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger)).
+
 
 ## Falsifiability
 
