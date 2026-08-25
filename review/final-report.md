@@ -255,3 +255,109 @@ domain-pack contract changed.
 Future Human Review remains required where the owning records say so: P6/P7
 successor decisions, frozen-core edits, pack-contract edits, E2 destructive
 restructuring, and high-risk runtime or side-effect work.
+
+---
+
+# Final Report — Product / Runtime Ownership Panel (2026-08-25)
+
+## Summary
+
+Completed the `review-packet-paste2-ownership-2026-08-25.md` discussion as a
+durable, falsifiable TeaPrompt decision. Seven read-only lenses unanimously
+returned `AGREE WITH CHANGES`; all schema-coerced summaries were recovered by
+tier-1 DM-wake before synthesis. Adopted only clean-room, in-place boundaries:
+runtime execution truth is distinct from host product acceptance; durability is
+record-specific; disconnect is not cancellation; hosted execution must be
+tenant-scoped and receive no ambient product-database credentials.
+
+No Heddle package, runtime, persistence adapter, hosted service, route, pack, or
+tenth core skill was added. The temporary packet was deleted after the durable
+record and guard existed.
+
+## Acceptance criteria status
+
+| Criterion | Status | Evidence |
+|---|---|---|
+| Preserve the full panel verdict, dissent, Socratic pressure, and evidence tiers | verified | `plans/product-runtime-ownership-panel-2026-08-25.md` |
+| Record every candidate disposition and re-litigation trigger | verified | OW-1–OW-9 Candidate Adoption Ledger |
+| Adopt only the bounded wording supported by the panel | verified | trust boundary, spec-plan, risk, methodology, and project-knowledge edits |
+| Keep TeaPrompt out of runtime/dependency/hosting ownership | verified | OW-7 blocked; Standing Non-Goals unchanged |
+| Guard each adopted surface deterministically | verified | `test_product_runtime_ownership_panel_record.py`: 6 passed |
+| Remove the temporary shared packet after synthesis | verified | packet absent; SHA-256 retained in the durable record |
+| Leave the shared worktree on its original branch | verified | `git branch --show-current` returned `main` |
+
+## Tests / checks run
+
+- `python3 -m pytest reflective-prompt-library/plans/tests/test_product_runtime_ownership_panel_record.py -q` — 6 passed.
+- Affected contract set (new guard, convergence record, skill contract, lint,
+  links, project knowledge, promotion contract, prompt/skill registry) — 96
+  passed.
+- `python3 -m pytest reflective-prompt-library/plans/tests/ -q` — 1052 passed.
+- `make all` — 1052 tests passed; post-cleanup link validation 169 files / 0 errors; lint 0
+  errors / one pre-existing long `agent-governance-scaffold` warning;
+  governance 12/12; project knowledge valid; record hygiene 0 errors / 0
+  warnings; benchmark fixture 24 tasks / 9 of 9 workflows; examples 9 core + 3
+  packs; route fixtures valid; ROUTE-001/002/003 each 100%.
+
+## Failures or skipped checks
+
+- First focused run: 5 passed / 1 failed because the new test expected the
+  paraphrase “no pinned Heddle repository” while the record said “did not
+  inspect a pinned Heddle repository.” Corrected the guard to pin the actual
+  negative-evidence statement; rerun passed 6/6.
+- Not executed and not claimed: Heddle source/package/license inspection,
+  SlideX deployment, power-loss/network-partition reproduction, real external
+  sink testing, or any production host integration.
+
+## Files changed
+
+- `reflective-prompt-library/04-agent/runtime-trust-boundary.md`
+- `reflective-prompt-library/skills/reflective-spec-plan/SKILL.md`
+- `reflective-prompt-library/skills/reflective-risk/SKILL.md`
+- `reflective-prompt-library/METHODOLOGY_MAP.md`
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md`
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`
+- `reflective-prompt-library/plans/product-runtime-ownership-panel-2026-08-25.md`
+- `reflective-prompt-library/plans/tests/test_product_runtime_ownership_panel_record.py`
+- `review/final-report.md` (this appended report)
+
+## Risks
+
+- The Heddle article/package surfaces remain unpinned and unlicensed in the
+  reviewed evidence. Adopted text is conceptual clean-room wording, not code or
+  checklist reuse.
+- Product CAS protects canonical host state, not an already-dispatched remote
+  effect. Existing `OUTCOME_UNKNOWN`, sink-idempotency, reconciliation, and
+  Human Review rules remain required.
+- The named five-stage ladder and complete checklist remain partial/study-only
+  to avoid a competing maturity model and lightweight-workflow ceremony.
+- Prompt and skill wording still cannot enforce concurrency, replay,
+  cancellation, tenant isolation, credential isolation, or effect settlement;
+  a host implementation requires code and behavioral tests.
+
+## Spec-to-code traceability
+
+| Decision | Repository surface | Guard |
+|---|---|---|
+| OW-1/OW-2 ownership and acceptance | `runtime-trust-boundary.md`, `METHODOLOGY_MAP.md`, `PROJECT_KNOWLEDGE.md` | `test_ownership_and_durability_are_guarded_in_trust_boundary`, `test_reference_and_judgement_surfaces_point_to_the_guarded_record` |
+| OW-3 record-specific durability | trust boundary + `reflective-spec-plan` | trust/spec wording guards |
+| OW-4 disconnect/cancel and single lifecycle | trust boundary + spec + risk | trust/spec/risk wording guards |
+| OW-5/OW-6 partial adoption only | panel Candidate Adoption Ledger | `test_candidate_ledger_preserves_bounded_dispositions` |
+| OW-7/OW-9 blocked/deferred external adoption | panel + external case-study index | ledger and runtime/evidence boundary guards |
+| OW-8 tenant/credential preconditions | trust boundary + risk | trust/risk wording guards |
+
+## Remaining work
+
+No TeaPrompt implementation item remains open from this panel. Reproduce the
+behavioral contracts only when a named host integration exists. Reconsider
+Heddle code/deployment only after explicit project-direction change, a pinned
+licensed source/SBOM, named enforcement owner, security review, and executed
+integration/fault tests.
+
+## Human review needs
+
+The user explicitly directed completion of the panel discussion and bounded
+adoption. No production, auth implementation, database migration, destructive
+operation, external side effect, public API, dependency, or runtime deployment
+was performed. Human Review remains mandatory before applying these contracts
+to a real multi-tenant or side-effectful host.

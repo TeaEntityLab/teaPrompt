@@ -32,7 +32,7 @@ Methods:
 - Definition of Done
 - Runtime trust-boundary design
 - SOP compiler framing for repeatable human processes
-- Workflow architecture, state, transition, and control-ownership design
+- Workflow architecture, state, transition, control-ownership, and product-acceptance design
 
 Output:
 - When file tools are available, write `spec.md`, `usage.md`, and `task-plan.md`; otherwise use the same headings inline.
@@ -47,6 +47,8 @@ Never:
 - Do not pass incomplete planning artifacts to implementation just to start faster.
 - Do not promote a prompt-only task into a runner or hook system without evidence of repeatability, risk, auditability, or drift.
 - Do not treat a workflow specification as proof of persistence, replay, recovery, cancellation, or idempotency.
+- Do not treat runtime completion as canonical product acceptance or a client disconnect as run cancellation.
+- Do not claim generic durability without naming the persisted record class, intended locality, and failure boundary.
 
 Escalation:
 - Route missing Definition of Ready inputs to `reflective-brief`.
@@ -170,6 +172,11 @@ risk requires rather than forcing one architecture:
 - **Ownership/liveness contract:** owner or lease identity, cancellation,
   supervision/restart policy, fencing scope, and stale-writer rejection at the
   authority that owns the commit.
+- **Product-truth contract:** canonical record and acceptance owner, authenticated tenant scope, base/current version or other decisive precondition, stale-result disposition, commit-before-success ordering, and verified postconditions.
+
+Match the architecture to the lowest user-visible promise that satisfies the requirement. Durability is record-specific: list only the sessions, compaction archives, active-run coordination, replay buffers, transcripts, canonical results, traces/artifacts, approvals/memory, and credentials that exist; mark intentionally volatile state explicitly. A named external stage model is optional reference vocabulary, not a maturity ladder.
+
+A client subscription lifecycle is not the execution lifecycle. Specify authenticated reconnect/cursor behavior, explicit cancellation authority, one run-lifecycle owner, and one absorbing terminal outcome.
 
 Then design the workflow:
 
@@ -180,6 +187,7 @@ Then design the workflow:
 5. **Side effects and recovery** — distinguish local/transactionally coupled/runtime-mediated/raw external boundaries; define exact parameter and authority binding, the sink's idempotency/query contract, intent/dispatch/receipt states, `OUTCOME_UNKNOWN`, retry cap, adapter-specific reconciliation, compensation, unresolved owner/deadline, and the point at which repair stops.
 6. **Errors and gates** — distinguish transient, model-recoverable, user-fixable, and unexpected failures. Define entry, exit, escalation, and hard-stop conditions.
 7. **Verification** — define observable events, scenario tests, and adversarial cases; for external mutations include the post-dispatch/pre-receipt crash window, stale-owner attempts, and sink-observed postconditions rather than relying only on the local log.
+For product-result workflows, include stale-proposal rejection, commit-before-success, disconnect-without-cancel, concurrent terminal-transition, cross-tenant replay denial, and ambient-credential rejection scenarios.
 
 Use this stage table as the central design artifact:
 
@@ -195,6 +203,8 @@ The completed `workflow-spec.md` should include:
 - state and artifact schemas, checkpoints, and provenance,
 - stage table with explicit transition ownership,
 - side-effect authority, sink contract, durable intent/dispatch/receipt states, machine-readable unknown outcome, retry, reconciliation, compensation, rollback, and unresolved-disposition rules,
+- canonical product owner, acceptance/concurrency rule, stale-result disposition, commit evidence, and postcondition verifier,
+- record-specific durability/locality claims and separate subscription, reconnect, cancellation, and terminal-state semantics,
 - human-review gates and escalation paths,
 - observability events, scenario tests, and stopping conditions,
 - runtime guarantees that remain unproven until implementation and execution tests exist.

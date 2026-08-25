@@ -26,7 +26,7 @@ Methods:
 - Threat model
 - Assumption audit
 - Evidence check
-- Authority and side-effect boundary mapping
+- Authority, product-acceptance, and side-effect boundary mapping
 - Failure-mode analysis
 - Effect-outcome classification and sink-contract audit
 - Dry-run, rollback, bounded execution, and audit-log planning
@@ -58,6 +58,7 @@ Use before:
 - Production deployment
 - Legal, medical, or financial high-stakes advice
 - Any workflow where untrusted external content can influence side-effectful tool actions
+- Agent-run results that can mutate canonical product state, or remote execution hosts that can access product or tenant data
 - Sending internal code, data, or evidence to external services or reviewers (data egress): redact secrets and identifiers first, send only the minimum evidence the question needs, and record a manifest of exactly what left the boundary (packet-handling lens: `04-agent/external-adoption-review.md` §2a in the TeaPrompt source repository)
 
 ## Output
@@ -110,6 +111,9 @@ Use before:
 - Define explicit execution boundaries (tools, scope, timebox, blast radius) before any action.
 - Ensure an auditable record exists for high-risk steps and approvals.
 - For an external mutation, bind the durable intent to the exact parameters, resource/version, tool/schema/policy version, principal, approval scope, and authorization expiry.
+- Runtime completion is a proposal, not business acceptance. Before a canonical mutation, the host must revalidate the principal, tenant scope, capability, and current resource version (or an equivalent decisive precondition), then commit and verify before reporting success.
+- A client transport disconnect ends observation only. Cancellation requires an explicit authenticated command, and concurrent terminal transitions must resolve to one absorbing outcome.
+- A remote execution host must not receive ambient product-database credentials. Bind durable records, replay queries, approvals, and cancellation requests to authenticated tenant scope and invocation-bound capabilities.
 - A timeout, transport error, or process crash after dispatch is not failure evidence. Record `OUTCOME_UNKNOWN` and `retry_safe: false`; never authorize a blind retry from a missing receipt.
 - A stable operation ID permits retry only when the sink enforces that identity for the retained window with matching parameters, or decisive reconciliation evidence proves the operation never started.
 - Reconciliation observations are adapter- and sink-specific. When they cannot settle the outcome, name the compensation or Human Review owner, deadline, budget, audit record, and explicit unresolved/abandoned disposition.

@@ -119,6 +119,15 @@ nine-layer discussion diagram as canonical:
    scope, cancellation, supervision/restart policy, and stale-writer rejection
    at the authority that owns the commit.
 
+Treat product truth as an orthogonal boundary across those three runtime
+contracts. Runtime `COMPLETED` records execution truth; it does not prove that
+the host product authorized, concurrency-checked, committed, or verified a
+canonical business mutation. Durability claims are record-specific rather than
+boolean, and a subscriber disconnect ends observation rather than authorizing
+run cancellation. The host owns these acceptance and lifecycle decisions; prompt
+text can require the contract but cannot enforce it. See the
+[product/runtime ownership panel record](plans/product-runtime-ownership-panel-2026-08-25.md).
+
 Keep four distinctions explicit:
 
 - Workflow/reducer replay can recover local control state without safely
