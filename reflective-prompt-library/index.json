@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-25T10:40:28.734975",
+  "generated_at": "2026-08-25T11:17:49.294459",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -41,6 +41,7 @@
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "durable-skills-flows-panel-2026-08-25.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -1749,6 +1750,72 @@
       ],
       "line_count": 105,
       "char_count": 8071
+    },
+    {
+      "path": "reflective-prompt-library/plans/durable-skills-flows-panel-2026-08-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "durable-skills-flows-panel-2026-08-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Durable-State Rethink of Skills & Flows — Panel Record (2026-08-25)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "AH-20a — `04-agent/workflow-recipes.md` `## Looper Topologies` (anti-collapse: WAL/event-reduction stay host-runtime)"
+        },
+        {
+          "level": 3,
+          "text": "AH-20b — `04-agent/workflow-engine.md` `## 4. State Model` (durable facts vs derived projections)"
+        },
+        {
+          "level": 3,
+          "text": "AH-21a — `04-agent/runtime-trust-boundary.md` `## 4a. External Effect Recovery Boundary` (data protection row)"
+        },
+        {
+          "level": 3,
+          "text": "AH-21b — `skills/agent-governance-scaffold/SKILL.md` `## 4a. External Effect Recovery Boundary` equivalent rule (Never: no raw secrets in durable artifacts)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 104,
+      "char_count": 10616
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -8575,8 +8642,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 163,
-      "char_count": 8434
+      "line_count": 164,
+      "char_count": 8552
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -8771,8 +8838,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 223,
-      "char_count": 9520
+      "line_count": 226,
+      "char_count": 9742
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -8947,8 +9014,8 @@
           "text": "13. Minimal Implementation Plan"
         }
       ],
-      "line_count": 90,
-      "char_count": 1775
+      "line_count": 91,
+      "char_count": 1918
     },
     {
       "path": "reflective-prompt-library/04-agent/sop-compiler.md",
@@ -10991,8 +11058,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 404,
-      "char_count": 25773
+      "line_count": 405,
+      "char_count": 26074
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -12197,5 +12264,5 @@
       "char_count": 19788
     }
   ],
-  "total_files": 133
+  "total_files": 134
 }
