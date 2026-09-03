@@ -32,7 +32,7 @@ reflective-prompt-library/skills/
 
 **Harness policy:** 九個凍結 workflow skills，採嚴謹度優先分流。見 [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills) 與 [skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md](skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)。
 
-**Domain packs 與觸發模式：** 三個 domain packs（`flow-control-generator`、`flow-loop-harness`、`agent-governance-scaffold`）是 host 直接呼叫的選配 contracts，不屬於九技能核心分流。若 host 支援使用者手動觸發模式（例如 Claude Code 的 `disable-model-invocation: true`），可將 domain packs 以該模式安裝，減少常駐 context 負擔；請在安裝副本上設定，倉庫內的 `SKILL.md` frontmatter 保持跨平台通用。九個核心 skills 維持可被模型自動觸發。
+**Domain packs 與觸發模式：** 四個 domain packs（`flow-control-generator`、`flow-loop-harness`、`agent-governance-scaffold`、`governed-delivery`）是 host 直接呼叫的選配 contracts，不屬於九技能核心分流。若 host 支援使用者手動觸發模式（例如 Claude Code 的 `disable-model-invocation: true`），可將 domain packs 以該模式安裝，減少常駐 context 負擔；請在安裝副本上設定，倉庫內的 `SKILL.md` frontmatter 保持跨平台通用。九個核心 skills 維持可被模型自動觸發，以保留 `reflective-dispatch` 的分流語意。
 
 每個平台都需要：
 
@@ -129,7 +129,7 @@ find . -path './.git' -prune -o -path '*/skills/examples/*.examples.md' -print
 - 避免大規模全域安裝，建議使用專案層級的少量 skill 集合。
 - 除非 skill 確實需要，否則不要授予工具權限或 hook。
 - 高風險工作流程請保留在 `reflective-risk` 之後再執行。
-- `reflective-risk`、`flow-loop-harness` 與 `agent-governance-scaffold` 的
+- `reflective-risk`、`flow-loop-harness`、`agent-governance-scaffold` 與 `governed-delivery` 的
   metadata 都設為 `human_review_required: true`；這只是意圖宣告，安裝後仍須由
   host 的呼叫控制實際執行 Human Review，TeaPrompt 本身不會強制執行。
 - `examples/*.examples.md` 只示範輸入/輸出形狀與證據層級，不代表已實際執行、已核准，或 host 已完成強制執行。

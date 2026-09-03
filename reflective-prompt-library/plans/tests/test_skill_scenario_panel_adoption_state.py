@@ -16,6 +16,7 @@ from prompt_eval_helpers import (  # noqa: E402
     cheatsheet_zh_tw_path,
     library_skills_dir,
 )
+from validate_skill_examples import CORE_SKILLS, DOMAIN_PACK_SKILLS  # noqa: E402
 
 PLANS = Path(__file__).parent.parent
 RECORD = PLANS / "skill-scenario-panel-record-2026-07-12.md"
@@ -208,7 +209,9 @@ def _all_shipped_skill_bodies() -> dict[str, str]:
 
 def test_port1_prompt_sources_marked_as_provenance_everywhere():
     bodies = _all_shipped_skill_bodies()
-    assert len(bodies) == 12
+    # Registry-driven (2026-07-18 panel R9): nine frozen core + every registered pack.
+    assert set(bodies) == set(CORE_SKILLS) | set(DOMAIN_PACK_SKILLS)
+    assert len(CORE_SKILLS) == 9
     for name, text in bodies.items():
         assert "## Prompt Sources" in text, name
         section = text.split("## Prompt Sources", 1)[1]

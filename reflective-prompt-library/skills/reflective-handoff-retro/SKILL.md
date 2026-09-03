@@ -39,6 +39,7 @@ Never:
 - Do not dump raw context when a compact continuation brief is enough.
 - Do not turn one-off accidents into permanent bureaucracy.
 - Do not omit blockers, skipped checks, or Human Review requirements.
+- Do not treat the transcript as the source of record; assemble continuation state from canonical artifacts (spec, ledger, relevant files); a reset or compaction must not lose state.
 
 Escalation:
 - Route active implementation back to `reflective-implement`.
@@ -75,6 +76,10 @@ success.
 ## Human Review Required
 ```
 
+### Continuation Packet
+
+A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript.
+
 ## Retro Workflow
 
 Use after task completion:
@@ -92,6 +97,10 @@ Use after task completion:
 ## Skill / Script / Test Candidates
 ## Next Process Improvement
 ```
+
+### Gate Retro
+
+Gate retro: record which gates fired, which were bypassed, and which caught nothing; feed the result into policy change, and keep policy change separate from policy activation. Fill this from the run's gate evidence, not from the transcript.
 
 ## Memory Consolidation
 

@@ -92,10 +92,12 @@ def test_t2_zh_tw_pack_appendix_parity_when_present():
 
     en_bullets = [line for line in en_section.splitlines() if line.startswith("- ")]
     zh_bullets = [line for line in zh_section.splitlines() if line.startswith("- ")]
-    assert len(en_bullets) == 4, "EN domain-pack appendix contract changed"
+    # One bullet per registered pack plus the dispatch-still-routes bullet
+    # (registry-driven, 2026-07-18 panel R9).
+    assert len(en_bullets) == len(PACK_NAMES) + 1, "EN domain-pack appendix contract changed"
     assert len(zh_bullets) == len(en_bullets), (
         f"pack bullet count mismatch: EN {len(en_bullets)} vs zh-TW "
-        f"{len(zh_bullets)}; parity requires all four bullets"
+        f"{len(zh_bullets)}; parity requires one bullet per pack plus dispatch"
     )
 
 

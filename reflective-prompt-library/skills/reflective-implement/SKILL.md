@@ -116,6 +116,12 @@ Multi-step implementation fails when progress lives only in the transcript: crit
 - The Final Report's `Acceptance Criteria Status` must be derivable from the ledger alone.
 - When the spec, an acceptance criterion, or a constraint changes mid-task, mark every dependent ledger item `stale`, re-plan only the affected slice, and re-verify; never absorb the change as an informal note.
 
+### Task Packet
+
+The ledger is one artifact inside a host-held packet, not a substitute for it.
+
+Work from a task packet — spec version, State Ledger, oracle manifest, relevant files — and never from the transcript; if the packet is missing an acceptance criterion, stop and repair the packet.
+
 ### Sufficiency Gate
 
 Stop editing when every acceptance criterion is `verified` and no `failed` item remains. Do not keep "improving" past that point, and do not report done before it.
@@ -156,6 +162,8 @@ When blocked or failing, report and iterate with this structure:
 Use this loop until acceptance criteria are met or a hard stop requires Human Review.
 
 If the same failure signature recurs after a correction, do not keep retrying inside the polluted context: return to the ledger, roll back to the last verified state where the host supports it, change strategy, or escalate. Retry budgets are task-declared, never unbounded; a prompt cannot clear its own context — a host must.
+
+A failure signature is the failing oracle, the error class, and the touched surface; when a signature repeats after a correction, exit by rollback to the last verified ledger state, a strategy change, or escalation — never by an identical retry.
 
 ## Final Report
 

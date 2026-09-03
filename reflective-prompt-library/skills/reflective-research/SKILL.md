@@ -128,6 +128,7 @@ Regulatory dates, standards status, version numbers, prices, and schedules drift
 - When an official value and a pending change coexist — a published deadline plus a provisionally agreed delay — report both; neither alone is settled fact.
 - State maturity next to any standard or spec: an incubator-stage proposal or RC is not a mature standard.
 - Say which kind of freshness applies: a date to recheck, a tracking event that invalidates it, or an immutable pin (digest, commit, or published text).
+- Each evidence entry names the claim, the source, the attester, the freshness kind, and the date checked.
 - A tool result or measurement the agent triggered is evidence; the agent's own summary of it is not.
 - In the State Ledger, downgrade a volatile claim to `stale` once its check date predates the decision it supports.
 

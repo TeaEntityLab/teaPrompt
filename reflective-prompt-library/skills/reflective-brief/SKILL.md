@@ -58,6 +58,11 @@ Escalation:
 
 Spike / exploration framing: when acceptance criteria can only emerge from building (prototype, spike, throwaway experiment), do not force full criteria up front. Set the acceptance criterion to the question the prototype must answer plus a timebox, state that the artifact is disposable, and route promotion of any surviving code through `reflective-review` (and `reflective-risk` when high-risk) before it becomes production work.
 
+### Intent Fidelity
+
+Name what the spec will not capture — tacit constraints, unknown unknowns, and non-functional expectations — as unknowns with an owner, so intent loss is visible before planning starts.
+Each assumption carries a status — `open`, `confirmed`, `refuted`, or `stale` — and a change to the goal marks dependent assumptions `stale`.
+
 ## Output
 
 ```markdown

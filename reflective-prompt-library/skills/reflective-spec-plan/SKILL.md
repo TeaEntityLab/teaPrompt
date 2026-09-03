@@ -136,6 +136,7 @@ Use this per-test template:
 - Requirement:
 - Type: acceptance / edge / negative / regression / adversarial
 - Oracle class: authoritative (sealed during runs; changes need Human Review) / developer
+- Oracle manifest: list every acceptance, invariant, and security oracle with its class (authoritative or developer), owner, host sealing precondition, and change protocol.
 - Given:
 - When:
 - Then:
@@ -221,6 +222,11 @@ When file tools are available, write:
 - `workflow-spec.md` when Workflow Design Mode is active
 
 When chat-only, use the same headings inline.
+
+### Spec Version and Acceptance Record
+
+The spec carries a version; a mid-task change bumps it and marks every dependent plan item and ledger entry `stale` before work continues.
+Acceptance record: a named accepter closes the delivery against the oracle manifest and product evidence; execution success alone never closes it.
 
 ## Ticket Template
 

@@ -27,12 +27,14 @@ CORE_SKILLS = [
 
 # Registered domain packs: host-invoked script/artifact-generation skills. Not
 # core routing surface; not selectable by reflective-dispatch route rows. See
-# plans/flow-control-pack-panel-record-2026-07-11.md and
-# plans/agent-governance-scaffold-adoption-2026-07-17.md before extending.
+# plans/flow-control-pack-panel-record-2026-07-11.md,
+# plans/agent-governance-scaffold-adoption-2026-07-17.md, and
+# plans/governed-delivery-adoption-2026-09-03.md before extending.
 DOMAIN_PACK_SKILLS = [
     "flow-control-generator",
     "flow-loop-harness",
     "agent-governance-scaffold",
+    "governed-delivery",
 ]
 
 MIN_EXAMPLE_CHARS = 200

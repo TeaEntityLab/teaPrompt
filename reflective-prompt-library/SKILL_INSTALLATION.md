@@ -24,6 +24,7 @@ reflective-prompt-library/skills/
   flow-control-generator/
   flow-loop-harness/
   agent-governance-scaffold/
+  governed-delivery/
 ```
 
 **Harness policy:** Nine frozen **core** workflow skills with strictness-first routing; registered domain packs are opt-in and remain outside core routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills), [skills/skill-map.md](skills/skill-map.md#registered-domain-packs-not-core-routing), and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
@@ -73,6 +74,7 @@ The optional domain-pack registry currently contains:
 flow-control-generator
 flow-loop-harness
 agent-governance-scaffold
+governed-delivery
 ```
 
 Use the core helpers for the default install. Afterward, call the matching
@@ -128,7 +130,7 @@ install_domain_packs_copy() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     cp -R "$skill" "$dest/"
@@ -140,7 +142,7 @@ install_domain_packs_symlink() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     ln -sfn "$skill" "$dest/$name"
@@ -598,8 +600,8 @@ Use symlink installs only for your own workspace, not as the default team instal
 ### Enforcing TeaPrompt's review gates host-side
 
 TeaPrompt skills declare intent via `metadata.human_review_required`; hosts, not
-TeaPrompt, enforce it. When installing `reflective-risk`, `flow-loop-harness`, or
-`agent-governance-scaffold` (all `human_review_required: true`), map the
+TeaPrompt, enforce it. When installing `reflective-risk`, `flow-loop-harness`,
+`agent-governance-scaffold`, or `governed-delivery` (all `human_review_required: true`), map the
 declaration to your host's
 invocation control:
 

@@ -80,6 +80,8 @@ Stop at the first rung that satisfies the requirement:
 
 When two options are equally small, choose the one that is more correct on edge cases.
 
+- Governance artifacts face the same delete-before-add test: size gate thickness to risk and remove ceremony that defends no named invariant. Apply this to gate lists, ledgers, and envelopes as to code.
+
 ## Safety Floor
 
 Minimal does not mean careless. Never simplify away:

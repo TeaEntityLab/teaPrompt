@@ -91,6 +91,7 @@ A claim can pass the first two dimensions and still fail the last two; re-verify
 ### Evidence Tiers
 
 - Rank evidence: deterministic checks, then runtime evidence, then external primary sources, then independent model judgment, then generator self-assessment.
+- Declare the verification channels used — deterministic check, runtime evidence, external primary source, independent model, self-assessment — and whether they are independent; a high-risk PASS needs at least one non-model channel.
 - Same-model, same-context multi-role review is one epistemic channel, not independent verification; model judgment may block or warn but never solely pass a high-risk claim.
 - Model or panel consensus is advisory evidence; it does not prove operational behavior.
 - Routing fixtures are regression guards for covered phrases; they do not prove general semantic routing.
