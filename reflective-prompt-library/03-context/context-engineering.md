@@ -15,6 +15,7 @@ Enforce context discipline before long tasks. Primary workflow surfaces: `reflec
 
 - Context-used, context-ignored, and missing-info sections appear at the end.
 - Large inputs are indexed before synthesis.
+- Task context is assembled from canonical artifacts (spec, ledger, relevant files) and covers every acceptance criterion and constraint the task depends on; the transcript is not the source of record, so a reset or compaction must not lose state.
 
 ## Falsifiability
 

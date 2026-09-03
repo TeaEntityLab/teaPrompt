@@ -135,6 +135,7 @@ Use this per-test template:
 ### TEST-001: <name>
 - Requirement:
 - Type: acceptance / edge / negative / regression / adversarial
+- Oracle class: authoritative (sealed during runs; changes need Human Review) / developer
 - Given:
 - When:
 - Then:

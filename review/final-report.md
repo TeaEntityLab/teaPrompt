@@ -361,3 +361,114 @@ adoption. No production, auth implementation, database migration, destructive
 operation, external side effect, public API, dependency, or runtime deployment
 was performed. Human Review remains mandatory before applying these contracts
 to a real multi-tenant or side-effectful host.
+
+---
+
+# Final Report — Governable Autonomous Delivery Survey (2026-09-03)
+
+## Summary
+
+Routed via `reflective-dispatch` as `reflective-research` (external-adoption
+lens) with the runtime trust-boundary gate, then `reflective-implement` for the
+bounded in-place changes. Surveyed a 4,523-line pasted corpus on governable
+autonomous delivery, verified 20 cited primary sources by direct `read`, mapped
+the corpus against every TeaPrompt surface with nine read-only scouts, and ran a
+seven-lens Parallel Lens Review that decided `AGREE WITH CHANGES` 7/7.
+
+Adopted nine narrow, clean-room sentences (GA-1–GA-9) at ten existing surfaces;
+rejected, deferred, or recorded no-change for eleven candidates (GA-10–GA-20).
+No runtime, compiler, outbox, sandbox, dependency, pack, directory, routing cue,
+or tenth core skill was added. The user's question is answered in the record:
+as of 2026-09-03, intent drift and context rot are bounded, not solved; fully
+automatic delivery cannot be trusted without human intent sign-off and host
+containment.
+
+## Acceptance criteria status
+
+| Criterion | Status | Evidence |
+|---|---|---|
+| Survey with evidence tiers, verified sources, and a direct dated answer | verified | `plans/governable-autonomy-survey-2026-09-03.md` |
+| Adversarial consensus with preserved disagreements and a Candidate Adoption Ledger | verified | 7/7 lens deliverables recovered in full; GA-1–GA-20 ledger |
+| Docs/skills updated only where a wording gap was verified | verified | ten surfaces, each cited in the record's Required Wording Changes |
+| No corpus text, schema, or volatile figure copied into durable prompts | verified | `test_durable_surfaces_carry_no_survey_citations_or_universal_retry_number` |
+| Prior ledgers honored (ATT-7, Hyperplan, AH-*, OW-*, CCSP7/8, fourth-ladder ban) | verified | ledger rows and Disagreements section |
+| Deterministic guard at every named surface | verified | `plans/tests/test_governable_autonomy_survey_record.py`: 7 passed |
+| Temporary packet removed; worktree attached | verified | packet absent; `git branch --show-current` = `main` |
+
+## Tests / checks run
+
+- `python3 -m pytest reflective-prompt-library/plans/tests/test_governable_autonomy_survey_record.py -q` — 7 passed.
+- `python3 -m pytest reflective-prompt-library/plans/tests/ -q` — 1059 passed.
+- `make all` — 1059 passed; links 171 files / 0 errors; lint 0 errors / one
+  pre-existing long `agent-governance-scaffold` warning; governance 12/12;
+  project knowledge valid; record hygiene 0 / 0; benchmark 24 tasks / 9 of 9;
+  examples 9 core + 3 packs; route fixtures valid; ROUTE-001/002/003 100%.
+- Coordinator `read` of 20 external URLs (existence + key passages); SHA-256 of
+  the corpus and packet; `git rev-parse HEAD`, `git branch --show-current`.
+
+## Failures or skipped checks
+
+- None failed. Not executed and not claimed: benchmark reproduction, Heddle or
+  ADK/Restate code inspection, live-harness fault injection, power-loss or
+  real-sink tests, and the host-side reproduction contracts R-1–R-9.
+- Three mapping scouts and all seven lenses had structured yields coerced to
+  summaries; every full deliverable was recovered over the hub before
+  synthesis (three via tier-1 DM-wake, seven pre-emptively).
+
+## Files changed
+
+- `reflective-prompt-library/06-repo/AGENTS.md`
+- `reflective-prompt-library/skills/reflective-implement/SKILL.md`
+- `reflective-prompt-library/skills/reflective-spec-plan/SKILL.md`
+- `reflective-prompt-library/skills/reflective-review/SKILL.md`
+- `reflective-prompt-library/skills/reflective-research/SKILL.md`
+- `reflective-prompt-library/skills/reflective-brief/SKILL.md`
+- `reflective-prompt-library/03-context/context-engineering.md`
+- `reflective-prompt-library/04-agent/workflow-recipes.md`
+- `reflective-prompt-library/04-agent/runtime-trust-boundary.md`
+- `reflective-prompt-library/04-agent/artifact-promotion.md`
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md`
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`
+- `reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md` (new)
+- `reflective-prompt-library/plans/tests/test_governable_autonomy_survey_record.py` (new)
+- `review/final-report.md` (this appended report)
+
+## Risks
+
+- Adopted sentences are detectability contracts; without host write
+  protection, sandboxing, budgets, and egress control they prevent nothing.
+- Recurrence is `unknown` for every candidate; adoption rests on explicit user
+  direction plus verified external evidence and verified wording gaps.
+- External magnitudes (17% FNR, 39/49, "+32%–170%") are dated and live only in
+  the record; the guard fails if they migrate into prompt surfaces.
+- `reflective-implement` grew by three sentences; lint reports no new warning.
+
+## Spec-to-code traceability
+
+| Decision | Surface | Guard |
+|---|---|---|
+| GA-1 oracle vs developer tests | AGENTS.md, `reflective-implement`, `reflective-spec-plan` | `test_adopted_wording_is_present_at_every_named_surface` |
+| GA-2 mid-task `stale` | `reflective-implement` State Ledger | same |
+| GA-3 context assembled from artifacts; bounded packets | `03-context/context-engineering.md`, `workflow-recipes.md` | same |
+| GA-4 repeated failure signature | `reflective-implement` Failure Loop | same + no-universal-number guard |
+| GA-5 evidence ranking; one epistemic channel | `reflective-review`, `workflow-recipes.md` | same |
+| GA-6 freshness kind; attester | `reflective-research` | same |
+| GA-7 non-zero miss rate; sink containment | `runtime-trust-boundary.md` §3 | same |
+| GA-8 compatibility bounds | `artifact-promotion.md` §4 | same |
+| GA-9 irreversible-assumption trigger | `reflective-brief` step 4 | same |
+| GA-10–GA-20 dispositions | survey ledger | `test_candidate_ledger_preserves_all_dispositions` |
+
+## Remaining work
+
+None open in TeaPrompt. Host-side reproduction contracts R-1–R-9 run only when
+a named host harness exists; deferred items keep their recorded triggers
+(AH-14/FM3 for live fault injection, ATT-7 for scoped retry thresholds,
+Hyperplan for assumption schemas). Changes are uncommitted for the user's
+review.
+
+## Human review needs
+
+The user directed the survey and the "update docs and skills if worth it"
+adoption. No auth, production, migration, destructive, billing, public-API,
+dependency, or runtime change occurred. Human Review remains required before
+any host treats these sentences as enforcement.

@@ -36,7 +36,7 @@ Output:
 - Finish with `Goal`, `Files Changed`, `Implementation Summary`, `Acceptance Criteria Status`, `Tests / Checks Run`, `Failures or Skipped Checks`, `Residual Risks`, and `Next Action`.
 
 Never:
-- Do not delete, skip, or weaken tests.
+- Do not delete, skip, or weaken tests. Acceptance, invariant, and security oracles are read-only during a run; if one is wrong, stop and propose an oracle change for Human Review. Developer tests may be added freely. Prompt text cannot seal an oracle — the host must (write protection, protected branch, CI ownership).
 - Do not change expected outputs to match broken behavior.
 - Do not widen scope beyond the acceptance criteria without a reason.
 - Do not claim checks passed unless they were run and read.
@@ -109,11 +109,12 @@ Multi-step implementation fails when progress lives only in the transcript: crit
 
 | Item | Status | Evidence |
 |---|---|---|
-| acceptance criterion, file, or check | `pending` / `done` / `verified` / `failed` | test output, diff, observation |
+| acceptance criterion, file, or check | `pending` / `done` / `verified` / `failed` / `stale` | test output, diff, observation |
 
 - Mark an item `verified` only after the relevant check was run and its output read.
 - Open constraints and deferred decisions belong in the ledger, not only in prose.
 - The Final Report's `Acceptance Criteria Status` must be derivable from the ledger alone.
+- When the spec, an acceptance criterion, or a constraint changes mid-task, mark every dependent ledger item `stale`, re-plan only the affected slice, and re-verify; never absorb the change as an informal note.
 
 ### Sufficiency Gate
 
@@ -153,6 +154,8 @@ When blocked or failing, report and iterate with this structure:
 ```
 
 Use this loop until acceptance criteria are met or a hard stop requires Human Review.
+
+If the same failure signature recurs after a correction, do not keep retrying inside the polluted context: return to the ledger, roll back to the last verified state where the host supports it, change strategy, or escalate. Retry budgets are task-declared, never unbounded; a prompt cannot clear its own context — a host must.
 
 ## Final Report
 

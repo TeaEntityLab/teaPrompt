@@ -94,6 +94,7 @@ Check:
 - Missing data means unknown, not false, safe, absent, or permission granted.
 - Missing runtime spec, missing authority map, missing side-effect inventory, missing rollback proof, or missing enforcement owner means unknown / no-go, not safe-by-default.
 - Conflicting facts are surfaced with source and recency instead of silently merged.
+- Assume injection detection has a non-zero miss rate; design so untrusted content cannot reach secrets, memory or skill promotion, permissions, deployment, or outbound communication without a deterministic host gate or Human Review — prompt rules cannot isolate a sink; the host must.
 
 ## 4. Tool And Action Policy
 

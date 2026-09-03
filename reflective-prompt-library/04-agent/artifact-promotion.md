@@ -81,6 +81,10 @@ For every non-`no change` candidate, answer:
 - Human approval: required, already granted, or pending?
 - Retirement trigger: when should this artifact be amended or deleted?
 
+For every `workflow skill` or `prompt lens` candidate, also answer:
+
+- Compatibility bounds: which tool, framework, model, or repository versions the guidance assumes; for a workflow skill, the paired with/without check that shows it helps — version-mismatched guidance can reduce outcomes.
+
 For every `verifier/test` (Acquisition L3) candidate, also answer; a relevant gate that cannot be answered fails closed (Human Review, stop, or documented no-go):
 
 - Authority boundary: does the workflow touch external content, tool output, or entity-like fields? If yes, record the data-not-instruction / prompt-injection check the verifier or reviewer performs.

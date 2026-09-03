@@ -130,6 +130,7 @@ Never:
 - change expected outputs to match broken behavior
 - claim success without evidence
 - invent logs, benchmarks, or tool results
+- edit an acceptance, invariant, or security oracle so a run passes; if the oracle is wrong, stop and propose an oracle change for Human Review (developer-authored unit, regression, reproduction, or property tests may still be added; prompt text cannot seal an oracle — host write protection or CI ownership must)
 
 ---
 

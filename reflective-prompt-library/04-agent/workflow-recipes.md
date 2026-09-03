@@ -157,6 +157,8 @@ Method lens (non-authoritative; provenance: managed skill `parallel-lens-review-
 - Lens deliverable: read-only findings, ≥3 Socratic questions, a strongest objection, and a terminal verdict — `AGREE`, `AGREE WITH CHANGES`, or `DISAGREE` with exact wording changes.
 - Completeness gate: summary-only, truncated, schema-coerced, or schema-failed output is not a lens verdict. Recover all four deliverable fields before synthesis; if recovery fails, mark that lens unavailable and never infer its terminal verdict.
 - Role labels are review perspectives; never claim named provider models or personas were literally invoked unless logged provider calls exist.
+- Reviewers read a bounded packet, not the full transcript: review and monitor accuracy degrade as transcript length grows.
+- Lenses run on one model family share failure modes; count them as one epistemic channel unless deterministic or runtime evidence backs the verdict.
 - Synthesis record headings: Panel Consensus; Required Wording Changes; Shared Findings; Disagreements / Residual Risks; Evidence Actually Checked — classify the recommendation by use case (study / reproduce / adopt / deploy).
 - When synthesis proposes durable wording or structure changes, the record MUST carry a Candidate Adoption Ledger (ID / candidate / status / evidence / next action or trigger) with deterministic guards at named surfaces — the discipline adopted in `plans/governance-rules-rethink-review-2026-07-11.md` A1/A3.
 - Host harnesses add operational safeguards around this recipe (packet reachability for sub-reviewers, shared-worktree safety, provider fallbacks, follow-ups on truncated reviewer output). Those are host-provided wrappers — TeaPrompt does not operate or enforce them, and they are not part of this method.
