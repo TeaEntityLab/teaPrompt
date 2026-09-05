@@ -1,10 +1,12 @@
-"""Guard the agentflow survey record (record-only outcome).
+"""Guard the agentflow survey record and its post-panel adoptions.
 
-Adopted rows: none. Per GLOSSARY Adoption Guard Closure, record-only and
-rejected rows are guarded for ledger presence and disposition only. The guard
-also pins the negative space: no TeaPrompt skill surface may carry agentflow
-vocabulary, incident citations, a fixed worker-start ceiling, or an install
-pointer to the surveyed repository.
+Panel outcome: record-only (7/7). Post-panel, by user direction, three
+clean-room sentences were adopted (AF-2, AF-19, AF-20); those are pinned
+verbatim until a documented supersession. Record-only and rejected rows are
+guarded for ledger presence and disposition only (GLOSSARY Adoption Guard
+Closure). The guard also pins the negative space: no TeaPrompt skill surface
+may carry agentflow vocabulary, incident citations, a fixed worker-start
+ceiling, or an install pointer to the surveyed repository.
 """
 
 import re
@@ -23,10 +25,28 @@ INSTALL_GUIDE = PROMPT_LIBRARY_ROOT / "SKILL_INSTALLATION.md"
 PINNED_COMMIT = "b2935f5381d6469243440e080b43d0092a591663"
 PACKET_SHA256 = "2b95cecfc40b0ac7320082355167867659ed71927f8a8557852f5200164116c2"
 REPO_REVISION = "2d61cf836eedd9492ae7fcd2e6762bf094a36849"
+DELIBERATION = "## Post-Panel Skill Update Deliberation (2026-09-05, user-directed)"
 FOREIGN_TOKENS = re.compile(
     r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|"
     r"three total worker starts|at most three (worker )?starts"
 )
+ADOPTED = {
+    "reflective-implement": (
+        "- Do not widen scope beyond the acceptance criteria. A finding from a reviewer, "
+        "worker, or tool is input to the scope decision, never authorization to widen it: "
+        "record the finding and obtain an acceptance criterion before acting on it."
+    ),
+    "reflective-handoff-retro": (
+        "Before handing it off, check the packet against its source artifacts for every "
+        "identifier, count, command, and open unknown it must carry; a compaction that "
+        "drops one has lost state, whatever its length."
+    ),
+    "reflective-minimality": (
+        "- A rule, guard, or check whose origin you cannot yet explain: before concluding it "
+        "defends no invariant, look for the failure it was added for, and record what the "
+        "search found beside the cut."
+    ),
+}
 
 
 def _read(path: Path) -> str:
@@ -42,7 +62,7 @@ def _ledger_rows() -> dict[str, str]:
         candidate_id: next(
             line for line in ledger.splitlines() if line.startswith(f"| {candidate_id} |")
         )
-        for candidate_id in (f"AF-{n}" for n in range(1, 19))
+        for candidate_id in (f"AF-{n}" for n in range(1, 21))
     }
 
 
@@ -53,6 +73,7 @@ def test_record_shape_identity_and_unanimity():
         "## Direct Recommendation (as of 2026-09-05)",
         "## Panel Consensus",
         "## Required Wording Changes (final)",
+        DELIBERATION,
         "## Findings",
         "### Evidence-tier findings (Evidence Auditor corrections to the packet)",
         "## Comparisons",
@@ -73,7 +94,10 @@ def test_record_shape_identity_and_unanimity():
     assert "`AGREE` **7 of 7** (record-only)" in text
     assert "**Reason tally" in text and "verdict split and reason split coincide" in text
     assert "no provider persona or model routing is claimed" in text
-    assert "## Required Wording Changes (final)\n\n**None.**" in text
+    assert (
+        "## Required Wording Changes (final)\n\n**Panel:** none. "
+        "**Post-panel, by user direction (same day):** three additive, clean-room sentences"
+    ) in text
 
 
 def test_direct_recommendation_and_relation():
@@ -105,12 +129,15 @@ def test_evidence_corrections_are_preserved_not_upgraded():
 
 def test_ledger_dispositions():
     rows = _ledger_rows()
-    for record_only in ("AF-1", "AF-2", "AF-4", "AF-5", "AF-7", "AF-8", "AF-11"):
+    for record_only in ("AF-1", "AF-4", "AF-5", "AF-7", "AF-8", "AF-11"):
         assert "**Record-only" in rows[record_only], record_only
     for no_change in ("AF-3", "AF-12", "AF-13", "AF-18"):
         assert "**No change** 2026-09-05" in rows[no_change], no_change
     for rejected in ("AF-9", "AF-10", "AF-14"):
         assert "**Rejected** 2026-09-05" in rows[rejected], rejected
+    for adopted in ("AF-2", "AF-19", "AF-20"):
+        assert "**Adopted (user-directed) 2026-09-05**" in rows[adopted], adopted
+    assert "after panel **Record-only** (7/7)" in rows["AF-2"]
     assert "ATT-7" in rows["AF-9"]
     assert "Standing Non-Goal" in rows["AF-14"]
     assert "**Record-only; rejected as skill**" in rows["AF-6"]
@@ -118,6 +145,20 @@ def test_ledger_dispositions():
     assert "**Record-only (agentflow defect)**" in rows["AF-16"]
     assert "**Rejected as install path**" in rows["AF-17"]
     assert "Never add to TeaPrompt install docs" in rows["AF-17"]
+    assert "inline incident citations still rejected (AF-1)" in rows["AF-20"]
+
+
+def test_adopted_sentences_present_and_loophole_closed():
+    skills = library_skills_dir()
+    for skill, sentence in ADOPTED.items():
+        text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
+        assert sentence in text, f"{skill} lost the adopted sentence"
+    implement = (skills / "reflective-implement" / "SKILL.md").read_text(encoding="utf-8")
+    assert "without a reason" not in implement, "scope-widening loophole qualifier is back"
+    deliberation = _read(RECORD).split(DELIBERATION, 1)[1].split("## Findings", 1)[0]
+    assert "the qualifier is the loophole" in deliberation
+    assert "a prohibition without a check is a wish" in deliberation
+    assert "**Not done, on purpose:**" in deliberation
 
 
 def test_no_surveyed_vocabulary_on_skill_or_install_surfaces():
@@ -137,11 +178,16 @@ def test_indexes_point_to_the_record():
         "`AGREE` 7 of 7",
         "record-only",
         "18 of 73",
+        "adopted three clean-room sentences by user direction",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
 
     case_studies = _read(CASE_STUDIES)
     assert "| 2026-09-05 | agentflow (agfnow/agentflow @ `b2935f5`)" in case_studies
+    assert "then three clean-room sentences by user direction" in case_studies
     assert "[survey](agentflow-survey-2026-09-05.md)" in case_studies
-    assert "| agentflow survey recorded (record-only; findings and comparisons) | done |" in case_studies
+    assert (
+        "| agentflow survey recorded; three sentences adopted post-panel by user direction | done |"
+        in case_studies
+    )

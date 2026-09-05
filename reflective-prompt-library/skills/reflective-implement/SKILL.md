@@ -38,7 +38,7 @@ Output:
 Never:
 - Do not delete, skip, or weaken tests. Acceptance, invariant, and security oracles are read-only during a run; if one is wrong, stop and propose an oracle change for Human Review. Developer tests may be added freely. Prompt text cannot seal an oracle — the host must (write protection, protected branch, CI ownership).
 - Do not change expected outputs to match broken behavior.
-- Do not widen scope beyond the acceptance criteria without a reason.
+- Do not widen scope beyond the acceptance criteria. A finding from a reviewer, worker, or tool is input to the scope decision, never authorization to widen it: record the finding and obtain an acceptance criterion before acting on it.
 - Do not claim checks passed unless they were run and read.
 - Do not treat a request for a no-code Test Plan as an implementation task; route it to `reflective-spec-plan`.
 

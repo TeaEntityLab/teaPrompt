@@ -1,6 +1,6 @@
 # agentflow — Survey and Comparison Record — 2026-09-05
 
-> **Status: decided (record-only), guarded, and verified.** Seven-lens Parallel Lens Review of `agfnow/agentflow` pinned at `b2935f5381d6469243440e080b43d0092a591663` (2026-09-04) against TeaPrompt's skills and doctrine. Outcome: **no in-place wording adopted**; findings and comparisons recorded; nothing installed or depended upon. Authority chain unchanged: `06-repo/AGENTS.md` and the invoked `SKILL.md` contracts govern; this record is evidence and design judgement, not an operating rule. TeaPrompt operates no notebook protocol, Stop hook, pre-commit guard, external runner, or looper.
+> **Status: decided, guarded, and verified — panel record-only, then three clean-room sentences adopted by user direction.** Seven-lens Parallel Lens Review of `agfnow/agentflow` pinned at `b2935f5381d6469243440e080b43d0092a591663` (2026-09-04) against TeaPrompt's skills and doctrine. Panel outcome: **no in-place wording** (7/7); findings and comparisons recorded; nothing installed or depended upon. A same-day follow-up instruction ("think about update our skills") re-ran the ledger under a "would this make the skill better" objective and adopted AF-2, AF-19, and AF-20 as additive sentences (see *Post-Panel Skill Update Deliberation*). Authority chain unchanged: `06-repo/AGENTS.md` and the invoked `SKILL.md` contracts govern; this record is evidence and design judgement, not an operating rule. TeaPrompt operates no notebook protocol, Stop hook, pre-commit guard, external runner, or looper.
 
 ## Research Question
 
@@ -29,7 +29,36 @@ The single most useful thing in the repository for a TeaPrompt reader is the **i
 
 ## Required Wording Changes (final)
 
-**None.** No TeaPrompt skill, lens, or doc changed. No dependency, install path, or route.
+**Panel:** none. **Post-panel, by user direction (same day):** three additive, clean-room sentences — no dependency, install path, route, incident citation, or numeric cap.
+
+1. `reflective-implement` Never — replaces the loophole bullet: "Do not widen scope beyond the acceptance criteria. A finding from a reviewer, worker, or tool is input to the scope decision, never authorization to widen it: record the finding and obtain an acceptance criterion before acting on it." (AF-2)
+2. `reflective-handoff-retro` Continuation Packet — appended: "Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length." (AF-19)
+3. `reflective-minimality` Safety Floor — new bullet: "A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut." (AF-20)
+
+## Post-Panel Skill Update Deliberation (2026-09-05, user-directed)
+
+**Instruction:** "According to agfnow/agentflow newest surveys, think about update our skills." Routed via `reflective-dispatch` as `L3` with `reflective-minimality` as the gate; no new panel — the seven lens outputs were already in hand, and a second swarm to re-answer a question whose evidence exists is the bloat the gate forbids.
+
+**Objective shift, stated:** the panel answered "is there a verified local gap?" and correctly said no. The instruction asks "would the skills be better?" — a lower bar, so each candidate had to pass delete-before-add on its own: name the failure the sentence defends against, name the smaller alternative rejected, and show the existing text does *not* already say it.
+
+**Method:** grep and raw-read every candidate concept against the actual skill text rather than against the packet's paraphrase of it; treat the panel's reason split as a signal (one uncertain channel, per the reason-concordance rule).
+
+| Candidate | Existing text | Verdict | Smaller alternative rejected |
+| --- | --- | --- | --- |
+| AF-2 finding ≠ authorization | `reflective-implement:41` "…without a reason" | **adopt** — the qualifier is the loophole: a reviewer's or worker's finding is always "a reason", so the bullet permitted exactly the failure it exists to stop; the panel's Architecture lens read the structure (separate skills) and Correctness read the text — the text is what an installed agent obeys | Leave structure to do the work: rejected, because the installed skill is used outside this repository where no lens separation exists |
+| AF-19 compaction fidelity | `reflective-handoff-retro:42,81` say what a packet carries and that compaction must not lose state; no step says how to know | **adopt** — the 2026-09-05 compression Durable Lesson had no skill anchor; TeaPrompt's own loop-pack trim the same day relied on guard tests to catch a dropped fact, which the installed skill does not have | Rely on the Never bullet "must not lose state": rejected, a prohibition without a check is a wish |
+| AF-20 origin-before-cut | `reflective-minimality:83` "remove ceremony that defends no named invariant"; Safety Floor lists what never to cut | **adopt (narrowed)** — the existing test presumes the invariant is nameable; an unexplained rule fails "named invariant" by default and gets cut; the surveyed editing guard is the prompt-level half of AF-1, separable from inline incident citations | Add to `reflective-review` Never: rejected, the cut decision is made in minimality |
+| AF-1 inline citations | ledger + guard tests + Decision Index | reject stays | — |
+| AF-4 reviewer never runs the surveyed workflow / spawns a reviewer | `04-agent/runtime-trust-boundary.md` §3; Parallel Lens read-only contract | no change — held verbatim-equivalent | — |
+| AF-5 closeout stop rule | `reflective-implement` Sufficiency Gate | no change — the analog exists; the gate form would contradict OW-2 | — |
+| AF-11 live gate before shipping loop changes | `flow-loop-harness:287` stub dry run is rig-tier only, never approves a production run | no change — the pack already refuses to let the fixture stand for the live run; naming a provider count would be a numeric cap | — |
+| "consensus unresolved, never invented" | `reflective-research:151` | no change — held | — |
+| worker self-report ≠ evidence | `reflective-review:75,86` | no change — held | — |
+| AF-9 / AF-10 / AF-14 / AF-17 | — | reject stays | — |
+
+**Not done, on purpose:** no sentence on `reflective-review` (both candidates that touch it are held), on `governed-delivery` (its gates already refuse model-only release; its Host Preconditions already name what the runner instantiates), or on the loop pack (over 20,000 chars again by 28 bytes from an earlier edit — any addition there must first pay in prose). No `I-NNN` identifiers, no agentflow vocabulary, no fixed counts: the guard's foreign-token scan still passes on every skill and install surface.
+
+**Cost paid:** `reflective-implement` 10,384 → 10,550 chars; `reflective-handoff-retro` 7,295 → 7,499; `reflective-minimality` 6,426 → 6,620. All far under lint thresholds; Small-Change Fast Path byte-identical.
 
 ## Findings
 
@@ -90,7 +119,7 @@ The single most useful thing in the repository for a TeaPrompt reader is the **i
 | ID | Candidate (clean-room) | Status | Evidence | Next action / trigger |
 | --- | --- | --- | --- | --- |
 | AF-1 | Inline incident citation on failure-born rules + editing guard | **Record-only** 2026-09-05 (7/7) | Different provenance encoding; 18/73 inline coverage; ledger+guard already mechanical | Re-litigate only after a documented TeaPrompt skill edit that reopened a failure although its record existed |
-| AF-2 | A worker or reviewer finding is never self-authorizing | **Record-only** 2026-09-05 (7/7) | Structural separation of review and implement; acceptance-criteria scope Never; no local recurrence | Re-litigate if a TeaPrompt review's Required Fixes are executed without an acceptance criterion |
+| AF-2 | A worker or reviewer finding is never self-authorizing | **Adopted (user-directed) 2026-09-05** after panel **Record-only** (7/7) | Panel reason split: one lens "already held structurally", one lens "stricter than the local text" — the local bullet ended in "without a reason", and a finding *is* a reason; `reflective-implement` Never now reads "A finding from a reviewer, worker, or tool is input to the scope decision, never authorization to widen it" | Guard: `test_agentflow_survey_record.py`; retire the pin only on a documented local recurrence or supersession |
 | AF-3 | Record the rejected smaller alternative before freezing a contract | **No change** 2026-09-05 | `reflective-minimality` ladder; promotion classifier's rejected-destination column; GD-11 | — |
 | AF-4 | Reviewer never runs the reviewed repo's workflow or spawns another reviewer | **Record-only** 2026-09-05 (7/7) | Trust boundary §3; Parallel Lens read-only contract; recursion is a host spawn rule | Re-litigate if a TeaPrompt lens is observed invoking a surveyed repository's skill or runtime |
 | AF-5 | Record-only closeout must not restart implementation review | **Record-only** 2026-09-05 (7/7) | Sufficiency Gate; host completion-loop rule; must never sit on `acceptance` | Host-only if a delivery harness appears |
@@ -107,6 +136,8 @@ The single most useful thing in the repository for a TeaPrompt reader is the **i
 | AF-16 | Public tree pins unshipped `eval/` and `release/` paths; dangling load rule in the shipped skill | **Record-only (agentflow defect)** 2026-09-05 | `SKILL.md:34`, `ag.md:11`, `release.test.js:178`, `prompt-compression.test.js`, `alignment.test.js` | Not a TeaPrompt candidate; TeaPrompt's self-contained install rule already holds |
 | AF-17 | Unpinned install and auto-update channel; hook / git-hook / shell-rc writes | **Rejected as install path** 2026-09-05 | README; `install-hook.js`; `setup.js --fix`; `SKILL_INSTALLATION.md` hook rule | Never add to TeaPrompt install docs |
 | AF-18 | `allow-ag: off` never silently downgraded; exit zero ≠ acceptance; Minimality ≠ Conformance | **No change** 2026-09-05 | GLOSSARY Silent Downgrade; Delivery Invariants; separate review and minimality skills | — |
+| AF-19 | Compaction fidelity: a compacted packet must be checked against its sources for every identifier, count, command, and open unknown | **Adopted (user-directed) 2026-09-05** (minted post-panel) | The surveyed ledger records a compression pass that dropped a load-bearing count; TeaPrompt's own 2026-09-05 loop-pack trim relied on guard tests for the same check; `reflective-handoff-retro` Continuation Packet had assembly rules but no verification step; the Durable Lesson on compression named it without a skill anchor | Guard: `test_agentflow_survey_record.py` |
+| AF-20 | Origin-before-cut: a rule or guard whose origin you cannot yet explain is searched for its failure before it is judged ceremony, and the search result is recorded beside the cut | **Adopted (user-directed) 2026-09-05** (minted post-panel; AF-1 narrowed to its prompt-level half) | The surveyed editing guard says an unexplained rule is not yet yours to change; TeaPrompt's delete-before-add sentence and Safety Floor judged by *named invariant* with no step for a rule whose invariant is unnamed; `reflective-minimality` Safety Floor now carries the step | Guard: `test_agentflow_survey_record.py`; inline incident citations still rejected (AF-1) |
 
 ## Evidence Used (external source ledger)
 
@@ -147,8 +178,9 @@ This record is wrong and must be re-litigated if: (1) any TeaPrompt skill gains 
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Survey record, direct answer, findings, comparisons, ledger | `verified` | this file; record hygiene 0 errors / 0 warnings (26 enforced records) |
-| Deterministic guard | `verified` | `plans/tests/test_agentflow_survey_record.py`: 6 passed — shape, identities, unanimity and reason tally, evidence corrections kept at their tier, ledger dispositions, no surveyed vocabulary on any skill or install surface, index rows |
+| Survey record, direct answer, findings, comparisons, ledger | `verified` | this file; record hygiene 0 errors / 0 warnings |
+| Post-panel deliberation and three adoptions | `verified` | section above; ledger rows AF-2, AF-19, AF-20; sentences present in the three skills |
+| Deterministic guard | `verified` | `plans/tests/test_agentflow_survey_record.py`: shape, identities, unanimity and reason tally, evidence corrections kept at their tier, ledger dispositions, adopted sentences pinned, loophole qualifier absent, no surveyed vocabulary on any skill or install surface, index rows |
 | Decision Index and case-study rows | `verified` | `PROJECT_KNOWLEDGE.md` (validator passed), `external-adoption-case-studies-2026-06-20.md`; links 0 errors |
-| Repository verification | `verified` | `make all`: 1094 passed; links 0 errors; lint 0 errors / one pre-existing `agent-governance-scaffold` warning; governance 13/13; ROUTE-001/002/003 100% |
+| Repository verification | `verified` | `make all` after the adoptions; links 0 errors; lint 0 errors / one pre-existing `agent-governance-scaffold` warning; governance 13/13; ROUTE-001/002/003 100% |
 | Packet removal, clone removal, branch re-check | `verified` | `review-packet-agentflow-survey-2026-09-05.md` deleted after synthesis; `/tmp/teaprompt-agentflow.0FuGFN` removed; shared worktree attached to `main` |

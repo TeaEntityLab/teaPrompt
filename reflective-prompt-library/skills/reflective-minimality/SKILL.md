@@ -93,6 +93,7 @@ Minimal does not mean careless. Never simplify away:
 - Hardware, time, locale, or platform calibration that the real environment needs.
 - Explicit user requirements.
 - One minimal runnable check for non-trivial logic.
+- A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut.
 
 ## Debt Marker
 

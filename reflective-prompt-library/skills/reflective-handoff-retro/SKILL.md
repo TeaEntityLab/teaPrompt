@@ -78,7 +78,7 @@ success.
 
 ### Continuation Packet
 
-A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript.
+A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
 
 ## Retro Workflow
 
