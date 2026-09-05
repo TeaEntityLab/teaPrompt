@@ -35,9 +35,9 @@ Methods:
 - Workflow architecture, state, transition, control-ownership, and product-acceptance design
 
 Output:
-- When file tools are available, write `spec.md`, `usage.md`, and `task-plan.md`; otherwise use the same headings inline.
-- In Test Plan mode, write `test-plan.md` instead of production code.
-- In Workflow Design mode, write `workflow-spec.md` instead of runtime code.
+- When file tools are available, write the artifacts the active mode requires — by default `spec.md`, `usage.md`, and `task-plan.md`; for a tickets-only request, `task-plan.md` alone; otherwise use the same headings inline.
+- In Test Plan mode, write `test-plan.md` instead of production code (do not rewrite the default artifacts unless they are missing).
+- In Workflow Design mode, write `workflow-spec.md` instead of runtime code (same rule).
 - For tickets, use the `TASK-001` template with dependencies, tests, risk, and Human Review flags.
 
 Never:
@@ -135,7 +135,7 @@ Use this per-test template:
 ```markdown
 ### TEST-001: <name>
 - Requirement:
-- Type: acceptance / edge / negative / regression / adversarial
+- Type: acceptance / edge / negative / regression / adversarial / hidden-evaluation / anti-cheating
 - Oracle class: authoritative (sealed during runs; changes need Human Review) / developer
 - Oracle manifest: list every acceptance, invariant, and security oracle with its class (authoritative or developer), owner, host sealing precondition, and change protocol.
 - Given:
@@ -153,11 +153,11 @@ Activate this mode when the requested deliverable is a workflow specification, o
 
 Do not start by drawing a graph. First choose the lowest formalization level that can satisfy the required guarantees:
 
-1. prompt only,
-2. SOP or checklist artifact,
-3. skill plus artifact,
-4. skill plus deterministic verifier or gate,
-5. executable runner with persisted state and enforced transitions.
+- Formalization L0: prompt only,
+- Formalization L1: SOP or checklist artifact,
+- Formalization L2: skill plus artifact,
+- Formalization L3: skill plus deterministic verifier or gate,
+- Formalization L4: executable runner with persisted state and enforced transitions.
 
 If the required guarantees depend on persistence, replay, cancellation, idempotency, or enforced authority, state explicitly that a prompt or specification alone cannot provide them.
 
@@ -198,7 +198,7 @@ Use this stage table as the central design artifact:
 |---|---|---|---|---|---|---|---|
 | ... | LLM / data / action / human | ... | ... | ... | ... | ... | ... |
 
-The completed `workflow-spec.md` should include:
+The completed `workflow-spec.md` should include, as the selected formalization level and the risk require (omit contracts the risk does not call for):
 
 - goal, trigger, inputs, non-goals, and selected formalization level,
 - fixed-workflow versus dynamic-agent decision,

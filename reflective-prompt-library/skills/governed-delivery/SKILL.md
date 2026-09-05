@@ -76,7 +76,7 @@ Escalation:
 | `acceptance` | Named accepter closes against oracles and product evidence | named accepter | mixed; not self-report | no |
 | `retro` | Gate retro recorded; policy change kept off activation | retro owner | artifact | yes if the retro record parses |
 
-Auto-release is never allowed for `intent` and `acceptance`. A mid-task spec change bumps the spec version and marks every dependent plan item and ledger entry `stale` before work continues.
+Auto-release is never allowed for `intent` and `acceptance`. A mid-task spec change bumps the spec version and marks every dependent plan item and ledger entry `stale`, and re-plans the affected slice before work continues.
 
 ## Autonomy Envelope
 

@@ -2,7 +2,7 @@
 name: flow-control-generator
 description: Use when a task needs an executable flow-control script that coordinates agent steps — sequential pipelines, parallel fan-out/fan-in, conditional routing, or orchestrator-worker delegation — over a host agent CLI or SDK. It classifies the task shape, picks the smallest topology, and writes a deterministic script with state files, verification gates, and budgets. For iterate-until-done loops, use flow-loop-harness.
 license: MIT
-compatibility: Requires a POSIX host with bash 3.2+ (python3 for the orchestrator template) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.
+compatibility: Requires a POSIX host with bash 3.2+ (python3 for the Python templates) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.
 metadata:
   risk_level: medium
   human_review_required: false
@@ -16,33 +16,33 @@ metadata:
 
 ## Purpose
 
-Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow; the model owns step content. TeaPrompt stays methodology-side and emits host-operationalized artifacts only, not a runtime (`plans/external-adoption-case-studies-2026-06-20.md`). Surveyed platform vocabulary is advisory-tier provenance (`plans/agent-flow-control-research-2026-07-11.md`), never an adoption mandate.
+Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow; the model owns step content. TeaPrompt stays methodology-side: host-operationalized artifacts, not a runtime (`plans/external-adoption-case-studies-2026-06-20.md`); surveyed platform vocabulary is advisory-tier provenance (`plans/agent-flow-control-research-2026-07-11.md`), not an adoption mandate.
 
 ## Module Contract
 
 Trigger:
 
 - The user asks to chain, pipeline, fan out, route, orchestrate, or script multiple agent-CLI steps.
-- The task decomposes into ordered or independent steps whose sequencing should not be left to model improvisation, or a prompt-only recipe keeps losing ordering, gates, or intermediate outputs.
+- The task decomposes into ordered or independent steps whose sequencing must not be left to model improvisation, or a prompt-only recipe keeps losing ordering, gates, or intermediate outputs.
 
 Methods:
 
 - Task-shape classification: map the task to the smallest sufficient topology (see Topology Selection).
-- Script contract enforcement: every generated script carries config header, state directory, runner abstraction, gates, budget, permission boundary, and logs (see Script Contract).
+- Script contract: every generated script carries the eight parts listed under Script Contract, in order.
 - Template instantiation: start from the matching template below; delete unused parts before adding anything.
 - Stub dry run: verify the script's control flow with a deterministic stub agent before any real run.
 
 Output:
 
-- One runnable script (bash for CLI glue; Python stdlib for bounded concurrency or richer state), plus per-step prompt files, written to the user's chosen location.
-- A run note: how to dry-run, how to run, where state and logs land, what the budget caps are, and — when any step has side effects — the human approval required before an unattended run.
+- One runnable script (bash for CLI glue; Python stdlib for bounded concurrency or richer state) plus per-step prompt files, written where the user chooses.
+- A run note: how to dry-run and run, where state and logs land, the budget caps, and — when any step has side effects — the human approval required before an unattended run.
 - Named gates: which deterministic check releases each stage.
 
 Never:
 
 - Never generate a fix-until-green loop here; use `flow-loop-harness`.
 - Never let the model decide known control flow at runtime; encode it in the script.
-- Never script epistemic perspective expansion (STORM-style discovery) as parallel execution; that belongs inside `reflective-research`.
+- Never script epistemic perspective expansion (STORM-style discovery) as parallel execution; it belongs in `reflective-research`.
 - Never treat agent self-report as a gate; gates are deterministic exit codes.
 - Never embed secrets, auto-approve destructive permissions, widen tool allowlists, or let a stage edit its own gates/checks/plan.
 - Never claim persistence, crash-safety, or idempotency; `state/` is only a host-honored resume convention.
@@ -52,13 +52,13 @@ Escalation:
 
 - Iterative refinement or fix-until-green loops → `flow-loop-harness`.
 - Unclear goal or acceptance criteria → `reflective-brief` first.
-- Long-running, resumable, multi-session workflow design → `reflective-spec-plan` (source-repo companion: `04-agent/workflow-engine.md`).
-- Steps touching credentials, permissions, privacy-sensitive data, billing, production, data deletion, destructive operations, or third parties → `reflective-risk` before the script is run; insert an explicit human-approval pause step.
+- Long-running, resumable, multi-session workflow design → `reflective-spec-plan` (companion: `04-agent/workflow-engine.md`).
+- Steps touching credentials, permissions, privacy-sensitive data, billing, production, data deletion, destructive operations, or third parties → `reflective-risk` before the script runs; insert an explicit human-approval pause step.
 - Whether the flow should exist at all (one agent call might do) → `reflective-minimality`.
 
 ## Topology Selection
 
-Pick the smallest topology that fits the task shape. Composition is allowed, but justify each layer. Multi-wave breadth belongs inside `flow-loop-harness`; compose it, do not build a bespoke runner.
+Pick the smallest topology that fits. Composition is allowed; justify each layer. Multi-wave breadth belongs inside `flow-loop-harness`; compose it, do not build a bespoke runner.
 
 | Task shape | Topology |
 | --- | --- |
@@ -68,19 +68,19 @@ Pick the smallest topology that fits the task shape. Composition is allowed, but
 | Subtasks unknown until a planner sees the task | Orchestrator-workers |
 | Quality must converge over rounds | Loop → `flow-loop-harness` |
 
-If no row fits, the task is probably a single agent call. Stop and say so.
+If no row fits, the task is probably a single agent call; say so.
 
 ## Script Contract
 
 Every generated script must contain, in order:
 
-1. Config header: `AGENT_CMD` (host CLI, overridable), workdir, state dir, budget constants, and a one-line generated-by comment (skill, topology, date, dry-run status) so the script's provenance survives copy-paste. Default `AGENT_CMD` to the host in use, e.g. `claude -p` (Claude Code headless), `codex exec`, or an SDK entry point.
-2. State directory: one file per step output (`state/NN-name.md`), never shell variables for step payloads — files survive interruption and are inspectable.
+1. Config header: `AGENT_CMD` (host CLI, overridable; default it to the host in use, e.g. `claude -p`, `codex exec`, or an SDK entry point), workdir, state dir, budget constants, and a one-line generated-by comment (skill, topology, date, dry-run status) so provenance survives copy-paste.
+2. State directory: one file per step output (`state/NN-name.md`), never shell variables for step payloads — files survive interruption and can be inspected.
 3. Runner abstraction: a single `run_agent <prompt-file> <out-file>` function; all agent invocations go through it (swap host or stub in one place).
 4. Gates: after each stage, a deterministic check (exit code) decides continue/abort. A missing gate must be an explicit `# gate: none (accepted)` comment. For fan-in, the gate runs over the merged result as well as the branch tally: branches that each pass can conflict when combined.
-5. Budget: hard caps — max parallel jobs, total step count, and a per-step wall-clock timeout where available (Python `subprocess` `timeout=`; for bash, a `timeout`-style wrapper on `AGENT_CMD` — stock macOS ships no `timeout(1)`, so treat it as host-provided). When a stage is itself a loop or retries, the composition's worst case is the product of the caps: declare one total budget (steps or wall-clock) that every level decrements, and have the outer script pass its remaining budget to the inner one.
-6. Permission boundary: the host's least-privilege flags for the steps' tool access (e.g. Claude Code `--allowedTools`), stated in the config header, never improvised mid-run.
-7. Logs: append one line per step to `state/flow.log` (step, start/end, gate result) for observability.
+5. Budget: hard caps — max parallel jobs, total step count, and a per-step wall-clock timeout where available (Python `subprocess` `timeout=`; in bash a `timeout`-style wrapper on `AGENT_CMD`, host-provided since stock macOS ships no `timeout(1)`). When a stage is itself a loop or retries, the composition's worst case is the product of the caps: declare one total budget (steps or wall-clock) that every level decrements, and have the outer script pass its remaining budget to the inner one.
+6. Permission boundary: the host's least-privilege flags for the steps' tool access (e.g. Claude Code `--allowedTools`), stated in the config header, never improvised.
+7. Logs: append one line per step to `state/flow.log` (step, start/end, gate result).
 8. Exit discipline: `set -euo pipefail` (bash) or raised exceptions (Python); non-zero exit on any failed gate; partial state left on disk for resume.
 
 ## Template: Sequential Pipeline (bash)
@@ -110,6 +110,7 @@ run_agent "$STATE/02-prompt.md" "$STATE/02-impl.md"
 # Stage 3: review
 { cat prompts/03-review.md; echo; cat "$STATE/02-impl.md"; } > "$STATE/03-prompt.md"
 run_agent "$STATE/03-prompt.md" "$STATE/03-review.md"
+# gate: none (accepted)
 log "pipeline complete"
 ```
 
@@ -123,14 +124,15 @@ STATE="${STATE:-./state}"; mkdir -p "$STATE"
 MAX_JOBS="${MAX_JOBS:-4}"                            # budget: concurrency cap
 MIN_OK="${MIN_OK:-}"    # quorum: empty = strict (any branch failure aborts at the gate)
 
-run_agent() { $AGENT_CMD "$(cat "$1")" > "$2"; }
+run_agent() { $AGENT_CMD "$(cat "$1")" > "$2" && [ -s "$2" ] || { rm -f "$2"; return 1; }; }  # failed/empty branch leaves nothing to count or synthesize
 FAILED=0
 wave_wait() { local pid; for pid in "$@"; do wait "$pid" || FAILED=$((FAILED+1)); done; }
 
+rm -f "$STATE"/fan-*.md                                # stale outputs from a prior run must not satisfy the gate
 pids=()
 i=0
 for prompt in prompts/fan/*.md; do
-  [ -e "$prompt" ] || { echo "no fan prompts found" >&2; exit 2; }  # unmatched glob guard (bash 3.2 has no nullglob default)
+  [ -e "$prompt" ] || { echo "no fan prompts found" >&2; exit 2; }  # unmatched-glob guard (no nullglob in bash 3.2)
   out="$STATE/fan-$(basename "$prompt" .md).md"
   run_agent "$prompt" "$out" &
   pids+=($!)
@@ -142,8 +144,8 @@ for prompt in prompts/fan/*.md; do
 done
 if [ "${#pids[@]}" -gt 0 ]; then wave_wait "${pids[@]}"; fi  # fan-in barrier (tail)
 
-# Gate: strict by default; set MIN_OK=N for an explicit partial-failure quorum
-# (ReMoM-style minimum successful branches). Silent skip-on-error is never the default.
+# Gate: strict by default; MIN_OK=N declares an explicit partial-failure quorum
+# (ReMoM-style). Silent skip-on-error is never the default.
 ok=0
 for f in "$STATE"/fan-*.md; do
   if [ -s "$f" ]; then ok=$((ok+1)); fi
@@ -152,7 +154,7 @@ if [ -n "$MIN_OK" ]; then
   [ "$ok" -ge "$MIN_OK" ] || { echo "quorum not met: $ok < $MIN_OK" >&2; exit 2; }
 else
   if [ "$FAILED" -ne 0 ] || [ "$ok" -eq 0 ]; then
-    echo "branch failures: $FAILED, non-empty outputs: $ok" >&2; exit 2
+    echo "branch failures: $FAILED, successful outputs: $ok" >&2; exit 2
   fi
 fi
 { cat prompts/synthesize.md; echo; cat "$STATE"/fan-*.md; } > "$STATE/synth-prompt.md"
@@ -169,30 +171,31 @@ AGENT_CMD="${AGENT_CMD:-claude -p}"
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 run_agent() { $AGENT_CMD "$(cat "$1")" > "$2"; }
 
-# Classifier step: constrained output, one label only.
+# Classifier: constrained output, one label only.
 { cat prompts/classify.md; echo; cat "$1"; } > "$STATE/classify-prompt.md"
 run_agent "$STATE/classify-prompt.md" "$STATE/label.txt"
-# Normalize: first line, lowercased, truncated at the first non-label character.
+# Normalize: first line, lowercased, cut at the first non-label char.
 LABEL="$(head -n1 "$STATE/label.txt" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z-].*//')"
-# Route trace: the routing decision must be observable, never silent.
+# Route trace: routing must be observable, never silent.
 printf 'route-trace: label=%s input=%s\n' "$LABEL" "$1" >> "$STATE/flow.log"
 
 case "$LABEL" in                                     # routing is code, not model improvisation
   bug)      route=prompts/route-bug.md ;;
   feature)  route=prompts/route-feature.md ;;
   question) route=prompts/route-question.md ;;
-  # Unknown labels: this template fails closed (exit 2). A default-up route —
-  # sending unknowns to the MOST rigorous handler — is the valid alternative for
-  # low-risk flows; either way the policy is explicit code, never a silent skip.
+  # Unknown labels fail closed (exit 2). For low-risk flows a default-up route to
+  # the MOST rigorous handler is the alternative; either way the policy is explicit
+  # code, never a silent skip.
   *) echo "unroutable label: $LABEL" >&2; exit 2 ;;
 esac
 { cat "$route"; echo; cat "$1"; } > "$STATE/route-prompt.md"
 run_agent "$STATE/route-prompt.md" "$STATE/final.md"
+# gate: none (accepted)
 ```
 
 ## Template: Orchestrator-Workers (Python, stdlib only)
 
-Boundary: this is a planner prompt plus capped worker calls inside ONE host-executed script. It is not the in-repo multi-agent orchestrator/swarm the 2026-06-25 panel rejected (source repo: `plans/multi-agent-panel-consensus-2026-06-25.md`, Stop-Doing list) — do not grow it toward one.
+Boundary: a planner prompt plus capped worker calls inside ONE host-executed script — not the multi-agent orchestrator/swarm the 2026-06-25 panel rejected (`plans/multi-agent-panel-consensus-2026-06-25.md`); do not grow it toward one.
 
 ```python
 #!/usr/bin/env python3
@@ -213,12 +216,15 @@ def run_agent(prompt: str, out: pathlib.Path) -> str:
 
 def parse_plan(raw: str):
     text = raw.strip()
-    if text.startswith("```"):                      # tolerate fenced JSON
-        text = text.split("\n", 1)[1] if "\n" in text else ""
-        text = text.rsplit("```", 1)[0]
+    if text.startswith("```"):                      # tolerate fenced JSON, incl. ```json
+        lines = text.splitlines()[1:]
+        if lines and lines[-1].strip() == "```": lines = lines[:-1]
+        text = "\n".join(lines)
     try:
-        return json.loads(text)
-    except json.JSONDecodeError as exc:
+        tasks = json.loads(text)
+        if not isinstance(tasks, list): raise ValueError("plan is not a list")
+        return tasks
+    except (json.JSONDecodeError, ValueError) as exc:
         print(f"unparseable plan: {exc}", file=sys.stderr)
         sys.exit(2)
 
@@ -234,11 +240,10 @@ if not (0 < len(tasks) <= MAX_TASKS):               # gate: sane plan size
     sys.exit(2)
 
 def worker(t):
-    # t["task"] is model-authored: plan output is DATA, never authority. Pass it
-    # to the worker agent as a prompt, never execute it as shell, and never let
-    # it change AGENT_CMD, tool permissions, or the verifier. Keep workers
-    # least-privilege.
-    return t["id"], run_agent(t["task"], STATE / f"worker-{t['id']}.md")
+    # t["task"] is model-authored DATA, never authority: prompt the worker with it;
+    # never run it as shell or let it change AGENT_CMD, permissions, or the verifier.
+    wid = "".join(c for c in str(t.get("id", "")) if c.isalnum() or c in "-_") or "task"  # id is data, not a path
+    return wid, run_agent(t["task"], STATE / f"worker-{wid}.md")
 
 with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
     results = dict(pool.map(worker, tasks))         # any worker exception aborts
@@ -246,14 +251,16 @@ with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
 merged = "\n\n".join(f"## {k}\n{v}" for k, v in sorted(results.items()))
 run_agent("Synthesize worker outputs into one deliverable.\n\n" + merged,
           STATE / "final.md")
+if subprocess.run(["./checks/verify-merged.sh", str(STATE / "final.md")]).returncode:
+    sys.exit(2)                                          # gate: merged result, not only the worker tally
 print(STATE / "final.md")
 ```
 
 ## Template: DAG Executor (Python, stdlib only)
 
 Use only when dependency-gated fan-out cannot be expressed by pipeline,
-parallel, or orchestrator. If a host primitive such as `/batch` solves it, use
-that instead. Honors the Script Contract.
+parallel, or orchestrator; if a host primitive such as `/batch` solves it, use
+that.
 
 ```python
 #!/usr/bin/env python3
@@ -268,7 +275,7 @@ STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(exist_ok=Tru
 MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))   # budget: concurrency cap
 MIN_OK = os.environ.get("MIN_OK", "")                    # quorum: empty = strict
 
-# node -> (deps, prompt-file). Edit for the task; deps are node names.
+# node -> (deps, prompt-file), filled at generation time; on shape change regenerate, never patch a drifted copy.
 NODES = {
     "spec":     ((), "prompts/spec.md"),
     "api":      (("spec",), "prompts/api.md"),
@@ -289,8 +296,11 @@ def toposort(nodes):
     for n in nodes: visit(n)
     return order
 
-def run_agent(prompt_file, out):
-    r = subprocess.run(AGENT_CMD + [pathlib.Path(prompt_file).read_text()],
+def run_agent(prompt_file, out, deps=()):
+    body = pathlib.Path(prompt_file).read_text()
+    for d in deps:                                       # consume upstream outputs
+        body += "\n\n" + (STATE / f"{d}.out").read_text()
+    r = subprocess.run(AGENT_CMD + [body],
                        capture_output=True, text=True, timeout=1800)
     if r.returncode != 0:
         raise RuntimeError(f"agent failed: {r.stderr[:500]}")
@@ -309,7 +319,7 @@ with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
     while remaining or running:
         for n in [n for n in remaining if ready(n) and len(running) < MAX_WORKERS]:
             remaining.remove(n)
-            running[pool.submit(run_agent, NODES[n][1], STATE / f"{n}.out")] = n
+            running[pool.submit(run_agent, NODES[n][1], STATE / f"{n}.out", NODES[n][0])] = n
         if not running:                                  # nothing runnable => blocked rest
             for n in remaining: status[n] = "blocked"
             break
@@ -327,37 +337,39 @@ ledger.close()
 ok = sum(1 for v in status.values() if v == "done")
 bad = [n for n, v in status.items() if v != "done"]
 if MIN_OK:
-    sys.exit(0 if ok >= int(MIN_OK) else 2)             # explicit quorum
-sys.exit(0 if not bad else 2)                           # strict default
+    if ok < int(MIN_OK): sys.exit(2)                     # explicit quorum
+elif bad: sys.exit(2)                                    # strict default
+final = STATE / f"{order[-1]}.out"                       # gate: merged result, not only the node tally
+sys.exit(2 if subprocess.run(["./checks/verify-merged.sh", str(final)]).returncode else 0)
 ```
 
-Boundary: one host-executed script, not a TeaPrompt runtime. Rejected extras
-stay rejected: no retry-with-backoff, memory backend, or per-node provenance
-headers (source repo: `plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
+One host-executed script, not a runtime; rejected extras stay rejected: no
+retry-with-backoff, memory backend, or per-node provenance headers
+(`plans/flow-coverage-panel-record-2026-07-11.md` §Rejected).
 
 ## Human Review Boundary
 
-Before the first unattended run of any generated script with side effects, a human must approve gates, caps, permission flags, blast radius, and every auth/permission/destructive/billing/production/privacy/migration/API/third-party effect step. Record the approval in the run note. Attended runs may review only gates and caps, but side-effectful steps still need a per-action pause.
+Before the first unattended run of any generated script with side effects, a human must approve gates, caps, permission flags, blast radius, and every auth/permission/destructive/billing/production/privacy/migration/API/third-party step. Record the approval in the run note. Attended runs may review only gates and caps; side-effectful steps still need a per-action pause.
 
 ## Verification
 
 Before handing a generated script to the user:
 
-1. Stub dry run: `AGENT_CMD='cat'` (bash templates) or a stub echoing canned outputs (router/orchestrator need shaped outputs, e.g. a stub script that prints a fixed label or JSON plan). Control flow, gates, and state files must behave with zero model calls. Stub success is rig-tier evidence only — it approves the control flow, never a production or side-effectful run.
+1. Stub dry run: `AGENT_CMD='cat'`, or a stub echoing shaped outputs (router: fixed label; orchestrator: JSON plan); control flow, gates, and state files must behave with zero model calls. Stub success is rig-tier evidence for control flow, never for a production or side-effectful run.
 2. Syntax check: `bash -n script.sh` or `python3 -m py_compile script.py`.
 3. Confirm every stage has a gate or an explicit `# gate: none (accepted)`.
-4. Report the dry-run evidence in the completion note; an unexercised script is not done.
+4. Report the dry-run evidence in the run note; an unexercised script is not done.
 
-Promoting a generated flow into a durable, recurring artifact is an Acquisition-ladder step: apply the fail-closed L3 security gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; source lens: `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any script to a team standard.
+Promoting a generated flow into a durable, recurring artifact is an Acquisition-ladder step: apply the fail-closed Acquisition L3 security gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before any script becomes a team standard.
 
 ## Demotion Triggers
 
 - Generated scripts are disposable: when the host CLI, task shape, or gates change, regenerate from the template rather than patching a drifted copy.
-- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
+- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill.
 
 ## Examples
 
-Companion examples live in the installed `<skills-root>/examples/flow-control-generator.examples.md` tree when examples are co-installed. They show expected script shapes and rig-tier checks; they are not production or unattended-run proof.
+Companion examples live at `<skills-root>/examples/flow-control-generator.examples.md` when co-installed. They show script shapes and rig-tier checks, not production or unattended-run proof.
 
 ## Prompt Sources
 

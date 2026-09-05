@@ -33,7 +33,7 @@ Methods:
 Output:
 - For handoff, output the handoff template with current state, decisions, artifacts, trust boundaries, risks, blockers, tests, and next action.
 - For retro, output the retro template with process failures, reusable rules, and improvement candidates.
-- When durable project knowledge may have formed, append the Project-Knowledge Promotion Candidates contract below.
+- When durable project knowledge may have formed and the repository has a project-knowledge layer (or the user asks to establish one), append the Project-Knowledge Promotion Candidates contract below.
 
 Never:
 - Do not dump raw context when a compact continuation brief is enough.
@@ -49,7 +49,7 @@ Escalation:
 
 Use when switching tools, agents, models, sessions, or context windows.
 
-When the session kept a State Ledger (`reflective-implement`), a research ledger (`reflective-research`), or a loop ledger (`flow-loop-harness` state files), attach or summarize it under `Files / Artifacts` instead of re-deriving state from the transcript.
+When the session kept a State Ledger (`reflective-implement`), a research ledger (`reflective-research`), or a loop ledger (`flow-loop-harness` state files), attach it under `Files / Artifacts` — or summarize it only after the Continuation Packet check below confirms every identifier, count, command, and open unknown survived — instead of re-deriving state from the transcript.
 
 If an external mutation's outcome is still unknown, the handoff must preserve
 the operation ID, exact parameter/resource/version binding, dispatch and receipt
@@ -78,7 +78,7 @@ success.
 
 ### Continuation Packet
 
-A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
+A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. It also lists the relevant files and the commands and tests run, so a continuation can rebuild the task packet (`reflective-implement`, `governed-delivery`). Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
 
 ## Retro Workflow
 
@@ -128,10 +128,10 @@ promote it.
 ### Candidate: <short name>
 - Claim / Procedure:
 - Evidence of recurrence: <at least two independent occurrences, or one explicit project decision>
-- Destination: governing principle | current direction | durable lesson | decision index | project-local skill | skill + verifier/test | runtime/orchestration | no change
+- Destination: governing principle | current direction | durable lesson | decision index | prompt lens | project-local skill | skill + verifier/test | runtime/orchestration | no change
 - Authority class: project-design judgement | agent operating rule
 - Proposed action: add | amend | supersede | retire | keep in draft
-- Human approval: required | explicitly granted in this task | pending
+- Human approval: required | already granted | pending
 - Source artifacts: <plans, tests, commits, incidents, or decisions>
 - Review / retirement trigger:
 ```
@@ -147,7 +147,7 @@ Promotion rules:
   Promotion requires human confirmation because executable knowledge has a
   larger failure surface than prose.
 - The nine core workflow skills are frozen — frozen means gated, not never: a new core skill needs recurrence evidence and explicit human approval; otherwise fold the material into an existing skill, lens, verifier/test, or no-change record.
-- Prefer `skill + verifier/test` when the task recurs and objective deterministic pass/fail exists; use runtime/orchestration only for persistence, replay, cancellation, idempotency, role isolation, enforced transitions, side-effect gating, or memory/identity ACLs that prompt/skill/verifier cannot guarantee.
+- Prefer `skill + verifier/test` when the task recurs and objective deterministic pass/fail exists; use runtime/orchestration only for persistence, replay, cancellation, idempotency, role isolation, enforced transitions, side-effect gating, audit trail, or memory/identity ACLs that prompt/skill/verifier cannot guarantee.
 - A one-off event remains in its plan, retro, or draft. Do not manufacture a
   permanent lesson merely to fill the knowledge file.
 - Superseded decisions remain traceable through the decision index; record the

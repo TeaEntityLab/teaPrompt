@@ -73,7 +73,7 @@ For reviews with more than a few load-bearing claims, keep a ledger and derive `
 
 - `asserted` means only the author's word supports it — treat as unverified, not as low-risk.
 - Mark `verified` only after examining the evidence yourself, not after reading a description of it.
-- `unverifiable` claims that are load-bearing belong in `Required Fixes` or `Residual Risks`, never silently accepted.
+- `unverifiable` claims that are load-bearing belong in `Required Fixes` and block `Approve`; unknowns that do not bear on the verdict belong in `Residual Risks`. Neither is silently accepted.
 
 ### Four Evidence Dimensions
 
@@ -156,7 +156,7 @@ Use one:
 - Reject
 - Human review required
 
-A decision binds to the exact revision reviewed: a later change to the artifact's source, tests, or configuration marks it `stale` and needs current review, while a record-only correction that changes no behavior or evidence does not.
+A decision binds to the exact revision reviewed: a later change to the artifact's source, tests, or configuration marks it `stale` and needs current review, while a record-only correction that changes no behavior or evidence does not. A record-only correction touches the review write-up, comments, or docs only; any other change to source, tests, or configuration semantics is substantive and stales the decision.
 
 ## Output Shape
 

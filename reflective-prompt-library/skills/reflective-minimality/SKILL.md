@@ -64,7 +64,7 @@ Escalation:
 - If simplification touches high-risk behavior, route to `reflective-risk`.
 - If implementation is required after the gate, route to `reflective-implement`.
 - If the question is whether to create or promote a skill, prompt lens, verifier, or runtime surface, use the artifact-promotion lens (`04-agent/artifact-promotion.md` in the TeaPrompt source repository) instead of treating minimality as promotion approval; without that lens, fail closed — no promotion without recurrence evidence and explicit human approval.
-- If reviewing an existing diff, combine with `reflective-review` for correctness and test adequacy.
+- If the ask includes correctness or test adequacy, combine with `reflective-review`; a complexity-only review stays on this skill's cut format and does not imply merge approval.
 
 ## Minimality Ladder
 
@@ -93,7 +93,7 @@ Minimal does not mean careless. Never simplify away:
 - Hardware, time, locale, or platform calibration that the real environment needs.
 - Explicit user requirements.
 - One minimal runnable check for non-trivial logic.
-- A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut.
+- A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut. If the search finds the originating failure, keep the rule; if it finds none, record that negative result and only then apply the ceremony test.
 - A hard stop, Human Review point, required evidence output, or ownership boundary in a prompt, rule, or governance artifact: a shorter text that drops one is a weakened control, not an improvement.
 
 ## Debt Marker
@@ -123,7 +123,7 @@ net: -N lines, -M deps possible.
 If there is nothing meaningful to cut:
 
 ```text
-Lean already. Ship.
+Lean already. No complexity cuts.
 ```
 
 For a repo-wide audit, rank the largest cuts first and use the same tags.

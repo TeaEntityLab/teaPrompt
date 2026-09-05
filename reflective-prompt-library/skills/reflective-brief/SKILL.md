@@ -54,7 +54,8 @@ Escalation:
 8. Define failure conditions.
 9. Define acceptance criteria.
 10. Define falsifiability: what evidence would prove this direction wrong.
-11. Choose the minimal next step.
+11. Write the Minimal Plan: the smallest How that could satisfy the acceptance criteria.
+12. Choose the Next Action.
 
 Spike / exploration framing: when acceptance criteria can only emerge from building (prototype, spike, throwaway experiment), do not force full criteria up front. Set the acceptance criterion to the question the prototype must answer plus a timebox, state that the artifact is disposable, and route promotion of any surviving code through `reflective-review` (and `reflective-risk` when high-risk) before it becomes production work. The spike ends only with observed run output, a measurement, or an explicit could-not-run bound, and names the decision that evidence unblocks; a designed but unrun experiment is not an answer.
 

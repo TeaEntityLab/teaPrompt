@@ -37,14 +37,14 @@ Methods:
 
 Output:
 
-- A task-minimal governance set written to the user's chosen location. For any external-effect governance scaffold, always emit an authority map (the Four-Power Split table plus the handover authority paragraph), capability-token/policy binding, broker-receipt contract, acceptance contract, run-interface contract, and handover; add a lease-keyed budget for repeated/cumulative effects, a named approval for must-approve effects, and constitutional paths when the worker could modify policy or verifiers.
+- A task-minimal governance set written to the user's chosen location. For any external-effect governance scaffold, always emit an authority map (the Four-Power Split table plus the handover authority paragraph), wrapper-agent contract, capability-token/policy binding, broker-receipt contract, acceptance contract, run-interface contract, and handover; add a lease-keyed budget for repeated/cumulative effects, a named approval for must-approve effects, and constitutional paths when the worker could modify policy or verifiers.
 - Extended artifacts (`proposal_state` / `control_decision`, `semantic_interface` / `conformance_suite`, `checker_profile`, Twin Check, `agenda_check`, `mutation_suite` / `approver_canary`) are conditional: emit only when the task/risk requires them and the host has a wiring or runner target. The Artifact Set is a menu, not a mandatory file count.
 - A handover note: which authorities are split vs merged and why; which gates are thick vs thin; which files are constitutional (control-plane) and therefore worker-immutable; broker receipt issuance semantics (`issued_by: broker`, `before_hash`/`after_state`); the `policy_activation` ceremony (`activation_epoch`, `usable_by_existing_leases`); the cumulative-effect budget's lease key and reset rule; `mutation_suite`/`approver_canary` as host-run adversarial obligations; every host precondition (broker, verifier, policy engine, approval, budget enforcer, canary runner) the scaffolding assumes but cannot enforce; and an explicit `artifact-complete` vs `enforcement-proven` status.
 - A fifteen-invariant checklist mapping each emitted object to the invariant it defends.
 
 Never:
 
-- Never store raw credentials, plaintext authentication tokens, or unredacted personal data (PII) inside durable intent payloads, broker receipts, or audit records; apply secret scrubbing and data-sanitization before committing contract artifacts (cross-ref: `04-agent/runtime-trust-boundary.md` §3).
+- Never store raw credentials, plaintext authentication tokens, or unredacted personal data (PII) inside durable intent payloads, broker receipts, or audit records; apply secret scrubbing and data-sanitization before committing contract artifacts (cross-ref: `04-agent/runtime-trust-boundary.md` §4a).
 - Never claim TeaPrompt enforces the four powers, issues receipts, holds capabilities, or runs a broker/verifier/policy engine — the scaffolding is host-run; enforcement is a host precondition, never a TeaPrompt guarantee.
 - Never treat artifact presence or narrated host preconditions as evidence that privileged effects are broker-mediated. If any `model → privileged_tool` path remains, name it as a governance failure and do not claim four-power compliance.
 - Never let the executor self-issue its own effect receipt: broker evidence must come from a broker-owned, worker-nonwritable store; a worker-writable receipt is self-report even when it says `issued_by: broker` (invariants #1, #3, #4).
@@ -287,7 +287,7 @@ constitutional_paths:
   - ".agent/evidence-schema/**"
   - ".agent/verifiers/**"
 worker_writable_exclusions:
-  deny_write: [".agent/policies/**", ".agent/hooks/**", ".agent/approval/**", ".agent/evidence-schema/**", ".agent/verifiers/**", "tests/acceptance/locked/**"]
+  deny_write: [".agent/policies/**", ".agent/hooks/**", ".agent/approval/**", ".agent/evidence-schema/**", ".agent/verifiers/**", "tests/acceptance/locked/**", "tests/governance/**", "tests/security-invariants/**"]
   enforcement_owner: "host_runtime"
 policy_activation:
   proposed_by: "policy-editor"
@@ -374,12 +374,12 @@ Use this canonical vocabulary:
 
 ## Verification
 
-1. Parse check: every emitted YAML/JSON template parses; parseability is not JSON Schema validation unless the host declares a schema dialect and runs its validator. The wrapper contract has the three-no clause and prompt-defense line; the generated `run-<cli>.sh` passes `bash -n`.
+1. Parse check: every emitted YAML/JSON template parses; parseability is not JSON Schema validation unless the host declares a schema dialect and runs its validator. The wrapper contract has the three-no clause (do not design, root-cause, or widen scope) and the prompt-defense line; the generated `run-<cli>.sh` passes `bash -n`.
 2. Authority check: verify the emitted artifacts structurally encode the four-power split (cite file paths and fields); verify broker-owned receipt storage/integrity evidence and lease-keyed plus cross-authorization budget fields are present — not merely narrated.
-3. Constitutional check: verify `constitutional_paths`, `worker_writable_exclusions`, `policy_activation`, and approval/activation provenance appear in the emitted artifacts; runtime enforcement remains a named host precondition.
+3. Constitutional check: when constitutional paths, worker-writable exclusions, `policy_activation`, or a named approval were in scope, verify they appear in the emitted artifacts with their activation provenance; runtime enforcement remains a named host precondition.
 4. Conditional-artifact check: verify only the extended artifacts actually emitted (`conformance_suite`, Twin Check, mutation/canary, experiment files) exist and parse; for each omission, name its task/risk trigger and host runner prerequisite. Presence is never a "passed" result.
 5. Handover evidence: include an emitted-file manifest + parse results, per-effect gate matrix, host wiring status, one named unwired bypass (for a run hook, name `direct_<cli>_exec_via_hook`), and the object→invariant→host-enforcer map.
-6. Status gate: HANDOVER must include the literal `**Governance status:** artifact-complete`, or `enforcement-proven` only after observed host rejection/receipt/budget/mutation or canary evidence. Do not claim four-power compliance from static files.
+6. Status gate: HANDOVER must include exactly one of the literals `**Governance status:** artifact-complete` or `**Governance status:** enforcement-proven`; the latter only after observed host rejection/receipt/budget/mutation or canary evidence. Do not claim four-power compliance from static files.
 
 
 Promotion to a durable, enforced governance system is an Acquisition-ladder step: the fail-closed §4 gates of `04-agent/artifact-promotion.md` (prompt-injection authority boundary, supply-chain provenance, memory-write provenance) apply before live wiring, plus recurrence evidence and explicit human approval before any scaffold becomes a team standard.

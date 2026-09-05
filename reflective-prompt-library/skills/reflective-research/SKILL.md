@@ -87,9 +87,9 @@ When evaluating an external tool, paper, repo, memory system, or workflow method
    - Unknowns
    - Claims needing fresh verification
 8. If doing methodology mapping, classify findings into:
-   - Already present in current practice
-   - Adjacent but not systematized
-   - Recommended for core adoption
+   - Already Present
+   - Adjacent / Missing
+   - Recommended Core Additions
 9. Pass the Sufficiency Gate, then synthesize a recommendation.
 10. Create a handoff or implementation implication if needed.
 
@@ -97,13 +97,13 @@ When evaluating an external tool, paper, repo, memory system, or workflow method
 
 Long research fails when working memory lives only in the growing transcript: constraints get dropped, and claims read once are silently treated as verified. Externalize that state into a ledger and update it after each retrieval, so later steps read the ledger instead of re-deriving from conversation history. The ledger's other job is auditability: a reader should be able to see what was refuted or qualified without rereading the sources.
 
-| Claim / Item | Source | Status | Open Constraints |
-|---|---|---|---|
+| Claim / Item | Source | Status | Checked (date) | How (command + input set, or freshness kind) | Open Constraints |
+|---|---|---|---|---|---|
 
-- Status is one of `unverified`, `verified`, `refuted`, `needs-qualification`, `stale`. Use a narrower status when the situation demands it (e.g., `unknown` for items no source can settle) — but never loosen `verified`.
+- Status is one of `unverified`, `verified`, `refuted`, `needs-qualification`, `stale`. Use a narrower status when the situation demands it (e.g., `unknown` for items no source can settle). `verified` means the check met the bar when it was made — never lower that bar; moving a volatile `verified` claim to `stale` when its check date predates the decision it supports is a freshness transition, not a lowered bar.
 - Mark a claim `verified` only after checking it against an official or upstream source, not a summary of one.
 - `verified` covers only what was actually checked: confirming a source's text is not verifying its underlying data. A figure can match the body table while the statistic stays self-reported and its sample non-generalizable. For load-bearing claims, split the check into the four evidence dimensions in `reflective-review` (existence, number/text, attribution/process, extrapolation).
-- A count, inventory, or catalog the agent generated is checked by a second method that shares none of the generator's logic — a cruder search, a hash, a fixture with a known answer; re-running the generator, or agreement between the generator and its own summary, is not a check.
+- A count, inventory, or catalog the agent generated is checked by a second method that shares none of the generator's logic — a cruder search, a hash, a fixture with a known answer; re-running the generator, or agreement between the generator and its own summary, is not a check. A second method over the same counted population is a check even when its command differs; `input set` in the Never list means the population counted, not the algorithm.
 - The final `Evidence vs Inference` section must be derivable from the ledger alone.
 
 ### Sufficiency Gate
@@ -140,7 +140,7 @@ When inspecting DeepWiki:
 
 - Treat it as a navigational index and synthesis layer, not the only authority.
 - Prefer DeepWiki for architecture maps, workflows, and file relationships.
-- Confirm important implementation details with official docs or upstream source when possible.
+- Confirm important implementation details with official docs or upstream source; if neither is available, leave the claim `unverified` or `unknown` rather than treating DeepWiki as the only authority.
 - Record the DeepWiki page and last indexed date if shown.
 
 ## Optional Method: Multi-Voice Panel
@@ -151,7 +151,7 @@ Use for strategic rethink, architecture review, or adoption decisions where one 
 2. For each lens: state position, strongest objection (Socratic), and falsifiable test.
 3. Run a critical-thinking pass: evidence vs inference, counterargument, silent-downgrade check.
 4. Loop until dissent is recorded or resolved; unresolved items go to `Human Review` or `Next Action`.
-5. Output: consensus table, rejected options with reason, and implemented changes (if any).
+5. Output: consensus table, rejected options with reason, and recommended changes (if any) under `Handoff` for a later implementation workflow; this method does not edit the repository.
 
 Skip when the question is narrow, repo-local, and already has a single canonical workflow.
 
@@ -175,8 +175,8 @@ Skip when the question is narrow, repo-local, and already has a single canonical
 ## Risks / Unknowns
 
 ## State Ledger (Final, Optional for short tasks)
-| Claim / Item | Source | Status | Open Constraints |
-|---|---|---|---|
+| Claim / Item | Source | Status | Checked (date) | How (command + input set, or freshness kind) | Open Constraints |
+|---|---|---|---|---|---|
 
 ## Classification (Optional)
 - Already Present:
@@ -188,7 +188,7 @@ Skip when the question is narrow, repo-local, and already has a single canonical
 
 ## Examples
 
-Companion examples live in the installed `<skills-root>/examples/reflective-research.examples.md` tree when examples are co-installed. They show expected evidence-tier output shapes, not source-backed evidence by themselves.
+Companion examples live in the installed `<skills-root>/examples/reflective-research.examples.md` tree when examples are co-installed. They show expected output headings and State Ledger status literals, not `reflective-review` Evidence Tiers and not source-backed evidence by themselves.
 
 ## Prompt Sources
 
