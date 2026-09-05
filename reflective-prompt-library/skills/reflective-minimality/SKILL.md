@@ -94,6 +94,7 @@ Minimal does not mean careless. Never simplify away:
 - Explicit user requirements.
 - One minimal runnable check for non-trivial logic.
 - A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut.
+- A hard stop, Human Review point, required evidence output, or ownership boundary in a prompt, rule, or governance artifact: a shorter text that drops one is a weakened control, not an improvement.
 
 ## Debt Marker
 

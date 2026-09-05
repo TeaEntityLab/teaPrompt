@@ -108,6 +108,7 @@ For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counte
 5. Define completion checks (Definition of Done for planning).
    - Spec has measurable acceptance criteria
    - Usage examples cover normal and error paths
+   - Each example that names a mechanism was run through that mechanism, or is marked unverified; prose agreement between an example and an invariant is not that check
    - Task slices are independently testable
    - Human Review points are explicit
 

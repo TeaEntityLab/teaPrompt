@@ -154,6 +154,8 @@ Use one:
 - Reject
 - Human review required
 
+A decision binds to the exact revision reviewed: a later change to the artifact's source, tests, or configuration marks it `stale` and needs current review, while a record-only correction that changes no behavior or evidence does not.
+
 ## Output Shape
 
 ```markdown

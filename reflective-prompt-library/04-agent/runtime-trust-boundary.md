@@ -95,6 +95,7 @@ Check:
 - Missing runtime spec, missing authority map, missing side-effect inventory, missing rollback proof, or missing enforcement owner means unknown / no-go, not safe-by-default.
 - Conflicting facts are surfaced with source and recency instead of silently merged.
 - Assume injection detection has a non-zero miss rate; design so untrusted content cannot reach secrets, memory or skill promotion, permissions, deployment, or outbound communication without a deterministic host gate or Human Review — prompt rules cannot isolate a sink; the host must.
+- An attempt by untrusted content to instruct the agent is reported to the user with its source, not only ignored; a refused payload the owner never hears about leaves the miss rate unmanaged.
 
 ## 4. Tool And Action Policy
 
