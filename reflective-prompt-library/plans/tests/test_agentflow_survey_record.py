@@ -200,6 +200,7 @@ def test_indexes_point_to_the_record():
         "six more sentences were adopted by user direction",
         "reviewer rerun-relief rejected as contradicting review independence",
         "A pasted synthesis is a claim about its source, not the source",
+        "the recipe now separates the panel record from the asker-facing answer",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
@@ -209,13 +210,13 @@ def test_indexes_point_to_the_record():
     assert "then three clean-room sentences by user direction" in case_studies
     assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "CX-1–CX-6 adopted by user direction" in case_studies
-    assert "author-talk addendum recorded, skills unchanged, synthesis-grounding Durable Lesson adopted | done |" in case_studies
-    assert "Durable Lesson on synthesis grounding adopted | [survey](agentflow-survey-2026-09-05.md)" in case_studies
+    assert "recipe record-vs-answer sentence) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
         "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
         "entry-point addendum recorded; EP-1/EP-6 adopted by user direction; "
         "concept addendum recorded with CX-1–CX-6 adopted; author-talk addendum recorded, "
-        "skills unchanged, synthesis-grounding Durable Lesson adopted | done |"
+        "skills unchanged, synthesis-grounding Durable Lesson adopted; "
+        "sibling-session reconciliation recorded (SS-1–SS-9) | done |"
         in case_studies
     )
 
@@ -479,3 +480,52 @@ def test_talk_addendum_changed_no_skill_and_landed_the_lesson():
     assert "`synthesizer-extrapolation`, never `author-claimed`" in lesson
     assert "[plans/agentflow-survey-2026-09-05.md](plans/agentflow-survey-2026-09-05.md)" in lesson
     assert "Review trigger:" in lesson
+
+
+SS_ADDENDUM = "## 2026-09-05 Sibling-Session Reconciliation Addendum"
+RECIPES = PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-recipes.md"
+ROOT_README = PROMPT_LIBRARY_ROOT.parent / "README.md"
+RECIPE_SENTENCE = (
+    "- The synthesis record and the answer to the asker are two artifacts: the record carries "
+    "ledger IDs, counts, citations, and tiers; the answer leads with the decision at the asker's "
+    "altitude and points to the record for the rest. A correct panel memo shipped as the first "
+    "answer is a failed answer."
+)
+
+
+def test_sibling_session_addendum_shape_and_corrections():
+    text = _read(RECORD)
+    assert SS_ADDENDUM in text
+    addendum = text.split(SS_ADDENDUM, 1)[1]
+    for heading in (
+        "### Why this is a leak",
+        "### Gap ledger",
+        "### What the sibling panels concluded about the relation",
+        "### Evidence vs inference (addendum)",
+        "### Addendum Falsifiability",
+        "### Addendum Completion Ledger",
+    ):
+        assert heading in addendum, heading
+    assert "does not change AF-1–AF-20, EP-1–EP-10, CX-1–CX-20, or TK-1–TK-10" in addendum
+    ledger = addendum.split("### Gap ledger", 1)[1].split("### What the sibling", 1)[0]
+    rows = {f"SS-{n}": next(line for line in ledger.splitlines() if line.startswith(f"| SS-{n} |")) for n in range(1, 10)}
+    assert "853 tests / 844 pass / 9 fail" in rows["SS-2"] and "**Correction.**" in rows["SS-2"]
+    assert "**Correction.**" in rows["SS-3"] and "AG_HOST_UNKNOWN" in rows["SS-3"]
+    assert "'not_proven'" in rows["SS-1"] and "**Recorded.**" in rows["SS-1"]
+    assert "skip ≠ encapsulate" in rows["SS-5"]
+    assert "wording-adoption guards are not session referees" in rows["SS-6"]
+    assert "**README fixed**" in rows["SS-7"]
+    assert "**Recipe sentence adopted**" in rows["SS-9"]
+    # Privacy: no address or handle from the sibling lenses.
+    assert "@" not in addendum and "http" not in addendum
+
+
+def test_sibling_session_fixes_landed_at_their_surfaces():
+    assert RECIPE_SENTENCE in _read(RECIPES), "recipe record-vs-answer sentence missing"
+    readme = _read(ROOT_README)
+    assert "Claude Code, Codex, Cursor, Gemini CLI, Antigravity CLI / IDE, and OpenCode" in readme
+    skills = library_skills_dir()
+    for skill in ("reflective-dispatch", "reflective-implement", "reflective-review"):
+        text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
+        assert "pit of success" not in text.lower(), "SS-5/TK-7: pit-of-success must never enter a skill"
+        assert "not_proven" not in text, "SS-1 is record-only; foreign literal must not enter a skill"
