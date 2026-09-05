@@ -10,7 +10,6 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 - Claude Code
 - Codex
-- Gemini CLI
 - Cursor
 - Antigravity CLI / IDE
 - OpenCode
@@ -66,18 +65,6 @@ mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 cp -R reflective-prompt-library/skills/reflective-* "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
-## Gemini CLI
-
-- 工作區層：`.gemini/skills/` 或 `.agents/skills/`（`.agents/skills` 優先）
-- 使用者層：`~/.gemini/skills/` 或 `~/.agents/skills/`
-
-```bash
-gemini skills link "$(pwd)/reflective-prompt-library/skills/reflective-brief" --scope user
-gemini skills list --all
-```
-
-啟用 skill 時會出現安全確認提示；免費層 Gemini CLI 將由 Antigravity CLI 取代（詳見英文版）。
-
 ## Cursor
 
 建議優先使用：
@@ -87,6 +74,8 @@ gemini skills list --all
 若未支援 SKILL 自動載入，請用 Cursor Rules fallback（參考英文版完整模板）。
 
 ## Antigravity CLI / IDE
+
+Antigravity CLI 已取代 Gemini CLI；本指南於 2026-09-05 移除 Gemini CLI 章節。
 
 - Workspace：`.agents/skills/<skill-name>/SKILL.md`
 - Global：`~/.gemini/antigravity/skills/<skill-name>/SKILL.md`

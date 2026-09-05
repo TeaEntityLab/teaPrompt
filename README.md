@@ -41,7 +41,7 @@ The repository contains:
 - `reflective-prompt-library/`: reusable Markdown prompts for thinking, planning, implementation, review, research, risk handling, and context handoff.
 - `reflective-prompt-library/skills/`: concise `SKILL.md` workflow wrappers that turn the prompt library into practical agent workflows.
 - `reflective-prompt-library/plans/`: decision records, research archive, eval fixtures, and deferred automation candidates.
-- `reflective-prompt-library/SKILL_INSTALLATION.md`: install instructions for Claude Code, Codex, Cursor, Gemini CLI, Antigravity CLI / IDE, and OpenCode.
+- `reflective-prompt-library/SKILL_INSTALLATION.md`: install instructions for Claude Code, Codex, Cursor, Antigravity CLI / IDE, and OpenCode.
 - `reflective-prompt-library/METHODOLOGY_MAP.md`: classification map for choosing the right strictness level.
 - `reflective-prompt-library/LANGUAGE_POLICY.md`: language policy for English operational docs and localized prompt sources.
 - `surveys/`: survey notes on external models and tools, kept as reference evidence.

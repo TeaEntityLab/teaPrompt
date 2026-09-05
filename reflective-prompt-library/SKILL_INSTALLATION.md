@@ -4,7 +4,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 Last verified: 2026-07-18
 
-This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Gemini CLI, Google Antigravity CLI / IDE, and OpenCode.
+This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
 
 The source skills live here:
 
@@ -388,45 +388,9 @@ Prefer:
 
 This is not a native skill install, but it preserves the workflow behavior in Cursor's official Rules system.
 
-## Gemini CLI
-
-Gemini CLI implements the Agent Skills standard with these discovery tiers
-(lowest to highest precedence: built-in, extension, user, workspace; within a
-tier the `.agents/skills` alias beats `.gemini/skills`):
-
-| Scope | Path |
-| --- | --- |
-| Workspace | `.gemini/skills/<skill-name>/SKILL.md` or `.agents/skills/<skill-name>/SKILL.md` |
-| User | `~/.gemini/skills/<skill-name>/SKILL.md` or `~/.agents/skills/<skill-name>/SKILL.md` |
-
-The shared helpers work as for other hosts:
-
-```bash
-install_core_skills_copy .agents/skills          # workspace
-install_core_skills_symlink "$HOME/.agents/skills"  # user
-```
-
-Gemini CLI also manages skills natively:
-
-```bash
-gemini skills list --all
-gemini skills link "$(pwd)/reflective-prompt-library/skills/reflective-brief" --scope user
-gemini skills install <git-url> --path reflective-prompt-library/skills/reflective-brief --consent
-gemini skills uninstall reflective-brief --scope user
-```
-
-Notes (verified on macOS, 2026-07-11): `gemini skills list` reads
-`~/.agents/skills`; `link` asks an interactive security confirmation (`install`
-accepts `--consent` to skip it); duplicate names across tiers are reported as
-conflicts with the higher tier winning; skill activation in-session shows a
-consent prompt naming the skill and the directory it gains access to. Google
-has announced that unpaid-tier and Google One users' Gemini CLI is being
-replaced by Antigravity CLI (see the next section), so free-tier users should
-prefer the Antigravity paths.
-
 ## Antigravity CLI / Antigravity IDE
 
-Antigravity supports Agent Skills in these locations:
+Antigravity CLI replaces Gemini CLI; this guide retired its Gemini CLI section on 2026-09-05. Antigravity supports Agent Skills in these locations:
 
 | Scope | Path |
 | --- | --- |
@@ -462,6 +426,8 @@ Validate:
 ```bash
 find .agents/skills ~/.gemini/antigravity/skills -maxdepth 2 -name SKILL.md -print 2>/dev/null
 ```
+
+Notes (verified on macOS, 2026-09-05): the CLI binary is `agy` (`agy --version` → 1.1.27); the global directory above exists and holds installed skills.
 
 In Antigravity CLI / IDE:
 
@@ -609,7 +575,6 @@ invocation control:
 | --- | --- |
 | Claude Code | add `disable-model-invocation: true` to your installed copy so only explicit `/skill-name` runs it |
 | Codex | `agents/openai.yaml` with `policy.allow_implicit_invocation: false` |
-| Gemini CLI | activation already shows a per-skill consent prompt; keep it enabled |
 
 These are host features documented at the sources below; TeaPrompt cannot
 verify or enforce them (runtime-trust boundary).
@@ -619,7 +584,6 @@ verify or enforce them (runtime-trust boundary).
 - Agent Skills specification: https://agentskills.io/specification
 - Claude Code skills docs: https://code.claude.com/docs/en/skills
 - Codex skills docs: https://learn.chatgpt.com/docs/build-skills
-- Gemini CLI skills docs: https://geminicli.com/docs/cli/skills/
 - OpenAI skills repository: https://github.com/openai/skills
 - Google Antigravity skills docs: https://antigravity.google/docs/skills
 - OpenCode skills docs: https://opencode.ai/docs/skills

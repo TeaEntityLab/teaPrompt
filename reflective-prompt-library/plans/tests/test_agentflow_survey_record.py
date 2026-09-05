@@ -211,7 +211,7 @@ def test_indexes_point_to_the_record():
     assert "then three clean-room sentences by user direction" in case_studies
     assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "CX-1–CX-6 adopted by user direction" in case_studies
-    assert "post-panel implementation C1a/C2/C6/C7/C8/C9) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
+    assert "post-panel implementation C1a/C2/C6/C7/C7b/C8/C9) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
         "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
         "entry-point addendum recorded; EP-1/EP-6 adopted by user direction; "
@@ -515,7 +515,7 @@ def test_sibling_session_addendum_shape_and_corrections():
     assert "'not_proven'" in rows["SS-1"] and "**Recorded.**" in rows["SS-1"]
     assert "skip ≠ encapsulate" in rows["SS-5"]
     assert "wording-adoption guards are not session referees" in rows["SS-6"]
-    assert "**README fixed**" in rows["SS-7"] and "six-host agreement guard" in rows["SS-7"]
+    assert "**Reversed by user report.**" in rows["SS-7"] and "five-host agreement guard" in rows["SS-7"]
     assert "**reworded by user direction**" in rows["SS-8"]
     assert "total = f(file set); split = f(environment)" in rows["SS-2"]
     assert "**Recipe sentence adopted**" in rows["SS-9"]
@@ -525,9 +525,10 @@ def test_sibling_session_addendum_shape_and_corrections():
 
 def test_sibling_session_fixes_landed_at_their_surfaces():
     assert RECIPE_SENTENCE in _read(RECIPES), "recipe record-vs-answer sentence missing"
-    # SS-7 / C7: the six hosts must agree across both READMEs and the install guide (substring, so
-    # "Google Antigravity" in the guide still passes); a verbatim pin missed the library README once.
-    hosts = ("Claude Code", "Codex", "Cursor", "Gemini CLI", "Antigravity", "OpenCode")
+    # SS-7 / C7: the five hosts must agree across both READMEs and the install guide (substring, so
+    # "Google Antigravity" in the guide still passes). Gemini CLI is replaced by Antigravity CLI
+    # (user-reported 2026-09-05): the retired host must not return to any host line.
+    hosts = ("Claude Code", "Codex", "Cursor", "Antigravity", "OpenCode")
     surfaces = {
         "root README": next(l for l in _read(ROOT_README).splitlines() if "SKILL_INSTALLATION.md`: install instructions" in l),
         "library README": next(l for l in _read(PROMPT_LIBRARY_ROOT / "README.md").splitlines() if "It covers " in l),
@@ -536,6 +537,9 @@ def test_sibling_session_fixes_landed_at_their_surfaces():
     for name, text in surfaces.items():
         for host in hosts:
             assert host in text, f"{host} missing from {name}"
+        assert "Gemini CLI" not in text, f"retired host re-added to {name}"
+    guide = _read(INSTALL_GUIDE)
+    assert "## Gemini CLI" not in guide and "gemini skills" not in guide
     skills = library_skills_dir()
     for skill in ("reflective-dispatch", "reflective-implement", "reflective-review"):
         text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
@@ -554,6 +558,12 @@ SS_ADOPTED = {
         "A run note that omits a named precondition is incomplete, not passing; a filled block is an "
         "output, not enforcement."
     ),
+    "reflective-implement": (
+        "- When two surfaces disagree and neither is an oracle, establish which is current — dates, "
+        "version pins, history, or an announcement inside the text itself — before propagating either; "
+        "a consistency check names the divergence, not the truth. If currency cannot be established, "
+        "record the divergence as an open unknown instead of reconciling silently."
+    ),
 }
 NON_GOAL_SENTENCE = (
     "- Repository guards bind this repository's authors, not sessions: `make all` proves adopted wording "
@@ -569,7 +579,8 @@ def test_post_panel_implementation_recorded_and_landed_once():
     assert SS_IMPLEMENTATION in text
     section = text.split(SS_IMPLEMENTATION, 1)[1].split("### Addendum Completion Ledger", 1)[0]
     for cid, disposition in (("C1a", "**Adopted**"), ("C1b", "**Held**"), ("C2", "**Adopted**"), ("C3", "**Held**"),
-                             ("C4", "**Held**"), ("C5", "**Held**"), ("C6", "**Adopted**"), ("C7", "**Adopted**"),
+                             ("C4", "**Held**"), ("C5", "**Held**"), ("C6", "**Adopted**"), ("C7", "**Adopted, direction reversed**"),
+                             ("C7b", "**Adopted**"),
                              ("C8", "**Adopted**"), ("C9", "**Adopted**")):
         row = next(line for line in section.splitlines() if line.startswith(f"| {cid} |"))
         assert disposition in row, cid

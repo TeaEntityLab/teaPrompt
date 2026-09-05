@@ -101,6 +101,7 @@ Run this quick check **only** when one or more bloat signals are present:
 - Prefer existing patterns and utilities.
 - Add or update tests for each acceptance criterion. For a behavior change or defect fix, see the test fail on the current code before the change and pass after it, so the test proves the behavior rather than the code. For a behavior-preserving change (refactor, cleanup, compression), first lock the current behavior with the narrowest tests that would fail if it changed, then change one kind of thing per verified pass.
 - Keep action parameters traceable to user input, trusted project instructions, or verified tool results.
+- When two surfaces disagree and neither is an oracle, establish which is current — dates, version pins, history, or an announcement inside the text itself — before propagating either; a consistency check names the divergence, not the truth. If currency cannot be established, record the divergence as an open unknown instead of reconciling silently.
 - For multi-step tasks, maintain the State Ledger instead of loose notes.
 - When implementing external-mutation recovery, preserve ambiguous post-dispatch outcomes as machine-readable `OUTCOME_UNKNOWN`; a missing receipt or synthetic error must not silently authorize retry.
 
