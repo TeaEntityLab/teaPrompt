@@ -29,10 +29,9 @@ Expected output shape:
 ## Envelope (task-declared limits — no universal retry count)
 - budget, pause list, kill conditions, failure-signature limit, allowed sinks, accepter
 
-## Host preconditions
-- oracle sealing / sink isolation / budget / durable ledgers / human channel: unmet/`unknown`
-
 ## Run note
+- oracle_sealing: unknown · sink_isolation: unknown · budget_enforcement: unknown · durable_ledger_storage: unknown · human_decision_channel: unknown
+- evidence: [] (nothing `met`)
 - status: artifact-complete, not enforcement-proven
 - GDR-1–GDR-6: unknown (not run)
 ```

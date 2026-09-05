@@ -233,7 +233,17 @@ Invariant: policy change stays separate from policy activation; feed the retro i
 
 ## Host Preconditions
 
-The host must supply: oracle sealing (write protection, protected branch, or CI ownership); sink isolation (sandbox, egress control, credential brokering); budget enforcement; durable ledger storage; a human decision channel. TeaPrompt runs none of these. Name each precondition met, unmet, or `unknown` in the run note — do not infer enforcement from files on disk.
+The host must supply: oracle sealing (write protection, protected branch, or CI ownership); sink isolation (sandbox, egress control, credential brokering); budget enforcement; durable ledger storage; a human decision channel. TeaPrompt runs none of these. Name each precondition met, unmet, or `unknown` in the run note — do not infer enforcement from files on disk. A run note that omits a named precondition is incomplete, not passing; a filled block is an output, not enforcement.
+
+```yaml
+oracle_sealing: unknown           # met | unmet | unknown
+sink_isolation: unknown
+budget_enforcement: unknown
+durable_ledger_storage: unknown
+human_decision_channel: unknown
+evidence: []                      # one entry per `met`: what was observed, where
+status: artifact-complete         # enforcement-proven only with observed host evidence
+```
 
 ## Adversarial Refuters
 

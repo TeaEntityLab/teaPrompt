@@ -192,6 +192,10 @@ def test_gd14_gd15_invariants_and_host_preconditions():
     host = _section(text, "## Host Preconditions")
     for phrase in ("write protection", "egress", "durable", "TeaPrompt runs none"):
         assert phrase in host, phrase
+    # SS-1 (2026-09-05): the run note is a fixed-field shape; every precondition is written, `unknown` by default.
+    for field in ("oracle_sealing", "sink_isolation", "budget_enforcement", "durable_ledger_storage", "human_decision_channel"):
+        assert f"{field}: unknown" in host, field
+    assert "incomplete, not passing" in host and "an output, not enforcement" in host
 
 
 def test_gd16_refuters_are_six_and_unknown_until_run():

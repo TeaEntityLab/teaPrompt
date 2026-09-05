@@ -30,7 +30,7 @@ ADDENDUM = "## 2026-09-05 Entry-Point Survey Addendum (paste-5)"
 ADDENDUM_PACKET_SHA256 = "7f035123004db8ec06ab9595efd46bfd6c325fef5d7b1d50e75030ed743243b0"
 ADDENDUM_REPO_REVISION = "2fc377ba13b39a34fd24f8f45ffce9a49ff3db70"
 FOREIGN_TOKENS = re.compile(
-    r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|"
+    r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|not_proven|"
     r"three total worker starts|at most three (worker )?starts"
 )
 ADOPTED = {
@@ -201,6 +201,7 @@ def test_indexes_point_to_the_record():
         "reviewer rerun-relief rejected as contradicting review independence",
         "A pasted synthesis is a claim about its source, not the source",
         "the recipe now separates the panel record from the asker-facing answer",
+        "total = f(file set) (853 vs 898) and split = f(environment) (844/9 vs 831/22)",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
@@ -210,13 +211,13 @@ def test_indexes_point_to_the_record():
     assert "then three clean-room sentences by user direction" in case_studies
     assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "CX-1–CX-6 adopted by user direction" in case_studies
-    assert "recipe record-vs-answer sentence) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
+    assert "post-panel implementation C1a/C2/C6/C7/C8/C9) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
         "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
         "entry-point addendum recorded; EP-1/EP-6 adopted by user direction; "
         "concept addendum recorded with CX-1–CX-6 adopted; author-talk addendum recorded, "
         "skills unchanged, synthesis-grounding Durable Lesson adopted; "
-        "sibling-session reconciliation recorded (SS-1–SS-9) | done |"
+        "sibling-session reconciliation recorded (SS-1–SS-9) and implemented by user direction | done |"
         in case_studies
     )
 
@@ -514,7 +515,9 @@ def test_sibling_session_addendum_shape_and_corrections():
     assert "'not_proven'" in rows["SS-1"] and "**Recorded.**" in rows["SS-1"]
     assert "skip ≠ encapsulate" in rows["SS-5"]
     assert "wording-adoption guards are not session referees" in rows["SS-6"]
-    assert "**README fixed**" in rows["SS-7"]
+    assert "**README fixed**" in rows["SS-7"] and "six-host agreement guard" in rows["SS-7"]
+    assert "**reworded by user direction**" in rows["SS-8"]
+    assert "total = f(file set); split = f(environment)" in rows["SS-2"]
     assert "**Recipe sentence adopted**" in rows["SS-9"]
     # Privacy: no address or handle from the sibling lenses.
     assert "@" not in addendum and "http" not in addendum
@@ -522,10 +525,65 @@ def test_sibling_session_addendum_shape_and_corrections():
 
 def test_sibling_session_fixes_landed_at_their_surfaces():
     assert RECIPE_SENTENCE in _read(RECIPES), "recipe record-vs-answer sentence missing"
-    readme = _read(ROOT_README)
-    assert "Claude Code, Codex, Cursor, Gemini CLI, Antigravity CLI / IDE, and OpenCode" in readme
+    # SS-7 / C7: the six hosts must agree across both READMEs and the install guide (substring, so
+    # "Google Antigravity" in the guide still passes); a verbatim pin missed the library README once.
+    hosts = ("Claude Code", "Codex", "Cursor", "Gemini CLI", "Antigravity", "OpenCode")
+    surfaces = {
+        "root README": next(l for l in _read(ROOT_README).splitlines() if "SKILL_INSTALLATION.md`: install instructions" in l),
+        "library README": next(l for l in _read(PROMPT_LIBRARY_ROOT / "README.md").splitlines() if "It covers " in l),
+        "install guide": _read(PROMPT_LIBRARY_ROOT / "SKILL_INSTALLATION.md").split("## ", 1)[0],
+    }
+    for name, text in surfaces.items():
+        for host in hosts:
+            assert host in text, f"{host} missing from {name}"
     skills = library_skills_dir()
     for skill in ("reflective-dispatch", "reflective-implement", "reflective-review"):
         text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
         assert "pit of success" not in text.lower(), "SS-5/TK-7: pit-of-success must never enter a skill"
         assert "not_proven" not in text, "SS-1 is record-only; foreign literal must not enter a skill"
+
+
+SS_IMPLEMENTATION = "### Post-panel implementation (user-directed, 2026-09-05)"
+SS_ADOPTED = {
+    "reflective-research": (
+        "- Do not report a load-bearing measured count without the command and input set that "
+        "produced it; the same number over a different set is a different fact. If two tallies "
+        "disagree, name the input or host-condition difference before treating them as conflicting truths."
+    ),
+    "governed-delivery": (
+        "A run note that omits a named precondition is incomplete, not passing; a filled block is an "
+        "output, not enforcement."
+    ),
+}
+NON_GOAL_SENTENCE = (
+    "- Repository guards bind this repository's authors, not sessions: `make all` proves adopted wording "
+    "is present at its named surfaces and that records stay consistent — that is what \"verified\" means "
+    "for a routing or governance change. It is not evidence that an installed agent followed the text or "
+    "that the methodology works; host-runtime code and tests remain the authority for operational guarantees."
+)
+LENS_LINE = "Use this as the small Review -> Rating -> Fix loop for improving an artifact."
+
+
+def test_post_panel_implementation_recorded_and_landed_once():
+    text = _read(RECORD)
+    assert SS_IMPLEMENTATION in text
+    section = text.split(SS_IMPLEMENTATION, 1)[1].split("### Addendum Completion Ledger", 1)[0]
+    for cid, disposition in (("C1a", "**Adopted**"), ("C1b", "**Held**"), ("C2", "**Adopted**"), ("C3", "**Held**"),
+                             ("C4", "**Held**"), ("C5", "**Held**"), ("C6", "**Adopted**"), ("C7", "**Adopted**"),
+                             ("C8", "**Adopted**"), ("C9", "**Adopted**")):
+        row = next(line for line in section.splitlines() if line.startswith(f"| {cid} |"))
+        assert disposition in row, cid
+    assert "6/6" in section and "AGREE WITH CHANGES" in section
+    skills = library_skills_dir()
+    texts = {p.parent.name: p.read_text(encoding="utf-8") for p in skills.glob("*/SKILL.md")}
+    for name, sentence in SS_ADOPTED.items():
+        owners = [n for n, body in texts.items() if sentence in body]
+        assert owners == [name], f"{name}: adopted sentence must live at exactly one surface, found {owners}"
+    knowledge = _read(PROJECT_KNOWLEDGE)
+    non_goals = knowledge.split("### Standing Non-Goals", 1)[1].split("\n## ", 1)[0]
+    assert NON_GOAL_SENTENCE in non_goals
+    assert "meta:product" not in non_goals
+    assert LENS_LINE in _read(PROMPT_LIBRARY_ROOT / "04-agent" / "review-rating-fix.md")
+    # Rejected alternatives must stay out: the environment as a required third parameter, and a
+    # lens-doc token scan (the scan scope stays installed surfaces; see the regex test above).
+    assert "environment it was measured under" not in texts["reflective-research"]

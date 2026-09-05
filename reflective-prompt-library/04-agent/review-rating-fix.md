@@ -1,6 +1,6 @@
 # Review -> Rating -> Fix Prompt
 
-Use this as the small agentflow loop for improving an artifact.
+Use this as the small Review -> Rating -> Fix loop for improving an artifact.
 
 ## Purpose
 
