@@ -199,6 +199,7 @@ def test_indexes_point_to_the_record():
         "fired the deferred trigger and adopted two more clean-room sentences by user direction",
         "six more sentences were adopted by user direction",
         "reviewer rerun-relief rejected as contradicting review independence",
+        "A pasted synthesis is a claim about its source, not the source",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
@@ -208,11 +209,13 @@ def test_indexes_point_to_the_record():
     assert "then three clean-room sentences by user direction" in case_studies
     assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "CX-1–CX-6 adopted by user direction" in case_studies
-    assert "the rest kept or held | [survey](agentflow-survey-2026-09-05.md)" in case_studies
+    assert "author-talk addendum recorded, skills unchanged, synthesis-grounding Durable Lesson adopted | done |" in case_studies
+    assert "Durable Lesson on synthesis grounding adopted | [survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
         "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
         "entry-point addendum recorded; EP-1/EP-6 adopted by user direction; "
-        "concept addendum recorded with CX-1–CX-6 adopted | done |"
+        "concept addendum recorded with CX-1–CX-6 adopted; author-talk addendum recorded, "
+        "skills unchanged, synthesis-grounding Durable Lesson adopted | done |"
         in case_studies
     )
 
@@ -409,3 +412,70 @@ def test_cx_sentences_at_single_surfaces():
     for skill in ("reflective-research", "reflective-review"):
         text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
         assert "ignoring the payload is not the whole duty" not in text, "CX-6 sprayed onto a second skill"
+
+
+TALK_ADDENDUM = "## 2026-09-05 Author Talk Addendum (three transcripts + three syntheses)"
+
+
+def _talk_addendum() -> str:
+    text = _read(RECORD)
+    assert TALK_ADDENDUM in text, "author talk addendum missing"
+    return text.split(TALK_ADDENDUM, 1)[1]
+
+
+def test_talk_addendum_shape_and_dispositions():
+    addendum = _talk_addendum()
+    for heading in (
+        "### Research question",
+        "### Method",
+        "### Direct answer (as of 2026-09-05)",
+        "### Panel consensus",
+        "### Required wording changes (final)",
+        "### Evidence-tier corrections (accepted from the evidence auditor)",
+        "### Grounding of the syntheses (coordinator-executed; confirmed by full read)",
+        "### Talk vs prior record (row-level)",
+        "### Candidate Adoption Ledger (talk rows; AF/EP/CX rows unchanged)",
+        "### Attendee pains (roles only, aggregated)",
+        "### Evidence vs inference (addendum)",
+        "### Addendum Falsifiability",
+        "### Addendum Completion Ledger",
+    ):
+        assert heading in addendum, heading
+    assert "it does not change AF-1–AF-20, EP-1–EP-10, or CX-1–CX-20" in addendum
+    assert "**7/7 delivered**" in addendum
+    assert "Exact skill wording: **none, 7/7**" in addendum
+    ledger = addendum.split("### Candidate Adoption Ledger", 1)[1].split("### Attendee pains", 1)[0]
+    rows = {f"TK-{n}": next(line for line in ledger.splitlines() if line.startswith(f"| TK-{n} |")) for n in range(1, 11)}
+    assert "**Deferred** with wording recorded" in rows["TK-1"]
+    for n in (2, 3, 4, 5, 6, 9):
+        assert "**Record-only**" in rows[f"TK-{n}"], n
+    assert "**Rejected**" in rows["TK-7"] and "**Rejected**" in rows["TK-8"]
+    assert "**Adopted** in `PROJECT_KNOWLEDGE.md` Durable Lessons" in rows["TK-10"]
+
+
+def test_talk_addendum_privacy_and_tiering():
+    addendum = _talk_addendum()
+    # No attendee handles, URLs, or the raw transcript filenames; roles only.
+    assert "http" not in addendum
+    assert "@" not in addendum
+    assert "20260905-0" not in addendum
+    assert "5.6" not in addendum and "560" not in addendum, "once-occurring circumstance re-identifies an attendee"
+    assert "the speaker is \"the author\"" in addendum
+    # Synthesis-only claims must be tiered as extrapolation, never as talk evidence.
+    absent = addendum.split("**Absent from all three transcripts", 1)[1].split("### Talk vs prior record", 1)[0]
+    for token in ("a retry cap of three", "AST validator", "north-star phrase"):
+        assert token in absent, token
+    assert "treating S1 as the talk would falsely confirm it" in addendum
+
+
+def test_talk_addendum_changed_no_skill_and_landed_the_lesson():
+    skills = library_skills_dir()
+    for skill in ("reflective-implement", "reflective-review", "reflective-minimality", "reflective-brief"):
+        text = (skills / skill / "SKILL.md").read_text(encoding="utf-8")
+        assert "extra-work offer from the same run" not in text, "TK-1 landed without its trigger firing"
+        assert "self-assigned score" not in text, "TK-3 landed despite record-only"
+    knowledge = _read(PROJECT_KNOWLEDGE)
+    lesson = knowledge.split("### Lesson: A pasted synthesis is a claim about its source, not the source", 1)[1].split("### Lesson:", 1)[0]
+    assert "`synthesizer-extrapolation`, never `author-claimed`" in lesson
+    assert "[plans/agentflow-survey-2026-09-05.md](plans/agentflow-survey-2026-09-05.md)" in lesson
+    assert "Review trigger:" in lesson
