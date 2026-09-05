@@ -40,6 +40,7 @@ Never:
 - Do not change expected outputs to match broken behavior.
 - Do not widen scope beyond the acceptance criteria. A finding from a reviewer, worker, or tool is input to the scope decision, never authorization to widen it: record the finding and obtain an acceptance criterion before acting on it.
 - Do not claim checks passed unless they were run and read.
+- Do not add a fallback, catch-all, retry, or silent default that hides a failure instead of fixing its cause; a fallback is legitimate only at an external or version boundary, documented, preserving the failure evidence, and tested on both paths.
 - Do not treat a request for a no-code Test Plan as an implementation task; route it to `reflective-spec-plan`.
 
 Escalation:
@@ -98,7 +99,7 @@ Run this quick check **only** when one or more bloat signals are present:
 - Make the smallest safe change.
 - Preserve existing behavior unless explicitly allowed.
 - Prefer existing patterns and utilities.
-- Add or update tests for each acceptance criterion. For a behavior change or defect fix, see the test fail on the current code before the change and pass after it, so the test proves the behavior rather than the code.
+- Add or update tests for each acceptance criterion. For a behavior change or defect fix, see the test fail on the current code before the change and pass after it, so the test proves the behavior rather than the code. For a behavior-preserving change (refactor, cleanup, compression), first lock the current behavior with the narrowest tests that would fail if it changed, then change one kind of thing per verified pass.
 - Keep action parameters traceable to user input, trusted project instructions, or verified tool results.
 - For multi-step tasks, maintain the State Ledger instead of loose notes.
 - When implementing external-mutation recovery, preserve ambiguous post-dispatch outcomes as machine-readable `OUTCOME_UNKNOWN`; a missing receipt or synthetic error must not silently authorize retry.
@@ -143,6 +144,8 @@ Run the checks that prove the claim:
 - Twin sweep, whenever a defect was fixed: a bug found in one place is presumed to recur elsewhere until you have searched. Name the exact wrong construct, search the whole project for it, and include this line verbatim in the Final Report: `TWINS: searched <pattern> - found <N> other sites: <files, or "none">`. Fix in-scope twins; list out-of-scope ones under `Residual Risks` instead of silently widening scope. (Adopted 2026-07-16 after local reproduction; see `plans/fable-method-survey-2026-07-16.md` FM1.)
 
 If verification fails, fix and rerun. If a check cannot run, report why.
+
+When a check fails, first establish whether the failure is in the check itself — its harness, environment, or inputs — or in the change; a broken check is reported as could-not-run and repaired or escalated as a check, never satisfied by editing the product. Read the exit status and the actual output: a log line that says success while the process failed, or a run that skipped the relevant tests, is not a pass. Every edit after the last verification run, including cosmetic cleanup or formatting, reopens verification; the reported result is the run against the final state of the change.
 
 ## Failure Loop (LOCAL_FEEDBACK)
 

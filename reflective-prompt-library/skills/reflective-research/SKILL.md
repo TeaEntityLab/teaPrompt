@@ -102,6 +102,7 @@ Long research fails when working memory lives only in the growing transcript: co
 - Status is one of `unverified`, `verified`, `refuted`, `needs-qualification`, `stale`. Use a narrower status when the situation demands it (e.g., `unknown` for items no source can settle) — but never loosen `verified`.
 - Mark a claim `verified` only after checking it against an official or upstream source, not a summary of one.
 - `verified` covers only what was actually checked: confirming a source's text is not verifying its underlying data. A figure can match the body table while the statistic stays self-reported and its sample non-generalizable. For load-bearing claims, split the check into the four evidence dimensions in `reflective-review` (existence, number/text, attribution/process, extrapolation).
+- A count, inventory, or catalog the agent generated is checked by a second method that shares none of the generator's logic — a cruder search, a hash, a fixture with a known answer; re-running the generator, or agreement between the generator and its own summary, is not a check.
 - The final `Evidence vs Inference` section must be derivable from the ledger alone.
 
 ### Sufficiency Gate

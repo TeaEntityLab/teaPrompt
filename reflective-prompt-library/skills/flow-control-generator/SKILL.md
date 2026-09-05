@@ -77,8 +77,8 @@ Every generated script must contain, in order:
 1. Config header: `AGENT_CMD` (host CLI, overridable), workdir, state dir, budget constants, and a one-line generated-by comment (skill, topology, date, dry-run status) so the script's provenance survives copy-paste. Default `AGENT_CMD` to the host in use, e.g. `claude -p` (Claude Code headless), `codex exec`, or an SDK entry point.
 2. State directory: one file per step output (`state/NN-name.md`), never shell variables for step payloads — files survive interruption and are inspectable.
 3. Runner abstraction: a single `run_agent <prompt-file> <out-file>` function; all agent invocations go through it (swap host or stub in one place).
-4. Gates: after each stage, a deterministic check (exit code) decides continue/abort. A missing gate must be an explicit `# gate: none (accepted)` comment.
-5. Budget: hard caps — max parallel jobs, total step count, and a per-step wall-clock timeout where available (Python `subprocess` `timeout=`; for bash, a `timeout`-style wrapper on `AGENT_CMD` — stock macOS ships no `timeout(1)`, so treat it as host-provided).
+4. Gates: after each stage, a deterministic check (exit code) decides continue/abort. A missing gate must be an explicit `# gate: none (accepted)` comment. For fan-in, the gate runs over the merged result as well as the branch tally: branches that each pass can conflict when combined.
+5. Budget: hard caps — max parallel jobs, total step count, and a per-step wall-clock timeout where available (Python `subprocess` `timeout=`; for bash, a `timeout`-style wrapper on `AGENT_CMD` — stock macOS ships no `timeout(1)`, so treat it as host-provided). When a stage is itself a loop or retries, the composition's worst case is the product of the caps: declare one total budget (steps or wall-clock) that every level decrements, and have the outer script pass its remaining budget to the inner one.
 6. Permission boundary: the host's least-privilege flags for the steps' tool access (e.g. Claude Code `--allowedTools`), stated in the config header, never improvised mid-run.
 7. Logs: append one line per step to `state/flow.log` (step, start/end, gate result) for observability.
 8. Exit discipline: `set -euo pipefail` (bash) or raised exceptions (Python); non-zero exit on any failed gate; partial state left on disk for resume.
@@ -157,6 +157,7 @@ else
 fi
 { cat prompts/synthesize.md; echo; cat "$STATE"/fan-*.md; } > "$STATE/synth-prompt.md"
 run_agent "$STATE/synth-prompt.md" "$STATE/final.md" # single synthesis step
+./checks/verify-merged.sh "$STATE/final.md"          # gate: merged result, not only the branch tally
 ```
 
 ## Template: Conditional Router (bash)
