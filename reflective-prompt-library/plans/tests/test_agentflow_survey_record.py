@@ -26,6 +26,9 @@ PINNED_COMMIT = "b2935f5381d6469243440e080b43d0092a591663"
 PACKET_SHA256 = "2b95cecfc40b0ac7320082355167867659ed71927f8a8557852f5200164116c2"
 REPO_REVISION = "2d61cf836eedd9492ae7fcd2e6762bf094a36849"
 DELIBERATION = "## Post-Panel Skill Update Deliberation (2026-09-05, user-directed)"
+ADDENDUM = "## 2026-09-05 Entry-Point Survey Addendum (paste-5)"
+ADDENDUM_PACKET_SHA256 = "7f035123004db8ec06ab9595efd46bfd6c325fef5d7b1d50e75030ed743243b0"
+ADDENDUM_REPO_REVISION = "2fc377ba13b39a34fd24f8f45ffce9a49ff3db70"
 FOREIGN_TOKENS = re.compile(
     r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|"
     r"three total worker starts|at most three (worker )?starts"
@@ -179,6 +182,9 @@ def test_indexes_point_to_the_record():
         "record-only",
         "18 of 73",
         "adopted three clean-room sentences by user direction",
+        "by reason 5 of 7 record-only for skills",
+        "deferred with named triggers",
+        "no AF row moved",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
@@ -186,8 +192,95 @@ def test_indexes_point_to_the_record():
     case_studies = _read(CASE_STUDIES)
     assert "| 2026-09-05 | agentflow (agfnow/agentflow @ `b2935f5`)" in case_studies
     assert "then three clean-room sentences by user direction" in case_studies
+    assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "[survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
-        "| agentflow survey recorded; three sentences adopted post-panel by user direction | done |"
+        "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
+        "entry-point addendum recorded | done |"
         in case_studies
     )
+
+
+def _addendum() -> str:
+    text = _read(RECORD)
+    assert ADDENDUM in text, "entry-point addendum missing"
+    return text.split(ADDENDUM, 1)[1]
+
+
+def _ep_rows() -> dict[str, str]:
+    ledger = _addendum().split("### Candidate Adoption Ledger (entry-point rows; AF rows unchanged)", 1)[1]
+    ledger = ledger.split("### Evidence vs inference (addendum)", 1)[0]
+    return {
+        candidate_id: next(
+            line for line in ledger.splitlines() if line.startswith(f"| {candidate_id} |")
+        )
+        for candidate_id in (f"EP-{n}" for n in range(1, 11))
+    }
+
+
+def test_addendum_shape_identity_and_reason_tally():
+    addendum = _addendum()
+    for heading in (
+        "### Research question",
+        "### Direct answer (as of 2026-09-05)",
+        "### Panel consensus",
+        "### Required wording changes (final)",
+        "### Coordinator-executed evidence (dated 2026-09-05",
+        "### Findings",
+        "### Entry-point comparison",
+        "### Candidate Adoption Ledger (entry-point rows; AF rows unchanged)",
+        "### Evidence vs inference (addendum)",
+        "### Addendum Falsifiability",
+        "### Addendum Completion Ledger",
+    ):
+        assert heading in addendum, f"addendum missing {heading!r}"
+    for identity in (ADDENDUM_PACKET_SHA256, ADDENDUM_REPO_REVISION, PINNED_COMMIT):
+        assert identity in addendum, f"addendum identity drifted: {identity}"
+    assert "it does not change AF-1–AF-20" in addendum
+    assert "`AGREE` 3" in addendum and "`AGREE WITH CHANGES` 4" in addendum
+    assert "**5 of 7 record-only for skills**" in addendum
+    assert "2–2 on the gate" in addendum
+    assert "### Required wording changes (final)\n\n**Skills: none.**" in addendum
+    assert "no provider persona or model routing is claimed" in addendum
+
+
+def test_addendum_corrections_and_tiers():
+    addendum = _addendum()
+    for correction in (
+        "23 citation pins (21 line-level, 2 file-level)",
+        "the packet's count of 22 was wrong",
+        "git status --porcelain=v1 --untracked-files=all -z",
+        "an extra unknown key beside a complete config is a **warning and is ignored**",
+        "**no PTY journey script ships**",
+        "instruction-shaped promotion with extractable quotes",
+        "**No writes under `$HOME`**",
+    ):
+        assert correction in addendum, correction
+    assert "supersedes \"no agentflow script was run\" above for these three scripts only" in addendum
+
+
+def test_ep_ledger_dispositions():
+    rows = _ep_rows()
+    assert "**Deferred with triggers** 2026-09-05" in rows["EP-1"]
+    assert "unless it reports a problem or the request needs more" in rows["EP-1"]
+    assert "**Rejected as wording** 2026-09-05" in rows["EP-2"]
+    assert "R5/R7" in rows["EP-2"]
+    assert "**Record-only contrast** 2026-09-05" in rows["EP-3"]
+    for host_only in ("EP-4", "EP-7"):
+        assert "**Record-only (host)** 2026-09-05" in rows[host_only], host_only
+    assert "**Record-only (provenance)** 2026-09-05" in rows["EP-5"]
+    assert "**Deferred with trigger** 2026-09-05" in rows["EP-6"]
+    assert "never a gate precondition (OW-2)" in rows["EP-6"]
+    assert "**Rejected as skill text** 2026-09-05" in rows["EP-8"]
+    assert "**Record-only correction** 2026-09-05" in rows["EP-9"]
+    assert "**None** 2026-09-05" in rows["EP-10"]
+
+
+def test_deferred_entry_point_sentences_absent_until_reopened():
+    skills = library_skills_dir()
+    dispatch = (skills / "reflective-dispatch" / "SKILL.md").read_text(encoding="utf-8")
+    implement = (skills / "reflective-implement" / "SKILL.md").read_text(encoding="utf-8")
+    for text in (dispatch, implement):
+        assert "before other discovery" not in text, "EP-1 landed without reopening the ledger row"
+        assert "lighter route" not in text, "EP-2 lock landed despite rejection"
+    assert "exercise the real surface" not in implement, "EP-6 landed without reopening the ledger row"
