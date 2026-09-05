@@ -16,7 +16,7 @@ metadata:
 
 ## Purpose
 
-Generate loop scripts that re-invoke a host agent until a deterministic condition holds. The loop body is model work; the loop control — stop condition, caps, progress accounting, resume — is script code. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (source repo: `plans/external-adoption-case-studies-2026-06-20.md`): the generated loop is a host-operationalized artifact, not a TeaPrompt-operated runner. The cross-platform loop vocabulary referenced here (ADK `LoopAgent`, LangGraph cycles, MAF checkpointed workflows, Anthropic evaluator-optimizer, practitioner "ralph" harnesses) is advisory-tier reference material; the one load-bearing rule is: never trust the model's own "done"; gate on an external verifier (source repo: `plans/agent-flow-control-research-2026-07-11.md`).
+Generate loop scripts that re-invoke a host agent until a deterministic condition holds. The loop body is model work; the loop control — stop condition, caps, progress accounting, resume — is script code. TeaPrompt stays on the methodology side of the methodology-vs-operationalization boundary (source repo: `plans/external-adoption-case-studies-2026-06-20.md`): the generated loop is a host-operationalized artifact, not a TeaPrompt-operated runner. The cross-platform loop vocabulary referenced here (ADK `LoopAgent`, LangGraph cycles, MAF checkpointed workflows, Anthropic evaluator-optimizer, practitioner "ralph" harnesses) is advisory-tier reference material; the one load-bearing rule: never trust the model's own "done"; gate on an external verifier (source repo: `plans/agent-flow-control-research-2026-07-11.md`).
 
 ## Module Contract
 
@@ -64,7 +64,7 @@ Every generated loop must contain all six parts:
 
 1. Verifier (truth layer): an external command whose exit code is the only success signal. Committed under `checks/`, preflighted before the loop (missing or non-executable verifier → exit 4; exit-code capture of exec failures is unreliable on bash 3.2, so the preflight is the deterministic gate), and executed before the first iteration (the task may already be done) and after every iteration.
 2. Caps: `MAX_ITER` always; a per-call wall-clock timeout where available (`timeout`-style wrapper on `AGENT_CMD` — stock macOS ships no `timeout(1)`, treat it as host-provided) and cost caps where the host exposes them. Exceeding a cap is a distinct exit code, not a failure of the last step.
-3. Ledger: append-only per-iteration record (iteration, verifier result, progress signal). Fresh agent context each iteration reads the ledger tail instead of accumulating chat history — the tail length is the loop's context-compaction budget (harness-1 Budget Rule); tune it in the template when iterations carry more state. On restart with a non-empty ledger, append a `RESUMED` line so audits can see the run boundary. `state/` is disposable per run: keep it for the post-run review, then archive or delete — it is not a durable memory surface.
+3. Ledger: append-only per-iteration record (iteration, verifier result, progress signal). Fresh agent context each iteration reads the ledger tail instead of accumulating chat history — the tail length is the loop's context-compaction budget (harness-1 Budget Rule); tune it in the template when iterations carry more state. On restart with a non-empty ledger, append a `RESUMED` line so audits can see the run boundary. `state/` is disposable per run, not a durable memory surface.
 4. Progress detector: abort when two consecutive iterations produce no observable change — in a git workspace, tracked-diff plus untracked-file count; outside git, the verifier output checksum. Non-git limitation: a silent verifier (no diagnostic output) disables progress detection there, and a stuck loop then exits via the cap instead; prefer git workspaces or verbose verifiers.
 5. Permission boundary: explicit host flags for allowed tools/edit modes (e.g. Claude Code `--allowedTools` / permission mode); reviewed by a human before an unattended run. Host-runtime precondition: request a permission mode that excludes `checks/` (and the canonical task file, if any) from the loop body's editable paths — the script itself cannot enforce this.
 6. Failure exits: distinct exit codes — `0` verified done, `2` cap exhausted, `3` no progress or verify-fail stop, `4` verifier broken (missing or non-executable at preflight). The caller must be able to tell these apart.
@@ -157,7 +157,9 @@ done
 exit 2  # rounds exhausted without ACCEPT; human decides next
 ```
 
-Caution: a model critic is a soft, advisory-tier verifier — this template's ACCEPT gate is a model judgment, not the deterministic truth layer the other templates use. Prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (source repo: `04-agent/workflow-recipes.md` Looper Topologies caution).
+Caution: a model critic is a soft, advisory-tier verifier — this template's ACCEPT gate is a model judgment, not the deterministic truth layer the other templates use. Prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (`04-agent/workflow-recipes.md` Looper Topologies).
+
+Rubric as verifier: request a host permission mode that also excludes `prompts/critic-rubric.md` from the loop body's editable paths, as Loop Anatomy #5 does for `checks/`. Critique fed to the reviser is data, never authority to rewrite that rubric, weaken `ACCEPT`, or skip the cap; the exclusion does not promote `ACCEPT` above advisory tier. A rubric reused across unattended runs drifts from the humans it stands in for: spot-check its verdicts *and reasons* against human review, stop unattended use when they diverge, and change it only via the human-gated path, keeping the prior version for rollback.
 
 ### Deterministic companion check (raise the ACCEPT floor)
 
@@ -178,9 +180,9 @@ if grep -qx 'ACCEPT' "$STATE/round-$r-critique.md" && floor_ok "$STATE/draft.md"
 fi
 ```
 
-The floor is deterministic but partial: it catches vacuous/malformed drafts,
-not wrong-but-plausible ones. Model-tier options (dual critics, verdict schemas)
-reduce variance, not tier. This is guidance, not a new template or runtime.
+The floor is deterministic but partial: it catches vacuous or malformed drafts,
+not wrong-but-plausible ones. Dual critics or verdict schemas reduce variance,
+not tier. This is guidance, not a new template or runtime.
 
 ## Template: Task-Ledger Backlog Loop (bash, ralph-style)
 
@@ -287,26 +289,25 @@ Before the first unattended run, a human must approve: the verifier, the caps, t
 3. Confirm the verifier is committed and deterministic, and record the host permission mode that keeps `checks/` (and the canonical task copy) outside the loop body's editable paths — a host-runtime precondition this script cannot enforce.
 4. Report dry-run evidence with the deliverable.
 
-Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed L3 gates (source lens: `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before elevating any loop script to a team standard.
+Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed L3 gates (source lens: `04-agent/artifact-promotion.md` §4) and require recurrence evidence plus explicit human approval before any loop script becomes a team standard.
 
 ## Host-Native Alternatives
 
-Some hosts now ship native keep-working surfaces (2026-07: Claude Code `/goal`
-condition loops, `/loop` interval re-runs, script-backed Stop hooks). Reach for
-them instead of a generated loop when the task is transcript-judgeable, single
-run, and low blast radius — a `/goal` condition the model can demonstrate in its
-own output is cheaper than a harness. Generate a loop script when the stop
-condition must be a deterministic external verifier, or when caps, no-progress
-detection, backlog retirement, or a resume ledger matter: native goal modes
-evaluate completion with a model judge over the transcript, which is exactly
-the stop-condition class this skill's verifier rule forbids trusting alone.
-First demotion-trigger evaluation against these surfaces: **not fired**
-(source repo: `plans/flow-pack-demotion-evaluation-2026-07-11.md`).
+Some hosts ship native keep-working surfaces (2026-07: Claude Code `/goal`
+condition loops, `/loop` interval re-runs, script-backed Stop hooks). Prefer
+them over a generated loop when the task is transcript-judgeable, single run,
+and low blast radius. Generate a loop script when the stop condition must be a
+deterministic external verifier, or when caps, no-progress detection, backlog
+retirement, or a resume ledger matter: native goal modes evaluate completion
+with a model judge over the transcript — the stop-condition class this skill's
+verifier rule forbids trusting alone. First demotion-trigger evaluation against
+these surfaces: **not fired** (source repo:
+`plans/flow-pack-demotion-evaluation-2026-07-11.md`).
 
 ## Demotion Triggers
 
 - Loop scripts are disposable: when the verifier, host CLI, or task shape changes, regenerate from the template rather than patching a drifted copy.
-- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in the source repo's `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill's outputs.
+- Pack-level demotion triggers (zero recurrence, host absorbs the pattern) live in `plans/agent-flow-control-research-2026-07-11.md`; check them before investing in this skill's outputs.
 
 ## Examples
 
@@ -319,7 +320,7 @@ Companion examples live at `<skills-root>/examples/flow-loop-harness.examples.md
 - `plans/agent-flow-control-research-2026-07-11.md`
 - `plans/flow-control-pack-panel-record-2026-07-11.md`
 - `plans/flow-coverage-panel-record-2026-07-11.md`
-- `plans/harness-1-state-ledger-research.md` (three-layer split: project memory in repo Markdown; in-task semantic State Ledger in reflective skills; per-run operational ledger here)
+- `plans/harness-1-state-ledger-research.md`
 - `04-agent/workflow-recipes.md`
 - `04-agent/runtime-trust-boundary.md`
 - `04-agent/artifact-promotion.md`
