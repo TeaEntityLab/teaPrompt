@@ -31,6 +31,7 @@ ADDENDUM_PACKET_SHA256 = "7f035123004db8ec06ab9595efd46bfd6c325fef5d7b1d50e75030
 ADDENDUM_REPO_REVISION = "2fc377ba13b39a34fd24f8f45ffce9a49ff3db70"
 FOREIGN_TOKENS = re.compile(
     r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|not_proven|"
+    r"NEEDS_FIX|3ways|tracker\.md|opus-4-8|sonnet-5|gpt-5\.[0-9]|"
     r"three total worker starts|at most three (worker )?starts"
 )
 ADOPTED = {
@@ -202,6 +203,7 @@ def test_indexes_point_to_the_record():
         "A pasted synthesis is a claim about its source, not the source",
         "the recipe now separates the panel record from the asker-facing answer",
         "total = f(file set) (853 vs 898) and split = f(environment) (844/9 vs 831/22)",
+        "holding one verdict-vocabulary divergence as an open unknown",
         "[record](plans/agentflow-survey-2026-09-05.md)",
     ):
         assert token in decision, f"decision index lost {token!r}"
@@ -211,13 +213,14 @@ def test_indexes_point_to_the_record():
     assert "then three clean-room sentences by user direction" in case_studies
     assert "EP-1/EP-6 deferred with triggers" in case_studies
     assert "CX-1–CX-6 adopted by user direction" in case_studies
-    assert "post-panel implementation C1a/C2/C6/C7/C7b/C8/C9) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
+    assert "post-panel implementation C1a/C2/C6/C7/C7b/C8/C9; session-outlines addendum O-1/O-2: concept map consolidated, one transcript correction, one open divergence) | [survey](agentflow-survey-2026-09-05.md)" in case_studies
     assert (
         "| agentflow survey recorded; three sentences adopted post-panel by user direction; "
         "entry-point addendum recorded; EP-1/EP-6 adopted by user direction; "
         "concept addendum recorded with CX-1–CX-6 adopted; author-talk addendum recorded, "
         "skills unchanged, synthesis-grounding Durable Lesson adopted; "
-        "sibling-session reconciliation recorded (SS-1–SS-9) and implemented by user direction | done |"
+        "sibling-session reconciliation recorded (SS-1–SS-9) and implemented by user direction; "
+        "session-outlines addendum recorded (O-1/O-2) | done |"
         in case_studies
     )
 
@@ -598,3 +601,34 @@ def test_post_panel_implementation_recorded_and_landed_once():
     # Rejected alternatives must stay out: the environment as a required third parameter, and a
     # lens-doc token scan (the scan scope stays installed surfaces; see the regex test above).
     assert "environment it was measured under" not in texts["reflective-research"]
+
+
+OUTLINES_ADDENDUM = "## 2026-09-05 Session Outlines Addendum (paste-9)"
+
+
+def test_session_outlines_addendum_recorded_without_skill_change():
+    text = _read(RECORD)
+    assert OUTLINES_ADDENDUM in text
+    addendum = text.split(OUTLINES_ADDENDUM, 1)[1]
+    for heading in (
+        "### Sources and what is new",
+        "### Consolidated concept map (as of this addendum)",
+        "### Corrections and open divergences",
+        "### Candidate Adoption Ledger",
+        "### Evidence vs inference (addendum)",
+        "### Addendum Falsifiability",
+        "### Addendum Completion Ledger",
+    ):
+        assert heading in addendum, heading
+    assert "byte-identical to the files surveyed by the Author Talk Addendum" in addendum
+    rows = [line for line in addendum.split("### Corrections", 1)[0].splitlines() if line.startswith("| ") and line[2:4].strip().isdigit()]
+    assert len(rows) >= 30, len(rows)
+    assert "**T1 Q4 model tiers (correction).**" in addendum
+    assert "**Verdict vocabulary (open divergence).**" in addendum and "held open, not reconciled" in addendum
+    assert "No new candidate." in addendum
+    assert "same source, same day — not a local recurrence; trigger unchanged" in addendum
+    # Privacy: no names, handles, or links carried from the log.
+    assert "@" not in addendum and "http" not in addendum
+    # The one TeaPrompt sentence the addendum leans on must still say what it says.
+    harness = (library_skills_dir() / "flow-loop-harness" / "SKILL.md").read_text(encoding="utf-8")
+    assert "forbids trusting alone" in harness
