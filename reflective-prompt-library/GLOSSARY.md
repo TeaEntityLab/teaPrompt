@@ -191,6 +191,44 @@ dedicated orchestration layer outside this library's scope. See
 
 ---
 
+## Harness / 執行框架
+
+Host-side machinery that holds when the model does not: authority over gate
+release, gate sequencing, the record of state (ledger or write-ahead log),
+referees (verifiers, hooks, linters), confinement of reachable sinks, and
+budget enforcement. Oracle sealing is write-protection of the measure — a
+confinement — not a referee. TeaPrompt writes contracts for these parts and
+operates none: "harness policy" in `06-repo/AGENTS.md` is this repository's
+author-facing rule set, `harness-generated` names skills a host harness
+auto-learned, and `eval_harness` in the playbook is a prompt-eval helper — none
+is a TeaPrompt-operated harness.
+
+**Operational test:** a skill sentence that says a harness *enforces* something
+names the host precondition that enforces it; a sentence that claims this
+library or the skill enforces it is a defect.
+
+---
+
+## Intent Drift / 意圖漂移
+
+Loss of the owner's intent as it is compressed and then read by something that
+exploits the loss. The optimizer-read chain (spec, oracle, rubric, judge,
+transcript) and its repair shape are the Durable Lesson "Intent lives with
+humans; every downstream artifact is a lossy compression read by an optimizer"
+in `PROJECT_KNOWLEDGE.md`. The term also covers readers that are not model
+optimizers — an asker handed a record as the answer, an editor reconciling two
+surfaces, an interpreter running a shipped template, a coordinator believing a
+tool's status line, a panel answering a packet's frame — each guarded by a
+local check rather than a seal. Drift from intent that was never written has no
+referee; the defenses there are writing more of the intent and a human
+re-anchoring.
+
+**Operational test:** a lesson, recipe, or skill that names a compression
+without naming the reader that exploits it and the check that would catch the
+loss is incomplete. A glossary entry seals nothing.
+
+---
+
 ## Context Load / 上下文負載
 
 Estimated prompt-and-artifact cost of loading and following a workflow skill.
@@ -364,8 +402,9 @@ paragraph prose:
 - **Open or partial ledger row:** a temporary phrase/token assertion may prove
   that named wording reached its named surface.
 - **Adopted ledger row:** retain permanent checks only for structural invariants,
-  registry parity, executable behavior, or stable protocol tokens. Replace or
-  retire exact paragraph pins once a structural contract owns the behavior.
+  registry parity, executable behavior (for a shipped pack template: a stub
+  dry-run over each gate path that template implements), or stable protocol tokens.
+  Replace or retire exact paragraph pins once a structural contract owns the behavior.
 - **Deferred or rejected row:** guard ledger presence and trigger state only;
   never assert the deferred content as though it were adopted.
 
