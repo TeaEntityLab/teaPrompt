@@ -111,9 +111,9 @@ For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counte
    - Each example that names a mechanism was run through that mechanism, or is marked unverified; prose agreement between an example and an invariant is not that check
    - Task slices are independently testable
    - Human Review points are explicit
+   - Requirements name the destination — outcome and acceptance criteria — not the route; a prescribed step sequence appears only where the product itself fixes it
 
 6. Stop at the smallest plan that can be executed and reviewed.
-7. Describe the intended outcome and acceptance criteria rather than prescribing each step; let the model choose the path unless a specific path is required for the product.
 
 ## Test Plan Mode
 

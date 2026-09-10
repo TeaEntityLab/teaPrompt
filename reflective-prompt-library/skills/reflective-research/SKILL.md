@@ -116,7 +116,7 @@ Before synthesizing, state why the evidence is sufficient to stop:
 - If the scope warranted perspective expansion, the synthesis names the competing perspectives and the blind spot — or states explicitly that none were found.
 
 If the gate fails, name the missing evidence and keep searching. Once it passes, stop — do not pad the answer with more sources.
-Do not search again to improve phrasing, add examples, or cite nonessential details; if wording can safely be made more generic, make it generic instead of re-searching.
+A passed gate is not reopened for polish: no further retrieval to reword a claim, find a nicer example, or attach a citation the decision does not need; if a sentence needs more support than the ledger holds, generalize the sentence rather than fetch more.
 
 ### Budget Rule
 

@@ -4,7 +4,7 @@ Adopted: two GLOSSARY terms, one Adoption Guard Closure clause, one Durable
 Lesson, one recipe frame-test bullet. Deferred: the tool-status-line rule (I-1)
 - guarded for ledger presence and absence from skills, never as adopted text.
 
-The 2026-09-10 skill-layer re-evaluation adopted no skill text (dated negative
+The 2026-09-06 skill-layer re-evaluation adopted no skill text (dated negative
 audit) and hardened I-1's reserved wording. This guard therefore pins the
 addendum's ledger, the hardened wording as record-only, and the continued
 absence of every rejected candidate from the installed skills.
@@ -38,13 +38,13 @@ CLOSURE_CLAUSE = "executable behavior (for a shipped pack template: a stub\n  dr
 LESSON = "### Lesson: A shipped template drifts from its contract prose; only execution finds it"
 FRAME_TEST = "- Frame test: the packet's questions carry the coordinator's frame, so the packet states the frame-test"
 DEFERRED_I1 = "A tool status line is a claim about an effect, not the artifact."
-ADDENDUM = "## Skill Adoption Addendum — 2026-09-10 (user-directed, skill layer)"
+ADDENDUM = "## Skill Adoption Addendum — 2026-09-06 (user-directed, skill layer)"
 HARDENED_I1 = (
     "compare it against an oracle that does not share the writer's channel — a copy taken "
     "before the write, or the version-control index; re-reading the bytes the writer just "
     "returned is not that check."
 )
-# Wording the 2026-09-10 panel rejected for the installed unit; the recipe owns these duties.
+# Wording the 2026-09-06 panel rejected for the installed unit; the recipe owns these duties.
 REJECTED_ON_SKILLS = ("asker's altitude", "two artifacts", "failed synthesis", "Test the frame too")
 
 

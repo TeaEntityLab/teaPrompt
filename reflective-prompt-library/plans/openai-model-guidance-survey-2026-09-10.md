@@ -1,6 +1,6 @@
 # OpenAI Model Guidance Survey — 2026-09-10
 
-> **Status: decided, guarded, and verified.** Five-lens Socratic panel (5/5 delivered) reviewed seven candidates from nine official OpenAI developer guidance pages (GPT-4.1 through GPT-6 Astra, fetched 2026-09-10). Four clean-room sentences adopted by user direction on four skills; one rejected (already implicit); two rejected (style, model-specific). User instruction: "survey these model guidance differences" plus "if worth it then update docs and skills."
+> **Status: decided, guarded, and verified.** Five-lens Socratic panel (5/5 delivered) reviewed seven candidates from nine official OpenAI developer guidance pages (GPT-4.1 through GPT-6 Astra, fetched 2026-09-10). Four clean-room sentences adopted by user direction on four skills; one rejected (already implicit); two rejected (style, model-specific). A same-day review of the landing commit revised the wording of three sentences and the seat of one — see Post-Review Revisions. User instruction (paraphrased; the verbatim message is not carried in this record): survey the differences across these model guidance pages, think critically in several roles, and update docs and skills if worthwhile.
 
 ## Source
 
@@ -8,7 +8,7 @@
 - Models surveyed: `gpt-4.1`, `gpt-5`, `gpt-5.1`, `gpt-5.2`, `gpt-5.3-codex`, `gpt-5.4`, `gpt-5.5`, `gpt-5.6`, `gpt-6-astra`
 - Fetch method: `curl` to `/tmp/model_<model>.md`; all nine returned 200 with model-specific content
 - Date fetched: 2026-09-10
-- License: OpenAI developer documentation (public)
+- License: not determined. The pages carry no license notice that this survey checked, and "publicly readable" is not a copy licence. **Copy boundary:** the precautionary no-copy rule from `claude-code-system-prompts-survey-2026-07-24.md` applies — quoted vendor text lives in this dated record only; every adopted sentence is a restatement, and the guard rejects any landed sentence sharing a run of more than four consecutive words with its quoted source.
 - No clone, no execution, no API calls — static Markdown only
 
 ## What Was Surveyed
@@ -101,7 +101,7 @@ Official OpenAI developer guidance pages for nine model generations, from GPT-4.
 - **Source**: GPT-6 Astra guidance: "Do not write tests for reversible, low-impact changes that mirror the implementation. If you do choose to verify your work with tests, make sure that the tests are meaningful and necessary."
 - **Gap**: `reflective-implement` §Verification says "Run the checks that prove the claim" and lists specific checks. The Small-Change Fast Path collapses the report but says "Never collapse verification itself." Line 102 says "narrowest tests that would fail if it changed." But neither says "calibrate how much testing a change requires; avoid tests that mirror the implementation for reversible low-impact changes."
 - **Destination**: `reflective-implement` §Verification.
-- **Existing text check**: Line 102 says "narrowest tests" and the Fast Path says "Never collapse verification itself." The system prompt says "NEVER write a test so the change 'has tests'." The gap is the explicit calibration sentence.
+- **Existing text check**: Line 102 says "narrowest tests" and the Fast Path says "Never collapse verification itself." (The surveying session's host prompt carries a similar no-tests-for-show rule; that is host-supplied, not installed text, and does not count as coverage.) The gap is the explicit calibration sentence.
 - **Smaller alternative rejected**: rely on "narrowest tests" — rejected because "narrowest" is about width, not about whether to test at all; a narrow test that mirrors the implementation is still a wasted test.
 - **Failure defended**: writing tests that mirror the implementation for a reversible low-impact change wastes tokens and can create false confidence.
 - **Risk**: could be misread as "skip verification for small changes," contradicting "Never collapse verification itself." The sentence must preserve the invariant that verification itself is never skipped.
@@ -154,12 +154,25 @@ Official OpenAI developer guidance pages for nine model generations, from GPT-4.
 | OG-6 | Rejected | Style, not correctness |
 | OG-7 | Rejected | Model-specific, TeaPrompt is model-agnostic |
 
-## Adopted Wording
+## Adopted Wording (as landed after the 2026-09-10 review)
 
 - **OG-1** (`reflective-minimality` Minimality Ladder, after governance-artifacts bullet): "Apply the same test to prompt text: state each instruction once. A rule repeated across sections adds tokens, invites wording drift between copies, and can over-weight the instruction or spend reasoning reconciling near-duplicates."
-- **OG-2** (`reflective-spec-plan` Workflow, after step 6): "Describe the intended outcome and acceptance criteria rather than prescribing each step; let the model choose the path unless a specific path is required for the product."
-- **OG-3** (`reflective-implement` §Verification, after A-7a sentence): "Calibrate the depth of verification to the risk and reversibility of the change: do not add tests that merely mirror the implementation for reversible, low-impact edits. The proving check is still run and read; choose the narrowest check that would actually fail if the change were wrong, then stop once the claim is proven."
-- **OG-4** (`reflective-research` Sufficiency Gate, after stop rule): "Do not search again to improve phrasing, add examples, or cite nonessential details; if wording can safely be made more generic, make it generic instead of re-searching."
+- **OG-2** (`reflective-spec-plan` Workflow step 5, Definition of Done, last check): "Requirements name the destination — outcome and acceptance criteria — not the route; a prescribed step sequence appears only where the product itself fixes it"
+- **OG-3** (`reflective-implement` §Verification, own paragraph after the A-7a sentence): "Scale verification depth to the risk and reversibility of the change; a test that merely mirrors the implementation proves nothing at any risk level. For a reversible, low-impact edit, the narrowest check that would fail if the change were wrong is enough — still run and read — then stop once the claim is proven."
+- **OG-4** (`reflective-research` Sufficiency Gate, after the stop rule): "A passed gate is not reopened for polish: no further retrieval to reword a claim, find a nicer example, or attach a citation the decision does not need; if a sentence needs more support than the ledger holds, generalize the sentence rather than fetch more."
+
+## Post-Review Revisions (2026-09-10)
+
+A review of the landing commit (`f96c068`) found four defects in the panel-approved text; the gap findings and verdicts stand, the wording and one seat changed.
+
+| ID | Defect | Revision |
+| --- | --- | --- |
+| OG-2 | Landed as numbered step 7 after step 6 "Stop at the smallest plan" — a step after the workflow's stop; and shared a 7-word verbatim run with the vendor sentence | Re-homed as the last Definition-of-Done check in step 5, where "destination not route" is verifiable at completion; restated with no run over three words |
+| OG-3 | "do not add tests that merely mirror the implementation *for reversible, low-impact edits*" scoped the prohibition by risk, implying mirroring tests are acceptable when risk is high; readable as licence to skip the `:102` behavior lock on a refactor | Split: mirroring tests prove nothing at any risk level; the risk qualifier now scopes depth ("the narrowest check that would fail … is enough") |
+| OG-4 | 9-word verbatim run with the vendor sentence under an undetermined licence | Restated against the skill's own vocabulary (gate, ledger); longest shared run now one word |
+| A-7a + OG-3 | Three verification rules on consecutive lines with no blank line — one fused paragraph in the skill's densest section | Blank lines inserted; guards pin substrings, unaffected |
+
+The panel was not re-run: each revision keeps the lens's named gap and failure defended and changes only wording or seat. OG-1 was left as landed (its 4-word overlap, "state each instruction once", is a generic imperative at the guard's threshold).
 
 ## Evidence Separation
 
@@ -170,4 +183,4 @@ Official OpenAI developer guidance pages for nine model generations, from GPT-4.
 
 ## Falsifiability
 
-This record is wrong or must be re-litigated if: (1) any of the four adopted sentences is removed from its named skill surface without a documented supersession; (2) vendor model names (GPT, Astra, OpenAI, Codex) appear on any durable skill surface (clean-room violation); (3) OG-5 is re-opened without new recurrence evidence showing a skill author adding a `Never` for a judgment call; (4) a future model guidance page contradicts the adopted sentences and the contradiction is confirmed locally.
+This record is wrong or must be re-litigated if: (1) any of the four adopted sentences is removed from its named skill surface without a documented supersession; (2) vendor model names (GPT, Astra, OpenAI, Codex) appear on any durable skill surface (clean-room violation); (3) OG-5 is re-opened without new recurrence evidence showing a skill author adding a `Never` for a judgment call; (4) a future model guidance page contradicts the adopted sentences and the contradiction is confirmed locally; (5) a landed sentence shares a run of more than four consecutive words with its quoted vendor source while the guard is green, or a licence determination later shows the copy boundary was unnecessary — the former is a guard defect, the latter loosens nothing already landed.

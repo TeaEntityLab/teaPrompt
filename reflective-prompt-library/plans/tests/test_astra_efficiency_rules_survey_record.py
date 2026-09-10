@@ -109,6 +109,11 @@ def test_no_surveyed_vocabulary_caps_or_reserved_wording_on_durable_surfaces():
             assert RESERVED_A7A not in body, path
 
 
+def test_a7a_adopted_wording_present_once_on_reflective_implement():
+    body = _read(library_skills_dir() / "reflective-implement" / "SKILL.md")
+    assert body.count(RESERVED_A7A) == 1, "A-7a is adopted; its wording must be pinned at its single surface"
+
+
 def test_indexes_point_to_the_record():
     knowledge = _read(PROJECT_KNOWLEDGE)
     assert "[record](plans/astra-efficiency-rules-survey-2026-09-10.md)" in knowledge
