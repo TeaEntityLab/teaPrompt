@@ -147,6 +147,7 @@ Run the checks that prove the claim:
 If verification fails, fix and rerun. If a check cannot run, report why.
 
 When a check fails, first establish whether the failure is in the check itself — its harness, environment, or inputs — or in the change; a broken check is reported as could-not-run and repaired or escalated as a check, never satisfied by editing the product. Read the exit status and the actual output: a log line that says success while the process failed, or a run that skipped the relevant tests, is not a pass. Every edit after the last verification run, including cosmetic cleanup or formatting, reopens verification; the reported result is the run against the final state of the change.
+Reused verification holds only while the source, inputs, base, dependencies, configuration, and acceptance it ran against are unchanged — including changes the agent did not make.
 
 ## Failure Loop (LOCAL_FEEDBACK)
 

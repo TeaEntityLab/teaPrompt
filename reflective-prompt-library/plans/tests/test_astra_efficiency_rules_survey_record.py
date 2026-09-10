@@ -41,7 +41,7 @@ LEDGER_STATUS = {
     "A-3": "**Rejected as installed**",
     "A-5": "**Deferred beside I-1 (record-only now)**",
     "A-6": "**Rejected (host-specific)**",
-    "A-7a": "**Record-only (gap real, unoccurred)**",
+    "A-7a": "**Adopted (user-directed 2026-09-10)**",
     "A-7b": "**Rejected as installed**",
     "A-8": "**Record-only (already held)**",
 }
@@ -103,7 +103,10 @@ def test_no_surveyed_vocabulary_caps_or_reserved_wording_on_durable_surfaces():
         body = path.read_text(encoding="utf-8")
         assert not SURVEY_TOKENS.search(body), path
         assert not CAP_LITERALS.search(body), path
-        assert RESERVED_A5 not in body and RESERVED_A7A not in body, path
+        assert RESERVED_A5 not in body, path
+        # A-7a was adopted onto reflective-implement; its wording IS expected there.
+        if "reflective-implement" not in str(path):
+            assert RESERVED_A7A not in body, path
 
 
 def test_indexes_point_to_the_record():
