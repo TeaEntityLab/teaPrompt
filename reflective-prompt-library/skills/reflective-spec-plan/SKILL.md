@@ -113,6 +113,7 @@ For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counte
    - Human Review points are explicit
 
 6. Stop at the smallest plan that can be executed and reviewed.
+7. Describe the intended outcome and acceptance criteria rather than prescribing each step; let the model choose the path unless a specific path is required for the product.
 
 ## Test Plan Mode
 
