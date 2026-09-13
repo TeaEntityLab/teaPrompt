@@ -45,7 +45,7 @@ PINS = {
     "reflective-minimality": ("Lean already. No complexity cuts.",),
     "reflective-risk": ("- If the risk cannot be bounded, recommend no-go.", "ungated production changes"),
     "reflective-spec-plan": ("- Formalization L0: prompt only,",),
-    "governed-delivery": ("and re-plans the affected slice before work continues.",),
+    "governed-delivery": ("the affected slice re-planned before work continues.",),
     "agent-governance-scaffold": (
         "exactly one of the literals `**Governance status:** artifact-complete` or `**Governance status:** enforcement-proven`",
     ),

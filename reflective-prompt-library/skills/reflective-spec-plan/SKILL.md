@@ -227,7 +227,7 @@ When chat-only, use the same headings inline.
 
 ### Spec Version and Acceptance Record
 
-The spec carries a version; a mid-task change bumps it and marks every dependent plan item and ledger entry `stale` before work continues.
+The spec carries a version; a mid-task change bumps it and marks every spec_version-keyed artifact — plan items, ledger entries, the oracle manifest, the task packet, and the acceptance record — `stale` before work continues.
 Acceptance record: a named accepter closes the delivery against the oracle manifest and product evidence; execution success alone never closes it.
 
 ## Ticket Template

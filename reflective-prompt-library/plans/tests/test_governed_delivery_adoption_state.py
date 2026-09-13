@@ -33,8 +33,10 @@ ANCHORS = {
     "reflective-spec-plan": (
         "Oracle manifest: list every acceptance, invariant, and security oracle with its class "
         "(authoritative or developer), owner, host sealing precondition, and change protocol.",
-        "The spec carries a version; a mid-task change bumps it and marks every dependent plan "
-        "item and ledger entry `stale` before work continues.",
+        "The spec carries a version; a mid-task change bumps it and marks every "
+        "spec_version-keyed artifact — plan items, ledger entries, the oracle "
+        "manifest, the task packet, and the acceptance record — `stale` before "
+        "work continues.",
         "Acceptance record: a named accepter closes the delivery against the oracle manifest "
         "and product evidence; execution success alone never closes it.",
     ),
@@ -104,7 +106,8 @@ TEMPLATES = (
 )
 CLEAN_ROOM_FORBIDDEN = re.compile(
     r"arXiv:\d|17% F|39/49|\+32%|\bA[0-5]–A[0-5]\b|\bK[0-4]–K[0-4]\b|\bW[0-5]–W[0-5]\b|"
-    r"\bG[0-6]–G[0-6]\b|\bP1–P12\b|grill"
+    r"\bG[0-6]–G[0-6]\b|\bP1–P12\b|grill|\bI[1-9]–I[1-9]\b|5\.7%|0\.4%|"
+    r"93% blind|80% override|2×–30×|800K token"
 )
 
 
@@ -131,6 +134,18 @@ def test_gd17_registered_self_labelled_and_off_dispatch_routes():
     dispatch = _skill("reflective-dispatch")
     route = dispatch.split("## Route", 1)[1].split("## Strictness Ladder", 1)[0]
     assert "governed-delivery" not in route
+
+
+# GD-17 - the pack must never appear in a ROUTE fixture (structural isolation;
+# collision measurement stays deferred under GD-19).
+def test_gd17_absent_from_route_fixtures():
+    for fixture in (
+        "route-001-paraphrase-eval.yaml",
+        "route-002-holdout-eval.yaml",
+        "route-003-adversarial-eval.yaml",
+        "ROUTING_CONTRACT.md",
+    ):
+        assert "governed-delivery" not in _read(PLANS_DIR / fixture), fixture
 
 
 # GD-17 - frontmatter declares the human-review gate and pack metadata.
@@ -230,9 +245,21 @@ def test_core_skill_anchors_present_once():
             assert text.count(anchor) == 1, f"{name} anchor count != 1: {anchor[:50]!r}"
 
 
-# Clean-room: no corpus tokens on any skill surface touched by this adoption.
-def test_clean_room_tokens_absent_from_all_skill_surfaces():
-    for path in SKILLS.glob("*/SKILL.md"):
+# Clean-room: no corpus tokens on any installed surface this adoption touched —
+# the claim covers "any skill surface" / "durable prompt surface", so the scan
+# covers the pack's co-installed examples and admission surfaces too.
+def test_clean_room_tokens_absent_from_all_installed_surfaces():
+    surfaces = list(SKILLS.glob("*/SKILL.md"))
+    surfaces += [
+        EXAMPLES,
+        SKILLS / "skill-map.md",
+        SKILLS / "SKILL_TRIGGER_CHEATSHEET.md",
+        SKILLS / "SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
+        PROMPT_LIBRARY_ROOT / "SKILL_INSTALLATION.md",
+        PROMPT_LIBRARY_ROOT / "SKILL_INSTALLATION.zh-TW.md",
+    ]
+    for path in surfaces:
+        assert path.is_file(), f"missing installed surface {path}"
         assert not CLEAN_ROOM_FORBIDDEN.search(path.read_text(encoding="utf-8")), path.name
 
 
@@ -260,5 +287,5 @@ def test_adoption_record_shape_and_ledger():
     for n in range(1, 18):
         assert f"| GD-{n} |" in text, n
     assert "| GD-16 | Adversarial refuters | Adopted 2026-09-03 (contracts only; all six `unknown`)" in text
-    assert "| GD-18 | Independent post-land panel | Deferred" in text
+    assert "| GD-18 | Independent post-land panel | Adopted 2026-09-13" in text
     assert "never waives the tenth-core promotion gate" in text

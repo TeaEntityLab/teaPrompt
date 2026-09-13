@@ -71,12 +71,12 @@ Escalation:
 | `intent` | Named human signs the intent-record; unknowns have owners | named human | human decision | no |
 | `spec` | Versioned spec plus oracle manifest; no `stale` dependents | spec owner | artifact | no |
 | `plan` | Plan items bound to the current spec version | plan owner | artifact | yes if binding is deterministic |
-| `execution` | Work follows the task packet; ledger current | executor | runtime | yes if packet and ledger checks pass |
+| `execution` | Work follows the task packet; ledger current | executor | runtime | yes if the deterministic packet-binding and ledger-currency checks pass; no when packet-adherence rests on agent self-report |
 | `verification` | Verification-plan channels met | attester / host verifier | ranked; deterministic first | yes for deterministic; no for model-only |
 | `acceptance` | Named accepter closes against oracles and product evidence | named accepter | mixed; not self-report | no |
 | `retro` | Gate retro recorded; policy change kept off activation | retro owner | artifact | yes if the retro record parses |
 
-Auto-release is never allowed for `intent` and `acceptance`. A mid-task spec change bumps the spec version and marks every dependent plan item and ledger entry `stale`, and re-plans the affected slice before work continues.
+Auto-release is never allowed for `intent` and `acceptance`. A mid-task spec change bumps the spec version and marks every spec_version-keyed artifact — plan items, ledger entries, the oracle manifest, the task packet, and the acceptance record — `stale`; the oracle manifest is re-validated and the affected slice re-planned before work continues. Auto-release keys off whether the release condition is a deterministic check, not off the evidence tier.
 
 ## Autonomy Envelope
 
@@ -254,7 +254,7 @@ Host-run checks. A refuter that has not been run is `unknown`, never passed.
 - **GDR-3** A repeated failure signature must exit, not retry.
 - **GDR-4** Losing the transcript must not lose state (packet rebuild from artifacts).
 - **GDR-5** Self-report-only evidence must not release a gate.
-- **GDR-6** A mid-run spec change must mark dependent items `stale` and re-plan.
+- **GDR-6** A mid-run spec change must mark every spec_version-keyed artifact (plan items, ledger entries, oracle manifest, task packet, acceptance record) `stale` and re-plan; any downstream artifact left at the prior spec_version is a refuter failure.
 
 ## Verification
 
@@ -266,7 +266,8 @@ Host-run checks. A refuter that has not been run is `unknown`, never passed.
 ## Demotion Triggers
 
 - Contract drift → regenerate from this skill rather than patching a drifted copy.
-- Zero recurrence by the next checkpoint, or a host absorbs the pattern → pack-level demotion folds back into `plans/governed-delivery-adoption-2026-09-03.md`.
+- Zero recurrence by the next checkpoint, or a host absorbs the pattern → pack-level demotion folds back into `plans/governed-delivery-adoption-2026-09-03.md`. Recurrence evidence is host-supplied (a prompt library cannot observe host invocations); a skipped or unrecorded checkpoint counts as zero recurrence, not as a pass.
+- Redundancy-in-use → if the pack is never invoked independently of `agent-governance-scaffold`, or the shared host-precondition / `artifact-complete` / constitutional-path machinery diverges between the two packs, fold the delivery lifecycle into a shared reference and retire the duplicated boilerplate rather than maintaining two copies.
 
 ## Examples
 

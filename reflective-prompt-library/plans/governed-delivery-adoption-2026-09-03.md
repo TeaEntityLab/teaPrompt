@@ -8,7 +8,7 @@ The user instruction was: *"I want Governable Autonomous Delivery's features as 
 
 ## Acceptance provenance
 
-**Composite self-acceptance (disclosed):** one host session reconsidered the options, authored the pack, deepened nine core skills through parallel workers, wrote this ledger, the guards, and the registry edits, and ran `make all`. Proposer and acceptor were the same session; the explicit user instruction supplied human approval. No independent review ran before landing; the first independent acceptance layer is a future Parallel Lens Review (see Demotion Triggers).
+**Composite self-acceptance (disclosed):** one host session reconsidered the options, authored the pack, deepened eight core skills (reflective-dispatch left untouched) through parallel workers, wrote this ledger, the guards, and the registry edits, and ran `make all`. Proposer and acceptor were the same session; the explicit user instruction supplied human approval. No independent review ran before landing; the first independent acceptance layer ran 2026-09-13 as a Parallel Lens Review (see Demotion Triggers and the review record).
 
 ## Reconsidered options
 
@@ -75,12 +75,13 @@ Host-only, declared not implemented: oracle sealing, sandbox and egress control,
 | GD-15 | Host preconditions | Adopted 2026-09-03 | pack `## Host Preconditions` | none |
 | GD-16 | Adversarial refuters | Adopted 2026-09-03 (contracts only; all six `unknown`) | pack `## Adversarial Refuters` | Run on the first named host harness; record pass/fail per GDR |
 | GD-17 | Pack admission surfaces | Adopted 2026-09-03 | `DOMAIN_PACK_SKILLS`, Type line, examples, skill-map, EN/zh-TW cheatsheets, `SKILL_INSTALLATION.md`, guard | none |
-| GD-18 | Independent post-land panel | Deferred | Composite self-acceptance disclosed above | Run a Parallel Lens Review before the 2026-10-11 checkpoint |
+| GD-18 | Independent post-land panel | Adopted 2026-09-13 — AGREE WITH CHANGES, all changes applied | Five-lens Parallel Lens Review; record: `plans/governed-delivery-review-2026-09-13.md` | none |
 | GD-19 | Collision measurement for "deliver / autonomous / unattended" vocabulary against core routes | Deferred | No pre-tune observation recorded | Same rule as G9: ≥3 fresh holdout groups before touching quick cues or fixtures |
 
 ## Demotion Triggers
 
-- **Recurrence checkpoint (2026-10-11)** — zero observed host invocations of `governed-delivery` by the checkpoint → demote: fold the gate sequence, contract set, and refuters into a reference section of this record and remove the pack from `DOMAIN_PACK_SKILLS` with the full surface unwind (registry, examples, skill-map, cheatsheets, install helpers, guard).
+- **Recurrence checkpoint (2026-10-11)** — zero observed host invocations of `governed-delivery` by the checkpoint → demote: fold the gate sequence, contract set, and refuters into a reference section of this record and remove the pack from `DOMAIN_PACK_SKILLS` with the full surface unwind (registry, examples, skill-map, cheatsheets, install helpers, guard). Recurrence evidence is host-supplied — a prompt library cannot observe host invocations; a skipped or unrecorded checkpoint counts as zero recurrence, not as a pass.
+- **Redundancy-in-use** — if `governed-delivery` is never invoked independently of `agent-governance-scaffold`, or the shared host-precondition / `artifact-complete` / constitutional-path machinery diverges between the two packs, fold the delivery lifecycle into a shared reference and retire the duplicated boilerplate rather than maintaining two copies.
 - **Host absorbs the pattern** — a target host shipping enforced gate sequencing, oracle sealing, and acceptance records as first-party primitives retires the pack.
 - **Contract drift** — when the host's oracle, sink, or ledger model changes, regenerate from the Contract Set; a patched drifted copy is not the pack's output.
 - **Core-skill regression** — if any deepened core skill trips a lint length warning or a ROUTE fixture regresses, shrink that skill's added subsection to its anchor sentence.
@@ -93,14 +94,14 @@ Host-only, declared not implemented: oracle sealing, sandbox and egress control,
 
 ## Falsifiability
 
-This record is wrong if: an anchor sentence disappears while its guard passes; the pack appears on a `reflective-dispatch` route row or ROUTE fixture; a skill surface carries a lettered ladder, practice number, arXiv identifier, or vendor figure from the corpus; a refuter is reported as passed without a named host run; or the pack reaches the 2026-10-11 checkpoint with zero invocations and no demotion decision.
+This record is wrong if: an anchor sentence disappears while its guard passes; the pack appears on a `reflective-dispatch` route row or ROUTE fixture; a skill surface carries a lettered ladder, practice number, arXiv identifier, or vendor figure from the corpus; a refuter is reported as passed without a named host run; or the pack reaches the 2026-10-11 checkpoint with no recorded demotion decision and no recorded evidence of host invocation.
 
 ## Completion Ledger
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Pack `governed-delivery` SKILL.md + examples | `verified` | `skills/governed-delivery/SKILL.md` (14,687 chars, under the 20,000-char lint threshold), `skills/examples/governed-delivery.examples.md` (2,040 chars); governance validator 13/13 |
-| Nine core skills deepened (A1–H1) | `verified` | 42 inserted lines, 0 deletions across the nine core skills; every anchor present exactly once; Small-Change Fast Path byte-identical |
+| Pack `governed-delivery` SKILL.md + examples | `verified` | `skills/governed-delivery/SKILL.md` (14,256-char body at review, under the 20,000-char lint threshold), `skills/examples/governed-delivery.examples.md` (2,081 chars); governance validator 13/13 |
+| Eight core skills deepened (A1–H1); reflective-dispatch unchanged | `verified` | 41 inserted lines, 0 deletions across the eight deepened core skills (git `1e4f960` numstat); every anchor present exactly once; Small-Change Fast Path byte-identical |
 | Registry, install helpers, skill-map, cheatsheets | `verified` | `DOMAIN_PACK_SKILLS` = 4; EN/zh-TW install guides and cheatsheet appendices; skill-map row; registry-driven guards passed |
 | Deterministic guard | `verified` | `plans/tests/test_governed_delivery_adoption_state.py`: 15 passed |
 | Prior guards reconciled | `verified` | `test_ga_skills_coverage_panel_record.py` cardinality 4 with supersession comment; `test_skill_scenario_panel_adoption_state.py` and `test_dormant_conditional_contracts.py` made registry-driven instead of hard-coded 12/4; `QUALITY_GATES_SUMMARY.md` counts 13/13, 9 core + 4 packs, floor 1060+ → 1080+ |

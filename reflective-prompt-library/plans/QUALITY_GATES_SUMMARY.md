@@ -19,7 +19,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
   must nest under `metadata:`), name regex + directory match, description ≤1024 chars
 
 **Results:**
-- Latest observed `validate_links.py` scan: 139 files, 0 errors (snapshot-sensitive; post spec-conformance migration).
+- Latest observed `validate_links.py` scan: 184 files, 0 errors (2026-09-13 snapshot; snapshot-sensitive).
 - All links and schema references were valid in that run.
 
 **Usage:**
@@ -39,7 +39,7 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Current generated index snapshot: 109 total files after `generate_index.py` (2026-07-11 snapshot; includes prompt-library docs, skills, plans records, and the active planning artifacts).
+- Current generated index snapshot: 148 total files after `generate_index.py` (2026-09-13 snapshot; includes prompt-library docs, skills, plans records, and the active planning artifacts).
 - 2 main categories (prompt-library, skills)
 - 10 prompt-library subcategories
 - 13 skill subcategories (9 core + 4 registered domain packs)
@@ -65,9 +65,9 @@ python3 reflective-prompt-library/plans/generate_index.py
   heuristics; prompt/skill checks run only on `00-core`–`06-repo` and `SKILL.md`.
 
 **Results:**
-- Latest observed lint run (2026-07-18): scanned 158 files
-- 0 errors, 1 warning (non-blocking): `agent-governance-scaffold/SKILL.md` body exceeds the 20k-char length threshold (25,773 chars) — accepted per the 2026-07-18 panels; shrink candidates stay ledgered as R10 in the panel record
-- 39 composable prompt/skill files with suggestions (non-blocking)
+- Latest observed lint run (2026-09-13): scanned 184 files
+- 0 errors, 1 warning (non-blocking): `agent-governance-scaffold/SKILL.md` body exceeds the 20k-char length threshold (25,405 chars) — accepted per the 2026-07-18 panels; shrink candidates stay ledgered as R10 in the panel record
+- 40 composable prompt/skill files with suggestions (non-blocking)
 - All 9 core + 4 domain-pack skills pass validation
 
 **Usage:**
@@ -283,7 +283,7 @@ python3 reflective-prompt-library/plans/benchmark_tasks.py
 
 The implementation aligns with research findings:
 
-1. **Quality over quantity** - TeaPrompt maintains a compact generated index (92 files after regeneration) vs thousands in other repos.
+1. **Quality over quantity** - TeaPrompt maintains a compact generated index (148 files after the 2026-09-13 regeneration) vs thousands in other repos.
 2. **Hierarchical organization** - 7 prompt-source directories plus skills/plans map onto the 10-layer taxonomy.
 3. **Focused skills** - nine frozen workflow skills (including reflective-minimality gate) vs comprehensive documentation
 4. **Validation discipline** - Automated quality gates catch structural regressions; semantic quality still needs review evidence.
@@ -293,7 +293,7 @@ The implementation aligns with research findings:
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Files validated | 148 snapshot | ✅ 0 link/schema errors in latest observed run |
+| Files validated | 184 snapshot (2026-09-13) | ✅ 0 link/schema errors in latest observed run |
 | Links validated | 0 broken | ✅ Pass |
 | Skills with governance | 13/13 | ✅ 9 core + 4 domain packs; metadata complete |
 | Benchmark tasks | 24 | ✅ Ready |
@@ -342,7 +342,7 @@ regression evidence, not proof of broad semantic routing quality.
 2. **ROUTE-001/002/003 in CI** — 128 + 124 + 76 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
-5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_human_review_library_registry.py`, `test_prompt_skill_links_library_registry.py`, `test_prompt_contract_library_registry.py`, `test_prompt_primary_workflow_surface_library_registry.py`, `test_workflow_skill_coverage_library_registry.py`, `test_prompt_eval_harness_score_library_registry.py`, `test_prompt_workflow_skill_reference_library_registry.py`, `test_prompt_eval_harness_fixture_library_registry.py`, `test_prompt_category_paths_library_registry.py`, `test_prompt_library_registry_helpers_library_registry.py`, `test_prompt_governance_surface_paths_library_registry.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`, `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py`, `test_skill_scenario_panel_adoption_state.py`, `test_skill_module_contract.py` (Escalation subsection + Trigger/Methods/Output/Never; 1140+ pytest anti-drift suite in CI); reciprocal thinking-lens ↔ skill checks and `00-core` + composable `Primary workflow surface(s)` ↔ `*_SKILL_LINKS` parity in `test_prompt_cross_links.py` (including strict Primary workflow surfaces parity via `test_thinking_lens_primary_surfaces_match_consumer_graph`); Human Review + Escalation route-target guards in thinking/skill contract tests; composable `Primary workflow surface(s)` / Supporting-lens preamble guards and composable `## Human Review` preamble guards (route to `reflective-risk`) via `prompt_eval_helpers.assert_human_review_preamble` in `test_*_prompts_eval_harness.py`; frozen `*_HUMAN_REVIEW_REQUIRED` / `*_HUMAN_REVIEW_EXEMPT` set parity across all prompt categories (Round 90); library-wide contract heading registry (`PROMPT_CONTRACT_HEADINGS`, Round 93); workflow skill coverage registry (`*_COVER_WORKFLOW_SKILLS`, Round 95); eval_harness score floor registry (`PROMPT_EVAL_MIN_SCORE`, Round 96); workflow skill reference registry (`assert_prompt_references_workflow_skill`, Round 97); eval_harness fixture registry (`make_category_eval_harness_fixture`, Round 98); category path registry (`category_prompt_dir` / `sorted_category_prompts`, Round 99); library registry helper registry (`assert_registry_matches_library_glob`, Round 100); governance surface path registry (`cheatsheet_en_path` / `glossary_path`, Round 101); workflow skill reference helper preamble-aligned (Round 99); library registry helper DRY (`assert_library_wide_unique_basenames` / `assert_registry_matches_library_glob`, Round 100)
+  5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_human_review_library_registry.py`, `test_prompt_skill_links_library_registry.py`, `test_prompt_contract_library_registry.py`, `test_prompt_primary_workflow_surface_library_registry.py`, `test_workflow_skill_coverage_library_registry.py`, `test_prompt_eval_harness_score_library_registry.py`, `test_prompt_workflow_skill_reference_library_registry.py`, `test_prompt_eval_harness_fixture_library_registry.py`, `test_prompt_category_paths_library_registry.py`, `test_prompt_library_registry_helpers_library_registry.py`, `test_prompt_governance_surface_paths_library_registry.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`, `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py`, `test_skill_scenario_panel_adoption_state.py`, `test_skill_module_contract.py` (Escalation subsection + Trigger/Methods/Output/Never; 1160+ pytest anti-drift suite in CI); reciprocal thinking-lens ↔ skill checks and `00-core` + composable `Primary workflow surface(s)` ↔ `*_SKILL_LINKS` parity in `test_prompt_cross_links.py` (including strict Primary workflow surfaces parity via `test_thinking_lens_primary_surfaces_match_consumer_graph`); Human Review + Escalation route-target guards in thinking/skill contract tests; composable `Primary workflow surface(s)` / Supporting-lens preamble guards and composable `## Human Review` preamble guards (route to `reflective-risk`) via `prompt_eval_helpers.assert_human_review_preamble` in `test_*_prompts_eval_harness.py`; frozen `*_HUMAN_REVIEW_REQUIRED` / `*_HUMAN_REVIEW_EXEMPT` set parity across all prompt categories (Round 90); library-wide contract heading registry (`PROMPT_CONTRACT_HEADINGS`, Round 93); workflow skill coverage registry (`*_COVER_WORKFLOW_SKILLS`, Round 95); eval_harness score floor registry (`PROMPT_EVAL_MIN_SCORE`, Round 96); workflow skill reference registry (`assert_prompt_references_workflow_skill`, Round 97); eval_harness fixture registry (`make_category_eval_harness_fixture`, Round 98); category path registry (`category_prompt_dir` / `sorted_category_prompts`, Round 99); library registry helper registry (`assert_registry_matches_library_glob`, Round 100); governance surface path registry (`cheatsheet_en_path` / `glossary_path`, Round 101); workflow skill reference helper preamble-aligned (Round 99); library registry helper DRY (`assert_library_wide_unique_basenames` / `assert_registry_matches_library_glob`, Round 100)
 
 ### Ongoing maintenance (not blockers)
 
