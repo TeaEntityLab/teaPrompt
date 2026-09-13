@@ -75,6 +75,8 @@ Choose one primary workflow:
 
 If more than one applies, pick one primary workflow and one gate. Example: coding a privacy-sensitive feature uses `reflective-risk` as the gate and `reflective-implement` as the execution workflow.
 
+When loaded skills require incompatible actions for the same task, identify the conflicting clauses and their consequence, then resolve them by instruction authority and applicable scope rather than silently blending them. Continue work whose authority is clear; ask only about an unresolved choice that blocks the next action, and do not treat overlap alone as a conflict.
+
 Test-design boundary: producing a rigorous Test Plan from requirements without writing code uses `reflective-spec-plan`. Adding executable tests or changing implementation uses `reflective-implement`.
 
 Workflow-design boundary: a no-code workflow specification, state model, transition design, or orchestration plan uses `reflective-spec-plan`. An executable runner or graph uses `reflective-implement`; current framework comparison uses `reflective-research`; review of an existing workflow uses `reflective-review`; deciding whether a workflow is needed at all remains with `reflective-dispatch`.

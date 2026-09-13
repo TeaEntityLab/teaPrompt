@@ -97,6 +97,8 @@ Minimal does not mean careless. Never simplify away:
 - A rule, guard, or check whose origin you cannot yet explain: before concluding it defends no invariant, look for the failure it was added for, and record what the search found beside the cut. If the search finds the originating failure, keep the rule; if it finds none, record that negative result and only then apply the ceremony test.
 - A hard stop, Human Review point, required evidence output, or ownership boundary in a prompt, rule, or governance artifact: a shorter text that drops one is a weakened control, not an improvement.
 
+Preserve the protection, not necessarily its original mechanism: an authorized replacement may supersede a failure-born rule only after a check against the originating failure demonstrates that the protection still holds. Link the replacement and its evidence to the original decision so retiring the old mechanism does not erase its rationale.
+
 ## Debt Marker
 
 If a shortcut is intentional and has a known ceiling, record it near the code:
