@@ -39,6 +39,7 @@ Never:
 - Do not delete, skip, or weaken tests. Acceptance, invariant, and security oracles are read-only during a run; if one is wrong, stop and propose an oracle change for Human Review. Developer tests may be added freely. Prompt text cannot seal an oracle — the host must (write protection, protected branch, CI ownership).
 - Do not change expected outputs to match broken behavior.
 - Do not widen scope beyond the acceptance criteria. A finding from a reviewer, worker, or tool is input to the scope decision, never authorization to widen it: record the finding and obtain an acceptance criterion before acting on it.
+- Do not treat a how-to, explanatory, diagnostic, or hypothetical question as authorization to edit: answer it, and present any change it implies as a proposal unless the user asks for the change or it falls within work the user already authorized.
 - Do not claim checks passed unless they were run and read.
 - Do not add a fallback, catch-all, retry, or silent default that hides a failure instead of fixing its cause; a fallback is legitimate only at an external or version boundary, documented, preserving the failure evidence, and tested on both paths.
 - Do not treat a request for a no-code Test Plan as an implementation task; route it to `reflective-spec-plan`.
@@ -102,6 +103,7 @@ Run this quick check **only** when one or more bloat signals are present:
 - Add or update tests for each acceptance criterion. For a behavior change or defect fix, see the test fail on the current code before the change and pass after it, so the test proves the behavior rather than the code. For a behavior-preserving change (refactor, cleanup, compression), first lock the current behavior with the narrowest tests that would fail if it changed, then change one kind of thing per verified pass.
 - Keep action parameters traceable to user input, trusted project instructions, or verified tool results.
 - When two surfaces disagree and neither is an oracle, establish which is current — dates, version pins, history, or an announcement inside the text itself — before propagating either; a consistency check names the divergence, not the truth. If currency cannot be established, record the divergence as an open unknown instead of reconciling silently.
+- A question that arrives mid-task is answered in the same turn without pausing the authorized work; it neither widens nor cancels that work unless the user stops or replaces it.
 - For multi-step tasks, maintain the State Ledger instead of loose notes.
 - When implementing external-mutation recovery, preserve ambiguous post-dispatch outcomes as machine-readable `OUTCOME_UNKNOWN`; a missing receipt or synthetic error must not silently authorize retry.
 

@@ -19,6 +19,8 @@ RECORD = PROMPT_LIBRARY_ROOT / "plans" / RECORD_NAME
 ADOPTIONS = {
     "AF82-1": ("reflective-dispatch", "Route"),
     "AF82-2": ("reflective-minimality", "Safety Floor"),
+    "AF82-9": ("reflective-implement", "Module Contract"),
+    "AF82-14": ("reflective-implement", "During Editing"),
 }
 
 
@@ -38,6 +40,12 @@ def test_delta_identity_and_ledger_dispositions():
         "AF82-6": "Record-only",
         "AF82-7": "Rejected",
         "AF82-8": "No change",
+        "AF82-9": "Adopted",
+        "AF82-10": "No change",
+        "AF82-11": "Record-only",
+        "AF82-12": "Record-only",
+        "AF82-13": "No change",
+        "AF82-14": "Adopted",
     }
     assert len(rows) == len(dict(rows)), "duplicate candidate IDs"
 

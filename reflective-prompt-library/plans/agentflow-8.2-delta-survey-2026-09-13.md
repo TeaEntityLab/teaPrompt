@@ -1,6 +1,6 @@
 # Agentflow 8.2.0 — Delta Survey and Skill Update — 2026-09-13
 
-> **Status: decided, adopted, and verified.** This is a delta from the [2026-09-05 survey](agentflow-survey-2026-09-05.md), not a replacement for its evidence or decisions. Three read-only source slices recommended no change; the coordinator adopted two narrower installed-text clarifications under the user's explicit skill-update direction. Paired decision probes showed no outcome improvement. No runtime, installation, new skill, or changed gate is adopted.
+> **Status: decided, adopted, and verified; second-pass review 2026-09-13 added one clarification in two seats (AF82-9, AF82-14).** This is a delta from the [2026-09-05 survey](agentflow-survey-2026-09-05.md), not a replacement for its evidence or decisions. Three read-only source slices recommended no change; the coordinator adopted two narrower installed-text clarifications under the user's explicit skill-update direction. A same-day review of those slices found the rewritten top-level contract unowned by any slice and adopted a third clarification from it, whose wording and seating were fixed by a behavioral fixture probe. Paired decision probes showed no outcome improvement for AF82-1/2. No runtime, installation, new skill, or changed gate is adopted.
 
 ## Research Question and Scope
 
@@ -47,6 +47,7 @@ The coordinator reused existing local checkouts at both pins; `git rev-parse HEA
 | Recovery reads already supplied answers before startup early-exits | `SKILL.md:30-36`; `references/advisors/requirements.md:13-15` preserves question history | Verified prompt text; live host recovery not exercised, and a prompt clause is not enforcement | EP-1, AF-19 and CX-12 already cover packet-first recovery, fidelity and default-not-approval; no new sentence |
 | Plain folders without Git and optional completed-record cleanup | Changelog; `SKILL.md`; cleanup implementation inspected by the lifecycle slice | Source-only: no-Git closeout and real Trash cleanup not run; cleanup is opt-in, with retention/reference/active-record checks in source | Host lifecycle and storage; no Git initialization, cleanup, timer, retention constant or hook added to TeaPrompt |
 | Progressive disclosure, writing formats, identities and cancellation guidance changed | Added closeout/progress/writing references; changed advisor prose and top-level contract; process-tree source listed in the delta | Source scope only; not every changed runtime path was executed | Current context-loading, real-surface verification, scope and authority rules cover the methodology; no broader runtime claim |
+| A question does not authorize a mutation, and a follow-up question does not cancel authorized work | Top-level contract at the current pin, absent at the previous pin (`git grep` of both checkouts, second pass) | Verified source delta; prompt text, not enforced by any shipped script | AF82-9: installed text permitted low-risk reversible actions on assumption and covered findings but not questions |
 
 The public tree still contains the evaluation-harness load reference (`references/ag.md:11`) and `scripts/release.test.js:11` reads unshipped `release/config.json`. The previous whole-public-suite limitation is not declared repaired. The changelog explicitly calls earlier dates source milestones rather than proven publication dates. The maintainer's model recommendation is attributed experience, not cross-model evidence.
 
@@ -72,6 +73,12 @@ Three concurrent read-only scouts delivered complete reviews through the hub: `C
 | AF82-6 | Skill inventory, hooks, completion records, cleanup and no-Git lifecycle | **Record-only** | Host/runtime implementation, not a missing TeaPrompt service | Runtime remains a Standing Non-Goal; any future adoption needs its own authorization and host evidence |
 | AF82-7 | Model recommendation, exact control tokens, fixed retry/retention values, auto-update schedule | **Rejected** | Vendor/operator policy, fixed numeric policy or install footprint | AF-9, AF-14, AF-17 and ATT-7 stand; no version bump fires them |
 | AF82-8 | Move or loosen existing deferred gates | **No change** | I-1/A-5, E-5, TK-1, CCSP4 and roadmap triggers are unchanged | Only their original named evidence/approval triggers can reopen them |
+| AF82-9 | A how-to, explanatory, diagnostic, or hypothetical question is answered, with any implied change as a proposal, not implemented | **Adopted** | Second pass. `reflective-implement` Never covered findings-as-authorization only; `04-agent/runtime-trust-boundary.md` §4 permits low-risk reversible actions on explicit assumptions; no installed sentence distinguished a question from a change request. Probe: no behavioral difference from baseline on the unambiguous why-question (both propose); the ambiguous "take a look" is read as an implicit fix request by most samples under every wording | Guard record-to-skill parity; revert if it blocks explicitly requested changes or induces permission prompts on clear requests |
+| AF82-10 | Plan-first requests as a waiting checkpoint; plain-language approval for ordinary work | **No change** | Second pass. Dispatch already separates plan-only from approved delivery and probes intent when confidence is low; a plan artifact is not code | Reopen on a local case where a plan-only request was implemented |
+| AF82-11 | Reasoned change display with a verified pre-edit baseline, no invented line numbers, and no silent current-commit-as-original | **Record-only** | Second pass. No TeaPrompt deliverable is a diff display; baseline identity for evidence is held by reused-verification (A-7a) and evidence-vs-inference rules | A local fabricated-baseline case would justify one sentence on `reflective-review` |
+| AF82-12 | Stop and process-tree cancellation, bounded correction without model escalation, cached-read caveat, environment dumping | **Record-only** | Second pass. Host mechanisms or vendor-tool specifics; cancellation authority, check-versus-change diagnosis, and credential-exposure rules already installed | Runtime remains a Standing Non-Goal |
+| AF82-13 | Writing and progress protocol: outcome-first openings, tests-running versus behavior-working versus completion, advisory presentation checks, append-only history with one replaceable summary | **No change** | Second pass. Held by existing report shapes, EP-adopted surface verification, execution-success-is-not-acceptance, deterministic-verifier and decision-index supersession rules | None |
+| AF82-14 | A mid-task question is answered without pausing the authorized work | **Adopted** | Second pass. Needed with AF82-9: the prohibition alone, or with this duty folded into the same Never bullet, stalled authorized work behind the question in 3 of 6 mid-task samples (baseline 1/1 continued); seated in `During Editing` the stall disappeared (3/3) | Guard record-to-skill parity; revert if mid-task questions still stall authorized work or the sentence is read as license to ignore a stop |
 
 Recurrence is `unknown`; the user request authorizes narrow in-place clarification, not a claim of measured recurrence. Old AF/EP/CX/SS/TK ledger rows, dates and pins are intentionally unchanged. Compatibility bounds: prompt-only judgment on instructions actually visible to the host; no host-discovery, isolation or enforcement capability is assumed.
 
@@ -86,6 +93,14 @@ These quotations are the adoption record, not a second operating-rule source. Th
 ### AF82-2 — reflective-minimality / Safety Floor
 
 > Preserve the protection, not necessarily its original mechanism: an authorized replacement may supersede a failure-born rule only after a check against the originating failure demonstrates that the protection still holds. Link the replacement and its evidence to the original decision so retiring the old mechanism does not erase its rationale.
+
+### AF82-9 — reflective-implement / Module Contract
+
+> Do not treat a how-to, explanatory, diagnostic, or hypothetical question as authorization to edit: answer it, and present any change it implies as a proposal unless the user asks for the change or it falls within work the user already authorized.
+
+### AF82-14 — reflective-implement / During Editing
+
+> A question that arrives mid-task is answered in the same turn without pausing the authorized work; it neither widens nor cancels that work unless the user stops or replaces it.
 
 ## Evidence Actually Checked
 
@@ -112,14 +127,32 @@ Four synthetic cases, each run once with the baseline skill and once with the pr
 
 The probes **do not demonstrate improvement**. Source inspection establishes the explicit wording gap; adoption is a coordinator judgment about portable clarity. A future behavioral evaluation may justify retaining, shrinking or removing the additions. Temporary probe artifacts are not dependencies of the installed skills or this record.
 
+## Second-Pass Review of the Slices (2026-09-13)
+
+Public `main` was rechecked the same day: still `fcb6878`, one commit ahead of the previous pin. The three slices divided `references/ag.md` plus advisors, the closeout/record scripts, and the audit/cleanup scripts between them; none owned the rewritten top-level contract (152 changed lines), the new writing reference (53 lines) or the new progress reference (12 lines). A `git grep` of both pinned checkouts found about twenty rules present only at the current pin. Most are host mechanics (startup command, capture hooks, process-tree containment, reply identity labels, cached-read caveat, environment inspection) or already-held methodology (append-only history with mutable projections, no anticipatory verification cycles, execution success is not acceptance, plan approval by plain language with exact gates for consequential work). Rows AF82-9 to AF82-14 record the review; only the question-versus-authorization pair met the adoption bar, and the probe below set its final shape.
+
+### AF82-9 / AF82-14 behavioral probe
+
+Twenty-one runs by independent low-reasoning agents, each given one skill-text variant as its only contract and one disposable fixture repository containing an obviously off-by-one date parser with its failing test. The observable is `git status --porcelain` after the run plus the reply, checked by the coordinator rather than taken from the self-report. Cases: a why-question ("why does the test fail?"), a mid-task follow-up (authorized fix accepted, then a library question), an ambiguous request ("take a look, CI is red"), and an explicit fix as the control.
+
+| Variant | Why-question edited | Mid-task follow-up continued the fix | Ambiguous request edited | Explicit fix edited |
+| --- | --- | --- | --- | --- |
+| Baseline (installed text) | 0/1 | 1/1 | 1/1 | 1/1 |
+| Draft 1: both halves in one Never bullet | 0/1 | 0/1 | 0/1 | 1/1 |
+| Draft 2: continuation half made imperative | 0/1 | 1/2 | 1/1 | — |
+| Draft 3: "current acceptance criteria already cover it" replaced by "work the user already authorized" | 0/1 | 2/3 | 1/2 | — |
+| Final: prohibition in Never (draft 3 text), continuation duty reseated in During Editing | — | 3/3 | — | — |
+
+What the runs establish. The prohibition never blocked a requested change and never changed the why-question outcome, which the installed text already handled. The ambiguous request was judged an implicit fix request by most samples under every wording, including baseline; the rule leaves that judgment to the agent and does not claim to prevent it. Draft 2's escape clause was exploited once as "the red test is the acceptance criterion", so draft 3 narrowed it to prior authorization. The stall was the material finding: a positive duty folded into a prohibition bullet was cited by no stalled agent, while every continuing final-variant agent cited the During Editing clause. One sample per cell in most rows; this is a wording-and-seating smoke check, not an efficacy measurement.
+
 ## Evidence vs Inference
 
 - **Observed:** API identities and absence of tags/releases; pinned source/changed-file reads; installed skill text; CLI JSON and fixture TAP output; eight synthetic decision outputs.
 - **Author-claimed:** release-history narrative, incident causes/measurements, model preference and real-world effectiveness. Reading them or their tests does not independently verify those claims.
-- **[INFERENCE]:** two explicit same-surface clarifications make the installed contracts easier to interpret. This is not demonstrated cross-model benefit; all source slices preferred no change.
+- **[INFERENCE]:** three explicit same-surface clarifications make the installed contracts easier to interpret. This is not demonstrated cross-model benefit; all source slices preferred no change, and the AF82-9 gap was found by the coordinator's second pass, not by a slice.
 - **Unknown / not done:** recurrence, private source revision/evaluation assets, installation/update behavior, live providers, real notebooks, no-Git closeout, real cleanup, full upstream-suite status and broad runtime safety.
 
-Sufficiency: all adoption-bearing facts are tied to the current source and local text; unavailable runtime/effectiveness evidence is explicitly excluded from the recommendation. No further retrieval is needed to decide these two prompt-only clarifications.
+Sufficiency: all adoption-bearing facts are tied to the current source and local text; unavailable runtime/effectiveness evidence is explicitly excluded from the recommendation. No further retrieval is needed to decide these three prompt-only clarifications.
 
 ## Falsifiability and Guard Closure
 
@@ -135,6 +168,6 @@ The persistent guard owns revision identity, ledger status, named section/destin
 | Three source slices and disagreement | verified | Three complete hub-delivered reviews; coordinator decision recorded |
 | Safe upstream CLI and selected fixtures | verified | CLI exit 0; corrected fixture run 28/28, exit 0 |
 | Paired decisions | verified | Four cases × baseline/candidate; same outcomes, no efficacy claim |
-| Two additive skill clarifications | done | Named paragraphs above; no existing text removed |
+| Four additive paragraphs on three skills | done | Named paragraphs above; no existing text removed; AF82-9 and AF82-14 landed on the second pass after the probe |
 | Record guard, migration smoke and indexes | verified | `test_agentflow_v82_delta_record.py`, record hygiene 0/0, Decision Index + case-study rows |
 | Full repository gate | verified | `make all` from repository root |
