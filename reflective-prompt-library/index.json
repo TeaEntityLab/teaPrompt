@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-25T11:17:49.294459",
+  "generated_at": "2026-09-13T22:48:51.610865",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -31,10 +31,12 @@
         "plans": {
           "path": "reflective-prompt-library/plans",
           "files": [
+            "ga-skills-coverage-panel-2026-09-03.md",
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "skills-surface-plan-2026-07-11.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
+            "harness-intent-drift-rethink-2026-09-06.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -42,8 +44,11 @@
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
             "durable-skills-flows-panel-2026-08-25.md",
+            "llm-judge-lifecycle-survey-2026-09-05.md",
+            "gpt-instruct-survey-2026-09-10.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
+            "astra-efficiency-rules-survey-2026-09-10.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
             "flow-control-roadmap-2026-07-11.md",
@@ -56,6 +61,7 @@
             "jspace-cognition-survey-2026-08-20.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
+            "openai-model-guidance-survey-2026-09-10.md",
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
             "governance-necessity-panel-record-2026-07-11.md",
@@ -68,9 +74,11 @@
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
             "governance-rules-rethink-review-2026-07-11.md",
+            "governed-delivery-adoption-2026-09-03.md",
             "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "QUALITY_GATES_SUMMARY.md",
+            "governable-autonomy-survey-2026-09-03.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
@@ -79,10 +87,13 @@
             "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
+            "product-runtime-ownership-panel-2026-08-25.md",
             "agent-governance-four-power-concepts-2026-07-17.md",
             "frozen-core-parity-review-2026-07-11.md",
             "openfugu-technical-brief-2026-06-25.md",
+            "agentflow-survey-2026-09-05.md",
             "skill-workflow-research-synthesis.md",
+            "skill-verification-panel-2026-09-05.md",
             "skill-scenario-panel-record-2026-07-12.md",
             "multi-agent-panel-consensus-2026-06-25.md",
             "flow-control-pack-panel-record-2026-07-11.md",
@@ -94,10 +105,12 @@
             "flow-pack-demotion-evaluation-2026-07-11.md",
             "3xa-harness-survey-2026-08-20.md",
             "prompt-library-build-plan.md",
+            "agentflow-8.2-delta-survey-2026-09-13.md",
             "runtime-governance-learning-plan-2026-06-11.md",
             "flow-pack-usage-log.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
-            "project-adjustment-reflection-2026-06-11.md"
+            "project-adjustment-reflection-2026-06-11.md",
+            "installed-skills-general-lessons-2026-09-05.md"
           ]
         },
         "04-agent": {
@@ -220,6 +233,12 @@
         },
         "reflective-review": {
           "path": "reflective-prompt-library/skills/reflective-review",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "governed-delivery": {
+          "path": "reflective-prompt-library/skills/governed-delivery",
           "files": [
             "SKILL.md"
           ]
@@ -994,8 +1013,74 @@
           "text": "Review Standard"
         }
       ],
-      "line_count": 205,
-      "char_count": 8819
+      "line_count": 206,
+      "char_count": 9133
+    },
+    {
+      "path": "reflective-prompt-library/plans/ga-skills-coverage-panel-2026-09-03.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ga-skills-coverage-panel-2026-09-03",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governable Autonomy × All Skills — Panel Record (2026-09-03)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final, adopted 2026-09-03)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 99,
+      "char_count": 11613
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -1259,6 +1344,124 @@
       ],
       "line_count": 117,
       "char_count": 6656
+    },
+    {
+      "path": "reflective-prompt-library/plans/harness-intent-drift-rethink-2026-09-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "harness-intent-drift-rethink-2026-09-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Harness and Intent-Drift Rethink — Panel Record (2026-09-06)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Packet Corrections (evidence beat the packet)"
+        },
+        {
+          "level": 2,
+          "text": "The Theses as Held (amended by the panel)"
+        },
+        {
+          "level": 2,
+          "text": "Locus Table (as of this record)"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final, adopted 2026-09-06)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Skill Adoption Addendum — 2026-09-06 (user-directed, skill layer)"
+        },
+        {
+          "level": 3,
+          "text": "Gate ruling (recorded so it cannot be re-shopped later)"
+        },
+        {
+          "level": 3,
+          "text": "Method"
+        },
+        {
+          "level": 3,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger (skill layer)"
+        },
+        {
+          "level": 3,
+          "text": "Packet corrections (evidence beat the packet again)"
+        },
+        {
+          "level": 3,
+          "text": "Observed divergences (recorded, no action)"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 185,
+      "char_count": 40252
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -1818,6 +2021,214 @@
       "char_count": 10616
     },
     {
+      "path": "reflective-prompt-library/plans/llm-judge-lifecycle-survey-2026-09-05.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "llm-judge-lifecycle-survey-2026-09-05",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "LLM-as-a-Judge Lifecycle — Survey Record — 2026-09-05"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-05)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 3,
+          "text": "Packet corrections (evidence beat the packet)"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used (external source ledger)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Coordinator Reflection — Judge Harness and Intent Drift (2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "1. A judge is an attester with a lifecycle, not an oracle"
+        },
+        {
+          "level": 3,
+          "text": "2. Intent drift is compression loss across a chain, and the judge is the last compressor"
+        },
+        {
+          "level": 3,
+          "text": "3. Why \"right answer, wrong reason\" is the deepest point"
+        },
+        {
+          "level": 3,
+          "text": "4. Asymmetry decides the gate shape"
+        },
+        {
+          "level": 3,
+          "text": "5. What TeaPrompt can and cannot do about it"
+        },
+        {
+          "level": 3,
+          "text": "6. What I chose not to do, and why"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 184,
+      "char_count": 28880
+    },
+    {
+      "path": "reflective-prompt-library/plans/gpt-instruct-survey-2026-09-10.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "gpt-instruct-survey-2026-09-10",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Evaluation and Release Methodology (`MDX-Tom/gpt-instruct`) — Survey and Panel Record (2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 3,
+          "text": "Questions about the surveyed method"
+        },
+        {
+          "level": 3,
+          "text": "Questions about the coordinator and panel"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Packet Corrections and Post-panel Source Checks"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 205,
+      "char_count": 33074
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1975,6 +2386,88 @@
       ],
       "line_count": 144,
       "char_count": 8621
+    },
+    {
+      "path": "reflective-prompt-library/plans/astra-efficiency-rules-survey-2026-09-10.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "astra-efficiency-rules-survey-2026-09-10",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Context-Efficiency Instruction Profile (`sh58702e/astra-efficiency-rules`) — Survey and Panel Record (2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map (rule → installed sibling → resemblance class → disposition)"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition (the surveyed text)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Packet Corrections (evidence beat the packet)"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used (external source ledger)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 128,
+      "char_count": 34073
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -3047,6 +3540,128 @@
       ],
       "line_count": 74,
       "char_count": 4795
+    },
+    {
+      "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openai-model-guidance-survey-2026-09-10",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenAI Model Guidance Survey — 2026-09-10"
+        },
+        {
+          "level": 2,
+          "text": "Source"
+        },
+        {
+          "level": 2,
+          "text": "What Was Surveyed"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Model Themes (Chronological Arc)"
+        },
+        {
+          "level": 3,
+          "text": "1. Prompt Simplification Arc"
+        },
+        {
+          "level": 3,
+          "text": "2. Reasoning Effort Default Oscillation"
+        },
+        {
+          "level": 3,
+          "text": "3. Outcome-First Prompts (GPT-5.5)"
+        },
+        {
+          "level": 3,
+          "text": "4. Instruction Sensitivity Increases"
+        },
+        {
+          "level": 3,
+          "text": "5. Autonomy Calibration"
+        },
+        {
+          "level": 3,
+          "text": "6. Verification Calibration (GPT-6 Astra)"
+        },
+        {
+          "level": 3,
+          "text": "7. Stopping Conditions / Retrieval Budgets (GPT-5.5)"
+        },
+        {
+          "level": 3,
+          "text": "8. Tool Calling Evolution"
+        },
+        {
+          "level": 3,
+          "text": "9. Writing Style (GPT-6 Astra)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "OG-1: Prompt-level minimality — \"state each instruction once\""
+        },
+        {
+          "level": 3,
+          "text": "OG-2: Outcome-first prompts — \"describe the destination, not every step\""
+        },
+        {
+          "level": 3,
+          "text": "OG-3: Verification calibration — \"calibrate test depth to change risk\""
+        },
+        {
+          "level": 3,
+          "text": "OG-4: Stopping conditions for search — \"do not search again to improve phrasing\""
+        },
+        {
+          "level": 3,
+          "text": "OG-5: Avoid unnecessary absolute rules — \"use ALWAYS/NEVER only for true invariants\""
+        },
+        {
+          "level": 3,
+          "text": "OG-6: Slop word avoidance"
+        },
+        {
+          "level": 3,
+          "text": "OG-7: \"Drop the current date\" — model already knows UTC date"
+        },
+        {
+          "level": 2,
+          "text": "Panel Verdicts (Five-Lens Socratic Review, 2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Adopted Wording (as landed after the 2026-09-10 review)"
+        },
+        {
+          "level": 2,
+          "text": "Post-Review Revisions (2026-09-10)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Separation"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 186,
+      "char_count": 19310
     },
     {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
@@ -4141,6 +4756,71 @@
       "char_count": 25441
     },
     {
+      "path": "reflective-prompt-library/plans/governed-delivery-adoption-2026-09-03.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "governed-delivery-adoption-2026-09-03",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "governable-autonomy-survey-2026-09-03.md",
+          "ga-skills-coverage-panel-2026-09-03.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governed Delivery — Feature Adoption Record — 2026-09-03"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance provenance"
+        },
+        {
+          "level": 2,
+          "text": "Reconsidered options"
+        },
+        {
+          "level": 2,
+          "text": "Design limits honored (not refusals; design choices)"
+        },
+        {
+          "level": 2,
+          "text": "Feature → destination map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 108,
+      "char_count": 12752
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -4585,8 +5265,90 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 409,
-      "char_count": 23996
+      "line_count": 410,
+      "char_count": 24043
+    },
+    {
+      "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "governable-autonomy-survey-2026-09-03",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governable Autonomous Delivery — Survey and Panel Record (2026-09-03)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-03)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final, adopted 2026-09-03)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Reproduction Contracts (host-only; refuters)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used (external source ledger)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 166,
+      "char_count": 29499
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -4690,6 +5452,17 @@
           "jspace-cognition-survey-2026-08-20.md",
           "code-recall-survey-2026-08-20.md",
           "agent-harness-convergence-survey-2026-08-25.md",
+          "product-runtime-ownership-panel-2026-08-25.md",
+          "governable-autonomy-survey-2026-09-03.md",
+          "ga-skills-coverage-panel-2026-09-03.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "llm-judge-lifecycle-survey-2026-09-05.md",
+          "agentflow-survey-2026-09-05.md",
+          "astra-efficiency-rules-survey-2026-09-10.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "openai-model-guidance-survey-2026-09-10.md",
+          "agentflow-8.2-delta-survey-2026-09-13.md",
+          "installed-skills-general-lessons-2026-09-05.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -4762,8 +5535,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 239,
-      "char_count": 24417
+      "line_count": 273,
+      "char_count": 40474
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -5287,6 +6060,64 @@
       "char_count": 4131
     },
     {
+      "path": "reflective-prompt-library/plans/product-runtime-ownership-panel-2026-08-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "product-runtime-ownership-panel-2026-08-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Product / Runtime Ownership Boundary — Panel Record (2026-08-25)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 86,
+      "char_count": 14632
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-four-power-concepts-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5517,6 +6348,332 @@
       "char_count": 8579
     },
     {
+      "path": "reflective-prompt-library/plans/agentflow-survey-2026-09-05.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agentflow-survey-2026-09-05",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "agentflow — Survey and Comparison Record — 2026-09-05"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-05)"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final)"
+        },
+        {
+          "level": 2,
+          "text": "Post-Panel Skill Update Deliberation (2026-09-05, user-directed)"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "What agentflow is (`observed` in the clone)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence-tier findings (Evidence Auditor corrections to the packet)"
+        },
+        {
+          "level": 3,
+          "text": "Supply-chain findings (Provenance lens)"
+        },
+        {
+          "level": 2,
+          "text": "Comparisons"
+        },
+        {
+          "level": 2,
+          "text": "Socratic Questions and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used (external source ledger)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Reproduction Contracts (host-only; not run)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "2026-09-05 Entry-Point Survey Addendum (paste-5)"
+        },
+        {
+          "level": 3,
+          "text": "Research question"
+        },
+        {
+          "level": 3,
+          "text": "Direct answer (as of 2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "Panel consensus"
+        },
+        {
+          "level": 3,
+          "text": "Required wording changes (final)"
+        },
+        {
+          "level": 3,
+          "text": "Post-panel skill update (user-directed, 2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "Coordinator-executed evidence (dated 2026-09-05; supersedes \"no agentflow script was run\" above for these three scripts only)"
+        },
+        {
+          "level": 3,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "Entry-point comparison"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger (entry-point rows; AF rows unchanged)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference (addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "2026-09-05 Docs and References Concept Addendum"
+        },
+        {
+          "level": 3,
+          "text": "Method"
+        },
+        {
+          "level": 3,
+          "text": "Direct answer (as of 2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "Required wording changes (final, by user direction)"
+        },
+        {
+          "level": 3,
+          "text": "Deliberation (worth it / kept)"
+        },
+        {
+          "level": 3,
+          "text": "Incident taxonomy (author-claimed narratives; coordinator-directed classification)"
+        },
+        {
+          "level": 3,
+          "text": "Reason concordance"
+        },
+        {
+          "level": 3,
+          "text": "Comparison (concept layer)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference (addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "2026-09-05 Author Talk Addendum (three transcripts + three syntheses)"
+        },
+        {
+          "level": 3,
+          "text": "Research question"
+        },
+        {
+          "level": 3,
+          "text": "Method"
+        },
+        {
+          "level": 3,
+          "text": "Direct answer (as of 2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "Panel consensus"
+        },
+        {
+          "level": 3,
+          "text": "Required wording changes (final)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence-tier corrections (accepted from the evidence auditor)"
+        },
+        {
+          "level": 3,
+          "text": "Grounding of the syntheses (coordinator-executed; confirmed by full read)"
+        },
+        {
+          "level": 3,
+          "text": "Talk vs prior record (row-level)"
+        },
+        {
+          "level": 3,
+          "text": "Internal tensions (the author's) and synthesis-only tensions"
+        },
+        {
+          "level": 3,
+          "text": "Methodology map (talk pattern → TeaPrompt)"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger (talk rows; AF/EP/CX rows unchanged)"
+        },
+        {
+          "level": 3,
+          "text": "Attendee pains (roles only, aggregated)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference (addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "2026-09-05 Sibling-Session Reconciliation Addendum"
+        },
+        {
+          "level": 3,
+          "text": "Why this is a leak"
+        },
+        {
+          "level": 3,
+          "text": "Gap ledger (SS = sibling session; tiers as stated by the lenses and re-checked where marked)"
+        },
+        {
+          "level": 3,
+          "text": "What the sibling panels concluded about the relation (recorded, not re-litigated)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference (addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Post-panel implementation (user-directed, 2026-09-05)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "2026-09-05 Session Outlines Addendum (paste-9)"
+        },
+        {
+          "level": 3,
+          "text": "Sources and what is new"
+        },
+        {
+          "level": 3,
+          "text": "Consolidated concept map (as of this addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Corrections and open divergences"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference (addendum)"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "Addendum Completion Ledger"
+        }
+      ],
+      "line_count": 658,
+      "char_count": 142076
+    },
+    {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5577,6 +6734,60 @@
       ],
       "line_count": 77,
       "char_count": 4870
+    },
+    {
+      "path": "reflective-prompt-library/plans/skill-verification-panel-2026-09-05.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skill-verification-panel-2026-09-05",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill Correctness and Logical-Consistency Pass — Panel Record (2026-09-05)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Landed Fixes by Skill"
+        },
+        {
+          "level": 2,
+          "text": "Not Changed"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 67,
+      "char_count": 12479
     },
     {
       "path": "reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md",
@@ -8002,6 +9213,110 @@
       "char_count": 2323
     },
     {
+      "path": "reflective-prompt-library/plans/agentflow-8.2-delta-survey-2026-09-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agentflow-8.2-delta-survey-2026-09-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agentflow-survey-2026-09-05.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agentflow 8.2.0 — Delta Survey and Skill Update — 2026-09-13"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Scope"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger and Changed Mechanisms"
+        },
+        {
+          "level": 2,
+          "text": "Source Review and Disagreement"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Adopted Wording"
+        },
+        {
+          "level": 3,
+          "text": "AF82-1 — reflective-dispatch / Route"
+        },
+        {
+          "level": 3,
+          "text": "AF82-2 — reflective-minimality / Safety Floor"
+        },
+        {
+          "level": 3,
+          "text": "AF82-9 — reflective-implement / Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "AF82-14 — reflective-implement / During Editing"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Upstream execution"
+        },
+        {
+          "level": 3,
+          "text": "Paired decision probes"
+        },
+        {
+          "level": 2,
+          "text": "Second-Pass Review of the Slices (2026-09-13)"
+        },
+        {
+          "level": 3,
+          "text": "AF82-9 / AF82-14 behavioral probe"
+        },
+        {
+          "level": 2,
+          "text": "Coordinator Reflections (2026-09-13)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Guard Closure"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 185,
+      "char_count": 31348
+    },
+    {
       "path": "reflective-prompt-library/plans/runtime-governance-learning-plan-2026-06-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -8250,6 +9565,64 @@
       "char_count": 5546
     },
     {
+      "path": "reflective-prompt-library/plans/installed-skills-general-lessons-2026-09-05.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "installed-skills-general-lessons-2026-09-05",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Installed-Skills General-Lessons Survey and Adoption — 2026-09-05"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-05)"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (final, by user direction)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Reproduction (observed)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 84,
+      "char_count": 16224
+    },
+    {
       "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -8325,7 +9698,7 @@
         }
       ],
       "line_count": 72,
-      "char_count": 1608
+      "char_count": 1622
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
@@ -8619,6 +9992,10 @@
         },
         {
           "level": 2,
+          "text": "2a. Product / Runtime Ownership Boundary"
+        },
+        {
+          "level": 2,
           "text": "3. Data Policy"
         },
         {
@@ -8642,8 +10019,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 164,
-      "char_count": 8552
+      "line_count": 191,
+      "char_count": 11838
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -8758,8 +10135,8 @@
           "text": "6. Output"
         }
       ],
-      "line_count": 125,
-      "char_count": 7182
+      "line_count": 129,
+      "char_count": 7474
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
@@ -8838,8 +10215,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 226,
-      "char_count": 9742
+      "line_count": 231,
+      "char_count": 11113
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -9414,8 +10791,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 55,
-      "char_count": 1492
+      "line_count": 56,
+      "char_count": 1740
     },
     {
       "path": "reflective-prompt-library/00-core/custom-instruction-zh.md",
@@ -9960,8 +11337,8 @@
           "text": "Registered domain packs (not core routing)"
         }
       ],
-      "line_count": 90,
-      "char_count": 6063
+      "line_count": 91,
+      "char_count": 6593
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -10028,8 +11405,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 245,
-      "char_count": 11543
+      "line_count": 246,
+      "char_count": 11902
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -10102,8 +11479,8 @@
           "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 236,
-      "char_count": 7617
+      "line_count": 237,
+      "char_count": 7766
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -10795,8 +12172,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 176,
-      "char_count": 10172
+      "line_count": 179,
+      "char_count": 11471
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -10865,8 +12242,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 140,
-      "char_count": 6218
+      "line_count": 147,
+      "char_count": 7632
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -11059,7 +12436,7 @@
         }
       ],
       "line_count": 405,
-      "char_count": 26074
+      "char_count": 26291
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -11073,7 +12450,7 @@
         "name": "flow-control-generator",
         "description": "Use when a task needs an executable flow-control script that coordinates agent steps — sequential pipelines, parallel fan-out/fan-in, conditional routing, or orchestrator-worker delegation — over a host agent CLI or SDK. It classifies the task shape, picks the smallest topology, and writes a deterministic script with state files, verification gates, and budgets. For iterate-until-done loops, use flow-loop-harness.",
         "license": "MIT",
-        "compatibility": "Requires a POSIX host with bash 3.2+ (python3 for the orchestrator template) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.",
+        "compatibility": "Requires a POSIX host with bash 3.2+ (python3 for the Python templates) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.",
         "metadata": "",
         "risk_level": "medium",
         "human_review_required": "false",
@@ -11132,16 +12509,20 @@
           "text": "Stage 3: review"
         },
         {
+          "level": 1,
+          "text": "gate: none (accepted)"
+        },
+        {
           "level": 2,
           "text": "Template: Parallel Fan-out/Fan-in (bash)"
         },
         {
           "level": 1,
-          "text": "Gate: strict by default; set MIN_OK=N for an explicit partial-failure quorum"
+          "text": "Gate: strict by default; MIN_OK=N declares an explicit partial-failure quorum"
         },
         {
           "level": 1,
-          "text": "(ReMoM-style minimum successful branches). Silent skip-on-error is never the default."
+          "text": "(ReMoM-style). Silent skip-on-error is never the default."
         },
         {
           "level": 2,
@@ -11149,15 +12530,19 @@
         },
         {
           "level": 1,
-          "text": "Classifier step: constrained output, one label only."
+          "text": "Classifier: constrained output, one label only."
         },
         {
           "level": 1,
-          "text": "Normalize: first line, lowercased, truncated at the first non-label character."
+          "text": "Normalize: first line, lowercased, cut at the first non-label char."
         },
         {
           "level": 1,
-          "text": "Route trace: the routing decision must be observable, never silent."
+          "text": "Route trace: routing must be observable, never silent."
+        },
+        {
+          "level": 1,
+          "text": "gate: none (accepted)"
         },
         {
           "level": 2,
@@ -11169,7 +12554,7 @@
         },
         {
           "level": 1,
-          "text": "node -> (deps, prompt-file). Edit for the task; deps are node names."
+          "text": "node -> (deps, prompt-file), filled at generation time; on shape change regenerate, never patch a drifted copy."
         },
         {
           "level": 2,
@@ -11192,8 +12577,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 371,
-      "char_count": 19061
+      "line_count": 384,
+      "char_count": 19935
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -11241,6 +12626,10 @@
         {
           "level": 2,
           "text": "Workflow"
+        },
+        {
+          "level": 3,
+          "text": "Intent Fidelity"
         },
         {
           "level": 2,
@@ -11311,8 +12700,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 116,
-      "char_count": 4324
+      "line_count": 122,
+      "char_count": 5258
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -11445,8 +12834,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 199,
-      "char_count": 10748
+      "line_count": 205,
+      "char_count": 12657
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -11561,8 +12950,133 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 180,
-      "char_count": 8297
+      "line_count": 188,
+      "char_count": 9814
+    },
+    {
+      "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "governed-delivery",
+      "name": "governed-delivery",
+      "description": "Use when a task must be delivered end-to-end under governance — an autonomous or unattended delivery run that needs a gate sequence, an oracle manifest, a task packet, failure-signature exits, decorrelated verification, an evidence ledger, and a named acceptance record. It emits a host-run delivery contract set; it does not enforce it. For effect authority use agent-governance-scaffold; for loop or flow scripts use flow-loop-harness or flow-control-generator.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "governed-delivery",
+        "description": "Use when a task must be delivered end-to-end under governance — an autonomous or unattended delivery run that needs a gate sequence, an oracle manifest, a task packet, failure-signature exits, decorrelated verification, an evidence ledger, and a named acceptance record. It emits a host-run delivery contract set; it does not enforce it. For effect authority use agent-governance-scaffold; for loop or flow scripts use flow-loop-harness or flow-control-generator.",
+        "license": "MIT",
+        "compatibility": "Emits static delivery contracts (Markdown and YAML templates) for a POSIX host with a headless agent CLI; the host owns oracle sealing, sink isolation, budget enforcement, durable ledgers, and the human decision channel — TeaPrompt runs none of them.",
+        "metadata": "",
+        "risk_level": "high",
+        "human_review_required": "true",
+        "external_io": "false",
+        "context_load": "medium"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "plans/governed-delivery-adoption-2026-09-03.md",
+        "plans/governable-autonomy-survey-2026-09-03.md",
+        "04-agent/runtime-trust-boundary.md",
+        "04-agent/artifact-promotion.md",
+        "04-agent/workflow-recipes.md",
+        "plans/external-adoption-case-studies-2026-06-20.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governed Delivery"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Delivery Gate Sequence"
+        },
+        {
+          "level": 2,
+          "text": "Autonomy Envelope"
+        },
+        {
+          "level": 2,
+          "text": "Contract Set"
+        },
+        {
+          "level": 3,
+          "text": "intent-record"
+        },
+        {
+          "level": 3,
+          "text": "oracle-manifest"
+        },
+        {
+          "level": 3,
+          "text": "task-packet"
+        },
+        {
+          "level": 3,
+          "text": "failure-log"
+        },
+        {
+          "level": 3,
+          "text": "verification-plan"
+        },
+        {
+          "level": 3,
+          "text": "evidence-ledger"
+        },
+        {
+          "level": 3,
+          "text": "acceptance-record"
+        },
+        {
+          "level": 3,
+          "text": "envelope"
+        },
+        {
+          "level": 3,
+          "text": "gate-retro"
+        },
+        {
+          "level": 2,
+          "text": "Delivery Invariants"
+        },
+        {
+          "level": 2,
+          "text": "Host Preconditions"
+        },
+        {
+          "level": 2,
+          "text": "Adversarial Refuters"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 284,
+      "char_count": 15146
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -11628,6 +13142,10 @@
         {
           "level": 2,
           "text": "State Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Task Packet"
         },
         {
           "level": 3,
@@ -11726,8 +13244,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 195,
-      "char_count": 8995
+      "line_count": 216,
+      "char_count": 13275
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -11839,6 +13357,10 @@
           "text": "Human Review Required"
         },
         {
+          "level": 3,
+          "text": "Continuation Packet"
+        },
+        {
           "level": 2,
           "text": "Retro Workflow"
         },
@@ -11887,6 +13409,10 @@
           "text": "Next Process Improvement"
         },
         {
+          "level": 3,
+          "text": "Gate Retro"
+        },
+        {
           "level": 2,
           "text": "Memory Consolidation"
         },
@@ -11911,8 +13437,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 161,
-      "char_count": 6592
+      "line_count": 170,
+      "char_count": 7872
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -12006,6 +13532,14 @@
         },
         {
           "level": 2,
+          "text": "Sink Inventory"
+        },
+        {
+          "level": 2,
+          "text": "Unattended Envelope"
+        },
+        {
+          "level": 2,
           "text": "Safe Dry-run Plan"
         },
         {
@@ -12037,6 +13571,10 @@
           "text": "Go / No-go Decision"
         },
         {
+          "level": 3,
+          "text": "Sink Inventory and Unattended Envelope"
+        },
+        {
           "level": 2,
           "text": "Rules"
         },
@@ -12049,8 +13587,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 129,
-      "char_count": 5666
+      "line_count": 147,
+      "char_count": 7712
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
@@ -12129,6 +13667,10 @@
           "text": "Artifact Output"
         },
         {
+          "level": 3,
+          "text": "Spec Version and Acceptance Record"
+        },
+        {
           "level": 2,
           "text": "Ticket Template"
         },
@@ -12149,8 +13691,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 254,
-      "char_count": 11945
+      "line_count": 273,
+      "char_count": 14868
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -12260,9 +13802,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 326,
-      "char_count": 19788
+      "line_count": 328,
+      "char_count": 19927
     }
   ],
-  "total_files": 134
+  "total_files": 148
 }
