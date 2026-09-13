@@ -266,7 +266,7 @@ Host-run checks. A refuter that has not been run is `unknown`, never passed.
 ## Demotion Triggers
 
 - Contract drift → regenerate from this skill rather than patching a drifted copy.
-- Zero recurrence by the next checkpoint, or a host absorbs the pattern → pack-level demotion folds back into `plans/governed-delivery-adoption-2026-09-03.md`. Recurrence evidence is host-supplied (a prompt library cannot observe host invocations); a skipped or unrecorded checkpoint counts as zero recurrence, not as a pass.
+- Zero recurrence by the next checkpoint, or a host absorbs the pattern → pack-level demotion folds back into `plans/governed-delivery-adoption-2026-09-03.md`. Recurrence evidence is host-supplied (a prompt library cannot observe host invocations); when no invocation evidence reaches the checkpoint, recurrence stays `unknown` — and a skipped or unrecorded checkpoint triggers demotion as a policy consequence of missing evidence, not as an observed zero.
 - Redundancy-in-use → if the pack is never invoked independently of `agent-governance-scaffold`, or the shared host-precondition / `artifact-complete` / constitutional-path machinery diverges between the two packs, fold the delivery lifecycle into a shared reference and retire the duplicated boilerplate rather than maintaining two copies.
 
 ## Examples
