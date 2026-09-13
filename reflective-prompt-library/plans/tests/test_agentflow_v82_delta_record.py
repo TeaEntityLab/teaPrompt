@@ -79,3 +79,21 @@ def test_delta_is_indexed_without_replacing_the_prior_survey():
     assert cases.count(RECORD_NAME) >= 2
     for text in (knowledge, cases):
         assert "agentflow-survey-2026-09-05.md" in text
+
+
+def test_second_pass_lessons_and_procedure_steps_are_recorded():
+    knowledge = (PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md").read_text(encoding="utf-8")
+    cases = (PROMPT_LIBRARY_ROOT / "plans" / "external-adoption-case-studies-2026-06-20.md").read_text(encoding="utf-8")
+    for heading in (
+        "### Lesson: A duty seated inside a prohibition list is dropped by the reader",
+        "### Lesson: A stated decision is not an observable",
+    ):
+        assert knowledge.count(heading) == 1, heading
+        lesson = knowledge.split(heading, 1)[1].split("\n### ", 1)[0].split("\n## ", 1)[0]
+        assert f"(plans/{RECORD_NAME})" in lesson
+        assert "- Review trigger:" in lesson
+    procedure = cases.split("## The Recurring Evaluation Procedure", 1)[1].split("\n## ", 1)[0]
+    assert "10. **Own every changed file family.**" in procedure
+    assert "11. **Probe drafted wording against state, not statements, before landing.**" in procedure
+    record = RECORD.read_text(encoding="utf-8")
+    assert record.count("## Coordinator Reflections (2026-09-13)") == 1

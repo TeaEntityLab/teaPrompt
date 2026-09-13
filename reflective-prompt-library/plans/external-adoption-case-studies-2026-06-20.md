@@ -86,6 +86,16 @@ This is the transferable output. When evaluating a new external tool or method:
    re-evaluate a settled item.
 9. **No-copy boundary:** until an upstream repo carries a license, learn the
    concept only; do not copy text, checklists, or code.
+10. **Own every changed file family.** When a survey fans out by file family,
+    the top-level contract becomes everyone's pointer and nobody's deliverable;
+    the coordinator owns that diff or names its owner, and the record lists each
+    changed family with an owner or "unreviewed" (2026-09-13: the release's
+    highest-yield rules sat in the unowned top-level contract).
+11. **Probe drafted wording against state, not statements, before landing.** A
+    reply is stated intent; a working tree read by the coordinator is behavior.
+    Iterate the draft with the probe as the oracle — the 2026-09-13 pass found a
+    stall, an exploitable escape clause, and a seating error in four cheap
+    rounds that reading the text did not show.
 
 ## Signal Accounting (do not miscount)
 

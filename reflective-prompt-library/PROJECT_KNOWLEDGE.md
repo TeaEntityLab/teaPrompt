@@ -108,6 +108,11 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 - Evidence: [plans/agentflow-8.2-delta-survey-2026-09-13.md](plans/agentflow-8.2-delta-survey-2026-09-13.md) (AF82-9 / AF82-14 probe: 21 fixture runs, working tree as observable), [plans/openai-model-guidance-survey-2026-09-10.md](plans/openai-model-guidance-survey-2026-09-10.md) (one adopted sentence re-seated by the landing review)
 - Review trigger: any adopted sentence that combines a prohibition with a duty, or whose exception names a fact the agent computes rather than a user act; probe it in a fixture before landing.
 
+### Lesson: A stated decision is not an observable
+- Pattern: probing adopted wording by asking an agent what it would do measures intent; the second Agentflow 8.2 pass produced a reply that said it was continuing the authorized task over a clean working tree, and the earlier text-only paired decisions for AF82-1/2 were retroactively weaker than they read. Probe a drafted sentence in a disposable fixture with state the coordinator reads (`git status`, test output), iterate the draft against that oracle, and land only the version whose behavior held. This is the review skill's "a reasoning narrative is not evidence" rule turned on the project's own probes.
+- Evidence: [plans/agentflow-8.2-delta-survey-2026-09-13.md](plans/agentflow-8.2-delta-survey-2026-09-13.md) (paired text-only decisions re-qualified; 21-run fixture probe), [plans/external-adoption-case-studies-2026-06-20.md](plans/external-adoption-case-studies-2026-06-20.md) (procedure step 11)
+- Review trigger: any adoption record whose probe evidence is agent replies without a state observable; any efficacy claim for a sentence that was never run in a fixture.
+
 ## Decision Index
 
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
