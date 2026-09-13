@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-13T22:48:51.610865",
+  "generated_at": "2026-09-13T23:18:03.511003",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -81,6 +81,7 @@
             "governable-autonomy-survey-2026-09-03.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
+            "governed-delivery-review-2026-09-13.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "ROUTING_CONTRACT.md",
@@ -4817,8 +4818,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 108,
-      "char_count": 12752
+      "line_count": 109,
+      "char_count": 13496
     },
     {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
@@ -5266,7 +5267,7 @@
         }
       ],
       "line_count": 410,
-      "char_count": 24043
+      "char_count": 24062
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -5537,6 +5538,62 @@
       ],
       "line_count": 273,
       "char_count": 40474
+    },
+    {
+      "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "governed-delivery-review-2026-09-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "governed-delivery-adoption-2026-09-03.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governed Delivery — Independent Review Record — 2026-09-13"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (all applied)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "M5 Managed-Skill Re-Audit (event: this panel)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 72,
+      "char_count": 7259
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -11338,7 +11395,7 @@
         }
       ],
       "line_count": 91,
-      "char_count": 6593
+      "char_count": 6655
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -13075,8 +13132,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 284,
-      "char_count": 15146
+      "line_count": 285,
+      "char_count": 16144
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -13692,7 +13749,7 @@
         }
       ],
       "line_count": 273,
-      "char_count": 14868
+      "char_count": 14955
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -13806,5 +13863,5 @@
       "char_count": 19927
     }
   ],
-  "total_files": 148
+  "total_files": 149
 }
