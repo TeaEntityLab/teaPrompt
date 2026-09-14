@@ -58,11 +58,12 @@ ADOPTED_WORDING = {
     SKILLS_DIR / "reflective-review" / "SKILL.md": (
         "Rank evidence: deterministic checks, then runtime evidence, then external primary sources, "
         "then independent model judgment, then generator self-assessment.",
-        "Same-model, same-context multi-role review is one epistemic channel, not independent "
-        "verification; model judgment may block or warn but never solely pass a high-risk claim.",
+        "same-model, same-context multi-role review is one epistemic channel, not independent "
+        "verification. A high-risk PASS needs at least one non-model channel: model judgment may "
+        "block or warn but never solely pass a high-risk claim.",
     ),
     SKILLS_DIR / "reflective-research" / "SKILL.md": (
-        "Say which kind of freshness applies: a date to recheck, a tracking event that invalidates it, "
+        "which kind of freshness applies: a date to recheck, a tracking event that invalidates it, "
         "or an immutable pin (digest, commit, or published text).",
         "A tool result or measurement the agent triggered is evidence; the agent's own summary of it is not.",
     ),

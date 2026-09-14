@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-13T23:18:03.511003",
+  "generated_at": "2026-09-14T17:42:17.713369",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -52,6 +52,7 @@
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
             "flow-control-roadmap-2026-07-11.md",
+            "september-skills-review-2026-09-14.md",
             "baton-dispatch-survey-2026-07-13.md",
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
@@ -1735,6 +1736,8 @@
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "../skills/skill-map.md",
           "flow-control-pack-panel-record-2026-07-11.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "governed-delivery-adoption-2026-09-03.md",
           "ROUTING_CONTRACT.md",
           "QUALITY_GATES_SUMMARY.md",
           "../../CONTRIBUTING.md",
@@ -1759,7 +1762,8 @@
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
-          "whole-project-roadmap-2026-07-11.md"
+          "whole-project-roadmap-2026-07-11.md",
+          "september-skills-review-2026-09-14.md"
         ]
       },
       "structure": [
@@ -1844,8 +1848,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 198,
-      "char_count": 14008
+      "line_count": 204,
+      "char_count": 14678
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -2709,6 +2713,52 @@
       ],
       "line_count": 100,
       "char_count": 6392
+    },
+    {
+      "path": "reflective-prompt-library/plans/september-skills-review-2026-09-14.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "september-skills-review-2026-09-14",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "September Skills Review — agentflow surveys and all skill changes since 2026-09-03 — 2026-09-14"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Concern Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap Additions (planning layer reconciled)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 63,
+      "char_count": 8983
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -4431,6 +4481,12 @@
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "agent-harness-convergence-survey-2026-08-25.md#2026-08-25-technical-lineage-addendum",
+          "harness-intent-drift-rethink-2026-09-06.md",
+          "installed-skills-general-lessons-2026-09-05.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md",
+          "skill-verification-panel-2026-09-05.md",
+          "agentflow-8.2-delta-survey-2026-09-13.md",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#consolidated-open-work-register",
           "flow-control-roadmap-2026-07-11.md",
@@ -4442,7 +4498,13 @@
           "flow-pack-usage-log.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan",
+          "governed-delivery-adoption-2026-09-03.md",
+          "governed-delivery-review-2026-09-13.md",
+          "governed-delivery-review-2026-09-13.md",
+          "september-skills-review-2026-09-14.md",
+          "governed-delivery-review-2026-09-13.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
+          "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
           "../04-agent/workflow-acquisition.md",
           "../04-agent/external-adoption-review.md",
@@ -4452,6 +4514,20 @@
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
+          "harness-intent-drift-rethink-2026-09-06.md",
+          "astra-efficiency-rules-survey-2026-09-10.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "agentflow-survey-2026-09-05.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "governable-autonomy-survey-2026-09-03.md",
+          "ga-skills-coverage-panel-2026-09-03.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "llm-judge-lifecycle-survey-2026-09-05.md",
+          "agentflow-8.2-delta-survey-2026-09-13.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "p7-pack-routing-decision-2026-07-11.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -4459,7 +4535,8 @@
           "flow-coverage-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
-          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger"
+          "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
+          "september-skills-review-2026-09-14.md"
         ]
       },
       "structure": [
@@ -4493,6 +4570,10 @@
         },
         {
           "level": 3,
+          "text": "Adopted 2026-09-03 → 2026-09-14 (user-directed and consensus; recurrence `unknown`)"
+        },
+        {
+          "level": 3,
           "text": "Still trigger-gated"
         },
         {
@@ -4512,8 +4593,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 164,
-      "char_count": 13423
+      "line_count": 207,
+      "char_count": 21137
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -4769,7 +4850,10 @@
         "ref_snippet": [],
         "markdown_links": [
           "governable-autonomy-survey-2026-09-03.md",
-          "ga-skills-coverage-panel-2026-09-03.md"
+          "ga-skills-coverage-panel-2026-09-03.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md"
         ]
       },
       "structure": [
@@ -4819,7 +4903,7 @@
         }
       ],
       "line_count": 109,
-      "char_count": 13496
+      "char_count": 14040
     },
     {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
@@ -5280,7 +5364,11 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md",
+          "september-skills-review-2026-09-14.md"
+        ]
       },
       "structure": [
         {
@@ -5349,7 +5437,7 @@
         }
       ],
       "line_count": 166,
-      "char_count": 29499
+      "char_count": 29898
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -5593,7 +5681,7 @@
         }
       ],
       "line_count": 72,
-      "char_count": 7259
+      "char_count": 7365
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -5936,7 +6024,9 @@
           "dormant-work-specs-2026-07-11.md",
           "all-skills-panel-record-2026-07-18.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
-          "skill-improvement-plan-2026-07-24.md"
+          "skill-improvement-plan-2026-07-24.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "governed-delivery-review-2026-09-13.md"
         ]
       },
       "structure": [
@@ -5974,6 +6064,10 @@
         },
         {
           "level": 2,
+          "text": "Agenda item 7 — `governed-delivery` recurrence checkpoint and GD↔AGS redundancy"
+        },
+        {
+          "level": 2,
           "text": "Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)"
         },
         {
@@ -5981,8 +6075,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 142,
-      "char_count": 8715
+      "line_count": 168,
+      "char_count": 10766
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -6728,7 +6822,7 @@
         }
       ],
       "line_count": 658,
-      "char_count": 142076
+      "char_count": 142108
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -9371,7 +9465,7 @@
         }
       ],
       "line_count": 185,
-      "char_count": 31348
+      "char_count": 31442
     },
     {
       "path": "reflective-prompt-library/plans/runtime-governance-learning-plan-2026-06-11.md",
@@ -12230,7 +12324,7 @@
         }
       ],
       "line_count": 179,
-      "char_count": 11471
+      "char_count": 11383
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -12300,7 +12394,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 7632
+      "char_count": 7570
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -12891,8 +12985,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 205,
-      "char_count": 12657
+      "line_count": 204,
+      "char_count": 12631
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -13007,8 +13101,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 188,
-      "char_count": 9814
+      "line_count": 187,
+      "char_count": 9917
     },
     {
       "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",
@@ -13133,7 +13227,7 @@
         }
       ],
       "line_count": 285,
-      "char_count": 16144
+      "char_count": 16275
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -13301,8 +13395,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 216,
-      "char_count": 13275
+      "line_count": 214,
+      "char_count": 13139
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -13495,7 +13589,7 @@
         }
       ],
       "line_count": 170,
-      "char_count": 7872
+      "char_count": 7780
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -13863,5 +13957,5 @@
       "char_count": 19927
     }
   ],
-  "total_files": 149
+  "total_files": 150
 }

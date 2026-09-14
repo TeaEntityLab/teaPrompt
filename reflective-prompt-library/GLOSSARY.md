@@ -293,6 +293,33 @@ the route trace or output. Prohibited by `plans/ROUTING_CONTRACT.md` R4–R6.
 
 ---
 
+## Stale / 失效
+
+A status for an artifact, ledger item, assumption, verification, or review
+decision whose basis has changed since it was made: the spec version, goal,
+inputs, base, dependencies, configuration, or acceptance it rested on moved.
+Phase-local: `reflective-brief` marks assumptions, `reflective-spec-plan` marks
+spec_version-keyed artifacts, `reflective-implement` marks ledger items,
+`reflective-research` marks volatile claims, `reflective-review` marks decisions.
+
+**Operational test:** `stale` is a freshness transition, not a lowered bar — the
+item is re-verified or re-planned before it is relied on again; it is never
+silently reused or silently dropped.
+
+---
+
+## Unknown / 未知
+
+A status for a fact, outcome, count, or usage signal that no available source,
+tool result, or receipt can settle. Distinct from `refuted` (checked and false)
+and from `unverified` (checkable but not yet checked).
+
+**Operational test:** Missing data is recorded as `unknown`, never read as zero,
+false, safe, or passed; a load-bearing `unknown` blocks the decision that needs
+it or names the owner who will resolve it.
+
+---
+
 ## Context Load Deferral / 上下文負載延後
 
 At Strictness L1–L2, hosts may defer skills with `context_load: high` when a

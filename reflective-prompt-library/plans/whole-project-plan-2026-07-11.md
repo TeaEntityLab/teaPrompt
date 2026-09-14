@@ -44,7 +44,7 @@
 | --- | --- | --- |
 | `00-core/`–`06-repo/` | Composable prompt sources (thinking, engineering, context, agent, domain, repo templates) | Complete; guarded by contract/cross-link/HR registries in `plans/tests/` |
 | `skills/` core | Nine frozen core workflow skills (bounded routing set; frozen = gated, not never) | Complete; 4-field governance metadata on 9/9 ([skill-map](../skills/skill-map.md)) |
-| `skills/` packs | Two registered domain packs outside core routing: `flow-control-generator`, `flow-loop-harness` | Adopted 2026-07-11 via user-directed exception; demotion triggers live ([record](flow-control-pack-panel-record-2026-07-11.md)) |
+| `skills/` packs | Four registered domain packs outside core routing: `flow-control-generator`, `flow-loop-harness` (2026-07-11), `agent-governance-scaffold` (2026-07-17), `governed-delivery` (2026-09-03) | Each adopted via user-directed exception; demotion triggers live ([flow record](flow-control-pack-panel-record-2026-07-11.md), [scaffold record](agent-governance-scaffold-adoption-2026-07-17.md), [GD record](governed-delivery-adoption-2026-09-03.md)); registry `DOMAIN_PACK_SKILLS` is the count of truth |
 | Routing | Deterministic seeded router + [ROUTING_CONTRACT.md](ROUTING_CONTRACT.md) R1–R12 | ROUTE-001/002/003 at 100% on seeded fixtures (128/124/76 phrases); P7 collision evidence resolved no core-router integration — regression-guard tier, not semantic proof |
 | Governance tooling | `make all`: pytest suite + validators + 3 route evals; CI via `.github/workflows/python-tools.yml` | Green; current evidence lives in [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md) and the latest session report |
 | Docs & distribution | READMEs (EN/zh-TW), [CONTRIBUTING](../../CONTRIBUTING.md), [SKILL_INSTALLATION](../SKILL_INSTALLATION.md) core-only default with opt-in packs, cheatsheets EN/zh-TW | Current as of the 2026-07-11 adoption wave |
@@ -130,8 +130,8 @@ ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
 - Planned work: keep SKILL_INSTALLATION registry parity (N4); T2 zh-TW pack
   appendix and README Orientation were adopted 2026-07-12 as user-directed
   documentation improvements with recurrence recorded `unknown`.
-- Acceptance: install helpers produce exactly 9 core + optionally 2 pack
-  directories; cheatsheet parity tests green.
+- Acceptance: install helpers produce exactly 9 core + optionally the registered
+  pack directories (`DOMAIN_PACK_SKILLS`, four as of 2026-09-03); cheatsheet parity tests green.
 
 ### WS7 — Knowledge and archive hygiene
 
@@ -184,6 +184,12 @@ the 2026-10-11 checkpoint passes with no recorded P6 outcome; a trigger-gated it
 is adopted without appearing here or in the roadmap; the core-skill count or pack
 registry changes; `make all` composition changes materially (validator added or
 removed).
+
+Fired and reconciled 2026-09-14: the pack registry moved 2→4 (2026-07-17, 2026-09-03)
+and thirteen September records adopted trigger-gated items without a queue entry;
+this plan's counts and the roadmap's September section were updated in the
+[September review](september-skills-review-2026-09-14.md). The clause stays live for
+the next drift.
 
 ## Verification (this plan)
 

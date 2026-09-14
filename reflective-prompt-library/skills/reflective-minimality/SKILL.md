@@ -53,7 +53,7 @@ Output:
 Never:
 
 - Do not use minimality to avoid explicit acceptance criteria.
-- Do not remove trust-boundary validation, auth, privacy, security, data-loss prevention, required accessibility, compatibility constraints, or required tests.
+- Do not remove anything the Safety Floor protects, compatibility constraints, or required tests.
 - Do not add a new dependency when standard library, platform-native behavior, existing dependency, or small local code is enough.
 - Do not add an abstraction for one implementation, a factory for one product, or config for a value that does not vary.
 - Do not mark a shortcut without both a ceiling and an observable upgrade trigger.

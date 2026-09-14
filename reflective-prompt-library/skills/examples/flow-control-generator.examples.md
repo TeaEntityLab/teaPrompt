@@ -36,6 +36,8 @@ Expected output shape:
 ```markdown
 ## Topology
 - Parallel fan-out/fan-in, MAX_JOBS=4, per-pid wave waits, synthesis step
+## Gates
+- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); merged deliverable: `./checks/verify-merged.sh state/final.md`
 ## Verification
 - Rig-tier only: stub dry run: 5 stub prompts, one forced failure → run aborts non-zero; happy path exit 0. This is not host-enforcement or production e2e proof.
 ## Escalation note

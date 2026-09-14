@@ -44,18 +44,20 @@ ANCHORS = {
         "Work from a task packet — spec version, State Ledger, oracle manifest, relevant files "
         "— and never from the transcript; if the packet is missing an acceptance criterion, "
         "stop and repair the packet.",
-        "A failure signature is the failing oracle, the error class, and the touched surface; "
-        "when a signature repeats after a correction, exit by rollback to the last verified "
-        "ledger state, a strategy change, or escalation — never by an identical retry.",
+        "A failure signature is the failing oracle, the error class, and the touched surface. If "
+        "the same failure signature recurs after a correction, do not keep retrying inside the "
+        "polluted context: exit by rollback to the last verified ledger state where the host "
+        "supports it, a strategy change, or escalation — never by an identical retry.",
     ),
     "reflective-review": (
         "Declare the verification channels used — deterministic check, runtime evidence, "
         "external primary source, independent model, self-assessment — and whether they are "
-        "independent; a high-risk PASS needs at least one non-model channel.",
+        "independent; same-model, same-context multi-role review is one epistemic channel, not "
+        "independent verification. A high-risk PASS needs at least one non-model channel",
     ),
     "reflective-research": (
-        "Each evidence entry names the claim, the source, the attester, the freshness kind, "
-        "and the date checked.",
+        "Each evidence entry names the claim, the source, the attester, the date checked, and "
+        "which kind of freshness applies",
     ),
     "reflective-risk": (
         "Sink inventory: list every sink the task can reach — secrets, memory or skill "

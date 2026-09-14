@@ -26,6 +26,9 @@
 | 5 | Watch-table rows re-checked? | [flow-control roadmap §F4](flow-control-roadmap-2026-07-11.md) — re-verify each of the six watch rows against its named source | F1 re-run decision |
 | 6 | Trigger drift sweep green? | `make all` from repository root — `test_dormant_item_watch.py` and conditionals passing means no *watched* surface drifted; it never proves no trigger fired in the world | Roadmap self-review |
 | 7 | Decision Index vs roadmap diff | Any [PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) Decision Index entry since 2026-07-11 that touches a queue item? | Roadmap self-review |
+| 8 | `governed-delivery` invocation evidence? | Scan session/retro records, host logs, and `git log --since=2026-09-03` for any host-supplied run of the pack; absence stays `unknown`, never zero | Agenda item 7 |
+| 9 | GD↔AGS shared blocks diverged? | Diff the Host Preconditions, `artifact-complete` status, and constitutional-path text of `governed-delivery` against `agent-governance-scaffold` | Agenda item 7 |
+| 10 | Flow-pack char counts | Body length of `flow-control-generator` and `flow-loop-harness` (20k lint warning; both were within 1k on 2026-09-14) | Agenda item 6 |
 
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 
@@ -115,6 +118,26 @@ the R10 ledger in the
 - Outcome lands under `## Ledger and index updates` in the outcome record; the
   required-section contract below is unchanged.
 
+## Agenda item 7 — `governed-delivery` recurrence checkpoint and GD↔AGS redundancy
+
+Owning gate: [GD adoption §Demotion Triggers](governed-delivery-adoption-2026-09-03.md)
+(date-gated to this checkpoint) and [GD review R5/R6](governed-delivery-review-2026-09-13.md).
+
+1. **Host-supplied invocation evidence exists** (check 8) → recurrence recorded
+   with its source; the pack stays; proceed to step 3.
+2. **No evidence** → recurrence stays `unknown`; the adoption record's policy
+   demotes: fold the gate sequence, contract set, and refuters into a reference
+   section of the adoption record and unwind `DOMAIN_PACK_SKILLS` 4→3 with every
+   admission surface (registry, examples, skill-map, cheatsheets, install
+   guides, guard). A skipped or unrecorded checkpoint demotes by the same policy.
+3. **Redundancy-in-use** (check 9): if the pack never ran independently of
+   `agent-governance-scaffold`, or the shared blocks diverged, open a
+   consolidation record (shared reference; retire the duplicated boilerplate).
+4. Decide the two deferred minimality items in the same sitting: A1/E1 anchor
+   tightening and the flow-pack lint tier (agenda item 6 extension).
+5. This session is a governance panel: the M5 managed-skill re-audit fires again
+   (last run 2026-09-13).
+
 ## Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)
 
 Required sections — the conditional guard in
@@ -128,6 +151,9 @@ Required sections — the conditional guard in
    triggers, artifacts marked stale.
 5. `## Ledger and index updates` — the Decision Index entry text added to
    PROJECT_KNOWLEDGE.md and any ledger rows opened elsewhere.
+6. `## GD outcome` — branch taken (retained with evidence / demoted / consolidation
+   opened), the invocation evidence or its absence as `unknown`, and the A1/E1 and
+   lint-tier decisions.
 
 Post-checkpoint duties (same session): Decision Index entry; regenerate
 `index.json` if docs changed; `make all` green from the repository root; if any

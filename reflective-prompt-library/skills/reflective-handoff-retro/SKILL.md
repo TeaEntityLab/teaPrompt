@@ -78,7 +78,7 @@ success.
 
 ### Continuation Packet
 
-A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. It also lists the relevant files and the commands and tests run, so a continuation can rebuild the task packet (`reflective-implement`, `governed-delivery`). Use it as the handoff payload so continuation rebuilds from artifacts, not from the transcript. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
+A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. It also lists the relevant files and the commands and tests run, so a continuation can rebuild the task packet (`reflective-implement`, `governed-delivery`). Use it as the handoff payload. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
 
 ## Retro Workflow
 
@@ -100,7 +100,7 @@ Use after task completion:
 
 ### Gate Retro
 
-Gate retro: record which gates fired, which were bypassed, and which caught nothing; feed the result into policy change, and keep policy change separate from policy activation. Fill this from the run's gate evidence, not from the transcript.
+Gate retro: record which gates fired, which were bypassed, and which caught nothing; feed the result into policy change, and keep policy change separate from policy activation. Fill it from the run's gate evidence.
 
 ## Memory Consolidation
 

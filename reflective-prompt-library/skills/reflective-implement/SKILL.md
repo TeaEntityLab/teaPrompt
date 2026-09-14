@@ -171,9 +171,7 @@ When blocked or failing, report and iterate with this structure:
 
 Use this loop until acceptance criteria are met or a hard stop requires Human Review.
 
-If the same failure signature recurs after a correction, do not keep retrying inside the polluted context: return to the ledger, roll back to the last verified state where the host supports it, change strategy, or escalate. Retry budgets are task-declared, never unbounded; a prompt cannot clear its own context — a host must.
-
-A failure signature is the failing oracle, the error class, and the touched surface; when a signature repeats after a correction, exit by rollback to the last verified ledger state, a strategy change, or escalation — never by an identical retry.
+A failure signature is the failing oracle, the error class, and the touched surface. If the same failure signature recurs after a correction, do not keep retrying inside the polluted context: exit by rollback to the last verified ledger state where the host supports it, a strategy change, or escalation — never by an identical retry. Retry budgets are task-declared, never unbounded; a prompt cannot clear its own context — a host must.
 
 ## Final Report
 

@@ -7,6 +7,10 @@ guarded for ledger presence and disposition only (GLOSSARY Adoption Guard
 Closure). The guard also pins the negative space: no TeaPrompt skill surface
 may carry agentflow vocabulary, incident citations, a fixed worker-start
 ceiling, or an install pointer to the surveyed repository.
+
+Record status: sealed. Subsequent deltas for the surveyed source live in
+independent records (e.g. agentflow-8.2-delta-survey-2026-09-13.md); this
+guard's FOREIGN_TOKENS is the single clean-room regex for every delta.
 """
 
 import re
@@ -32,7 +36,9 @@ ADDENDUM_REPO_REVISION = "2fc377ba13b39a34fd24f8f45ffce9a49ff3db70"
 FOREIGN_TOKENS = re.compile(
     r"agentflow|agfnow|\bI-0\d\d\b|external-runner-v1|devlog\.md|godev|not_proven|"
     r"NEEDS_FIX|3ways|tracker\.md|opus-4-8|sonnet-5|gpt-5\.[0-9]|"
-    r"three total worker starts|at most three (worker )?starts"
+    r"three total worker starts|at most three (worker )?starts|"
+    # 8.2 delta vocabulary (2026-09-13)
+    r"\bagf\b|not_performed|fast-lane|completion-record|skills-audit|skill-conflicts"
 )
 ADOPTED = {
     "reflective-implement": (

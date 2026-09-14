@@ -68,7 +68,7 @@ Expected output shape:
   cannot weaken tests/acceptance/locked/**)
 - worker_writable_exclusions deny writes to policies, hooks, approval, evidence-schema,
   verifiers, and locked acceptance tests; the host runtime owns enforcement
-- policy_activation object: change != activation; new authorization_epoch;
+- policy_activation object: change != activation; new activation_epoch;
   usable_by_existing_leases: false
 - mutation_suite.yaml (host-run adversarial spec): worker_weakens_acceptance_test,
   worker_changes_rule_then_executes -> the host must reject these pre-effect with

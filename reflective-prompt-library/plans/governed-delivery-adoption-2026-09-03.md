@@ -62,9 +62,9 @@ Host-only, declared not implemented: oracle sealing, sandbox and egress control,
 | GD-2 | Oracle manifest in `reflective-spec-plan` and pack | Adopted 2026-09-03 | anchor B1; pack `### oracle-manifest` | none |
 | GD-3 | Spec version + `stale` propagation | Adopted 2026-09-03 | anchor B2; pack GDR-6 | none |
 | GD-4 | Task packet / continuation packet | Adopted 2026-09-03 | anchors C1, G1; pack `### task-packet`, GDR-4 | none |
-| GD-5 | Failure signature and exits | Adopted 2026-09-03 | anchor C2; pack `### failure-log`, GDR-3 | none |
-| GD-6 | Verification channels | Adopted 2026-09-03 | anchor D1; pack `### verification-plan`, GDR-5 | none |
-| GD-7 | Evidence entry fields | Adopted 2026-09-03 | anchor E1; pack `### evidence-ledger` | none |
+| GD-5 | Failure signature and exits | Adopted 2026-09-03 | anchor C2; pack `### failure-log`, GDR-3; merged 2026-09-14 with GA-4 into one sentence, guard `ANCHORS` pins the merged wording ([review](september-skills-review-2026-09-14.md)) | none |
+| GD-6 | Verification channels | Adopted 2026-09-03 | anchor D1; pack `### verification-plan`, GDR-5; merged 2026-09-14 with GA-5 into one sentence, guard `ANCHORS` pins the merged wording ([review](september-skills-review-2026-09-14.md)) | none |
+| GD-7 | Evidence entry fields | Adopted 2026-09-03 | anchor E1; pack `### evidence-ledger`; merged 2026-09-14 with GA-6 into one sentence, guard `ANCHORS` pins the merged wording ([review](september-skills-review-2026-09-14.md)) | none |
 | GD-8 | Sink inventory + unattended envelope | Adopted 2026-09-03 | anchors F1, F2; pack `### envelope`, GDR-2 | none |
 | GD-9 | Acceptance record | Adopted 2026-09-03 | anchor B3; pack `### acceptance-record` | none |
 | GD-10 | Gate retro | Adopted 2026-09-03 | anchor G2; pack `### gate-retro` | none |

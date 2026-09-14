@@ -47,7 +47,7 @@ Never:
 
 Escalation:
 - Mark `Human review required` when safety, privacy, financial, legal, medical, destructive, or irreversible risk is present.
-- Route implementation fixes to `reflective-implement` after review.
+- Route implementation fixes to `reflective-implement` after review; a required fix outside the reviewed acceptance criteria is a scope proposal, not authorization to widen.
 - Route prompt/scaffold provenance source gathering or adoption decisions to `reflective-research`; use review after the evidence set exists and the task asks for critique or required fixes.
 
 ## Review Flow
@@ -91,8 +91,7 @@ A claim can pass the first two dimensions and still fail the last two; re-verify
 ### Evidence Tiers
 
 - Rank evidence: deterministic checks, then runtime evidence, then external primary sources, then independent model judgment, then generator self-assessment.
-- Declare the verification channels used — deterministic check, runtime evidence, external primary source, independent model, self-assessment — and whether they are independent; a high-risk PASS needs at least one non-model channel.
-- Same-model, same-context multi-role review is one epistemic channel, not independent verification; model judgment may block or warn but never solely pass a high-risk claim.
+- Declare the verification channels used — deterministic check, runtime evidence, external primary source, independent model, self-assessment — and whether they are independent; same-model, same-context multi-role review is one epistemic channel, not independent verification. A high-risk PASS needs at least one non-model channel: model judgment may block or warn but never solely pass a high-risk claim.
 - Audit the reason, not only the verdict: a check that reaches the right label for a reason that does not match the criterion is a finding, not a confirmation — a misaligned reason poisons every revision or decision that consumes it.
 - Model or panel consensus is advisory evidence; it does not prove operational behavior.
 - Routing fixtures are regression guards for covered phrases; they do not prove general semantic routing.
