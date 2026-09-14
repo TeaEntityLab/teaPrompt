@@ -320,6 +320,26 @@ it or names the owner who will resolve it.
 
 ---
 
+## Ledger Status Families / 帳冊狀態對照
+
+Each phase keeps its own ledger with statuses named for its object; the same
+epistemic state wears a different label per phase. Translate at handoffs
+instead of unifying the vocabularies (each set is pinned by its skill's guard):
+
+| State | `reflective-brief` (assumption) | `reflective-research` (claim) | `reflective-implement` (criterion) | `reflective-review` (claim) |
+| --- | --- | --- | --- | --- |
+| not yet checked | `open` | `unverified` | `pending` | `asserted` |
+| holds | `confirmed` | `verified` | `verified` (`done` = edited, not yet proven) | `verified` |
+| does not hold | `refuted` | `refuted` | `failed` | `refuted` |
+| basis moved | `stale` | `stale` | `stale` | `stale` (the decision) |
+| cannot be settled | — | `unknown` | — | `unverifiable` |
+
+**Operational test:** a continuation packet or review handoff that carries a
+status from one family names the family; a reader never treats `asserted` as
+weaker or stronger than `unverified` — they are the same state.
+
+---
+
 ## Context Load Deferral / 上下文負載延後
 
 At Strictness L1–L2, hosts may defer skills with `context_load: high` when a

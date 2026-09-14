@@ -42,3 +42,49 @@ Expected output shape:
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
 ```
+
+## Example 3
+
+Input:
+
+```text
+Have one agent draft the release notes and another critique them until they're good. Run it overnight.
+```
+
+Expected output shape:
+
+```markdown
+## Loop
+- Writer-critic (evaluator-optimizer): MAX_ROUNDS=4; critic is rubric-bound and must return the single word ACCEPT or a numbered fix list
+## Deterministic companion floor (required: "overnight" = unattended)
+- floor_ok(): non-empty draft, no TODO/TBD/PLACEHOLDER, ./checks/links-resolve.sh passes; ACCEPT releases only when the critic contract AND the floor both hold
+## Stop conditions
+- ACCEPT + floor → 0; MAX_ROUNDS exhausted → 2 (human decides; the last draft is not the result)
+## Human review boundary
+- unattended: rubric file excluded from the writer's write set (host permission mode); approval of verifier, caps, and blast radius recorded before the first run
+## Verification
+- Rig-tier only: stub critic returning ACCEPT against a draft containing TODO must not exit 0; stub returning a fix list for four rounds must exit 2. Not proof the rubric judges well.
+```
+
+## Example 4
+
+Input:
+
+```text
+Fan out five reviewers each round and re-run with a merged summary until the converge check passes.
+```
+
+Expected output shape:
+
+```markdown
+## Loop
+- Multi-wave fan-out: MAX_WAVES=4; VERIFY=./checks/converged.sh (truth layer); per-wave branch prompts under prompts/wave/*.md
+## Anatomy
+- branch failure tally per wave (all failed → exit 3), one bounded summary.md compacts each wave for the next, progress signal hashes branch outputs (never the wave header), exits 0/2/3/4
+## Stop conditions
+- converged → 0; MAX_WAVES exhausted → 2; branch outputs identical to the previous wave → 3; missing verifier or wave prompts → 4
+## Human review boundary
+- attended: verifier + caps; unattended: full approval recorded first; any branch step on the AGENTS.md Human Review list keeps a per-action pause
+## Verification
+- Rig-tier only: stub branches with a toggling converge script prove exits 0 and 2; identical stub outputs across two waves prove exit 3. Not a claim about reviewer quality.
+```

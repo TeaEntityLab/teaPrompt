@@ -386,12 +386,15 @@ class ParaphraseRouter:
         )
         approved_spec_markers = (
             "approved spec",
+            "approved delivery plan",  # GD-19 (2026-09-14): pack vocabulary must not derail R11
             "已核准 spec",
             "已核准的 spec",
             "已核准規格",
         )
         repository_delivery_context = [
             "repository", "repo", "codebase", "in the repo", "to production code",
+            # verification of the landed change is as strong an implement signal as the repo itself
+            "verify", "run the tests", "tests pass", "gate checks",
         ]
         if (
             not any(ctx in text_lower for ctx in no_code_context)

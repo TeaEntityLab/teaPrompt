@@ -109,6 +109,38 @@ def test_p7_pack_collision_probes_preserve_core_routes():
         assert workflow == expected, f"{phrase!r} -> {workflow}, want {expected}"
 
 
+
+# GD-19 (2026-09-14): pack vocabulary must not derail core routes; the approved
+# delivery-plan paraphrase is an R11 case, not a planning artifact request.
+GD19_DELIVERY_COLLISION_PROBES = (
+    ("write the delivery plan with gates and an acceptance record before any code", "reflective-spec-plan"),
+    ("which skill should own an unattended delivery run request", "reflective-dispatch"),
+    ("assess the risk of an unattended overnight delivery run touching production", "reflective-risk"),
+    ("implement the approved delivery plan and verify each gate passes", "reflective-implement"),
+    ("land the approved delivery plan in the repo and run the gate checks", "reflective-implement"),
+    ("write tickets for the approved delivery plan before any implementation", "reflective-spec-plan"),
+)
+
+
+def test_gd19_delivery_collision_groups_are_fixture_backed():
+    route_002 = load_route_eval_config(PLANS / "route-002-holdout-eval.yaml")
+    route_003 = load_route_eval_config(PLANS / "route-003-adversarial-eval.yaml")
+    route_002_names = {group["name"] for group in route_002["holdout_sets"]}
+    route_003_names = {group["name"] for group in route_003["adversarial_sets"]}
+    assert {
+        "delivery_vocab_plan_holdout",
+        "delivery_vocab_route_holdout",
+        "delivery_vocab_risk_holdout",
+    } <= route_002_names
+    assert "delivery_vocab_implement_not_plan_trap" in route_003_names
+
+
+def test_gd19_delivery_collision_probes_preserve_core_routes():
+    router = ParaphraseRouter()
+    for phrase, expected in GD19_DELIVERY_COLLISION_PROBES:
+        workflow, _, _, _ = router.route(phrase)
+        assert workflow == expected, f"{phrase!r} -> {workflow}, want {expected}"
+
 ROUND_51_BOUNDARY_PROBES = (
     ("narrow scope and assumptions before writing the PRD", "reflective-brief"),
     ("what dependencies can we remove from this module", "reflective-minimality"),

@@ -99,6 +99,11 @@ This contract applies to:
 - Plan-only variants (tickets, rollout, or acceptance criteria with explicit no-code context)
   still route to `reflective-spec-plan`.
 - Add ROUTE-003 `implement_not_plan_trap` holdout phrases (including mixed zh-TW + English approved-spec delivery) before tuning this boundary.
+- Pack vocabulary never changes a core route (GD-19, measured 2026-09-14): "deliver / autonomous / unattended"
+  phrases route on their core intent (plan → `reflective-spec-plan`, selection → `reflective-dispatch`,
+  hazard → `reflective-risk`). An **approved delivery plan** handed to an implement/land verb with repository
+  or verification context is an approved-spec delivery paraphrase and routes to `reflective-implement`;
+  ROUTE-003 `delivery_vocab_implement_not_plan_trap` fixture-backs that boundary.
 
 ### R12: Boundary quick-cue summary
 

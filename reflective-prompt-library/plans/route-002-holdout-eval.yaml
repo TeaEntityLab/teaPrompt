@@ -452,6 +452,36 @@ holdout_sets:
       - which skill should handle an agent pipeline script request
       - route this orchestrate-agent-steps request without generating a script
       - choose between workflow design and a host-invoked flow-control domain pack
+
+  - name: delivery_vocab_plan_holdout
+    expected_workflow: reflective-spec-plan
+    expected_rigor: medium
+    expected_enhancements:
+      - acceptance_criteria
+    phrases:
+      - write the delivery plan with gates and an acceptance record before any code
+      - spec the end-to-end delivery gates and oracle list without implementing anything
+      - "plan an autonomous delivery run: spec version, oracle owners, named accepter, no code yet"
+
+  - name: delivery_vocab_route_holdout
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - which skill should own an unattended delivery run request
+      - route this end-to-end delivery request without running it
+      - which workflow handles a governed end-to-end delivery ask when the host pack is not installed
+
+  - name: delivery_vocab_risk_holdout
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - assess the risk of an unattended overnight delivery run touching production
+      - what could go wrong if an autonomous agent delivers this database migration unattended
+      - threat model an autonomous delivery agent with deploy credentials
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

@@ -81,7 +81,7 @@ Stop at the first rung that satisfies the requirement:
 When two options are equally small, choose the one that is more correct on edge cases.
 
 - Governance artifacts face the same delete-before-add test: size gate thickness to risk and remove ceremony that defends no named invariant. Apply this to gate lists, ledgers, and envelopes as to code.
-- Apply the same test to prompt text: state each instruction once. A rule repeated across sections adds tokens, invites wording drift between copies, and can over-weight the instruction or spend reasoning reconciling near-duplicates.
+- Apply the same test to prompt text: state each instruction once. A rule repeated across sections adds tokens, invites wording drift between copies, and can over-weight the instruction or spend reasoning reconciling near-duplicates. Before adding an instruction to a prompt, rule, or skill, search that surface for a sentence already carrying the clause and extend it rather than land a twin — two same-day adoptions on one skill is how twins arrive.
 
 ## Safety Floor
 

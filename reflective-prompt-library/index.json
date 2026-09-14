@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-14T17:42:17.713369",
+  "generated_at": "2026-09-14T17:57:41.426441",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -32,6 +32,7 @@
           "path": "reflective-prompt-library/plans",
           "files": [
             "ga-skills-coverage-panel-2026-09-03.md",
+            "governance-workflow-self-control-adoption-2026-09-14.md",
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "skills-surface-plan-2026-07-11.md",
@@ -1083,6 +1084,51 @@
       ],
       "line_count": 99,
       "char_count": 11613
+    },
+    {
+      "path": "reflective-prompt-library/plans/governance-workflow-self-control-adoption-2026-09-14.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "governance-workflow-self-control-adoption-2026-09-14",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "september-skills-review-2026-09-14.md",
+          "governed-delivery-review-2026-09-13.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governance, Workflow, and Self-Control — User-Directed Adoption Pass — 2026-09-14"
+        },
+        {
+          "level": 2,
+          "text": "Direct Answer"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 48,
+      "char_count": 8305
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -4516,15 +4562,15 @@
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "harness-intent-drift-rethink-2026-09-06.md",
           "astra-efficiency-rules-survey-2026-09-10.md",
-          "governed-delivery-adoption-2026-09-03.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governed-delivery-adoption-2026-09-03.md",
           "agentflow-survey-2026-09-05.md",
           "gpt-instruct-survey-2026-09-10.md",
           "governable-autonomy-survey-2026-09-03.md",
           "ga-skills-coverage-panel-2026-09-03.md",
-          "september-skills-review-2026-09-14.md",
-          "september-skills-review-2026-09-14.md",
-          "september-skills-review-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "gpt-instruct-survey-2026-09-10.md",
           "llm-judge-lifecycle-survey-2026-09-05.md",
           "agentflow-8.2-delta-survey-2026-09-13.md",
@@ -4594,7 +4640,7 @@
         }
       ],
       "line_count": 207,
-      "char_count": 21137
+      "char_count": 21329
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -4853,7 +4899,8 @@
           "ga-skills-coverage-panel-2026-09-03.md",
           "september-skills-review-2026-09-14.md",
           "september-skills-review-2026-09-14.md",
-          "september-skills-review-2026-09-14.md"
+          "september-skills-review-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md"
         ]
       },
       "structure": [
@@ -4903,7 +4950,7 @@
         }
       ],
       "line_count": 109,
-      "char_count": 14040
+      "char_count": 14293
     },
     {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
@@ -5221,6 +5268,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -5350,8 +5398,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 410,
-      "char_count": 24062
+      "line_count": 419,
+      "char_count": 24699
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -5990,8 +6038,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 153,
-      "char_count": 6181
+      "line_count": 158,
+      "char_count": 6692
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -9554,8 +9602,11 @@
         "markdown_links": [
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
+          "skill-verification-panel-2026-09-05.md",
           "flow-control-pack-panel-record-2026-07-11.md",
-          "flow-pack-demotion-evaluation-2026-07-11.md"
+          "flow-pack-demotion-evaluation-2026-07-11.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "checkpoint-2026-10-11-runbook.md"
         ]
       },
       "structure": [
@@ -9573,11 +9624,15 @@
         },
         {
           "level": 2,
+          "text": "Template maintenance (not invocations)"
+        },
+        {
+          "level": 2,
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 40,
-      "char_count": 1909
+      "line_count": 57,
+      "char_count": 3250
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -12394,7 +12449,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 7570
+      "char_count": 7788
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -13395,8 +13450,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 214,
-      "char_count": 13139
+      "line_count": 208,
+      "char_count": 12950
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -13957,5 +14012,5 @@
       "char_count": 19927
     }
   ],
-  "total_files": 150
+  "total_files": 151
 }
