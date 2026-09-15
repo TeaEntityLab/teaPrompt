@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-15T12:44:13.830449",
+  "generated_at": "2026-09-15T12:47:21.196002",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1132,7 +1132,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 15104
+      "char_count": 15985
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -5403,8 +5403,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 423,
-      "char_count": 25110
+      "line_count": 425,
+      "char_count": 25359
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",

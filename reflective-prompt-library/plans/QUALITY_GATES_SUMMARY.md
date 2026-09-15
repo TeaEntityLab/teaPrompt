@@ -344,8 +344,10 @@ requests into implement — an adversarial trap now pins those three shapes to r
 the token was narrowed to `gate passes`; selection questions naming skills or a pack, a
 catalog question that mentions implementing, bare `deploy` / `money` hazards (a
 pre-existing gap against the AGENTS.md Human Review list), and a zh-TW approved-delivery-plan
-marker were each fixture-backed first (80% / 0% / 0% / 75% pre-tune) and then tuned; all
-three evals 100% post-tune ([record](governance-workflow-self-control-adoption-2026-09-14.md)).
+marker were each fixture-backed first and then tuned in three steps (2a on the `b5c3a10`
+router: selection trap 66.7%, deploy/money trap 0%; 2b on the 2a-tuned router: selection trap
+expanded to five phrases 80%, zh-TW implement phrase 75%, verify trap 0%; 2c: catalog signal
+and two contract-contradicting fixture phrases replaced); all three evals 100% post-tune ([record](governance-workflow-self-control-adoption-2026-09-14.md)).
 
 ## Phase 2 Status (post-Round 68 maintenance)
 
