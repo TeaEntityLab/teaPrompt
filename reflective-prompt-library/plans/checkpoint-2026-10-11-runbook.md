@@ -28,7 +28,7 @@
 | 7 | Decision Index vs roadmap diff | Any [PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) Decision Index entry since 2026-07-11 that touches a queue item? | Roadmap self-review |
 | 8 | `governed-delivery` invocation evidence? | Scan session/retro records, host logs, and `git log --since=2026-09-03` for any host-supplied run of the pack; absence stays `unknown`, never zero | Agenda item 7 |
 | 9 | GD↔AGS shared blocks diverged? | Diff the Host Preconditions, `artifact-complete` status, and constitutional-path text of `governed-delivery` against `agent-governance-scaffold` | Agenda item 7 |
-| 10 | Flow-pack char counts | Body length of `flow-control-generator` and `flow-loop-harness` (20k lint warning; both were within 1k on 2026-09-14) | Agenda item 6 |
+| 10 | Flow-pack char counts | Whole-file length of `flow-control-generator` and `flow-loop-harness` as `lint_skills.py` measures it (20k warning; 19,952 and 19,927 on 2026-09-14) | Agenda item 6 |
 
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 

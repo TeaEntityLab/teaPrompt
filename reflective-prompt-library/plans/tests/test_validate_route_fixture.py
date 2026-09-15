@@ -115,9 +115,16 @@ def test_p7_pack_collision_probes_preserve_core_routes():
 GD19_DELIVERY_COLLISION_PROBES = (
     ("write the delivery plan with gates and an acceptance record before any code", "reflective-spec-plan"),
     ("which skill should own an unattended delivery run request", "reflective-dispatch"),
+    ("choose between a delivery spec and the host-invoked delivery domain pack", "reflective-dispatch"),
+    ("which skill should implement the approved delivery plan and verify each gate", "reflective-dispatch"),
     ("assess the risk of an unattended overnight delivery run touching production", "reflective-risk"),
+    ("gate an unattended delivery run that can deploy and spend money", "reflective-risk"),
     ("implement the approved delivery plan and verify each gate passes", "reflective-implement"),
     ("land the approved delivery plan in the repo and run the gate checks", "reflective-implement"),
+    ("在 repo 實作已核准的 delivery plan 並確認 gate checks 通過", "reflective-implement"),
+    ("review whether we should implement this approved spec and verify it", "reflective-review"),
+    ("assess risk to implement this approved spec and verify", "reflective-risk"),
+    ("write the test plan to verify we can implement this approved spec", "reflective-spec-plan"),
     ("write tickets for the approved delivery plan before any implementation", "reflective-spec-plan"),
 )
 
@@ -132,7 +139,12 @@ def test_gd19_delivery_collision_groups_are_fixture_backed():
         "delivery_vocab_route_holdout",
         "delivery_vocab_risk_holdout",
     } <= route_002_names
-    assert "delivery_vocab_implement_not_plan_trap" in route_003_names
+    assert {
+        "delivery_vocab_implement_not_plan_trap",
+        "delivery_vocab_route_not_plan_trap",
+        "deploy_money_risk_trap",
+        "approved_spec_verify_not_implement_trap",
+    } <= route_003_names
 
 
 def test_gd19_delivery_collision_probes_preserve_core_routes():

@@ -63,7 +63,7 @@ Expected output shape:
 ## Human review boundary
 - unattended: rubric file excluded from the writer's write set (host permission mode); approval of verifier, caps, and blast radius recorded before the first run
 ## Verification
-- Rig-tier only: stub critic returning ACCEPT against a draft containing TODO must not exit 0; stub returning a fix list for four rounds must exit 2. Not proof the rubric judges well.
+- Rig-tier (run 2026-09-14): ACCEPT + clean draft → 0; ACCEPT + draft containing TODO → 2; ACCEPT + zero-byte draft → 2; ACCEPT + failing links-resolve.sh → 2; fix list for four rounds → 2; critique "I cannot ACCEPT this" → 2 (whole-verdict match). Not proof the rubric judges well.
 ```
 
 ## Example 4
@@ -86,5 +86,5 @@ Expected output shape:
 ## Human review boundary
 - attended: verifier + caps; unattended: full approval recorded first; any branch step on the AGENTS.md Human Review list keeps a per-action pause
 ## Verification
-- Rig-tier only: stub branches with a toggling converge script prove exits 0 and 2; identical stub outputs across two waves prove exit 3. Not a claim about reviewer quality.
+- Rig-tier (run 2026-09-14): converge on the third check → 0; never converge → 2 at MAX_WAVES; identical branch outputs across waves → 3; all branches fail → 3; verifier not executable → 4; no wave prompts → 4. Not a claim about reviewer quality.
 ```

@@ -482,6 +482,7 @@ holdout_sets:
       - assess the risk of an unattended overnight delivery run touching production
       - what could go wrong if an autonomous agent delivers this database migration unattended
       - threat model an autonomous delivery agent with deploy credentials
+      - threat model an unattended script that can spend money on cloud resources
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

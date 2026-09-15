@@ -54,8 +54,17 @@ def test_gw3_status_family_map_in_glossary():
     text = _read(glossary_path())
     assert "## Ledger Status Families / 帳冊狀態對照" in text
     section = text.split("## Ledger Status Families / 帳冊狀態對照", 1)[1].split("\n## ", 1)[0]
-    for literal in ("`open`", "`unverified`", "`pending`", "`asserted`", "`unverifiable`", "`stale`"):
+    for literal in ("`open`", "`unverified`", "`needs-qualification`", "`pending`", "`asserted`", "`unverifiable`", "`stale`"):
         assert literal in section, literal
+
+
+def test_gw3_every_skill_status_list_is_pinned():
+    """The GLOSSARY map says each skill's status list is guarded; brief and implement
+    are pinned by the GD / GA adoption guards, research and review here."""
+    research = _read(SKILLS / "reflective-research" / "SKILL.md")
+    assert "Status is one of `unverified`, `verified`, `refuted`, `needs-qualification`, `stale`." in research
+    review = _read(SKILLS / "reflective-review" / "SKILL.md")
+    assert "`asserted` / `verified` / `refuted` / `unverifiable`" in review
 
 
 def test_gw6_examples_cover_the_four_templates():
@@ -65,6 +74,11 @@ def test_gw6_examples_cover_the_four_templates():
     control = _read(SKILLS / "examples" / "flow-control-generator.examples.md")
     for token in ("Orchestrator-workers", "MAX_WORKERS=4 / MAX_TASKS=12", "DAG executor", "exit 4 before any node runs"):
         assert token in control, token
+    # Second pass: examples state observed rig results, never mechanisms the templates lack.
+    assert "read-only plus a scratch dir" not in control
+    assert "per-node gate on output presence" not in control
+    for text in (loop, control):
+        assert "Rig-tier (run 2026-09-14)" in text
 
 
 def test_gw7_usage_log_covers_all_registered_packs():
@@ -85,10 +99,14 @@ def test_record_dispositions_and_held_items_stay_held():
     for n in range(1, 8):
         assert "**Adopted 2026-09-14**" in _ledger_row(text, f"GW-{n}"), n
     assert "**Rejected on evidence 2026-09-14**" in _ledger_row(text, "GW-8")
+    assert "**Fixed 2026-09-14**" in _ledger_row(text, "GW-15")
+    assert "## Second-Pass Review (2026-09-14)" in text
+    for n in range(1, 14):
+        assert f"| S{n} |" in text, n
     for n, status in ((9, "date-gated"), (10, "date-gated"), (11, "trigger unfired"), (12, "named gates"), (13, "host-only"), (14, "panel-decided")):
         assert f"**Held — {status}**" in _ledger_row(text, f"GW-{n}"), n
     gd = _read(PLANS_DIR / "governed-delivery-adoption-2026-09-03.md")
     assert "| GD-19 |" in gd and "Measured 2026-09-14" in gd
     # The held reserves keep their absence on the skills (their own records guard the wording).
     implement = _read(SKILLS / "reflective-implement" / "SKILL.md")
-    assert "same-run offer" not in implement, "TK-1 reserve landed without its trigger"
+    assert "extra-work offer from the same run" not in implement, "TK-1 reserve landed without its trigger"

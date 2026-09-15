@@ -324,12 +324,12 @@ it or names the owner who will resolve it.
 
 Each phase keeps its own ledger with statuses named for its object; the same
 epistemic state wears a different label per phase. Translate at handoffs
-instead of unifying the vocabularies (each set is pinned by its skill's guard):
+instead of unifying the vocabularies (each skill's status list is pinned by a guard):
 
 | State | `reflective-brief` (assumption) | `reflective-research` (claim) | `reflective-implement` (criterion) | `reflective-review` (claim) |
 | --- | --- | --- | --- | --- |
 | not yet checked | `open` | `unverified` | `pending` | `asserted` |
-| holds | `confirmed` | `verified` | `verified` (`done` = edited, not yet proven) | `verified` |
+| holds | `confirmed` | `verified` (`needs-qualification` = holds only as qualified) | `verified` (`done` = edited, not yet proven) | `verified` |
 | does not hold | `refuted` | `refuted` | `failed` | `refuted` |
 | basis moved | `stale` | `stale` | `stale` | `stale` (the decision) |
 | cannot be settled | — | `unknown` | — | `unverifiable` |

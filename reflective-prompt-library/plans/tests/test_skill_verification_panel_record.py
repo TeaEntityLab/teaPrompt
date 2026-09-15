@@ -31,6 +31,9 @@ LINT_WARNING_CHARS = 20000
 DAG_TEMPLATE = re.compile(
     r"## Template: DAG Executor \(Python, stdlib only\)\n.*?```python\n(.*?)```", re.S
 )
+ORCHESTRATOR_TEMPLATE = re.compile(  # the body holds a literal ``` in a string; end at a fence on its own line
+    r"## Template: Orchestrator-Workers \(Python, stdlib only\)\n.*?```python\n(.*?)\n```\n", re.S
+)
 
 # skill -> sentences that must be present exactly once (or at least once when noted).
 PINS = {
@@ -118,8 +121,10 @@ def test_record_is_indexed():
     assert "`skill-verification-panel-2026-09-05.md`" in ledger
 
 
-def _run_dag(tmp_path: Path, dag: str, *, fail_node: str | None, min_ok: str, conflict: bool) -> int:
-    d = tmp_path / f"{fail_node}-{min_ok}-{conflict}"
+def _run_dag(
+    tmp_path: Path, dag: str, *, fail_node: str | None, min_ok: str, conflict: bool, empty_node: str | None = None
+) -> int:
+    d = tmp_path / f"{fail_node}-{min_ok}-{conflict}-{empty_node}"
     (d / "prompts").mkdir(parents=True)
     (d / "checks").mkdir()
     for n in ("spec", "api", "client", "assemble"):
@@ -128,6 +133,8 @@ def _run_dag(tmp_path: Path, dag: str, *, fail_node: str | None, min_ok: str, co
     body = "#!/bin/sh\n"
     if fail_node:
         body += f'case "$1" in {fail_node}*) exit 1;; esac\n'
+    if empty_node:
+        body += f'case "$1" in {empty_node}*) exit 0;; esac\n'  # success with zero bytes
     body += 'echo "CONFLICT $1"\n' if conflict else 'echo "stub: $1"\n'
     stub.write_text(body, encoding="utf-8")
     stub.chmod(0o755)
@@ -151,3 +158,33 @@ def test_dag_template_quorum_path_still_reaches_the_merged_gate(tmp_path: Path):
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="4", conflict=False) == 0      # quorum, clean merge
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="4", conflict=True) == 2       # quorum met, merge rejected
     assert _run_dag(tmp_path, dag, fail_node="assemble", min_ok="1", conflict=False) == 2  # quorum met, sink missing
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="sh not available")
+def test_python_templates_treat_empty_success_as_failure(tmp_path: Path):
+    """Second-pass review 2026-09-14: a node or worker that exits 0 with no output
+    must not be marked done and feed empty text downstream (the bash templates
+    already gate on `[ -s ]`)."""
+    dag = DAG_TEMPLATE.search(_skill("flow-control-generator")).group(1)
+    assert _run_dag(tmp_path, dag, fail_node=None, min_ok="", conflict=False, empty_node="api") == 2
+
+    orch = ORCHESTRATOR_TEMPLATE.search(_skill("flow-control-generator")).group(1)
+    d = tmp_path / "orch"
+    (d / "checks").mkdir(parents=True)
+    (d / "goal.md").write_text("goal\n", encoding="utf-8")
+    stub = d / "stub.sh"
+    stub.write_text(
+        "#!/bin/sh\n"
+        'case "$1" in Decompose*) printf \'[{"id":"a","task":"x"},{"id":"b","task":"y"}]\';;'
+        " x) exit 0;; *) echo out;; esac\n",  # worker "x" succeeds with zero bytes
+        encoding="utf-8",
+    )
+    stub.chmod(0o755)
+    gate = d / "checks" / "verify-merged.sh"
+    gate.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+    gate.chmod(0o755)
+    (d / "orch.py").write_text(orch, encoding="utf-8")
+    env = dict(os.environ, AGENT_CMD=str(stub))
+    r = subprocess.run([sys.executable, "orch.py", "goal.md"], cwd=d, env=env, capture_output=True, text=True, timeout=120)
+    assert r.returncode != 0, r.stdout
+    assert "no output" in r.stderr

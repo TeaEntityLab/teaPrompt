@@ -101,9 +101,12 @@ This contract applies to:
 - Add ROUTE-003 `implement_not_plan_trap` holdout phrases (including mixed zh-TW + English approved-spec delivery) before tuning this boundary.
 - Pack vocabulary never changes a core route (GD-19, measured 2026-09-14): "deliver / autonomous / unattended"
   phrases route on their core intent (plan → `reflective-spec-plan`, selection → `reflective-dispatch`,
-  hazard → `reflective-risk`). An **approved delivery plan** handed to an implement/land verb with repository
-  or verification context is an approved-spec delivery paraphrase and routes to `reflective-implement`;
-  ROUTE-003 `delivery_vocab_implement_not_plan_trap` fixture-backs that boundary.
+  hazard → `reflective-risk`). An **approved delivery plan** (EN or zh-TW marker) handed to an implement/land
+  verb with repository context, or with landed-change verification context (`gate passes`, `tests pass`,
+  `run the tests`, `gate checks` — never bare `verify`, which also names review and test-plan intent), is an
+  approved-spec delivery paraphrase and routes to `reflective-implement`. A catalog question ("which skill
+  should implement …") stays with `reflective-dispatch`. ROUTE-003 `delivery_vocab_implement_not_plan_trap`,
+  `delivery_vocab_route_not_plan_trap`, and `approved_spec_verify_not_implement_trap` fixture-back those boundaries.
 
 ### R12: Boundary quick-cue summary
 

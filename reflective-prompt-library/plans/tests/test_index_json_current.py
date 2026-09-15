@@ -20,17 +20,18 @@ from prompt_eval_helpers import PROMPT_LIBRARY_REPO_ROOT, PROMPT_LIBRARY_ROOT  #
 INDEX = PROMPT_LIBRARY_ROOT / "index.json"
 
 
-def _entries(index: dict) -> dict[str, int]:
-    return {
-        entry["path"]: entry.get("line_count", -1)
-        for entry in index.get("prompts", []) + index.get("skills", [])
-    }
+def _entries(index: dict) -> dict[str, dict]:
+    """Whole entries keyed by path; every field is content-derived (the only
+    timestamp, `generated_at`, is top-level and ignored)."""
+    return {entry["path"]: entry for entry in index.get("prompts", []) + index.get("skills", [])}
 
 
 def test_committed_index_matches_generator_over_current_tree():
     assert INDEX.is_file(), "index.json missing; run plans/generate_index.py"
-    committed = _entries(json.loads(INDEX.read_text(encoding="utf-8")))
-    live = _entries(IndexGenerator(PROMPT_LIBRARY_REPO_ROOT).generate())
+    committed_index = json.loads(INDEX.read_text(encoding="utf-8"))
+    live_index = IndexGenerator(PROMPT_LIBRARY_REPO_ROOT).generate()
+    committed = _entries(committed_index)
+    live = _entries(live_index)
 
     missing = sorted(set(live) - set(committed))
     extra = sorted(set(committed) - set(live))
@@ -40,6 +41,8 @@ def test_committed_index_matches_generator_over_current_tree():
     )
     changed = sorted(p for p in live if live[p] != committed[p])
     assert not changed, (
-        "index.json is stale — line counts differ for: "
+        "index.json is stale — entries differ (frontmatter, headings, links, or size) for: "
         f"{changed[:8]}{' …' if len(changed) > 8 else ''}; run generate_index.py"
     )
+    assert committed_index["categories"] == live_index["categories"], "index.json category file lists are stale"
+    assert committed_index["total_files"] == live_index["total_files"]

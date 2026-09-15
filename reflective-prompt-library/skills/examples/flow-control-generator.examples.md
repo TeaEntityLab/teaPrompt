@@ -80,11 +80,11 @@ Expected output shape:
 ## Topology
 - Orchestrator-workers (Python, stdlib): planner emits a JSON task list (fenced JSON stripped, must parse as a list), MAX_WORKERS=4 / MAX_TASKS=12 budget caps, worker ids sanitized to [A-Za-z0-9-_]
 ## Gates
-- planner output must be a list or the run exits 2 before any worker starts; any worker exception aborts; merged deliverable: ./checks/verify-merged.sh state/final.md (the worker tally alone never passes)
+- planner output must be a list of 1..12 tasks or the run exits 2 before any worker starts; a worker that fails or returns no output aborts the run; merged deliverable: ./checks/verify-merged.sh state/final.md (the worker tally alone never passes)
 ## Human Review Boundary
-- migration = AGENTS.md Human Review item: the generated script stops before any apply step; workers get read-only plus a scratch dir
+- migration = AGENTS.md Human Review item: the generated script pauses before any apply step and records the approval; worker task text is model-authored data — never run as shell, never allowed to change AGENT_CMD, permissions, or the verifier
 ## Verification
-- Rig-tier only: stub planner returning prose (not a list) → exit 2; one raising worker → non-zero; happy path → verify-merged.sh runs. Not proof of migration safety.
+- Rig-tier (run 2026-09-14): stub planner returning prose → exit 2 with zero workers started; 13 tasks → exit 2; one raising worker → exit 1; fenced JSON plan accepted; failing verify-merged.sh → exit 2; worker id `b/../evil` written as `worker-bevil.md`. Not proof of migration safety.
 ```
 
 ## Example 5
@@ -101,9 +101,9 @@ Expected output shape:
 ## Topology
 - DAG executor (Python, stdlib): nodes spec → {api, client} → integration; topological order with bounded concurrency MAX_WORKERS=4; each node's prompt receives its dependencies' outputs
 ## Gates
-- cycle or dangling dependency → exit 4 before any node runs; per-node gate on output presence; quorum MIN_OK or strict (any failed node → exit 2); sink node checked by ./checks/verify-merged.sh
+- cycle or dangling dependency → exit 4 before any node runs; a node that fails or returns no output counts as failed; quorum MIN_OK or strict (any failed node → exit 2); sink node checked by ./checks/verify-merged.sh
 ## Escalation note
 - regenerate from the template when the node set changes; never patch a drifted copy (plans/agent-flow-control-research-2026-07-11.md P12)
 ## Verification
-- Rig-tier only: a stub DAG with an injected cycle exits 4; one failing stub node exits 2 under strict; happy path reaches the merged gate. Not proof the generated code is correct.
+- Rig-tier (run 2026-09-14): injected cycle and dangling dependency each exit 4 with zero nodes run; one failing node exits 2 under strict and under MIN_OK=3; a node exiting 0 with zero bytes exits 2; failing sink gate exits 2; happy path exits 0. Not proof the generated code is correct.
 ```

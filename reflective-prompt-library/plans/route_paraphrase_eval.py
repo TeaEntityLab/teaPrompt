@@ -236,7 +236,7 @@ class ParaphraseRouter:
             ],
             "reflective-risk": [
                 "risk", "security", "privacy", "auth", "permission", "production",
-                "deployment", "migration", "destructive", "billing", "safe", "safety",
+                "deploy", "migration", "destructive", "billing", "money", "safe", "safety",
                 "delete", "rollback", "compliance", "credential", "irreversible",
                 "風險", "安全", "正式環境", "權限"
             ],
@@ -277,7 +277,7 @@ class ParaphraseRouter:
         )
 
         risk_signals = [
-            "production", "security", "credential", "deployment", "dangerous",
+            "production", "security", "credential", "deploy", "money", "dangerous",
             "not break", "breaking", "avoid breaking", "before changing"
         ]
         risk_context = ["check", "verify", "review", "make sure", "avoid", "before", "will not"]
@@ -387,23 +387,38 @@ class ParaphraseRouter:
         approved_spec_markers = (
             "approved spec",
             "approved delivery plan",  # GD-19 (2026-09-14): pack vocabulary must not derail R11
+            "已核准 delivery plan",
+            "已核准的 delivery plan",
+            "已核准交貨計畫",
             "已核准 spec",
             "已核准的 spec",
             "已核准規格",
         )
         repository_delivery_context = [
             "repository", "repo", "codebase", "in the repo", "to production code",
-            # verification of the landed change is as strong an implement signal as the repo itself
-            "verify", "run the tests", "tests pass", "gate checks",
         ]
+        # GD-19 (2026-09-14): verifying the landed change locates it in a codebase as
+        # surely as naming the repo does. Compound tokens only: bare "verify" pulled
+        # review/risk/test-plan requests into implement (second-pass review, 2026-09-14).
+        landed_change_verification_context = [
+            "gate passes", "run the tests", "tests pass", "gate checks",
+        ]
+        # A catalog question about implementing is still a catalog question.
+        catalog_question = any(
+            signal in text_lower for signal in ("which skill", "what skill", "哪個 skill")
+        )
         if (
             not any(ctx in text_lower for ctx in no_code_context)
+            and not catalog_question
             and (
                 any(signal in text_lower for signal in implement_approved_spec_signals)
                 or (
                     any(verb in text_lower for verb in implement_delivery_verbs)
                     and any(marker in text_lower for marker in approved_spec_markers)
-                    and any(ctx in text_lower for ctx in repository_delivery_context)
+                    and any(
+                        ctx in text_lower
+                        for ctx in repository_delivery_context + landed_change_verification_context
+                    )
                 )
             )
         ):
@@ -433,7 +448,8 @@ class ParaphraseRouter:
             "which orchestration", "what orchestration"
         ]
         workflow_selection_targets = [
-            "workflow", "agent", "orchestration level", "prompt"
+            "workflow", "agent", "orchestration level", "prompt",
+            "skill", "pack", "reflective-",  # GD-19 (2026-09-14): choosing among named skills or a pack is a dispatch question
         ]
         if any(signal in text_lower for signal in workflow_selection_signals) and any(
             target in text_lower for target in workflow_selection_targets
@@ -535,6 +551,7 @@ class ParaphraseRouter:
 
         dispatch_meta_signals = [
             "which skill handles",
+            "which skill should",  # GD-19 (2026-09-14): "which skill should implement X" is a catalog question
             "which reflective workflow skill covers",
             "which workflow skill covers",
             "what skill handles",

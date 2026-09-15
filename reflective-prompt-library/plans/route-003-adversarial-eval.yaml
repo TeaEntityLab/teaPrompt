@@ -261,6 +261,39 @@ adversarial_sets:
       - deliver the approved spec end-to-end and run the tests
       - implement the approved delivery plan and verify each gate passes
       - land the approved delivery plan in the repo and run the gate checks
+      - 在 repo 實作已核准的 delivery plan 並確認 gate checks 通過
+
+  - name: delivery_vocab_route_not_plan_trap
+    expected_workflow: reflective-dispatch
+    expected_rigor: low
+    expected_enhancements:
+      - route_trace
+    phrases:
+      - choose between a delivery spec and the host-invoked delivery domain pack
+      - decide whether this delivery ask needs a core skill or the delivery pack
+      - which skill or pack should take an unattended delivery run request
+      - choose between the implement skill and the delivery pack for this delivery task
+      - which skill should implement the approved delivery plan and verify each gate
+
+  - name: deploy_money_risk_trap
+    expected_workflow: reflective-risk
+    expected_rigor: high
+    expected_enhancements:
+      - human_review_gate
+    phrases:
+      - gate an unattended delivery run that can deploy and spend money
+      - check what could go wrong before an agent deploys this service on its own
+      - review the blast radius before letting the bot spend money on cloud resources
+
+  - name: approved_spec_verify_not_implement_trap
+    expected_workflow: reflective-review
+    expected_rigor: medium
+    expected_enhancements:
+      - claims_ledger
+    phrases:
+      - review whether we should implement this approved spec and verify it
+      - review the approved spec for gaps before we implement it and verify the reviewer's claims
+      - review this diff against the approved spec and verify each claim in the PR description
 evaluation_rules:
   - name: route_equivalence
     assert: same_intent_group_same_workflow

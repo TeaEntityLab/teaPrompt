@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-14T17:57:41.426441",
+  "generated_at": "2026-09-15T12:44:13.830449",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1120,6 +1120,10 @@
         },
         {
           "level": 2,
+          "text": "Second-Pass Review (2026-09-14)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -1127,8 +1131,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 48,
-      "char_count": 8305
+      "line_count": 73,
+      "char_count": 15104
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -2804,7 +2808,7 @@
         }
       ],
       "line_count": 63,
-      "char_count": 8983
+      "char_count": 9116
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -4548,6 +4552,7 @@
           "governed-delivery-review-2026-09-13.md",
           "governed-delivery-review-2026-09-13.md",
           "september-skills-review-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governed-delivery-review-2026-09-13.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
@@ -4640,7 +4645,7 @@
         }
       ],
       "line_count": 207,
-      "char_count": 21329
+      "char_count": 21429
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -5398,8 +5403,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 419,
-      "char_count": 24699
+      "line_count": 423,
+      "char_count": 25110
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -6038,8 +6043,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 158,
-      "char_count": 6692
+      "line_count": 161,
+      "char_count": 7053
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -6124,7 +6129,7 @@
         }
       ],
       "line_count": 168,
-      "char_count": 10766
+      "char_count": 10797
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -12449,7 +12454,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 7788
+      "char_count": 7730
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -12783,8 +12788,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 384,
-      "char_count": 19935
+      "line_count": 386,
+      "char_count": 19952
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -13451,7 +13456,7 @@
         }
       ],
       "line_count": 208,
-      "char_count": 12950
+      "char_count": 13031
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",

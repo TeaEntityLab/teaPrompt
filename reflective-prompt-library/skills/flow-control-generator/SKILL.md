@@ -16,7 +16,7 @@ metadata:
 
 ## Purpose
 
-Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow; the model owns step content. TeaPrompt stays methodology-side: host-operationalized artifacts, not a runtime (`plans/external-adoption-case-studies-2026-06-20.md`); surveyed platform vocabulary is advisory-tier provenance (`plans/agent-flow-control-research-2026-07-11.md`), not an adoption mandate.
+Turn a multi-step agent task into a small, deterministic, host-executable flow-control script. The script owns control flow; the model owns step content. TeaPrompt stays methodology-side: host-operationalized artifacts, not a runtime (`plans/external-adoption-case-studies-2026-06-20.md`).
 
 ## Module Contract
 
@@ -211,6 +211,7 @@ def run_agent(prompt: str, out: pathlib.Path) -> str:
     r = subprocess.run(AGENT_CMD + [prompt], capture_output=True, text=True, timeout=1800)
     if r.returncode != 0:
         raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+    if not r.stdout.strip(): raise RuntimeError("agent returned no output")
     out.write_text(r.stdout)
     return r.stdout
 
@@ -304,6 +305,7 @@ def run_agent(prompt_file, out, deps=()):
                        capture_output=True, text=True, timeout=1800)
     if r.returncode != 0:
         raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+    if not r.stdout.strip(): raise RuntimeError("agent returned no output")
     out.write_text(r.stdout)
 
 order = toposort(NODES)
