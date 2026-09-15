@@ -211,6 +211,35 @@ it does not fire any named 3XA, JS, or CR adoption trigger.
 
 Deterministic guard: `plans/tests/test_managed_skill_promotion_adoption_state.py`.
 
+## 2026-09-15 Landing-Review and Tune-Rule Promotion
+
+User instruction: *"Update docs and skills if worth it"*, after a read-back of the
+month's surveys. The three September landing passes — the 2026-09-10 model-guidance
+adoption, the 2026-09-13 Agentflow 8.2 delta, and the 2026-09-14 governance pass —
+each violated a rule they later stated, and each rule now sits only in a
+non-authoritative Lesson or a dated record rather than on the surface the next
+coordinator reads. This is recurrence in TeaPrompt's own method, not local demand
+for any upstream mechanism; the direction authorizes narrow in-place repairs and
+fires no named survey trigger.
+
+### Candidate Adoption Ledger
+
+| ID | Candidate | Status | Evidence | Next action or trigger |
+| --- | --- | --- | --- | --- |
+| XM-6 | Landing reviewed as landed bytes; every figure bound to its measured revision (Parallel Lens Review packet contract) | Adopted in place 2026-09-15 | Three consecutive landing reviews each found defects the landing session had recorded as done: 4 in panel-approved text on 2026-09-10 (a step placed after the workflow's stop carrying a 7-word verbatim run, a risk-scoped prohibition readable as licence to skip a behavior lock, a 9-word verbatim run, three rules fused into one paragraph); an unowned top-level contract on 2026-09-13 whose probe then found a stall, an exploitable escape clause, and a seating error; 13 on 2026-09-14 (five dropped clauses recorded as "same clauses", two example claims the templates did not implement, a vacuous guard, wrong tallies, a pre-tune figure attributed to the wrong fixture revision). No packet-contract bullet said a landed commit is read against its record; step 11 probes a sentence *before* landing and does not check counts, seats, figures, or examples after | Guard `04-agent/workflow-recipes.md`; retire if three consecutive landing reviews find nothing, in which case the bullet is ceremony |
+| XM-7 | R8 gains the two tune duties GW-1 violated: one adversarial group per *other* workflow sharing a tuned token; failing probes fixture-backed or recorded, never swapped | Adopted in place 2026-09-15 | The bare-`verify` tune passed its target trap and all three evals at 100% while moving review/risk/test-plan phrases into implement; two failing probes were replaced by passing ones, producing a 100% pre-tune figure that measured nothing. Both duties lived only in the Durable Lesson's review trigger while `PROJECT_KNOWLEDGE.md` says router tuning follows R8 | Guard `plans/ROUTING_CONTRACT.md` R8; the Lesson keeps the pattern and evidence, R8 the rule |
+| XM-8 | "Own the front door" promoted from procedure step 10 into the Parallel Lens Review recipe stanza | Held — named gate | The 2026-09-13 reflections gate promotion on a second occurrence; the 2026-09-14 fan-out (by concern, coordinator-owned execute slice) reported no unowned family | Fires on a second survey whose highest-yield rules sat in an unowned slice |
+| XM-9 | "Ask approval only after preparing a concrete reviewable result; no unsolicited approval flows" (vendor autonomy guidance) | No change 2026-09-15 | Already held: `reflective-brief` step 4 classifies an unknown before it becomes a question and Never asks before a targeted check; `reflective-implement` presents an implied change as a proposal (AF82-9); `reflective-risk` gates approval on a dry-run, which is the reviewable result | A local case where an agent asked before looking or without a dry-run |
+| XM-10 | Per-source yield rule ("after wording yield falls below one clarification per pass, go delta-only, no panel") | No change / record-only 2026-09-15 | Source-specific procedure note in the 2026-09-13 reflections; a generic threshold would be the universal number ATT-7 rejects | Stays with the Agentflow record |
+
+Rejected alternative: a tenth Durable Lesson for the landing-review pattern — it
+would restate XM-6 on a second surface, and the three Decision Index entries
+already carry the defect counts. Deterministic guard:
+`plans/tests/test_managed_skill_promotion_adoption_state.py`. Falsifier: XM-6 is
+ceremony if three consecutive landing reviews find nothing; XM-7 is wrong if a
+tune that followed both duties still regressed a sibling workflow, in which case
+the duty is incomplete, not excessive.
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -271,3 +300,4 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | OpenAI model guidance survey recorded; OG-1–OG-4 adopted (prompt-text repetition on minimality, outcome-first on spec-plan, verification calibration on implement, re-search anti-pattern on research); OG-5 rejected (already implicit); OG-6/OG-7 rejected (style/model-specific) | done | `openai-model-guidance-survey-2026-09-10.md` + Decision Index entry + guard `plans/tests/test_openai_model_guidance_survey_record.py` (four adopted sentences pinned at single surfaces; vendor tokens absent from skills) |
 | Skill correctness and logical-consistency pass recorded; fixes landed in twelve skills; flow packs back under the size budget | done | `skill-verification-panel-2026-09-05.md` + Decision Index entry + guard `plans/tests/test_skill_verification_panel_record.py` (landed sentences pinned per skill; both flow packs ≤ 20,000 chars; DAG quorum-path merged-gate dry-run) |
 | Agentflow 8.2.0 delta recorded; four paragraphs adopted on three skills (two with source-review dissent and no measured efficacy claim; AF82-9/AF82-14 from a second pass whose fixture probe set their wording and seating) | done | `agentflow-8.2-delta-survey-2026-09-13.md` + Decision Index + Durable Lesson on seating + `test_agentflow_v82_delta_record.py` (identity, fourteen dispositions, named-section and single-surface record parity) |
+| Landing-review bullet on the packet contract and two tune duties on R8 adopted from the September passes; front-door promotion held at its second-occurrence gate; approval-shape and per-source yield no-change; tenth Lesson rejected as restatement | done | `04-agent/workflow-recipes.md` + `plans/ROUTING_CONTRACT.md` R8 + §2026-09-15 above + `test_managed_skill_promotion_adoption_state.py` |

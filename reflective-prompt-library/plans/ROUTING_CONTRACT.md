@@ -78,6 +78,11 @@ This contract applies to:
   `route_paraphrase_eval.py` keyword or boundary rules.
 - `validate_route_fixture.py` enforces minimum group and phrase counts in CI.
 - Holdout expansion is maintenance, not proof of broad semantic routing.
+- A tune on a token that another workflow can also use is fixture-backed first by one
+  adversarial group per *other* workflow sharing it; a passing fixture set bounds the phrases
+  in it, not the phrase space.
+- Every probed phrase is recorded: a phrase that fails pre-tune is fixture-backed or written
+  down with its reason, never replaced by one that passes.
 
 ### R10: Brief-before-plan
 

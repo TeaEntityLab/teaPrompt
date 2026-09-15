@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-15T12:47:21.196002",
+  "generated_at": "2026-09-15T15:08:13.539713",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5666,6 +5666,14 @@
         },
         {
           "level": 2,
+          "text": "2026-09-15 Landing-Review and Tune-Rule Promotion"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
           "text": "Rejected Alternatives"
         },
         {
@@ -5677,8 +5685,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 273,
-      "char_count": 40474
+      "line_count": 303,
+      "char_count": 45163
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -6043,8 +6051,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 161,
-      "char_count": 7053
+      "line_count": 166,
+      "char_count": 7416
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -10426,8 +10434,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 231,
-      "char_count": 11113
+      "line_count": 232,
+      "char_count": 11509
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",

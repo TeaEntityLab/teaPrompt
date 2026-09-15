@@ -1,8 +1,9 @@
 """Guard managed-skill promotions and their named canonical surfaces.
 
 The 2026-07-11 M1-M2 panel adoptions stay structurally pinned. The 2026-08-20
-cross-survey method repairs extend the same packet/adoption contract without
-adding a test item or changing any deferred 3XA/JS/CR candidate status.
+cross-survey method repairs and the 2026-09-15 landing-review / tune-rule
+repairs extend the same packet/adoption contract without adding a test item or
+changing any deferred candidate status.
 D1 discipline: headings, tokens, and link targets, not paragraph pins.
 """
 
@@ -102,6 +103,34 @@ def test_m1_packet_contract_and_cross_survey_method_repairs_present():
         assert "No candidate created or changed a TeaPrompt skill" in survey
         for candidate_id, expected_status in expected_rows:
             assert expected_status in _ledger_row(survey, candidate_id)
+
+
+# 2026-09-15 - landing review on the packet contract; tune duties on R8.
+def test_september_landing_review_and_tune_duties_present():
+    section = _plr_section()
+    contract = _read(PLANS_DIR / "ROUTING_CONTRACT.md")
+    record = _read(PLANS_DIR / "external-adoption-case-studies-2026-06-20.md")
+    knowledge = _read(PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md")
+
+    assert "reviewed as landed bytes, not as the plan" in section
+    assert "bound to the revision it was measured on" in section
+
+    r8 = contract.split("### R8: Holdout-before-tune", 1)[1].split("\n### ", 1)[0]
+    assert "per *other* workflow sharing it" in r8
+    assert "never replaced by one that passes" in r8
+
+    promotion = record.split("## 2026-09-15 Landing-Review and Tune-Rule Promotion", 1)[1].split("\n## ", 1)[0]
+    expected = {
+        "XM-6": "Adopted in place 2026-09-15",
+        "XM-7": "Adopted in place 2026-09-15",
+        "XM-8": "Held — named gate",
+        "XM-9": "No change 2026-09-15",
+        "XM-10": "No change / record-only 2026-09-15",
+    }
+    for candidate_id, status in expected.items():
+        assert status in _ledger_row(promotion, candidate_id), candidate_id
+    assert "### Lesson: A landing" not in knowledge  # tenth Lesson rejected as restatement
+    assert "#2026-09-15-landing-review-and-tune-rule-promotion" in knowledge
 
 
 def test_m1_verdict_vocabulary_present():
