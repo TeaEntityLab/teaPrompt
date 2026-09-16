@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T14:48:29.986988",
+  "generated_at": "2026-09-16T14:53:06.560955",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5768,7 +5768,7 @@
         }
       ],
       "line_count": 307,
-      "char_count": 49103
+      "char_count": 49584
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9879,11 +9879,15 @@
         },
         {
           "level": 2,
+          "text": "Post-Landing Corrections (same day)"
+        },
+        {
+          "level": 2,
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 131,
-      "char_count": 22650
+      "line_count": 142,
+      "char_count": 26394
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -13201,8 +13205,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 205,
-      "char_count": 12920
+      "line_count": 204,
+      "char_count": 12631
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
