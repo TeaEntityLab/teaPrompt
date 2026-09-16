@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T15:34:24.969296",
+  "generated_at": "2026-09-16T15:39:28.460050",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1581,8 +1581,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 149,
-      "char_count": 20665
+      "line_count": 152,
+      "char_count": 22631
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -14240,8 +14240,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 333,
-      "char_count": 19956
+      "line_count": 331,
+      "char_count": 19884
     }
   ],
   "total_files": 154

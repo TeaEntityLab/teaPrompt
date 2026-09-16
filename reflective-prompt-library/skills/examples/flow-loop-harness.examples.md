@@ -39,7 +39,7 @@ Expected output shape:
 - Task-ledger backlog loop over state/TASKS.canon (canonical copy; the agent
   cannot reorder the queue), grep -n line dispatch, sed exact-line retirement
 ## Stop conditions
-- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work); broken verifier → 4
+- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier → 4
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
 ```

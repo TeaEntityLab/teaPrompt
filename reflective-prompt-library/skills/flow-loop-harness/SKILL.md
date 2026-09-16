@@ -184,7 +184,7 @@ not tier.
 
 ## Template: Task-Ledger Backlog Loop (bash, ralph-style)
 
-Anatomy deviations, by design: fail-fast exit 3 on a failed verify or an unchanged workspace (a green verifier proves nothing about untouched work); resume is the canonical task copy, not a `RESUMED` line. `TASKS.md` holds one task per non-empty line, no headings.
+Anatomy deviations, by design: fail-fast exit 3 on a failed verify or an unchanged workspace — a global verifier proves nothing about untouched work, so an already-satisfied or interrupted-after-edits task halts here too: confirm it, delete its line from `state/TASKS.canon` (the resume path; no `RESUMED` line), rerun. `TASKS.md` holds one task per non-empty line, no headings.
 
 ```bash
 #!/usr/bin/env bash
@@ -232,7 +232,7 @@ echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2
 
 Use only when repeated breadth is real: fan out, compact state, fan out again.
 Compose a parallel template inside a loop first; use this when that becomes
-clumsy. Keeps all six Loop Anatomy parts (the cap is `MAX_WAVES`).
+clumsy.
 
 ```bash
 #!/usr/bin/env bash
@@ -306,9 +306,7 @@ low-blast-radius tasks.
 Generate a loop script when the stop condition must be a deterministic external
 verifier, or when caps, no-progress detection, backlog retirement, or a resume
 ledger matter — native goal modes judge completion with a model over the
-transcript, the stop-condition class this skill forbids trusting alone. First
-demotion-trigger evaluation against these surfaces: **not fired**
-(`plans/flow-pack-demotion-evaluation-2026-07-11.md`).
+transcript, the stop-condition class this skill forbids trusting alone.
 
 ## Demotion Triggers
 

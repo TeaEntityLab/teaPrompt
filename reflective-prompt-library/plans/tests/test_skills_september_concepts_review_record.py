@@ -105,7 +105,10 @@ def test_backlog_template_never_retires_untouched_work(tmp_path: Path):
     """2026-09-16 review, C1: with a globally green verifier the backlog loop retired
     every task for a no-op agent and for a crashing agent (exit 0, "backlog empty").
     A task is retired only when the verifier passes AND the workspace changed; the
-    check is skipped outside git, where there is no change signal."""
+    check is skipped outside git, where there is no change signal. By documented
+    tradeoff (2026-09-16 advisory) an already-satisfied task and a task re-dispatched
+    on resume after its edits share the no-op's exit 3: the loop cannot tell them
+    apart and hands the call to the operator rather than retire on self-report."""
     script = BACKLOG_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")).group(1) + "\n"
     cases = {
         "noop": ('echo "stub: done"\n', 3, "no change: task one"),
