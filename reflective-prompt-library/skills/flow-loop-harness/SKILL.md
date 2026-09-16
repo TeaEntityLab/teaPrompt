@@ -65,7 +65,7 @@ Every generated loop must contain all six parts:
 1. Verifier (truth layer): an external command whose exit code is the only success signal. Committed under `checks/`, preflighted (missing or non-executable → exit 4; bash 3.2 reports exec failures unreliably, so preflight is the gate), and run before the first iteration (the task may already be done) and after every one.
 2. Caps: `MAX_ITER` always; a per-call wall-clock timeout where available (a `timeout`-style wrapper on `AGENT_CMD`; stock macOS ships none, so it is host-provided) and cost caps where the host exposes them. Exceeding a cap is a distinct exit code, not a failure of the last step.
 3. Ledger: append-only per-iteration record (iteration, verifier result, progress signal). Each iteration's fresh agent context reads the ledger tail, not accumulated chat history — the tail length is the context-compaction budget (harness-1 Budget Rule). On restart with a non-empty ledger, append a `RESUMED` line so audits see the run boundary. `state/` is disposable per run, not durable memory.
-4. Progress detector: abort when an iteration produces no observable change (end snapshot equals start snapshot) — in git, tracked diff plus untracked-file count; outside git, the verifier-output checksum, so a silent verifier disables detection and a stuck loop exits via the cap: prefer git workspaces or verbose verifiers.
+4. Progress detector: abort when an iteration produces no observable change (end snapshot equals start snapshot) — in git, tracked diff plus untracked-file count excluding `state/`, the loop's own files; outside git, the verifier-output checksum, so a silent verifier disables detection and a stuck loop exits via the cap: prefer git workspaces or verbose verifiers.
 5. Permission boundary: explicit host flags for allowed tools/edit modes (e.g. Claude Code `--allowedTools` / permission mode), human-reviewed before an unattended run. Host precondition: a permission mode that excludes `checks/` (and the canonical task file, if any) from the loop body's editable paths — the script cannot enforce this.
 6. Failure exits: distinct exit codes — `0` verified done, `2` cap exhausted, `3` no progress or verify-fail stop, `4` verifier broken (missing or non-executable at preflight). The caller must tell these apart.
 
@@ -90,7 +90,7 @@ check() {  # run verifier once; keep its diagnostics for prompt + progress
 snapshot() {  # progress signal: git tracked+untracked, else verifier output (see Loop Anatomy 4)
   if git rev-parse --git-dir >/dev/null 2>&1; then
     printf '%s +u%s' "$(git diff HEAD --stat | tail -n1)" \
-      "$(git ls-files -o --exclude-standard | wc -l | tr -d ' ')"
+      "$(git ls-files -o --exclude-standard | grep -vc "^${STATE#./}/" || true)"
   else
     [ -s "$STATE/verify-out.txt" ] && cksum < "$STATE/verify-out.txt" || echo "no-signal-$RANDOM"  # silent verifier disables detection
   fi

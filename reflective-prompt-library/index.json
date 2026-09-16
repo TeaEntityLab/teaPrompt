@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-15T15:08:13.539713",
+  "generated_at": "2026-09-16T10:00:42.241938",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -54,6 +54,7 @@
             "knowie-project-knowledge-reflection-2026-06-17.md",
             "flow-control-roadmap-2026-07-11.md",
             "september-skills-review-2026-09-14.md",
+            "rsiagent-survey-2026-09-16.md",
             "baton-dispatch-survey-2026-07-13.md",
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
@@ -2809,6 +2810,84 @@
       ],
       "line_count": 63,
       "char_count": 9116
+    },
+    {
+      "path": "reflective-prompt-library/plans/rsiagent-survey-2026-09-16.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "rsiagent-survey-2026-09-16",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "RSIAgent (`AetherLabsAI/RSIAgent`) — Survey and Template-Repair Record (2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Landed Repairs"
+        },
+        {
+          "level": 3,
+          "text": "RS-1 — DAG quorum gate (`skills/flow-control-generator/SKILL.md`)"
+        },
+        {
+          "level": 3,
+          "text": "RS-2 — Fix-loop progress count (`skills/flow-loop-harness/SKILL.md`)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 152,
+      "char_count": 25802
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -5605,6 +5684,7 @@
           "openai-model-guidance-survey-2026-09-10.md",
           "agentflow-8.2-delta-survey-2026-09-13.md",
           "installed-skills-general-lessons-2026-09-05.md",
+          "rsiagent-survey-2026-09-16.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -5685,8 +5765,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 303,
-      "char_count": 45163
+      "line_count": 305,
+      "char_count": 46879
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -12797,7 +12877,7 @@
         }
       ],
       "line_count": 386,
-      "char_count": 19952
+      "char_count": 19979
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -14022,8 +14102,8 @@
         }
       ],
       "line_count": 328,
-      "char_count": 19927
+      "char_count": 19983
     }
   ],
-  "total_files": 151
+  "total_files": 152
 }

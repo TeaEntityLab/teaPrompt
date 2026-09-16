@@ -54,7 +54,7 @@ PINS = {
     ),
     "flow-control-generator": (
         'run_agent() { $AGENT_CMD "$(cat "$1")" > "$2" && [ -s "$2" ] || { rm -f "$2"; return 1; }; }',
-        "    if ok < int(MIN_OK): sys.exit(2)                     # explicit quorum\nelif bad: sys.exit(2)",
+        "elif bad: sys.exit(2)                                    # strict default",
         'wid = "".join(c for c in str(t.get("id", "")) if c.isalnum() or c in "-_") or "task"',
         'if not isinstance(tasks, list): raise ValueError("plan is not a list")',
     ),
@@ -122,27 +122,41 @@ def test_record_is_indexed():
 
 
 def _run_dag(
-    tmp_path: Path, dag: str, *, fail_node: str | None, min_ok: str, conflict: bool, empty_node: str | None = None
+    tmp_path: Path,
+    dag: str,
+    *,
+    fail_node: str | None,
+    min_ok: str,
+    conflict: bool,
+    empty_node: str | None = None,
+    stale_sink: bool = False,
 ) -> int:
-    d = tmp_path / f"{fail_node}-{min_ok}-{conflict}-{empty_node}"
+    d = tmp_path / f"{fail_node}-{min_ok}-{conflict}-{empty_node}-{stale_sink}"
     (d / "prompts").mkdir(parents=True)
     (d / "checks").mkdir()
     for n in ("spec", "api", "client", "assemble"):
         (d / "prompts" / f"{n}.md").write_text(f"{n}\n", encoding="utf-8")
     stub = d / "stub.sh"
-    body = "#!/bin/sh\n"
-    if fail_node:
-        body += f'case "$1" in {fail_node}*) exit 1;; esac\n'
-    if empty_node:
-        body += f'case "$1" in {empty_node}*) exit 0;; esac\n'  # success with zero bytes
-    body += 'echo "CONFLICT $1"\n' if conflict else 'echo "stub: $1"\n'
-    stub.write_text(body, encoding="utf-8")
-    stub.chmod(0o755)
+
+    def write_stub(fail: str | None) -> None:
+        body = "#!/bin/sh\n"
+        if fail:
+            body += f'case "$1" in {fail}*) exit 1;; esac\n'
+        if empty_node:
+            body += f'case "$1" in {empty_node}*) exit 0;; esac\n'  # success with zero bytes
+        body += 'echo "CONFLICT $1"\n' if conflict else 'echo "stub: $1"\n'
+        stub.write_text(body, encoding="utf-8")
+        stub.chmod(0o755)
+
     gate = d / "checks" / "verify-merged.sh"
     gate.write_text('#!/bin/sh\n[ -s "$1" ] && ! grep -q CONFLICT "$1"\n', encoding="utf-8")
     gate.chmod(0o755)
     (d / "dag.py").write_text(dag, encoding="utf-8")
     env = dict(os.environ, AGENT_CMD=str(stub), MIN_OK=min_ok)
+    if stale_sink:  # a prior clean run in the same STATE leaves every node's .out on disk
+        write_stub(None)
+        assert subprocess.run([sys.executable, "dag.py"], cwd=d, env=env, capture_output=True, timeout=120).returncode == 0
+    write_stub(fail_node)
     r = subprocess.run([sys.executable, "dag.py"], cwd=d, env=env, capture_output=True, text=True, timeout=120)
     return r.returncode
 
@@ -158,6 +172,10 @@ def test_dag_template_quorum_path_still_reaches_the_merged_gate(tmp_path: Path):
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="4", conflict=False) == 0      # quorum, clean merge
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="4", conflict=True) == 2       # quorum met, merge rejected
     assert _run_dag(tmp_path, dag, fail_node="assemble", min_ok="1", conflict=False) == 2  # quorum met, sink missing
+    # RSIAgent survey 2026-09-16 (C8 family): a sink left by a prior run in the same
+    # STATE must not satisfy the merged gate when this run's sink failed or was blocked.
+    assert _run_dag(tmp_path, dag, fail_node="assemble", min_ok="3", conflict=False, stale_sink=True) == 2
+    assert _run_dag(tmp_path, dag, fail_node="api", min_ok="2", conflict=False, stale_sink=True) == 2
 
 
 @pytest.mark.skipif(shutil.which("sh") is None, reason="sh not available")

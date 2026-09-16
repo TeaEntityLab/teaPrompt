@@ -339,7 +339,7 @@ ledger.close()
 ok = sum(1 for v in status.values() if v == "done")
 bad = [n for n, v in status.items() if v != "done"]
 if MIN_OK:
-    if ok < int(MIN_OK): sys.exit(2)                     # explicit quorum
+    if ok < int(MIN_OK) or status.get(order[-1]) != "done": sys.exit(2)  # quorum; sink from this run
 elif bad: sys.exit(2)                                    # strict default
 final = STATE / f"{order[-1]}.out"                       # gate: merged result, not only the node tally
 sys.exit(2 if subprocess.run(["./checks/verify-merged.sh", str(final)]).returncode else 0)
