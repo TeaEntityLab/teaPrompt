@@ -6,6 +6,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from validate_route_fixture import (  # noqa: E402
+    ROUTE_001_MIN_ADVERSARIAL_GROUPS,
+    ROUTE_001_MIN_INTENT_GROUPS,
+    ROUTE_001_MIN_PHRASES,
     ROUTE_002_MIN_HOLDOUT_GROUPS,
     ROUTE_002_MIN_PHRASES,
     ROUTE_003_MIN_ADVERSARIAL_GROUPS,
@@ -55,6 +58,12 @@ def test_route_fixture_minimums_match_validator_constants():
     assert r2_phrases == ROUTE_002_MIN_PHRASES
     assert r3_groups == ROUTE_003_MIN_ADVERSARIAL_GROUPS
     assert r3_phrases == ROUTE_003_MIN_PHRASES
+    route_001 = load_route_eval_config(PLANS / "route-001-paraphrase-eval.yaml")  # 2026-09-16 review: ROUTE-001 was unpinned
+    r1_intent = route_001["intent_groups"]
+    r1_adv = route_001["adversarial_sets"]
+    assert len(r1_intent) >= ROUTE_001_MIN_INTENT_GROUPS
+    assert len(r1_adv) >= ROUTE_001_MIN_ADVERSARIAL_GROUPS
+    assert sum(len(g.get("phrases", [])) for g in r1_intent + r1_adv) == ROUTE_001_MIN_PHRASES
 
 P7_PACK_COLLISION_PROBES = (
     (

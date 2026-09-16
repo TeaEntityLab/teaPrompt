@@ -19,7 +19,7 @@ This document summarizes the Phase 1 quality gates implemented for TeaPrompt bas
   must nest under `metadata:`), name regex + directory match, description ≤1024 chars
 
 **Results:**
-- Latest observed `validate_links.py` scan: 184 files, 0 errors (2026-09-13 snapshot; snapshot-sensitive).
+- Latest observed `validate_links.py` scan: 190 files, 0 errors (2026-09-16 snapshot; snapshot-sensitive).
 - All links and schema references were valid in that run.
 
 **Usage:**
@@ -39,7 +39,7 @@ python3 reflective-prompt-library/plans/validate_links.py
 - Categorizes content by library structure
 
 **Results:**
-- Current generated index snapshot: 148 total files after `generate_index.py` (2026-09-13 snapshot; includes prompt-library docs, skills, plans records, and the active planning artifacts).
+- Current generated index snapshot: 154 total files after `generate_index.py` (2026-09-16 snapshot; includes prompt-library docs, skills, plans records, and the active planning artifacts).
 - 2 main categories (prompt-library, skills)
 - 10 prompt-library subcategories
 - 13 skill subcategories (9 core + 4 registered domain packs)
@@ -65,8 +65,8 @@ python3 reflective-prompt-library/plans/generate_index.py
   heuristics; prompt/skill checks run only on `00-core`–`06-repo` and `SKILL.md`.
 
 **Results:**
-- Latest observed lint run (2026-09-13): scanned 184 files
-- 0 errors, 1 warning (non-blocking): `agent-governance-scaffold/SKILL.md` body exceeds the 20k-char length threshold (25,405 chars) — accepted per the 2026-07-18 panels; shrink candidates stay ledgered as R10 in the panel record
+- Latest observed lint run (2026-09-16): scanned 190 files
+- 0 errors, 1 warning (non-blocking): `agent-governance-scaffold/SKILL.md` body exceeds the 20k-char length threshold (26,291 chars as lint measures the whole file) — accepted per the 2026-07-18 panels; shrink candidates stay ledgered as R10 in the panel record
 - 40 composable prompt/skill files with suggestions (non-blocking)
 - All 9 core + 4 domain-pack skills pass validation
 
@@ -113,7 +113,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 44 holdout groups with 124 paraphrases
+- Tested 47 holdout groups with 134 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - P7 plan-only pipeline/orchestration and workflow-selection collision groups
@@ -283,7 +283,7 @@ python3 reflective-prompt-library/plans/benchmark_tasks.py
 
 The implementation aligns with research findings:
 
-1. **Quality over quantity** - TeaPrompt maintains a compact generated index (148 files after the 2026-09-13 regeneration) vs thousands in other repos.
+1. **Quality over quantity** - TeaPrompt maintains a compact generated index (154 files after the 2026-09-16 regeneration) vs thousands in other repos.
 2. **Hierarchical organization** - 7 prompt-source directories plus skills/plans map onto the 10-layer taxonomy.
 3. **Focused skills** - nine frozen workflow skills (including reflective-minimality gate) vs comprehensive documentation
 4. **Validation discipline** - Automated quality gates catch structural regressions; semantic quality still needs review evidence.

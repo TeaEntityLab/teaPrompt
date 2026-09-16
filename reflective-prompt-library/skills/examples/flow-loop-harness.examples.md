@@ -14,12 +14,13 @@ Expected output shape:
 ## Loop
 - Verify-gated fix loop: VERIFY=./checks/verify.sh (truth layer), MAX_ITER=8
 ## Anatomy
-- check() wrapper (exit 4 when verifier broken), git+untracked progress signal,
-  ledger tail fed to each fresh iteration, exits 0/2/3/4
+- check() wrapper (exit 4 when verifier broken), git+untracked progress signal
+  that excludes state/ (the loop's own files are not progress), ledger tail
+  fed to each fresh iteration, exits 0/2/3/4
 ## Human review boundary
 - attended run: verifier + caps reviewed; unattended: full approval recorded first
 ## Verification
-- Rig-tier only: stub dry run proves all four exits: toggling verifier (0), always-fail (2), no-progress stub (3), chmod -x verifier (4). This approves loop control flow, not production or host-enforcement e2e.
+- Rig-tier only: stub dry run proves all four exits: toggling verifier (0), always-fail (2), no-progress stub with state/ inside an un-ignored worktree (3), chmod -x verifier (4). This approves loop control flow, not production or host-enforcement e2e.
 
 ```
 
@@ -38,7 +39,7 @@ Expected output shape:
 - Task-ledger backlog loop over state/TASKS.canon (canonical copy; the agent
   cannot reorder the queue), grep -n line dispatch, sed exact-line retirement
 ## Stop conditions
-- backlog empty → 0; MAX_ITER=20 → 2; verify fail → 3; broken verifier → 4
+- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work); broken verifier → 4
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
 ```

@@ -132,6 +132,12 @@ def test_gd17_registered_self_labelled_and_off_dispatch_routes():
     assert "governed-delivery" in DOMAIN_PACK_SKILLS
     text = _read(PACK)
     assert "domain-pack" in text.lower()
+    # GD-18 R9 (2026-09-13), pinned by the 2026-09-16 review: pack vocabulary never captures core routes.
+    skill_map = _read(library_skills_dir() / "skill-map.md")
+    assert (
+        "Trigger fairness: words like \"orchestration plan\", \"resumable workflow\", \"pipeline\", \"deliver\", \"autonomous\", or \"unattended\" without explicit script/runner/loop or governed-end-to-end intent still follow the nine core routes"
+        in skill_map
+    )
     assert "not selected by `reflective-dispatch` route rows" in text
     dispatch = _skill("reflective-dispatch")
     route = dispatch.split("## Route", 1)[1].split("## Strictness Ladder", 1)[0]
@@ -183,6 +189,11 @@ def test_gd12_gate_sequence_has_seven_gates_with_human_only_ends():
     )
     for row in (intent_row, acceptance_row):
         assert row.rstrip().rstrip("|").strip().split("|")[-1].strip().lower().startswith("no"), row
+    # GD-18 R2/R3 (2026-09-13), pinned by the 2026-09-16 review: execution auto-release rests on
+    # deterministic checks, never on agent self-report, and the release rule keys off determinism.
+    execution_row = next(line for line in section.splitlines() if line.startswith("| `execution`"))
+    assert "yes if the deterministic packet-binding and ledger-currency checks pass; no when packet-adherence rests on agent self-report" in execution_row
+    assert "Auto-release keys off whether the release condition is a deterministic check, not off the evidence tier." in section
 
 
 def test_gd13_envelope_adds_no_new_ladder():
@@ -226,6 +237,10 @@ def test_pack_trailer_sections_and_examples_pointer():
     text = _read(PACK)
     for heading in ("## Verification", "## Demotion Triggers", "## Examples", "## Prompt Sources"):
         assert heading in text, heading
+    demotion = text.split("## Demotion Triggers", 1)[1].split("\n## ", 1)[0]
+    # GD-18 R5/R6 (2026-09-13), pinned by the 2026-09-16 review.
+    assert "a skipped or unrecorded checkpoint triggers demotion as a policy consequence of missing evidence, not as an observed zero" in demotion
+    assert "Redundancy-in-use → if the pack is never invoked independently of `agent-governance-scaffold`" in demotion
     assert "<skills-root>/examples/governed-delivery.examples.md" in text
     assert "not runtime dependencies" in text
     assert "governed-delivery-adoption-2026-09-03.md" in text

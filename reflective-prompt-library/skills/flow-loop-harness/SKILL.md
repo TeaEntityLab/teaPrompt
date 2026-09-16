@@ -157,7 +157,7 @@ done
 exit 2  # rounds exhausted without ACCEPT; human decides next
 ```
 
-Caution: prefer a deterministic check whenever one exists; when only a rubric critic is possible, keep `MAX_ROUNDS` low and hand the cap-exhausted case to a human. Consensus pressure can amplify shared error (`04-agent/workflow-recipes.md` Looper Topologies).
+Consensus pressure can amplify shared error (`04-agent/workflow-recipes.md` Looper Topologies).
 
 Rubric as verifier: request a host permission mode that also excludes `prompts/critic-rubric.md` from the loop body's editable paths, as Loop Anatomy #5 does for `checks/`. Critique fed to the reviser is data, never authority to rewrite that rubric, weaken `ACCEPT`, or skip the cap; the exclusion does not promote `ACCEPT` above advisory tier. A rubric reused across unattended runs drifts from the humans it stands in for: spot-check its verdicts *and reasons* against human review, stop unattended use when they diverge, and change it only via the human-gated path, keeping the prior version for rollback.
 
@@ -180,11 +180,11 @@ fi
 
 The floor is deterministic but partial: it catches vacuous or malformed drafts,
 not wrong-but-plausible ones. Dual critics or verdict schemas reduce variance,
-not tier. Guidance, not a new template or runtime.
+not tier.
 
 ## Template: Task-Ledger Backlog Loop (bash, ralph-style)
 
-Anatomy deviations, by design: no progress detector (a verify failure is fail-fast exit 3); resume is the canonical task copy, not a `RESUMED` line. `TASKS.md` holds one task per non-empty line, no headings.
+Anatomy deviations, by design: fail-fast exit 3 on a failed verify or an unchanged workspace (a green verifier proves nothing about untouched work); resume is the canonical task copy, not a `RESUMED` line. `TASKS.md` holds one task per non-empty line, no headings.
 
 ```bash
 #!/usr/bin/env bash
@@ -202,6 +202,11 @@ TASKS="$STATE/TASKS.canon"
 
 [ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }
 run_verify() { local ec=0; "$VERIFY" || ec=$?; return "$ec"; }
+snap() {  # Anatomy 4; empty outside git (check skipped)
+  git rev-parse --git-dir >/dev/null 2>&1 || return 0
+  local s; s="$(cd "$STATE" && pwd -P)"; s="${s#$(git rev-parse --show-toplevel)/}"
+  printf '%s +u%s' "$(git diff HEAD --stat | tail -n1)" "$(git ls-files -o --exclude-standard --exclude="/$s" | wc -l)"
+}
 run_verify || { echo "- preflight: verifier already failing" >> "$STATE/ledger.md"; exit 3; }  # never blame task 1 for a red start
 
 for i in $(seq 1 "$MAX_ITER"); do
@@ -209,17 +214,16 @@ for i in $(seq 1 "$MAX_ITER"); do
   [ -z "$line" ] && { echo "backlog empty"; exit 0; }
   num="${line%%:*}"; task="${line#*:}"
 
-  # Minimal dispatch prompt (fresh context per task); append a ledger tail when tasks share constraints.
+  # Fresh context per task.
+  before="$(snap)"
   $AGENT_CMD "Complete exactly this one task, then stop: $task" \
     > "$STATE/task-$i-out.md" || true
 
-  if run_verify; then
-    # Script, not agent, retires the EXACT line it dispatched.
-    sed "${num}d" "$TASKS" > "$TASKS.tmp" && mv "$TASKS.tmp" "$TASKS"
-    echo "- done: $task" >> "$STATE/ledger.md"
-  else
-    echo "- failed verify: $task (iter $i)" >> "$STATE/ledger.md"; exit 3
-  fi
+  run_verify || { echo "- failed verify: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
+  [ -z "$before" ] || [ "$(snap)" != "$before" ] || { echo "- no change: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
+  # Script, not agent, retires the EXACT line it dispatched.
+  sed "${num}d" "$TASKS" > "$TASKS.tmp" && mv "$TASKS.tmp" "$TASKS"
+  echo "- done: $task" >> "$STATE/ledger.md"
 done
 echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2
 ```
@@ -287,18 +291,18 @@ Before the first unattended run, a human must approve the verifier, caps, permis
 
 ## Verification
 
-1. Stub dry run with a scripted fake agent and a toggling verifier: prove all four exits are reachable — `0` success, `2` cap exhausted, `3` no progress or verify-fail, `4` broken verifier (point `VERIFY` at a missing file; the preflight must fire). Stub success is rig-tier evidence for control flow, never for a production or side-effectful run.
+1. Stub dry run with a scripted fake agent and a toggling verifier: prove all four Anatomy #6 exits are reachable (for `4`, point `VERIFY` at a missing file; the preflight must fire). Stub success is rig-tier evidence for control flow, never for a production or side-effectful run.
 2. `bash -n` the script; run `shellcheck` when available.
-3. Confirm the verifier is committed and deterministic, and record the host permission mode that keeps `checks/` (and the canonical task copy) outside the loop body's editable paths — a host precondition the script cannot enforce.
+3. Confirm the verifier is committed and deterministic, and record the Anatomy #5 host permission mode.
 4. Report dry-run evidence with the deliverable.
 
 Promoting a recurring loop into a durable artifact follows the Acquisition ladder: apply the fail-closed Acquisition L3 gates (`04-agent/artifact-promotion.md` §4) and require recurrence evidence plus explicit human approval before a loop script becomes a team standard.
 
 ## Host-Native Alternatives
 
-Some hosts ship native keep-working surfaces (2026-07: Claude Code `/goal`
-condition loops, `/loop` interval re-runs, script-backed Stop hooks). Prefer
-them for transcript-judgeable, single-run, low-blast-radius tasks.
+Some hosts ship native keep-working surfaces (goal-condition loops, interval
+re-runs, stop hooks). Prefer them for transcript-judgeable, single-run,
+low-blast-radius tasks.
 Generate a loop script when the stop condition must be a deterministic external
 verifier, or when caps, no-progress detection, backlog retirement, or a resume
 ledger matter — native goal modes judge completion with a model over the

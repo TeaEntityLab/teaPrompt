@@ -101,9 +101,9 @@ Expected output shape:
 ## Topology
 - DAG executor (Python, stdlib): nodes spec → {api, client} → integration; topological order with bounded concurrency MAX_WORKERS=4; each node's prompt receives its dependencies' outputs
 ## Gates
-- cycle or dangling dependency → exit 4 before any node runs; a node that fails or returns no output counts as failed; quorum MIN_OK or strict (any failed node → exit 2); sink node checked by ./checks/verify-merged.sh
+- cycle or dangling dependency → exit 4 before any node runs; a node that fails or returns no output counts as failed; strict (any failed node → exit 2) or quorum MIN_OK, which also requires the sink node done in this run (a stale sink file from a prior run never passes); sink node checked by ./checks/verify-merged.sh
 ## Escalation note
 - regenerate from the template when the node set changes; never patch a drifted copy (plans/agent-flow-control-research-2026-07-11.md P12)
 ## Verification
-- Rig-tier (run 2026-09-14): injected cycle and dangling dependency each exit 4 with zero nodes run; one failing node exits 2 under strict and under MIN_OK=3; a node exiting 0 with zero bytes exits 2; failing sink gate exits 2; happy path exits 0. Not proof the generated code is correct.
+- Rig-tier (run 2026-09-14; sink case re-run 2026-09-16): injected cycle and dangling dependency each exit 4 with zero nodes run; one failing node exits 2 under strict and under MIN_OK=3; a node exiting 0 with zero bytes exits 2; a failing sink under MIN_OK=3 exits 2 even when a prior run's sink file is present; failing sink gate exits 2; happy path exits 0. Not proof the generated code is correct.
 ```

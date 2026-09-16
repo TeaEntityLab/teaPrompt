@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 # Skill Installation Guide
 
-Last verified: 2026-07-18
+Last verified: 2026-09-16
 
 This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
 
@@ -83,7 +83,7 @@ host-invoked generator packs (flow scripts, loop harnesses, governance
 scaffolding) are wanted.
 
 Invocation-mode note (context-load control): on hosts that support user-invoked
-skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the three
+skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the four
 domain packs may be installed user-invoked so their long descriptions stop loading
 into every turn's context — they are host-invoked contracts, not
 `reflective-dispatch` routes, so core routing never depends on their

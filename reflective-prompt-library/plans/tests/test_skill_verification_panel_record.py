@@ -60,7 +60,7 @@ PINS = {
     ),
     "flow-loop-harness": (
         "4. Progress detector: abort when an iteration produces no observable change",
-        '"$(git diff HEAD --stat | tail -n1)"',
+        'srel="$(cd "$STATE" && pwd -P)"; srel="${srel#$(git rev-parse --show-toplevel)/}"',  # fix-loop signal; the backlog loop shares the diff-stat expression since 2026-09-16
         'if "$VERIFY" > "$STATE/verify-out.txt" 2>&1; then echo "already converged"; exit 0; fi',
         'summary="$(cat "$STATE"/w${w}-*.md | cksum)"',
     ),

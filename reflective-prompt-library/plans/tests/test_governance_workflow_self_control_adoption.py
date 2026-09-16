@@ -44,7 +44,13 @@ def test_gw5_implement_traceability_is_one_step_and_steps_are_contiguous():
     text = _read(SKILLS / "reflective-implement" / "SKILL.md")
     workflow = text.split("## Before Editing", 1)[1].split("\n## ", 1)[0]
     step4 = next(ln for ln in workflow.splitlines() if ln.startswith("4. "))
-    for clause in ("`Claim`", "`Falsifier / Verification`", "`unknown`, not zero demand", "recurrence gates"):
+    for clause in (
+        "`Claim`", "`Falsifier / Verification`", "`unknown`, not zero demand", "recurrence gates",
+        # 2026-09-16 review: the hierarchy between the tokens is the rule; pin it too
+        "local project authority and verified repository evidence first",
+        "current external or official evidence only for unstable, unfamiliar, comparative, or high-risk facts",
+        "logic, Socratic questions, counterarguments, and falsifiability as challenges to the evidence, never substitutes",
+    ):
         assert clause in step4, clause
     numbers = [int(m.group(1)) for m in (re.match(r"^(\d+)\. ", ln) for ln in workflow.splitlines()) if m]
     assert numbers == list(range(1, len(numbers) + 1)), numbers

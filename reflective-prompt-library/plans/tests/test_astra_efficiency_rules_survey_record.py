@@ -63,7 +63,9 @@ def _durable_surfaces() -> list[Path]:
 
 def test_survey_record_shape_identity_and_panel_provenance():
     text = _read(RECORD)
-    assert "> **Status: decided, guarded, and verified — record-only." in "\n".join(text.splitlines()[:12])
+    head = "\n".join(text.splitlines()[:12])
+    assert "> **Status: decided, guarded, and verified — panel record-only, then one user-directed adoption (A-7a)." in head
+    assert "adopted nothing on any installed surface" not in head, "banner must not contradict the A-7a ledger row (2026-09-16 review)"
     for heading in (
         "## Research Question", "## Direct Recommendation (as of 2026-09-10)", "## Method",
         "## What the Artifact Is", "## Panel Consensus", "## Concept Map",

@@ -113,11 +113,13 @@ def test_september_landing_review_and_tune_duties_present():
     knowledge = _read(PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md")
 
     assert "reviewed as landed bytes, not as the plan" in section
+    assert "an independent pass reads each record claim" in section  # 2026-09-16 review: the operative duty
     assert "bound to the revision it was measured on" in section
 
     r8 = contract.split("### R8: Holdout-before-tune", 1)[1].split("\n### ", 1)[0]
-    assert "per *other* workflow sharing it" in r8
-    assert "never replaced by one that passes" in r8
+    assert "fixture-backed first by one" in r8 and "per *other* workflow sharing it" in r8
+    assert "a passing fixture set bounds the phrases" in r8  # 2026-09-16 review
+    assert "fixture-backed or written" in r8 and "never replaced by one that passes" in r8
 
     promotion = record.split("## 2026-09-15 Landing-Review and Tune-Rule Promotion", 1)[1].split("\n## ", 1)[0]
     expected = {

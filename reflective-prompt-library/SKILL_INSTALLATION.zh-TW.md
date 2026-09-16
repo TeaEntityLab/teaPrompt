@@ -4,7 +4,7 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 # Skills 安裝指南
 
-最後確認日期：2026-07-18
+最後確認日期：2026-09-16
 
 本文件說明如何把 TeaPrompt 的 workflow skills 安裝到：
 

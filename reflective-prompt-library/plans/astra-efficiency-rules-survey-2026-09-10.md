@@ -1,6 +1,6 @@
 # Context-Efficiency Instruction Profile (`sh58702e/astra-efficiency-rules`) — Survey and Panel Record (2026-09-10)
 
-> **Status: decided, guarded, and verified — record-only. Eight read-only lenses (8/8 delivered over hub; 2 `AGREE`, 6 `AGREE WITH CHANGES`, 0 `DISAGREE`) surveyed a three-file, single-commit instruction profile pinned at `5576ceb931c91cc14c19dd4f6a6358996e793f20` (2026-09-08) and adopted nothing on any installed surface: every candidate is already installed, forbidden here (fixed numeric caps), host-owned by construction, or shares the single occurrence behind the already-deferred I-1 rule. Two reserved wordings and their triggers are recorded; the frame test went 8/8 for the coordinator's frame while correcting two of the coordinator's own claims.** User instruction: "Survey and socratic critical thinking in multi roles" plus the repository URL.
+> **Status: decided, guarded, and verified — panel record-only, then one user-directed adoption (A-7a). Eight read-only lenses (8/8 delivered over hub; 2 `AGREE`, 6 `AGREE WITH CHANGES`, 0 `DISAGREE`) surveyed a three-file, single-commit instruction profile pinned at `5576ceb931c91cc14c19dd4f6a6358996e793f20` (2026-09-08) and recommended no installed change: every candidate is already installed, forbidden here (fixed numeric caps), host-owned by construction, or shares the single occurrence behind the already-deferred I-1 rule. After the panel, A-7a (external-change verification invalidation) was adopted on `reflective-implement` by user direction (commit `20a80a4`); A-5 stays deferred beside I-1. Two reserved wordings and their triggers are recorded; the frame test went 8/8 for the coordinator's frame while correcting two of the coordinator's own claims.** User instruction: "Survey and socratic critical thinking in multi roles" plus the repository URL.
 
 ## Research Question
 
@@ -121,7 +121,7 @@ This record is wrong or must be re-litigated if: (1) a TeaPrompt record document
 | --- | --- | --- |
 | Repository fetched, pinned, measured; packet with verbatim rules; eight lenses delivered over hub (8/8; one null yield after delivery) | `verified` | Method |
 | Frame test answered by all eight lenses; two coordinator claims corrected | `verified` | Panel Consensus; Packet Corrections |
-| Nothing adopted on any installed surface; eight ledger rows with tallies, covering text, and triggers; two reserved wordings | `verified` | Candidate Adoption Ledger |
+| Panel adopted nothing; A-7a adopted afterwards by user direction on `reflective-implement`; eight ledger rows with tallies, covering text, and triggers; two reserved wordings | `verified` | Candidate Adoption Ledger; `test_astra_efficiency_rules_survey_record.py` |
 | Lens tool-divergence claim refuted by transcript diff; I-1 trigger unfired | `verified` | Packet Corrections, item 5 |
 | Guard (survey tokens and cap literals absent from skills, install guide, GLOSSARY, `04-agent/`; ledger dispositions; reserved wordings record-only; indexes) | `verified` | `plans/tests/test_astra_efficiency_rules_survey_record.py` |
 | Indexes | `verified` | `PROJECT_KNOWLEDGE.md` Decision Index; case-study Case Comparison row and State Ledger row |

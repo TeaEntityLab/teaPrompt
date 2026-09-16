@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T14:53:06.560955",
+  "generated_at": "2026-09-16T15:34:24.969296",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -38,6 +38,7 @@
             "skills-surface-plan-2026-07-11.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "harness-intent-drift-rethink-2026-09-06.md",
+            "skills-september-concepts-review-2026-09-16.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -1518,6 +1519,72 @@
       "char_count": 40252
     },
     {
+      "path": "reflective-prompt-library/plans/skills-september-concepts-review-2026-09-16.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-september-concepts-review-2026-09-16",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "All Thirteen Skills vs the September Concepts and Surveys — Review Record (2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Answer (as of 2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 2,
+          "text": "Coordinator Rig Results (current bytes, pre-fix)"
+        },
+        {
+          "level": 2,
+          "text": "Landed Fixes"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 149,
+      "char_count": 20665
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2524,7 +2591,7 @@
         }
       ],
       "line_count": 128,
-      "char_count": 34073
+      "char_count": 34381
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -4640,6 +4707,8 @@
           "../04-agent/workflow-acquisition.md",
           "../04-agent/external-adoption-review.md",
           "validate_record_hygiene.py",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
@@ -4647,13 +4716,11 @@
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "harness-intent-drift-rethink-2026-09-06.md",
           "astra-efficiency-rules-survey-2026-09-10.md",
-          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governed-delivery-adoption-2026-09-03.md",
           "agentflow-survey-2026-09-05.md",
           "gpt-instruct-survey-2026-09-10.md",
           "governable-autonomy-survey-2026-09-03.md",
           "ga-skills-coverage-panel-2026-09-03.md",
-          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "gpt-instruct-survey-2026-09-10.md",
@@ -4725,7 +4792,7 @@
         }
       ],
       "line_count": 207,
-      "char_count": 21429
+      "char_count": 21493
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -5484,7 +5551,7 @@
         }
       ],
       "line_count": 425,
-      "char_count": 25359
+      "char_count": 25391
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -14173,9 +14240,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 329,
-      "char_count": 19984
+      "line_count": 333,
+      "char_count": 19956
     }
   ],
-  "total_files": 153
+  "total_files": 154
 }

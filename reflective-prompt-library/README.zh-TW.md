@@ -14,7 +14,7 @@ Doing the right thing > doing things right.
 
 ## 北極星（North Star）
 
-TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，記錄**決策理由**，並以**證據**驗證結果 —— 透過可組合的 prompt 層與九個 workflow skills 作為自然語言 harness policy，**不**自建 agent runtime。
+TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，記錄**決策理由**，並以**證據**驗證結果 —— 透過可組合的 prompt 層與[九個核心 workflow skills 加上選配的已註冊 domain packs](skills/skill-map.md) 作為自然語言 harness policy，**不**自建 agent runtime。
 
 ## 嚴謹度優先於 Skills
 
@@ -34,9 +34,9 @@ TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，�
 - `04-agent/`：agent 分級、workflow、retro、memory consolidation
 - `05-domain/`：高風險、研究、商業、學習、寫作、創意
 - `06-repo/`：AGENTS/Cursor/Codex/OpenCode 指令模板
-- `skills/`：9 個可執行工作流 skill
+- `skills/`：9 個核心 `SKILL.md` 工作流 skill，加上選配的已註冊 domain packs；[skill-map.md](skills/skill-map.md) 是分層地圖
 - `skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md`：一頁式觸發口訣（英文版：[SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md)）
-- `skills/examples/`：每個 skill 的兩組 input/output 示例
+- `skills/examples/`：每個已註冊核心與 domain-pack skill 的 input/output 示例
 - `plans/`：規劃與研究紀錄
 - `plans/multi-agent-panel-consensus-2026-06-25.md`：多視角 Socratic 共識紀錄（單一宿主，非 agent runtime）
 
