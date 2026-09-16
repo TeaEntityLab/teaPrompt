@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T11:17:40.135018",
+  "generated_at": "2026-09-16T14:48:29.986988",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -113,6 +113,7 @@
             "runtime-governance-learning-plan-2026-06-11.md",
             "flow-pack-usage-log.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
+            "graph-engineering-synthesis-survey-2026-09-16.md",
             "project-adjustment-reflection-2026-06-11.md",
             "installed-skills-general-lessons-2026-09-05.md"
           ]
@@ -5685,6 +5686,7 @@
           "agentflow-8.2-delta-survey-2026-09-13.md",
           "installed-skills-general-lessons-2026-09-05.md",
           "rsiagent-survey-2026-09-16.md",
+          "graph-engineering-synthesis-survey-2026-09-16.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -5765,8 +5767,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 305,
-      "char_count": 46879
+      "line_count": 307,
+      "char_count": 49103
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9818,6 +9820,72 @@
       "char_count": 23337
     },
     {
+      "path": "reflective-prompt-library/plans/graph-engineering-synthesis-survey-2026-09-16.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "graph-engineering-synthesis-survey-2026-09-16",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "\"Graph Engineering\" Vendor-Consensus Synthesis — Survey Record (2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-16)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 131,
+      "char_count": 22650
+    },
+    {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -13133,8 +13201,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 204,
-      "char_count": 12631
+      "line_count": 205,
+      "char_count": 12920
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -14105,5 +14173,5 @@
       "char_count": 19984
     }
   ],
-  "total_files": 152
+  "total_files": 153
 }
