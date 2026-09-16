@@ -116,7 +116,10 @@ def test_existing_indexes_link_the_survey_decision():
     assert RECORD.name in state
 
 
-def _run_fix_loop(tmp_path: Path, loop: str, *, agent_body: str, subdir: bool) -> tuple[int, str]:
+def _run_fix_loop(
+    tmp_path: Path, loop: str, *, agent_body: str, subdir: bool = False, state: str = "./state"
+) -> tuple[int, str]:
+    """Run the fix-loop template in a fresh git repo; ``state`` may use ``{cwd}`` / ``{tmp}``."""
     repo = tmp_path / ("sub-run" if subdir else "root-run")
     repo.mkdir(parents=True)
     git = ["git", "-c", "user.email=t@x", "-c", "user.name=t"]
@@ -135,9 +138,16 @@ def _run_fix_loop(tmp_path: Path, loop: str, *, agent_body: str, subdir: bool) -
     stub.write_text("#!/bin/sh\n" + agent_body, encoding="utf-8")
     stub.chmod(0o755)
     (tmp_path / "loop.sh").write_text(loop, encoding="utf-8")
-    env = dict(os.environ, AGENT_CMD=str(stub), MAX_ITER="4", STATE="./state")
+    state = state.format(cwd=cwd, tmp=tmp_path)
+    env = dict(os.environ, AGENT_CMD=str(stub), MAX_ITER="4", STATE=state)
     r = subprocess.run(["bash", str(tmp_path / "loop.sh")], cwd=cwd, env=env, capture_output=True, text=True, timeout=120)
-    return r.returncode, (cwd / "state" / "ledger.md").read_text(encoding="utf-8")
+    ledger = Path(state if state.startswith("/") else cwd / state) / "ledger.md"
+    return r.returncode, ledger.read_text(encoding="utf-8")
+
+
+NO_OP = 'echo "stub: no-op"\n'
+# Real work under a sibling whose name a regex filter for `run.1` would swallow.
+DECOY_WORK = 'mkdir -p run-1; touch "run-1/w$(ls run-1 | wc -l | tr -d " ")"\n'
 
 
 @pytest.mark.skipif(shutil.which("git") is None or shutil.which("bash") is None, reason="git/bash not available")
@@ -145,13 +155,27 @@ def test_fix_loop_no_progress_exit_survives_state_inside_worktree(tmp_path: Path
     """RSIAgent survey 2026-09-16 (C2 family): with the template default
     ``STATE=./state`` inside an un-ignored git worktree, the loop's own per-iteration
     files counted as untracked progress and a no-op agent ran to the cap (exit 2)
-    instead of exiting 3 at the first iteration."""
+    instead of exiting 3 at the first iteration. The same-day advisory added the
+    forms a regex filter mishandled: trailing slash, absolute in-worktree path,
+    and a dotted name whose regex swallows a sibling directory."""
     loop = FIX_LOOP_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")).group(1)
-    for subdir in (False, True):
-        code, ledger = _run_fix_loop(tmp_path, loop, agent_body='echo "stub: no-op"\n', subdir=subdir)
-        assert code == 3, ledger
-        assert "NO PROGRESS" in ledger
-    # Real progress (a tracked edit each iteration) is still counted: the cap, not exit 3.
-    code, ledger = _run_fix_loop(tmp_path / "edit", loop, agent_body="echo x >> README.md\n", subdir=False)
-    assert code == 2, ledger
-    assert "NO PROGRESS" not in ledger
+    stalls = {
+        "default": dict(state="./state"),
+        "subdir": dict(state="state", subdir=True),
+        "trailing-slash": dict(state="./state/"),
+        "absolute-inside": dict(state="{cwd}/state"),
+        "outside-worktree": dict(state="{tmp}/outstate"),
+    }
+    for name, kwargs in stalls.items():
+        code, ledger = _run_fix_loop(tmp_path / name, loop, agent_body=NO_OP, **kwargs)
+        assert code == 3, (name, ledger)
+        assert "NO PROGRESS" in ledger, (name, ledger)
+    # Real progress is still counted (the cap, not exit 3): a tracked edit each
+    # iteration, and new files under `run-1/` while STATE is `./run.1`.
+    for name, kwargs in {
+        "tracked-edit": dict(agent_body="echo x >> README.md\n"),
+        "decoy-sibling": dict(agent_body=DECOY_WORK, state="./run.1"),
+    }.items():
+        code, ledger = _run_fix_loop(tmp_path / name, loop, **kwargs)
+        assert code == 2, (name, ledger)
+        assert "NO PROGRESS" not in ledger, (name, ledger)

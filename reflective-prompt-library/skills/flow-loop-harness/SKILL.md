@@ -82,17 +82,18 @@ LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 
 [ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }
 
-check() {  # run verifier once; keep its diagnostics for prompt + progress
+check() {  # keep verifier diagnostics for prompt + progress
   local ec=0
   "$VERIFY" > "$STATE/verify-out.txt" 2>&1 || ec=$?
   return "$ec"
 }
-snapshot() {  # progress signal: git tracked+untracked, else verifier output (see Loop Anatomy 4)
+snapshot() {  # Loop Anatomy 4
   if git rev-parse --git-dir >/dev/null 2>&1; then
+    srel="$(cd "$STATE" && pwd -P)"; srel="${srel#$(git rev-parse --show-toplevel)/}"  # worktree-relative, literal
     printf '%s +u%s' "$(git diff HEAD --stat | tail -n1)" \
-      "$(git ls-files -o --exclude-standard | grep -vc "^${STATE#./}/" || true)"
+      "$(git ls-files -o --exclude-standard --exclude="/$srel" | wc -l | tr -d ' ')"
   else
-    [ -s "$STATE/verify-out.txt" ] && cksum < "$STATE/verify-out.txt" || echo "no-signal-$RANDOM"  # silent verifier disables detection
+    [ -s "$STATE/verify-out.txt" ] && cksum < "$STATE/verify-out.txt" || echo "no-signal-$RANDOM"
   fi
 }
 

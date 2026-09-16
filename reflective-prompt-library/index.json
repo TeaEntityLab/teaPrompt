@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T10:00:42.241938",
+  "generated_at": "2026-09-16T11:17:40.135018",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2886,8 +2886,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 152,
-      "char_count": 25802
+      "line_count": 159,
+      "char_count": 28066
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -14101,8 +14101,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 328,
-      "char_count": 19983
+      "line_count": 329,
+      "char_count": 19984
     }
   ],
   "total_files": 152

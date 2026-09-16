@@ -20,7 +20,7 @@ What does the framework actually establish, at what evidence tier, and does any 
 
 Coordinator reads (2026-09-16): repository and commit metadata via the GitHub API, `README.md`, `docs/ARCHITECTURE.md`, `docs/PAPER.md`, `docs/RELEASE.md`, `docs/OPERATIONS.md`, and the arXiv abstract; three coordinator spot-checks of scout-cited source lines (all held). Two read-only scouts ran in parallel on one concept list (C1–C10): a source-mechanism audit deciding the enforcement tier of each concept at the pinned commit, and a TeaPrompt coverage map locating the nearest installed sentence for each concept and answering four pointed questions about the pack templates. No Parallel Lens Review panel: no surveyed wording was proposed for adoption, and the two changes are template defects, the channel the 2026-09-14 second pass found most reliable (deterministic rigs, not lens reads). The packet-contract falsifier (`04-agent/workflow-recipes.md`: one review pass would reach the same decision) was judged to hold; the landing itself was reviewed as landed bytes by an independent pass before commit (XM-6).
 
-Coordinator rigs: the two templates were extracted from the pack files by fence, run with stub agents in `/tmp`, re-extracted after the edit and re-run. Rig figures below are bound to the pre-edit bytes (`9a756e5`) and the landed bytes of this commit respectively.
+Coordinator rigs: the two templates were extracted from the pack files by fence, run with stub agents in `/tmp`, re-extracted after the edit and re-run. Rig figures below are bound to the revision they were measured on: the pre-edit bytes (`9a756e5`), the first landing (`be0d16e`), and the landed bytes of the correcting commit.
 
 **Scope / acceptance:** map all ten concepts; decide every candidate with evidence and a trigger; land only defects proven on TeaPrompt's own templates; keep both flow packs under the 20,000-character lint budget; guards fail on the previous bytes; run `make all` from the repository root.
 
@@ -52,7 +52,7 @@ Tier is the source-audit finding at the pinned commit (`code+test` = host check 
 | ID | Candidate | Status | Evidence | Next action / trigger |
 | --- | --- | --- | --- | --- |
 | RS-1 | DAG executor (`flow-control-generator`): in quorum mode the merged gate must require the sink node to be `done` in this run, not merely an existing `<sink>.out` | Adopted 2026-09-16 | Pre-edit rig (`9a756e5`): run 1 clean, then run 2 in the same `STATE` with the sink failing and `MIN_OK=3` exited 0 while `verify-merged.sh` printed run 1's output and the ledger read `assemble failed`; a fresh `STATE` exited 2 only because the check script rejects a missing file. Landed bytes: exit 2; clean rerun 0; blocked sink (`api` fails, `MIN_OK=2`) 2. Guard `_run_dag(..., stale_sink=True)` in `test_skill_verification_panel_record.py` fails on `9a756e5` (`assert 0 == 2`) | Retire only if the DAG template drops quorum mode; rejected smaller alternative: clearing `*.out` at start (more characters, and would not cover a sink that failed in a fresh directory when the check script accepts a missing path) |
-| RS-2 | Verify-gated fix loop (`flow-loop-harness`): the git progress snapshot counts untracked files outside `$STATE`; Anatomy #4 says so | Adopted 2026-09-16 | Pre-edit rig (`9a756e5`): a no-op agent with the template default `STATE=./state` in an un-ignored worktree ran to the cap, exit 2, signatures `+u6` through `+u14` (two loop files per iteration); with `STATE` outside the tree or gitignored it exited 3 at iteration 1. Landed bytes: exit 3 at iteration 1 from the root and from a subdirectory; an agent that edits a tracked file each iteration still reaches the cap with three distinct signatures; a verifier that flips exits 0. Guard `test_fix_loop_no_progress_exit_survives_state_inside_worktree` fails on `9a756e5` (`sig: +u6`) | Retire only if the snapshot stops counting untracked files; rejected smaller alternative: `git ls-files --exclude=/<state>` (anchors at the repository root, so a loop run from a subdirectory kept the defect); a documented "gitignore `state/`" precondition was rejected because the template default itself disabled the exit |
+| RS-2 | Verify-gated fix loop (`flow-loop-harness`): the git progress snapshot counts untracked files outside `$STATE`; Anatomy #4 says so | Adopted 2026-09-16 | Pre-edit rig (`9a756e5`): a no-op agent with the template default `STATE=./state` in an un-ignored worktree ran to the cap, exit 2, signatures `+u6` through `+u14` (two loop files per iteration); with `STATE` outside the tree or gitignored it exited 3 at iteration 1. Landed bytes: exit 3 at iteration 1 from the root and from a subdirectory; an agent that edits a tracked file each iteration still reaches the cap with three distinct signatures; a verifier that flips exits 0. Same-day correction (advisory after `be0d16e`): the first landing filtered with a cwd-relative regex, which a trailing slash (`./state/`) or an absolute in-worktree path defeated and whose `.` swallowed a sibling (`STATE=./run.1` hid real work under `run-1/`); replaced by a literal, worktree-root-relative `--exclude`, with all three forms plus an outside-worktree path in the guard. Guard `test_fix_loop_no_progress_exit_survives_state_inside_worktree` fails on `9a756e5` (three forms) and on `be0d16e` (three forms) | Retire only if the snapshot stops counting untracked files; rejected alternatives: the regex filter (above); a pathspec `:(exclude,literal)` (fatal when `STATE` is outside the worktree); a documented "gitignore `state/`" precondition (the template default itself disabled the exit) |
 | RS-3 | Loop pack sentence requiring the verifier to run on a workspace snapshot or revert its local writes (coverage-map candidate from C2) | Rejected 2026-09-16 | A shell template cannot snapshot a workspace; the sentence would restate Anatomy #5's host precondition. The only local instance of "harness residue read as progress" was the loop's own `state/`, fixed by RS-2 | Reopen if a TeaPrompt-run loop shows a verifier's own writes masking a stall after RS-2 |
 | RS-4 | `governed-delivery` sentence hiding authoritative oracle content from the executor (coverage-map candidate from C6, the leakage fence) | Rejected 2026-09-16 | A benchmark-integrity control: delivery oracles are visible by design (CX-1 red-first tests; GA oracle split keeps them read-only, not hidden). The transferable part — a score that steers edits stops measuring — is installed as R8 holdout-before-tune | Reopen only for a delivery task whose acceptance oracle is a hidden evaluation set |
 | RS-5 | Run-keyed `STATE` directories or refusing to reuse one (coverage-map candidate from C8, the source's new-batch-name rule) | Rejected 2026-09-16 | Both packs declare `state/` a host-honored resume convention (generator Never, loop Anatomy #3); refusing reuse breaks resume. The bash fan-out already clears stale branch outputs; the DAG needed a sink gate (RS-1), not a naming rule | Reopen if a resume-free topology is added to the generator pack |
@@ -82,18 +82,23 @@ Previous line: `if ok < int(MIN_OK): sys.exit(2)  # explicit quorum`. Landed lin
 
 ### RS-2 — Fix-loop progress count (`skills/flow-loop-harness/SKILL.md`)
 
-Previous snapshot term: `git ls-files -o --exclude-standard | wc -l | tr -d ' '`. Landed: `git ls-files -o --exclude-standard | grep -vc "^${STATE#./}/" || true`. `git ls-files -o` prints paths relative to the working directory, so the filter is correct from the repository root and from a subdirectory for every relative `STATE` form; an absolute `STATE` outside the tree matches nothing and is unaffected. Anatomy #4 now reads "untracked-file count excluding `state/`, the loop's own files".
+Previous snapshot term: `git ls-files -o --exclude-standard | wc -l | tr -d ' '`. Landed: `srel="$(cd "$STATE" && pwd -P)"; srel="${srel#$(git rev-parse --show-toplevel)/}"` inside the git branch, then `git ls-files -o --exclude-standard --exclude="/$srel" | wc -l | tr -d ' '`. The exclude is a root-anchored gitignore pattern built from the physical path of `$STATE` relative to the worktree root, so it is literal (a `.` in the name matches only `.`), indifferent to `./`, trailing slashes, and absolute forms, correct from any working directory, and inert when `$STATE` is outside the worktree (the pattern then starts with `//` and matches nothing). Two template comments that restated Anatomy #4 were shortened to pay for it. Anatomy #4 reads "untracked-file count excluding `state/`, the loop's own files".
 
-| Rig case | `9a756e5` | landed |
-| --- | --- | --- |
-| no-op agent, `STATE=./state` in an un-ignored worktree, from root | 2 after 5 iterations (`+u6` … `+u14`) | 3 at iteration 1 |
-| same, run from a subdirectory with `STATE=state` | not run | 3 at iteration 1 |
-| no-op agent, `STATE` outside the worktree | 3 at iteration 1 | not run |
-| no-op agent, `state/` gitignored | 3 at iteration 1 | not run |
-| agent appends to a tracked file each iteration, cap 3 | not run | 2 (three distinct signatures) |
-| verifier flips to pass after one iteration | not run | 0 |
+The first landing (`be0d16e`) used `grep -vc "^${STATE#./}/"` and claimed correctness "for every relative `STATE` form"; a same-day advisory showed the claim exceeded the tested cases. Matrix on all three revisions (no-op agent unless noted; exit 3 = stall detected at iteration 1, 2 = ran to the cap):
 
-Sizes after landing (lint measure, characters): `flow-loop-harness` 19,983; `flow-control-generator` 19,979; both under 20,000.
+| Rig case | `9a756e5` | `be0d16e` | landed |
+| --- | --- | --- | --- |
+| `STATE=./state`, un-ignored worktree, from root | 2 (`+u6` … `+u14`) | 3 | 3 |
+| `STATE=state` from a subdirectory | 2 | 3 | 3 |
+| `STATE=./state/` (trailing slash) | 2 | **2** | 3 |
+| `STATE=<worktree>/state` (absolute, inside) | 2 | **2** | 3 |
+| `STATE=<tmp>/outstate` (outside the worktree) | 3 | 3 | 3 |
+| `state/` gitignored | 3 | not run | not run |
+| agent appends to a tracked file each iteration | 2 (progress) | 2 | 2 |
+| `STATE=./run.1`, agent adds a file under `run-1/` each iteration | 2 (progress) | **3** (false stall: the regex hid `run-1/`) | 2 |
+| verifier flips to pass after one iteration | not run | 0 | 0 |
+
+Sizes after landing (lint measure, characters): `flow-loop-harness` 19,984; `flow-control-generator` 19,979; both under 20,000.
 
 ## Shared Findings
 
@@ -102,6 +107,7 @@ Sizes after landing (lint measure, characters): `flow-loop-harness` 19,983; `flo
 3. **Persistent judge context is a data structure, not an instruction** (`core/verifier.py:180`, a list subclass carrying the conversation, probe telemetry, and an archived scratch area across executor reattachments). This is what RS-9 would approximate at prompt level.
 4. **Surprises recorded by the source audit** (scout-read, coordinator not verified unless marked): the paper aggregate keeps a zero for one task's setup failure while the runtime now leaves such runs unscored (`docs/PAPER.md`, coordinator-read); the "evaluator correction" mechanism supports exactly one task and identifier and raises on any other; the curriculum memory-view ablation is reachable from an internal module but not the public protocol file; the release check skips the two evaluator tests unless an environment variable opts in.
 5. **Two of the source's failure classes were TeaPrompt's failures.** Both packs' prose already stated the rule the templates broke (the fan-out comment "stale outputs from a prior run must not satisfy the gate"; Anatomy #4's "no observable change"); only execution found the gap — the 2026-09-05 lesson that a shipped template drifts from its contract prose, again.
+6. **The first RS-2 landing repeated the 2026-09-14 fixture lesson on a rig.** Its regex filter passed every row of its own table and an independent landing review, then failed three `STATE` forms the table did not contain. A rig matrix bounds the configurations in it, not the configuration space; the second occurrence of that pattern (router fixtures on 2026-09-14, template rigs here) is recorded as the trigger for generalizing the router-tune Durable Lesson beyond router tokens.
 
 ## Evidence vs Inference
 
@@ -114,7 +120,7 @@ Sizes after landing (lint measure, characters): `flow-loop-harness` 19,983; `flo
 | 718 portable tests, smoke results, CI composition | Author-claimed / scout-read | `docs/RELEASE.md`; `.github/workflows/tests.yml` read by the scout only |
 | Benchmark improvements | Author-claimed | Transcribed manuscript table; no result files audited by anyone in this survey |
 | Pre-edit template defects (RS-1, RS-2) | Observed / executed | Coordinator rigs on bytes extracted from `9a756e5` |
-| Repairs hold and real progress is still detected | Observed / executed | Rigs on re-extracted landed bytes; guards fail on `9a756e5`, pass on the landed tree |
+| Repairs hold and real progress is still detected | Observed / executed | Rigs on re-extracted landed bytes; guards fail on `9a756e5` (and RS-2's on `be0d16e`), pass on the landed tree |
 | A stateless critic would re-accept an oscillation (RS-9) | `[INFERENCE]` | Template read; no local run observed |
 | No installed surface carries the surveyed vocabulary | Observed | `test_survey_vocabulary_stays_out_of_installed_surfaces` |
 
@@ -125,14 +131,14 @@ Sizes after landing (lint measure, characters): `flow-loop-harness` 19,983; `flo
 - Coordinator spot-checks (raw files at the pinned commit): `run_osworld.py`, `tests/test_verifier_isolation.py`, `core/verifier.py`.
 - Scout source audit: `explore/phase1_wave.py`, `explore/commit.py`, `explore/charter.py`, `core/self_evolving_loop.py`, `core/verifier.py`, `core/verifier_runtime.py`, `env/qemu_rollback.py`, `benchmarks/osworld/{pipeline,phase1,phase2,task,evaluator_corrections}.py`, `benchmarks/ale/report.py`, `tools/{exam_fence,check_rsi_release,smoke_osworld}.py`, `config/` role profiles, `tests/` (governance-relevant files), `.github/workflows/tests.yml`. Skipped: ALE VM plumbing, guest transport, imagery, practice apps, the PDF.
 - Scout coverage map: all thirteen `SKILL.md` files, `skills/examples/`, `04-agent/`, `PROJECT_KNOWLEDGE.md`, `GLOSSARY.md`, `plans/ROUTING_CONTRACT.md`, prior survey ledgers.
-- Coordinator rigs: `/tmp/rig-d1` (six loop runs) and `/tmp/rig-d2` (eight DAG runs), templates extracted by fence before and after the edit.
+- Coordinator rigs: `/tmp/rig-d1` (six loop runs), `/tmp/rig-d1b` (ten exclusion-form probes for the corrected filter), `/tmp/rig-d2` (eight DAG runs), templates extracted by fence before and after each edit; the guard's negative matrix run against `9a756e5` and `be0d16e` templates via `git show`.
 - Not executed: any RSIAgent code, tests, or smoke; no clone.
 
 ## Falsifiability
 
 - The "no sentence needed" mapping is wrong if an installed skill is later shown to lack a rule the Concept Map credits to it (the coverage rows cite file and line; re-grep them).
 - RS-1 is wrong if a legitimate quorum topology needs the merged gate to run without a completed sink; the dry run would then need a new case, not a revert.
-- RS-2 is wrong if a host's `git ls-files -o` prints root-relative paths from a subdirectory (the subdirectory rig case would then fail), or if a loop legitimately writes its own progress into `state/`.
+- RS-2 is wrong if `git rev-parse --show-toplevel` and `pwd -P` disagree on a host (symlinked worktrees; the macOS `/tmp` case passed), if `$STATE` contains gitignore glob characters, or if a loop legitimately writes its own progress into `state/`. Its first landing was already shown wrong once: a rig matrix bounds the forms in it, not the form space.
 - RS-9 stays deferred only while no writer-critic run oscillates; one observed oscillation reopens it.
 - The tiering is wrong if the source's named tests do not exercise the mechanisms the audit attributes to them; three spot-checks held, the rest are scout-read.
 
@@ -144,9 +150,10 @@ Sizes after landing (lint measure, characters): `flow-loop-harness` 19,983; `flo
 | Ten concepts mapped with tier and coverage | done | Concept Map |
 | Twelve candidates decided with evidence and triggers | done | Candidate Adoption Ledger, dispositions guarded |
 | RS-1 landed with dry-run case failing on `9a756e5` | done | `test_skill_verification_panel_record.py` |
-| RS-2 landed with dry-run case failing on `9a756e5` | done | `test_rsiagent_survey_record.py` |
-| Flow packs under the lint budget | done | 19,983 / 19,979 characters |
+| RS-2 landed with dry-run cases failing on `9a756e5` and on the first landing `be0d16e` | done | `test_rsiagent_survey_record.py` (seven cases) |
+| Flow packs under the lint budget | done | 19,984 / 19,979 characters |
 | Clean-room boundary on installed surfaces | done | `test_survey_vocabulary_stays_out_of_installed_surfaces` |
+| Same-day correction of RS-2 after an advisory (regex filter → literal worktree-relative exclude; guard widened to seven cases; record claims re-bound) | done | second commit; matrix above |
 | Independent landing review (XM-6) before commit | done | `AGREE WITH CHANGES`: both template edits, both sizes, every rig cell on both revisions, both guard failures on `9a756e5`, all twelve dispositions and counts, and every TeaPrompt coverage citation reproduced; five source line citations were wrong (the URL reader's line numbering drifts from the raw file) and were re-derived from raw bytes; star/fork counts had moved within the day and are now time-bound |
 | Decision Index, Case Comparison row, State Ledger row, `index.json` | done | `PROJECT_KNOWLEDGE.md`, `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
