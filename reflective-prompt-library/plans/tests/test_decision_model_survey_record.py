@@ -29,7 +29,7 @@ CANDIDATE_STATUS = {
     "DM-2": "No change 2026-09-18",
     "DM-3": "No change 2026-09-18",
     "DM-4": "No change 2026-09-18",
-    "DM-5": "No change 2026-09-18",
+    "DM-5": "Rejected 2026-09-18",
     "DM-6": "Rejected 2026-09-18",
     "DM-7": "Corrected 2026-09-18",
     "DM-8": "Corrected 2026-09-18",
@@ -89,8 +89,8 @@ def test_candidate_ledger_preserves_dispositions_and_triggers():
         got = found[cid]
         assert got.startswith(want.split()[0]), f"{cid}: {got!r} lost {want!r}"
         assert want.split()[1] in got, f"{cid}: {got!r} lost its date"
-    deferred = [r for r in text.splitlines() if r.startswith("| DM-5 |")]
-    assert deferred and "real candidate scores" in deferred[0], (
+    dm5 = [r for r in text.splitlines() if r.startswith("| DM-5 |")]
+    assert dm5 and "real candidate scores" in dm5[0], (
         "DM-5 trigger must name the structural signal that reopens it"
     )
 

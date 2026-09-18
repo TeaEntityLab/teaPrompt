@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-18T14:27:07.329240",
+  "generated_at": "2026-09-18T15:15:51.755590",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2831,10 +2831,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Review Addendum (2026-09-18, same day)"
         }
       ],
-      "line_count": 109,
-      "char_count": 16916
+      "line_count": 113,
+      "char_count": 18427
     },
     {
       "path": "reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md",
@@ -9304,10 +9308,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Review Addendum (2026-09-18, same day)"
         }
       ],
-      "line_count": 125,
-      "char_count": 19224
+      "line_count": 129,
+      "char_count": 20036
     },
     {
       "path": "reflective-prompt-library/plans/flow-coverage-panel-record-2026-07-11.md",
