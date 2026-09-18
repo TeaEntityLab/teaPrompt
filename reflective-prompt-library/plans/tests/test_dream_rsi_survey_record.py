@@ -4,8 +4,8 @@ clean-room boundary, and index links.
 Record: plans/dream-rsi-survey-2026-09-18.md — survey of
 zhengkid/Dream-RSI (paper-only repo, no LICENSE, code "being prepared")
 and its project site/PDF: discovery history as an exact replay simulator
-for off-policy exploration-policy evaluation. Record-only: no installed
-change; DR-5 (semantic-guidance caution) deferred with reserved wording;
+for off-policy exploration-policy evaluation. DR-5 (semantic-guidance caution) adopted 2026-09-18 under same-day user
+direction: its sentence lives pinned-once on 04-agent/workflow-recipes.md;
 DR-8/DR-9 are record-only scope corrections.
 """
 
@@ -29,7 +29,7 @@ CANDIDATE_STATUS = {
     "DR-2": "No change 2026-09-18",
     "DR-3": "No change 2026-09-18",
     "DR-4": "No change 2026-09-18",
-    "DR-5": "Deferred 2026-09-18",
+    "DR-5": "Adopted 2026-09-18",
     "DR-6": "No change 2026-09-18",
     "DR-7": "No change 2026-09-18",
     "DR-8": "Corrected 2026-09-18",
@@ -43,7 +43,7 @@ SURVEY_TOKENS = re.compile(
     r"discovery tree|discovery-agent",
     re.IGNORECASE,
 )
-# DR-5's reserved wording must stay out of installed surfaces until user direction.
+# DR-5's caution landed 2026-09-18 (user direction): pinned exactly once, on workflow-recipes.
 DR5_RESERVED = "Directional guidance distilled from prior runs can shrink the space"
 
 
@@ -91,9 +91,9 @@ def test_candidate_ledger_preserves_dispositions_and_triggers():
         got = found[cid]
         assert got.startswith(want.split()[0]), f"{cid}: {got!r} lost {want!r}"
         assert want.split()[1] in got, f"{cid}: {got!r} lost its date"
-    deferred = [r for r in text.splitlines() if r.startswith("| DR-5 |")]
-    assert deferred and "directional guidance" in deferred[0], (
-        "DR-5 trigger must name the proposed surface that reopens it"
+    dr5 = [r for r in text.splitlines() if r.startswith("| DR-5 |")]
+    assert dr5 and "directional guidance" in dr5[0], (
+        "DR-5 row must keep the caution it adopted"
     )
 
 
@@ -110,9 +110,9 @@ def test_survey_vocabulary_stays_out_of_installed_surfaces():
         assert not SURVEY_TOKENS.search(_read(path)), path
 
 
-def test_dr5_reserved_wording_absent_from_installed_surfaces():
-    for path in _durable_surfaces():
-        assert DR5_RESERVED not in _read(path), path
+def test_dr5_caution_pinned_once_at_its_surface():
+    hits = [p.name for p in _durable_surfaces() if DR5_RESERVED in _read(p)]
+    assert hits == ["workflow-recipes.md"], hits
 
 
 def test_existing_indexes_link_the_survey_decision():

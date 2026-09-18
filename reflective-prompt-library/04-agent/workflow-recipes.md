@@ -128,6 +128,14 @@ response — three models can be confidently wrong together while the lone
 dissenter is right. Mirror that in Parallel Lens Review: preserve
 disagreements; never discard a dissent solely for being in the minority.
 
+A second caution transfers from exploration-policy research (single-task
+external evidence, recorded 2026-09-18).
+Directional guidance distilled from prior runs can shrink the space
+a parallel exploration actually searches; prefer replayable evidence over
+advice when the budget is parallel. Give parallel workers the evidence and
+a disjoint slice, not the coordinator's distilled direction — the packet
+still discloses the prior conclusion, and the frame test carries its bias.
+
 Falsifier: if these rows merely rename existing recipes without changing a
 routing decision or improving shared vocabulary, this section is ceremony and
 should be removed — see

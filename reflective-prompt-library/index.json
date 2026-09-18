@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-18T15:15:51.755590",
+  "generated_at": "2026-09-18T15:34:25.943926",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2835,10 +2835,14 @@
         {
           "level": 2,
           "text": "Review Addendum (2026-09-18, same day)"
+        },
+        {
+          "level": 2,
+          "text": "Adoption Addendum (2026-09-18, same day, user direction)"
         }
       ],
-      "line_count": 113,
-      "char_count": 18427
+      "line_count": 117,
+      "char_count": 20202
     },
     {
       "path": "reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md",
@@ -5907,7 +5911,7 @@
         }
       ],
       "line_count": 309,
-      "char_count": 51193
+      "char_count": 51265
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -10799,8 +10803,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 232,
-      "char_count": 11509
+      "line_count": 240,
+      "char_count": 11989
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
