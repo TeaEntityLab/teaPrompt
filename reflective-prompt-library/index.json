@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-16T15:39:28.460050",
+  "generated_at": "2026-09-18T13:40:41.502592",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -104,6 +104,7 @@
             "flow-control-pack-panel-record-2026-07-11.md",
             "ai-assisted-team-throughput-review-2026-08-12.md",
             "memory-mechanisms-research-2026-06-25.md",
+            "decision-model-survey-2026-09-18.md",
             "flow-coverage-panel-record-2026-07-11.md",
             "skills-and-spec-systems-research-2026-06-25.md",
             "vllm-micro-agent-research-record-2026-06-30.md",
@@ -5834,8 +5835,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 307,
-      "char_count": 49584
+      "line_count": 308,
+      "char_count": 50403
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9170,6 +9171,76 @@
       ],
       "line_count": 220,
       "char_count": 10689
+    },
+    {
+      "path": "reflective-prompt-library/plans/decision-model-survey-2026-09-18.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "decision-model-survey-2026-09-18",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Decision-Model Survey — `dsif2012/Qwen3-4B-Instruct-2507-Decision` and its two inspirations (2026-09-18)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-18)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Claim Check (the paste against its sources)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 125,
+      "char_count": 19224
     },
     {
       "path": "reflective-prompt-library/plans/flow-coverage-panel-record-2026-07-11.md",
@@ -14244,5 +14315,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 154
+  "total_files": 155
 }
