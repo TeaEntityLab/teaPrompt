@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-18T13:40:41.502592",
+  "generated_at": "2026-09-18T14:27:07.329240",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -53,6 +53,7 @@
             "astra-efficiency-rules-survey-2026-09-10.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
+            "dream-rsi-survey-2026-09-18.md",
             "flow-control-roadmap-2026-07-11.md",
             "september-skills-review-2026-09-14.md",
             "rsiagent-survey-2026-09-16.md",
@@ -2768,6 +2769,72 @@
       ],
       "line_count": 138,
       "char_count": 8726
+    },
+    {
+      "path": "reflective-prompt-library/plans/dream-rsi-survey-2026-09-18.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "dream-rsi-survey-2026-09-18",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Dream-RSI Survey — `zhengkid/Dream-RSI` / dream-rsi.com (2026-09-18)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-18)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 109,
+      "char_count": 16916
     },
     {
       "path": "reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md",
@@ -5835,8 +5902,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 308,
-      "char_count": 50403
+      "line_count": 309,
+      "char_count": 51193
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14315,5 +14382,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 155
+  "total_files": 156
 }
