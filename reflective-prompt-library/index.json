@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T10:29:29.059400",
+  "generated_at": "2026-09-19T11:09:41.523274",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6104,8 +6104,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 313,
-      "char_count": 54450
+      "line_count": 314,
+      "char_count": 55167
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -10365,10 +10365,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Landing Addendum (2026-09-19, user direction)"
         }
       ],
-      "line_count": 142,
-      "char_count": 26394
+      "line_count": 152,
+      "char_count": 28752
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -13686,8 +13690,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 204,
-      "char_count": 12631
+      "line_count": 205,
+      "char_count": 12920
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
