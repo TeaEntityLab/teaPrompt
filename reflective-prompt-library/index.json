@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T11:09:41.523274",
+  "generated_at": "2026-09-19T12:36:40.328855",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -45,6 +45,7 @@
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "direction-scope-docs-adoption-2026-09-19.md",
             "durable-skills-flows-panel-2026-08-25.md",
             "llm-judge-lifecycle-survey-2026-09-05.md",
             "gpt-instruct-survey-2026-09-10.md",
@@ -2083,6 +2084,48 @@
       ],
       "line_count": 105,
       "char_count": 8071
+    },
+    {
+      "path": "reflective-prompt-library/plans/direction-scope-docs-adoption-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "direction-scope-docs-adoption-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Direction-Scope Docs Adoption — \"Update docs if worth it\" (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 38,
+      "char_count": 4935
     },
     {
       "path": "reflective-prompt-library/plans/durable-skills-flows-panel-2026-08-25.md",
@@ -5821,7 +5864,7 @@
         }
       ],
       "line_count": 425,
-      "char_count": 25391
+      "char_count": 25554
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -6104,8 +6147,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 314,
-      "char_count": 55167
+      "line_count": 315,
+      "char_count": 55984
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -10701,8 +10744,8 @@
           "text": "7. Output"
         }
       ],
-      "line_count": 159,
-      "char_count": 6659
+      "line_count": 161,
+      "char_count": 7035
     },
     {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
@@ -14662,5 +14705,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 160
+  "total_files": 161
 }

@@ -130,6 +130,8 @@ Keep these counts separate:
 
 Missing usage data is `unknown`, not evidence of zero demand.
 
+A later user direction is read at the scope it names: direction naming a source or survey family fires the user-direction-gated candidates that family's records carry; a generic "adopt what's worth it" inside one review fires only that review's own candidates, never a named hold elsewhere. A fired consideration trigger authorizes the consideration it names, not a landing.
+
 ## 6. Adoption Decision
 
 Choose one:
