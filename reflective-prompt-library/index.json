@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T17:10:07.526666",
+  "generated_at": "2026-09-19T23:34:00.094321",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -117,6 +117,7 @@
             "flow-pack-demotion-evaluation-2026-07-11.md",
             "minimax-code-survey-2026-09-19.md",
             "3xa-harness-survey-2026-08-20.md",
+            "gliner2-survey-2026-09-19.md",
             "prompt-library-build-plan.md",
             "agentflow-8.2-delta-survey-2026-09-13.md",
             "runtime-governance-learning-plan-2026-06-11.md",
@@ -6218,8 +6219,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 316,
-      "char_count": 57088
+      "line_count": 317,
+      "char_count": 58254
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -10047,6 +10048,72 @@
       ],
       "line_count": 313,
       "char_count": 23100
+    },
+    {
+      "path": "reflective-prompt-library/plans/gliner2-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "gliner2-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "GLiNER2 Survey — `fastino-ai/GLiNER2` @ `d7c727458bf6` + EMNLP 2025 Demos Paper (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 111,
+      "char_count": 19149
     },
     {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
@@ -14776,5 +14843,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 162
+  "total_files": 163
 }
