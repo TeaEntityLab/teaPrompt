@@ -4,9 +4,10 @@ clean-room boundary, and index links.
 Record: plans/minimax-code-survey-2026-09-19.md — survey of
 MiniMax-AI/minimax-code (terminal coding agent published as the reviewed
 public projection of an internal monorepo; Pi-lineage vendored agent core;
-five co-located repo skills). Record-only: nine concepts covered or host
-territory; MC-5 (tri-state consumer map) deferred with an observed-failure
-trigger; MC-7/MC-10 dated record-only notes.
+five co-located repo skills). Nine concepts covered or host territory;
+MC-5 (tri-state consumer map) adopted 2026-09-19 under same-day user
+direction as one additive Verification bullet on reflective-implement,
+pinned once below; MC-7/MC-10 dated record-only notes.
 """
 
 from __future__ import annotations
@@ -29,7 +30,7 @@ CANDIDATE_STATUS = {
     "MC-2": "No change 2026-09-19",
     "MC-3": "No change 2026-09-19",
     "MC-4": "No change 2026-09-19",
-    "MC-5": "Deferred 2026-09-19",
+    "MC-5": "Adopted 2026-09-19",
     "MC-6": "No change 2026-09-19",
     "MC-7": "Noted 2026-09-19",
     "MC-8": "No change 2026-09-19",
@@ -89,8 +90,8 @@ def test_candidate_ledger_preserves_dispositions_and_triggers():
         assert got.startswith(want.split()[0]), f"{cid}: {got!r} lost {want!r}"
         assert want.split()[1] in got, f"{cid}: {got!r} lost its date"
     mc5 = [r for r in text.splitlines() if r.startswith("| MC-5 |")]
-    assert mc5 and "never enumerated" in mc5[0], (
-        "MC-5 must keep the observed-failure trigger that reopens it"
+    assert mc5 and "never becomes a ledger row" in mc5[0], (
+        "MC-5 must keep the verified-gap evidence and its retire condition"
     )
 
 
@@ -115,3 +116,17 @@ def test_existing_indexes_link_the_survey_decision():
     assert "minimax-code-survey-2026-09-19" in cases
     index = _read(PROMPT_LIBRARY_ROOT / "index.json")
     assert "minimax-code-survey-2026-09-19" in index
+
+
+MC5_BULLET = "Consumer map, whenever a change alters a contract, field, default, schema, prompt, or identity"
+
+
+def test_mc5_consumer_map_pinned_once_at_its_surface():
+    hits = [p.name for p in _durable_surfaces() if MC5_BULLET in _read(p)]
+    assert hits == ["SKILL.md"], hits
+    skill = library_skills_dir() / "reflective-implement" / "SKILL.md"
+    text = _read(skill)
+    assert text.count(MC5_BULLET) == 1
+    line = next(l for l in text.splitlines() if MC5_BULLET in l)
+    for token in ("`covered`", "`not applicable`", "`unknown`", "Sufficiency Gate", "final observable consumer"):
+        assert token in line, f"MC-5 bullet lost {token!r}"

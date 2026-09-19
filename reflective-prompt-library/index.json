@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T10:09:52.340685",
+  "generated_at": "2026-09-19T10:14:45.171685",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5979,7 +5979,7 @@
         }
       ],
       "line_count": 311,
-      "char_count": 52870
+      "char_count": 52939
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9713,10 +9713,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Adoption Addendum (2026-09-19, same day, user direction)"
         }
       ],
-      "line_count": 116,
-      "char_count": 20005
+      "line_count": 120,
+      "char_count": 22145
     },
     {
       "path": "reflective-prompt-library/plans/3xa-harness-survey-2026-08-20.md",
@@ -13966,8 +13970,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 208,
-      "char_count": 13031
+      "line_count": 209,
+      "char_count": 13707
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
