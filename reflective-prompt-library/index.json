@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T10:03:54.340882",
+  "generated_at": "2026-09-19T10:09:52.340685",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -111,6 +111,7 @@
             "skills-and-spec-systems-research-2026-06-25.md",
             "vllm-micro-agent-research-record-2026-06-30.md",
             "flow-pack-demotion-evaluation-2026-07-11.md",
+            "minimax-code-survey-2026-09-19.md",
             "3xa-harness-survey-2026-08-20.md",
             "prompt-library-build-plan.md",
             "agentflow-8.2-delta-survey-2026-09-13.md",
@@ -5977,8 +5978,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 310,
-      "char_count": 52080
+      "line_count": 311,
+      "char_count": 52870
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9650,6 +9651,72 @@
       ],
       "line_count": 63,
       "char_count": 4261
+    },
+    {
+      "path": "reflective-prompt-library/plans/minimax-code-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "minimax-code-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MiniMax Code Survey — `MiniMax-AI/minimax-code` (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 116,
+      "char_count": 20005
     },
     {
       "path": "reflective-prompt-library/plans/3xa-harness-survey-2026-08-20.md",
@@ -14461,5 +14528,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 157
+  "total_files": 158
 }
