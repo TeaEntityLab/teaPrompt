@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T12:36:40.328855",
+  "generated_at": "2026-09-19T16:47:08.937364",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -59,6 +59,7 @@
             "september-skills-review-2026-09-14.md",
             "rsiagent-survey-2026-09-16.md",
             "baton-dispatch-survey-2026-07-13.md",
+            "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "prime-agent-survey-2026-08-06.md",
@@ -3179,6 +3180,72 @@
       "char_count": 22412
     },
     {
+      "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "nimble-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Bespoke Nimble Survey — `bespokelabsai/nimble` @ `d2387fc0b32d` (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 109,
+      "char_count": 19017
+    },
+    {
       "path": "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6147,8 +6214,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 315,
-      "char_count": 55984
+      "line_count": 316,
+      "char_count": 57011
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14705,5 +14772,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 161
+  "total_files": 162
 }
