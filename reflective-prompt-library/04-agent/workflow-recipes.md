@@ -116,7 +116,7 @@ prompt recipe — the `flow-control-generator` / `flow-loop-harness` domain pack
 
 | Topology | Task-shape signal | Prompt-layer equivalent |
 | --- | --- | --- |
-| Confidence (escalate on low confidence) | High volume, easy-vs-hard mix, cost or latency pressure | `reflective-dispatch` Strictness Ladder: start L1/L2, escalate only when risk or ambiguity demands |
+| Confidence (escalate on low confidence) | High volume, easy-vs-hard mix, cost or latency pressure | `reflective-dispatch` Strictness Ladder: start L1/L2, escalate only when risk or ambiguity demands; confidence only raises strictness: low self-reported confidence defaults up, a close call between top candidates on host-measured scores escalates the same way, and no confidence number — self-reported or measured — lowers the rigor risk demands |
 | Ratings (bounded parallel candidates) | Several plausible candidates under a hard concurrency cap | Parallel Lens Review with a fixed lens count; keep its falsifier |
 | ReMoM (breadth, then synthesis contract) | High reasoning variance plus a strict output format | Multi-angle `reflective-research` passes, then synthesis against Acceptance Criteria from `reflective-brief` |
 | Fusion (disagreement as signal) | Contested factual or judgment calls where one confident answer is brittle | Parallel Lens Review with disagreements preserved and counterargument before consensus |

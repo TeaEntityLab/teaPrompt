@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T23:34:00.094321",
+  "generated_at": "2026-09-20T00:24:27.632089",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -88,6 +88,7 @@
             "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "QUALITY_GATES_SUMMARY.md",
+            "pi-warden-survey-2026-09-20.md",
             "governable-autonomy-survey-2026-09-03.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
@@ -5939,6 +5940,76 @@
       "char_count": 25554
     },
     {
+      "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "pi-warden-survey-2026-09-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Pi-Warden Survey — `DevMortimer/pi-warden` @ `c9921c3ebc48` + Goals Rethink (2026-09-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-20)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Goals Rethink"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 124,
+      "char_count": 21326
+    },
+    {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6219,8 +6290,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 317,
-      "char_count": 58254
+      "line_count": 318,
+      "char_count": 59411
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11253,7 +11324,7 @@
         }
       ],
       "line_count": 240,
-      "char_count": 11989
+      "char_count": 12236
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -14843,5 +14914,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 163
+  "total_files": 164
 }
