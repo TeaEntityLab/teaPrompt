@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T10:14:45.171685",
+  "generated_at": "2026-09-19T10:21:27.305806",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -61,6 +61,7 @@
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "prime-agent-survey-2026-08-06.md",
+            "minimax-code-trace-map-survey-2026-09-19.md",
             "skill-improvement-plan-2026-07-24.md",
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
@@ -3459,6 +3460,68 @@
       "char_count": 21109
     },
     {
+      "path": "reflective-prompt-library/plans/minimax-code-trace-map-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "minimax-code-trace-map-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MiniMax Code Trace-Map Survey — pasted zh-TW entry-point/engine map (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Verification Results"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 92,
+      "char_count": 11967
+    },
+    {
       "path": "reflective-prompt-library/plans/skill-improvement-plan-2026-07-24.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5978,8 +6041,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 311,
-      "char_count": 52939
+      "line_count": 312,
+      "char_count": 53685
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14532,5 +14595,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 158
+  "total_files": 159
 }
