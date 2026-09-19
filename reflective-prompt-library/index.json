@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-18T15:34:25.943926",
+  "generated_at": "2026-09-19T10:03:54.340882",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -66,6 +66,7 @@
             "jspace-cognition-survey-2026-08-20.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
+            "jev-architecture-synthesis-survey-2026-09-19.md",
             "openai-model-guidance-survey-2026-09-10.md",
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -3866,6 +3867,72 @@
       "char_count": 4795
     },
     {
+      "path": "reflective-prompt-library/plans/jev-architecture-synthesis-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "jev-architecture-synthesis-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Jev Architecture-Analysis Synthesis Survey — pasted thread by Roy Chen (@RoyChenBuild), 2026-09-18 (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 108,
+      "char_count": 18571
+    },
+    {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5910,8 +5977,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 309,
-      "char_count": 51265
+      "line_count": 310,
+      "char_count": 52080
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14394,5 +14461,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 156
+  "total_files": 157
 }
