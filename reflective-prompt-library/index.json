@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T10:21:27.305806",
+  "generated_at": "2026-09-19T10:29:29.059400",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -62,6 +62,7 @@
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
+            "jev-diffusion-eval-survey-2026-09-19.md",
             "skill-improvement-plan-2026-07-24.md",
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
@@ -3522,6 +3523,68 @@
       "char_count": 11967
     },
     {
+      "path": "reflective-prompt-library/plans/jev-diffusion-eval-survey-2026-09-19.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "jev-diffusion-eval-survey-2026-09-19",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Jev-vs-Diffusion Eval Survey — X thread by @mmastrac, 2026-09-17 (2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-19)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Thread Claims, and What Checked"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 93,
+      "char_count": 11884
+    },
+    {
       "path": "reflective-prompt-library/plans/skill-improvement-plan-2026-07-24.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6041,8 +6104,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 312,
-      "char_count": 53685
+      "line_count": 313,
+      "char_count": 54450
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14595,5 +14658,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 159
+  "total_files": 160
 }
