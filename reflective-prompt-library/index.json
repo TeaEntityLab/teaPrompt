@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-19T16:47:08.937364",
+  "generated_at": "2026-09-19T17:10:07.526666",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3240,10 +3240,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Direction Addendum (2026-09-19, generic direction)"
         }
       ],
-      "line_count": 109,
-      "char_count": 19017
+      "line_count": 123,
+      "char_count": 20660
     },
     {
       "path": "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
@@ -6215,7 +6219,7 @@
         }
       ],
       "line_count": 316,
-      "char_count": 57011
+      "char_count": 57088
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",

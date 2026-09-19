@@ -107,3 +107,17 @@ Deterministic guard: `plans/tests/test_nimble_survey_record.py` (identity and ta
 | Guard written | done | `plans/tests/test_nimble_survey_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+| Same-day generic direction re-ran the six candidates; none fired; rows unchanged | done | Direction Addendum |
+
+## Direction Addendum (2026-09-19, generic direction)
+
+Same-day follow-up direction: "If worth it then update doca ans skills" (sic) — generic, naming no survey family. Per the installed direction-scope rule it fires only this survey's own candidates; no named hold elsewhere was touched (DM-5/MV-6/JA-7 keep their host-integration triggers).
+
+All six rows re-ran at the worth bar with direction present; none meets the worth bar, and the ledger rows above are byte-unchanged:
+
+- **NB-1** — no verified local gap: R11 already forces one adversarial group per token-sharing workflow with every probed phrase recorded; a minimal-pair sentence would restate the installed force.
+- **NB-2** — the ablation move already exists in executed form where TeaPrompt runs fixtures that could leak: the pack guards' stub dry-runs drive a toggling verifier through each gate path (a gate whose outcome does not change when the verifier flips is the defect), and R11 governs route-fixture tunes. No leaky route fixture or vacuous guard has been observed locally; adopting the sentence now would be adoption on external elegance, which §5 Signal Accounting forbids ("external tool exists — no").
+- **NB-3** — covered as lesson and byte-pinning practice; enforcement stays host-owned.
+- **NB-4/NB-5/NB-6** — record-only notes whose triggers name their own conditions (host integration; an upstream root LICENSE); a generic direction does not fire them.
+
+Direction outcome recorded so it is not re-litigated; the reopen triggers stand as written.

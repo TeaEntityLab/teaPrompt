@@ -80,6 +80,7 @@ def test_record_identity_and_tally_pins():
         "Research Question", "Direct Recommendation", "Method", "What the Artifact Is",
         "Concept Map", "Candidate Adoption Ledger", "Shared Findings", "Evidence vs Inference",
         "Evidence Actually Checked", "Falsifiability", "Completion Ledger",
+        "Direction Addendum (2026-09-19, generic direction)",
     ):
         assert f"## {heading}" in text, heading
     concept_map = text.split("## Concept Map", 1)[1].split("\n## ", 1)[0]
@@ -118,3 +119,10 @@ def test_existing_indexes_link_the_survey_decision():
     assert f"[plans/{RECORD.name}](plans/{RECORD.name})" in knowledge
     state = _read(CASE_STUDIES).split("## State Ledger", 1)[1].split("\n## ", 1)[0]
     assert RECORD.name in state
+
+
+def test_direction_addendum_records_the_no_fire():
+    addendum = _read(RECORD).split("## Direction Addendum", 1)[1]
+    assert "If worth it then update doca ans skills" in addendum
+    assert "none meets the worth bar" in addendum
+    assert "byte-unchanged" in addendum
