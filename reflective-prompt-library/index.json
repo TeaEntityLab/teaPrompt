@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-21T15:18:49.067806",
+  "generated_at": "2026-09-22T22:58:21.522471",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -35,6 +35,7 @@
             "governance-workflow-self-control-adoption-2026-09-14.md",
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
+            "teabrain-concepts-experiments-survey-2026-09-21.md",
             "skills-surface-plan-2026-07-11.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "harness-intent-drift-rethink-2026-09-06.md",
@@ -68,6 +69,7 @@
             "skill-improvement-plan-2026-07-24.md",
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
+            "pstack-survey-2026-09-22.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
             "jev-architecture-synthesis-survey-2026-09-19.md",
@@ -127,8 +129,7 @@
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
             "project-adjustment-reflection-2026-06-11.md",
-            "installed-skills-general-lessons-2026-09-05.md",
-            "pstack-survey-2026-09-22.md"
+            "installed-skills-general-lessons-2026-09-05.md"
           ]
         },
         "04-agent": {
@@ -1252,6 +1253,80 @@
       ],
       "line_count": 82,
       "char_count": 4645
+    },
+    {
+      "path": "reflective-prompt-library/plans/teabrain-concepts-experiments-survey-2026-09-21.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "teabrain-concepts-experiments-survey-2026-09-21",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "teaBrain Concepts & Experiments Survey — `~/dev/teaBrain` @ `27b4d25` (2026-09-21)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-21)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Experiments Reproduced (the distinctive evidence)"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Direction Addendum (2026-09-21, generic direction)"
+        }
+      ],
+      "line_count": 309,
+      "char_count": 27495
     },
     {
       "path": "reflective-prompt-library/plans/skills-surface-plan-2026-07-11.md",
@@ -4000,6 +4075,96 @@
       "char_count": 29135
     },
     {
+      "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "pstack-survey-2026-09-22",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "pstack Survey — 2026-09-22"
+        },
+        {
+          "level": 2,
+          "text": "Research question and recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source identity and provenance"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "Correctness: verification as maintained infrastructure"
+        },
+        {
+          "level": 3,
+          "text": "Quality: externalized engineering judgment"
+        },
+        {
+          "level": 3,
+          "text": "Architecture: constrain the error class, not merely the wording"
+        },
+        {
+          "level": 3,
+          "text": "Automation: bookkeeping is real, acceptance remains separate"
+        },
+        {
+          "level": 2,
+          "text": "Executed evidence"
+        },
+        {
+          "level": 3,
+          "text": "Plan checker"
+        },
+        {
+          "level": 3,
+          "text": "Orchestration store"
+        },
+        {
+          "level": 3,
+          "text": "Source integrity"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Practical pilot: one user journey, not a whole-product harness"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Verification and scope"
+        },
+        {
+          "level": 2,
+          "text": "Primary source map"
+        }
+      ],
+      "line_count": 203,
+      "char_count": 18616
+    },
+    {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6292,8 +6457,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 319,
-      "char_count": 60333
+      "line_count": 323,
+      "char_count": 65720
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11010,7 +11175,7 @@
         }
       ],
       "line_count": 161,
-      "char_count": 7035
+      "char_count": 7331
     },
     {
       "path": "reflective-prompt-library/04-agent/memory-consolidation.md",
@@ -13257,96 +13422,6 @@
       ],
       "line_count": 79,
       "char_count": 1684
-    },
-    {
-      "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
-      "type": "prompt",
-      "category": "prompt-library",
-      "subcategory": "plans",
-      "name": "pstack-survey-2026-09-22",
-      "description": "",
-      "frontmatter": {},
-      "dependencies": {
-        "ref_file": [],
-        "ref_snippet": [],
-        "markdown_links": []
-      },
-      "structure": [
-        {
-          "level": 1,
-          "text": "pstack Survey — 2026-09-22"
-        },
-        {
-          "level": 2,
-          "text": "Research question and recommendation"
-        },
-        {
-          "level": 2,
-          "text": "Source identity and provenance"
-        },
-        {
-          "level": 2,
-          "text": "Findings"
-        },
-        {
-          "level": 3,
-          "text": "Correctness: verification as maintained infrastructure"
-        },
-        {
-          "level": 3,
-          "text": "Quality: externalized engineering judgment"
-        },
-        {
-          "level": 3,
-          "text": "Architecture: constrain the error class, not merely the wording"
-        },
-        {
-          "level": 3,
-          "text": "Automation: bookkeeping is real, acceptance remains separate"
-        },
-        {
-          "level": 2,
-          "text": "Executed evidence"
-        },
-        {
-          "level": 3,
-          "text": "Plan checker"
-        },
-        {
-          "level": 3,
-          "text": "Orchestration store"
-        },
-        {
-          "level": 3,
-          "text": "Source integrity"
-        },
-        {
-          "level": 2,
-          "text": "Candidate Adoption Ledger"
-        },
-        {
-          "level": 2,
-          "text": "Evidence vs Inference"
-        },
-        {
-          "level": 3,
-          "text": "Practical pilot: one user journey, not a whole-product harness"
-        },
-        {
-          "level": 2,
-          "text": "Falsifiability"
-        },
-        {
-          "level": 2,
-          "text": "Verification and scope"
-        },
-        {
-          "level": 2,
-          "text": "Primary source map"
-        }
-      ],
-      "line_count": 203,
-      "char_count": 18616
     }
   ],
   "skills": [
@@ -15060,5 +15135,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 166
+  "total_files": 167
 }
