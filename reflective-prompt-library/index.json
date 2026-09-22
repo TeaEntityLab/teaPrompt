@@ -127,7 +127,8 @@
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
             "project-adjustment-reflection-2026-06-11.md",
-            "installed-skills-general-lessons-2026-09-05.md"
+            "installed-skills-general-lessons-2026-09-05.md",
+            "pstack-survey-2026-09-22.md"
           ]
         },
         "04-agent": {
@@ -13256,6 +13257,92 @@
       ],
       "line_count": 79,
       "char_count": 1684
+    },
+    {
+      "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "pstack-survey-2026-09-22",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "pstack Survey — 2026-09-22"
+        },
+        {
+          "level": 2,
+          "text": "Research question and recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source identity and provenance"
+        },
+        {
+          "level": 2,
+          "text": "Findings"
+        },
+        {
+          "level": 3,
+          "text": "Correctness: verification as maintained infrastructure"
+        },
+        {
+          "level": 3,
+          "text": "Quality: externalized engineering judgment"
+        },
+        {
+          "level": 3,
+          "text": "Architecture: constrain the error class, not merely the wording"
+        },
+        {
+          "level": 3,
+          "text": "Automation: bookkeeping is real, acceptance remains separate"
+        },
+        {
+          "level": 2,
+          "text": "Executed evidence"
+        },
+        {
+          "level": 3,
+          "text": "Plan checker"
+        },
+        {
+          "level": 3,
+          "text": "Orchestration store"
+        },
+        {
+          "level": 3,
+          "text": "Source integrity"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Verification and scope"
+        },
+        {
+          "level": 2,
+          "text": "Primary source map"
+        }
+      ],
+      "line_count": 158,
+      "char_count": 15953
     }
   ],
   "skills": [
@@ -14969,5 +15056,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 165
+  "total_files": 166
 }

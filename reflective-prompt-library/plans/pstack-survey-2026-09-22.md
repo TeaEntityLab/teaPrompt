@@ -1,0 +1,158 @@
+# pstack Survey — 2026-09-22
+
+> **Status: record-only.** The user requested the survey and then explicitly requested documentation and a commit. This authorizes preserving the findings, not installing pstack, changing skills, or operating a runtime. This document is evidence and project analysis, not agent operating policy.
+
+## Research question and recommendation
+
+Evaluate three layers: correctness verification, engineering-quality skills, and agent-friendly architecture. The central lesson is not to persuade an agent to obey a longer prompt. It is to turn engineering judgment into repeatable tools, observable evidence, and enforceable constraints.
+
+pstack combines natural-language policy, project-local skill generation, executable bookkeeping, and host integration. Neither “just Markdown” nor “a complete independently enforcing harness” is accurate. Study the mechanisms; do not infer efficacy from PR volume.
+
+## Source identity and provenance
+
+- Repository: https://github.com/cursor/plugins/tree/53e579f1481697931fc44f5445171397cfa2b24b/pstack
+- Commit: `53e579f1481697931fc44f5445171397cfa2b24b`; manifest version `0.15.2`; MIT license. Checked 2026-09-22. Recheck the revision and host dependencies before adoption.
+- User inputs: two lossy exports titled “The Complete Guide to pstack” Parts 1 and 2, and “High-Trust AI Agent Architectures: Building a Michelin Kitchen,” containing a summary and purported verbatim transcript. Their session names were paste-1.md, paste-2.md, and paste-3.md. They are not dependencies of this record.
+- Original X article URLs were not recovered by two targeted searches. The audio file referenced by the transcript existed, but audio-to-text fidelity was not checked. The transcript spells the handle differently from upstream. Treat attribution and verbatim claims as unverified, not fabricated.
+- The guides and talk repeat the same author's claims; they are not independent productivity evaluations.
+
+## Findings
+
+### Correctness: verification as maintained infrastructure
+
+The generator requires Launch, Doctor, Drive, Evidence, Cleanup, and Helpers sections grounded in the target repository. It prefers existing harnesses, real user paths, observable side effects, and evidence that survives cleanup. The Feature Map gives subsequent agents a navigable description of features, entry points, commands and expected observations.
+
+The current contract seeds the top 3–5 features and proves ONE mapped feature end to end. It does not automatically establish full-product coverage. Current generated maps live under `features/`, whereas the supplied guide mentions `references/features/`.
+
+Maintenance separates concurrent source readers from coordinator-owned live driving. It distinguishes documentation drift, harness gaps, and product regressions; the last must not be concealed by editing the map. A source-clean feature still needs live exercise. These are prompt-level obligations unless target tools and host permissions enforce them.
+
+### Quality: externalized engineering judgment
+
+The architect workflow grounds current mechanics and rationale, writes caller usage before types, compares structurally distinct designs, and revises a sketch when repeated implementation friction contradicts it. Repeated workarounds are stronger evidence than one awkward edge case. Prototypes answer observable questions; model judgments remain advisory.
+
+This is inference-time procedural guidance, not proof that a model became a software engineer. Compare accepted outcomes, escaped defects, operator active time and total cost under fixed models/tasks. The supplied 2,000/2,462 PR-per-month and 100–1000x output claims lack independently checked baselines and quality outcomes.
+
+### Architecture: constrain the error class, not merely the wording
+
+Recurring corrections can become discriminated unions, import boundaries, canonical APIs, lint rules or runtime invariants. Existing code is also an example agents imitate: remove bad patterns rather than explaining why each copy is exceptional.
+
+“Impossible” must name the invariant and enforcement boundary. An import restriction cannot alone guarantee a renderer stays within 16ms/8ms. The supplied summary overstates that connection; Dune's implementation and performance were not verified.
+
+Do not adopt blanket comment deletion. Upstream has legal, public-API, external-constraint and RFC exceptions, but no-comments step 5 still permits deleting some constraint comments when replacement is not approved. Removing the warning does not remove the risk. Preserve the protection until the constraint is disproved or an equivalent mechanism is verified.
+
+### Automation: bookkeeping is real, acceptance remains separate
+
+The pinned tree contains orch, a PR watcher, bootstrap and other scripts; the plugin is not Markdown-only. The orchestrate playbook explicitly says orch never spawns, waits or wakes agents: the host Task tool does. Its PR+SHA ledger preserves version-specific attestations, not independently established truth.
+
+The dormant benny automation pack requires explicit setup, committed target configuration, adapters and host integrations. Its declared outcome is a draft PR, not merge or deployment. No automation was enabled during this survey.
+
+## Executed evidence
+
+Two read-only scouts extracted distinct source slices. The coordinator spot-read load-bearing primary files, checked the complete upstream tree, and rejected scout overclaims: serialized maintenance does not disprove a productivity multiplier; prompt-only role restrictions are not sandboxes; and the plugin has executable helpers beyond the plan checker.
+
+### Plan checker
+
+Command shape: `node check-plan.mjs <case.txt>`, Node v25.1.0. Inputs were synthetic plans with the required headings, literal verification rule, ten lanes, perf fields and program markers. No application or tests described by the plans ran.
+
+| Input | Exit | Observed result |
+| --- | --- | --- |
+| Valid structure, no work or evidence | 0 | 1 PR sections, 0 problems |
+| Same input with all boxes checked and nonexistent screenshots | 0 | 1 PR sections, 0 problems |
+| First lane lacks Pass when | 1 | lane 1 has no pass predicate |
+| Lane 10 relabeled Lane 9 | 1 | lanes are [1,2,3,4,5,6,7,8,9,9], expected 1 to 10 |
+
+The checker validates syntax, not evidence existence or semantic correctness. This is a responsibility boundary, not a claim that the checker violates its purpose. Its fixed ten-lane/model wording is not an appropriate universal verification policy.
+
+### Orchestration store
+
+Command: `bun store-probe.mjs`, importing only the pinned store module. No bootstrap, dependency installation, agent dispatch, GitHub command or frontier refresh was invoked. The probe wrote only to a fresh temporary directory.
+
+Observed output:
+
+```json
+{"evidenceFileExists":false,"storedVerdictAfterReopen":"live-ui-verified","changedHeadResult":"NOT-VERIFIED","lockRemovedAfterClose":true}
+```
+
+A recorded verdict survived reopening; a changed SHA had no verdict; the nonexistent evidence path did not prevent recording a successful verdict. These observations do not certify concurrent writers, crash recovery or whole-host safety.
+
+Reproduction (place the pinned store.ts beside this file and run with Bun in a disposable directory):
+
+```javascript
+import {openStore} from './store.ts';
+import {existsSync} from 'node:fs';
+import {join} from 'node:path';
+const dir=join(import.meta.dir,'scratch-store');
+const missing=join(import.meta.dir,'never-produced-proof.png');
+const oldSha='a'.repeat(40),newSha='b'.repeat(40);
+const store=openStore(dir);
+await store.init();
+await store.ledger.record({pr:1,sha:oldSha,verdict:'live-ui-verified',evidence:missing,verifier:'synthetic-survey-caller'});
+await store.close();
+const reader=openStore(dir);
+const persisted=await reader.ledger.check({pr:1,sha:oldSha});
+let changedHead;
+try { await reader.ledger.check({pr:1,sha:newSha}); changedHead='unexpected-pass'; }
+catch(e) { changedHead=e.message; }
+await reader.close();
+console.log(JSON.stringify({evidenceFileExists:existsSync(missing),storedVerdictAfterReopen:persisted.verdict,changedHeadResult:changedHead,lockRemovedAfterClose:!existsSync(join(dir,'.orch.lock'))}));
+```
+
+### Source integrity
+
+| Executed source | Git blob SHA-1 | SHA-256 |
+| --- | --- | --- |
+| scripts/check-plan.mjs | 21d350ac155928bbcf8d29dce193a97974f12748 | 4f5118edf719b481983dc87dfadd5b4b5473d05aad04a7ba65191ff9c73faf1b |
+| scripts/orch/store.ts | 5e6c602fb670a6b5598977f5bf85d717cf797ef7 | 0eae7cf69282e827b1227166f2e32cee3560f2f3e65b3f1f2faf6fb83d3b4c5b |
+
+Both downloaded files' computed Git blob identities matched the pinned tree. Source inspection and these probes are not end-to-end agent efficacy evidence.
+
+## Candidate Adoption Ledger
+
+| ID | Mechanism | Decision | Evidence / existing surface | Trigger and falsifier |
+| --- | --- | --- | --- | --- |
+| PS-C1 | Project-local control interface plus maintained feature map | defer target-repository pilot | reflective-implement Verification requires real consumer-surface evidence; does not ship an app-specific adapter/map | A named product and repeated manual driving/context-discovery bottleneck; explicit implementation request. Falsifier: No reduction in operator active time or no improvement in acceptance/escaped-regression outcomes under fixed model and task set |
+| PS-C2 | Source/live maintenance separates doc drift, harness gaps and product regressions | concept only; candidate for existing workflow if local failure observed | reflective-implement Verification distinguishes broken check from product failure; local-feedback requests evidence/root cause | A recorded local case wrongly rewrites product or map to satisfy a broken harness. Falsifier: Current workflow already handles representative cases with the same reliable outcome |
+| PS-C3 | Repeated corrections become types, import boundaries, lint or runtime invariants | concept only; prefer target-product structural repair over more prompt text | 04-agent/artifact-promotion destinations and verifier/runtime gates; 02-engineering/local-feedback anti-regression rule | A concrete repeated anti-pattern plus a narrow enforceable invariant. Falsifier: Rule rejects legitimate cases or merely moves the failure elsewhere |
+| PS-C4 | Usage-first design and empirical prototypes | no new core skill | reflective-spec-plan Workflow step 3; reflective-brief Spike/exploration framing | Specific failure not covered by those contracts. Falsifier: Paired task probe reveals an uncovered design failure |
+| PS-C5 | Persistent autonomous execution and effect/acceptance separation | host responsibility; no TeaPrompt runtime adoption | PROJECT_KNOWLEDGE Standing Non-Goals; 04-agent/runtime-trust-boundary §§2a,3 | Explicit direction to implement in a named host plus enforceable authority/effect boundaries. Falsifier: A required operational guarantee remains only prose |
+| PS-C6 | Delete constraints without replacement; universal ten-lane/model policy | reject as universal defaults | reflective-minimality Safety Floor and risk-scaled verification in reflective-implement | Only reconsider a bounded rule with failure-specific evidence and approved scope. Falsifier: Replacement preserves the originating protection and fixed overhead improves measured outcomes |
+
+No candidate is adopted into an operating contract. Local recurrence is unknown. Coverage above refers to checked repository-delivered text, not the reviewing host's instructions or provenance-only source links. No tenth core skill, domain pack, dependency or runner is proposed for immediate admission.
+
+## Evidence vs Inference
+
+Separate intent/acceptance, skill-guided execution, controlled product interaction, revision-bound evidence, result evaluation, and authority to merge or deploy. The executor should not silently redefine the criterion it is measured against. Classify product failures, broken checks and unavailable environments separately. Feed recurring failures back into tools, maps and architecture.
+
+The smallest useful next experiment is a named product's control interface and maintained Feature Map, not a new orchestration platform. Hold model, task set and environment constant; compare accepted outcomes, operator active minutes, escaped regressions and total cost with and without those assets. Include failures the verifier must reject, not only successful demonstrations. A pilot is a proposal, not authorized implementation.
+
+Competing perspectives: throughput favors reusable tools; maintainability favors constrained architecture; agent ergonomics favors maps and clear errors; safety requires independent authority and honest unknowns. Blind spots remain the private Dune runtime, full Cursor/cloud integration, transcript authenticity and independently measured quality/productivity.
+
+## Falsifiability
+
+The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.
+
+## Verification and scope
+
+- Three requested survey themes: addressed with source/claim distinctions.
+- Actual execution: plan-checker fixtures and isolated store API probe only.
+- Not executed: full plugin installation, target-app driving, cloud agents, Slack integration, PR mutation, merge or deploy.
+- No operational skills, routing, governance policy or runtime configuration changed by this record.
+- Documentation verification is reported by the recording commit's accompanying delivery message; historical probe results above are scoped to their exact inputs.
+
+## Primary source map
+
+All links below name the reviewed immutable revision, accessed 2026-09-22.
+
+- [.cursor-plugin/plugin.json](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/.cursor-plugin/plugin.json)
+- [LICENSE](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/LICENSE)
+- [skills/create-verification-skill/SKILL.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/create-verification-skill/SKILL.md)
+- [skills/maintain-verification-skill/SKILL.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/maintain-verification-skill/SKILL.md)
+- [skills/architect/SKILL.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/architect/SKILL.md)
+- [skills/principle-encode-lessons-in-structure/SKILL.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/principle-encode-lessons-in-structure/SKILL.md)
+- [skills/no-comments/SKILL.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/no-comments/SKILL.md)
+- [agents/comment-sicko.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/agents/comment-sicko.md)
+- [skills/poteto-mode/playbooks/orchestrate.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/playbooks/orchestrate.md)
+- [skills/poteto-mode/scripts/check-plan.mjs](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/scripts/check-plan.mjs)
+- [skills/poteto-mode/scripts/orch/store.ts](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/scripts/orch/store.ts)
+- [skills/poteto-mode/scripts/watch-pr/policy.ts](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/scripts/watch-pr/policy.ts)
+- [automations/benny/FOR_AGENTS.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/automations/benny/FOR_AGENTS.md)
