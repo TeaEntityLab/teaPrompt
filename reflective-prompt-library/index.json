@@ -59,7 +59,6 @@
             "september-skills-review-2026-09-14.md",
             "rsiagent-survey-2026-09-16.md",
             "baton-dispatch-survey-2026-07-13.md",
-            "agentflow-8.3-delta-survey-2026-09-21.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
@@ -69,6 +68,7 @@
             "skill-improvement-plan-2026-07-24.md",
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
+            "ember-snn-llm-survey-2026-09-22.md",
             "pstack-survey-2026-09-22.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -3185,79 +3185,6 @@
       "char_count": 22412
     },
     {
-      "path": "reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md",
-      "type": "prompt",
-      "category": "prompt-library",
-      "subcategory": "plans",
-      "name": "agentflow-8.3-delta-survey-2026-09-21",
-      "description": "",
-      "frontmatter": {},
-      "dependencies": {
-        "ref_file": [],
-        "ref_snippet": [],
-        "markdown_links": [
-          "agentflow-8.2-delta-survey-2026-09-13.md",
-          "agentflow-survey-2026-09-05.md",
-          "../04-agent/external-adoption-review.md#4-local-gap-test",
-          "teabrain-concepts-experiments-survey-2026-09-21.md",
-          "ember-snn-llm-survey-2026-09-22.md",
-          "agentflow-8.3.2-delta-survey-2026-09-22.md"
-        ]
-      },
-      "structure": [
-        {
-          "level": 1,
-          "text": "Agentflow 8.3.0 — Delta Survey — 2026-09-21"
-        },
-        {
-          "level": 2,
-          "text": "Research Question and Scope"
-        },
-        {
-          "level": 2,
-          "text": "Direct Recommendation (as of 2026-09-21)"
-        },
-        {
-          "level": 2,
-          "text": "Version and Source Identity"
-        },
-        {
-          "level": 2,
-          "text": "State Ledger and Changed Mechanisms"
-        },
-        {
-          "level": 2,
-          "text": "Candidate Adoption Ledger"
-        },
-        {
-          "level": 2,
-          "text": "Evidence vs Inference"
-        },
-        {
-          "level": 2,
-          "text": "Evidence Actually Checked"
-        },
-        {
-          "level": 2,
-          "text": "Falsifiability"
-        },
-        {
-          "level": 2,
-          "text": "Completion Ledger"
-        },
-        {
-          "level": 2,
-          "text": "Direction Addendum (2026-09-21, skill-update direction)"
-        },
-        {
-          "level": 2,
-          "text": "Recent-Inspiration Reflection (2026-09-22)"
-        }
-      ],
-      "line_count": 254,
-      "char_count": 23821
-    },
-    {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -4072,6 +3999,72 @@
       ],
       "line_count": 368,
       "char_count": 29135
+    },
+    {
+      "path": "reflective-prompt-library/plans/ember-snn-llm-survey-2026-09-22.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ember-snn-llm-survey-2026-09-22",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "EMBER Survey — arXiv:2604.12167v1 (SNN-as-LLM-memory) — 2026-09-22"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-22)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Cross-Link: EMBER and teaBrain's TB-1"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 191,
+      "char_count": 15267
     },
     {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
