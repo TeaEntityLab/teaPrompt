@@ -22,7 +22,7 @@ pstack combines natural-language policy, project-local skill generation, executa
 
 The generator requires Launch, Doctor, Drive, Evidence, Cleanup, and Helpers sections grounded in the target repository. It prefers existing harnesses, real user paths, observable side effects, and evidence that survives cleanup. The Feature Map gives subsequent agents a navigable description of features, entry points, commands and expected observations.
 
-The current contract seeds the top 3–5 features and proves ONE mapped feature end to end. It does not automatically establish full-product coverage. Current generated maps live under `features/`, whereas the supplied guide mentions `references/features/`.
+The current contract seeds the top 3–5 features and proves ONE mapped feature end to end. It does not automatically establish full-product coverage. Current generated maps live under `features/`, whereas the supplied guide mentions `references/features/` — resolved 2026-09-22: the external `poteto/verification-skill-example` repo uses `references/features/`; both layouts exist.
 
 Maintenance separates concurrent source readers from coordinator-owned live driving. It distinguishes documentation drift, harness gaps, and product regressions; the last must not be concealed by editing the map. A source-clean feature still needs live exercise. These are prompt-level obligations unless target tools and host permissions enforce them.
 
@@ -167,6 +167,15 @@ Success means independent operation and reliable discrimination between success
 and failure, not a count of generated skill files. Compare operator intervention
 and accepted outcomes against the existing approach before expanding coverage.
 Failure to improve those outcomes is a reason to revise or stop the pilot.
+
+Evaluation design for this pilot is recorded in the follow-on synthesis survey
+(`plans/pstack-synthesis-survey-2026-09-22.md`, PS2-7): a three-arm controlled
+experiment (agent / +pstack / +governance gates) over a matched task set with
+ten falsification scenarios (ambiguous intent, protected-test weakening, stale
+feature map, mid-run crash, post-effect timeout, SHA change, injected
+instruction, repeated failure, unvetted skill promotion, clean delivery) and an
+effective-throughput metric (accepted deliverables / total cost including human
+intervention and rework). Recorded, not executed.
 
 These assets belong with the product whose startup, authentication, navigation and
 behavior they describe. TeaPrompt supplies reusable methodology; it does not need
