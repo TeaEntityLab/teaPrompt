@@ -108,7 +108,7 @@ Do not claim a methodology prompt already provides runtime guarantees.
 For each mechanism, answer:
 
 - Is there a verified local problem?
-- Is the problem already covered by an existing prompt, skill, test, or project-knowledge rule?
+- Is the problem already covered by an existing prompt, skill, test, or project-knowledge rule? Cite the checked artifact path and section, and bound the claim to what is available in the reviewed delivery (repository, standalone skill, or host configuration); the reviewing agent's own host instructions and a skill's provenance-only source links do not establish coverage in that delivery.
 - Is the proposed change an in-place repair or a new durable surface?
 - What is the blast radius?
 - Is the change reversible?
