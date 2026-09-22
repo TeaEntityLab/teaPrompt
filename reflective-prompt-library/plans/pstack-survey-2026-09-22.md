@@ -231,6 +231,19 @@ Two further experiments on the same product:
   archaeology. On a broken product the map is what makes the regression
   visible.
 
+- **Sealed-oracle contradiction (T01/T02):** a fresh agent on the healthy
+  product with a locked `acceptance.yaml` claiming `/heartbeat` → `pong`
+  reported FAIL but classified it **spec/oracle error**, not product
+  regression — citing the source (`return "ok"` at line 103), VERIFY.md, and
+  routing.md as the ground truth. The oracle-vs-product distinction held.
+
+All three discrimination classes (product regression, doc drift, spec/oracle
+error) are now demonstrated under seeded adversarial conditions on one
+product. The remaining PS2-7 scenarios (ambiguous intent, protected-test
+weakening, repeated failure, unvetted skill promotion, clean delivery,
+effective throughput) require a named product and explicit authorization for
+the full A/B/C protocol.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.

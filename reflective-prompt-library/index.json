@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T00:18:16.998024",
+  "generated_at": "2026-09-23T00:26:02.658586",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4367,8 +4367,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 262,
-      "char_count": 22236
+      "line_count": 275,
+      "char_count": 22999
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
