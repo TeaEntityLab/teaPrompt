@@ -133,6 +133,17 @@ No candidate is adopted into an operating contract. PS2-7 is recorded as the
 evaluation design for the deferred pilot — it changes what a pilot would
 *measure*, not any installed surface.
 
+### Pilot execution addendum (2026-09-22)
+
+PS-C1 was triggered by user direction later the same day and executed at small
+scale on `TeaEntityLab/wsgiLite.js`. The full outcome is recorded in the first
+survey's pilot addendum (`plans/pstack-survey-2026-09-22.md`). Headline: the
+map-drive-find-drift-fix-map loop worked — run 1 surfaced 7 doc-vs-behavior
+deviations plus a real traversal quirk; run 2 on corrected docs passed 15/15
+with zero deviations. PS2-7's full A/B/C protocol remains unexecuted; this was
+a single-product, single-agent smoke of the control+map assets, not the
+controlled experiment.
+
 ## Falsifiability
 
 The record's central assessment — that the paste's governance controls are

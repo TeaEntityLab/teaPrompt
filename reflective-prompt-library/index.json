@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-22T23:34:34.864507",
+  "generated_at": "2026-09-22T23:58:00.589593",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4347,6 +4347,10 @@
           "text": "Practical pilot: one user journey, not a whole-product harness"
         },
         {
+          "level": 3,
+          "text": "Pilot execution addendum (2026-09-22)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability"
         },
@@ -4359,8 +4363,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 212,
-      "char_count": 19337
+      "line_count": 240,
+      "char_count": 20954
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -6753,6 +6757,10 @@
           "text": "Candidate Adoption Ledger"
         },
         {
+          "level": 3,
+          "text": "Pilot execution addendum (2026-09-22)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability"
         },
@@ -6765,8 +6773,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 167,
-      "char_count": 12353
+      "line_count": 178,
+      "char_count": 12959
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3.2-delta-survey-2026-09-22.md",

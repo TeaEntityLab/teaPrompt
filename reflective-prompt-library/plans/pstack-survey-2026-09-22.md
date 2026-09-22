@@ -175,11 +175,39 @@ ten falsification scenarios (ambiguous intent, protected-test weakening, stale
 feature map, mid-run crash, post-effect timeout, SHA change, injected
 instruction, repeated failure, unvetted skill promotion, clean delivery) and an
 effective-throughput metric (accepted deliverables / total cost including human
-intervention and rework). Recorded, not executed.
+intervention and rework). Recorded, not executed at design time — see the
+2026-09-22 execution addendum below.
 
 These assets belong with the product whose startup, authentication, navigation and
 behavior they describe. TeaPrompt supplies reusable methodology; it does not need
 to become that product's control harness.
+
+### Pilot execution addendum (2026-09-22)
+
+Executed at small scale on `TeaEntityLab/wsgiLite.js` (public repo, user-named
+scope: johnteee/TeaEntityLab projects only). Assets committed to the product
+repo as `VERIFY.md` + `features/` (routing, csrf-upload, errors) — no new CLI;
+curl and the existing demo server sufficed.
+
+Two fresh-agent runs, no prior context:
+
+- **Run 1 (uncorrected docs):** 7/14 routes passed; the agent found 7
+  map-vs-behavior deviations — a wrong launch directory in VERIFY.md, a
+  first-request `undefined` CSRF token (cookie set on the same response), a
+  wrong form-field name (`_csrf` vs `CSRF_token`), a header-only `/upload2`
+  claim (both header and form field required), a cert-error fast-fail on
+  `/timeout`, a `404 File not found.` body prefix, and a real path-traversal
+  quirk (`/file/../package.json` serves repo-root `package.json` when launched
+  from root). The map was wrong, not the product — the loop caught doc drift.
+- **Run 2 (corrected docs):** 15/15 routes passed, zero deviations, negative
+  controls confirmed (403 without token, traversal reproduced as documented).
+
+The pilot's own success criteria held: a fresh agent completed the journeys
+independently, distinguished doc drift from product behavior, preserved
+evidence, and cleaned up. The traversal quirk is a product finding the map now
+records rather than hides. This is one product, one agent, one pass — it does
+not yet measure acceptance rate, operator time, or escaped regressions at
+scale; the PS2-7 protocol remains the design for that.
 
 ## Falsifiability
 
