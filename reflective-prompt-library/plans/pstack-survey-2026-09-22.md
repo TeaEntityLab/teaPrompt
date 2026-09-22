@@ -127,6 +127,51 @@ The smallest useful next experiment is a named product's control interface and m
 
 Competing perspectives: throughput favors reusable tools; maintainability favors constrained architecture; agent ergonomics favors maps and clear errors; safety requires independent authority and honest unknowns. Blind spots remain the private Dune runtime, full Cursor/cloud integration, transcript authenticity and independently measured quality/productivity.
 
+### Practical pilot: one user journey, not a whole-product harness
+
+Recorded by user direction after clarification of PS-C1. This is an illustrative,
+unexecuted experiment proposal, not evidence of local recurrence or permission to
+implement it.
+
+Start in a concrete product repository with one meaningful user journey. For a
+task-list app, an example is: create a task through the UI, reload, and confirm the
+task persists exactly once. This small journey exercises both interaction and
+persistence; a screenshot immediately after creation would miss a persistence bug.
+
+Keep two assets distinct:
+
+| Asset | Question answered | Minimum useful content |
+| --- | --- | --- |
+| Control tools | How can the agent perform the operation reliably? | Launch/readiness, existing browser or API operations, observable completion, evidence capture, cleanup of this run's data |
+| Feature Map | Where is the feature, and what should be observed? | Preconditions, user-facing entry point, operation recipe, requirement-derived success/failure observations, known timing or state pitfalls |
+
+Reuse existing browser automation, test utilities, or host tools first. A new CLI
+is not required. Wrap only repeated or unreliable steps that justify the extra
+maintenance. Wait for an observable completion condition rather than an arbitrary
+delay. Use isolated test accounts/data and keep evidence after cleanup.
+
+The map describes navigation and verification, not the whole source architecture.
+Its success criteria come from product requirements; observed current behavior is
+not automatically the oracle. A broken implementation must not become “correct”
+because the agent rewrites the map to describe it.
+
+Try the journey with a fresh agent that has no prior conversation, using the tools
+and map as its product-specific context. Check whether it can:
+
+- Complete the journey without the operator supplying missing navigation steps.
+- Detect a seeded failure such as a task disappearing after reload.
+- Distinguish a product regression from expired authentication or a broken driver.
+- Preserve evidence and clean up only the resources the run created.
+
+Success means independent operation and reliable discrimination between success
+and failure, not a count of generated skill files. Compare operator intervention
+and accepted outcomes against the existing approach before expanding coverage.
+Failure to improve those outcomes is a reason to revise or stop the pilot.
+
+These assets belong with the product whose startup, authentication, navigation and
+behavior they describe. TeaPrompt supplies reusable methodology; it does not need
+to become that product's control harness.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.

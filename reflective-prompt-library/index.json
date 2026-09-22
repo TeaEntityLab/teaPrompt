@@ -13329,6 +13329,10 @@
           "text": "Evidence vs Inference"
         },
         {
+          "level": 3,
+          "text": "Practical pilot: one user journey, not a whole-product harness"
+        },
+        {
           "level": 2,
           "text": "Falsifiability"
         },
@@ -13341,8 +13345,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 158,
-      "char_count": 15953
+      "line_count": 203,
+      "char_count": 18616
     }
   ],
   "skills": [
