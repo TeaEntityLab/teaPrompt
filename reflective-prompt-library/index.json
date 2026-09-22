@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-22T22:58:21.522471",
+  "generated_at": "2026-09-22T23:18:37.784644",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -54,6 +54,7 @@
             "routing-holdout-plan-2026-07-11.md",
             "astra-efficiency-rules-survey-2026-09-10.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
+            "hotline-verification-redundancy-survey-2026-09-22.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
             "dream-rsi-survey-2026-09-18.md",
             "flow-control-roadmap-2026-07-11.md",
@@ -2839,6 +2840,60 @@
       ],
       "line_count": 354,
       "char_count": 16382
+    },
+    {
+      "path": "reflective-prompt-library/plans/hotline-verification-redundancy-survey-2026-09-22.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "hotline-verification-redundancy-survey-2026-09-22",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Hotline Verification-Redundancy Survey — 2026-09-22"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-22)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Verification and scope"
+        },
+        {
+          "level": 2,
+          "text": "Primary source map"
+        }
+      ],
+      "line_count": 146,
+      "char_count": 10438
     },
     {
       "path": "reflective-prompt-library/plans/knowie-project-knowledge-reflection-2026-06-17.md",
@@ -6599,8 +6654,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 323,
-      "char_count": 65720
+      "line_count": 324,
+      "char_count": 66871
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -15339,5 +15394,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 170
+  "total_files": 171
 }
