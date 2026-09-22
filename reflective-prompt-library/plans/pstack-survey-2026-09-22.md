@@ -209,6 +209,28 @@ records rather than hides. This is one product, one agent, one pass — it does
 not yet measure acceptance rate, operator time, or escaped regressions at
 scale; the PS2-7 protocol remains the design for that.
 
+### Discrimination and A/B addendum (2026-09-22, same day)
+
+Two further experiments on the same product:
+
+- **Failure discrimination (seeded):** a fresh agent on a broken copy
+  (`/heartbeat` → `pong`) reported FAIL and classified it **product
+  regression**; a second fresh agent on the healthy product with a stale map
+  (claiming `pong`) classified it **doc drift**, citing the source
+  (`redirect('/heartbeat')` → `ok`), the map's self-contradiction, and the
+  repo's correct copy. Both classifications correct — the three-way split
+  (product / doc / harness) held under seeded adversarial conditions.
+- **Mini A/B (docs vs no docs):** two fresh agents verified the identical
+  healthy product. With docs: 19/19 PASS, zero deviations, 4m08s. Without
+  docs: 26/26 PASS, 5m58s — all routes still found by reading source, but the
+  agent had to reverse-engineer the CSRF dual-token requirement and discovered
+  two undocumented quirks the map then absorbed (`redirect()` is internal
+  re-dispatch, not HTTP 302; every request without a CSRF cookie gets
+  `Set-Cookie` globally). Docs did not change correctness on a healthy
+  product; they changed time-to-verify and removed the need for source
+  archaeology. On a broken product the map is what makes the regression
+  visible.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.

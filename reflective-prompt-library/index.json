@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-22T23:58:00.589593",
+  "generated_at": "2026-09-23T00:18:16.998024",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4351,6 +4351,10 @@
           "text": "Pilot execution addendum (2026-09-22)"
         },
         {
+          "level": 3,
+          "text": "Discrimination and A/B addendum (2026-09-22, same day)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability"
         },
@@ -4363,8 +4367,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 240,
-      "char_count": 20954
+      "line_count": 262,
+      "char_count": 22236
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
