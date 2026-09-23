@@ -271,6 +271,26 @@ outranked the stale map (C×S3) and was itself correctly indicted when wrong
 (C×S4). Effective-throughput and operator-time metrics remain unmeasured —
 single product, single model, single pass per cell.
 
+### Second product: fpGo (2026-09-23)
+
+User directed the same experiment at `TeaEntityLab/fpGo` (generics branch) —
+a Go *library*, not a server. The control surface changed shape: `go test
+-mod=mod` + scratch drivers via `replace` directives replace curl; the
+product's own 1013-test suite is the primary oracle, so the map's job shifts
+from defining expected behavior to routing features → `-run` regexes and
+capturing environment quirks (the stale `vendor/` requiring `-mod=mod` was
+documented and handled cleanly by the agent).
+
+| Arm | Result | Classification |
+| --- | --- | --- |
+| Baseline (healthy + docs) | 1013/1013 PASS, 1m42s | — |
+| Broken — **unlabeled** `Distinct` returns receiver | FAIL `distinct-dedupes` + collections feature | **product regression** — named `stream.go` Distinct, listed TestStreamDistinct/TestFilter/TestStreamSetOperation |
+| Wrong spec (`Just(nil).IsPresent()==true`) | FAIL `just-nil-is-present` | **spec-oracle error** — cited `maybe.go` lines + core.md + existing tests |
+
+The unlabeled seeded bug was caught — the wsgiLite self-labeled-bug caveat
+does not repeat. Second-product adoption of the pattern is confirmed; the
+review trigger in PROJECT_KNOWLEDGE's verification-map lesson has fired.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.
