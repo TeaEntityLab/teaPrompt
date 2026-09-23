@@ -144,6 +144,21 @@ with zero deviations. PS2-7's full A/B/C protocol remains unexecuted; this was
 a single-product, single-agent smoke of the control+map assets, not the
 controlled experiment.
 
+### Authorization addendum (2026-09-23)
+
+User authorized all four open items ("yes for all"):
+
+- **PS-C1 full pilot**: executed on `TeaEntityLab/wsgiLite.js` — see the
+  arm×scenario matrix in `pstack-survey-2026-09-22.md` §Discrimination and
+  A/B addendum.
+- **PS2-4 durable execution**: authorized as a direction. It remains a host
+  runtime capability — nothing in this repository can implement it; recorded
+  as the accepted answer to "who owns persistence/spawn/cancellation".
+- **PS2-8 Gardener**: closed as absent — not found in the pinned pstack tree
+  (repo grep) nor in public pstack documentation (web search 2026-09-22).
+  The paste's claim is recorded as unverifiable, not adopted.
+- **wsgiLite.js pilot assets**: pushed to `origin/master` (`a8b8521`).
+
 ## Falsifiability
 
 The record's central assessment — that the paste's governance controls are

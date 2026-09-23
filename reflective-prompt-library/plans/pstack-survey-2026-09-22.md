@@ -244,6 +244,33 @@ weakening, repeated failure, unvetted skill promotion, clean delivery,
 effective throughput) require a named product and explicit authorization for
 the full A/B/C protocol.
 
+### Full arm×scenario matrix (2026-09-23)
+
+User authorized the full pilot ("yes for all"). Ten fresh-agent runs on
+wsgiLite.js demo copies; seeded bug = `/heartbeat` → `pong` (self-labeled
+`// SEEDED BUG` in source — no-docs detection is assisted by the label, a
+known limitation):
+
+| Cell | Product | Docs | Locked spec | Result |
+| --- | --- | --- | --- | --- |
+| A×S1 | healthy | none | none | 26/26 PASS, 5m58s |
+| A×S2 | broken | none | none | FAIL heartbeat+heartbeat2 → **product regression**; `/timeout` → **harness failure** (external TLS outage) |
+| A×S4 | broken | none | correct | FAIL heartbeat+heartbeat2 → **product regression** |
+| B×S1 | healthy | map | none | 19/19 PASS, 4m08s |
+| B×S2 | broken | map | none | FAIL → **product regression** |
+| B×S3 | healthy | stale map | none | **doc drift** classified |
+| C×S1 | healthy | map | correct | 23/23 PASS, 2m49s — fastest arm |
+| C×S2 | broken | map | correct | FAIL heartbeat+heartbeat2 → **product regression** |
+| C×S3 | healthy | stale map | correct | PASS + **doc drift** flagged; spec corroborated product over map |
+| C×S4 | healthy | map | wrong (`pong`) | FAIL → **spec/oracle error**, not product regression |
+
+All four failure classes demonstrated under seeded adversarial conditions:
+product regression, doc drift, spec/oracle error, harness failure. Correct
+spec + map was the fastest arm; the spec acted as a second oracle that
+outranked the stale map (C×S3) and was itself correctly indicted when wrong
+(C×S4). Effective-throughput and operator-time metrics remain unmeasured —
+single product, single model, single pass per cell.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.
