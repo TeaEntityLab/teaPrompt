@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T08:39:45.864638",
+  "generated_at": "2026-09-23T08:42:24.202576",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -14907,8 +14907,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 209,
-      "char_count": 13707
+      "line_count": 211,
+      "char_count": 14367
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",

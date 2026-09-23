@@ -118,6 +118,11 @@ deferred promotions are recurrence-gated — see [panel backlog](plans/multi-age
 - Evidence: [plans/governance-workflow-self-control-adoption-2026-09-14.md](plans/governance-workflow-self-control-adoption-2026-09-14.md) (GW-1 rounds 1–2c; S1, S2: three regressions reproduced by an independent lens; per-step pre-tune figures bound to fixture and router revisions), [plans/ROUTING_CONTRACT.md](plans/ROUTING_CONTRACT.md) R11
 - Review trigger: any router keyword or context change; before tuning, fixture-back one adversarial group per *other* workflow that can use the token, and record every probed phrase — a phrase that fails is fixture-backed or written down with its reason, never swapped for one that passes.
 
+### Lesson: A verification map's value is regression visibility and time-to-verify, not correctness
+- Pattern: on a healthy product a fresh agent verified every route with or without docs (26/26 vs 19/19); the map's value appeared only on broken or drifting products — it is what makes a regression classifiable. A locked acceptance spec adds a second, independent oracle: it outranked a stale map (doc drift correctly indicted) and was itself correctly indicted when wrong (spec/oracle error, not product regression). Four failure classes need four repairs — product regression, doc/map drift, spec/oracle error, harness failure — now in reflective-implement's Verification section. Seeded bugs for such probes must be unlabeled: a `// SEEDED BUG` comment let the no-docs arm detect the regression from source alone, weakening the measurement.
+- Evidence: [plans/pstack-survey-2026-09-22.md](plans/pstack-survey-2026-09-22.md) (full arm×scenario matrix, 10 fresh-agent runs on wsgiLite.js)
+- Review trigger: a second product adopts the VERIFY.md + features/ + locked-spec pattern, or repeated demand for the recipe — then reconsider a domain-pack doc; if a run shows the four-way classification misrouting repairs, revisit the reflective-implement wording.
+
 ## Decision Index
 
 > Pointers to the causal trail — plans, reflections, tests, commits. Detail is
