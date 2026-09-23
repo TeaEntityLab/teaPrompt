@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T10:46:03.819472",
+  "generated_at": "2026-09-23T11:48:11.778645",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -53,6 +53,7 @@
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
             "astra-efficiency-rules-survey-2026-09-10.md",
+            "handover-docs-survey-2026-09-23.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
             "hotline-verification-redundancy-survey-2026-09-22.md",
             "knowie-project-knowledge-reflection-2026-06-17.md",
@@ -2732,6 +2733,64 @@
       ],
       "line_count": 128,
       "char_count": 34381
+    },
+    {
+      "path": "reflective-prompt-library/plans/handover-docs-survey-2026-09-23.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "handover-docs-survey-2026-09-23",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Handover-Docs Methodology Survey — 2026-09-23"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-23)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 73,
+      "char_count": 7455
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -15547,5 +15606,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 173
+  "total_files": 174
 }
