@@ -115,6 +115,26 @@ def main() -> int:
             if pack not in surface_text:
                 errors.append(f"{surface}: does not name pack {pack!r}")
 
+    # Cardinality self-check: the lists above iterate themselves, so a registry
+    # shrink (a dropped entry) passes silently unless asserted. Nine core is the
+    # frozen invariant; five packs is the current registered cardinality — a
+    # legitimate pack admission updates the list AND this pin in one change.
+    if len(CORE_SKILLS) != 9:
+        errors.append(
+            f"CORE_SKILLS has {len(CORE_SKILLS)} entries, expected 9 "
+            "(frozen nine; a tenth core skill needs the promotion gate)"
+        )
+    if len(set(CORE_SKILLS)) != len(CORE_SKILLS):
+        errors.append("CORE_SKILLS contains duplicates")
+    if len(DOMAIN_PACK_SKILLS) != 5:
+        errors.append(
+            f"DOMAIN_PACK_SKILLS has {len(DOMAIN_PACK_SKILLS)} entries, "
+            "expected 5 (update this pin in the same change as a pack "
+            "admission or demotion)"
+        )
+    if len(set(DOMAIN_PACK_SKILLS)) != len(DOMAIN_PACK_SKILLS):
+        errors.append("DOMAIN_PACK_SKILLS contains duplicates")
+
 
 
     if errors:

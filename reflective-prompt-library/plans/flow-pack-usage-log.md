@@ -34,6 +34,7 @@ themselves):
 | — | `agent-governance-scaffold` | — | — | Zero-state recorded 2026-09-14: no real invocation on record since pack adoption (2026-07-17). |
 | — | `governed-delivery` | — | — | Zero-state recorded 2026-09-14: no real invocation on record since pack adoption (2026-09-03); the 2026-10-11 checkpoint reads this row — absence stays `unknown`, and demotion is a policy consequence of missing evidence. |
 | 2026-09-23 | `verification-map-generator` | omp task agents | Four-product verification-map generation (wsgiLite.js, fpGo, fpEs, fpRust) | Adopted same-day: pattern generated VERIFY.md + features/ + locked spec on four products; fresh-agent arms classified product regression, doc drift, spec-oracle error correctly; evidence in `plans/pstack-survey-2026-09-22.md`. |
+| 2026-09-23 | `verification-map-generator` | teaPrompt self-application (dogfooding) | Verification map for this repo's own gate suite | Generated `VERIFY.md` + `features/` (4 areas: test suite, validators, route evals, registry cardinality) + locked `acceptance.yaml` at repo root; fresh-agent sweep + seeded-bug classification run same-day; evidence in commit and sweep report. |
 
 ## Template maintenance (not invocations)
 

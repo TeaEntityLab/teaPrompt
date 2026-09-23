@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T12:12:45.832661",
+  "generated_at": "2026-09-23T22:43:12.800358",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -11087,8 +11087,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 58,
-      "char_count": 3620
+      "line_count": 59,
+      "char_count": 4003
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",

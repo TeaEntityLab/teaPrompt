@@ -2,6 +2,10 @@
 
 Date: 2026-07-11
 
+> **Historical record.** This report covers the 2026-07-11 session only. It is
+> not current project state — for live verification status see `VERIFY.md` and
+> `features/` at the repo root (generated 2026-09-23).
+
 ## Summary
 
 Completed the documentation/test pass, then executed every remaining fix that
