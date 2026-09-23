@@ -30,6 +30,14 @@ CORE_SKILLS = [
 # plans/flow-control-pack-panel-record-2026-07-11.md,
 # plans/agent-governance-scaffold-adoption-2026-07-17.md, and
 # plans/governed-delivery-adoption-2026-09-03.md before extending.
+# Admission checklist for a new pack (each is a guarded surface — the 2026-09-23
+# verification-map-generator registration touched all of them):
+#   SKILL.md + skills/examples/<name>.examples.md; this registry;
+#   skills/skill-map.md pack table; SKILL_TRIGGER_CHEATSHEET.md + .zh-TW.md
+#   appendices; SKILL_INSTALLATION.md install_domain_packs_{copy,symlink} loops;
+#   plans/flow-pack-usage-log.md row; cardinality pins in
+#   test_ga_skills_coverage_panel_record.py and
+#   test_installed_skills_general_lessons_record.py.
 DOMAIN_PACK_SKILLS = [
     "flow-control-generator",
     "flow-loop-harness",

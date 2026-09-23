@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T09:08:15.668627",
+  "generated_at": "2026-09-23T10:06:40.785673",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -14698,7 +14698,7 @@
         }
       ],
       "line_count": 95,
-      "char_count": 6853
+      "char_count": 7049
     },
     {
       "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",
