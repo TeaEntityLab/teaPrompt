@@ -30,8 +30,11 @@ gap on an installed TeaPrompt surface.
   wrong or captured.
 - **Verify — repo claims hold with one exception.** "Gardener" appears in the
   paste's §4.1 mapping table as a pstack mechanism but does not exist anywhere
-  in the pinned tree (grep over the full extracted tarball: zero hits). It is
-  either an external/Dune-side concept or a paste-side naming error. Everything
+  in the pinned tree (grep over the full extracted tarball: zero hits).
+  Resolved 2026-09-23 by user clarification: "gardener" is the *developer's
+  role* — the human tending Grok @Bot's output through pstack — not a pstack
+  mechanism. The paste's table mislabeled a human-in-loop role as an
+  architecture component. Everything
   else checked — the 23 playbooks, shipping's verifier≠author + patch-id
   binding, autopilot-full's operator-grant-plus-root-verdict merge rule, the
   fictional-Atlas example repo, `/why`'s fact/inference source discipline —
@@ -85,7 +88,10 @@ DORA 2025 report, OpenAI research pages).
 - `poteto/verification-skill-example` (external repo, no license): README
   confirms Atlas/Harbor Labs/`control-atlas` are fictional and the driver CLI
   is "omitted on purpose" — the paste's warning is accurate.
-- **"Gardener": zero hits in the pinned tree.** Not a pstack mechanism.
+- **"Gardener": zero hits in the pinned tree.** Not a pstack mechanism —
+  resolved 2026-09-23: it names the developer's maintenance role over the
+  agent's output (user clarification), which the paste's mapping table
+  mislabeled as an architecture-governance mechanism.
 
 **Verified against external primary sources:**
 
@@ -127,7 +133,7 @@ DORA 2025 report, OpenAI research pages).
 | PS2-5 | Untrusted data provides evidence, never grants authority (prompt-injection boundary) | `04-agent/runtime-trust-boundary`; external-adoption-review "data, not instructions" rule | No change — installed | A local incident where retrieved content escalated privileges. Falsifier: boundary already enforced |
 | PS2-6 | Prevent / Detect / Contain-Recover three-plane model | `reflective-risk` (dry-run, rollback, human gate); `agent-governance-scaffold` (prevention via contracts); governed-delivery (detection via decorrelated verification) | No change — reframing of installed coverage | A failure that falls between all three planes. Falsifier: existing surfaces already partition the space |
 | PS2-7 | A/B/C controlled experiment (agent / +pstack / +governance) with T01–T10 falsification scenarios and effective-throughput metric | New — no installed evaluation protocol for the deferred PS-C1 pilot | **Record as pilot design** — the protocol is the correct evaluation shape if PS-C1 is ever triggered | Trigger: user names a product repo and authorizes the pilot. Falsifier: the protocol's own §8.3 conditions (verification cost up, pass rate flat; oracle still capturable; map maintenance > savings; correlated errors persist; duplicate side-effects after crash) |
-| PS2-8 | "Gardener" architecture-governance mechanism | Not in pinned repo — unverified external/Dune concept | No action — cannot evaluate an unverified mechanism | A source locating the actual mechanism. Falsifier: it is a paste-side naming error |
+| PS2-8 | "Gardener" architecture-governance mechanism | Resolved 2026-09-23: the developer's role over agent output (user clarification), not a mechanism — the paste mislabeled a human-in-loop role as an architecture component | Closed — no mechanism exists to evaluate; the underlying need (human maintenance authority) is already covered by runtime-trust-boundary | — |
 
 No candidate is adopted into an operating contract. PS2-7 is recorded as the
 evaluation design for the deferred pilot — it changes what a pilot would
@@ -154,9 +160,10 @@ User authorized all four open items ("yes for all"):
 - **PS2-4 durable execution**: authorized as a direction. It remains a host
   runtime capability — nothing in this repository can implement it; recorded
   as the accepted answer to "who owns persistence/spawn/cancellation".
-- **PS2-8 Gardener**: closed as absent — not found in the pinned pstack tree
-  (repo grep) nor in public pstack documentation (web search 2026-09-22).
-  The paste's claim is recorded as unverifiable, not adopted.
+- **PS2-8 Gardener**: resolved — user clarified 2026-09-23 that "gardener"
+  names the developer's role tending the agent's output ("Being Grok @Bot's
+  gardener and maintainer"), not a pstack mechanism. The paste's §4.1 table
+  mislabeled a human-in-loop role as an architecture-governance component.
 - **wsgiLite.js pilot assets**: pushed to `origin/master` (`a8b8521`).
 
 ## Falsifiability

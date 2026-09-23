@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T08:34:10.524556",
+  "generated_at": "2026-09-23T08:39:45.864638",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6785,8 +6785,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 193,
-      "char_count": 13727
+      "line_count": 200,
+      "char_count": 14310
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3.2-delta-survey-2026-09-22.md",

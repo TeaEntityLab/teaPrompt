@@ -51,7 +51,7 @@ CANDIDATE_STATUS = {
     "PS2-5": "No change — installed",
     "PS2-6": "No change — reframing of installed coverage",
     "PS2-7": "**Record as pilot design** — the protocol is the correct evaluation shape if PS-C1 is ever triggered",
-    "PS2-8": "No action — cannot evaluate an unverified mechanism",
+    "PS2-8": "Closed — no mechanism exists to evaluate; the underlying need (human maintenance authority) is already covered by runtime-trust-boundary",
 }
 
 # Survey-specific vocabulary — grep-verified absent from installed surfaces this
