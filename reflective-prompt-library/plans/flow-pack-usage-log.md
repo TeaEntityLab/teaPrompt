@@ -1,7 +1,7 @@
 # Flow-Pack Usage Log
 
 > **Status: living evidence ledger (non-authoritative).** Manual invocation log
-> for every registered domain pack (`DOMAIN_PACK_SKILLS`: four since 2026-09-03;
+> for every registered domain pack (`DOMAIN_PACK_SKILLS`: five since 2026-09-23;
 > scope widened 2026-09-14 so the `governed-delivery` recurrence checkpoint reads
 > the same ledger), established 2026-07-11 per
 > [necessity record N11](governance-necessity-panel-record-2026-07-11.md) and

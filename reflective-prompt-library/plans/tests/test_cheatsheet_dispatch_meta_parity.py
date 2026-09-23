@@ -28,6 +28,14 @@ def en_cheatsheet_text() -> str:
 def zh_cheatsheet_text() -> str:
     assert ZH_CHEATSHEET.is_file(), f"missing {ZH_CHEATSHEET}"
     return ZH_CHEATSHEET.read_text(encoding="utf-8")
+# zh-TW cheatsheet cues are zh-native — the 2026-09-23 constraint review
+# stopped embedding verbatim English fixture phrases (the eval's answer
+# key) into the production routing surface.
+ZH_NATIVE_EQUIVALENTS = {
+    "which reflective workflow skill fits a routing-only mixed intent": "純路由的混合意圖適合哪個 reflective workflow skill",
+    "which reflective workflow skill should handle routing-only mixed intent": "純路由的混合意圖該由哪個 reflective workflow skill 處理",
+}
+
 
 
 @pytest.mark.parametrize("cue", DISPATCH_META_SKILL_TRAP_PROBES)
@@ -38,5 +46,6 @@ def test_dispatch_meta_cues_present_in_english_cheatsheet(en_cheatsheet_text: st
 
 @pytest.mark.parametrize("cue", DISPATCH_META_SKILL_TRAP_PROBES)
 def test_dispatch_meta_cues_present_in_zh_tw_cheatsheet(zh_cheatsheet_text: str, cue: str):
+    expected = ZH_NATIVE_EQUIVALENTS.get(cue, cue)
     haystack = zh_cheatsheet_text.lower()
-    assert cue.lower() in haystack, f"zh-TW cheatsheet missing dispatch-meta cue: {cue!r}"
+    assert expected.lower() in haystack, f"zh-TW cheatsheet missing dispatch-meta cue: {expected!r}"

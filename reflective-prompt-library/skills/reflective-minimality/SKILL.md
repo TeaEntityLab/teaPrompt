@@ -1,6 +1,6 @@
 ---
 name: reflective-minimality
-description: Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild.
+description: Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, for a complexity audit or intentional-shortcut debt ledger, or when an agent may overbuild.
 license: MIT
 metadata:
   risk_level: low

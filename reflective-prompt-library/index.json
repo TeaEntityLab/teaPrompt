@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T11:48:11.778645",
+  "generated_at": "2026-09-23T12:12:45.832661",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6386,8 +6386,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 425,
-      "char_count": 25554
+      "line_count": 426,
+      "char_count": 25551
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -13159,8 +13159,6 @@
           "SKILL_TRIGGER_CHEATSHEET.md",
           "SKILL_TRIGGER_CHEATSHEET.md",
           "../LANGUAGE_POLICY.md",
-          "SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing",
-          "SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing",
           "skill-map.md#registered-domain-packs-not-core-routing",
           "../GLOSSARY.md"
         ]
@@ -13216,7 +13214,7 @@
         }
       ],
       "line_count": 236,
-      "char_count": 7821
+      "char_count": 7055
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -13917,11 +13915,11 @@
       "category": "skills",
       "subcategory": "reflective-minimality",
       "name": "reflective-minimality",
-      "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild.",
+      "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, for a complexity audit or intentional-shortcut debt ledger, or when an agent may overbuild.",
       "license": "MIT",
       "frontmatter": {
         "name": "reflective-minimality",
-        "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, or when an agent may overbuild.",
+        "description": "Use this as a Minimality Gate or anti-bloat review before implementation, during refactoring, for a complexity audit or intentional-shortcut debt ledger, or when an agent may overbuild.",
         "license": "MIT",
         "metadata": "",
         "risk_level": "low",
@@ -13979,7 +13977,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 7730
+      "char_count": 7790
     },
     {
       "path": "reflective-prompt-library/skills/agent-governance-scaffold/SKILL.md",
@@ -15058,11 +15056,11 @@
       "category": "skills",
       "subcategory": "reflective-handoff-retro",
       "name": "reflective-handoff-retro",
-      "description": "Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
+      "description": "Use this when a task needs context handoff, session transfer, context compaction, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
       "license": "MIT",
       "frontmatter": {
         "name": "reflective-handoff-retro",
-        "description": "Use this when a task needs context handoff, session transfer, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
+        "description": "Use this when a task needs context handoff, session transfer, context compaction, retrospective, reusable memory, process learning, or conversion of repeated experience into rules, checklists, skills, scripts, or tests.",
         "license": "MIT",
         "metadata": "",
         "risk_level": "low",
@@ -15243,7 +15241,7 @@
         }
       ],
       "line_count": 170,
-      "char_count": 7780
+      "char_count": 7800
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",

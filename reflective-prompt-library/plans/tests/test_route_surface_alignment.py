@@ -26,11 +26,11 @@ DESCRIPTION_SCOPE_TERMS = {
     "reflective-brief": ("falsifiability", "next step"),
     "reflective-spec-plan": ("no-code", "stateful", "resumable workflow"),
     "reflective-implement": ("coding", "content edits"),
-    "reflective-minimality": ("overbuild", "anti-bloat"),
+    "reflective-minimality": ("overbuild", "anti-bloat", "complexity audit", "debt ledger"),
     "reflective-review": ("diffs", "specs", "ai outputs", "decisions"),
     "reflective-research": ("deepwiki", "synthesis", "platform comparison"),
     "reflective-risk": ("deletion", "dry-run", "financial", "legal", "medical"),
-    "reflective-handoff-retro": ("checklists", "session transfer"),
+    "reflective-handoff-retro": ("checklists", "session transfer", "context compaction"),
     "reflective-dispatch": ("convert prompts", "prompt library"),
 }
 
@@ -64,12 +64,12 @@ def test_description_scope_terms_exist_in_keyword_table():
 
 def test_scope_terms_still_appear_in_descriptions():
     # Reverse direction: a term removed from the description must not linger
-    # as a stale requirement here.
+    # as a stale requirement here. Full-term match — a first-word stem is
+    # nearly vacuous ("ai" survives inside "domain"/"email").
     for workflow, terms in DESCRIPTION_SCOPE_TERMS.items():
         desc = _description(workflow)
         for term in terms:
-            stem = term.split()[0].rstrip("s")
-            assert stem in desc, (
+            assert term in desc, (
                 f"{workflow}: pinned scope term {term!r} no longer appears in "
                 "the SKILL.md description — update DESCRIPTION_SCOPE_TERMS"
             )

@@ -25,6 +25,7 @@ reflective-prompt-library/skills/
   flow-loop-harness/
   agent-governance-scaffold/
   governed-delivery/
+  verification-map-generator/
 ```
 
 **Harness policy:** Nine frozen **core** workflow skills with strictness-first routing; registered domain packs are opt-in and remain outside core routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills), [skills/skill-map.md](skills/skill-map.md#registered-domain-packs-not-core-routing), and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
@@ -75,15 +76,16 @@ flow-control-generator
 flow-loop-harness
 agent-governance-scaffold
 governed-delivery
+verification-map-generator
 ```
 
 Use the core helpers for the default install. Afterward, call the matching
 `install_domain_packs_*` helper with the same destination only when those
 host-invoked generator packs (flow scripts, loop harnesses, governance
-scaffolding) are wanted.
+scaffolding, verification maps) are wanted.
 
 Invocation-mode note (context-load control): on hosts that support user-invoked
-skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the four
+skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the five
 domain packs may be installed user-invoked so their long descriptions stop loading
 into every turn's context — they are host-invoked contracts, not
 `reflective-dispatch` routes, so core routing never depends on their

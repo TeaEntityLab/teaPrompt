@@ -222,6 +222,7 @@ class ParaphraseRouter:
                 "wrapper", "abstraction", "factory", "unnecessary complexity",
                 "avoid writing", "avoid overengineering", "complexity-only",
                 "ceiling", "upgrade trigger", "overbuild", "anti-bloat",
+                "complexity audit", "debt ledger",
                 "最小化", "過度工程", "刪減", "少寫"
             ],
             "reflective-review": [
@@ -249,6 +250,7 @@ class ParaphraseRouter:
                 "handoff", "retro", "retrospective", "memory", "context",
                 "consolidation", "transfer", "continue later", "session summary",
                 "lessons", "reusable rules", "checklists", "session transfer",
+                "context compaction",
                 "交接", "回顧", "摘要", "教訓"
             ],
             "reflective-dispatch": [

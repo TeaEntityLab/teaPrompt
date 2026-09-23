@@ -4,12 +4,12 @@ Language: [English](SKILL_TRIGGER_CHEATSHEET.md) | 繁體中文
 
 # Skill 觸發口訣（速查版）
 
-這份是 9 個 **core** workflow skills 的一頁式選用指南；可選的 host-invoked domain packs 另見[英文版](SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing)。
+這份是 9 個 **core** workflow skills 的一頁式選用指南；可選的 host-invoked domain packs 見下方[領域包](#領域包host-直接呼叫不屬於核心路由)一節。
 
 > **輸出慣例**：精簡的交付規格應放在 Module Contract 的 `Output:` 欄位。僅當 skill 產生實質的輸出範本（例如 markdown 區塊、多欄位結構）時，才額外加入獨立的 `## Output` 區段。具有程序步驟（before/during/after）的 skill 通常不需要獨立的 Output 區段。
 
 Skill 契約語言：
-- 九個 core `skills/reflective-*/SKILL.md` 以**英文**為權威；registered domain packs 不屬於 core 分流。完整 domain-pack 契約與選用提示見[英文版](SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing)及 [skill-map.md](skill-map.md#registered-domain-packs-not-core-routing)；本繁中 cheatsheet 與 [GLOSSARY.md](../GLOSSARY.md) 供 L1–L2 分流與成本決策，不取代完整 skill 契約。
+- 九個 core `skills/reflective-*/SKILL.md` 以**英文**為權威；registered domain packs 不屬於 core 分流。完整 domain-pack 契約見各 pack 的 `SKILL.md` 與 [skill-map.md](skill-map.md#registered-domain-packs-not-core-routing)；本繁中 cheatsheet 與 [GLOSSARY.md](../GLOSSARY.md) 供 L1–L2 分流與成本決策，不取代完整 skill 契約。
 
 分流公平性說明：
 - 各 skill frontmatter 含 `context_load: low|medium|high`，供成本敏感分流。
@@ -42,11 +42,11 @@ Skill 契約語言：
 - 任務混合規劃、實作、風險
 - 任務包含外部資料、工具結果或行動權限問題
 
-- 「Which skill handles session handoff in this library？」
-- 「Which workflow skill should run for this library task？」
-- 「Which reflective workflow skill covers handoff retro？」
-- 「Which reflective workflow skill fits a routing-only mixed intent？」
-- 「Which reflective workflow skill should handle routing-only mixed intent？」
+- 「這個函式庫的 session handoff 由哪個 skill 處理？」
+- 「這個函式庫任務該由哪個 workflow skill 執行？」
+- 「handoff retro 由哪個 reflective workflow skill 涵蓋？」
+- 「純路由的混合意圖適合哪個 reflective workflow skill？」
+- 「純路由的混合意圖該由哪個 reflective workflow skill 處理？」
 
 不要用在：
 
@@ -65,9 +65,9 @@ L1 快速路徑：
 - 需要先釐清 goal、scope、assumptions、acceptance criteria。
 - 規劃前需要定義 failure conditions 與 falsifiability。
 
-- 「Narrow scope and assumptions before writing the PRD。」
-- 「Stakeholder alignment before choosing architecture。」
-- 「Align stakeholders on goals before writing tickets。」
+- 「寫 PRD 前先收斂範圍與假設。」
+- 「選架構前先對齊 stakeholder。」
+- 「寫工單前先對齊 stakeholder 目標。」
 - 「釐清目標再拆工單。」
 
 不要用在：
@@ -87,13 +87,13 @@ L1 快速路徑：
 - 「規劃已核准 spec，但不要更動 repo。」
 - 「從已核准 spec 草擬 rollout plan，但不要編輯 repo。」
 
-- 「Write tickets and acceptance criteria without touching the repo。」
-- 「Compare two API designs on paper only no implementation。」
-- 「Compare API designs on paper without touching the repository。」
-- 「Compare API design options on paper without touching the repository。」
+- 「寫 tickets 與驗收條件，但不要動 repo。」
+- 「只在紙上比較兩個 API 設計，不要實作。」
+- 「在紙上比較 API 設計，不要動 repository。」
+- 「在紙上比較 API 設計選項，不要動 repository。」
 - 「比較兩個 API 設計方案但不要寫 code。」
 - 「把規格寫出來但不要改程式。」
-- 「Design a handoff workflow specification without runtime code。」
+- 「設計 handoff workflow 規格，但不要寫 runtime code。」
 - 「把這個 idea break down into tickets with acceptance criteria。」
 
 不要用在：
@@ -112,11 +112,11 @@ L1 快速路徑：
 - 「落地已核准規格到 codebase。」
 - 「用驗收標準與測試重構或除錯。」
 - 「交付最小安全修補並附驗證。」
-- 「Patch the trivial null check in code。」
+- 「在程式裡修補這個 trivial null check。」
 - 「幫我 patch 這個 trivial null check and run tests。」
-- 「Automate the recurring manual release check as a deterministic test in the repo。」
-- 「Keep working until every test in test/auth passes。」
-- 「Write a bash loop that reruns the agent until the verifier passes。」
+- 「把重複的人工 release 檢查自動化成 repo 裡的確定性測試。」
+- 「持續修到 test/auth 的每個測試都通過。」
+- 「寫一個 bash 迴圈，重跑 agent 直到 verifier 通過。」
 - 「持續修到整個測試套件全綠為止。」
 
 何時用：
@@ -141,8 +141,8 @@ Minimality 訊號掃描（skill 內建）：
 - 實作前需要 YAGNI / minimality / Ponytail-style gate
 - 只想從 diff 裡找可刪的複雜度
 
-- 「What dependencies can we remove from this module？」
-- 「Dependency removal review for this module。」
+- 「這個 module 可以移除哪些 dependency？」
+- 「審查這個 module 的 dependency 移除。」
 
 不要用在：
 
@@ -158,10 +158,10 @@ Minimality 訊號掃描（skill 內建）：
 - 要找出風險、regression、缺漏測試與證據品質問題
 - 要檢查外部內容是否被當成資料而不是指令
 
-- 「Review the README for clarity not security。」
-- 「Check the diff for readability not production deploy。」
+- 「審查 README 的清晰度，不是安全性。」
+- 「檢查 diff 的可讀性，不是 production 部署。」
 - 「審查 README 清晰度不是安全風險。」
-- 「Inspect this patch for regressions before merge。」
+- 「merge 前檢查這個 patch 有沒有 regression。」
 
 不要用在：
 
@@ -177,8 +177,8 @@ Minimality 訊號掃描（skill 內建）：
 - 要判斷 prompt leak / mirror 是否可信、是否可移植，並比較官方文件與第三方 scaffold
 - 要研究目前 workflow framework 或 orchestration pattern
 - 多視角戰略重思（使用 skill 內 Optional Method: Multi-Voice Panel）
-- 「Six-lens debate on whether to merge these skills。」
-- 「Compare official docs for both libraries before deciding。」
+- 「用六個視角辯論是否合併這些 skills。」
+- 「決定前先比較兩個函式庫的官方文件。」
 
 不要用在：
 
@@ -192,7 +192,7 @@ Minimality 訊號掃描（skill 內建）：
 - auth / privacy / money / deletion / prod 等高風險
 - 需要 dry-run、rollback、approval gate 或 blast-radius 評估
 - 工具行動可能受到不可信或不完整資料影響
-- 「Verify production auth change will not expose secrets。」
+- 「驗證 production auth 變更不會洩漏 secrets。」
 
 不要用在：
 
@@ -204,7 +204,7 @@ Minimality 訊號掃描（skill 內建）：
 何時用：
 
 - 要交接、復盤、沉澱規則
-- 「Lessons learned retro after this sprint。」
+- 「這個 sprint 結束後做 lessons learned retro。」
 
 不要用在：
 
