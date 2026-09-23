@@ -152,3 +152,17 @@ def test_domain_packs_are_absent_from_dispatch_route_table():
     route = dispatch.split("## Route", 1)[1].split("## Strictness Ladder", 1)[0]
     for pack in DOMAIN_PACK_SKILLS:
         assert pack not in route, f"{pack} must remain outside core dispatch routes"
+
+
+def test_reflective_risk_human_review_flag_is_pinned():
+    """reflective-risk is the human-review gate; flipping its flag to false must
+    fail here — the readme test derives the required set dynamically, so a flip
+    would otherwise pass `make all` silently (found 2026-09-23 review)."""
+    meta = (
+        REPO_ROOT
+        / "reflective-prompt-library"
+        / "skills"
+        / "reflective-risk"
+        / "SKILL.md"
+    ).read_text(encoding="utf-8").split("---", 2)[1]
+    assert "human_review_required: true" in meta

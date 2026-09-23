@@ -53,12 +53,15 @@ VALID_STATUSES = {"active", "planned", "done"}
 GOVERNANCE_SURFACE_PATHS = [
     "Makefile",
     "reflective-prompt-library/PROJECT_KNOWLEDGE.md",
+    "reflective-prompt-library/06-repo/AGENTS.md",
     "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
     "reflective-prompt-library/plans/route-001-paraphrase-eval.yaml",
     "reflective-prompt-library/plans/route-002-holdout-eval.yaml",
+    "reflective-prompt-library/plans/route-003-adversarial-eval.yaml",
     "reflective-prompt-library/plans/route_paraphrase_eval.py",
     "reflective-prompt-library/plans/validate_governance.py",
     "reflective-prompt-library/plans/validate_project_knowledge.py",
+    "reflective-prompt-library/plans/validate_skill_examples.py",
     "reflective-prompt-library/plans/lint_skills.py",
     "reflective-prompt-library/skills",
 ]
