@@ -698,6 +698,67 @@ class ParaphraseRouter:
 
         return adjustments, reasons
     
+    # Signal → enhancement proposals. The enhancement_visibility gate asserts
+    # fixture-declared expected_enhancements are a subset of what the router
+    # proposes here — previously route() always returned [], so the gate was
+    # structurally unfailable.
+    ENHANCEMENT_SIGNALS = {
+        "tests": ("test", "tests", "regression test", "executable test", "run tests", "測試"),
+        "negative_and_regression_tests": ("regression", "negative test", "edge case"),
+        "anti_cheating_checks": ("cheat", "anti-cheat", "adversarial"),
+        "human_review_gate": ("production", "deploy", "permission", "credential", "billing", "money", "destructive", "irreversible", "正式環境", "權限"),
+        "security_review": ("security", "auth", "secret", "privacy", "安全"),
+        "rollback_plan": ("rollback", "migration", "production data", "deploy"),
+        "safety_floor": ("production", "destructive", "irreversible", "overnight", "unattended"),
+        "source_check": ("official docs", "source", "upstream", "external", "leaked", "mirror", "官方", "文件"),
+        "quality_review": ("review", "audit", "inspect", "審查", "檢查"),
+        "route_trace": ("route", "dispatch", "which skill", "what skill", "路由", "分派"),
+        "acceptance_criteria": ("acceptance criteria", "驗收標準", "tickets", "工單"),
+        "task_breakdown": ("tickets", "break down", "拆", "工單"),
+        "requirement_traceability": ("requirements", "spec", "traceability", "規格", "需求"),
+        "assumption_log": ("assumption", "clarify", "goal", "假設", "釐清", "目標"),
+        "goal_clarification": ("clarify", "unclear", "not sure", "釐清"),
+        "complexity_cut_list": ("minimal", "bloat", "overengineer", "remove", "dependency", "少寫", "刪減", "過度工程"),
+        "state_and_artifact_contracts": ("state model", "artifact", "resumable", "checkpoint", "workflow specification"),
+        "recovery_and_observability": ("recovery", "observability", "retry", "release check"),
+        "reusable_memory": ("handoff", "retro", "lessons", "session", "交接", "回顧", "教訓"),
+        "transition_ownership": ("handoff", "transfer", "next agent", "交接"),
+        "promotion_candidate": ("promotion", "promote", "reusable", "skill candidate"),
+        "claims_ledger": ("claims", "verify", "evidence", "trustworthy"),
+        "evidence_map": ("evidence", "verify", "proof"),
+    }
+
+    # Enhancements a workflow offers by default — the menu the route trace must
+    # disclose. Fixture expected_enhancements are group-level declarations of
+    # what the routed workflow should offer, so the proposal is
+    # workflow-defaults ∪ phrase-signals.
+    WORKFLOW_ENHANCEMENTS = {
+        "reflective-brief": ("assumption_log", "goal_clarification", "acceptance_criteria"),
+        "reflective-spec-plan": ("acceptance_criteria", "task_breakdown", "requirement_traceability", "state_and_artifact_contracts", "transition_ownership", "recovery_and_observability", "negative_and_regression_tests", "anti_cheating_checks"),
+        "reflective-implement": ("tests", "negative_and_regression_tests", "anti_cheating_checks", "recovery_and_observability"),
+        "reflective-minimality": ("complexity_cut_list", "safety_floor"),
+        "reflective-review": ("quality_review", "claims_ledger", "evidence_map", "tests", "security_review"),
+        "reflective-research": ("source_check", "evidence_map"),
+        "reflective-risk": ("human_review_gate", "security_review", "rollback_plan", "safety_floor"),
+        "reflective-handoff-retro": ("reusable_memory", "transition_ownership", "promotion_candidate"),
+        "reflective-dispatch": ("route_trace",),
+    }
+
+    def propose_enhancements(self, text_lower: str, workflow: str = None) -> List[str]:
+        """Propose enhancements from phrase signals plus the routed workflow's
+        default menu. `route_trace` is universal — every route emits a trace."""
+        proposed = [
+            name
+            for name, signals in self.ENHANCEMENT_SIGNALS.items()
+            if any(signal in text_lower for signal in signals)
+        ]
+        for name in self.WORKFLOW_ENHANCEMENTS.get(workflow, ()):
+            if name not in proposed:
+                proposed.append(name)
+        if "route_trace" not in proposed:
+            proposed.append("route_trace")
+        return proposed
+
     def route(self, text: str) -> Tuple[str, float, List[str], str]:
         """Route text to a workflow based on keyword matching."""
         text_lower = text.lower()
@@ -714,8 +775,8 @@ class ParaphraseRouter:
             scores[workflow] = scores.get(workflow, 0) + adjustment
         
         if not scores:
-            return "reflective-dispatch", 0.3, [], "No keywords matched, defaulting to dispatch"
-        
+            return "reflective-dispatch", 0.3, self.propose_enhancements(text_lower, "reflective-dispatch"), "No keywords matched, defaulting to dispatch"
+
         # Return highest scoring workflow
         priority = [
             "reflective-risk",
@@ -729,14 +790,32 @@ class ParaphraseRouter:
             "reflective-dispatch",
         ]
         best_workflow = max(scores, key=lambda workflow: (scores[workflow], -priority.index(workflow)))
-        confidence = min(0.9, 0.4 + scores[best_workflow] * 0.1)
-        
-        # Generate trace
-        trace = f"Matched signals for {best_workflow}: {scores[best_workflow]} score"
+        best_score = scores[best_workflow]
+        # Contested routes are low-confidence: a runner-up within one point of
+        # the winner means the keyword evidence was ambiguous. This makes the
+        # low_confidence_visibility gate reachable — previously confidence was
+        # min(0.9, 0.4 + score*0.1), so every matched route scored >= 0.5 and
+        # the gate could never fire.
+        runner_up_scores = {w: s for w, s in scores.items() if w != best_workflow}
+        runner_up = max(runner_up_scores.values(), default=0)
+        contested = bool(runner_up_scores) and runner_up >= best_score - 1
+        confidence = min(0.9, 0.4 + best_score * 0.1)
+        if contested:
+            confidence = min(confidence, 0.45)
+
+        # Generate trace; contested routes must name the rejected alternate so
+        # the downgrade is visible, not silent.
+        trace = f"Matched signals for {best_workflow}: {best_score} score"
+        if contested:
+            alternate = max(
+                runner_up_scores,
+                key=lambda w: (runner_up_scores[w], -priority.index(w)),
+            )
+            trace += f"; contested with {alternate} ({scores[alternate]})"
         if boundary_reasons:
             trace += f"; boundary: {', '.join(boundary_reasons)}"
-        
-        return best_workflow, confidence, [], trace
+
+        return best_workflow, confidence, self.propose_enhancements(text_lower, best_workflow), trace
 
 
 class ParaphraseEval:
@@ -873,7 +952,7 @@ class ParaphraseEval:
         total_confidence = 0.0
         trace_checked = 0
         trace_passed = 0
-        
+
         for group in intent_groups:
             group_result = {
                 "name": group.name,
@@ -896,10 +975,10 @@ class ParaphraseEval:
                     "workflow": workflow,
                     "confidence": confidence,
                     "enhancements_enabled": bool(enhancements),
-                    "enhancements_available": group.expected_enhancements,
+                    "enhancements_available": enhancements,
                     "rationale": trace,
                 }
-                
+
                 matched = (workflow == group.canonical_workflow)
                 if matched:
                     group_matches += 1
@@ -915,15 +994,32 @@ class ParaphraseEval:
                             "paraphrase": paraphrase,
                             "missing_trace": True,
                         })
-
                 if not matched and self.config["global_expectations"].get("forbid_silent_downgrade", False):
-                    if not route_trace["rationale"]:
+                    # A downgrade is silent when the route was confident and the
+                    # trace carries no ambiguity signal — a low-confidence or
+                    # contested route is a *visible* downgrade.
+                    if confidence >= 0.5 and "contested" not in route_trace["rationale"]:
                         self.results["summary"]["silent_downgrade_incidents"].append({
                             "group": group.name,
                             "paraphrase": paraphrase,
                             "routed_workflow": workflow,
                             "expected_workflow": group.canonical_workflow,
                         })
+
+                # enhancement_visibility: fixture-declared expected enhancements
+                # must be a subset of what the router proposed — the router's
+                # proposal is the visible surface, not the fixture echo.
+                missing_enhancements = [
+                    e for e in group.expected_enhancements if e not in enhancements
+                ]
+                if missing_enhancements:
+                    self.results["summary"].setdefault("enhancement_visibility_failures", []).append({
+                        "group": group.name,
+                        "paraphrase": paraphrase,
+                        "expected": group.expected_enhancements,
+                        "proposed": enhancements,
+                        "missing": missing_enhancements,
+                    })
                 
                 group_confidence += confidence
                 total_confidence += confidence
@@ -1051,6 +1147,7 @@ def main():
         results["summary"]["consistency_rate"] >= eval.phase1_consistency_min
         and results["summary"]["trace_coverage_rate"] == 1.0
         and len(results["summary"]["silent_downgrade_incidents"]) == 0
+        and len(results["summary"].get("enhancement_visibility_failures", [])) == 0
     )
 
     if hard_gates_pass:
