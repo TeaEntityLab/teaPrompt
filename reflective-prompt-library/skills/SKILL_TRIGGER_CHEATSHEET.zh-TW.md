@@ -83,10 +83,9 @@ L1 快速路徑：
 - 要從 spec 設計嚴謹 Test Plan，但不寫實作程式碼
 - 需要規劃工具 gate、權限邊界或副作用
 - 只設計可恢復 workflow、state model 或 orchestration plan，不寫 runtime code
-- 「Write tickets from the approved spec without implementing。」
-- 「Plan the approved spec without repo changes。」
-- 「Plan 已核准 spec without repo changes。」
-- 「Draft rollout plan from approved spec without repo edits。」
+- 「從已核准 spec 開 tickets，但不要實作。」
+- 「規劃已核准 spec，但不要更動 repo。」
+- 「從已核准 spec 草擬 rollout plan，但不要編輯 repo。」
 
 - 「Write tickets and acceptance criteria without touching the repo。」
 - 「Compare two API designs on paper only no implementation。」
@@ -108,9 +107,8 @@ L1 快速路徑：
 觸發提示：
 
 - 「在 repo 實作這個變更。」
-- 「Implement the approved spec in the repository。」
+- 「實作已核准 spec 到 repository。」
 - 「在 repository 實作已核准 spec。」
-- 「implement 已核准 spec in the repository。」
 - 「落地已核准規格到 codebase。」
 - 「用驗收標準與測試重構或除錯。」
 - 「交付最小安全修補並附驗證。」

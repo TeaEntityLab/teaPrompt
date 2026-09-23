@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T10:06:40.785673",
+  "generated_at": "2026-09-23T10:46:03.819472",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -13156,8 +13156,8 @@
           "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 238,
-      "char_count": 7999
+      "line_count": 236,
+      "char_count": 7821
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -14655,7 +14655,6 @@
         "markdown_links": []
       },
       "prompt_sources": [
-        "VERIFY.md",
         "PROJECT_KNOWLEDGE.md",
         "04-agent/artifact-promotion.md"
       ],
@@ -15361,11 +15360,6 @@
         "markdown_links": []
       },
       "prompt_sources": [
-        "spec.md",
-        "usage.md",
-        "task-plan.md",
-        "test-plan.md",
-        "workflow-spec.md",
         "02-engineering/spec-writer.md",
         "02-engineering/test-designer.md",
         "02-engineering/usage-first.md",

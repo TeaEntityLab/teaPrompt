@@ -30,6 +30,16 @@ def zh_cheatsheet_text() -> str:
     return ZH_CHEATSHEET.read_text(encoding="utf-8")
 
 
+# zh-TW cheatsheet cues are zh-native where a translation exists — the
+# 2026-09-23 constraint review stopped embedding verbatim English fixture
+# phrases (the eval's answer key) into the production routing surface.
+# Cues not listed here are asserted verbatim (zh/mixed probes and English
+# examples the zh-TW cheatsheet legitimately keeps).
+ZH_NATIVE_EQUIVALENTS = {
+    "plan the approved spec without repo changes": "規劃已核准 spec，但不要更動 repo",
+}
+
+
 @pytest.mark.parametrize("cue", ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES)
 def test_route_003_cues_present_in_english_cheatsheet(en_cheatsheet_text: str, cue: str):
     haystack = en_cheatsheet_text.lower()
@@ -38,5 +48,6 @@ def test_route_003_cues_present_in_english_cheatsheet(en_cheatsheet_text: str, c
 
 @pytest.mark.parametrize("cue", ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES)
 def test_route_003_cues_present_in_zh_tw_cheatsheet(zh_cheatsheet_text: str, cue: str):
+    expected = ZH_NATIVE_EQUIVALENTS.get(cue, cue)
     haystack = zh_cheatsheet_text.lower()
-    assert cue.lower() in haystack, f"zh-TW cheatsheet missing ROUTE-003 adversarial cue: {cue!r}"
+    assert expected.lower() in haystack, f"zh-TW cheatsheet missing ROUTE-003 adversarial cue: {expected!r}"

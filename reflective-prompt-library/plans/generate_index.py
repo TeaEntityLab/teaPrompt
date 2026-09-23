@@ -239,12 +239,16 @@ class IndexGenerator:
         return structure
     
     def extract_prompt_sources(self, content: str) -> List[str]:
-        """Extract prompt sources from skill file."""
-        sources = []
-        pattern = r'- `([^`]+\.md)`'
-        matches = re.findall(pattern, content)
-        sources.extend(matches)
-        return sources
+        """Extract prompt sources from the skill file's Prompt Sources section only.
+
+        Scraping the whole document turns any backticked `.md` token in prose
+        (e.g. `VERIFY.md` in a generation recipe) into a phantom source.
+        """
+        section = re.split(r"^##\s+Prompt Sources\s*$", content, flags=re.M)
+        if len(section) < 2:
+            return []
+        body = re.split(r"^##\s", section[1], maxsplit=1, flags=re.M)[0]
+        return re.findall(r'- `([^`]+\.md)`', body)
 
 
 def main():

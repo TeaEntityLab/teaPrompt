@@ -48,6 +48,21 @@ DOMAIN_PACK_SKILLS = [
 
 MIN_EXAMPLE_CHARS = 200
 
+# Every registered pack must appear on each of these surfaces — the 2026-09-23
+# constraint review found pack admission was convention-driven (each surface
+# updated by hand) rather than registry-driven, so the fifth pack shipped with
+# gaps (zh-TW install guide still said four packs). This manifest makes the
+# checklist executable: add a pack to DOMAIN_PACK_SKILLS and every surface
+# below must name it.
+PACK_SURFACES = [
+    "reflective-prompt-library/skills/skill-map.md",
+    "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
+    "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
+    "reflective-prompt-library/SKILL_INSTALLATION.md",
+    "reflective-prompt-library/SKILL_INSTALLATION.zh-TW.md",
+    "reflective-prompt-library/plans/flow-pack-usage-log.md",
+]
+
 
 def main() -> int:
     repo_root = Path(__file__).parent.parent.parent
@@ -88,6 +103,18 @@ def main() -> int:
                 f"{skill_file.relative_to(repo_root)}: missing installed examples "
                 f"pointer {pointer!r}"
             )
+
+    # Registry-driven surface coverage: every pack on every required surface.
+    for surface in PACK_SURFACES:
+        surface_path = repo_root / surface
+        if not surface_path.is_file():
+            errors.append(f"Missing pack surface: {surface}")
+            continue
+        surface_text = surface_path.read_text(encoding="utf-8")
+        for pack in DOMAIN_PACK_SKILLS:
+            if pack not in surface_text:
+                errors.append(f"{surface}: does not name pack {pack!r}")
+
 
 
     if errors:

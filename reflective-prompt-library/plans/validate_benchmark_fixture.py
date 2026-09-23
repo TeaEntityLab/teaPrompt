@@ -7,7 +7,9 @@ LLM-assisted benchmark executions. This is the compromise for Round 6: reject
 full benchmark-in-CI, but gate the fixture shape on every change.
 """
 
+import json
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 VALID_WORKFLOWS = {
@@ -76,8 +78,28 @@ def main() -> int:
         if not task.acceptance_criteria:
             errors.append(f"{task.id}: acceptance_criteria must be non-empty")
 
+    # The committed JSON is a generated artifact: compare, never rewrite.
+    # Rewriting here would silently heal drift between benchmark_tasks.py and
+    # benchmark-tasks.json instead of failing on it.
     output_file = plans_dir / "benchmark-tasks.json"
-    benchmark.save_benchmark(output_file)
+    expected = {
+        "version": "1.0",
+        "total_tasks": len(benchmark.tasks),
+        "tasks": [asdict(task) for task in benchmark.tasks],
+    }
+    if not output_file.exists():
+        errors.append(
+            "benchmark-tasks.json missing — regenerate with "
+            "`python3 -c 'from benchmark_tasks import BenchmarkSet; "
+            "BenchmarkSet().save_benchmark(\"reflective-prompt-library/plans/benchmark-tasks.json\")'`"
+        )
+    else:
+        committed = json.loads(output_file.read_text(encoding="utf-8"))
+        if committed != expected:
+            errors.append(
+                "benchmark-tasks.json is stale vs benchmark_tasks.py — "
+                "regenerate it; the validator does not rewrite committed artifacts"
+            )
 
     if errors:
         print(f"\n❌ {len(errors)} benchmark fixture violation(s):")
@@ -89,7 +111,7 @@ def main() -> int:
         f"\n✅ Benchmark fixture valid: {len(benchmark.tasks)} tasks, "
         f"{len(workflows)}/{len(VALID_WORKFLOWS)} workflow skills"
     )
-    print(f"💾 Wrote {output_file.relative_to(repo_root)}")
+    print(f"📎 Committed artifact in sync: {output_file.relative_to(repo_root)}")
     return 0
 
 

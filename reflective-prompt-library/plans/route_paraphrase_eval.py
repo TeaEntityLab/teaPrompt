@@ -193,6 +193,7 @@ class ParaphraseRouter:
                 "clarify", "goal", "assumption", "scope", "acceptance", "kickoff",
                 "kick off", "start", "begin", "ambiguous", "unclear", "what should",
                 "not sure", "before deciding", "real objective",
+                "falsifiability", "next step",
                 "釐清", "目標", "範圍", "假設", "驗收"
             ],
             "reflective-spec-plan": [
@@ -201,7 +202,7 @@ class ParaphraseRouter:
                 "acceptance criteria", "define acceptance criteria", "roadmap", "release plan", "prd",
                 "test plan", "test strategy", "test matrix", "given/when/then",
                 "workflow specification", "workflow architecture", "state model", "control flow",
-                "orchestration plan", "resumable workflow",
+                "orchestration plan", "resumable workflow", "no-code", "stateful",
                 "規格", "計畫", "需求", "工單", "驗收標準"
             ],
             "reflective-implement": [
@@ -209,6 +210,7 @@ class ParaphraseRouter:
                 "programming", "development", "function", "parse", "build", "add",
                 "change", "patch", "wire", "make the code", "unit test",
                 "integration test", "executable test", "add tests", "update tests",
+                "coding", "content edits",
                 "實作", "修復", "程式碼", "重構", "除錯", "補丁", "修改"
             ],
             "reflective-minimality": [
@@ -219,37 +221,40 @@ class ParaphraseRouter:
                 "dependency", "one file", "one-line", "one line", "smallest",
                 "wrapper", "abstraction", "factory", "unnecessary complexity",
                 "avoid writing", "avoid overengineering", "complexity-only",
-                "ceiling", "upgrade trigger",
+                "ceiling", "upgrade trigger", "overbuild", "anti-bloat",
                 "最小化", "過度工程", "刪減", "少寫"
             ],
             "reflective-review": [
                 "review", "critique", "check", "audit", "analyze", "examine",
                 "issues", "bugs", "pull request", "changes", "look over",
                 "carefully", "make sure", "does this work", "review this like",
+                "diffs", "specs", "ai outputs", "decisions",
                 "審查", "檢查", "程式碼審查"
             ],
             "reflective-research": [
                 "research", "documentation", "docs", "investigate", "find",
                 "look up", "search", "external", "compare", "best practice",
                 "official", "source", "source-backed", "guidance",
+                "deepwiki", "synthesis", "long-document", "platform comparison",
                 "研究", "查詢", "官方", "比較", "文件"
             ],
             "reflective-risk": [
                 "risk", "security", "privacy", "auth", "permission", "production",
                 "deploy", "migration", "destructive", "billing", "money", "safe", "safety",
                 "delete", "rollback", "compliance", "credential", "irreversible",
+                "deletion", "dry-run", "financial", "legal", "medical",
                 "風險", "安全", "正式環境", "權限"
             ],
             "reflective-handoff-retro": [
                 "handoff", "retro", "retrospective", "memory", "context",
                 "consolidation", "transfer", "continue later", "session summary",
-                "lessons", "reusable rules",
+                "lessons", "reusable rules", "checklists", "session transfer",
                 "交接", "回顧", "摘要", "教訓"
             ],
             "reflective-dispatch": [
                 "route", "dispatch", "choose", "select", "apply library",
                 "workflow", "which skill", "what skill", "best skill", "prompt-only",
-                "agentic workflow",
+                "agentic workflow", "convert prompts", "prompt library",
                 "路由", "分派", "選擇", "工作流"
             ]
         }
