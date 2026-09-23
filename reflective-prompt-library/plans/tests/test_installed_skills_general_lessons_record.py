@@ -124,7 +124,7 @@ def test_record_shape_and_dispositions():
 
 def test_sentences_at_exactly_one_surface():
     texts = _skill_texts()
-    assert len(texts) == 13, sorted(texts)
+    assert len(texts) == 14, sorted(texts)
     for skill, sentences in ADOPTED.items():
         for sentence in sentences:
             homes = [name for name, body in texts.items() if sentence in body]

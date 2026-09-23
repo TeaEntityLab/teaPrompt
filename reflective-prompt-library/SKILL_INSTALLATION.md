@@ -130,7 +130,7 @@ install_domain_packs_copy() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     cp -R "$skill" "$dest/"
@@ -142,7 +142,7 @@ install_domain_packs_symlink() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     ln -sfn "$skill" "$dest/$name"

@@ -35,6 +35,7 @@ DOMAIN_PACK_SKILLS = [
     "flow-loop-harness",
     "agent-governance-scaffold",
     "governed-delivery",
+    "verification-map-generator",
 ]
 
 MIN_EXAMPLE_CHARS = 200

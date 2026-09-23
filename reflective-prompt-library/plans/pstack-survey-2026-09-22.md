@@ -291,6 +291,24 @@ The unlabeled seeded bug was caught — the wsgiLite self-labeled-bug caveat
 does not repeat. Second-product adoption of the pattern is confirmed; the
 review trigger in PROJECT_KNOWLEDGE's verification-map lesson has fired.
 
+### Third and fourth products: fpEs + fpRust (2026-09-23)
+
+User extended the experiment to `TeaEntityLab/fpEs` (mocha/`should`, 528
+tests) and `TeaEntityLab/fpRust` (cargo, 120 unit + 24 doc tests). Same
+three arms each:
+
+| Product | Baseline | Unlabeled seeded bug | Wrong spec |
+| --- | --- | --- | --- |
+| fpEs (`fp.unique` returns input) | 528/528, 1m39s | **product regression** — `fp.js:148` named | **spec-oracle error** |
+| fpRust (`fp::reverse` returns input) | 144/144, 1m41s | **product regression** — `src/fp.rs:297` named | **spec-oracle error** |
+
+Both agents also caught a real doc drift in the generator's own VERIFY.md
+(`Maybe.Just` vs `Maybe.just` casing) — the classification table indicted
+its own author. Pattern confirmed across four products and three control
+surfaces (curl, go test, mocha, cargo). Recurrence + stable I/O + failure
+signals satisfied the domain-pack gate: `verification-map-generator`
+registered in `plans/validate_skill_examples.py`.
+
 ## Falsifiability
 
 The candidate ledger names a falsifier per proposal. In particular, a controlled product pilot that does not improve acceptance, operator effort or escaped regressions defeats the adoption case; a check that accepts deliberately invalid evidence cannot support an independent-verification claim.

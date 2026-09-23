@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T08:55:30.208336",
+  "generated_at": "2026-09-23T09:08:15.668627",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -257,6 +257,12 @@
         },
         "reflective-review": {
           "path": "reflective-prompt-library/skills/reflective-review",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "verification-map-generator": {
+          "path": "reflective-prompt-library/skills/verification-map-generator",
           "files": [
             "SKILL.md"
           ]
@@ -4363,6 +4369,10 @@
           "text": "Second product: fpGo (2026-09-23)"
         },
         {
+          "level": 3,
+          "text": "Third and fourth products: fpEs + fpRust (2026-09-23)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability"
         },
@@ -4375,8 +4385,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 322,
-      "char_count": 25851
+      "line_count": 340,
+      "char_count": 26828
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -11018,8 +11028,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 57,
-      "char_count": 3250
+      "line_count": 58,
+      "char_count": 3620
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -13004,8 +13014,8 @@
           "text": "Registered domain packs (not core routing)"
         }
       ],
-      "line_count": 91,
-      "char_count": 6655
+      "line_count": 92,
+      "char_count": 7070
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -13072,8 +13082,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 246,
-      "char_count": 11902
+      "line_count": 247,
+      "char_count": 12297
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -13146,8 +13156,8 @@
           "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 237,
-      "char_count": 7766
+      "line_count": 238,
+      "char_count": 7999
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -14621,6 +14631,76 @@
       "char_count": 9917
     },
     {
+      "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "verification-map-generator",
+      "name": "verification-map-generator",
+      "description": "Use when a product repository needs an agent-drivable verification surface — a VERIFY.md control doc, a features/ map routing feature areas to drive commands, and optionally a locked acceptance spec — so a fresh agent can verify the product, classify failures (product regression / doc drift / spec-oracle error / harness failure), and keep the map event-driven. Proven on HTTP servers (curl surface) and libraries (test-suite surface) across JS, Go, and Rust.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "verification-map-generator",
+        "description": "Use when a product repository needs an agent-drivable verification surface — a VERIFY.md control doc, a features/ map routing feature areas to drive commands, and optionally a locked acceptance spec — so a fresh agent can verify the product, classify failures (product regression / doc drift / spec-oracle error / harness failure), and keep the map event-driven. Proven on HTTP servers (curl surface) and libraries (test-suite surface) across JS, Go, and Rust.",
+        "license": "MIT",
+        "compatibility": "Requires a product repo with an executable check surface (test suite, HTTP routes, CLI). Generated docs live in the product repo, not TeaPrompt.",
+        "metadata": "",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false",
+        "context_load": "medium"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "VERIFY.md",
+        "PROJECT_KNOWLEDGE.md",
+        "04-agent/artifact-promotion.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Verification Map Generator"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 2,
+          "text": "Generation Procedure"
+        },
+        {
+          "level": 2,
+          "text": "Failure Classification (canonical table — copy into VERIFY.md)"
+        },
+        {
+          "level": 2,
+          "text": "Maintenance Rule"
+        },
+        {
+          "level": 2,
+          "text": "Never"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 95,
+      "char_count": 6853
+    },
+    {
       "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",
       "type": "skill",
       "category": "skills",
@@ -15473,5 +15553,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 172
+  "total_files": 173
 }

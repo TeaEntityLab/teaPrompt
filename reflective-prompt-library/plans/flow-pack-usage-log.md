@@ -33,6 +33,7 @@ themselves):
 | — | — | — | — | Zero-state recorded 2026-07-11: no real invocation on record since pack adoption (2026-07-11). |
 | — | `agent-governance-scaffold` | — | — | Zero-state recorded 2026-09-14: no real invocation on record since pack adoption (2026-07-17). |
 | — | `governed-delivery` | — | — | Zero-state recorded 2026-09-14: no real invocation on record since pack adoption (2026-09-03); the 2026-10-11 checkpoint reads this row — absence stays `unknown`, and demotion is a policy consequence of missing evidence. |
+| 2026-09-23 | `verification-map-generator` | omp task agents | Four-product verification-map generation (wsgiLite.js, fpGo, fpEs, fpRust) | Adopted same-day: pattern generated VERIFY.md + features/ + locked spec on four products; fresh-agent arms classified product regression, doc drift, spec-oracle error correctly; evidence in `plans/pstack-survey-2026-09-22.md`. |
 
 ## Template maintenance (not invocations)
 

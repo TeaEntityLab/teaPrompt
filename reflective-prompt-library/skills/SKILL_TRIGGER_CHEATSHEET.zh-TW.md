@@ -234,4 +234,5 @@ Minimality 訊號掃描（skill 內建）：
 - **可執行的迴圈腳本** → `flow-loop-harness` — loop until、ralph、fix-until-green 搭配外部驗證器；若要的是主要工作流程上的 repo 內 `verifier/test` 產物，走上方的 Acquisition L3 速查。
 - **為會產生外部效果的 agent 產生治理骨架** → `agent-governance-scaffold` — 分離提案／授權／效果／驗收四權、capability token、broker 收據、以租約為鍵的效果預算、憲法路徑；產出 host 執行的契約，本身不強制執行；高風險工件仍走 `reflective-risk`。
 - **在治理之下端到端交付** → `governed-delivery` — 自主或無人值守的交付執行，含閘門序列、oracle 清單、任務封包、失敗特徵退出、去相關驗證、證據帳本與具名驗收；產出 host 執行的交付契約組，本身不強制執行；副作用仍先走 `reflective-risk`。
+- **為產品 repo 產生 agent 可驅動的驗證介面** → `verification-map-generator` — 在產品 repo 內產出 VERIFY.md + features/ 地圖 + 可選的鎖定驗收規格，讓全新 agent 能驗證並分類失敗（產品回歸／文件漂移／規格或 oracle 錯誤／harness 故障）；不是迴圈腳本（`flow-loop-harness`）也不是無碼測試計畫（`reflective-spec-plan`）。
 - **工作流程選擇／函式庫路由** → 仍是 `reflective-dispatch`；本節不取代九技能 Fast Routing Rule。
