@@ -1,6 +1,6 @@
 ---
 feature: route paraphrase evals
-source_commit: 7d8de92
+source_commit: 7147e91
 last_verified_at: 2026-09-24
 verification_status: passing
 ---
@@ -26,10 +26,13 @@ python3 $P/route_paraphrase_eval.py $P/route-003-adversarial-eval.yaml
 - Current measured: 100.0% consistency on all three fixtures. This is a
   **regression-guard tier** result (seeded fixture), not proof of semantic
   routing — see `plans/QUALITY_GATES_SUMMARY.md`.
-- Known low-confidence groups (ROUTE-003, still passing):
-  `approved_spec_verify_not_implement_trap` ~0.45,
-  `pack_vocab_implement_not_plan_trap` ~0.53. Confidence near the trace
-  threshold is a weak spot, not a failure.
+- Group confidence is not a pass criterion. A route that is **contested**
+  (runner-up within one point) is capped at 0.45 and its trace names the
+  alternate — that is the gate working, not a failure. Lowest measured at
+  `7147e91`: ROUTE-003 `review_led_cut_not_review_trap` 0.45 (minimality vs
+  review, contested and visible), `pack_vocab_implement_not_plan_trap` 0.53
+  (single signal, uncontested). ROUTING_CONTRACT R13 moved review-led
+  spec/plan inspection from 0.45 to 0.80.
 
 ## Failure paths
 

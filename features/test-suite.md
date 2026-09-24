@@ -1,6 +1,6 @@
 ---
 feature: governance test suite
-source_commit: 7d8de92
+source_commit: 7147e91
 last_verified_at: 2026-09-24
 verification_status: passing
 ---
@@ -9,7 +9,7 @@ verification_status: passing
 
 ## Entry points
 
-- `reflective-prompt-library/plans/tests/` — 99 `test_*.py` files, 1287 tests at
+- `reflective-prompt-library/plans/tests/` — 99 `test_*.py` files, 1290 tests at
   generation time. Pins governance records, registry cardinality, cheatsheet
   parity, boundary quick cues, and adoption-state contracts.
 
@@ -19,7 +19,7 @@ verification_status: passing
 python3 -m pytest reflective-prompt-library/plans/tests/ -q
 ```
 
-Expected tail: `1287 passed` (count grows as tests are added — the invariant
+Expected tail: `1290 passed` (count grows as tests are added — the invariant
 is **0 failures**, not the exact count).
 
 Per-area selection uses `-k` or a file path, e.g.:

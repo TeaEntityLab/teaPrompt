@@ -5,7 +5,7 @@ Companion to `../VERIFY.md`. One file per feature area; each carries
 
 | File | Area | Drive surface |
 | --- | --- | --- |
-| `test-suite.md` | Governance pytest suite | `plans/tests/` (1287 tests at generation) |
+| `test-suite.md` | Governance pytest suite | `plans/tests/` (1290 tests at `7147e91`) |
 | `validators.md` | Standalone gate scripts | 7 `validate_*.py` + `lint_skills.py` (8 scripts) |
 | `route-evals.md` | Routing paraphrase evals | 3 YAML fixtures via `route_paraphrase_eval.py` |
 | `registry.md` | Skill registry cardinality | `validate_skill_examples.py` lists |

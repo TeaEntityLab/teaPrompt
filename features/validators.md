@@ -1,6 +1,6 @@
 ---
 feature: standalone validators
-source_commit: 7d8de92
+source_commit: 7147e91
 last_verified_at: 2026-09-24
 verification_status: passing
 ---
