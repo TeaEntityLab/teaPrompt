@@ -7,6 +7,7 @@ Tests that same intent groups route to the same canonical workflow.
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
@@ -302,11 +303,37 @@ class ParaphraseRouter:
             adjustments["reflective-risk"] = adjustments.get("reflective-risk", 0) + 2
             reasons.append("risk boundary: security verification")
 
+        # Review-led inspection of an existing planning artifact (2026-09-24,
+        # R8 holdout-first; review_led_* fixture groups): "review / audit /
+        # critique the <spec|plan|PRD|roadmap>" names the artifact as the object
+        # under inspection, not a requested deliverable. Before this boundary,
+        # review tied spec-plan on raw keywords and won only on priority order,
+        # and roadmap / PRD / implementation-plan objects lost to the planning
+        # boundary outright. Authoring, delivery, catalog, minimality, and
+        # production phrasing are excluded and keep their own routes.
+        review_led_verbs = ("review", "critique", "audit", "examine", "check", "審查", "檢查")
+        review_led_exclusions = (
+            "draft a", "write", "turn it into", "turn this into", "into tickets",
+            "break down", "in the repository", "in the repo", "land it", "land the",
+            "run the tests", "which skill", "what skill", "which workflow",
+        )
+        review_led_inspection = bool(
+            text_lower.lstrip().startswith(review_led_verbs)
+            and (
+                re.search(r"\b(?:specs?|plans?|roadmap|prd|requirements|design doc)\b", text_lower)
+                or any(noun in text_lower for noun in ("規格", "計畫", "需求"))
+            )
+            and not any(marker in text_lower for marker in review_led_exclusions)
+            and not any(marker in text_lower for marker in no_code_context)
+            and not any(signal in text_lower for signal in risk_signals)
+            and not any(kw in text_lower for kw in self.routing_rules["reflective-minimality"])
+        )
+
         planning_signals = [
             "delivery plan", "acceptance criteria", "launch readiness",
             "roadmap", "prd", "implementation plan"
         ]
-        if any(signal in text_lower for signal in planning_signals):
+        if not review_led_inspection and any(signal in text_lower for signal in planning_signals):
             adjustments["reflective-spec-plan"] = adjustments.get("reflective-spec-plan", 0) + 2
             reasons.append("planning boundary: delivery artifact requested")
 
@@ -517,6 +544,10 @@ class ParaphraseRouter:
         ):
             adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 2
             reasons.append("review boundary: correctness inspection requested")
+
+        if review_led_inspection:
+            adjustments["reflective-review"] = adjustments.get("reflective-review", 0) + 3
+            reasons.append("review boundary: existing planning artifact under inspection")
 
         clarification_signals = ["do not know", "don't know", "unknown", "unclear", "not sure", "還不確定", "不確定"]
         clarification_targets = ["outcome", "goal", "intent", "objective", "scope", "assumption"]

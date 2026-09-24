@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-24T12:19:29.387484",
+  "generated_at": "2026-09-24T12:31:59.689957",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -61,6 +61,7 @@
             "flow-control-roadmap-2026-07-11.md",
             "september-skills-review-2026-09-14.md",
             "rsiagent-survey-2026-09-16.md",
+            "self-governance-dogfood-2026-09-24.md",
             "baton-dispatch-survey-2026-07-13.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
             "nimble-survey-2026-09-19.md",
@@ -3285,6 +3286,48 @@
       "char_count": 28066
     },
     {
+      "path": "reflective-prompt-library/plans/self-governance-dogfood-2026-09-24.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "self-governance-dogfood-2026-09-24",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Self-Governance Dogfood Record — 2026-09-24"
+        },
+        {
+          "level": 2,
+          "text": "Trigger"
+        },
+        {
+          "level": 2,
+          "text": "Part A — Verification map sweeps"
+        },
+        {
+          "level": 2,
+          "text": "Part B — R13 review-led inspection tune (R8 holdout-first)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 122,
+      "char_count": 8163
+    },
+    {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6257,6 +6300,7 @@
         "ref_snippet": [],
         "markdown_links": [
           "governance-workflow-self-control-adoption-2026-09-14.md",
+          "self-governance-dogfood-2026-09-24.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -6386,8 +6430,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 426,
-      "char_count": 25551
+      "line_count": 438,
+      "char_count": 26547
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -7214,6 +7258,10 @@
           "text": "R12: Boundary quick-cue summary"
         },
         {
+          "level": 3,
+          "text": "R13: Review-led inspection of an existing artifact"
+        },
+        {
           "level": 2,
           "text": "Router Output Contract"
         },
@@ -7230,8 +7278,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 166,
-      "char_count": 7416
+      "line_count": 178,
+      "char_count": 8252
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -11058,6 +11106,7 @@
         "markdown_links": [
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
+          "self-governance-dogfood-2026-09-24.md",
           "skill-verification-panel-2026-09-05.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
@@ -11088,7 +11137,7 @@
         }
       ],
       "line_count": 59,
-      "char_count": 4166
+      "char_count": 4249
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -15604,5 +15653,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 174
+  "total_files": 175
 }

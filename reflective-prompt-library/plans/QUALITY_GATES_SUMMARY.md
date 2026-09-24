@@ -113,7 +113,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py
 - Keeps a lower Phase-1 bar and separate aspirational target to avoid over-claiming
 
 **Results:**
-- Tested 47 holdout groups with 134 paraphrases
+- Tested 48 holdout groups with 138 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - P7 plan-only pipeline/orchestration and workflow-selection collision groups
@@ -226,7 +226,7 @@ python3 reflective-prompt-library/plans/validate_skill_examples.py
 - Post-panel maintenance: ROUTING_CONTRACT **R11** approved-spec delivery (`implement_not_plan_trap`) at 100%
 
 **Results:**
-- Tested 26 adversarial groups with 91 paraphrases
+- Tested 32 adversarial groups with 108 paraphrases
 - Overall consistency: 100.0% (passes Phase-1 threshold >=80% and aspirational target >=90%)
 - Low-confidence route trace coverage: 100.0%
 - P7 executable flow-script vocabulary preserves `reflective-implement` at 3/3 pre-tune
@@ -243,7 +243,7 @@ python3 reflective-prompt-library/plans/route_paraphrase_eval.py reflective-prom
 
 **What it does:**
 - Enforces minimum ROUTE-001/002/003 group and phrase counts before paraphrase eval runs
-- Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (47 holdout groups, 134 phrases); ROUTE-003 (26 adversarial groups, 91 phrases)
+- Current minimums: ROUTE-001 (12 intent + 4 adversarial groups, 128 phrases); ROUTE-002 (48 holdout groups, 138 phrases); ROUTE-003 (32 adversarial groups, 108 phrases)
 - Round 22 panel compromise: deterministic hygiene without YAML dependency explosion
 - Integrated in `make validate` after skill examples gate; mirrored by pytest in `test_validate_route_fixture.py`
 - P7 collision anti-drift: three named fixture groups + nine canonical probe assertions; pack names remain absent from core route targets
@@ -299,8 +299,8 @@ The implementation aligns with research findings:
 | Skills with governance | 14/14 | ✅ 9 core + 5 domain packs; metadata complete |
 | Benchmark tasks | 24 | ✅ Ready |
 | Routing consistency | 100.0% | ✅ ROUTE-001 seeded deterministic ParaphraseRouter fixture, not live dispatch proof |
-| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (47 groups, 134 paraphrases), seeded holdout fixture |
-| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (26 groups, 91 paraphrases), seeded adversarial fixture |
+| Holdout routing consistency | 100.0% | ✅ ROUTE-002 (48 groups, 138 paraphrases), seeded holdout fixture |
+| Adversarial routing consistency | 100.0% | ✅ ROUTE-003 (32 groups, 108 paraphrases), seeded adversarial fixture |
 | Skill example coverage | 9 core + 5 packs | ✅ validate_skill_examples.py |
 | Linting | 0 errors / 1 warning | ✅ Non-blocking length warning on `agent-governance-scaffold` only; routing-input checks otherwise clean |
 
@@ -335,7 +335,7 @@ passed 100% pre-tune, so no router rule changed and the decision remained
 host-invoked packs with no core-router integration. Treat this as seeded
 regression evidence, not proof of broad semantic routing quality.
 
-The 2026-09-14 GD-19 delivery-vocabulary measurement raised the current floor to
+The 2026-09-14 GD-19 delivery-vocabulary measurement raised the floor to
 47 ROUTE-002 groups / 134 ROUTE-002 phrases and 26 ROUTE-003 adversarial groups / 91 phrases,
 in two rounds. Round one: nine fresh plan/route/risk phrases carrying "deliver /
 autonomous / unattended" passed 100% pre-tune; the `approved delivery plan` implement
@@ -350,12 +350,24 @@ router: selection trap 66.7%, deploy/money trap 0%; 2b on the 2a-tuned router: s
 expanded to five phrases 80%, zh-TW implement phrase 75%, verify trap 0%; 2c: catalog signal
 and two contract-contradicting fixture phrases replaced); all three evals 100% post-tune ([record](governance-workflow-self-control-adoption-2026-09-14.md)).
 
+The 2026-09-24 review-led inspection measurement (ROUTING_CONTRACT **R13**) raised the current floor to
+48 ROUTE-002 groups / 138 ROUTE-002 phrases and 32 ROUTE-003 adversarial groups / 108 phrases.
+Fixture-backed before any tune: one ROUTE-002 holdout group (four review-led roadmap / PRD /
+requirements / zh-TW plan phrases, written unprobed) and six ROUTE-003 groups — review-led
+inspection, plus one trap per other workflow sharing the review verbs or the spec/plan nouns
+(authoring → spec-plan, delivery → implement, catalog → dispatch, cut → minimality,
+production → risk). Pre-tune: 4 of 24 new-group phrases misrouted to spec-plan (roadmap, PRD,
+implementation-plan and release-plan objects lost to the planning boundary) and every other
+review-led phrase won only by priority tie-break at the 0.45 contested cap; all 12 cross-workflow
+trap phrases already held. Post-tune: 24/24, review-led phrases 0.80 uncontested, all three
+evals 100% ([record](self-governance-dogfood-2026-09-24.md)).
+
 ## Phase 2 Status (post-Round 68 maintenance)
 
 ### Done ✅
 
 1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
-2. **ROUTE-001/002/003 in CI** — 128 + 134 + 91 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
+2. **ROUTE-001/002/003 in CI** — 128 + 138 + 108 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, benchmark fixture, skill examples
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
   5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_human_review_library_registry.py`, `test_prompt_skill_links_library_registry.py`, `test_prompt_contract_library_registry.py`, `test_prompt_primary_workflow_surface_library_registry.py`, `test_workflow_skill_coverage_library_registry.py`, `test_prompt_eval_harness_score_library_registry.py`, `test_prompt_workflow_skill_reference_library_registry.py`, `test_prompt_eval_harness_fixture_library_registry.py`, `test_prompt_category_paths_library_registry.py`, `test_prompt_governance_surface_paths_library_registry.py`, `test_agent_prompts_eval_harness.py`, `test_context_prompts_eval_harness.py`, `test_domain_prompts_eval_harness.py`, `test_repo_prompts_eval_harness.py`, `test_validate_governance.py`, `test_validate_links.py`, `test_lint_skills.py`, `test_skill_scenario_panel_adoption_state.py`, `test_skill_module_contract.py` (Escalation subsection + Trigger/Methods/Output/Never; 1283+ pytest anti-drift suite in CI); reciprocal thinking-lens ↔ skill checks and `00-core` + composable `Primary workflow surface(s)` ↔ `*_SKILL_LINKS` parity in `test_prompt_cross_links.py` (including strict Primary workflow surfaces parity via `test_thinking_lens_primary_surfaces_match_consumer_graph`); Human Review + Escalation route-target guards in thinking/skill contract tests; composable `Primary workflow surface(s)` / Supporting-lens preamble guards and composable `## Human Review` preamble guards (route to `reflective-risk`) via `prompt_eval_helpers.assert_human_review_preamble` in `test_*_prompts_eval_harness.py`; frozen `*_HUMAN_REVIEW_REQUIRED` / `*_HUMAN_REVIEW_EXEMPT` set parity across all prompt categories (Round 90); library-wide contract heading registry (`PROMPT_CONTRACT_HEADINGS`, Round 93); workflow skill coverage registry (`*_COVER_WORKFLOW_SKILLS`, Round 95); eval_harness score floor registry (`PROMPT_EVAL_MIN_SCORE`, Round 96); workflow skill reference registry (`assert_prompt_references_workflow_skill`, Round 97); eval_harness fixture registry (`make_category_eval_harness_fixture`, Round 98); category path registry (`category_prompt_dir` / `sorted_category_prompts`, Round 99); library registry helper registry (`assert_registry_matches_library_glob`, Round 100); governance surface path registry (`cheatsheet_en_path` / `glossary_path`, Round 101); workflow skill reference helper preamble-aligned (Round 99); library registry helper DRY (`assert_library_wide_unique_basenames` / `assert_registry_matches_library_glob`, Round 100)
@@ -423,4 +435,4 @@ Phase 1 quality-gate tooling and documentation are **complete**. Routing consist
 - ✅ Benchmark fixture gate plus optional manual benchmark runs
 - ✅ Research-backed design decisions
 
-The project is positioned to grow sustainably with quality discipline built in from the start. No blocking validation failures remain from panel Rounds 1–101; non-blocking governance warnings should still be resolved through Decision Index hygiene. The standing quality discipline is **holdout expansion before router tuning** (floors last raised 2026-09-14: ROUTE-002 47 groups / 134 phrases, ROUTE-003 26 groups / 91 phrases) and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.
+The project is positioned to grow sustainably with quality discipline built in from the start. No blocking validation failures remain from panel Rounds 1–101; non-blocking governance warnings should still be resolved through Decision Index hygiene. The standing quality discipline is **holdout expansion before router tuning** (floors last raised 2026-09-24: ROUTE-002 48 groups / 138 phrases, ROUTE-003 32 groups / 108 phrases) and optional manual baseline-vs-skill benchmark runs — not shipping new core skills without promotion evidence.

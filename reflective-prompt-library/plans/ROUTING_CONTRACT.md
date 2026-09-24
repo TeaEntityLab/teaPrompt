@@ -125,6 +125,18 @@ This contract applies to:
   probe-linked snippets in the quick-cue block; `test_cheatsheet_*_parity.py` guards full
   cheatsheet coverage.
 
+### R13: Review-led inspection of an existing artifact
+
+- Phrases that **open with a review verb** (review, critique, audit, examine, check, 審查, 檢查)
+  and name an existing spec / plan / PRD / roadmap / requirements artifact route to
+  `reflective-review`: the artifact is the object under inspection, not a requested deliverable,
+  so the planning boundary's "delivery artifact requested" boost does not apply.
+- Authoring (draft, write, turn into tickets, no-code / planning-only), repository delivery
+  (in the repository, land, run the tests), catalog questions (which skill), minimality
+  vocabulary, and production / security hazards keep their own routes.
+- ROUTE-002 `review_led_artifact_holdout` and the ROUTE-003 `review_led_*` groups fixture-back
+  this boundary, one trap per other workflow sharing the verbs or nouns (R8).
+
 
 ## Router Output Contract
 
