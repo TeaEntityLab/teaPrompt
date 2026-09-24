@@ -1,7 +1,7 @@
 ---
 feature: route paraphrase evals
-source_commit: c1cdf14
-last_verified_at: 2026-09-23
+source_commit: 7d8de92
+last_verified_at: 2026-09-24
 verification_status: passing
 ---
 

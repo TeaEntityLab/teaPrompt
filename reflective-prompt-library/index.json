@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-23T22:43:12.800358",
+  "generated_at": "2026-09-24T12:19:29.387484",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -11088,7 +11088,7 @@
         }
       ],
       "line_count": 59,
-      "char_count": 4003
+      "char_count": 4166
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",

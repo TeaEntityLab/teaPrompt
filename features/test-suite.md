@@ -1,7 +1,7 @@
 ---
 feature: governance test suite
-source_commit: c1cdf14
-last_verified_at: 2026-09-23
+source_commit: 7d8de92
+last_verified_at: 2026-09-24
 verification_status: passing
 ---
 
@@ -9,7 +9,7 @@ verification_status: passing
 
 ## Entry points
 
-- `reflective-prompt-library/plans/tests/` — 103 test files, 1287 tests at
+- `reflective-prompt-library/plans/tests/` — 99 `test_*.py` files, 1287 tests at
   generation time. Pins governance records, registry cardinality, cheatsheet
   parity, boundary quick cues, and adoption-state contracts.
 

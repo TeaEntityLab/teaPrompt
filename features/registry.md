@@ -1,7 +1,7 @@
 ---
 feature: skill registry cardinality
-source_commit: c1cdf14
-last_verified_at: 2026-09-23
+source_commit: 7d8de92
+last_verified_at: 2026-09-24
 verification_status: passing
 ---
 
@@ -16,7 +16,7 @@ verification_status: passing
 ## Drive
 
 ```bash
-find reflective-prompt-library/skills -name SKILL.md -mindepth 2 -maxdepth 2 | wc -l   # expect: 14 (9 core + 5 packs)
+find reflective-prompt-library/skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l   # expect: 14 (9 core + 5 packs)
 python3 reflective-prompt-library/plans/validate_skill_examples.py
 ```
 
@@ -44,4 +44,4 @@ Expected validator tail: `All 9 core + 5 domain-pack skills have example files`.
 
 ## Evidence
 
-`ls` count, validator output, and the offending directory/file name.
+`find` count, validator output, and the offending directory/file name.
