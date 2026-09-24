@@ -115,10 +115,12 @@ def main() -> int:
             if pack not in surface_text:
                 errors.append(f"{surface}: does not name pack {pack!r}")
 
-    # Cardinality self-check: the lists above iterate themselves, so a registry
-    # shrink (a dropped entry) passes silently unless asserted. Nine core is the
-    # frozen invariant; five packs is the current registered cardinality — a
-    # legitimate pack admission updates the list AND this pin in one change.
+    # Cardinality self-check: the loops above iterate the lists themselves, so
+    # a dropped entry passes this script unless asserted here. The pytest pins
+    # (test_ga_skills_coverage_panel_record.py) also catch it; this keeps the
+    # validator correct when run standalone. Nine core is the frozen invariant;
+    # five packs is the current registered cardinality — a pack admission or
+    # demotion updates the list AND this pin in one change.
     if len(CORE_SKILLS) != 9:
         errors.append(
             f"CORE_SKILLS has {len(CORE_SKILLS)} entries, expected 9 "
@@ -134,8 +136,6 @@ def main() -> int:
         )
     if len(set(DOMAIN_PACK_SKILLS)) != len(DOMAIN_PACK_SKILLS):
         errors.append("DOMAIN_PACK_SKILLS contains duplicates")
-
-
 
     if errors:
         print(f"\n❌ {len(errors)} skill example violation(s):")

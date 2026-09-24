@@ -6,4 +6,4 @@ repos:
         entry: make all
         language: system
         pass_filenames: false
-        files: ^(reflective-prompt-library/.*\.(py|md|ya?ml)|Makefile)$
+        files: ^(reflective-prompt-library/.*\.(py|md|ya?ml)|Makefile|VERIFY\.md|acceptance\.yaml|features/.*\.md)$
