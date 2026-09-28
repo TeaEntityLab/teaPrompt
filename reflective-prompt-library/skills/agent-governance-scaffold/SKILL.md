@@ -200,6 +200,8 @@ escalate_if:
 
 Treat `resource_scope` as data subordinate to the broker-enforced `capability_class`; the broker normalizes paths and re-validates `state_predicate` at execution time (defends invariant #7 against path-normalization + TOCTOU).
 
+A `delegated_to` grant is monotone non-increasing (invariant #11): `allowed_effects` and `resource_scope` are the intersection with the delegator's authority, `forbidden_effects` is the union, and the token must not grant a capability the delegator does not hold. Record that constraint in the token; only the broker enforces it.
+
 ### Checker profile (§5.2) — failure independence, not just role names
 
 ```yaml

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-24T12:31:59.689957",
+  "generated_at": "2026-09-28T23:25:41.757449",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -82,6 +82,7 @@
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
             "governance-necessity-panel-record-2026-07-11.md",
+            "devops-agentic-trends-survey-2026-09-28.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "fable-method-survey-2026-07-16.md",
@@ -5050,6 +5051,68 @@
       ],
       "line_count": 319,
       "char_count": 32425
+    },
+    {
+      "path": "reflective-prompt-library/plans/devops-agentic-trends-survey-2026-09-28.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "devops-agentic-trends-survey-2026-09-28",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "DevOps and Agentic AI Architecture Trends Survey — August–September 2026 Shift (2026-09-28)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-28)"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity and Claim Verification"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings and Architectural Synthesis"
+        }
+      ],
+      "line_count": 132,
+      "char_count": 23670
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -14218,8 +14281,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 405,
-      "char_count": 26291
+      "line_count": 407,
+      "char_count": 26622
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -15653,5 +15716,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 175
+  "total_files": 176
 }
