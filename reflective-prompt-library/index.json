@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-28T23:47:32.949099",
+  "generated_at": "2026-09-29T00:55:47.790293",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -106,6 +106,7 @@
             "claude-code-system-prompts-survey-2026-07-24.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "ROUTING_CONTRACT.md",
+            "software-factory-rethink-panel-record-2026-09-28.md",
             "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
@@ -7346,6 +7347,64 @@
       "char_count": 8252
     },
     {
+      "path": "reflective-prompt-library/plans/software-factory-rethink-panel-record-2026-09-28.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "software-factory-rethink-panel-record-2026-09-28",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Parallel Lens Review: SDLC & Software Factory Entry Points Rethink (2026-09-28)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question & Problem Context"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 125,
+      "char_count": 11937
+    },
+    {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -12179,6 +12238,14 @@
         },
         {
           "level": 2,
+          "text": "Autonomous Software Factory (AI-Native SDLC)"
+        },
+        {
+          "level": 3,
+          "text": "Factory Composition Rules"
+        },
+        {
+          "level": 2,
           "text": "Cost Modes"
         },
         {
@@ -12186,8 +12253,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 240,
-      "char_count": 12236
+      "line_count": 279,
+      "char_count": 15237
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -13377,7 +13444,7 @@
         }
       ],
       "line_count": 247,
-      "char_count": 12297
+      "char_count": 12333
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -13449,7 +13516,7 @@
         }
       ],
       "line_count": 236,
-      "char_count": 7055
+      "char_count": 7072
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -15839,5 +15906,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 177
+  "total_files": 178
 }

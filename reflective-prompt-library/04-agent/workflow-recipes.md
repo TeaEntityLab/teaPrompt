@@ -179,6 +179,45 @@ Falsifier for this subsection: wrong if panel records satisfy these contracts wi
 
 Falsifier: if one `reflective-review` or `reflective-research` pass would produce the same decision with enough evidence, this recipe is ceremony and should not run.
 
+
+## Autonomous Software Factory (AI-Native SDLC)
+
+Start: L5. Artifacts: `intent-record`, versioned spec, `VERIFY.md` (verification map), delivery contract packet (`oracle-manifest`, `task-packet`, `autonomy-envelope`), headless execution loop script, proof-carrying diff with evidence ledger, `acceptance-record`, and `gate-retro-record`.
+
+Mandatory human gates: `intent` (Gate 1) and `acceptance` (Gate 6) require explicit named human sign-off; auto-release is strictly prohibited.
+
+```text
+Phase 1: Intent & Specification (Outer Loop)
+reflective-brief
+-> reflective-spec-plan
+-> verification-map-generator
+
+Phase 2: Governance & Containment (Contract Boundary)
+-> governed-delivery (oracle-manifest, task-packet, autonomy-envelope)
+-> Host Precondition Verification (MicroVM isolation, Action Gateway, oracle write-protection)
+
+Phase 3: Bounded Headless Execution (Inner Loop)
+-> flow-loop-harness (or flow-control-generator) executing reflective-implement
+-> Deterministic Invariant Checks & Failure-Signature Tracking
+
+Phase 4: Verification, Acceptance & Durability (Audit Loop)
+-> reflective-review + reflective-risk (evidence-ledger attestation, proof-carrying diff)
+-> Human Acceptance Gate (acceptance-record)
+-> reflective-handoff-retro (gate retro, durable project knowledge)
+```
+
+### Factory Composition Rules
+
+1. **Outer-Loop vs. Inner-Loop Split:**
+   The prompt layer (`brief` -> `spec-plan` -> `verification-map`) defines *what* must be built and *how* truth is measured before code generation begins. The inner loop (`flow-loop-harness` + `reflective-implement`) runs headlessly in host containment until deterministic oracles pass or the envelope budget/failure signature limit is reached.
+2. **Artifact-Gated Handshake:**
+   Execution must not begin on an unversioned spec or an unlocked oracle manifest. `verification-map-generator` emits the verification matrix; `governed-delivery` seals authoritative oracles from developer tests. The executing agent in the inner loop cannot mutate authoritative oracles.
+3. **Evidence-Ledger Attestation:**
+   Inner loop passes do not constitute acceptance (`execution-success ≠ goal-success`). The delivery must produce a Proof-Carrying Diff attested across four evidence dimensions (deterministic check, runtime evidence, external primary source, independent model review) before Gate 6.
+4. **Enforcement Boundary (Principle P7):**
+   TeaPrompt provides the prompt sequence and contract schemas; host infrastructure owns container sandboxing, process execution, credential brokering, and git branch protection. A delivery run that lacks host enforcement must report status as `artifact-complete`, never `enforcement-proven`.
+
+Falsifier: If an autonomous delivery pipeline run without Phase 1 (intent & verification map) succeeds with equal defect rate and zero intent drift as one run with Phase 1, or if a single monolithic prompt achieves the same verifiability without artifact-gated stages, this recipe is ceremony and should be removed.
 ## Cost Modes
 
 Strictness mapping: low-cost starts at L1–L2, medium-cost at L3, high-cost
