@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-28T23:25:41.757449",
+  "generated_at": "2026-09-28T23:47:32.949099",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -136,6 +136,7 @@
             "flow-pack-usage-log.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
+            "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
             "project-adjustment-reflection-2026-06-11.md",
             "installed-skills-general-lessons-2026-09-05.md"
           ]
@@ -11367,6 +11368,128 @@
       "char_count": 28752
     },
     {
+      "path": "reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "software-factory-sdlc-inner-outer-loop-survey-2026-09-28",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Autonomous Software Factory Survey — SDLC, Inner Loop vs. Outer Loop, and Spec-Driven Correctness (2026-09-28)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question & Core Objective"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-28)"
+        },
+        {
+          "level": 2,
+          "text": "Executive Architectural Blueprint: The 5-Layer Software Factory"
+        },
+        {
+          "level": 2,
+          "text": "Method & Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Detailed Findings Across the Three Parallel Lenses"
+        },
+        {
+          "level": 3,
+          "text": "Lens 1: Intent & Specification Contract Layer (`intent.md` → `spec.md` → `criteria.yaml`)"
+        },
+        {
+          "level": 3,
+          "text": "Lens 2: Inner Loop Execution & Anti-Gaming Verification"
+        },
+        {
+          "level": 3,
+          "text": "Lens 3: Outer Loop Governance & Software Factory Architecture"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Canonical Contract Artifact Blueprints"
+        },
+        {
+          "level": 3,
+          "text": "1. `intent.md` (Human Intent Contract)"
+        },
+        {
+          "level": 1,
+          "text": "Intent: Distributed Rate-Limiting Ingress Filter"
+        },
+        {
+          "level": 2,
+          "text": "1. Problem & Business Context"
+        },
+        {
+          "level": 2,
+          "text": "2. Core Goal & Jobs-to-be-Done (JTBD)"
+        },
+        {
+          "level": 2,
+          "text": "3. Scope Boundaries"
+        },
+        {
+          "level": 3,
+          "text": "3.1. In Scope"
+        },
+        {
+          "level": 3,
+          "text": "3.2. Out of Scope (Strict Non-Goals)"
+        },
+        {
+          "level": 2,
+          "text": "4. Owned Unknowns & Irreversible Assumptions"
+        },
+        {
+          "level": 2,
+          "text": "5. Falsifiability"
+        },
+        {
+          "level": 3,
+          "text": "2. `criteria.yaml` (Sealed Oracle Manifest & Anti-Cheating Spec)"
+        },
+        {
+          "level": 3,
+          "text": "3. `evidence-ledger.yaml` (Attested Proof-Carrying Diff Dossier)"
+        },
+        {
+          "level": 2,
+          "text": "Architectural Synthesis"
+        }
+      ],
+      "line_count": 351,
+      "char_count": 29501
+    },
+    {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -15716,5 +15839,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 176
+  "total_files": 177
 }
