@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-29T00:55:47.790293",
+  "generated_at": "2026-09-30T15:30:54.043891",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -39,6 +39,7 @@
             "skills-surface-plan-2026-07-11.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "harness-intent-drift-rethink-2026-09-06.md",
+            "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "socratic-change-inquiry-2026-06-11.md",
@@ -134,6 +135,7 @@
             "prompt-library-build-plan.md",
             "agentflow-8.2-delta-survey-2026-09-13.md",
             "runtime-governance-learning-plan-2026-06-11.md",
+            "stop-that-shit-survey-2026-09-30.md",
             "flow-pack-usage-log.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
@@ -1620,6 +1622,118 @@
       ],
       "line_count": 185,
       "char_count": 40252
+    },
+    {
+      "path": "reflective-prompt-library/plans/coordinate-codex-tasks-eval-survey-2026-09-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "coordinate-codex-tasks-eval-survey-2026-09-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md#concept-map",
+          "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md#candidate-adoption-ledger",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../02-engineering/test-designer.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "rsiagent-survey-2026-09-16.md#candidate-adoption-ledger",
+          "fable-method-survey-2026-07-16.md#candidate-adoption-ledger",
+          "llm-judge-lifecycle-survey-2026-09-05.md#candidate-adoption-ledger",
+          "pi-warden-survey-2026-09-20.md#concept-map",
+          "ROUTING_CONTRACT.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../06-repo/AGENTS.md",
+          "validate_record_hygiene.py",
+          "validate_links.py",
+          "validate_project_knowledge.py"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Eval-Driven Optimization and Codex Task Coordination Survey (2026-09-30)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Method and Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Source Identity and Tracking Points"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Eval Construction and Optimization"
+        },
+        {
+          "level": 3,
+          "text": "Coordinator Lifecycle"
+        },
+        {
+          "level": 3,
+          "text": "Provider Comparison: Mechanisms, Not Rankings"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Coverage and Prior Decisions"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Executable Verification"
+        },
+        {
+          "level": 3,
+          "text": "Pinned Coordinator Package"
+        },
+        {
+          "level": 3,
+          "text": "Write Protection Versus Read Isolation"
+        },
+        {
+          "level": 3,
+          "text": "Scalar-Only Validation Selection"
+        },
+        {
+          "level": 3,
+          "text": "Repository Guards"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Acceptance, and Handoff"
+        }
+      ],
+      "line_count": 215,
+      "char_count": 30475
     },
     {
       "path": "reflective-prompt-library/plans/skills-september-concepts-review-2026-09-16.md",
@@ -11216,6 +11330,115 @@
       "char_count": 5506
     },
     {
+      "path": "reflective-prompt-library/plans/stop-that-shit-survey-2026-09-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "stop-that-shit-survey-2026-09-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "coordinate-codex-tasks-eval-survey-2026-09-30.md",
+          "rsiagent-survey-2026-09-16.md",
+          "fable-method-survey-2026-07-16.md",
+          "llm-judge-lifecycle-survey-2026-09-05.md",
+          "pi-warden-survey-2026-09-20.md",
+          "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Stop That Shit: Task Guardrails and Minimality Survey (2026-09-30)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Method and Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 3,
+          "text": "Advisory methodology versus executable guard"
+        },
+        {
+          "level": 3,
+          "text": "Arming and authority"
+        },
+        {
+          "level": 3,
+          "text": "Reservation accounting, not orchestration"
+        },
+        {
+          "level": 3,
+          "text": "Privacy and failure posture"
+        },
+        {
+          "level": 2,
+          "text": "Host Coverage and Material Limits"
+        },
+        {
+          "level": 2,
+          "text": "Verification Evidence: Three Different Bars"
+        },
+        {
+          "level": 3,
+          "text": "1. Local offline behavior — observed in this survey"
+        },
+        {
+          "level": 3,
+          "text": "2. Installed-host postconditions — upstream-reported, not repeated here"
+        },
+        {
+          "level": 3,
+          "text": "3. Model improvement — not established"
+        },
+        {
+          "level": 2,
+          "text": "Concept Map and Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference / Final State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Continuity, Risks, and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Repository Guards and Completion"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        }
+      ],
+      "line_count": 218,
+      "char_count": 37038
+    },
+    {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -15906,5 +16129,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 178
+  "total_files": 180
 }
