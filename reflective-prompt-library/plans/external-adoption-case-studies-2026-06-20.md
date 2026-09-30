@@ -275,6 +275,28 @@ and a known-present control → `verified`; two searched docs out of 41
 → `needs-qualification`. This records one sampled response, not general
 adherence, improvement over the previous wording, or an upstream model benchmark.
 
+## 2026-09-30 Agentflow 8.4.1 and RRSI Follow-through
+
+User direction: fix advisor notes, survey Agentflow v8.4.1 and RRSI, then update docs or skills if worthwhile.
+This authorizes consideration of these candidates, not unrelated named holds.
+The STS banner now separates its eight record-only mechanisms from the earlier XM-11 method adoption.
+Nine Agentflow candidates and twelve RRSI candidates remain unadopted; the one verified local gap is the
+Software Factory recipe's attribution of oracle sealing to the contract generator.
+
+### Candidate Adoption Ledger
+
+| ID | Candidate | Status | Evidence | Next action or trigger |
+| --- | --- | --- | --- | --- |
+| AF841-M1 | Correct recipe #2's sealing attribution without changing the delivery contract | Adopted in place 2026-09-30 — docs-only | `governed-delivery` Methods/Never/Host Preconditions already require host enforcement; recipe #4 agrees. Rule #2 now declares the oracle split, owner, host seal and change protocol. Actual recipe/contract consumer smoke passed three synthetic boundary cases, not an efficacy comparison. | Reopen on a consumer attributing actual sealing to TeaPrompt; repair that surface. |
+
+[Agentflow record](agentflow-8.4.1-delta-survey-2026-09-30.md): requested `v8.4.1` at `ab80a4d`,
+not main-ahead 8.4.2; two sandboxed native probes. [RRSI record](rrsi-survey-2026-09-30.md):
+`be50316e`; 34 core checks plus five supplemental selection cases and five sandbox controls.
+The latter exposes missing-cost-neutral admission and within-band novelty semantics, not benchmark
+failure or replicated performance. Full provider/benchmark runs were not undertaken.
+No skill, routing, permission, dependency or runtime change; R8 and RS-4/FM3/JL-9/XM-3 holds remain.
+Existing structural/link/governance checks cover the documentation repair; no paragraph-pin test added.
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -357,3 +379,6 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | Hotline verification-redundancy survey recorded (pasted zh-TW excerpt, source unknown): thesis "trust is not the architecture — verification and redundancy are" over the Moscow–Washington hotline; 1963 MOU wire-telegraph + Tangier radiotelegraph backup verified, 1971 claim corrected (same-day pair — Modernization added Intelsat/Molniya II satellite circuits operational 1978; accident/unauthorized-incident wording belongs to the companion Accidents Measures Agreement); trust minimized and verified, not eliminated (exchanged teleprinters + encoding devices) | paste read in full; Yale Avalon 1971 Accidents Measures text in full; ACA hotline factsheet in full; state.gov/aerospace.org corroboration; nothing executed | record-only (bare survey, DS-1) — five HL-* candidates all no-change: failure-mode enumeration covered by reflective-risk/spec-plan; decorrelated channels by governed-delivery; text-over-voice by artifact-promotion; shared schemas by agent-governance-scaffold; treaty-level inspection/monitoring out of scope → `plans/hotline-verification-redundancy-survey-2026-09-22.md` + guard `plans/tests/test_hotline_survey_record.py` |
 | pstack deep-research synthesis survey recorded (`'/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-09-22T14-10-34-853Z_01a0c974-42e5-723b-8563-6b4647c88d6f/local/paste-4.md'`, zh-TW synthesis proposing governance integration for pstack; repo claims verified at `cursor/plugins` @ `53e579f`): 23 playbooks confirmed; shipping's verifier≠author + patch-id binding + contiguous-verified-run landing confirmed; autopilot-full's operator-grant + root-verdict merge confirmed; `poteto/verification-skill-example` confirmed fictional (Atlas/Harbor Labs, CLI omitted on purpose); "Gardener" absent from pinned tree (zero hits) | paste read in full; pinned repo re-verified via API tree + raw reads + full-tarball grep; METR/DORA/OpenAI/GitHub/Cursor external claims verified against primary sources; nothing executed | record-only (bare survey, DS-1) — eight PS2-* candidates: seven no-change (installed coverage via governed-delivery, agent-governance-scaffold, runtime-trust-boundary); PS2-7 recorded as A/B/C pilot-evaluation design for deferred PS-C1 → `plans/pstack-synthesis-survey-2026-09-22.md` + guard `plans/tests/test_pstack_synthesis_survey_record.py` |
 | 2026-09-30 research-method follow-through | done | XM-11 adopted on the existing research State Ledger; XM-12 held under XM-3; Code Recall's absence wording scoped to its recorded documents; user direction and falsifiers above |
+| Agentflow 8.4.1 follow-through recorded | done | `agentflow-8.4.1-delta-survey-2026-09-30.md`; immutable requested pin and delta, two sandboxed native probes; nine upstream candidates unadopted |
+| RRSI survey recorded | done | `rrsi-survey-2026-09-30.md`; pinned source/paper, core and supplemental selector smoke, twelve candidate dispositions; gains and cost-saving scopes remain author-claimed |
+| Advisor banner and local recipe attribution repaired | done | STS headline distinguishes XM-11; AF841-M1 fixes recipe #2 only; three-case consumer smoke; Decision Index links both records; existing named holds unchanged |

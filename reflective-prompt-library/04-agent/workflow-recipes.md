@@ -211,7 +211,7 @@ Phase 4: Verification, Acceptance & Durability (Audit Loop)
 1. **Outer-Loop vs. Inner-Loop Split:**
    The prompt layer (`brief` -> `spec-plan` -> `verification-map`) defines *what* must be built and *how* truth is measured before code generation begins. The inner loop (`flow-loop-harness` + `reflective-implement`) runs headlessly in host containment until deterministic oracles pass or the envelope budget/failure signature limit is reached.
 2. **Artifact-Gated Handshake:**
-   Execution must not begin on an unversioned spec or an unlocked oracle manifest. `verification-map-generator` emits the verification matrix; `governed-delivery` seals authoritative oracles from developer tests. The executing agent in the inner loop cannot mutate authoritative oracles.
+   Execution must not begin on an unversioned spec or an unlocked oracle manifest. `verification-map-generator` emits the verification matrix; `governed-delivery` separates authoritative oracles from developer tests and declares their owner, host seal, and change protocol. The host must enforce the seal; the executing agent in the inner loop cannot mutate authoritative oracles.
 3. **Evidence-Ledger Attestation:**
    Inner loop passes do not constitute acceptance (`execution-success ≠ goal-success`). The delivery must produce a Proof-Carrying Diff attested across four evidence dimensions (deterministic check, runtime evidence, external primary source, independent model review) before Gate 6.
 4. **Enforcement Boundary (Principle P7):**

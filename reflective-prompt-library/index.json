@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30T16:05:22.106815",
+  "generated_at": "2026-09-30T17:05:02.213774",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -53,6 +53,7 @@
             "gpt-instruct-survey-2026-09-10.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
+            "agentflow-8.4.1-delta-survey-2026-09-30.md",
             "astra-efficiency-rules-survey-2026-09-10.md",
             "handover-docs-survey-2026-09-23.md",
             "vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -118,6 +119,7 @@
             "agentflow-survey-2026-09-05.md",
             "skill-workflow-research-synthesis.md",
             "skill-verification-panel-2026-09-05.md",
+            "rrsi-survey-2026-09-30.md",
             "skill-scenario-panel-record-2026-07-12.md",
             "multi-agent-panel-consensus-2026-06-25.md",
             "flow-control-pack-panel-record-2026-07-11.md",
@@ -2769,6 +2771,100 @@
       ],
       "line_count": 144,
       "char_count": 8621
+    },
+    {
+      "path": "reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agentflow-8.4.1-delta-survey-2026-09-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "software-factory-rethink-panel-record-2026-09-28.md",
+          "agentflow-8.3.2-delta-survey-2026-09-22.md",
+          "agentflow-8.3-delta-survey-2026-09-21.md",
+          "agentflow-8.2-delta-survey-2026-09-13.md",
+          "agentflow-survey-2026-09-05.md",
+          "../04-agent/workflow-recipes.md#factory-composition-rules",
+          "../skills/governed-delivery/SKILL.md#host-preconditions"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agentflow 8.4.1 — Delta Survey — 2026-09-30"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Scope"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-30)"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger and Changed Mechanisms"
+        },
+        {
+          "level": 3,
+          "text": "8.3.3 → 8.3.4 (host hardening + obligation rewrite + review-only path)"
+        },
+        {
+          "level": 3,
+          "text": "8.3.4 → 8.4.0 (optional notebook ownership)"
+        },
+        {
+          "level": 3,
+          "text": "8.4.0 → 8.4.1 (documentation only)"
+        },
+        {
+          "level": 3,
+          "text": "8.4.2 (later identity/date context — not requested-version behavior)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Local Documentation Repair and Consumer Map"
+        },
+        {
+          "level": 2,
+          "text": "Native Smoke (observed at the requested pin)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 244,
+      "char_count": 23070
     },
     {
       "path": "reflective-prompt-library/plans/astra-efficiency-rules-survey-2026-09-10.md",
@@ -6893,7 +6989,9 @@
           "claude-code-system-prompts-survey-2026-07-24.md",
           "stop-that-shit-survey-2026-09-30.md",
           "code-recall-survey-2026-08-20.md",
-          "../GLOSSARY.md#adoption-guard-closure"
+          "../GLOSSARY.md#adoption-guard-closure",
+          "agentflow-8.4.1-delta-survey-2026-09-30.md",
+          "rrsi-survey-2026-09-30.md"
         ]
       },
       "structure": [
@@ -6963,6 +7061,14 @@
         },
         {
           "level": 2,
+          "text": "2026-09-30 Agentflow 8.4.1 and RRSI Follow-through"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
           "text": "Rejected Alternatives"
         },
         {
@@ -6974,8 +7080,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 359,
-      "char_count": 71286
+      "line_count": 384,
+      "char_count": 73758
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -8475,6 +8581,92 @@
       ],
       "line_count": 67,
       "char_count": 12479
+    },
+    {
+      "path": "reflective-prompt-library/plans/rrsi-survey-2026-09-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "rrsi-survey-2026-09-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "RRSI Survey — `google-research/rrsi` (2026-09-30)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation (as of 2026-09-30)"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity and Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "What the Artifact Is"
+        },
+        {
+          "level": 2,
+          "text": "Mechanism Map (code-verified at the pin)"
+        },
+        {
+          "level": 2,
+          "text": "Reported Performance (author-claimed; NOT replicated)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Offline Smoke (observed runtime evidence)"
+        },
+        {
+          "level": 3,
+          "text": "Supplemental selector boundary probe"
+        },
+        {
+          "level": 2,
+          "text": "Existing TeaPrompt Contract Mapping (closest lines, not gaps)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Citations (checked 2026-09-30; code pinned)"
+        },
+        {
+          "level": 2,
+          "text": "Completion Ledger"
+        }
+      ],
+      "line_count": 294,
+      "char_count": 35298
     },
     {
       "path": "reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md",
@@ -11448,7 +11640,7 @@
         }
       ],
       "line_count": 219,
-      "char_count": 37890
+      "char_count": 37864
     },
     {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
@@ -12489,7 +12681,7 @@
         }
       ],
       "line_count": 279,
-      "char_count": 15237
+      "char_count": 15330
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -16141,5 +16333,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 180
+  "total_files": 182
 }
