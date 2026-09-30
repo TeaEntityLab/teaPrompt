@@ -240,7 +240,9 @@ runtime, or project-knowledge rule. Deterministic guard for this record:
    removed a pre-existing `@AGENTS.md` import, an `AGENTS.md` Gemini
    `contextFileName` entry, and a `/user/custom/stop.js` Cursor hook via
    `/coderecall|stop\.js/i` — contradicting "removes ONLY our entries" and
-   byte-for-byte-preservation claims. Not disclosed anywhere.
+   byte-for-byte-preservation claims. Not disclosed in the READMEs, SPEC,
+   SECURITY, COMPATIBILITY, CHANGELOG, or ROADMAP read at the pin
+   (see §Evidence Actually Checked).
 3. **MCP failure/output semantics:** `update_task` returns success with no
    `TASK.md`; a missing `DECISIONS.md` terminates the long-lived server via
    `fail()`; `search_memory`/`list_decisions` return unfenced project text.

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30T15:30:54.043891",
+  "generated_at": "2026-09-30T16:05:22.106815",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5711,8 +5711,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 375,
-      "char_count": 30618
+      "line_count": 377,
+      "char_count": 30733
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md",
@@ -6890,7 +6890,10 @@
           "../skills/reflective-minimality/SKILL.md",
           "../skills/reflective-dispatch/SKILL.md",
           "baton-dispatch-survey-2026-07-13.md",
-          "claude-code-system-prompts-survey-2026-07-24.md"
+          "claude-code-system-prompts-survey-2026-07-24.md",
+          "stop-that-shit-survey-2026-09-30.md",
+          "code-recall-survey-2026-08-20.md",
+          "../GLOSSARY.md#adoption-guard-closure"
         ]
       },
       "structure": [
@@ -6952,6 +6955,14 @@
         },
         {
           "level": 2,
+          "text": "2026-09-30 Absence-Claim Method Repair"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
           "text": "Rejected Alternatives"
         },
         {
@@ -6963,8 +6974,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 325,
-      "char_count": 68034
+      "line_count": 359,
+      "char_count": 71286
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11342,6 +11353,7 @@
         "ref_snippet": [],
         "markdown_links": [
           "coordinate-codex-tasks-eval-survey-2026-09-30.md",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair",
           "rsiagent-survey-2026-09-16.md",
           "fable-method-survey-2026-07-16.md",
           "llm-judge-lifecycle-survey-2026-09-05.md",
@@ -11435,8 +11447,8 @@
           "text": "Evidence Used"
         }
       ],
-      "line_count": 218,
-      "char_count": 37038
+      "line_count": 219,
+      "char_count": 37890
     },
     {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
@@ -15094,7 +15106,7 @@
         }
       ],
       "line_count": 205,
-      "char_count": 12920
+      "char_count": 13102
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",

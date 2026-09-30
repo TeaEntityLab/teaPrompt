@@ -242,6 +242,39 @@ ceremony if three consecutive landing reviews find nothing; XM-7 is wrong if a
 tune that followed both duties still regressed a sibling workflow, in which case
 the duty is incomplete, not excessive.
 
+## 2026-09-30 Absence-Claim Method Repair
+
+User instruction: *"yes do it and if worth it then update docs or skills in the
+repo and commit push"*, after the Stop That Shit correction identified two
+probe-design misses and four candidate documentation-absence twins.
+
+This repairs TeaPrompt's research method, not the surveyed guardrail. GL-8's
+existing count/input-set rule already covers zero in principle, but the first
+STS audit check lacked a positive control and the first docs-attribution pass
+searched only root docs and the main skill. Code Recall's "Not disclosed
+anywhere" also exceeded its recorded document population. The minimal repair
+extends the existing State Ledger bullet rather than adding a rule or skill.
+
+### Candidate Adoption Ledger
+
+| ID | Candidate | Status | Evidence | Next action or trigger |
+| --- | --- | --- | --- | --- |
+| XM-11 | Load-bearing absence claims treated as zero counts with a named population and known-present control | Adopted in place 2026-09-30 | [STS correction](stop-that-shit-survey-2026-09-30.md) exposed a vacuous audit absence check and incomplete docs search; [Code Recall](code-recall-survey-2026-08-20.md) used a universal absence phrase over a listed document set. One sentence extends `reflective-research` §State Ledger; the Code Recall phrase is narrowed to its existing evidence, not freshly re-verified. | If a later survey still omits population or control, investigate execution/verifier failure rather than add duplicate prose; retire the clause if it adds ceremony without catching these gaps. |
+| XM-12 | Widen concurrent-write probes to include lock-acquisition timeout and abandoned-lock recovery | Held — XM-3 repeated-escape gate | The STS first run's healthy two-process race missed lock-timeout fail-open; the correction exercised held and abandoned locks. This is the first recorded escape, not repeated escapes. Earlier source-identified races do not establish another escaped probe. | XM-3's existing trigger remains: widen only after a repeated failure class escapes the probes; a second observed escape or explicit candidate-specific Human Review can reopen this row. |
+
+Rejected alternatives: rely on "count" implicitly including zero despite the
+observed misses; add a duplicate absence-check bullet or a tenth Durable Lesson;
+silently waive XM-3's named gate. No upstream mechanism or deferred candidate is
+promoted. Existing structural/metadata/link guards cover the change; no new
+paragraph pin is added ([Adoption Guard Closure](../GLOSSARY.md#adoption-guard-closure)).
+
+Prompt smoke: one completion loaded the installed `.agents` research entry point
+and classified three synthetic evidence packets: missing audit files/control
+→ `unverified`; an exact zero over two named files with independent inspection
+and a known-present control → `verified`; two searched docs out of 41
+→ `needs-qualification`. This records one sampled response, not general
+adherence, improvement over the previous wording, or an upstream model benchmark.
+
 ## Rejected Alternatives
 
 - A new `reflective-adopt` skill or `evaluation/` directory: rejected —
@@ -323,3 +356,4 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | Agentflow 8.3.2 delta survey recorded (`agfnow/agentflow` @ `6d699038`, ahead_by 4 of the 8.3.0 pin `0abf416`; two patch releases 8.3.1+8.3.2; tags/releases empty; config schema unchanged at 8; Apache-2.0): host-only — `--include-answered true` manual-compaction flag (8.3.2); 8.3.1 stream fixes (first-activation ownership claim via committed empty-notebook proof; preserve-before-destroy cleanup recovery to a private dir before worktree removal, stops on unknown/active/changed) | GitHub API compare 8.3.0→8.3.2 read (4 commits); CHANGELOG 8.3.1/8.3.2 + SKILL.md + streams.md patches read in full; changed-file inventory enumerated; installed-surface vocab grep; nothing executed | record-only (bare survey, DS-1) — three AF832-* items are host runtime refining AF83-5/8/10 (Standing Non-Goal); no methodology change, no schema bump; cleanup fix corroborates reflective-risk rollback≠no-harm; prior AF/EP/AF82/AF83 adoptions untouched | `plans/agentflow-8.3.2-delta-survey-2026-09-22.md` + Decision Index entry + guard `plans/tests/test_agentflow_v832_delta_record.py` |
 | Hotline verification-redundancy survey recorded (pasted zh-TW excerpt, source unknown): thesis "trust is not the architecture — verification and redundancy are" over the Moscow–Washington hotline; 1963 MOU wire-telegraph + Tangier radiotelegraph backup verified, 1971 claim corrected (same-day pair — Modernization added Intelsat/Molniya II satellite circuits operational 1978; accident/unauthorized-incident wording belongs to the companion Accidents Measures Agreement); trust minimized and verified, not eliminated (exchanged teleprinters + encoding devices) | paste read in full; Yale Avalon 1971 Accidents Measures text in full; ACA hotline factsheet in full; state.gov/aerospace.org corroboration; nothing executed | record-only (bare survey, DS-1) — five HL-* candidates all no-change: failure-mode enumeration covered by reflective-risk/spec-plan; decorrelated channels by governed-delivery; text-over-voice by artifact-promotion; shared schemas by agent-governance-scaffold; treaty-level inspection/monitoring out of scope → `plans/hotline-verification-redundancy-survey-2026-09-22.md` + guard `plans/tests/test_hotline_survey_record.py` |
 | pstack deep-research synthesis survey recorded (`'/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-09-22T14-10-34-853Z_01a0c974-42e5-723b-8563-6b4647c88d6f/local/paste-4.md'`, zh-TW synthesis proposing governance integration for pstack; repo claims verified at `cursor/plugins` @ `53e579f`): 23 playbooks confirmed; shipping's verifier≠author + patch-id binding + contiguous-verified-run landing confirmed; autopilot-full's operator-grant + root-verdict merge confirmed; `poteto/verification-skill-example` confirmed fictional (Atlas/Harbor Labs, CLI omitted on purpose); "Gardener" absent from pinned tree (zero hits) | paste read in full; pinned repo re-verified via API tree + raw reads + full-tarball grep; METR/DORA/OpenAI/GitHub/Cursor external claims verified against primary sources; nothing executed | record-only (bare survey, DS-1) — eight PS2-* candidates: seven no-change (installed coverage via governed-delivery, agent-governance-scaffold, runtime-trust-boundary); PS2-7 recorded as A/B/C pilot-evaluation design for deferred PS-C1 → `plans/pstack-synthesis-survey-2026-09-22.md` + guard `plans/tests/test_pstack_synthesis_survey_record.py` |
+| 2026-09-30 research-method follow-through | done | XM-11 adopted on the existing research State Ledger; XM-12 held under XM-3; Code Recall's absence wording scoped to its recorded documents; user direction and falsifiers above |
