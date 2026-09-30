@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30T17:05:02.213774",
+  "generated_at": "2026-09-30T22:55:05.469331",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -139,6 +139,7 @@
             "runtime-governance-learning-plan-2026-06-11.md",
             "stop-that-shit-survey-2026-09-30.md",
             "flow-pack-usage-log.md",
+            "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
             "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
@@ -6979,6 +6980,7 @@
           "installed-skills-general-lessons-2026-09-05.md",
           "rsiagent-survey-2026-09-16.md",
           "graph-engineering-synthesis-survey-2026-09-16.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -7080,8 +7082,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 384,
-      "char_count": 73758
+      "line_count": 386,
+      "char_count": 74854
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11688,6 +11690,112 @@
       ],
       "line_count": 59,
       "char_count": 4249
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-execution-assurance-taxonomy-survey-2026-09-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agent-harness-convergence-survey-2026-08-25.md",
+          "pstack-survey-2026-09-22.md#pilot-execution-addendum-2026-09-22",
+          "pstack-survey-2026-09-22.md#full-armscenario-matrix-2026-09-23",
+          "pstack-survey-2026-09-22.md#second-product-fpgo-2026-09-23",
+          "pstack-survey-2026-09-22.md#third-and-fourth-products-fpes--fprust-2026-09-23",
+          "pstack-synthesis-survey-2026-09-22.md#candidate-adoption-ledger",
+          "pstack-synthesis-survey-2026-09-22.md#authorization-addendum-2026-09-23",
+          "../skills/reflective-spec-plan/SKILL.md#test-plan-mode",
+          "../skills/verification-map-generator/SKILL.md#module-contract",
+          "../skills/verification-map-generator/SKILL.md#generation-procedure",
+          "../skills/governed-delivery/SKILL.md#contract-set",
+          "../PROJECT_KNOWLEDGE.md#lesson-a-verification-maps-value-is-regression-visibility-and-time-to-verify-not-correctness",
+          "pstack-survey-2026-09-22.md#practical-pilot-one-user-journey-not-a-whole-product-harness",
+          "agent-flow-control-research-2026-07-11.md#convergent-concepts-safe-to-build-on",
+          "software-factory-rethink-panel-record-2026-09-28.md#candidate-adoption-ledger",
+          "agent-flow-control-research-2026-07-11.md#promotion-decision",
+          "../skills/flow-loop-harness/SKILL.md#loop-anatomy",
+          "pstack-synthesis-survey-2026-09-22.md#authorization-addendum-2026-09-23",
+          "governable-autonomy-survey-2026-09-03.md#direct-recommendation-as-of-2026-09-03",
+          "../PROJECT_KNOWLEDGE.md#lesson-a-verification-maps-value-is-regression-visibility-and-time-to-verify-not-correctness",
+          "pstack-survey-2026-09-22.md#pilot-execution-addendum-2026-09-22",
+          "pstack-synthesis-survey-2026-09-22.md#candidate-adoption-ledger",
+          "governable-autonomy-survey-2026-09-03.md#disagreements--residual-risks",
+          "../skills/reflective-spec-plan/SKILL.md#workflow-design-mode",
+          "agent-governance-four-power-concepts-2026-07-17.md#core-proposition",
+          "agent-governance-four-power-concepts-2026-07-17.md#three-stage-effect-pipeline",
+          "../04-agent/runtime-trust-boundary.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Execution & Assurance Taxonomy Survey — 2026-09-30"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Source-backed corrections"
+        },
+        {
+          "level": 3,
+          "text": "Inferences and unknowns"
+        },
+        {
+          "level": 2,
+          "text": "PS2-3 / PS-C1 Status and Product Traceability Join"
+        },
+        {
+          "level": 2,
+          "text": "Existing Decision Precedents"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Verification Actually Exercised"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 156,
+      "char_count": 30707
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -16333,5 +16441,5 @@
       "char_count": 19884
     }
   ],
-  "total_files": 182
+  "total_files": 183
 }
