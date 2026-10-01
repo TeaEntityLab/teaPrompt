@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T11:06:25.681344",
+  "generated_at": "2026-10-01T11:46:05.345742",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -11858,6 +11858,7 @@
         "markdown_links": [
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
+          "../PROJECT_KNOWLEDGE.md",
           "self-governance-dogfood-2026-09-24.md",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
@@ -11890,8 +11891,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 62,
-      "char_count": 4971
+      "line_count": 69,
+      "char_count": 5458
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",

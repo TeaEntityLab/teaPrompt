@@ -27,6 +27,13 @@ themselves):
 - Rig verification runs during pack maintenance do not count; note them below
   the table only when they change a template.
 - Anyone (human or agent) touching the packs appends here in the same change.
+- Failure channel (added 2026-10-01, feeds the MR-3 falsifier in
+  [PROJECT_KNOWLEDGE.md §Standing Non-Goals](../PROJECT_KNOWLEDGE.md)): a real
+  host-agent execution of a generated flow-pack script that FAILS on a
+  deterministic script-structure defect (topology/gate/exit semantics an
+  offline stub test should have caught) must be logged here with the repro
+  evidence — three such documented failures trip the non-goal falsifier and
+  open re-litigation of the no-runtime posture.
 
 ## Entries
 
