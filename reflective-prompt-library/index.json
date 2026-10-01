@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T10:38:29.595052",
+  "generated_at": "2026-10-01T10:54:24.108736",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -85,6 +85,7 @@
             "managed-skill-promotion-panel-record-2026-07-11.md",
             "governance-necessity-panel-record-2026-07-11.md",
             "devops-agentic-trends-survey-2026-09-28.md",
+            "oh-my-openagent-survey-2026-10-01.md",
             "agent-workflows-plan.md",
             "code-followups-plan.md",
             "fable-method-survey-2026-07-16.md",
@@ -5388,6 +5389,60 @@
       ],
       "line_count": 132,
       "char_count": 23670
+    },
+    {
+      "path": "reflective-prompt-library/plans/oh-my-openagent-survey-2026-10-01.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "oh-my-openagent-survey-2026-10-01",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Oh My OpenAgent (OmO) 5.x Re-survey — Standalone Runtime Pivot (2026-10-01)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Method and Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Delta vs 2026-06-25 Record"
+        },
+        {
+          "level": 2,
+          "text": "Prompt-Text vs Enforced-Mechanism Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 118,
+      "char_count": 9160
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -16529,5 +16584,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 183
+  "total_files": 184
 }
