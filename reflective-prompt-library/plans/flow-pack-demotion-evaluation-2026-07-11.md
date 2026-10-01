@@ -61,3 +61,30 @@ evaluator on 2026-07-11, or if a packaged host loop artifact (caps + verifier
 gate + ledger) existed in Claude Code at that date. Stale when any F4 watch row
 fires; the re-run must rebuild the table from current primary docs, not patch
 this one.
+
+## Source-only F1 re-check (2026-10-01)
+
+The July table and decision above remain historical. A fresh read of the
+[hooks guide](https://code.claude.com/docs/en/hooks-guide#stop-hook-hits-the-block-cap)
+documents a cap after eight consecutive Stop blocks without progress and an
+override. It is no longer safe to reuse "no caps" as a current host claim.
+The [goal docs](https://code.claude.com/docs/en/goal) still describe a model
+judging surfaced output, not independent command/file execution.
+
+Rebuilt against all four current [loop-pack templates](../skills/flow-loop-harness/SKILL.md),
+not by editing the July table:
+
+| Current template | Current documented candidate | Comparison with the template's acceptance/hygiene requirements |
+| --- | --- | --- |
+| Verify-gated fix loop | `/goal`; command Stop hook | `/goal` still has a transcript-model stop. A command hook can run a verifier; its documented continuation cap does not supply the template's content-hash progress check, ledger/resume convention, protected verifier or task-specific failure exits. |
+| Task-ledger backlog loop | `/goal` over a backlog; command Stop hook | The checked pages do not define canonical, worker-excluded queue ownership or deterministic per-task retirement plus verifier/change checks. Those require an additional script; a continuation cap is not that backlog protocol. |
+| Writer-critic rounds | Prompt/agent Stop hook | Model acceptance can be advisory, as in the pack's bare critic path; it does not establish the unattended deterministic floor, protected rubric, stored round artifacts or declared round budget. No enforcement-equivalence evidence. |
+| Multi-wave fan-out | Subagents plus Stop hook | The checked pages do not supply this template's per-wave concurrency bound, failed/empty-output tally, deterministic merged-result verifier and resumed-ledger/output-reset protocol as a packaged loop. Custom assembly is still needed. |
+
+**Disposition:** the partial cap/progress documentation justifies this F1
+source re-check, but does not establish all-template coverage with equivalent
+enforcement. No demotion or template change is authorized. No vendor runtime
+was exercised; deployed-host behavior and ecosystem-wide packaged alternatives
+remain `unknown`. The [prep evidence log](flow-pack-usage-log.md#verification-correction-2026-10-01)
+records the six F4 rows and separate S4/survey-note follow-ups; the 2026-10-11
+checkpoint must re-verify these volatile sources.

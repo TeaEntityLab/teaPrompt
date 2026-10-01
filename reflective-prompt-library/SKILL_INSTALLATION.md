@@ -406,12 +406,14 @@ This is not a native skill install, but it preserves the workflow behavior in Cu
 
 ## Antigravity CLI / Antigravity IDE
 
-Antigravity CLI replaces Gemini CLI; this guide retired its Gemini CLI section on 2026-09-05. Antigravity supports Agent Skills in these locations:
+Antigravity CLI replaces consumer Gemini CLI access; this guide retired its Gemini CLI section on 2026-09-05. The [Google transition announcement](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) distinguishes free/Google AI Pro/Ultra users from supported enterprise and paid-API Gemini CLI access. Current [Agent Skills docs](https://antigravity.google/docs/skills), checked 2026-10-01, distinguish CLI and desktop/IDE global locations:
 
-| Scope | Path |
-| --- | --- |
-| Workspace | `<workspace-root>/.agents/skills/<skill-name>/SKILL.md` |
-| Global | `~/.gemini/antigravity/skills/<skill-name>/SKILL.md` |
+| Scope | Surface | Path |
+| --- | --- | --- |
+| Workspace | CLI / Antigravity 2.0 / IDE | `<workspace-root>/.agents/skills/<skill-name>/SKILL.md` |
+| Global | CLI | `~/.gemini/antigravity-cli/skills/<skill-name>/SKILL.md` |
+| Global | Antigravity 2.0 / IDE | `~/.gemini/config/skills/<skill-name>/SKILL.md` |
+| Legacy global | IDE only | `~/.gemini/antigravity/skills/<skill-name>/SKILL.md` |
 
 Workspace install (copy):
 
@@ -425,31 +427,39 @@ Workspace install (symlink):
 install_core_skills_symlink .agents/skills
 ```
 
-Global install (copy):
+CLI global install (copy):
 
 ```bash
-install_core_skills_copy "$HOME/.gemini/antigravity/skills"
+install_core_skills_copy "$HOME/.gemini/antigravity-cli/skills"
 ```
 
-Global install (symlink):
+CLI global install (symlink):
 
 ```bash
-install_core_skills_symlink "$HOME/.gemini/antigravity/skills"
+install_core_skills_symlink "$HOME/.gemini/antigravity-cli/skills"
+```
+
+Antigravity 2.0 / IDE global install (copy):
+
+```bash
+install_core_skills_copy "$HOME/.gemini/config/skills"
+```
+
+Antigravity 2.0 / IDE global install (symlink):
+
+```bash
+install_core_skills_symlink "$HOME/.gemini/config/skills"
 ```
 
 Validate:
 
 ```bash
-find .agents/skills ~/.gemini/antigravity/skills -maxdepth 2 -name SKILL.md -print 2>/dev/null
+find .agents/skills "$HOME/.gemini/antigravity-cli/skills" "$HOME/.gemini/config/skills" "$HOME/.gemini/antigravity/skills" -maxdepth 2 -name SKILL.md -print 2>/dev/null
 ```
 
-Notes (verified on macOS, 2026-09-05): the CLI binary is `agy` (`agy --version` → 1.1.27); the global directory above exists and holds installed skills.
+Historical local check (macOS, 2026-09-05): `agy --version` returned 1.1.27 and `~/.gemini/antigravity/skills` held installed skills. That observation is not current CLI discovery proof; the locations above were refreshed from official docs, not a new live host installation.
 
-In Antigravity CLI / IDE:
-
-```text
-/skills
-```
+In the CLI, invoke a skill with its generated `/<skill-name>` slash command. In the standalone IDE, inspect skills in **Customizations** in the agent side panel.
 
 If skills do not appear, restart the IDE/CLI session and confirm the project root is the workspace root Antigravity opened.
 
@@ -602,6 +612,7 @@ verify or enforce them (runtime-trust boundary).
 - Codex skills docs: https://learn.chatgpt.com/docs/build-skills
 - OpenAI skills repository: https://github.com/openai/skills
 - Google Antigravity skills docs: https://antigravity.google/docs/skills
+- Google Gemini CLI transition announcement: https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/
 - OpenCode skills docs: https://opencode.ai/docs/skills
 - Cursor rules docs: https://docs.cursor.com/en/context
 - GitHub CLI `gh skill install`: https://cli.github.com/manual/gh_skill_install

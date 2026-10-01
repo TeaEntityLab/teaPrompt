@@ -83,6 +83,12 @@ integration** and no router/quick-cue change ([record](p7-pack-routing-decision-
 | AgentKit wind-down confirmation | OpenAI docs | Retire or confirm the `[search-derived]` note in both survey records |
 | agentskills.io spec change (frontmatter table, allowed-tools) | agentskills.io/specification | Re-run S1 conformance before any migration work |
 
+Latest source-only re-check: [2026-10-01 prep correction](flow-pack-usage-log.md#verification-correction-2026-10-01).
+It records the partial Stop-cap delta and [fresh F1 table](flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01),
+the consumer-Gemini S4 guide repair, and the narrow Agent Builder wind-down
+confirmation in both survey records. These are named follow-ups, not adoption,
+runtime enforcement proof, or the 2026-10-11 checkpoint verdict.
+
 ## Non-goals restated (pointers)
 
 No TeaPrompt-owned runtime, recorder, replay engine, or side-effect enforcer;

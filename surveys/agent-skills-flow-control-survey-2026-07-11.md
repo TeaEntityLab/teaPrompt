@@ -133,6 +133,15 @@ it; the docs migration (developers.openai.com/codex → learn.chatgpt.com, plugi
 distributing to "ChatGPT Work") is consistent with a consolidation but proves
 nothing. Recorded as **unknown**.
 
+**F4 follow-up (2026-10-01):** supersedes the wind-down unknown above only for
+the visual **Agent Builder** product. Its [official guide](https://developers.openai.com/api/docs/guides/agent-builder)
+and [deprecation timeline](https://developers.openai.com/api/docs/deprecations#2026-06-03-agent-builder)
+confirm an announcement on 2026-06-03 and scheduled shutdown on 2026-11-30.
+ChatKit remains available; the documented migration choices include Agents SDK
+and ChatGPT Workspace Agents. Whole-AgentKit retirement or an exclusively
+code-first replacement is not established. This is a dated source correction,
+not a runtime trial or TeaPrompt adoption; re-check the timeline before reliance.
+
 ### Google
 
 Gemini CLI adopted Agent Skills (activation via `activate_skill` tool with
@@ -163,10 +172,11 @@ item for SKILL_INSTALLATION host coverage.
 - **Read (primary):** agentskills.io home + specification; code.claude.com docs
   for skills, commands, goal; learn.chatgpt.com build-skills; geminicli.com
   skills; openai.github.io/openai-agents-python index.
-- **Not verified:** AgentKit wind-down (unknown); `/loop` full skill body
-  behavior beyond the commands-reference entry; every claim about hosts not
-  listed in "Read" above. (The formerly untested skills-ref unknown-field
-  behavior was settled same-day: strict rejection, observed — see S1.)
+- **Not verified in the July session:** AgentKit wind-down (the Agent Builder
+  subset is now confirmed in the dated F4 follow-up above); `/loop` full skill
+  body behavior beyond the commands-reference entry; every claim about hosts
+  not listed in "Read" above. The skills-ref unknown-field behavior was settled
+  same-day: strict rejection, observed — see S1.
 
 ## Falsifiability
 

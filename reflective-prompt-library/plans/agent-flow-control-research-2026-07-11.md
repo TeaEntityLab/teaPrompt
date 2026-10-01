@@ -36,6 +36,17 @@ Web research on 2026-07-11 (six searches across vendor docs, engineering blogs, 
 | Microsoft (Agent Framework) | Graph workflows over executors/edges | Sequential, Concurrent (fan-out/fan-in), Handoff, Group Chat, Magentic (manager with dynamic planning); checkpointing, human-in-the-loop pauses, typed messages, OpenTelemetry observability | Primary docs |
 | Practitioner layer (harness engineering) | Shell/CI loop harnesses | "Ralph" loop: `while` loop around headless agent CLI + task ledger file; external verifier as the only trusted stop condition; permission pre-approval flags; per-iteration fresh context | Practitioner posts, convergent |
 
+**F4 follow-up (2026-10-01):** the visual Agent Builder wind-down portion of
+the OpenAI row's `[search-derived]` claim is now confirmed by its
+[official guide](https://developers.openai.com/api/docs/guides/agent-builder)
+and [deprecation timeline](https://developers.openai.com/api/docs/deprecations#2026-06-03-agent-builder):
+announced 2026-06-03, scheduled shutdown 2026-11-30. ChatKit remains available;
+migration choices include Agents SDK and ChatGPT Workspace Agents, not only a
+code-first SDK. Whole-AgentKit retirement and an exclusively SDK replacement
+remain unestablished. The July row is preserved as the historical assessment;
+this dated correction supersedes its narrow wind-down/date unknown, not the
+rest of the platform survey or any TeaPrompt adoption gate.
+
 ## Convergent Concepts (safe to build on)
 
 1. Deterministic code owns control flow; the model owns step content. The surveyed vendor docs separate "workflow" (code-driven) from "agent" (model-driven) and recommend moving unreliable orchestration into scripts. Scope caveat: "surveyed" means the six sources below, not the whole field.
@@ -50,7 +61,7 @@ Web research on 2026-07-11 (six searches across vendor docs, engineering blogs, 
 - Handoff (transfer of conversation ownership) is OpenAI/Microsoft vocabulary; Anthropic/Google express the same need as routing plus subagent delegation. The skills treat handoff as a routing variant.
 - Magentic-style dynamic re-planning is a manager-model behavior, not a scriptable control structure; scripts should expose re-planning as "orchestrator step re-runs planner", not imitate it in bash.
 - Durability claims (LangGraph checkpoints, MAF checkpointing) are runtime guarantees of those hosts. A generated shell script's state ledger gives resume *convention*, not crash-safety *proof* — aligned with the runtime-trust-boundary lesson that prompt/spec text cannot provide operational guarantees.
-- `[search-derived]` items (AgentKit visual-builder wind-down date; a native Claude Code `/goal` grader loop) were not confirmed against primary docs during this session and must be re-verified before being relied on.
+- During the July research session, the AgentKit visual-builder wind-down date and native Claude Code `/goal` grader-loop claims were `[search-derived]`, not primary-source-confirmed. The Agent Builder lifecycle portion is superseded by the dated F4 follow-up above; broader product-lifecycle claims are not.
 
 ## Local Gap Analysis
 
@@ -112,4 +123,4 @@ Primary documentation (retrieved 2026-07-11):
 - Microsoft, Agent Framework — https://learn.microsoft.com/en-us/agent-framework/
 - Geoffrey Huntley, Ralph pattern — https://ghuntley.com/ralph/
 
-Secondary/search-derived (2026-07-11 web search snapshots): Anthropic 2026 Agentic Coding Trends Report summary; AgentKit wind-down reports; practitioner loop-harness posts. Treat as `[search-derived]` until re-verified.
+Secondary/search-derived (2026-07-11 web search snapshots): Anthropic 2026 Agentic Coding Trends Report summary; AgentKit wind-down reports; practitioner loop-harness posts. These remain historical search evidence; the narrow Agent Builder lifecycle claim is superseded by the 2026-10-01 primary-source follow-up above. Other claims still require re-verification before reliance.

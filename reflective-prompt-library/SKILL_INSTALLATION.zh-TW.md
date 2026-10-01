@@ -75,15 +75,35 @@ cp -R reflective-prompt-library/skills/reflective-* "${CODEX_HOME:-$HOME/.codex}
 
 ## Antigravity CLI / IDE
 
-Antigravity CLI 已取代 Gemini CLI；本指南於 2026-09-05 移除 Gemini CLI 章節。
+本指南於 2026-09-05 移除 Gemini CLI 章節。[Google 官方公告](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)確認，免費與 Google AI Pro／Ultra 使用者改用 Antigravity CLI；企業授權與付費 API 的 Gemini CLI 存取仍受支援，不能解讀成所有 Gemini CLI 都已退役。
 
-- Workspace：`.agents/skills/<skill-name>/SKILL.md`
-- Global：`~/.gemini/antigravity/skills/<skill-name>/SKILL.md`
+依 [Antigravity 技能文件](https://antigravity.google/docs/skills)於 2026-10-01 核對的路徑：
+
+- Workspace（CLI／Antigravity 2.0／IDE）：`.agents/skills/<skill-name>/SKILL.md`
+- Global（CLI）：`~/.gemini/antigravity-cli/skills/<skill-name>/SKILL.md`
+- Global（Antigravity 2.0／IDE）：`~/.gemini/config/skills/<skill-name>/SKILL.md`
+- 舊版 global（僅 IDE 支援）：`~/.gemini/antigravity/skills/<skill-name>/SKILL.md`
 
 ```bash
 mkdir -p .agents/skills
 cp -R reflective-prompt-library/skills/reflective-* .agents/skills/
 ```
+
+CLI 的 global 安裝：
+
+```bash
+mkdir -p "$HOME/.gemini/antigravity-cli/skills"
+cp -R reflective-prompt-library/skills/reflective-* "$HOME/.gemini/antigravity-cli/skills/"
+```
+
+Antigravity 2.0／IDE 的 global 安裝：
+
+```bash
+mkdir -p "$HOME/.gemini/config/skills"
+cp -R reflective-prompt-library/skills/reflective-* "$HOME/.gemini/config/skills/"
+```
+
+CLI 可用自動產生的 `/<skill-name>` 指令呼叫技能；獨立 IDE 可在 agent 側邊面板的 **Customizations** 檢視技能。以上是官方文件核對，不是本輪新的 host 載入驗證；2026-09-05 的 `agy` 1.1.27 與舊路徑觀察仍屬歷史證據。
 
 ## OpenCode
 

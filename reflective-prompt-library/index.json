@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T11:49:49.904554",
+  "generated_at": "2026-10-01T16:51:13.151813",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3396,6 +3396,8 @@
           "dormant-items-user-directed-adoption-2026-07-12.md",
           "p7-pack-routing-decision-2026-07-11.md",
           "../04-agent/workflow-acquisition.md",
+          "flow-pack-usage-log.md#verification-correction-2026-10-01",
+          "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
           "p7-pack-routing-decision-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals"
@@ -3435,8 +3437,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 100,
-      "char_count": 6400
+      "line_count": 106,
+      "char_count": 6879
     },
     {
       "path": "reflective-prompt-library/plans/september-skills-review-2026-09-14.md",
@@ -3887,6 +3889,10 @@
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
           "checkpoint-2026-10-11-runbook.md",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md",
           "multi-agent-panel-consensus-2026-06-25.md",
@@ -3895,6 +3901,7 @@
           "harness-intent-drift-rethink-2026-09-06.md",
           "astra-efficiency-rules-survey-2026-09-10.md",
           "governed-delivery-adoption-2026-09-03.md",
+          "flow-pack-usage-log.md#primary-host-generation-correction-2026-10-01",
           "agentflow-survey-2026-09-05.md",
           "gpt-instruct-survey-2026-09-10.md",
           "governable-autonomy-survey-2026-09-03.md",
@@ -3904,6 +3911,15 @@
           "gpt-instruct-survey-2026-09-10.md",
           "llm-judge-lifecycle-survey-2026-09-05.md",
           "agentflow-8.2-delta-survey-2026-09-13.md",
+          "software-factory-rethink-panel-record-2026-09-28.md",
+          "methodology-only-rethink-panel-2026-10-01.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+          "teabrain-concepts-experiments-survey-2026-09-21.md",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair",
+          "rsiagent-survey-2026-09-16.md",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion",
+          "skills-september-concepts-review-2026-09-16.md",
+          "../../review/final-report.md",
           "skill-improvement-plan-2026-07-24.md",
           "checkpoint-2026-10-11-runbook.md",
           "skill-improvement-plan-2026-07-24.md",
@@ -4074,8 +4090,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 790,
-      "char_count": 52953
+      "line_count": 800,
+      "char_count": 55873
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -6039,6 +6055,10 @@
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
           "checkpoint-2026-10-11-runbook.md",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -6065,6 +6085,15 @@
           "gpt-instruct-survey-2026-09-10.md",
           "llm-judge-lifecycle-survey-2026-09-05.md",
           "agentflow-8.2-delta-survey-2026-09-13.md",
+          "software-factory-rethink-panel-record-2026-09-28.md",
+          "methodology-only-rethink-panel-2026-10-01.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+          "teabrain-concepts-experiments-survey-2026-09-21.md",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair",
+          "rsiagent-survey-2026-09-16.md",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion",
+          "skills-september-concepts-review-2026-09-16.md",
+          "../../review/final-report.md",
           "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
           "dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
@@ -6075,7 +6104,9 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
-          "september-skills-review-2026-09-14.md"
+          "september-skills-review-2026-09-14.md",
+          "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
+          "../PROJECT_KNOWLEDGE.md#decision-index"
         ]
       },
       "structure": [
@@ -6136,8 +6167,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 229,
-      "char_count": 24167
+      "line_count": 250,
+      "char_count": 28644
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -6276,8 +6307,8 @@
           "text": "Sources"
         }
       ],
-      "line_count": 115,
-      "char_count": 14644
+      "line_count": 126,
+      "char_count": 15671
     },
     {
       "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
@@ -7864,7 +7895,8 @@
           "governed-delivery-review-2026-09-13.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
-          "agent-governance-scaffold-field-use-panel-2026-07-17.md"
+          "agent-governance-scaffold-field-use-panel-2026-07-17.md",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger"
         ]
       },
       "structure": [
@@ -7910,6 +7942,10 @@
         },
         {
           "level": 2,
+          "text": "Agenda item 9 — H5 / H6: September held-candidate review"
+        },
+        {
+          "level": 2,
           "text": "Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)"
         },
         {
@@ -7917,8 +7953,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 193,
-      "char_count": 12811
+      "line_count": 209,
+      "char_count": 13806
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -11196,7 +11232,9 @@
           "../skills/reflective-spec-plan/SKILL.md",
           "../04-agent/runtime-trust-boundary.md",
           "flow-control-roadmap-2026-07-11.md",
-          "flow-pack-usage-log.md"
+          "flow-pack-usage-log.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "flow-pack-usage-log.md#verification-correction-2026-10-01"
         ]
       },
       "structure": [
@@ -11223,10 +11261,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Source-only F1 re-check (2026-10-01)"
         }
       ],
-      "line_count": 63,
-      "char_count": 4261
+      "line_count": 90,
+      "char_count": 6734
     },
     {
       "path": "reflective-prompt-library/plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md",
@@ -11858,11 +11900,28 @@
         "markdown_links": [
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
-          "../PROJECT_KNOWLEDGE.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "self-governance-dogfood-2026-09-24.md",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-verification-panel-2026-09-05.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
+          "../04-agent/workflow-acquisition.md",
+          "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
+          "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
+          "QUALITY_GATES_SUMMARY.md",
+          "governance-rules-rethink-review-2026-07-11.md",
+          "agent-governance-scaffold-field-use-panel-2026-07-17.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md#candidate-adoption-ledger",
+          "all-skills-panel-record-2026-07-18.md#candidate-adoption-ledger",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "QUALITY_GATES_SUMMARY.md#holdout-tracking",
+          "teabrain-concepts-experiments-survey-2026-09-21.md",
+          "governed-delivery-adoption-2026-09-03.md#candidate-adoption-ledger",
+          "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
+          "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "governed-delivery-adoption-2026-09-03.md",
@@ -11891,12 +11950,28 @@
           "text": "Pre-checkpoint prep scans"
         },
         {
+          "level": 3,
+          "text": "Verification correction (2026-10-01)"
+        },
+        {
+          "level": 3,
+          "text": "Continuation evidence (2026-10-01)"
+        },
+        {
+          "level": 3,
+          "text": "G9 measurement provenance correction (2026-10-01)"
+        },
+        {
+          "level": 3,
+          "text": "Primary host-generation correction (2026-10-01)"
+        },
+        {
           "level": 2,
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 81,
-      "char_count": 6105
+      "line_count": 410,
+      "char_count": 36692
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
