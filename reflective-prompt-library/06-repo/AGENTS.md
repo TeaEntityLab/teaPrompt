@@ -7,7 +7,7 @@ Repository-level harness policy for reflective engineering agents. Primary workf
 ## Scope
 
 - In scope: strictness-first routing, nine frozen core workflow skills (the current bounded routing set; frozen means gated, not never), registered domain packs outside core routing, evidence-backed completion, project-knowledge authority boundary.
-- Out of scope: multi-agent runtime, tenth core skill without promotion gate, unregistered or silently core-routed domain packs, silent rigor downgrade.
+- Out of scope: multi-agent runtime or any distributed/user-facing runner (author-side extracted-template test harnesses stay developer-only CI fixtures), tenth core skill without promotion gate, unregistered or silently core-routed domain packs, silent rigor downgrade.
 
 ## Acceptance Criteria
 

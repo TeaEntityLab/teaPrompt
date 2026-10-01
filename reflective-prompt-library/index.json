@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T10:54:24.108736",
+  "generated_at": "2026-10-01T11:06:25.681344",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -47,6 +47,7 @@
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+            "methodology-only-rethink-panel-2026-10-01.md",
             "direction-scope-docs-adoption-2026-09-19.md",
             "durable-skills-flows-panel-2026-08-25.md",
             "llm-judge-lifecycle-survey-2026-09-05.md",
@@ -1055,7 +1056,7 @@
         }
       ],
       "line_count": 206,
-      "char_count": 9133
+      "char_count": 9251
     },
     {
       "path": "reflective-prompt-library/plans/ga-skills-coverage-panel-2026-09-03.md",
@@ -2300,6 +2301,64 @@
       ],
       "line_count": 105,
       "char_count": 8071
+    },
+    {
+      "path": "reflective-prompt-library/plans/methodology-only-rethink-panel-2026-10-01.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "methodology-only-rethink-panel-2026-10-01",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Methodology-Only Posture Rethink — Parallel Lens Panel (2026-10-01)"
+        },
+        {
+          "level": 2,
+          "text": "Packet"
+        },
+        {
+          "level": 2,
+          "text": "Panel composition"
+        },
+        {
+          "level": 2,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 2,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Required Wording Changes (applied)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Guard"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 124,
+      "char_count": 7235
     },
     {
       "path": "reflective-prompt-library/plans/direction-scope-docs-adoption-2026-09-19.md",
@@ -16584,5 +16643,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 184
+  "total_files": 185
 }
