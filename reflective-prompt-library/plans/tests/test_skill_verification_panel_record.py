@@ -4,7 +4,9 @@ Pins one or two landed sentences per skill at the surface that owns them, keeps
 both flow packs under the 20,000-character routing budget (the harness bound
 pre-exists in test_llm_judge_lifecycle_survey_record.py; the generator bound is
 new here), dry-runs the DAG template's quorum path against the merged-result
-gate (D7), and checks the record is indexed.
+gate (D7), and checks the record is indexed. Pins whose lines the 2026-10-01
+repair rewrote (stdin runner, identity gate, explicit DAG final node, content
+progress) are re-pinned to the repaired lines — one replacement pin per fix.
 """
 
 from __future__ import annotations
@@ -53,21 +55,23 @@ PINS = {
         "exactly one of the literals `**Governance status:** artifact-complete` or `**Governance status:** enforcement-proven`",
     ),
     "flow-control-generator": (
-        'run_agent() { $AGENT_CMD "$(cat "$1")" > "$2" && [ -s "$2" ] || { rm -f "$2"; return 1; }; }',
-        "elif bad: sys.exit(2)                                    # strict default",
-        'wid = "".join(c for c in str(t.get("id", "")) if c.isalnum() or c in "-_") or "task"',
+        'if $AGENT_CMD < "$1" > "$2" && [ -s "$2" ]; then',   # stdin prompt + output gate (WR-21/WR-20 re-pin)
+        'if status.get(FINAL_NODE) != "done" or (ok < int(MIN_OK) if MIN_OK else bool(bad)):',  # explicit sink (WR-04 re-pin)
+        'wid = "".join(c for c in t["id"] if c.isalnum() or c in "-_")',  # WR-02: no silent "task" fallback
         'if not isinstance(tasks, list): raise ValueError("plan is not a list")',
     ),
     "flow-loop-harness": (
-        "4. Progress detector: abort when an iteration produces no observable change",
-        'srel="$(cd "$STATE" && pwd -P)"; srel="${srel#$(git rev-parse --show-toplevel)/}"',  # fix-loop signal; the backlog loop shares the diff-stat expression since 2026-09-16
-        'if "$VERIFY" > "$STATE/verify-out.txt" 2>&1; then echo "already converged"; exit 0; fi',
+        "4. Progress detector: abort on equal content signals, not equal churn.",  # WR-05 re-pin
         'summary="$(cat "$STATE"/w${w}-*.md | cksum)"',
     ),
 }
 # Sentences that legitimately appear more than once (template + companion floor).
 AT_LEAST_ONCE = {
-    "flow-loop-harness": ("""if [ "$(sed '/^[[:space:]]*$/d' "$STATE/round-$r-critique.md")" = "ACCEPT" ]""",),
+    "flow-loop-harness": (
+        """if [ "$(sed '/^[[:space:]]*$/d' "$STATE/round-$r-critique.md")" = "ACCEPT" ]""",
+        '[ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }',
+        'srel="$(cd "$STATE" && pwd -P)"',
+    ),
     "reflective-risk": ("Sink Inventory", "Unattended Envelope"),
     "flow-control-generator": ("# gate: none (accepted)",),
     "reflective-research": ("| Claim / Item | Source | Status | Checked (date) | How (command + input set, or freshness kind) | Open Constraints |",),
@@ -107,7 +111,6 @@ def test_landed_sentences_present_once(skill: str):
     for pin in AT_LEAST_ONCE.get(skill, ()):
         assert pin in text, f"{skill}: missing {pin[:60]!r}"
 
-
 @pytest.mark.parametrize("pack", ["flow-control-generator", "flow-loop-harness"])
 def test_flow_packs_stay_under_lint_length_threshold(pack: str):
     # lint_skills.py measures the whole file in characters; so do we.
@@ -139,12 +142,12 @@ def _run_dag(
     stub = d / "stub.sh"
 
     def write_stub(fail: str | None) -> None:
-        body = "#!/bin/sh\n"
+        body = '#!/bin/sh\nprompt="$(cat)"\n'
         if fail:
-            body += f'case "$1" in {fail}*) exit 1;; esac\n'
+            body += f'case "$prompt" in {fail}*) exit 1;; esac\n'
         if empty_node:
-            body += f'case "$1" in {empty_node}*) exit 0;; esac\n'  # success with zero bytes
-        body += 'echo "CONFLICT $1"\n' if conflict else 'echo "stub: $1"\n'
+            body += f'case "$prompt" in {empty_node}*) exit 0;; esac\n'
+        body += 'echo "CONFLICT $prompt"\n' if conflict else 'echo "stub: $prompt"\n'
         stub.write_text(body, encoding="utf-8")
         stub.chmod(0o755)
 
@@ -192,9 +195,9 @@ def test_python_templates_treat_empty_success_as_failure(tmp_path: Path):
     (d / "goal.md").write_text("goal\n", encoding="utf-8")
     stub = d / "stub.sh"
     stub.write_text(
-        "#!/bin/sh\n"
-        'case "$1" in Decompose*) printf \'[{"id":"a","task":"x"},{"id":"b","task":"y"}]\';;'
-        " x) exit 0;; *) echo out;; esac\n",  # worker "x" succeeds with zero bytes
+        '#!/bin/sh\nprompt="$(cat)"\n'
+        'case "$prompt" in Decompose*) printf \'[{"id":"a","task":"x"},{"id":"b","task":"y"}]\';;'
+        " x) exit 0;; *) echo out;; esac\n",
         encoding="utf-8",
     )
     stub.chmod(0o755)

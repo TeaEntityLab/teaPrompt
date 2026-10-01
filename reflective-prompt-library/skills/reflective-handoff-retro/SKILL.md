@@ -146,7 +146,7 @@ Promotion rules:
   recurrence, inputs, outputs, failure signals, and verification are concrete.
   Promotion requires human confirmation because executable knowledge has a
   larger failure surface than prose.
-- The nine core workflow skills are frozen — frozen means gated, not never: a new core skill needs recurrence evidence and explicit human approval; otherwise fold the material into an existing skill, lens, verifier/test, or no-change record.
+- The nine core workflow skills are frozen — frozen means gated, not never: a new core skill needs three-recurrence evidence (TeaPrompt tenth-core gate, distinct from the two-occurrence project-knowledge candidate field above) and explicit human approval; otherwise fold the material into an existing skill, lens, verifier/test, or no-change record.
 - Prefer `skill + verifier/test` when the task recurs and objective deterministic pass/fail exists; use runtime/orchestration only for persistence, replay, cancellation, idempotency, role isolation, enforced transitions, side-effect gating, audit trail, or memory/identity ACLs that prompt/skill/verifier cannot guarantee.
 - A one-off event remains in its plan, retro, or draft. Do not manufacture a
   permanent lesson merely to fill the knowledge file.

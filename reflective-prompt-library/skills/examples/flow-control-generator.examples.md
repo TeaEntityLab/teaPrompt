@@ -78,9 +78,11 @@ Expected output shape:
 
 ```markdown
 ## Topology
-- Orchestrator-workers (Python, stdlib): planner emits a JSON task list (fenced JSON stripped, must parse as a list), MAX_WORKERS=4 / MAX_TASKS=12 budget caps, worker ids sanitized to [A-Za-z0-9-_]
+- Orchestrator-workers (Python, stdlib): planner emits a JSON list, MAX_WORKERS=4 / MAX_TASKS=12; create parent STATE directories; send prompts via stdin, not argv
 ## Gates
-- planner output must be a list of 1..12 tasks or the run exits 2 before any worker starts; a worker that fails or returns no output aborts the run; merged deliverable: ./checks/verify-merged.sh state/final.md (the worker tally alone never passes)
+- Validate every nonempty string id/task and unique nonempty sanitized output id
+  before dispatch. Duplicate ids and sanitization collisions exit 2; no worker
+  starts. Worker failure/empty output aborts; ./checks/verify-merged.sh checks final.
 ## Human Review Boundary
 - migration = AGENTS.md Human Review item: the generated script pauses before any apply step and records the approval; worker task text is model-authored data — never run as shell, never allowed to change AGENT_CMD, permissions, or the verifier
 ## Verification
@@ -101,7 +103,10 @@ Expected output shape:
 ## Topology
 - DAG executor (Python, stdlib): nodes spec → {api, client} → integration; topological order with bounded concurrency MAX_WORKERS=4; each node's prompt receives its dependencies' outputs
 ## Gates
-- cycle or dangling dependency → exit 4 before any node runs; a node that fails or returns no output counts as failed; strict (any failed node → exit 2) or quorum MIN_OK, which also requires the sink node done in this run (a stale sink file from a prior run never passes); sink node checked by ./checks/verify-merged.sh
+- cycle/dangling dependency or missing/nonterminal FINAL_NODE → exit 4 before any node runs.
+  FINAL_NODE explicitly names the acceptance artifact; other terminal nodes and
+  dictionary order cannot replace it. Strict or MIN_OK quorum both require that
+  final node done in this run, then ./checks/verify-merged.sh checks its output.
 ## Escalation note
 - regenerate from the template when the node set changes; never patch a drifted copy (plans/agent-flow-control-research-2026-07-11.md P12)
 ## Verification

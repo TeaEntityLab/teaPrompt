@@ -70,14 +70,12 @@ def _row_resolved(row: str) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# T2 -- zh-TW cheatsheet pack appendix parity (activates when packs appear)
+# T2 -- landed EN/zh-TW cheatsheet pack appendix parity
 # ---------------------------------------------------------------------------
 
 
 def test_t2_zh_tw_pack_appendix_parity_when_present():
     zh = _read(cheatsheet_zh_tw_path())
-    if not any(pack in zh for pack in PACK_NAMES):
-        return  # dormant: T2 waits for the EN-appendix stability gate
 
     en_section = _markdown_section(
         _read(cheatsheet_en_path()),
@@ -85,6 +83,7 @@ def test_t2_zh_tw_pack_appendix_parity_when_present():
     )
     zh_section = _markdown_section(zh, r"^##\s+(?:領域包|Domain packs).*$")
     for pack in PACK_NAMES:
+        assert pack in en_section, f"EN pack appendix lost {pack!r}"
         assert pack in zh_section, f"zh-TW pack appendix landed without {pack!r}"
     assert "reflective-dispatch" in zh_section, (
         "zh-TW appendix must keep the dispatch-still-routes bullet"

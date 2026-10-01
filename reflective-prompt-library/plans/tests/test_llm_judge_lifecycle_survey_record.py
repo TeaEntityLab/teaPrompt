@@ -21,12 +21,12 @@ RECORD = PLANS_DIR / "llm-judge-lifecycle-survey-2026-09-05.md"
 CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 LOOP_PACK = library_skills_dir() / "flow-loop-harness" / "SKILL.md"
-RECIPES = PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-recipes.md"
-REVIEW = library_skills_dir() / "reflective-review" / "SKILL.md"
 LINT_WARNING_CHARS = 20000
 PASTE_SHA256 = "40a3efd15e74793be7148544b7e5c36dc5f8f57d349d15d99db13ef375637b5f"
 PACKET_SHA256 = "fe0914e2f3dfa124c10adf9558edd61588a101e076306f713fa953db15796dd9"
 REPO_REVISION = "1e4f96078abcb9b076897f7a68f001c407526ae1"
+RECIPES = PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-recipes.md"
+REVIEW = library_skills_dir() / "reflective-review" / "SKILL.md"
 ADOPTED = {
     LOOP_PACK: (
         "Rubric as verifier: request a host permission mode that also excludes "
@@ -165,6 +165,7 @@ def test_skill_surfaces_stay_clean_room():
 
 def test_indexes_point_to_the_record():
     knowledge = _read(PROJECT_KNOWLEDGE)
+
     decision = next(
         line
         for line in knowledge.splitlines()

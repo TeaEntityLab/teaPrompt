@@ -3,9 +3,10 @@
 > **Status: decided (non-authoritative); external-concept panel record, no
 > runtime adoption.** The checked systems support a shared architectural pattern,
 > not an industry consensus or one production-ready architecture. TeaPrompt keeps
-> the examples as study material. No candidate changed a TeaPrompt skill, lens,
-> dependency, runtime, or project-knowledge rule; the only executable addition is
+> the examples as study material. No base-ledger (AH-1–AH-8) candidate changed a TeaPrompt skill, lens,
+> dependency, runtime, or project-knowledge rule; the only executable addition for that base decision is
 > a deterministic guard for this record and its no-adoption dispositions.
+> Later AH-19 (same record's lineage addendum) is an adopted narrow in-place repair, already recorded below.
 > `06-repo/AGENTS.md` and governed skill contracts remain authoritative.
 
 ## Purpose
@@ -181,7 +182,7 @@ host `parallel-lens-review-packet` wrapper.
 
 No candidate changed a TeaPrompt skill, lens, dependency, runtime, or
 project-knowledge rule. Deterministic guard for this record:
-`plans/tests/test_agent_harness_convergence_survey_record.py`.
+`plans/tests/test_agent_harness_convergence_survey_record.py`. (Scope note: this sentence covers the base ledger AH-1–AH-8; AH-18/AH-19 lineage adoptions are recorded in the addendum below.)
 
 ## Shared Findings
 

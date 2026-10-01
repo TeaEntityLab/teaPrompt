@@ -1,7 +1,7 @@
 # Flow-Control Roadmap — 2026-07-11
 
 > **Status: active planning artifact (non-authoritative).** Domain roadmap for the
-> flow-control capability (the two registered domain packs plus host-native flow
+> flow-control capability (the two registered **flow-control** packs plus host-native flow
 > features), extending the [whole-project roadmap](whole-project-roadmap-2026-07-11.md)
 > with the [2026-07-11 survey](../../surveys/agent-skills-flow-control-survey-2026-07-11.md)
 > deltas. Owning decisions stay in the
@@ -86,7 +86,7 @@ integration** and no router/quick-cue change ([record](p7-pack-routing-decision-
 ## Non-goals restated (pointers)
 
 No TeaPrompt-owned runtime, recorder, replay engine, or side-effect enforcer;
-no third pack without the [AGENTS item-3 admission rule](../06-repo/AGENTS.md#harness-policy-nine-skills);
+no new pack without the [AGENTS item-3 admission rule](../06-repo/AGENTS.md#harness-policy-nine-skills);
 no domain-pack targets in the bounded core router after P7's measured
 no-integration decision ([record](p7-pack-routing-decision-2026-07-11.md);
 [Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals)).

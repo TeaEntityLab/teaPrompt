@@ -244,6 +244,7 @@ def test_port1_flow_control_human_review_boundary_present():
     assert "per-action pause" in text
 
 
+
 def test_port1_flow_examples_label_rig_tier_only():
     examples = _read(library_skills_dir() / "examples" / "flow-control-generator.examples.md")
     loop_examples = _read(library_skills_dir() / "examples" / "flow-loop-harness.examples.md")
@@ -251,7 +252,6 @@ def test_port1_flow_examples_label_rig_tier_only():
     assert "human approval pause" in examples
     assert "No production e2e proof is claimed" in examples
     assert "Rig-tier only" in loop_examples
-
 
 def test_port1_contributing_uses_nested_metadata_template():
     text = _read(PROMPT_LIBRARY_ROOT.parent / "CONTRIBUTING.md")

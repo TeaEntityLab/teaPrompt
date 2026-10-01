@@ -27,6 +27,7 @@ RECORD = PLANS_DIR / "installed-skills-general-lessons-2026-09-05.md"
 CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 
+
 ADOPTED = {
     "reflective-brief": (
         "Before an unknown becomes a question to the user, classify it: answerable from "
@@ -73,8 +74,8 @@ ADOPTED = {
         "inner one.",
         "For fan-in, the gate runs over the merged result as well as the branch tally: "
         "branches that each pass can conflict when combined.",
-        './checks/verify-merged.sh "$STATE/final.md"          # gate: merged result, '
-        "not only the branch tally",
+        'ec=0; ./checks/verify-merged.sh "$STATE/final.md" || ec=$?    # gate: merged result, '
+        "not only the branch tally",  # WR-22/WR-20 re-pin: ec capture kept, adopted suffix restored
     ),
 }
 
@@ -121,7 +122,6 @@ def test_record_shape_and_dispositions():
         assert row.rstrip().endswith("| **Held** |"), row
     assert "| **Not applicable** |" in ledger
 
-
 def test_sentences_at_exactly_one_surface():
     texts = _skill_texts()
     assert len(texts) == 14, sorted(texts)
@@ -144,7 +144,6 @@ def test_fast_path_and_pinned_neighbours_untouched():
         "4. State assumptions and unknowns; an unresolved high-impact, irreversible "
         "assumption is a Human Review trigger, not a default." in brief
     )
-
 
 def test_indexes_point_to_the_record():
     knowledge = _read(PROJECT_KNOWLEDGE)
@@ -183,11 +182,11 @@ def test_fan_out_template_gates_the_merged_result(tmp_path: Path):
             capture_output=True, text=True, timeout=60,
         )
 
-    ok = run('#!/bin/sh\necho "stub: $1"\n')
+    ok = run('#!/bin/sh\nprompt="$(cat)"\necho "stub: $prompt"\n')
     assert ok.returncode == 0, ok.stderr
     assert "stub:" in (tmp_path / "state" / "final.md").read_text(encoding="utf-8")
 
-    rejected = run('#!/bin/sh\necho "CONFLICT $1"\n')
+    rejected = run('#!/bin/sh\nprompt="$(cat)"\necho "CONFLICT $prompt"\n')
     assert rejected.returncode != 0, "merged gate did not reject a conflicting synthesis"
     branch_outputs = sorted((tmp_path / "state").glob("fan-*.md"))
     assert len(branch_outputs) == 2 and all(p.stat().st_size > 0 for p in branch_outputs), (

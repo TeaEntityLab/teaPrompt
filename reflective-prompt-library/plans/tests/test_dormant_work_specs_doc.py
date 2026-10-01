@@ -28,7 +28,6 @@ ROADMAP = PLANS_DIR / "whole-project-roadmap-2026-07-11.md"
 
 QUEUE_SECTIONS = (
     "P6 — pack merge re-litigation",
-    "T2 — zh-TW cheatsheet domain-pack appendix parity",
     "P12 — Conductor-style DAG executor template",
     "P13 — dedicated multi-wave ReMoM template",
     "M4 — ephemeral-source internalization deltas",
@@ -49,11 +48,6 @@ REJECTED_PRECONDITION_SECTIONS = (
     "M8 — blanket other-project skill promotion",
 )
 
-ROADMAP_QUEUE_TOKENS = (
-    "E2",
-    "reflective-implement` default-invokes `reflective-minimality",
-    "Localized trigger cues beyond cheatsheet/glossary",
-)
 
 ROADMAP_ADOPTED_20260712_TOKENS = (
     "P12",
@@ -149,16 +143,64 @@ def test_rejected_items_have_reopen_preconditions(heading: str):
     assert "**Test plan:**" in body
 
 
-def test_roadmap_horizon3_queue_is_covered_by_specs():
+def _table_rows(text: str) -> list[list[str]]:
+    rows = []
+    for line in text.splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if cells[0] in {"Item", "Queue item"} or re.fullmatch(r"[-: ]+", cells[0]):
+            continue
+        rows.append(cells)
+    return rows
+
+
+def _assert_reviewable_rows(rows: list[list[str]]) -> None:
+    for row in rows:
+        assert len(row) == 3 and row[1], f"missing disposition for {row[0]!r}"
+        links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", row[2])
+        assert links, f"missing spec/owning-record pointer for {row[0]!r}"
+        for target in links:
+            path = target.split("#", 1)[0]
+            assert not re.match(r"\w+://", path), "queue pointers must be repository-local"
+            destination = SPEC.parent / path if path else SPEC
+            assert destination.is_file(), target
+
+
+def test_current_roadmap_queue_has_reviewable_coverage():
     roadmap = _read(ROADMAP)
-    horizon3 = roadmap.split("## Horizon 3", 1)[1].split("\n## ", 1)[0]
-    specs = _read(SPEC)
-    for token in ROADMAP_QUEUE_TOKENS:
-        assert token in horizon3, f"expected roadmap queue token vanished: {token!r}"
-        normalized = token.replace(" / N12", "")
-        assert normalized in specs, (
-            f"roadmap queue token {token!r} has no corresponding spec section"
+    horizon2 = roadmap.split("## Horizon 2", 1)[1].split("\n## ", 1)[0]
+    horizon3 = roadmap.split("### Still trigger-gated", 1)[1].split("\n## ", 1)[0]
+    queue_rows = _table_rows(horizon2) + _table_rows(horizon3)
+    assert queue_rows, "roadmap has no current queue rows to review"
+    spec = _read(SPEC)
+    coverage = spec.split("## Current queue coverage", 1)[1].split("\n## ", 1)[0]
+    mapped_rows = _table_rows(coverage)
+    queue_items = [row[0] for row in queue_rows]
+    mapped_items = [row[0] for row in mapped_rows]
+    assert len(queue_items) == len(set(queue_items)), "duplicate roadmap queue identity"
+    assert len(mapped_items) == len(set(mapped_items)), "duplicate coverage identity"
+    assert set(mapped_items) == set(queue_items), (
+        f"missing coverage: {set(queue_items) - set(mapped_items)}; "
+        f"stale coverage: {set(mapped_items) - set(queue_items)}"
+    )
+    _assert_reviewable_rows(mapped_rows)
+    mapped_by_item = {row[0]: row for row in mapped_rows}
+    for row in queue_rows:
+        owner_paths = {
+            target.split("#", 1)[0]
+            for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", row[-1])
+        }
+        mapped_paths = {
+            target.split("#", 1)[0]
+            for target in re.findall(
+                r"\[[^\]]+\]\(([^)]+)\)", mapped_by_item[row[0]][2]
+            )
+        }
+        assert owner_paths and owner_paths <= mapped_paths, (
+            f"coverage for {row[0]!r} lost owning pointers: {owner_paths - mapped_paths}"
         )
+
 
 def test_roadmap_user_directed_adoptions_are_covered_by_specs():
     roadmap = _read(ROADMAP)
@@ -169,14 +211,6 @@ def test_roadmap_user_directed_adoptions_are_covered_by_specs():
         assert token in specs or token.replace("Writer-critic deterministic companion", "Writer-critic deterministic companion check") in specs
 
 
-def test_date_and_event_gated_siblings_are_covered():
-    roadmap = _read(ROADMAP)
-    horizon2 = roadmap.split("## Horizon 2", 1)[1].split("\n## ", 1)[0]
-    specs = _read(SPEC)
-    for token in ("P6 / N11", "T2 stability check", "M5 managed-skill re-audit"):
-        assert token in horizon2
-    for token in ("### P6", "### T2", "### M5"):
-        assert token in specs
 
 
 def test_domain_plan_only_dormant_items_are_explained():
@@ -189,6 +223,24 @@ def test_domain_plan_only_dormant_items_are_explained():
         ("### H3/H4", "routing-holdout-plan-2026-07-11.md"),
     ):
         assert token in specs and source in specs
+
+
+def test_domain_dispositions_cover_current_skill_improvement_deferrals():
+    source = _read(PLANS_DIR / "skill-improvement-plan-2026-07-24.md")
+    ledger = source.split("## Candidate Adoption Ledger", 1)[1].split("\n## ", 1)[0]
+    deferred = {
+        row[0] for row in _table_rows(ledger)
+        if row[0].startswith("WGS-") and row[2].startswith("Deferred")
+    }
+    spec = _read(SPEC)
+    dispositions = spec.split("## Domain and retired-plan dispositions", 1)[1].split("\n## ", 1)[0]
+    rows = _table_rows(dispositions)
+    _assert_reviewable_rows(rows)
+    mapped = {row[0] for row in rows if row[0].startswith("WGS-")}
+    assert mapped == deferred, (
+        f"missing domain disposition: {deferred - mapped}; "
+        f"stale domain disposition: {mapped - deferred}"
+    )
 
 
 def test_guard_inventory_matches_files_on_disk():
@@ -214,24 +266,10 @@ def test_runbook_and_spec_are_bidirectionally_linked():
 
 
 def test_runbook_outcome_contract_matches_deadman_test():
+    from test_checkpoint_2026_10_11 import REQUIRED_OUTCOME_HEADINGS
+
     runbook = _read(RUNBOOK)
-    test_text = _read(PLANS_DIR / "tests" / "test_checkpoint_2026_10_11.py")
-    outcome = "checkpoint-2026-10-11-outcome.md"
-    assert outcome in runbook and outcome in test_text
-    for heading in (
-        "## P6 outcome",
-        "## T2 decision",
-        "## F4 re-check",
-        "## Roadmap self-review",
-        "## Ledger and index updates",
-    ):
-        assert heading in runbook and heading in test_text
+    for heading in REQUIRED_OUTCOME_HEADINGS:
+        assert heading in runbook, f"runbook lost outcome field {heading!r}"
 
 
-def test_spec_retirement_trigger_prevents_archive_ossification():
-    section = _read(SPEC).split(
-        "## Falsifiability (retirement/staleness triggers for this book)", 1
-    )[1]
-    assert "two consecutive checkpoints" in section
-    assert "retire" in section.lower()
-    assert "roadmap's queue gains an item with no section" in section

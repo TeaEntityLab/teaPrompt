@@ -1,5 +1,7 @@
 """Pytest mirrors for validate_links.py (Round 77 anti-drift)."""
 
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -10,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from validate_links import LinkValidator  # noqa: E402
 
 REPO_ROOT = Path(__file__).parent.parent.parent.parent
+VALIDATE_LINKS_SCRIPT = Path(__file__).parent.parent / "validate_links.py"
 
 
 @pytest.fixture(scope="module")
@@ -23,20 +26,14 @@ def test_live_repo_has_no_link_errors(link_results):
         "ref_snippet": link_results["ref_snippet_errors"],
         "markdown": link_results["markdown_link_errors"],
         "frontmatter": link_results["frontmatter_errors"],
+        "read": link_results.get("read_errors", []),
     }
 
 
 def test_broken_markdown_link_is_detected(tmp_path):
     bad_file = tmp_path / "broken.md"
     bad_file.write_text("[missing](does-not-exist.md)\n", encoding="utf-8")
-    results = {
-        "ref_file_errors": [],
-        "ref_snippet_errors": [],
-        "markdown_link_errors": [],
-        "frontmatter_errors": [],
-        "total_files": 0,
-        "total_errors": 0,
-    }
+    results = _empty_results()
     LinkValidator(str(tmp_path)).validate_markdown_links(
         bad_file.read_text(encoding="utf-8"),
         bad_file,
@@ -44,6 +41,59 @@ def test_broken_markdown_link_is_detected(tmp_path):
         results,
     )
     assert results["markdown_link_errors"]
+
+
+def test_broken_md_symlink_reports_read_error(tmp_path):
+    """WR-08: a dangling .md symlink must surface, never validate as clean."""
+    broken = tmp_path / "broken.md"
+    broken.symlink_to(tmp_path / "does-not-exist.md")
+    results = LinkValidator(str(tmp_path)).validate_all()
+    assert results["total_files"] >= 1
+    assert results["read_errors"], "broken .md symlink must appear in read diagnostics"
+    assert results["total_errors"] >= len(results["read_errors"])
+
+
+def test_unreadable_md_reports_read_error(tmp_path):
+    """WR-08: unreadable bytes (invalid UTF-8) must fail validation."""
+    bad_file = tmp_path / "unreadable.md"
+    bad_file.write_bytes(b"# title\n\xff\xfe not utf-8\n")
+    results = LinkValidator(str(tmp_path)).validate_all()
+    assert results["read_errors"], "unreadable .md must appear in read diagnostics"
+    assert results["total_errors"] >= len(results["read_errors"])
+
+
+def test_repeat_validation_does_not_accumulate_read_errors(tmp_path):
+    """Repeat validate_all calls must report current errors, not stale ones."""
+    bad_file = tmp_path / "broken.md"
+    bad_file.symlink_to(tmp_path / "does-not-exist.md")
+    validator = LinkValidator(str(tmp_path))
+    first = validator.validate_all()
+    second = validator.validate_all()
+    assert first["total_errors"] == second["total_errors"]
+    assert len(first["read_errors"]) == len(second["read_errors"])
+
+
+def test_validate_links_cli_reports_read_error_and_fails(tmp_path):
+    """WR-08: the actual CLI must print read diagnostics and exit nonzero."""
+    plans_dir = tmp_path / "reflective-prompt-library" / "plans"
+    plans_dir.mkdir(parents=True)
+    shutil.copy(VALIDATE_LINKS_SCRIPT, plans_dir / "validate_links.py")
+    # Repo root resolves two levels above the script via __file__.
+    (tmp_path / "ok.md").write_text("# ok\n", encoding="utf-8")
+    (tmp_path / "broken.md").symlink_to(tmp_path / "does-not-exist.md")
+    script = plans_dir / "validate_links.py"
+    completed = subprocess.run(
+        [sys.executable, str(script)],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    output = completed.stdout + completed.stderr
+    assert completed.returncode != 0, output
+    assert "Read errors" in output
+    assert "broken.md" in output
+    assert "All validations passed" not in output
 
 
 def test_skill_frontmatter_requires_name_description_and_license(tmp_path):
@@ -57,14 +107,7 @@ def test_skill_frontmatter_requires_name_description_and_license(tmp_path):
 """,
         encoding="utf-8",
     )
-    results = {
-        "ref_file_errors": [],
-        "ref_snippet_errors": [],
-        "markdown_link_errors": [],
-        "frontmatter_errors": [],
-        "total_files": 0,
-        "total_errors": 0,
-    }
+    results = _empty_results()
     LinkValidator(str(tmp_path)).validate_skill_frontmatter(
         skill_file.read_text(encoding="utf-8"),
         skill_file,
@@ -83,6 +126,7 @@ def _empty_results():
         "ref_snippet_errors": [],
         "markdown_link_errors": [],
         "frontmatter_errors": [],
+        "read_errors": [],
         "total_files": 0,
         "total_errors": 0,
     }

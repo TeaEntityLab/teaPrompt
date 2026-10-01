@@ -117,8 +117,8 @@ def test_planning_layer_carries_september():
     ):
         assert token in roadmap, f"roadmap lost {token!r}"
     plan = _read(PLAN)
-    assert "Four registered domain packs outside core routing" in plan
     assert "Fired and reconciled 2026-09-14" in plan
+    assert "Five registered domain packs outside core routing" in plan  # re-pinned 2026-10-01: WR-10 corrected the registry count
     runbook = _read(RUNBOOK)
     assert "## Agenda item 7 — `governed-delivery` recurrence checkpoint" in runbook
     assert "`## GD outcome`" in runbook

@@ -336,10 +336,8 @@ Revise this brief if any of the following occurs:
 
 - Read this brief for the *mechanism* and *concept*; read the companion record
   for the *decision* and the TeaPrompt gap audit.
-- Actionable prompt-layer follow-up already proposed in the record §7.3 (a
-  "Looper Topologies" section in `04-agent/workflow-recipes.md`) remains
-  **proposed, awaiting go/no-go** — do not implement without approval, and route
-  it through `reflective-spec-plan` if approved.
+- The record §7.3 proposal has shipped: see the "Looper Topologies" section in
+  `04-agent/workflow-recipes.md` (landed 2026-07-02 per the companion record §7; no stale go/no-go remains).
 - Do not treat any benchmark number here as established without replication.
 
 ## Documentation Maintenance Note

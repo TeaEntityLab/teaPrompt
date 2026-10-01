@@ -1,11 +1,11 @@
 # Dormant-Work Specs — TeaPrompt (2026-07-11)
 
 > **Status: pre-drafted specs for dormant items (non-authoritative; NOT adoption).**
-> This document writes down, ahead of time, what each deferred / trigger-gated /
-> rejected-with-precondition item in the
-> [whole-project roadmap](whole-project-roadmap-2026-07-11.md) would look like if
-> its trigger fired: rationale, draft spec, draft acceptance criteria, and a test
-> plan. Writing a spec here changes no gate and adopts nothing — queue discipline
+> This document preserves pre-adoption designs and gives each current roadmap
+> queue row a spec or disposition/owning-record pointer in the
+> [coverage map](#current-queue-coverage-2026-10-01). Not every row has a draft spec:
+> later records already own their re-litigation designs. Writing here changes no
+> gate and adopts nothing — queue discipline
 > from the roadmap holds: **a fired trigger authorizes re-litigation, not silent
 > adoption**, and every decision stays with the owning record cited per item.
 > If this file and an owning record disagree, the record wins.
@@ -35,10 +35,10 @@
 
 ## Scope
 
-- In scope: one spec section per dormant item in the roadmap's Horizon 2/3
-  queues, preconditions for the two named rejected items, draft content for the
-  two pure-documentation items (M6, T2), and documentation of the new
-  deterministic guards.
+- In scope: specs or reviewable disposition/owning-record pointers for the
+  roadmap's Horizon 2/3 queues; preconditions for two named rejected items;
+  historical designs for adopted items; and documentation of the deterministic
+  guards. The current coverage map, not the original July section list, owns parity.
 - Out of scope: adopting anything; editing core skills, packs, router, route
   fixtures, `Makefile`, or any governed surface; changing any trigger's wording;
   re-arguing any rejected item. Nothing here overrides
@@ -55,7 +55,62 @@ trail; the successor source of truth for the adoption wave is
 
 P6 remains date/usage-gated. E2 remains destructive and recurrence-gated.
 
+## Current queue coverage (2026-10-01)
+
+This map covers the actual Horizon 2 agenda and Horizon 3 **Still trigger-gated**
+table, not every candidate in every survey. The self-guard derives identities
+from those roadmap tables and requires a disposition and reachable local pointer
+for each. A pointer is coverage, not a drafted implementation or adoption.
+F4's live watch table stays in the [flow-control roadmap](flow-control-roadmap-2026-07-11.md) §F4;
+it is not duplicated here. The original July designs below are historical where
+the adoption update says an item landed.
+
+| Queue item | Disposition | Spec / owning-record pointer |
+| --- | --- | --- |
+| P6 / N11 — pack merge re-litigation | Date/usage-gated; keep / re-open / unknown-extend | [P6 spec](#date-gated-items-horizon-2); [pack owner](flow-control-pack-panel-record-2026-07-11.md); [necessity N11](governance-necessity-panel-record-2026-07-11.md) |
+| Pack utility claims re-verification | Checkpoint evidence-tier review, not new utility proof | [pack record](flow-control-pack-panel-record-2026-07-11.md); [runbook item 2](checkpoint-2026-10-11-runbook.md) |
+| T2 stability check (landed-parity re-verification) | Adopted 2026-07-12; re-verify current parity/stability | [adoption](dormant-items-user-directed-adoption-2026-07-12.md); [runbook item 3](checkpoint-2026-10-11-runbook.md) |
+| T4 / F1 — loop-pack demotion evaluation | Done/not fired; F4 re-check duty remains | [pack owner](flow-control-pack-panel-record-2026-07-11.md); [evaluation](flow-pack-demotion-evaluation-2026-07-11.md); [live F4](flow-control-roadmap-2026-07-11.md) |
+| Roadmap self-review | Walk source triggers and staleness falsifiers | [plan](whole-project-plan-2026-07-11.md); [runbook item 5](checkpoint-2026-10-11-runbook.md) |
+| `governed-delivery` recurrence checkpoint | Date-gated policy decision; no demotion performed here | [GD adoption](governed-delivery-adoption-2026-09-03.md); [GD review](governed-delivery-review-2026-09-13.md); [runbook item 7](checkpoint-2026-10-11-runbook.md) |
+| GD↔AGS redundancy-in-use | Decide consolidation only under owning trigger | [GD review R6](governed-delivery-review-2026-09-13.md) |
+| Flow-pack lint tier decision | Held to checkpoint; existing 20k bounds unchanged | [September review](september-skills-review-2026-09-14.md); [GW-15](governance-workflow-self-control-adoption-2026-09-14.md) |
+| A1/E1 anchor tightening | Deferred checkpoint minimality decision | [GD review](governed-delivery-review-2026-09-13.md) |
+| AS8 / R10 — governance-pack size re-litigation | Date-gated shrink/demotion review; first use clears only zero-use | [AS8](all-skills-panel-record-2026-07-18.md); [AGS adoption](agent-governance-scaffold-adoption-2026-07-17.md); [WGS-GOV-1](skill-improvement-plan-2026-07-24.md) |
+| G9 / AS9 — governance vocabulary | Proceed/hold/close due even without a fire event; unchanged R8 gate | [G9](agent-governance-scaffold-adoption-2026-07-17.md); [AS9](all-skills-panel-record-2026-07-18.md); [runbook item 8](checkpoint-2026-10-11-runbook.md) |
+| E2 — archive restructuring (panel-transcript demotion, `00-core`/`03-context` merges) | Destructive/recurrence-gated; E2 spec below | [E2 owner](governance-rules-rethink-review-2026-07-11.md) |
+| `reflective-implement` default-invokes `reflective-minimality` | Three-recurrence gate; spec below, no default invocation adopted | [June backlog](multi-agent-panel-consensus-2026-06-25.md) |
+| Localized trigger cues beyond cheatsheet/glossary | Adoption-signal gate; spec below, no full localization | [June backlog](multi-agent-panel-consensus-2026-06-25.md) |
+| AH-11/AH-15 — multi-axis Effect Contract re-litigation | Held to named host integration gap; owner retains design | [lineage ledger](agent-harness-convergence-survey-2026-08-25.md) |
+| AH-14 — Harness Reliability Benchmark | Held to concrete runtime-adoption decision; no TeaPrompt runtime | [lineage ledger](agent-harness-convergence-survey-2026-08-25.md) |
+| I-1 / A-5 — a tool status line or viewer preview is a claim, not the artifact | Named occurrence gates; decide fold/twin only on fire | [I-1](harness-intent-drift-rethink-2026-09-06.md); [A-5](astra-efficiency-rules-survey-2026-09-10.md) |
+| GD-16 — refuters GDR-1..GDR-6 host run | Contracts adopted; host executions still unknown | [GD-16 owner](governed-delivery-adoption-2026-09-03.md) |
+| TK-1 — extra-work offer is not a criterion | Held to specified same-run widening failure | [TK-1 owner](agentflow-survey-2026-09-05.md) |
+| E-5 — legible acceptance over an unmet oracle | Held to named unmet-oracle acceptance case | [E-5 owner](gpt-instruct-survey-2026-09-10.md) |
+| GA-13 / XS-4 — live fault-injection suite | Named host-eval gate; never TeaPrompt CI | [GA owner](governable-autonomy-survey-2026-09-03.md); [XS owner](ga-skills-coverage-panel-2026-09-03.md) |
+| Ledger status vocabulary (`asserted` / `unverified` / `pending` / `open` for one epistemic state) | Unification held to cross-skill handoff confusion; GLOSSARY map remains smaller alternative | [GW-3](governance-workflow-self-control-adoption-2026-09-14.md) |
+| Pack example coverage (orchestrator, router, DAG, writer-critic floor, multi-wave) | Four resolved 2026-09-14; conditional router still host-run gated | [GW-6](governance-workflow-self-control-adoption-2026-09-14.md) |
+| Single-sentence reserves: E-2, E-11, E-12; JL-1, JL-9/17; AF82-11 | Each owning row's named case; not a blanket activation | [gpt-instruct](gpt-instruct-survey-2026-09-10.md); [LLM-judge](llm-judge-lifecycle-survey-2026-09-05.md); [8.2 delta](agentflow-8.2-delta-survey-2026-09-13.md) |
+
+## Domain and retired-plan dispositions (2026-10-01)
+
+These pointers resolve discovery gaps, not scheduling, recurrence claims, or
+adoption. Their owning rows remain unchanged.
+
+| Item | Disposition / unchanged condition | Owning-record pointer |
+| --- | --- | --- |
+| WGS-GOV-1 | Date-gated under AS8/R10; covered in the checkpoint map above, not fired early | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md); [runbook item 6](checkpoint-2026-10-11-runbook.md) |
+| WGS-SPC-2 | Live conditional deferral: lint warning or documented burying | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md) |
+| WGS-X4a | Live conditional deferral: documented misroute/metric regression | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md) |
+| WGS-X4b | Live evidence gate: eval harness can A/B wording | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md) |
+| TASK-006 (runtime governance) | Historical future candidate in a retired plan, not silently complete or active work. Three real primary-workflow tasks plus explicit tenth-core approval still required; supporting-lens use does not qualify. | [retired task](runtime-governance-learning-plan-2026-06-11.md); [current bounded-core policy](../06-repo/AGENTS.md#harness-policy-nine-skills) |
+| TASK-003 (OpenFugu) | Optional upstream TRINITY follow-up only if desired; public `.npy` blocker is historical evidence, not freshly retested. No weight conversion/download or runtime adoption authorized here. | [optional task](openfugu-reference-plan-2026-06-25.md) |
+| TASK-004 (OpenFugu) | Optional future reference-only citation when a task needs it; no dependency or adoption | [optional task](openfugu-reference-plan-2026-06-25.md) |
+
 ## How the register hangs together (inference)
+
+The inference below is the original 2026-07-11 snapshot, before the 2026-07-12
+adoption wave and later pack admissions; it is preserved as design history.
 
 Reasoning over the queue, labeled per the evidence policy — everything in this
 section is `[INFERENCE]` from the records read this session, not new evidence:
@@ -102,7 +157,7 @@ flowchart TD
 
 ## Spec template
 
-Every item section carries the same fields:
+Every original draft spec section carries the same fields:
 
 - **Status** — dormant class from the roadmap (date-gated / trigger-gated /
   event-gated / rejected-with-precondition).
@@ -142,9 +197,10 @@ Every item section carries the same fields:
 - **Draft spec (merge branch, only if re-opened AND decided):** one skill
   `flow-script-pack` with a topology field selecting one-pass vs loop; Module
   Contract keeps the loop-specific Human Review Boundary as a conditional
-  section; registry `DOMAIN_PACK_SKILLS` shrinks to one entry; SKILL_INSTALLATION
-  and both cheatsheet appendices update in the same change; usage log convention
-  continues under the merged name with a rename note.
+  section; replace only the two flow-pack entries in `DOMAIN_PACK_SKILLS` with
+  the merged entry, leaving other registered packs unchanged. Unwind their
+  admission checklist and `PACK_SURFACES` in the same change; preserve the usage
+  log's historical entries with a rename note.
 - **Draft acceptance criteria:** decision recorded either way (merge / keep /
   `unknown`-extend) in the checkpoint outcome record; if merged: `make all`
   green, registry parity tests updated in the same change, no orphan directory,
@@ -161,48 +217,18 @@ Every item section carries the same fields:
 
 ### T2 — zh-TW cheatsheet domain-pack appendix parity
 
-- **Status:** date-gated stability check — 2026-10-11 ("no edits between now and
-  the next checkpoint qualifies as stable").
-- **Owning record:** [pack panel record](flow-control-pack-panel-record-2026-07-11.md)
-  §Required Changes item 6; task T2 in the
-  [whole-project plan](whole-project-plan-2026-07-11.md).
-- **Trigger (verbatim):** "zh-TW cheatsheet domain-pack appendix parity, once the
-  EN appendix is stable (no edits between now and the next checkpoint qualifies
-  as stable)."
-- **Destination:** `skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md`.
-- **Why this exists:** zh-TW navigation parity is standing direction (navigation,
-  cheatsheet routing, glossary lines — never full SKILL localization). The EN
-  appendix was added on pack adoption day; translating a surface that might
-  still churn would double the churn, hence the stability gate.
-- **Draft spec:** append to the zh-TW cheatsheet a section mirroring the EN
-  `## Domain packs (host-invoked; not core routing)` — same three bullets, same
-  order, pack names kept in English (code identifiers stay untranslated per
-  language policy). Draft text, ready to translate-check on adoption
-  (targets shown as code, not links, until placed):
-
-  ```markdown
-  ## 領域包（host 直接呼叫；不屬於核心路由）
-
-  - **可執行的一次性流程腳本** → `flow-control-generator` — 串接、pipeline、
-    fan-out、把 agent CLI 步驟編排成腳本；純工作流程設計（不產腳本）仍走
-    `reflective-spec-plan`。
-  - **可執行的迴圈腳本** → `flow-loop-harness` — loop until、ralph、
-    fix-until-green 搭配外部驗證器；若要的是主要工作流程上的 repo 內
-    `verifier/test` 產物，走上方的 Acquisition L3 速查。
-  - **工作流程選擇／函式庫路由** → 仍是 `reflective-dispatch`；本節不取代
-    九技能 Fast Routing Rule。
-  ```
-
-- **Draft acceptance criteria:** section lands only after the stability check
-  passes; both pack names present; the dispatch-still-routes bullet present;
-  EN and zh-TW pack bullet counts equal; cheatsheet parity tests green.
-- **Test plan:** activation contract pre-written —
-  `test_dormant_conditional_contracts.py` vacuously passes while the zh-TW file
-  has no pack names, and enforces the structural parity contract above the
-  moment they appear. The runbook's T2 step records the git stability check
-  command.
-- **Non-adoption note:** this spec prepares re-litigation; it decides nothing;
-  the owning record and its trigger govern.
+- **Status:** adopted 2026-07-12 by explicit user direction; recurrence `unknown`.
+- **Successor record:** [dormant-items adoption](dormant-items-user-directed-adoption-2026-07-12.md);
+  task T2 in the [whole-project plan](whole-project-plan-2026-07-11.md).
+- **Original gate:** EN-appendix stability at the next checkpoint. The explicit
+  adoption superseded waiting to translate; it did not erase the future
+  stability/parity review.
+- **Current checkpoint duty:** [runbook item 3](checkpoint-2026-10-11-runbook.md)
+  re-verifies EN stability and both current appendices against `DOMAIN_PACK_SKILLS`,
+  including the dispatch-still-routes bullet. Do not re-land the original
+  two-flow-pack draft or remove later admitted packs.
+- **Guard:** `test_dormant_conditional_contracts.py` checks registry-relative
+  appendix parity; the checkpoint outcome records evidence and drift disposition.
 
 ---
 
@@ -632,8 +658,9 @@ Every item section carries the same fields:
   install transcript.
 - **Draft acceptance criteria:** the requesting user/report is cited; one
   channel per adoption (no speculative multi-channel build-out); install
-  verified end-to-end on a clean host; registry parity (9 core + 2 packs)
-  preserved in the packaged form.
+  verified end-to-end on a clean host; packaged skill directories match the
+  current `CORE_SKILLS` ∪ `DOMAIN_PACK_SKILLS` registry exactly (with the
+  documented core-only/default versus pack opt-in choice preserved).
 - **Test plan:** dormancy — ledger presence (Execution Ledger row still says
   "packaging still trigger-gated").
 - **Non-adoption note:** this spec prepares re-litigation; it decides nothing;
@@ -650,8 +677,8 @@ Every item section carries the same fields:
   hypothesis, so adopting them now would pin the router to an undecided
   boundary — fixtures must encode decided contracts, not open questions
   (ROUTE-003's own verifier-artifact probe was deferred on exactly this logic).
-- **Destination:** `ROUTING_CONTRACT.md` (new boundary rule à la R10–R12), then
-  the fixtures.
+- **Destination:** `ROUTING_CONTRACT.md` (a new decided boundary rule, consistent
+  with the current R1–R13 contract), then the fixtures.
 - **Draft spec (disambiguation procedure):** (1) collect ≥3 real occurrences of
   each phrasing class from session records; (2) classify by *artifact wanted*:
   recurring-schedule phrasings splitting report-wanted (→ research/brief) vs
@@ -711,9 +738,9 @@ Every item section carries the same fields:
 | File | Tier | Defends |
 | --- | --- | --- |
 | `tests/test_dormant_item_watch.py` | regression guard | Trigger state for dormant items; P7's resolved no-core-integration invariant; deferred/rejected ledger rows; Makefile composition; roadmap↔PK/backlog non-goal parity; checkpoint date consistency |
-| `tests/test_dormant_conditional_contracts.py` | forward contract | Activation discipline: when a still-dormant artifact appears, its ledger row must have flipped and its structural contract must hold; T2 appendix parity is scoped to the actual section and all three bullets |
-| `tests/test_checkpoint_2026_10_11.py` | evidence + deadman | Checkpoint evidence base stays intact (usage log, evaluation record, agenda sources); after 2026-10-11 an outcome record must exist — the roadmap's "checkpoint passes undocumented" falsifier, mechanized |
-| `tests/test_dormant_work_specs_doc.py` | self-guard | This book covers every roadmap queue item, every section carries the required fields, and the runbook stays cross-linked |
+| `tests/test_dormant_conditional_contracts.py` | forward contract | Activation discipline: when a still-dormant artifact appears, its ledger row must have flipped and its structural contract must hold; landed T2 appendix parity covers the current registry plus dispatch |
+| `tests/test_checkpoint_2026_10_11.py` | evidence + deadman | Checkpoint evidence base stays intact (usage log, evaluation record, agenda sources); after 2026-10-11 an outcome record must exist, including G9/AS9 — the roadmap's "checkpoint passes undocumented" falsifier, mechanized |
+| `tests/test_dormant_work_specs_doc.py` | self-guard | Source-derived Horizon 2/3 queue identities map to a spec or disposition/owning-record pointer; original draft sections retain review fields; the runbook stays cross-linked |
 
 Evidence-tier note (N13 discipline): all four are **seeded, deterministic
 regression guards**. Green means "no silent drift among the named tokens", never
@@ -746,8 +773,8 @@ touching any watched surface. Manual checkpoint review stays load-bearing.
 
 This book is stale and must be revised or retired with the historical header if:
 a watched item is adopted or re-litigated (its section then compresses to a
-pointer at the new record); the roadmap's queue gains an item with no section
-here (the parity test fails first); two consecutive checkpoints pass with zero
+pointer at the new record); the roadmap's queue gains an item with no coverage
+mapping here (the source-derived parity test fails first); two consecutive checkpoints pass with zero
 sections consumed (the book failed its make-relitigation-cheap purpose — retire
 rather than maintain); or any owning record's trigger wording changes (verbatim
 quotes here are then wrong by definition).

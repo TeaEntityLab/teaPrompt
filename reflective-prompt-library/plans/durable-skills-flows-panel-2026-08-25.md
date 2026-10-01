@@ -4,7 +4,7 @@
 
 ## Panel Consensus
 
-- **Decision:** `AGREE WITH CHANGES` — unanimous, **7 of 7 lenses** (`EvidenceAuditor`, `ArchitectureReviewer`, `ReproEngineer`, `ProvenanceSecurity-2`, `CodeCorrectness`, `UsabilityReviewer`, `StrategicSynthesis-2`); no `DISAGREE`, no pure `AGREE`.
+- **Decision:** `AGREE WITH CHANGES` ×5 / `AGREE` ×2 across the 7 lenses (`EvidenceAuditor`, `ArchitectureReviewer`, `ReproEngineer`, `ProvenanceSecurity-2`, `CodeCorrectness`, `UsabilityReviewer`, `StrategicSynthesis-2`); no `DISAGREE`, no other verdict.
 - **Use-case recommendation:**
   - `study` — **yes**: WAL / durable program counter / effect sandwich / unknown→reconcile, plus host priors (Temporal, DBOS, Restate, Orleans, Erlang/OTP, ARIES/SAGAS, Helland) as reference architecture.
   - `reproduce` — **deferred / host-only**: requires concrete host runtime + crash/replay/fencing harness with power-loss & real-sink tiers; not reproducible at prompt layer.
@@ -94,7 +94,7 @@
 
 ## Evidence Actually Checked
 
-- **Coordinator-executed (observed):** `git rev-parse 4c604b1`, `branch main`, packet SHA `52cf6fa9...`, reads of `review-packet-durable-skills-flows-2026-08-25.md`, `skill-map.md`, `PROJECT_KNOWLEDGE.md`, `workflow-recipes.md:108-135`, `workflow-engine.md:1-60`, `runtime-trust-boundary.md:80-130`, `agent-governance-scaffold/SKILL.md:40-70`, `agent-harness-convergence-survey-2026-08-25.md`, guard tests listed above.
+- **Coordinator-executed (observed 2026-08-25 bytes):** `git rev-parse 4c604b1`, `branch main`, packet SHA `52cf6fa9...`, reads of `review-packet-durable-skills-flows-2026-08-25.md`, `skill-map.md`, `PROJECT_KNOWLEDGE.md`, `workflow-recipes.md:108-135` (2026-08-25 range; Looper section now ships at `## Looper Topologies`), `workflow-engine.md:1-60`, `runtime-trust-boundary.md:80-130`, `agent-governance-scaffold/SKILL.md:40-70`, `agent-harness-convergence-survey-2026-08-25.md`, guard tests listed above. Line ranges are the coordinator's dated observation, not a re-verified current pin.
 - **Read by lenses (observed):** All 7 lenses read packet before inspection; each reported ≥3 findings + ≥3 Socratic questions + steelman + verbatim verdict (AGREE WITH CHANGES ×5, AGREE ×2).
 - **Inferred (marked):** That prompt wording could by itself provide crash-safety/idempotency/fencing — refuted as `[INFERENCE]` in ≥3 lenses.
 - **Not executed:** No skill edits in lens phase, no `make all`, no power-loss / real-sink replay harness — such evidence would be host-runtime tier, not prompt tier.

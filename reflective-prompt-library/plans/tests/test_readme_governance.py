@@ -1,6 +1,8 @@
 """Anti-drift tests for README governance surface and skill-count wording."""
 
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -150,6 +152,106 @@ def test_installation_defaults_to_core_and_opts_into_registered_packs(
         assert pack_loop, f"domain-pack {helper} helper loop missing"
         assert set(pack_loop.group(1).split()) == set(DOMAIN_PACK_SKILLS)
 
+
+def _extract_helper(installation_guide_text: str, helper: str) -> str:
+    start = installation_guide_text.index(f"{helper}() {{")
+    end = installation_guide_text.index("\n}\n", start)
+    return installation_guide_text[start:end]
+
+
+def _run_install_helper(
+    tmp_path: Path,
+    helper: str,
+    dest: Path,
+    source_root: Path,
+    installation_guide_text: str,
+) -> "subprocess.CompletedProcess":
+    body = _extract_helper(installation_guide_text, helper)
+    script = tmp_path / f"{helper}.sh"
+    script.write_text(
+        "#!/bin/sh\n" + body + "\n}\n" + helper + ' "$1" "$2"\n',
+        encoding="utf-8",
+    )
+    return subprocess.run(
+        ["sh", str(script), str(dest), str(source_root)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def _write_skill_source(source_root: Path, name: str, marker: str) -> None:
+    skill = source_root / name
+    skill.mkdir(parents=True)
+    (skill / "SKILL.md").write_text(f"# {name}\n{marker}\n", encoding="utf-8")
+
+
+def _write_full_source(source_root: Path) -> None:
+    _write_skill_source(source_root, "reflective-brief", "SOURCE-MARKER")
+    for pack in DOMAIN_PACK_SKILLS:
+        _write_skill_source(source_root, pack, "SOURCE-MARKER")
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+def test_install_symlink_helpers_preserve_real_directory_and_fail(
+    tmp_path: Path, installation_guide_text: str
+):
+    """WR-07: extracted helpers must refuse real-directory collisions."""
+    source_root = tmp_path / "source"
+    _write_full_source(source_root)
+    for helper, name in (
+        ("install_core_skills_symlink", "reflective-brief"),
+        ("install_domain_packs_symlink", "flow-control-generator"),
+    ):
+        dest = tmp_path / f"dest-dir-{name}"
+        target = dest / name
+        target.mkdir(parents=True)
+        (target / "SKILL.md").write_text("# old\nOLD-INSTALLED-COPY\n", encoding="utf-8")
+        result = _run_install_helper(tmp_path, helper, dest, source_root, installation_guide_text)
+        assert result.returncode != 0, result.stdout + result.stderr
+        assert not target.is_symlink()
+        assert "OLD-INSTALLED-COPY" in (target / "SKILL.md").read_text(encoding="utf-8")
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+def test_install_symlink_helpers_preserve_real_file_and_fail(
+    tmp_path: Path, installation_guide_text: str
+):
+    """WR-07: the same guard must refuse pre-existing real files."""
+    source_root = tmp_path / "source"
+    _write_full_source(source_root)
+    for helper, name in (
+        ("install_core_skills_symlink", "reflective-brief"),
+        ("install_domain_packs_symlink", "flow-control-generator"),
+    ):
+        dest = tmp_path / f"dest-file-{name}"
+        dest.mkdir(parents=True)
+        target = dest / name
+        target.write_text("OLD-INSTALLED-COPY\n", encoding="utf-8")
+        result = _run_install_helper(tmp_path, helper, dest, source_root, installation_guide_text)
+        assert result.returncode != 0, result.stdout + result.stderr
+        assert not target.is_symlink()
+        assert "OLD-INSTALLED-COPY" in target.read_text(encoding="utf-8")
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+def test_install_symlink_helpers_replace_existing_links(
+    tmp_path: Path, installation_guide_text: str
+):
+    """WR-07: fresh installs and re-runs over existing symlinks stay valid."""
+    source_root = tmp_path / "source"
+    _write_full_source(source_root)
+    dest = tmp_path / "dest"
+    for helper in ("install_core_skills_symlink", "install_domain_packs_symlink"):
+        first = _run_install_helper(tmp_path, helper, dest, source_root, installation_guide_text)
+        assert first.returncode == 0, first.stdout + first.stderr
+        second = _run_install_helper(tmp_path, helper, dest, source_root, installation_guide_text)
+        assert second.returncode == 0, second.stdout + second.stderr
+    brief = dest / "reflective-brief"
+    pack = dest / "flow-control-generator"
+    assert brief.is_symlink() and pack.is_symlink()
+    assert "SOURCE-MARKER" in (brief / "SKILL.md").read_text(encoding="utf-8")
+    assert "SOURCE-MARKER" in (pack / "SKILL.md").read_text(encoding="utf-8")
 
 def test_en_cheatsheet_domain_pack_appendix_lists_registry():
     text = cheatsheet_en_path().read_text(encoding="utf-8")

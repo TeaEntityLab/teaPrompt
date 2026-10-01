@@ -82,8 +82,8 @@ Test-design boundary: producing a rigorous Test Plan from requirements without w
 Workflow-design boundary: a no-code workflow specification, state model, transition design, or orchestration plan uses `reflective-spec-plan`. An executable runner or graph uses `reflective-implement`; current framework comparison uses `reflective-research`; review of an existing workflow uses `reflective-review`; deciding whether a workflow is needed at all remains with `reflective-dispatch`.
 
 Promotion boundary: deciding whether repeated material should become a note, prompt lens, skill, verifier, or runtime surface uses `04-agent/artifact-promotion.md`, `04-agent/workflow-acquisition.md`, or `04-agent/external-adoption-review.md` (TeaPrompt source-repository lenses) as supporting lenses; where those lenses are not installed, fail closed — no promotion without recurrence evidence and explicit human approval. Do not create a new workflow skill as the default route.
-Frozen skill boundary: nine frozen workflow skills means gated, not never. A tenth core workflow skill needs recurrence evidence and explicit human approval; otherwise fold material into an existing skill, supporting lens, verifier/test, or no-change record.
-Contract boundaries: phrase-level routing rules R1–R12 live in the TeaPrompt source repository (`plans/ROUTING_CONTRACT.md`) with full fixture history, but the portable boundary cues are:
+Frozen skill boundary: nine frozen workflow skills means gated, not never. A tenth core workflow skill needs three-recurrence evidence and explicit human approval (TeaPrompt tenth-core gate, distinct from the two-occurrence project-knowledge candidate); otherwise fold material into an existing skill, supporting lens, verifier/test, or no-change record.
+Contract boundaries: phrase-level routing rules R1–R13 live in the TeaPrompt source repository (`plans/ROUTING_CONTRACT.md`) with full fixture history, but the portable boundary cues are:
 
 - **Plan-only (no code)** → `reflective-spec-plan` — tickets, rollout plans, or acceptance criteria with explicit no-code context.
 - **Plain review (non-production)** → `reflective-review` — diff/PR review for readability or regressions when production risk is out of scope.
@@ -95,6 +95,7 @@ Contract boundaries: phrase-level routing rules R1–R12 live in the TeaPrompt s
 - **Recurring deterministic check** → primary workflow + `verifier/test` artifact (Acquisition L3) — do not jump to a runner unless a prompt-impossible guarantee is required.
 - **Doc edit not review** → `reflective-implement` — revising repository documents or content against acceptance criteria; critique-only stays `reflective-review`.
 - **Prototype/spike (criteria emerge by building)** → `reflective-brief` first — frame the spike as a falsifiable question plus a timebox, then `reflective-implement` with a disposable-artifact label; full `reflective-spec-plan` waits until the direction sticks.
+- **Existing-plan review (R13) → `reflective-review`** — a review verb opening on an existing spec, plan, PRD, or roadmap routes to review of that artifact; authoring, repository delivery, catalog questions, minimality vocabulary, and production/security hazards keep their own routes.
 
 The portable invariant is that equivalent intent must route equivalently with a visible route trace.
 
@@ -124,7 +125,7 @@ When **all** of the following are true, skip a separate `reflective-brief` and a
 - The task is trivial or a single obvious action.
 - No high-risk, trust-boundary, or side-effect authority signals appear.
 
-Still emit a route trace (`Mode`, `Strictness`, `Workflow: prompt-only`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Next Action`); deferred `context_load: high` skills go under `Enhancements Available` with a one-line rationale. If any Fast Path eligibility signal (strictness, triviality, or a high-risk / trust-boundary / side-effect cue) is ambiguous, default-up to `reflective-brief` instead of silent downgrade; safe content ambiguity after routing is handled by stating assumptions, not by a second default-up.
+Still emit the full ten-field route trace (`Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow: prompt-only`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`); deferred `context_load: high` skills go under `Enhancements Available` with a one-line rationale. If any Fast Path eligibility signal (strictness, triviality, or a high-risk / trust-boundary / side-effect cue) is ambiguous, default-up to `reflective-brief` instead of silent downgrade; safe content ambiguity after routing is handled by stating assumptions, not by a second default-up.
 
 ## Context Load Deferral
 

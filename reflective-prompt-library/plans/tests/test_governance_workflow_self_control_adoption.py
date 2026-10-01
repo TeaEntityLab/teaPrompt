@@ -73,6 +73,7 @@ def test_gw3_every_skill_status_list_is_pinned():
     assert "`asserted` / `verified` / `refuted` / `unverifiable`" in review
 
 
+
 def test_gw6_examples_cover_the_four_templates():
     loop = _read(SKILLS / "examples" / "flow-loop-harness.examples.md")
     for token in ("Writer-critic", "floor_ok()", "MAX_ROUNDS=4", "Multi-wave fan-out", "MAX_WAVES=4"):
@@ -85,7 +86,6 @@ def test_gw6_examples_cover_the_four_templates():
     assert "per-node gate on output presence" not in control
     for text in (loop, control):
         assert "Rig-tier (run 2026-09-14)" in text
-
 
 def test_gw7_usage_log_covers_all_registered_packs():
     from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402

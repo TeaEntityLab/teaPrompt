@@ -168,7 +168,7 @@ tools: [least-privilege allowlist for this task only]
 run-<cli>.sh <read-only|workspace-write> <workdir> <prompt-file> [model] [effort]
 ```
 
-The line above is an interface signature, not executable shell. The emitted script must reject unknown modes, fence `workdir` with `--cd`, take the prompt via stdin, preserve identical broker/policy gates for any in-process fallback, inherit configuration only for empty optional parameters, and pass `bash -n`.
+The line above is an interface signature, not executable shell: `<prompt-file>` names a readable input file; the wrapper reads that file and passes its contents to the host CLI through stdin, not argv. The emitted script must reject unknown modes, fence `workdir` with `--cd`, preserve identical broker/policy gates for any in-process fallback, inherit configuration only for empty optional parameters, and pass `bash -n`.
 
 ### Escalate predicates (§15.3) — machine-readable, not introspective
 
@@ -233,6 +233,7 @@ checker_profile:
 ### Cumulative-effect budget (§6.3) — keyed on the lease, not the session
 
 ```yaml
+# emit: .agent/policies/cumulative-effect-budget.yaml (worker-immutable)
 cumulative_effect_key:
   principal: "user:john"
   purpose: "fix issue #381"
@@ -247,7 +248,8 @@ effect_budget:
 cross_purpose_budget:
   key: {principal: "user:john", resource_domain: "repository:alpha"}
   max_operations_across_authorizations: 40
-  reset_requires: "new_out_of_band_authorization"
+  reset_requires: "explicit_out_of_band_aggregate_reset_grant"
+  # Ordinary lease renewal/new authorization never resets this cross-authorization cap.
 ```
 
 ### Lease semantics (§5.7)
@@ -288,8 +290,10 @@ constitutional_paths:
   - ".agent/approval/**"
   - ".agent/evidence-schema/**"
   - ".agent/verifiers/**"
+  - ".agent/broker/**"
+  - ".agent/acceptance/**"
 worker_writable_exclusions:
-  deny_write: [".agent/policies/**", ".agent/hooks/**", ".agent/approval/**", ".agent/evidence-schema/**", ".agent/verifiers/**", "tests/acceptance/locked/**", "tests/governance/**", "tests/security-invariants/**"]
+  deny_write: [".agent/policies/**", ".agent/hooks/**", ".agent/approval/**", ".agent/evidence-schema/**", ".agent/verifiers/**", ".agent/broker/**", ".agent/acceptance/**", "tests/acceptance/locked/**", "tests/governance/**", "tests/security-invariants/**"]
   enforcement_owner: "host_runtime"
 policy_activation:
   proposed_by: "policy-editor"
@@ -310,13 +314,13 @@ approval:
   owner: "security-team"
   approver: "alice@example.com"
   authority_basis: "POLICY-SEC-17"
-  decision: "approved"
-  rationale: "..."
-  expires_at: "..."
+  decision: "pending"     # only the named out-of-band approver may grant approval
+  rationale: ""
+  expires_at: ""
   provenance:
-    issued_out_of_band: true
+    issued_out_of_band: true   # required channel: only an out-of-band approver may issue
     worker_writable: false
-    integrity_evidence: "<host-specific signature or trusted-log reference>"
+    integrity_evidence: "" # host verifies approver issuance before accepting approved
 # Even in a single-person system, mark the roles (requester / approver / executor /
 # evidence recorder) so responsibility never collapses into "the system decided".
 ```

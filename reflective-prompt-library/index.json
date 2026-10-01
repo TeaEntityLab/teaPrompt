@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30T22:55:05.469331",
+  "generated_at": "2026-10-01T09:45:56.200032",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1802,7 +1802,7 @@
         }
       ],
       "line_count": 152,
-      "char_count": 22631
+      "char_count": 22255
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -2072,11 +2072,13 @@
           "code-followups-plan.md",
           "runtime-governance-learning-plan-2026-06-11.md",
           "../PROJECT_KNOWLEDGE.md#decision-index",
+          "dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "../skills/skill-map.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "governed-delivery-adoption-2026-09-03.md",
+          "pstack-survey-2026-09-22.md",
           "ROUTING_CONTRACT.md",
           "QUALITY_GATES_SUMMARY.md",
           "../../CONTRIBUTING.md",
@@ -2120,7 +2122,7 @@
         },
         {
           "level": 2,
-          "text": "Current State (evidence snapshot, 2026-07-11)"
+          "text": "Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11)"
         },
         {
           "level": 3,
@@ -2187,8 +2189,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 204,
-      "char_count": 14678
+      "line_count": 215,
+      "char_count": 15784
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -2338,7 +2340,7 @@
         }
       ],
       "line_count": 38,
-      "char_count": 4935
+      "char_count": 5247
     },
     {
       "path": "reflective-prompt-library/plans/durable-skills-flows-panel-2026-08-25.md",
@@ -2404,7 +2406,7 @@
         }
       ],
       "line_count": 104,
-      "char_count": 10616
+      "char_count": 10794
     },
     {
       "path": "reflective-prompt-library/plans/llm-judge-lifecycle-survey-2026-09-05.md",
@@ -2709,6 +2711,7 @@
           "governance-rules-rethink-review-2026-07-11.md#adoption-update-3-2026-07-11",
           "p7-pack-routing-decision-2026-07-11.md",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
+          "ROUTING_CONTRACT.md",
           "p7-pack-routing-decision-2026-07-11.md"
         ]
       },
@@ -2770,8 +2773,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 144,
-      "char_count": 8621
+      "line_count": 146,
+      "char_count": 8763
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md",
@@ -3119,8 +3122,8 @@
           "text": "Documentation Maintenance Note"
         }
       ],
-      "line_count": 354,
-      "char_count": 16382
+      "line_count": 352,
+      "char_count": 16292
     },
     {
       "path": "reflective-prompt-library/plans/hotline-verification-redundancy-survey-2026-09-22.md",
@@ -3373,7 +3376,7 @@
         }
       ],
       "line_count": 100,
-      "char_count": 6392
+      "char_count": 6400
     },
     {
       "path": "reflective-prompt-library/plans/september-skills-review-2026-09-14.md",
@@ -3794,17 +3797,68 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "whole-project-roadmap-2026-07-11.md",
           "checkpoint-2026-10-11-runbook.md",
           "whole-project-plan-2026-07-11.md",
           "../GLOSSARY.md#adoption-guard-closure",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "dormant-items-user-directed-adoption-2026-07-12.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "governance-necessity-panel-record-2026-07-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "whole-project-plan-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "governed-delivery-review-2026-09-13.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "governed-delivery-review-2026-09-13.md",
+          "september-skills-review-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "governed-delivery-review-2026-09-13.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "governance-rules-rethink-review-2026-07-11.md",
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "agent-harness-convergence-survey-2026-08-25.md",
+          "agent-harness-convergence-survey-2026-08-25.md",
+          "harness-intent-drift-rethink-2026-09-06.md",
+          "astra-efficiency-rules-survey-2026-09-10.md",
+          "governed-delivery-adoption-2026-09-03.md",
+          "agentflow-survey-2026-09-05.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "governable-autonomy-survey-2026-09-03.md",
+          "ga-skills-coverage-panel-2026-09-03.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "llm-judge-lifecycle-survey-2026-09-05.md",
+          "agentflow-8.2-delta-survey-2026-09-13.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "runtime-governance-learning-plan-2026-06-11.md",
+          "../06-repo/AGENTS.md#harness-policy-nine-skills",
+          "openfugu-reference-plan-2026-06-25.md",
+          "openfugu-reference-plan-2026-06-25.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "checkpoint-2026-10-11-runbook.md",
-          "flow-control-pack-panel-record-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
           "whole-project-plan-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
           "p7-pack-routing-decision-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
           "flow-control-roadmap-2026-07-11.md",
@@ -3842,6 +3896,14 @@
         {
           "level": 2,
           "text": "Adoption update (2026-07-12)"
+        },
+        {
+          "level": 2,
+          "text": "Current queue coverage (2026-10-01)"
+        },
+        {
+          "level": 2,
+          "text": "Domain and retired-plan dispositions (2026-10-01)"
         },
         {
           "level": 2,
@@ -3952,8 +4014,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 763,
-      "char_count": 46446
+      "line_count": 790,
+      "char_count": 52953
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -5845,7 +5907,8 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
-          "flow-control-pack-panel-record-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
+          "checkpoint-2026-10-11-runbook.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "flow-pack-usage-log.md",
           "flow-control-pack-panel-record-2026-07-11.md",
@@ -5856,6 +5919,12 @@
           "september-skills-review-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "governed-delivery-review-2026-09-13.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "checkpoint-2026-10-11-runbook.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -5864,6 +5933,7 @@
           "validate_record_hygiene.py",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
+          "pstack-survey-2026-09-22.md",
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
@@ -5881,6 +5951,8 @@
           "gpt-instruct-survey-2026-09-10.md",
           "llm-judge-lifecycle-survey-2026-09-05.md",
           "agentflow-8.2-delta-survey-2026-09-13.md",
+          "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
+          "dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "p7-pack-routing-decision-2026-07-11.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -5927,6 +5999,10 @@
         },
         {
           "level": 3,
+          "text": "Adopted 2026-09-23 (fifth-pack admission)"
+        },
+        {
+          "level": 3,
           "text": "Still trigger-gated"
         },
         {
@@ -5946,8 +6022,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 207,
-      "char_count": 21493
+      "line_count": 229,
+      "char_count": 24167
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -6478,8 +6554,8 @@
           "text": "Addendum Falsifiability"
         }
       ],
-      "line_count": 838,
-      "char_count": 60515
+      "line_count": 839,
+      "char_count": 60799
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -6707,7 +6783,7 @@
         }
       ],
       "line_count": 438,
-      "char_count": 26547
+      "char_count": 25485
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -7200,8 +7276,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 200,
-      "char_count": 14310
+      "line_count": 202,
+      "char_count": 14609
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3.2-delta-survey-2026-09-22.md",
@@ -7655,12 +7731,13 @@
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "flow-control-roadmap-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "all-skills-panel-record-2026-07-18.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "dormant-work-specs-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
-          "flow-control-pack-panel-record-2026-07-11.md",
-          "dormant-work-specs-2026-07-11.md",
+          "dormant-items-user-directed-adoption-2026-07-12.md",
           "flow-control-roadmap-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
           "whole-project-roadmap-2026-07-11.md",
@@ -7670,7 +7747,10 @@
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-improvement-plan-2026-07-24.md",
           "governed-delivery-adoption-2026-09-03.md",
-          "governed-delivery-review-2026-09-13.md"
+          "governed-delivery-review-2026-09-13.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
+          "all-skills-panel-record-2026-07-18.md",
+          "agent-governance-scaffold-field-use-panel-2026-07-17.md"
         ]
       },
       "structure": [
@@ -7712,6 +7792,10 @@
         },
         {
           "level": 2,
+          "text": "Agenda item 8 — G9 / AS9: governance-vocabulary checkpoint review"
+        },
+        {
+          "level": 2,
           "text": "Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)"
         },
         {
@@ -7719,8 +7803,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 168,
-      "char_count": 10797
+      "line_count": 193,
+      "char_count": 12763
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -8541,7 +8625,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../../review/final-report.md#final-report--whole-library-plan--skill-review"
+        ]
       },
       "structure": [
         {
@@ -8581,8 +8667,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 67,
-      "char_count": 12479
+      "line_count": 74,
+      "char_count": 13002
     },
     {
       "path": "reflective-prompt-library/plans/rrsi-survey-2026-09-30.md",
@@ -8667,8 +8753,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 294,
-      "char_count": 35298
+      "line_count": 296,
+      "char_count": 35542
     },
     {
       "path": "reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md",
@@ -11659,6 +11745,8 @@
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
           "self-governance-dogfood-2026-09-24.md",
+          "agent-governance-scaffold-field-use-panel-2026-07-17.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-verification-panel-2026-09-05.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
@@ -11688,8 +11776,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 59,
-      "char_count": 4249
+      "line_count": 62,
+      "char_count": 4971
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -12081,7 +12169,7 @@
         }
       ],
       "line_count": 351,
-      "char_count": 29501
+      "char_count": 29648
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -14743,8 +14831,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 179,
-      "char_count": 11383
+      "line_count": 180,
+      "char_count": 11821
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -14938,6 +15026,10 @@
           "text": "Cumulative-effect budget (§6.3) — keyed on the lease, not the session"
         },
         {
+          "level": 1,
+          "text": "emit: .agent/policies/cumulative-effect-budget.yaml (worker-immutable)"
+        },
+        {
           "level": 3,
           "text": "Lease semantics (§5.7)"
         },
@@ -15006,8 +15098,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 407,
-      "char_count": 26622
+      "line_count": 411,
+      "char_count": 27126
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -15069,15 +15161,7 @@
         },
         {
           "level": 1,
-          "text": "Stage 1: spec"
-        },
-        {
-          "level": 1,
-          "text": "Stage 2: implement (consumes spec)"
-        },
-        {
-          "level": 1,
-          "text": "Stage 3: review"
+          "text": "generated-by: flow-control-generator / pipeline / 2026-10-01 / dry-run-required"
         },
         {
           "level": 1,
@@ -15089,11 +15173,7 @@
         },
         {
           "level": 1,
-          "text": "Gate: strict by default; MIN_OK=N declares an explicit partial-failure quorum"
-        },
-        {
-          "level": 1,
-          "text": "(ReMoM-style). Silent skip-on-error is never the default."
+          "text": "generated-by: flow-control-generator / parallel / 2026-10-01 / dry-run-required"
         },
         {
           "level": 2,
@@ -15101,15 +15181,11 @@
         },
         {
           "level": 1,
-          "text": "Classifier: constrained output, one label only."
+          "text": "generated-by: flow-control-generator / router / 2026-10-01 / dry-run-required"
         },
         {
           "level": 1,
-          "text": "Normalize: first line, lowercased, cut at the first non-label char."
-        },
-        {
-          "level": 1,
-          "text": "Route trace: routing must be observable, never silent."
+          "text": "Preserve raw bytes; accept a whole case-insensitive label and at most one LF."
         },
         {
           "level": 1,
@@ -15122,10 +15198,6 @@
         {
           "level": 2,
           "text": "Template: DAG Executor (Python, stdlib only)"
-        },
-        {
-          "level": 1,
-          "text": "node -> (deps, prompt-file), filled at generation time; on shape change regenerate, never patch a drifted copy."
         },
         {
           "level": 2,
@@ -15148,8 +15220,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 386,
-      "char_count": 19979
+      "line_count": 403,
+      "char_count": 19998
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -15406,7 +15478,7 @@
         }
       ],
       "line_count": 205,
-      "char_count": 13102
+      "char_count": 13298
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -16078,7 +16150,7 @@
         }
       ],
       "line_count": 170,
-      "char_count": 7800
+      "char_count": 7908
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -16385,16 +16457,24 @@
           "text": "Template: Verify-Gated Fix Loop (bash)"
         },
         {
+          "level": 1,
+          "text": "generated-by: flow-loop-harness / fix / 2026-10-01 / dry-run-required"
+        },
+        {
           "level": 2,
           "text": "Template: Evaluator-Optimizer / Writer-Critic (bash)"
         },
         {
-          "level": 3,
-          "text": "Deterministic companion check (raise the ACCEPT floor)"
+          "level": 1,
+          "text": "generated-by: flow-loop-harness / writer-critic / 2026-10-01 / dry-run-required"
         },
         {
           "level": 1,
-          "text": "gate: ACCEPT requires the critic contract AND a deterministic floor."
+          "text": "UNATTENDED PREFLIGHT: insert companion block here, before the draft call."
+        },
+        {
+          "level": 3,
+          "text": "Deterministic companion check (raise the ACCEPT floor)"
         },
         {
           "level": 2,
@@ -16402,15 +16482,23 @@
         },
         {
           "level": 1,
-          "text": "Canonical copy: the loop reads and retires ONLY this copy, so agent edits"
+          "text": "generated-by: flow-loop-harness / backlog / 2026-10-01 / dry-run-required"
         },
         {
           "level": 1,
-          "text": "to the original backlog cannot reorder or drop queued work mid-run."
+          "text": "Only the script retires this queue; host write exclusion is REQUIRED."
+        },
+        {
+          "level": 1,
+          "text": "Retiring the last task on the final iteration is success, not cap."
         },
         {
           "level": 2,
           "text": "Template: Multi-Wave Fan-out (bash)"
+        },
+        {
+          "level": 1,
+          "text": "generated-by: flow-loop-harness / multi-wave / 2026-10-01 / dry-run-required"
         },
         {
           "level": 2,
@@ -16437,8 +16525,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 331,
-      "char_count": 19884
+      "line_count": 391,
+      "char_count": 19873
     }
   ],
   "total_files": 183

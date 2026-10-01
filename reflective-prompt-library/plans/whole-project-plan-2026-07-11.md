@@ -16,8 +16,10 @@
 - The previous planning artifacts ([build plan](prompt-library-build-plan.md),
   [agent workflows](agent-workflows-plan.md), [code follow-ups](code-followups-plan.md),
   [runtime governance learning](runtime-governance-learning-plan-2026-06-11.md)) are all
-  retired; their milestones are complete and recorded in the
-  [Decision Index](../PROJECT_KNOWLEDGE.md#decision-index).
+  retired; their completed milestones are recorded in the
+  [Decision Index](../PROJECT_KNOWLEDGE.md#decision-index). Retired TASK-006 and
+  optional OpenFugu tasks have [disposition pointers](dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01);
+  retirement does not mean every historical future task was completed.
 - Open work now lives scattered across panel records as deferred candidates with
   named triggers (P6/P12/P13, M4–M7, E2, D4, N8, June backlog). Nothing
   aggregates them, so trigger drift — the failure mode every panel record's
@@ -36,7 +38,7 @@
   [Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals). Scheduling
   semantics (cadence / date / trigger / direction gates) belong to the roadmap.
 
-## Current State (evidence snapshot, 2026-07-11)
+## Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11)
 
 ### Product surfaces
 
@@ -44,10 +46,10 @@
 | --- | --- | --- |
 | `00-core/`–`06-repo/` | Composable prompt sources (thinking, engineering, context, agent, domain, repo templates) | Complete; guarded by contract/cross-link/HR registries in `plans/tests/` |
 | `skills/` core | Nine frozen core workflow skills (bounded routing set; frozen = gated, not never) | Complete; 4-field governance metadata on 9/9 ([skill-map](../skills/skill-map.md)) |
-| `skills/` packs | Four registered domain packs outside core routing: `flow-control-generator`, `flow-loop-harness` (2026-07-11), `agent-governance-scaffold` (2026-07-17), `governed-delivery` (2026-09-03) | Each adopted via user-directed exception; demotion triggers live ([flow record](flow-control-pack-panel-record-2026-07-11.md), [scaffold record](agent-governance-scaffold-adoption-2026-07-17.md), [GD record](governed-delivery-adoption-2026-09-03.md)); registry `DOMAIN_PACK_SKILLS` is the count of truth |
-| Routing | Deterministic seeded router + [ROUTING_CONTRACT.md](ROUTING_CONTRACT.md) R1–R12 | ROUTE-001/002/003 at 100% on seeded fixtures (128/124/76 phrases); P7 collision evidence resolved no core-router integration — regression-guard tier, not semantic proof |
-| Governance tooling | `make all`: pytest suite + validators + 3 route evals; CI via `.github/workflows/python-tools.yml` | Green; current evidence lives in [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md) and the latest session report |
-| Docs & distribution | READMEs (EN/zh-TW), [CONTRIBUTING](../../CONTRIBUTING.md), [SKILL_INSTALLATION](../SKILL_INSTALLATION.md) core-only default with opt-in packs, cheatsheets EN/zh-TW | Current as of the 2026-07-11 adoption wave |
+| `skills/` packs | Five registered domain packs outside core routing: `flow-control-generator`, `flow-loop-harness` (2026-07-11), `agent-governance-scaffold` (2026-07-17), `governed-delivery` (2026-09-03), `verification-map-generator` (2026-09-23) | Registry `DOMAIN_PACK_SKILLS` is the count of truth; owning records: [flow](flow-control-pack-panel-record-2026-07-11.md), [scaffold](agent-governance-scaffold-adoption-2026-07-17.md), [GD](governed-delivery-adoption-2026-09-03.md), [verification map](pstack-survey-2026-09-22.md) |
+| Routing | Deterministic seeded router + [ROUTING_CONTRACT.md](ROUTING_CONTRACT.md) R1–R13, including review-led inspection | Current coverage floors live in `validate_route_fixture.py`; prior 128/124/76 phrase snapshot was dated evidence, not current coverage. P7 remains no core-router integration; seeded results are regression-guard tier, not semantic proof. |
+| Governance tooling | `make all`: pytest suite + eight validators + 3 route evals; CI via `.github/workflows/python-tools.yml` | Composition reconciled from Makefile; executed results live in [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md) and the latest session report, not this source reconciliation |
+| Docs & distribution | READMEs (EN/zh-TW), [CONTRIBUTING](../../CONTRIBUTING.md), [SKILL_INSTALLATION](../SKILL_INSTALLATION.md) core-only default with opt-in packs, cheatsheets EN/zh-TW | T2 landed 2026-07-12; pack admission/parity now follows the current registry and `PACK_SURFACES` manifest |
 | Knowledge layer | [PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) (principles, direction, lessons, Decision Index), [GLOSSARY](../GLOSSARY.md) playbook | Validated by `validate_project_knowledge.py`; Rounds 69–101 rolled up |
 | Evidence archive | `plans/` records + [surveys/](../../surveys/ornith-1.0-survey.md) | Eleven retired records carry historical-status headers (rethink E3) |
 
@@ -55,10 +57,12 @@
 
 `validate_links.py` (links + SKILL frontmatter incl. required `license`),
 `lint_skills.py`, `validate_governance.py` (core/pack registry parity),
-`validate_project_knowledge.py` (authority boundary), `validate_benchmark_fixture.py`
-(24 golden tasks), `validate_skill_examples.py` (`CORE_SKILLS` ∪ `DOMAIN_PACK_SKILLS`),
-`validate_route_fixture.py` (coverage floors: ROUTE-002 ≥ 44 groups / 124 phrases,
-ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
+`validate_project_knowledge.py` (authority boundary), `validate_record_hygiene.py`
+(forward record hygiene), `validate_benchmark_fixture.py` (24 golden tasks),
+`validate_skill_examples.py` (`CORE_SKILLS` ∪ `DOMAIN_PACK_SKILLS`),
+`validate_route_fixture.py` (coverage floors as of 2026-10-01: ROUTE-001 ≥12 intent
+groups + 4 adversarial groups / 128 phrases; ROUTE-002 ≥48 groups / 138 phrases;
+ROUTE-003 ≥32 groups / 108 phrases), then ROUTE-001/002/003 evals. Details:
 [QUALITY_GATES_SUMMARY.md](QUALITY_GATES_SUMMARY.md).
 
 ## Operating constraints (pointers, not restatements)
@@ -85,7 +89,7 @@ ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
 
 ### WS2 — Routing and dispatch
 
-- Objective: preserve routing fairness (R1–R12) without untested tuning.
+- Objective: preserve routing fairness (R1–R13) without untested tuning.
 - Planned work: expand ROUTE-002/003 holdouts before any router change (R8);
   keep cheatsheet quick-cue parity (playbook items 6–8). P7 closed on
   2026-07-11 after three collision groups / 9 phrases passed 100% pre-tune:
@@ -98,7 +102,7 @@ ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
 
 ### WS3 — Skills surface (core + packs)
 
-- Objective: hold the bounded core set stable; manage the two packs by evidence.
+- Objective: hold the bounded core set stable; manage registered packs by evidence.
 - Planned work: collect manual pack-usage evidence (T3 below) ahead of the
   2026-10-11 P6/N11 re-litigation; keep pack Module Contracts at full parity
   (N5 guards); no new pack without the AGENTS item-3 admission rule.
@@ -131,7 +135,7 @@ ROUTE-003 ≥ 22 groups / 76 phrases), then ROUTE-001/002/003 evals. Details:
   appendix and README Orientation were adopted 2026-07-12 as user-directed
   documentation improvements with recurrence recorded `unknown`.
 - Acceptance: install helpers produce exactly 9 core + optionally the registered
-  pack directories (`DOMAIN_PACK_SKILLS`, four as of 2026-09-03); cheatsheet parity tests green.
+  pack directories from the current `DOMAIN_PACK_SKILLS` registry; cheatsheet parity tests green.
 
 ### WS7 — Knowledge and archive hygiene
 
@@ -190,6 +194,13 @@ and thirteen September records adopted trigger-gated items without a queue entry
 this plan's counts and the roadmap's September section were updated in the
 [September review](september-skills-review-2026-09-14.md). The clause stays live for
 the next drift.
+
+Fired and reconciled 2026-10-01: fifth-pack admission on 2026-09-23 and R13 on
+2026-09-24 had outgrown the active layer's four-pack/R1–R12 snapshot. The current
+layer and roadmap admission ledger now point to five packs, R13, live route floors,
+and the Makefile's record-hygiene validator. The original dated counts and gate
+measurements above/below remain historical; this correction asserts source
+reconciliation, not a fresh execution result.
 
 ## Verification (this plan)
 

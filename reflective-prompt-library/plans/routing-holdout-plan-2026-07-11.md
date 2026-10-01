@@ -16,14 +16,16 @@
   router first; observations recorded; the fixture group is added; only then may
   a router rule change, and only if a meaningful boundary actually fails.
 - **Floors ratchet:** `validate_route_fixture.py` minimums only go up
-  (currently ROUTE-002 ≥44 groups/124 phrases; ROUTE-003 ≥22 groups/76 phrases).
+  (2026-10-01 snapshot: ROUTE-002 ≥48 groups/138 phrases; ROUTE-003 ≥32 groups/108
+  phrases). Use the validator's current constants for subsequent checks.
 - **P7 is decided by its successor record:** these fixtures test that
   pack-adjacent vocabulary does not destabilize the nine core routes. Nine fresh
   collision phrases passed pre-tune, so `reflective-dispatch` does not route to
   packs; the packs remain host-invoked.
 - **Parity mechanics:** any adopted group follows the
   [playbook](../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊) items
-  6–8 (probe tuples, EN/zh-TW cheatsheet cues, CONTRIBUTING R8–R12 sync).
+  6–8 (probe tuples, EN/zh-TW cheatsheet cues, CONTRIBUTING sync with the current
+  [ROUTING_CONTRACT](ROUTING_CONTRACT.md), including R13).
 
 ## Candidate ROUTE-003 groups (adversarial traps)
 

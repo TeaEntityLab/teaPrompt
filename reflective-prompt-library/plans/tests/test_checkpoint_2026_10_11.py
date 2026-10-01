@@ -32,6 +32,7 @@ REQUIRED_OUTCOME_HEADINGS = (
     "## Roadmap self-review",
     "## Ledger and index updates",
     "## GD outcome",
+    "## G9 / AS9 outcome",
 )
 
 

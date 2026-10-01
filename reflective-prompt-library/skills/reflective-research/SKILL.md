@@ -121,7 +121,7 @@ A passed gate is not reopened for polish: no further retrieval to reword a claim
 
 ### Budget Rule
 
-When fetched material outgrows the task, compress findings into the ledger and drop the raw text. Keep source identities, versions, and dates; discard full documents. For very large documents, apply `03-context/large-context.md`.
+When fetched material outgrows the task, compress findings into the ledger and drop the raw text. Keep source identities, versions, and dates; discard full documents. For very large documents, apply index-then-selective-extraction-then-synthesis handling (`03-context/large-context.md` in the TeaPrompt source repository when available; otherwise index headings, extract only cited sections, then synthesize from the ledger).
 
 ## High-Volatility Facts
 

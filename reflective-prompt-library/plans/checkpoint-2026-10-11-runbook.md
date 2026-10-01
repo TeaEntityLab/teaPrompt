@@ -5,8 +5,8 @@
 > [whole-project roadmap](whole-project-roadmap-2026-07-11.md) §Horizon 2 with
 > the decision procedures scattered across the owning records. It restates
 > gates with pointers and adds none. If a step and its owning record disagree,
-> the record wins. Draft specs for every agenda item live in the
-> [dormant-work spec book](dormant-work-specs-2026-07-11.md).
+> the record wins. Specs or disposition/owning-record pointers for the agenda
+> live in the [dormant-work spec book](dormant-work-specs-2026-07-11.md).
 >
 > **Output contract:** the checkpoint session MUST produce
 > `plans/checkpoint-2026-10-11-outcome.md` (required sections below). The
@@ -21,7 +21,7 @@
 | --- | --- | --- | --- |
 | 1 | Usage log current? | [flow-pack-usage-log.md](flow-pack-usage-log.md) — count rows per skill in §Entries | P6 |
 | 2 | Unlogged use plausible? | `git log --since=2026-07-11 -- reflective-prompt-library/skills/flow-control-generator reflective-prompt-library/skills/flow-loop-harness` + scan session/retro records for pack mentions | P6 (unknown-vs-zero weighing) |
-| 3 | EN appendix stable? | `git log --since=2026-07-11 -- reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md` — appendix section untouched since 2026-07-11? | T2 |
+| 3 | EN stability and EN/zh-TW parity? | Review EN appendix history since 2026-07-11; compare both current appendices with `DOMAIN_PACK_SKILLS` (one bullet per registered pack plus dispatch). T2 landed 2026-07-12; this is re-verification, not re-adoption. | T2 |
 | 4 | Demotion evaluation on record? | [flow-pack-demotion-evaluation-2026-07-11.md](flow-pack-demotion-evaluation-2026-07-11.md) exists, verdict "not fired" | F4 duty |
 | 5 | Watch-table rows re-checked? | [flow-control roadmap §F4](flow-control-roadmap-2026-07-11.md) — re-verify each of the six watch rows against its named source | F1 re-run decision |
 | 6 | Trigger drift sweep green? | `make all` from repository root — `test_dormant_item_watch.py` and conditionals passing means no *watched* surface drifted; it never proves no trigger fired in the world | Roadmap self-review |
@@ -29,6 +29,7 @@
 | 8 | `governed-delivery` invocation evidence? | Scan session/retro records, host logs, and `git log --since=2026-09-03` for any host-supplied run of the pack; absence stays `unknown`, never zero | Agenda item 7 |
 | 9 | GD↔AGS shared blocks diverged? | Diff the Host Preconditions, `artifact-complete` status, and constitutional-path text of `governed-delivery` against `agent-governance-scaffold` | Agenda item 7 |
 | 10 | Flow-pack char counts | Whole-file length of `flow-control-generator` and `flow-loop-harness` as `lint_skills.py` measures it (20k warning; 19,952 and 19,927 on 2026-09-14) | Agenda item 6 |
+| 11 | G9/AS9 trigger evidence? | [G9 adoption ledger](agent-governance-scaffold-adoption-2026-07-17.md), [AS9](all-skills-panel-record-2026-07-18.md), session evidence of governance-vocabulary misroute/discoverability failure | Agenda item 8 |
 
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 
@@ -65,15 +66,17 @@ record. Do not upgrade evidence tiers without evidence (N13 discipline).
 
 ## Agenda item 3 — T2: zh-TW pack-appendix parity
 
-Owning gate: [pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md).
+T2 was **adopted 2026-07-12** by explicit user direction:
+[adoption record](dormant-items-user-directed-adoption-2026-07-12.md). The original
+stability-gated draft is historical, not an instruction to re-land it.
 
-- Check 3 says **stable** → T2 qualifies as due: translate the EN appendix
-  (ready draft in the [T2 spec](dormant-work-specs-2026-07-11.md)), land it with
-  cheatsheet parity tests green — the pre-written conditional contract in
-  `test_dormant_conditional_contracts.py` enforces the structural parity the
-  moment pack names appear in the zh-TW file.
-- Check 3 says **edited since 2026-07-11** → the stability clock restarts; name
-  the next check date in the outcome record.
+- Check 3: record EN appendix changes and its stability interval; keep legitimate
+  later pack admissions rather than reverting to the original two-flow-pack draft.
+- Re-verify both appendices against the current `DOMAIN_PACK_SKILLS` registry,
+  including the dispatch-still-routes bullet and the same pack order. The existing
+  `test_dormant_conditional_contracts.py` parity contract is registry-relative.
+- Record parity intact / drift repaired / unresolved, the evidence source, and
+  any next stability review date. No new adoption or localization scope is granted.
 
 ## Agenda item 4 — T4/F1 residue: F4 watch-table re-check
 
@@ -127,9 +130,12 @@ Owning gate: [GD adoption §Demotion Triggers](governed-delivery-adoption-2026-0
    with its source; the pack stays; proceed to step 3.
 2. **No evidence** → recurrence stays `unknown`; the adoption record's policy
    demotes: fold the gate sequence, contract set, and refuters into a reference
-   section of the adoption record and unwind `DOMAIN_PACK_SKILLS` 4→3 with every
-   admission surface (registry, examples, skill-map, cheatsheets, install
-   guides, guard). A skipped or unrecorded checkpoint demotes by the same policy.
+   section of the adoption record and remove only the `governed-delivery` pack
+   from `DOMAIN_PACK_SKILLS`. Use its admission checklist and the canonical
+   `PACK_SURFACES` manifest in `plans/validate_skill_examples.py` for the full
+   unwind; preserve historical usage evidence and every other registered pack.
+   Nothing here executes the demotion — the owning record governs.
+   A skipped or unrecorded checkpoint demotes by the same policy.
 3. **Redundancy-in-use** (check 9): if the pack never ran independently of
    `agent-governance-scaffold`, or the shared blocks diverged, open a
    consolidation record (shared reference; retire the duplicated boilerplate).
@@ -138,6 +144,21 @@ Owning gate: [GD adoption §Demotion Triggers](governed-delivery-adoption-2026-0
 5. This session is a governance panel: the M5 managed-skill re-audit fires again
    (last run 2026-09-13).
 
+## Agenda item 8 — G9 / AS9: governance-vocabulary checkpoint review
+
+Owning duty: [G9 adoption ledger](agent-governance-scaffold-adoption-2026-07-17.md)
+and [AS9](all-skills-panel-record-2026-07-18.md), with the
+[field-use panel](agent-governance-scaffold-field-use-panel-2026-07-17.md) retaining
+the 2026-10-11 proceed/hold/close review.
+
+- Record whether the named misroute/discoverability trigger fired, with its source
+  or an explicit no-recorded-event/`unknown` limit.
+- Even absent a fire event, record **proceed / hold / close**, rationale, and the
+  owning decision pointer. Do not silently carry the deferral past this checkpoint.
+- Proceed is re-litigation, not tuning or adoption: G9's ≥3 fresh holdout groups
+  and pre-tune observation under R8 still precede any router, quick-cue, or
+  dispatch change. This runbook grants no new holdout or tuning authority.
+
 ## Outcome record contract (`plans/checkpoint-2026-10-11-outcome.md`)
 
 Required sections — the conditional guard in
@@ -145,7 +166,8 @@ Required sections — the conditional guard in
 
 1. `## P6 outcome` — branch taken (closed / re-opened / unknown-extended),
    counts, next checkpoint date.
-2. `## T2 decision` — stable→landed, or clock restarted with date.
+2. `## T2 decision` — registry-wide parity result, EN stability interval and
+   changes, evidence source, drift disposition, and any next review date; no re-landing.
 3. `## F4 re-check` — per-row table: unchanged / fired + follow-up opened.
 4. `## Roadmap self-review` — falsifiers walked, queue items with fired
    triggers, artifacts marked stale.
@@ -154,6 +176,9 @@ Required sections — the conditional guard in
 6. `## GD outcome` — branch taken (retained with evidence / demoted / consolidation
    opened), the invocation evidence or its absence as `unknown`, and the A1/E1 and
    lint-tier decisions.
+7. `## G9 / AS9 outcome` — trigger fired / no recorded event / unknown, evidence
+   pointer, proceed / hold / close, rationale, owning decision, and next action
+   under the unchanged G9 gate (or closure reason).
 
 Post-checkpoint duties (same session): Decision Index entry; regenerate
 `index.json` if docs changed; `make all` green from the repository root; if any

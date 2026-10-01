@@ -46,12 +46,12 @@ Input:
 Review this PR description: "Refactored the cache layer; all edge cases tested and passing."
 ```
 
-Expected mid-review Claims Ledger shape:
+Expected mid-review Claims Ledger shape (illustrative rows showing ledger literals, not proof of this PR):
 
 ```markdown
 | Claim | Checked How | Status |
 |---|---|---|
-| cache layer refactored, behavior preserved | diff read; public API unchanged | verified |
-| all edge cases tested | test files in diff | refuted (no new tests for eviction path) |
-| tests passing | CI run link | verified |
+| cache layer refactored; public API text unchanged (behavior preservation still unproven) | diff read (example); public API text compared | verified |
+| all edge cases tested | test files in diff (example) | refuted (no new tests for eviction path) |
+| tests passing | CI output read: example run showed suite green on 2026-09-30 (example) | verified |
 ```

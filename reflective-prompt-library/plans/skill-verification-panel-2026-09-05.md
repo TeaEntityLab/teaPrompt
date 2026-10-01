@@ -1,6 +1,13 @@
 # Skill Correctness and Logical-Consistency Pass — Panel Record (2026-09-05)
 
 > **Status:** Complete. Thirteen installed skills reviewed by thirteen parallel lenses (one per skill) against a shared read-only packet; every text fix below landed at its named surface, `make all` is green (1129 tests with this record's guard, 1112 before it; validators 0 errors; ROUTE-001/002/003 100%; lint 1 pre-existing length warning), and `plans/tests/test_skill_verification_panel_record.py` guards the landed wording and both flow-pack size budgets. User instruction: "verify every single skill in this project, to examine their correctness and logical corrections."
+>
+> **Historical scope:** The counts, wording guards and original diff-stat/non-git
+> observations above/below describe the 2026-09-05 revision, not current template
+> behavior. The [whole-library review](../../review/final-report.md#final-report--whole-library-plan--skill-review)
+> found consumer failures despite those green guards; the 2026-10-01 source repair
+> replaces incidental wording pins with executable consumer regressions. Current
+> completion evidence belongs to that review's repair follow-through report.
 
 ## Research Question
 

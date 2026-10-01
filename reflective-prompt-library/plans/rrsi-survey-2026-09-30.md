@@ -30,8 +30,9 @@ on an installed TeaPrompt surface?
 - **Benchmark replication: not undertaken.** Full runs need Claude Opus 4.8 on Vertex AI (proposer, analyst, critic,
   frozen policy), Docker + harbor (coding), a Harvey LAB checkout at a pinned commit plus judge models
   (workspace), and EngDesign bench + gateway + grading venv (eng). Nothing benchmark- or provider-backed ran here.
-- **Adopt: nothing.** Twelve RRSI-* candidates decided below: eight no-change (covered or host-only or
-  non-goal), four record-only adjacent (ECT-2/ECT-4 already carry the portable distinction; the exact RRSI
+- **Adopt: nothing.** Twelve RRSI-* candidates decided below: seven no-change (covered or host-only or
+  non-goal), five record-only (RRSI-5, -6 and -11 explicitly ECT-adjacent; RRSI-10 is a benchmark
+  missing-data distinction and RRSI-12 a transfer-tradeoff clarification, neither ECT-adjacent; the exact RRSI
   formula is not a TeaPrompt sentence). No verified local declared-contract defect was found by this slice.
 - **Deploy: not applicable.** A benchmark search loop, not a tool one runs on TeaPrompt work.
 - **Scope corrections for citers (load-bearing):**
@@ -247,8 +248,9 @@ and all unrelated named holds are untouched. No upstream vocabulary copied into 
   file/function at `be50316e`; the smoke probe is disposable and recorded above).
 - Any no-change mapping is wrong if an installed skill is later shown to lack the credited rule (coverage rows
   cite file + clause; re-grep them) or if a TeaPrompt-run loop exhibits the named failure (ledger trigger fires).
-- Record-only adjacents (RRSI-5/6/10/11) are wrong if ECT-2/ECT-4's recorded distinction fails on a named local
-  eval run — then the smallest in-place repair lands at that surface under fresh direction.
+- Record-only ECT-adjacents (RRSI-5/6/11) are wrong if ECT-2/ECT-4's recorded distinction fails on a named local
+  eval run — then the smallest in-place repair lands at that surface under fresh direction. RRSI-10 (benchmark
+  missing-data distinction) and RRSI-12 (transfer-tradeoff clarification) are record-only without an ECT-adjacency claim.
 - Author-claimed numbers stand or fall with upstream data/releases; the tracking points name what to re-check.
 - The smoke proves only the exercised pure paths; any efficacy/transfer/cost reading beyond them is `[INFERENCE]`.
 

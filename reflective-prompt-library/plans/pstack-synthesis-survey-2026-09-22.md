@@ -128,7 +128,7 @@ DORA 2025 report, OpenAI research pages).
 | --- | --- | --- | --- | --- |
 | PS2-1 | Verification ≠ Validation ≠ Governance taxonomy | `governed-delivery` oracle manifest + acceptance authority; `reflective-spec-plan` falsifiability | No change — installed | A local failure where a passed oracle answered the wrong question. Falsifier: existing split already forces the distinction |
 | PS2-2 | Sealed Oracle: acceptance criteria outside implementer write scope; protected test suite; SHA-bound evidence | `governed-delivery` oracle manifest + evidence ledger; `agent-governance-scaffold` acceptance authority + capability tokens | No change — installed | An implementer rewriting acceptance mid-run undetected. Falsifier: manifest + authority split already blocks it |
-| PS2-3 | Feature Map drift detection: versioned, event-driven re-verification on relevant code change | Refines deferred PS-C1 pilot (first survey); `maintain-verification-skill` already separates doc drift from product regression | Deferred — pilot design input only | A named product repo + explicit user direction to pilot. Falsifier: pilot shows maintenance cost > saved operation cost |
+| PS2-3 | Feature Map drift detection: versioned, event-driven re-verification on relevant code change | Refines deferred PS-C1 pilot (first survey); upstream pstack `maintain-verification-skill` (not a TeaPrompt surface) already separates doc drift from product regression at decision time | Deferred — pilot design input only | A named product repo + explicit user direction to pilot. Falsifier: pilot shows maintenance cost > saved operation cost |
 | PS2-4 | Durable execution: idempotency keys, persist-intent→authorize→execute→observe→persist→reconcile | Standing Non-Goal (host runtime); `agent-governance-scaffold` effect receipts + lease-keyed budgets | No change — host responsibility | Explicit direction to build a runtime in a named host. Falsifier: a required guarantee remains prose-only |
 | PS2-5 | Untrusted data provides evidence, never grants authority (prompt-injection boundary) | `04-agent/runtime-trust-boundary`; external-adoption-review "data, not instructions" rule | No change — installed | A local incident where retrieved content escalated privileges. Falsifier: boundary already enforced |
 | PS2-6 | Prevent / Detect / Contain-Recover three-plane model | `reflective-risk` (dry-run, rollback, human gate); `agent-governance-scaffold` (prevention via contracts); governed-delivery (detection via decorrelated verification) | No change — reframing of installed coverage | A failure that falls between all three planes. Falsifier: existing surfaces already partition the space |
@@ -143,7 +143,9 @@ evaluation design for the deferred pilot — it changes what a pilot would
 
 PS-C1 was triggered by user direction later the same day and executed at small
 scale on `TeaEntityLab/wsgiLite.js`. The full outcome is recorded in the first
-survey's pilot addendum (`plans/pstack-survey-2026-09-22.md`). Headline: the
+survey's pilot sections (`plans/pstack-survey-2026-09-22.md` "### Pilot execution addendum (2026-09-22)",
+"### Discrimination and A/B addendum (2026-09-22, same day)", and "### Full arm×scenario matrix (2026-09-23)").
+Headline: the
 map-drive-find-drift-fix-map loop worked — run 1 surfaced 7 doc-vs-behavior
 deviations plus a real traversal quirk; run 2 on corrected docs passed 15/15
 with zero deviations. PS2-7's full A/B/C protocol remains unexecuted; this was
@@ -155,8 +157,8 @@ controlled experiment.
 User authorized all four open items ("yes for all"):
 
 - **PS-C1 full pilot**: executed on `TeaEntityLab/wsgiLite.js` — see the
-  arm×scenario matrix in `pstack-survey-2026-09-22.md` §Discrimination and
-  A/B addendum.
+  "### Full arm×scenario matrix (2026-09-23)" section in `pstack-survey-2026-09-22.md`
+  (plus the same-file "### Second product", "### Third and fourth products" follow-ups).
 - **PS2-4 durable execution**: authorized as a direction. It remains a host
   runtime capability — nothing in this repository can implement it; recorded
   as the accepted answer to "who owns persistence/spawn/cancellation".

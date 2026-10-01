@@ -6,8 +6,9 @@
 > the same ledger), established 2026-07-11 per
 > [necessity record N11](governance-necessity-panel-record-2026-07-11.md) and
 > T3/F2 of the [whole-project plan](whole-project-plan-2026-07-11.md). TeaPrompt
-> has no telemetry; this log is the only evidence feeding the 2026-10-11 P6
-> merge re-litigation and the zero-invocation demotion trigger. Append-only;
+> has no telemetry; this log aggregates host-supplied evidence feeding the 2026-10-11
+> P6 merge re-litigation and pack demotion reviews. Owning records remain evidence
+> sources even when a use was logged late. Append-only;
 > absence of entries is recorded `unknown`-vs-zero honestly: an empty log means
 > "no invocation was *recorded*", and the 2026-10-11 review must weigh whether
 > unlogged use is plausible before treating it as zero.
@@ -20,8 +21,9 @@ themselves):
 | Date | Skill | Host / context | Task shape | Outcome + evidence pointer |
 | --- | --- | --- | --- | --- |
 
-- "Real invocation" = the skill's contract was used to generate a script for an
-  actual task, whether or not the script then ran to completion.
+- "Real invocation" = the skill's contract was used to generate its declared
+  artifacts for an actual task (a script, governance contracts, or verification
+  surface); generated scripts need not have run to completion.
 - Rig verification runs during pack maintenance do not count; note them below
   the table only when they change a template.
 - Anyone (human or agent) touching the packs appends here in the same change.
@@ -35,6 +37,7 @@ themselves):
 | — | `governed-delivery` | — | — | Zero-state recorded 2026-09-14: no real invocation on record since pack adoption (2026-09-03); the 2026-10-11 checkpoint reads this row — absence stays `unknown`, and demotion is a policy consequence of missing evidence. |
 | 2026-09-23 | `verification-map-generator` | omp task agents | Four-product verification-map generation (wsgiLite.js, fpGo, fpEs, fpRust) | Adopted same-day: pattern generated VERIFY.md + features/ + locked spec on four products; fresh-agent arms classified product regression, doc drift, spec-oracle error correctly; evidence in `plans/pstack-survey-2026-09-22.md`. |
 | 2026-09-23 | `verification-map-generator` | teaPrompt self-application (dogfooding) | Verification map for this repo's own gate suite | Generated `VERIFY.md` + `features/` (4 areas: test suite, validators, route evals, registry cardinality) + `acceptance.yaml` (read-only by convention) at repo root; fresh-agent healthy sweep passed 4/4 areas and an unlabeled seeded `CORE_SKILLS` deletion was classified product regression, same-day; evidence in [self-governance-dogfood-2026-09-24.md](self-governance-dogfood-2026-09-24.md) Part A (classifications are model-judgment tier; the registry-shrink exit code is pytest-pinned). |
+| 2026-07-17 | `agent-governance-scaffold` | lite-ad host (`.agent/` emit) | Governance-scaffold emit (four-power map, fail-closed pending/deny templates, constitutional paths) | **Correction appended 2026-10-01:** first solo invocation — refutes the 2026-09-14 zero-state row above, which is preserved as dated history. Falsifies the zero-use leg only; does not clear the 2026-10-11 recurrence/size checkpoint. Evidence: [field-use panel](agent-governance-scaffold-field-use-panel-2026-07-17.md) (FU7), [adoption record](agent-governance-scaffold-adoption-2026-07-17.md). |
 
 ## Template maintenance (not invocations)
 

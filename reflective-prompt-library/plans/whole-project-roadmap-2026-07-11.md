@@ -59,13 +59,15 @@ The only calendar commitment currently on record. Agenda:
 | --- | --- | --- | --- |
 | P6 / N11 — pack merge re-litigation | Did either `flow-control-generator` or `flow-loop-harness` see zero solo invocations? If yes, re-open merge-to-one-skill (Minimality dissent preserved) | Manual usage log (task T3); `unknown` must be recorded as `unknown` | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md), [Necessity N11](governance-necessity-panel-record-2026-07-11.md) |
 | Pack utility claims re-verification | Utility claims above template correctness were labeled `[INFERENCE]` until this review | Same usage log | [Pack record §Disagreements](flow-control-pack-panel-record-2026-07-11.md) |
-| T2 stability check | EN pack appendix unedited since 2026-07-11? Then zh-TW parity qualifies as due | Git history of the EN cheatsheet | [Pack record §Required Changes 6](flow-control-pack-panel-record-2026-07-11.md) |
+| T2 stability check (landed-parity re-verification) | T2 landed 2026-07-12; what changed in the EN appendix, and do EN/zh-TW still cover every current registered pack plus dispatch? Do not re-land the original draft. | EN history + both current appendices + `DOMAIN_PACK_SKILLS` | [T2 adoption](dormant-items-user-directed-adoption-2026-07-12.md), [runbook item 3](checkpoint-2026-10-11-runbook.md) |
 | T4 / F1 — loop-pack demotion evaluation | **Answered 2026-07-11: not fired** (model-judge stop; unpackaged Stop-hook primitives). Checkpoint duty reduces to re-checking the F4 watch table | [Evaluation record](flow-pack-demotion-evaluation-2026-07-11.md); [usage log](flow-pack-usage-log.md) | [Pack record §Demotion Triggers](flow-control-pack-panel-record-2026-07-11.md) |
 | Roadmap self-review | Any trigger below fired unnoticed? Any staleness falsifier hit? | This file vs Decision Index diff | [Plan §Falsifiability](whole-project-plan-2026-07-11.md#falsifiability-staleness-triggers-for-this-plan) |
-| `governed-delivery` recurrence checkpoint | Any host-supplied evidence of a `governed-delivery` invocation? None → recurrence stays `unknown` and the pack is demoted by policy: fold into its adoption record, unwind `DOMAIN_PACK_SKILLS` 4→3 and every admission surface | Host-supplied invocation evidence only; a skipped checkpoint demotes | [GD adoption §Demotion Triggers](governed-delivery-adoption-2026-09-03.md), [GD review R5/R6](governed-delivery-review-2026-09-13.md) |
+| `governed-delivery` recurrence checkpoint | Any host-supplied invocation evidence? None → recurrence stays `unknown`; the owning policy demotes only `governed-delivery`: fold into its adoption record and unwind its admission checklist and canonical `PACK_SURFACES` manifest in `validate_skill_examples.py`, preserving all other packs and historical usage evidence | Host-supplied invocation evidence only; a skipped checkpoint demotes by policy; this roadmap performs no demotion | [GD adoption §Demotion Triggers](governed-delivery-adoption-2026-09-03.md), [GD review R5/R6](governed-delivery-review-2026-09-13.md) |
 | GD↔AGS redundancy-in-use | Has `governed-delivery` ever run independently of `agent-governance-scaffold`; has the shared host-precondition / `artifact-complete` / constitutional-path machinery diverged? | Same evidence; a diff of the two packs' shared blocks | [GD review R6](governed-delivery-review-2026-09-13.md) |
 | Flow-pack lint tier decision | Both flow packs sit within 100 chars of the 20k whole-file lint warning (48 / 73 on 2026-09-14); decide a pack lint tier (25k, matching AS8) or template factoring | Current char counts; agenda item 6 (AS8/R10) | [September review](september-skills-review-2026-09-14.md), [GW-15](governance-workflow-self-control-adoption-2026-09-14.md) |
 | A1/E1 anchor tightening | Keep the two decorative-leaning GD anchors (`reflective-brief` A1, `reflective-research` E1) at full length, or reduce each to its novel clause? | Any local case where the owner tag or attester field carried weight | [GD review §Shared Findings](governed-delivery-review-2026-09-13.md) |
+| AS8 / R10 — governance-pack size re-litigation | Is `agent-governance-scaffold` still oversized/low-recurrence? First lite-ad solo emit falsifies only zero-use; decide shrink/demotion or record the branch not taken | Current measurement + invocation evidence; WGS-GOV-1 design; runbook item 6 | [AS8](all-skills-panel-record-2026-07-18.md), [AGS demotion duty](agent-governance-scaffold-adoption-2026-07-17.md), [WGS-GOV-1](skill-improvement-plan-2026-07-24.md) |
+| G9 / AS9 — governance vocabulary | Whether or not a trigger fired, record proceed / hold / close, evidence, rationale, owning decision, and next action. No router, quick-cue, dispatch, or holdout adoption is authorized by this review alone. | Misroute/discoverability evidence or explicit no-recorded-event/unknown; unchanged G9 R8 pre-tune gate | [G9](agent-governance-scaffold-adoption-2026-07-17.md), [AS9](all-skills-panel-record-2026-07-18.md), [runbook item 8](checkpoint-2026-10-11-runbook.md) |
 
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next
 governance panel ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md)) —
@@ -118,6 +120,15 @@ reconciled by this section).
 | GD-19 — "deliver / autonomous / unattended" collision measured 2026-09-14 (nine fresh phrases 100% pre-tune; one R11 gap fixed under holdout-before-tune); moved here from the trigger-gated table 2026-09-16 | `ROUTING_CONTRACT.md` R11; ROUTE fixtures | `test_validate_route_fixture.py` (GD-19 collision probes), [GW-1](governance-workflow-self-control-adoption-2026-09-14.md) |
 | Cross-core traceability checklist — resolved 2026-09-14 by compacting `reflective-implement` step 4 to one sentence; moved here 2026-09-16 | `reflective-implement` Workflow step 4 | `test_governance_workflow_self_control_adoption.py` (GW-5), [GW-5](governance-workflow-self-control-adoption-2026-09-14.md) |
 
+### Adopted 2026-09-23 (fifth-pack admission)
+
+The four-product recurrence decision registered `verification-map-generator`
+outside core routing. This records an already-landed admission, not a new one.
+
+| Item | Surface | Guard |
+| --- | --- | --- |
+| `verification-map-generator` — fifth registered pack | pack + examples; registry admission checklist and `PACK_SURFACES`; product VERIFY/features/spec pattern | `test_validate_skill_examples.py`, `test_verification_map_generator_adoption_state.py`; seeded classifications are judgment-tier evidence, not host enforcement; [owning pstack record](pstack-survey-2026-09-22.md) |
+
 ### Still trigger-gated
 
 | Item | Wakes when | Destination surface | Source |
@@ -139,6 +150,12 @@ reconciled by this section).
 Queue discipline: when a trigger fires, the item gets its own review/panel record
 with a Candidate Adoption Ledger — a fired trigger authorizes *re-litigation*, not
 silent adoption.
+
+The [spec-book coverage map](dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01)
+maps every current row above to a spec or disposition/owning-record pointer.
+[Domain/retired-plan dispositions](dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01)
+also keep WGS-SPC-2/X4a/X4b, retired TASK-006, and optional OpenFugu TASK-003/004
+reachable without scheduling or adopting them.
 
 ## Horizon 4 — Direction-gated (never-unless)
 
@@ -193,6 +210,11 @@ but not here" falsifier had fired for all thirteen September records, and the
 plan's pack-registry falsifier (2→4) with it; both reconciled by the September
 rows above and the [September review](september-skills-review-2026-09-14.md).
 The 2026-10-11 runbook now carries the `governed-delivery` checkpoint.
+
+Source reconciliation 2026-10-01: the fifth-pack admission is now recorded above;
+the checkpoint re-verifies landed T2, carries G9/AS9 proceed/hold/close, and names
+only `governed-delivery` for its policy unwind. Original 2026-09-14 and 2026-07-11
+measurements remain dated history; no checkpoint outcome or demotion is claimed.
 
 ## Verification
 

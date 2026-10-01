@@ -342,7 +342,20 @@ def test_conformance_and_checker_profile_are_evidence_tier_labeled():
 
 
 
-# R14 - constitutional ownership and compliance-status bindings stay explicit.
+def _contract_scalars(skill: str, heading: str) -> dict:
+    from route_paraphrase_eval import parse_scalar
+
+    section = skill.split(heading, 1)[1].split("\n### ", 1)[0]
+    body = re.search(r"```yaml\n(.*?)\n```", section, re.S).group(1)
+    fields = {}
+    for line in body.splitlines():
+        match = re.fullmatch(r"\s*([a-z_]+):\s+(.+)", line)
+        if match:
+            fields[match.group(1)] = parse_scalar(match.group(2).split("#", 1)[0])
+    return fields
+
+
+# R14 - declared constitutional paths must be covered; this is not host ACL proof.
 def test_host_owned_security_bindings_remain():
     skill = _read(SKILL)
     for token in (
@@ -361,6 +374,13 @@ def test_host_owned_security_bindings_remain():
     for path in paths:
         assert path in deny, f"constitutional path {path!r} missing from deny_write"
     assert ".agent/hooks/**" in deny and ".agent/evidence-schema/**" in deny
+    activation = _contract_scalars(skill, "### Constitutional paths + out-of-band activation")
+    assert activation["worker_may_write_activation_record"] is False
+    assert activation["same_transaction_as_policy_change"] is False
+    approval = _contract_scalars(skill, "### Named accountability gate")
+    assert approval["decision"] == "pending"
+    assert approval["issued_out_of_band"] is True
+    assert approval["worker_writable"] is False
 
 # R18 - Output menu language and Four-Power conditional markers stay aligned.
 def test_output_menu_and_four_power_conditional_alignment():

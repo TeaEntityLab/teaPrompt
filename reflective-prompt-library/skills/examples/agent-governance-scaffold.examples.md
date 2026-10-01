@@ -17,13 +17,16 @@ Expected output shape:
 ## Deliverable (scaffolding — host runs it)
 - .agent/policies/capability-token.json (flat capability token + host policy
   binding: allowed_effects [read,write], forbidden_effects [network_send])
-- .agent/approval/slack-gate.yaml (named approval: owner, approver, rationale)
-- cumulative-effect-budget.yaml keyed on principal x purpose x authorization_id
-  x resource_domain (NOT session); max_external_recipients: 0; reset_requires:
-  new_out_of_band_authorization
-- effect-receipt.contract.json (issued_by: broker; broker-owned receipt store;
-  host-specific integrity evidence; before_hash/after_state)
-- acceptance-contract.yaml (L0 parse gate; L5 named human decision for Slack)
+- .agent/approval/slack-gate.yaml (owner, approver, rationale; decision: pending;
+  no approver-issued integrity evidence until the out-of-band approval acts)
+- .agent/policies/cumulative-effect-budget.yaml keyed on principal x purpose x
+  authorization_id x resource_domain (NOT session); max_external_recipients: 0;
+  lease reset requires new_out_of_band_authorization; cross-authorization cap
+  resets only on explicit_out_of_band_aggregate_reset_grant, never ordinary renewal
+- .agent/broker/effect-receipt.contract.json (issued_by: broker; broker-owned
+  receipt store; host-specific integrity evidence; before_hash/after_state)
+- .agent/acceptance/acceptance-contract.yaml (L0 artifact integrity gate;
+  L1 parse/schema validity; L5 named human decision for Slack)
 - run-<cli>.sh wrapper stub + emitted-file manifest (host must route effects
   through the broker — never direct tool calls)
 ## Gates
@@ -97,6 +100,10 @@ Expected output shape:
 - .agent/policies/capability-token.json
 - .agent/broker/effect-receipt.contract.json
 - .agent/acceptance/acceptance-contract.yaml
+- .agent/policies/cumulative-effect-budget.yaml (lease + cross-authorization caps)
+- .agent/approval/<purpose>-gate.yaml (pending until out-of-band approval)
+- Protected controls: policies/**, approval/**, broker/** and acceptance/** under
+  .agent/; host deny-write enforcement must cover every emitted control path
 - .agent/INVARIANTS.md
 - .agent/HANDOVER.md
 - run-<cli>.sh

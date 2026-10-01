@@ -26,6 +26,7 @@ def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+
 # P8 - methodology/operationalization boundary in both Purposes.
 @pytest.mark.parametrize("path", [GENERATOR, HARNESS])
 def test_p8_methodology_boundary_in_purpose(path: Path):
@@ -34,11 +35,11 @@ def test_p8_methodology_boundary_in_purpose(path: Path):
     assert "methodology" in purpose and "operational" in purpose
     assert "external-adoption-case-studies-2026-06-20.md" in purpose
 
-
 # P8 - demotion triggers section in both skills.
 @pytest.mark.parametrize("path", [GENERATOR, HARNESS])
 def test_p8_demotion_triggers_section(path: Path):
     assert "## Demotion Triggers" in _read(path)
+
 
 
 # P8 - run state is not project memory (harness Never).
@@ -49,6 +50,7 @@ def test_p8_run_state_not_project_memory():
     assert "reflective-handoff-retro" in never
 
 
+
 # P9 - parallel quorum gate is an explicit policy.
 def test_p9_parallel_quorum_gate():
     text = _read(GENERATOR)
@@ -56,11 +58,13 @@ def test_p9_parallel_quorum_gate():
     assert "quorum" in text
 
 
+
 # P10 - router route-trace observability.
 def test_p10_router_route_trace():
     text = _read(GENERATOR)
     assert "route-trace" in text
     assert "default-up" in text
+
 
 
 # P11 - loop restart stanza.

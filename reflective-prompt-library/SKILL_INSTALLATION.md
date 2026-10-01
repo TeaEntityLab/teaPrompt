@@ -123,6 +123,10 @@ install_core_skills_symlink() {
     skill="${skill%/}"
     test -f "$skill/SKILL.md" || continue
     name="$(basename "$skill")"
+    if [ -e "$dest/$name" ] && [ ! -L "$dest/$name" ]; then
+      echo "refusing to replace existing non-symlink skill directory: $dest/$name" >&2
+      return 1
+    fi
     ln -sfn "$skill" "$dest/$name"
   done
 }
@@ -147,6 +151,10 @@ install_domain_packs_symlink() {
   for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
+    if [ -e "$dest/$name" ] && [ ! -L "$dest/$name" ]; then
+      echo "refusing to replace existing non-symlink skill directory: $dest/$name" >&2
+      return 1
+    fi
     ln -sfn "$skill" "$dest/$name"
   done
 }
@@ -176,6 +184,12 @@ install_skill_examples_symlink() {
 
 Run these definitions once (or paste them before a command below).
 `ln -sfn` replaces an existing link; use `ln -sf` if the host `ln` lacks `-n`.
+The symlink helpers refuse to replace an existing real file or directory:
+they print a refusal, preserve its bytes, and exit nonzero. `ln -sfn` only
+replaces an existing symlink, so fresh installs and re-runs over an existing
+symlink stay valid. To migrate an owner-managed copy to a link, back up any
+local edits, remove or move that destination yourself, then re-run the helper —
+the helpers never delete a non-link destination.
 Examples below install core skills by default:
 
 ```bash

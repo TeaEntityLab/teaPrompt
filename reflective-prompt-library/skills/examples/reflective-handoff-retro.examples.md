@@ -8,19 +8,23 @@ Input:
 Prepare handoff for the next agent. I am ending this session.
 ```
 
-Expected output shape:
+Proportional subset of the handoff template; it keeps the non-optional continuation state (assumptions, blockers, commands/tests, Human Review) that the Never clause forbids losing.
 
 ```markdown
 ## Goal
 ## Current State
 ## Decisions Made
+## Assumptions
 ## Files / Artifacts
 ## Completed Work
 ## Remaining Work
 ## Risks
 ## Trust Boundaries / External Data
+## Blockers
+## Commands / Tests Run
 ## Next Recommended Action
 ## Do Not Do
+## Human Review Required
 ```
 
 ## Example 2

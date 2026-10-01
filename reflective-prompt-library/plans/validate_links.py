@@ -24,29 +24,32 @@ class LinkValidator:
         
     def validate_all(self) -> Dict:
         """Run all validations and return results."""
+        self.errors = []
         results = {
             "ref_file_errors": [],
             "ref_snippet_errors": [],
             "markdown_link_errors": [],
             "frontmatter_errors": [],
+            "read_errors": [],
             "total_files": 0,
             "total_errors": 0
         }
-        
+
         # Find all markdown files
         md_files = list(self.repo_root.rglob("*.md"))
         results["total_files"] = len(md_files)
-        
+
         for md_file in md_files:
             self.validate_file(md_file, results)
-            
+
         results["total_errors"] = (
-            len(results["ref_file_errors"]) + 
-            len(results["ref_snippet_errors"]) + 
-            len(results["markdown_link_errors"]) + 
-            len(results["frontmatter_errors"])
+            len(results["ref_file_errors"]) +
+            len(results["ref_snippet_errors"]) +
+            len(results["markdown_link_errors"]) +
+            len(results["frontmatter_errors"]) +
+            len(results["read_errors"])
         )
-        
+
         return results
     
     def validate_file(self, file_path: Path, results: Dict):
@@ -54,21 +57,29 @@ class LinkValidator:
         try:
             content = file_path.read_text(encoding='utf-8')
             relative_path = file_path.relative_to(self.repo_root)
-            
+
             # Validate ref_file references
             self.validate_ref_file(content, file_path, relative_path, results)
-            
+
             # Validate ref_snippet references
             self.validate_ref_snippet(content, file_path, relative_path, results)
-            
+
             # Validate markdown links
             self.validate_markdown_links(content, file_path, relative_path, results)
-            
+
             # Validate frontmatter if it's a SKILL.md
             if file_path.name == "SKILL.md":
                 self.validate_skill_frontmatter(content, file_path, relative_path, results)
-                
+
         except Exception as e:
+            try:
+                shown = str(file_path.relative_to(self.repo_root))
+            except ValueError:
+                shown = str(file_path)
+            results.setdefault("read_errors", []).append({
+                "file": shown,
+                "error": f"Error reading {file_path}: {e}",
+            })
             self.errors.append(f"Error reading {file_path}: {e}")
     
     def validate_ref_file(self, content: str, file_path: Path, relative_path: Path, results: Dict):
@@ -264,6 +275,11 @@ def main():
     if results["frontmatter_errors"]:
         print(f"\n❌ Frontmatter errors ({len(results['frontmatter_errors'])}):")
         for error in results["frontmatter_errors"]:
+            print(f"  {error['file']}: {error['error']}")
+
+    if results["read_errors"]:
+        print(f"\n❌ Read errors ({len(results['read_errors'])}):")
+        for error in results["read_errors"]:
             print(f"  {error['file']}: {error['error']}")
     
     if validator.warnings:
