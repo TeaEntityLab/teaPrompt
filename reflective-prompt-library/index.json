@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T09:45:56.200032",
+  "generated_at": "2026-10-01T10:38:29.595052",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -7804,7 +7804,7 @@
         }
       ],
       "line_count": 193,
-      "char_count": 12763
+      "char_count": 12811
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -15221,7 +15221,7 @@
         }
       ],
       "line_count": 403,
-      "char_count": 19998
+      "char_count": 19890
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16490,7 +16490,7 @@
         },
         {
           "level": 1,
-          "text": "Retiring the last task on the final iteration is success, not cap."
+          "text": "Last task retired on the final iteration is success, not cap."
         },
         {
           "level": 2,
@@ -16526,7 +16526,7 @@
         }
       ],
       "line_count": 391,
-      "char_count": 19873
+      "char_count": 19985
     }
   ],
   "total_files": 183

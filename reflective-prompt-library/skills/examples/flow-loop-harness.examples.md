@@ -49,7 +49,7 @@ Expected output shape:
   if composed with writer-critic. Copying a backlog supplies no protection.
   Content progress excludes STATE; outside git the change check is disabled.
 ## Stop conditions
-- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier → 4
+- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier or missing TASKS.canon → 4
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
 ```

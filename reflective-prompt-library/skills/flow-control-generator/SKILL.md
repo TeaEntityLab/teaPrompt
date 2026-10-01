@@ -35,7 +35,7 @@ Methods:
 Output:
 
 - One runnable script (bash for CLI glue; Python stdlib for bounded concurrency or richer state) plus per-step prompt files, written where the user chooses.
-- A run note: how to dry-run and run, where state and logs land, the budget caps, and — when any step has side effects — the human approval required before an unattended run.
+- A run note: dry-run/run commands, state and log locations, budget caps, and the human approval required when any step has side effects.
 - Named gates: which deterministic check releases each stage.
 
 Never:
@@ -193,6 +193,8 @@ log "handler gate=none accepted"
 ```
 
 ## Template: Orchestrator-Workers (Python, stdlib only)
+
+Boundary: a planner prompt plus capped worker calls inside ONE host-executed script — not the multi-agent orchestrator/swarm the 2026-06-25 panel rejected (`plans/multi-agent-panel-consensus-2026-06-25.md`); do not grow it toward one.
 
 ```python
 #!/usr/bin/env python3
@@ -363,8 +365,7 @@ log(f"merged gate={ec}")
 sys.exit(2 if ec else 0)
 ```
 
-One host-executed script, not a runtime; rejected extras (retry-with-backoff,
-memory backend, per-node provenance headers) stay rejected.
+One host-executed script, not a runtime; retry-with-backoff, memory backend and per-node provenance headers stay rejected.
 
 ## Human Review Boundary
 
@@ -375,16 +376,15 @@ Before the first unattended run of any generated script with side effects, a hum
 Before handing a generated script to the user:
 
 1. Stub dry run: `AGENT_CMD='cat'`, or a stub echoing shaped outputs (router: fixed label; orchestrator: JSON plan); control flow, gates, and state files must behave with zero model calls. Stub success is rig-tier evidence for control flow, never for a production or side-effectful run.
-2. Syntax check: `bash -n script.sh` or `python3 -m py_compile script.py`.
+2. `bash -n` / `python3 -m py_compile` the script.
 3. Confirm every stage has a gate or an explicit `# gate: none (accepted)`.
 4. Report the dry-run evidence in the run note; an unexercised script is not done.
 
-Promoting a generated flow into a durable, recurring artifact is an Acquisition-ladder step: apply the fail-closed Acquisition L3 security gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; `04-agent/artifact-promotion.md` §4) before registering it anywhere, and require recurrence evidence plus explicit human approval before any script becomes a team standard.
+Promoting a generated flow into a durable artifact needs fail-closed Acquisition L3 gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; `04-agent/artifact-promotion.md` §4), recurrence evidence and explicit human approval.
 
 ## Demotion Triggers
 
-- Generated scripts are disposable: when the host CLI, task shape, or gates change, regenerate from the template rather than patching a drifted copy.
-- Pack-level demotion triggers (zero recurrence, host support absorbing the pattern) live in `plans/agent-flow-control-research-2026-07-11.md` — check them before investing in this skill.
+- Generated scripts are disposable: regenerate on host CLI, task shape or gate changes; pack-level demotion triggers (zero recurrence, host absorption) live in `plans/agent-flow-control-research-2026-07-11.md`.
 
 ## Examples
 

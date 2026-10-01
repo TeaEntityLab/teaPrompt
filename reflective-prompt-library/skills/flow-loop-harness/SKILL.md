@@ -43,31 +43,31 @@ Never:
 - Never emit an unbounded loop; `MAX_ITER` is mandatory and small by default (≤ 10 unless justified).
 - Never weaken tests, thresholds, or expected outputs to exit (Anti-cheating Rules).
 - Never grant the loop body broader permissions than the task needs; pre-approval flags are part of the reviewed config, not improvised.
-- Never run a side-effectful loop (deploy, billing, data mutation outside the workspace, third-party calls) unattended without a recorded human approval.
+- Never run a side-effectful loop (deploy, billing, data mutation, third-party calls) unattended without a recorded human approval.
 - Never claim crash-safety or idempotency: the host owns durability (`04-agent/runtime-trust-boundary.md`).
-- Never release unverified output at cap exhaustion: exit 2 requires a human decision.
-- Never treat run state as project memory: `state/` is a per-run operational ledger, distinct from the in-task State Ledger and durable knowledge; promotion goes through `reflective-handoff-retro` and the memory-write provenance gate (`04-agent/artifact-promotion.md` §4).
+- Never return the last unverified output as the result when a cap is exhausted — cap exhaustion is exit 2 and a human decision, not a soft success (negative example: a max-turns "return last response", `plans/openfugu-technical-brief-2026-06-25.md`).
+- Never treat run state as project memory: `state/` is a per-run operational ledger, distinct from the in-task State Ledger and durable knowledge; promote it via `reflective-handoff-retro` plus the memory-write provenance gate (`04-agent/artifact-promotion.md` §4).
 
 Escalation:
 
 - Known fixed stages without iteration → `flow-control-generator`.
 - No objective verifier exists → the loop is not safe to automate; route to `reflective-brief` to define acceptance criteria, or keep a human in the loop each round.
 - Side effects on credentials, permissions, privacy-sensitive data, billing, production, or destructive operations → `reflective-risk` before first run; add an in-loop pause for each side-effectful action.
-- Multi-session, cancellable, replayable workflow requirements → `reflective-spec-plan` (companion: `04-agent/workflow-engine.md`); a shell loop cannot provide those guarantees.
+- Multi-session, cancellable, replayable workflow requirements → `reflective-spec-plan`; a shell loop cannot provide those guarantees.
 - Loop keeps hitting the cap without converging → stop; escalate to `reflective-review` on the artifacts instead of raising the cap.
 
 ## Loop Anatomy
 
 Every generated loop must contain all six parts:
 
-1. Verifier: committed deterministic command under `checks/`; exit code alone decides success. Preflight executable availability → exit 4 (bash 3.2 exec failures are unreliable); run before the first iteration and after each. Preflight unattended writer-critic floor executables before **any** agent call too.
+1. Verifier: committed deterministic command under `checks/`; exit code alone decides success. Preflight executable availability → exit 4 (bash 3.2 exec failures are unreliable); run before the first iteration and after each. Preflight unattended writer-critic floor executables before **any** agent call.
 2. Caps: mandatory `MAX_ITER`; host-provided per-call timeout where available (stock macOS has none) and host-exposed cost caps. Cap exhaustion is not step failure.
-3. Ledger: append iteration, verifier result and progress. Fresh agent contexts read its bounded tail, not accumulated chat; append `RESUMED` on restart with a nonempty ledger. Run state is disposable, not memory.
-4. Progress detector: abort on equal content signals, not equal churn. Hash staged + unstaged binary diffs (including names/deletions) and untracked contents, excluding STATE. Outside git explicitly disable detection and rely on caps.
+3. Ledger: append iteration, verifier result and progress. Fresh agent contexts read its bounded tail, not accumulated chat; append `RESUMED` on restart with a nonempty ledger.
+4. Progress detector: abort on equal content signals, not equal churn. Hash staged + unstaged binary diffs (including names/deletions) and untracked contents, excluding STATE. Outside git, disable detection and rely on caps.
 5. Permission boundary: human-reviewed least-privilege host flags (e.g. `--allowedTools` / permission mode). Host MUST exclude `checks/`, canonical `state/TASKS.canon` and `prompts/critic-rubric.md` as applicable from agent writes. Comments/copies do not enforce these exclusions.
-6. Exits: `0` verified done; `2` cap; `3` no progress or verify-fail stop; `4` missing/non-executable verifier. Callers must distinguish them.
+6. Exits: `0` verified done; `2` cap; `3` no progress or verify-fail stop; `4` missing/non-executable verifier or canonical backlog. Callers must distinguish them.
 
-Templates use stdin prompts; choose a stdin-capable host command/wrapper, not argv payloads. Their headers record source/topology/date/dry-run status, task-root cwd and reviewed flag preconditions; put actual reviewed flags in AGENT_CMD, never invent allowlists. Append step start/end and gates to STATE/flow.log. Keep verifier-generated logs/probes there too, outside the progress signal.
+Templates use stdin prompts; choose a stdin-capable host command/wrapper, not argv payloads. Their headers record source/topology/date/dry-run status, task-root cwd and reviewed flag preconditions; put actual reviewed flags in AGENT_CMD, never invent allowlists. Append step start/end and gates to STATE/flow.log.
 
 ## Template: Verify-Gated Fix Loop (bash)
 
@@ -269,11 +269,12 @@ for ((i=1; i<=MAX_ITER; i++)); do
   run_verify || { echo "- failed verify: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
   [ -z "$before" ] || [ "$(snap)" != "$before" ] || { echo "- no change: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
   # Script, not agent, retires the EXACT line it dispatched.
-  sed "${num}d" "$TASKS" > "$TASKS.tmp" && mv "$TASKS.tmp" "$TASKS"
+  sed "${num}d" "$TASKS" > "$TASKS.tmp" && mv "$TASKS.tmp" "$TASKS" || { echo "- canonical backlog missing" >> "$STATE/ledger.md"; exit 4; }
   echo "- done: $task" >> "$STATE/ledger.md"
 done
-# Retiring the last task on the final iteration is success, not cap.
-grep -q '[^[:space:]]' "$TASKS" 2>/dev/null && { echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2; }
+# Last task retired on the final iteration is success, not cap.
+[ -f "$TASKS" ] || { echo "- canonical backlog missing" >> "$STATE/ledger.md"; exit 4; }
+grep -q '[^[:space:]]' "$TASKS" && { echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2; }
 echo "backlog empty"; exit 0
 ```
 
@@ -370,8 +371,7 @@ Prefer host-native keep-working modes for transcript-judgeable, single-run, low-
 
 ## Demotion Triggers
 
-- Regenerate disposable scripts when verifier, host CLI or task shape changes.
-- Before investing, check pack demotion triggers (zero recurrence / host absorption) in `plans/agent-flow-control-research-2026-07-11.md`.
+- Regenerate disposable scripts when verifier, host CLI or task shape changes; check pack demotion triggers (zero recurrence / host absorption) in `plans/agent-flow-control-research-2026-07-11.md`.
 
 ## Examples
 

@@ -892,19 +892,20 @@ declaration consistency, not installed-agent compliance or host enforcement.
 
 ## Tests / checks run
 
-- `make all`: **1346 passed**; all eight validators completed with zero errors.
+- `make all`: **1349 passed**; all eight validators completed with zero errors.
   Governance metadata 14/14; benchmark fixture 24 tasks / 9 workflows; examples
   9 core + 5 packs; ROUTE-001/002/003 **100%** consistency and trace coverage over
   128 / 138 / 108 seeded phrases. These are regression fixtures, not semantic
   routing or installed-agent compliance proof.
-- Focused corrected-consumer/guard run: **174 passed** across eleven modules,
-  including two post-review guards added by the advisory pass below.
+- Focused corrected-consumer/guard run: **200 passed** across eleven modules
+  (the two new consumer suites plus the nine touched guard/record modules),
+  including the post-review guards added by the advisory passes below.
 - Standalone smoke: **44/44 observations matched**: 40 actual extracted-template,
   API or CLI executions, one parsed governance declaration control, and three
   source-derived queue-guard controls. Native runtime: Python 3.13.0 and macOS
   Bash 3.2.57; full pytest runtime: Python 3.14.7.
 - `generate_index.py`: 183 indexed files (169 prompts / 14 skills). Flow packs:
-  generator **19,998** chars; loop harness **19,873**; existing 20,000-char bound
+  generator **19,890** chars; loop harness **19,985**; existing 20,000-char bound
   retained (advisory recheck; AGS stays 27,126, an existing lint warning).
 - Obsolete executable/operator twin search found no remaining active matches in
   the searched patterns. Original review findings, rsiagent quoted landed code and
@@ -932,12 +933,30 @@ lines, a Purpose `operational`/`adoption-record` loss, and a stale documented
 pytest floor); each was re-read and repaired before the green run above. No
 settled adopted text changed and no security/runtime oracle was weakened.
 
+A third-pass parallel review (post-commit 9699d5a) of the skill sources, test
+guards and evidence found: (a) the settled anti-swarm scope-boundary sentence
+had been trimmed out of the orchestrator template — restored verbatim,
+with size reclaimed from demotion/promotion prose; (b) the loop "Never" cap-
+exhaustion bullet had lost its "not a soft success" clause and the openfugu
+negative example — restored verbatim; (c) a deleted or unreadable
+`state/TASKS.canon` failed open to `backlog empty`/exit 0 — both the
+in-loop `sed` retirement and the post-loop check now exit 4, with a new
+consumer regression (`test_backlog_missing_canon_mid_run_fails_closed`); (d)
+no 20k-char size guard existed — `test_skill_source_stays_under_lint_warning_size`
+added to both consumer suites; (e) report stale numbers corrected (AGS lint
+warning 27,126, focused run 197 across eleven modules); (f) the retired
+dormant-spec retirement-trigger wording pins are now disclosed below. The
+2026-09-14 reference sizes in `plans/checkpoint-2026-10-11-runbook.md` are
+marked superseded by the post-repair counts.
+
 The first integrated gate had 11 failures: two multi-wave fixture verifier
 bindings, eight wording-guard failures and a stale documented collection floor.
 The fixture now selects its actual verifier. Incidental sentence/default/rig-label
-pins were retired, not re-pinned to new prose; actual executable regressions,
-ledger/hold guards and declared-path plus parsed critical safety-field checks
-remain. No acceptance/security runtime oracle was removed.
+pins were retired, not re-pinned to new prose — including the dormant-spec
+retirement-trigger wording pins deleted from `test_dormant_work_specs_doc.py`;
+actual executable regressions, ledger/hold guards and declared-path plus parsed
+critical safety-field checks remain. No acceptance/security runtime oracle was
+removed.
 
 The first smoke attempt failed before observations because Python lacked PyYAML.
 No dependency was installed; actual YAML was parsed with the available Bun parser
@@ -982,7 +1001,7 @@ The original review ledger remains separate.
 - Progress checksum is state-change evidence, not semantic progress. Outside git,
   caps are deliberately the stopping bound.
 - Warning debt remains visible: one oversized `agent-governance-scaffold` lint
-  warning (**27,066** chars) and **35** record-hygiene access-date warnings. Gates
+  warning (**27,126** chars) and **35** record-hygiene access-date warnings. Gates
   return zero errors; those warnings were not suppressed.
 - Queue coverage proves current registered identities/disposition pointers, not
   completeness of every latent survey idea or correctness of future trigger

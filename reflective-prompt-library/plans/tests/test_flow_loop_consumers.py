@@ -156,6 +156,24 @@ def test_backlog_last_task_retired_on_final_iteration_is_success(tmp_path: Path)
     assert "- done: only" in (tmp_path / "state/ledger.md").read_text()
 
 
+def test_backlog_missing_canon_mid_run_fails_closed(tmp_path: Path):
+    """Deleting state/TASKS.canon between iterations must not read as success."""
+    _workspace(tmp_path, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("first\nsecond\n", encoding="utf-8")
+    _git(tmp_path, "add", "TASKS.md")
+    _git(tmp_path, "commit", "-qm", "backlog")
+    result = _run(
+        tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+        COUNT + 'rm -f state/TASKS.canon; echo changed > work.txt\n', MAX_ITER="3",
+    )
+    assert result.returncode == 4, result.stdout + result.stderr
+    assert "canonical backlog missing" in (tmp_path / "state/ledger.md").read_text()
+
+
+def test_skill_source_stays_under_lint_warning_size():
+    assert len(_source()) < 20_000
+
+
 @pytest.mark.parametrize("all_bad", [False, True])
 def test_wave_only_current_nonempty_successful_evidence_reaches_final(tmp_path: Path, all_bad: bool):
     _workspace(tmp_path, git=False, verify='test -f state/summary.md\n')

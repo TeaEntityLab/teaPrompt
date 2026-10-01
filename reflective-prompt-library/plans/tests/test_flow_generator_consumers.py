@@ -203,3 +203,7 @@ def test_whole_case_insensitive_classifier_label_routes_and_keeps_raw(tmp_path: 
     assert (tmp_path / "state/label.txt").read_text() == "BUG\n"
     trace = (tmp_path / "state/flow.log").read_text()
     assert "raw=" in trace and "BUG" in trace and "label=bug" in trace
+
+
+def test_skill_source_stays_under_lint_warning_size():
+    assert len(_source()) < 20_000
