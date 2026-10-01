@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T11:46:05.345742",
+  "generated_at": "2026-10-01T11:49:49.904554",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -11888,11 +11888,15 @@
         },
         {
           "level": 2,
+          "text": "Pre-checkpoint prep scans"
+        },
+        {
+          "level": 2,
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 69,
-      "char_count": 5458
+      "line_count": 81,
+      "char_count": 6105
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",

@@ -56,6 +56,18 @@ themselves):
   ([record](skill-verification-panel-2026-09-05.md)). Recorded 2026-09-14; the
   convention's same-change note was missed at the time.
 
+## Pre-checkpoint prep scans
+
+- 2026-10-01 (prep, not the checkpoint verdict — the 2026-10-11 run re-verifies):
+  check 8 scan found no host-supplied `governed-delivery` invocation
+  (`git log` on pack + plan-doc grep; recurrence stays `unknown`); check 9
+  shared-block read shows `artifact-complete`/`enforcement-proven`,
+  constitutional-path and host-precondition wording still coherent across
+  `governed-delivery` and `agent-governance-scaffold` (no divergence seen);
+  F4 watch rows 1–6 checked via docs/search — none fired (Codex Record & Replay
+  and Antigravity↔Gemini rows stay `unknown`); flow-pack chars 19,890/19,985;
+  AGS 27,126.
+
 ## Review checkpoints
 
 - 2026-10-11 — P6 merge re-litigation consumes this table
