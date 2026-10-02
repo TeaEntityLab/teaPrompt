@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-02T17:43:23.886564",
+  "generated_at": "2026-10-02T23:01:40.206100",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -54,6 +54,7 @@
             "gpt-instruct-survey-2026-09-10.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
+            "d025db7-publication-review-2026-10-02.md",
             "agentflow-8.4.1-delta-survey-2026-09-30.md",
             "astra-efficiency-rules-survey-2026-09-10.md",
             "handover-docs-survey-2026-09-23.md",
@@ -2837,6 +2838,52 @@
       ],
       "line_count": 146,
       "char_count": 8763
+    },
+    {
+      "path": "reflective-prompt-library/plans/d025db7-publication-review-2026-10-02.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "d025db7-publication-review-2026-10-02",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "d025db7 Publication Review — Eight-Role Panel Record — 2026-10-02"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 2,
+          "text": "Deferred Correction Proposals (the queue)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Verification Limits (declared, not hidden)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Files Changed"
+        }
+      ],
+      "line_count": 52,
+      "char_count": 6824
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md",
@@ -16904,5 +16951,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 187
+  "total_files": 188
 }

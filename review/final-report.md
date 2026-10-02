@@ -1893,3 +1893,209 @@ authorized implementation. The future 10/11 checkpoint is not advanced.
 The user explicitly authorized the reviewed commit and configured-upstream
 push. No permission/oracle/runtime-policy cutover is included; any such future
 change retains its existing named-owner and Human Review gates.
+
+# Final Report — d025db7 Eight-Role Publication Review (2026-10-02)
+
+## Panel Consensus
+
+**Decision: Request changes, limited to documentation/source correctness.**
+The reviewed revision is `d025db7e0b6384b2c2ce78c794d246d15ebbbb09`,
+parent `f0f986d98af86702c5ecacac6daf095a06849686`. This is a review of all
+18 changed paths and affected consumers, not only the new MGD survey.
+Primary mode: AI-output/source-evidence review; secondary checks: scientific
+reasoning, provenance, governance, discovery metadata and reproducibility.
+
+Eight reviewer contexts delivered complete findings, at least three Socratic
+questions each, strongest objections and terminal decisions. Their final
+decision split is **3 Approve / 4 Comment / 1 Request changes**, not unanimous
+approval. Role variety is not eight independent verification channels.
+Main owns the adjudication and fresh native checks.
+
+There are **nine confirmed documentation findings**: four medium and five low;
+two introduced by this publication and seven pre-existing or retained claims.
+Six additional clarifications remain optional. One proposed defect was rejected
+after inspecting the actual ledger footer. No critical/high issue was confirmed.
+The introduced false file-status clause, not the majority vote, determines the
+request-changes verdict.
+
+Use-case recommendation:
+- **Study:** retain the bounded MGD reference and source distinctions.
+- **Reproduce:** native counterexamples were exercised; upstream runtime/PIT,
+  live-host behavior, human efficacy and private telemetry were not reproduced.
+- **Adopt / deploy:** no new authority. Existing reference-only/no-change
+  dispositions, named-human gates and held candidates remain unchanged.
+
+**Dated supersession:** the preceding publication report's “No documentation
+repair or verification remains for this scope” was its delivery-time assessment.
+This post-publication review finds remaining inaccuracies; it does not rewrite
+historical receipts or claim that the proposed corrections have been applied.
+
+## Shared Findings
+
+Paths abbreviated below are under `reflective-prompt-library/`, except
+`review/final-report.md`. Line references bind to the reviewed `d025db7` bytes.
+
+| ID / severity | Location / origin | Observable evidence and smallest proposed correction |
+| --- | --- | --- |
+| DPR-1 / Medium | `plans/agentflow-8.3-delta-survey-2026-09-21.md:265-267`; introduced | The correction calls `delegation-route.test.js` a new-file entry. The pinned compare reports **modified +240/−8**, and the file exists at the 8.2 base pin. Replace only that clause with “its test file `delegation-route.test.js` was likewise modified +240/−8, not new.” |
+| DPR-2 / Medium | `plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md:137`; pre-existing | A surviving mutant does not prove the suite vacuous. A fresh suite rejects a constant-zero mutant but accepts a non-equivalent survivor that returns 0 instead of 9 at input 3. Qualify the detection-gap claim; distinguish equivalent/unreachable mutants and the declared acceptance policy. Do not lower any mutation threshold automatically. |
+| DPR-3 / Medium | Same SDLC record `:138`; pre-existing | Lookup-table immunity is false. A hardcoded table passed **8,448** algebraic/metamorphic checks over **3,000** seeded inputs, yet returned 0 instead of 9 at an excluded input. Proposed wording: “Property-based and metamorphic tests check the chosen properties over the generated domain; hardcoded programs, weak properties or narrow domains can still pass incorrectly.” |
+| DPR-4 / Medium | Same SDLC record `:199`; pre-existing | “Mathematically feasible if and only if” three safeguards has no named necessity/sufficiency derivation. A fresh immutable wrong-oracle toy killed **4/4 selected mutants** while rejecting the specification-conforming program. Proposed wording: “These controls are proposed safeguards for bounded autonomous work, not an established necessary-and-sufficient condition; correctness remains bounded by specification/oracle fidelity and covered behavior.” No real host seal or human verdict was exercised by the toy. |
+| DPR-5 / Low | `review/final-report.md:1261-1262`; introduced | “19 primary source files” confuses bindings with paths. The ledger has **7 distinct paths / 19 file–pin bindings**: baseline 6, release 6, main 7; all 19 identity comparisons match. Say “seven primary source paths across the pins (19 file–pin bindings).” |
+| DPR-6 / Low | `plans/agentflow-8.3.2-delta-survey-2026-09-22.md:59`; inherited label on a touched line | `terminal.test.js` is **modified +70/−0**, not added. The other two named files are added. Distinguish host-script/test changes and their statuses; the corrected total of 16 files stands. |
+| DPR-7 / Low | SDLC record `:159`; pre-existing | “Hours to minutes” is an unmeasured outcome, despite neighboring qualifications of the same claim class. Say “intended to reduce review load from raw-diff auditing to intent/evidence-ledger review; time savings are unmeasured here.” This is not evidence that the design has no benefit. |
+| DPR-8 / Low | `plans/handover-docs-survey-2026-09-23.md:3,17,48`; inherited assertions | Kit-wide absence of credentials/hosts/real values remains unqualified while Method concedes unreconstructable historical full-read coverage. Qualify it as the 2026-09-23 audit's report, not verified complete-kit absence. No sensitive value or exposure was discovered. The literal absence claims predate `d025db7`; the count correction did not introduce them. |
+| DPR-9 / Low | `review/final-report.md:1086-1087`; pre-existing | The report attributes procedure-qualified eyewitness confidence to the critical-thinking lens. Its actual consumer bullets are general construct/provenance checks; Wixted/Wells procedure limits live in the cognition plan, not an eyewitness-specific lens clause. Drop the phrase or attribute it to the plan. Do not add an operating clause merely to make the report true. |
+
+The source-status findings are bound to the primary
+[8.2→8.3 compare](https://api.github.com/repos/agfnow/agentflow/compare/fcb6878be0b2316cdba5a111f040655f161bfe03...0abf416ccfe10016f16893239bf6c9fd9d4d71e9)
+and
+[8.3→8.3.2 compare](https://api.github.com/repos/agfnow/agentflow/compare/0abf416ccfe10016f16893239bf6c9fd9d4d71e9...6d699038ea14bf246c7bfaaef1ea4348a467d639).
+Main inspected the reviewer-fetched raw API rows, not only the reviewer summary.
+The constructed property/mutation examples are not upstream Hypothesis,
+QuickCheck, mutation-engine or PIT replications.
+
+## Required Wording Changes and Candidate Adoption Ledger
+
+All corrections below are **proposals deferred by the review-only authority**.
+None was adopted, partially landed or pinned by a new test in this turn.
+
+| ID | Candidate | Status | Evidence | Next action / trigger |
+| --- | --- | --- | --- | --- |
+| DPR-1 | Correct the introduced 8.3 test-file classification | Deferred | Pinned modified +240/−8 row | Authorized one-clause documentation repair; preserve pin and dispositions |
+| DPR-2 | Replace mutant-survival → vacuity inference | Deferred | Fresh meaningful-suite counterexample | Authorized source qualification; keep acceptance-policy ownership |
+| DPR-3 | Remove categorical property-test immunity | Deferred | Fresh 3,000-input lookup-table counterexample | Authorized bounded wording; no new test/runtime package |
+| DPR-4 | Remove unsupported feasibility biconditional | Deferred | Source traceability and wrong-oracle counterexample | Authorized claim qualification, not oracle amendment |
+| DPR-5 | Distinguish seven paths from 19 bindings | Deferred | Direct ledger enumeration | Authorized report correction |
+| DPR-6 | Distinguish modified terminal test from added files | Deferred | Pinned +70/−0 row | Authorized source qualification |
+| DPR-7 | Qualify hours-to-minutes outcome | Deferred | No named timing measurement | Authorized unmeasured/design-intent annotation |
+| DPR-8 | Qualify complete-kit sensitive-value absence | Deferred | Historical full-read limit and parent text | Authorized dated qualification; never invent audit receipts |
+| DPR-9 | Correct eyewitness consumer attribution | Deferred | Actual consumer versus plan | Authorized report-only correction; no extra lens rule |
+| DPO-1 | Clarify deliberate L5 four-channel strictness | Deferred, optional | Recipe requirement exceeds a floor, not a maximum | If clarified, missing required channels block Gate 6; do not relax them |
+| DPO-2 | Name OmO tag and checked-commit identities separately | Deferred, optional | Tag `89688165` differs from checked revision `37659a4` | Clarify expected identities; “vs” alone is not an implemented equality check |
+| DPO-3 | Distinguish publication-parent baseline from run tree | Deferred, optional | Existing metadata sentence and original staged-tree receipts | No incorrect hash proved; never invent a whole-tree binding |
+| DPO-4 | Expand “nine core plus four domain packs” referents | Deferred, optional | Primary record and repair row already say workflow skills/governance-flow packs | Explicit nouns improve clarity; no wrong 9+4 population proved |
+| DPO-5 | Qualify historical line citations by revision/anchor | Deferred, optional | Current PK handover entry is line 152, not 151 | Preserve historical reads; use a dated clarification if changed |
+| DPO-6 | Clarify feature-map receipt pointers | Deferred, optional | Test map carries observed tail and points to detailed report | Optional distinction between summary and detailed receipt/limits |
+| DRJ-1 | Add a supposedly missing first-gate artifact pointer | Rejected as a defect | Original ledger text already ends with `[raw output: artifact://1604]` | No repair needed; a second pointer would be optional duplication |
+
+## Acceptance Criteria Status and Spec-to-Artifact Traceability
+
+All 18 changed paths were covered by assigned lenses; cross-slice review examined
+the complete substantive diff. Paths below are relative to the repository root.
+
+| Changed path | Primary coverage / result |
+| --- | --- |
+| `features/README.md` | Metadata/adversarial; optional summary-versus-detail pointer |
+| `features/test-suite.md` | Metadata/evidence; parent baseline, 106 modules and dated 1358 receipt distinguished from the 99/1290 generation snapshot |
+| `reflective-prompt-library/04-agent/workflow-recipes.md` | Governance/adversarial; dimensions versus channels fixed; stricter L5 profile is not a contract violation |
+| `reflective-prompt-library/PROJECT_KNOWLEDGE.md` | Metadata/governance; non-authoritative judgement, pointers and holds preserved |
+| `reflective-prompt-library/index.json` | Metadata/adversarial plus fresh Main generator smoke; 187 entries match current tree |
+| `reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md` | Upstream; 82/42/40 partition correct, DPR-1 introduced false clause |
+| `reflective-prompt-library/plans/agentflow-8.3.2-delta-survey-2026-09-22.md` | Upstream; 16-file span correct, DPR-6 residual classification |
+| `reflective-prompt-library/plans/devops-agentic-trends-survey-2026-09-28.md` | Governance/upstream; Faros median/per-PR/observational and bank-anecdote bounds checked, not raw telemetry |
+| `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md` | Metadata/adversarial; bounded taxonomy/MGD rollups and decision status |
+| `reflective-prompt-library/plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md` | Metadata/adversarial; dated `a2b74f0` inventory and unknown literal seven-list provenance |
+| `reflective-prompt-library/plans/flow-pack-usage-log.md` | Evidence; invocation scopes and dated S5 fingerprint, no new EOF claim/checkpoint advance |
+| `reflective-prompt-library/plans/handover-docs-survey-2026-09-23.md` | Metadata/adversarial; 16-file structure versus missing historical full-read receipts, DPR-8 |
+| `reflective-prompt-library/plans/human-cognition-adoption-2026-10-02.md` | Cognition; ten source rows, construct/access bounds, 50 per-file identities and unknown aggregate method |
+| `reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md` | Formal-methods; pinned-v1 definitions, reported denominators, coverage/S=T/availability limits and owning-surface mappings; no defect found |
+| `reflective-prompt-library/plans/oh-my-openagent-survey-2026-10-01.md` | Upstream; 18 entries, six root-relative citation repairs, tag/pin/license/source-versus-runtime bounds; optional identity-recheck clarity |
+| `reflective-prompt-library/plans/software-factory-rethink-panel-record-2026-09-28.md` | Governance; readable-packet versus host-manual cleanup attribution and adoption decisions |
+| `reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md` | Governance/adversarial/Main; repaired Faros/design-intent claims plus DPR-2/3/4/7 residuals |
+| `review/final-report.md` | All domain lenses, evidence and latest-runtime auditor; original receipts, DPR-5/9 and optional historical citation/referent clarity |
+
+Acceptance: **18/18 path coverage; 8/8 complete lens deliverables; every one of
+19 raw role findings adjudicated; introduced/inherited claims separated; fresh
+load-bearing native smoke exercised; no reviewed operating surface repaired.**
+The review deliverable is complete; the proposed documentation repairs are not
+claimed complete.
+
+## Disagreements / Residual Risks
+
+- Upstream requested changes for DPR-1 while other slices approved/commented.
+  Main accepts the primary-source contradiction; voting does not erase it.
+- Adversarial's initial “no unsupported claim remains derivable” frame was too
+  broad. After examining the current SDLC claims it distinguished patch
+  correctness from corpus correctness. The final record also preserves the
+  later introduced-file-status finding rather than claiming a clean patch.
+- Factory's initial four-channel concern is a strictness clarification, not
+  evidence that a stricter recipe violates a minimum contract. No authorization
+  to weaken Gate 6 follows.
+- Metadata called the handover absence claim introduced. Parent text proves the
+  literal assertions were inherited. Its citation explanation also misnamed the
+  current PK line-151 entry: that entry is DevOps, not fpGo.
+- Metadata's “nine core plus four domain packs” concern is imprecise referents,
+  not a demonstrated wrong count. OmO's “vs” wording is ambiguous prose, not
+  proof that an executable checker demands tag/checked-commit equality.
+- EvidenceRepro's missing-first-gate-pointer claim is rejected: the pointer
+  exists in the ledger footer. Main read artifact 1604's 36-advisory output and
+  compared it with the original final 35-advisory receipt; no fabricated receipt
+  or fresh confirming rerun was substituted.
+- Full MGD source/mapping checks establish bounded text fidelity, not an
+  installed host's enforcement, human acceptance or universal correctness.
+  Predicate-level accounting remains adjacent/local-deficit unknown; AEAT-4
+  remains held.
+- Historical handover coverage, aggregate-digest derivation, present S5 EOF,
+  historical OmO HEAD ref, exact seven-list provenance, private telemetry,
+  human efficacy and live-host/Windows parity remain limited or unknown.
+- Session ledgers/transcripts are host-local provenance, not portable public
+  proofs or installed dependencies. Converted PDF text has math/figure fidelity
+  limits. Independent provider identity was not established.
+
+## Evidence Actually Checked / Tests and Checks Run
+
+**Fresh Main execution:** the installed `python3` binary ran an in-memory driver
+through the available JS kernel, exit **0**. It demonstrated the meaningful-suite
+survivor, the **3,000-input / 8,448-check** lookup-table false green, the **4/4**
+selected-mutant wrong-oracle boundary, and the existing index generator:
+**187 = 173 prompts + 14 skills**, no missing/extra/different entries, equal
+categories/counts. No index, script or permanent test was written by the driver.
+Tuple immutability is not host sealing; no actual human verdict was issued.
+
+**Retained evidence inspected, not re-run:** original final `make all` showed
+**1,358 passed in 23.19 s**, eight validator commands without errors,
+ROUTE-001/002/003 at **128/138/108 and 100%**, the existing AGS **27,126-character**
+warning and **35** record-hygiene advisories. Artifact 1604's earlier gate showed
+**1,358 passed in 29.36 s / 36 advisories**, including the MGD line-92 access-date
+advisory; the original final artifact 1607 carries the success sentinel and 35.
+Original 12/12 reader decisions, 10 links/3 fragments, repair failures and commit/
+push receipts were checked as historical, scoped evidence, not new measurements.
+
+**Source checks:** pinned compare rows and 19 identity bindings were read directly
+by Main. Lenses checked bounded primary paper/source text, immutable upstream
+paths, historical tree counts and actual owning-surface clauses; those checks
+do not verify the sources' underlying empirical data.
+
+**Failures / skipped checks:** the Python Eval backend was unavailable; no probe
+ran through it. The available JS kernel launched installed Python successfully,
+without installation. Upstream encountered GitHub REST quota exhaustion after
+the load-bearing compares; Main consumed retained primary responses instead of
+retrying that failure. Full suites, upstream runtime/retry paths, PIT, live-host
+UI, real human efficacy and private telemetry were not freshly exercised.
+Summary-only/schema-failed deliveries were recovered from full scratch artifacts
+and raw transcript messages before synthesis; no absent lens verdict was invented.
+
+Evidence: `local://d025db7-full-parallel-review-2026-10-02.json` retains all eight
+complete role outputs, questions, disagreements, 19-finding crosswalk and
+adjudications. `local://d025db7-review-native-smoke-2026-10-02.json` retains the
+fresh driver's source, exit and actual output. These are session provenance,
+not new runtime or oracle surfaces.
+
+## Files Changed, Remaining Work and Human Review
+
+This turn appends only this review record to `review/final-report.md` and retains
+session evidence. Reviewed claims, library skills/prompts, tests, index, oracles,
+runtime, registry, adoption decisions and checkpoint state are unchanged.
+No new commit, push, installation or host-policy change is authorized or performed.
+
+The review is complete. DPR-1–9 are deferred correction proposals, not unfinished
+authorized implementation; DPR-1 and DPR-5 are the two introduced errors to fix
+first if a documentation-repair turn is authorized. Optional DPO-1–6 do not block
+the existing adoption decisions. Any future permission/oracle/runtime cutover
+retains its named-owner and Human Review gates; the 10/11 checkpoint is not advanced.
+
+Post-synthesis repository link/schema check:
+`python3 reflective-prompt-library/plans/validate_links.py` reported
+**230 files scanned, 0 errors, all validations passed**. This is a fresh command
+receipt, not a new full-suite, runtime-enforcement or empirical-quality claim.
