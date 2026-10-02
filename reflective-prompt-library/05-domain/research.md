@@ -48,5 +48,6 @@ State what new evidence would overturn the strongest claim in the synthesis.
 - 尚未證實
 - 可能錯誤
 - 需要最新查證
+- 科學或人類行為主張：優先核對原始研究與相關系統性回顧，註明實際讀到的是全文、原始摘要或二手介紹，不能把摘要的介紹寫成已讀摘要；記錄受試群體、測量結果、比較條件與限制。書籍改寫摘要與機制解釋不是介入效果證據，也不能直接推到 AI。
 ```
 

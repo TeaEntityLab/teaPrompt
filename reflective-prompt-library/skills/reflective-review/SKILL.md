@@ -88,6 +88,8 @@ For evidence-heavy artifacts — research documents, benchmark results, vendor r
 
 A claim can pass the first two dimensions and still fail the last two; re-verifying a source's text never verifies its underlying data. Record the strongest failing dimension in `Findings`.
 
+For human-learning or behavior claims, match the evidence to the measured construct: separate task performance, self-reported confidence, prediction error or probability calibration, correct/error discrimination (metacognitive sensitivity), and efficiency relative to task performance. Less confidence or one score discrepancy does not by itself establish improvement across those measures, and competence/confidence are not a universal inverse law. Require population, task, comparison/design, and procedure limits before generalizing; a text audit or agent-output probe does not establish human efficacy. Missing citations make a figure unverified, not proven fabricated.
+
 ### Evidence Tiers
 
 - Rank evidence: deterministic checks, then runtime evidence, then external primary sources, then independent model judgment, then generator self-assessment.

@@ -1035,3 +1035,158 @@ the original review findings; zero active executable/operator twins. Those
 historical matches are intentionally retained. This is pattern-scoped coverage,
 not a proof that every possible twin is absent.
 The count excludes this search-pattern declaration itself.
+
+---
+
+# Final Report — Selective Human Cognition Adoption (2026-10-02)
+
+## Goal and summary
+
+User direction: “Update docs and skills according your thoughts and evidences as possible.”
+Selected human-learning and judgment mechanisms were integrated clean-room into
+existing prompts and two existing skill clauses. The beneficiary is the human
+learner or decision-maker; no human psychological mechanism or efficacy claim
+was transferred to AI agents.
+
+The Learning Coach now requires observed work or an unknown current level,
+corrected retrieval, delayed application and proportionate optional support.
+Research guidance distinguishes full study, original abstract and secondary
+description, plus population/outcome/design limits. Review guidance distinguishes
+confidence, calibration, discrimination and efficiency; an uncited percentage
+is unverified, not proven fabricated.
+
+Eight mechanism families are an optional selection menu, not a validated
+eight-part intervention. Unsupported percentages, deterministic neural/firmware
+stories, mandatory actions/penalties and illness/exhaustion streaks were not
+adopted. No new skill, pack, runtime, installation, route tuning or dependency.
+
+## Acceptance criteria and spec-to-surface traceability
+
+| Criterion | Surface | Observable evidence | Status |
+| --- | --- | --- | --- |
+| HC-AC1: diagnostic evidence, corrected retrieval, delayed application and proportional support | `05-domain/learning-coach.md` | Three-session hotel-English plan: unknown proficiency, three 15-minute sessions, correction and new-context gates, rest and plan revision; 5/5 logical rubric items | Verified within fixture |
+| HC-AC2: construct-sensitive calibration, no universal inverse law | `skills/reflective-review/SKILL.md`; `01-thinking/critical-thinking-check.md` | Two corrected reports plus independent arithmetic: both accuracies 0.5; Brier 0.41 → 0.25; zero correct/error probability separation in both, no efficiency claim | Verified within fixture |
+| HC-AC3: original-source priority and actual access/design/population limits | `skills/reflective-research/SKILL.md`; `05-domain/research.md`; review surfaces | Two final scientific outputs preserve packet-description provenance and reject kit/85%/dopamine/AI-effect extrapolation; each 5/5 | Verified within fixture |
+| HC-AC4: no unsupported guarantees or coercive defaults | Learning Coach and source-review outputs; HCC-4/5 decisions | Voluntary support, rest and refusal retained; no whole-kit or human-to-AI promotion | Verified within scope |
+| HC-AC5: existing protocols, routing, registry and oracle boundaries; index current | Existing gates, adoption record, Decision Index, generated index | 265 focused tests; 1,358 full-suite tests; eight validators without errors; route fixtures at 100% | Verified within covered fixtures |
+
+The contract, consumer map, HCC-1–5 dispositions, evidence scopes and retirement
+triggers are in
+`reflective-prompt-library/plans/human-cognition-adoption-2026-10-02.md`.
+Primary-source links and actual access limits are preserved there; session
+artifacts and the external corpus are provenance, not installed-skill dependencies.
+
+## Files changed
+
+Paths below are under `reflective-prompt-library/` unless stated otherwise:
+
+- `05-domain/learning-coach.md`: diagnostic evidence, outcome gates, corrected
+  retrieval and learner-owned optional support; no compulsory dual schedule.
+- `05-domain/research.md`: scientific source/access/outcome/design boundaries.
+- `01-thinking/critical-thinking-check.md`: construct and numerical-provenance
+  distinctions, including procedure-qualified eyewitness confidence.
+- `skills/reflective-research/SKILL.md`: one scientific-evidence Source Priority
+  paragraph; existing summary provenance and workflow protocols retained.
+- `skills/reflective-review/SKILL.md`: one human-learning/behavior evidence
+  paragraph; existing four-dimension review and output/status contracts retained.
+- `plans/human-cognition-adoption-2026-10-02.md`: dated adoption/verification
+  record with full snapshot filenames and primary-source access limits.
+- `PROJECT_KNOWLEDGE.md`: Decision Index pointer only, not a new operating rule.
+- `index.json`: regenerated with the existing generator.
+- `review/final-report.md` at repository root: this appended report; historical
+  repair reports were retained.
+
+The gate commands also refresh the three existing `plans/route-00X-results.json`
+outputs. No tests, acceptance/security oracles, routing fixture definitions,
+registry definitions or external source files were edited for this adoption.
+No commit or push was performed for this scope.
+
+## Tests and checks run
+
+- Actual stateless output runs: **10 completions**, requested model alias
+  `default`, no tools. Resolved execution-model identity is unknown. Eight initial
+  outputs plus two corrected scientific outputs; five final updated scenarios
+  satisfy **25/25** predeclared logical rubric items. Three unchanged baselines
+  satisfy **15/15**. The two extra copy prompts are updated-only coverage.
+- All three paired baselines also pass: **no marginal improvement demonstrated**.
+  These are compatibility checks, not repeat-run reliability, population or
+  human-intervention efficacy evidence.
+- Independent arithmetic reproduced accuracy **0.5** in both rounds and Brier
+  **0.41 / 0.25**. Better scoring does not prove better sensitivity or efficiency.
+- Per-file SHA-256 comparison: **50/50** external source files unchanged against
+  the preceding survey inventory; source integrity is not human efficacy.
+- `python3 reflective-prompt-library/plans/generate_index.py`: **186** indexed
+  files, **172** prompts and **14** skills.
+- Focused pytest on `test_domain_prompts_eval_harness.py`,
+  `test_thinking_prompts_eval_harness.py`, `test_prompt_cross_links.py`,
+  `test_skill_module_contract.py`, `test_validate_skill_examples.py`,
+  `test_decision_index_hygiene.py` and `test_index_json_current.py`:
+  **265 passed**.
+- `make all`: **1,358 passed**; all eight validators report zero errors;
+  ROUTE-001/002/003 each **100%** on **128/138/108** phrases. Covered routing
+  fixtures are not proof of semantic routing across all requests.
+- Existing skill-creator review generator produced
+  `local://human-cognition-evals-2026-10-02/review.html`. Output navigation and
+  graded comparison rendering were exercised in Chromium; both tabs closed.
+  No time/token metrics or human feedback were invented.
+
+## Failures and skipped checks
+
+The initial updated research skill output implied original-abstract access when
+only an abstract description was supplied. The unchanged baseline did not.
+The draft's binary full-study/abstract wording was replaced with explicit
+full-study/original-abstract/secondary-description categories and the distinction
+that an abstract description is not abstract access. Both research entry points
+were rerun against the same packet; the corrected outputs pass. The failed
+output remains in the ledger, not in the final-pass tally.
+
+The first behavior-discovery `find` call failed all judgement requests with HTTP
+403 and judged zero files; its no-hit result was not used as absence evidence.
+Explicit literal/name searches supplied the surface map. No skill was installed.
+
+Static `file://` viewer feedback API calls failed; offline output rendering works,
+but persistent feedback autosave was not verified. No user review was inferred.
+The generated learner output also contains isolated Simplified character forms;
+the logical behavior rubric does not certify general language consistency.
+No human study, clinical guidance, full-paper/raw-data audit, host installation,
+tool-enabled agent-compliance run or human-to-AI efficacy test was performed.
+
+## Risks and evidence limits
+
+The 41 adaptations and nine supporting documents are not the original books.
+Checked publications were mostly abstracts/opening sections, not every full
+paper or underlying dataset. Source preservation does not establish truth or
+benefit. Some selected supports are bounded protocol recommendations, not checked
+effect sizes; human value and local recurrence remain `unknown`.
+
+External installation, behavior-override and mandatory-action directives were
+treated as untrusted source content and not executed. Prompt guidance cannot
+enforce future agent behavior or replace measured human outcomes.
+
+Existing warning debt remains visible: one **27,126-character**
+`agent-governance-scaffold` lint warning and **35** historical record access-date
+warnings. No warning or runtime/security oracle was suppressed.
+
+Integration evidence:
+`local://human-cognition-integration-ledger-2026-10-02.json`.
+The preceding source survey remains separately retained at
+`local://human-cognition-followup-ledger.json`.
+Fixtures, outputs, inline grades and comparison notes are available in the
+review artifact. Neither session artifact is a runtime dependency.
+
+## Remaining work and human review needs
+
+None for the authorized in-place adoption scope. No unrelated held gate was
+fired, and no runtime non-goal was lifted. No further approval is needed for
+these ordinary documentation/skill edits. A consequential legal/clinical use,
+human experiment, new skill/runtime, oracle change or host installation requires
+its own authority and evidence; this report does not supply either.
+
+## Twin-sweep record
+
+TWINS: searched record whether the full study or only its abstract was read|註明讀到全文或僅摘要 - found 0 other sites: none.
+
+Search population: gitignore-respecting repository files before this report's
+search-pattern declaration was appended. A separate known-present control
+matched both alternatives. This is literal-pattern coverage, not proof that
+every differently worded access-scope ambiguity is absent.

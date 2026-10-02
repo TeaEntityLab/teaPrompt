@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01T16:51:13.151813",
+  "generated_at": "2026-10-02T10:45:23.675997",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -113,6 +113,7 @@
             "software-factory-rethink-panel-record-2026-09-28.md",
             "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
+            "human-cognition-adoption-2026-10-02.md",
             "project-knowledge-authority-promotion-decision-2026-06-17.md",
             "product-runtime-ownership-panel-2026-08-25.md",
             "agent-governance-four-power-concepts-2026-07-17.md",
@@ -8043,6 +8044,77 @@
       "char_count": 8246
     },
     {
+      "path": "reflective-prompt-library/plans/human-cognition-adoption-2026-10-02.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "human-cognition-adoption-2026-10-02",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../05-domain/learning-coach.md",
+          "../05-domain/research.md",
+          "../01-thinking/critical-thinking-check.md",
+          "../05-domain/learning-coach.md",
+          "../skills/reflective-research/SKILL.md",
+          "../05-domain/research.md",
+          "../skills/reflective-review/SKILL.md",
+          "../01-thinking/critical-thinking-check.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Selective Human Cognition Adoption — 2026-10-02"
+        },
+        {
+          "level": 2,
+          "text": "Goal and Authority"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Source Corrections Preserved"
+        },
+        {
+          "level": 2,
+          "text": "Selected Mechanisms and Destinations"
+        },
+        {
+          "level": 2,
+          "text": "Local Gap and Minimality Decision"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Contract and Compatibility Bounds"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance and Consumer Map"
+        },
+        {
+          "level": 2,
+          "text": "Verification Results"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Residual Risks"
+        }
+      ],
+      "line_count": 121,
+      "char_count": 19921
+    },
+    {
       "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -14508,8 +14580,8 @@
           "text": "主題"
         }
       ],
-      "line_count": 52,
-      "char_count": 1351
+      "line_count": 53,
+      "char_count": 1468
     },
     {
       "path": "reflective-prompt-library/05-domain/learning-coach.md",
@@ -14522,7 +14594,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/human-cognition-adoption-2026-10-02.md"
+        ]
       },
       "structure": [
         {
@@ -14547,11 +14621,19 @@
         },
         {
           "level": 2,
+          "text": "Optional Human Support Menu"
+        },
+        {
+          "level": 2,
           "text": "學習目標"
+        },
+        {
+          "level": 2,
+          "text": "可用條件"
         }
       ],
-      "line_count": 55,
-      "char_count": 1635
+      "line_count": 82,
+      "char_count": 4279
     },
     {
       "path": "reflective-prompt-library/05-domain/deep-analysis.md",
@@ -14790,8 +14872,8 @@
           "text": "8. Recommendation"
         }
       ],
-      "line_count": 88,
-      "char_count": 2053
+      "line_count": 91,
+      "char_count": 2216
     },
     {
       "path": "reflective-prompt-library/01-thinking/falsifiability.md",
@@ -15671,8 +15753,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 205,
-      "char_count": 13298
+      "line_count": 207,
+      "char_count": 13815
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -15787,8 +15869,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 187,
-      "char_count": 9917
+      "line_count": 189,
+      "char_count": 10592
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -16723,5 +16805,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 185
+  "total_files": 186
 }
