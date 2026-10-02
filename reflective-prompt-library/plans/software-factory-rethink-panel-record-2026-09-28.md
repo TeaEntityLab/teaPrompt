@@ -60,7 +60,7 @@ Questions addressed by the panel:
 4. **Epistemic Division of Responsibility (Principle P7):**
    The prompt library defines contracts, gates, and evidence schemas; host infrastructure owns physical MicroVM execution, Action Gateway credential injection, and git branch locks. The disclaimer "emits contracts, does not enforce them" must be strictly maintained.
 5. **Packet vs. Panel Record Lifecycle:**
-   Under the `parallel-lens-review-packet` protocol (`workflow-recipes.md` line 158), the shared review packet (`plans/*-review-packet-*.md`) is an ephemeral input document deleted upon synthesis. The durable synthesis document containing the panel consensus, candidate ledger, and guard evidence is preserved as the panel record.
+   Under the `parallel-lens-review-packet` protocol (`workflow-recipes.md` line 158), the shared review packet (`plans/*-review-packet-*.md`) is a transient input document; this record's deletion of the packet after synthesis is the managed host manual/panel convention, not a requirement of the recipe. *(Correction 2026-10-02:* the canonical recipe requires only a reviewer-readable path — it neither mandates nor verifies deletion.) *The durable synthesis document containing the panel consensus, candidate ledger, and guard evidence is preserved as the panel record.*
 
 ---
 
@@ -97,7 +97,7 @@ Questions addressed by the panel:
 | The word 'factory' is an active keyword in `reflective-minimality` | Observed | `plans/route_paraphrase_eval.py` line 223. |
 | `test_dormant_conditional_contracts.py` asserts strictly 6 bullets in Domain packs | Observed | `test_dormant_conditional_contracts.py` T2 executed and verified. |
 | Cheatsheets in EN and zh-TW pass 105 parity assertions with the in-place cue | Observed | `pytest plans/tests/test_cheatsheet*.py` passed 105/105. |
-| The temporary review packet is ephemeral and deleted after synthesis | Observed | Contract stated in `workflow-recipes.md` line 158 and `parallel-lens-review-packet`. |
+| The temporary review packet was deleted after synthesis | Observed | Packet removal executed by the managed host under its manual/panel convention. (Corrected 2026-10-02: `workflow-recipes.md` line 158 requires a packet path every reviewer can actually read; it does not instruct, verify, or authorize deletion, so deletion is not a recipe-checked fact.) |
 | Users will successfully discover `governed-delivery` via the updated cheatsheet cues | `[INFERENCE]` | Based on developer keyword patterns matching cheatsheet parentheticals. |
 
 ---
@@ -123,3 +123,12 @@ Questions addressed by the panel:
 1. **Falsifier for In-Place Cheatsheet Cues (SFR-1):** Falsified if `test_dormant_conditional_contracts.py` T2 fails due to bullet count mismatch, or if any of the 105 cheatsheet parity tests fail.
 2. **Falsifier for Recipe Clean-Room Compliance (SFR-2):** Falsified if `04-agent/workflow-recipes.md` contains the banned token `'sealed oracle'` (triggering `test_pstack_synthesis_survey_record.py`) or if `test_prompt_cross_links.py` fails.
 3. **Falsifier for Skill Rejection (SFR-3):** Falsified if an autonomous delivery workflow requires a contract artifact or gate that cannot be expressed within `governed-delivery`, `reflective-spec-plan`, and `verification-map-generator`.
+
+---
+
+## Corrections (2026-10-02)
+
+Post-review audit (`review/final-report.md`, finding Factory-5) corrected two attributions while leaving the settled SFR-1/SFR-2 adoptions, the SFR-3 rejection, the SFR-4 deferral, and the panel's decision history unchanged:
+
+1. **Packet lifecycle (:63):** the original wording implied the `parallel-lens-review-packet` recipe makes the packet ephemeral and deleted upon synthesis. The canonical recipe (`workflow-recipes.md` :158) requires only that the packet be at a path every reviewer can actually read; deleting it after synthesis is this host's manual/panel convention, not recipe authority.
+2. **Evidence row (:100):** the claim "the temporary review packet is ephemeral and deleted after synthesis — Observed, contract stated in `workflow-recipes.md`" conflated a host cleanup action with a recipe contract. The deletion happened under the managed host's convention; it was not instructed or verified by the cited recipe text.

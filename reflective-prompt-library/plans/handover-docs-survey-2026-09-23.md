@@ -1,6 +1,6 @@
 # Handover-Docs Methodology Survey — 2026-09-23
 
-> **Status: decided — record-only; one durable lesson adopted into PROJECT_KNOWLEDGE.md, no skill or wording installed.** The object is `~/dev/handover-docs/` — a local, reusable **project handover documentation kit** (15 markdown files: README methodology, 9-volume handbook, ops SOPs, templates, glossary) written in Traditional Chinese. Its goal: a successor engineer with **no oral handover and no live support from the original team** can understand the system, operate it safely, and rebuild from zero using only repo docs. All content is templates and placeholders — no credentials, hosts, or real values exist in the kit; nothing sensitive was recorded. Guard: `plans/tests/test_handover_docs_survey_record.py`.
+> **Status: decided — record-only; one durable lesson adopted into PROJECT_KNOWLEDGE.md, no skill or wording installed.** The object is `~/dev/handover-docs/` — a local, reusable **project handover documentation kit** (16 markdown files by documented enumeration: 1 README methodology + 1 glossary + 9 handbook volumes + 2 ops SOPs + 3 templates; the original banner said "15 markdown files" — corrected 2026-10-02) written in Traditional Chinese. Its goal: a successor engineer with **no oral handover and no live support from the original team** can understand the system, operate it safely, and rebuild from zero using only repo docs. All content is templates and placeholders — no credentials, hosts, or real values exist in the kit; nothing sensitive was recorded. Guard: `plans/tests/test_handover_docs_survey_record.py`.
 
 ## Research Question
 
@@ -14,7 +14,7 @@ User instruction: "Learn from @~/dev/handover-docs/ and beware about sensitive k
 
 ## Method
 
-Coordinator read all 15 files in full (2026-09-23): `README.md`, `glossary.md`, `handbook/01-09`, `ops/secrets-management.md`, `ops/offsite-backup.md`, `templates/{task-card,incident-entry,agent-memory}.md`. No scouts, no panel. Sensitive-keyword audit: every file is template/placeholder text; no real values present.
+Coordinator reported reading all files in full (2026-09-23). The kit's documented enumeration totals **16** files: `README.md`, `glossary.md`, `handbook/01-09`, `ops/secrets-management.md`, `ops/offsite-backup.md`, `templates/{task-card,incident-entry,agent-memory}.md`. No scouts, no panel. Sensitive-keyword audit: the enumerated files are template/placeholder text; no real values present. *(supersession 2026-10-02: this paragraph originally claimed "read all 15 files in full" — a historical self-report for which no VCS or per-file receipts exist; whether the 16-file enumeration was miscounted or one file was missed cannot be reconstructed, and this record does not retroactively claim a verified 16-file full read.)*
 
 ## Concept Map
 
@@ -44,7 +44,7 @@ Coordinator read all 15 files in full (2026-09-23): `README.md`, `glossary.md`, 
 
 | Claim | Status | Basis |
 | --- | --- | --- |
-| Kit structure and all quoted principles | Observed | All 15 files read in full, 2026-09-23 |
+| Kit structure and all quoted principles | Observed | Documented enumeration is 16 files; the 2026-09-23 "all read" claim is a self-report without per-file receipts (see Method) |
 | No sensitive values present | Observed | Every file is template/placeholder text |
 | HD-3 matches TeaPrompt's failable-gates principle | Observed | ROUTE gate fix commit 6b31ab1 same day |
 | The nine-volume order is "proven" | `[INFERENCE]` | README asserts it; no external validation of the ordering claim |
@@ -52,13 +52,13 @@ Coordinator read all 15 files in full (2026-09-23): `README.md`, `glossary.md`, 
 
 ## Evidence Actually Checked
 
-- `~/dev/handover-docs/` — all 15 files read in full, 2026-09-23.
+- `~/dev/handover-docs/` — 16 files by documented enumeration; original 2026-09-23 self-report claimed all read without VCS/per-file receipts (supersession 2026-10-02; see Method).
 - TeaPrompt installed surfaces checked for overlap: `reflective-handoff-retro`, `reflective-spec-plan`, `reflective-implement` Verification, `validate_record_hygiene.py`, `PROJECT_KNOWLEDGE.md` lesson format.
 - Not done: no external validation of the methodology against a real handover; the kit is self-described.
 
 ## Falsifiability
 
-- Wrong about "no sensitive values" if any file contains a real credential/host — all files read; all fields are placeholders.
+- Wrong about "no sensitive values" if any file contains a real credential/host — per the 2026-09-23 audit, all enumerated files are placeholders (the all-read claim remains a self-report; see Method).
 - Wrong about HD-5 overlap if `plans/` records lack live-status or provenance — both are enforced by `validate_record_hygiene.py` and the Decision Index.
 - The PK lesson is wrong if its principles contradict an installed contract — all five are consistent with existing verification/record conventions.
 
@@ -66,7 +66,7 @@ Coordinator read all 15 files in full (2026-09-23): `README.md`, `glossary.md`, 
 
 | Item | Status | Evidence |
 | --- | --- | --- |
-| Kit read in full; sensitive-keyword audit clean | done | Method; Evidence vs Inference |
+| Kit surveyed; sensitive-keyword audit clean | done | Method; Evidence vs Inference (16-file enumeration vs all-read self-report noted there) |
 | Nine concepts mapped; five adopted into PK lesson | done | Concept Map; Candidate Adoption Ledger |
 | PK durable lesson written | done | `PROJECT_KNOWLEDGE.md` |
 | Guard written | done | `plans/tests/test_handover_docs_survey_record.py` |

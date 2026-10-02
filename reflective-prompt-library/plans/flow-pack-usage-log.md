@@ -273,6 +273,13 @@ at 1681/1682 and 1685/1686. Positive controls include AGS URI read
 `c944b7c4` and GD skill-prompt `53ce0236`. A capped grep's missing match is
 not absence evidence; the prior header-only attribution is superseded.
 
+**Live-source qualification (2026-10-02):** the byte/line fingerprints above
+are the dated 2026-10-01 scan, not a claim about S5's current EOF. S5 is a
+growing session source; later append events do not invalidate that historical
+scan or prove a changed invocation count. Re-scan the complete source and
+record the new bound before relying on it at the checkpoint. This note does
+not assert a new EOF scan or advance the 2026-10-11 verdict.
+
 The rows cite the earliest successful load pair, `3dd5d656` / `e7ebaff0`,
 as load-of-record before artifact creation. S4 also contains a second
 successful pair: `1e35fe23` (generator, :1863, 10:00:21.062Z) and

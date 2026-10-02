@@ -1,7 +1,7 @@
 ---
 feature: governance test suite
-source_commit: 7147e91
-last_verified_at: 2026-09-24
+source_commit: f0f986d98af86702c5ecacac6daf095a06849686
+last_verified_at: 2026-10-02
 verification_status: passing
 ---
 
@@ -9,9 +9,15 @@ verification_status: passing
 
 ## Entry points
 
-- `reflective-prompt-library/plans/tests/` — 99 `test_*.py` files, 1290 tests at
-  generation time. Pins governance records, registry cardinality, cheatsheet
-  parity, boundary quick cues, and adoption-state contracts.
+- `reflective-prompt-library/plans/tests/` — 106 `test_*.py` files; the
+  2026-10-02 verification drive reported 1358 passing tests. Pins governance
+  records, registry cardinality, cheatsheet parity, boundary quick cues and
+  adoption-state contracts.
+
+Generation-time baseline (2026-09-24, `7147e91`): 99 files and 1290 tests.
+The metadata now names the current committed source baseline; this repair
+changes covered documentation, not test code. Run receipts and limits are
+recorded in `review/final-report.md`.
 
 ## Drive
 
@@ -19,8 +25,8 @@ verification_status: passing
 python3 -m pytest reflective-prompt-library/plans/tests/ -q
 ```
 
-Expected tail: `1290 passed` (count grows as tests are added — the invariant
-is **0 failures**, not the exact count).
+Observed tail on 2026-10-02: `1358 passed`. The invariant is **0 failures**,
+not the exact count; re-verify after covered source changes.
 
 Per-area selection uses `-k` or a file path, e.g.:
 

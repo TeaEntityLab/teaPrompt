@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-02T10:45:23.675997",
+  "generated_at": "2026-10-02T17:43:23.886564",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -80,6 +80,7 @@
             "pstack-survey-2026-09-22.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
+            "mgd-form-theory-survey-2026-10-02.md",
             "jev-architecture-synthesis-survey-2026-09-19.md",
             "openai-model-guidance-survey-2026-09-10.md",
             "harness-1-state-ledger-research.md",
@@ -3069,7 +3070,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 7455
+      "char_count": 8300
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -3773,10 +3774,14 @@
         {
           "level": 2,
           "text": "Recent-Inspiration Reflection (2026-09-22)"
+        },
+        {
+          "level": 2,
+          "text": "Source Corrections (2026-10-02)"
         }
       ],
-      "line_count": 254,
-      "char_count": 23821
+      "line_count": 271,
+      "char_count": 24828
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -4956,6 +4961,78 @@
       "char_count": 4795
     },
     {
+      "path": "reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mgd-form-theory-survey-2026-10-02",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../04-agent/workflow-recipes.md#autonomous-software-factory-ai-native-sdlc",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/verification-map-generator/SKILL.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Misfit-Governed Development Form-Theory Survey (2026-10-02)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Authority"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity, Version and Access"
+        },
+        {
+          "level": 2,
+          "text": "Mechanisms and Claim Boundaries"
+        },
+        {
+          "level": 3,
+          "text": "Enumerated vs Actually Evaluated"
+        },
+        {
+          "level": 2,
+          "text": "Empirical Evidence — Author-Reported, Not Reproduced"
+        },
+        {
+          "level": 2,
+          "text": "Verification Actually Exercised"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger and Existing TeaPrompt Mapping"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference, Risks and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 198,
+      "char_count": 17735
+    },
+    {
       "path": "reflective-prompt-library/plans/jev-architecture-synthesis-survey-2026-09-19.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5461,10 +5538,14 @@
         {
           "level": 2,
           "text": "Shared Findings and Architectural Synthesis"
+        },
+        {
+          "level": 2,
+          "text": "Corrections (2026-10-02)"
         }
       ],
-      "line_count": 132,
-      "char_count": 23670
+      "line_count": 139,
+      "char_count": 25535
     },
     {
       "path": "reflective-prompt-library/plans/oh-my-openagent-survey-2026-10-01.md",
@@ -5515,10 +5596,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Source Corrections (2026-10-02)"
         }
       ],
-      "line_count": 118,
-      "char_count": 9160
+      "line_count": 139,
+      "char_count": 10649
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -7215,7 +7300,8 @@
           "code-recall-survey-2026-08-20.md",
           "../GLOSSARY.md#adoption-guard-closure",
           "agentflow-8.4.1-delta-survey-2026-09-30.md",
-          "rrsi-survey-2026-09-30.md"
+          "rrsi-survey-2026-09-30.md",
+          "mgd-form-theory-survey-2026-10-02.md"
         ]
       },
       "structure": [
@@ -7304,8 +7390,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 386,
-      "char_count": 74854
+      "line_count": 387,
+      "char_count": 75520
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -7482,10 +7568,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Source Corrections (2026-10-02)"
         }
       ],
-      "line_count": 135,
-      "char_count": 10310
+      "line_count": 147,
+      "char_count": 10937
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -7854,10 +7944,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Corrections (2026-10-02)"
         }
       ],
-      "line_count": 125,
-      "char_count": 11937
+      "line_count": 134,
+      "char_count": 13337
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -8111,8 +8205,8 @@
           "text": "Falsifiability and Residual Risks"
         }
       ],
-      "line_count": 121,
-      "char_count": 19921
+      "line_count": 129,
+      "char_count": 21465
     },
     {
       "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
@@ -11394,7 +11488,7 @@
         }
       ],
       "line_count": 97,
-      "char_count": 10579
+      "char_count": 12151
     },
     {
       "path": "reflective-prompt-library/plans/minimax-code-survey-2026-09-19.md",
@@ -12042,8 +12136,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 410,
-      "char_count": 36692
+      "line_count": 417,
+      "char_count": 37134
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -12432,10 +12526,14 @@
         {
           "level": 2,
           "text": "Architectural Synthesis"
+        },
+        {
+          "level": 2,
+          "text": "Corrections (2026-10-02)"
         }
       ],
-      "line_count": 351,
-      "char_count": 29648
+      "line_count": 361,
+      "char_count": 32984
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -13069,7 +13167,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../plans/vllm-micro-agent-research-record-2026-06-30.md"
+          "../plans/vllm-micro-agent-research-record-2026-06-30.md",
+          "../plans/mgd-form-theory-survey-2026-10-02.md"
         ]
       },
       "structure": [
@@ -13142,8 +13241,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 279,
-      "char_count": 15330
+      "line_count": 281,
+      "char_count": 15932
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -16805,5 +16904,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 186
+  "total_files": 187
 }

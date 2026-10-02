@@ -56,9 +56,9 @@ Checked 2026-09-22:
 | Configuration schema | **8 — unchanged** (no schema bump in 8.3.1/8.3.2) | Separate from the release version |
 | GitHub tags / Releases | Both **empty** (`[]`) at the pin | No independently published tag |
 | License | Apache-2.0, unchanged | Concepts restated in original prose |
-| Delta size | ~14 files, dominated by new host scripts (`stream-cleanup.js` +95, `terminal.test.js` +70, `notebook-owner-first-stream.test.js` +89) | Host implementation |
+| Delta size | 16 files — corrected 2026-10-02; originally recorded as "~14" — dominated by new host scripts (`stream-cleanup.js` +95, `terminal.test.js` +70, `notebook-owner-first-stream.test.js` +89) | Host implementation |
 
-Primary sources (2026-09-22): [HEAD commit](https://api.github.com/repos/agfnow/agentflow/commits/main), [8.3.0→8.3.2 compare](https://api.github.com/repos/agfnow/agentflow/compare/0abf416ccfe10016f16893239bf6c9fd9d4d71e9...main), [tags](https://api.github.com/repos/agfnow/agentflow/tags), and `docs/CHANGELOG.md` + the `SKILL.md`/`references/streams.md` patches read in full.
+Primary sources (2026-09-22): [HEAD commit](https://api.github.com/repos/agfnow/agentflow/commits/main), [8.3.0→8.3.2 compare](https://api.github.com/repos/agfnow/agentflow/compare/0abf416ccfe10016f16893239bf6c9fd9d4d71e9...6d699038ea14bf246c7bfaaef1ea4348a467d639), [tags](https://api.github.com/repos/agfnow/agentflow/tags), and `docs/CHANGELOG.md` + the `SKILL.md`/`references/streams.md` patches read in full.
 
 ## State Ledger and Changed Mechanisms
 
@@ -103,7 +103,7 @@ unchanged; the 8.3.1/8.3.2 text contradicts none of them.
 
 ## Evidence Actually Checked
 
-- GitHub API 2026-09-22: `commits/main`, `compare/0abf416...main` (4 commits), `tags`.
+- GitHub API 2026-09-22: `commits/main`, `compare/0abf416...6d699038` (4 commits), `tags`.
 - Read in full: `docs/CHANGELOG.md` (8.3.1 + 8.3.2 sections) and the `SKILL.md` +
   `references/streams.md` patches; changed-file inventory enumerated.
 - Installed-surface grep 2026-09-22: agentflow vocabulary absent from every skill and
@@ -133,3 +133,15 @@ unchanged; the 8.3.1/8.3.2 text contradicts none of them.
 | Guard written | done | `plans/tests/test_agentflow_v832_delta_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Source Corrections (2026-10-02)
+
+Adjudicated repairs to source-tier facts above; all AF832-* dispositions,
+the record-only/no-execution stance, and prior adopted sentences are unchanged.
+
+- The immutable span `0abf416..6d699038` changes **16 files**, not "~14"
+  (Version and Source Identity).
+- The compare citation above now uses the immutable pin
+  `0abf416...6d699038`; the 2026-09-22 observation that it then resolved as
+  `main` HEAD (the checked-main facts: `main` at `6d699038`, ahead_by 4)
+  is preserved, not rewritten.

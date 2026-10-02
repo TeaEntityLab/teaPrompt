@@ -70,14 +70,15 @@ Checked 2026-09-21:
 | Commit message | `release: agentflow @ 9571389` | Source-build label only; that source revision is uninspected |
 | GitHub tags / Releases | Both API lists **empty** (`[]`) at the pin | No independently published tag |
 | License / copy boundary | Apache-2.0, unchanged | Concepts restated in original prose; no upstream text copied |
-| Delta size | ~40 files, +6,933 / −2,024, one commit | Bulk is host scripts; see below |
+| Delta size | 82 files (42 test files, ~40 non-test), +6,933 / −2,024, one commit — corrected 2026-10-02; originally recorded as "~40 files," which approximated only the non-test subset | Bulk is host scripts; see below |
 
-Primary sources (all 2026-09-21): [HEAD commit](https://api.github.com/repos/agfnow/agentflow/commits/main), [8.2→8.3 compare](https://api.github.com/repos/agfnow/agentflow/compare/fcb6878be0b2316cdba5a111f040655f161bfe03...main), [tags](https://api.github.com/repos/agfnow/agentflow/tags), [releases](https://api.github.com/repos/agfnow/agentflow/releases), and the compare's `docs/CHANGELOG.md`, `SKILL.md`, `README.md` patches read in full.
+Primary sources (all 2026-09-21): [HEAD commit](https://api.github.com/repos/agfnow/agentflow/commits/main), [8.2→8.3 compare](https://api.github.com/repos/agfnow/agentflow/compare/fcb6878be0b2316cdba5a111f040655f161bfe03...0abf416ccfe10016f16893239bf6c9fd9d4d71e9), [tags](https://api.github.com/repos/agfnow/agentflow/tags), [releases](https://api.github.com/repos/agfnow/agentflow/releases), and the compare's `docs/CHANGELOG.md`, `SKILL.md`, `README.md` patches read in full.
 
 ## State Ledger and Changed Mechanisms
 
-The changed-file set (from the compare API) is dominated by host code: new
-`scripts/delegation-route.js` (+399, the `allowed-worker`/`review-policy` engine),
+The changed-file set (from the compare API) is dominated by host code: the
+`allowed-worker`/`review-policy` engine `scripts/delegation-route.js` (modified
++399/−8 — corrected 2026-10-02; originally recorded as "new"),
 new `scripts/default-branch.js` (shared default-branch resolver), new
 `branch-safety-terminal.test.js`, and large rewrites of `agf.js` (+424),
 `ag-settings.js` (+293), and their tests (`agf.test.js` +484, `ag-settings.test.js`
@@ -139,7 +140,7 @@ question-is-not-a-change and mid-task-continuation clauses remain consistent wit
 
 ## Evidence Actually Checked
 
-- GitHub API 2026-09-21: `commits/main`, `compare/fcb6878...main`, `tags`, `releases`.
+- GitHub API 2026-09-21: `commits/main`, `compare/fcb6878...0abf416`, `tags`, `releases`.
 - Read in full from the compare: the `docs/CHANGELOG.md` 8.3.0 section, the `SKILL.md`
   diff, and the `README.md`/`README.zh-tw.md` diffs; changed-file inventory enumerated.
 - Installed-surface grep 2026-09-21: agentflow vocabulary (`agentflow`, `godev`,
@@ -252,3 +253,19 @@ explicit instruction in the installed skill body → covered (4/4). No
 before/after efficacy improvement is claimed. The exercise ran in memory and
 left no script or new permanent test. The citation-twin search over the plan
 archive found only the historical correction above, not another live claim.
+
+## Source Corrections (2026-10-02)
+
+Adjudicated repairs to source-tier facts above; all AF83-* dispositions,
+the record-only/no-execution stance, and prior adopted sentences are unchanged.
+
+- The 8.2→8.3 delta is **82 total files** (42 test files, ~40 non-test),
+  +6,933 / −2,024 — not "~40 files," which approximated only the non-test
+  subset (Version and Source Identity).
+- `scripts/delegation-route.js` was **modified +399/−8**, not created new
+  (State Ledger); its test file `delegation-route.test.js` remains the
+  new-file entry.
+- The compare citation above now uses the immutable pin
+  `fcb6878...0abf416`; the 2026-09-21 observation that it then resolved as
+  `main` HEAD (the checked-main facts: `main` at `0abf416`, ahead_by 1)
+  is preserved, not rewritten.

@@ -1190,3 +1190,706 @@ Search population: gitignore-respecting repository files before this report's
 search-pattern declaration was appended. A separate known-present control
 matched both alternatives. This is literal-pattern coverage, not proof that
 every differently worded access-scope ambiguity is absent.
+
+---
+
+# Final Report — Agentflow Newest-Version Survey (2026-10-02)
+
+## Summary and authority
+
+The completed selective human-cognition adoption was committed and pushed as
+`f0f986d` (`f221a24..f0f986d main -> main`), covering nine files. That explicit
+commit/push instruction does not authorize installing or adopting Agentflow.
+This subsequent survey is **record-only**.
+
+At the check time, the newest published release and tag were **v8.4.6** at
+`19457e78fd30eb635ac2895aaec4af9302ca2896`, published
+`2026-10-01T07:44:39Z`. Separately pinned main was
+`216c75f25b46a10351c34e23742a0f86569175a3`, labeling itself **8.4.7**.
+The main changelog calls that a release, but the public publication check did
+not establish a v8.4.7 release or tag. The prior survey baseline remains
+v8.4.1 at `ab80a4db168742042afec790c5b446c745499ab4`.
+
+Sources: [latest-release API](https://api.github.com/repos/agfnow/agentflow/releases/latest),
+[release list](https://api.github.com/repos/agfnow/agentflow/releases?per_page=8),
+[v8.4.6 publication](https://github.com/agfnow/agentflow/releases/tag/v8.4.6),
+[pinned main](https://github.com/agfnow/agentflow/commit/216c75f25b46a10351c34e23742a0f86569175a3),
+and [pinned changelog](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/CHANGELOG.md).
+These are volatile publication observations, not a promise about later releases.
+
+## Changed mechanisms and source traceability
+
+The full baseline-to-main inventory contains **44 changed entries**:
+15 prose/version/publication files, 11 production-runtime files, 15 test files,
+and three live-journey/tooling files. An independent blob-tree comparison found
+45 changed path slots; the explicit `docs/CHANGELOG.md` → `CHANGELOG.md` rename
+accounts for the difference. `ag-settings.js` supplied the changed-blob control;
+`LICENSE` supplied the unchanged-blob control. Schema **8** and Apache-2.0
+remain unchanged at all three pins.
+
+The [complete source delta](https://github.com/agfnow/agentflow/compare/ab80a4db168742042afec790c5b446c745499ab4...216c75f25b46a10351c34e23742a0f86569175a3)
+and per-release file lists are retained in the evidence ledger.
+
+| Revision | Relevant delta | Classification |
+| --- | --- | --- |
+| 8.4.2 `a20951b` | Codex model/effort template values; writing guidance | Host defaults and prose, not measured model efficacy |
+| 8.4.3 `42961c0` | Current-Ask `skip-ag`; Claude session attribution; completion-reference v2 and historical Reply-byte preservation; changelog relocation; terminal-journey tooling | Runtime controls/persistence plus documentation; live journeys not replayed |
+| 8.4.4 `47aecd5` | Saved answers versus linked-report repetition | Prose/version changes; no production-runtime file delta |
+| 8.4.5 `cd1c7be` | Persistent `away-gates`; public assistant brief | Runtime approval policy plus prose |
+| 8.4.6 `19457e7` | One summary bullet per numbered final-report item | Prose/version changes; no production-runtime file delta |
+| 8.4.7-labeled main `216c75f` | Startup template audit; sorted switches; closed-round receipt shortcut in Stop hook | Runtime mutation and historical-record handling; not a verified published release |
+
+Primary runtime sources:
+[route parser](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/fast-lane.js),
+[round linter](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/round-linter.js),
+[settings audit](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/ag-settings.js#L719-L775),
+[startup ordering](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/agf.js#L864-L905),
+[Reply identity](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/reply-identity.js),
+[completion references](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/completion-record.js),
+and [closed-round verifier](https://github.com/agfnow/agentflow/blob/216c75f25b46a10351c34e23742a0f86569175a3/skills/agentflow/scripts/closed-round.js).
+The other affected production files are `completion-context.js`,
+`notebook-write.js`, `resume-intake.js`, and `stop-hook.js`; their source deltas
+are inventoried separately from tests and live-journey tooling.
+
+## Native checks actually run
+
+Node **v25.1.0**, disposable baseline/release/main copies, `sandbox-exec`,
+network denied, `/Users` reads denied, explicit `env -i`, scratch HOME/TMPDIR.
+Writes were confined to the owned scratch plus the literal `/dev/null` device.
+`agf start` generated fixture-local hooks/configuration only; no live host hooks,
+skill installation, external workers or paid provider sessions were activated.
+Post-run blob comparisons bind **19 primary source files** to the immutable pins;
+this is identity checking, not a host-sealing guarantee.
+
+There are **72 effective observation rows**, including six corrected route
+controls. This is not a count of passing tests, acceptance runs or independent
+replications.
+
+| Exercised boundary | Observation |
+| --- | --- |
+| Safe invalid saved value | Baseline/release exit 1 unchanged; main exit 0, keeps saved `log-verbosity: maybe`, reports it, uses runtime `all`, and adds absent `away-gates: off` |
+| Invalid ownership | `notebook-ownership: maybe` exits 1 with configuration bytes unchanged at all three pins |
+| Missing schema-8 permissions | Baseline/release exit 1 unchanged; main exit 0 and writes `allowed-worker: ["external","internal","host"]` plus `review-policy: prefer-independent` |
+| Schema-7 migration | Main writes schema 8 with `["external","host"]` and `require-independent`; do not conflate this conservative migration with the schema-8 missing-field audit |
+| Two concurrent starts | One exit 0 and one exit 1; the latter rejects the saved invalid logging value. One sample does not prove concurrency safety or uniform startup behavior |
+| Outside-repository notebook-parent symlink | Main exits 1; peer notebook unchanged, but `ag.json` gains the missing key before rejection. The diagnostic says “no files changed” despite the observed configuration-byte change |
+| `skip-ag` | Release/main parser recognizes bare/active commands, rejects quoted/fenced/mentioned/control-setting forms; actual `agf start` exposes the active command. Corrected direct-route control passes, full-pipeline route fails, pipeline checks skip, unauthorized `skip-review` still fails |
+| Configured `away-gates` | Missing owner Design/Result Go fails when off, passes with supplied valid facts when on; blocking host gate, false journey-green and Result Stop still fail |
+| Claude attribution | Matching synthetic latest assistant gives `fixture-model/high` in release/main, versus baseline `claude/unknown`; a later user turn gives `claude/unknown` rather than reusing the old assistant stamp |
+| Closed-round Stop check | With synthetic commit/receipt and later working-config edits, release exits 2 and main exits 0. Changed Reply, absent receipt, wrong hash or wrong host all make main return false and exit 2 |
+
+The last three rows exercise synthetic facts/transcripts/receipts, not independent
+attestation of journey/review evidence, a real provider identity, or a successful
+owner acceptance. The receipt fixture does not prove the real `agf close` path
+created an authorized receipt. Reply-retry byte preservation was source-inspected,
+not independently smoke-tested.
+
+`git ls-remote --tags` searched the exact `v8.4.6` and `v8.4.7` refs: zero
+`v8.4.7` matches, with the same method detecting `v8.4.6` at `19457e78`.
+The release APIs independently supplied the publication result.
+
+## TeaPrompt assessment and candidate dispositions
+
+No named local methodology gap or recurrence was established. Existing
+[dispatch](../reflective-prompt-library/skills/reflective-dispatch/SKILL.md),
+[research evidence discipline](../reflective-prompt-library/skills/reflective-research/SKILL.md#state-ledger),
+[runtime boundary](../reflective-prompt-library/04-agent/runtime-trust-boundary.md),
+and [governed delivery](../reflective-prompt-library/skills/governed-delivery/SKILL.md#delivery-gate-sequence)
+already separate workflow choice, attributed evidence, host enforcement and
+acceptance authority.
+
+| ID | Candidate | Disposition / reason |
+| --- | --- | --- |
+| AFNEW-1 | Model/effort templates | Record-only; no efficacy evidence or local host requirement |
+| AFNEW-2 | `skip-ag` | Not adopted; an upstream runtime command, not permission to silently downgrade equivalent intent or omit retained review |
+| AFNEW-3 | Exact Claude identity | Record-only; synthetic transcript consistency is not observed provider/process attribution |
+| AFNEW-4 | Reference v2 / historical Reply bytes | Record-only; host persistence mechanism, not prompt enforcement |
+| AFNEW-5 | Persistent `away-gates` | Do not copy into governed delivery: TeaPrompt never auto-releases `intent` or `acceptance`; upstream Design/Result Go is not a substitute for those gates |
+| AFNEW-6 | Startup audit | Not adopted; missing authority fields can receive broader defaults, and failed startup can already have mutated configuration |
+| AFNEW-7 | Closed-round receipt shortcut | Record-only; record consistency does not prove product acceptance or an oracle result |
+| AFNEW-8 | Writing / brief / live journeys | Record-only; no named local content gap; live-host parity and improvement remain unverified |
+
+This does not reject Agentflow as a product. It rejects automatic mechanism
+promotion from a release label, synthetic receipt or author benchmark claim.
+
+## Acceptance criteria status
+
+- Authorized prior adoption committed/pushed: **met**, `f0f986d`, nine files.
+- Newest published release distinguished from current main: **met**, immutable
+  pins, API publication evidence and controlled remote-tag absence check.
+- Complete source delta classified: **met**, independent inventory check and
+  per-release production/prose/tooling split.
+- Runtime claims exercised or explicitly bounded: **met**, native controls,
+  source binding and untested paths named above.
+- Recommendation respects authority and local-gap evidence: **met**, eight
+  unadopted/record-only candidate dispositions; no core/domain/runtime cutover.
+
+## Failures, skipped checks and residual risks
+
+The first native run stopped at Git init because the sandbox also denied writes
+to `/dev/null`. Earlier completed observations were preserved. A literal device
+exception retained the network and `/Users` restrictions; only the failed
+close-receipt slice resumed, then exited 0.
+
+The initial route fixture used `not-required` rather than the source-declared
+`not_required`. Those six rows remain superseded in the ledger. Only that slice
+was corrected and rerun; release/main direct-route positive controls and retained
+review rejection then passed their observation contract.
+
+One behavior-discovery `find` failed all 26 judgement requests with API 403;
+its no-hit text was not absence evidence. Known-literal searches and immutable
+source diffs supplied the map instead.
+
+No upstream full-suite, live Codex/Claude journey, Windows/case-sensitive-FS
+check, actual owner acceptance, provider-model attribution or performance
+measurement was run. Author verification claims remain author claims. The
+previous 1,358-test TeaPrompt result belongs to the completed prior adoption,
+not to this survey or to upstream Agentflow.
+
+## Files and evidence
+
+Only this existing report was appended for the survey; library prompts, skills,
+tests, discovery index and prior dated decisions are intentionally unchanged.
+The new survey report section is not included in the earlier `f0f986d` push.
+
+- Evidence/state ledger: `local://agentflow-newest-survey-ledger-2026-10-02.json`.
+- Disposable probe source: `local://agentflow-newest-probe-2026-10-02.cjs`.
+- Corrected route slice: `local://agentflow-newest-skip-controls-2026-10-02.cjs`.
+- Sandbox policy: `local://agentflow-newest-sandbox-2026-10-02.sb`.
+
+## Remaining work and human review needs
+
+None for the requested survey. The evidence is sufficient for its bounded
+version/delta question: identities, inventory and exercised claims are verified;
+unrun safety/parity/efficacy claims are explicit unknowns. New installation,
+runtime adoption, permission-policy changes or oracle/acceptance cutover would
+need a named local requirement and separate authority; this survey supplies none.
+
+Owned upstream checkouts and execution fixtures were removed after retaining
+the evidence and probe sources: the same canonical-path check observed the
+scratch before deletion and no remaining path afterward. No survey commit or
+push was performed.
+
+# Final Report — Recent Surveys Parallel Verification (2026-10-02)
+
+## Goal and summary
+
+User direction: "Rethink in parallel: verify all surveyed things recently and
+docs or skills being updated." Seven independent-context review lenses covered
+all 21 repository survey/panel records dated 2026-09-21 through 2026-10-02,
+plus the report-only newest Agentflow survey. Earlier records were included only
+where this batch adopted or superseded their wording.
+
+**Parent verdict: AGREE WITH CHANGES.** Existing adoption/no-change decisions and
+the host-owned runtime boundary stand. The review identified 18 findings:
+two P2 source/contract classification issues and sixteen P3 precision,
+provenance, snapshot or clarification issues. Repository gates passing does not
+make those claims true. Required corrections are recommendations, not applied
+repairs; a verification request does not authorize rewriting the reviewed
+contracts, changing an oracle, installing a runtime, or committing/pushing.
+
+The retained ledger contains complete lens findings/explanations, source and
+consumer coverage, every parent adjudication, actual consumer outputs, the
+initial failed output, unchanged source hashes and current gate receipts:
+`local://recent-surveys-parallel-review-2026-10-02.json`.
+
+## Complete inventory and traceability
+
+Paths below are under `reflective-prompt-library/plans/` unless stated otherwise.
+The ledger preserves the inspected pins and primary-source/receipt limits in
+each named lens's full explanation. "Checked" means the stated evidence scope,
+not reproduced upstream effectiveness or production acceptance.
+
+| Record | Lens | Decision/current consumer checked |
+| --- | --- | --- |
+| `agentflow-8.3-delta-survey-2026-09-21.md` | Runtime | Pin `0abf416` against `fcb6878`; source-only delta; CA-1 coverage-attribution wording on `04-agent/external-adoption-review.md`; two factual corrections recommended. |
+| `teabrain-concepts-experiments-survey-2026-09-21.md` | Experimental | Pin `27b4d25`; governance vocabulary and artifact-complete boundary; later S4 pack-load receipts supersede inference-only attribution; TB-* decisions unchanged. |
+| `fifth-gen-prompt-taxonomy-rethink-2026-09-21.md` | Experimental | ROPE paper and record-commit inventory; exact seven-list attribution overclaims its source; RT-* no-change/exclusivity rejection stands. |
+| `agentflow-8.3.2-delta-survey-2026-09-22.md` | Runtime | Pin `6d699038` against `0abf416`; schema 8 and stream/recovery prose; no adoption; changed-file count correction recommended. |
+| `ember-snn-llm-survey-2026-09-22.md` | Experimental | arXiv `2604.12167v1` and retained paste; N=1/author-claimed/code-unreleased limits; EM-* no-change and TB-1 cross-link, not authorization. |
+| `hotline-verification-redundancy-survey-2026-09-22.md` | Experimental | Primary treaty/factsheet distinctions; 1971 modernization versus accident agreement; HL-* no-change. |
+| `pstack-survey-2026-09-22.md` | Verification Map | `cursor/plugins` pin `53e579f`; pilot's later authorization/execution supersedes the initial deferred row; registered `verification-map-generator`, off core routing. |
+| `pstack-synthesis-survey-2026-09-22.md` | Verification Map | Same pin, 23 playbooks and fictional example; no pstack mechanism adopted; PS2-7 protocol and later pilot evidence distinguished. |
+| `handover-docs-survey-2026-09-23.md` | Verification Map | Local kit principles and non-sensitive template scope; PK lesson only; documented enumeration is 16, not 15, with historical-read limits preserved. |
+| `self-governance-dogfood-2026-09-24.md` | Verification Map | R13 exclusions, registry-shrink check, portable commands and convention-only acceptance header; current map metadata is stale, not a new product failure. |
+| `devops-agentic-trends-survey-2026-09-28.md` | Factory | Primary source claims and DT-4's exact capability-token sentence; broker enforcement remains host-owned; Faros citation/denominator repair recommended. |
+| `software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md` | Factory | Six SF-* no-change decisions and host boundary; unsourced numeric and universal-correctness/effectiveness claims need qualification. |
+| `software-factory-rethink-panel-record-2026-09-28.md` | Factory | `738d0b3` file label 8.3.3; SFR-1 cues and SFR-2 recipe landed; SFR-3 rejected/SFR-4 held; packet-deletion citation is not canonical recipe authority. |
+| `agentflow-8.4.1-delta-survey-2026-09-30.md` | Runtime | Requested tag `ab80a4d` distinct from later main; retained sandbox receipts; AF841-M1 declares oracle owner/seal/change protocol while the host enforces it. |
+| `coordinate-codex-tasks-eval-survey-2026-09-30.md` | Eval Guardrail | Anthropic `8a1541c4`, coordinator `bfdc289d`, retained probes; instruction-only isolation/default-test/timed-wake limits; ECT-* unadopted. |
+| `stop-that-shit-survey-2026-09-30.md` | Eval Guardrail | `749c921e`, distinct tag/package identities and corrected offline receipts; fail-open/policy/host-effect boundaries; STS-* mechanisms unadopted, earlier XM-11 separate. |
+| `rrsi-survey-2026-09-30.md` | Eval Guardrail | `be50316e`, code and selection controls; gains author-claimed; RRSI-* unadopted; unrederived signature/site claims remain limited. |
+| `agent-execution-assurance-taxonomy-survey-2026-09-30.md` | Factory | Survey conclusions versus later map promotion reconciled; AEAT-4 REQ/AC-to-oracle/driver/evidence join remains held for a named product. |
+| `oh-my-openagent-survey-2026-10-01.md` | Runtime | `37659a4`, tag distinction, standalone-runtime pivot and prompt-versus-code boundaries; OO-* no-change; count/path/ref-label corrections recommended. |
+| `methodology-only-rethink-panel-2026-10-01.md` | Governance | MR-1..4 landed on named policy/PK surfaces; MR-5 held/MR-6 rejected; author-side consumer tests do not become a shipped runner. |
+| `human-cognition-adoption-2026-10-02.md` | Cognition | 41 adaptations plus nine support docs; 50 per-file hashes matched; HCC-1..3 on five existing surfaces, HCC-4/5 rejected/no-change; aggregate-digest method unverified. |
+| Newest Agentflow survey in this report | Runtime | `ab80a4d` baseline, published `19457e78` 8.4.6, later `216c75f` file label 8.4.7; 44 changed-file entries and 72 bounded observations; record-only. |
+
+Auxiliary Governance coverage: `flow-pack-usage-log.md`, checkpoint runbook,
+dormant specs, whole-project roadmap, all current pack/policy/discovery surfaces.
+The 18 invocation rows, paired/solo split, dated supersessions, G9/AS9 duties and
+held queues were checked. No 2026-10-11 verdict was executed early.
+
+## Findings and parent adjudication
+
+Locations refer to current displayed files; full original reviewer locations and
+evidence remain in the ledger. All recommendations below are **unapplied**.
+
+| ID | Location | Adjudication and smallest correction |
+| --- | --- | --- |
+| Factory-1 (P2) | `04-agent/workflow-recipes.md:215-216` | Confirmed: deterministic/runtime/external-primary/independent-model items are evidence **channels**, not the canonical four dimensions (existence, number/text, attribution/process, extrapolation). Rename the category only; do not add mandatory self-assessment or change Gate 6. |
+| Experimental-1 (P2) | Fifth-gen record `:3,27`; PK `:164`; case studies `:375` | Confirmed source-attribution overclaim: arXiv `2409.08775v2` supports requirements-oriented ROPE, not the enumerated seven-category list. Treat the list as the supplied object with unverified exact provenance; propagate the qualification to rollups. Exclusivity rejection stands. |
+| Factory-2 (P3) | SDLC record `:349-351` | Unmeasured elimination of the verification bottleneck is design intent, not a result. Adjacent "provably prevents ... incorrect or malicious code" likewise exceeds finite harness/oracle coverage; qualify it rather than promising universal correctness. |
+| Factory-3 (P3) | SDLC record `:149,158,197` | Correlation approaching 1.0 and 90% failure filtering have no supplied measurement. Remove the figures; retain qualitative correlated-failure risk and explicitly unmeasured effectiveness. Do not save them as an "inference bound." |
+| Factory-4 (P3) | DevOps record `:39,61,86,123`; SDLC record `:193` | Numbers are corroborated, not proven fabricated. Separate the article's one-bank anecdote from the primary Faros report, preserve median/per-PR qualifiers and observational-design limits. |
+| Factory-5 (P3) | SFR record `:100` | Canonical recipe requires a readable packet; deletion belongs to the managed host manual/panel convention. Correct the attribution without promoting host convention into repository authority. |
+| Runtime-1 (P3) | Agentflow 8.3 record `:73,79-84` | 82 total changed files, including 42 test files; "~40" only approximates non-test files. `delegation-route.js` is modified +399/-8, not new. Retain +6933/-2024 and source-only scope. |
+| Runtime-2 (P3) | Agentflow 8.3.2 record `:59` | Immutable span `0abf416..6d69903` changes 16 files, not "~14"; no disposition/runtime inference changes. |
+| Runtime-3 (P3) | OmO record `:67,96` | 18 SKILL.md catalog entries, not 16; actual installer path is `packages/get-worker/scripts/install.sh`. |
+| Runtime-4 (P3) | OmO record `:48` | Historical "main HEAD" attribution unverified. Use **checked commit**; present dev/master ancestry does not establish historical dev HEAD either. Immutable pin stands. |
+| Experimental-2 (P3) | Fifth-gen record `:34` | At record commit `a2b74f0`: context 7, agent 12, domain 7, nine core plus four domain packs, 13 examples. Date the correction; do not substitute today's inventory. |
+| VerificationMap-1 (P3) | Handover record `:3,17,47,55`; PK `:129,151` | Documented structure totals 16 (1+1+9+2+3), contradicting 15. Correct the enumeration with a dated note; no VCS/per-file historical receipts authorize inventing a retroactive 16-file full-read receipt. |
+| VerificationMap-2 (P3) | `features/test-suite.md:3-23` | Active metadata drift: covered tests changed after its 2026-09-24 verification. Current drive passes 1358; historical 1290 is explicitly generation-time, not an exact-count oracle. Refresh metadata only from actual source/run evidence. |
+| VerificationMap-3 (P3) | VMG skill `:62` | Optional boundary clarification, not an established sealing promise: readonly is convention unless a host enforces it. Root acceptance header and Factory Rule 2 already assign/disclaim enforcement; add no mechanism automatically. |
+| VerificationMap-4 (P3) | PK Decision Index `:132-136,150-153` | Optional dogfood pointer improves discoverability, but the index explicitly is a map, not an archive. Existing record/usage-log/R13 traceability means no mandatory-index violation was proved. |
+| Cognition-1 (P3) | Human-cognition record `:15`; retained ledgers | Legacy `bf4e60...` aggregate derivation remains undocumented. Failed guessed recipes do not prove a bad hash. Annotate the limit or recover the real method; 50 per-file identity checks stand. |
+| Cognition-2 (P3) | Human-cognition record `:17-27` | Seven selected table rows do not expose all ten checked publications. Name the three parent-override sources, with actual abstract/opening access bounds. |
+| Governance-1 (P3) | Usage log `:266-274` | Informational live-snapshot issue: the 2026-10-01 S5 EOF fingerprint was dated correctly, then the session grew. Keep history; annotate live-source limits and rescan before checkpoint reliance. No count/classification correction follows from growth alone. |
+
+### Independently checked primary-source distinction
+
+The [IT Revolution article](https://itrevolution.com/articles/why-isnt-ai-adoption-showing-up-in-your-pl/)
+attributes roughly +441% review time and +243% incidents **per PR** to one bank
+team, separately mentioning the 22,000-developer/4,000-team Faros population.
+The [primary Faros 2026 report](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf)
+does publish population metrics: +441.5% **median** PR-review time, +242.7%
+incidents **per PR**, and +57.9% monthly incidents. Its methodology uses
+within-company/within-team observational comparisons, Spearman correlations,
+at least six companies per reported metric and p<.05, with excluded outliers.
+This corroborates the reported figures, not causal inference, every developer's
+experience, or independently verified raw telemetry.
+
+The [ROPE paper](https://arxiv.org/html/2409.08775v2) identifies requirements-based
+prompting and its training study; it is not provenance for the exact pasted
+seven-item enumeration. The three omitted human-survey override sources are
+[Kahneman/Klein 2009](https://pubmed.ncbi.nlm.nih.gov/19739881/),
+[Hauenstein et al. 2025](https://pubmed.ncbi.nlm.nih.gov/39630638/), and
+[Ezra/Feldman/Kupfer 2021](https://www.ijcai.org/proceedings/2021/0025.pdf);
+their actual access limits remain in the followup ledger.
+
+## Exercised verification
+
+### Current repository drive
+
+- `make all`: 1,358 tests passed; all eight validator commands completed with
+  zero errors; ROUTE-001/002/003 were 100% on 128/138/108 fixture paraphrases.
+  Full receipt: `artifact://1361`.
+- Warnings remain: one AGS length warning and 35 record-hygiene access-date
+  advisories. They are not silently reported as zero.
+- `wc -m`: generator 19,890; loop 19,985; AGS 27,126. Both flow packs remain
+  within the 20,000-character bound; AGS's existing warning is unchanged.
+- These are structural/regression guards and offline template-consumer evidence,
+  not proof all research claims are true or deployed hosts enforce the contracts.
+
+### Five fresh current-source consumer scenarios
+
+All five source hashes matched the retained adopted bytes. Six stateless,
+tool-free completion calls were made: five initial calls plus one context repair.
+Requested model alias `default`; resolved model identity unknown. Parent inline
+rubric review is not an independent grader or a baseline comparison.
+
+| Current surface | Exercised scenario | Final selected criteria |
+| --- | --- | --- |
+| `skills/reflective-research/SKILL.md` | Bank anecdote versus study population, excerpt-only access, unmeasured 90%/universal guarantees, host/adoption boundaries | 5/5 |
+| `05-domain/research.md` | Same evidence packet; source/date/unknown retention | Initial 4/5; explicit-date corrected fixture 5/5 |
+| `skills/reflective-review/SKILL.md` | Equal-accuracy/equal-Brier confidence reduction; construct separation; hash integrity versus efficacy; unverified versus fabricated | 5/5 |
+| `01-thinking/critical-thinking-check.md` | Same synthetic confidence case; no universal ability/causal/human-effect inference | 5/5 |
+| `05-domain/learning-coach.md` | Unknown French level, two 8-minute sessions, corrected unprompted performance, delayed new-menu transfer, voluntary rest and untested-audio limits | 5/5 |
+
+**Initial result: 24/25; final selected criteria: 25/25.** The standalone research
+output initially asserted this conversation was 2026-08-12 and falsely called
+the supplied article future-dated. The stateless fixture had not provided a
+current date. The initial output is retained; only that input received the
+authoritative review date 2026-10-02 and was rerun. No skill bytes or rubric
+items changed; the four successful cases were not replayed.
+
+Native arithmetic independently confirmed the supplied five outcomes:
+accuracy .60 in both arms, Brier .28 in both arms, constant-confidence
+correct/error separation zero. The outputs rejected inferred metacognitive
+efficiency, source-hash-to-benefit and missing-citation-to-fabrication claims.
+This proves only selected fixture behavior; it does not establish general
+temporal reliability, marginal prompt improvement, human learning benefit,
+French comprehension, or runtime enforcement.
+
+## Acceptance criteria and disagreement
+
+| Criterion | Status | Evidence/boundary |
+| --- | --- | --- |
+| Every recent record inventoried and assigned | Met | 21 repository records plus one report-only survey; auxiliary governance consumers also covered. |
+| Source-to-decision-to-current-consumer traceability | Met within stated limits | Complete raw lens reports, inspected pins/receipts and parent locations in retained ledger. |
+| Concrete discrepancies adjudicated | Met for review, not remediation | 18/18 classified; corrections explicitly unapplied; historical snapshots and optional clarifications not mislabeled mandatory defects. |
+| Actual current consumer behavior exercised | Met within fixture | Five source-bound scenarios, retained initial failure, one context repair, native arithmetic and current repository drive. |
+| Unknowns and authority preserved | Met | No new skill/runtime/oracle/adoption gate; no premature checkpoint; provider/host/efficacy limits remain unknown. |
+
+The frame test did not justify runtime or skill proliferation: present adopted
+surfaces are representable in existing contracts and host preconditions.
+It also did not justify an unconditional "all updates correct": the adopted
+recipe's channel/dimension label and source attribution require correction.
+
+Parent rejected three overstrong readings: current branch ancestry cannot prove
+historical dev HEAD; no-VCS kit counts cannot invent prior full-read receipts;
+an omitted optional Decision Index row is not a broken mandatory contract.
+Faros figures were narrowed by citation/denominator, not accused of fabrication.
+GovernanceAudit's raw label is OK_WITH_LIMITS, not a supplied canonical AGREE;
+it is preserved as returned. Parent supplies the canonical terminal decision.
+
+Socratic checks retained with the lens results: can same-family source/rubric
+agreement establish efficacy; do immutable pins prove runtime enforcement; does
+a recorded-use-only population make unknown demand zero; and can a green suite
+validate a misattributed quantitative claim? Strongest objection: fixture authors
+and reviewers share a host/model channel, no independent grader/baseline was
+established, and external operational benefits remain unmeasured.
+
+## Files, residual risks and next action
+
+Only this existing report received an append-only review deliverable.
+`make all` re-emitted `plans/route-001-results.json`, `route-002-results.json`
+and `route-003-results.json`; those generated receipts are not new decisions.
+The reviewed source records, five adopted prompts/skills, registries, tests,
+security/acceptance oracles, historical ledgers and external corpus are
+intentionally unchanged. No commit, push, installation or surveyed-product
+provider journey was performed; the six host completion probes are disclosed
+above. No index regeneration was required for this report-only append.
+
+Residual unknowns: the legacy aggregate-digest recipe; some carried-forward
+provider/documentation observations and inaccessible OpenAI Atlas content;
+original paste citations/private source builds; raw per-arm timing/transcripts;
+live-host/Windows parity; STS host effects; independent model-family identity;
+benchmark/human/production efficacy; temporal reliability without explicit date
+context. Separate agent contexts are not seven statistical replications.
+
+The requested review is complete. A smallest subsequent repair would correct
+existing claim/metadata/rollup surfaces with dated supersessions, preserving
+adopted gates and oracle ownership; it does not need a new skill or runtime.
+Such repairs are proposals, not actions taken by this verification pass.
+The parent-owned temporary packet is removed after its evidence is retained;
+the cleanup observation is recorded in the ledger.
+
+### Candidate Adoption Ledger — review proposals only
+
+Every candidate below is **deferred/unapplied**. Evidence and exact locations
+are in the finding table and retained ledger; no new adoption is claimed.
+
+| Candidate IDs | Candidate / evidence | Status | Next action or trigger |
+| --- | --- | --- | --- |
+| Factory-1; Experimental-1 | Correct evidence-channel naming and seven-list source attribution; canonical dimensions and primary ROPE text | Deferred | Existing-surface documentation repair with affected rollups; preserve Gate 6 and settled dispositions. |
+| Factory-2/3/4/5 | Qualify universal/numeric claims, Faros denominators and packet-cleanup authority; inspected claims and primary sources | Deferred | Source-only repair with dated supersession; no runtime or oracle cutover. |
+| Runtime-1/2/3/4; Experimental-2; VerificationMap-1 | Correct source counts, installer path, ref labels and dated enumeration; pin-bound inventories and stated historical limits | Deferred | Update existing records/rollups without inventing historical receipts. |
+| VerificationMap-2 | Refresh active test-map verification metadata; current 1358-test drive | Deferred | Bind a metadata update to the exercised source/run; preserve generation-time counts. |
+| Cognition-1/2 | Expose digest-method uncertainty and three override sources; per-file integrity and access-bound receipts | Deferred | Annotate unknown derivation unless recovered; add source-table transparency without a human-efficacy claim. |
+| VerificationMap-3/4 | Optional readonly-boundary and dogfood-index clarification; existing host disclaimer and index-as-map convention | Deferred | Only if clarifying existing documentation; neither is a proved missing mandatory mechanism. |
+| Governance-1 | Preserve dated live-log fingerprint and qualify checkpoint reliance; append-only usage provenance | Deferred | Rescan the growing source before the checkpoint uses that fingerprint; do not rewrite the dated snapshot. |
+
+**Use-case recommendation:** study/review and bounded documentation correction,
+not runtime adoption or deployment. **Review decision:** Request changes to the
+identified claim/metadata surfaces; no change to the underlying settled
+adoption/no-change decisions. No human approval is needed for this completed
+read-only review. Any later permission/oracle/acceptance cutover requires its
+existing Human Review gate; this ledger supplies no such approval.
+
+# Final Report — Recent Survey Source Repairs (2026-10-02)
+
+## Goal and implementation summary
+
+Apply the minimal documentation repairs authorized by the user's continuation
+after the completed parallel review. All 18 findings now have an explicit
+disposition: **16 source/metadata corrections or qualifications applied; two
+optional clarifications intentionally unchanged**. No new skill, runtime,
+adoption decision, permission, registry entry or oracle was introduced.
+
+This dated section supersedes the preceding review's **deferred/unapplied**
+description for those 16 documentation repairs only. It does not turn a
+documentation correction into adoption approval or erase the historical review.
+Existing adoption/no-change decisions, named human gates and host-enforcement
+preconditions remain unchanged.
+
+Three independent repair contexts handled factory claims, runtime-source facts,
+and taxonomy/handover records; Main owned shared rollups, provenance, metadata,
+integration and verification. Separate contexts are not independent model-family
+evidence.
+
+## Findings and spec-to-artifact traceability
+
+| Finding | Disposition | Applied correction / preserved limit |
+| --- | --- | --- |
+| GovernanceAudit-1 | Qualified | Usage log keeps the 2026-10-01 fingerprint as a dated scan; S5 is growing, not current EOF evidence. Re-scan before checkpoint reliance; no new invocation or premature 10/11 verdict. |
+| ExperimentalAudit-1 | Corrected | Exact seven-item taxonomy is the user-supplied reviewed object with unverified literal provenance. ROPE supports adjacent requirements/design-by-contract work, not that enumeration. Banner, source ledger, PK and case-study row agree. |
+| ExperimentalAudit-2 | Corrected | At historical `a2b74f0`: context/agent/domain 7/12/7, nine workflow skills plus four governance/flow packs, 13 examples. Current inventory is not substituted. |
+| VerificationMapAudit-1 | Corrected | Handover structure totals 16 = 1+1+9+2+3. Historical 15-or-16 full-read coverage remains unreconstructable; no retroactive reading receipt was invented. PK references carry the same limit. |
+| VerificationMapAudit-2 | Refreshed | Test map names committed source baseline `f0f986d98af86702c5ecacac6daf095a06849686`, 2026-10-02, 106 modules and the observed 1358-test drive. Historical `7147e91` / 99 files / 1290 tests remains labeled; zero failures, not a fixed count, is the invariant. README points to the current map. |
+| VerificationMapAudit-3 | Intentionally unchanged | Optional readonly-boundary clarification is not a proved missing mechanism. Existing convention/host disclaimers stand; VMG skill and acceptance oracle unchanged. |
+| VerificationMapAudit-4 | Intentionally unchanged | Optional extra dogfood-index pointer is not a missing mandatory contract. Existing record, usage-log and R13 trail preserved; no redundant index entry added. |
+| RuntimeAudit-1 | Corrected | 8.2-to-8.3 delta: 82 total files, 42 test files, approximately 40 non-test files, +6933/-2024. `scripts/delegation-route.js` was modified +399/-8, not newly created. |
+| RuntimeAudit-2 | Corrected | `0abf416..6d69903` changes 16 files, not approximately 14. Immutable pins and source-only/no-execution disposition preserved. |
+| RuntimeAudit-3 | Corrected | OmO catalog has 18 `SKILL.md` entries; install path is `packages/get-worker/scripts/install.sh`. Source inspection does not prove an installed runtime. |
+| RuntimeAudit-4 | Qualified | Reviewed immutable pin remains `37659a4`; current ancestry cannot reconstruct its historical HEAD ref. No unverified main/dev attribution is presented as fact. |
+| CognitionAudit-1 | Qualified | `bf4e60…` remains a legacy identifier with undocumented/unverified aggregate derivation. Per-file identities and recorded ranges remain evidence; failed guessed recipes do not disprove the old identifier. No aggregate re-pin. |
+| CognitionAudit-2 | Corrected | Source table now names Kahneman/Klein 2009, Hauenstein et al. 2025 and Ezra/Feldman/Kupfer 2021 as the three parent-override sources completing the ten-publication list; abstract/opening-section limits remain explicit. |
+| FactoryAudit-1 | Corrected | Recipe's deterministic/runtime/external-primary/independent-model list is four evidence **channels**, not the canonical four evidence dimensions. No new mandatory self-assessment attestation; Gate 6 unchanged. |
+| FactoryAudit-2 | Qualified | Mitigation/prevention is design intent bounded by actual deployed harness/oracle coverage, not measured bottleneck elimination or universal correctness. Equivalent guarantee wording qualified. |
+| FactoryAudit-3 | Corrected | Unmeasured correlation approaching 1.0 and 90% filtering claims removed; qualitative shared-failure risk and unmeasured effectiveness retained. No numeric inference bound or correctness guarantee substituted. |
+| FactoryAudit-4 | Corrected | IT Revolution's bank-team +441%/+243%-per-PR anecdote separated from Faros' observational published report: +441.5% median PR-review time, +242.7% incidents per PR and +57.9% monthly incidents. Primary report cited; causal/raw-telemetry verification not claimed. |
+| FactoryAudit-5 | Corrected | Packet deletion attributed to the managed host manual/panel convention. Canonical recipe requires a reviewer-readable packet, not deletion. Historical deletion facts elsewhere are not rewritten. |
+
+## Acceptance criteria status
+
+| Criterion | Status | Evidence / boundary |
+| --- | --- | --- |
+| Correct claim naming, attribution and efficacy bounds | Met within source scope | Direct records, affected PK/case-study rollups, factory/taxonomy consumer outputs and current repository guards. |
+| Correct historical counts, paths and labels | Met | Pin-bound review evidence retained; corrected records consumed without implying installed/deployed compliance. |
+| Make provenance uncertainty explicit | Met | Legacy digest, three override rows and dated live-log qualification; original extraction failure and focused output both retained. |
+| Refresh active metadata against an exercised source/run | Met | Current 1358-test drive, 106 modules, committed baseline and separate generation-time counts. Baseline commit is not a new commit or whole-working-tree digest. |
+| Exercise the changed surface and preserve failures | Met within fixture | Five fresh tool-free source consumers plus one focused extraction; actual requests, excerpt hashes, outputs and per-criterion grading in the repair ledger. |
+| Publish every disposition without cutover | Met by this append | All 18 rows above; prior review ledger and settled contracts unchanged. Post-publication validation is recorded in the repair ledger. |
+
+## Tests and checks run
+
+- `python3 reflective-prompt-library/plans/generate_index.py`: 186 indexed files,
+  172 prompts, 14 skills. Regenerated after all library source edits.
+- `make all`, final corrected-source receipt `artifact://1425`: **1358 passed**
+  in 30.29 seconds; all eight validator commands completed without errors.
+  ROUTE-001/002/003 each reached 100% consistency on 128/138/108 phrases.
+- Observed warnings: one pre-existing AGS length warning, **27126 characters**;
+  35 record-hygiene advisories. They were not suppressed or reclassified as
+  newly repaired defects.
+- Fresh source-use consumers: evidence channels/human gates, factory metrics and
+  authority, immutable runtime pins, taxonomy/handover, and provenance/test-map
+  interpretation. Initial result **27/28 criteria**, four of five answers fully
+  satisfactory. The provenance answer incorrectly said the supplied override
+  names were unavailable.
+- The original input already contained all three names at lines 28–30 and the
+  parent-override annotation at 32–35. No product or oracle edit was made to
+  accommodate the model. One stateless **focused-source extraction** using
+  lines 11–35, the same task and rubric, met **6/6** criteria.
+- The selected four original passing answers plus that focused answer meet
+  **28/28** criteria. This is not a passing rerun of the original broad input:
+  its failure remains failed and retained. No causal guidance improvement,
+  general model reliability, independent grading or human efficacy is inferred.
+- Requests declare the authoritative date. SHA-256 fields bind the exact
+  supplied reader excerpts, not full files. Requested model is `default`;
+  resolved model-family identity remains unknown.
+
+Evidence ledger: `local://recent-surveys-repair-evidence-2026-10-02.json`.
+It preserves original review evidence, all repair dispositions, source excerpts,
+requests, failures, outputs, rubric observations, current gate and publication
+checks.
+
+## Files changed and consumer coverage
+
+Fifteen existing source/metadata documents changed:
+
+- Factory: `reflective-prompt-library/04-agent/workflow-recipes.md`;
+  `plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md`;
+  `plans/devops-agentic-trends-survey-2026-09-28.md`;
+  `plans/software-factory-rethink-panel-record-2026-09-28.md`.
+- Runtime records: `plans/agentflow-8.3-delta-survey-2026-09-21.md`;
+  `plans/agentflow-8.3.2-delta-survey-2026-09-22.md`;
+  `plans/oh-my-openagent-survey-2026-10-01.md`.
+- Taxonomy/handover: `plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md`;
+  `plans/handover-docs-survey-2026-09-23.md`.
+- Shared rollups/provenance: `reflective-prompt-library/PROJECT_KNOWLEDGE.md`;
+  `plans/external-adoption-case-studies-2026-06-20.md`;
+  `plans/human-cognition-adoption-2026-10-02.md`;
+  `plans/flow-pack-usage-log.md`.
+- Active verification map: `features/test-suite.md`, `features/README.md`.
+
+All `plans/` paths above are under `reflective-prompt-library/`. Generated
+`reflective-prompt-library/index.json` was refreshed; this existing report
+received an append. `make all` re-emitted the three `plans/route-00X-results.json`
+receipts, not new routing decisions.
+
+Direct source consumers, shared rollups, generated index and current guards are
+covered in the ledger. Alternate routing/registries are unchanged and exercised
+by the current gate. Installed contracts and surveyed-product runtime execution
+are not applicable: no skill edits, installs or upstream/provider journey.
+
+TWINS: searched `2409.08775|seven-item taxonomy attribution|15 kit files|15 template files` - found 4 other sites: `PROJECT_KNOWLEDGE.md` (three) and `plans/external-adoption-case-studies-2026-06-20.md` (one); all in-scope rollups repaired.
+
+Runtime/factory twin searches found no additional active wrong-count,
+guarantee or recipe-deletion-attribution sites outside their repaired targets.
+Sibling archives that report actual historical packet deletion are not
+requirement-attribution twins and remain unchanged.
+
+## Failures, limits and residual risks
+
+- First five completion launches used an invalid argument shape and were
+  rejected by the host helper. Only those launches were retried with a prompt
+  string and options object; successful source preparation was not repeated.
+- The original provenance consumer's extraction failure is retained as above.
+  Focused success does not establish broad-context reliability.
+- The completed background receipt exposes the full gate output but not a
+  retrievable numeric process status through `proc://bg_35`; no separate exit
+  code is asserted. Every expected validator/route stage through the final
+  `Eval passed` was observed. Metadata lookup failures are retained in the
+  ledger; the successful gate was not rerun just to obtain that field.
+- Exact pasted-taxonomy provenance, historical handover full-read coverage,
+  historical OmO HEAD ref and legacy aggregate-digest derivation remain
+  unknown. Qualifications resolve the documentation defects, not the missing
+  historical facts.
+- Published scientific/vendor source text is not raw-data replication.
+  Human benefit, production effectiveness, live-host/Windows parity, and
+  surveyed-product permission enforcement were not exercised or claimed.
+- No scaffold or throwaway script was added. Source inputs and execution
+  receipts remain in the session ledger; prior ledgers and external corpus are
+  intentionally unchanged.
+
+## Remaining work and Human Review
+
+None for this bounded repair. Before the future checkpoint relies on the live
+S5 fingerprint, re-scan the complete then-current source and record its actual
+boundary; this repair does not perform or advance that verdict.
+
+No commit, push, installation, runtime-policy change or oracle cutover occurred.
+Any later permission/oracle/acceptance cutover still requires its existing
+Human Review gate; this repair ledger grants no such authority.
+
+# Final Report — MGD Review, Documentation and Publication (2026-10-02)
+
+## Summary and implementation
+
+User direction: **"Review Update and Commit Push"** after the arXiv
+`2610.01372` survey. Reviewed the 17 already-staged recent-survey source/metadata
+repairs, published one source-bound MGD record, added three discovery pointers,
+and corrected one remaining source-citation defect. Publication scope is
+**18 files**: the existing 17 plus the new MGD record.
+
+MGD remains **reference-only**. All seven MGD-* dispositions preserve the
+existing loop, oracle-owner, failure-classification and consumer contracts.
+Predicate-level accounting is a product-bound audit target with an unverified
+local deficit, not a new skill, runner, schema, routing rule or mandatory
+four-form requirement. AEAT-4's independent acceptance-oracle join remains held.
+
+This dated publication follows the earlier research-only and repair-only
+sections; their no-commit/no-push statements describe those completed turns,
+not a restriction on the user's later explicit publication direction.
+
+## Review findings and corrections
+
+Two read-only review contexts checked the original staged repair slices,
+without running checks or editing files mid-flight. Separate contexts do not
+establish independent model-family evidence.
+
+- Factory/verification-map review found no new defect in evidence-channel
+  naming, qualified efficacy claims, Faros denominators, historical/current
+  metadata, packet-cleanup attribution or the 18-finding repair dispositions.
+- Source/provenance review found one low-priority residual: the corrected OmO
+  installer row still cited `omo-native/compiled-update.ts` without `packages/`.
+  Main corrected it and the same citation class in six rows: updater, both DAG
+  references, memory recall gate, Boulder storage and ultrawork `codex.md`.
+- Exact pin `37659a4c15cdbb5e2eb10d21109ae42829bcf2cd`: raw updater/prompt
+  sources and a narrow DAG contents endpoint resolved; retained tree entries
+  resolved `packages/boulder-state`, its `src/storage/stale-work.ts`, and
+  `packages/memory-core/src/recall/gate.ts`. A dated note supersedes the earlier
+  package-relative shorthand. These are source checks, not runtime receipts.
+- The original 18 recent-survey findings retain their dispositions:
+  16 applied source/metadata corrections or qualifications, two optional
+  clarifications intentionally unchanged. The citation follow-through extends
+  RuntimeAudit-3's source hygiene, not any adoption decision.
+
+## Acceptance criteria and spec-to-artifact traceability
+
+| Criterion | Status | Artifact / evidence boundary |
+| --- | --- | --- |
+| Preserve paper identity, full-text scope and author-report limits | Met | `plans/mgd-form-theory-survey-2026-10-02.md`; versioned PDF, official metadata, private-artifact and single-binding limits. |
+| Keep enumeration, execution completeness and world judgment distinct | Met within source-use fixture | Appendix A interpretation and explicit incomplete implementation; fresh reader rejects partial/empty/full-world overclaims. |
+| Preserve source counts and correlated-oracle risk | Met | Current/historical/subset rule populations, repeated telemetry denominator, toy wrong-oracle counterexample and unmeasured S=T faithfulness. |
+| Map local contracts without inventing a deficit or adoption | Met | Seven MGD-* rows, positive checked source matches, MGD-5 scoped trigger/falsifier and unchanged AEAT-4 hold. |
+| Provide durable discovery without a second rulebook | Met | Decision Index, external case-study ledger and reference-only factory paragraph; ten local targets and three fragments resolve. |
+| Apply confirmed review correction across its citation twins | Met | OmO record's six corrected citation rows and dated supersession; pinned positive source checks above. |
+| Verify integrated final library source | Met | Final `make all` receipt `artifact://1607`; 1358 tests, all validator/route stages, success-only exit sentinel. |
+| Preserve governed scope and historical evidence | Met | No skill, test, registry, oracle, runtime or source-corpus edit; preceding repair/review sections retained. |
+
+## Tests and checks run
+
+- Index regeneration: **187 indexed files, 173 prompts, 14 skills**.
+- Final command: `make all && printf '\nMGD_FINAL_GATE_EXIT=0\n'`.
+  Observed **1358 passed in 23.19s**; every validator completed without errors;
+  ROUTE-001/002/003 reached **100% consistency** on **128/138/108** phrases.
+  The sentinel appeared only after `make all` succeeded: exit **0**.
+- Final link/lint population: **230 files**. One pre-existing AGS length
+  warning remains (**27126 characters**); **35** record-hygiene advisories.
+  No warning was suppressed and no oracle or assertion weakened.
+- First integrated gate was also green, but emitted one new access-date
+  proximity advisory. The already-recorded empirical citation date was moved
+  from two lines after its citation to immediately before it; no facts changed.
+  The final dated-source gate above removed that advisory.
+- One stateless tool-free documentation consumer, requested model `default`,
+  made **12/12** expected structured decisions across coverage, wrong-oracle,
+  denominator/causality, adoption and authority scenarios. Its next-action
+  answer preserves the correct program and requires authorized oracle-owner
+  correction; its population explanation separates 95/188/235 and
+  216148 reports/1748 sites. Resolved model-family identity is unknown.
+- Exact consumer input/hash and output are retained. That sample precedes
+  only the access-date line relocation; it was not rerun or represented as
+  a new passing sample after the formatting change. Final source identity and
+  final repository gate are separately bound.
+- Throwaway local-link/fragment smoke consumed four documents: **10 new local
+  links**, **3 heading fragments**, **0 failures**. This checks heading targets
+  the ordinary link validator strips; it is not remote-availability or
+  browser-layout proof.
+
+No permanent test was added for prose or copied wiring. The original survey's
+two Bun constructive probes remain synthetic scope checks, not PIT execution,
+upstream implementation replay, human efficacy or benchmark replication.
+
+## Files changed
+
+- New reference:
+  `reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md`.
+- Additional edits on existing staged surfaces:
+  `reflective-prompt-library/PROJECT_KNOWLEDGE.md`,
+  `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`,
+  `reflective-prompt-library/04-agent/workflow-recipes.md`,
+  `reflective-prompt-library/plans/oh-my-openagent-survey-2026-10-01.md`,
+  generated `reflective-prompt-library/index.json`, and this report.
+- The remaining already-reviewed source/metadata repairs are the fifteen
+  documents enumerated in **Recent Survey Source Repairs — Files changed and
+  consumer coverage** above. This publication includes those staged changes,
+  not unrelated repository work.
+
+Evidence ledger: `local://mgd-review-publication-2026-10-02.json`, linked to the
+original MGD survey and recent-survey repair ledgers. Publication transaction
+receipts are retained there and in the final reply, outside this commit's
+self-referential report. Session URIs are evidence provenance, not installed
+skill/runtime dependencies.
+
+## Failures, limits and residual risks
+
+- Semantic search returned no hits while its requests failed HTTP 403; no
+  absence conclusion was drawn. Known-path reads and literal searches supplied
+  the evidence.
+- The large raw GitHub tree was truncated mid-JSON; its first parse failed.
+  The bytes were retained and no complete-tree/absence claim was made.
+  Narrow pinned endpoints and positive retained entries resolved the citations.
+- An attempted semicolon-batched URL read became one malformed URL and returned
+  404. Only that failed read was retried as distinct calls; it is not evidence
+  that any individual source path was absent.
+- Source-text verification is not private telemetry replication or empirical
+  superiority. MGD's predicate-level accounting, semantic S=T leg, outer-loop
+  institution, portability and ROI limits remain explicit.
+- One model sample and parent grading do not establish independent review,
+  general model reliability, installed-agent compliance or host enforcement.
+- No scaffold, service, installation or throwaway file was created. Native
+  scratch logic ran in the retained kernel; its evidence is preserved without
+  exporting a runtime or changing the prior source corpus.
+
+## Remaining work and Human Review
+
+No documentation repair or verification remains for this scope. A future
+named-product predicate/oracle audit, new paper version, released application
+or second binding reopens only its relevant candidate; none is an unfinished
+authorized implementation. The future 10/11 checkpoint is not advanced.
+
+The user explicitly authorized the reviewed commit and configured-upstream
+push. No permission/oracle/runtime-policy cutover is included; any such future
+change retains its existing named-owner and Human Review gates.

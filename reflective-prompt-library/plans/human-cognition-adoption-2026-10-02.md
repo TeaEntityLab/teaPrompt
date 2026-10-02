@@ -12,7 +12,7 @@ This direction approves narrow edits for this survey family. It does not fire un
 
 The preceding survey inspected 41 condensed book adaptations and nine supporting documents in the user-supplied **Human Cheat Codes En** corpus: 50 Markdown files, 85 mechanism anchor ranges and nine final claim anchors. Its source-integrity audit reported zero changed source files. Those checks establish coverage and attribution, not fidelity to the original books or human benefit.
 
-Pinned corpus identity: `bf4e607a8215fbdded105ca88482d532dadce67ca22fb420a3468eabe62ba2c5`. Source names and ranges below identify that snapshot; the external directory, pasted survey and session ledger are provenance, not runtime dependencies of the installed skills.
+Retained legacy corpus identifier: `bf4e607a8215fbdded105ca88482d532dadce67ca22fb420a3468eabe62ba2c5`. **2026-10-02 provenance correction:** this supersedes “Pinned corpus identity”; the aggregate digest's derivation is undocumented and unverified, not disproven by unsuccessful guessed recipes. The 50 per-file SHA-256 identity checks and source names/ranges remain the snapshot evidence; no new aggregate was substituted. The external directory, pasted survey and session ledgers are provenance, not runtime dependencies of the installed skills.
 
 The preceding survey also checked ten primary publications, mostly abstracts or article openings, not all full papers or underlying datasets. The selected source findings below are carried forward as of 2026-10-02. Fleming/Lau and Wixted/Wells abstracts were read again on 2026-10-02. This record does not claim an exhaustive or current systematic review.
 
@@ -25,6 +25,14 @@ The preceding survey also checked ten primary publications, mostly abstracts or 
 | [Gignac/Zajenkowski (2020)](https://research-repository.uwa.edu.au/en/publications/the-dunning-kruger-effect-is-mostly-a-statistical-artefact-valid-/) | Author-university abstract; publisher access returned HTTP 403; carried forward as of 2026-10-02 | Quartile analysis confounds regression to the mean and better-than-average effects; do not retain a universal inverse competence-confidence law. |
 | [Wixted/Wells (2017)](https://pubmed.ncbi.nlm.nih.gov/28395650/) | Primary synthesis abstract, accessed 2026-10-02 | Adult confidence and identification accuracy can be strongly related under initial, uncontaminated, fair lineups without administrator influence and with immediate confidence statements. Do not generalize to contaminated procedures. |
 | [Sisk et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/29505339/) | Meta-analysis abstract; carried forward as of 2026-10-02 | Overall mindset associations/intervention effects were weak, with some contextual benefits; no support for mindset overriding talent, resources and environment. |
+| [Kahneman/Klein (2009)](https://pubmed.ncbi.nlm.nih.gov/19739881/) | Primary article abstract; carried forward as of 2026-10-02 | Intuitive expertise depends on environmental predictability and opportunity to learn regularities; neither blanket rejection nor unconditional trust in intuition follows. |
+| [Hauenstein et al. (2025)](https://pubmed.ncbi.nlm.nih.gov/39630638/) | Primary reanalysis abstract; carried forward as of 2026-10-02 | Controlling method variance reduced, eliminated or reversed some tournament team/training effects; journaling does not guarantee superforecaster performance. |
+| [Ezra/Feldman/Kupfer (2021)](https://www.ijcai.org/proceedings/2021/0025.pdf) | Abstract, introduction and model opening; carried forward as of 2026-10-02 | Random order, immediate irrevocable choice and selecting the maximum define the classic secretary model; changed selection/competition conditions do not support a universal 37%-of-time prescription. |
+
+**2026-10-02 source-table correction:** these three parent-override sources
+complete the preceding ten-publication list; the earlier seven-row selection
+omitted their names, not their checks. No full-paper, raw-data or human-benefit
+verification is inferred from the recorded abstract/opening access.
 
 ### Source Corrections Preserved
 

@@ -45,8 +45,8 @@ non-goal absent an owner sentence or a reproduced local failure.
 
 | Identity | Observed value | Boundary / tracking event |
 | --- | --- | --- |
-| Reviewed commit | `37659a4c15cdbb5e2eb10d21109ae42829bcf2cd` (main HEAD, 2026-10-01, merge of test-audit PR #9336) | Immutable research pin; recheck on next release-line or engine change. |
-| Release tag checked | `v5.1.7` → `89688165848b69121270682193b5ac2c175666de` | Tag and reviewed HEAD differ; no behavioral difference inferred from identity alone. |
+| Reviewed commit | `37659a4c15cdbb5e2eb10d21109ae42829bcf2cd` (checked commit, 2026-10-01, merge of test-audit PR #9336 — corrected 2026-10-02; originally labeled "main HEAD," but the historical branch-at-HEAD attribution is unverified) | Immutable research pin; recheck on next release-line or engine change. |
+| Release tag checked | `v5.1.7` → `89688165848b69121270682193b5ac2c175666de` | Tag and reviewed commit differ; no behavioral difference inferred from identity alone. |
 | Package | root `package.json` name `oh-my-opencode`, version `5.1.7`; npm package `omo-ai` | Name predates the rename; artifact ≠ reviewed tree. |
 | Engine | `senpi` v2026.9.30 (`@code-yeongyu/senpi`), fork of `badlogic/pi-mono` | Engine changes on senpi's own release line. |
 | License | SUL-1.0 (`LICENSE.md:26-27`): internal-business/non-commercial use only; no commercial distribution or paid SaaS; patent-retaliation clause | Source-available, not OSI. |
@@ -64,7 +64,8 @@ non-goal absent an owner sentence or a reproduced local failure.
 - Traced (coordinator): `packages/memory-core/src/index.ts` barrel and
   `git/`, `memfs/`, `recall/`, `reflection/` subtrees;
   `packages/omo-senpi/src/components/memory/wiring.ts:13,132-155` (Kibitzer
-  sidecar wiring); `packages/shared-skills/skills/` catalog (16 skills incl.
+  sidecar wiring); `packages/shared-skills/skills/` catalog (18 SKILL.md
+  entries — corrected 2026-10-02; originally "16 skills" — incl.
   `ulw-plan`, `ulw-execute`);
   `packages/shared-skills/skills/ulw-execute/SKILL.md` (orchestrator-only
   rule, goal/todo discipline, Boulder state);
@@ -73,13 +74,17 @@ non-goal absent an owner sentence or a reproduced local failure.
   `packages/boulder-state` (state machine over `.omo/boulder.json`).
 - Not run: no install, no `omo` execution, no provider calls. All behavior
   statements are source evidence, not runtime proof.
+- Citation correction (2026-10-02): source paths below now use the reviewed tree's
+  root-relative `packages/` locations, superseding the earlier package-relative
+  shorthand for updater, DAG, memory, Boulder storage and ultrawork prompt.
+  Pinned source/path checks do not add an installation or runtime receipt.
 
 ## Delta vs 2026-06-25 Record
 
 | 2026-06 record | 2026-10-01 observed |
 | --- | --- |
 | Plugin for OpenCode (Ultimate) + Codex (Light) | Standalone `omo` runtime on senpi; plugins kept as adapters/migration path |
-| `Team Mode`, `ultrawork`, hooks, MCPs | ultrawork persists as prompt doctrine; `mass ulw` now drives a real in-process DAG scheduler (`senpi-task/src/dag`, ~14k LOC, WAL store); hooks moved into engine components |
+| `Team Mode`, `ultrawork`, hooks, MCPs | ultrawork persists as prompt doctrine; `mass ulw` now drives a real in-process DAG scheduler (`packages/senpi-task/src/dag`, ~14k LOC, WAL store); hooks moved into engine components |
 | SUL-1.0 license badge | Unchanged: SUL-1.0 confirmed at `LICENSE.md` |
 | Hyperplan runtime judged non-goal (agent swarm + runtime engine) | Same verdict at larger scale: the machinery grew; the non-goal boundary did not |
 
@@ -88,12 +93,12 @@ non-goal absent an owner sentence or a reproduced local failure.
 | Claim (README/CHANGELOG) | Enforcement tier | Evidence |
 | --- | --- | --- |
 | "proves each step… checks the result on the real surface" | prompt only | `packages/prompts-core/prompts/ultrawork/*.md`; no runtime validates the surface check |
-| evidence reuse per target; re-review ≤2; full suite before final | prompt only | `codex.md:310-320,404-409`; one CLI helper exists for recording blockers, enforcement is self-policed |
-| "mass ulw → graph of agents" | real engine + prompt glue | `senpi-task/src/dag/` scheduler (dependency frontier, WAL, crash recovery); the *graph authorship* is model-written JS via `OMO_DAG_SDK_ROOT/sdk.js` |
-| session resume / stale work | enforced | `boulder-state` schema v2 + `stale-work.ts` transcript-mtime reconciliation (6h → paused) |
-| Kibitzer nudge = observation only | enforced | `memory-core/src/recall/gate.ts` rejects imperatives/second-person/Korean honorific request forms |
+| evidence reuse per target; re-review ≤2; full suite before final | prompt only | `packages/prompts-core/prompts/ultrawork/codex.md:310-320,404-409`; one CLI helper exists for recording blockers, enforcement is self-policed |
+| "mass ulw → graph of agents" | real engine + prompt glue | `packages/senpi-task/src/dag/` scheduler (dependency frontier, WAL, crash recovery); the *graph authorship* is model-written JS via `OMO_DAG_SDK_ROOT/sdk.js` |
+| session resume / stale work | enforced | `packages/boulder-state` schema v2 + `packages/boulder-state/src/storage/stale-work.ts` transcript-mtime reconciliation (6h → paused) |
+| Kibitzer nudge = observation only | enforced | `packages/memory-core/src/recall/gate.ts` rejects imperatives/second-person/Korean honorific request forms |
 | malformed tool args "repaired before they run" | partially verified | OpenCode `json-error-recovery` hook retries parse-failed calls; no pre-execution repair found in the traced paths — treat claim as [INFERENCE] |
-| install checksum verification | enforced at install, not update | `get-worker/scripts/install.sh` verifies SHA256SUMS; `omo-native/compiled-update.ts:50-61` `omo update` path emits raw curl+mv with no checksum [gap noted] |
+| install checksum verification | enforced at install, not update | `packages/get-worker/scripts/install.sh` verifies SHA256SUMS (path corrected 2026-10-02; originally `get-worker/scripts/install.sh`); `packages/omo-native/compiled-update.ts:50-61` `omo update` path emits raw curl+mv with no checksum [gap noted] |
 | computer-use safety | enforced | `crates/senpi-desktop-safety/src/gate.rs` five-check fail-closed gate + `UserReset` out-of-band resume |
 
 ## Candidate Adoption Ledger
@@ -109,10 +114,26 @@ non-goal absent an owner sentence or a reproduced local failure.
 
 ## Falsifiability
 
-This record is wrong or stale if: the `v5.1.7`→HEAD pin is wrong (recheck
+This record is wrong or stale if: the `v5.1.7`→checked-commit pin is wrong (recheck
 `git rev-list -1 v5.1.7` vs `37659a4`); senpi is replaced as engine; the
 OpenCode/Codex adapters are deleted rather than maintained; license changes
 from SUL-1.0; or a mechanism listed as "prompt only" gains runtime
 enforcement (recheck `prompts-core` vs `senpi-task` boundary). Any adoption
 requires an owner sentence plus a reproduced local failure per the standing
 adoption bar.
+
+## Source Corrections (2026-10-02)
+
+Adjudicated repairs to source-tier facts above; all OO-* dispositions and the
+record-only/no-adoption stance are unchanged.
+
+- The reviewed commit `37659a4c` is recorded as the **checked commit** of
+  2026-10-01, not "main HEAD": the historical branch-at-HEAD attribution is
+  unverified, and no historical dev-HEAD inference substitutes for it. The
+  tag identity (`v5.1.7` → `89688165`) remains distinct from the checked
+  commit; the `v5.1.7`→commit wording in Falsifiability was updated to match.
+- `packages/shared-skills/skills/` carries **18 SKILL.md catalog entries**,
+  not 16.
+- The install-checksum script is `packages/get-worker/scripts/install.sh`;
+  the earlier `get-worker/scripts/install.sh` path omitted the package
+  prefix.

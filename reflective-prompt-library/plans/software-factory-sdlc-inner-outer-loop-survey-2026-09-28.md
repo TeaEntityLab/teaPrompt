@@ -11,9 +11,9 @@
 How can software engineering transition from interactive, manual coding ("vibe coding" and line-by-line code review) to an autonomous **Software Factory** where:
 1. Humans author only high-level intents (`intent.md`), architectural specifications (`spec.md`), and testable acceptance criteria (`criteria.yaml`);
 2. Coding agents autonomously implement, compile, test, and repair software in their inner loop;
-3. Software correctness is mathematically and empirically guaranteed without humans manually reviewing hundreds of lines of agent diffs;
+3. Software correctness is established by deterministic oracles and outer-loop verification rather than by humans manually reviewing hundreds of lines of agent diffs — a design target bounded by deployed harness/oracle coverage, not an unconditional guarantee (corrected 2026-10-02);
 4. Agents are structurally prevented from "gaming tests" (weakening assertions, creating trivial mocks, deleting failing tests, or overfitting task descriptions);
-5. Human engineers are protected from the "Verification Bottleneck" (the 441% surge in review duration and 243% spike in production incidents).
+5. Human engineers are protected from the "Verification Bottleneck" (industry-reported ~441% rise in median PR-review time and ~243% rise in incidents per PR — attribution and denominators corrected in *Evidence vs Inference* below).
 
 ## Direct Recommendation (as of 2026-09-28)
 
@@ -70,7 +70,7 @@ To develop software automatically and correctly from human intents, specs, and c
 1. **Primary Source Research (2026-09-28):**
    - Anthropic Claude Academy: *The AI-Native SDLC Playbook* by Louis Claxton (checked 2026-09-28; [Claude Academy Course](https://academy.claude.com/courses/ai-native-sdlc-playbook)).
    - Addy Osmani: *Own the Outer Loop* (keynote & publication, checked 2026-09-28; [Addy Osmani Blog](https://daily.dev/posts/own-the-outer-loop-jdc7i9zwl)).
-   - IT Revolution / Enterprise Technology Leadership Journal: *Why Isn't AI Adoption Showing Up in Your P&L?* citing Faros AI 22k dev study (checked 2026-09-28; [IT Revolution Article](https://itrevolution.com/articles/why-isnt-ai-adoption-showing-up-in-your-pl/)).
+   - IT Revolution / Enterprise Technology Leadership Journal: *Why Isn't AI Adoption Showing Up in Your P&L?* citing Faros AI study figures (checked 2026-09-28; [IT Revolution Article](https://itrevolution.com/articles/why-isnt-ai-adoption-showing-up-in-your-pl/); correction 2026-10-02: its ~441%/~243% per-PR figures describe one bank team — population-level metrics come from the [primary Faros 2026 report](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf), checked 2026-10-02 — see *Evidence vs Inference*).
    - DZone: *The Inner Loop is Eating the Outer Loop* (checked 2026-09-28; [DZone Article](https://dzone.com/articles/inner-loop-is-eating-the-outer-loop)).
    - Refactoring.fm & Industry Telemetry on Coding Agent Benchmarks and Specification Gaming (Terminal-Bench 4.0, SWE-bench Verified, DeepSWE, checked 2026-09-28; [Refactoring.fm](https://refactoring.fm/p/outer-loop-gaming-tests-and-weekly)).
    - Modern Spec-Driven Development (SDD) frameworks and Loop Engineering literature (checked 2026-09-28; [Data Science Dojo](https://datasciencedojo.com/blog/loop-engineering-design-patterns/)).
@@ -146,16 +146,16 @@ To develop software automatically and correctly from human intents, specs, and c
    - *The Inner Loop has eaten the Outer Loop:* MicroVM sandboxes allow agents to execute builds, linters, unit tests, and integration tests inside their single execution turn, pulling traditional CI into the agent loop.
    - *Humans Own the Outer Loop:* As defined by Addy Osmani, human ownership shifts upwards to **Quality** (defining deterministic harnesses), **Verdict** (making the explicit decision to accept or block), and **Answerability** (carrying operational and legal accountability). The machine cannot define the criteria of its own success or approve its own release.
 2. **The Epistemic Illusion of Same-Model Multi-Agent Review:**
-   Prompting the same foundation model to play multiple personas (`Proposer` $\to$ `Reviewer` $\to$ `QA`) creates a dangerous illusion of consensus. Shared base weights and identical pretraining distributions cause failure correlations approaching 1.0 on complex architectural and security bugs. Sycophantic context leakage further causes reviewer personas to anchor on the proposer's self-justifications.
+   Prompting the same foundation model to play multiple personas (`Proposer` $\to$ `Reviewer` $\to$ `QA`) creates a dangerous illusion of consensus. Shared base weights and identical pretraining distributions create a correlated-failure risk on complex architectural and security bugs (the correlation magnitude is unmeasured; the original record's "approaching 1.0" figure was unsupported). Sycophantic context leakage further causes reviewer personas to anchor on the proposer's self-justifications.
 3. **Tripartite Decorrelated Verification Fabric:**
    True verification independence requires three orthogonal planes:
    - *Channel 1: Deterministic Oracles (Non-Model Plane):* Compilers, typecheckers, AST linters, property tests, mutation kill scores. A failure here is an unconditional blocker.
    - *Channel 2: Heterogeneous Judge Models (Cross-Model Plane):* Models from competing providers (e.g. Gemini judging Claude, or DeepSeek-R1 judging OpenAI) receiving strictly the signed spec and the raw git diff, with zero author transcript or chain-of-thought.
    - *Channel 3: Human Intent & Attested Runtime Evidence:* Before-and-after reproduction logs, UI interaction traces, and signed evidence ledgers.
-4. **Solving the Verification Bottleneck (441% Review Surge):**
+4. **Mitigating the Verification Bottleneck (Reported Review Surge):**
    Human engineers must not be forced to read raw agent code diffs. The Software Factory replaces raw diffs with **Proof-Carrying Diffs (PCD)**:
    - Pull requests must include an attested **Evidence Ledger** mapping every claim to observable artifacts across four dimensions (Existence, Number/Text, Attribution/Process, Extrapolation).
-   - An automated **L0–L5 Acceptance Ladder** (L0 Integrity $\to$ L1 Structural $\to$ L2 Behavioral $\to$ L3 Regression $\to$ L4 Scope $\to$ L5 Intent) filters out 90% of failures before human review.
+   - An automated **L0–L5 Acceptance Ladder** (L0 Integrity $\to$ L1 Structural $\to$ L2 Behavioral $\to$ L3 Regression $\to$ L4 Scope $\to$ L5 Intent) filters failures before human review (filtering effectiveness unmeasured; the original record's "90%" figure was unsupported).
    - Humans review only the L5 Intent Verdict and Evidence Ledger, reducing review cognitive load from hours to minutes.
 
 ---
@@ -169,7 +169,7 @@ To develop software automatically and correctly from human intents, specs, and c
 | **SF-C3** | **Anti-Gaming AST & Mutation Testing:** Synthetic AST fault injection with kill-rate thresholds ($\ge 85\%$) to defeat tautological and vanity tests. | Formal Verification & Testing | `flow-loop-harness` Loop Anatomy #1 (verifier preflight/exit-4 gate) & #5 (host permission precondition) as deterministic exit/precondition rules, not cryptographic sealing; `reflective-review` (Four evidence dimensions). Execution engine is host CI. | **Covered / Host Boundary.** Criteria declared in prompt; mutation runners are host tools. |
 | **SF-C4** | **MicroVM Ephemeral Sandboxes & Action Gateways:** Sub-50ms CoW sandboxes with zero ambient credentials, isolating execution from prompt context. | Infrastructure Runtime (Firecracker, Docker Cloud SBX, DigitalOcean) | `reflective-prompt-library/04-agent/runtime-trust-boundary.md` §2a & §4; `governed-delivery` host preconditions. | **Host Boundary (P7).** Prompt methodology defines trust boundaries; host hypervisors enforce them. |
 | **SF-C5** | **Tripartite Decorrelated Verification:** Piercing same-model multi-agent illusions via deterministic oracles, heterogeneous judge models, and attested runtime evidence. | Epistemic Verification (Osmani, Enterprise SDLC) | `reflective-review` ("same-model review is one epistemic channel; high-risk PASS needs non-model channel"), `governed-delivery`. | **Covered.** Core verification doctrine across TeaPrompt review skills. |
-| **SF-C6** | **Proof-Carrying Diffs (PCD) & L0–L5 Cognitive Filter:** Solving the 441% review bottleneck by replacing raw diff reviews with attested Evidence Ledgers and automated gate filters. | Delivery Governance (Faros AI, ETLJ 2026) | `governed-delivery` (`evidence-ledger.yaml`, `acceptance-record.yaml`), `skills/agent-governance-scaffold` (Acceptance ladder L0–L5). | **Covered.** Complete 1:1 structural alignment. |
+| **SF-C6** | **Proof-Carrying Diffs (PCD) & L0–L5 Cognitive Filter:** Addressing the reported review-time bottleneck by replacing raw diff reviews with attested Evidence Ledgers and automated gate filters. | Delivery Governance (Faros AI, ETLJ 2026) | `governed-delivery` (`evidence-ledger.yaml`, `acceptance-record.yaml`), `skills/agent-governance-scaffold` (Acceptance ladder L0–L5). | **Covered.** Complete 1:1 structural alignment. |
 
 ---
 
@@ -190,11 +190,11 @@ To develop software automatically and correctly from human intents, specs, and c
 
 | Claim | Status | Basis |
 | --- | --- | --- |
-| Faros AI 22k dev study reports +441% review duration and +243% incident spike | Observed | Enterprise Technology Leadership Journal / IT Revolution (2026). |
+| Faros AI reports a large review-time/incident surge for AI-assisted teams | Observed (primary report re-checked 2026-10-02) | The primary [Faros AI Engineering Report 2026](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf) reports +441.5% **median** PR-review time, +242.7% incidents **per PR**, and +57.9% monthly incidents, from observational within-company/within-team comparisons (≥6 companies per metric, Spearman p<.05) — not causal inference or verified raw telemetry. The IT Revolution article (checked 2026-09-28) attributes its rounded ~441%/~243% per-PR figures to **one bank team**, separately citing the Faros 22,000-developer/4,000-team population; the original wording conflated the anecdote with the population study. |
 | Louis Claxton / Anthropic AI-Native SDLC defines continuous artifact loop | Observed | Claude Academy published course materials (checked 2026-09-28). |
 | Addy Osmani defines Outer Loop as Quality, Verdict, Answerability | Observed | AI Engineer World's Fair address and blog publications (checked 2026-09-28). |
 | Ephemeral MicroVM sandboxes (Firecracker, Docker Cloud SBX) achieve <100ms startup | Observed | Docker and AWS technical documentation (checked 2026-09-28). |
-| Same-model multi-agent review exhibits near-perfect failure correlation on complex bugs | Observed | Research on model sycophancy, reasoning faithfulness, and shared pretraining bias. |
+| Same-model multi-agent review carries correlated-failure risk on complex bugs | Observed (qualitative; magnitude unmeasured) | Research on model sycophancy, reasoning faithfulness, and shared pretraining bias. The original record's "near-perfect" correlation magnitude had no supplied measurement (corrected 2026-10-02). |
 | Agents routinely game test harnesses via assertion weakening, test deletion, and mocks | Observed | Benchmark reports on SWE-bench Verified and Terminal-Bench 4.0 (2026). |
 | Autonomous development is mathematically feasible from intents, specs, and criteria | `[INFERENCE]` | Feasible *if and only if* host runtimes enforce sealed oracles, mutation kill thresholds, and out-of-band human verdicts; unverified on unbounded greenfield architectures. |
 | Human specification writing is less cognitively taxing than code review | `[INFERENCE]` | Reviewing structured 1-page contracts and criteria takes less cognitive time than diff audits, but writing complete, ungameable specifications requires high architectural expertise. |
@@ -346,6 +346,16 @@ non_model_channel_verified: true
    The goal of having humans define only intents, specs, and criteria while agents write the code cannot be solved by prompting alone. It requires structuring the development lifecycle as an untrusted compilation pipeline:
    - Humans supply the source code of intent (`intent.md`) and the test suite of truth (`criteria.yaml`).
    - The AI agent acts as a stochastic, non-deterministic optimizer (the compiler backend).
-   - The host sandbox and verification plane act as the static analyzer, type checker, and runtime harness that provably prevents the optimizer from emitting incorrect or malicious code.
+   - The host sandbox and verification plane act as the static analyzer, type checker, and runtime harness designed to prevent the optimizer from emitting incorrect or malicious code. This is the design intent; coverage is bounded by the harness and oracle set actually deployed — it is not a measured guarantee that no incorrect or malicious code can ever be emitted.
 2. **Inner Loop Velocity Must Be Counterbalanced by Outer Loop Authority:**
-   Because MicroVMs allow the inner loop to "eat" traditional CI, verification feedback is now instantaneous. However, that speed is dangerous without outer-loop containment. By enforcing sealed oracle manifests, mutation kill-rate thresholds, failure-signature compaction, and decorrelated multi-channel reviews, the Software Factory eliminates the 441% verification bottleneck—enabling engineering organizations to safely absorb machine-speed development without cognitive collapse.
+   Because MicroVMs allow the inner loop to "eat" traditional CI, verification feedback is now instantaneous. However, that speed is dangerous without outer-loop containment. By enforcing locked oracle manifests, mutation kill-rate thresholds, failure-signature compaction, and decorrelated multi-channel reviews, the Software Factory is *designed* to mitigate the reported ~441% review-time bottleneck—enabling engineering organizations to absorb machine-speed development without cognitive collapse. Whether that mitigation works in practice is unmeasured here; it is the architecture's intent, not a demonstrated result.
+
+---
+
+## Corrections (2026-10-02)
+
+Post-review audit (`review/final-report.md`, findings Factory-2/3/4) corrected three claim classes while leaving the settled SF-1..SF-6 no-change dispositions, the 5-layer blueprint, and the record-only recommendation unchanged:
+
+1. **Unmeasured figures removed, not preserved as bounds:** "failure correlations approaching 1.0" (:149) and the L0–L5 ladder "filters out 90% of failures" (:158) had no supplied measurement. The correlated-failure risk and the ladder's filtering role are retained qualitatively with effectiveness marked unmeasured.
+2. **Design intent vs. measured result:** "provably prevents … incorrect or malicious code" (:349) and "eliminates the 441% verification bottleneck" (:351) overstated finite harness/oracle coverage; both are qualified as design intent. The equivalent "Solving the 441% review bottleneck" phrasing in :155 and SF-C6 was likewise softened.
+3. **Faros citation/denominator repair (:16, :155, :172, :193):** the original record attributed population-level claims to the IT Revolution article. The article reports its rounded ~441%/~243% per-PR figures for one bank team; the primary Faros 2026 report supplies the population metrics (+441.5% median PR-review time, +242.7% incidents per PR, +57.9% monthly incidents) under an observational within-company/team design (≥6 companies per metric, Spearman p<.05). The numbers are corroborated — narrowed by citation and denominator, not fabricated. Primary report checked 2026-10-02; article checked 2026-09-28.

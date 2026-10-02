@@ -213,9 +213,11 @@ Phase 4: Verification, Acceptance & Durability (Audit Loop)
 2. **Artifact-Gated Handshake:**
    Execution must not begin on an unversioned spec or an unlocked oracle manifest. `verification-map-generator` emits the verification matrix; `governed-delivery` separates authoritative oracles from developer tests and declares their owner, host seal, and change protocol. The host must enforce the seal; the executing agent in the inner loop cannot mutate authoritative oracles.
 3. **Evidence-Ledger Attestation:**
-   Inner loop passes do not constitute acceptance (`execution-success ≠ goal-success`). The delivery must produce a Proof-Carrying Diff attested across four evidence dimensions (deterministic check, runtime evidence, external primary source, independent model review) before Gate 6.
+   Inner loop passes do not constitute acceptance (`execution-success ≠ goal-success`). The delivery must produce a Proof-Carrying Diff attested across four evidence channels (deterministic check, runtime evidence, external primary source, independent model review) before Gate 6. *(Correction 2026-10-02: these four items are evidence channels, not the canonical four evidence dimensions — existence, number/text, attribution/process, extrapolation — under `reflective-review`.)*
 4. **Enforcement Boundary (Principle P7):**
    TeaPrompt provides the prompt sequence and contract schemas; host infrastructure owns container sandboxing, process execution, credential brokering, and git branch protection. A delivery run that lacks host enforcement must report status as `artifact-complete`, never `enforcement-proven`.
+
+Reference-only (2026-10-02): the [Misfit-Governed Development survey](../plans/mgd-form-theory-survey-2026-10-02.md) separates a clear returned verdict from complete evaluation of the declared misfit set, and both from specification/world judgment. The paper discloses remaining predicate-level coverage and S=T limitations; this reference adds no gate, four-form requirement or host-enforcement claim.
 
 Falsifier: If an autonomous delivery pipeline run without Phase 1 (intent & verification map) succeeds with equal defect rate and zero intent drift as one run with Phase 1, or if a single monolithic prompt achieves the same verifiability without artifact-gated stages, this recipe is ceremony and should be removed.
 ## Cost Modes
