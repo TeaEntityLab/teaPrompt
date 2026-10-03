@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-03T01:28:26.258191",
+  "generated_at": "2026-10-03T11:33:53.105079",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -99,6 +99,7 @@
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
             "governance-rules-rethink-review-2026-07-11.md",
+            "pstack-matt-lauren-survey-2026-10-03.md",
             "governed-delivery-adoption-2026-09-03.md",
             "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -6604,6 +6605,90 @@
       "char_count": 25441
     },
     {
+      "path": "reflective-prompt-library/plans/pstack-matt-lauren-survey-2026-10-03.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "pstack-matt-lauren-survey-2026-10-03",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-brief/SKILL.md#workflow",
+          "../skills/reflective-spec-plan/SKILL.md#workflow",
+          "../skills/reflective-minimality/SKILL.md#minimality-ladder",
+          "../skills/reflective-implement/SKILL.md#verification",
+          "../skills/verification-map-generator/SKILL.md#module-contract",
+          "../skills/reflective-review/SKILL.md#evidence-tiers",
+          "../skills/governed-delivery/SKILL.md#delivery-gate-sequence",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../04-agent/artifact-promotion.md",
+          "pstack-survey-2026-09-22.md",
+          "pstack-synthesis-survey-2026-09-22.md",
+          "../PROJECT_KNOWLEDGE.md#lesson-a-verification-maps-value-is-regression-visibility-and-time-to-verify-not-correctness",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "pstack / Matt–Lauren Claims Survey — 2026-10-03"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity and Access"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Four Evidence Dimensions"
+        },
+        {
+          "level": 2,
+          "text": "Source-Bound Method Comparison"
+        },
+        {
+          "level": 2,
+          "text": "Executed Checker Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Relationship to Earlier pstack Records"
+        },
+        {
+          "level": 2,
+          "text": "Verification Scope and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Sources"
+        }
+      ],
+      "line_count": 159,
+      "char_count": 26442
+    },
+    {
       "path": "reflective-prompt-library/plans/governed-delivery-adoption-2026-09-03.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -7395,6 +7480,7 @@
           "graph-engineering-synthesis-survey-2026-09-16.md",
           "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
           "superpowers-v6.4-adoption-2026-10-03.md",
+          "pstack-matt-lauren-survey-2026-10-03.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -7409,7 +7495,8 @@
           "agentflow-8.4.1-delta-survey-2026-09-30.md",
           "rrsi-survey-2026-09-30.md",
           "mgd-form-theory-survey-2026-10-02.md",
-          "superpowers-v6.4-adoption-2026-10-03.md"
+          "superpowers-v6.4-adoption-2026-10-03.md",
+          "pstack-matt-lauren-survey-2026-10-03.md"
         ]
       },
       "structure": [
@@ -7498,8 +7585,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 389,
-      "char_count": 77105
+      "line_count": 391,
+      "char_count": 78474
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -17020,5 +17107,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 189
+  "total_files": 190
 }
