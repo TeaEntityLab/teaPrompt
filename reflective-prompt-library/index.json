@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-02T23:01:40.206100",
+  "generated_at": "2026-10-03T01:28:26.258191",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -68,6 +68,7 @@
             "self-governance-dogfood-2026-09-24.md",
             "baton-dispatch-survey-2026-07-13.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
+            "superpowers-v6.4-adoption-2026-10-03.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
@@ -3831,6 +3832,64 @@
       "char_count": 24828
     },
     {
+      "path": "reflective-prompt-library/plans/superpowers-v6.4-adoption-2026-10-03.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "superpowers-v6.4-adoption-2026-10-03",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Superpowers v6.4.2 Adoption Record — 2026-10-03"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Decision Question"
+        },
+        {
+          "level": 2,
+          "text": "Verification Ladder"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "How Outputs Were Produced"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Mechanism-vs-Product Analysis"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 61,
+      "char_count": 8445
+    },
+    {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -7335,6 +7394,7 @@
           "rsiagent-survey-2026-09-16.md",
           "graph-engineering-synthesis-survey-2026-09-16.md",
           "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+          "superpowers-v6.4-adoption-2026-10-03.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -7348,7 +7408,8 @@
           "../GLOSSARY.md#adoption-guard-closure",
           "agentflow-8.4.1-delta-survey-2026-09-30.md",
           "rrsi-survey-2026-09-30.md",
-          "mgd-form-theory-survey-2026-10-02.md"
+          "mgd-form-theory-survey-2026-10-02.md",
+          "superpowers-v6.4-adoption-2026-10-03.md"
         ]
       },
       "structure": [
@@ -7437,8 +7498,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 387,
-      "char_count": 75520
+      "line_count": 389,
+      "char_count": 77105
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -15996,6 +16057,10 @@
         },
         {
           "level": 2,
+          "text": "Declined to Judge"
+        },
+        {
+          "level": 2,
           "text": "Required Fixes"
         },
         {
@@ -16015,8 +16080,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 189,
-      "char_count": 10592
+      "line_count": 196,
+      "char_count": 11548
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -16780,6 +16845,10 @@
           "text": "Workflow"
         },
         {
+          "level": 3,
+          "text": "Planning Fidelity"
+        },
+        {
           "level": 2,
           "text": "Test Plan Mode"
         },
@@ -16820,8 +16889,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 273,
-      "char_count": 14955
+      "line_count": 278,
+      "char_count": 16256
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -16951,5 +17020,5 @@
       "char_count": 19985
     }
   ],
-  "total_files": 188
+  "total_files": 189
 }
