@@ -35,12 +35,14 @@ Methods:
 - Fallacy, overengineering, and reward-hacking scan
 
 Output:
-- Output `Findings`, `Traceability`, `Required Fixes`, `Decision`, and `Residual Risks`.
+- Output `Findings`, `Traceability`, `Declined to Judge`, `Required Fixes`, `Decision`, and `Residual Risks`.
+
 
 Never:
 - Do not bury serious findings behind a summary.
 - Do not accept unsupported claims as evidence.
-- Do not treat stated reasoning — human or AI — as proof that a check ran; require observable evidence.
+- Do not treat the spec's silence on an input as permission for that input to break the software; judge such behavior by what a reasonable user would expect, and grade it by effect on that user rather than by whether the spec names the trigger.
+- Do not silently drop considered behaviors: anything declined as out of scope is listed in `Declined to Judge` with a reason, not omitted.
 - Do not treat re-verified source text as verification of its underlying data (see Four Evidence Dimensions).
 - Do not treat missing tests or weak acceptance criteria as style issues.
 - Do not rewrite the artifact unless the task asks for edits.
@@ -59,7 +61,8 @@ Escalation:
 5. Check evidence and test integrity, recording each load-bearing claim in the Claims Ledger.
 6. Steelman the strongest counterargument.
 7. Scan for overengineering, reward hacking, and missing edge cases.
-8. Give a decision.
+8. Record coverage: list each checked area or criterion that produced no finding, and every behavior considered but declined as outside scope — one line each with the reason. Every declined item keeps a named ruling owner; an empty list means nothing was set aside, not that the check was skipped. An area the review attempted but could not verify stays `unverifiable` in the Claims Ledger — it is not declined and not clean.
+9. Give a decision.
 
 ## Claims Ledger
 
@@ -165,6 +168,10 @@ A decision binds to the exact revision reviewed: a later change to the artifact'
 ## Findings
 
 ## Traceability
+
+## Declined to Judge
+
+[One line per behavior considered and set aside as outside the plan or spec, with the reason and who rules on it — or "None"; covered-and-clean areas may be noted under Findings or here as checked scope]
 
 ## Required Fixes
 

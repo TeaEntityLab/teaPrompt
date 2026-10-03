@@ -15,9 +15,12 @@ Expected output shape:
 - <file>:L<line>: <severity> — <defect>; failure scenario or violated invariant: <reachable evidence>
 ## Traceability
 | Acceptance Criteria | Artifact Evidence | Test Evidence | Status |
+## Declined to Judge
+- <behavior set aside as out of scope> — <reason; who rules on it> (or "None")
 ## Required Fixes
 ## Decision
 ## Residual Risks
+
 ```
 
 ## Example 2

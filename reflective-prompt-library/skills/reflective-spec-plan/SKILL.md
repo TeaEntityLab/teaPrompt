@@ -69,6 +69,10 @@ For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counte
 
 ## Workflow
 
+### Planning Fidelity
+
+An implementation plan is the set of decisions the executor cannot recover alone — files, interfaces, names, exact spec values, test names and assertions, commands, and acceptance boundaries. A code step gives the exact signature, its file, and the spec's pinned values; a body appears only for an algorithm or exact copy the signature, tests, and spec still leave undetermined. Both failure directions count: a plan that transcribes implementation code those decisions already determine has written the program instead, and a line that decides nothing ("handle edge cases", "add appropriate validation", a type or function no task defines) is a gap. Proportion the plan to the decisions that need pinning, not to a fixed time or line budget — a plan several times longer than its requirement is transcript-shaped. The spec's silence on an input is not permission for that input to break the software: put observed input classes or failure modes that no task's tests exercise into a bounded **Review Focus** list (most likely to bite first), and add the check that pins each to the task that owns the behavior.
+
 1. Validate entry criteria (Definition of Ready).
    - Goal exists
    - Intended outcome exists
@@ -112,6 +116,7 @@ For each material recommendation, state `Claim`, `Evidence`, `Unknowns`, `Counte
    - Task slices are independently testable
    - Human Review points are explicit
    - Requirements name the destination — outcome and acceptance criteria — not the route; a prescribed step sequence appears only where the product itself fixes it
+   - Each task carries the decisions the executor cannot recover, and the plan stays proportional to them — no transcript-shaped bodies, no lines that decide nothing
 
 6. Stop at the smallest plan that can be executed and reviewed.
 
