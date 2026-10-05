@@ -107,6 +107,7 @@ The pack was adversarially reviewed the same day by a six-lens parallel panel �
 | P13 | Dedicated multi-wave ReMoM template | Adopted 2026-07-12 (user-directed; recurrence `unknown`) | `flow-loop-harness` §Template: Multi-Wave Fan-out (composition note retained) | Prefer compose-first for single-wave work |
 | P14 | `workflow-recipes.md` cross-references: Looper Topologies see-also block; Parallel Lens Review input-contract/merge-owner line | Adopted 2026-07-11 | `04-agent/workflow-recipes.md` | none |
 | P15 | Frozen-core parity items (reflective-research Blind Spots section; historical-banner forward pointers) | **Resolved 2026-07-11** — prompt-layer change + no-change pair; frozen-surface gate not fired | [Parity review record](frozen-core-parity-review-2026-07-11.md) | none |
+| P16 | Selected host-evidence preflight before agent dispatch and result release, including initial-success and quorum paths | Adopted 2026-10-05 (user-directed in-place extension; recurrence unchanged) | Both flow packs, examples, `test_flow_generator_consumers.py` and `test_flow_loop_consumers.py`; [runtime integration record](runtime-skills-experiments-2026-10-05.md) | Re-observe on bound host/spec/oracle changes; preflight is point-in-time evidence, not continuous enforcement or cancellation proof |
 
 ## Sources
 

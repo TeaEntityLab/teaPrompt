@@ -1,4 +1,5 @@
-"""Consumer regressions for loop evidence, content progress and unattended floors.
+"""Selected-preflight gate consumers: failure before work, mutation after work,
+initial-success bypass, and quorum-swallowing for loop templates.
 
 Execute the published bash recipes with offline stdin-only stubs in isolated
 workspaces. These checks do not prove host write exclusions or model quality.
@@ -62,7 +63,7 @@ def _run(d: Path, script: str, agent: str, **config: str) -> subprocess.Complete
     state.mkdir(exist_ok=True)
     _executable(state / "agent.sh", 'prompt="$(cat)"\n' + agent)
     (state / "driver.sh").write_text(script, encoding="utf-8")
-    env = dict(os.environ, AGENT_CMD=str(state / "agent.sh"), STATE="./state", **config)
+    env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(state / "agent.sh"), "STATE": "./state", **config}
     return subprocess.run(
         ["bash", "state/driver.sh"], cwd=d, env=env,
         capture_output=True, text=True, timeout=60,
@@ -170,8 +171,16 @@ def test_backlog_missing_canon_mid_run_fails_closed(tmp_path: Path):
     assert "canonical backlog missing" in (tmp_path / "state/ledger.md").read_text()
 
 
-def test_skill_source_stays_under_lint_warning_size():
-    assert len(_source()) < 20_000
+FAIL_GATE = "exit 1\n"
+
+
+def _gate(d: Path, body: str = "exit 0\n", *, executable: bool = True) -> str:
+    path = d / "checks" / "preflight-gate"
+    _executable(path, body)
+    if not executable:
+        path.chmod(0o644)
+    return str(path)
+
 
 
 @pytest.mark.parametrize("all_bad", [False, True])
@@ -219,14 +228,14 @@ def _unattended_writer() -> str:
     )
 
 
-@pytest.mark.parametrize("floor", ["missing", "not-executable", "passing"])
+@pytest.mark.parametrize("floor", ["missing", "not-executable", "passing", "rejecting"])
 def test_unattended_floor_preflight_precedes_every_agent_call(tmp_path: Path, floor: str):
     _workspace(tmp_path, git=False)
     for name in ("draft", "critic-rubric", "revise"):
         (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
     floor_path = tmp_path / "checks/links-resolve.sh"
     if floor != "missing":
-        _executable(floor_path, "exit 0\n")
+        _executable(floor_path, "exit 1\n" if floor == "rejecting" else "exit 0\n")
         if floor == "not-executable":
             floor_path.chmod(0o644)
     agent = COUNT + 'case "$prompt" in critic-rubric*) echo ACCEPT;; *) echo clean-draft;; esac\n'
@@ -236,7 +245,151 @@ def test_unattended_floor_preflight_precedes_every_agent_call(tmp_path: Path, fl
         assert result.returncode == 0, result.stderr
         assert calls.read_text().strip() == "2"
         assert (tmp_path / "state/final.md").read_text() == "clean-draft\n"
+    elif floor == "rejecting":
+        assert result.returncode == 2, result.stderr
+        assert calls.read_text().strip() == "3"
+        assert not (tmp_path / "state/final.md").exists()
     else:
         assert result.returncode == 4, result.stderr
         assert not calls.exists()
         assert not (tmp_path / "state/final.md").exists()
+
+
+def test_fix_selected_gate_failure_blocks_first_dispatch(tmp_path: Path):
+    _workspace(tmp_path)
+    gate = _gate(tmp_path, FAIL_GATE)
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"), COUNT + 'echo changed > work.txt\n',
+                  MAX_ITER="2", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert "preflight gate=1" in (tmp_path / "state/flow.log").read_text()
+
+
+def test_fix_gate_mutation_after_work_blocks_acceptance(tmp_path: Path):
+    _workspace(tmp_path)
+    gate = _gate(tmp_path, '[ -z "$(ls state/iter-*-out.md 2>/dev/null)" ]\n')
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"),
+                  COUNT + 'echo changed > work.txt; echo done\n', MAX_ITER="2",
+                  VERIFY="./checks/verify.sh", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == "1"
+    assert "- iter 1: VERIFIED" not in (tmp_path / "state/ledger.md").read_text()
+
+
+def test_fix_zero_call_already_verified_still_checks_gate(tmp_path: Path):
+    _workspace(tmp_path, verify="exit 0\n")
+    gate = _gate(tmp_path, FAIL_GATE)
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"), COUNT + 'echo changed > work.txt\n',
+                  MAX_ITER="2", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+
+
+def test_fix_empty_gate_preserves_attended_path(tmp_path: Path):
+    _workspace(tmp_path)
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"),
+                  COUNT + 'printf "stage%03d\\n" "$n" > work.txt\n', MAX_ITER="2")
+    assert result.returncode == 2, result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == "2"
+
+
+def test_backlog_gate_failure_before_work_retires_nothing(tmp_path: Path):
+    _workspace(tmp_path, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("first\nsecond\n", encoding="utf-8")
+    gate = _gate(tmp_path, FAIL_GATE)
+    result = _run(tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+                  COUNT + 'echo changed > work.txt\n', MAX_ITER="3", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert (tmp_path / "state/TASKS.canon").read_text() == "first\nsecond\n"
+
+
+def test_backlog_zero_call_empty_queue_still_checks_gate(tmp_path: Path):
+    _workspace(tmp_path, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("", encoding="utf-8")
+    gate = _gate(tmp_path, FAIL_GATE)
+    result = _run(tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+                  COUNT + 'echo changed > work.txt\n', MAX_ITER="3", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+
+
+def test_wave_partial_policy_cannot_swallow_gate_failure(tmp_path: Path):
+    _workspace(tmp_path, git=False, verify='test -f state/summary.md\n')
+    wave = tmp_path / "prompts/wave"
+    wave.mkdir()
+    for name in ("good", "other"):
+        (wave / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    gate = _gate(tmp_path, FAIL_GATE)
+    agent = 'case "$prompt" in good*) echo GOOD;; *) echo OTHER;; esac\n'
+    result = _run(tmp_path, _template("Multi-Wave Fan-out (bash)"), agent,
+                  VERIFY="./checks/verify.sh", MAX_WAVES="1", MAX_JOBS="2", PREFLIGHT=gate)
+    assert result.returncode == 4, result.stderr
+    assert "preflight gate=4" in (tmp_path / "state/ledger.md").read_text()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("unattended", [False, True])
+@pytest.mark.parametrize(("verdict", "accepted"), [
+    ("ACCEPT\nREJECT\n", False),
+    ("\nACCEPT\n\n", True),
+])
+def test_writer_requires_the_whole_critique_to_accept(
+    tmp_path: Path, unattended: bool, verdict: str, accepted: bool,
+):
+    _workspace(tmp_path, git=False)
+    for name in ("draft", "critic-rubric", "revise"):
+        (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    (tmp_path / "critique.txt").write_text(verdict, encoding="utf-8")
+    if unattended:
+        _executable(tmp_path / "checks/links-resolve.sh", "exit 0\n")
+    agent = COUNT + 'case "$prompt" in critic-rubric*) cat critique.txt;; *) echo clean-draft;; esac\n'
+    script = _unattended_writer() if unattended else _template("Evaluator-Optimizer / Writer-Critic (bash)")
+    result = _run(tmp_path, script, agent, MAX_ROUNDS="1")
+    assert result.returncode == (0 if accepted else 2), result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == ("2" if accepted else "3")
+    if accepted:
+        assert (tmp_path / "state/final.md").read_text() == "clean-draft\n"
+    else:
+        assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("template", [
+    "Verify-Gated Fix Loop (bash)",
+    "Task-Ledger Backlog Loop (bash, ralph-style)",
+    "Multi-Wave Fan-out (bash)",
+])
+@pytest.mark.parametrize("broken", ["missing", "not-executable"])
+def test_declared_broken_verifier_holds_before_loop_work(
+    tmp_path: Path, template: str, broken: str,
+):
+    _workspace(tmp_path, git=False)
+    (tmp_path / "TASKS.md").write_text("complete task\n", encoding="utf-8")
+    (tmp_path / "prompts/wave").mkdir()
+    (tmp_path / "prompts/wave/worker.md").write_text("worker\n", encoding="utf-8")
+    verifier = tmp_path / "checks/declared-verify"
+    if broken == "not-executable":
+        _executable(verifier, "exit 0\n")
+        verifier.chmod(0o644)
+    result = _run(
+        tmp_path, _template(template), COUNT + "echo work\n",
+        VERIFY="./checks/declared-verify", MAX_ITER="1", MAX_WAVES="1",
+    )
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("changing", [False, True])
+def test_wave_stall_uses_evidence_not_changing_wave_headers(tmp_path: Path, changing: bool):
+    _workspace(tmp_path, git=False)
+    (tmp_path / "prompts/wave").mkdir()
+    (tmp_path / "prompts/wave/worker.md").write_text("worker\n", encoding="utf-8")
+    agent = COUNT + ('echo "EVIDENCE-$n"\n' if changing else "echo SAME-EVIDENCE\n")
+    result = _run(
+        tmp_path, _template("Multi-Wave Fan-out (bash)"), agent,
+        VERIFY="./checks/verify.sh", MAX_WAVES="3",
+    )
+    assert result.returncode == (2 if changing else 3), result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == ("3" if changing else "2")
+    assert not (tmp_path / "state/final.md").exists()

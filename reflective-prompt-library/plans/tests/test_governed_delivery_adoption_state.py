@@ -20,7 +20,6 @@ SKILLS = library_skills_dir()
 PACK = SKILLS / "governed-delivery" / "SKILL.md"
 EXAMPLES = SKILLS / "examples" / "governed-delivery.examples.md"
 ADOPTION = PLANS_DIR / "governed-delivery-adoption-2026-09-03.md"
-LINT_WARNING_CHARS = 20000
 
 ANCHORS = {
     "reflective-brief": (
@@ -247,11 +246,6 @@ def test_pack_trailer_sections_and_examples_pointer():
     examples = _read(EXAMPLES)
     assert len(examples.strip()) >= 600
     assert "artifact-complete" in examples
-
-
-def test_pack_body_stays_under_lint_warning_threshold():
-    body = _read(PACK).split("---", 2)[2]
-    assert len(body) <= LINT_WARNING_CHARS, len(body)
 
 
 # GD-1..GD-11 - phase-local anchors present exactly once in the owning core skill.

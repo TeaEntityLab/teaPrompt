@@ -1,5 +1,7 @@
 # `flow-control-generator` Examples
 
+Illustrative output shapes, not new execution evidence. Every generated script carries the shared selected-preflight gate: `PREFLIGHT` names one executable pathname (never shell text); empty preserves the attended example below and claims no runtime enforcement, and a workflow requiring observed host preconditions names its gate in the run note. When set, the gate is checked before each agent dispatch and after that dispatch before acceptance/publication, including zero-call already-done paths; failure exits 4 and is never swallowed by `MIN_OK`/partial policy. Gate output is point-in-time evidence, never enforcement proof; no cancellation manager is added.
+
 ## Example 1
 
 Input:
@@ -18,7 +20,7 @@ Expected output shape:
   gates after each stage, caps, permission flags, flow.log)
 - prompts/01-spec.md, 02-implement.md, 03-review.md
 ## Gates
-- stage 1: test -s state/01-spec.md; stage 2: ./checks/run-tests.sh; stage 3: gate: none (accepted)
+- stage 1: test -s state/01-spec.md; stage 2: ./checks/run-tests.sh; stage 3: gate: none (accepted); every dispatch carries the shared `PREFLIGHT` gate before and after (empty = attended, unchanged)
 ## Verification
 - Rig-tier only: stub dry run with AGENT_CMD='cat' → exit 0, three state files; bash -n clean. This approves control flow, not production or side-effectful execution.
 ```
@@ -37,7 +39,7 @@ Expected output shape:
 ## Topology
 - Parallel fan-out/fan-in, MAX_JOBS=4, per-pid wave waits, synthesis step
 ## Gates
-- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); merged deliverable: `./checks/verify-merged.sh state/final.md`
+- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); merged deliverable: `./checks/verify-merged.sh state/final.md`; selected-preflight failure exits 4 under either policy
 ## Verification
 - Rig-tier only: stub dry run: 5 stub prompts, one forced failure → run aborts non-zero; happy path exit 0. This is not host-enforcement or production e2e proof.
 ## Escalation note
@@ -83,6 +85,7 @@ Expected output shape:
 - Validate every nonempty string id/task and unique nonempty sanitized output id
   before dispatch. Duplicate ids and sanitization collisions exit 2; no worker
   starts. Worker failure/empty output aborts; ./checks/verify-merged.sh checks final.
+  Selected `PREFLIGHT` (fixed `[PREFLIGHT]` argv, no shell) gates every dispatch and the final publish; failure exits 4.
 ## Human Review Boundary
 - migration = AGENTS.md Human Review item: the generated script pauses before any apply step and records the approval; worker task text is model-authored data — never run as shell, never allowed to change AGENT_CMD, permissions, or the verifier
 ## Verification
@@ -107,6 +110,7 @@ Expected output shape:
   FINAL_NODE explicitly names the acceptance artifact; other terminal nodes and
   dictionary order cannot replace it. Strict or MIN_OK quorum both require that
   final node done in this run, then ./checks/verify-merged.sh checks its output.
+  Selected-node `PREFLIGHT` failure is configuration (exit 4), never quorum-tolerable.
 ## Escalation note
 - regenerate from the template when the node set changes; never patch a drifted copy (plans/agent-flow-control-research-2026-07-11.md P12)
 ## Verification

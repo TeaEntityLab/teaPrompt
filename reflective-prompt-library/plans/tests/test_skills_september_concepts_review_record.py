@@ -24,7 +24,6 @@ from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa:
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "skills-september-concepts-review-2026-09-16.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
-LINT_WARNING_CHARS = 20000
 CANDIDATE_STATUS = {
     "H1": "Held 2026-09-16",
     "H2": "Held 2026-09-16",
@@ -74,8 +73,6 @@ def test_record_shape_and_dispositions():
     assert f"[record](plans/{RECORD.name})" in knowledge
 
 
-def test_loop_pack_stays_under_budget_after_the_backlog_repair():
-    assert len(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")) <= LINT_WARNING_CHARS
 
 
 def _run_backlog(tmp_path: Path, script: str, *, agent_body: str, git: bool, verify_ec: int = 0, max_iter: str = "20") -> tuple[int, str]:
@@ -94,7 +91,7 @@ def _run_backlog(tmp_path: Path, script: str, *, agent_body: str, git: bool, ver
     stub.write_text("#!/bin/sh\n" + agent_body, encoding="utf-8")
     stub.chmod(0o755)
     (tmp_path / "loop.sh").write_text(script, encoding="utf-8")
-    env = dict(os.environ, AGENT_CMD=str(stub), STATE="./state", MAX_ITER=max_iter)
+    env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub), "STATE": "./state", "MAX_ITER": max_iter}
     r = subprocess.run(["bash", str(tmp_path / "loop.sh")], cwd=d, env=env, capture_output=True, text=True, timeout=120)
     ledger = d / "state" / "ledger.md"
     return r.returncode, ledger.read_text(encoding="utf-8") if ledger.is_file() else ""

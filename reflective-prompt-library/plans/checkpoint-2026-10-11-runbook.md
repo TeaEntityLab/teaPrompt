@@ -31,6 +31,15 @@
 | 10 | Flow-pack char counts | Whole-file length of `flow-control-generator` and `flow-loop-harness` as `lint_skills.py` measures it (20k warning; 19,952 and 19,927 on 2026-09-14 — latest 2026-10-01 prep measurement: 19,890 and 19,985) | Agenda item 6 |
 | 11 | G9/AS9 trigger evidence? | [G9 adoption ledger](agent-governance-scaffold-adoption-2026-07-17.md), [AS9](all-skills-panel-record-2026-07-18.md), session evidence of governance-vocabulary misroute/discoverability failure | Agenda item 8 |
 
+**2026-10-05 maintenance input:** [runtime-aware pack integration and
+experiments](runtime-skills-experiments-2026-10-05.md) extends the existing
+contracts under explicit user direction. At its measured source digests the
+generator is 27,731 and loop is 24,566 characters; both exceed the nonblocking
+20k lint warning threshold. Consume these measurements and the record's
+verification observations alongside the dated counts above. Maintenance
+experiments are not §Entries invocations, recurrence proof, full GDR refuter
+results or MR-3 qualifying failures, and do not clear this checkpoint.
+
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 
 Owning gate: [necessity record N11](governance-necessity-panel-record-2026-07-11.md);

@@ -139,7 +139,7 @@ def _run_fix_loop(
     stub.chmod(0o755)
     (tmp_path / "loop.sh").write_text(loop, encoding="utf-8")
     state = state.format(cwd=cwd, tmp=tmp_path)
-    env = dict(os.environ, AGENT_CMD=str(stub), MAX_ITER="4", STATE=state)
+    env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub), "MAX_ITER": "4", "STATE": state}
     r = subprocess.run(["bash", str(tmp_path / "loop.sh")], cwd=cwd, env=env, capture_output=True, text=True, timeout=120)
     ledger = Path(state if state.startswith("/") else cwd / state) / "ledger.md"
     return r.returncode, ledger.read_text(encoding="utf-8")

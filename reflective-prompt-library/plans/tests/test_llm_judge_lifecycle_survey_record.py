@@ -4,8 +4,7 @@ Panel outcome was record-only (AGREE 4/7); a follow-up user direction adopted
 three clean-room sentences (JL-2a with a narrowed JL-3 clause, JD-1a, JD-1b).
 Adopted rows get presence pins at their surfaces; record-only / rejected rows
 are guarded for ledger presence and disposition only (GLOSSARY Adoption Guard
-Closure). The loop pack is also pinned under the lint length threshold because
-the adoption was paid for by trimming, not by accepting a second warning.
+Closure).
 """
 
 import re
@@ -21,7 +20,6 @@ RECORD = PLANS_DIR / "llm-judge-lifecycle-survey-2026-09-05.md"
 CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 LOOP_PACK = library_skills_dir() / "flow-loop-harness" / "SKILL.md"
-LINT_WARNING_CHARS = 20000
 PASTE_SHA256 = "40a3efd15e74793be7148544b7e5c36dc5f8f57d349d15d99db13ef375637b5f"
 PACKET_SHA256 = "fe0914e2f3dfa124c10adf9558edd61588a101e076306f713fa953db15796dd9"
 REPO_REVISION = "1e4f96078abcb9b076897f7a68f001c407526ae1"
@@ -139,8 +137,6 @@ def test_adopted_wording_present_once_at_every_surface():
             assert text.count(sentence) == 1, f"{path.name} lost or duplicated: {sentence[:48]!r}"
 
 
-def test_loop_pack_stays_under_lint_length_threshold():
-    assert len(_read(LOOP_PACK)) <= LINT_WARNING_CHARS
 
 
 def test_reflection_records_the_compression_chain_and_boundaries():

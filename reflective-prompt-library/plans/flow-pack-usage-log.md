@@ -72,6 +72,22 @@ themselves):
   deterministic floor, backlog preflights) — rig-tier stub runs only
   ([record](skill-verification-panel-2026-09-05.md)). Recorded 2026-09-14; the
   convention's same-change note was missed at the time.
+- 2026-10-05 — user-directed runtime-aware maintenance of both flow packs,
+  `governed-delivery` and `agent-governance-scaffold`: selected preflight
+  dispatch/release gates, a finite evidence-record checker and matching
+  role/binding/lifecycle contracts. [Implementation and experiment
+  record](runtime-skills-experiments-2026-10-05.md). Offline subprocess,
+  real-OS role-denial, local CLI and bounded synthetic model arms are
+  maintenance evidence, not new §Entries invocations, recurrence proof,
+  complete GDR refuter results or qualifying MR-3 cases. Original harness
+  failures remain preserved. The final 38-arm treatment, 17 original checker
+  cases, 16 checker-review cases and 15 corrected flow-review cases matched
+  expected outcomes; the configured real-model CLI returned a usage-credit
+  prerequisite, not a repair. Flow source sizes are 27,731
+  (`flow-control-generator`) and 24,566 (`flow-loop-harness`) characters at the
+  record's source digests, both above the nonblocking 20k warning threshold.
+  These measurements do not clear the checkpoint; final gate observations
+  are recorded only after execution.
 
 ## Pre-checkpoint prep scans
 

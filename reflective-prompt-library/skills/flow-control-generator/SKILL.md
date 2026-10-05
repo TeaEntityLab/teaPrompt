@@ -74,14 +74,16 @@ If no row fits, the task is probably a single agent call; say so.
 
 Every generated script must contain, in order:
 
-1. Config: `AGENT_CMD` (reviewed host CLI/wrapper, flags and stdin/file support), workdir, `STATE`, caps, and generated-by skill/topology/date/dry-run status.
+1. Config: `AGENT_CMD` (reviewed host CLI/wrapper, flags and stdin/file support), workdir, `STATE`, caps, `PREFLIGHT` (optional executable pathname, not shell text; empty = attended example without claimed runtime enforcement), and generated-by skill/topology/date/dry-run status.
 2. State: one output file per step, not shell-variable payloads; inspectable partial files support a host-honored resume convention.
 3. Runner: all calls go through `run_agent`; prompt content via stdin, never argv.
-4. Gates: deterministic exit codes release stages; absent checks say `# gate: none (accepted)`. For fan-in, the gate runs over the merged result as well as the branch tally: branches that each pass can conflict when combined.
+4. Gates: deterministic exit codes release stages; absent checks say `# gate: none (accepted)`. For fan-in, the gate runs over the merged result as well as the branch tally: branches that each pass can conflict when combined. When `PREFLIGHT` is set, its exit-4 gate runs before each agent dispatch and after that dispatch before the stage gate accepts, publishes, or merges; gate output is evidence, never enforcement proof.
 5. Budget: cap concurrency and total steps; per-call timeout/cost caps where supported. When a stage is itself a loop or retries, the composition's worst case is the product of the caps: declare one total budget (steps or wall-clock) that every level decrements, and have the outer script pass its remaining budget to the inner one. Stock macOS has no `timeout`; a bash timeout wrapper is host-provided.
 6. Permissions: record least-privilege host flags in `AGENT_CMD`; review them and host write-exclusions before unattended use. Defaults are attended examples, not approval.
 7. Logs: `STATE/flow.log` records step start/end and gate results; workdir is the reviewed task root.
-8. Exits: bash `set -euo pipefail` or Python exceptions; failed gates exit nonzero and retain partial state.
+8. Exits: bash `set -euo pipefail` or Python exceptions; failed gates exit nonzero and retain partial state. Selected-preflight missing/non-executable/nonzero and topology configuration failures exit 4; partial-failure quorums never swallow exit 4.
+
+Selected preflight gate (shared interface): `PREFLIGHT="${PREFLIGHT:-}"` names one executable file, never shell text. Empty preserves ordinary attended behavior and claims no runtime enforcement; a task requiring observed host preconditions must set it, and empty never means met. When set, every template checks executability before the first/each agent dispatch (zero-call already-done paths check too), invokes with no shell (Python passes `[PREFLIGHT]` argv; bash runs `"$PREFLIGHT"`), captures output per stage (`$STATE/preflight-<stage>.out`, per-branch files under parallel fan-out; `flow.log` holds one log line per check), and exits 4 before the stage gate accepts, the merged result publishes, or the queue retires — including under `MIN_OK`/partial policies. Gate output is point-in-time evidence, not enforcement proof; the host owns the gate, manifests, and write exclusions. There is no cancellation manager: killing the driver does not cancel in-flight agent/child processes (examine the process group; stop only coordinator-created groups), and absence of lifecycle evidence is unknown, not kill assurance.
 
 ## Template: Sequential Pipeline (bash)
 
@@ -90,13 +92,25 @@ Every generated script must contain, in order:
 # generated-by: flow-control-generator / pipeline / 2026-10-01 / dry-run-required
 set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; workdir=task root; protect checks/
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+preflight() { # $1=stage: selected gate passes, or exit 4 before any dispatch/acceptance
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || return 4
+}
 run_agent() {
+  preflight "$(basename "$2")" || return 4
   log "start $1"
   local ec=0
   $AGENT_CMD < "$1" > "$2" || ec=$?
-  log "end $1 exit=$ec"; return "$ec"
+  log "end $1 exit=$ec"
+  [ "$ec" -eq 0 ] || return "$ec"
+  preflight "$(basename "$2")-post" || return 4
 }
 run_agent prompts/01-spec.md "$STATE/01-spec.md"
 if test -s "$STATE/01-spec.md"; then log "spec gate=0"; else log "spec gate=2"; exit 2; fi
@@ -117,20 +131,34 @@ log "review gate=none accepted; pipeline complete"
 # generated-by: flow-control-generator / parallel / 2026-10-01 / dry-run-required
 set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; workdir=task root; protect checks/
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 MAX_JOBS="${MAX_JOBS:-4}"
 MIN_OK="${MIN_OK:-}" # empty=strict; otherwise explicit partial-failure quorum
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MIN_OK" in *[!0-9]*) log "quorum configuration gate=4"; exit 4 ;; esac
+preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never swallowed by MIN_OK)
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || return 4
+}
 run_agent() {
+  local prompt="$1" out="$2"
+  local stem="fan-$(basename "$prompt" .md)"
+  preflight "$stem-pre" || return 4
   log "start $1"
   if $AGENT_CMD < "$1" > "$2" && [ -s "$2" ]; then
     log "end $1 output-gate=0"
   else
     log "end $1 output-gate=1"; rm -f "$2"; return 1
   fi
+  preflight "$stem-post" || { rm -f "$2"; return 4; }
 }
-FAILED=0
-wave_wait() { local pid; for pid in "$@"; do wait "$pid" || FAILED=$((FAILED+1)); done; }
+FAILED=0; PREFLIGHT_FAILED=0
+wave_wait() { local pid; for pid in "$@"; do wait "$pid" || { ec=$?; [ "$ec" -eq 4 ] && PREFLIGHT_FAILED=1; FAILED=$((FAILED+1)); }; done; }
 rm -f "$STATE"/fan-*.md
 pids=(); i=0
 for prompt in prompts/fan/*.md; do
@@ -144,13 +172,18 @@ if [ "${#pids[@]}" -gt 0 ]; then wave_wait "${pids[@]}"; fi
 ok=0
 for f in "$STATE"/fan-*.md; do [ ! -s "$f" ] || ok=$((ok+1)); done
 if [ -n "$MIN_OK" ]; then
+  [ "$PREFLIGHT_FAILED" -eq 0 ] || { log "preflight gate=4 propagated under quorum"; exit 4; }
   [ "$ok" -ge "$MIN_OK" ] || { log "quorum gate=2 $ok < $MIN_OK"; exit 2; }
+elif [ "$PREFLIGHT_FAILED" -ne 0 ]; then
+  log "preflight gate=4 propagated (strict)"; exit 4
 elif [ "$FAILED" -ne 0 ] || [ "$ok" -eq 0 ]; then
   log "branch gate=2 failed=$FAILED successful=$ok"; exit 2
 fi
 log "branch gate=0 successful=$ok"
 { cat prompts/synthesize.md; echo; cat "$STATE"/fan-*.md; } > "$STATE/synth-prompt.md"
-run_agent "$STATE/synth-prompt.md" "$STATE/final.md"
+preflight "synth-pre" || exit 4
+run_agent "$STATE/synth-prompt.md" "$STATE/final.md" || exit "$?"
+preflight "final-post" || exit 4
 ec=0; ./checks/verify-merged.sh "$STATE/final.md" || ec=$?    # gate: merged result, not only the branch tally
 log "merged gate=$ec"; exit "$ec"
 ```
@@ -162,13 +195,25 @@ log "merged gate=$ec"; exit "$ec"
 # generated-by: flow-control-generator / router / 2026-10-01 / dry-run-required
 set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; workdir=task root; protect prompts/
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+preflight() { # $1=stage: selected gate passes, or exit 4 before dispatch/acceptance
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; exit 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || exit 4
+}
 run_agent() {
+  preflight "$(basename "$2")" || exit 4
   log "start $1"
   local ec=0
   $AGENT_CMD < "$1" > "$2" || ec=$?
-  log "end $1 exit=$ec"; return "$ec"
+  log "end $1 exit=$ec"
+  [ "$ec" -eq 0 ] || return "$ec"
+  preflight "$(basename "$2")-post" || exit 4
 }
 { cat prompts/classify.md; echo; cat "$1"; } > "$STATE/classify-prompt.md"
 run_agent "$STATE/classify-prompt.md" "$STATE/label.txt"
@@ -188,6 +233,7 @@ esac
 log "route gate=0"
 { cat "$route"; echo; cat "$1"; } > "$STATE/route-prompt.md"
 run_agent "$STATE/route-prompt.md" "$STATE/final.md"
+preflight "final-post" || exit 4
 # gate: none (accepted)
 log "handler gate=none accepted"
 ```
@@ -202,15 +248,32 @@ Boundary: a planner prompt plus capped worker calls inside ONE host-executed scr
 generated-by: flow-control-generator / orchestrator / 2026-10-01 / dry-run-required
 """
 import json, os, pathlib, shlex, subprocess, sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/
+PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
 STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
 MAX_WORKERS, MAX_TASKS = 4, 12
 def log(line):
     with (STATE / "flow.log").open("a") as f: f.write(line + "\n")
 
-def run_agent(prompt: str, out: pathlib.Path) -> str:
+def preflight(stage: str) -> None: # selected gate passes, or exit 4 before dispatch/acceptance
+    if not PREFLIGHT: return
+    gate = pathlib.Path(PREFLIGHT)
+    if not (gate.is_file() and os.access(gate, os.X_OK)):
+        log(f"preflight gate=4 stage={stage} missing/not-executable")
+        print(f"preflight missing/not executable: {PREFLIGHT}", file=sys.stderr); sys.exit(4)
+    out = STATE / f"preflight-{stage}.out"
+    try:
+        r = subprocess.run([PREFLIGHT], capture_output=True, text=True, timeout=600) # no shell: fixed argv
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"preflight gate=4 stage={stage} invocation failed: {exc}"); sys.exit(4)
+    out.write_text((r.stdout or "") + (r.stderr or ""))
+    log(f"preflight gate={r.returncode} stage={stage}")
+    if r.returncode: sys.exit(4)
+
+def run_agent(prompt: str, out: pathlib.Path, stage: str = "") -> str:
+    preflight(stage or out.name)
     log(f"{out.name} start")
     r = subprocess.run(AGENT_CMD, input=prompt, capture_output=True, text=True, timeout=1800)
     passed = r.returncode == 0 and bool(r.stdout.strip())
@@ -218,6 +281,7 @@ def run_agent(prompt: str, out: pathlib.Path) -> str:
     if r.returncode: raise RuntimeError(f"agent failed: {r.stderr[:500]}")
     if not passed: raise RuntimeError("agent returned no output")
     out.write_text(r.stdout)
+    preflight(f"{out.name}-post")
     return r.stdout
 
 def parse_plan(raw: str):
@@ -262,11 +326,25 @@ def worker(t):
     return t["id"], run_agent(t["task"], STATE / f"worker-{t['id']}.md")
 
 with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-    results = dict(pool.map(worker, tasks))
+    futures = [pool.submit(worker, t) for t in tasks]
+    results, held, worker_error = {}, False, None
+    for future in as_completed(futures):
+        try:
+            key, value = future.result(); results[key] = value
+        except SystemExit as exc:
+            if exc.code != 4: raise
+            held = True
+        except Exception as exc:
+            if worker_error is None: worker_error = exc
+    if held:
+        log("preflight gate=4 propagated"); sys.exit(4)
+    if worker_error is not None: raise worker_error
 
 merged = "\n\n".join(f"## {k}\n{v}" for k, v in sorted(results.items()))
+preflight("synth-pre")
 run_agent("Synthesize worker outputs into one deliverable.\n\n" + merged,
           STATE / "final.md")
+preflight("final-post")
 ec = subprocess.run(["./checks/verify-merged.sh", str(STATE / "final.md")]).returncode
 log(f"merged gate={ec}")
 if ec: sys.exit(2)
@@ -287,9 +365,16 @@ import os, pathlib, shlex, subprocess, sys
 from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 
 AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/
+PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
 STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
-MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))
-MIN_OK = os.environ.get("MIN_OK", "")
+try:
+    MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))
+    MIN_OK_RAW = os.environ.get("MIN_OK", "")
+    MIN_OK = int(MIN_OK_RAW) if MIN_OK_RAW else None
+except ValueError:
+    print("invalid worker/quorum configuration", file=sys.stderr); sys.exit(4)
+if MAX_WORKERS < 1:
+    print("MAX_WORKERS must be positive", file=sys.stderr); sys.exit(4)
 FINAL_NODE = "assemble" # explicit acceptance artifact, independent of traversal order
 NODES = {
     "spec":     ((), "prompts/spec.md"),
@@ -299,6 +384,39 @@ NODES = {
 }
 def log(line):
     with (STATE / "flow.log").open("a") as f: f.write(line + "\n")
+
+class PreflightError(Exception): pass # exit 4; never merged into the MIN_OK/partial tally
+
+def preflight(stage: str) -> None: # selected gate passes, or raises before dispatch/acceptance
+    if not PREFLIGHT: return
+    gate = pathlib.Path(PREFLIGHT)
+    if not (gate.is_file() and os.access(gate, os.X_OK)):
+        log(f"preflight gate=4 stage={stage} missing/not-executable")
+        print(f"preflight missing/not executable: {PREFLIGHT}", file=sys.stderr)
+        raise PreflightError(stage)
+    out = STATE / f"preflight-{stage}.out"
+    try:
+        r = subprocess.run([PREFLIGHT], capture_output=True, text=True, timeout=600) # no shell: fixed argv
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"preflight gate=4 stage={stage} invocation failed: {exc}")
+        raise PreflightError(stage) from exc
+    out.write_text((r.stdout or "") + (r.stderr or ""))
+    log(f"preflight gate={r.returncode} stage={stage}")
+    if r.returncode: raise PreflightError(stage)
+
+def run_agent(prompt_file, out, deps=()):
+    preflight(f"{out.stem}-pre")
+    body = pathlib.Path(prompt_file).read_text()
+    for d in deps:
+        body += "\n\n" + (STATE / f"{d}.out").read_text()
+    log(f"{out.name} start")
+    r = subprocess.run(AGENT_CMD, input=body, capture_output=True, text=True, timeout=1800)
+    passed = r.returncode == 0 and bool(r.stdout.strip())
+    log(f"{out.name} end exit={r.returncode} output-gate={int(not passed)}")
+    if r.returncode: raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+    if not passed: raise RuntimeError("agent returned no output")
+    out.write_text(r.stdout)
+    preflight(f"{out.stem}-post")
 
 def toposort(nodes):
     order, seen, temp = [], set(), set()
@@ -313,17 +431,6 @@ def toposort(nodes):
     for n in nodes: visit(n)
     return order
 
-def run_agent(prompt_file, out, deps=()):
-    body = pathlib.Path(prompt_file).read_text()
-    for d in deps:
-        body += "\n\n" + (STATE / f"{d}.out").read_text()
-    log(f"{out.name} start")
-    r = subprocess.run(AGENT_CMD, input=body, capture_output=True, text=True, timeout=1800)
-    passed = r.returncode == 0 and bool(r.stdout.strip())
-    log(f"{out.name} end exit={r.returncode} output-gate={int(not passed)}")
-    if r.returncode: raise RuntimeError(f"agent failed: {r.stderr[:500]}")
-    if not passed: raise RuntimeError("agent returned no output")
-    out.write_text(r.stdout)
 
 order = toposort(NODES)
 if FINAL_NODE not in NODES or any(FINAL_NODE in deps for deps, _ in NODES.values()):
@@ -349,16 +456,25 @@ with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
             n = running.pop(fut)
             try:
                 fut.result(); status[n] = "done"
+            except PreflightError as exc:
+                status[n] = "preflight"
+                print(f"{n} preflight gate=4: {exc}", file=sys.stderr)
             except Exception as exc:
                 status[n] = "failed"
                 print(f"{n} failed: {exc}", file=sys.stderr)
             ledger.write(f"{n}\t{status[n]}\n")
 
 ledger.close()
+if any(v == "preflight" for v in status.values()): # selected gate failure is configuration, never quorum-tolerable
+    log("preflight gate=4 propagated"); sys.exit(4)
 ok = sum(1 for v in status.values() if v == "done")
 bad = [n for n, v in status.items() if v != "done"]
-if status.get(FINAL_NODE) != "done" or (ok < int(MIN_OK) if MIN_OK else bool(bad)):
+if status.get(FINAL_NODE) != "done" or (ok < MIN_OK if MIN_OK is not None else bool(bad)):
     log("nodes gate=2"); sys.exit(2)
+try:
+    preflight("final-post")
+except PreflightError:
+    log("preflight gate=4 propagated"); sys.exit(4)
 final = STATE / f"{FINAL_NODE}.out"
 ec = subprocess.run(["./checks/verify-merged.sh", str(final)]).returncode
 log(f"merged gate={ec}")
@@ -375,10 +491,10 @@ Before the first unattended run of any generated script with side effects, a hum
 
 Before handing a generated script to the user:
 
-1. Stub dry run: `AGENT_CMD='cat'`, or a stub echoing shaped outputs (router: fixed label; orchestrator: JSON plan); control flow, gates, and state files must behave with zero model calls. Stub success is rig-tier evidence for control flow, never for a production or side-effectful run.
+1. Stub dry run: `AGENT_CMD='cat'`, or a stub echoing shaped outputs (router: fixed label; orchestrator: JSON plan); control flow, gates, and state files must behave with zero model calls. Stub success is rig-tier evidence for control flow, never for a production or side-effectful run. With `PREFLIGHT` unset the attended path is unchanged; with a failing/missing selected gate the script exits 4 before dispatch and before acceptance, including under `MIN_OK` and in zero-call paths.
 2. `bash -n` / `python3 -m py_compile` the script.
-3. Confirm every stage has a gate or an explicit `# gate: none (accepted)`.
-4. Report the dry-run evidence in the run note; an unexercised script is not done.
+3. Confirm every stage has a gate or an explicit `# gate: none (accepted)`, plus the shared `preflight()` gate before each dispatch and after it before acceptance.
+4. Report the dry-run evidence in the run note; an unexercised script is not done. A required-precondition workflow's run note names the selected `PREFLIGHT` executable; never imply an empty gate means met.
 
 Promoting a generated flow into a durable artifact needs fail-closed Acquisition L3 gates (prompt-injection authority boundary, supply-chain provenance, memory-write provenance; `04-agent/artifact-promotion.md` §4), recurrence evidence and explicit human approval.
 

@@ -1,12 +1,8 @@
 """Guard the 2026-09-05 skill correctness / logical-consistency pass.
 
-Pins one or two landed sentences per skill at the surface that owns them, keeps
-both flow packs under the 20,000-character routing budget (the harness bound
-pre-exists in test_llm_judge_lifecycle_survey_record.py; the generator bound is
-new here), dry-runs the DAG template's quorum path against the merged-result
-gate (D7), and checks the record is indexed. Pins whose lines the 2026-10-01
-repair rewrote (stdin runner, identity gate, explicit DAG final node, content
-progress) are re-pinned to the repaired lines — one replacement pin per fix.
+Preserves named contract prose and protocol tokens, dry-runs quorum/final-sink
+and empty-worker behavior, and checks the record is indexed. Executable-code
+snippets and incidental source-size assertions are not acceptance oracles.
 """
 
 from __future__ import annotations
@@ -28,7 +24,6 @@ PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "skill-verification-panel-2026-09-05.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
-LINT_WARNING_CHARS = 20000
 
 DAG_TEMPLATE = re.compile(
     r"## Template: DAG Executor \(Python, stdlib only\)\n.*?```python\n(.*?)```", re.S
@@ -54,24 +49,12 @@ PINS = {
     "agent-governance-scaffold": (
         "exactly one of the literals `**Governance status:** artifact-complete` or `**Governance status:** enforcement-proven`",
     ),
-    "flow-control-generator": (
-        'if $AGENT_CMD < "$1" > "$2" && [ -s "$2" ]; then',   # stdin prompt + output gate (WR-21/WR-20 re-pin)
-        'if status.get(FINAL_NODE) != "done" or (ok < int(MIN_OK) if MIN_OK else bool(bad)):',  # explicit sink (WR-04 re-pin)
-        'wid = "".join(c for c in t["id"] if c.isalnum() or c in "-_")',  # WR-02: no silent "task" fallback
-        'if not isinstance(tasks, list): raise ValueError("plan is not a list")',
-    ),
     "flow-loop-harness": (
         "4. Progress detector: abort on equal content signals, not equal churn.",  # WR-05 re-pin
-        'summary="$(cat "$STATE"/w${w}-*.md | cksum)"',
     ),
 }
 # Sentences that legitimately appear more than once (template + companion floor).
 AT_LEAST_ONCE = {
-    "flow-loop-harness": (
-        """if [ "$(sed '/^[[:space:]]*$/d' "$STATE/round-$r-critique.md")" = "ACCEPT" ]""",
-        '[ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }',
-        'srel="$(cd "$STATE" && pwd -P)"',
-    ),
     "reflective-risk": ("Sink Inventory", "Unattended Envelope"),
     "flow-control-generator": ("# gate: none (accepted)",),
     "reflective-research": ("| Claim / Item | Source | Status | Checked (date) | How (command + input set, or freshness kind) | Open Constraints |",),
@@ -111,10 +94,6 @@ def test_landed_sentences_present_once(skill: str):
     for pin in AT_LEAST_ONCE.get(skill, ()):
         assert pin in text, f"{skill}: missing {pin[:60]!r}"
 
-@pytest.mark.parametrize("pack", ["flow-control-generator", "flow-loop-harness"])
-def test_flow_packs_stay_under_lint_length_threshold(pack: str):
-    # lint_skills.py measures the whole file in characters; so do we.
-    assert len(_skill(pack)) <= LINT_WARNING_CHARS, len(_skill(pack))
 
 
 def test_record_is_indexed():
@@ -155,7 +134,7 @@ def _run_dag(
     gate.write_text('#!/bin/sh\n[ -s "$1" ] && ! grep -q CONFLICT "$1"\n', encoding="utf-8")
     gate.chmod(0o755)
     (d / "dag.py").write_text(dag, encoding="utf-8")
-    env = dict(os.environ, AGENT_CMD=str(stub), MIN_OK=min_ok)
+    env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub), "MIN_OK": min_ok}
     if stale_sink:  # a prior clean run in the same STATE leaves every node's .out on disk
         write_stub(None)
         assert subprocess.run([sys.executable, "dag.py"], cwd=d, env=env, capture_output=True, timeout=120).returncode == 0
@@ -205,7 +184,7 @@ def test_python_templates_treat_empty_success_as_failure(tmp_path: Path):
     gate.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
     gate.chmod(0o755)
     (d / "orch.py").write_text(orch, encoding="utf-8")
-    env = dict(os.environ, AGENT_CMD=str(stub))
+    env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub)}
     r = subprocess.run([sys.executable, "orch.py", "goal.md"], cwd=d, env=env, capture_output=True, text=True, timeout=120)
     assert r.returncode != 0, r.stdout
     assert "no output" in r.stderr

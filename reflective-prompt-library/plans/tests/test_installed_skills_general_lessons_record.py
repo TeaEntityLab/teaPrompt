@@ -176,7 +176,7 @@ def test_fan_out_template_gates_the_merged_result(tmp_path: Path):
         stub.write_text(stub_body, encoding="utf-8")
         stub.chmod(stub.stat().st_mode | stat.S_IEXEC)
         shutil.rmtree(tmp_path / "state", ignore_errors=True)
-        env = dict(os.environ, AGENT_CMD=str(stub))
+        env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub)}
         return subprocess.run(
             ["bash", str(script)], cwd=tmp_path, env=env,
             capture_output=True, text=True, timeout=60,

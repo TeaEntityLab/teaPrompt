@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-03T11:33:53.105079",
+  "generated_at": "2026-10-05T23:26:36.618785",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -37,6 +37,7 @@
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "teabrain-concepts-experiments-survey-2026-09-21.md",
             "skills-surface-plan-2026-07-11.md",
+            "runtime-skills-experiments-2026-10-05.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "harness-intent-drift-rethink-2026-09-06.md",
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
@@ -1438,6 +1439,90 @@
       "char_count": 8594
     },
     {
+      "path": "reflective-prompt-library/plans/runtime-skills-experiments-2026-10-05.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "runtime-skills-experiments-2026-10-05",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "methodology-only-rethink-panel-2026-10-01.md",
+          "product-runtime-ownership-panel-2026-08-25.md",
+          "skills-runtime-legitimacy-panel-record-2026-07-06.md",
+          "skill-verification-panel-2026-09-05.md",
+          "../../review/final-report.md#final-report--whole-library-plan--skill-review"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Runtime-Skills Integration and Experiments — 2026-10-05"
+        },
+        {
+          "level": 2,
+          "text": "Goal and authority"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Contract and traceability"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Complete-source baseline"
+        },
+        {
+          "level": 3,
+          "text": "Emitted checker and flow coupling"
+        },
+        {
+          "level": 3,
+          "text": "Final source-review repairs"
+        },
+        {
+          "level": 3,
+          "text": "Executable-pin removal and behavioral coverage closure — 2026-10-05"
+        },
+        {
+          "level": 3,
+          "text": "Consumer map"
+        },
+        {
+          "level": 3,
+          "text": "Real OS role and CLI observations"
+        },
+        {
+          "level": 3,
+          "text": "Process interruption"
+        },
+        {
+          "level": 3,
+          "text": "Model and repository verification"
+        },
+        {
+          "level": 2,
+          "text": "Source measurements and preserved evidence"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and evidence limits"
+        }
+      ],
+      "line_count": 149,
+      "char_count": 23195
+    },
+    {
       "path": "reflective-prompt-library/plans/agentic-sop-workflow-reflection-2026-06-13.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1827,6 +1912,7 @@
           "agent-governance-scaffold-panel-record-2026-07-18.md",
           "../06-repo/AGENTS.md",
           "flow-control-pack-panel-record-2026-07-11.md",
+          "runtime-skills-experiments-2026-10-05.md",
           "agent-governance-four-power-concepts-2026-07-17.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "../06-repo/AGENTS.md",
@@ -1879,8 +1965,8 @@
           "text": "Prompt / Source Pointers"
         }
       ],
-      "line_count": 164,
-      "char_count": 11998
+      "line_count": 165,
+      "char_count": 12653
     },
     {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
@@ -6439,7 +6525,8 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-coverage-panel-record-2026-07-11.md",
           "p7-pack-routing-decision-2026-07-11.md",
-          "frozen-core-parity-review-2026-07-11.md"
+          "frozen-core-parity-review-2026-07-11.md",
+          "runtime-skills-experiments-2026-10-05.md"
         ]
       },
       "structure": [
@@ -6500,8 +6587,8 @@
           "text": "Sources"
         }
       ],
-      "line_count": 126,
-      "char_count": 15671
+      "line_count": 127,
+      "char_count": 16181
     },
     {
       "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
@@ -6705,7 +6792,8 @@
           "september-skills-review-2026-09-14.md",
           "september-skills-review-2026-09-14.md",
           "september-skills-review-2026-09-14.md",
-          "governance-workflow-self-control-adoption-2026-09-14.md"
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "runtime-skills-experiments-2026-10-05.md"
         ]
       },
       "structure": [
@@ -6754,8 +6842,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 109,
-      "char_count": 14293
+      "line_count": 110,
+      "char_count": 14894
     },
     {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
@@ -8168,6 +8256,7 @@
           "../PROJECT_KNOWLEDGE.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
+          "runtime-skills-experiments-2026-10-05.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "dormant-work-specs-2026-07-11.md",
@@ -8243,8 +8332,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 209,
-      "char_count": 13806
+      "line_count": 218,
+      "char_count": 14400
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -12266,6 +12355,7 @@
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-verification-panel-2026-09-05.md",
+          "runtime-skills-experiments-2026-10-05.md",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../04-agent/workflow-acquisition.md",
           "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
@@ -12331,8 +12421,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 417,
-      "char_count": 37134
+      "line_count": 433,
+      "char_count": 38266
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -15669,7 +15759,7 @@
         }
       ],
       "line_count": 411,
-      "char_count": 27126
+      "char_count": 27769
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -15790,8 +15880,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 403,
-      "char_count": 19890
+      "line_count": 519,
+      "char_count": 27731
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16251,7 +16341,7 @@
         "name": "governed-delivery",
         "description": "Use when a task must be delivered end-to-end under governance — an autonomous or unattended delivery run that needs a gate sequence, an oracle manifest, a task packet, failure-signature exits, decorrelated verification, an evidence ledger, and a named acceptance record. It emits a host-run delivery contract set; it does not enforce it. For effect authority use agent-governance-scaffold; for loop or flow scripts use flow-loop-harness or flow-control-generator.",
         "license": "MIT",
-        "compatibility": "Emits static delivery contracts (Markdown and YAML templates) for a POSIX host with a headless agent CLI; the host owns oracle sealing, sink isolation, budget enforcement, durable ledgers, and the human decision channel — TeaPrompt runs none of them.",
+        "compatibility": "Emits delivery contracts (Markdown/YAML) and an optional stdlib-only Python 3.7+ record checker for a POSIX host with a headless agent CLI; the host owns sealing, sink isolation, budgets, durable ledgers, and human decisions — TeaPrompt runs none of them.",
         "metadata": "",
         "risk_level": "high",
         "human_review_required": "true",
@@ -16346,6 +16436,18 @@
         },
         {
           "level": 2,
+          "text": "Preflight Evidence Checker (generated template, host-run)"
+        },
+        {
+          "level": 3,
+          "text": "Template: checks/preflight.py (Python, stdlib only)"
+        },
+        {
+          "level": 3,
+          "text": "Flow-pack executable wrapper"
+        },
+        {
+          "level": 2,
           "text": "Verification"
         },
         {
@@ -16361,8 +16463,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 285,
-      "char_count": 16275
+      "line_count": 634,
+      "char_count": 34517
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -17103,9 +17205,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 391,
-      "char_count": 19985
+      "line_count": 442,
+      "char_count": 24566
     }
   ],
-  "total_files": 190
+  "total_files": 191
 }

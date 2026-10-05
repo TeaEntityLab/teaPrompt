@@ -77,6 +77,7 @@ Host-only, declared not implemented: oracle sealing, sandbox and egress control,
 | GD-17 | Pack admission surfaces | Adopted 2026-09-03 | `DOMAIN_PACK_SKILLS`, Type line, examples, skill-map, EN/zh-TW cheatsheets, `SKILL_INSTALLATION.md`, guard | none |
 | GD-18 | Independent post-land panel | Adopted 2026-09-13 — AGREE WITH CHANGES, all changes applied | Five-lens Parallel Lens Review; record: `plans/governed-delivery-review-2026-09-13.md` | none |
 | GD-19 | Collision measurement for "deliver / autonomous / unattended" vocabulary against core routes | Measured 2026-09-14 — no core route changed by pack vocabulary; one R11 paraphrase gap (`approved delivery plan`) fixed after the trap was fixture-backed | Three fresh ROUTE-002 groups 100% pre-tune; ROUTE-003 `delivery_vocab_implement_not_plan_trap` 33% → 100%; [record](governance-workflow-self-control-adoption-2026-09-14.md) | R12 quick-cue only if the trap becomes frequent |
+| GD-20 | Generated finite host-evidence record checker and one-path flow wrapper; required-control, freshness and spec/host/file binding checks | Adopted 2026-10-05 (user-directed in-place extension; recurrence unchanged) | Pack inline `checks/preflight.py` and `checks/run-preflight.sh`, examples, behavioral guard `test_runtime_preflight_consumers.py` and [runtime integration record](runtime-skills-experiments-2026-10-05.md) | Re-observe stale bindings; readonly coherence checking does not authenticate attestation, supply enforcement or close acceptance; full GD-16 refuters remain unchanged |
 
 ## Demotion Triggers
 

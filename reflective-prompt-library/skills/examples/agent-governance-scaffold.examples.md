@@ -121,3 +121,31 @@ Expected output shape:
 - Keep `<cli>` generic: agy, agent(cursor-cli), Devin, OpenCode, OMP, Claude, Codex, or another headless host may supply the concrete command.
 ```
 
+## Example 4
+
+Input:
+
+```text
+Our handover says preconditions are met. Does that prove enforcement?
+```
+
+Expected output shape (same evidence boundary as governed-delivery):
+
+```markdown
+## Refusal
+- No: the handover is a host-checked record, never a sealed result. A
+  generated handover or run note that claims `met` without coherent fresh
+  evidence bound to the current spec/host is `hold`, not a pass.
+- Record coherence alone — including the governed-delivery preflight
+  checker's `ready` — never yields enforcement-proven; only observed host
+  rejection/receipt/budget/mutation or canary evidence does.
+- File and artifact existence/hash checks never prove events happened or
+  sealing holds continuously. The host owns and protects the checker, the
+  binding, and the evidence; prose cannot seal them.
+## HANDOVER.md status
+- **Governance status:** artifact-complete, not enforcement-proven
+- Named unwired bypass: direct_<cli>_exec_via_hook until the host broker intercepts the CLI
+## Escalation
+- enforcement questions -> named host owner + Human Review before live wiring
+```
+
