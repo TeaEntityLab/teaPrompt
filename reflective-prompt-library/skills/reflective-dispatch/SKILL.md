@@ -39,8 +39,8 @@ Methods:
 - Runtime trust-boundary routing
 
 Output:
-- For routing-only work, output `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Human Review`, and `Next Action`.
-- Include a short route trace with confidence and optional enhancements.
+- For routing-only work, output the ten-field trace the router linter checks: `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, and `Next Action`.
+- A blank `Route Confidence`, a deferred enhancement with no rationale sentence, or a high-risk route whose `Human Review` is blank or `not required` is not a finished trace.
 
 Never:
 - Do not create a large plan, agent swarm, or multi-file process when a smaller workflow can produce the result.

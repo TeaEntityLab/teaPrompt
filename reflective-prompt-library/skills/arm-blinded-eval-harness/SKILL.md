@@ -98,7 +98,9 @@ Usage: run_blinded_eval.py <config.json>  (see CONFIG below)
 config: {pairs: [{id, seed, candidates: [relpaths], oracle: [argv...]}],
           arms: ["control", "treatment"], order: {pair: [arm...]},
           arm_dirs: {pair: {arm: path}}, blinded: path, sealed_map: path,
-          results: path, run_note: path}
+          results: path, run_note: path,
+          noise_floor_basis: str|omit, failure_categorization: str|omit,
+          selection_vs_final: str|omit}
 Oracle argv uses {CAND} for the blinded candidate path. Scorer never sees arm dirs.
 """
 import hashlib, json, shutil, subprocess, sys
@@ -163,6 +165,9 @@ def main(cfg_path: str) -> int:
     Path(cfg["results"]).write_text("".join(json.dumps(s) + "\n" for s in scores))
     note = {"order": cfg["order"], "clone_hashes": clone_hashes,
             "discarded": discarded,
+            "noise_floor_basis": cfg.get("noise_floor_basis") or "missing",
+            "failure_categorization": cfg.get("failure_categorization") or "unresolved",
+            "selection_vs_final": cfg.get("selection_vs_final") or "not-a-final-claim",
             "disclosure": "by-construction blinding only; zero observed blinded runs yet"}
     Path(cfg["run_note"]).write_text(json.dumps(note, indent=2))
     # Scorer-log label audit: caller greps results + invocation log for ARM_TOKENS.

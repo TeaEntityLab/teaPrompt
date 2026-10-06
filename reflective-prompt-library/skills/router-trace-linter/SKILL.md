@@ -27,15 +27,15 @@ Give hosts and reviewers a small deterministic checker that lints a router's emi
 
 ### Inputs
 
-- One route trace as markdown text, YAML block, or key/value lines (the ten contract fields, in any order/casing). Machine `trace_required_fields` form (`canonical_intent, workflow, confidence, enhancements_enabled, enhancements_available, rationale`) is accepted as an alias subset — missing display-only fields (`Mode`, `Next Action`) are reported as warnings, not failures, in alias mode.
+- One route trace as markdown text, YAML block, or key/value lines (the ten contract fields, in any order/casing). Machine `trace_required_fields` form (`canonical_intent, workflow, confidence, enhancements_enabled, enhancements_available, rationale`) is accepted as an alias subset — absent `Mode`, `Strictness`, and `Next Action` are warnings, not failures, in alias mode. `Human Review` is a warning only when no high-risk signal fired.
 - Optional: the pre-route request text (one paragraph), used only to detect claimed-but-unexplained downgrades (e.g. request names tests, trace defers them silently). Never required; absence never fails the lint.
 
 ### Methods
 
-1. **Field-presence check:** normalize trace keys (case/whitespace/punctuation-insensitive: `Route Confidence` ≡ `confidence`) and require all ten contract fields — `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`. Missing or blank field = fail with per-field row.
+1. **Field-presence check:** normalize trace keys (case/whitespace/punctuation-insensitive: `Route Confidence` ≡ `confidence`, `Enhancements Available` ≡ `enhancements_available`) and require all ten contract fields — `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`. Missing or blank field = fail with per-field row. **Alias mode** is the machine six-field form (`canonical_intent`, `workflow`, `confidence`, `enhancements_enabled`, `enhancements_available`, `rationale`) when the ten display names are absent. Map `canonical_intent`→`Goal`, `workflow`→`Workflow`, `confidence`→`Route Confidence`, `enhancements_enabled`→`Enhancements Enabled`, `enhancements_available`→`Enhancements Available`, and `rationale`→the rationale seat (it also fills `Assumptions` when that field is absent). Absent `Mode`, `Strictness`, and `Next Action` are warnings, not failures. Absent `Human Review` is a warning unless a high-risk signal fired, in which case R4 still fails.
 2. **Confidence-parse check:** accept exactly `high | medium | low` (case-insensitive) or a numeric `0..1` float; anything else (blank, `maybe`, `confident`, `80%`, prose sentence) = fail. Rationale: TeaPrompt's standing rule is "evidence over confidence" — the linter checks the value is well-formed and therefore comparable, never that it is calibrated.
-3. **Downgrade/defer-rationale check (R5/R7):** when the trace signals reduced rigor, require explicit rationale text (≥1 non-placeholder sentence, >20 characters, not `n/a`/`none`/`tbd`). Signals: `Enhancements Available` non-empty (a deferred skill exists); `Workflow: prompt-only` or Fast Path taken where a workflow was in scope; `Strictness` below the risk-implied floor; or any line matching `downgrade|defer|fallback|default-up|instead of|skipped`. Rationale may live in `Assumptions` or a `Rationale`/`Reason` line — the linter reports where it found it.
-4. **High-risk-review check (R4):** when the trace signals high risk or irreversible impact — `Workflow` contains `reflective-risk`, `Strictness` is `L4`/`L5`, or `Goal`/`Assumptions` match `production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part` — require `Human Review` to be present, non-blank, and not a negation (`none`, `not required`, `n/a`). Anything weaker = fail.
+3. **Downgrade/defer-rationale check (R5/R7):** when the trace signals reduced rigor, require explicit rationale text (≥1 non-placeholder sentence, >20 characters, not `n/a`/`none`/`tbd`). Signals: `Enhancements Available` non-empty (a deferred skill exists); `Workflow: prompt-only` or Fast Path taken where a workflow was in scope; `Strictness` below the risk-implied floor; or any line matching `downgrade|defer|fallback|default-up|instead of|skipped`. Rationale may live in `Assumptions`, a `Rationale`/`Reason` line, or in `Enhancements Available` itself when that field is a non-placeholder sentence longer than 20 characters — the linter reports which seat it used. The named must-pass fixture is allowed to keep a short `Assumptions` value; the deferral sentence in `Enhancements Available` is enough.
+4. **High-risk-review check (R4):** when the trace signals high risk or irreversible impact — `Workflow` contains `reflective-risk`, `Strictness` is `L4`/`L5`, or `Goal`/`Assumptions` match `production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part` — require `Human Review` to be present, non-blank, and not a negation (`none`, `not required`, `n/a`). Anything weaker = fail. A keyword inside a negated clause (`no`, `not`, `without`, `non-`) is not a signal: Example 1's `no auth, billing, or production surface` is a denial, and `Human Review: not required` is a valid low-risk answer when no signal fired. `not required` remains a failure when a real signal did fire.
 5. **Diff output:** emit one row per field (`ok | missing | unparseable | rationale-missing | review-missing`) plus the offending raw line or `<absent>`, so a reviewer can fix the trace without re-reading the contract.
 
 ### Output
@@ -50,7 +50,7 @@ Give hosts and reviewers a small deterministic checker that lints a router's emi
 - Never state which workflow *should* have been chosen — report only whether the emitted trace satisfies the contract.
 - Never present a `pass` as evidence the rationale is true, the confidence is calibrated, or the workflow choice was right: a coherent invented rationale passes the syntax check.
 - Never treat a high-risk-keyword miss as a route approval — the underlying R4 duty still binds the router when the heuristic list misses.
-- Never fail alias-mode (machine six-field) traces on display-only gaps (`Mode`, `Next Action`) — warnings only; gates that need strictness must require the full ten-field form.
+- Never fail alias-mode (machine six-field) traces on absent `Mode`, `Strictness`, or `Next Action` — warnings only. Still fail that form when confidence is unparseable, a deferral has no rationale sentence, or a high-risk signal has no `Human Review`. A gate that needs strictness recorded must require the full ten-field form.
 - Never invent rationale, confidence, or review text to turn a fail into a pass — return the diff to the router author for a one-line fix.
 - Never adjudicate whether the route was semantically correct or whether the work should exist — escalate instead (see Escalation).
 
@@ -68,18 +68,19 @@ Give hosts and reviewers a small deterministic checker that lints a router's emi
 
 ### Verification
 
-Three self-contained fixtures, runnable without network or model calls —
+Four self-contained fixtures, runnable without network or model calls —
 
 1. `complete-trace` (must pass): all ten fields filled, `Route Confidence: medium`, `Enhancements Available: security review after bounded patch (deferred: L2 scope, no auth surface)` — verdict `pass`, zero failing rows.
 2. `missing-rationale-downgrade` (must fail): `Enhancements Available: performance review` with `Assumptions` blank and no rationale sentence — verdict `fail`, row `Enhancements Available: rationale-missing (R5/R7)`.
 3. `missing-confidence` (must fail): `Route Confidence:` blank — verdict `fail`, row `Route Confidence: unparseable (presence/parse)`. Optional fourth fixture: high-risk route (`Strictness: L4`, production deploy) with `Human Review: none` → `fail`, row `Human Review: review-missing (R4)`.
+4. `alias-six-field` (must pass with warnings): only the six machine keys, low-risk wording, a rationale sentence, no un-negated hazard keyword — verdict `pass`, warnings for absent `Mode`, `Strictness`, and `Next Action`. The same trace with `canonical_intent` containing `production` and no `Human Review` — verdict `fail`, row `Human Review: review-missing (R4)`.
 
 ## Honest Limits
 
 - Syntax, not semantics: the linter proves the trace *says* something well-formed, not that the rationale is true or the workflow choice is right. A coherent invented rationale passes.
 - Confidence is uncalibrated by design: `high` from a chat model is self-report with no calibration evidence. The linter checks comparability only.
 - High-risk keyword list is heuristic English-first (`production|auth|billing|…`); non-English or novel hazard phrasing can miss the review check. Misses are linter gaps, not route approvals — the underlying R4 duty still binds the router.
-- Alias mode (machine six-field form) is leniency by construction: display-only gaps warn instead of fail. Gates that need strictness should require the full ten-field form.
+- Alias mode (machine six-field form) warns instead of failing on absent `Mode`, `Strictness`, and `Next Action`. It still fails closed on a bad confidence value, a deferral without a rationale sentence, or a high-risk signal with no `Human Review`. A gate that needs strictness recorded should require the full ten-field form.
 - Recurrence evidence is still thin: at registration the linter had zero observed misroute catches. Record real failing traces caught pre-release, plus a no-false-positive run over the existing `reflective-dispatch.examples.md` traces, before treating early passes as established practice.
 
 ## Examples

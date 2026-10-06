@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T00:52:31.793375",
+  "generated_at": "2026-10-07T01:08:54.838941",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -8054,7 +8054,7 @@
         }
       ],
       "line_count": 65,
-      "char_count": 7605
+      "char_count": 7591
     },
     {
       "path": "reflective-prompt-library/plans/pstack-synthesis-survey-2026-09-22.md",
@@ -15816,7 +15816,7 @@
         }
       ],
       "line_count": 180,
-      "char_count": 11821
+      "char_count": 12039
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -16391,8 +16391,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 210,
-      "char_count": 14514
+      "line_count": 215,
+      "char_count": 14880
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16948,8 +16948,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 96,
-      "char_count": 10004
+      "line_count": 97,
+      "char_count": 11962
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
