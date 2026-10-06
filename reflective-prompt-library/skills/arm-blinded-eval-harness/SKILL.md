@@ -49,7 +49,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 
 ### Never
 
-- Never let a blinded path or scorer input contain an arm token (`control`, `treatment`, arm index) — refuse with exit 4 before scoring.
+- Never let a blinded path or scorer input contain an arm label (`control`, `treatment` — the ARM_TOKENS tuple) — refuse with exit 4 before scoring; arm *indices* are not tokens (digits false-positive everywhere) and are prevented by not appearing in candidate filenames.
 - Never let scorer argv reference anything outside `blinded/` — refuse with exit 4.
 - Never count a discarded invocation in the pair denominator; a ledger entry without a raw receipt invalidates the run note — do not score.
 - Never merge the hold fixture into the repair-pair denominator — it is reported separately (expected `stale` exit 4, zero dispatch).
@@ -73,7 +73,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 
 ### Failure signals
 
-- Any blinded path contains an arm token (`control`, `treatment`, arm index) → exit 4 before scoring.
+- Any blinded path contains an arm label (`control`, `treatment`) → exit 4 before scoring.
 - Scorer argv references anything outside `blinded/` → exit 4.
 - Seed hash mismatch between clones (caller-side clone check) → exit 4 (clones not identical); do not score.
 - Discarded invocation missing raw receipt → run note incomplete; do not score.
