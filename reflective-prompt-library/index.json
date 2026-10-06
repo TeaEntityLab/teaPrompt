@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-06T14:22:36.804520",
+  "generated_at": "2026-10-06T15:39:53.308954",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -109,6 +109,7 @@
             "QUALITY_GATES_SUMMARY.md",
             "pi-warden-survey-2026-09-20.md",
             "governable-autonomy-survey-2026-09-03.md",
+            "managed-skills-learned-survey-2026-10-06.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "governed-delivery-review-2026-09-13.md",
@@ -7648,6 +7649,76 @@
       ],
       "line_count": 166,
       "char_count": 29898
+    },
+    {
+      "path": "reflective-prompt-library/plans/managed-skills-learned-survey-2026-10-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "managed-skills-learned-survey-2026-10-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Managed-Skills Learned Procedures Survey — 2026-10-06"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Background"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Managed-Skills Inventory (post-session)"
+        },
+        {
+          "level": 2,
+          "text": "Procedures Recorded"
+        },
+        {
+          "level": 3,
+          "text": "1. `registry-gated-admission-sweep`"
+        },
+        {
+          "level": 3,
+          "text": "2. `inert-proposal-mechanics-smoke`"
+        },
+        {
+          "level": 3,
+          "text": "3. `external-repo-delta-survey`"
+        },
+        {
+          "level": 3,
+          "text": "4. `delayed-review-finding-triage`"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Boundary Calls"
+        },
+        {
+          "level": 2,
+          "text": "Status"
+        }
+      ],
+      "line_count": 122,
+      "char_count": 6142
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -17865,5 +17936,5 @@
       "char_count": 24566
     }
   ],
-  "total_files": 198
+  "total_files": 199
 }
