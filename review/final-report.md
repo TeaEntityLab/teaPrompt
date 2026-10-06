@@ -2099,3 +2099,86 @@ Post-synthesis repository link/schema check:
 `python3 reflective-prompt-library/plans/validate_links.py` reported
 **230 files scanned, 0 errors, all validations passed**. This is a fresh command
 receipt, not a new full-suite, runtime-enforcement or empirical-quality claim.
+
+---
+
+# Final Report — Runtime-Skills Workflow Planning (2026-10-06)
+
+## Summary
+
+Produced `reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md`, spec version **RSD-2**, a planning-only L3 runtime-aware skills design. It reuses the five registered packs and existing generated artifacts; no second runner, broker, scheduler, cancellation manager, core skill, pack merge, registry/adoption change, or runtime implementation is authorized or introduced.
+
+## Acceptance criteria status
+
+- Workflow specification with goal, scope, evidence boundaries, usage-first scenarios, requirements R1–R10, staged ownership/gates, falsifiers and phased tickets TASK-001–014: **met**.
+- Separate proved/unknown/blocked/falsified claims and preserve existing adoption/authority boundaries: **met**.
+- Concrete task plan with dependencies, acceptance checks, risk/parallelism and Human Review gates: **met**.
+- Planning artifact hygiene and index currency: **met** after targeted fixes.
+- Implementation, live model evaluation, full GDR campaign, lifecycle/effect deployment or product acceptance: **out of scope / not claimed**.
+
+## Tests run
+
+Fresh checks this turn:
+
+- `python3 /tmp/teaprompt-runtime-skill-plan-YAyZa3/plan_smoke.py` — three real checker subprocess cases, zero mismatches: required unknown → hold/4; invented coherent record → ready/0; changed bound input → stale/4. It demonstrated coherence-only `ready`, not authentication or enforcement.
+- `python3 reflective-prompt-library/plans/validate_links.py` — **235 files scanned, 0 errors**.
+- `python3 reflective-prompt-library/plans/generate_index.py` — **192 files indexed: 178 prompts + 14 skills**.
+- `python3 -m pytest reflective-prompt-library/plans/tests/test_index_json_current.py reflective-prompt-library/plans/tests/test_quality_gates_summary.py -q` — **13 passed**.
+- `python3 -m pytest reflective-prompt-library/plans/tests/test_runtime_preflight_consumers.py reflective-prompt-library/plans/tests/test_flow_generator_consumers.py reflective-prompt-library/plans/tests/test_flow_loop_consumers.py reflective-prompt-library/plans/tests/test_governance_workflow_self_control_adoption.py reflective-prompt-library/plans/tests/test_flow_pack_adoption_state.py -q` — **138 passed**.
+- `python3 reflective-prompt-library/plans/validate_record_hygiene.py` — **0 errors, 35 pre-existing warnings**.
+- `python3 reflective-prompt-library/plans/validate_governance.py` — **14 skills valid, 0 invalid**.
+- `python3 reflective-prompt-library/plans/validate_project_knowledge.py` — **passed**.
+- `python3 reflective-prompt-library/plans/validate_skill_examples.py` — **9 core + 5 domain-pack examples present**.
+- `python3 reflective-prompt-library/plans/lint_skills.py` — **0 errors; 6 warnings retained** (four long domain-pack bodies plus existing size warning).
+
+Retained, not re-run for confirmation: E1–E7 in the spec and pre-plan `make all` gate `artifact://350` with **1,439 passed**. Advisory slice reviews were read from `agent://HostContractReview` and `agent://ExperimentDesignReview`; they informed the plan but are not operational proof.
+
+## Files changed
+
+- `reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md` — new planning specification, RSD-2.
+- `reflective-prompt-library/index.json` — regenerated catalog entry for the new planning artifact.
+- `review/final-report.md` — appended this final report.
+- `local://runtime-skill-planning-evidence-2026-10-06.json` — session evidence bundle.
+
+## Risks
+
+- The plan is evidence-bounded but still unexecuted: actual CLI-role/profile inheritance, model utility, complete GDR-1–6 results, cancel/recovery and external-effect behavior remain unknown or conditional.
+- Checker `ready` is coherence only; a coherent invented record returned `ready` in the planning smoke. Host observation/protection remains mandatory.
+- Provider prerequisite (`usage credits`) remains an environment blocker; it is not model failure or zero demand.
+- The planning artifact is not an adoption decision and does not advance the 2026-10-11 checkpoint.
+
+## Spec-to-code traceability
+
+- Existing finite checker schema and controls → spec §4 and R3.
+- E1/E2 gate and coupling receipts → spec §5 and R2/R3.
+- E3 identity/progress regressions → spec §6 R4/R5.
+- E4 scoped host profile and E5 driver-exit result → spec §5/R6/R9 and TASK-002/TASK-013.
+- E6 provider blocker → spec §7 TASK-004/005 and Phase B prerequisites.
+- E7 usage/GDR boundary → spec §7 TASK-006–011 and promotion limits.
+
+## Remaining work
+
+First human decision: approve one TASK-001 task/root and its minimum selected contracts; then authorize TASK-002 host-control observations. TASK-004+ remains blocked until provider credits and run/cost authorization exist. TASK-012–014 stay conditional.
+
+## Human review needs
+
+- Named task/root/spec/accepter owners before operational wiring.
+- Host owner approval before permission/network/security probes.
+- Human account/task owner approval for provider usage and data egress.
+- Product/sink/accepter approval before canonical or external effects.
+- Any future runtime/adoption/recurrence decision must go through existing owner gates; this report is not approval.
+
+## Addendum — 2026-10-06 (post-report human decisions + second-pass lens rethink)
+
+Human decisions after this report's body was written:
+
+- TASK-001 task class: governed-delivery dry run on a private copy (selected 2026-10-06).
+- TASK-002 scoped probes pre-authorized: positive + intended-denial observations bounded to the named task root; profile/probe config under host owner; no ambient credentials, billing/network changes, or TeaPrompt runner. Auth/permission-class work stays human-gated.
+- Drafted ticket `plans/runtime-skills-task001-ticket-2026-10-06.md` exists but is bindings-pending, not executable — task root, CLI/profile, oracle, writes/sinks, caps, accepter, and artifact owner remain UNKNOWN.
+
+Second-pass verification (three parallel reviewer lenses over RSD-2: host/authority, evidence/falsifier, planning fidelity — 19 findings, 14 adopted):
+
+- Fixed: §7 "not authorized" vs §10 TASK-002 pre-authorization contradiction; dependency summary overstated TASK-002 for TASK-008/009/011; TASK-001 acceptance now names the artifact-owner reviewer; TASK-002 acceptance row gained descendant-inheritance and cap-termination criteria plus declared-bound probe scope; run-level authorization carrier declared (ready ≠ authorization) and boundary-attempt detection assigned host-side; TASK-005 falsifier given a primary endpoint, pair-level denominator, and explicit win rule; alternated-order and single-run nondeterminism limits stated; E3 pin-repair and executed-fresh wording corrected; ticket fixed (artifact-owner input row; caps/accepter/artifact-owner no longer host-defaultable; denial/audit-log receipt added — the descendant probe was already present).
+- Rejected: treating the drafted ticket as execution authorization; demanding exhaustive probe coverage beyond the declared write/sink boundary.
+- Spec sha256 rebound to `4cf307b4…` (via intermediate `f0804197…`, then the descendant-probe label correction); ticket `fe570f47…`; evidence bundle `local://runtime-skill-planning-evidence-2026-10-06.json` updated with prior-hash chain preserved.
+- Gates re-run after edits: index regen clean, record hygiene 0 errors, link validation 0 errors, index test pass.

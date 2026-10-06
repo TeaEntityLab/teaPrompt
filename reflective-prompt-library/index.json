@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-05T23:26:36.618785",
+  "generated_at": "2026-10-06T11:46:50.733878",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -69,6 +69,7 @@
             "self-governance-dogfood-2026-09-24.md",
             "baton-dispatch-survey-2026-07-13.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
+            "runtime-skills-workflow-spec-2026-10-06.md",
             "superpowers-v6.4-adoption-2026-10-03.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
@@ -102,6 +103,7 @@
             "governance-rules-rethink-review-2026-07-11.md",
             "pstack-matt-lauren-survey-2026-10-03.md",
             "governed-delivery-adoption-2026-09-03.md",
+            "runtime-skills-task001-ticket-2026-10-06.md",
             "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "QUALITY_GATES_SUMMARY.md",
@@ -3919,6 +3921,110 @@
       "char_count": 24828
     },
     {
+      "path": "reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "runtime-skills-workflow-spec-2026-10-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../06-repo/AGENTS.md",
+          "../PROJECT_KNOWLEDGE.md",
+          "methodology-only-rethink-panel-2026-10-01.md",
+          "product-runtime-ownership-panel-2026-08-25.md",
+          "runtime-skills-experiments-2026-10-05.md",
+          "flow-pack-usage-log.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../skills/verification-map-generator/SKILL.md",
+          "../../review/final-report.md",
+          "runtime-skills-task001-ticket-2026-10-06.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Runtime-Aware Skills — Workflow Specification and Task Plan"
+        },
+        {
+          "level": 2,
+          "text": "1. Goal, scope and readiness"
+        },
+        {
+          "level": 2,
+          "text": "2. Evidence ledger: what the design may claim"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "3. Reuse the existing skills; do not invent a runtime skill family"
+        },
+        {
+          "level": 2,
+          "text": "4. Minimal runtime-aware skill interface"
+        },
+        {
+          "level": 3,
+          "text": "Existing finite-checker records"
+        },
+        {
+          "level": 2,
+          "text": "5. Workflow, ownership and release"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "6. Usage-first scenarios and requirement-to-test map"
+        },
+        {
+          "level": 2,
+          "text": "7. Phased task plan"
+        },
+        {
+          "level": 3,
+          "text": "Phase A — minimum usable vertical slice (no provider needed)"
+        },
+        {
+          "level": 3,
+          "text": "Phase B — narrow model utility, currently provider-blocked"
+        },
+        {
+          "level": 3,
+          "text": "Phase C — complete current GDR campaign, not narrower analogues"
+        },
+        {
+          "level": 3,
+          "text": "Phase D — only after the earlier evidence justifies further work"
+        },
+        {
+          "level": 2,
+          "text": "8. Material decisions, counterarguments and falsifiers"
+        },
+        {
+          "level": 2,
+          "text": "9. Review focus, open inputs and human gates"
+        },
+        {
+          "level": 2,
+          "text": "10. Planning acceptance and verification"
+        }
+      ],
+      "line_count": 207,
+      "char_count": 46616
+    },
+    {
       "path": "reflective-prompt-library/plans/superpowers-v6.4-adoption-2026-10-03.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6844,6 +6950,68 @@
       ],
       "line_count": 110,
       "char_count": 14894
+    },
+    {
+      "path": "reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "runtime-skills-task001-ticket-2026-10-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "TASK-001 Ticket — Governed-Delivery Dry Run (Private Copy)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "TASK-001: Instantiate governed delivery on a private copy"
+        },
+        {
+          "level": 2,
+          "text": "TASK-002: Scoped host-control probes (pre-authorized, bounded)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Bindings status"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance record"
+        },
+        {
+          "level": 2,
+          "text": "TASK-003 + offline refuters — executed on this copy (2026-10-06)"
+        },
+        {
+          "level": 2,
+          "text": "GDR-1/2 + TASK-004 inventory — user-granted 2026-10-06, executed same day"
+        },
+        {
+          "level": 2,
+          "text": "TASK-005 pilot — user-granted 2026-10-06, executed same day"
+        },
+        {
+          "level": 2,
+          "text": "Lens-review defects found post-acceptance (2026-10-06)"
+        }
+      ],
+      "line_count": 92,
+      "char_count": 14118
     },
     {
       "path": "reflective-prompt-library/plans/agent-harness-convergence-survey-2026-08-25.md",
@@ -15880,8 +16048,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 519,
-      "char_count": 27731
+      "line_count": 521,
+      "char_count": 29286
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16463,8 +16631,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 634,
-      "char_count": 34517
+      "line_count": 636,
+      "char_count": 36033
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -17209,5 +17377,5 @@
       "char_count": 24566
     }
   ],
-  "total_files": 191
+  "total_files": 193
 }
