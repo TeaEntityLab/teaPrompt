@@ -57,11 +57,13 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Never claim alternated order cancels order effects — report order as observed sequence; two pairs cannot separate order effects from fixture-order interaction.
 - Never present by-construction path-shape assertions as observed blinding evidence — every run note carries the zero-observed-runs disclosure until a real pilot lands.
 - Never launder candidate content — content that names its arm is out of scope for the harness; the ticket must forbid arm-identifying content in candidates.
+- Never let a run note attribute a score difference to the treatment without a named noise-floor basis (repeated-baseline spread, or an explicit single-run caveat) and without ruling out noise, grader error, harness failure, and task impossibility.
+- Never cite a score used to select a winner as a reportable final gain — selection and final measurements are separate populations; a final claim needs an untouched final evaluation.
 
 ### Output
 
 - `eval-harness/run_blinded_eval.py` (stdlib only; emitted scaffold, §Emitted Scaffold).
-- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held arm map), `results/scores.jsonl` (per-candidate oracle pass/fail + raw output), `results/run-note.json` (order, seed hashes, caps, discarded ledger refs).
+- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held arm map), `results/scores.jsonl` (per-candidate oracle pass/fail + raw output), `results/run-note.json` (order, seed hashes, caps, discarded ledger refs, declared `noise_floor_basis`, `failure_categorization` verdict, `selection_vs_final` flag).
 - C-hold pair reported separately: expected `stale` exit 4, zero dispatch — never merged into the repair-pair denominator.
 
 ### Escalation
@@ -77,6 +79,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Scorer argv references anything outside `blinded/` → exit 4.
 - Seed hash mismatch between clones (caller-side clone check) → exit 4 (clones not identical); do not score.
 - Discarded invocation missing raw receipt → run note incomplete; do not score.
+- A score difference is attributed to treatment with `noise_floor_basis` missing or `failure_categorization` unresolved → measurement misreport; do not score, repair the run note.
 
 ### Verification
 

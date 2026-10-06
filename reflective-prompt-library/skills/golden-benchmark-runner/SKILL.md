@@ -41,6 +41,7 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 5. **Optional LLM-judge slot.** Declared interface (`JUDGE_CMD` env + rubric), never required. The ledger marks each score `structural` vs `judge-backed`; judge-backed scores name the judge model and rubric version.
 6. **Hold arm.** Preflight-hold fixtures (C-hold pattern: stale binding → exit 4, zero dispatch) are scored separately and excluded from the repair-pair denominator.
 7. **Discard discipline.** Malformed or environment-incomplete invocations are re-run correctly and the discarded receipts are kept for audit — never silently dropped, never counted in the denominator.
+8. **Measurement preflight.** Before attributing any delta to the skill layer, the run report names (a) the noise floor basis — repeated-baseline spread, or an explicit single-run caveat; (b) failure categorization — a delta is not attributable to the treatment until noise, grader error, harness failure, and task impossibility are ruled out; (c) selection-vs-report separation — the score that selected a winner is a selection statistic, not a reportable final gain; a final claim needs a pre-registered untouched evaluation.
 
 ### Output
 
@@ -59,6 +60,8 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 - Never let a scorer that passes an empty or prompt-echoing candidate contribute a delta — mark `structural-heuristic-only` and refuse the delta.
 - Never structurally score research-category tasks with no deterministic oracle — they are `judge-backed` or excluded.
 - Never treat the `cat`-stub self-run as evidence of model utility — it verifies harness mechanics only.
+- Never report a delta inside the declared noise floor as improvement — within-noise is not a demonstrated effect.
+- Never cite a selection-validation score as a reportable final gain — selection and final measurements are separate populations; a final claim needs untouched final data.
 
 ### Escalation
 
@@ -75,6 +78,7 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 - Treatment and control use different models without declaration → composite misreported as skill effect (hard stop; re-run with matched models or relabel `composite`).
 - Scorer passes an empty or prompt-echoing candidate → scorer too weak; mark `structural-heuristic-only` and refuse the delta.
 - Hold-fixture dispatches work → containment failure; halt the run.
+- A delta is reported without a named noise-floor basis or with noise/grader/harness/task-impossibility unruled-out → measurement misreport; halt and repair the report before scoring.
 
 ### Verification
 

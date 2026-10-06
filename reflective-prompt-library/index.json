@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-06T15:39:53.308954",
+  "generated_at": "2026-10-07T00:52:31.793375",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -113,6 +113,7 @@
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "governed-delivery-review-2026-09-13.md",
+            "cross-survey-rethink-2026-10-07.md",
             "pstack-synthesis-survey-2026-09-22.md",
             "agentflow-8.3.2-delta-survey-2026-09-22.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
@@ -7717,8 +7718,8 @@
           "text": "Status"
         }
       ],
-      "line_count": 122,
-      "char_count": 6142
+      "line_count": 119,
+      "char_count": 5926
     },
     {
       "path": "reflective-prompt-library/plans/agent-tooling-research-2026-06-25.md",
@@ -8000,6 +8001,60 @@
       ],
       "line_count": 72,
       "char_count": 7365
+    },
+    {
+      "path": "reflective-prompt-library/plans/cross-survey-rethink-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "cross-survey-rethink-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Cross-Survey ReThink — Unimplemented Candidates Worth Reopening (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "The Finding"
+        },
+        {
+          "level": 2,
+          "text": "Other Surviving Candidates — Why Not Them"
+        },
+        {
+          "level": 2,
+          "text": "Rejected Shapes"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 65,
+      "char_count": 7605
     },
     {
       "path": "reflective-prompt-library/plans/pstack-synthesis-survey-2026-09-22.md",
@@ -16242,8 +16297,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 111,
-      "char_count": 10046
+      "line_count": 115,
+      "char_count": 11045
     },
     {
       "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
@@ -16336,8 +16391,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 207,
-      "char_count": 13810
+      "line_count": 210,
+      "char_count": 14514
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -17936,5 +17991,5 @@
       "char_count": 24566
     }
   ],
-  "total_files": 199
+  "total_files": 200
 }
