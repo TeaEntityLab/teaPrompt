@@ -233,4 +233,9 @@ Minimality 訊號掃描（skill 內建）：
 - **為會產生外部效果的 agent 產生治理骨架** → `agent-governance-scaffold` — 分離提案／授權／效果／驗收四權、capability token、broker 收據、以租約為鍵的效果預算、憲法路徑；產出 host 執行的契約，本身不強制執行；高風險工件仍走 `reflective-risk`。
 - **在治理之下端到端交付（軟體工廠／AI 原生 SDLC）** → `governed-delivery` — 自主或無人值守的交付執行，含閘門序列、oracle 清單、任務封包、失敗特徵退出、去相關驗證、證據帳本與具名驗收；產出 host 執行的交付契約組，本身不強制執行；副作用仍先走 `reflective-risk`。
 - **為產品 repo 產生 agent 可驅動的驗證介面** → `verification-map-generator` — 在產品 repo 內產出 VERIFY.md + features/ 地圖 + 可選的鎖定驗收規格，讓全新 agent 能驗證並分類失敗（產品回歸／文件漂移／規格或 oracle 錯誤／harness 故障）；不是迴圈腳本（`flow-loop-harness`）也不是無碼測試計畫（`reflective-spec-plan`）。
+- **以 headless 方式呼叫指定的 agent CLI** → `headless-agent-cli-contract` — 先做零成本清點探針，再產出各 provider 的呼叫配方（prompt 傳輸方式、權限旗標、輸出隔離、需剝除的 side-channel）；無非互動模式時輸出 `BLOCKED`；絕不自動核准擴權旗標。
+- **需要盲測評分的 with/without-skill 試驗** → `arm-blinded-eval-harness` — 去標籤抽取、封存 arm 對照表、洩漏檢查、捨棄呼叫分冊記帳。
+- **檢查 repo 的 REQ/AC 驗收面完整性** → `acceptance-join-validator` — 每個 ID 都對到鎖定的可執行檢查；純靜態，不執行。
+- **在 golden 任務集上跑 baseline-vs-skill 對照** → `golden-benchmark-runner` — 成對 arm、決定性評分、記錄干擾項；只給方向性結論。
+- **檢查 route trace 是否符合 Router Output Contract** → `router-trace-linter` — 欄位齊全、confidence 可解析、降級理由（R5）、高風險 Human Review（R4/R7）。
 - **工作流程選擇／函式庫路由** → 仍是 `reflective-dispatch`；本節不取代九技能 Fast Routing Rule。

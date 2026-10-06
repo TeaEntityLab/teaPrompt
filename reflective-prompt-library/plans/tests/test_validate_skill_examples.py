@@ -57,4 +57,4 @@ def test_validator_fails_when_pack_registry_shrinks(monkeypatch, capsys):
         validate_skill_examples, "DOMAIN_PACK_SKILLS", DOMAIN_PACK_SKILLS[:-1]
     )
     assert validate_skill_examples.main() == 1
-    assert "DOMAIN_PACK_SKILLS has 4 entries, expected 5" in capsys.readouterr().out
+    assert "DOMAIN_PACK_SKILLS has 9 entries, expected 10" in capsys.readouterr().out

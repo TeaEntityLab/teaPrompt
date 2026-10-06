@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-06T11:46:50.733878",
+  "generated_at": "2026-10-06T14:17:52.230363",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -263,6 +263,18 @@
             "SKILL.md"
           ]
         },
+        "golden-benchmark-runner": {
+          "path": "reflective-prompt-library/skills/golden-benchmark-runner",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "arm-blinded-eval-harness": {
+          "path": "reflective-prompt-library/skills/arm-blinded-eval-harness",
+          "files": [
+            "SKILL.md"
+          ]
+        },
         "reflective-brief": {
           "path": "reflective-prompt-library/skills/reflective-brief",
           "files": [
@@ -275,8 +287,20 @@
             "SKILL.md"
           ]
         },
+        "headless-agent-cli-contract": {
+          "path": "reflective-prompt-library/skills/headless-agent-cli-contract",
+          "files": [
+            "SKILL.md"
+          ]
+        },
         "reflective-review": {
           "path": "reflective-prompt-library/skills/reflective-review",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "router-trace-linter": {
+          "path": "reflective-prompt-library/skills/router-trace-linter",
           "files": [
             "SKILL.md"
           ]
@@ -301,6 +325,12 @@
         },
         "reflective-handoff-retro": {
           "path": "reflective-prompt-library/skills/reflective-handoff-retro",
+          "files": [
+            "SKILL.md"
+          ]
+        },
+        "acceptance-join-validator": {
+          "path": "reflective-prompt-library/skills/acceptance-join-validator",
           "files": [
             "SKILL.md"
           ]
@@ -2285,7 +2315,7 @@
         }
       ],
       "line_count": 215,
-      "char_count": 15784
+      "char_count": 16081
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -7461,7 +7491,7 @@
         }
       ],
       "line_count": 438,
-      "char_count": 25485
+      "char_count": 25641
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -12589,8 +12619,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 433,
-      "char_count": 38266
+      "line_count": 450,
+      "char_count": 40389
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -14816,8 +14846,8 @@
           "text": "Registered domain packs (not core routing)"
         }
       ],
-      "line_count": 92,
-      "char_count": 7070
+      "line_count": 97,
+      "char_count": 8819
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md",
@@ -14884,8 +14914,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 247,
-      "char_count": 12333
+      "line_count": 252,
+      "char_count": 13349
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -14956,8 +14986,8 @@
           "text": "領域包（host 直接呼叫；不屬於核心路由）"
         }
       ],
-      "line_count": 236,
-      "char_count": 7072
+      "line_count": 241,
+      "char_count": 7661
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -16052,6 +16082,193 @@
       "char_count": 29286
     },
     {
+      "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "golden-benchmark-runner",
+      "name": "golden-benchmark-runner",
+      "description": "Use to run a baseline-vs-skill comparison over the golden benchmark tasks — each task runs twice (bare prompt vs prompt+skill layer) with deterministic structural scoring, an optional declared-but-not-required LLM-judge slot, and a results ledger carrying per-task deltas plus confound notes.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "golden-benchmark-runner",
+        "description": "Use to run a baseline-vs-skill comparison over the golden benchmark tasks — each task runs twice (bare prompt vs prompt+skill layer) with deterministic structural scoring, an optional declared-but-not-required LLM-judge slot, and a results ledger carrying per-task deltas plus confound notes.",
+        "license": "MIT",
+        "compatibility": "Requires plans/benchmark_tasks.py corpus (or equivalent task set) and an AGENT_CMD runner; verdicts are directional/stable/composite vocabulary — never proves-at-n=1.",
+        "metadata": "",
+        "risk_level": "medium",
+        "human_review_required": "true",
+        "external_io": "true",
+        "context_load": "medium"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
+        "reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Golden Benchmark Runner"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Inputs"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 3,
+          "text": "Failure signals"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Honest Limits"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 111,
+      "char_count": 10046
+    },
+    {
+      "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "arm-blinded-eval-harness",
+      "name": "arm-blinded-eval-harness",
+      "description": "Use when running a with/without-skill pilot on paired repair fixtures and the scorer must not see arm labels. It emits a paired-arm evaluation scaffold — fixture cloning, alternated arm order, treatment-only artifact exclusion, label-stripped candidate extraction into a blinded dir, deterministic scorer invocation, and a discarded-invocation ledger kept separate from the denominator. By-construction guarantees only; zero observed blinded runs yet.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "arm-blinded-eval-harness",
+        "description": "Use when running a with/without-skill pilot on paired repair fixtures and the scorer must not see arm labels. It emits a paired-arm evaluation scaffold — fixture cloning, alternated arm order, treatment-only artifact exclusion, label-stripped candidate extraction into a blinded dir, deterministic scorer invocation, and a discarded-invocation ledger kept separate from the denominator. By-construction guarantees only; zero observed blinded runs yet.",
+        "license": "MIT",
+        "compatibility": "Requires paired repair fixtures and a deterministic scorer; by-construction guarantees only — zero observed blinded runs yet.",
+        "metadata": "",
+        "risk_level": "medium",
+        "human_review_required": "true",
+        "external_io": "false",
+        "context_load": "low"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md",
+        "reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md",
+        "reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Arm-Blinded Eval Harness"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Inputs"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 3,
+          "text": "Failure signals"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Emitted Scaffold"
+        },
+        {
+          "level": 2,
+          "text": "Honest Limits"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 207,
+      "char_count": 13686
+    },
+    {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
       "type": "skill",
       "category": "skills",
@@ -16309,6 +16526,97 @@
       "char_count": 13815
     },
     {
+      "path": "reflective-prompt-library/skills/headless-agent-cli-contract/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "headless-agent-cli-contract",
+      "name": "headless-agent-cli-contract",
+      "description": "Use when dispatching a task to a named third-party agent CLI headlessly. Given a target CLI plus intended mode (read-only proposal vs tool-using), emit a per-provider invocation recipe — prompt transport, headless permission flags, output isolation, and side-channels to strip — after a zero-cost inventory probe, and block when the CLI has no non-interactive mode.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "headless-agent-cli-contract",
+        "description": "Use when dispatching a task to a named third-party agent CLI headlessly. Given a target CLI plus intended mode (read-only proposal vs tool-using), emit a per-provider invocation recipe — prompt transport, headless permission flags, output isolation, and side-channels to strip — after a zero-cost inventory probe, and block when the CLI has no non-interactive mode.",
+        "license": "MIT",
+        "compatibility": "Requires a POSIX host with the named agent CLIs installed (zero-cost inventory probe first); recipes are per-provider spellings — TeaPrompt runs none of them.",
+        "metadata": "",
+        "risk_level": "medium",
+        "human_review_required": "true",
+        "external_io": "true",
+        "context_load": "low"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "04-agent/runtime-trust-boundary.md",
+        "04-agent/agent-scaffold-provenance.md",
+        "plans/runtime-skills-workflow-spec-2026-10-06.md",
+        "plans/runtime-skills-task001-ticket-2026-10-06.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Headless Agent CLI Contract"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Inputs"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 3,
+          "text": "Failure signals"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Honest Limits"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 104,
+      "char_count": 9701
+    },
+    {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
       "type": "skill",
       "category": "skills",
@@ -16427,6 +16735,95 @@
       ],
       "line_count": 196,
       "char_count": 11548
+    },
+    {
+      "path": "reflective-prompt-library/skills/router-trace-linter/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "router-trace-linter",
+      "name": "router-trace-linter",
+      "description": "Use when a router emits a route trace and you need to check it against the Router Output Contract before accepting the route — required fields present, confidence parseable, downgrade/defer claims carrying explicit rationale (R5), and high-risk routes carrying Human Review (R4/R7). Outputs pass/fail plus a field-level diff.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "router-trace-linter",
+        "description": "Use when a router emits a route trace and you need to check it against the Router Output Contract before accepting the route — required fields present, confidence parseable, downgrade/defer claims carrying explicit rationale (R5), and high-risk routes carrying Human Review (R4/R7). Outputs pass/fail plus a field-level diff.",
+        "license": "MIT",
+        "compatibility": "Requires router route-trace artifacts conforming to the Router Output Contract; checks declaration completeness (fields, parseable confidence, downgrade rationale, high-risk Human Review) — cannot judge whether a deferral was justified.",
+        "metadata": "",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false",
+        "context_load": "low"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
+        "reflective-prompt-library/skills/examples/reflective-dispatch.examples.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Router Trace Linter"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Inputs"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 3,
+          "text": "Failure signals"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Honest Limits"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 96,
+      "char_count": 10004
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -16997,6 +17394,97 @@
       "char_count": 7908
     },
     {
+      "path": "reflective-prompt-library/skills/acceptance-join-validator/SKILL.md",
+      "type": "skill",
+      "category": "skills",
+      "subcategory": "acceptance-join-validator",
+      "name": "acceptance-join-validator",
+      "description": "Lint a repo's acceptance surface — every REQ/AC ID in VERIFY.md/features must resolve to a locked runnable acceptance check; duplicates and dangling IDs flagged, every check command verified statically runnable.",
+      "license": "MIT",
+      "frontmatter": {
+        "name": "acceptance-join-validator",
+        "description": "Lint a repo's acceptance surface — every REQ/AC ID in VERIFY.md/features must resolve to a locked runnable acceptance check; duplicates and dangling IDs flagged, every check command verified statically runnable.",
+        "license": "MIT",
+        "compatibility": "Requires a repo exposing a REQ/AC acceptance surface (VERIFY.md/features/ or acceptance.yaml); static resolvability checks only — never executes the checks it lists.",
+        "metadata": "",
+        "risk_level": "low",
+        "human_review_required": "false",
+        "external_io": "false",
+        "context_load": "low"
+      },
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "prompt_sources": [
+        "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+        "reflective-prompt-library/plans/3xa-harness-survey-2026-08-20.md",
+        "reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md",
+        "reflective-prompt-library/skills/verification-map-generator/SKILL.md"
+      ],
+      "structure": [
+        {
+          "level": 1,
+          "text": "Acceptance Join Validator"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Module Contract"
+        },
+        {
+          "level": 3,
+          "text": "Trigger"
+        },
+        {
+          "level": 3,
+          "text": "Inputs"
+        },
+        {
+          "level": 3,
+          "text": "Methods"
+        },
+        {
+          "level": 3,
+          "text": "Never"
+        },
+        {
+          "level": 3,
+          "text": "Output"
+        },
+        {
+          "level": 3,
+          "text": "Escalation"
+        },
+        {
+          "level": 3,
+          "text": "Failure signals"
+        },
+        {
+          "level": 3,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Honest Limits"
+        },
+        {
+          "level": 2,
+          "text": "Examples"
+        },
+        {
+          "level": 2,
+          "text": "Prompt Sources"
+        }
+      ],
+      "line_count": 92,
+      "char_count": 8958
+    },
+    {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
       "type": "skill",
       "category": "skills",
@@ -17377,5 +17865,5 @@
       "char_count": 24566
     }
   ],
-  "total_files": 193
+  "total_files": 198
 }

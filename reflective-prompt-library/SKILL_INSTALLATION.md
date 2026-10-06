@@ -26,6 +26,11 @@ reflective-prompt-library/skills/
   agent-governance-scaffold/
   governed-delivery/
   verification-map-generator/
+  headless-agent-cli-contract/
+  arm-blinded-eval-harness/
+  acceptance-join-validator/
+  golden-benchmark-runner/
+  router-trace-linter/
 ```
 
 **Harness policy:** Nine frozen **core** workflow skills with strictness-first routing; registered domain packs are opt-in and remain outside core routing. See [06-repo/AGENTS.md](06-repo/AGENTS.md#harness-policy-nine-skills), [skills/skill-map.md](skills/skill-map.md#registered-domain-packs-not-core-routing), and [skills/SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md).
@@ -77,6 +82,11 @@ flow-loop-harness
 agent-governance-scaffold
 governed-delivery
 verification-map-generator
+headless-agent-cli-contract
+arm-blinded-eval-harness
+acceptance-join-validator
+golden-benchmark-runner
+router-trace-linter
 ```
 
 Use the core helpers for the default install. Afterward, call the matching
@@ -136,7 +146,7 @@ install_domain_packs_copy() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator headless-agent-cli-contract arm-blinded-eval-harness acceptance-join-validator golden-benchmark-runner router-trace-linter; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     cp -R "$skill" "$dest/"
@@ -148,7 +158,7 @@ install_domain_packs_symlink() {
   local source_root
   source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
   mkdir -p "$dest"
-  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator; do
+  for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator headless-agent-cli-contract arm-blinded-eval-harness acceptance-join-validator golden-benchmark-runner router-trace-linter; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
     if [ -e "$dest/$name" ] && [ ! -L "$dest/$name" ]; then
@@ -593,7 +603,7 @@ Use symlink installs only for your own workspace, not as the default team instal
 
 TeaPrompt skills declare intent via `metadata.human_review_required`; hosts, not
 TeaPrompt, enforce it. When installing `reflective-risk`, `flow-loop-harness`,
-`agent-governance-scaffold`, or `governed-delivery` (all `human_review_required: true`), map the
+`agent-governance-scaffold`, `governed-delivery`, `headless-agent-cli-contract`, `arm-blinded-eval-harness`, or `golden-benchmark-runner` (all `human_review_required: true`), map the
 declaration to your host's
 invocation control:
 

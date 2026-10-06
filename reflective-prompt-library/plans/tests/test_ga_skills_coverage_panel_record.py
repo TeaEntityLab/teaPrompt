@@ -111,10 +111,21 @@ def test_adopted_never_sentences_and_frozen_skill_cardinality():
     # governed-delivery adoption (plans/governed-delivery-adoption-2026-09-03.md)
     # superseded XS-8/XS-9 and added a fourth pack; the four-product
     # verification-map recurrence (plans/pstack-survey-2026-09-22.md) added a
-    # fifth on 2026-09-23. Core stays frozen at nine.
-    assert len(DOMAIN_PACK_SKILLS) == 5
+    # fifth on 2026-09-23; the runtime-skills dry-run evidence added
+    # headless-agent-cli-contract as the sixth on 2026-10-06, with the
+    # four remaining runtime-skills proposals admitted the same day.
+    # Core stays frozen at nine.
+    assert len(DOMAIN_PACK_SKILLS) == 10
     assert "governed-delivery" in DOMAIN_PACK_SKILLS
     assert "verification-map-generator" in DOMAIN_PACK_SKILLS
+    assert "headless-agent-cli-contract" in DOMAIN_PACK_SKILLS
+    for name in (
+        "arm-blinded-eval-harness",
+        "acceptance-join-validator",
+        "golden-benchmark-runner",
+        "router-trace-linter",
+    ):
+        assert name in DOMAIN_PACK_SKILLS
     found = {path.parent.name for path in SKILLS_DIR.glob("*/SKILL.md")}
     assert found == set(CORE_SKILLS) | set(DOMAIN_PACK_SKILLS)
     for name in FORBIDDEN_SKILL_DIRS:

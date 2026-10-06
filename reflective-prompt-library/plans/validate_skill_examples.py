@@ -44,6 +44,11 @@ DOMAIN_PACK_SKILLS = [
     "agent-governance-scaffold",
     "governed-delivery",
     "verification-map-generator",
+    "headless-agent-cli-contract",
+    "arm-blinded-eval-harness",
+    "acceptance-join-validator",
+    "golden-benchmark-runner",
+    "router-trace-linter",
 ]
 
 MIN_EXAMPLE_CHARS = 200
@@ -128,10 +133,10 @@ def main() -> int:
         )
     if len(set(CORE_SKILLS)) != len(CORE_SKILLS):
         errors.append("CORE_SKILLS contains duplicates")
-    if len(DOMAIN_PACK_SKILLS) != 5:
+    if len(DOMAIN_PACK_SKILLS) != 10:
         errors.append(
             f"DOMAIN_PACK_SKILLS has {len(DOMAIN_PACK_SKILLS)} entries, "
-            "expected 5 (update this pin in the same change as a pack "
+            "expected 10 (update this pin in the same change as a pack "
             "admission or demotion)"
         )
     if len(set(DOMAIN_PACK_SKILLS)) != len(DOMAIN_PACK_SKILLS):

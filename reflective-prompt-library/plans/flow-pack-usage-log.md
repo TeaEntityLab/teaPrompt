@@ -63,6 +63,13 @@ themselves):
 | 2026-09-27 | `flow-loop-harness` | omp / metaCognitionAndSelfStudyByStories task (S3) | Separate bounded supervised repair loop | **Late correction 2026-10-01:** skill read `d51e2324`, successful write `4c2aedb0` (`loops/repair-batch.sh`), with verifier hook and RUN-NOTE. A separate loop responsibility, not a nested loop inside draft production. |
 | 2026-09-27 | `verification-map-generator` | omp / metaCognitionAndSelfStudyByStories task (S3) | Learning-workflow verification map and locked acceptance file | **Late correction 2026-10-01:** skill read `671e8bb1`; successful writes `523914cf` (VERIFY.md), `98b0c4f4` (feature map), `b1531c5c` (acceptance.yaml). Generation confirmed; the earlier malformed checker run is historical harness-failure evidence, not a current map verdict. |
 
+| 2026-10-06 | `headless-agent-cli-contract` | teaPrompt runtime-skills dry run | Per-provider headless invocation recipes for ollama/devin/cursor-agent/agy (transport, permission flags, strip lists, BLOCKED policy) | Adopted same-day as sixth domain pack: contract emitted all four recipes from TASK-004 receipts; agy correctly BLOCKED on provider policy denial; evidence in `plans/runtime-skills-task001-ticket-2026-10-06.md` and `local://runtime-skill-planning-evidence-2026-10-06.json`. |
+
+| 2026-10-06 | `arm-blinded-eval-harness` | teaPrompt runtime-skills dry run | Paired-arm evaluation scaffold (blinded extraction, sealed map, leak assertion) | Adopted same-day: mechanics smoked in /tmp/proposal-smoke (label-stripped extraction, zero arm-token leaks); by-construction guarantees only, zero observed blinded production runs — disclosed. |
+| 2026-10-06 | `acceptance-join-validator` | teaPrompt runtime-skills dry run | REQ/AC→check join lint (dangling FAIL, orphan info, unrunnable FAIL) | Adopted same-day: mechanics smoked on synthetic repo (all three verdict classes fired); TeaPrompt self-run vacuous (zero REQ/AC ids) — disclosed. |
+| 2026-10-06 | `golden-benchmark-runner` | teaPrompt runtime-skills dry run | Baseline-vs-skill paired runner over benchmark_tasks corpus | Adopted same-day: cat-stub smoke proved arm alternation + ledger schema; comparative signal requires real model arms (manual-execution tier) — disclosed. |
+| 2026-10-06 | `router-trace-linter` | teaPrompt runtime-skills dry run | Router Output Contract lint (fields, confidence, R5 rationale, R4/R7 Human Review) | Adopted same-day: mechanics smoked (pass/downgrade-flag/missing-confidence fixtures all correct); declaration-completeness only, cannot judge deferral merit — disclosed. |
+
 ## Template maintenance (not invocations)
 
 - 2026-09-05 — skill-verification pass changed templates in both flow packs
@@ -168,6 +175,11 @@ In registry order, recorded-row counts are:
 | `agent-governance-scaffold` | 1 |
 | `governed-delivery` | 0 |
 | `verification-map-generator` | 2 |
+| `headless-agent-cli-contract` | 0 |
+| `arm-blinded-eval-harness` | 0 |
+| `acceptance-join-validator` | 0 |
+| `golden-benchmark-runner` | 0 |
+| `router-trace-linter` | 0 |
 
 **Dated supersession (2026-10-01, primary-receipt re-check):** this
 0/0/1/0/2 table is the earlier repository-record-only inventory, not the
@@ -250,6 +262,11 @@ agree on 18 real invocation rows, with no duplicate task/pack identities:
 | `agent-governance-scaffold` | 4 |
 | `governed-delivery` | 3 |
 | `verification-map-generator` | 4 |
+| `headless-agent-cli-contract` | 0 |
+| `arm-blinded-eval-harness` | 0 |
+| `acceptance-join-validator` | 0 |
+| `golden-benchmark-runner` | 0 |
+| `router-trace-linter` | 0 |
 
 The three dated zero-state rows remain. Controls include the previously
 recorded lite-ad/verification-map rows and primary successful generation

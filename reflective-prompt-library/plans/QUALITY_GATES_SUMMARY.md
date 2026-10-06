@@ -139,7 +139,7 @@ Position: since the 2026-07-11 spec-conformance migration these four fields nest
 under the Agent Skills `metadata:` map (the spec's extension point; the reference
 validator `skills-ref` rejects them at top level — observed 0.1.1 failure on all
 11 skills pre-migration, 11/11 pass post-migration). The five domain packs also
-carry the spec `compatibility` field for host preconditions.
+carry the spec `compatibility` field for host preconditions. *(Dated correction 2026-10-06: six domain packs — `headless-agent-cli-contract` was registered that day; the five-pack count is the historical statement.)*
 
 Field semantics: `external_io: true` means the skill expects the agent to reach outside the repository by default (web, DeepWiki, external APIs) — local file edits are not external IO. `human_review_required: true` means review gates the skill's core flow by default; conditional body-level triggers (e.g. auth/production escalation inside `reflective-implement`) are escalations, not frontmatter defaults.
 
