@@ -49,12 +49,11 @@ Escalation:
 - Route auth, permissions, security, privacy, migrations, destructive operations, billing, breaking APIs, or production deployment to `reflective-risk`.
 
 ## Small-Change Fast Path
-
-For a single-file, low-risk change with no bloat signals and an obvious verification (a trivial null check, a typo-level doc fix):
+For a single-file, single-step, low-risk change with no bloat signals and an obvious verification (a trivial null check, a typo-level doc fix):
 
 - Collapse the Before-Editing restatement to one line: the goal plus the check that will prove it.
 - Skip the State Ledger; it exists for multi-step tasks where criteria could silently drop, not for one-step patches.
-- Collapse the Final Report to `Goal`, `Change`, and `Verification`.
+- Collapse the Final Report to `Goal`, `Change`, `Verification`, and any `Residual Risks`.
 - Never collapse verification itself: the proving check is still run and its output read.
 - Any high-risk signal, bloat signal, or scope growth exits the fast path back to the full contract.
 

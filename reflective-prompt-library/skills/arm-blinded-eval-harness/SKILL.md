@@ -43,7 +43,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Fixture cloning: copy each fixture once per arm from a read-only seed; record seed hash per clone. Arms never share a workdir.
 - Alternated arm order: pair A runs control-then-treatment, pair B runs treatment-then-control (or the ticket's declared alternation); order is written to the run note as observed sequence, not as a canceled effect.
 - Treatment-only artifact exclusion: only the ticket-named candidate files are extracted for scoring. Skill guidance, workflow scripts, ledgers, and inspectable state stay out of the blinded dir — they are reported factors, not scored surface.
-- Label-stripped extraction: each final candidate is copied to `blinded/<pair>-<seq>.ext` (sequential IDs, no arm token); the arm↔ID map is written to a host-held file outside the scorer's read path.
+- Label-stripped extraction: each final candidate is copied to `blinded/<pair>-<id>.ext` (random opaque IDs, no arm token and no sequential order leakage); the arm↔ID map is written to a host-held file outside the scorer's read path.
 - Deterministic scorer invocation: the oracle runs with argv pointing only into `blinded/`; scorer stdout/stderr is captured per candidate. No scorer input path may contain an arm label — the harness asserts this before scoring and refuses (exit 4) if any blinded path leaks one.
 - Discarded-invocation ledger: malformed or environment-incomplete invocations (wrong CLI spelling, tool-rejection with no proposal) are logged with raw receipts and re-run; they never enter the pair denominator. The denominator stays fixture-pair level (n = number of repair pairs).
 
@@ -106,7 +106,7 @@ config: {pairs: [{id, seed, candidates: [relpaths], oracle: [argv...]}],
           hold: {pair, exit, dispatched, verdict}|omit}
 Oracle argv uses {CAND} for the blinded candidate path. Scorer never sees arm dirs.
 """
-import hashlib, json, shutil, subprocess, sys
+import hashlib, json, secrets, shutil, subprocess, sys
 from pathlib import Path
 
 ARM_TOKENS = ("control", "treatment")
@@ -134,11 +134,14 @@ def main(cfg_path: str) -> int:
             return 4
     hold_id = hold.get("pair") if hold else None
     clone_hashes = {}
-    seq = 0
     for pair in cfg["pairs"]:
         pid = pair["id"]
         if pid == hold_id:
             continue
+        order_arms = cfg["order"].get(pid, [])
+        if sorted(order_arms) != sorted(cfg["arms"]) or len(order_arms) != len(cfg["arms"]):
+            print(f"order for pair {pid} must be a permutation of arms {cfg['arms']}", file=sys.stderr)
+            return 4
         # Provenance only: these are *final* arm states, expected to differ as
         # the arm effect. Start-state clone equality is checked at clone time
         # by the caller (exit 4 on mismatch); the hashes are recorded here.
@@ -146,8 +149,8 @@ def main(cfg_path: str) -> int:
                              for arm in cfg["arms"]}
         for arm in cfg["order"][pid]:
             for cand in pair["candidates"]:
-                seq += 1
-                dest = blinded / f"{pid}-{seq}{Path(cand).suffix}"
+                cand_id = secrets.token_hex(6)
+                dest = blinded / f"{pid}-{cand_id}{Path(cand).suffix}"
                 shutil.copyfile(Path(cfg["arm_dirs"][pid][arm]) / cand, dest)
                 sealed[dest.name] = {"pair": pid, "arm": arm, "file": cand}
     # Blinding assertion: no arm token anywhere in the scorer-visible surface.
@@ -160,6 +163,9 @@ def main(cfg_path: str) -> int:
     for pair in cfg["pairs"]:
         if pair["id"] == hold_id:
             continue
+        if not any("{CAND}" in str(a) for a in pair["oracle"]):
+            print(f"oracle for pair {pair['id']} missing {{CAND}} placeholder", file=sys.stderr)
+            return 4
         for name, meta in sealed.items():
             if meta["pair"] != pair["id"]:
                 continue

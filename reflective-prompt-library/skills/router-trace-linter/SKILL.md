@@ -92,7 +92,7 @@ HAZARD = re.compile(
     r"production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part",
     re.I,
 )
-NEG = re.compile(r"\b(?:no|not|without)\b|non-", re.I)
+NEG = re.compile(r"\b(?:no|not|without)\b", re.I)
 DEFER = re.compile(r"downgrade|defer|fallback|default-up|instead of|skipped", re.I)
 KEY = re.compile(r"^\s*(?:[-*]\s*)?(?:\*\*)?([A-Za-z][A-Za-z0-9 /_-]*?)(?:\*\*)?\s*:\s*(.*)$")
 ALIAS = {
@@ -135,6 +135,8 @@ def sentence(value):
 def hazard(text):
     for clause in re.split(r"[.;\n]", text or ""):
         for m in HAZARD.finditer(clause):
+            if clause[:m.start()].endswith("non-"):
+                continue  # directly prefixed (e.g. non-destructive, non-production)
             seg_start = clause.rfind(",", 0, m.start()) + 1
             if NEG.search(clause[seg_start:m.start()]):
                 continue  # same comma-segment negation ("without credentials or billing")
@@ -151,7 +153,7 @@ def hazard(text):
     return False
 
 def review_negated(value):
-    return bool(re.match(r"\s*(none|n/a|na|not required)\b", value or "", re.I))
+    return bool(re.match(r"\s*(none|n/a|na|no\b|not required|not needed|not necessary|waived|skipped)\b", value or "", re.I))
 
 def source_line(lines, *slots):
     for slot in slots:
@@ -195,7 +197,9 @@ def lint(text):
         seat = "Enhancements Available"
     elif sentence(rationale):
         seat = "Rationale"
-    elif sentence(values["Assumptions"]):
+    elif sentence(values["Assumptions"]) and any(
+        w in values["Assumptions"].lower() for w in ("defer", "downgrade", "out of scope", "fallback", "skip")
+    ):
         seat = "Assumptions"
     warn_fields = {"Mode", "Strictness", "Next Action"}
     if not high:

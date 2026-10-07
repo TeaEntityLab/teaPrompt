@@ -35,6 +35,7 @@ Tickets-only mode writes the TASK template, not titles alone. TASK-002 and TASK-
 ```markdown
 ### TASK-001: logging schema and event contract
 - Goal:
+- Spec Version:
 - Scope:
 - Inputs:
 - Outputs:

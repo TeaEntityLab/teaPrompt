@@ -20,7 +20,7 @@ Expected output shape:
 - .agent/approval/slack-gate.yaml (owner, approver, rationale; decision: pending;
   no approver-issued integrity evidence until the out-of-band approval acts)
 - .agent/policies/cumulative-effect-budget.yaml keyed on principal x purpose x
-  authorization_id x resource_domain (NOT session); max_external_recipients: 0;
+  authorization_id x resource_domain (NOT session); max_external_recipients: 1 (approval-gated per authorization);
   lease reset requires new_out_of_band_authorization; cross-authorization cap
   resets only on explicit_out_of_band_aggregate_reset_grant, never ordinary renewal
 - .agent/broker/effect-receipt.contract.json (issued_by: broker; broker-owned

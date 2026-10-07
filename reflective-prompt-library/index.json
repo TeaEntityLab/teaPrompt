@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T09:18:23.764991",
+  "generated_at": "2026-10-07T10:22:25.954136",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -15816,7 +15816,7 @@
         }
       ],
       "line_count": 180,
-      "char_count": 12039
+      "char_count": 12060
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -16204,8 +16204,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 521,
-      "char_count": 29286
+      "line_count": 522,
+      "char_count": 29373
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
@@ -16391,8 +16391,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 238,
-      "char_count": 15985
+      "line_count": 244,
+      "char_count": 16489
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16952,8 +16952,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 280,
-      "char_count": 19403
+      "line_count": 284,
+      "char_count": 19706
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -17327,8 +17327,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 211,
-      "char_count": 14367
+      "line_count": 210,
+      "char_count": 14401
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",
@@ -17869,7 +17869,7 @@
         }
       ],
       "line_count": 278,
-      "char_count": 16256
+      "char_count": 16338
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -17995,8 +17995,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 442,
-      "char_count": 24659
+      "line_count": 444,
+      "char_count": 24835
     }
   ],
   "total_files": 200

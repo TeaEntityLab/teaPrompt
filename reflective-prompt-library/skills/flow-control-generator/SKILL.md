@@ -138,6 +138,7 @@ STATE="${STATE:-./state}"; mkdir -p "$STATE"
 MAX_JOBS="${MAX_JOBS:-4}"
 MIN_OK="${MIN_OK:-}" # empty=strict; otherwise explicit partial-failure quorum
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_JOBS" in ""|*[!0-9]*|0) log "max_jobs configuration gate=4"; exit 4 ;; esac
 case "$MIN_OK" in *[!0-9]*) log "quorum configuration gate=4"; exit 4 ;; esac
 preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never swallowed by MIN_OK)
   [ -n "$PREFLIGHT" ] || return 0

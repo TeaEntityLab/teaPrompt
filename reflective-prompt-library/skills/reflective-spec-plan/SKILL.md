@@ -221,10 +221,9 @@ The completed `workflow-spec.md` should include, as the selected formalization l
 ## Artifact Output
 
 When file tools are available, write:
-
-- `spec.md`
-- `usage.md`
-- `task-plan.md`
+- `spec.md` (default)
+- `usage.md` (default)
+- `task-plan.md` (default, or standalone for tickets-only mode)
 - `test-plan.md` when Test Plan Mode is active
 - `workflow-spec.md` when Workflow Design Mode is active
 
@@ -240,6 +239,7 @@ Acceptance record: a named accepter closes the delivery against the oracle manif
 ```markdown
 ### TASK-001: <name>
 - Goal:
+- Spec Version:
 - Scope:
 - Inputs:
 - Outputs:

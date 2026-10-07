@@ -330,6 +330,8 @@ MAX_JOBS="${MAX_JOBS:-4}"                   # per-wave concurrency budget
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_WAVES" in ""|*[!0-9]*|0) log "max_waves configuration gate=4"; exit 4 ;; esac
+case "$MAX_JOBS" in ""|*[!0-9]*|0) log "max_jobs configuration gate=4"; exit 4 ;; esac
 preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never a tolerable branch failure)
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
