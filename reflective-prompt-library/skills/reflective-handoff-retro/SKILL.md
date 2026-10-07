@@ -33,6 +33,7 @@ Methods:
 Output:
 - For handoff, output the handoff template with current state, decisions, artifacts, trust boundaries, risks, blockers, tests, and next action.
 - For retro, output the retro template with process failures, reusable rules, and improvement candidates.
+- Name an as-of date (`YYYY-MM-DD`) on every handoff and every retained memory, so a later reader can treat the packet as a dated lead.
 - When durable project knowledge may have formed and the repository has a project-knowledge layer (or the user asks to establish one), append the Project-Knowledge Promotion Candidates contract below.
 
 Never:
@@ -59,6 +60,7 @@ under `Do Not Do`; never summarize `OUTCOME_UNKNOWN` as ordinary failure or
 success.
 
 ```markdown
+## As-of Date
 ## Goal
 ## Current State
 ## Decisions Made
@@ -115,6 +117,7 @@ Only institutionalize repeated patterns:
 
 - Quality gate: preserve a memory only when it is future-useful, durable beyond the current task, and self-contained for a reader without the original session. Exclude live task state and facts a routine source lookup can recover.
 - Revalidation: treat recalled memory as a dated lead; re-check changeable facts against the current authoritative source before acting.
+- As-of date: every retained item records when it was written (`YYYY-MM-DD`). That date ages the lead; it does not prove the fact is still true.
 
 ## Project-Knowledge Promotion Contract
 

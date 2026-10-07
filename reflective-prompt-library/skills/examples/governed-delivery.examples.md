@@ -27,7 +27,7 @@ Expected output shape:
 - developer: unit tests the worker may add
 
 ## Envelope (task-declared limits — no universal retry count)
-- budget, pause list, kill conditions, failure-signature limit, allowed sinks, accepter
+- budget, pause list, kill conditions, failure-signature limit, allowed sinks, accepter, strictness (L1–L6)
 
 ## Run note
 - oracle_sealing: unknown · sink_isolation: unknown · budget_enforcement: unknown · durable_ledger_storage: unknown · human_decision_channel: unknown

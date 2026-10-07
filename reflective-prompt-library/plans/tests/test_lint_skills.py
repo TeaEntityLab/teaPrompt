@@ -49,6 +49,11 @@ def test_docs_and_plans_are_classified_as_documents(lint_results):
     for path in (
         "reflective-prompt-library/PROJECT_KNOWLEDGE.md",
         "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
+        "reflective-prompt-library/plans/proposals/acceptance-join-validator-proposal.md",
+        "reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md",
+        "reflective-prompt-library/plans/proposals/golden-benchmark-runner-proposal.md",
+        "reflective-prompt-library/plans/proposals/headless-agent-cli-contract-proposal.md",
+        "reflective-prompt-library/plans/proposals/router-trace-linter-proposal.md",
         "review/final-report.md",
     ):
         result = by_file[path]

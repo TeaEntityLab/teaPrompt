@@ -8,11 +8,19 @@ Input:
 We need to run a production migration that changes permission checks.
 ```
 
-Proportional subset of the contract Output showing the safety spine for a production migration; a real gate emits the full contract Output. `Sink Inventory` and `Unattended Envelope` are recorded before any dry-run.
+The contract Output for a production migration. `Sink Inventory` and `Unattended Envelope` are recorded before any dry-run. Backup, dry-run, rollback, and approval stay in the gate.
 
 ```markdown
+## Goal
+## Stakeholders
+## Assets at Risk
 ## Threat Model
+## Assumption Audit
+## Evidence Check
 ## Authority / Tool Boundary
+## Effect Recovery Decision
+## Failure Modes
+## Worst-case Scenario
 ## Sink Inventory
 ## Unattended Envelope
 ## Safe Dry-run Plan
@@ -21,6 +29,7 @@ Proportional subset of the contract Output showing the safety spine for a produc
 ## Audit Log Plan
 ## Human Review Required
 ## Human Approval Gate
+## Acceptance Criteria
 ## Go / No-go Decision
 ```
 
@@ -32,15 +41,27 @@ Input:
 Delete legacy customer records older than 5 years.
 ```
 
-Proportional subset of the contract Output for pre-execution scoping; before any dry-run, record `Sink Inventory` and `Unattended Envelope` per the contract.
+The contract Output for a destructive delete, before execution. Dry-run, rollback, and approval are part of the gate. `Sink Inventory` and `Unattended Envelope` are recorded before any dry-run.
 
 ```markdown
+## Goal
+## Stakeholders
 ## Assets at Risk
+## Threat Model
+## Assumption Audit
+## Evidence Check
 ## Authority / Tool Boundary
-## Sink Inventory
-## Unattended Envelope
+## Effect Recovery Decision
 ## Failure Modes
 ## Worst-case Scenario
+## Sink Inventory
+## Unattended Envelope
+## Safe Dry-run Plan
+## Rollback Plan
+## Bounded Execution
+## Audit Log Plan
 ## Human Review Required
+## Human Approval Gate
 ## Acceptance Criteria
+## Go / No-go Decision
 ```

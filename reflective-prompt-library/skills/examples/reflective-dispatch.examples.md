@@ -18,7 +18,7 @@ Assumptions: current APIs can be changed
 Workflow: reflective-brief -> reflective-spec-plan
 Route Confidence: medium
 Enhancements Enabled: brief before planning
-Enhancements Available: risk gate if policy/auth scope appears
+Enhancements Available: risk gate if policy/auth scope appears (deferred: no policy change is in scope yet, so the gate waits)
 Human Review: required if policy/auth scope expands
 Next Action: produce brief with scope and acceptance criteria
 ```
@@ -41,7 +41,7 @@ Assumptions: production impact likely
 Workflow: reflective-risk -> reflective-implement -> reflective-review
 Route Confidence: high
 Enhancements Enabled: risk gate, rollback planning, review
-Enhancements Available: security review after bounded patch
+Enhancements Available: security review after the bounded patch (deferred: the patch stays inside the auth bug; a wider audit is a follow-on)
 Human Review: required before production action
 Next Action: create dry-run and rollback gate
 ```

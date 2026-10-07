@@ -36,7 +36,9 @@ Expected output shape:
 
 ```markdown
 ## Minimality Decision
-- **stdlib**: use built-in `Validator` / platform constraint, not a new dependency
+- **reuse**: use the built-in validator or platform constraint, not a new dependency
+## Allowed Work
+- one check per field type, using the standard library or a constraint the platform already has
 ## Cut List
 - new library dependency
 ## Safety Floor

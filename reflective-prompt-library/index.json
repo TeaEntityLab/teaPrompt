@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T01:08:54.838941",
+  "generated_at": "2026-10-07T09:18:23.764991",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -16391,8 +16391,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 215,
-      "char_count": 14880
+      "line_count": 238,
+      "char_count": 15985
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -16937,6 +16937,10 @@
         },
         {
           "level": 2,
+          "text": "Emitted Scaffold"
+        },
+        {
+          "level": 2,
           "text": "Honest Limits"
         },
         {
@@ -16948,8 +16952,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 97,
-      "char_count": 11962
+      "line_count": 280,
+      "char_count": 19403
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -17155,7 +17159,7 @@
         }
       ],
       "line_count": 636,
-      "char_count": 36033
+      "char_count": 36053
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -17377,6 +17381,10 @@
         },
         {
           "level": 2,
+          "text": "As-of Date"
+        },
+        {
+          "level": 2,
           "text": "Goal"
         },
         {
@@ -17516,8 +17524,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 170,
-      "char_count": 7908
+      "line_count": 173,
+      "char_count": 8203
     },
     {
       "path": "reflective-prompt-library/skills/acceptance-join-validator/SKILL.md",
@@ -17988,7 +17996,7 @@
         }
       ],
       "line_count": 442,
-      "char_count": 24566
+      "char_count": 24659
     }
   ],
   "total_files": 200

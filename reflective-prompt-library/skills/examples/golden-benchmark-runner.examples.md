@@ -21,7 +21,12 @@ Expected output shape:
 
 ```markdown
 ## Delta table (T − C)
-- B001: +100 (structural; scorer b001-arithmetic)
+- B001: raw structural difference +100 (scorer b001-arithmetic) — withheld as a skill-effect claim
+
+## Measurement preflight
+- noise_floor_basis: single-run caveat (one run per arm; no repeated-baseline spread)
+- failure_categorization: unresolved — noise, grader error, harness failure, and task impossibility are not ruled out, so the difference is not attributed to the skill layer
+- selection_vs_final: not-a-final-claim (this score was not an untouched final evaluation)
 
 ## Confounds
 - single run per arm → verdict `directional`, not stable, never `proves`
@@ -30,6 +35,8 @@ Expected output shape:
 
 The scorer passed its check first: it fails the broken fixture
 (`return a - b`) and passes the fixed fixture (`return a + b`).
+The ledger may record the raw scores. It may not call +100 an improvement:
+a delta with an unresolved failure categorization is a measurement misreport.
 
 ## Example 2 — Composite arms must be relabeled, not reported as skill effect
 
@@ -43,7 +50,12 @@ Expected output shape:
 
 ```markdown
 ## Delta table (T − C)
-- B002: +50 — verdict `composite` (arms differ in model AND guidance)
+- B002: raw difference +50 — verdict `composite`, not an isolated skill effect and not an improvement
+
+## Measurement preflight
+- noise_floor_basis: single-run caveat (one run per arm; no repeated-baseline spread)
+- failure_categorization: not attributable — arms differ in model, so harness/setup confound is not ruled out
+- selection_vs_final: not-a-final-claim
 
 ## Confounds
 - treatment model <model-t> vs control model <model-c>: guidance + model + setup composite

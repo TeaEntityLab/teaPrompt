@@ -37,7 +37,13 @@ Expected output shape:
 Mode: Plan/Spec Review
 ## Findings
 - missing gate / strictness mismatch / unnecessary workflow depth
+## Traceability
+| Acceptance Criteria | Artifact Evidence | Test Evidence | Status |
+## Declined to Judge
+- <behavior set aside as out of scope> — <reason; who rules on it> (or "None")
+## Required Fixes
 ## Decision
+## Residual Risks
 ```
 
 

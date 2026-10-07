@@ -63,7 +63,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 ### Output
 
 - `eval-harness/run_blinded_eval.py` (stdlib only; emitted scaffold, §Emitted Scaffold).
-- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held arm map), `results/scores.jsonl` (per-candidate oracle pass/fail + raw output), `results/run-note.json` (order, seed hashes, caps, discarded ledger refs, declared `noise_floor_basis`, `failure_categorization` verdict, `selection_vs_final` flag).
+- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held arm map), `results/scores.jsonl` (per-candidate oracle pass/fail + raw output), `results/run-note.json` (order, clone hashes, declared caps, discarded ledger refs, declared `noise_floor_basis`, `failure_categorization` verdict, `selection_vs_final` flag).
 - C-hold pair reported separately: expected `stale` exit 4, zero dispatch — never merged into the repair-pair denominator.
 
 ### Escalation
@@ -100,7 +100,10 @@ config: {pairs: [{id, seed, candidates: [relpaths], oracle: [argv...]}],
           arm_dirs: {pair: {arm: path}}, blinded: path, sealed_map: path,
           results: path, run_note: path,
           noise_floor_basis: str|omit, failure_categorization: str|omit,
-          selection_vs_final: str|omit}
+          selection_vs_final: str|omit,
+          discarded: [{pair, arm, cause, receipt, rerun}]|omit,
+          caps: {pair: {arm: {calls, time_s, cost}}}|omit,
+          hold: {pair, exit, dispatched, verdict}|omit}
 Oracle argv uses {CAND} for the blinded candidate path. Scorer never sees arm dirs.
 """
 import hashlib, json, shutil, subprocess, sys
@@ -119,11 +122,23 @@ def sha256_dir(root: Path) -> str:
 def main(cfg_path: str) -> int:
     cfg = json.loads(Path(cfg_path).read_text())
     blinded = Path(cfg["blinded"]); blinded.mkdir(parents=True, exist_ok=True)
-    sealed, scores, discarded = {}, [], []
+    sealed, scores = {}, []
+    discarded = list(cfg.get("discarded") or [])
+    hold = cfg.get("hold") if isinstance(cfg.get("hold"), dict) else None
+    if hold and hold.get("dispatched"):
+        print("hold fixture dispatched work", file=sys.stderr)
+        return 4
+    for entry in discarded:
+        if not isinstance(entry, dict) or not entry.get("receipt"):
+            print("discarded invocation missing raw receipt", file=sys.stderr)
+            return 4
+    hold_id = hold.get("pair") if hold else None
     clone_hashes = {}
     seq = 0
     for pair in cfg["pairs"]:
         pid = pair["id"]
+        if pid == hold_id:
+            continue
         # Provenance only: these are *final* arm states, expected to differ as
         # the arm effect. Start-state clone equality is checked at clone time
         # by the caller (exit 4 on mismatch); the hashes are recorded here.
@@ -143,6 +158,8 @@ def main(cfg_path: str) -> int:
     arm_dir_strs = [str(Path(d)) for per in cfg["arm_dirs"].values()
                     for d in per.values()]
     for pair in cfg["pairs"]:
+        if pair["id"] == hold_id:
+            continue
         for name, meta in sealed.items():
             if meta["pair"] != pair["id"]:
                 continue
@@ -160,11 +177,17 @@ def main(cfg_path: str) -> int:
             r = subprocess.run(argv, capture_output=True, text=True, timeout=300)
             scores.append({"candidate": name, "exit": r.returncode,
                            "stdout": r.stdout[-2000:], "stderr": r.stderr[-2000:]})
-    Path(cfg["sealed_map"]).parent.mkdir(parents=True, exist_ok=True)
+    for path in (cfg["sealed_map"], cfg["results"], cfg["run_note"]):
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(cfg["sealed_map"]).write_text(json.dumps(sealed, indent=2))
     Path(cfg["results"]).write_text("".join(json.dumps(s) + "\n" for s in scores))
+    repair_ids = [p["id"] for p in cfg["pairs"] if p["id"] != hold_id]
     note = {"order": cfg["order"], "clone_hashes": clone_hashes,
+            "caps": cfg.get("caps") or "not declared",
             "discarded": discarded,
+            "hold": hold,
+            "denominator": {"repair_pairs": len(repair_ids),
+                            "note": "discarded + hold excluded"},
             "noise_floor_basis": cfg.get("noise_floor_basis") or "missing",
             "failure_categorization": cfg.get("failure_categorization") or "unresolved",
             "selection_vs_final": cfg.get("selection_vs_final") or "not-a-final-claim",

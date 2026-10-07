@@ -29,6 +29,8 @@ Expected output shape:
   L1 parse/schema validity; L5 named human decision for Slack)
 - run-<cli>.sh wrapper stub + emitted-file manifest (host must route effects
   through the broker — never direct tool calls)
+- <cli>-bounded-worker.md (wrapper-agent contract), .agent/INVARIANTS.md,
+  .agent/HANDOVER.md
 ## Gates
 - file write: thin (idempotent, small blast radius, machine evidence)
 - Slack send: thick (external, must-approve) -> approval gate + broker receipt
@@ -76,6 +78,10 @@ Expected output shape:
 - mutation_suite.yaml (host-run adversarial spec): worker_weakens_acceptance_test,
   worker_changes_rule_then_executes -> the host must reject these pre-effect with
   worker-immutable evidence once wired; this skill only emits the spec
+- baseline (always emitted for external-effect scaffolds): authority map
+  (proposal/authorization/effect/acceptance owners), capability-token + policy
+  binding, broker-receipt contract, acceptance contract, run-<cli>.sh,
+  .agent/INVARIANTS.md, .agent/HANDOVER.md
 ## Verification
 - verify the emitted constitutional_paths, policy_activation, and worker-writable
   exclusions appear and parse; handover maps objects to invariants and labels the
@@ -116,7 +122,7 @@ Expected output shape:
 ## HANDOVER.md status
 - **Governance status:** artifact-complete, not enforcement-proven
 - Named unwired bypass: direct_<cli>_exec_via_hook until the host broker intercepts the CLI
-- Conditional artifacts omitted: conformance_suite, mutation_suite, approver_canary — add only when a host runner exists
+- Conditional artifacts omitted: conformance_suite (trigger: no conformance test surface in scope), mutation_suite (trigger: no mutable control-plane tests declared), approver_canary (trigger: no live approver traffic) — each with runner prerequisite "add only when a host runner exists"
 ## Host matrix
 - Keep `<cli>` generic: agy, agent(cursor-cli), Devin, OpenCode, OMP, Claude, Codex, or another headless host may supply the concrete command.
 ```

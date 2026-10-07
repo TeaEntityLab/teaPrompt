@@ -34,7 +34,7 @@ Methods:
 - Failure signatures: record failing oracle, error class, and touched surface. After a correction, a repeated signature exits by rollback to the last verified ledger state, a strategy change, or escalation — never an identical retry. Limits are task-declared in the envelope.
 - Decorrelated verification: declare channels (deterministic check, runtime evidence, external primary source, independent model, self-assessment) and whether they are independent. A high-risk PASS needs at least one non-model channel.
 - Evidence ledger: each entry names the claim, the source, the attester, the freshness kind, and the date checked. A tool result is evidence; the agent's summary of it is not.
-- Envelope: before unattended work, record pre-approved budget, per-action pause list, kill conditions, failure-signature limit, allowed sinks, and named accepter. A run outside the envelope stops. Unresolved high-impact irreversible assumptions are Human Review triggers.
+- Envelope: before unattended work, record pre-approved budget, per-action pause list, kill conditions, failure-signature limit, allowed sinks, named accepter, and strictness level. A run outside the envelope stops. Unresolved high-impact irreversible assumptions are Human Review triggers.
 - Acceptance: a named accepter closes the delivery against the oracle manifest and product evidence; execution success alone never closes it.
 - Minimality: size gate thickness to risk; remove ceremony that defends no named invariant.
 - Compatibility: name tool, framework, model, or repository versions the guidance assumes; a workflow skill needs a paired with/without check.
@@ -80,7 +80,7 @@ Auto-release is never allowed for `intent` and `acceptance`. A mid-task spec cha
 
 ## Autonomy Envelope
 
-This pack adds no new lettered ladder: autonomy is expressed through the existing strictness ladder (`L1`–`L6`) and Gate 2.0 thickness. Cross-ref `flow-loop-harness` Human Review Boundary for loops and `agent-governance-scaffold` Gate 2.0 for effect severity. Envelope fields: pre-approved budget, per-action pause list, kill conditions, failure-signature limit (task-declared), allowed sinks, named accepter. A run outside the envelope stops. Thickness scales with risk; higher strictness still cannot auto-release `intent` or `acceptance`.
+This pack adds no new lettered ladder: autonomy is expressed through the existing strictness ladder (`L1`–`L6`) and Gate 2.0 thickness. Cross-ref `flow-loop-harness` Human Review Boundary for loops and `agent-governance-scaffold` Gate 2.0 for effect severity. Envelope fields: pre-approved budget, per-action pause list, kill conditions, failure-signature limit (task-declared), allowed sinks, named accepter, strictness (L1–L6). A run outside the envelope stops. Thickness scales with risk; higher strictness still cannot auto-release a gate.
 
 ## Contract Set
 

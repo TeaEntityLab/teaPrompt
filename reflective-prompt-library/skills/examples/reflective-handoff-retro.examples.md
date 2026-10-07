@@ -8,9 +8,10 @@ Input:
 Prepare handoff for the next agent. I am ending this session.
 ```
 
-Proportional subset of the handoff template; it keeps the non-optional continuation state (assumptions, blockers, commands/tests, Human Review) that the Never clause forbids losing.
+The handoff template, including the as-of date and Acceptance Criteria. A continuation packet that drops either is not finished.
 
 ```markdown
+## As-of Date
 ## Goal
 ## Current State
 ## Decisions Made
@@ -21,6 +22,7 @@ Proportional subset of the handoff template; it keeps the non-optional continuat
 ## Risks
 ## Trust Boundaries / External Data
 ## Blockers
+## Acceptance Criteria
 ## Commands / Tests Run
 ## Next Recommended Action
 ## Do Not Do
@@ -40,9 +42,12 @@ Expected output shape:
 ```markdown
 ## What Went Well
 ## What Went Wrong
+## Misunderstandings
 ## Wrong Assumptions
+## Token or Time Waste
 ## Weak Gates
-## Trust-boundary lesson
+## Test Adequacy
+## Overengineering / Underspecification
 ## Reusable Rules
 ## Skill / Script / Test Candidates
 ## Next Process Improvement
@@ -61,6 +66,7 @@ Expected output shape:
 ```markdown
 ## Retain
 - future-useful, durable, self-contained lesson
+- as-of date (`YYYY-MM-DD`)
 ## Exclude
 - live task state or lookup-recoverable fact
 ## Revalidate

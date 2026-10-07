@@ -75,6 +75,189 @@ Four self-contained fixtures, runnable without network or model calls —
 3. `missing-confidence` (must fail): `Route Confidence:` blank — verdict `fail`, row `Route Confidence: unparseable (presence/parse)`. Optional fourth fixture: high-risk route (`Strictness: L4`, production deploy) with `Human Review: none` → `fail`, row `Human Review: review-missing (R4)`.
 4. `alias-six-field` (must pass with warnings): only the six machine keys, low-risk wording, a rationale sentence, no un-negated hazard keyword — verdict `pass`, warnings for absent `Mode`, `Strictness`, and `Next Action`. The same trace with `canonical_intent` containing `production` and no `Human Review` — verdict `fail`, row `Human Review: review-missing (R4)`.
 
+## Emitted Scaffold
+
+`lint_route_trace.py` (Python stdlib only; host-executed). It implements the four verification fixtures, including alias-mode warnings and negated hazard clauses. A keyword inside `no` / `not` / `without` / `non-` is not a high-risk signal. `none` is a filled value for enhancements and a negated Human Review only when a high-risk signal fired.
+
+```python
+#!/usr/bin/env python3
+"""Lint one route trace against the Router Output Contract. Stdlib only."""
+import re, sys
+
+FIELDS = [
+    "Mode", "Strictness", "Goal", "Assumptions", "Workflow", "Route Confidence",
+    "Enhancements Enabled", "Enhancements Available", "Human Review", "Next Action",
+]
+HAZARD = re.compile(
+    r"production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part",
+    re.I,
+)
+NEG = re.compile(r"\b(?:no|not|without)\b|non-", re.I)
+DEFER = re.compile(r"downgrade|defer|fallback|default-up|instead of|skipped", re.I)
+KEY = re.compile(r"^\s*(?:[-*]\s*)?(?:\*\*)?([A-Za-z][A-Za-z0-9 /_-]*?)(?:\*\*)?\s*:\s*(.*)$")
+ALIAS = {
+    "mode": "mode", "strictness": "strictness", "goal": "goal",
+    "assumptions": "assumptions", "workflow": "workflow",
+    "routeconfidence": "confidence", "confidence": "confidence",
+    "enhancementsenabled": "enabled", "enhancementsavailable": "available",
+    "humanreview": "review", "nextaction": "next",
+    "canonicalintent": "intent", "rationale": "rationale", "reason": "rationale",
+}
+EMPTY = {"", "none", "n/a", "na", "tbd"}
+
+def norm(key):
+    return re.sub(r"[^a-z0-9]", "", key.lower())
+
+def parse(text):
+    found, lines = {}, {}
+    for line in text.splitlines():
+        stripped = line.strip()
+        m = KEY.match(stripped)
+        if not m:
+            continue
+        slot = ALIAS.get(norm(m.group(1)))
+        if slot and slot not in found:
+            found[slot] = m.group(2).strip()
+            lines[slot] = stripped
+    return found, lines
+
+def blank(value):
+    return value is None or value.strip() == ""
+
+def placeholder(value):
+    return blank(value) or value.strip().lower() in EMPTY
+
+def sentence(value):
+    if placeholder(value):
+        return False
+    return len(value.strip()) > 20
+
+def hazard(text):
+    for clause in re.split(r"[.;\n]", text or ""):
+        for m in HAZARD.finditer(clause):
+            seg_start = clause.rfind(",", 0, m.start()) + 1
+            if NEG.search(clause[seg_start:m.start()]):
+                continue  # same comma-segment negation ("without credentials or billing")
+            if seg_start and NEG.search(clause[:seg_start]):
+                # comma item of an earlier negation: a real list only when the
+                # chain is completed by an or/and item ("no auth, billing, or
+                # production"); a bare comma ends the negation's scope
+                seg_rest = clause[seg_start:]
+                if re.match(r"\s*(?:or|and)\b", seg_rest) or re.search(
+                    r",\s*(?:or|and)\b", seg_rest
+                ):
+                    continue
+            return True
+    return False
+
+def review_negated(value):
+    return bool(re.match(r"\s*(none|n/a|na|not required)\b", value or "", re.I))
+
+def source_line(lines, *slots):
+    for slot in slots:
+        if slot in lines:
+            return lines[slot]
+    return "<absent>"
+
+def lint(text):
+    raw, lines = parse(text)
+    alias = "intent" in raw and "mode" not in raw and "goal" not in raw
+    goal = raw.get("goal") or raw.get("intent") or ""
+    assumptions = raw.get("assumptions") or ""
+    rationale = raw.get("rationale") or ""
+    if alias and blank(assumptions) and sentence(rationale):
+        assumptions = rationale
+    values = {
+        "Mode": raw.get("mode") or "",
+        "Strictness": raw.get("strictness") or "",
+        "Goal": goal,
+        "Assumptions": assumptions,
+        "Workflow": raw.get("workflow") or "",
+        "Route Confidence": raw.get("confidence") or "",
+        "Enhancements Enabled": raw.get("enabled") or "",
+        "Enhancements Available": raw.get("available") or "",
+        "Human Review": raw.get("review") or "",
+        "Next Action": raw.get("next") or "",
+    }
+    high = (
+        "reflective-risk" in values["Workflow"]
+        or bool(re.search(r"\bL[45]\b", values["Strictness"], re.I))
+        or hazard(values["Goal"]) or hazard(values["Assumptions"])
+    )
+    defer = (
+        not placeholder(values["Enhancements Available"])
+        or "prompt-only" in values["Workflow"].lower()
+        or "fast path" in values["Workflow"].lower()
+        or any(DEFER.search(line) for line in text.splitlines())
+    )
+    seat = ""
+    if sentence(values["Enhancements Available"]):
+        seat = "Enhancements Available"
+    elif sentence(rationale):
+        seat = "Rationale"
+    elif sentence(values["Assumptions"]):
+        seat = "Assumptions"
+    warn_fields = {"Mode", "Strictness", "Next Action"}
+    if not high:
+        warn_fields.add("Human Review")
+    rows, warnings = [], []
+    for field in FIELDS:
+        value = values[field]
+        status, detail = "ok", ""
+        if field == "Route Confidence" and not re.fullmatch(
+            r"high|medium|low|0(?:\.\d+)?|1(?:\.0+)?|0?\.\d+", value.strip(), re.I
+        ):
+            status, detail = "unparseable", "presence/parse"
+        elif field == "Enhancements Available" and defer and not seat:
+            status, detail = "rationale-missing", "R5/R7"
+        elif field == "Human Review" and high and (blank(value) or review_negated(value)):
+            status, detail = "review-missing", "R4"
+        elif blank(value):
+            if alias and field in warn_fields:
+                status = "warning"
+                warnings.append(field)
+            else:
+                status, detail = "missing", "presence"
+        quoted = {
+            "Mode": source_line(lines, "mode"),
+            "Strictness": source_line(lines, "strictness"),
+            "Goal": source_line(lines, "goal", "intent"),
+            "Assumptions": source_line(lines, "assumptions", "rationale"),
+            "Workflow": source_line(lines, "workflow"),
+            "Route Confidence": source_line(lines, "confidence"),
+            "Enhancements Enabled": source_line(lines, "enabled"),
+            "Enhancements Available": source_line(lines, "available"),
+            "Human Review": source_line(lines, "review"),
+            "Next Action": source_line(lines, "next"),
+        }[field]
+        rows.append({"field": field, "status": status, "detail": detail, "raw": quoted})
+    failing = [r for r in rows if r["status"] not in {"ok", "warning"}]
+    return {
+        "verdict": "fail" if failing else "pass",
+        "rows": rows,
+        "warnings": warnings,
+        "rationale_seat": seat,
+        "alias": alias,
+    }
+
+def main(argv):
+    text = sys.stdin.read() if len(argv) < 2 else open(argv[1], encoding="utf-8").read()
+    result = lint(text)
+    print(result["verdict"])
+    for row in result["rows"]:
+        extra = f" ({row['detail']})" if row["detail"] else ""
+        shown = "<absent>" if row["raw"] == "<absent>" else "`" + row["raw"] + "`"
+        print(f"{row['field']}: {row['status']}{extra} | {shown}")
+    for field in result["warnings"]:
+        print(f"warning: {field} absent")
+    if result["rationale_seat"]:
+        print(f"rationale seat: {result['rationale_seat']}")
+    return 0 if result["verdict"] == "pass" else 1
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
+```
+
 ## Honest Limits
 
 - Syntax, not semantics: the linter proves the trace *says* something well-formed, not that the rationale is true or the workflow choice is right. A coherent invented rationale passes.

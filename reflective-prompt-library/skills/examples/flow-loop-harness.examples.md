@@ -29,6 +29,9 @@ Expected output shape:
 ## Verification
 - Rig-tier only proposed checks (unrun here): toggling verifier (0), changing agent + always-fail verifier (2), no-op agent with STATE inside an un-ignored worktree (3), non-executable verifier before any call (4). Rig control flow is not production or host-enforcement proof.
 
+## Run note
+- stop condition, iteration cap, budget caps, resume command (`rerun the generated script`), human-approval boundary; prompt file(s), verifier hook, inspectable `state/ledger.md`
+
 ```
 
 ## Example 2
@@ -54,6 +57,9 @@ Expected output shape:
 - backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier or missing TASKS.canon → 4; selected-preflight failure before dispatch/retirement → 4
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
+## Human review boundary
+- attended: verifier + caps; unattended: recorded approval of verifier, caps, flags, blast radius before the first run
+
 ```
 
 ## Example 3
@@ -103,4 +109,7 @@ Expected output shape:
 ## Verification
 - Rig-tier (run 2026-09-14): converge on the third check → 0; never converge → 2 at MAX_WAVES; identical branch outputs across waves → 3; all branches fail → 3; verifier not executable → 4; no wave prompts → 4. Not a claim about reviewer quality.
 - Repair acceptance checks (unrun here): reused STATE cannot import a deleted branch, old summary or final; failed/empty branch evidence is tallied and excluded. The historical run above did not prove those cases.
+## Run note
+- stop condition, wave cap, budget caps, resume command (`rerun the generated script`), human-approval boundary; prompt file(s), verifier hook, inspectable `state/ledger.md`
+
 ```

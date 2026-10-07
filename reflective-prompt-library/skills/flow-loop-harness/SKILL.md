@@ -264,7 +264,7 @@ run_verify() {
 }
 # Only the script retires this queue; host write exclusion is REQUIRED.
 TASKS="$STATE/TASKS.canon"
-[ -f "$TASKS" ] || cp "$TASKS_SRC" "$TASKS"
+[ -f "$TASKS" ] || { [ -f "$TASKS_SRC" ] && cp "$TASKS_SRC" "$TASKS"; } || { echo "canonical backlog missing: $TASKS_SRC" >&2; exit 4; }
 
 [ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }
 snap() {  # same content evidence as fix loop; empty outside git

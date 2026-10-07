@@ -11,9 +11,13 @@ Generated surface:
 
 - `VERIFY.md` — launch `node demo/simple-routing.js`, doctor
   `curl localhost:PORT/heartbeat`, drive = curl per route in feature files,
-  evidence = response bodies to scratch dir.
+  evidence = response bodies to scratch dir, the four-way failure
+  classification table (product regression / doc drift / spec-oracle error /
+  harness failure), cleanup = stop the demo server and remove the scratch dir.
+- `features/README.md` — index of the feature files below.
 - `features/routing.md`, `features/csrf-upload.md`, `features/errors.md` —
-  each with entry points (route table), drive (curl commands), observable
+  each with `source_commit` + `last_verified_at` + `verification_status`
+  metadata, entry points (route table), drive (curl commands), observable
   outcomes (expected bodies/statuses), failure paths, evidence.
 - Environment quirk recorded verbatim: launch directory changes what
   `/file/../` traversal serves — cwd-dependent, documented not hidden.
@@ -31,10 +35,13 @@ Generated surface:
 - `VERIFY.md` — launch `go test -mod=mod ./...` (the `-mod=mod` flag is the
   recorded environment quirk: stale `vendor/` vs `go.mod`), doctor =
   `go vet` + smoke `-run` regex, drive = per-feature `-run` regexes,
-  scratch drivers outside the repo via `replace` directive.
+  evidence = `go test -json` output to scratch dir, the four-way failure
+  classification table, cleanup = remove scratch drivers.
+- `features/README.md` — index of the feature files below.
 - `features/core.md`, `collections.md`, `queues.md`, `concurrency.md`,
-  `integrations.md` — the product's own test suite is the oracle; the map
-  routes feature areas to test regexes.
+  `integrations.md` — each carries `source_commit` + `last_verified_at` +
+  `verification_status` metadata; the product's own test suite is the
+  oracle; the map routes feature areas to test regexes.
 
 Fresh-agent result: 1013/1013 baseline; unlabeled `Distinct` bug classified
 product regression; wrong spec classified spec-oracle error. Same shape

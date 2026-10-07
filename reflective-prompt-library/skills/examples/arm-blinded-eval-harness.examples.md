@@ -22,7 +22,8 @@ blinded/
   B-content-4.md
 map/sealed-map.json          # host-held; never on the scorer read path
 results/scores.jsonl         # per-candidate oracle pass/fail + raw output
-results/run-note.json        # order, seed hashes, caps, discarded ledger refs
+results/run-note.json        # order, seed hashes, caps, discarded ledger refs,
+                             # noise_floor_basis, failure_categorization, selection_vs_final
 ```
 
 Unblinding (host only, after scoring):
@@ -36,9 +37,12 @@ Unblinding (host only, after scoring):
 
 Planted-difference check: the arm whose `calc.py` passes the A-code oracle
 scores pass, the other scores fail; `scores.jsonl` recovers that pattern only
-after the host joins through the sealed map. The scorer's argv, cwd, and
-captured stdout contain zero arm tokens (grep the invocation log for
-`control|treatment`, require zero matches).
+after the host joins through the sealed map. That recovery checks the harness.
+It is not a treatment-effect claim: the run note still names `noise_floor_basis`,
+`failure_categorization`, and `selection_vs_final`, and a score difference is
+not attributed to treatment while categorization is unresolved. The scorer's
+argv, cwd, and captured stdout contain zero arm tokens (grep the invocation
+log for `control|treatment`, require zero matches).
 
 ## Example 2 — Label leak refuses before scoring (exit 4)
 
@@ -71,12 +75,16 @@ Expected output shape (`results/run-note.json` fragment):
 ```json
 {
   "order": {"A-code": ["control", "treatment"], "B-content": ["treatment", "control"]},
+  "clone_hashes": {"A-code": {"control": "<sha256>", "treatment": "<sha256>"}},
   "discarded": [
     {"pair": "B-content", "arm": "treatment", "cause": "wrong CLI spelling",
      "receipt": "evidence/task005/malformed-1.out", "rerun": true}
   ],
   "hold": {"pair": "C-hold", "exit": 4, "dispatched": false, "verdict": "stale"},
   "denominator": {"repair_pairs": 2, "note": "discarded + hold excluded"},
+  "noise_floor_basis": "single-run caveat: no score difference claimed in this note",
+  "failure_categorization": "no treatment attribution in this note",
+  "selection_vs_final": "not-a-final-claim",
   "disclosure": "by-construction blinding only; zero observed blinded runs yet"
 }
 ```

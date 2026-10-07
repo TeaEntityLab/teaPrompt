@@ -17,7 +17,7 @@ Expected output shape:
 - Sequential pipeline (fixed known stages)
 ## Deliverable
 - pipeline.sh (Script Contract: AGENT_CMD header, state/ dir, run_agent fn,
-  gates after each stage, caps, permission flags, flow.log)
+  gates after each stage, caps, permission flags, flow.log, documented exits)
 - prompts/01-spec.md, 02-implement.md, 03-review.md
 ## Gates
 - stage 1: test -s state/01-spec.md; stage 2: ./checks/run-tests.sh; stage 3: gate: none (accepted); every dispatch carries the shared `PREFLIGHT` gate before and after (empty = attended, unchanged)
@@ -63,6 +63,8 @@ Expected output shape:
 - deploy is production/third-party effect; generated script exits before deploy unless approval record path is supplied and non-empty
 ## Gates
 - build: deterministic build exit 0; test: ./checks/run-tests.sh; deploy: named human approval + explicit operator command
+## Run note
+- dry-run/run commands, state and log locations (`state/`, `flow.log`), budget caps, human approval required for the deploy step
 ## Verification
 - Rig-tier only: AGENT_CMD='cat' dry run exercises build/test/approval-missing path and exits non-zero before deploy; bash -n clean. No production e2e proof is claimed.
 ```

@@ -63,3 +63,27 @@ Expected output shape:
   negation, not a review. The fix is a named reviewer sign-off, after
   which the underlying task still routes through `reflective-risk`
   before execution.
+
+## Example 5 — Alias six-field form (must pass with warnings; hazard still fails)
+
+Input: only the six machine keys, low-risk wording, and a rationale
+sentence. No un-negated hazard keyword. `Mode`, `Strictness`, and
+`Next Action` are absent.
+
+```text
+canonical_intent: reword the onboarding banner to match the style guide
+workflow: reflective-minimality
+confidence: medium
+enhancements_enabled: none
+enhancements_available: style-guide sweep after this edit (deferred: single string, no logic change)
+rationale: the banner is copy only, so a wider workflow would not change the result
+```
+
+Expected output shape:
+
+- Verdict: `pass`, warnings for absent `Mode`, `Strictness`, and
+  `Next Action`. Absent `Human Review` is a warning because no
+  high-risk signal fired.
+- The same trace with `canonical_intent` containing `production` and
+  no `Human Review` — verdict `fail`, row
+  `Human Review: review-missing (R4)`.

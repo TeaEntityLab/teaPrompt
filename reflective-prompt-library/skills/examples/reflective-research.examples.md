@@ -28,13 +28,20 @@ Input:
 Classify these methodology ideas into what we already do vs what to add.
 ```
 
-Expected output shape:
+Classification is an optional section of the same research output, not a replacement for it.
 
 ```markdown
+## Research Question
+## Direct Recommendation
+## Evidence Used
+## Version / Date Context
+## Evidence vs Inference
+## Risks / Unknowns
 ## Classification (Optional)
 - Already Present:
 - Adjacent / Missing:
 - Recommended Core Additions:
+## Handoff
 ```
 
 

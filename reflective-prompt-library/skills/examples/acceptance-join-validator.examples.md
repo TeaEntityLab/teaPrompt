@@ -51,7 +51,7 @@ Expected output shape:
 ```text
 REQ-101   ok        acceptance.yaml:4
 AC-101.1  ok        acceptance.yaml:4 (via covers)
-REQ-102   DANGLING  features/checkout.md:1 — no check covers it
+REQ-102   dangling   features/checkout.md:1 — no check covers it
 lock: locked=true  artifact sha256:71bd…  HEAD:a1b2c3d
 summary: 2 ok, 1 dangling, 0 duplicate, 0 unrunnable → exit 1
 ```

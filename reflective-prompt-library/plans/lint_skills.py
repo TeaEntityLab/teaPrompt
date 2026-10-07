@@ -127,14 +127,22 @@ class SkillLinter:
         """Classify a SKILL.md, composable category prompt, or documentation."""
         if file_path.name == "SKILL.md":
             return "skill"
-        if content.startswith('---') and 'name:' in content[:500]:
-            return "skill"
 
         try:
             relative = file_path.resolve().relative_to(self.repo_root)
         except ValueError:
             return "document"
         parts = relative.parts
+        # Plans stay documents even when an admission record carries
+        # skill-shaped frontmatter. They are not routing inputs.
+        if (
+            len(parts) >= 2
+            and parts[0] == "reflective-prompt-library"
+            and parts[1] == "plans"
+        ):
+            return "document"
+        if content.startswith('---') and 'name:' in content[:500]:
+            return "skill"
         if (
             len(parts) >= 2
             and parts[0] == "reflective-prompt-library"
