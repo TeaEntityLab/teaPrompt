@@ -326,6 +326,7 @@ def _pipeline(tmp_path: Path, *, preflight: str | None = None):
 def _fanout(
     tmp_path: Path, *, preflight: str | None = None, min_ok: str = "",
     agent_body: str = 'echo "OUT:$prompt"\n', first_prompt: str = "a",
+    max_jobs: str | None = None,
 ):
     match = re.search(r"## Template: Parallel Fan-out/Fan-in \(bash\)\n.*?```bash\n(.*?)\n```", _source(), re.S)
     (tmp_path / "fanout.sh").write_text(match.group(1))
@@ -338,6 +339,8 @@ def _fanout(
     stub = tmp_path / "stub.sh"
     _executable(stub, '#!/bin/sh\nprompt="$(cat)"\n' + agent_body)
     env = {"PATH": os.environ["PATH"], "AGENT_CMD": str(stub), "STATE": "state", "MIN_OK": min_ok}
+    if max_jobs is not None:
+        env["MAX_JOBS"] = max_jobs
     if preflight is not None:
         gate = tmp_path / "preflight.sh"
         _executable(gate, preflight)
@@ -469,3 +472,52 @@ def test_bash_fanout_empty_success_cannot_satisfy_strict_policy(tmp_path: Path):
     assert (tmp_path / "state/fan-b.md").read_text() == "GOOD-WORK\n"
     assert not (tmp_path / "synthesis-ran").exists()
     assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("cap", ["00", "08", "0", "", "0x4", "-1", "4 ", " 4", "4.0", "9999999999"])
+def test_fanout_noncanonical_max_jobs_is_configuration_hold(tmp_path: Path, cap: str):
+    result = _fanout(tmp_path, max_jobs=cap)
+    assert result.returncode == 4, result.stderr
+    assert not list((tmp_path / "state").glob("fan-*.md"))
+    assert not (tmp_path / "state/final.md").exists()
+
+
+def test_fanout_empty_max_jobs_does_not_fall_back_to_default(tmp_path: Path):
+    result = _fanout(tmp_path, max_jobs="")
+    assert result.returncode == 4, result.stderr
+    assert not list((tmp_path / "state").glob("fan-*.md"))
+
+
+def test_fanout_canonical_cap_still_dispatches(tmp_path: Path):
+    result = _fanout(tmp_path, max_jobs="2")
+    assert result.returncode == 0, result.stderr
+    assert (tmp_path / "state/fan-a.md").read_text() == "OUT:a\n"
+    assert (tmp_path / "state/final.md").is_file()
+
+
+@pytest.mark.parametrize("quorum", ["00", "01", "abc", "-1", "9999999999"])
+def test_fanout_noncanonical_quorum_is_configuration_hold(tmp_path: Path, quorum: str):
+    result = _fanout(tmp_path, min_ok=quorum)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("cap, expected", [
+    ("999999999", 0), ("1000000000", 0), ("2147483647", 0), ("2147483648", 4),
+])
+def test_fanout_cap_ceiling_does_not_truncate_valid_decimals(tmp_path: Path, cap: str, expected: int):
+    result = _fanout(tmp_path, max_jobs=cap)
+    assert result.returncode == expected, result.stderr
+    if expected == 4:
+        assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("quorum, expected", [
+    ("999999999", 2), ("1000000000", 2), ("2147483647", 2), ("2147483648", 4),
+])
+def test_dag_large_valid_quorum_is_shortfall_not_configuration_error(
+    tmp_path: Path, quorum: str, expected: int,
+):
+    result = _dag(tmp_path, min_ok=quorum)
+    assert result.returncode == expected, result.stderr
+    assert not (tmp_path / "gate-target.txt").exists()

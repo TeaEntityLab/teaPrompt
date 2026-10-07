@@ -1,8 +1,10 @@
 """The router-trace-linter scaffold must accept its own fixtures.
 
-Extracts the emitted checker from the skill and runs the four verification
-fixtures plus the installed dispatch traces. A fixture the checker rejects
-is a contract bug, not a test to weaken.
+Extracts the emitted checker from the skill and runs the verification
+fixtures (complete, rationale, confidence, high-risk, alias, the RV-04
+contrastive matrix, and quoted confidence) plus the installed dispatch
+traces. A fixture the checker rejects is a contract bug, not a test to
+weaken.
 """
 
 from __future__ import annotations
@@ -26,6 +28,19 @@ Enhancements Enabled: none
 Enhancements Available: style-guide sweep after this edit (deferred: single string, no logic change)
 Human Review: not required — L1 wording change, reversible in one edit
 Next Action: run reflective-minimality on the banner copy
+"""
+
+CONTROL = """
+Mode: dispatch
+Strictness: L2
+Goal: rename a local variable
+Assumptions: Only the actions in Goal are planned.
+Workflow: reflective-implement
+Route Confidence: medium
+Enhancements Enabled: none
+Enhancements Available: none
+Human Review: not required
+Next Action: execute the named change
 """
 
 ALIAS = """
@@ -125,6 +140,63 @@ Next Action: stop for review
     ))
     assert hazard["verdict"] == "fail"
     assert _failing(hazard) == ["Human Review"]
+
+
+def _sub(trace, field, replacement):
+    updated = []
+    for line in trace.strip().splitlines():
+        if line.startswith(field + ":"):
+            updated.append(f"{field}: {replacement}")
+        else:
+            updated.append(line)
+    return "\n".join(updated) + "\n"
+
+
+def test_r4_contrastive_matrix_denies_bypasses_and_holds_controls():
+    checker = _checker()
+
+    denied = [
+        ("No auth changes, deploy to production, and rotate credentials", "not required", "reflective-implement"),
+        ("deploy to production", "false", "reflective-implement"),
+        ("deploy to production", "not applicable", "reflective-implement"),
+        ("deploy to production", "not-applicable", "reflective-implement"),
+        ("deploy to production", "tbd", "reflective-implement"),
+        ("deploy to production", "**none**", "reflective-implement"),
+        ('deploy to production', '"none"', "reflective-implement"),
+        ("rename a local variable", "not required", "Reflective-Risk"),
+    ]
+    for goal, review, workflow in denied:
+        trace = _sub(_sub(_sub(CONTROL, "Goal", goal), "Human Review", review), "Workflow", workflow)
+        result = checker.lint(trace)
+        assert result["verdict"] == "fail", (goal, review, workflow)
+        row = next(r for r in result["rows"] if r["field"] == "Human Review")
+        assert row["status"] not in ("ok", "warning"), (goal, review, workflow)
+        assert row["detail"] == "R4", (goal, review, workflow)
+
+    low_risk = checker.lint(CONTROL)
+    assert low_risk["verdict"] == "pass"
+    assert _failing(low_risk) == []
+
+    for review in ("none", "skipped"):
+        trace = _sub(_sub(CONTROL, "Goal", "deploy to production"), "Human Review", review)
+        result = checker.lint(trace)
+        assert result["verdict"] == "fail", review
+        row = next(r for r in result["rows"] if r["field"] == "Human Review")
+        assert row["status"] not in ("ok", "warning"), review
+        assert row["detail"] == "R4", review
+
+
+def test_quoted_confidence_passes_and_prose_still_fails():
+    checker = _checker()
+    for confidence in ('"medium"', "'medium'", "**medium**", '"high"', '"low"', '"0.8"'):
+        result = checker.lint(_sub(CONTROL, "Route Confidence", confidence))
+        assert result["verdict"] == "pass", confidence
+        assert _failing(result) == [], confidence
+
+    for confidence in ("maybe", "confident", "80%", "a whole prose sentence about routing today"):
+        result = checker.lint(_sub(CONTROL, "Route Confidence", confidence))
+        assert result["verdict"] == "fail", confidence
+        assert _failing(result) == ["Route Confidence"], confidence
 
 
 def test_dispatch_examples_are_not_false_positives():

@@ -393,3 +393,163 @@ def test_wave_stall_uses_evidence_not_changing_wave_headers(tmp_path: Path, chan
     assert result.returncode == (2 if changing else 3), result.stderr
     assert (tmp_path / "state/calls").read_text().strip() == ("3" if changing else "2")
     assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("cap", ["00", "08", "0", "", "0x2", "-1", "2 ", " 2", "2.0", "9999999999"])
+def test_fix_noncanonical_max_iter_is_configuration_hold(tmp_path: Path, cap: str):
+    _workspace(tmp_path)
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"), COUNT + "echo changed > work.txt\n", MAX_ITER=cap)
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+
+
+def test_fix_canonical_cap_still_dispatches(tmp_path: Path):
+    _workspace(tmp_path)
+    result = _run(tmp_path, _template("Verify-Gated Fix Loop (bash)"), COUNT + 'printf "stage%03d\\n" "$n" > work.txt\n', MAX_ITER="2")
+    assert result.returncode == 2, result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == "2"
+
+
+def test_fix_expression_cap_expands_nothing(tmp_path: Path):
+    _workspace(tmp_path)
+    (tmp_path / "r").write_text("1\n", encoding="utf-8")
+    result = _run(
+        tmp_path, _template("Verify-Gated Fix Loop (bash)"),
+        COUNT + "echo changed > work.txt\n",
+        MAX_ITER="r[$(printf marker > state/arithmetic-expanded)]",
+    )
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/arithmetic-expanded").exists()
+
+
+@pytest.mark.parametrize("cap", ["00", "08", "0", "", "0x1", "-1", "9999999999"])
+def test_writer_noncanonical_max_rounds_is_configuration_hold(tmp_path: Path, cap: str):
+    _workspace(tmp_path, git=False)
+    for name in ("draft", "critic-rubric", "revise"):
+        (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    result = _run(
+        tmp_path, _template("Evaluator-Optimizer / Writer-Critic (bash)"),
+        COUNT + "echo clean-draft\n", MAX_ROUNDS=cap,
+    )
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+def test_writer_expression_rounds_expands_nothing(tmp_path: Path):
+    _workspace(tmp_path, git=False)
+    for name in ("draft", "critic-rubric", "revise"):
+        (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    agent = COUNT + 'case "$prompt" in critic-rubric*) echo ACCEPT;; *) echo clean-draft;; esac\n'
+    result = _run(
+        tmp_path, _template("Evaluator-Optimizer / Writer-Critic (bash)"), agent,
+        MAX_ROUNDS="r[$(printf marker > state/arithmetic-expanded)]",
+    )
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/arithmetic-expanded").exists()
+
+
+@pytest.mark.parametrize("cap", ["00", "08", "0", "", "-1", "9999999999"])
+def test_wave_noncanonical_caps_are_configuration_holds(tmp_path: Path, cap: str):
+    _workspace(tmp_path, git=False)
+    (tmp_path / "prompts/wave").mkdir()
+    (tmp_path / "prompts/wave/worker.md").write_text("worker\n", encoding="utf-8")
+    result = _run(
+        tmp_path, _template("Multi-Wave Fan-out (bash)"), COUNT + "echo work\n",
+        VERIFY="./checks/verify.sh", MAX_WAVES=cap, MAX_JOBS="2",
+    )
+    assert result.returncode == 4, result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    result = _run(
+        tmp_path, _template("Multi-Wave Fan-out (bash)"), COUNT + "echo work\n",
+        VERIFY="./checks/verify.sh", MAX_WAVES="1", MAX_JOBS=cap,
+    )
+    assert result.returncode == 4, result.stderr
+
+
+def test_wave_canonical_caps_still_dispatch(tmp_path: Path):
+    _workspace(tmp_path, git=False)
+    (tmp_path / "prompts/wave").mkdir()
+    (tmp_path / "prompts/wave/worker.md").write_text("worker\n", encoding="utf-8")
+    result = _run(
+        tmp_path, _template("Multi-Wave Fan-out (bash)"), COUNT + "echo SAME-EVIDENCE\n",
+        VERIFY="./checks/verify.sh", MAX_WAVES="3", MAX_JOBS="2",
+    )
+    assert result.returncode == 3, result.stderr
+    assert (tmp_path / "state/calls").read_text().strip() == "2"
+
+
+def test_backlog_directory_canon_is_read_error_not_empty(tmp_path: Path):
+    _workspace(tmp_path, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("an unfinished task\n", encoding="utf-8")
+    (tmp_path / "state").mkdir(exist_ok=True)
+    (tmp_path / "state/TASKS.canon").mkdir(exist_ok=True)
+    result = _run(
+        tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+        COUNT + "echo changed > work.txt\n", MAX_ITER="3",
+    )
+    assert result.returncode == 4, result.stdout + result.stderr
+    assert "unreadable" in (result.stdout + result.stderr)
+    assert "backlog empty" not in result.stdout
+    assert not (tmp_path / "state/calls").exists()
+
+
+def test_backlog_missing_canon_is_configuration_hold(tmp_path: Path):
+    _workspace(tmp_path, git=False, verify="exit 0\n")
+    result = _run(
+        tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+        COUNT + "echo changed > work.txt\n", MAX_ITER="3",
+    )
+    assert result.returncode == 4, result.stdout + result.stderr
+    assert "canonical backlog missing" in (result.stdout + result.stderr)
+    assert not (tmp_path / "state/calls").exists()
+
+
+def test_backlog_normal_file_still_retires(tmp_path: Path):
+    _workspace(tmp_path, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("only\n", encoding="utf-8")
+    _git(tmp_path, "add", "TASKS.md")
+    _git(tmp_path, "commit", "-qm", "backlog")
+    result = _run(
+        tmp_path, _template("Task-Ledger Backlog Loop (bash, ralph-style)"),
+        COUNT + 'printf "stage%03d\\n" "$n" > work.txt\n', MAX_ITER="1",
+    )
+    assert result.returncode == 0, result.stderr
+    assert "backlog empty" in result.stdout
+
+
+@pytest.mark.parametrize("worker_exit", [1, 4, 127])
+def test_writer_raw_worker_exit_is_distinct_from_configuration(tmp_path: Path, worker_exit: int):
+    _workspace(tmp_path, git=False)
+    for name in ("draft", "critic-rubric", "revise"):
+        (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    result = _run(
+        tmp_path, _template("Evaluator-Optimizer / Writer-Critic (bash)"),
+        f"exit {worker_exit}\n", MAX_ROUNDS="2",
+    )
+    expected = 5 if worker_exit == 4 else worker_exit
+    assert result.returncode == expected, result.stderr
+    assert not (tmp_path / "state/final.md").exists()
+
+
+def test_fix_raw_worker_exit_4_is_distinct_from_configuration(tmp_path: Path):
+    _workspace(tmp_path)
+    result = _run(
+        tmp_path, _template("Verify-Gated Fix Loop (bash)"), "exit 4\n", MAX_ITER="2",
+    )
+    assert result.returncode == 5, result.stderr
+    assert "- iter 1: worker failed agent-exit=4" in (tmp_path / "state/ledger.md").read_text()
+
+
+@pytest.mark.parametrize("cap, expected", [
+    ("999999999", 0), ("1000000000", 0), ("2147483647", 0), ("2147483648", 4),
+])
+def test_fix_cap_ceiling_does_not_truncate_valid_decimals(tmp_path: Path, cap: str, expected: int):
+    _workspace(tmp_path, git=False, verify="exit 0\n")
+    result = _run(
+        tmp_path, _template("Verify-Gated Fix Loop (bash)"), COUNT + "exit 1\n", MAX_ITER=cap,
+    )
+    assert result.returncode == expected, result.stderr
+    assert not (tmp_path / "state/calls").exists()

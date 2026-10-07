@@ -1,7 +1,7 @@
 ---
 feature: governance test suite
-source_commit: f0f986d98af86702c5ecacac6daf095a06849686
-last_verified_at: 2026-10-02
+source_commit: 13fc95c
+last_verified_at: 2026-10-07
 verification_status: passing
 ---
 
@@ -9,15 +9,17 @@ verification_status: passing
 
 ## Entry points
 
-- `reflective-prompt-library/plans/tests/` — 106 `test_*.py` files; the
-  2026-10-02 verification drive reported 1358 passing tests. Pins governance
-  records, registry cardinality, cheatsheet parity, boundary quick cues and
-  adoption-state contracts.
+- `reflective-prompt-library/plans/tests/` — governance records, registry
+  cardinality, cheatsheet parity, boundary quick cues, adoption-state
+  contracts, and emitted-script consumer regressions.
 
-Generation-time baseline (2026-09-24, `7147e91`): 99 files and 1290 tests.
-The metadata now names the current committed source baseline; this repair
-changes covered documentation, not test code. Run receipts and limits are
-recorded in `review/final-report.md`.
+Historical snapshots: the generation-time baseline (2026-09-24, `7147e91`)
+had 99 files and 1290 tests; the 2026-10-02 drive reported 106 files and
+1358 passing tests.
+`source_commit` now names the committed base; the verified working tree
+includes the current runtime-review and consumer-regression repairs.
+This map refresh changes documentation, not test code. Run receipts and
+limits are recorded in `review/final-report.md`.
 
 ## Drive
 
@@ -25,7 +27,7 @@ recorded in `review/final-report.md`.
 python3 -m pytest reflective-prompt-library/plans/tests/ -q
 ```
 
-Observed tail on 2026-10-02: `1358 passed`. The invariant is **0 failures**,
+Observed tail on 2026-10-07: `1533 passed`. The invariant is **0 failures**,
 not the exact count; re-verify after covered source changes.
 
 Per-area selection uses `-k` or a file path, e.g.:

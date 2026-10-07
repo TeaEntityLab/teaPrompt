@@ -61,11 +61,11 @@ Escalation:
 Every generated loop must contain all six parts:
 
 1. Verifier: committed deterministic command under `checks/`; exit code alone decides success. Preflight executable availability → exit 4 (bash 3.2 exec failures are unreliable); run before the first iteration and after each. Preflight unattended writer-critic floor executables before **any** agent call.
-2. Caps: mandatory `MAX_ITER`; host-provided per-call timeout where available (stock macOS has none) and host-exposed cost caps. Cap exhaustion is not step failure.
+2. Caps: mandatory `MAX_ITER` (`MAX_ROUNDS`/`MAX_WAVES`/`MAX_JOBS` where the template composes them); every arithmetic cap is validated as canonical positive decimal before first dispatch and before any arithmetic evaluation — `1`–`2147483647` with no leading zero, no empty value, no expression, and no silent env-default fallback when the variable is explicitly set but empty. Invalid caps exit 4 with zero dispatches and zero command expansion. Cap exhaustion is not step failure.
 3. Ledger: append iteration, verifier result and progress. Fresh agent contexts read its bounded tail, not accumulated chat; append `RESUMED` on restart with a nonempty ledger.
 4. Progress detector: abort on equal content signals, not equal churn. Hash staged + unstaged binary diffs (including names/deletions) and untracked contents, excluding STATE. Outside git, disable detection and rely on caps.
 5. Permission boundary: human-reviewed least-privilege host flags (e.g. `--allowedTools` / permission mode). Host MUST exclude `checks/`, canonical `state/TASKS.canon` and `prompts/critic-rubric.md` as applicable from agent writes. Comments/copies do not enforce these exclusions.
-6. Exits: `0` verified done; `2` cap; `3` no progress or verify-fail stop; `4` missing/non-executable verifier or canonical backlog. Callers must distinguish them.
+6. Exits: `0` verified done; `2` cap; `3` no progress, verify-fail stop, or worker failure; `4` missing/non-executable verifier, invalid cap, missing/unreadable canonical backlog, or selected-preflight failure; `5` raw worker exit 4 remapped away from the reserved configuration class. Callers must distinguish them.
 
 Selected preflight gate (shared interface): `PREFLIGHT="${PREFLIGHT:-}"` names one executable file, never shell text. Empty preserves ordinary attended behavior and claims no runtime enforcement; a workflow requiring observed host preconditions must set it, and empty never means met. When set, every template checks executability before the first/each agent dispatch — including the zero-call already-converged/already-verified/backlog-empty path — invokes it with no shell (`"$PREFLIGHT"`, per-stage capture under `$STATE/preflight-<stage>.out`; `flow.log` holds one log line per check), and exits 4 before the verifier result is accepted, the final artifact is published, the backlog line is retired, or the satisfied queue retires — including under partial multi-wave policy. Gate output is point-in-time evidence, not enforcement proof; the host owns the gate, manifests, and write exclusions. There is no cancellation manager: killing the driver does not cancel in-flight agent/child processes (driver SIGTERM can leave a stand-in child alive in its own group; examine the process group and stop only coordinator-created groups), and absence of lifecycle evidence is unknown, not kill assurance.
 
@@ -80,10 +80,14 @@ set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 VERIFY="${VERIFY:-./checks/verify.sh}"   # truth layer: exit 0 = done
-MAX_ITER="${MAX_ITER:-8}"
+MAX_ITER="${MAX_ITER-8}"
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_ITER" in ""|0|0*|*[!0-9]*) log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4 ;; esac
+MAX_ITER_LEN="${#MAX_ITER}"
+if [ "$MAX_ITER_LEN" -gt 10 ] || { [ "$MAX_ITER_LEN" -eq 10 ] && [ "$MAX_ITER" \> 2147483647 ]; }; then log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4; fi
+unset MAX_ITER_LEN
 preflight() { # $1=stage: selected gate passes, or exit 4 before dispatch/acceptance
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; exit 4; }
@@ -139,6 +143,7 @@ for ((i=1; i<=MAX_ITER; i++)); do
   log "iter $i start"
   ec=0; $AGENT_CMD < "$STATE/iter-$i-prompt.md" > "$STATE/iter-$i-out.md" || ec=$?
   log "iter $i end agent-exit=$ec"
+  if [ "$ec" -eq 4 ]; then echo "- iter $i: worker failed agent-exit=4" >> "$LEDGER"; exit 5; fi
 
   if check; then
     preflight "iter-$i-post"
@@ -164,10 +169,13 @@ Deviations: advisory model ACCEPT, no ledger or progress detector; round artifac
 set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/ + rubric
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
-MAX_ROUNDS="${MAX_ROUNDS:-4}"
+MAX_ROUNDS="${MAX_ROUNDS-4}"
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
-
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_ROUNDS" in ""|0|0*|*[!0-9]*) log "max_rounds configuration gate=4: $MAX_ROUNDS"; echo "max_rounds configuration gate=4: $MAX_ROUNDS" >&2; exit 4 ;; esac
+MAX_ROUNDS_LEN="${#MAX_ROUNDS}"
+if [ "$MAX_ROUNDS_LEN" -gt 10 ] || { [ "$MAX_ROUNDS_LEN" -eq 10 ] && [ "$MAX_ROUNDS" \> 2147483647 ]; }; then log "max_rounds configuration gate=4: $MAX_ROUNDS"; echo "max_rounds configuration gate=4: $MAX_ROUNDS" >&2; exit 4; fi
+unset MAX_ROUNDS_LEN
 preflight() { # $1=stage: selected gate passes, or exit 4 before dispatch/acceptance
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; exit 4; }
@@ -181,18 +189,20 @@ run_agent() {
   log "start $1"
   local ec=0
   $AGENT_CMD < "$1" > "$2" || ec=$?
-  log "end $1 agent-exit=$ec"; return "$ec"
+  log "end $1 agent-exit=$ec"
+  if [ "$ec" -eq 4 ]; then log "worker gate=5 agent-exit=4"; return 5; fi
+  return "$ec"
 }
 
 # UNATTENDED PREFLIGHT: insert companion block here, before the draft call.
 
 cp prompts/draft.md "$STATE/round-0-prompt.md"
-run_agent "$STATE/round-0-prompt.md" "$STATE/draft.md"
+run_agent "$STATE/round-0-prompt.md" "$STATE/draft.md" || { ec=$?; log "draft gate=$ec"; exit "$ec"; }
 
 for ((r=1; r<=MAX_ROUNDS; r++)); do
   # Critic: rubric-bound, must output ACCEPT or a numbered fix list.
   { cat prompts/critic-rubric.md; echo; cat "$STATE/draft.md"; } > "$STATE/round-$r-critic-prompt.md"
-  run_agent "$STATE/round-$r-critic-prompt.md" "$STATE/round-$r-critique.md"
+  run_agent "$STATE/round-$r-critic-prompt.md" "$STATE/round-$r-critique.md" || { ec=$?; log "round $r critic gate=$ec"; exit "$ec"; }
   log "round $r ACCEPT gate start"
 
   if [ "$(sed '/^[[:space:]]*$/d' "$STATE/round-$r-critique.md")" = "ACCEPT" ]; then   # the whole verdict, not one line
@@ -202,7 +212,7 @@ for ((r=1; r<=MAX_ROUNDS; r++)); do
   log "round $r ACCEPT gate=1"
   { cat prompts/revise.md; echo "## Critique"; cat "$STATE/round-$r-critique.md";
     echo "## Draft"; cat "$STATE/draft.md"; } > "$STATE/round-$r-revise-prompt.md"
-  run_agent "$STATE/round-$r-revise-prompt.md" "$STATE/draft.md"
+  run_agent "$STATE/round-$r-revise-prompt.md" "$STATE/draft.md" || { ec=$?; log "round $r revise gate=$ec"; exit "$ec"; }
 done
 exit 2  # rounds exhausted without ACCEPT; human decides next
 ```
@@ -245,9 +255,13 @@ AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed flags; task-root cwd; protect che
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 TASKS_SRC="${TASKS:-TASKS.md}"           # human-owned backlog
 VERIFY="${VERIFY:-./checks/verify.sh}"
-MAX_ITER="${MAX_ITER:-20}"               # justified: backlogs often exceed ten items
+MAX_ITER="${MAX_ITER-20}"               # justified: backlogs often exceed ten items
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_ITER" in ""|0|0*|*[!0-9]*) log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4 ;; esac
+MAX_ITER_LEN="${#MAX_ITER}"
+if [ "$MAX_ITER_LEN" -gt 10 ] || { [ "$MAX_ITER_LEN" -eq 10 ] && [ "$MAX_ITER" \> 2147483647 ]; }; then log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4; fi
+unset MAX_ITER_LEN
 preflight() { # $1=stage: selected gate passes, or exit 4 before dispatch/acceptance/retirement
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; exit 4; }
@@ -264,8 +278,11 @@ run_verify() {
 }
 # Only the script retires this queue; host write exclusion is REQUIRED.
 TASKS="$STATE/TASKS.canon"
-[ -f "$TASKS" ] || { [ -f "$TASKS_SRC" ] && cp "$TASKS_SRC" "$TASKS"; } || { echo "canonical backlog missing: $TASKS_SRC" >&2; exit 4; }
-
+if [ ! -e "$TASKS" ]; then
+  if [ -f "$TASKS_SRC" ] && [ ! -d "$TASKS_SRC" ]; then cp "$TASKS_SRC" "$TASKS" || { echo "canonical backlog missing: $TASKS_SRC" >&2; exit 4; }
+  else echo "canonical backlog missing: $TASKS_SRC" >&2; exit 4; fi
+fi
+if [ ! -f "$TASKS" ] || [ ! -r "$TASKS" ]; then echo "canonical backlog unreadable: $TASKS" >&2; exit 4; fi
 [ -x "$VERIFY" ] || { echo "verifier missing/not executable: $VERIFY" >&2; exit 4; }
 snap() {  # same content evidence as fix loop; empty outside git
   git rev-parse --git-dir >/dev/null 2>&1 || return 0
@@ -288,7 +305,9 @@ run_verify || { echo "- preflight: verifier already failing" >> "$STATE/ledger.m
 [ -n "$(snap)" ] || log "progress disabled: outside git; rely on caps"
 
 for ((i=1; i<=MAX_ITER; i++)); do
-  line="$(grep -n -m1 -v '^[[:space:]]*$' "$TASKS" || true)"
+  if [ ! -f "$TASKS" ] || [ ! -r "$TASKS" ]; then echo "canonical backlog unreadable: $TASKS" >&2; exit 4; fi
+  ec=0; line="$(grep -n -m1 -v '^[[:space:]]*$' "$TASKS")" || ec=$?
+  if [ "$ec" -gt 1 ]; then echo "canonical backlog unreadable: $TASKS" >&2; exit 4; fi
   [ -z "$line" ] && { preflight "backlog-empty-post"; echo "backlog empty"; exit 0; }
   num="${line%%:*}"; task="${line#*:}"
 
@@ -299,17 +318,21 @@ for ((i=1; i<=MAX_ITER; i++)); do
   log "task $i start"
   ec=0; $AGENT_CMD < "$STATE/task-$i-prompt.md" > "$STATE/task-$i-out.md" || ec=$?
   log "task $i end agent-exit=$ec"
+  if [ "$ec" -eq 4 ]; then echo "- worker failed: $task (iter $i) agent-exit=4" >> "$STATE/ledger.md"; exit 5; fi
+  [ "$ec" -eq 0 ] || { echo "- worker failed: $task (iter $i) agent-exit=$ec" >> "$STATE/ledger.md"; exit 3; }
 
   run_verify || { echo "- failed verify: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
   [ -z "$before" ] || [ "$(snap)" != "$before" ] || { echo "- no change: $task (iter $i)" >> "$STATE/ledger.md"; exit 3; }
   preflight "task-$i-post"
   # Script, not agent, retires the EXACT line it dispatched.
   sed "${num}d" "$TASKS" > "$TASKS.tmp" && mv "$TASKS.tmp" "$TASKS" || { echo "- canonical backlog missing" >> "$STATE/ledger.md"; exit 4; }
-  echo "- done: $task" >> "$STATE/ledger.md"
+  echo "- done: $task (iter $i)" >> "$STATE/ledger.md"
 done
 # Last task retired on the final iteration is success, not cap.
-[ -f "$TASKS" ] || { echo "- canonical backlog missing" >> "$STATE/ledger.md"; exit 4; }
-grep -q '[^[:space:]]' "$TASKS" && { echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2; }
+if [ ! -f "$TASKS" ] || [ ! -r "$TASKS" ]; then echo "canonical backlog unreadable: $TASKS" >> "$STATE/ledger.md"; echo "canonical backlog unreadable: $TASKS" >&2; exit 4; fi
+ec=0; grep -q '[^[:space:]]' "$TASKS" || ec=$?
+if [ "$ec" -eq 0 ]; then echo "- cap $MAX_ITER exhausted" >> "$STATE/ledger.md"; exit 2; fi
+if [ "$ec" -gt 1 ]; then echo "canonical backlog unreadable: $TASKS" >> "$STATE/ledger.md"; echo "canonical backlog unreadable: $TASKS" >&2; exit 4; fi
 preflight "queue-retired-post"
 echo "backlog empty"; exit 0
 ```
@@ -325,13 +348,19 @@ set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 VERIFY="${VERIFY:-./checks/converged.sh}"  # truth layer: exit 0 = converged
-MAX_WAVES="${MAX_WAVES:-4}"                 # cap: distinct exit, not a failure
-MAX_JOBS="${MAX_JOBS:-4}"                   # per-wave concurrency budget
+MAX_WAVES="${MAX_WAVES-4}"                 # cap: distinct exit, not a failure
+MAX_JOBS="${MAX_JOBS-4}"                   # per-wave concurrency budget
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
-case "$MAX_WAVES" in ""|*[!0-9]*|0) log "max_waves configuration gate=4"; exit 4 ;; esac
-case "$MAX_JOBS" in ""|*[!0-9]*|0) log "max_jobs configuration gate=4"; exit 4 ;; esac
+case "$MAX_WAVES" in ""|0|0*|*[!0-9]*) log "max_waves configuration gate=4: $MAX_WAVES"; echo "max_waves configuration gate=4: $MAX_WAVES" >&2; exit 4 ;; esac
+MAX_WAVES_LEN="${#MAX_WAVES}"
+if [ "$MAX_WAVES_LEN" -gt 10 ] || { [ "$MAX_WAVES_LEN" -eq 10 ] && [ "$MAX_WAVES" \> 2147483647 ]; }; then log "max_waves configuration gate=4: $MAX_WAVES"; echo "max_waves configuration gate=4: $MAX_WAVES" >&2; exit 4; fi
+unset MAX_WAVES_LEN
+case "$MAX_JOBS" in ""|0|0*|*[!0-9]*) log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4 ;; esac
+MAX_JOBS_LEN="${#MAX_JOBS}"
+if [ "$MAX_JOBS_LEN" -gt 10 ] || { [ "$MAX_JOBS_LEN" -eq 10 ] && [ "$MAX_JOBS" \> 2147483647 ]; }; then log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4; fi
+unset MAX_JOBS_LEN
 preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never a tolerable branch failure)
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }

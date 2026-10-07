@@ -108,19 +108,22 @@ def test_backlog_template_never_retires_untouched_work(tmp_path: Path):
     apart and hands the call to the operator rather than retire on self-report."""
     script = BACKLOG_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")).group(1) + "\n"
     cases = {
-        "noop": ('echo "stub: done"\n', 3, "no change: task one"),
-        "crash": ("echo boom >&2; exit 1\n", 3, "no change: task one"),
-        "state-only": ('touch "state/junk-$$"\n', 3, "no change: task one"),
-        "real-work": ('touch "work-$$-$(date +%s%N)"\n', 0, "- done: task three"),
+        "noop": ('echo "stub: done"\n', 3, ["task one", "task two", "task three"]),
+        "crash": ("echo boom >&2; exit 1\n", 3, ["task one", "task two", "task three"]),
+        "state-only": ('touch "state/junk-$$"\n', 3, ["task one", "task two", "task three"]),
+        "real-work": ('touch "work-$$-$(date +%s%N)"\n', 0, []),
     }
-    for name, (body, want_exit, want_ledger) in cases.items():
+    for name, (body, want_exit, want_tasks) in cases.items():
         code, ledger = _run_backlog(tmp_path / name, script, agent_body=body, git=True)
         assert code == want_exit, (name, code, ledger)
-        assert want_ledger in ledger, (name, ledger)
+        assert (tmp_path / name / "git/state/TASKS.canon").read_text().splitlines() == want_tasks, (name, ledger)
     code, ledger = _run_backlog(tmp_path / "cap", script, agent_body='touch "w-$$-$(date +%s%N)"\n', git=True, max_iter="2")
-    assert code == 2 and "cap 2 exhausted" in ledger, ledger
+    assert code == 2, ledger
+    assert (tmp_path / "cap/git/state/TASKS.canon").read_text().splitlines() == ["task three"], ledger
     code, ledger = _run_backlog(tmp_path / "red", script, agent_body='echo x\n', git=True, verify_ec=1)
-    assert code == 3 and "preflight" in ledger, ledger
+    assert code == 3, ledger
+    assert (tmp_path / "red/git/state/TASKS.canon").read_text().splitlines() == ["task one", "task two", "task three"], ledger
     # Outside git there is no change signal: the check is skipped, not failed.
     code, _ = _run_backlog(tmp_path / "nogit", script, agent_body='echo "stub: done"\n', git=False)
     assert code == 0
+    assert (tmp_path / "nogit/plain/state/TASKS.canon").read_text() == ""

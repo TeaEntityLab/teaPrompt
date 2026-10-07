@@ -100,6 +100,17 @@ themselves):
   pin below it. The registry and guard already require ten domain packs;
   behavior, membership, and acceptance pins are unchanged. Maintenance only,
   not a domain-pack invocation or recurrence claim.
+- 2026-10-07 — user-directed RV repair of `flow-control-generator`,
+  `flow-loop-harness`, `arm-blinded-eval-harness`, and `router-trace-linter`:
+  canonical cap guards before arithmetic/dispatch, queue-read error handling,
+  worker exit classification, private scoring order, blinded-only scorer data,
+  runnable CONFIG, and router review/confidence normalization. RV-05's locked
+  oracle migration was separately approved; registry membership remains
+  9 core + 10 packs. Emitted-script smoke matched 89 flow, 16 router, and
+  16 blinded scenarios; 163 focused regressions passed.
+  [Repair evidence and limits](recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07).
+  Template maintenance only, not a §Entries invocation, model-efficacy result,
+  recurrence claim, or checkpoint decision.
 
 ## Pre-checkpoint prep scans
 

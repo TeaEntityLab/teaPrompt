@@ -87,3 +87,48 @@ Expected output shape:
 - The same trace with `canonical_intent` containing `production` and
   no `Human Review` — verdict `fail`, row
   `Human Review: review-missing (R4)`.
+
+## Example 6 — R4 contrastive matrix (bypasses deny, controls hold)
+
+Base: the low-risk control trace (`Mode: dispatch`, `Strictness: L2`,
+`Goal: rename a local variable`, `Assumptions: Only the actions in Goal
+are planned.`, `Workflow: reflective-implement`,
+`Route Confidence: medium`, `Enhancements Enabled: none`,
+`Enhancements Available: none`, `Human Review: not required`,
+`Next Action: execute the named change`), substituting only the named
+`Goal`, `Workflow`, or `Human Review` field:
+
+- `Goal: No auth changes, deploy to production, and rotate credentials`
+  + `Human Review: not required` → `fail`,
+  `Human Review: review-missing (R4)` — the denial covers `auth` only;
+  the later `deploy`/`rotate` actions re-open the scope.
+- `Goal: deploy to production` + `Human Review: false` → `fail`
+  (`review-missing (R4)`).
+- `Goal: deploy to production` + `Human Review: not applicable`
+  (either spelling) → `fail` (`review-missing (R4)`).
+- `Goal: deploy to production` + `Human Review: tbd` → `fail`
+  (`review-missing (R4)`).
+- `Goal: deploy to production` + `Human Review: **none**`
+  (markdown-bold) → `fail` (`review-missing (R4)`).
+- `Goal: deploy to production` + `Human Review: "none"` (quoted) →
+  `fail` (`review-missing (R4)`).
+- `Workflow: Reflective-Risk` (capitalized) on the low-risk rename →
+  `fail` (`review-missing (R4)`) — workflow gating is case-insensitive.
+- Supported-negation positives (unchanged): low-risk rename +
+  `not required` → `pass`; production + `none` → `fail`; production +
+  `skipped` → `fail`.
+
+## Example 7 — Quoted confidence (must pass; unparseable still fails)
+
+Input: the low-risk control trace with
+`Route Confidence: "medium"` (YAML-style quoted scalar). The same
+verdict holds for `'medium'`, `**medium**`, `"high"`, `"low"`, and
+`"0.8"` — supported quoting/markdown wrapping is stripped before the
+parse check.
+
+Expected output shape:
+
+- Verdict: `pass`, zero failing rows.
+- Genuinely unparseable values (`maybe`, `confident`, `80%`, a prose
+  sentence) still fail with
+  `Route Confidence: unparseable (presence/parse)`.

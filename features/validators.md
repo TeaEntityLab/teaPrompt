@@ -1,11 +1,15 @@
 ---
 feature: standalone validators
-source_commit: 7147e91
-last_verified_at: 2026-09-24
+source_commit: 13fc95c
+last_verified_at: 2026-10-07
 verification_status: passing
 ---
 
 # Standalone validators
+
+`source_commit` names the committed base. The verification includes the
+current uncommitted runtime-review repairs; this map refresh changes
+documentation, not validator behavior or acceptance rules.
 
 ## Entry points
 
@@ -26,9 +30,12 @@ python3 $P/validate_route_fixture.py      # ROUTE-002/003 minimum counts
 ## Observable outcomes
 
 - Every script exits 0 and prints a ✅-style success line.
-- `lint_skills.py` exits 0 with **one known warning**
-  (`agent-governance-scaffold` body length, accepted R10 debt). A *second*
-  warning or any error is a finding.
+- `lint_skills.py` exits 0 when it reports warnings but no errors. The
+  2026-10-07 drive reported eight long-skill warnings across six packs;
+  the full list is retained in the runtime-review handoff.
+  This observation is not an acceptance waiver: R10 covers only
+  `agent-governance-scaffold` body length, and new or changed warnings remain
+  findings to triage. Any error is a failure.
 
 ## Failure paths
 

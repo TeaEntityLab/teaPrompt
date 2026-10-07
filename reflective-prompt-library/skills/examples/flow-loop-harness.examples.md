@@ -18,7 +18,10 @@ Expected output shape:
 ## Anatomy
 - check() wrapper (exit 4 when verifier broken), staged+unstaged binary diffs
   and untracked content checksums excluding STATE (including logs/probes),
-  bounded ledger tail per fresh iteration, exits 0/2/3/4; shared `PREFLIGHT` gate
+  bounded ledger tail per fresh iteration, exits 0/2/3/4/5; canonical positive-decimal
+  caps validated before first dispatch and before any arithmetic evaluation
+  (invalid `00`/`08`/empty/expression/overflow → 4 with zero dispatches and zero
+  command expansion); shared `PREFLIGHT` gate
   before each dispatch and after it before acceptance, including the zero-call
   already-verified path (selected failure → 4)
 - Equal-churn content changes continue; unchanged git workspace halts.
@@ -53,8 +56,7 @@ Expected output shape:
 - Exclude canonical tasks and checks/; exclude prompts/critic-rubric.md
   if composed with writer-critic. Copying a backlog supplies no protection.
   Content progress excludes STATE; outside git the change check is disabled.
-## Stop conditions
-- backlog empty → 0; MAX_ITER=20 → 2; verify fail or unchanged workspace after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier or missing TASKS.canon → 4; selected-preflight failure before dispatch/retirement → 4
+- backlog empty → 0; MAX_ITER=20 → 2; verify fail, unchanged workspace, or worker failure after a task → 3 (a green global verifier does not retire untouched work; an already-satisfied or interrupted task halts here too — confirm it, delete its line from state/TASKS.canon, rerun); broken verifier, invalid cap, or missing/directory/unreadable TASKS.canon → 4 (read errors never read as empty); raw worker exit 4 → 5, distinct from configuration 4; selected-preflight failure before dispatch/retirement → 4
 ## Escalation note
 - no objective verifier for a task → keep human in the loop (reflective-brief)
 ## Human review boundary
@@ -78,8 +80,7 @@ Expected output shape:
 ## Deterministic companion floor (required: "overnight" = unattended)
 - Insert FLOOR executable preflight and floor_ok() at UNATTENDED PREFLIGHT, before draft dispatch; missing/non-executable floor → 4 with zero agent calls.
 - Replace the entire bare ACCEPT if block with ACCEPT && floor_ok(): non-empty draft, no TODO/TBD/PLACEHOLDER, reviewed links-resolve.sh passes.
-## Stop conditions
-- ACCEPT + floor → 0; MAX_ROUNDS exhausted → 2 (human decides; the last draft is not the result); selected `PREFLIGHT` failure before dispatch/publication → 4
+- ACCEPT + floor → 0; MAX_ROUNDS exhausted → 2 (human decides; the last draft is not the result); invalid MAX_ROUNDS → 4 before any dispatch; selected `PREFLIGHT` failure before dispatch/publication → 4; raw worker exit 4 → 5, distinct from configuration 4 (worker exits 1/127 propagate as worker failures)
 ## Human review boundary
 - unattended: host excludes checks/ and prompts/critic-rubric.md from agent writes; recorded approval of verifier/floor, caps, flags and blast radius before the first run
 ## Verification
@@ -101,9 +102,9 @@ Expected output shape:
 ## Loop
 - Multi-wave fan-out: MAX_WAVES=4; VERIFY=./checks/converged.sh (truth layer); per-wave branch prompts under prompts/wave/*.md
 ## Anatomy
-- Preserve resume ledger, clear prior-run branch outputs/summary/final, count failed or zero-byte branches before compaction (all failed/empty → 3). Only successful nonempty current-wave outputs enter summary/checksum/final; one bounded summary feeds the next wave. Hash output content, never the wave header; exits 0/2/3/4. Selected-preflight failure in any branch propagates as exit 4, never a tolerable branch failure.
+- Preserve resume ledger, clear prior-run branch outputs/summary/final, count failed or zero-byte branches before compaction (all failed/empty → 3). Only successful nonempty current-wave outputs enter summary/checksum/final; one bounded summary feeds the next wave. Hash output content, never the wave header; exits 0/2/3/4. Canonical MAX_WAVES/MAX_JOBS validated before first dispatch and before any arithmetic evaluation (invalid `00`/`08`/empty/expression/overflow → 4 with zero dispatches). Selected-preflight failure in any branch propagates as exit 4, never a tolerable branch failure.
 ## Stop conditions
-- converged → 0; MAX_WAVES exhausted → 2; branch outputs identical to the previous wave → 3; missing verifier or wave prompts → 4; selected preflight → 4 before dispatch and before convergence publish
+- converged → 0; MAX_WAVES exhausted → 2; branch outputs identical to the previous wave → 3; missing verifier, invalid caps, or wave prompts → 4; selected preflight → 4 before dispatch and before convergence publish
 ## Human review boundary
 - attended: verifier + caps; unattended: full approval first, including host checks/ write exclusion; Human Review actions retain per-action pauses
 ## Verification

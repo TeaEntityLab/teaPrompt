@@ -39,16 +39,17 @@ Per-feature commands live in `features/`:
 | Governance test suite | `features/test-suite.md` | `python3 -m pytest reflective-prompt-library/plans/tests/` |
 | Standalone validators | `features/validators.md` | 7 `plans/validate_*.py` + `lint_skills.py` (8 scripts) |
 | Route paraphrase evals | `features/route-evals.md` | `route_paraphrase_eval.py` over 3 YAML fixtures |
-| Skill registry | `features/registry.md` | `CORE_SKILLS` (9) / `DOMAIN_PACK_SKILLS` (5) cardinality |
+| Skill registry | `features/registry.md` | `CORE_SKILLS` (9) / `DOMAIN_PACK_SKILLS` (10) cardinality |
 
 ## Environment quirks (verbatim)
 
 - `route_paraphrase_eval.py` writes `plans/route-00X-results.json` on every
   run. These files are gitignored and never appear in `git status`.
-- `lint_skills.py` exits 0 with **one known non-blocking warning**:
-  `agent-governance-scaffold/SKILL.md` exceeds the 20k-char body threshold
-  (accepted per the 2026-07-18 panels, ledgered as R10). Do not classify this
-  as a failure.
+- `lint_skills.py` exits 0 when only warnings are reported. The 2026-10-07
+  drive reported eight long-skill warnings across six packs, not one.
+  Preserve the full warning output; new or changed warnings remain findings
+  to triage. The R10 acceptance covers `agent-governance-scaffold` body length,
+  not a blanket waiver for other warnings. Any lint error is a failure.
 - `make validate` runs the route evals; `make test` runs pytest. `make all`
   runs both.
 - Python 3 only; no virtualenv required (stdlib + pytest).

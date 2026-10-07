@@ -2182,3 +2182,153 @@ Second-pass verification (three parallel reviewer lenses over RSD-2: host/author
 - Rejected: treating the drafted ticket as execution authorization; demanding exhaustive probe coverage beyond the declared write/sink boundary.
 - Spec sha256 rebound to `4cf307b4…` (via intermediate `f0804197…`, then the descendant-probe label correction); ticket `fe570f47…`; evidence bundle `local://runtime-skill-planning-evidence-2026-10-06.json` updated with prior-hash chain preserved.
 - Gates re-run after edits: index regen clean, record hygiene 0 errors, link validation 0 errors, index test pass.
+
+# Final Report — Runtime Review Repairs (2026-10-07)
+
+## Summary
+
+Repaired all ten open runtime findings from the recent-change review and
+implemented RV-05's explicitly human-approved five-to-ten oracle migration.
+The three documentation findings and stale-comment advisory were already
+corrected; their evidence remains preserved in the
+[review handoff](../reflective-prompt-library/plans/recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07).
+No new skill, core route, owned runtime, provider invocation, permission mode,
+commit, or push was introduced.
+
+## Acceptance criteria status
+
+- RV-01/RV-02/RV-13: caps validated before arithmetic or dispatch; invalid
+  inputs return 4 without worker calls/command expansion; valid decimal
+  boundaries through `2147483647` are preserved — **met**.
+- RV-03/RV-06/RV-07: scoring schedule privately shuffled independently of
+  public execution order, scorer data constrained to blinded paths, and
+  documented CONFIG executed with planted content-reading oracles — **met**.
+- RV-04/RV-09: contrastive high-risk review denial, action-scoped negation,
+  case/quoted-scalar normalization, and low-risk controls — **met**.
+- RV-05: approved expectation 10, retained nine-core count, `locked: true`,
+  other checks unchanged, and `0444` file mode restored — **met**.
+- RV-08/RV-14: queue read errors fail closed, valid tasks retire with ledgers,
+  and raw worker exit 4 maps to worker class 5 — **met**.
+
+## Tests run
+
+- Standalone emitted Bash smoke: **89/89 matched** (60 invalid/beyond-ceiling
+  caps, 23 valid cap paths, three queue errors, three critic worker failures).
+- Standalone emitted router CLI: **16/16 matched**.
+- Standalone emitted blinded harness plus verbatim documented CONFIG:
+  **16/16 matched**, including 12 negative scorer-data boundary cases.
+- Approved acceptance/feature-map smoke: **PASS**, counts **9 / 10 / 19**,
+  command exits **0**, oracle `locked: true`, mode **0444**.
+- Focused extracted-template/acceptance regressions: **163 passed**.
+- Failing-before ceiling regressions: **9 failed / 3 refusal controls passed**;
+  all twelve passed after correcting the eight digit-length guard sites.
+- Additional quality-summary/backlog-invariant regressions: **14 passed**
+  after refreshing the observed 1,533-test collection floor and replacing
+  incidental diagnostic wording with actual canonical-queue state checks.
+- All **13 emitted Bash/Python fences** passed syntax checks; the Markdown
+  consumer and real Chromium retained 14 findings and seven three-column
+  closure rows. The owned browser tab was closed.
+- Integrated command:
+  `python3 reflective-prompt-library/plans/generate_index.py && make all`
+  — **1,533 passed**, zero validator errors, **19** valid skill contracts,
+  **9 core + 10 packs** with examples, ROUTE-001/002/003 **100% consistency**.
+- Final browser DOM revalidation retained the refreshed notes and closure
+  table without horizontal overflow. Final screenshot retries timed out;
+  the earlier unchanged-table capture remains the visual receipt. The owned
+  final tab was closed and the capture failure reported to tool QA.
+
+## Files changed
+
+- Four existing `skills/*/SKILL.md` contracts and their matching
+  `skills/examples/*.examples.md`: flow generator, loop harness, blinded eval,
+  and router linter.
+- Developer regressions: `test_flow_generator_consumers.py`,
+  `test_flow_loop_consumers.py`, `test_router_trace_linter_scaffold.py`, and new
+  `test_arm_blinded_eval_consumers.py` / `test_registry_acceptance_consumers.py`.
+  `test_skills_september_concepts_review_record.py` now checks queue state
+  instead of incidental crash/cap/preflight diagnostic text.
+- Approved oracle/consumer maps: `acceptance.yaml`, `features/registry.md`,
+  `VERIFY.md`.
+- Current handoff, template-maintenance log, project decision-index entry,
+  this report, and regenerated discovery index.
+- `plans/QUALITY_GATES_SUMMARY.md`: current pytest floor refreshed from the
+  observed collection; its freshness guard and the test count are unchanged.
+
+## Risks
+
+The smoke uses synthetic local workers and deterministic content-reading scorers.
+It does not establish real provider utility, scorer/process isolation,
+hidden-answer read sealing, statistical blinding, comparative skill efficacy,
+host permission enforcement, or external-effect safety. Final gates report
+eight long-skill warnings across six packs, including the repaired blinded-eval
+and router-linter bodies, plus 35 historical record-hygiene warnings.
+No warning threshold or oracle was weakened; fixture routing scores do not
+establish general routing correctness.
+
+## Spec-to-code traceability
+
+The handoff's acceptance table joins every repaired RV ID to its current
+contract and exercised consumer. Companion examples use the same interfaces;
+historical proposals/surveys remain evidence, not current runtime contracts.
+
+TWINS: searched `_LEN" -(gt|eq) 9|len\(text\) (>|==) 9` - found 7 other guard sites: `skills/flow-control-generator/SKILL.md`, `skills/flow-loop-harness/SKILL.md`; all eight guards corrected.
+
+## Remaining work
+
+No supplied repair remains open. Untested host/provider/statistical boundaries
+above are not claimed as completed experiments or product acceptance.
+
+## Human review needs
+
+RV-05 approval was received and implemented. No additional Human Review decision
+is needed for these repairs; future permission, provider, product-runtime, or
+external-effect work remains separately authorized.
+
+## Delayed-advisory follow-up (2026-10-07)
+
+- Current source rejects the delayed missing-ledger/precheck/exit-class,
+  scorer-boundary/private-seed, router-confidence, and wrong-installed-target
+  concerns as superseded. Registry metadata, oracle approval/protection, and
+  final green gate evidence were already current.
+- Repaired live documentation drift in `VERIFY.md`, `features/validators.md`,
+  and `features/test-suite.md`; the latter two now name the committed base
+  separately from the tested working tree. Historical test snapshots remain
+  dated history. No runtime, test, warning-threshold, oracle, permission,
+  installation, commit, or push change.
+- Fresh lint command: exit 0, zero errors, eight long-skill warnings across
+  six packs. This is a recorded observation, not a blanket warning waiver.
+- Fresh published-map consumer: eight standalone validator commands exit 0,
+  test-suite Drive **1,533 passed**, registry Drive **19** contracts;
+  oracle `locked: true` and mode `0444` preserved.
+- The first Drive reported **1,532 passed / 1 failed** at the index freshness
+  guard because the new handoff text had not yet been regenerated. Classified
+  as generated-document drift; index regeneration before the rerun restored
+  the passing consumer without changing assertions or acceptance rules.
+- The host eval/tab explanation is unestablished; the actual returned DOM
+  receipt remains retained. Prior screenshot limits and untested
+  host/provider/statistical boundaries are unchanged.
+
+TWINS: searched `one known (non.blocking )?warning` - found 1 other site: `features/validators.md`; both live warning descriptions corrected.
+
+## Recording and Git delivery (2026-10-07)
+
+- The user authorized recording, commit, and push in a separate delivery turn.
+  Earlier no-commit/no-push statements remain historical repair-turn receipts.
+- The [decision rationale and final advisory dispositions](../reflective-prompt-library/plans/recent-changes-review-handoff-2026-10-07.md#decision-rationale-and-git-delivery-2026-10-07)
+  explain the boundary-focused repairs, minimality choice, bounded blinding
+  claim, and decision not to re-edit already-correct contracts.
+- All four latest advisories were already addressed. The advisory recheck
+  regenerated discovery metadata and reported **1 freshness test passed**;
+  it did not rerun the full suite. The original **1,532 passed / 1 failed**
+  map Drive and regenerated **1,533 passed** rerun remain recorded above.
+- Literal search confirmed the feature-map maintenance convention after the
+  semantic search failed; a failed search was not used as absence evidence.
+- The later five-document DOM smoke passed, but its viewport screenshot tiled
+  repeated content. The tool issue was reported; that capture is not clean
+  visual-layout proof and does not change the previously stated limits.
+- Delivery scope is the 25 related repair/recording files on `main` and a normal
+  push to `origin/main`, including the four prior local commits observed after
+  fetching. Final delivery order is record → regenerate discovery index →
+  rendered-record smoke and `make all` → commit → push. Actual gate and Git
+  receipts are reported by the delivery commands, not assumed in advance.
+

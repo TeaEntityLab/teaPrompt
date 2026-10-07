@@ -74,7 +74,7 @@ If no row fits, the task is probably a single agent call; say so.
 
 Every generated script must contain, in order:
 
-1. Config: `AGENT_CMD` (reviewed host CLI/wrapper, flags and stdin/file support), workdir, `STATE`, caps, `PREFLIGHT` (optional executable pathname, not shell text; empty = attended example without claimed runtime enforcement), and generated-by skill/topology/date/dry-run status.
+1. Config: `AGENT_CMD` (reviewed host CLI/wrapper, flags and stdin/file support), workdir, `STATE`, caps, `PREFLIGHT` (optional executable pathname, not shell text; empty = attended example without claimed runtime enforcement), and generated-by skill/topology/date/dry-run status. Every arithmetic cap (`MAX_JOBS`, `MIN_OK`, `MAX_WORKERS`) is validated as canonical positive decimal before first dispatch and before any arithmetic evaluation — `1`–`2147483647` with no leading zero, no empty value, no expression, and no silent env-default fallback when the variable is explicitly set but empty (`MIN_OK` additionally allows empty for strict mode and `0` for its zero-quorum spelling). Invalid caps exit 4 with zero dispatches and zero command expansion.
 2. State: one output file per step, not shell-variable payloads; inspectable partial files support a host-honored resume convention.
 3. Runner: all calls go through `run_agent`; prompt content via stdin, never argv. In Python that means `subprocess.run(AGENT_CMD, input=prompt, ...)` — do not append the prompt to `AGENT_CMD` (for `bash`-class workers, argv text becomes the *command*, silently executing the prompt as code). Note the invocation spelling matters: `bash -lc` parses `-lc` as `-l`+`-c`, shifting the real command into `$0` — observed failure 2026-10-06, exit 134.
 4. Gates: deterministic exit codes release stages; absent checks say `# gate: none (accepted)`. For fan-in, the gate runs over the merged result as well as the branch tally: branches that each pass can conflict when combined. When `PREFLIGHT` is set, its exit-4 gate runs before each agent dispatch and after that dispatch before the stage gate accepts, publishes, or merges; gate output is evidence, never enforcement proof.
@@ -135,11 +135,19 @@ set -euo pipefail
 AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; workdir=task root; protect checks/
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
-MAX_JOBS="${MAX_JOBS:-4}"
-MIN_OK="${MIN_OK:-}" # empty=strict; otherwise explicit partial-failure quorum
+MAX_JOBS="${MAX_JOBS-4}"
+MIN_OK="${MIN_OK-}" # empty=strict; 0=zero-quorum (accepts any branch tally, merged gate still decides); otherwise explicit partial-failure quorum
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
-case "$MAX_JOBS" in ""|*[!0-9]*|0) log "max_jobs configuration gate=4"; exit 4 ;; esac
-case "$MIN_OK" in *[!0-9]*) log "quorum configuration gate=4"; exit 4 ;; esac
+case "$MAX_JOBS" in ""|0|0*|*[!0-9]*) log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4 ;; esac
+MAX_JOBS_LEN="${#MAX_JOBS}"
+if [ "$MAX_JOBS_LEN" -gt 10 ] || { [ "$MAX_JOBS_LEN" -eq 10 ] && [ "$MAX_JOBS" \> 2147483647 ]; }; then log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4; fi
+unset MAX_JOBS_LEN
+case "$MIN_OK" in ""|0) ;; 0*|*[!0-9]*) log "quorum configuration gate=4: $MIN_OK"; echo "quorum configuration gate=4: $MIN_OK" >&2; exit 4 ;; esac
+if [ -n "$MIN_OK" ]; then
+  MIN_OK_LEN="${#MIN_OK}"
+  if [ "$MIN_OK_LEN" -gt 10 ] || { [ "$MIN_OK_LEN" -eq 10 ] && [ "$MIN_OK" \> 2147483647 ]; }; then log "quorum configuration gate=4: $MIN_OK"; echo "quorum configuration gate=4: $MIN_OK" >&2; exit 4; fi
+  unset MIN_OK_LEN
+fi
 preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never swallowed by MIN_OK)
   [ -n "$PREFLIGHT" ] || return 0
   [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
@@ -370,14 +378,20 @@ from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/
 PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
 STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
-try:
-    MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))
-    MIN_OK_RAW = os.environ.get("MIN_OK", "")
-    MIN_OK = int(MIN_OK_RAW) if MIN_OK_RAW else None
-except ValueError:
-    print("invalid worker/quorum configuration", file=sys.stderr); sys.exit(4)
-if MAX_WORKERS < 1:
-    print("MAX_WORKERS must be positive", file=sys.stderr); sys.exit(4)
+def _canonical_cap(raw: str | None, default: str, name: str) -> str | None:
+    text = default if raw is None else raw
+    if text == "" and name == "MIN_OK": return None
+    if text == "0" and name == "MIN_OK": return "0"
+    if not text or len(text) > 10 or (len(text) > 1 and text.startswith("0")) or any(c not in "0123456789" for c in text):
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    if len(text) == 10 and text > "2147483647":
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    if text == "0":
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    return text
+MAX_WORKERS = int(_canonical_cap(os.environ.get("MAX_WORKERS"), "4", "MAX_WORKERS"))
+MIN_OK_RAW = _canonical_cap(os.environ.get("MIN_OK"), "", "MIN_OK")
+MIN_OK = int(MIN_OK_RAW) if MIN_OK_RAW else None
 FINAL_NODE = "assemble" # explicit acceptance artifact, independent of traversal order
 NODES = {
     "spec":     ((), "prompts/spec.md"),

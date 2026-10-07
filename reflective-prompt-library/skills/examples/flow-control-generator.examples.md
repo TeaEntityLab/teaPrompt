@@ -37,9 +37,9 @@ Expected output shape:
 
 ```markdown
 ## Topology
-- Parallel fan-out/fan-in, MAX_JOBS=4, per-pid wave waits, synthesis step
+- Parallel fan-out/fan-in, MAX_JOBS=4 (canonical positive decimal validated before first dispatch and before any arithmetic evaluation; invalid `00`/`08`/empty/expression/overflow → 4 with zero dispatches), per-pid wave waits, synthesis step
 ## Gates
-- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); merged deliverable: `./checks/verify-merged.sh state/final.md`; selected-preflight failure exits 4 under either policy
+- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); `MIN_OK=0` is the zero-quorum spelling; noncanonical quorum → 4; merged deliverable: `./checks/verify-merged.sh state/final.md`; selected-preflight failure exits 4 under either policy
 ## Verification
 - Rig-tier only: stub dry run: 5 stub prompts, one forced failure → run aborts non-zero; happy path exit 0. This is not host-enforcement or production e2e proof.
 ## Escalation note

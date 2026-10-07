@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T14:04:54.520821",
+  "generated_at": "2026-10-07T20:32:36.513858",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3005,55 +3005,55 @@
         },
         {
           "level": 3,
-          "text": "Goal, state, and acceptance"
+          "text": "Original recording goal, state, and acceptance"
         },
         {
           "level": 2,
-          "text": "Open runtime findings (UNIMPLEMENTED)"
+          "text": "Runtime findings (original evidence; now repaired)"
         },
         {
           "level": 3,
-          "text": "RV-01 [P1] Fan-out / wave digit-guard bypass (`00`, `08`) — UNIMPLEMENTED"
+          "text": "RV-01 [P1] Fan-out / wave digit-guard bypass (`00`, `08`) — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-02 [P1] Unvalidated arithmetic iteration/round caps permit command expansion — UNIMPLEMENTED"
+          "text": "RV-02 [P1] Unvalidated arithmetic iteration/round caps permit command expansion — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-03 [P1] ARM blinded-eval scorer recovers both arm identities from public order — UNIMPLEMENTED"
+          "text": "RV-03 [P1] ARM blinded-eval scorer recovers both arm identities from public order — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-04 [P1] Router-trace linter R4 bypasses and case gap — UNIMPLEMENTED"
+          "text": "RV-04 [P1] Router-trace linter R4 bypasses and case gap — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-05 [P1] Locked acceptance oracle still expects 5 packs; registry holds 10 — UNIMPLEMENTED, requires human-reviewed migration"
+          "text": "RV-05 [P1] Locked acceptance oracle still expects 5 packs; registry holds 10 — APPROVED AND MIGRATED"
         },
         {
           "level": 3,
-          "text": "RV-06 [P2] ARM scorer-input boundary not enforced (extra outsider data arg) — UNIMPLEMENTED"
+          "text": "RV-06 [P2] ARM scorer-input boundary not enforced (extra outsider data arg) — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-07 [P2] Documented ARM CONFIG is not runnable (`KeyError: blinded`) — UNIMPLEMENTED"
+          "text": "RV-07 [P2] Documented ARM CONFIG is not runnable (`KeyError: blinded`) — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-08 [P2] `TASKS.canon` directory misreported as empty backlog — UNIMPLEMENTED"
+          "text": "RV-08 [P2] `TASKS.canon` directory misreported as empty backlog — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-09 [P2] Router linter rejects legitimate quoted confidence `\"medium\"` — UNIMPLEMENTED"
+          "text": "RV-09 [P2] Router linter rejects legitimate quoted confidence `\"medium\"` — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-13 [P2] Verify-gated fix loop zero-cap misclassification (`MAX_ITER=00`) — UNIMPLEMENTED"
+          "text": "RV-13 [P2] Verify-gated fix loop zero-cap misclassification (`MAX_ITER=00`) — FIXED"
         },
         {
           "level": 3,
-          "text": "RV-14 [P2] Raw critic worker exit 4 collides with configuration exit 4 — UNIMPLEMENTED"
+          "text": "RV-14 [P2] Raw critic worker exit 4 collides with configuration exit 4 — FIXED"
         },
         {
           "level": 2,
@@ -3085,7 +3085,7 @@
         },
         {
           "level": 2,
-          "text": "Remaining work / ordered actions"
+          "text": "Original ordered repair plan (completed)"
         },
         {
           "level": 2,
@@ -3106,10 +3106,38 @@
         {
           "level": 2,
           "text": "Recording-turn verification (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Repair-turn closure (2026-10-07)"
+        },
+        {
+          "level": 3,
+          "text": "Decision and minimality"
+        },
+        {
+          "level": 3,
+          "text": "Acceptance and spec-to-code traceability"
+        },
+        {
+          "level": 3,
+          "text": "Fresh executed verification"
+        },
+        {
+          "level": 3,
+          "text": "Consumer map and residual risks"
+        },
+        {
+          "level": 3,
+          "text": "Delayed-advisory recheck (2026-10-07)"
+        },
+        {
+          "level": 3,
+          "text": "Decision rationale and Git delivery (2026-10-07)"
         }
       ],
-      "line_count": 215,
-      "char_count": 25200
+      "line_count": 398,
+      "char_count": 39449
     },
     {
       "path": "reflective-prompt-library/plans/d025db7-publication-review-2026-10-02.md",
@@ -13064,6 +13092,7 @@
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-verification-panel-2026-09-05.md",
           "runtime-skills-experiments-2026-10-05.md",
+          "recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../04-agent/workflow-acquisition.md",
           "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
@@ -13129,8 +13158,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 455,
-      "char_count": 40747
+      "line_count": 466,
+      "char_count": 41561
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -16588,8 +16617,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 522,
-      "char_count": 29373
+      "line_count": 536,
+      "char_count": 31172
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
@@ -16775,8 +16804,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 244,
-      "char_count": 16489
+      "line_count": 393,
+      "char_count": 26917
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -17336,8 +17365,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 284,
-      "char_count": 19706
+      "line_count": 328,
+      "char_count": 22985
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -18379,8 +18408,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 444,
-      "char_count": 24835
+      "line_count": 473,
+      "char_count": 28518
     }
   ],
   "total_files": 204
