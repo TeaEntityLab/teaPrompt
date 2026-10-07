@@ -124,7 +124,7 @@ def main() -> int:
     # a dropped entry passes this script unless asserted here. The pytest pins
     # (test_ga_skills_coverage_panel_record.py) also catch it; this keeps the
     # validator correct when run standalone. Nine core is the frozen invariant;
-    # five packs is the current registered cardinality — a pack admission or
+    # domain-pack cardinality is pinned below — a pack admission or
     # demotion updates the list AND this pin in one change.
     if len(CORE_SKILLS) != 9:
         errors.append(

@@ -95,6 +95,11 @@ themselves):
   record's source digests, both above the nonblocking 20k warning threshold.
   These measurements do not clear the checkpoint; final gate observations
   are recorded only after execution.
+- 2026-10-07 — delayed-advisory correction in `validate_skill_examples.py`:
+  removed the stale five-pack comment and pointed to the executable cardinality
+  pin below it. The registry and guard already require ten domain packs;
+  behavior, membership, and acceptance pins are unchanged. Maintenance only,
+  not a domain-pack invocation or recurrence claim.
 
 ## Pre-checkpoint prep scans
 

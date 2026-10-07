@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T10:22:25.954136",
+  "generated_at": "2026-10-07T14:04:54.520821",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -55,6 +55,7 @@
             "gpt-instruct-survey-2026-09-10.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
+            "recent-changes-review-handoff-2026-10-07.md",
             "d025db7-publication-review-2026-10-02.md",
             "agentflow-8.4.1-delta-survey-2026-09-30.md",
             "astra-efficiency-rules-survey-2026-09-10.md",
@@ -81,6 +82,7 @@
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
             "ember-snn-llm-survey-2026-09-22.md",
+            "mattpocock-skills-v131-delta-survey-2026-10-07.md",
             "pstack-survey-2026-09-22.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -96,6 +98,7 @@
             "code-followups-plan.md",
             "fable-method-survey-2026-07-16.md",
             "agent-governance-scaffold-panel-record-2026-07-18.md",
+            "system-prompts-leaks-survey-2026-10-07.md",
             "code-recall-survey-2026-08-20.md",
             "whole-project-roadmap-2026-07-11.md",
             "p7-pack-routing-decision-2026-07-11.md",
@@ -128,6 +131,7 @@
             "agent-governance-four-power-concepts-2026-07-17.md",
             "frozen-core-parity-review-2026-07-11.md",
             "openfugu-technical-brief-2026-06-25.md",
+            "diagram-design-survey-2026-10-07.md",
             "agentflow-survey-2026-09-05.md",
             "skill-workflow-research-synthesis.md",
             "skill-verification-panel-2026-09-05.md",
@@ -2962,6 +2966,152 @@
       "char_count": 8763
     },
     {
+      "path": "reflective-prompt-library/plans/recent-changes-review-handoff-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "recent-changes-review-handoff-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "diagram-design-survey-2026-10-07.md",
+          "system-prompts-leaks-survey-2026-10-07.md",
+          "mattpocock-skills-v131-delta-survey-2026-10-07.md",
+          "external-adoption-case-studies-2026-06-20.md",
+          "flow-pack-usage-log.md",
+          "runtime-skills-workflow-spec-2026-10-06.md",
+          "runtime-skills-task001-ticket-2026-10-06.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Recent-Changes Parallel Review Handoff — 2026-10-07"
+        },
+        {
+          "level": 2,
+          "text": "Handoff contract (dated 2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Scope"
+        },
+        {
+          "level": 2,
+          "text": "Disposition summary"
+        },
+        {
+          "level": 3,
+          "text": "Goal, state, and acceptance"
+        },
+        {
+          "level": 2,
+          "text": "Open runtime findings (UNIMPLEMENTED)"
+        },
+        {
+          "level": 3,
+          "text": "RV-01 [P1] Fan-out / wave digit-guard bypass (`00`, `08`) — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-02 [P1] Unvalidated arithmetic iteration/round caps permit command expansion — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-03 [P1] ARM blinded-eval scorer recovers both arm identities from public order — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-04 [P1] Router-trace linter R4 bypasses and case gap — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-05 [P1] Locked acceptance oracle still expects 5 packs; registry holds 10 — UNIMPLEMENTED, requires human-reviewed migration"
+        },
+        {
+          "level": 3,
+          "text": "RV-06 [P2] ARM scorer-input boundary not enforced (extra outsider data arg) — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-07 [P2] Documented ARM CONFIG is not runnable (`KeyError: blinded`) — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-08 [P2] `TASKS.canon` directory misreported as empty backlog — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-09 [P2] Router linter rejects legitimate quoted confidence `\"medium\"` — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-13 [P2] Verify-gated fix loop zero-cap misclassification (`MAX_ITER=00`) — UNIMPLEMENTED"
+        },
+        {
+          "level": 3,
+          "text": "RV-14 [P2] Raw critic worker exit 4 collides with configuration exit 4 — UNIMPLEMENTED"
+        },
+        {
+          "level": 2,
+          "text": "Documentation-only corrections (parent-applied, same commit)"
+        },
+        {
+          "level": 3,
+          "text": "RV-10 [P2] Leaked-prompt survey overclaims — parent DOC-FIX (qualify samples, preserve qualifiers)"
+        },
+        {
+          "level": 3,
+          "text": "RV-11 [P2] Matt delta-survey commit counts — parent DOC-FIX"
+        },
+        {
+          "level": 3,
+          "text": "RV-12 [P2] Case-comparison table blank-line rendering — parent DOC-FIX"
+        },
+        {
+          "level": 2,
+          "text": "Advisory dispositions (no repository defect)"
+        },
+        {
+          "level": 2,
+          "text": "Declined to judge"
+        },
+        {
+          "level": 2,
+          "text": "Historical verification preserved (not current evidence)"
+        },
+        {
+          "level": 2,
+          "text": "Remaining work / ordered actions"
+        },
+        {
+          "level": 2,
+          "text": "Authority / trust boundaries and blockers"
+        },
+        {
+          "level": 2,
+          "text": "Retro / process lessons"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Recording-turn verification (2026-10-07)"
+        }
+      ],
+      "line_count": 215,
+      "char_count": 25200
+    },
+    {
       "path": "reflective-prompt-library/plans/d025db7-publication-review-2026-10-02.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5070,6 +5220,74 @@
       "char_count": 15267
     },
     {
+      "path": "reflective-prompt-library/plans/mattpocock-skills-v131-delta-survey-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mattpocock-skills-v131-delta-survey-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "recent-changes-review-handoff-2026-10-07.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "mattpocock/skills v1.3.1 Delta Survey (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Delta Summary & Analysis"
+        },
+        {
+          "level": 3,
+          "text": "1. `chief-of-staff` Skill (`skills/in-progress/chief-of-staff/SKILL.md`)"
+        },
+        {
+          "level": 3,
+          "text": "2. Scope & Governance Hardening (`SCOPE.md` + `.out-of-scope/`)"
+        },
+        {
+          "level": 3,
+          "text": "3. Execution Safety (`claude-handoff` #272)"
+        },
+        {
+          "level": 3,
+          "text": "4. Tool Invocation Terminology"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Inferences & Claims"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 59,
+      "char_count": 7244
+    },
+    {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6329,6 +6547,78 @@
       ],
       "line_count": 380,
       "char_count": 27307
+    },
+    {
+      "path": "reflective-prompt-library/plans/system-prompts-leaks-survey-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "system-prompts-leaks-survey-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "recent-changes-review-handoff-2026-10-07.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "System Prompts Leaks Survey & Architectural Rethink (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Architectural Rethink & Findings"
+        },
+        {
+          "level": 3,
+          "text": "1. Corpus Scope & Heterogeneous Epistemic Sourcing"
+        },
+        {
+          "level": 3,
+          "text": "2. Architecture & Prompt Taxonomy: Deconstructing the \"Megaprompt\""
+        },
+        {
+          "level": 3,
+          "text": "3. Coding Agent Discipline & Tool Execution Protocols"
+        },
+        {
+          "level": 3,
+          "text": "4. Safety, Refusal & The Extraction Paradox"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Inferences & Claims"
+        },
+        {
+          "level": 3,
+          "text": "Recording-turn correction"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 68,
+      "char_count": 9640
     },
     {
       "path": "reflective-prompt-library/plans/code-recall-survey-2026-08-20.md",
@@ -7839,6 +8129,9 @@
           "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
           "superpowers-v6.4-adoption-2026-10-03.md",
           "pstack-matt-lauren-survey-2026-10-03.md",
+          "mattpocock-skills-v131-delta-survey-2026-10-07.md",
+          "system-prompts-leaks-survey-2026-10-07.md",
+          "diagram-design-survey-2026-10-07.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -7943,8 +8236,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 391,
-      "char_count": 78474
+      "line_count": 394,
+      "char_count": 80275
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -9149,6 +9442,97 @@
       ],
       "line_count": 161,
       "char_count": 8579
+    },
+    {
+      "path": "reflective-prompt-library/plans/diagram-design-survey-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "diagram-design-survey-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../PROJECT_KNOWLEDGE.md",
+          "../05-domain/creative-template.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "recent-changes-review-handoff-2026-10-07.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Diagram Design Survey (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Research question"
+        },
+        {
+          "level": 2,
+          "text": "Upstream identity (dated, immutable)"
+        },
+        {
+          "level": 2,
+          "text": "What the source provides"
+        },
+        {
+          "level": 3,
+          "text": "Semantic pattern before visual type"
+        },
+        {
+          "level": 3,
+          "text": "Stricter composition budgets"
+        },
+        {
+          "level": 3,
+          "text": "Import discipline: extract inert structure, redraw, ledger fidelity"
+        },
+        {
+          "level": 3,
+          "text": "Installed self-check scope versus repository-only checks"
+        },
+        {
+          "level": 3,
+          "text": "SVG portability: scoped CSS, namespaced defs, XML normalization"
+        },
+        {
+          "level": 3,
+          "text": "Static-first motion"
+        },
+        {
+          "level": 2,
+          "text": "Preserved helper evidence: 15 of 15 matched (survey run, 2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Preserved browser evidence: real Chromium (survey run, 2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Network dependence and explicit non-proofs"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Provenance and citations"
+        }
+      ],
+      "line_count": 132,
+      "char_count": 21932
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-survey-2026-09-05.md",
@@ -12745,8 +13129,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 450,
-      "char_count": 40389
+      "line_count": 455,
+      "char_count": 40747
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -17999,5 +18383,5 @@
       "char_count": 24835
     }
   ],
-  "total_files": 200
+  "total_files": 204
 }
