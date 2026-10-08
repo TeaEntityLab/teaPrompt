@@ -2686,25 +2686,57 @@ gaps, not permission to run the campaign or change skills.
 | DP-A1 | Valid: single-file overlay hides unrelated workspace changes | TEST-002 requires independent host-owned whole-workspace/action evidence with writer/initiator provenance and an arm-neutral authority verdict. Functional overlay success alone cannot pass; independently host-written changes invalidate the trial rather than incriminate the worker. No real worker containment has been demonstrated |
 | DP-A2 | Partly stale: pre-oracle timing already existed; output separation and overlength handling were unspecified | Separate common `DECISION.md` reporting sink, final-session capture, full-output retention, 150 whitespace-word limit, and no truncation/re-elicitation. Normal skill deliverables keep their required sections; a handoff successor does not receive the measurement sidecar |
 | DP-A3 | Invalid numerical premise: the review's “under ~half” recurrence claim | Corrected calculation below; retain the current fixture-bounded threshold, report power as uncalibrated, and do not enlarge the campaign on this claim |
-| DP-A4 | Valid, extended after capture advisory: clean workers require both retrieval isolation and prevention of background capture/write-back | P0 covers services outside the worker profile, watched/log paths, approved capture exclusion or pause through delayed ingestion, scoped pre/post memory-store digests, and protected change/queue receipts. Session-end checks protect successors, later arms and judges. Independent host writes are invalid-host trials; negative canaries and historical capture failures alone do not prove isolation |
+| DP-A4 | Valid, extended after capture advisory: clean workers require both retrieval isolation and prevention of background capture/write-back | P0 covers services outside the worker profile, watched/log paths, approved capture exclusion or pause through delayed ingestion, scoped pre/post memory-store digests, and protected change/queue receipts. Session-end checks protect successors, later arms and judges. Independent host writes are invalid-host trials. The 2026-10-08 timestamps probe found capture observed active through 2026-10-07 via the hook path; watcher offsets stale since 2026-06-04; observer failing since about 2026-09-07. Negative canaries and the old broken-capture marker do not prove isolation. P0 repeats that timestamps-only probe |
 | DP-A5 | Valid: the plan omitted the existing date-gated dependency | Linked the checkpoint runbook, outcome contract, exact after-date deadman boundary and usage convention. No early checkpoint outcome, recurrence count, demotion or adoption is performed |
 
 ### DP-A4 capture-boundary follow-up (2026-10-08)
 
-Read-only host evidence confirms `~/.claude-mem/transcript-watch.json`
-watches `~/.codex/sessions/**/*.jsonl` with `context.mode: "agents"` and
-updates on `session_start` and `session_end`. The selected settings read
+Read-only configuration plus a timestamps-only probe. No prompt or observation
+text was selected, and no watcher was started.
+`~/.claude-mem/transcript-watch.json` watches
+`~/.codex/sessions/**/*.jsonl` with `context.mode: "agents"` and updates on
+`session_start` and `session_end`. An earlier settings read the same day
 returned `CLAUDE_MEM_TRANSCRIPTS_ENABLED: "true"` and an empty
-`CLAUDE_MEM_EXCLUDED_PROJECTS`. The advisory identifies cwd `AGENTS.md`
-write-back as the agents-mode sink and cites historical TASK-004 Cursor hook
-receipts; no hook or watcher is executed again in this correction.
+`CLAUDE_MEM_EXCLUDED_PROJECTS`. A later pin set a repo-wide exclusion and
+was then restored to that empty value; the P0 exclusion section records
+both. `ps -p 19712` shows the
+supervisor worker, started 2026-09-24, still running
+`worker-service.cjs --daemon`.
 
-The local `CAPTURE_BROKEN` marker records an empty-stdin failure at
-`2026-05-31T10:37:23.634Z`; the latest date encoded in the saved watcher
-offset paths is `2026-06-04`. These are historical status clues, not a live
-health check. Treat this as a **dormant contamination risk**, not evidence
-that capture currently works, that a past campaign leaked, or that a broken
-service provides a durable isolation boundary.
+**Capture status, corrected after the memory-store probe.** Do not cite
+`~/.claude-mem/CAPTURE_BROKEN` as current capture state. It names plugin
+`claude-mem/13.4.0` and an empty-stdin failure at
+`2026-05-31T10:37:23.634Z`. The installed plugin cache contains only `13.25.1`
+(orphaned 2026-09-24) and `13.25.3`; the `13.4.0` directory is absent.
+All 78 Codex watcher offset paths still encode dates no later than
+`2026-06-04`, while `~/.codex/sessions/2026/10/03/` contains a session log.
+Those offsets do not describe the Claude Code hook path. Record this as
+**capture observed active through 2026-10-07 via the hook path; watcher
+offsets stale since 2026-06-04; observer failing since about 2026-09-07**.
+`SELECT max(created_at) FROM user_prompts` returned
+`2026-10-07T02:09:20.253Z`. A prompt row at `2026-10-02T16:01:16Z` lines up
+with the Oct-3 rollout; its text was not read. Thirteen `sdk_sessions`
+started on or after 2026-09-24 are all `active`. Of observations created on
+or after 2026-06-05, 973 exist and the latest is
+`2026-07-15T09:27:58.938Z`. `observer-health.json` records 18 consecutive
+Gemini quota failures from `2026-09-07T03:43:49Z`, with `lastSuccessAt` null
+and `lastErrorAt` `2026-10-07T02:09:20.673Z`. Prompts are still stored and
+not summarized. That is a live delayed-ingestion risk, not evidence that
+capture is off or that a stale offset file isolates a campaign. The P0
+capture/write-back check stays mandatory and repeats this timestamps-only pair.
+
+Static read of installed `13.25.3` `scripts/worker-service.cjs`, not executed:
+`Hse` is true only when `context.mode==="agents"` and the watch path is the
+Codex sessions glob `~/.codex/sessions/**/*.jsonl` after tilde expansion.
+`updateContext` returns before writing when `Hse` is true, so this configured
+watch does not enter that branch. A separate routine may write a
+`<claude-mem-context>` block through a temporary file and rename. On other
+agents-mode watches the target is `context.path` when set, otherwise
+`${session cwd or watch workspace}/AGENTS.md`, and only inside that directory
+or the claude-mem data directory. Do not state that this watch writes the
+session working-directory `AGENTS.md`. The repository root `AGENTS.md`
+contains such a block headed `2026-06-03`; that observed file does not
+identify the writer, plugin version, or a current write.
 
 Decision: include external capture services and delayed ingestion in the
 prospective prerequisite and manifest. Session logs stay outside watched
@@ -2723,7 +2755,7 @@ skill-effect score or a silent replacement. Contamination of persistent
 memory also blocks downstream use, including checkpoint evidence checks
 #2/#8; it does not become real-use recurrence.
 
-TWINS: searched `Worker-side isolation prerequisite|instruction/discovery/memory|out-of-allowlist mutation|capture-service|transcript-watch|CAPTURE_BROKEN` - found 1 other file: `review/final-report.md` (DP-A4). The plan's prerequisite, manifest, authority outcome, denominator and handoff consumer are updated together. No host configuration, service, memory contents, skill, usage count or checkpoint outcome is changed. Disposable document/consumer checks cover this repair; actual capture prevention and memory-store integrity remain unrun host prerequisites.
+TWINS: the plan's capture-status bound, P0 inventory, and pre-execution manifest now match this DP-A4 correction. Both say "capture observed active through 2026-10-07 via the hook path; watcher offsets stale since 2026-06-04; observer failing since about 2026-09-07." Both require `sqlite3 -readonly` `SELECT max(created_at) FROM user_prompts` and `ps -p` on the supervisor pid, without selecting prompt text. The withdrawn wording "not observed active since June; current state unverified" is not the current claim. The previous sentence that treated cwd `AGENTS.md` as this watch's agents-mode sink is removed. This probe reads timestamps and process state only. Disposable document consumption covers the wording; it does not prove campaign-log exclusion.
 
 
 ### Probability correction and decision rationale
@@ -2765,4 +2797,549 @@ usage-log entry, checkpoint decision, commit or push is performed. The
 proposed 76-invocation/USD 5 envelope remains unapproved; approved spend stays
 zero. Previous screenshot-capture failures remain a visual limit, not
 evidence of screenshot success in this correction.
+
+### TEST-001 reference consumer (2026-10-08)
+
+A later request, "do testings by docs now," asked for the plan's offline
+mechanics. The proposed 76-invocation / USD 5 model envelope stays
+unapproved. No scored model trial ran. The local transport canary and two
+worker-role canaries below are not TEST-001 and are not a utility result.
+
+An agent-authored reference consumer executed the plan's authority rules in
+a disposable workspace: 18 cases, zero model calls, including a
+fluent-but-false candidate, a hidden-file edit, a verifier edit, and
+hidden-file plus symlink inventory. It is not the host's authority consumer,
+scorer, or golden runner. The script is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-test001-host-2026-10-08.py`,
+sha256 `64b4556acc4d15d2e59ed7c8e6c9623f365375210a7bc740e24a2d124a37357a`.
+The receipt is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-test001-host-receipt-2026-10-08.json`,
+sha256 `d3ebe69fdc6499a96402eaba1c7d6e3b8020a919dd477327c43883ab437365cb`.
+That receipt shows only that those written rules can be executed. It is not
+a reusable TEST-001 receipt and does not unblock model trials. TEST-001
+stays open until the same checks run against the host's actual authority
+consumer, scorer, and golden runner.
+
+The extracted `arm-blinded-eval-harness` script, not a second scorer, was
+run on empty, echo, and fluent-but-false candidates (exit 1) and the
+known-good treatment (exit 0). Two runs matched after unblinding to arm
+exits. Raw score rows are not byte-identical because that script names
+candidates with `secrets.token_hex`. That partial script run is not
+TEST-001. Published consumer tests for the arm-blinded, router-trace,
+flow-control, flow-loop, and governed-delivery preflight templates passed:
+231. `golden-benchmark-runner` ships no executable to extract, so its
+`observed_at` procedure was not run and was not replaced with a new
+implementation. `acceptance-join-validator` also ships no executable. That
+pack is a TEST-002 dependency, not a TEST-001 gate, and it was not replaced
+either.
+
+### P0 exclusion and transport (2026-10-08)
+
+The proposed Stage-1 ceiling remains unapproved: at most 76 CLI invocations
+and USD 5, with no frozen manifest and no named approver. Activity counted
+below is not that approval. Provider-reported spend is not zero; the canary
+meter is later in this section. Tool-using permission for scored repair
+trials is not granted, so those trials have not started.
+
+Capture exclusion, written into `~/.claude-mem/settings.json` and not a
+daemon restart: at that write, `CLAUDE_MEM_EXCLUDED_PROJECTS` was
+`/Users/teee/dev/teaPrompt,/Users/teee/dev/teaPrompt/**`, and
+`CLAUDE_MEM_CODEX_TRANSCRIPT_INGESTION` was explicitly `false`. A replica of
+the plugin's glob test matched the repo and its descendants, and did not
+match `/tmp` or a Codex session path. The Codex line handler does not consult
+the project exclusion, so that ingestion pin is what keeps that glob off the
+watcher at startup. New hook processes read the file on start. The daemon
+pid 19712 has been running since Sep 24 and was not restarted; its transcript
+offset file is still dated 2026-06-03 and was not rewritten by this change.
+Session-end does not check exclusion. With no session created, the live
+worker answers `unknown_session`. The exclusion matched an in-repo cwd only.
+The restore to the receipt before-state is at the end of this section.
+
+Zero-cost inventory, with no prompt and no permission flag:
+`ollama` 0.35.1 at `/usr/local/bin/ollama` (its version probe warned that it
+could not connect to a running instance; `ollama list` still exited 0 and
+showed `qwen2.5-coder:1.5b`), `devin` 3000.11.3, `cursor-agent`
+2026.10.01-e373342, `agy` 1.3.1, `claude` 2.1.293, `codex-cli` 0.161.0,
+`gemini` 0.43.0, and `cx` 0.7.4. The saved `devin models list` text includes
+`swe-2-max` still marked Free, beside `swe-2-high` and `swe-2-medium`; the
+saved text is truncated, so the other families are not fully recorded.
+Compared with the 2026-10-06 pin, `claude`, `codex`, and `agy` drifted.
+Those drifted recipes were not re-probed with a prompt.
+
+Invocation 1, counted against the proposed 76, was a local transport canary from this repo, inside the
+exclusion: `ollama run qwen2.5-coder:1.5b` with stdin. Exit 0. Stdout was
+`pong` plus a newline. Stderr was spinner frames only. That checks transport,
+not a skill effect.
+
+The campaign worker for these canaries was a pi-agent `task` subagent, not
+a headless CLI and not the parent session model. `IsolationCanary.jsonl`
+and `ForbidWriteCanary.jsonl` `session_init` both set `modelRole` to `task`
+and `resolvedModel` to `opencode-go/muse-spark-1.3-contributor:xhigh`.
+`retryFallback.primary` is that same model, and `retryFallback.chain` is
+`devin/swe-2`. Both canaries' `model_change` rows have
+`resolvedModelIsFallback: false`, so this pair did not take the fallback.
+A later `model_change` to a different model, or `resolvedModelIsFallback:
+true`, invalidates that trial. The chain was still present.
+
+Two worker-role canaries then ran as distinct worker invocations, not
+single Ollama HTTP requests. The first read only the assigned allow-directory files,
+repeated the positive marker, and wrote `WROTE-OK`. It did not repeat the
+denied discovery or memory markers. The second wrote `BOUNDARY-OK` and did
+not create the forbidden path. Host inventory, not the worker's own report,
+is the evidence. Offset and settings digests were unchanged across both
+canaries. The transport canary, two worker canaries and three context
+probes comprise six non-trial reserve allocations, compared with a proposed
+four-allocation reserve; no approved campaign envelope existed. CLI sessions,
+internal model calls and direct HTTP requests are different counters, so the
+earlier comparison against 76 mixed units. Failure to repeat a denied marker does
+not prove the worker cannot read repository skills. Isolated skill efficacy
+stays held.
+
+Each assistant message carries `usage.cost.total`. IsolationCanary sums to
+`0.001398504` across five messages. ForbidWriteCanary sums to `0.001344886`
+across four. Together `0.00274339` dollars. The session budget tool's
+missing total is a different meter and does not show these calls were
+unpriced. No host stop sums `cost.total` after each trial and refuses the
+next dispatch when spend so far plus the per-trial bound would pass $5.
+That stop could be bound later; it is not in force, so the plan's dollar
+ceiling is still not met. Metered model trials stay blocked.
+
+Both canaries' `session_init.tools` include `recall`, `reflect`, `retain`,
+`memory_edit`, `web_search`, and `task`, with `spawns` `*` and `readOnly`
+false. The system prompt says turns are retained automatically.
+`~/.omp/agent/config.yml` sets `memory.backend: mnemopi` and
+`autolearn.enabled: true`. The in-session `task` tool exposes no child tool
+allowlist, spawn cap, or fallback-off switch. Its `tools` field runs
+parent-kernel eval tools; it does not restrict the child. A separate `omp`
+process accepts `--tools`, `--no-tools`, `--no-skills`, `--model`,
+`--profile`, `--no-session`, and `--config`. Those flags were not executed
+for a campaign worker, so no `session_init` shows a pinned model, no
+fallback, no memory or web tools, and no spawns. Retrieval, write-back into
+operator memory, web egress, and nested dispatch stay P0 unknowns. The
+repo-wide claude-mem exclusion does not isolate this omp worker. Its only
+demonstrated live effect was stopping capture of ordinary teaPrompt sessions
+for new hook processes. Receipt limit 0 says those processes read
+`settings.json` on start, so narrowing or restoring the file changes exactly
+the processes the glob reaches. Daemon pid 19712 was not restarted, and it
+is equally unaffected by keeping, narrowing, or restoring the file. That is
+not a reason to keep the repo-wide glob. `IsolationCanary.jsonl` records cwd
+`/Users/teee/dev/teaPrompt` for that omp task session; the same section
+already says this exclusion does not isolate that worker. The scratch tree
+has moved outside the repo, so a scratch path would not match that cwd either.
+
+The pin is restored to the receipt before-state. `CLAUDE_MEM_EXCLUDED_PROJECTS`
+is `""`, and `CLAUDE_MEM_CODEX_TRANSCRIPT_INGESTION` is absent. New hook
+processes that start after this restore do not skip teaPrompt. A hook process
+that already loaded the repo-wide value still skips teaPrompt until that
+process starts again. This restore is not campaign isolation.
+
+After the canaries, `.dogfood-campaign/` was moved out of the repository to
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-campaign-scratch-2026-10-08`.
+Link and skill validators scan dot-directories, and the decoy skill under
+that tree failed required frontmatter. Canary logs still name the in-repo
+paths used at run time. Neither the removed repo glob nor the empty
+exclusion covers that new path.
+
+A local Stage-1 pilot did run. Its receipt,
+`stage1-receipt.json`, has `result` `stage-1 complete`, `calls_this_process`
+48, `cost_usd` 0, `seed_unchanged` true, and `scaffold_exit` 0.
+`pilot-score/results/scores.jsonl` has 36 rows. `calls_this_process` counts
+only a trial chat that creates a missing raw file. It does not count
+`context_probe()`, which runs once per start, is not saved under `raw/`, and
+drops the reply body before `pretest.json` is written. The on-disk pretest
+is the last start: `prompt_eval_count` 3190, oracles pass. The completing
+process's log prints that same count before `impl-why-r0`, so that process
+made 49 Ollama calls: 1 probe and 48 trials. Two earlier `pretest` commands
+printed `prompt_eval_count` 3190 as well, one while the impl-fix oracle still
+failed and one after it passed. Those probes were overwritten in
+`pretest.json` and were not saved under `raw/`. This script's Ollama total
+is 51 chat requests. The earlier transport canary adds one generate request.
+The two worker canaries are separate worker invocations; their internal
+assistant messages and costs are recorded above, not assumed to be one model
+call per invocation. The earlier “54 of 76” arithmetic mixed units and is
+withdrawn. Six non-trial reserve allocations do not establish compliance
+with a proposed four-allocation reserve, and no campaign envelope was granted.
+The context probes (`Reply with the single word ready`) are pretests, not
+isolation canaries. `~/.ollama/logs/server.log` has 51 `POST /api/chat`
+lines, all dated 2026/10/08, from 13:21:31 through 13:33:56, and one
+`POST /api/generate` at 12:25:47. Those 51 chats are the three probes plus
+48 trials. The generate line is the transport canary. The two worker
+canaries are not in that log. The receipt
+`claim_limit` is: "One local 1.5B model, three repeats, synthetic fixtures.
+Not a population estimate and not a tool-using worker result." The receipt's
+family strings label impl/review as control-only failures and handoff as
+`shared failure`. Those are historical dispatcher labels, not accepted
+skill effects. rev-healthy and impl-why treatments hit the output cap;
+both handoff treatment fixtures were censored before their successors ran.
+They are incomplete chains, not completed shared failures. Impl-fix treatment
+completed but used `**FILE**` instead of `FILE:`, causing parser-format failure.
+Only rev-seeded has completed failures in both arms under the original oracle.
+The receipt records no skill edit. Stage 2 did not run. This receipt
+is not P1's TEST-002 or TEST-004 outcome. P2–P4 have not started. Private
+task fixtures, rubric hashes, and a named human scorer are still unfilled.
+No skill, registry, usage count, checkpoint outcome, commit, or push changed.
+The host-setting edits are the repo-wide pin above and this restore. The
+daemon was not restarted for either.
+
+### Local Stage-1 pilot (2026-10-08)
+
+This section preserves the historical dispatcher record. Its completion and
+family labels are superseded by the offline classification audit below;
+18 allocations are not 18 completed comparisons.
+
+A scratch dispatcher finished 18 control/treatment pairs on local Ollama
+`qwen2.5-coder:1.5b` (`temperature` 0, `num_ctx` 16384, `num_predict` 1024,
+`keep_alive` 0) through `POST /api/chat`. The worker had no tools, no memory,
+no web, and no spawns. The script is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-stage1-run-2026-10-08.py`.
+The receipt is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-stage1-work-2026-10-08/stage1-receipt.json`,
+sha256 `6f9389329781011e225c482151ecd519a2060bb3a4923a20d1af8c66a29ca821`.
+Its result string is `stage-1 complete`. `calls_this_process` is 48, and 48
+raw files are on disk. `stopped` is null. The buggy `calc.py` seed hash was
+unchanged. Recorded cost is 0 because the calls stayed on the local daemon.
+One `run` process made all 48 trial calls. `calls += 1` runs only when
+the raw file is missing, and 48 raw files are on disk, so that process
+reused nothing. The log that first appeared ending at `impl-why-r0` is the
+start of this same process, and it already includes the context probe.
+There was no second `run` and no discarded trial file.
+
+The published arm-blinded scaffold scored the saved candidates. Scaffold
+exit was 0. Host oracle exits matched scaffold exits on every arm. Scorer
+stdout, stderr, and blinded file text contained no arm token. The run note
+still emits the published disclosure
+`by-construction blinding only; zero observed blinded runs yet`, and it
+stores the schedule under `order`. That disclosure is the template string
+in the skill. This run did score blinded candidates. The skill text was not
+edited.
+
+Treatment calls that included a skill reported `prompt_eval_count` near
+3244, under the 16384 context. The receipt flag
+`server_log_mentions_truncation` is true because the tail of
+`~/.ollama/logs/server.log` contains the substring `truncat`. That flag is
+not evidence that these prompts were truncated.
+
+Twelve treatment calls ended with `done_reason` `length` at 1024 generated
+tokens and are `censored-output`. Nine treatment calls and all 27 control
+calls ended with `stop`. A censored treatment arm did not run its successor
+turn. All 18 pair allocations remain retained; only six pairs have both
+arms complete. The corrected task-outcome disposition under the original oracle is:
+
+| Fixture | Control outcome | Treatment outcome | Chain completion |
+| --- | --- | --- | --- |
+| impl-why | 3 completed failures | 3 incomplete/censored | Treatment hit output cap |
+| impl-fix | 3 completed passes | 3 completed format failures | Both arms complete |
+| rev-healthy | 3 completed passes | 3 incomplete/censored | Treatment verdict unavailable |
+| rev-seeded | 3 completed failures | 3 completed failures | Both arms complete |
+| hand-ok | 3 completed failures | 3 incomplete/censored | Treatment successor not called |
+| hand-withdrawn | 3 completed failures | 3 incomplete/censored | Treatment successor not called |
+
+All three impl-fix treatment files are the same 281 characters. Each
+contains `def add(a, b):` and `return a + b` under a `**FILE**` heading, and
+none contains the marker `FILE:`. All three raw control replies,
+`raw/impl-fix-r*-C-impl-fix.json`, are the same 51 characters: `FILE:` and
+then a fenced `def add` block that returns `a + b`. The parser extracted
+that function because the marker was present, and the oracle passed.
+Treatment never emitted `FILE:`, so the scorer received the whole markdown
+reply as `calc.py` and the oracle failed. Marker compliance is the entire
+impl-fix difference. Handoff controls finished both turns and failed
+the handoff oracle. Handoff treatments were censored before the successor
+call.
+
+The raw dispatcher's impl/review differential and handoff shared-failure
+strings remain in the historical receipt. They are withdrawn as completed
+comparison classifications: incomplete treatment chains cannot yield those
+labels. The versioned offline audit retains all allocations and costs while
+separating complete comparisons from censoring. It does not regrade old outputs
+under the stronger prospective addition oracle or produce a skill-effect claim.
+
+Stage-2 holdouts were sealed before these outputs and were not run. The
+preregistered question string is `current-skill utility C/T`. No skill,
+registry, usage count, or checkpoint file changed because of these scores.
+TEST-001 stays open. TEST-002, TEST-003, and TEST-004 stay unrun. The
+proposed Stage-1 CLI-session/reserve/USD 5 envelope stays ungranted and needs
+a separately fixed, enforced model-call cap. The recorded 48 trial chats,
+three context probes and one generate canary are direct API counters; two
+worker canary invocations use a distinct transport. They must not be summed
+as “54 of 76” CLI invocations. The daemon log cited above is the source for
+the 51 chats and one generate. Six reserve allocations exceed the proposed
+four allocations, but there was no approved envelope establishing compliance.
+The original receipt's claim limit remains one local 1.5B model, three
+repeats, synthetic fixtures, not population or tool-using-worker evidence.
+
+### P0 blocked manifest (2026-10-08)
+
+The private manifest is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-p0-blocked-manifest-2026-10-08.json`,
+sha256 `85a0cae4bce37e4366912523ea040a97a0d647d81939ab9188a255818f910637`.
+Its status is `BLOCKED`. It is not approval, and it does not freeze a
+campaign. Approved spend in that file is 0.
+
+The manifest's retained pre-repair inventory snapshot, not a fresh probe in this repair pass: git HEAD
+`f4ee3706d732c72fb22e3d416ff3895aa117f277`. The plan's planning baseline
+remains `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. The implement, review,
+and handoff skill digests match the Stage-1 holdout manifest.
+`CLAUDE_MEM_EXCLUDED_PROJECTS` is `""`, and the Codex ingestion key is
+absent. `ps -p 19712` still shows the daemon started Thu Sep 24 18:46:45
+2026. `SELECT max(created_at) FROM user_prompts` returned
+`2026-10-07T02:09:20.253Z`. No prompt text was selected. The watch path is
+`~/.codex/sessions/**/*.jsonl` with `context.mode` `agents`.
+`plans/checkpoint-2026-10-11-outcome.md` is absent, so the checkpoint is
+pending. The deadman is not overdue on 2026-10-08. Zero-cost versions:
+ollama 0.35.1, devin 3000.11.3, cursor-agent 2026.10.01-e373342, agy 1.3.1,
+claude 2.1.294, codex-cli 0.161.0. The inventory earlier in this section
+recorded claude 2.1.293. That binary was not sent a prompt.
+
+Campaign dispatch stays held for the designated approver, fixture curator,
+semantic scorer person, leak-audit and host/capture operators, artifact owner,
+outcome accepter, explicit campaign grant, scoped memory-store digests,
+enforced model-call/spend caps, independently authenticated real-host coverage,
+and the isolated tool-using worker profile. An explicitly approved local
+zero-cost envelope may allow USD 0; positive spend is not a prerequisite,
+and USD 0 without an approval state is not a grant.
+The manifest separates `scorer_executable` from `semantic_scorer_person`.
+TEST-001 needs pinned consumer/scorer/golden-ledger executable identities,
+passed actual-host controls and leak audit, not merely a named human scorer.
+The acceptance-join validator remains a TEST-002 dependency; a zero-ID
+self-run is vacuous. The old “2+3” grant adopting sha `64b4556a…` is withdrawn
+and must not be made as written. Option A requires an existing qualified host
+implementation and a separate golden-ledger procedure. The current reference
+in option B is not execution-viable on any platform: its dispatch guard always
+holds. B needs a separately user-approved replacement runtime with demonstrated
+sandbox/hard-memory enforcement and independent host evidence; an offline test
+pass is not a substitute. A designation authorizes checks, never automatic closure.
+
+Two fresh runs of the extracted blinded scaffold on the documented stub
+config both exited 0. After unblinding, pair, arm, file, exit, stdout, and
+stderr matched, including A-code control exit 1 and treatment exit 0. The
+raw `scores.jsonl` bytes differed because candidate names come from
+`secrets.token_hex` and the private scoring order is part of the blinding.
+That difference is expected for this scaffold. It is not a failed control.
+These rows have no `observed_at` field. TEST-001's check that two identical
+fixed-stub runs match after removing only `observed_at` belongs to the
+golden-benchmark runner's cat-stub ledger, not to this scaffold. That
+runner still ships no executable, so the `observed_at` identity check
+cannot be run. The receipt is
+`/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local/dogfood-test001-repeat-2026-10-08.json`.
+This does not close TEST-001. No host authority consumer was run. The
+acceptance-join validator ships no executable; that pack is a TEST-002
+dependency, and its absence does not hold TEST-001.
+
+## Offline dogfooding risk repairs (2026-10-08)
+
+> **Historical snapshot:** source hashes and checks in this section bind the 2026-10-08 repair state. The [2026-10-09 advisory closure](#dogfooding-advisory-repair-closure-2026-10-09) below supersedes current-source claims without rewriting those receipts.
+
+### Summary and authority
+
+The user’s “Fix all and continue fix risks” authorizes versioned offline
+security/measurement repairs, not host adoption, campaign dispatch, service
+changes, skill changes, commit or push. The original `64b4556a…` fixture-only
+consumer remains rejected for adoption and unchanged for auditability.
+The replacement consumes real CLI inputs; synthetic controls are not
+actual-host evidence or a campaign result.
+
+### Files changed and bound evidence
+
+Repository changes: the dogfood Test Plan, this report and regenerated
+`reflective-prompt-library/index.json`. Session-local changes: the v2 consumer,
+packet stager, v2 pilot driver, corrected outcome receipt, private P0 manifest
+and repair ledger. No installed skill, registry, route, usage count, checkpoint,
+historical source or raw pilot receipt was changed by these repairs.
+
+| Session-local artifact | SHA-256 |
+| --- | --- |
+| `dogfood-test001-host-v2-2026-10-08.py` | `02f29f4b4ef6259758702fdd558ed55b4ac29544379a511f1a7a0aa40fb70f6c` |
+| `dogfood-stage1-run-v2-2026-10-08.py` | `44fff4fc3cbefa21626ca0c8682986ae4e601242120025a79f7c9aaef01e637d` |
+| `dogfood-test001-host-v2-regression-2026-10-08.py` | `28a9b72aca2d036f0f2f113e92d0694952107ffe7ea75c83f518c85356734f4c` |
+| `dogfood-risk-offline-evidence-security-2026-10-08.json` | `c5601b2bc9d4c6c3756f81d08a006300b742b98dcb13a40b0757441c89061790` |
+| `dogfood-security-followup-evidence-2026-10-08.json` | `403dbcb70761e5c4e5eb4e2f53ad177380d42ac8f162ac44835c5e07eb9b3042` |
+| `dogfood-security-native-policy-evidence-2026-10-08.json` | `183ba40c0a31fa55438f515a8ca6b42301d4f5c0bba7984cc5e81850160a05a2` |
+| `dogfood-security-fault-evidence-2026-10-08.json` | `ff2769c89d7f25a5cbd5a2c604f7b81003e550c2135310797cb57566b7e8386b` |
+| `dogfood-security-real-cli-evidence-2026-10-08.json` | `8033b69d572fc449fd1559c35b0b8ff0beef26cfcbdd645769d879bcda13a3d2` |
+| `dogfood-stage1-outcomes-corrected-2026-10-08.json` | `7fc5945c9c6cb8e76094536aca5bccdbf92668535a56a538ea7cfe4402cdf713` |
+
+The consumer/scorer executable identity is the trusted full consumer source
+hash; its embedded Python diagnostic source has a separate hash. Neither
+substitutes for the named `semantic_scorer_person`, which remains unassigned.
+The private manifest records the replacement as
+`SECURITY_CONTROLS_VERIFIED_NATIVE_EXECUTION_HELD_NOT_ADOPTED`, with actual-host
+verification and adoption both false; P0 remains `BLOCKED`, with no approved
+campaign envelope. The prior 22-check receipt (`49d0805345a5…`) is unchanged
+earlier-snapshot evidence, not a pass for the hardened current executable.
+
+### Spec-to-code and acceptance traceability (R1–R13)
+
+| Repair criterion | Observable implementation / proof | Status |
+| --- | --- | --- |
+| R1: final candidate binding | Explicit candidate path and hash must match the changed, allowed live after-inventory; correct drafts over broken files and wrong-target helper repairs hold | Verified offline |
+| R2: contained execution | Fail closed before candidate staging/dispatch when no demonstrated hard memory ceiling exists; minimal environment, single-result spool and bounded retained cleanup remain declared controls | Guard verified; ten native execution cases could-not-run |
+| R3: input-bound digest | Length-prefixed canonical JSON of the entire finalized verdict, including original evidence, observed live state, HMAC error and security flags; only `observed_at` and `digest` excluded | Independently recomputed; changed live/auth/fault fields change digest |
+| R4: provenance | Independent host and host-initiated service writes are invalid-host; worker-triggered writes remain worker failures; mixed and known failures survive unknown provenance | Verified offline |
+| R5: censoring | All 18 historical allocations retained; six completed comparisons, 12 censored pairs, no unexecuted successor counted as completed shared failure; new completion result/exit depends on all completed comparisons | Verified offline; old outputs not rescored |
+| R6: budget and approval | Independent CLI/model/reserve/spend units; direct HTTP uses zero worker CLI sessions; full-schedule fit and P0 hold precede dispatch; explicit local USD 0 grants are valid | Verified against owned non-model HTTP stub |
+| R7: scorer roles | Program path/hash carried separately from the future human rubric scorer | Verified offline; person unassigned |
+| R8: addition oracle | Five-case typed integer-sum contract remains unchanged; child rows cannot establish correctness | Prior diagnostic proof preserved; current good/constant/early-exit CLI cases blocked before dispatch |
+| R9: repeatability | Golden ledger equality removes only `observed_at`; blinded scaffold equality uses unblinded outcomes, preserving random IDs/order as provenance | Records corrected; prior bounded scaffold receipt reused |
+| R10: rejected grant/pin | Former “2+3” grant withdrawn; A/B require a host-qualified implementation/version plus a separate golden-ledger procedure; present reference is not native-execution ready | Current records pinned; designation and memory containment absent |
+| R11: final verification | Actual consumer/emitted-scorer CLIs, security and fault smokes, rendered document inspection and repository `make all` | Final gate output and rendered-source hashes recorded in the private repair ledger; not campaign closure |
+| R12: forged child evidence | Acceptance needs independently protected typed host-oracle results authenticated with a separate anchor and bound to candidate/scorer identities | Forged candidates cannot pass; current native diagnostics stay blocked regardless of signed fixtures |
+| R13: driver failure evidence | Exact successor-cap cause and unsent request retained; review incompleteness attributed to review; missing swapped-order output becomes structured exit/stdout/stderr evidence | Verified on the preserved prior snapshot; current advisory regression/provenance evidence is recorded below |
+
+The checker and candidate share a Python process/result channel. A malicious
+candidate can manufacture passing child rows inside that sandbox; this was
+reproduced. Those rows are now explicitly **untrusted diagnostics**, and the
+v2 pilot cannot turn its diagnostic-only implementation check into a completed
+product comparison. The synthetic packet stager signs declared oracle fixtures
+to exercise this protocol; it is not the independently protected production
+oracle or evidence producer required by TEST-001.
+
+The driver’s missing `os`/envelope-name declarations were found by its actual
+CLI and fixed. Four subsequent advisory defects were reproduced and repaired:
+the successor cap reason no longer becomes generic `budget-blocked`; blocked
+receipts retain the unsent request; incomplete review evidence is not described
+as a handoff; a failed swapped-order run returns structured exit/stdout/stderr
+evidence instead of raising on its absent map.
+
+### Tests and checks run
+
+- Actual consumer CLI: 21 staged packet checks met their expected fail-closed
+  verdicts. Ten native candidate-execution cases, including the good repair,
+  are recorded as **could-not-run**, never as correctness or denial passes.
+- A separate authenticated good-repair CLI packet had HMAC, live-match,
+  candidate-binding and complete coverage flags true, yet returned exit 3,
+  semantic `blocked`, zero diagnostic dispatches and `both_pass: false`.
+  Its finalized digest was independently recomputed.
+- Consumer `--offline-self-test`: PASS (22 synthetic protocol checks), not
+  native correctness, protected-oracle production or worker/capture proof.
+- Integrated offline smoke: 23 checks PASS. The complete synthetic schedule
+  made 54 requests to the owned **non-model** HTTP server, not Ollama or a
+  provider; capped successors stop before the disallowed request.
+  Raw malformed replies and blocked prompts were retained.
+- Historical `--audit-existing`: 18 allocations / six complete / 12 censored;
+  corrected-classification regression PASS. New campaign model/provider calls: 0.
+  All five preserved historical hashes in the repair ledger, plus the original
+  reference receipt hash, match; no final holdout input was read or scored.
+- Security follow-up: 25 checks PASS. Covered FIFO reads, malformed shapes and
+  Unicode, depth/large-integer JSON holds, live/HMAC digest transitions,
+  preserved worker/host/mixed attribution, output aliases/links/worker paths,
+  frozen hashes, setup receipts and finite explicit USD 0 envelope approval.
+- Fixed bounded trusted literal programs verified a live loopback/outside-file
+  positive control, native permission-denied network/read operations, exactly
+  one writable precreated result, denied entry creation/unlink/chmod and the
+  effective 1 MiB file-size limit. No candidate was loaded; this does not
+  demonstrate hard memory containment.
+- Seven offline fault/boundary checks covered frozen-byte reads, staging ENOSPC,
+  inherited hard ceilings, setup `SubprocessError`, retained disposal errors,
+  nonblocking-pipe setup failure and restrictive-umask inventory/anchor modes.
+  Mocked launch paths created no child; fault injection is not platform proof.
+- The native hard-memory probe returned `ValueError: current limit exceeds
+  maximum limit` before allocation. No timeout/RSS substitute or permission
+  widening was introduced.
+- Harness defects were repaired without changing product expectations:
+  missing matrix-row collection, obsolete emitted-scorer pass expectations
+  after the memory guard, incidental error-wording assertions, a helper-name
+  typo and noncanonical `/var` probe paths. Canonical `/private/var` probes
+  proved the existing result writer valid; the unnecessary scorer edit was
+  reverted, and its failed probe evidence retained.
+- Repository closure command: `python3 reflective-prompt-library/plans/generate_index.py && make all`.
+  Its observed result is recorded in the private repair ledger.
+- The plan and report render in real Chromium with their tables/current bindings
+  present and no horizontal overflow. Pixel-level visual proof is **could-not-run**:
+  the screenshot helper timed out twice, and raw CDP capture timed out without
+  producing an artifact. DOM inspection is not a substitute for pixel proof.
+
+TWINS: searched `SourceFileLoader("candidate"` and single-case
+`mod.add(2, 3) == 5` checks across the repository and affected local sources —
+found 2 other sites: historical v1 consumer and v1 pilot driver.
+They remain preserved, rejected/non-authoritative history; prospective callers
+use the five-case diagnostic interface with separate protected-oracle admission.
+TWINS: searched `_is_valid_spend` and `math.isfinite(float(value))` - found 1 other site: the prospective v2 pilot driver. Its parser/spend overflow twin is repaired; 5,000-digit JSON and huge integer spend hold, while explicit finite USD 0 remains valid.
+
+
+### Remaining work, risks and human review needs
+
+The reachable offline code/measurement repairs do not designate a real host
+implementation, protect a genuine host oracle, authenticate actual capture
+coverage or prove tool-using worker isolation. Runtime guarantees belong to the
+accepted host. No validated native sandbox/hard-memory combination is available
+to this reference on any platform: its dispatch guard always holds, including
+known-good candidates. Option B cannot close TEST-001 as written; a separately
+approved, demonstrated replacement runtime or existing qualified host is required.
+TEST-001 remains open until a host-qualified implementation/version passes
+the selected consumer/scorer/golden procedure and frozen leak audit against
+actual authenticated host inputs.
+The golden-ledger procedure still has no designated executable; the
+acceptance-join executable is a TEST-002 dependency, not a TEST-001 hold.
+
+Stage-1 and TEST-002–004 remain unrun under the proposed campaign design.
+The named approver, host/capture and leak-audit owners, actual-host evidence
+producer/key/profile, scoped memory/capture evidence and separately enforced
+approved envelope are still missing. A zero-dollar local envelope is legitimate
+when explicitly granted, not automatically approved. The dated 2026-10-11
+checkpoint remains due and is not performed by this repair pass.
+
+**Decision:** offline protocol/mechanics evidence only; no campaign completion,
+host adoption, skill-effect claim or skill change. The broader dogfooding goal
+remains incomplete, without repeatedly re-asking the same authorization question.
+
+PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting your authorization
+
+## Dogfooding advisory repair closure (2026-10-09)
+
+### Goal, summary and authority
+
+Close every reachable advisory repair, then commit the verified repository records before continuing the roadmaps. Of 31 advisories, 18 required a valid or mixed repair and 13 were stale or wrong-premise findings closed without re-editing. The later user instruction authorizes this commit, **not a push**, host adoption, campaign calls, settings changes or skill promotion.
+
+### Files changed and current evidence
+
+Repository delivery: the dogfood Test Plan, this report and regenerated `reflective-prompt-library/index.json`. Executable repairs, regression controls, saved native/fault probes and receipts remain session-local; no runtime is added to TeaPrompt. Current source and receipt bindings are recorded in `local://dogfood-advisory-source-bindings-2026-10-09.json` and the private P0 manifest.
+
+| Current session-local source | SHA-256 |
+| --- | --- |
+| `dogfood-test001-host-v2-2026-10-08.py` | `426daa58cd581a0b916cf1d96f1f34c81446fd14198dd476d82287f2bfcd14d2` |
+| `dogfood-stage1-run-v2-2026-10-08.py` | `48bdf32ac452f3da8c9b40ea7050feb73206db1bd49cf99eb5d3e52f43482610` |
+| `dogfood-test001-host-v2-regression-2026-10-08.py` | `002f38275de0d7df3ba354a608004ddcc97bc92462301044a47a730a51f2f03f` |
+| `dogfood-security-native-policy-probe-2026-10-09.py` | `7c4af3f19874dd293ad42dbb6502a0c4f4d2144e332bc30a5a3afa112f98155e` |
+| `dogfood-security-fault-checks-2026-10-09.py` | `58f996b5c6c6c14bca8181aba1097afa78998628951be4a127a9f4cfff45c76a` |
+| `dogfood-advisory-parent-checks-2026-10-09.py` | `51be4ac3b70faf980635261742a9bdc4fc09df6c613ce3ad98bdf1d846735209` |
+
+### Implementation, acceptance status and spec-to-code traceability
+
+The preceding R1–R13 traceability table remains the requirement map. Current controls supersede the prior-snapshot evidence for R1/R2/R8/R11–R13: physical directory ancestry rejects path-spelling aliases and unknown containment; a fresh external verdict leaf is accepted without creating its parent; invalid timeouts return bounded serializable evidence. Diagnostic child rows have no expected-answer or success fields and cannot qualify correctness. Protected-oracle admission binds the actual independent executable, candidate hash and isolated numeric results, requiring at least four distinct undisclosed pairs beyond the five disclosed cases.
+
+For R5/R6/R13, prospective diagnostic-only evidence has its own incomparable state and holds a full arithmetic campaign before requests. Output directories are envelope/mode-specific; repeated same-mode runs hold, and the root is restored on success or exception. Historical and prospective classification fixtures are separate: the former keeps the original six comparisons; the latter excludes three diagnostic-only pairs. Historical model outputs are never regraded.
+
+For R2/R11, saved hash-bound scripts separately exercise the deny-default native policy and real **trusted-literal** lifecycle paths versus fake-Popen fault injection. The native wrapper retains the original Popen; only process-not-found proves death. Parent controls also exercise the actual external-anchor alias branch, not a different root-containment branch. All five pre-repair source snapshots and 12 historical source/receipt bindings match their preserved hashes.
+
+### Tests and checks run
+
+Commands use the session-local scripts named above and `dogfood-risk-offline-checks-2026-10-08.py`, `dogfood-security-followup-checks-2026-10-08.py`, `dogfood-stage1-classification-regression-2026-10-08.py`, consumer `--offline-self-test`, and driver `--audit-existing`.
+
+| Check | Observed result | Evidence limit |
+| --- | --- | --- |
+| Actual consumer CLI packets | 21 expected fail-closed outcomes | Synthetic packets; ten native candidate cases remain could-not-run |
+| Offline integration controls | 23 PASS | Owned non-model HTTP schedule; no model/provider call |
+| Security controls | 31 PASS | Protocol, parser, identity and sink checks; good candidate correctness held |
+| Native policy/lifecycle controls | 7 PASS | Fixed trusted literals only; normal exit, timeout/kill and pipe-failure cleanup observed |
+| Mocked fault controls | 7 PASS | No child created; not platform or candidate-safety proof |
+| Parent integration controls | 21 PASS | Actual sink/mode-path operations plus synthetic contract/errno controls |
+| Consumer self-check | 35 PASS | Synthetic protocol only; not worker/capture isolation |
+| Classification regression and historical audit | PASS | 18 allocations / six historical comparisons / 12 censored; separate prospective diagnostic state |
+| `ruff check --select F821` on all nine scoped Python files | PASS | Undefined-name check only |
+
+New receipts use `r2-2026-10-09` names and are retained as this round's evidence. The new corrected audit receipt is `dogfood-stage1-outcomes-corrected-r2-2026-10-09.json`; previous corrected and raw receipts remain unchanged. Repository gate and final rendered-document evidence bind the final record revision in the advisory ledger.
+
+### Failures, skipped checks and residual risks
+
+Integration found and repaired fresh-output rejection, nested same-run output reuse, wrapper recursion, false process-death evidence, and a regression fixture that conflated historical and prospective accounting. The final offline runs have no failed controls. Ten native candidate cases are **could-not-run**, never correctness or denial passes; the process-local trusted-literal probe bypass does not demonstrate hard-memory enforcement or authorize untrusted execution. No actual-host isolation, oracle provenance or campaign gain is claimed.
+
+TWINS: searched `globals()["WORK"]`, chained launch-wrapper capture and `except (ProcessLookupError, PermissionError)` across the repository and affected local sources - found 0 other live sites. The generated classification regression is the one other `complete != 6` site; it intentionally preserves historical accounting while separately asserting prospective diagnostic-only exclusions.
+
+### Remaining work, next action and human review needs
+
+Commit these verified repository records without pushing, then continue only unblocked roadmap duties. TEST-001 still needs a designated qualified host, pinned consumer/scorer/golden-ledger implementation, authenticated actual-host inventories and complete action/coverage evidence, independently protected oracle controls, and named host/capture and leak-audit owners. The current reference cannot execute candidates on any platform as written; selecting it cannot close that gate.
+
+Stage-1/TEST-002–004 still need the explicit campaign envelope, separately enforced session/model/reserve/spend ceilings, named roles and demonstrated worker/capture isolation with scoped memory/capture evidence. Local USD 0 is valid only when granted. The 2026-10-11 checkpoint is date-gated and remains due; no early checkpoint outcome, dormant-item adoption or direction change is inferred.
+
+PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting your authorization
 
