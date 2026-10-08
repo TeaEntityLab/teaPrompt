@@ -2566,3 +2566,203 @@ remain unchanged. Eight lint warnings and 35 historical hygiene warnings remain
 visible debt, not permission to weaken an oracle. Final-source verification and
 the resulting commit identity are retained in the delivery receipt.
 
+# Skill Dogfooding Experiment Plan (2026-10-08)
+
+## Goal and scope
+
+User direction: use this project's skills to govern the project, review skills
+through experiments, and improve correctness, performance, CoT and stability;
+plan experiments first. Deliverable:
+[the dated Test Plan](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md).
+Planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`.
+No experimental campaign, skill edit, runtime, registry admission, provider
+setting change, commit or push is authorized or performed by this planning work.
+
+## Implementation and acceptance criteria
+
+The project governed the design through dispatch, brief, Test Plan, review,
+risk and minimality contracts. Prior experiment records were recovered before
+choosing the pilot; historical failures were not re-run just to confirm them.
+The live catalog import observed 24 unique tasks, nine core workflows and ten
+packs. The plan maps all nine cores and all ten packs, but proposes initial
+model comparisons only for implementation, review and handoff.
+
+DG-01–08 map the user's goals to four prospective test cases: measurement
+mechanics, actual task outcomes, repeated/untouched confirmation, and successor
+behavior after handoff. Current-skill C/T utility, T0/T1 repair, and T0/T1
+efficiency are separate questions; no selection score becomes a final gain.
+CoT is bounded to an evidence-grounded public decision summary, not private
+thought disclosure or an assertion about the model's internal causal process.
+
+## Panel Consensus
+
+Two read-only perspectives reviewed draft SHA-256
+`1012ed006ba0fbd54ea0e89ede596e3caf5f0f3024d2adca3a9cbefc9680af94`.
+Both returned `AGREE WITH CHANGES`: experimental validity supplied seven
+findings; governance/actionability supplied six. They share a denominator
+finding. Agreement is advisory judgment, not independent empirical support.
+Complete reviews were recovered from the structured result and a session
+artifact after direct-message interfaces were unavailable.
+
+**Frame-test decision:** a known deterministic defect can use the ordinary
+authorized repair path; failed matched-host prerequisites warrant a blocked
+receipt, not an invalid model comparison. The pilot is a proposed small cut,
+not evidence that these three skills are weakest.
+
+## Required Wording Changes and Candidate Adoption Ledger
+
+These dispositions refine this plan only; none adopts a new skill contract.
+The disposable document consumer checks catalog/coverage/denominator structure,
+not the truth or efficacy of the proposed methodology.
+
+| ID | Review issue / disposition | Destination and evidence boundary |
+| --- | --- | --- |
+| DP-1 | Integrated: healthy sentinel, per-fixture good/bad controls, and retained task-level hold outcomes | TEST-001–004 and primary endpoint; future behavioral checks, not runs already performed |
+| DP-2 | Integrated: identical stripped fixtures, explicit incremental-policy permission, and blinded single-file overlay scoring | Treatment construction and TEST-002; host capability remains unverified |
+| DP-3 | Integrated: current-skill utility and efficiency confirmation, named C/T or T0/T1 noise reference | Stage 2 and decision rules; fixed small samples support only fixture-bounded conclusions |
+| DP-4 | Integrated: pre-oracle public summary, leak-audit owner, judge allocation and author-overlap disclosure | Measurement/manifest; no private-CoT, automatic-leak-rejection or judge-independence claim |
+| DP-5 | Partially accepted: stronger causal diagnosis, not blanket exclusion of shared-arm failures | Shared C/T failures remain unresolved; equality alone identifies neither a skill nor a non-skill cause |
+| DP-6 | Partially accepted: family-pinned timeouts and right-censoring, not an invented rehearsal p90 | Budget is proposed, not approved; a 300-second exposure ceiling is not measured completion latency |
+
+## Shared Findings, Disagreements and Residual Risks
+
+Both perspectives questioned contamination, denominators and readiness.
+Validity's strongest objection was that the original design could confirm a
+patch but not an unchanged skill's benefit; the revised question-specific
+confirmation path addresses that design gap without adding a third arm.
+Governance's strongest objection remains: valid matched-model, isolated,
+capped execution has not been demonstrated. Old mixed-model/bare-role receipts
+do not prove such a setup exists now, nor do they prove it is impossible.
+
+Socratic checks retained: can a post-hoc summary reveal private reasoning
+(no); what happens at a ceiling or inconclusive result (no forced candidate or
+larger N); can repeated small fixtures establish broad stability (no); can
+the proposed budget fund the fixed design (unknown); can offline mechanics
+be approved separately (yes, no model permission implied); can a rubric
+author be an independent judge (not claimed); can public tasks be memorized
+(residual risk requiring novel instances, not proof from a catalog canary).
+
+No reviewer re-approved the integrated snapshot. Main owns the corrections.
+Host/model feasibility, semantic judge availability, actual telemetry and
+private fixture adequacy are unverified execution prerequisites. Review does
+not grant spend, unattended tools, egress, installation or promotion.
+
+## Evidence Actually Checked and Verification
+
+Checked during planning: current revision and initial clean worktree; imported
+catalog/registries; cited prior records and live skill contracts; both complete
+review deliverables. Prior 1,548-test results remain historical evidence, not
+the verification result of this new plan.
+
+Final-source checks for this delivery: a disposable CommonMark/HTML consumer
+imports the catalog and verifies all mapped core seeds, ten pack dispositions,
+eight requirements, four planned cases and the 36/18/76 accounting; Chromium
+observes the rendered document; then
+`python3 reflective-prompt-library/plans/generate_index.py && make all`.
+Actual outputs and source digests are retained in the session delivery
+receipt; this command list alone is not proof of passage. Earlier managed
+screenshot timeouts remain a visual limit; no screenshot success is inferred.
+
+Files: the dated Test Plan, this existing report and regenerated
+`reflective-prompt-library/index.json`. No permanent prose-pinning test or
+campaign runner is added. Scope remains nine core skills plus ten packs.
+
+## Next action / Human Review
+
+Planning ends with a reviewed design, not model-efficacy findings. Before P0,
+obtain the named host/run/cost decision and freeze the private manifest.
+The proposed Stage-1 ceiling is 76 CLI invocations and USD 5, with actual
+approved spend zero until granted. If capacity cannot support the declared
+design, revise it explicitly before dispatch; never silently remove tasks
+or substitute the earlier mixed-model setup.
+
+## Plan advisory corrections (2026-10-08)
+
+User direction: “Fix.” Current-file triage found measurement and isolation
+gaps, not permission to run the campaign or change skills.
+
+| ID | Current finding / disposition | Repair and evidence boundary |
+| --- | --- | --- |
+| DP-A1 | Valid: single-file overlay hides unrelated workspace changes | TEST-002 requires independent host-owned whole-workspace/action evidence with writer/initiator provenance and an arm-neutral authority verdict. Functional overlay success alone cannot pass; independently host-written changes invalidate the trial rather than incriminate the worker. No real worker containment has been demonstrated |
+| DP-A2 | Partly stale: pre-oracle timing already existed; output separation and overlength handling were unspecified | Separate common `DECISION.md` reporting sink, final-session capture, full-output retention, 150 whitespace-word limit, and no truncation/re-elicitation. Normal skill deliverables keep their required sections; a handoff successor does not receive the measurement sidecar |
+| DP-A3 | Invalid numerical premise: the review's “under ~half” recurrence claim | Corrected calculation below; retain the current fixture-bounded threshold, report power as uncalibrated, and do not enlarge the campaign on this claim |
+| DP-A4 | Valid, extended after capture advisory: clean workers require both retrieval isolation and prevention of background capture/write-back | P0 covers services outside the worker profile, watched/log paths, approved capture exclusion or pause through delayed ingestion, scoped pre/post memory-store digests, and protected change/queue receipts. Session-end checks protect successors, later arms and judges. Independent host writes are invalid-host trials; negative canaries and historical capture failures alone do not prove isolation |
+| DP-A5 | Valid: the plan omitted the existing date-gated dependency | Linked the checkpoint runbook, outcome contract, exact after-date deadman boundary and usage convention. No early checkpoint outcome, recurrence count, demotion or adoption is performed |
+
+### DP-A4 capture-boundary follow-up (2026-10-08)
+
+Read-only host evidence confirms `~/.claude-mem/transcript-watch.json`
+watches `~/.codex/sessions/**/*.jsonl` with `context.mode: "agents"` and
+updates on `session_start` and `session_end`. The selected settings read
+returned `CLAUDE_MEM_TRANSCRIPTS_ENABLED: "true"` and an empty
+`CLAUDE_MEM_EXCLUDED_PROJECTS`. The advisory identifies cwd `AGENTS.md`
+write-back as the agents-mode sink and cites historical TASK-004 Cursor hook
+receipts; no hook or watcher is executed again in this correction.
+
+The local `CAPTURE_BROKEN` marker records an empty-stdin failure at
+`2026-05-31T10:37:23.634Z`; the latest date encoded in the saved watcher
+offset paths is `2026-06-04`. These are historical status clues, not a live
+health check. Treat this as a **dormant contamination risk**, not evidence
+that capture currently works, that a past campaign leaked, or that a broken
+service provides a durable isolation boundary.
+
+Decision: include external capture services and delayed ingestion in the
+prospective prerequisite and manifest. Session logs stay outside watched
+paths or under an explicitly approved, durable exclusion/pause arrangement;
+resuming capture must not ingest retained experiment logs. Scoped, consistent
+memory-store snapshots/digests and protected change receipts bracket the
+run; boundary checks precede successors, later arms and judges. A changed
+global digest alone is not campaign attribution when other sessions write.
+
+An independently host-written fixture file invalidates the trial as a
+host-configuration failure, not a worker failure. Writer and initiating
+actor evidence distinguish it from a worker-triggered forbidden write.
+Unknown provenance cannot pass; mixed causes remain recorded. Invalid-host
+rows retain allocation counts, costs and raw receipts, but cannot support a
+skill-effect score or a silent replacement. Contamination of persistent
+memory also blocks downstream use, including checkpoint evidence checks
+#2/#8; it does not become real-use recurrence.
+
+TWINS: searched `Worker-side isolation prerequisite|instruction/discovery/memory|out-of-allowlist mutation|capture-service|transcript-watch|CAPTURE_BROKEN` - found 1 other file: `review/final-report.md` (DP-A4). The plan's prerequisite, manifest, authority outcome, denominator and handoff consumer are updated together. No host configuration, service, memory contents, skill, usage count or checkpoint outcome is changed. Disposable document/consumer checks cover this repair; actual capture prevention and memory-store integrity remain unrun host prerequisites.
+
+
+### Probability correction and decision rationale
+
+The archived validity review's Q3 claimed that a 70% recurrence probability
+makes “at least two of three instances, each at least two of three repeats”
+less than about half **before** requiring treatment 9/9. Under the explicit
+toy assumption of independent, identically distributed reference misses
+with probability `p = 0.7`, let `q = 3*p**2*(1-p) + p**3`:
+
+| Reference-arm event | Calculation | Probability |
+| --- | --- | --- |
+| At least two misses in three repeats for one instance | `q` | 0.784 |
+| Original review's event: at least two of three instances meet that condition | `3*q**2*(1-q) + q**3` | 0.880187392 |
+| Current rule: both of two challenge instances meet that condition | `q**2` | 0.614656 |
+
+The review's numerical claim is rejected, not used to retune sample size.
+These are conditional arithmetic checks, not observed recurrence, statistical
+power, false-positive control or the joint probability of confirmation:
+treatment 9/9 is a separate condition with no established success rate or
+independence. Correlated repeats and heterogeneous fixtures make the toy
+assumptions unreliable for real power. Preserve the conservative action on
+uncertainty—an inconclusive result—not an unsupported “powered” claim.
+
+### Verification and unchanged authority
+
+The correction is limited to the Test Plan, this report and regenerated
+discovery metadata. A disposable consumer renders the changed documents,
+checks their catalog/coverage and linked checkpoint contract, and exercises
+the existing pure deadman predicate at the date boundary. Illustrative
+offline controls may demonstrate overlay information loss and sidecar
+handling; they are not TEST-001–004 campaign results, model-role containment,
+ambient-skill isolation or scorer-host readiness. Actual outputs and source
+digests belong in the correction's delivery receipt, after the smoke and
+`python3 reflective-prompt-library/plans/generate_index.py && make all`.
+
+No campaign trial, worker contamination canary, skill or registry change,
+usage-log entry, checkpoint decision, commit or push is performed. The
+proposed 76-invocation/USD 5 envelope remains unapproved; approved spend stays
+zero. Previous screenshot-capture failures remain a visual limit, not
+evidence of screenshot success in this correction.
+

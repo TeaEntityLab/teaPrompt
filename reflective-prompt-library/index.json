@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-08T10:18:26.892350",
+  "generated_at": "2026-10-08T11:46:29.515198",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -89,6 +89,7 @@
             "dormant-items-user-directed-adoption-2026-07-12.md",
             "mgd-form-theory-survey-2026-10-02.md",
             "jev-architecture-synthesis-survey-2026-09-19.md",
+            "skill-dogfood-test-plan-2026-10-08.md",
             "openai-model-guidance-survey-2026-09-10.md",
             "harness-1-state-ledger-research.md",
             "managed-skill-promotion-panel-record-2026-07-11.md",
@@ -5777,6 +5778,107 @@
       ],
       "line_count": 108,
       "char_count": 18571
+    },
+    {
+      "path": "reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skill-dogfood-test-plan-2026-10-08",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agentflow-8.2-delta-survey-2026-09-13.md#af82-9--af82-14-behavioral-probe",
+          "self-governance-dogfood-2026-09-24.md",
+          "runtime-skills-experiments-2026-10-05.md",
+          "runtime-skills-task001-ticket-2026-10-06.md#task-005-pilot--user-granted-2026-10-06-executed-same-day",
+          "../../review/final-report.md#recorded-rationale-and-commit-authorization-2026-10-08",
+          "../SKILL_INSTALLATION.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "tests/test_checkpoint_2026_10_11.py",
+          "flow-pack-usage-log.md#convention",
+          "../../review/final-report.md#skill-dogfooding-experiment-plan-2026-10-08"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skill Improvement Through Dogfooding — Test Plan — 2026-10-08"
+        },
+        {
+          "level": 2,
+          "text": "Goal and brief"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Requirements and acceptance coverage"
+        },
+        {
+          "level": 2,
+          "text": "Design: arms, sampling, and controls"
+        },
+        {
+          "level": 3,
+          "text": "Treatment and control"
+        },
+        {
+          "level": 3,
+          "text": "Pilot and expansion"
+        },
+        {
+          "level": 3,
+          "text": "Coverage beyond the pilot"
+        },
+        {
+          "level": 2,
+          "text": "Planned test cases"
+        },
+        {
+          "level": 3,
+          "text": "TEST-001: Measurement mechanics cannot manufacture a gain"
+        },
+        {
+          "level": 3,
+          "text": "TEST-002: Native-task correctness and evidence-grounded decisions"
+        },
+        {
+          "level": 3,
+          "text": "TEST-003: Repetition, prompt variation, and untouched confirmation"
+        },
+        {
+          "level": 3,
+          "text": "TEST-004: Handoff survives evidence withdrawal"
+        },
+        {
+          "level": 2,
+          "text": "Measurement and decision rules"
+        },
+        {
+          "level": 2,
+          "text": "Execution readiness and risk gate"
+        },
+        {
+          "level": 2,
+          "text": "Minimal execution slices and usage"
+        },
+        {
+          "level": 2,
+          "text": "Review and planning verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and next action"
+        }
+      ],
+      "line_count": 203,
+      "char_count": 45420
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -18541,5 +18643,5 @@
       "char_count": 28518
     }
   ],
-  "total_files": 205
+  "total_files": 206
 }
