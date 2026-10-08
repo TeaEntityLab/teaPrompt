@@ -23,6 +23,12 @@ Expected output shape:
 ## Delta table (T − C)
 - B001: raw structural difference +100 (scorer b001-arithmetic) — withheld as a skill-effect claim
 
+## Treatment construction
+- artifact: `<skills-root>/reflective-brief/SKILL.md`, revision/hash pinned in the run manifest
+- payload: full skill text; delivery slot: user prompt
+- composition: base task text, newline, then skill text; control receives only the base text
+- task-to-skill mapping and composition rule fixed before either arm runs; model, CLI, fixture, and caps matched
+
 ## Measurement preflight
 - noise_floor_basis: single-run caveat (one run per arm; no repeated-baseline spread)
 - failure_categorization: unresolved — noise, grader error, harness failure, and task impossibility are not ruled out, so the difference is not attributed to the skill layer
@@ -65,7 +71,7 @@ Expected output shape:
 Hard stop applied: the run is NOT reported as an isolated skill effect.
 Re-run with matched models and fresh contexts, or keep the `composite` label.
 
-## Example 3 — Hold arm scored separately; discards kept for audit
+## Example 3 — Hold fixture scored separately; discards kept for audit
 
 Input:
 
@@ -76,9 +82,9 @@ Score the C-hold fixture row and one malformed invocation (missing prompt file).
 Expected output shape:
 
 ```markdown
-## Hold arm
+## Hold fixture
 - C-hold: stale binding → exit 4, zero dispatch — scored separately, excluded
-  from the repair-pair denominator (n=2, not n=3).
+  from the task-pair denominator (two control/treatment task comparisons, n=2, not n=3).
 
 ## Discards
 - task B003 arm T: malformed (missing prompt file) → re-run correctly;
@@ -86,3 +92,12 @@ Expected output shape:
 ```
 
 Had the hold fixture dispatched work, the run would halt (containment failure).
+
+## Example 4 — Deterministic self-run with distinct timestamps
+
+Two stub runs produce identical candidates and scores, but different
+`observed_at` values. Keep both raw ledgers. Compare rows after removing only
+that timestamp field: equality passes; a changed candidate hash, score,
+scorer, arm order, identity, or caps fails. Timestamp normalization must not
+hide a measurement or setup difference. This is a mechanics check, not a
+model-utility comparison.

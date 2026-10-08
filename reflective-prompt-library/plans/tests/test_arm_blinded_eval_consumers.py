@@ -8,6 +8,7 @@ checks run the template — never the prose.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import subprocess
@@ -243,3 +244,134 @@ def test_dispatched_hold_blocks_scoring(tmp_path: Path):
     assert result.returncode == 4, result.stderr
     assert "hold fixture dispatched work" in result.stderr
     assert not (tmp_path / "results" / "scores.jsonl").exists()
+
+
+@pytest.mark.parametrize(
+    "key,value",
+    [
+        ("arm_dirs", []),
+        ("arm_dirs", {"A-code": []}),
+        ("arm_dirs", {"A-code": {"control": 7, "treatment": "unused"}}),
+        ("order", []),
+        ("order", {"A-code": [1, "treatment"]}),
+        ("arms", ["control", 7]),
+        ("arms", ["control", "control"]),
+        ("pairs", {}),
+        ("pairs", [{}]),
+        ("pairs", [{"id": 7}]),
+        ("pairs", [{"id": "../outside", "candidates": ["calc.py"], "oracle": ["python3", "{CAND}"]}]),
+        ("pairs", [{"id": "A-code", "candidates": [7], "oracle": ["python3", "{CAND}"]}]),
+        ("pairs", [{"id": "A-code", "candidates": ["calc.py"], "oracle": [7, "{CAND}"]}]),
+        ("scorer_code", [{}]),
+        ("blinded", 7),
+        ("discarded", {}),
+        ("hold", []),
+        ("hold", {}),
+        ("hold", {"pair": "C-hold", "exit": 0, "dispatched": False, "verdict": "stale"}),
+        ("hold", {"pair": "C-hold", "exit": 4, "dispatched": False, "verdict": "passed"}),
+        ("hold", {"pair": "C-hold", "exit": 4, "dispatched": 0, "verdict": "stale"}),
+    ],
+)
+def test_malformed_config_refuses_without_dispatch_or_traceback(tmp_path: Path, key, value):
+    cfg = _fixture(tmp_path, with_extra=True)
+    cfg[key] = value
+    result = _run(tmp_path, cfg)
+    assert result.returncode == 4, result.stderr
+    assert "Traceback" not in result.stderr
+    assert not (tmp_path / "evidence" / "dispatch-count.txt").exists()
+    assert not (tmp_path / "results" / "scores.jsonl").exists()
+
+
+@pytest.mark.parametrize("path_kind", ["relative", "absolute", "symlink"])
+def test_candidate_escape_refuses_without_copying_or_scoring(tmp_path: Path, path_kind: str):
+    cfg = _fixture(tmp_path, with_extra=True)
+    outside = tmp_path / "arms" / "A-code" / "outside.py"
+    outside.write_text("def add(a, b):\n    return a + b\n", encoding="utf-8")
+    if path_kind == "relative":
+        cfg["pairs"][0]["candidates"] = ["../outside.py"]
+    elif path_kind == "absolute":
+        cfg["pairs"][0]["candidates"] = [str(outside)]
+    else:
+        candidate = tmp_path / "arms" / "A-code" / "control" / "calc.py"
+        candidate.unlink()
+        candidate.symlink_to(outside)
+    result = _run(tmp_path, cfg)
+    assert result.returncode == 4, result.stderr
+    assert "Traceback" not in result.stderr
+    assert not (tmp_path / "evidence" / "dispatch-count.txt").exists()
+    assert not list((tmp_path / "blinded").glob("*"))
+
+
+def test_missing_scorer_preserves_failure_receipt_not_a_product_score(tmp_path: Path):
+    cfg = _fixture(tmp_path)
+    cfg["pairs"][0]["oracle"][0] = str(tmp_path / "unavailable-scorer")
+    result = _run(tmp_path, cfg)
+    assert result.returncode == 4, result.stderr
+    assert "Traceback" not in result.stderr
+    failures = [row for row in _scores(tmp_path) if row.get("error")]
+    assert len(failures) == 1
+    assert failures[0]["exit"] is None
+    assert failures[0]["error"] == "FileNotFoundError"
+    note = json.loads((tmp_path / "results" / "run-note.json").read_text(encoding="utf-8"))
+    assert note["scorer_error"]
+
+
+def test_scorer_timeout_preserves_partial_output_and_stops(tmp_path: Path, monkeypatch):
+    cfg = _fixture(tmp_path)
+    (tmp_path / "fixtures" / "A-code" / "oracle.py").write_text(
+        "import time\nprint('started', flush=True)\ntime.sleep(2)\n", encoding="utf-8"
+    )
+    cfg_path = tmp_path / "config.json"
+    cfg_path.write_text(json.dumps(cfg), encoding="utf-8")
+    namespace = {"__name__": "extracted_blinded_eval"}
+    exec(compile(_scaffold(), "run_blinded_eval.py", "exec"), namespace)
+    namespace["SCORER_TIMEOUT_S"] = 0.2
+    monkeypatch.chdir(tmp_path)
+    assert namespace["main"](str(cfg_path)) == 4
+    failures = [row for row in _scores(tmp_path) if row.get("error")]
+    assert len(failures) == 1
+    assert failures[0]["exit"] is None
+    assert failures[0]["error"] == "TimeoutExpired"
+    assert failures[0]["stdout"].strip() == "started"
+    assert len(_scores(tmp_path)) < 4
+
+
+def test_final_state_hashes_bind_extracted_contents(tmp_path: Path):
+    cfg = _fixture(tmp_path)
+    result = _run(tmp_path, cfg)
+    assert result.returncode == 0, result.stderr
+    note = json.loads((tmp_path / "results" / "run-note.json").read_text(encoding="utf-8"))
+    final = note["final_state_hashes"]["A-code"]
+    assert final["control"] == hashlib.sha256(b"calc.pydef add(a, b):\n    return a - b\n").hexdigest()
+    assert final["treatment"] == hashlib.sha256(b"calc.pydef add(a, b):\n    return a + b\n").hexdigest()
+    assert final["control"] != final["treatment"]
+
+
+def test_missing_config_argument_reports_usage_without_traceback(tmp_path: Path):
+    result = subprocess.run(
+        [sys.executable, str(_runner(tmp_path))],
+        cwd=tmp_path, capture_output=True, text=True, timeout=10,
+    )
+    assert result.returncode == 4, result.stderr
+    assert "Usage:" in result.stderr
+    assert "Traceback" not in result.stderr
+
+
+@pytest.mark.parametrize("stream", ["stdout", "stderr"])
+def test_scorer_output_retains_early_labels_for_full_output_audit(tmp_path: Path, stream: str):
+    cfg = _fixture(tmp_path)
+    (tmp_path / "fixtures" / "A-code" / "oracle.py").write_text(
+        f"import sys\nprint('control ' + 'x' * 2500, file=sys.{stream})\n", encoding="utf-8"
+    )
+    result = _run(tmp_path, cfg)
+    assert result.returncode == 0, result.stderr
+    sealed = _sealed(tmp_path)["candidates"]
+    expected_leaks = {
+        name for name, meta in sealed.items() if meta["pair"] == "A-code"
+    }
+    detected_leaks = {
+        row["candidate"] for row in _scores(tmp_path)
+        if any(token in (row["stdout"] + row["stderr"]).lower()
+               for token in ("control", "treatment"))
+    }
+    assert detected_leaks == expected_leaks

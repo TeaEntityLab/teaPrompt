@@ -13,7 +13,7 @@ Produce session handoff summaries when switching models, tools, agents, or sessi
 
 ## Acceptance Criteria
 
-- Output follows the handoff field structure without narrative drift.
+- Output follows the handoff field structure without narrative drift; summarized state preserves named invalidations and the decisions or steps they affect, rather than silently retaining withdrawn support as verified.
 - Do-not-do guidance explicit when blast-radius warrants `reflective-risk`.
 
 ## Falsifiability

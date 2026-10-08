@@ -656,3 +656,20 @@ This addendum is wrong or must be re-litigated if: (1) any of T0/T1/T2 in paste-
 | Guard extended (addendum shape, correction rows, foreign tokens incl. verdict literal and vendor tier strings) | `verified` | `plans/tests/test_agentflow_survey_record.py` |
 | Indexes amended | `verified` | `PROJECT_KNOWLEDGE.md` Decision Index; case-study Comparison and State Ledger rows |
 | Repository verification | `verified` | `make all` after the changes |
+
+## Guard mechanism supersession (2026-10-08)
+
+The September adoption decisions and completion receipts above remain dated
+history. AF-19's original source-fidelity sentence is preserved verbatim in
+`reflective-handoff-retro`; AUD-2 adds invalidations and dependent decisions in
+an adjacent obligation, not a replacement of AF-19.
+
+The AF/EP/CX free-form sentence-presence checks were retired on 2026-10-08
+rather than re-pinned to revised prose. This supersedes the exact-prose portion
+of the earlier guard descriptions, not the adoption decisions or their evidence.
+Record identity, ledger dispositions, clean-room boundaries, and other
+structural checks remain. `SS_ADOPTED` concerns other surfaces, not the
+Continuation Packet. Repository checks do not prove installed-agent adherence.
+Current repair and consumer verification are recorded in
+[the dated follow-up](../../review/final-report.md#delayed-advisory-follow-up-2026-10-08).
+

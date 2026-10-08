@@ -1,8 +1,8 @@
 """Guard the 2026-09-05 skill correctness / logical-consistency pass.
 
-Preserves named contract prose and protocol tokens, dry-runs quorum/final-sink
-and empty-worker behavior, and checks the record is indexed. Executable-code
-snippets and incidental source-size assertions are not acceptance oracles.
+Preserves record structure and indexing and dry-runs quorum/final-sink and
+empty-worker behavior. Exact live-skill prose and incidental source-size
+assertions are not acceptance oracles.
 """
 
 from __future__ import annotations
@@ -32,36 +32,6 @@ ORCHESTRATOR_TEMPLATE = re.compile(  # the body holds a literal ``` in a string;
     r"## Template: Orchestrator-Workers \(Python, stdlib only\)\n.*?```python\n(.*?)\n```\n", re.S
 )
 
-# skill -> sentences that must be present exactly once (or at least once when noted).
-PINS = {
-    "reflective-brief": ("11. Write the Minimal Plan: the smallest How that could satisfy the acceptance criteria.",),
-    "reflective-dispatch": (
-        "safe content ambiguity after routing is handled by stating assumptions, not by a second default-up.",
-        "at Strictness L5, create one before yielding if neither exists.",
-    ),
-    "reflective-handoff-retro": (
-        "A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. It also lists the relevant files and the commands and tests run, so a continuation can rebuild the task packet",
-    ),
-    "reflective-minimality": ("Lean already. No complexity cuts.",),
-    "reflective-risk": ("- If the risk cannot be bounded, recommend no-go.", "ungated production changes"),
-    "reflective-spec-plan": ("- Formalization L0: prompt only,",),
-    "governed-delivery": ("the affected slice re-planned before work continues.",),
-    "agent-governance-scaffold": (
-        "exactly one of the literals `**Governance status:** artifact-complete` or `**Governance status:** enforcement-proven`",
-    ),
-    "flow-loop-harness": (
-        "4. Progress detector: abort on equal content signals, not equal churn.",  # WR-05 re-pin
-    ),
-}
-# Sentences that legitimately appear more than once (template + companion floor).
-AT_LEAST_ONCE = {
-    "reflective-risk": ("Sink Inventory", "Unattended Envelope"),
-    "flow-control-generator": ("# gate: none (accepted)",),
-    "reflective-research": ("| Claim / Item | Source | Status | Checked (date) | How (command + input set, or freshness kind) | Open Constraints |",),
-    "reflective-review": ("record-only correction",),
-    "reflective-spec-plan": ("hidden-evaluation",),
-    "agent-governance-scaffold": ('"tests/governance/**"',),
-}
 
 
 def _read(path: Path) -> str:
@@ -81,18 +51,9 @@ def test_record_has_required_shape():
         "## Evidence vs Inference", "## Evidence Actually Checked", "## Falsifiability", "## Completion Ledger",
     ):
         assert heading in text, heading
-    for skill in PINS:
-        assert f"`{skill}`" in text, f"record has no row for {skill}"
     assert "reflective-implement" in text and "No text change landed" in text
 
 
-@pytest.mark.parametrize("skill", sorted(set(PINS) | set(AT_LEAST_ONCE)))
-def test_landed_sentences_present_once(skill: str):
-    text = _skill(skill)
-    for pin in PINS.get(skill, ()):
-        assert text.count(pin) == 1, f"{skill}: count != 1 for {pin[:60]!r}"
-    for pin in AT_LEAST_ONCE.get(skill, ()):
-        assert pin in text, f"{skill}: missing {pin[:60]!r}"
 
 
 

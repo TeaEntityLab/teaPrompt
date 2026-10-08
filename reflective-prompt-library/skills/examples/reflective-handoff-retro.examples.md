@@ -72,3 +72,27 @@ Expected output shape:
 ## Revalidate
 - dated, changeable claim and its current authoritative source
 ```
+
+## Example 4
+
+Input:
+
+```text
+Summarize this ledger for continuation: support A justified decision D;
+later evidence retracted A, so D and its dependent publish step need review.
+```
+
+Expected continuation state:
+
+```markdown
+## Current State
+- A retracted; D affected; the dependent publish step is held.
+## Next Recommended Action
+- Revalidate D using current support before permitting the publish step.
+## Do Not Do
+- Treat the earlier A-backed decision as still verified after compaction.
+```
+
+The packet keeps the invalidation and its dependency, not merely the old
+decision or an undifferentiated “unknown.” This is an illustrative handoff,
+not evidence of an agent or runtime executing revalidation.

@@ -50,7 +50,7 @@ Escalation:
 
 Use when switching tools, agents, models, sessions, or context windows.
 
-When the session kept a State Ledger (`reflective-implement`), a research ledger (`reflective-research`), or a loop ledger (`flow-loop-harness` state files), attach it under `Files / Artifacts` — or summarize it only after the Continuation Packet check below confirms every identifier, count, command, and open unknown survived — instead of re-deriving state from the transcript.
+When the session kept a State Ledger (`reflective-implement`), a research ledger (`reflective-research`), or a loop ledger (`flow-loop-harness` state files), attach it under `Files / Artifacts` — or summarize it only after the Continuation Packet check below confirms every identifier, count, command, and open unknown survived, including named invalidations and their affected decisions or steps — instead of re-deriving state from the transcript.
 
 If an external mutation's outcome is still unknown, the handoff must preserve
 the operation ID, exact parameter/resource/version binding, dispatch and receipt
@@ -81,6 +81,8 @@ success.
 ### Continuation Packet
 
 A continuation packet carries the spec version, the State Ledger, oracle manifest status, open failure signatures, and named unknowns. It also lists the relevant files and the commands and tests run, so a continuation can rebuild the task packet (`reflective-implement`, `governed-delivery`). Use it as the handoff payload. Before handing it off, check the packet against its source artifacts for every identifier, count, command, and open unknown it must carry; a compaction that drops one has lost state, whatever its length.
+
+It also carries named invalidations — claims or supports refuted, retracted, or superseded since recording, with the decisions or steps depending on them — and includes those invalidations and dependency links in the source-fidelity check.
 
 ## Retro Workflow
 

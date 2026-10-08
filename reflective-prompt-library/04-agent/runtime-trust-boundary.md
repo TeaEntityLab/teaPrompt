@@ -142,6 +142,10 @@ Rules:
 - An unknown outcome needs an owner, next action, deadline, attempt/cost budget,
   audit trail, and a durable unresolved/abandoned disposition when certainty is
   impossible.
+- An integrity, checksum, chain, or audit-trail claim names the covered fields
+  and encoding. Field integrity does not establish source/actor authenticity
+  or log completeness; stronger claims need separate evidence, including a
+  trusted tail anchor for completeness. Enforcement remains host-owned.
 
 ## 5. Context Assembly Check
 

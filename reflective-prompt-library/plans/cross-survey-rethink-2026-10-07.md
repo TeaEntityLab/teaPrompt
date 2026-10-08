@@ -6,34 +6,34 @@
 
 User instruction: "Rethink all known surveyed features in plans in parallel. Try to find out something we don't implement yet and worthy it."
 
-This record re-examines the deferred/held/record-only candidate ledgers across the `plans/` corpus (81 ledger-bearing documents, ~45 surveys) against the installed surface as of 2026-10-07 — post the five domain-pack admissions (`headless-agent-cli-contract`, `arm-blinded-eval-harness`, `acceptance-join-validator`, `golden-benchmark-runner`, `router-trace-linter`, commits `8f610df`/`dfa1789`).
+The original review reported 81 ledger-bearing documents and roughly 45 surveys in the `plans/` corpus; that historical count is not a fresh inventory for this follow-up. It compared deferred/held/record-only candidates against the installed surface after the five domain-pack admissions (`headless-agent-cli-contract`, `arm-blinded-eval-harness`, `acceptance-join-validator`, `golden-benchmark-runner`, `router-trace-linter`, commits `8f610df`/`dfa1789`).
 
 ## Method
 
 
 1. Enumerated all `Candidate Adoption Ledger` tables and extracted every row whose disposition is not `Adopted`/`Rejected` (deferred, held, record-only, study-only, partial).
 2. Cross-checked each surviving candidate against current installed surfaces — including the five packs admitted 2026-10-06, which post-date most ledgers.
-3. Applied each candidate's own recorded reopen trigger as the test, not a re-derived judgment.
+3. Compared candidates with their recorded reopen triggers, separately from explicit user authorization. RTH-1 was adopted under user direction before a named misreading event was demonstrated.
 
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Status | Evidence | Reopen trigger / falsifier |
 | --- | --- | --- | --- | --- |
-| RTH-1 | Eval measurement-discipline repair: `golden-benchmark-runner` + `arm-blinded-eval-harness` must name noise floor, failure categorization, and selection-vs-final separation | Adopted in place 2026-10-07 (user direction) | ECT-2 / RRSI-5 / ECT-4 / RRSI-11 reopen triggers now satisfied by the existence of owned eval harnesses; zero grep hits for the diagnostic vocabulary in `skills/`; TASK-005 n=1/mixed-arm confound | Adoption requires explicit user direction (bare rethink carries no adoption direction, DS-1) |
+| RTH-1 | Eval measurement-discipline repair: `golden-benchmark-runner` + `arm-blinded-eval-harness` name noise floor, failure categorization, and selection-vs-final separation | Adopted in place 2026-10-07 (user direction) | Owned comparison-harness surfaces now exist (repair precondition); TASK-005 disclosed n=1/mixed-arm confounds, not a completed noise-for-improvement misreading. Adoption was prophylactic under explicit user direction, not proof that ECT-2/RRSI-5/ECT-4/RRSI-11 triggers fired. | Bare rethink carries no adoption direction (DS-1); retain the original event-based triggers, without inventing recurrence. |
 | RTH-2 | Tenth core skill for eval discipline | Rejected | In-place repair of the two existing packs is the named smallest shape; core frozen at nine | — |
 | RTH-3 | Import RRSI annealed-budget / critic-leakage / numeric-threshold machinery | Rejected | Benchmark-integrity machinery for evolve-measured loops; wrong substrate | — |
 
 ## The Finding
 
-**One candidate class now has a fired reopen condition that did not exist when the ledgers were written: measurement diagnostic discipline for eval harnesses (ECT-2 / RRSI-5 / RRSI-11 / ECT-4).**
+**The admitted comparison packs provided an in-place repair surface, not evidence that the event-based reopen conditions had fired.**
 
 - **ECT-2** (`coordinate-codex-tasks-eval-survey-2026-09-30`): reopen = "a named local eval run mistakes noise, grader error, harness failure, or task impossibility for product improvement; consider the smallest in-place repair."
 - **RRSI-5** (`rrsi-survey-2026-09-30`): same trigger — "a named local eval mistakes noise for improvement; smallest in-place repair at that harness surface."
 - **ECT-4 / RRSI-11**: untouched-final separation — reopen = "a named eval-driven optimization needs a reportable final-gain claim."
 
-When these were written (2026-09-30) TeaPrompt had no owned eval harness at all — they were Record-only/Adjacent because there was no harness surface to repair. On 2026-10-06 we admitted two: `arm-blinded-eval-harness` and `golden-benchmark-runner`. TASK-005's own honesty record shows why the gap is real: n=1 arms, mixed models, mixed guidance, scorer not arm-blinded at extraction — the harnesses run comparisons but have **no noise-floor preflight, no stall/failure categorization, and no selection-vs-final-test separation contract**. The orchestration exists; the measurement discipline the surveys named is missing. Grep confirms: zero hits for `noise floor|held-out|stall categor|within-noise|headroom` across `skills/`.
+The two comparison domain packs were admitted 2026-10-06. TASK-005 disclosed n=1 arms, mixed models/guidance, and non-blinded extraction; those honest limits are a near-miss avoided, not a recorded misattribution. The pre-adoption review identified missing explicit noise-floor, failure-categorization, and selection-vs-final requirements in these packs. Its broad zero-hit scan is not current evidence and is not used here to claim absence across all skills.
 
-This is the "smallest in-place repair" the triggers named: tighten `golden-benchmark-runner` (or the shared Methods text) so a run report must name (a) the noise floor basis — repeated-baseline or documented single-run caveat, (b) failure categorization — a delta is not attributable to the treatment until noise / grader error / harness failure / task impossibility are ruled out, (c) selection-vs-report separation — the score that selected a winner is not a reportable final gain. Same repair class as AF-2/EP-6 wording fixes: a contract that would otherwise permit exactly the failure it exists to prevent (a user mistaking an n=1 delta for improvement — which we just narrowly avoided only by manual honesty disclosure).
+Under explicit user direction on 2026-10-07, RTH-1 tightened the existing packs instead of adding a surface. The live golden runner now states measurement preflight in Methods 8 and the corresponding Never clauses; the blinded harness states the attribution/final-evaluation limits and carries `noise_floor_basis`, `failure_categorization`, and `selection_vs_final` in CONFIG and the run note. This is preventive contract maintenance, not an observed skill-effect or final-gain result.
 
 ## Other Surviving Candidates — Why Not Them
 
@@ -58,8 +58,71 @@ This is the "smallest in-place repair" the triggers named: tighten `golden-bench
 
 ## Evidence vs Inference
 
-Observed: the two new packs contain no noise-floor/stall/final-separation text (grep, 2026-10-07); the ledgers' reopen triggers quote above; TASK-005's n=1/mixed-arms confound is recorded in `local://runtime-skill-planning-evidence-2026-10-06.json` and this session's summary. [INFERENCE] That the repair is "in-place in golden-benchmark-runner + arm-blinded-eval-harness Methods/Output" rather than a new surface — smallest satisfying the trigger.
+Observed: the live contracts now contain noise-floor, failure-categorization, and selection-vs-final requirements; the event-based trigger texts are quoted above; TASK-005's mixed-model/single-run confounds remain disclosed in its ticket and receipts. The pre-adoption gap is historical, not the current state. [INFERENCE] In-place repair was the smallest useful preventive shape under explicit user direction; harness existence alone neither fires the original triggers nor supplies recurrence evidence.
 
 ## Falsifiability
 
-This recommendation is wrong if: (a) a grep of either pack shows the diagnostic already stated; (b) a local eval report already commits a noise-for-improvement misreading and was caught by the existing contract text (showing it suffices); (c) the admission record shows the packs were designed never to emit comparative claims (then the repair is cosmetic).
+The original gap claim would be wrong if the exact pre-adoption pack revisions already carried all three obligations; post-adoption text does not refute a historical gap. The preventive-shape judgment is wrong if a concrete run shows the requirements unnecessary or insufficient. A claim that a reopen trigger fired needs the named misreading or reportable-final-gain event that the original ledger specified; none is established by admitting a harness or by TASK-005's honest confound disclosure.
+
+## Latest-survey refresh (2026-10-08)
+
+User direction: “fix all and review the skills or docs to update by newest
+surveys; rethink in parallel,” then “until nothing to do.” This permits
+bounded repairs to existing surfaces, not a new core skill, pack, owned
+runtime, provider campaign, commit, or push.
+
+Three read-only slices reviewed evidence/provenance, workflow composition,
+and eval governance. Main integrated the findings; reviewer agreement is
+advisory, not independent experimental evidence or approval by majority.
+The inputs were the dated Semantica, System Prompts Leaks, Diagram Design,
+Matt Pocock delta, pstack/Matt–Lauren, and retained Agentflow/Firstmate
+records, not a fresh upstream re-survey.
+
+| Finding / candidate | Disposition and destination | Evidence / verification |
+| --- | --- | --- |
+| SL-1: RTH-1 state and trigger overclaim | Corrected this record and its project-knowledge pointer; pre-adoption gaps are historical, adoption remains user-directed preventive maintenance. | Live comparison contracts carry the requirements; admitting a harness is not the event named by the original triggers. |
+| SL-2 / SL-5 / SL-6: malformed CONFIG, candidate escape, incomplete hold validation | Repaired the blinded harness before copying/scoring; relative/absolute/symlink escape and invalid hold receipts refuse with exit 4. Launch failure/timeout retain execution-error evidence, not product-failure scores. | Regression reproduction originally had 25 failures; standalone emitted-program negatives now refuse without dispatch or traceback. |
+| SL-3 / SL-4: misleading hashes and nonexistent invocation log | Clean cutover to `final_state_hashes`; caller owns pre-dispatch clone equality. Audit the emitted `scores.jsonl` stdout/stderr, retained in full so early labels cannot disappear under truncation. | The full-output regression failed before the fix; standalone stdout/stderr controls retain 2,509 characters and expose the early label to the caller audit. |
+| SL-7 / SL-8 / SL-9: golden determinism, treatment construction, denominator | Normalize only `observed_at`, retain original receipts, predeclare exact treatment artifact/composition, and define the task-pair denominator. Updated live skill and examples. | Two local `cat` calls produce a timestamp-only difference; normalization accepts it but rejects a changed score. This is stub mechanics, not model utility. |
+| AUD-2: summarized invalidations | Extend `reflective-handoff-retro` Continuation Packet and the context-handoff lens; preserve withdrawn support and affected decisions/steps, with an illustrative example. | Actual rendered example preserves “A retracted; D affected” and the held dependent publish step. No graph store or runtime invalidation engine added. |
+| AUD-1: scope of integrity claims | Refine runtime-trust-boundary and the review checklist: name covered fields/encoding; authenticity/completeness need separate evidence only when those stronger claims are made. | The Semantica counterexamples motivate the distinction. A narrow field-integrity claim does not require a universal tail anchor. |
+| SR-01: file-loaded argv transport | Keep array-form exec and `shell=False`; publish an executable illustration, not a generic shell recipe or unprobed `--` separator. Correct the implication that file loading bypasses argv limits. | Local stub received quotes, shell-looking substitutions, CRLF, Unicode, and trailing newlines as one exact argv value; no shell side effects. Provider flag acceptance and length caps remain unprobed. |
+| SR-02: fallback completeness and layered verification | Refine the existing creative-spec acceptance/validation/fallback fields in English and zh-TW; static/no-JS/reduced-motion states retain meaningful content, and structural checks are not rendered-preview proof. | Actual Markdown rendering exposes both obligations. No upstream style system, geometry verifier, or animation implementation imported. |
+| AUD-6: survey receipt/count corrections | Correct System Prompts Leaks symlink-entry wording and retain the unverified exact delta-membership boundary; name Semantica's initial unmatched cases 2/5/8 from the retained receipt. | No new upstream execution or rewritten behavioral expectation; case 5's missing inner stderr stays explicit. |
+
+### Dissent and no-change rulings
+
+- **Strongest objection:** some prompt refinements precede a reproduced local
+  consumer misreading. Decision: explicit user direction permits completing
+  existing handoff/audit/fallback obligations; it does not establish recurrence
+  or fire the external ledgers' event-based triggers.
+- **SR-03 declined:** creative output already starts with goal/audience/message;
+  no local layout-first failure justifies a new semantic-pattern selector.
+- **SR-04 narrowed:** preserve named continuation state and invalidations, not
+  a separate ledger of every dropped or merged piece of irrelevant raw context.
+- AUD-3/AUD-4 remain covered by research freshness/count discipline and scaffold
+  provenance; chief-of-staff tactical/strategic composition and memory
+  revalidation remain covered. No parallel duplicate workflow added.
+- Geometry/export tooling, strategic always-on ceremony, clock/pass-horizon
+  constants, lease/wake/merge authority, RRSI machinery, and a tenth core skill
+  remain outside the demonstrated gap or host-owned. Their recorded reopen
+  triggers stand; missing local evidence is unknown, not zero demand.
+
+### Consumer evidence and limits
+
+The standalone smoke matched 15/15 checks: clean planted repair outcomes,
+malformed/config/path/hold refusals, scorer launch/timeout receipts,
+full-output label visibility, published argv transport, timestamp normalization,
+actual Markdown rendering, and installed-skill resolution. Timeout-branch
+smoke shortened the constant to 0.1 seconds; it did not measure the production
+300-second ceiling. The four affected installed skill paths resolve to the
+canonical repository files.
+
+The [final report](../../review/final-report.md#latest-survey-skills-and-docs-refresh-2026-10-08)
+records integration closure. Registry remains nine core plus ten packs.
+Synthetic fixtures and rendered docs do not establish model adherence, host
+isolation, statistical blinding, source authentication, log completeness,
+comparative efficacy, or operational animation behavior. Historical proposal
+scaffolds remain admission evidence, explicitly non-current; no compatibility
+alias or executable shim is retained.
+

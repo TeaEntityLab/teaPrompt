@@ -111,6 +111,16 @@ themselves):
   [Repair evidence and limits](recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07).
   Template maintenance only, not a §Entries invocation, model-efficacy result,
   recurrence claim, or checkpoint decision.
+- 2026-10-08 — user-directed latest-survey refresh of
+  `arm-blinded-eval-harness` and `golden-benchmark-runner`: malformed-config,
+  candidate-path and hold guards, retained scorer launch/timeout evidence,
+  final-state hash naming, full captured-output auditability, timestamp-only
+  determinism normalization, and predeclared treatment construction.
+  Standalone consumer smoke matched 15/15 synthetic checks, including the
+  published argv example and rendered documentation; no provider invoked.
+  [Rulings and limits](cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08).
+  Template maintenance only: not an Entries invocation, recurrence evidence,
+  model-efficacy result, new admission, or 2026-10-11 checkpoint decision.
 
 ## Pre-checkpoint prep scans
 

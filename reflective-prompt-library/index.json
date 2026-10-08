@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-07T20:32:36.513858",
+  "generated_at": "2026-10-08T10:18:26.892350",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -39,6 +39,7 @@
             "skills-surface-plan-2026-07-11.md",
             "runtime-skills-experiments-2026-10-05.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
+            "semantica-survey-2026-10-07.md",
             "harness-intent-drift-rethink-2026-09-06.md",
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
@@ -1637,6 +1638,108 @@
       ],
       "line_count": 117,
       "char_count": 6656
+    },
+    {
+      "path": "reflective-prompt-library/plans/semantica-survey-2026-10-07.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "semantica-survey-2026-10-07",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../03-context/context-handoff.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../04-agent/memory-consolidation.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-research/SKILL.md",
+          "../04-agent/memory-consolidation.md",
+          "../../review/final-report.md#semantica-reference-survey-2026-10-07"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Semantica Survey (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Research question"
+        },
+        {
+          "level": 2,
+          "text": "Direct recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / date context"
+        },
+        {
+          "level": 2,
+          "text": "What the source provides"
+        },
+        {
+          "level": 3,
+          "text": "Broad graph/data framework, not merely an agent prompt library"
+        },
+        {
+          "level": 3,
+          "text": "Decision records and caller-asserted causal links"
+        },
+        {
+          "level": 3,
+          "text": "Provenance persistence and PROV-O projection"
+        },
+        {
+          "level": 3,
+          "text": "Audit-integrity boundaries: verified counterexamples"
+        },
+        {
+          "level": 3,
+          "text": "Truth maintenance: support identity, cascading retraction, snapshot freshness"
+        },
+        {
+          "level": 3,
+          "text": "Trust tiers are heuristics, not independent-source verification"
+        },
+        {
+          "level": 3,
+          "text": "Upstream CI is a qualified regression gate"
+        },
+        {
+          "level": 2,
+          "text": "Evidence actually checked: bounded offline API execution"
+        },
+        {
+          "level": 2,
+          "text": "State ledger"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and sufficiency gate"
+        },
+        {
+          "level": 2,
+          "text": "Handoff and recording checks"
+        },
+        {
+          "level": 2,
+          "text": "Recording-turn consumer evidence (2026-10-07)"
+        }
+      ],
+      "line_count": 192,
+      "char_count": 29017
     },
     {
       "path": "reflective-prompt-library/plans/harness-intent-drift-rethink-2026-09-06.md",
@@ -6646,7 +6749,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 9640
+      "char_count": 9982
     },
     {
       "path": "reflective-prompt-library/plans/code-recall-survey-2026-08-20.md",
@@ -7811,7 +7914,7 @@
         }
       ],
       "line_count": 438,
-      "char_count": 25641
+      "char_count": 25694
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -8334,7 +8437,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../../review/final-report.md#latest-survey-skills-and-docs-refresh-2026-10-08"
+        ]
       },
       "structure": [
         {
@@ -8372,10 +8477,22 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-survey refresh (2026-10-08)"
+        },
+        {
+          "level": 3,
+          "text": "Dissent and no-change rulings"
+        },
+        {
+          "level": 3,
+          "text": "Consumer evidence and limits"
         }
       ],
-      "line_count": 65,
-      "char_count": 7591
+      "line_count": 128,
+      "char_count": 13967
     },
     {
       "path": "reflective-prompt-library/plans/pstack-synthesis-survey-2026-09-22.md",
@@ -9573,7 +9690,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../../review/final-report.md#delayed-advisory-follow-up-2026-10-08"
+        ]
       },
       "structure": [
         {
@@ -9883,10 +10002,14 @@
         {
           "level": 3,
           "text": "Addendum Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Guard mechanism supersession (2026-10-08)"
         }
       ],
-      "line_count": 658,
-      "char_count": 142108
+      "line_count": 675,
+      "char_count": 143047
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -9962,7 +10085,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../../review/final-report.md#final-report--whole-library-plan--skill-review"
+          "../../review/final-report.md#final-report--whole-library-plan--skill-review",
+          "../../review/final-report.md#delayed-advisory-follow-up-2026-10-08"
         ]
       },
       "structure": [
@@ -10001,10 +10125,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Guard mechanism supersession (2026-10-08)"
         }
       ],
-      "line_count": 74,
-      "char_count": 13002
+      "line_count": 91,
+      "char_count": 13946
     },
     {
       "path": "reflective-prompt-library/plans/rrsi-survey-2026-09-30.md",
@@ -13093,6 +13221,7 @@
           "skill-verification-panel-2026-09-05.md",
           "runtime-skills-experiments-2026-10-05.md",
           "recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07",
+          "cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../04-agent/workflow-acquisition.md",
           "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
@@ -13158,8 +13287,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 466,
-      "char_count": 41561
+      "line_count": 476,
+      "char_count": 42307
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -14058,8 +14187,8 @@
           "text": "Output"
         }
       ],
-      "line_count": 191,
-      "char_count": 11838
+      "line_count": 195,
+      "char_count": 12141
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -14690,7 +14819,7 @@
         }
       ],
       "line_count": 49,
-      "char_count": 1268
+      "char_count": 1417
     },
     {
       "path": "reflective-prompt-library/03-context/low-token.md",
@@ -15572,7 +15701,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 1509
+      "char_count": 1780
     },
     {
       "path": "reflective-prompt-library/05-domain/business-strategy.md",
@@ -16711,7 +16840,7 @@
         }
       ],
       "line_count": 115,
-      "char_count": 11045
+      "char_count": 11580
     },
     {
       "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
@@ -16804,8 +16933,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 393,
-      "char_count": 26917
+      "line_count": 466,
+      "char_count": 31548
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -17272,8 +17401,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 196,
-      "char_count": 11548
+      "line_count": 197,
+      "char_count": 11813
     },
     {
       "path": "reflective-prompt-library/skills/router-trace-linter/SKILL.md",
@@ -17937,8 +18066,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 173,
-      "char_count": 8203
+      "line_count": 175,
+      "char_count": 8513
     },
     {
       "path": "reflective-prompt-library/skills/acceptance-join-validator/SKILL.md",
@@ -18412,5 +18541,5 @@
       "char_count": 28518
     }
   ],
-  "total_files": 204
+  "total_files": 205
 }

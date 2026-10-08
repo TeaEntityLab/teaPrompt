@@ -2332,3 +2332,237 @@ TWINS: searched `one known (non.blocking )?warning` - found 1 other site: `featu
   rendered-record smoke and `make all` → commit → push. Actual gate and Git
   receipts are reported by the delivery commands, not assumed in advance.
 
+# Semantica Reference Survey (2026-10-07)
+
+## Goal and scope
+
+Survey `semantica-agi/semantica` as an external mechanism reference; separate
+source/package identities, real behavior, upstream claims, and unknowns.
+Earlier supplied delivery advisories were already closed in `f86173b`; no
+completed repair was replayed. This survey grants no new commit/push or
+skill/runtime-adoption authority.
+
+## Summary and acceptance status
+
+- Main `320761de5d040a54a3220acc563223b4a7ffdc51` is separate from the
+  v0.7.0 release tag `2a9afec685fe6f4a18350834caed3d6a9affb27a`.
+  Downloaded published-wheel bytes matched the registry SHA-256. Source and
+  distribution both say `0.7.0`; actual API execution selected pinned main.
+- Four native isolation controls matched. Real pinned public API probes
+  matched **18/18** expected outcomes, with no model/provider calls.
+  This includes observed limitations, not eighteen security successes.
+- Explicit graph-file/SQLite process recovery, causal-link deduplication,
+  last-support cascading fact retraction, stable support identities, and
+  stale-snapshot refusal were observed.
+- Invented source/actor assertions were accepted. SQL changes to quotes,
+  locations, and metadata retained passing checksum/chain/lineage booleans.
+  Covered-field and interior-deletion controls failed verification as
+  expected; tail deletion passed. Ambiguous checksum-field encoding was
+  demonstrated without finding a SHA-256 collision.
+- Initial 15/18 run had three survey-harness API-shape access mistakes.
+  Correcting dictionary/key accesses produced 18/18 without changing SDK
+  code or behavioral expectations.
+
+## Files changed and traceability
+
+- [Survey record](../reflective-prompt-library/plans/semantica-survey-2026-10-07.md):
+  identities, architecture boundaries, per-case inputs/observations, state
+  ledger, Candidate Adoption Ledger SEM-1–SEM-4, rejected options, unknowns,
+  sufficiency/falsifiers, source citations, and exact probe command/bindings.
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md`: decision-index pointer
+  only; no principle or operating-rule promotion.
+- `reflective-prompt-library/index.json`: discovery metadata for the
+  documentation change, generated after final documentation edits.
+- This final-report section: bounded survey receipts; prior repair and Git
+  delivery receipts remain historical and unchanged.
+
+## Checks, risks, and remaining work
+
+The pinned main SDK ran under Python `3.13.12`, private native sandbox
+restrictions, published-wheel dependencies, and `advanced_analytics=False`.
+The final smoke command and its source/input/receipt hashes are in the record.
+Local rendering/discovery/repository checks are recording evidence, not proof
+of upstream SDK efficacy or safety.
+
+No full upstream suite, actual retrieval ranking, model-backed GraphRAG,
+comparative workflow efficacy, regulatory acceptance, crash-window recovery,
+concurrent/distributed storage, or general sandbox-escape resistance was
+tested. Those boundaries remain unknown; no blanket safety/compliance claim
+or upstream fix is made.
+
+Decision: reference-only, registry unchanged at nine core plus ten packs,
+no TeaPrompt dependency or new runtime, and no new commit/push. Further
+adoption is not an open engineering task: it requires a named local consumer
+failure, host ownership, bounded evaluation, and destination-specific human
+approval. No new Human Review decision is needed to finish this survey.
+
+Recording smoke: CommonMark/table rendering and independent HTML parsing
+recovered all 18 probe rows, nine ledger rows, and SEM-1–SEM-4 with their
+expected column shapes. Real Chromium confirmed those rows and qualifiers,
+the report and pointer, and no horizontal overflow at 1280px; a viewport
+capture showed the probe-table body. This was the local record surface,
+not an upstream product UI or a hosted-documentation deployment.
+
+# Latest-Survey Skills and Docs Refresh (2026-10-08)
+
+## Summary and authority
+
+User-directed continuation: fix surviving defects and review the newest
+survey records in parallel for warranted existing-surface updates, continuing
+until the in-scope work is closed. Main integrated three read-only review
+slices: evidence/provenance, workflow composition, and eval governance.
+Agreement is advisory, not independent experimental confirmation.
+
+The [dated ruling ledger](../reflective-prompt-library/plans/cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08)
+records accepted, narrowed, and no-change decisions. No new skill, pack,
+dependency, owned runtime, permission widening, provider campaign, commit,
+or push is authorized. Registry stays nine core plus ten domain packs;
+existing admission decisions and the 2026-10-11 checkpoint remain unchanged.
+
+## Findings, changes, and acceptance traceability
+
+| Criterion / finding | Changed surface | Exercised evidence / boundary |
+| --- | --- | --- |
+| SL-1: distinguish current contracts, historical gaps, and event-based trigger satisfaction | Cross-survey record and project-knowledge pointer | RTH-1 remains preventive adoption under explicit user direction; harness admission is not proof of a misreading event or recurrence. |
+| SL-2 / SL-5 / SL-6: malformed config, candidate confinement, hold acceptance, and scorer failures | `arm-blinded-eval-harness` emitted scaffold | Missing/malformed shapes and escaping candidates refuse with exit 4 before scoring. Missing scorer/timeout retain `exit: null`, error class, partial output, and `scorer_error`; they are not product scores. |
+| SL-3 / SL-4: honest hash provenance and auditable scorer output | Blinded skill, scaffold, and examples | `final_state_hashes` is post-run provenance, not clone-equality proof. Real emitted output retains early labels on both streams for caller audit; no invented invocation log or compatibility alias. |
+| SL-7 / SL-8 / SL-9: executable golden verification instructions | Golden runner and examples | Only `observed_at` may normalize; changed scores still fail equality. Exact treatment artifact/revision, excerpt/full text, delivery slot, composition and task mapping are predeclared; denominator means control/treatment task pairs. |
+| AUD-2: preserve withdrawn support and affected dependencies during compaction | Handoff-retro skill/example and context-handoff lens | Rendered example retains A's retraction, D's affected state, and held publish step. No store, graph, or runtime invalidation mechanism added. |
+| AUD-1: separate integrity, authenticity, and completeness | Runtime-trust-boundary and review checklist | Covered fields/encoding named; source/actor authentication and trusted tail anchors are separate evidence for stronger claims, not mandatory additions to every checksum claim. |
+| SR-01: safe argv transport | Headless CLI companion example | Published array-form Python example passed quotes, substitutions, CRLF, Unicode and trailing newlines exactly to one argv value; no shell side effects. Stub proof does not validate provider flags or unknown length caps. |
+| SR-02: complete fallbacks and honest visual verification | Creative-template acceptance and English/zh-TW validation/fallback fields | Rendered prompt states static/no-JS/reduced-motion completeness and separates structural checks from actual rendered previews; no animation or geometry runtime implemented. |
+| AUD-6: correct retained survey evidence | Semantica and System Prompts Leaks records | Initial Semantica unmatched cases 2/5/8 named; missing inner reader stderr stays explicit. Symlink entry semantics corrected; exact members of the eight-entry count delta remain unverified. |
+
+SR-03's semantic-selector addition was declined: goal/audience/message
+already precede styling, without a local layout-first failure. SR-04 was
+narrowed to continuation-state fidelity, not an extra dropped-context ledger.
+Existing research freshness/count/provenance, tactical/strategic composition,
+and memory revalidation remain the owners; no duplicate workflow added.
+Geometry/export tooling, fixed clock/pass-horizon constants, always-on
+strategic ceremony, host lease/wake/merge mechanisms, RRSI machinery, and a
+tenth core skill were not adopted. Main owns these scope rulings.
+
+## Tests and consumer verification
+
+- Original malformed-config/path/scorer/hold regression reproduction:
+  **25 failed, 3 passed, 13 deselected**. The added early-label retention
+  regression also failed before the output-truncation repair.
+- Standalone extracted-program and published-example smoke:
+  **15/15 checks matched**, including exact planted unblinded outcomes,
+  pre-dispatch refusals, launch/timeout receipts, full stdout/stderr,
+  argv-data transport, timestamp-only normalization, CommonMark/table
+  rendering of 13 actual documents, and canonical resolution of the four
+  affected installed skills. Zero model calls and upstream runs.
+- Timeout-branch smoke shortened the constant to **0.1 seconds**; it did not
+  measure the production 300-second ceiling. Original receipts are retained.
+- The initial closing gate reported **1,560 passed, 3 failed**: two exact-prose
+  pins and a stale documented pytest floor. Removed all 15 live-prose checks
+  from the two affected survey-guard modules and their unused pin maps;
+  executable regressions, historical-ledger checks, and registry guards remain.
+  The count documentation now follows the reduced collection. No behavior
+  oracle or lint threshold was weakened to hide a failure.
+- Regression command:
+  `python3 -m pytest reflective-prompt-library/plans/tests/test_arm_blinded_eval_consumers.py -q --tb=short`.
+- Closing repository command:
+  `python3 reflective-prompt-library/plans/generate_index.py && make all`.
+  Run after the final repository record edit; its actual receipt is retained
+  in the session ledger rather than replaced by the prior 1,533-test snapshot.
+
+TWINS: searched `clone_hashes|full scorer invocation log|r\.stdout\[-2000:\]|reopen triggers now satisfied` - found 1 other site: `reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md`.
+That site is an explicitly historical admission record, not a live executable
+caller; the current skill points to its own emitted scaffold.
+
+## Consumer propagation, risks, and remaining work
+
+Direct callers exercised the emitted CLI and array-form example. Alternate
+prompt/lens/example consumers were rendered; installed skill symlinks resolve
+to canonical repository files. Live CONFIG, run-note fields, and examples use
+the clean field cutover; historical receipts/proposals remain dated evidence.
+Discovery metadata is regenerated after final source edits and checked by the
+repository gate, not trusted from an earlier generation.
+
+Synthetic checks and rendered obligations do not establish model adherence,
+host permission/isolation enforcement, statistical arm-blinding, comparative
+efficacy, source authentication, log completeness, or operational animation
+behavior. The existing long-skill and historical hygiene warnings are visible
+debt, not a blanket waiver or a reason to weaken limits or acceptance oracles.
+No in-scope proposal needs a new Human Review decision; no commit or push is
+part of this continuation.
+
+## Delayed advisory follow-up (2026-10-08)
+
+User direction: fix the delayed findings against current files.
+
+- Restored the contiguous H2 packet-description sentences and AF-19's original
+  source-fidelity sentence in `reflective-handoff-retro`. AUD-2 remains an
+  adjacent obligation: carry invalidated claims/supports and affected decisions,
+  and include their dependency links in the source-fidelity check.
+- Added dated guard-mechanism supersessions to the two September adoption
+  records. Their historical decisions and receipts remain unchanged.
+  Incidental prose-only tests remain retired; no behavioral assertion,
+  acceptance oracle, or lint threshold was changed by this follow-up.
+- The remaining findings were stale or superseded: SR-01 already passes prompt
+  text as argv data with `shell=False`; CONFIG preflight already rejects missing
+  keys and wrong shapes; hashes already use `final_state_hashes`; both scorer
+  output branches already retain full stdout/stderr. `SS_ADOPTED` guards other
+  surfaces, not these handoff sentences.
+- The proposed 1,563-test floor predates the deliberate prose-check retirement;
+  the documented 1,548 floor matches the last verified collection. No count
+  bump is made merely to match delayed feedback.
+
+TWINS: searched `command, open unknown, and invalidation` - found 0 other sites: none.
+Historical AF-19/H2 source records are provenance, not duplicate live contracts;
+their disposition is retained explicitly above.
+
+Verification: exercise the current emitted-scaffold/argv consumers and render
+the skill, handoff example, context lens, and amended records; then run
+`python3 reflective-prompt-library/plans/generate_index.py && make all` after
+these source edits. Actual receipts are retained in the session ledger.
+Documentation smoke cannot prove model adherence or host enforcement.
+The earlier screenshot-capture failure remains an explicit visual limit, not
+a claimed screenshot success. No new admission, commit, or push.
+
+## Recorded rationale and commit authorization (2026-10-08)
+
+User direction: "Record your thoughts and commit." This authorizes recording
+the rationale and committing the completed Semantica survey, latest-survey
+refresh, and delayed handoff repairs. It supersedes the earlier no-commit
+delivery boundary above; it does not authorize a push or further adoption.
+The following is decision rationale, not a new operating-rule source.
+
+- **Repair the owning layer.** CONFIG refusal, candidate confinement, and
+  scorer-output retention needed executable scaffold fixes; handoff fidelity
+  needed an explicit summary obligation. A new graph store, runtime, or larger
+  gate stack would not repair those failures more directly. Existing contracts
+  remain the smallest sufficient owners.
+- **Preserve adopted obligations without freezing incidental prose.**
+  Restoring contiguous H2/AF-19 wording preserves the recorded decisions;
+  adjacent AUD-2 carriage adds the missing invalidation/dependency check.
+  Reintroducing exact-string tests would protect a spelling rather than
+  successor-visible state. Dated mechanism supersessions preserve provenance;
+  executable regressions and rendered consumers check the relevant boundaries.
+- **Keep causal claims narrower than admission.** RTH-1 was preventive,
+  explicitly user-directed adoption. Owning an eval harness supplies a repair
+  surface, not evidence that the original event-based reopen triggers fired.
+  Likewise, Semantica's exercised retraction and recovery mechanisms do not
+  authenticate asserted sources or establish regulatory acceptance.
+- **A green gate has a named ceiling.** The retained follow-up receipts show
+  1,548 tests passing, 15/15 consumer checks matching, and six rendered handoff
+  consumers. They do not establish model adherence, host isolation, statistical
+  blinding, comparative efficacy, or log completeness. Full scorer output
+  enables the caller's label audit; retention itself is not automatic rejection.
+  Screenshot failures remain a visual limit, not a success claim.
+
+Counterargument: more permanent gates or mandatory host machinery might appear
+safer. They would add an unproven mechanism or duplicate an existing owner here.
+Reopen the relevant decision on a concrete consumer failure against its named
+contract, or on the existing ledger's evidence threshold; review agreement or
+an upstream release alone does not satisfy either.
+
+Promotion disposition: retain these conclusions in this report and the
+existing ruling ledger; no new skill, core route, runtime, dependency, or
+project-wide rule. The nine-core/ten-pack registry and the 2026-10-11 checkpoint
+remain unchanged. Eight lint warnings and 35 historical hygiene warnings remain
+visible debt, not permission to weaken an oracle. Final-source verification and
+the resulting commit identity are retained in the delivery receipt.
+

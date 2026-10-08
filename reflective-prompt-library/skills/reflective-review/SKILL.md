@@ -142,6 +142,7 @@ An empty findings list is a valid result; never add a finding to make the review
 - An operation ID proves retry safety only when exact parameters remain bound and the sink enforces the retained idempotency contract or exposes decisive query evidence.
 - Fencing claims are scoped to the authority that checks the epoch; identify already-escaped external requests separately.
 - Unknown outcomes have a named reconciliation/compensation/Human Review owner, deadline, audit trail, and explicit unresolved disposition.
+- An integrity, checksum, chain, or audit-trail claim names the covered fields and encoding. Field integrity does not establish source/actor authenticity or log completeness; stronger claims need separate evidence, including a trusted tail anchor for completeness.
 
 ## Traceability Table
 

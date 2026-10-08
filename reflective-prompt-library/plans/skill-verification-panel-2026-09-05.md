@@ -72,3 +72,20 @@ Read fully: all thirteen `skills/*/SKILL.md`; `plans/tests/test_flow_pack_adopti
 | Flow packs back under the 20,000-char budget; hard guard added for the generator (harness already had one) | done | `plans/tests/test_skill_verification_panel_record.py` |
 | Record indexed | done | `PROJECT_KNOWLEDGE.md` Decision Index; `plans/external-adoption-case-studies-2026-06-20.md` State Ledger |
 | `agent-governance-scaffold` size | not done (out of scope) | lint warning, pre-existing |
+
+## Guard mechanism supersession (2026-10-08)
+
+H2's adopted packet-description sentences remain contiguous and verbatim in
+`reflective-handoff-retro`. AUD-2's invalidation/dependency obligation is adjacent;
+the September adoption and run receipts above are not rewritten.
+
+The parametrized live-prose pins were retired on 2026-10-08, not updated to
+mirror a changed implementation. The earlier sentence-presence and source-size
+falsifiability claims are historical guard mechanisms, not current acceptance
+oracles. Record structure/indexing checks and executable quorum, final-sink,
+and empty-worker regressions remain; no flow-pack lint threshold was raised.
+This supersedes the current-applicability claim of those historical prose/size
+guards, not the behavior they were intended to protect.
+Current repair and consumer verification are recorded in
+[the dated follow-up](../../review/final-report.md#delayed-advisory-follow-up-2026-10-08).
+

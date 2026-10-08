@@ -59,9 +59,9 @@ reading — the positive control that scoring still distinguishes candidates.
 It is not a treatment-effect claim: the run note still names
 `noise_floor_basis`, `failure_categorization`, and `selection_vs_final`,
 and a score difference is not attributed to treatment while categorization
-is unresolved. The scorer's argv, cwd, and captured stdout contain zero arm
-tokens (grep the invocation log for `control|treatment`, require zero
-matches).
+is unresolved. Audit stdout/stderr in `results/scores.jsonl` for
+`control|treatment`, requiring zero matches. Argv is checked before dispatch;
+cwd/filesystem/network isolation needs separate host evidence.
 
 ## Example 2 — Label leak refuses before scoring (exit 4)
 
@@ -151,7 +151,7 @@ Expected output shape (`results/run-note.json` fragment):
 ```json
 {
   "order": {"A-code": ["control", "treatment"], "B-content": ["treatment", "control"]},
-  "clone_hashes": {"A-code": {"control": "<sha256>", "treatment": "<sha256>"}},
+  "final_state_hashes": {"A-code": {"control": "<final-sha256>", "treatment": "<final-sha256>"}},
   "scoring": "private shuffled schedule in sealed map; ordinal carries no arm information",
   "scorer_isolation": "host-precondition: argv lint only; filesystem/network isolation of the scorer from arm dirs, config, and the sealed map is enforced by the host, not by this scaffold",
   "discarded": [
@@ -172,3 +172,11 @@ invocation costs budget (decrements the ticket's invocation cap) but never
 enters the denominator; a ledger entry without a raw receipt invalidates the
 run note. `C-hold` is reported separately — expected `stale` exit 4, zero
 dispatch — never merged into `scores.jsonl` or the repair-pair denominator.
+
+These are post-run hashes; differing final states are expected and do not
+establish or refute caller-verified start-state clone equality. Malformed
+configuration, an escaping candidate, or an invalid hold receipt refuses
+before scoring. A scorer launch failure or timeout instead retains completed
+rows plus an execution-error row (`exit: null`, `error` class), writes
+`scorer_error` in the run note, and exits 4; partial scores are not a complete
+comparison.

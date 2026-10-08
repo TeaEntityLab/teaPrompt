@@ -40,12 +40,12 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 
 ### Methods
 
-- Fixture cloning: copy each fixture once per arm from a read-only seed; record seed hash per clone. Arms never share a workdir.
+- Fixture cloning: the caller copies each fixture once per arm from a read-only seed, records seed hashes, and verifies identical start states before dispatch (exit 4 on mismatch). Arms never share a workdir. The extraction scaffold records `final_state_hashes` after the arms ran; these are not clone-equality evidence.
 - Alternated arm order: pair A runs control-then-treatment, pair B runs treatment-then-control (or the ticket's declared alternation); order is written to the run note as observed execution provenance only — it never influences extraction or scoring order, and claiming it cancels order effects is forbidden.
 - Treatment-only artifact exclusion: only the ticket-named candidate files are extracted for scoring. Skill guidance, workflow scripts, ledgers, and inspectable state stay out of the blinded dir — they are reported factors, not scored surface.
 - Label-stripped extraction: each final candidate is copied to `blinded/<pair>-<id>.ext` (random opaque IDs, no arm token); extraction iterates arms in sorted canonical order, never the public execution order, so creation sequence carries no provenance. The arm↔ID map is written to a host-held file outside the scorer's read path.
 - Private scoring schedule: scoring walks a shuffled candidate order drawn from `scoring_seed` (ticket-declared, or harness-derived and recorded when omitted). The schedule is stored in the sealed map only — never in the run note, scores, or any scorer-visible path — so an ordinal-only predictor reading the public order guesses at chance by construction.
-- Deterministic scorer invocation with a code/data boundary: each oracle's `argv[0]` plus the ticket-declared `scorer_code` entries are trusted scorer code; every other argv entry is candidate data. After `{CAND}` substitution the harness validates every oracle argv for every candidate BEFORE any scorer dispatch and refuses (exit 4) when any entry names an arm label, an arm dir, the config, sealed/results/run-note paths, or any other existing path outside `blinded/`. Nonexistent opaque entries (flags, scalars) pass — they name no file the scorer could read. argv lint is not filesystem isolation (see Honest Limits).
+- Deterministic scorer invocation with a code/data boundary: each oracle's `argv[0]` plus the ticket-declared `scorer_code` entries are trusted scorer code; every other argv entry is candidate data. After `{CAND}` substitution the harness validates every oracle argv for every candidate BEFORE any scorer dispatch and refuses (exit 4) when any entry names an arm label, an arm dir, the config, sealed/results/run-note paths, or anything outside `blinded/`. Fixed options belong in the trusted scorer script, not undeclared data argv. argv lint is not filesystem isolation (see Honest Limits).
 - Discarded-invocation ledger: malformed or environment-incomplete invocations (wrong CLI spelling, tool-rejection with no proposal) are logged with raw receipts and re-run; they never enter the pair denominator. The denominator stays fixture-pair level (n = number of repair pairs).
 
 ### Never
@@ -68,7 +68,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 ### Output
 
 - `eval-harness/run_blinded_eval.py` (stdlib only; emitted scaffold, §Emitted Scaffold).
-- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held: `candidates` arm map + private `scoring_order` + `scoring_seed`/`scoring_seed_source`), `results/scores.jsonl` (per-candidate oracle pass/fail + raw output, in scoring order), `results/run-note.json` (public execution-order provenance, clone hashes, declared caps, discarded ledger refs, declared `noise_floor_basis`, `failure_categorization` verdict, `selection_vs_final` flag, scorer-isolation precondition).
+- `blinded/` (label-free candidates), `map/sealed-map.json` (host-held: `candidates` arm map + private `scoring_order` + `scoring_seed`/`scoring_seed_source`), `results/scores.jsonl` (per-candidate oracle pass/fail + captured output, in scoring order; scorer execution errors have `exit: null` and an `error` class, not a product-failure score), `results/run-note.json` (public execution-order provenance, `final_state_hashes`, declared caps, discarded ledger refs, declared `noise_floor_basis`, `failure_categorization` verdict, `selection_vs_final` flag, scorer-isolation precondition, and `scorer_error` if scoring stopped).
 - C-hold pair reported separately: expected `stale` exit 4, zero dispatch — never merged into the repair-pair denominator.
 
 ### Escalation
@@ -84,6 +84,8 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Any oracle argv entry (after `{CAND}` substitution) names an arm label, an arm dir, the config, sealed/results/run-note paths, or any existing path outside `blinded/` — unless it is `argv[0]` or declared `scorer_code` — → exit 4 before ANY scorer dispatch.
 - A host-held output (sealed map, results, run note) resolves inside `blinded/` → exit 4 (schedule metadata must stay off the scorer read path).
 - Missing required config key, malformed arm_dirs/candidates/oracle, an oracle missing the `{CAND}` placeholder, or an unsubstituted `{CAND}` → exit 4.
+- Absolute, parent-traversing, missing, or symlink-escaping candidate paths, or a hold record other than `stale` exit 4 with `dispatched: false` → exit 4 before extraction/scoring.
+- Scorer launch failure or timeout → exit 4; preserve completed rows and the execution-error receipt, halt further scoring, and never interpret incomplete scoring as product failure.
 - Seed hash mismatch between clones (caller-side clone check) → exit 4 (clones not identical); do not score.
 - Discarded invocation missing raw receipt → run note incomplete; do not score.
 - A score difference is attributed to treatment with `noise_floor_basis` missing or `failure_categorization` unresolved → measurement misreport; do not score, repair the run note.
@@ -93,7 +95,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Content-reading positive control: run the emitted harness on the documented CONFIG verbatim with a planted scoreable difference (one arm's `calc.py` passes the A-code oracle, the other fails it; one B-content report keeps all three headings, the other drops one). `results/scores.jsonl` must recover the planted pass/fail pattern after host unblinding via the sealed map, with denominator `repair_pairs: 2` and the discarded ledger + C-hold outside it.
 - Order-independence (by construction, not a chance guess): run twice with the same `scoring_seed` and swapped public `order`; the sealed `scoring_order` arm sequence must be identical across runs while the public order differs, so an ordinal-only predictor reading public order cannot be correct in both runs. The run note must not contain the scoring schedule.
 - Boundary negatives: outsider-file, arm-dir, config-file, and sealed-map data args each refuse with exit 4 and zero scorer dispatch (the oracle sentinel never runs); an undeclared scorer-code path refuses; the declared clean CONFIG scores exit 0.
-- Check the scorer's argv, cwd, and captured stdout contain no arm labels: grep the full scorer invocation log for the arm tokens and require zero matches.
+- Audit captured stdout/stderr in the emitted `results/scores.jsonl` for arm tokens and require zero matches. Argv is checked before dispatch; cwd/filesystem/network isolation requires separate host evidence, not a nonexistent invocation log.
 
 ## Emitted Scaffold
 
@@ -126,6 +128,7 @@ import hashlib, json, os, random, secrets, shutil, subprocess, sys
 from pathlib import Path
 
 ARM_TOKENS = ("control", "treatment")
+SCORER_TIMEOUT_S = 300
 
 REQUIRED_KEYS = ("pairs", "arms", "order", "arm_dirs", "blinded",
                  "sealed_map", "results", "run_note")
@@ -153,6 +156,11 @@ def _within(child: Path, parent: Path) -> bool:
     return True
 
 
+def _string_list(value) -> bool:
+    return isinstance(value, list) and all(
+        isinstance(item, str) and item and "\0" not in item for item in value)
+
+
 def main(cfg_path: str) -> int:
     try:
         cfg = json.loads(Path(cfg_path).read_text())
@@ -163,6 +171,21 @@ def main(cfg_path: str) -> int:
     for key in REQUIRED_KEYS:
         if key not in cfg:
             return _fail(f"missing required config key: {key}")
+    if not isinstance(cfg["pairs"], list) or not cfg["pairs"]:
+        return _fail("pairs must be a nonempty list")
+    if not _string_list(cfg["arms"]) or sorted(cfg["arms"]) != sorted(ARM_TOKENS):
+        return _fail("arms must name control and treatment exactly once")
+    if not isinstance(cfg["order"], dict) or not isinstance(cfg["arm_dirs"], dict):
+        return _fail("order and arm_dirs must be objects")
+    if any(not isinstance(per, dict) or
+           any(not isinstance(d, str) or not d or "\0" in d for d in per.values())
+           for per in cfg["arm_dirs"].values()):
+        return _fail("arm_dirs must map pairs to arm path strings")
+    for key in ("blinded", "sealed_map", "results", "run_note"):
+        if not isinstance(cfg[key], str) or not cfg[key] or "\0" in cfg[key]:
+            return _fail(f"{key} must be a nonempty path string")
+    if not _string_list(cfg.get("scorer_code", [])):
+        return _fail("scorer_code must be a list of strings")
     blinded = Path(cfg["blinded"])
     sealed_map = Path(cfg["sealed_map"])
     results_path = Path(cfg["results"])
@@ -172,14 +195,23 @@ def main(cfg_path: str) -> int:
                         ("run_note", run_note_path)):
         if _within(path, blinded):
             return _fail(f"host-held {label} inside scorer-visible blinded/: {path}")
-    discarded = list(cfg.get("discarded") or [])
-    hold = cfg.get("hold") if isinstance(cfg.get("hold"), dict) else None
-    if hold and hold.get("dispatched"):
-        return _fail("hold fixture dispatched work")
+    discarded = cfg.get("discarded", [])
+    if not isinstance(discarded, list):
+        return _fail("discarded must be a list")
+    hold = cfg.get("hold")
+    if "hold" in cfg:
+        if not isinstance(hold, dict):
+            return _fail("hold must be an object")
+        if hold.get("dispatched"):
+            return _fail("hold fixture dispatched work")
+        if (not isinstance(hold.get("pair"), str) or not hold["pair"] or
+                type(hold.get("exit")) is not int or hold["exit"] != 4 or
+                hold.get("dispatched") is not False or hold.get("verdict") != "stale"):
+            return _fail("hold must record a named pair, stale exit 4, and dispatched false")
     for entry in discarded:
-        if not isinstance(entry, dict) or not entry.get("receipt"):
+        if not isinstance(entry, dict) or not isinstance(entry.get("receipt"), str) or not entry["receipt"]:
             return _fail("discarded invocation missing raw receipt")
-    hold_id = hold.get("pair") if hold else None
+    hold_id = hold["pair"] if hold else None
     seed = cfg.get("scoring_seed")
     if seed is None:
         seed = secrets.token_hex(8)
@@ -187,7 +219,7 @@ def main(cfg_path: str) -> int:
     else:
         seed = str(seed)
         seed_source = "ticket"
-    trusted = set(cfg.get("scorer_code") or [])
+    trusted = set(cfg.get("scorer_code", []))
     arm_dir_strs = [str(Path(d)) for per in cfg["arm_dirs"].values()
                     for d in per.values()]
     sensitive = [cfg_path, cfg["sealed_map"], cfg["results"],
@@ -211,23 +243,44 @@ def main(cfg_path: str) -> int:
             arm_roots.append(str(Path(d).resolve()))
         except OSError:
             arm_roots.append(d)
-    sealed, clone_hashes, planned = {}, {}, {}
+    # Validate the whole configuration and all source paths before copying or
+    # dispatching anything. A late-pair defect must not score an early pair.
+    seen = set()
+    for pair in cfg["pairs"]:
+        if not isinstance(pair, dict):
+            return _fail("each pair must be an object")
+        pid = pair.get("id")
+        if (not isinstance(pid, str) or not pid or "\0" in pid or
+                Path(pid).name != pid or pid in (".", "..") or pid in seen):
+            return _fail("pair ids must be unique filename components")
+        seen.add(pid)
+        if pid == hold_id:
+            continue
+        order_arms = cfg["order"].get(pid)
+        if not _string_list(order_arms) or sorted(order_arms) != sorted(cfg["arms"]):
+            return _fail(f"order for pair {pid} must be a permutation of arms {cfg['arms']}")
+        if pid not in cfg["arm_dirs"] or any(a not in cfg["arm_dirs"][pid] for a in cfg["arms"]):
+            return _fail(f"arm_dirs for pair {pid} must name every arm")
+        if (not _string_list(pair.get("candidates")) or not pair["candidates"] or
+                not _string_list(pair.get("oracle")) or not pair["oracle"]):
+            return _fail(f"pair {pid} needs candidate and oracle string lists")
+        for cand in pair["candidates"]:
+            rel = Path(cand)
+            if rel.is_absolute() or ".." in rel.parts:
+                return _fail(f"candidate must be arm-relative: {pid}/{cand}")
+            for arm in cfg["arms"]:
+                root = Path(cfg["arm_dirs"][pid][arm])
+                source = root / rel
+                if not _within(source, root) or not source.is_file():
+                    return _fail(f"candidate missing or outside arm dir: {pid}/{arm}/{cand}")
+    sealed, final_state_hashes, planned = {}, {}, {}
     for pair in cfg["pairs"]:
         pid = pair["id"]
         if pid == hold_id:
             continue
-        order_arms = cfg["order"].get(pid, [])
-        if sorted(order_arms) != sorted(cfg["arms"]) or len(order_arms) != len(cfg["arms"]):
-            return _fail(f"order for pair {pid} must be a permutation of arms {cfg['arms']}")
-        if pid not in cfg["arm_dirs"] or any(a not in cfg["arm_dirs"][pid] for a in cfg["arms"]):
-            return _fail(f"arm_dirs for pair {pid} must name every arm")
-        if not pair.get("candidates") or not pair.get("oracle"):
-            return _fail(f"pair {pid} needs candidates and oracle")
-        # Provenance only: these are *final* arm states, expected to differ as
-        # the arm effect. Start-state clone equality is checked at clone time
-        # by the caller (exit 4 on mismatch); the hashes are recorded here.
-        clone_hashes[pid] = {arm: sha256_dir(Path(cfg["arm_dirs"][pid][arm]))
-                             for arm in cfg["arms"]}
+        # Final-state provenance only; start-state equality is caller-owned.
+        final_state_hashes[pid] = {arm: sha256_dir(Path(cfg["arm_dirs"][pid][arm]))
+                                   for arm in cfg["arms"]}
         # Canonical extraction order: sorted arms, never the public execution
         # order, so creation sequence carries no provenance.
         for arm in sorted(cfg["arms"]):
@@ -235,7 +288,10 @@ def main(cfg_path: str) -> int:
                 cand_id = secrets.token_hex(6)
                 dest = blinded / f"{pid}-{cand_id}{Path(cand).suffix}"
                 try:
-                    shutil.copyfile(Path(cfg["arm_dirs"][pid][arm]) / cand, dest)
+                    source = Path(cfg["arm_dirs"][pid][arm]) / cand
+                    if not _within(source, Path(cfg["arm_dirs"][pid][arm])):
+                        return _fail(f"candidate outside arm dir: {pid}/{arm}/{cand}")
+                    shutil.copyfile(source, dest)
                 except OSError as exc:
                     return _fail(f"cannot extract {pid}/{arm}/{cand}: {exc}")
                 sealed[dest.name] = {"pair": pid, "arm": arm, "file": cand}
@@ -250,7 +306,7 @@ def main(cfg_path: str) -> int:
     for pair in cfg["pairs"]:
         if pair["id"] == hold_id:
             continue
-        if not any("{CAND}" in str(a) for a in pair["oracle"]):
+        if not any("{CAND}" in a for a in pair["oracle"]):
             return _fail(f"oracle for pair {pair['id']} missing {{CAND}} placeholder")
         for name, meta in sealed.items():
             if meta["pair"] != pair["id"]:
@@ -288,11 +344,21 @@ def main(cfg_path: str) -> int:
     rng = random.Random(seed)
     schedule = [name for name in sealed]
     rng.shuffle(schedule)
-    scores = []
+    scores, scorer_error = [], None
     for name in schedule:
-        r = subprocess.run(planned[name], capture_output=True, text=True, timeout=300)
+        try:
+            r = subprocess.run(planned[name], capture_output=True, text=True,
+                               timeout=SCORER_TIMEOUT_S)
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            out, err = getattr(exc, "stdout", None), getattr(exc, "stderr", None)
+            out = out.decode(errors="replace") if isinstance(out, bytes) else out or ""
+            err = err.decode(errors="replace") if isinstance(err, bytes) else err or ""
+            scores.append({"candidate": name, "exit": None, "error": type(exc).__name__,
+                           "stdout": out, "stderr": err})
+            scorer_error = f"scorer execution failed: {exc}"
+            break
         scores.append({"candidate": name, "exit": r.returncode,
-                       "stdout": r.stdout[-2000:], "stderr": r.stderr[-2000:]})
+                       "stdout": r.stdout, "stderr": r.stderr})
     for path in (sealed_map, results_path, run_note_path):
         path.parent.mkdir(parents=True, exist_ok=True)
     sealed_doc = {"candidates": sealed, "scoring_order": schedule,
@@ -300,7 +366,7 @@ def main(cfg_path: str) -> int:
     sealed_map.write_text(json.dumps(sealed_doc, indent=2))
     results_path.write_text("".join(json.dumps(s) + "\n" for s in scores))
     repair_ids = [p["id"] for p in cfg["pairs"] if p["id"] != hold_id]
-    note = {"order": cfg["order"], "clone_hashes": clone_hashes,
+    note = {"order": cfg["order"], "final_state_hashes": final_state_hashes,
             "scoring": "private shuffled schedule in sealed map; ordinal carries no arm information",
             "scorer_isolation": ("host-precondition: argv lint only; filesystem/network "
                                  "isolation of the scorer from arm dirs, config, and the "
@@ -314,12 +380,19 @@ def main(cfg_path: str) -> int:
             "failure_categorization": cfg.get("failure_categorization") or "unresolved",
             "selection_vs_final": cfg.get("selection_vs_final") or "not-a-final-claim",
             "disclosure": "by-construction blinding only; zero observed blinded runs yet"}
+    if scorer_error:
+        note["scorer_error"] = scorer_error
     run_note_path.write_text(json.dumps(note, indent=2))
-    # Scorer-log label audit: caller greps results + invocation log for ARM_TOKENS.
-    return 0
+    # Captured-output label audit: caller checks scores.jsonl for ARM_TOKENS.
+    return _fail(scorer_error) if scorer_error else 0
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1]))
+    if len(sys.argv) != 2:
+        sys.exit(_fail("Usage: run_blinded_eval.py <config.json>"))
+    try:
+        sys.exit(main(sys.argv[1]))
+    except (OSError, ValueError) as exc:
+        sys.exit(_fail(f"harness file error: {exc}"))
 ```
 
 The default derives a private seed. Supply `scoring_seed` only for host-held
@@ -388,6 +461,6 @@ Companion examples live in the installed `<skills-root>/examples/arm-blinded-eva
 
 *Provenance: TeaPrompt source-repository paths (`reflective-prompt-library/`), not runtime dependencies — the installed skill is self-contained.*
 
-- `reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md` (admission record; scaffold source)
+- `reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md` (historical admission record; the live scaffold is above)
 - `reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md` (TASK-005 confounds, receipts, invocation cap)
 - `reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md` (TASK-005 row: per-pair repair outcome, alternated order, blinded deterministic scorer)

@@ -13,8 +13,8 @@ Convert natural-language creative intent into verifiable, replayable creative sp
 
 ## Acceptance Criteria
 
-- Animation and visual constraints expressed as testable fields (duration, easing, fallback).
-- Brand-safety and failure cases listed before handoff to execution.
+- Animation and visual constraints expressed as testable fields (duration, easing, fallback). Motion-bearing specs preserve complete meaningful content in static, no-JS, and reduced-motion fallbacks.
+- Brand-safety and failure cases listed before handoff to execution; validation rules distinguish structural/static checks from actual rendered-preview evidence.
 
 ## Falsifiability
 
@@ -42,7 +42,7 @@ Escalate to `reflective-risk` before publishing creative output that affects bra
 8. Assets Needed
 9. Constraints
 10. JSON-like Schema
-11. Validation Rules
+11. Validation Rules（區分結構／靜態檢查與實際渲染預覽；未預覽不得宣稱視覺結果已驗證）
 12. Failure Cases
 13. Preview Requirements
 14. Brand Safety Checks
@@ -63,6 +63,6 @@ Escalate to `reflective-risk` before publishing creative output that affects bra
 - opacity
 - position
 - repeat
-- fallback
+- fallback（靜態、停用 JavaScript、減少動態效果時，仍保留完整且有意義的內容）
 ```
 

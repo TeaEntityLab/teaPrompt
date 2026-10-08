@@ -36,7 +36,7 @@ Expected output shape:
 - transport: argv — `devin --respect-workspace-trust false --model swe-2-max -p "<prompt>"` (array-form exec; `-p -` treats the literal dash as the prompt — never use it)
 - permission flags: headless auto-denies tool calls; prompt must inline file contents (no read tools) or the call returns a tool-rejection warning only
 - output isolation: stdout = proposal; stderr may carry warnings
-- prompt-length cap: UNKNOWN — not probed; send long prompts via a file-backed task instead of guessing
+- prompt-length cap: UNKNOWN — not probed; loading a file into argv does not bypass its length limit, and a read-only CLI cannot be assumed to fetch a file reference. Long-prompt handling needs a transport/size probe, not a guessed fallback.
 - strip list: none observed
 - BLOCKED: n/a
 
@@ -63,3 +63,31 @@ Observed: headless mode auto-denied a `command` tool permission and produced no 
   for tool-using mode; read-only proposal prompts must not trigger tool calls —
   do NOT add --dangerously-skip-permissions to unblock (human-approved widenings only).
 ```
+
+## Example 4 — File-loaded prompt passed as argv data
+
+Transport illustration for a target with an inventoried separate-argv prompt
+flag. This is not a new provider recipe or evidence that a provider accepts
+these flags; its fixed arguments, permissions, and length handling still come
+from that provider's probe.
+
+```python
+from pathlib import Path
+import subprocess
+import sys
+
+cli, prompt_flag, prompt_file = sys.argv[1:]
+prompt = Path(prompt_file).read_bytes().decode("utf-8")
+result = subprocess.run(
+    [cli, prompt_flag, prompt],
+    shell=False, capture_output=True, text=True,
+)
+sys.stdout.write(result.stdout)
+sys.stderr.write(result.stderr)
+raise SystemExit(result.returncode)
+```
+
+The prompt remains one argv value, including quotes, backticks, shell-looking
+substitutions, and trailing newlines; it never becomes parsed shell source.
+No generic `--` separator is invented. File loading still uses argv transport
+and does not solve an unknown prompt-length cap.

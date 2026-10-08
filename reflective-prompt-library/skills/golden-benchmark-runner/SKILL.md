@@ -35,17 +35,17 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 ### Methods
 
 1. **Task source reuse.** Import `BenchmarkSet` from `plans/benchmark_tasks.py` (24 golden tasks across 9 skills) — never duplicate the task list. The CI fixture-shape validator (`plans/validate_benchmark_fixture.py`) stays the CI gate; this runner is local-only and never runs in CI.
-2. **Paired arms.** For each selected task, run arm C (control: bare prompt) and arm T (treatment: prompt + skill layer) against the same frozen fixture snapshot. Alternate arm order per task (A: control-first; B: treatment-first), fresh contexts per invocation.
+2. **Paired arms.** For each selected task, run arm C (control: bare prompt) and arm T (treatment: prompt + skill layer) against the same frozen fixture snapshot. Declare the exact treatment artifact and revision/hash, full text versus named excerpt, delivery slot, and composition rule in the run report; fix that rule and any task-to-skill mapping before the run. Control omits only that declared layer; all other setup stays matched. Alternate arm order per task (A: control-first; B: treatment-first), fresh contexts per invocation.
 3. **Provider-neutral transport.** The agent under test is a shell template from `AGENT_CMD` (env), with a declared prompt-passing convention (`{prompt_file}` placeholder; stdin vs argv spelled out per provider). Bounded caps: per-invocation timeout, max task count, total spend envelope; human run/cost approval precedes any metered invocation.
 4. **Deterministic structural scoring first.** Per-task scorer registry (`task id → scorer script`, e.g. arithmetic assertions like fixture `A-code/oracle.py`, required-section + substance checks like fixture `B-content/oracle.py`). Tasks with no scorer get a generic structural heuristic (acceptance-criteria heading/keyword presence, after `plans/eval_harness.py` rubric style) and are marked `structural-heuristic-only`.
 5. **Optional LLM-judge slot.** Declared interface (`JUDGE_CMD` env + rubric), never required. The ledger marks each score `structural` vs `judge-backed`; judge-backed scores name the judge model and rubric version.
-6. **Hold arm.** Preflight-hold fixtures (C-hold pattern: stale binding → exit 4, zero dispatch) are scored separately and excluded from the repair-pair denominator.
+6. **Hold fixture.** Preflight-hold fixtures (C-hold pattern: stale binding → exit 4, zero dispatch) are scored separately and excluded from the task-pair denominator: one control/treatment comparison per selected task, called a repair pair in a TASK-005-style repair pilot.
 7. **Discard discipline.** Malformed or environment-incomplete invocations are re-run correctly and the discarded receipts are kept for audit — never silently dropped, never counted in the denominator.
 8. **Measurement preflight.** Before attributing any delta to the skill layer, the run report names (a) the noise floor basis — repeated-baseline spread, or an explicit single-run caveat; (b) failure categorization — a delta is not attributable to the treatment until noise, grader error, harness failure, and task impossibility are ruled out; (c) selection-vs-report separation — the score that selected a winner is a selection statistic, not a reportable final gain; a final claim needs a pre-registered untouched evaluation.
 
 ### Output
 
-- Results ledger (JSONL, one row per task-arm): task id, arm, agent identity + version, candidate hash, score, scorer id, judge-backing flag, arm order, observed_at, caps envelope. Plus a per-task delta table (T − C) and a confound block on every reported effect.
+- Results ledger (JSONL, one row per task-arm): task id, arm, agent identity + version, candidate hash, score, scorer id, judge-backing flag, arm order, observed_at, caps envelope. Plus a per-task delta table (T − C), the declared treatment construction, and a confound block on every reported effect.
 - Verdict vocabulary: `directional` (single run per arm), `stable` (repeated runs agree), `composite` (arms differ in more than guidance — see confounds). No `proves` language at n=1.
 
 ### Never
@@ -56,7 +56,7 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 - Never claim `proves`, and never claim stability from a single run per arm — one run per arm is `directional` only.
 - Never run a metered invocation without human cost approval and a caps envelope up front.
 - Never silently drop discarded receipts, and never count discards in the denominator.
-- Never count hold-fixture rows in the repair-pair denominator.
+- Never count hold-fixture rows in the task-pair denominator.
 - Never let a scorer that passes an empty or prompt-echoing candidate contribute a delta — mark `structural-heuristic-only` and refuse the delta.
 - Never structurally score research-category tasks with no deterministic oracle — they are `judge-backed` or excluded.
 - Never treat the `cat`-stub self-run as evidence of model utility — it verifies harness mechanics only.
@@ -82,7 +82,7 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 
 ### Verification
 
-- Self-run on 2 tasks with a `cat`-stub `AGENT_CMD` (fixed candidate file, zero model spend): exercises transport plumbing, scorer execution, ledger append, and delta computation. Deterministic candidates must reproduce byte-identical ledger rows across two runs.
+- Self-run on 2 tasks with a `cat`-stub `AGENT_CMD` (fixed candidate file, zero model spend): exercises transport plumbing, scorer execution, ledger append, and delta computation. Across two runs, deterministic candidates must reproduce byte-identical ledger rows after removing only `observed_at`; retain the original timestamped receipts and require every other field to match.
 - Scorer check: each scorer must fail the broken fixture and pass the fixed fixture (A-code pattern: `return a - b` fails, `return a + b` passes) before it may score arms.
 
 ## Evidence
