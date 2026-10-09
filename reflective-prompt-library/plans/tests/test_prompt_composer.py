@@ -60,14 +60,96 @@ def test_compose_with_task(composer):
     assert "## Prompt 1: core-short" in output
 
 
-def test_compose_low_token_strips_examples(composer):
-    """Low-token mode should strip fenced code blocks."""
-    full = composer.compose(["spec-writer"])
+def test_compose_low_token_preserves_primary_instructions(composer):
+    """Low-token mode must keep primary fenced/unfenced instructions.
+
+    Regression for the recorded defect where --low-token deleted all fenced
+    blocks, including core-short's primary anti-cheating instruction.
+    """
+    low = composer.compose(["core-short"], low_token=True)
+
+    assert "Inputs / Outputs" in low
+    assert "Failure Conditions" in low
+    assert "Self-check" in low
+    assert "對 AI 產物保持不信任" in low
+
+
+def test_compose_low_token_preserves_secondary_template(composer):
+    """A second primary template keeps safety/acceptance content compressed."""
     low = composer.compose(["spec-writer"], low_token=True)
 
-    assert "```" in full
-    assert "```" not in low
-    assert len(low) < len(full)
+    assert "Acceptance Criteria" in low
+    assert "Human Review Required" in low
+    assert "Non-goals" in low
+
+
+def test_strip_examples_removes_marked_examples_only(composer):
+    """Only explicitly marked Example sections are removed."""
+    content = (
+        "# Title\n\n"
+        "Primary instruction with ```inline fence``` kept.\n\n"
+        "```markdown\nprimary fenced instruction\n```\n\n"
+        "## Example 1\n\n"
+        "Extended illustration to drop.\n\n"
+        "```text\nillustration body\n```\n\n"
+        "## Acceptance Criteria\n\n"
+        "Must survive compression.\n"
+    )
+    stripped = composer._strip_examples(content)
+
+    assert "primary fenced instruction" in stripped
+    assert "Acceptance Criteria" in stripped
+    assert "Must survive compression" in stripped
+    assert "Extended illustration" not in stripped
+    assert "illustration body" not in stripped
+
+
+def test_strip_examples_preserves_placeholders(composer):
+    """Placeholder slots are not treated as strippable example content."""
+    content = "## Inputs\n{貼上需求}\n\n```markdown\n{keep me}\n```\n"
+    stripped = composer._strip_examples(content)
+
+    assert "{貼上需求}" in stripped
+    assert "{keep me}" in stripped
+
+
+@pytest.mark.parametrize("fence", ["```", "~~~", "````"])
+def test_low_token_keeps_fenced_example_instructions_and_drops_adjacent_examples(composer, fence):
+    content = (
+        f"{fence}markdown\n"
+        "## Examples\nPrimary requirement: explain the evidence.\n"
+        f"{fence}\n"
+        "## Example 1\nFirst expendable illustration.\n"
+        "## Example 2\nSecond expendable illustration.\n"
+        "## Acceptance Criteria\nEvidence remains mandatory.\n"
+        "    ## Examples\n    Indented primary instruction remains mandatory.\n"
+    )
+
+    stripped = composer._strip_examples(content)
+
+    assert "Primary requirement: explain the evidence." in stripped
+    assert "Evidence remains mandatory." in stripped
+    assert "Indented primary instruction remains mandatory." in stripped
+    assert "First expendable illustration." not in stripped
+    assert "Second expendable illustration." not in stripped
+
+
+def test_compose_missing_second_source_raises_only_partial_avoided(composer, monkeypatch):
+    """Direct compose with a missing second input publishes nothing partial."""
+    output_before = composer.compose(["core-full", "spec-writer"])
+    assert "## Prompt 1: core-full" in output_before
+    assert "## Prompt 2: spec-writer" in output_before
+
+    real_read = composer.read_prompt
+
+    def fake_read(rel_path: str) -> str:
+        if rel_path.endswith("02-engineering/spec-writer.md"):
+            raise FileNotFoundError(f"Prompt file not found: {rel_path}")
+        return real_read(rel_path)
+
+    monkeypatch.setattr(composer, "read_prompt", fake_read)
+    with pytest.raises(FileNotFoundError, match="Prompt file not found"):
+        composer.compose(["core-full", "spec-writer"])
 
 
 def test_template_engineering_task(composer):
@@ -107,6 +189,52 @@ def test_compose_unknown_slug_raises(composer):
     """Composing with an unknown slug should raise ValueError."""
     with pytest.raises(ValueError, match="Unknown slug"):
         composer.compose(["core-full", "nonexistent-xyz"])
+
+
+def test_cli_stdout_failure_emits_no_success_output(composer, monkeypatch, capsys):
+    """A stdout-path compose failure emits no success-shaped partial output."""
+    import prompt_composer as composer_module
+
+    real_read = composer.read_prompt
+
+    def fake_read(rel_path: str) -> str:
+        if rel_path.endswith("02-engineering/spec-writer.md"):
+            raise FileNotFoundError(f"Prompt file not found: {rel_path}")
+        return real_read(rel_path)
+
+    monkeypatch.setattr(composer, "read_prompt", fake_read)
+    monkeypatch.setattr(composer_module, "PromptComposer", lambda _root: composer)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["prompt_composer.py", "core-full", "spec-writer"],
+    )
+    assert composer_module.main() == 1
+    captured = capsys.readouterr()
+    assert "Generated from 2 prompts" not in captured.out
+    assert "## Prompt 1" not in captured.out
+    assert "Prompt file not found" in captured.err
+
+
+def test_cli_output_failure_leaves_existing_file_unchanged(
+    composer, tmp_path, monkeypatch
+):
+    """An --output failure leaves existing output unchanged, with no partial artifact."""
+    import prompt_composer as composer_module
+
+    existing = tmp_path / "composed.md"
+    existing.write_text("previous complete artifact\n", encoding="utf-8")
+    missing = tmp_path / "missing-dir" / "composed.md"
+
+    monkeypatch.setattr(composer_module, "PromptComposer", lambda _root: composer)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["prompt_composer.py", "core-full", "spec-writer", "--output", str(missing)],
+    )
+    assert composer_module.main() == 1
+    assert existing.read_text(encoding="utf-8") == "previous complete artifact\n"
+    assert not missing.exists()
 
 
 def test_resolve_slugs_returns_ordered_paths(composer):

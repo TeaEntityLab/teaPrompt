@@ -45,7 +45,7 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 
 ### Output
 
-- Results ledger (JSONL, one row per task-arm): task id, arm, agent identity + version, candidate hash, score (null when unscored), completion/censoring status and reason, scorer executable identity + revision (distinct from a named human semantic scorer), judge-backing flag, arm order, observed_at, caps envelope. Plus allocated/completed/censored pair totals, a per-task delta table for complete scorable pairs only, the declared treatment construction, and a confound block on every reported effect.
+- Results ledger (JSONL, one row per task-arm): task id, arm, agent identity + version, candidate hash, score (`null` when unscored — censored, incomplete, or oracle-side error — never a zero-score loss), `completion` (`completed` | `censored` | `incomplete`) plus `status_reason` (`scorer-verdict`, `cap-exhausted`, `oracle-error`, `hold-no-dispatch`, …), scorer executable path plus `scorer_revision` content hash (the pinned deterministic oracle; `semantic_scorer_person` is a separately named human role and stays `null` on structural rows), judge-backing flag, arm order, observed_at, caps envelope. Plus allocated/completed/censored pair totals, a per-task delta table for complete scorable pairs only, the declared treatment construction, and a confound block on every reported effect.
 - Verdict vocabulary: `directional` (single run per arm), `stable` (repeated runs agree), `composite` (arms differ in more than guidance — see confounds). No `proves` language at n=1.
 
 ### Never

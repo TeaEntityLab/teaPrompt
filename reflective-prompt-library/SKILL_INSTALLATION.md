@@ -95,13 +95,13 @@ host-invoked generator packs (flow scripts, loop harnesses, governance
 scaffolding, verification maps) are wanted.
 
 Invocation-mode note (context-load control): on hosts that support user-invoked
-skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the five
-domain packs may be installed user-invoked so their long descriptions stop loading
+skills (e.g. Claude Code's `disable-model-invocation: true` frontmatter), the ten
+registered domain packs may be installed user-invoked so their long descriptions stop loading
 into every turn's context — they are host-invoked contracts, not
 `reflective-dispatch` routes, so core routing never depends on their
 auto-discovery. Keep the nine core skills model-invoked; dispatch and the other
 core skills reach them by description. Apply the toggle in the installed copy:
-the shipped `SKILL.md` frontmatter stays host-portable.
+the shipped `SKILL.md` frontmatter stays host-portable. **Dated supersession 2026-10-09:** the earlier "five" count is historical; the current count is ten from the live `DOMAIN_PACK_SKILLS` registry in `plans/validate_skill_examples.py`.
 
 Companion examples live under `reflective-prompt-library/skills/examples/` and are part of the host-facing documentation surface. Co-install them when the target host supports companion files or when operators need example output shapes; the examples are not semantic execution proof.
 
@@ -115,20 +115,42 @@ second. It copies or links only directories containing `SKILL.md`.
 install_core_skills_copy() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
-  mkdir -p "$dest"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
+  [ -d "$source_root" ] || return 1
+  local found=0
+  for skill in "$source_root"/reflective-*/; do
+    skill="${skill%/}"
+    if [ -f "$skill/SKILL.md" ]; then found=1; break; fi
+  done
+  if [ "$found" -ne 1 ]; then
+    echo "no expected core skills in source: $source_root" >&2
+    return 1
+  fi
+  mkdir -p "$dest" || return 1
   for skill in "$source_root"/reflective-*/; do
     skill="${skill%/}"
     test -f "$skill/SKILL.md" || continue
-    cp -R "$skill" "$dest/"
+    cp -R "$skill" "$dest/" || return 1
   done
 }
 
 install_core_skills_symlink() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
-  mkdir -p "$dest"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
+  [ -d "$source_root" ] || return 1
+  local found=0
+  for skill in "$source_root"/reflective-*/; do
+    skill="${skill%/}"
+    if [ -f "$skill/SKILL.md" ]; then found=1; break; fi
+  done
+  if [ "$found" -ne 1 ]; then
+    echo "no expected core skills in source: $source_root" >&2
+    return 1
+  fi
+  mkdir -p "$dest" || return 1
   for skill in "$source_root"/reflective-*/; do
     skill="${skill%/}"
     test -f "$skill/SKILL.md" || continue
@@ -137,27 +159,29 @@ install_core_skills_symlink() {
       echo "refusing to replace existing non-symlink skill directory: $dest/$name" >&2
       return 1
     fi
-    ln -sfn "$skill" "$dest/$name"
+    ln -sfn "$skill" "$dest/$name" || return 1
   done
 }
 
 install_domain_packs_copy() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
-  mkdir -p "$dest"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
+  mkdir -p "$dest" || return 1
   for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator headless-agent-cli-contract arm-blinded-eval-harness acceptance-join-validator golden-benchmark-runner router-trace-linter; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
-    cp -R "$skill" "$dest/"
+    cp -R "$skill" "$dest/" || return 1
   done
 }
 
 install_domain_packs_symlink() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
-  mkdir -p "$dest"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
+  mkdir -p "$dest" || return 1
   for name in flow-control-generator flow-loop-harness agent-governance-scaffold governed-delivery verification-map-generator headless-agent-cli-contract arm-blinded-eval-harness acceptance-join-validator golden-benchmark-runner router-trace-linter; do
     skill="$source_root/$name"
     test -f "$skill/SKILL.md" || return 1
@@ -165,34 +189,43 @@ install_domain_packs_symlink() {
       echo "refusing to replace existing non-symlink skill directory: $dest/$name" >&2
       return 1
     fi
-    ln -sfn "$skill" "$dest/$name"
+    ln -sfn "$skill" "$dest/$name" || return 1
   done
 }
 
 install_skill_examples_copy() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
   test -d "$source_root/examples" || return 1
-  mkdir -p "$dest"
-  cp -R "$source_root/examples" "$dest/"
+  mkdir -p "$dest" || return 1
+  cp -R "$source_root/examples" "$dest/" || return 1
 }
 
 install_skill_examples_symlink() {
   local dest="$1"
   local source_root
-  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)"
+  source_root="$(cd "${2:-$(pwd)/reflective-prompt-library/skills}" && pwd)" || return 1
+  [ -n "$source_root" ] || return 1
   test -d "$source_root/examples" || return 1
-  mkdir -p "$dest"
+  mkdir -p "$dest" || return 1
   if [ -e "$dest/examples" ] && [ ! -L "$dest/examples" ]; then
     echo "refusing to replace existing non-symlink examples directory: $dest/examples" >&2
     return 1
   fi
-  ln -sfn "$source_root/examples" "$dest/examples"
+  ln -sfn "$source_root/examples" "$dest/examples" || return 1
 }
 ```
 
-Run these definitions once (or paste them before a command below).
+Run these definitions once (or paste them before a command below). Every
+helper returns nonzero without reporting success when source resolution,
+destination creation, or a copy/link step fails: a missing source directory,
+a source with none of the expected core skills, a missing pack skill, or a
+missing examples directory fails before the destination is treated as
+installed. Core helpers check the expected skills before creating the
+destination, so a bad source never leaves an empty install behind. `cp -R`
+and `ln -sfn` failures also propagate, independent of caller `errexit`.
 `ln -sfn` replaces an existing link; use `ln -sf` if the host `ln` lacks `-n`.
 The symlink helpers refuse to replace an existing real file or directory:
 they print a refusal, preserve its bytes, and exit nonzero. `ln -sfn` only

@@ -48,7 +48,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Deterministic scorer invocation with a code/data boundary: each oracle's `argv[0]` plus the ticket-declared `scorer_code` entries are trusted scorer code; every other argv entry is candidate data. After `{CAND}` substitution the harness validates every oracle argv for every candidate BEFORE any scorer dispatch and refuses (exit 4) when any entry names an arm label, an arm dir, the config, sealed/results/run-note paths, or anything outside `blinded/`. Fixed options belong in the trusted scorer script, not undeclared data argv. argv lint is not filesystem isolation (see Honest Limits).
 - Discarded-invocation ledger: malformed or environment-incomplete invocations (wrong CLI spelling, tool-rejection with no proposal) are logged with raw receipts and re-run; they never enter the pair denominator. The denominator stays fixture-pair level (n = number of repair pairs).
 - Immutable run artifacts: use a fresh `blinded/` directory and fresh sealed-map, score and run-note files. Existing paths refuse with exit 4 before extraction or scoring; metadata files are exclusive-created before scorer dispatch. A replay or corrected audit uses a new output namespace and retains the original receipts.
-- Validate before reserving: require four fresh, distinct, non-nested outputs using resolved paths plus conservative NFC/case folding; unresolved identity refuses, never falls back to lexical identity. Finish config, candidate-path and scorer-argv preflight before creating `blinded/`, so a preflight refusal reserves nothing and its correction may reuse the namespace. This covers those checked alias classes, not racing actors or filesystem-specific aliases; failures after extraction starts retain partial artifacts and require a fresh namespace.
+- Validate before reserving: require four fresh, distinct, non-nested outputs without parent-traversal components, using resolved paths plus conservative NFC/case folding; unresolved identity refuses, never falls back to lexical identity. Finish config, candidate-path and scorer-argv preflight before creating `blinded/`, so a preflight refusal reserves nothing and its correction may reuse the namespace. This covers those checked alias classes, not racing actors or filesystem-specific aliases; failures after extraction starts retain partial artifacts and require a fresh namespace.
 
 ### Never
 
@@ -85,7 +85,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Any blinded path contains an arm label (`control`, `treatment`) → exit 4 before scoring.
 - Any oracle argv entry (after `{CAND}` substitution) names an arm label, an arm dir, the config, sealed/results/run-note paths, or any existing path outside `blinded/` — unless it is `argv[0]` or declared `scorer_code` — → exit 4 before ANY scorer dispatch.
 - A host-held output (sealed map, results, run note) resolves inside `blinded/`, including by a case or normalization alias such as `Blinded/sealed-map.json` → exit 4 (schedule metadata must stay off the scorer read path).
-- Missing required config key, malformed arm_dirs/candidates/oracle, an oracle missing the `{CAND}` placeholder, an unsubstituted `{CAND}`, duplicate/nested output paths (including case or Unicode-normalization aliases), or unresolved output identity → exit 4 before any output path is created.
+- Missing required config key, malformed arm_dirs/candidates/oracle, an oracle missing the `{CAND}` placeholder, an unsubstituted `{CAND}`, parent-traversing output paths, duplicate/nested output paths (including case or Unicode-normalization aliases), or unresolved output identity → exit 4 before any output path is created.
 - Absolute, parent-traversing, missing, or symlink-escaping candidate paths, or a hold record other than `stale` exit 4 with `dispatched: false` → exit 4 before extraction/scoring.
 - Scorer launch failure or timeout → exit 4; preserve completed rows and the execution-error receipt, halt further scoring, and never interpret incomplete scoring as product failure.
 - Seed hash mismatch between clones (caller-side clone check) → exit 4 (clones not identical); do not score.
@@ -160,6 +160,8 @@ def _within(child: Path, parent: Path) -> bool:
 
 
 def _fold(path: Path) -> tuple:
+    if ".." in path.parts:
+        raise ValueError("run output must not contain parent traversal")
     # Strictly resolve existing ancestors; only missing suffixes are allowed.
     suffix = []
     while True:
@@ -219,7 +221,7 @@ def main(cfg_path: str) -> int:
             return _fail(f"run artifact already exists; use a fresh output namespace: {path}")
     try:
         folded = {label: _fold(path) for label, path in outputs}
-    except (OSError, RuntimeError) as exc:
+    except (OSError, RuntimeError, ValueError) as exc:
         return _fail(f"cannot resolve run output: {exc}")
     # Host metadata must stay outside even a case/normalization alias of blinded/.
     for label, path in outputs[1:]:

@@ -194,6 +194,7 @@ For an authorized replay, give **all four outputs** fresh paths, such as
 first namespace and raw receipts. Exclusive creation prevents replacing a
 pre-existing metadata file; filesystem/actor isolation still belongs to the
 host. A configuration the preflight rejects — a missing `{CAND}` placeholder,
+parent-traversing output paths such as `new-parent/../blinded/sealed-map.json`,
 duplicate or nested output paths (judged case- and normalization-insensitively,
 so `results/Scores.jsonl` vs `results/scores.jsonl` and `Blinded/sealed-map.json`
 refuse on every volume), an unresolvable output parent, or a late-pair

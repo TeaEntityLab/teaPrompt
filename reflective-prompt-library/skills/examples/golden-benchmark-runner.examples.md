@@ -12,16 +12,33 @@ Input:
 Run the golden comparison on 2 tasks with AGENT_CMD="run-agent --model <model> --prompt-file {prompt_file}", per-invocation timeout 120s, max 4 invocations, approver named.
 ```
 
-Expected output shape:
+Expected output shape (all required ledger fields; F13: completion/censoring
+status plus reason, pinned scorer identity plus revision, null-means-unscored):
 
 ```jsonl
-{"task_id": "B001", "arm": "C", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": 0, "scorer": "b001-arithmetic", "judge_backed": false, "arm_order": "control-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
-{"task_id": "B001", "arm": "T", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": 100, "scorer": "b001-arithmetic", "judge_backed": false, "arm_order": "control-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
+{"task_id": "B001", "arm": "C", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": 0, "completion": "completed", "status_reason": "scorer-verdict", "scorer_executable": "fixtures/B001/oracle.py", "scorer_revision": "<sha256-of-oracle>", "semantic_scorer_person": null, "judge_backed": false, "arm_order": "control-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
+{"task_id": "B001", "arm": "T", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": 100, "completion": "completed", "status_reason": "scorer-verdict", "scorer_executable": "fixtures/B001/oracle.py", "scorer_revision": "<sha256-of-oracle>", "semantic_scorer_person": null, "judge_backed": false, "arm_order": "control-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
 ```
+
+Field semantics: `score: null` means unscored (censored, incomplete, or
+oracle-side error) — never a zero-score loss. `completion` is
+`completed` | `censored` | `incomplete`; `status_reason` names the cause
+(`scorer-verdict`, `cap-exhausted`, `oracle-error`, `hold-no-dispatch`, …).
+`scorer_executable` plus `scorer_revision` (content hash of the executed
+oracle script) is the pinned deterministic scorer; `semantic_scorer_person`
+is a separately named human role and stays `null` on structural rows. A
+representative censored row:
+
+```jsonl
+{"task_id": "B002", "arm": "T", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": null, "completion": "censored", "status_reason": "cap-exhausted", "scorer_executable": "fixtures/B002/oracle.py", "scorer_revision": "<sha256-of-oracle>", "semantic_scorer_person": null, "judge_backed": false, "arm_order": "treatment-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
+```
+
+Censored rows keep their allocation, contribute `score: null`, and never
+enter the delta table.
 
 ```markdown
 ## Delta table (T − C)
-- B001: raw structural difference +100 (scorer b001-arithmetic) — withheld as a skill-effect claim
+- B001: raw structural difference +100 (scorer fixtures/B001/oracle.py @ <sha256-of-oracle>) — withheld as a skill-effect claim
 
 ## Treatment construction
 - artifact: `<skills-root>/reflective-brief/SKILL.md`, revision/hash pinned in the run manifest
@@ -116,6 +133,12 @@ Report three allocated pairs, one completed comparison and two
 censored/incomplete comparisons. B002/B003 stay in the allocation ledger;
 neither becomes a zero-score loss or disappears from accounting. Discards and
 the separately reported preflight-hold fixture remain outside this population.
+Representative censored rows (both `score: null`, never zero):
+
+```jsonl
+{"task_id": "B002", "arm": "T", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": null, "completion": "censored", "status_reason": "cap-exhausted", "scorer_executable": "fixtures/B002/oracle.py", "scorer_revision": "<sha256-of-oracle>", "semantic_scorer_person": null, "judge_backed": false, "arm_order": "treatment-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
+{"task_id": "B003", "arm": "T", "agent": "<agent-id>", "agent_version": "<version>", "candidate_sha256": "<hash>", "score": null, "completion": "incomplete", "status_reason": "oracle-error", "scorer_executable": "fixtures/B003/oracle.py", "scorer_revision": "<sha256-of-oracle>", "semantic_scorer_person": null, "judge_backed": false, "arm_order": "treatment-first", "observed_at": "<utc>", "caps": {"timeout_s": 120, "max_tasks": 2, "spend": "<envelope>"}}
+```
 
 For a protected executable result, a candidate exception containing “budget”
 still counts as a completed failure when the host attests

@@ -33,10 +33,10 @@ Close the held AEAT-4 gap with a linter, not a new map or schema: given a produc
 
 ### Methods
 
-1. **Extract requirement IDs.** Scan the requirement sources (default: `VERIFY.md` + `features/*.md`) for the ID pattern. Record each ID with file and line.
-2. **Extract check bindings.** Parse the locked artifact (default `acceptance.yaml`: `locked: true` + `checks:` entries with `id`, `verify`, `expect`/`expect_exit`). Accept an equivalent locked artifact — per AEAT-4, an oracle-manifest entry resolving to a check (observed shape: an oracle-manifest with `oracle_id`, `owner`, `commands`, `immutable: true`). Refuse unlocked artifacts: `locked: false`/missing, or `immutable: false`/missing, is a join failure, not a pass.
-3. **Join.** Every requirement ID must resolve to ≥1 check whose `id` equals the requirement ID or whose `covers:` list names it. Flag duplicates (same ID defined twice in requirement sources, or twice in check sources) and dangling IDs (requirement ID with no check). Orphan checks (check with no requirement ID) are reported as info only — checks may cover non-REQ invariants — and do not fail the run.
-4. **Runnable check.** For every check's `verify` command (split on `&&`), resolve the first word: a path containing `/` must exist relative to the repo root; a bare name must resolve via `PATH` (shell builtins `cd` exempt). This is static resolvability only — the validator never executes checks; execution belongs to the feature-map driver, whose observation is recorded as evidence elsewhere.
+1. **Extract requirement IDs.** Scan the requirement sources (default: `VERIFY.md` + `features/*.md`) for the ID pattern. Record each occurrence with file, line, and classification: a *definition* is an ID in a definition seat — a Markdown ATX heading naming the ID, a list item or table row whose first token is the ID, or an explicit `Requirement:`/`ID:` declaration line; every other occurrence — prose, inline code, parenthetical `(covers REQ-…)`, `exercises`/`drives`/`tests` mentions, and any `covers:` list entry — is a *reference* (a coverage reference when inside `covers:`). Only definitions participate in duplicate detection; references never create a definition.
+2. **Extract check bindings.** Parse the locked artifact (default `acceptance.yaml`: `locked: true` + `checks:` entries with `id`, `verify`, `expect`/`expect_exit`). Accept an equivalent locked artifact — per AEAT-4, an oracle-manifest entry resolving to a check (observed shape: an oracle-manifest with `oracle_id`, `owner`, `commands`, `immutable: true`). Refuse unlocked artifacts: `locked: false`/missing, or `immutable: false`/missing, is a join failure, not a pass. A check `id:` is a check-side definition; its `covers:` list entries are coverage references, never check-side definitions.
+3. **Join.** Every defined requirement ID must resolve to ≥1 check whose `id` equals the requirement ID or whose `covers:` list names it. Flag duplicates (same ID in two definition seats across requirement sources, or the same check `id:` twice in check sources) and dangling IDs (defined requirement ID with no check). One definition seat plus any number of reference mentions — including `covers:` references — is a clean multiple mention, not a duplicate. Orphan checks (check with no requirement ID) are reported as info only — checks may cover non-REQ invariants — and do not fail the run.
+4. **Runnable check (static shell grammar, never executed).** The supported grammar is a `&&`-separated sequence of *simple commands*; `;`, `||`, `|`, `&`, command substitution, process substitution, glob expansion, and control keywords (`if`, `for`, `while`, subshells) are unsupported and classify the check as usage/refusal (`exit 2`), never as resolved or silently passed. Each segment supports: optional leading `NAME=value` assignments (stripped, never treated as the executable — so `FOO=1 make test` resolves `make`, not `FOO=1`); a single- or double-quoted first word (quotes removed after tokenizing; unmatched quotes are usage/refusal); then the executable word plus arguments. A bare `cd <dir>` segment changes the resolution directory for later segments only (`cd sub && ./test.sh` resolves `./test.sh` against `<root>/sub`); `cd` with no target, with flags, or into an absolute path is usage/refusal. Resolution per segment: a word containing `/` must exist as an executable file relative to the current resolution directory (starting at the repo root); a bare name must resolve via `PATH` (shell builtins other than `cd` are usage/refusal — only `cd` is supported). Tilde expansion, parameter/variable expansion (`$VAR`, `${VAR}`), and quoting that spans a `&&` boundary are unsupported and classify the segment as usage/refusal. This is static resolvability only — the validator never executes checks; execution belongs to the feature-map driver, whose observation is recorded as evidence elsewhere.
 5. **Digest-bound report.** The report records `sha256` of the locked artifact and the repo `HEAD` (or `source_commit`), so a later closeout can deterministically compare reviewed-vs-shipped bytes — the 3XA-1 repair applied to the acceptance surface itself.
 
 ### Never
@@ -45,8 +45,9 @@ Close the held AEAT-4 gap with a linter, not a new map or schema: given a produc
 - Never execute a check command itself; static resolvability only — runtime proof belongs to the driver sweep.
 - Never invent checks for a repo that has requirement IDs but no locked artifact — report the AEAT-4 gap and route to `reflective-spec-plan`.
 - Never accept a `covers:` claim as semantic proof — coverage declaration is trust-based; whether the check actually exercises the requirement stays a human review judgment.
-- Never present a join report as verification evidence — observation-with-spec/version/freshness binding is the driver's and the run-note's job.
+- Never treat a repeated reference as a duplicate definition — one definition seat plus any number of reference mentions (prose, inline code, `covers:` entries) is a clean multiple mention; only a second definition seat (heading/list-row/declaration, or a second check `id:`) is a duplicate.
 - Never let a dangling, duplicate, or unrunnable check pass silently — any of them fails the run with exit `1`.
+- Never resolve an unsupported shell form as runnable — `;`, `||`, pipes, substitution, globs, variable/tilde expansion, or control keywords are usage/refusal (`exit 2`), not a pass and not a runnable failure.
 - Never claim requirement coverage from a vacuous self-run — zero requirement IDs in scope means the join holds vacuously, nothing more.
 
 ### Output
@@ -62,13 +63,18 @@ Close the held AEAT-4 gap with a linter, not a new map or schema: given a produc
 ### Failure signals
 
 - A synthetic repo with one dangling AC passes the validator.
+- A genuine double definition (second definition seat) passes silently.
+- A repeated reference mention is misreported as a duplicate.
+- `cd sub && ./test.sh` resolves the second segment against the repo root instead of `sub`.
+- `FOO=1 make test` resolves `FOO=1` as the executable instead of `make`.
+- An unsupported form (`;`, `||`, pipe, substitution, expansion) is treated as runnable or silently passed.
 - A duplicate or unrunnable check passes silently.
 - An unlocked artifact is treated as joined.
 - The validator executes a check command itself.
 
 ### Verification
 
-Build a synthetic repo (three requirement IDs across two `features/` files, `acceptance.yaml` with checks covering two) → validator must exit `1` naming the exact dangling ID; add the missing check → exit `0`. Negative controls: duplicate one ID → exit `1`; set `locked: false` → exit `1`; point one `verify` at a nonexistent script → exit `1`. Then run on TeaPrompt itself: it must pass or flag honestly (see Honest Limits).
+Build a synthetic repo (three requirement IDs across two `features/` files, `acceptance.yaml` with checks covering two) → validator must exit `1` naming the exact dangling ID; add the missing check → exit `0`. Negative controls: duplicate one ID with a second definition seat → exit `1`; repeat an ID only as prose/`covers:` references → still exit `0`; set `locked: false` → exit `1`; point one `verify` at a nonexistent script → exit `1`. Static-grammar controls: `cd sub && ./scripts/t.sh` resolves against `sub`; `FOO=1 make test` resolves `make`; `make test || make fallback` refuses with exit `2` without executing anything. Then run on TeaPrompt itself: it must pass or flag honestly (see Honest Limits).
 
 ## Honest Limits
 

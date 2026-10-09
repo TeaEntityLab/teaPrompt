@@ -132,3 +132,53 @@ Expected output shape:
 - Genuinely unparseable values (`maybe`, `confident`, `80%`, a prose
   sentence) still fail with
   `Route Confidence: unparseable (presence/parse)`.
+
+## Example 8 — Folded/literal block scalars (representation parity)
+
+Input: a high-risk trace whose `Goal` is written as a YAML folded scalar:
+
+```text
+Mode: routing
+Strictness: L4
+Goal: >
+  deploy the auth-service migration
+  to production
+Assumptions: production deploy window
+Workflow: reflective-risk
+Route Confidence: high
+Enhancements Enabled: risk gate
+Enhancements Available: none
+Human Review: none
+Next Action: stop for review
+```
+
+Expected output shape:
+
+- Verdict: `fail`.
+- Failing row: `Human Review: review-missing (R4)` — the folded
+  continuation is part of `Goal`, so `deploy ... production` still
+  reaches the risk scan. A literal `|` block behaves identically.
+- The same folded form on low-risk wording (e.g. `rename a local
+  variable` across two indented lines) passes.
+- A field whose value is only an unsupported scalar indicator
+  (`Goal: ?`, `Goal: !`, `Goal: >-`, `Goal: |+`, flow `[]`/`{}`) fails
+  as `unparseable (unsupported scalar form)` — the marker is refused,
+  never read as the field's content.
+
+## Example 9 — Documented low-risk forms (must pass)
+
+Inputs that a correct linter accepts:
+
+- `Goal: credit the original author in the changelog` — `author`,
+  `authors`, `authorship`, and `coauthor` never fire the hazard scan;
+  `auth`, `authentication`, `authorize`, and `auth-service` still do.
+- A six-field alias trace whose `rationale` is short but complete
+  (`rationale: copy change only`) — it fills `Assumptions` and passes
+  with the usual alias warnings; the >20-character sentence rule
+  applies only when a deferral signal is present.
+- `Assumptions` carrying a meaningful sentence (`The existing suite
+  already covers this surface well`) satisfies a deferred enhancement
+  as a rationale seat without inventing keyword requirements.
+- `Human Review: skipped` on a low-risk trace with no deferred
+  enhancement passes — `skipped` is review status, not a deferral
+  claim. (On a genuine high-risk trace it still fails R4.)

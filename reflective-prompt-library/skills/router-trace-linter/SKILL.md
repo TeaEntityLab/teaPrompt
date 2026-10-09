@@ -32,12 +32,12 @@ Give hosts and reviewers a small deterministic checker that lints a router's emi
 
 ### Methods
 
-**Value normalization:** before any check, field values are stripped of supported quoting/markdown wrapping (`"none"`, `'medium'`, `**none**` all read as their inner token). `false` and `not applicable` (space or hyphen spelling) read as empty alongside `none`/`n/a`/`na`/`tbd`.
+**Value normalization:** before any check, field values are stripped of supported quoting/markdown wrapping (`"none"`, `'medium'`, `**none**` all read as their inner token). `false` and `not applicable` (space or hyphen spelling) read as empty alongside `none`/`n/a`/`na`/`tbd`. **Multiline scalars:** a YAML block-scalar header `>` or `|` on a field line is supported — indented continuation lines fold to spaces (`>`) or keep line breaks (`|`) before all checks. Other scalar indicators/decorators (`?`, `!`, `|+`, `>-`, `&`, `*`, flow `[]`/`{}`) are unsupported: the field must be reported `unparseable (unsupported scalar form)` rather than read as the header character, so the representation can never hide field content.
 
 1. **Field-presence check:** normalize trace keys (case/whitespace/punctuation-insensitive: `Route Confidence` ≡ `confidence`, `Enhancements Available` ≡ `enhancements_available`) and require all ten contract fields — `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`. Missing or blank field = fail with per-field row. **Alias mode** is the machine six-field form (`canonical_intent`, `workflow`, `confidence`, `enhancements_enabled`, `enhancements_available`, `rationale`) when the ten display names are absent. Map `canonical_intent`→`Goal`, `workflow`→`Workflow`, `confidence`→`Route Confidence`, `enhancements_enabled`→`Enhancements Enabled`, `enhancements_available`→`Enhancements Available`, and `rationale`→the rationale seat (it also fills `Assumptions` when that field is absent). Absent `Mode`, `Strictness`, and `Next Action` are warnings, not failures. Absent `Human Review` is a warning unless a high-risk signal fired, in which case R4 still fails.
 2. **Confidence-parse check:** strip supported quoting/markdown wrapping, then accept exactly `high | medium | low` (case-insensitive) or a numeric `0..1` float; anything else (blank, `maybe`, `confident`, `80%`, prose sentence) = fail. Rationale: TeaPrompt's standing rule is "evidence over confidence" — the linter checks the value is well-formed and therefore comparable, never that it is calibrated.
-3. **Downgrade/defer-rationale check (R5/R7):** when the trace signals reduced rigor, require explicit rationale text (≥1 non-placeholder sentence, >20 characters, not a placeholder such as `n/a`/`none`/`false`/`tbd` in any supported spelling/wrapping). Signals: `Enhancements Available` non-empty (a deferred skill exists); `Workflow: prompt-only` or Fast Path taken where a workflow was in scope; `Strictness` below the risk-implied floor; or any line matching `downgrade|defer|fallback|default-up|instead of|skipped`. Rationale may live in `Assumptions`, a `Rationale`/`Reason` line, or in `Enhancements Available` itself when that field is a non-placeholder sentence longer than 20 characters — the linter reports which seat it used. The named must-pass fixture is allowed to keep a short `Assumptions` value; the deferral sentence in `Enhancements Available` is enough.
-4. **High-risk-review check (R4):** when the trace signals high risk or irreversible impact — `Workflow` contains `reflective-risk` (case-insensitive), `Strictness` is `L4`/`L5`, or an action-scoped `Goal`/`Assumptions` match on `production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part` — require `Human Review` to be present, non-blank, and not a placeholder/negation (`none`, `false`, `not required`, `not applicable`, `n/a`, `tbd`, markdown-bold or quoted equivalents). Anything weaker = fail. A negation denies only the hazard it actually modifies: `no auth, billing, or production surface` denies the whole coordinated list, but `No auth changes, deploy to production` still signals because the later action (`deploy`) re-opens the scope. Likewise `Human Review: not required` is a valid low-risk answer only when no action-scoped signal fired; it remains a failure when a real signal did fire.
+3. **Downgrade/defer-rationale check (R5/R7):** when the trace signals reduced rigor, require explicit rationale text (≥1 non-placeholder sentence, >20 characters, not a placeholder such as `n/a`/`none`/`false`/`tbd` in any supported spelling/wrapping). Signals are field-scoped: `Enhancements Available` non-empty (a deferred skill exists); `Workflow` naming `prompt-only` or Fast Path where a workflow was in scope; or a deferral keyword (`downgrade|defer|fallback|default-up|instead of|skipped`) inside `Goal`/`Assumptions`/`Workflow`/enhancement/rationale fields. `Human Review` and `Next Action` never signal deferral: a low-risk `Human Review: skipped` is review status, not a reduced-rigor claim. Rationale may live in `Assumptions`, a `Rationale`/`Reason` line, or in `Enhancements Available` itself when that field is a non-placeholder sentence longer than 20 characters — the linter reports which seat it used. The named must-pass fixture is allowed to keep a short `Assumptions` value; the deferral sentence in `Enhancements Available` is enough.
+4. **High-risk-review check (R4):** when the trace signals high risk or irreversible impact — `Workflow` contains `reflective-risk` (case-insensitive), `Strictness` is `L4`/`L5`, or an action-scoped `Goal`/`Assumptions` match on `production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part` with intentional token boundaries — require `Human Review` to be present, non-blank, and not a placeholder/negation (`none`, `false`, `not required`, `not applicable`, `n/a`, `tbd`, markdown-bold or quoted equivalents). Boundaries are intentional: bare `auth`, `authentication`, and `authorize`/`authorise` (plus suffix forms) match, but `author`/`authors`/`authorship`/`coauthor` never do; `-`, `_`, digits, and `-service`-style continuations still attach to `auth`. A negation denies only the hazard it actually modifies: `no auth, billing, or production surface` denies the whole coordinated list, but `No auth changes, deploy to production` still signals because the later action (`deploy`) re-opens the scope. Likewise `Human Review: not required` is a valid low-risk answer only when no action-scoped signal fired; it remains a failure when a real signal did fire. The risk scan covers `Goal`/`Assumptions` only — widening it to `Next Action` was reviewed and declined; a hazard missed there is a stated limit, not a pass endorsement.
 5. **Diff output:** emit one row per field (`ok | missing | unparseable | rationale-missing | review-missing`) plus the offending raw line or `<absent>`, so a reviewer can fix the trace without re-reading the contract.
 
 ### Output
@@ -70,7 +70,7 @@ Give hosts and reviewers a small deterministic checker that lints a router's emi
 
 ### Verification
 
-Six self-contained fixtures, runnable without network or model calls —
+Eight self-contained fixtures, runnable without network or model calls —
 
 1. `complete-trace` (must pass): all ten fields filled, `Route Confidence: medium`, `Enhancements Available: security review after bounded patch (deferred: L2 scope, no auth surface)` — verdict `pass`, zero failing rows.
 2. `missing-rationale-downgrade` (must fail): `Enhancements Available: performance review` with `Assumptions` blank and no rationale sentence — verdict `fail`, row `Enhancements Available: rationale-missing (R5/R7)`.
@@ -78,10 +78,12 @@ Six self-contained fixtures, runnable without network or model calls —
 4. `alias-six-field` (must pass with warnings): only the six machine keys, low-risk wording, a rationale sentence, no un-negated hazard keyword — verdict `pass`, warnings for absent `Mode`, `Strictness`, and `Next Action`. The same trace with `canonical_intent` containing `production` and no `Human Review` — verdict `fail`, row `Human Review: review-missing (R4)`.
 5. `r4-contrastive-matrix` (behavioral regressions): the low-risk control trace with substituted `Goal`/`Workflow`/`Human Review` fields — every high-risk bypass denies (`No auth changes, deploy to production` + `not required`; `deploy to production` + `false` / `not applicable` / `tbd` / `**none**` / `"none"`; capitalized `Reflective-Risk` workflow on low-risk wording), while the ordinary low-risk control (`rename a local variable` + `not required`) and production + `none`/`skipped` denials keep their existing verdicts.
 6. `quoted-confidence` (must pass): the low-risk control trace with `Route Confidence: "medium"` (also `'medium'`, `**medium**`, `"high"`, `"low"`, `"0.8"`) — verdict `pass`; genuinely unparseable values (`maybe`, `confident`, `80%`, prose) still fail.
+7. `folded-scalar-parity` (representation check): `Goal: >` with an indented continuation such as `deploy to production` carries the same review obligation as the inline form (verdict `fail`, `Human Review: review-missing (R4)`); the same folded Goal on low-risk wording passes. A field whose value is only `?`/`!`/other unsupported scalar syntax fails `unparseable (unsupported scalar form)` rather than pretending the header is content.
+8. `low-risk-form-parity` (F11 regressions): `credit the original author in the changelog` never fires R4; a six-field alias trace whose `rationale` is short but complete (`copy change only`) passes with warnings and fills `Assumptions`; `Assumptions` carrying a meaningful sentence is a valid rationale seat without deferral keywords; a low-risk `Human Review: skipped` with no deferred enhancement passes.
 
 ## Emitted Scaffold
 
-`lint_route_trace.py` (Python stdlib only; host-executed). It implements the four verification fixtures plus the RV-04/RV-09 contrastive matrix: action-scoped negation, normalized quoting/markdown/placeholder review values, case-insensitive workflow gating, and quoted confidence. A negation denies only the hazard it actually modifies. Normalized `none`/`false`/`not applicable`/`tbd` (including markdown-bold and quoted forms) is a filled value for enhancements and a negated Human Review only when a high-risk signal fired.
+`lint_route_trace.py` (Python stdlib only; host-executed). It implements the verification fixtures plus the RV-04/RV-09 contrastive matrix: supported `>`/`|` block-scalar parsing with explicit refusal of unsupported scalar syntax, intentional hazard token boundaries (`author` never matches; `auth`, `authentication`, `authorize`, `auth-service` still do), field-scoped deferral detection (Human Review/`Next Action` never signal deferral), action-scoped negation, normalized quoting/markdown/placeholder review values, case-insensitive workflow gating, and quoted confidence. A negation denies only the hazard it actually modifies. Normalized `none`/`false`/`not applicable`/`tbd` (including markdown-bold and quoted forms) is a filled value for enhancements and a negated Human Review only when a high-risk signal fired.
 
 ```python
 #!/usr/bin/env python3
@@ -92,13 +94,19 @@ FIELDS = [
     "Mode", "Strictness", "Goal", "Assumptions", "Workflow", "Route Confidence",
     "Enhancements Enabled", "Enhancements Available", "Human Review", "Next Action",
 ]
+# Intentional token boundaries: "auth" still attaches to non-letter
+# continuations (auth-service, auth2, auth_) and to full hazard words
+# (authentication, authorize, authorise), but never to the author family
+# (author/authors/authorship/authored/authoring/authorial/authority).
 HAZARD = re.compile(
-    r"production|auth|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part",
+    r"auth(?!or(?:e[ds]|ing|s|ship|ial|ity|itative|itarian)?\b)|production|billing|credential|secret|permission|privacy|pii|delet|destruct|irreversib|third-part",
     re.I,
 )
 NEG = re.compile(r"\b(?:no|not|without)\b", re.I)
 DEFER = re.compile(r"downgrade|defer|fallback|default-up|instead of|skipped", re.I)
-KEY = re.compile(r"^\s*(?:[-*]\s*)?(?:\*\*)?([A-Za-z][A-Za-z0-9 /_-]*?)(?:\*\*)?\s*:\s*(.*)$")
+KEY = re.compile(r"^(?P<ind>\s*)(?:[-*]\s*)?(?:\*\*)?(?P<key>[A-Za-z][A-Za-z0-9 /_-]*?)(?:\*\*)?\s*:\s*(?P<val>.*)$")
+BLOCK = re.compile(r"^[>|]$")
+UNSUPPORTED_SCALAR = re.compile(r"^[>|?!&*%@`#\[\]{},:]")
 ALIAS = {
     "mode": "mode", "strictness": "strictness", "goal": "goal",
     "assumptions": "assumptions", "workflow": "workflow",
@@ -116,18 +124,65 @@ ACTION = re.compile(
 def norm(key):
     return re.sub(r"[^a-z0-9]", "", key.lower())
 
+def block_scalar(raw_lines, start, base_indent):
+    """Collect indented continuation lines after a > or | header."""
+    parts = []
+    i = start
+    while i < len(raw_lines):
+        line = raw_lines[i]
+        if not line.strip():
+            parts.append("")
+            i += 1
+            continue
+        if len(line) - len(line.lstrip()) <= base_indent:
+            break
+        parts.append(line.strip())
+        i += 1
+    return parts, i
+
+def join_block(kind, parts):
+    body = list(parts)
+    while body and body[-1] == "":
+        body.pop()
+    if kind == "|":
+        return "\n".join(body).strip()
+    # folded: blank lines mark paragraph breaks; other lines join by space
+    text, pending_blanks = [], 0
+    for p in body:
+        if p == "":
+            pending_blanks += 1
+            continue
+        text.append("\n\n" if pending_blanks else (" " if text else ""))
+        text.append(p)
+        pending_blanks = 0
+    return "".join(text).strip()
+
 def parse(text):
-    found, lines = {}, {}
-    for line in text.splitlines():
-        stripped = line.strip()
-        m = KEY.match(stripped)
+    found, lines, unsupported = {}, {}, set()
+    raw = text.splitlines()
+    i = 0
+    while i < len(raw):
+        line = raw[i]
+        i += 1
+        m = KEY.match(line)
         if not m:
             continue
-        slot = ALIAS.get(norm(m.group(1)))
-        if slot and slot not in found:
-            found[slot] = m.group(2).strip()
-            lines[slot] = stripped
-    return found, lines
+        slot = ALIAS.get(norm(m.group("key")))
+        if not slot or slot in found:
+            continue
+        value = m.group("val").strip()
+        lines[slot] = line.strip()
+        if BLOCK.match(value):
+            parts, i = block_scalar(raw, i, len(m.group("ind")))
+            found[slot] = join_block(value, parts)
+        elif UNSUPPORTED_SCALAR.match(value) and not (
+            len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'`"
+        ) and not value.startswith("**"):
+            unsupported.add(slot)
+            found[slot] = value
+        else:
+            found[slot] = value
+    return found, lines, unsupported
 
 def clean(value):
     text = (value or "").strip()
@@ -205,13 +260,26 @@ def source_line(lines, *slots):
             return lines[slot]
     return "<absent>"
 
+FIELD_SLOTS = {
+    "Mode": ("mode",),
+    "Strictness": ("strictness",),
+    "Goal": ("goal", "intent"),
+    "Assumptions": ("assumptions", "rationale"),
+    "Workflow": ("workflow",),
+    "Route Confidence": ("confidence",),
+    "Enhancements Enabled": ("enabled",),
+    "Enhancements Available": ("available",),
+    "Human Review": ("review",),
+    "Next Action": ("next",),
+}
+
 def lint(text):
-    raw, lines = parse(text)
+    raw, lines, unsupported = parse(text)
     alias = "intent" in raw and "mode" not in raw and "goal" not in raw
     goal = raw.get("goal") or raw.get("intent") or ""
     assumptions = raw.get("assumptions") or ""
     rationale = raw.get("rationale") or ""
-    if alias and blank(assumptions) and sentence(rationale):
+    if alias and blank(assumptions) and not placeholder(rationale):
         assumptions = rationale
     values = {
         "Mode": raw.get("mode") or "",
@@ -230,20 +298,25 @@ def lint(text):
         or bool(re.search(r"\bL[45]\b", values["Strictness"], re.I))
         or hazard(values["Goal"]) or hazard(values["Assumptions"])
     )
+    # Deferral signals are field-scoped: Human Review status words such as
+    # "skipped" and Next Action text never claim reduced rigor.
+    defer_fields = [
+        values["Goal"], values["Assumptions"], values["Workflow"],
+        values["Enhancements Enabled"], values["Enhancements Available"],
+        rationale,
+    ]
     defer = (
         not placeholder(values["Enhancements Available"])
         or "prompt-only" in values["Workflow"].lower()
         or "fast path" in values["Workflow"].lower()
-        or any(DEFER.search(line) for line in text.splitlines())
+        or any(DEFER.search(v) for v in defer_fields)
     )
     seat = ""
     if sentence(values["Enhancements Available"]):
         seat = "Enhancements Available"
     elif sentence(rationale):
         seat = "Rationale"
-    elif sentence(values["Assumptions"]) and any(
-        w in clean(values["Assumptions"]).lower() for w in ("defer", "downgrade", "out of scope", "fallback", "skip")
-    ):
+    elif sentence(values["Assumptions"]):
         seat = "Assumptions"
     warn_fields = {"Mode", "Strictness", "Next Action"}
     if not high:
@@ -252,7 +325,10 @@ def lint(text):
     for field in FIELDS:
         value = values[field]
         status, detail = "ok", ""
-        if field == "Route Confidence" and not re.fullmatch(
+        supplied = next((s for s in FIELD_SLOTS[field] if s in lines), None)
+        if supplied in unsupported:
+            status, detail = "unparseable", "unsupported scalar form"
+        elif field == "Route Confidence" and not re.fullmatch(
             r"high|medium|low|0(?:\.\d+)?|1(?:\.0+)?|0?\.\d+", clean(value), re.I
         ):
             status, detail = "unparseable", "presence/parse"
@@ -266,19 +342,12 @@ def lint(text):
                 warnings.append(field)
             else:
                 status, detail = "missing", "presence"
-        quoted = {
-            "Mode": source_line(lines, "mode"),
-            "Strictness": source_line(lines, "strictness"),
-            "Goal": source_line(lines, "goal", "intent"),
-            "Assumptions": source_line(lines, "assumptions", "rationale"),
-            "Workflow": source_line(lines, "workflow"),
-            "Route Confidence": source_line(lines, "confidence"),
-            "Enhancements Enabled": source_line(lines, "enabled"),
-            "Enhancements Available": source_line(lines, "available"),
-            "Human Review": source_line(lines, "review"),
-            "Next Action": source_line(lines, "next"),
-        }[field]
-        rows.append({"field": field, "status": status, "detail": detail, "raw": quoted})
+        rows.append({
+            "field": field,
+            "status": status,
+            "detail": detail,
+            "raw": source_line(lines, *FIELD_SLOTS[field]),
+        })
     failing = [r for r in rows if r["status"] not in {"ok", "warning"}]
     return {
         "verdict": "fail" if failing else "pass",
@@ -309,6 +378,7 @@ if __name__ == "__main__":
 ## Honest Limits
 
 - Syntax, not semantics: the linter proves the trace *says* something well-formed, not that the rationale is true or the workflow choice is right. A coherent invented rationale passes.
+- Scalar support is bounded, stdlib-only: `>` and `|` block scalars fold into the field value before checks; other scalar indicators (`?`, `!`, `>-`, `|+`, anchors, flow collections) are refused as `unparseable (unsupported scalar form)` rather than silently read or dropped — this is a refusal, not a YAML guarantee.
 - Confidence is uncalibrated by design: `high` from a chat model is self-report with no calibration evidence. The linter checks comparability only.
 - High-risk keyword list is heuristic English-first (`production|auth|billing|…`); non-English or novel hazard phrasing can miss the review check. Misses are linter gaps, not route approvals — the underlying R4 duty still binds the router.
 - Alias mode (machine six-field form) warns instead of failing on absent `Mode`, `Strictness`, and `Next Action`. It still fails closed on a bad confidence value, a deferral without a rationale sentence, or a high-risk signal with no `Human Review`. A gate that needs strictness recorded should require the full ten-field form.

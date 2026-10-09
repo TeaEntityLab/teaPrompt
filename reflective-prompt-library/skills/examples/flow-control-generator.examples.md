@@ -1,6 +1,6 @@
 # `flow-control-generator` Examples
 
-Illustrative output shapes, not new execution evidence. Every generated script carries the shared selected-preflight gate: `PREFLIGHT` names one executable pathname (never shell text); empty preserves the attended example below and claims no runtime enforcement, and a workflow requiring observed host preconditions names its gate in the run note. When set, the gate is checked before each agent dispatch and after that dispatch before acceptance/publication, including zero-call already-done paths; failure exits 4 and is never swallowed by `MIN_OK`/partial policy. Gate output is point-in-time evidence, never enforcement proof; no cancellation manager is added.
+Illustrative output shapes, not new execution evidence. Every generated script carries the shared selected-preflight gate: `PREFLIGHT` names one executable pathname (never shell text); empty preserves the attended example below and claims no runtime enforcement, and a workflow requiring observed host preconditions names its gate in the run note. When set, the gate is checked before each agent dispatch and after that dispatch before acceptance/publication, including zero-call already-done paths; failure exits 4 and is never swallowed by `MIN_OK`/partial policy. Gate output is point-in-time evidence, never enforcement proof; no cancellation manager is added. Every script also carries the repeated-failure discipline: on agent failure the driver appends a prompt-identity signature to `FAIL_SIGS` (default a driver-owned `state/../fail-signatures.jsonl`, rejected if configured inside worker-writable `STATE`); an identical redispatch exits 3 (`refuse-identical-retry`) — a hold never swallowed by quorum — unless a new `RETRY_REASON` names the changed strategy or corrected input; raw `<out>.failed-<exit>` receipts stay on disk. `AGENT_CMD` unset falls back to the documented example; explicitly empty or whitespace-only exits 4 before any dispatch.
 
 ## Example 1
 
@@ -39,7 +39,7 @@ Expected output shape:
 ## Topology
 - Parallel fan-out/fan-in, MAX_JOBS=4 (canonical positive decimal validated before first dispatch and before any arithmetic evaluation; invalid `00`/`08`/empty/expression/overflow → 4 with zero dispatches), per-pid wave waits, synthesis step
 ## Gates
-- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); `MIN_OK=0` is the zero-quorum spelling; noncanonical quorum → 4; merged deliverable: `./checks/verify-merged.sh state/final.md`; selected-preflight failure exits 4 under either policy
+- Branch quorum: explicit `MIN_OK` or strict (`FAILED=0`, at least one non-empty output); `MIN_OK=0` is the zero-quorum spelling — zero survivors still run synthesis on a zero-survivor note and reach the merged gate; noncanonical quorum → 4; merged deliverable: `./checks/verify-merged.sh state/final.md`; selected-preflight failure and repeated-failure holds exit 4/3 under either policy
 ## Verification
 - Rig-tier only: stub dry run: 5 stub prompts, one forced failure → run aborts non-zero; happy path exit 0. This is not host-enforcement or production e2e proof.
 ## Escalation note

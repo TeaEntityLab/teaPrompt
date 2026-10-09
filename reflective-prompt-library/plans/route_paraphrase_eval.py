@@ -917,6 +917,13 @@ class ParaphraseEval:
 
     def validate_config(self) -> None:
         """Fail closed when the fixture omits fields the eval needs."""
+        expectations = self.config.get("global_expectations", {})
+        for key in ("require_route_trace_on_low_confidence", "forbid_silent_downgrade"):
+            if key not in expectations:
+                raise ValueError(f"global expectations missing required policy: {key}")
+            if type(expectations[key]) is not bool:
+                raise ValueError(f"global expectations policy must be boolean: {key}")
+
         supported_rules = {
             "route_equivalence",
             "low_confidence_visibility",
@@ -1017,7 +1024,7 @@ class ParaphraseEval:
                     group_matches += 1
                     total_matches += 1
 
-                if confidence < 0.5 and self.config["global_expectations"].get("require_route_trace_on_low_confidence", False):
+                if confidence < 0.5 and self.config["global_expectations"]["require_route_trace_on_low_confidence"]:
                     trace_checked += 1
                     if self.has_required_trace(route_trace):
                         trace_passed += 1
@@ -1027,7 +1034,7 @@ class ParaphraseEval:
                             "paraphrase": paraphrase,
                             "missing_trace": True,
                         })
-                if not matched and self.config["global_expectations"].get("forbid_silent_downgrade", False):
+                if not matched and self.config["global_expectations"]["forbid_silent_downgrade"]:
                     # A downgrade is silent when the route was confident and the
                     # trace carries no ambiguity signal — a low-confidence or
                     # contested route is a *visible* downgrade.
@@ -1158,10 +1165,14 @@ def main():
     repo_root = Path(__file__).parent.parent.parent
     config_path = Path(sys.argv[1]) if len(sys.argv) > 1 else None
     
-    eval = ParaphraseEval(str(repo_root), config_path)
+    try:
+        eval = ParaphraseEval(str(repo_root), config_path)
+        results = eval.run_eval()
+    except ValueError as exc:
+        print(f"Configuration error: {exc}", file=sys.stderr)
+        return 2
     print(f"Running {eval.config.get('id', 'ROUTE')} Paraphrase Routing Eval")
     print("=" * 60)
-    results = eval.run_eval()
     
     # Generate and print report
     report = eval.generate_report()

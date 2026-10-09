@@ -431,6 +431,13 @@ def _reject(cfg: dict, kind: str) -> dict:
     elif kind == "metadata-inside-blinded-case-alias":
         # On a case-insensitive volume this resolves inside blinded/ at open time.
         cfg["sealed_map"] = "Blinded/sealed-map.json"
+    elif kind == "traversing-metadata-inside-blinded":
+        cfg["sealed_map"] = "new-parent/../blinded/sealed-map.json"
+    elif kind == "traversing-blinded-parent":
+        cfg["blinded"] = "new-parent/../blinded"
+        cfg["sealed_map"] = "blinded/sealed-map.json"
+    elif kind == "traversing-output-alias":
+        cfg["run_note"] = "new-parent/../results/scores.jsonl"
     elif kind == "late-pair-boundary":
         cfg["pairs"][1]["oracle"].append("config.json")
     elif kind == "dispatched-hold":
@@ -450,6 +457,9 @@ def _reject(cfg: dict, kind: str) -> dict:
         "case-alias-outputs",
         "nfc-nfd-alias-outputs",
         "metadata-inside-blinded-case-alias",
+        "traversing-metadata-inside-blinded",
+        "traversing-blinded-parent",
+        "traversing-output-alias",
         "late-pair-boundary",
         "dispatched-hold",
     ],

@@ -2,9 +2,10 @@
 
 Extracts the emitted checker from the skill and runs the verification
 fixtures (complete, rationale, confidence, high-risk, alias, the RV-04
-contrastive matrix, and quoted confidence) plus the installed dispatch
-traces. A fixture the checker rejects is a contract bug, not a test to
-weaken.
+contrastive matrix, quoted confidence, folded/literal block scalars,
+unsupported-scalar refusal, and documented low-risk forms) plus the
+installed dispatch traces. A fixture the checker rejects is a contract
+bug, not a test to weaken.
 """
 
 from __future__ import annotations
@@ -206,3 +207,100 @@ def test_dispatch_examples_are_not_false_positives():
     for trace in traces:
         result = checker.lint(trace)
         assert result["verdict"] == "pass", _failing(result)
+
+def test_folded_goal_preserves_risk_obligation_and_low_risk_control():
+    checker = _checker()
+    folded = """
+Mode: routing
+Strictness: L4
+Goal: >
+  deploy the auth-service migration
+  to production
+Assumptions: production deploy window
+Workflow: reflective-risk
+Route Confidence: high
+Enhancements Enabled: risk gate
+Enhancements Available: none
+Human Review: none
+Next Action: stop for review
+"""
+    result = checker.lint(folded)
+    assert result["verdict"] == "fail"
+    row = next(r for r in result["rows"] if r["field"] == "Human Review")
+    assert row["detail"] == "R4"
+
+    low = CONTROL.replace(
+        "Goal: rename a local variable",
+        "Goal: >\n  rename a local variable\n  inside one file",
+    )
+    result = checker.lint(low)
+    assert result["verdict"] == "pass"
+    assert _failing(result) == []
+
+
+def test_literal_block_goal_preserves_risk_obligation():
+    checker = _checker()
+    blocked = """
+Mode: routing
+Strictness: L4
+Goal: |
+  deploy the auth-service migration
+  to production
+Assumptions: production deploy window
+Workflow: reflective-risk
+Route Confidence: high
+Enhancements Enabled: risk gate
+Enhancements Available: none
+Human Review: none
+Next Action: stop for review
+"""
+    result = checker.lint(blocked)
+    assert result["verdict"] == "fail"
+    row = next(r for r in result["rows"] if r["field"] == "Human Review")
+    assert row["detail"] == "R4"
+
+
+def test_unsupported_scalar_marker_cannot_hide_content():
+    checker = _checker()
+    for marker in ("?", "!", ">-", "|+", "[]", "{}"):
+        trace = _sub(CONTROL, "Goal", marker)
+        result = checker.lint(trace)
+        assert result["verdict"] == "fail", marker
+        row = next(r for r in result["rows"] if r["field"] == "Goal")
+        assert row["detail"] == "unsupported scalar form", marker
+
+
+def test_low_risk_documented_forms_pass_without_weakening_hazards():
+    checker = _checker()
+    for wording in (
+        "credit the original author in the changelog",
+        "list the authors of this file",
+        "update the authorship note",
+        "thank every coauthor",
+    ):
+        author = checker.lint(_sub(CONTROL, "Goal", wording))
+        assert author["verdict"] == "pass", wording
+        assert _failing(author) == [], wording
+
+    alias_short = ALIAS.replace(
+        "rationale: the banner is copy only, so a wider workflow would not change the result",
+        "rationale: copy change only",
+    )
+    result = checker.lint(alias_short)
+    assert result["verdict"] == "pass"
+    assert "Assumptions" not in result["warnings"]
+
+    assumptions_seat = CONTROL.replace(
+        "Enhancements Available: none",
+        "Enhancements Available: performance review",
+    ).replace(
+        "Assumptions: Only the actions in Goal are planned.",
+        "Assumptions: The existing suite already covers this surface well.",
+    )
+    result = checker.lint(assumptions_seat)
+    assert result["verdict"] == "pass"
+    assert result["rationale_seat"] == "Assumptions"
+
+    skipped = checker.lint(_sub(CONTROL, "Human Review", "skipped"))
+    assert skipped["verdict"] == "pass"
+    assert _failing(skipped) == []

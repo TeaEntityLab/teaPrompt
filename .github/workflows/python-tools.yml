@@ -6,11 +6,23 @@ on:
     paths:
       - 'reflective-prompt-library/**'
       - 'Makefile'
+      - 'acceptance.yaml'
+      - 'VERIFY.md'
+      - 'features/**'
+      - 'README*.md'
+      - 'CONTRIBUTING.md'
+      - '.pre-commit-config.yaml'
       - '.github/workflows/python-tools.yml'
   pull_request:
     paths:
       - 'reflective-prompt-library/**'
       - 'Makefile'
+      - 'acceptance.yaml'
+      - 'VERIFY.md'
+      - 'features/**'
+      - 'README*.md'
+      - 'CONTRIBUTING.md'
+      - '.pre-commit-config.yaml'
       - '.github/workflows/python-tools.yml'
 
 jobs:

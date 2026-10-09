@@ -174,12 +174,38 @@ class PromptComposer:
         return full_path.read_text(encoding="utf-8")
 
     def _strip_examples(self, content: str) -> str:
-        """Strip fenced code blocks and placeholder lines for low-token mode."""
-        content = re.sub(r"```[\s\S]*?```", "", content)
-        content = re.sub(r"^\s*\{[^}]*\}\s*$", "", content, flags=re.MULTILINE)
-        content = re.sub(r"\n{3,}", "\n\n", content)
-        lines = [line.rstrip() for line in content.split("\n")]
-        return "\n".join(lines)
+        """Remove only explicit Example sections outside primary code fences."""
+        kept: List[str] = []
+        skip_level: Optional[int] = None
+        fence = None
+        for line in content.split("\n"):
+            marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+            if marker:
+                run, tail = marker.groups()
+                if fence is None:
+                    fence = (run[0], len(run))
+                elif run[0] == fence[0] and len(run) >= fence[1] and not tail.strip():
+                    fence = None
+                if skip_level is None:
+                    kept.append(line)
+                continue
+            if fence is not None:
+                if skip_level is None:
+                    kept.append(line)
+                continue
+            heading = re.match(r"^ {0,3}(#{1,6})[ \t]+(.+)$", line)
+            if skip_level is not None:
+                if heading and len(heading.group(1)) <= skip_level:
+                    skip_level = None
+                else:
+                    continue
+            if heading and re.match(r"examples?\b", heading.group(2), re.IGNORECASE):
+                skip_level = len(heading.group(1))
+                continue
+            kept.append(line)
+        content = re.sub(r"\n{3,}", "\n\n", "\n".join(kept))
+        return "\n".join(line.rstrip() for line in content.split("\n"))
+
 
     def _build_header(self, slugs: List[str], low_token: bool) -> str:
         header = (
@@ -193,11 +219,7 @@ class PromptComposer:
     def _build_prompt_section(
         self, slug: str, path: str, index: int, low_token: bool
     ) -> str:
-        try:
-            content = self.read_prompt(path)
-        except FileNotFoundError as e:
-            print(f"Warning: {e}", file=sys.stderr)
-            return ""
+        content = self.read_prompt(path)
 
         if low_token:
             content = self._strip_examples(content)
@@ -223,10 +245,7 @@ class PromptComposer:
             sections.append(f"\n---\n## Task\n\n{task_text}\n")
 
         for i, (slug, path) in enumerate(zip(slugs, paths)):
-            section = self._build_prompt_section(slug, path, i, low_token)
-            if section:
-                sections.append(section)
-
+            sections.append(self._build_prompt_section(slug, path, i, low_token))
         return "".join(sections)
 
     def expand_template(self, template_name: str) -> List[str]:
@@ -323,7 +342,11 @@ def main():
 
     if args.output:
         out_path = Path(args.output)
-        out_path.write_text(output, encoding="utf-8")
+        try:
+            out_path.write_text(output, encoding="utf-8")
+        except OSError as e:
+            print(f"Error: cannot write output file: {e}", file=sys.stderr)
+            return 1
         print(f"Composed prompt written to: {out_path}")
     else:
         print(output)

@@ -148,6 +148,7 @@ find . -path './.git' -prune -o -path '*/skills/examples/*.examples.md' -print
 - 高風險任務先走 `reflective-risk`
 - 不要一次全域安裝大量第三方 skills
 - 若新建 skills 根目錄後看不到，重啟對應工具
+- 英文版 helper 的失敗處理：來源解析、目的地建立或複製／連結任一步驟失敗時，helper 會回傳非零結束碼，不會回報安裝成功；來源缺失、來源內沒有預期的核心 skills、缺少 pack skill 或缺少範例目錄時，會在視為安裝完成之前失敗。核心 helper 會先檢查預期的 skills，才建立目的地，因此錯誤的來源不會留下空的安裝結果。`cp -R` 與 `ln -sfn` 的失敗也會向外傳遞，不受呼叫端 `errexit` 設定影響。
 - 英文版 symlink helper 若遇到已存在的非連結 skill 目錄會拒絕覆寫並保留原檔；如需從手動複製改為連結安裝，請由擁有者自行備份本地修改並搬移該目錄後再重跑 helper（helper 不會刪除非連結目的地）
 
 完整來源、平台差異與疑難排解請看英文完整版：
