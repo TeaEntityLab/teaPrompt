@@ -193,5 +193,13 @@ For an authorized replay, give **all four outputs** fresh paths, such as
 `replay-2/results/scores.jsonl` and `replay-2/results/run-note.json`. Keep the
 first namespace and raw receipts. Exclusive creation prevents replacing a
 pre-existing metadata file; filesystem/actor isolation still belongs to the
-host. Failed runs may retain reserved empty files or partial extraction, so
-they also require a new namespace rather than in-place retry.
+host. A configuration the preflight rejects — a missing `{CAND}` placeholder,
+duplicate or nested output paths (judged case- and normalization-insensitively,
+so `results/Scores.jsonl` vs `results/scores.jsonl` and `Blinded/sealed-map.json`
+refuse on every volume), an unresolvable output parent, or a late-pair
+scorer-boundary violation — creates nothing, so the corrected CONFIG may reuse
+the same namespace. That guarantee
+covers the alias classes the preflight checks; an alias it cannot see and any
+run that fails after extraction began (copy error, scorer launch failure or
+timeout) retain partial artifacts and need a new namespace rather than an
+in-place retry.

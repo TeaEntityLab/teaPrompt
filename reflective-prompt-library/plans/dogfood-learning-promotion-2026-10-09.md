@@ -59,7 +59,10 @@ standing runtime non-goal. No managed-skill memory was promoted as authority.
   scaffold checks reuse before extraction/scoring, creates the blinded
   directory without `exist_ok`, and exclusive-opens all three metadata files
   before dispatch. A failed attempt may leave reserved empty files or partial
-  extraction; it remains an attempted namespace, not an in-place retry slot.
+  extraction; it remains an attempted namespace, not an in-place retry slot
+  (narrowed 2026-10-09 by the [review follow-up](#review-follow-up-validate-before-reserving-the-namespace-2026-10-09):
+  a rejected configuration now reserves nothing; the residual applies only to
+  failures after extraction began).
   This prevents replacement of existing output paths, not unauthorized writes
   by another actor or a guarantee of atomic multi-file publication.
 - **Pair accounting:** keep every allocation, label incomplete/censored arms
@@ -161,7 +164,8 @@ locations, not every generated input or fixture. Temporary test setup,
 prompt/backlog mutations, HTML interpolation, Markdown blockquotes and
 survey-only upstream quotations are excluded. These are similar write
 constructs, not 31 additional immutable-receipt defects. Paths below are
-relative to `reflective-prompt-library/`.
+relative to `reflective-prompt-library/`; line numbers are bound to commit
+`49cff74` and shift with later edits (the blinded-scaffold rows already have).
 
 TWINS: searched `write_text|open(..., w)|single > output redirects|tee` - found 31 other sites: `skills/flow-control-generator/SKILL.md`, `skills/flow-loop-harness/SKILL.md`, `plans/proposals/arm-blinded-eval-harness-proposal.md`, `plans/benchmark_tasks.py`, `plans/eval_harness.py`, `plans/generate_index.py`, `plans/prompt_composer.py`, `plans/route_paraphrase_eval.py`.
 
@@ -190,10 +194,99 @@ Prior private ledgers and CLI receipts remain historical; current search,
 source, gate and rendered-document evidence is retained separately in
 `dogfood-twins-commit-ledger-2026-10-09.json`.
 
+## Review follow-up: validate before reserving the namespace (2026-10-09)
+
+A post-commit review of `49cff74` probed the extracted scaffold with rejected
+configurations (trusted fixtures, no model calls). Finding, graded Medium and
+introduced by the create-once change: `main` created `blinded/` before the
+host-held-path, hold/discard, pair, candidate and scorer-argv checks finished,
+and the `{CAND}` placeholder check ran after extraction despite the "validate
+before copying" comment above it. A configuration typo therefore left an empty
+or partially extracted `blinded/`, and the corrected re-run with the same paths
+refused as "already exists". Two Low findings: duplicate output paths surfaced
+only at the exclusive open, after extraction, as an `Errno 17` message; and the
+twin-sweep table above pinned line numbers without a revision anchor.
+
+Repair in the live contract, not the historical proposal: the four output
+paths must be distinct and non-nested (exit 4 naming both keys); the
+placeholder check moved into the pre-copy validation loop; extraction is
+planned and every scorer argv linted before `blinded/` is created; the
+candidate containment re-check stays at copy time. Six new consumer
+regressions (missing placeholder, metadata inside `blinded/`, duplicate
+outputs, nested outputs, late-pair boundary violation, dispatched hold) each
+refuse with exit 4 and zero scorer dispatch, leave only the test's own inputs in the
+workspace, and then run the corrected CONFIG to completion in the same
+namespace. All six failed against the pre-fix scaffold and pass after it. The
+Methods bullet, failure signal and replay example state the narrowed limit.
+
+**Advisory correction, same day — output aliases.** An advisory on the first
+version of this follow-up noted that `Path.resolve()` cannot fold case for a
+file that does not exist yet, so the new distinct-path check would pass
+`results/Scores.jsonl` beside `results/scores.jsonl` and fail only at the
+exclusive open after extraction. A probe on this volume (case-insensitive
+**and** normalization-insensitive, both confirmed by creating one name and
+testing the other) reproduced that, and found a worse, **pre-existing** gap:
+`sealed_map: "Blinded/sealed-map.json"` passed the inside-`blinded/` check
+(same `_within` string comparison in `49cff74` and earlier) and the run
+**completed with exit 0** with the sealed map — arm map plus scoring schedule —
+inside the scorer-visible directory. The NFC/NFD pair behaved like the case
+pair. Repair: a conservative `_fold` identity (resolved parts, NFC-normalized,
+case-folded) now drives both the inside-`blinded/` and the distinct/non-nested
+checks, so these aliases refuse on every volume before anything is reserved;
+output names never need to differ only by case or normalization, so
+over-refusal on case-sensitive volumes costs nothing. Three more regressions
+(case alias, NFC/NFD alias, case alias into `blinded/`) failed against the
+unfolded preflight — the third with exit 0 — and pass now; the consumer suite
+is 61 passed. The contract text bounds the guarantee to the alias classes the
+preflight checks.
+
+Limits: this is a rejected-configuration guarantee bounded to exact,
+case-folded, NFC-normalized and nested path identity. An alias the preflight
+cannot see (another actor racing it, exotic filesystem short names) and any
+run that fails after extraction began (copy error, scorer launch failure or
+timeout) still retain partial artifacts and need a new namespace. File
+exclusivity is still not actor isolation or atomic multi-file publication.
+Scorer-argv checks were not changed: an aliased argv path is already refused
+as outside `blinded/`, which is the safe direction. Two de-pinned wording
+assertions (§Test-integrity corrections) still pass against the current text;
+keeping them removed is the recorded choice, not a repair.
+
+**Closure correction, same day — unresolved parents and evidence.** A live
+symlink-loop probe against `cd5f6e5f…` exited 4 only after creating
+`blinded/`, `map/` and `results/`. Removing `_fold`'s lexical fallback alone
+did not repair it: on the checked Python 3.14.7, non-strict resolution tolerates
+loops. Output identity now strictly resolves existing ancestors, permits only
+missing suffix components, and refuses loops or dangling symlink ancestors
+before reservation. Fold each output once and compare the cached identities.
+Two behavioral regressions cover those parents, zero dispatch, an unchanged
+namespace and a successful corrected re-run; both have failing-before evidence.
+The final consumer suite passes **63 checks** (52 prior + 9 earlier namespace/
+alias cases + 2 parent-resolution cases). Diagnostic wording assertions are
+removed; exit/state/dispatch/error-receipt checks remain, and corrected runs
+must recover all four planted pair/arm outcomes, not merely emit four rows.
+
+The actual extracted CLI and documented CONFIG refuse both unresolved
+parents and all three alias cases without reserving outputs, then recover
+the planted outcomes in the corrected namespace. Repeating that successful
+CONFIG preserves all prior bytes. These are trusted synthetic checks, zero
+model calls, not host-isolation or skill-effect evidence. The final current
+source is bound in the test plan and private
+`dogfood-review-commit-closure-2026-10-09.json`; prior ledgers keep their own
+source and receipt bindings.
+
+Provenance correction: `216abaa3…` was an intermediate uncommitted source used
+by offline checks, not an approved campaign/model run. It was incorrect to
+call it "never a run input". The explicit later **"Fix all and commit"** grants
+the scoped repository commit only; it does not grant a host adoption,
+campaign, provider call, settings change, push or early checkpoint outcome.
+
 ## Falsifiability
 
 This promotion is wrong or incomplete if a repeated extraction dispatches a
 scorer or changes prior bytes; a fresh authorized namespace cannot run; a
+configuration the preflight rejects creates any output path; a checked
+exact/case-folded/NFC-normalized/nested identity lets a host-held output reach
+the scorer-visible directory;
 censored/unattributed outcome becomes a complete delta; or task-declared type
 semantics disappear between oracle admission and final scoring. Synthetic
 signed fixtures falsify protocol defects only. Actual-host enforcement and

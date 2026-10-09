@@ -244,9 +244,16 @@ checkpoint outcome.
 | Arm-blinded harness revision | SHA-256 | Permitted interpretation |
 | --- | --- | --- |
 | Original 2026-10-08 P0 planning freeze | `fcb8550cb1c809e00769054f24e53563663323fa5c67c0b9cf3b91121880a6c1` | Historical pin; old pilot and mechanics receipts do not verify the updated contract |
-| Post-learning contract, rebound 2026-10-09 | `7f4ef03e3984f30dd2a6aa38d125d0ccae4c5d07e6003f865f64adb46f9de30c` | Current future-run input; offline lifecycle checks only, not model utility |
+| Post-learning contract, rebound 2026-10-09 | `7f4ef03e3984f30dd2a6aa38d125d0ccae4c5d07e6003f865f64adb46f9de30c` | Superseded the same day; its lifecycle receipts do not cover the validate-before-reserve fix |
+| Post-review alias-folded output identity, rebound 2026-10-09 | `cd5f6e5fdf09be0e3581f49a992247e26dc9499947c000326565ef50cda181a8` | Superseded the same day by the parent-resolution closure; its receipts do not prove refusal before reservation for unresolved output parents |
+| Review closure with strict existing-ancestor resolution, rebound 2026-10-09 | `8071a47359e761d7507646bbbc9a9dec3edfc3f63ced1bff0efa8eb96b1569af` | Current future-run pin; preflight refuses checked exact/case/NFC/nested aliases and unresolved parents before reservation. 63 consumer checks and an actual extracted CLI smoke with trusted fixtures support lifecycle behavior, not host isolation or model utility |
 
-The private P0 manifest's current `skill_sha256` map now uses the latter pin;
+Same-day provenance correction: intermediate uncommitted `216abaa3…` was
+exercised by offline checks, not by an approved campaign/model run. The earlier
+"never a run input" statement was too broad. The unsuccessful `559d3edc…`
+intermediate also has a failing CLI receipt; neither is the current future pin.
+
+The private P0 manifest's current `skill_sha256` map now uses the latest pin;
 its `skill_pin_history` preserves the original four-skill map and pilot receipt
 identity. The three core treatment pins are unchanged. Freeze the exact current
 bytes again with any separately approved Stage-1 run. Keep the earlier pilot's

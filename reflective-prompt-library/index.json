@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T09:40:02.643978",
+  "generated_at": "2026-10-09T10:48:52.145656",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5418,6 +5418,10 @@
         },
         {
           "level": 2,
+          "text": "Review follow-up: validate before reserving the namespace (2026-10-09)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -5425,8 +5429,8 @@
           "text": "Remaining work and Human Review"
         }
       ],
-      "line_count": 210,
-      "char_count": 16430
+      "line_count": 303,
+      "char_count": 22714
     },
     {
       "path": "reflective-prompt-library/plans/mattpocock-skills-v131-delta-survey-2026-10-07.md",
@@ -5975,8 +5979,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 267,
-      "char_count": 66580
+      "line_count": 274,
+      "char_count": 67596
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -17134,8 +17138,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 475,
-      "char_count": 32443
+      "line_count": 510,
+      "char_count": 34592
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",

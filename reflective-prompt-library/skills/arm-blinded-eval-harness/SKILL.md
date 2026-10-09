@@ -48,6 +48,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Deterministic scorer invocation with a code/data boundary: each oracle's `argv[0]` plus the ticket-declared `scorer_code` entries are trusted scorer code; every other argv entry is candidate data. After `{CAND}` substitution the harness validates every oracle argv for every candidate BEFORE any scorer dispatch and refuses (exit 4) when any entry names an arm label, an arm dir, the config, sealed/results/run-note paths, or anything outside `blinded/`. Fixed options belong in the trusted scorer script, not undeclared data argv. argv lint is not filesystem isolation (see Honest Limits).
 - Discarded-invocation ledger: malformed or environment-incomplete invocations (wrong CLI spelling, tool-rejection with no proposal) are logged with raw receipts and re-run; they never enter the pair denominator. The denominator stays fixture-pair level (n = number of repair pairs).
 - Immutable run artifacts: use a fresh `blinded/` directory and fresh sealed-map, score and run-note files. Existing paths refuse with exit 4 before extraction or scoring; metadata files are exclusive-created before scorer dispatch. A replay or corrected audit uses a new output namespace and retains the original receipts.
+- Validate before reserving: require four fresh, distinct, non-nested outputs using resolved paths plus conservative NFC/case folding; unresolved identity refuses, never falls back to lexical identity. Finish config, candidate-path and scorer-argv preflight before creating `blinded/`, so a preflight refusal reserves nothing and its correction may reuse the namespace. This covers those checked alias classes, not racing actors or filesystem-specific aliases; failures after extraction starts retain partial artifacts and require a fresh namespace.
 
 ### Never
 
@@ -83,8 +84,8 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 
 - Any blinded path contains an arm label (`control`, `treatment`) → exit 4 before scoring.
 - Any oracle argv entry (after `{CAND}` substitution) names an arm label, an arm dir, the config, sealed/results/run-note paths, or any existing path outside `blinded/` — unless it is `argv[0]` or declared `scorer_code` — → exit 4 before ANY scorer dispatch.
-- A host-held output (sealed map, results, run note) resolves inside `blinded/` → exit 4 (schedule metadata must stay off the scorer read path).
-- Missing required config key, malformed arm_dirs/candidates/oracle, an oracle missing the `{CAND}` placeholder, or an unsubstituted `{CAND}` → exit 4.
+- A host-held output (sealed map, results, run note) resolves inside `blinded/`, including by a case or normalization alias such as `Blinded/sealed-map.json` → exit 4 (schedule metadata must stay off the scorer read path).
+- Missing required config key, malformed arm_dirs/candidates/oracle, an oracle missing the `{CAND}` placeholder, an unsubstituted `{CAND}`, duplicate/nested output paths (including case or Unicode-normalization aliases), or unresolved output identity → exit 4 before any output path is created.
 - Absolute, parent-traversing, missing, or symlink-escaping candidate paths, or a hold record other than `stale` exit 4 with `dispatched: false` → exit 4 before extraction/scoring.
 - Scorer launch failure or timeout → exit 4; preserve completed rows and the execution-error receipt, halt further scoring, and never interpret incomplete scoring as product failure.
 - Seed hash mismatch between clones (caller-side clone check) → exit 4 (clones not identical); do not score.
@@ -125,7 +126,7 @@ trusted scorer code; every other argv entry is candidate data and must resolve
 inside blinded/. argv lint is not filesystem isolation: keeping the sealed
 map, arm dirs, and config off the scorer's read path is a host precondition.
 """
-import hashlib, json, os, random, secrets, shutil, subprocess, sys
+import hashlib, json, os, random, secrets, shutil, subprocess, sys, unicodedata
 from contextlib import ExitStack
 from pathlib import Path
 
@@ -156,6 +157,25 @@ def _within(child: Path, parent: Path) -> bool:
     except (ValueError, OSError):
         return False
     return True
+
+
+def _fold(path: Path) -> tuple:
+    # Strictly resolve existing ancestors; only missing suffixes are allowed.
+    suffix = []
+    while True:
+        try:
+            parts = path.resolve(strict=True).parts + tuple(reversed(suffix))
+            break
+        except FileNotFoundError:
+            if path.is_symlink() or path.parent == path:
+                raise
+            suffix.append(path.name)
+            path = path.parent
+    return tuple(unicodedata.normalize("NFC", p).casefold() for p in parts)
+
+
+def _nested(child: tuple, parent: tuple) -> bool:
+    return child[:len(parent)] == parent
 
 
 def _string_list(value) -> bool:
@@ -192,14 +212,26 @@ def main(cfg_path: str) -> int:
     sealed_map = Path(cfg["sealed_map"])
     results_path = Path(cfg["results"])
     run_note_path = Path(cfg["run_note"])
-    for path in (blinded, sealed_map, results_path, run_note_path):
+    outputs = (("blinded", blinded), ("sealed_map", sealed_map),
+               ("results", results_path), ("run_note", run_note_path))
+    for label, path in outputs:
         if path.exists() or path.is_symlink():
             return _fail(f"run artifact already exists; use a fresh output namespace: {path}")
-    blinded.mkdir(parents=True)
-    for label, path in (("sealed_map", sealed_map), ("results", results_path),
-                        ("run_note", run_note_path)):
-        if _within(path, blinded):
+    try:
+        folded = {label: _fold(path) for label, path in outputs}
+    except (OSError, RuntimeError) as exc:
+        return _fail(f"cannot resolve run output: {exc}")
+    # Host metadata must stay outside even a case/normalization alias of blinded/.
+    for label, path in outputs[1:]:
+        if _nested(folded[label], folded["blinded"]):
             return _fail(f"host-held {label} inside scorer-visible blinded/: {path}")
+    # Equal or ancestor outputs would overwrite or block another receipt.
+    for i, (label, path) in enumerate(outputs):
+        for other_label, other in outputs[i + 1:]:
+            if (_nested(folded[label], folded[other_label]) or
+                    _nested(folded[other_label], folded[label])):
+                return _fail(f"output paths must be distinct and non-nested: {label} vs {other_label}")
+    # Finish every preflight check before reserving the namespace.
     discarded = cfg.get("discarded", [])
     if not isinstance(discarded, list):
         return _fail("discarded must be a list")
@@ -269,6 +301,8 @@ def main(cfg_path: str) -> int:
         if (not _string_list(pair.get("candidates")) or not pair["candidates"] or
                 not _string_list(pair.get("oracle")) or not pair["oracle"]):
             return _fail(f"pair {pid} needs candidate and oracle string lists")
+        if not any("{CAND}" in a for a in pair["oracle"]):
+            return _fail(f"oracle for pair {pid} missing {{CAND}} placeholder")
         for cand in pair["candidates"]:
             rel = Path(cand)
             if rel.is_absolute() or ".." in rel.parts:
@@ -278,7 +312,8 @@ def main(cfg_path: str) -> int:
                 source = root / rel
                 if not _within(source, root) or not source.is_file():
                     return _fail(f"candidate missing or outside arm dir: {pid}/{arm}/{cand}")
-    sealed, final_state_hashes, planned = {}, {}, {}
+    # Plan the extraction and lint every scorer argv before creating anything.
+    sealed, final_state_hashes, planned, extraction = {}, {}, {}, []
     for pair in cfg["pairs"]:
         pid = pair["id"]
         if pid == hold_id:
@@ -290,29 +325,18 @@ def main(cfg_path: str) -> int:
         # order, so creation sequence carries no provenance.
         for arm in sorted(cfg["arms"]):
             for cand in pair["candidates"]:
-                cand_id = secrets.token_hex(6)
-                dest = blinded / f"{pid}-{cand_id}{Path(cand).suffix}"
-                try:
-                    source = Path(cfg["arm_dirs"][pid][arm]) / cand
-                    if not _within(source, Path(cfg["arm_dirs"][pid][arm])):
-                        return _fail(f"candidate outside arm dir: {pid}/{arm}/{cand}")
-                    shutil.copyfile(source, dest)
-                except OSError as exc:
-                    return _fail(f"cannot extract {pid}/{arm}/{cand}: {exc}")
+                dest = blinded / f"{pid}-{secrets.token_hex(6)}{Path(cand).suffix}"
                 sealed[dest.name] = {"pair": pid, "arm": arm, "file": cand}
+                extraction.append((pid, arm, cand, dest))
     # Blinding assertion: no arm token anywhere in the scorer-visible surface.
-    for p in blinded.iterdir():
-        if any(t in p.name.lower() for t in ARM_TOKENS):
-            return _fail(f"label leak: {p.name}")
-    # Scorer code/data boundary, validated for every candidate BEFORE dispatch:
-    # argv[0] plus declared scorer_code entries are trusted code; every other
-    # entry is candidate data and must stay inside blinded/ and off host-held
-    # paths. Undeclared flags/scalars are not trusted code or blinded data.
+    for name in sealed:
+        if any(t in name.lower() for t in ARM_TOKENS):
+            return _fail(f"label leak: {name}")
+    # Validate all scorer argv before extraction: declared code is trusted;
+    # all other entries must be blinded candidate data, not host-held paths.
     for pair in cfg["pairs"]:
         if pair["id"] == hold_id:
             continue
-        if not any("{CAND}" in a for a in pair["oracle"]):
-            return _fail(f"oracle for pair {pair['id']} missing {{CAND}} placeholder")
         for name, meta in sealed.items():
             if meta["pair"] != pair["id"]:
                 continue
@@ -343,6 +367,17 @@ def main(cfg_path: str) -> int:
                 if not _within(Path(a), blinded):
                     return _fail(f"scorer data outside blinded/: {a}")
             planned[name] = argv
+    # Preflight passed; only now reserve blinded/ and extract.
+    blinded.mkdir(parents=True)
+    for pid, arm, cand, dest in extraction:
+        root = Path(cfg["arm_dirs"][pid][arm])
+        try:
+            source = root / cand
+            if not _within(source, root) or not source.is_file():
+                return _fail(f"candidate outside arm dir: {pid}/{arm}/{cand}")
+            shutil.copyfile(source, dest)
+        except OSError as exc:
+            return _fail(f"cannot extract {pid}/{arm}/{cand}: {exc}")
     # Private scoring schedule: shuffled here, recorded only in the sealed map.
     # The public execution order never influences this order, so an
     # ordinal-only predictor reading public order guesses at chance.

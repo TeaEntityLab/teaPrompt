@@ -3516,3 +3516,119 @@ grant did not authorize campaign execution, host adoption, model/provider
 calls, settings/service changes, commit or push. The later TWINS correction
 and commit instruction authorizes the verified repository commit only;
 campaign/adoption/settings/model execution and push remain unapproved.
+
+## Review follow-up: validate before reserving the namespace (2026-10-09)
+
+### Goal, summary and authority
+
+The user requested a full review of `49cff74`, promotion of worthy findings,
+and then explicitly **"Fix all and commit"**. The create-once scaffold had
+reserved `blinded/` before validation finished, blocking corrected retries.
+Repairs now cover namespace ordering, exact/case/NFC/nested output identity
+and unresolved output parents; the line-number record is revision-anchored.
+The grant covers this scoped repository commit only: no new skill/pack/runtime,
+host adoption, campaign, model/provider call, settings change or push.
+
+### Files changed and implementation
+
+- `skills/arm-blinded-eval-harness/SKILL.md`: output paths must be distinct
+  and non-nested (exit 4 naming both keys) under a conservative `_fold`
+  identity: strictly resolve existing ancestors, permit only missing suffixes,
+  refuse loops/dangling symlink ancestors, then cache NFC/case-folded parts.
+  The same identities drive the inside-`blinded/` check; `{CAND}` moved into the
+  pre-copy validation loop; extraction is planned and every scorer argv linted
+  before `blinded/` is created; the candidate containment re-check stays at
+  copy time. New Methods bullet and failure signals.
+- `skills/examples/arm-blinded-eval-harness.examples.md`: Example 5 states the
+  narrowed limit (rejected CONFIG creates nothing; post-extraction failures
+  still need a new namespace).
+- `plans/tests/test_arm_blinded_eval_consumers.py`: nine earlier rejected-
+  configuration cases plus two unresolved-parent cases require exit 4,
+  zero dispatch and no reserved output, then complete a corrected run in the
+  same namespace. Diagnostic wording pins are removed; exit/state/dispatch/
+  error-receipt invariants remain. Corrected runs must recover the four
+  planted pair/arm outcomes, not merely produce four score rows.
+- `plans/dogfood-learning-promotion-2026-10-09.md` (follow-up section,
+  narrowed limit pointer, revision-anchored twin-sweep line numbers),
+  `plans/skill-dogfood-test-plan-2026-10-08.md` (new harness pin row),
+  `PROJECT_KNOWLEDGE.md` (lesson evidence + Decision Index clause), this
+  section and regenerated `reflective-prompt-library/index.json`. Paths above
+  are relative to `reflective-prompt-library/`.
+
+### Acceptance criteria and traceability
+
+| Criterion | Evidence | Status |
+| --- | --- | --- |
+| A configuration the preflight rejects reserves no output | Nine namespace/alias cases plus loop and dangling-parent cases; failing-before receipts and passing final checks | Verified for the stated preflight classes |
+| Corrected re-run reuses the namespace | Exit 0, four dispatches and exact planted outcomes after refusal | Verified |
+| Duplicate/nested/aliased outputs refuse before extraction | Behavioral tests require exit 4 and no residue; actual CLI receipts identify the conflicting paths without permanent wording pins | Verified |
+| No checked output identity aliases metadata into `blinded/` | Case-alias metadata case refuses before reservation; earlier source completed with exit 0 and exposed the sealed map | Verified on this volume; conservative elsewhere |
+| Existing create-once, boundary, hold, discard and timeout behavior retained | Final consumer suite: 63 passed (52 prior + 9 namespace/alias + 2 unresolved-parent cases) | Verified |
+| Historical evidence remains source-bound | Old receipts, proposal and planning pins retained; final source has a new current pin and closure ledger | Verified |
+
+### Tests and checks run
+
+Final consumer suite: **63 passed**. The actual extracted CLI with the
+documented CONFIG refused five cases (loop parent, dangling parent, case alias,
+NFC/NFD alias and case alias into `blinded/`) with zero output reservation and
+zero dispatch, then recovered the four planted pair/arm outcomes. Repeating
+the successful CONFIG exited 4 without changing prior bytes. These checks
+used trusted synthetic fixtures, zero model calls and no untrusted execution.
+
+Failing-before evidence: the earlier six namespace cases failed against
+`49cff74`; the three alias cases failed against the first follow-up; the
+loop parent failed against `cd5f6e5f…` and the unsuccessful `559d3edc…`
+intermediate; the dangling-parent regression failed before strict resolution
+also refused dangling symlink ancestors. On the observed Python 3.14.7,
+non-strict resolution tolerates loops, so removing a lexical fallback alone
+was insufficient. Final source: `8071a47359e761d7507646bbbc9a9dec3edfc3f63ced1bff0efa8eb96b1569af`.
+
+The earlier **1,566-test** repository gate is historical alias-repair evidence,
+not evidence for the strict-parent closure. The current closure's source,
+CLI and repository-gate receipts are bound separately in private
+`dogfood-review-commit-closure-2026-10-09.json`; historical ledgers retain their
+original bindings. Non-blocking skill-size/record warnings are not hidden by
+changing thresholds or dropping contract content.
+
+Final closure gate: `generate_index.py && make all` — **1,568 passed**;
+validators report 0 errors, all three routing evaluations pass, and 9 skill
+warnings plus 35 historical-record warnings remain non-blocking. A separate
+imported `main(config_path)` smoke recovered all four planted outcomes.
+All **63** prior source/receipt bindings are unchanged; the installed skill
+alias resolves to this repository source and matches the current pin.
+
+**Advisory correction.** The first version of this follow-up claimed every
+rejected configuration reserves nothing. An advisory pointed out that
+`Path.resolve()` cannot fold case for a not-yet-created file, so
+`results/Scores.jsonl` beside `results/scores.jsonl` passed the distinct check
+and collided at the exclusive open after extraction. The probe confirmed it
+and found the pre-existing boundary gap above. Later CLI probing found that
+non-strict resolution tolerates symlink loops; current preflight instead
+strictly resolves existing ancestors and refuses dangling ones. Its guarantee
+remains bounded to checked path classes, not filesystem/actor isolation.
+
+### Failures, skipped checks and residual risks
+
+An alias the preflight cannot see (another actor racing it, exotic filesystem
+short names) and any run that fails after extraction began (copy error,
+scorer launch failure or timeout) still retain partial artifacts and need a
+new namespace. Folding is conservative: on a case-sensitive volume two output
+names differing only by case are refused although they would be distinct
+files; nothing needs such names. File exclusivity is not actor isolation or
+atomic multi-file publication. Scorer-argv checks were not changed; an aliased
+argv path is already refused as outside `blinded/`. The two de-pinned wording
+assertions still pass against the current text; keeping them removed is a
+recorded choice. The twin-sweep line numbers are bound to commit `49cff74`.
+Offline trusted-fixture checks do not establish actual-host isolation or
+skill efficacy.
+
+Provenance correction: `216abaa3…` was an intermediate uncommitted input to
+offline checks, not an approved campaign/model run. "Never a run input" was
+too broad; its evidence cannot be pooled with the current source's receipts.
+
+### Remaining work and Human Review
+
+TEST-001 host qualification and the Stage-1/TEST-002–004 campaign remain
+**BLOCKED** under their existing gates. The user-owned **2026-10-11
+checkpoint** is date-gated and unchanged. The scoped repository commit is
+explicitly authorized; it does not resolve those external gates or grant a push.
