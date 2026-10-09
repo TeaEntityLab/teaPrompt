@@ -3890,3 +3890,68 @@ the corrected probe succeeded. Ruby emitted two native-extension warnings.
 Chromium DOM/layout inspection succeeded at 1200×800 with no page overflow,
 but both PNG and JPEG screenshot helper calls timed out: no pixel-proof claim.
 
+## H12-GD approved semantic guard repair (2026-10-10)
+
+### Goal, approval and acceptance status
+
+The maintainer selected **Repair H12-GD + commit**, without push. Replace the
+nine-template heading-only guard with semantic developer checks at the existing
+governance consumer. Required fields, safety defaults and unbound
+version/reference slots are implemented and their failure paths verified.
+Historical H12 counts and the unresolved seven-guard branch remain Held.
+
+### Files changed and implementation
+
+- `plans/validate_governance.py`: safe YAML parsing, unique real template/fence
+  extraction, typed required top-level/nested fields and safety constraints.
+- `plans/tests/test_governed_delivery_adoption_state.py`: behavioral consumer
+  regressions replace the heading-only test; no new incidental English pins.
+- `requirements-dev.txt`: declare `PyYAML>=6.0` for developer validation. CI
+  already installs this file. Installed skills and the stdlib-only host checker
+  are byte-unchanged.
+- Dated review record, September successor pointer, QUALITY_GATES and Decision
+  Index record this approved scope; discovery metadata is regenerated after
+  final record edits.
+
+### Exercised verification
+
+- Actual before-fix CLI: baseline/equivalent-YAML controls exit 0, but all
+  14 invalid controls also incorrectly exit 0.
+- Actual final CLI: **20 controls**; four valid inputs exit 0, 16 invalid inputs
+  exit 1 with diagnostics and no traceback. All nine hollow bodies are refused.
+- Final focused governance/adoption suite: **100 passed**. Includes nested-field
+  omissions, malformed/duplicate YAML, boolean impostors, unsafe defaults,
+  pre-bound reference/version slots, markup decoys and a non-executing unsafe
+  object tag. Legitimate enum choices and equivalent YAML/fences pass.
+- Live governance CLI: **19 valid skills, 0 invalid**. Repository-wide
+  `generate_index.py && make all`: **1,733 passed**, zero validator errors and
+  all three routing evaluations passed. Nine lint warnings and 35 historical
+  record warnings remain. Post-receipt discovery/document checks are separate.
+- Five Chromium document views passed DOM/layout inspection at 1200×800 with
+  no horizontal page overflow. Viewport screenshot capture timed out after
+  20 seconds: no pixel-proof claim. Only the owned tab was opened and released.
+
+### Traceability, risks and next action
+
+Required fields → parsed schemas + consumer omission/type regressions.
+Safety defaults → unsigned/open, no pre-granted sinks/evidence, task-declared
+limits, non-model verification and out-of-band policy checks.
+Reference bindings → required string-typed unbound template slots; not live
+artifact identity, freshness, authentication or host-record validation.
+Source bindings and full dispositions live in
+[the scoped repair record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10).
+
+TWINS: searched heading-only `assert f"### {name}"` template guards and the retired GD heading-guard symbol - found 0 other executable sites: none.
+
+Direct API, actual CLI and the existing Makefile/CI entry points reach the same
+developer checker. These observations do not establish actual-host isolation,
+comparative efficacy or remote CI success. No new skill, core route, registry
+membership or host/campaign authority is created.
+
+The explicit approval covers this guard repair and scoped commit only.
+TEST-001 still needs accepted host/consumer/scorer ownership and authenticated
+evidence; Stage-1/TEST-002–004 still need campaign grants, enforced caps, roles
+and capture/worker isolation. The October 11 checkpoint remains date-gated.
+The historical seven-guard inventory or a separately accepted assessment scope
+remains maintainer-owned; it is not reconstructed from arbitrary current matches.
+

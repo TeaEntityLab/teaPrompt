@@ -10,10 +10,14 @@ import re
 import sys
 from pathlib import Path
 
+
+import pytest
+import yaml
 sys.path.insert(0, str(Path(__file__).parent))
 
 from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa: E402
 from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402
+from validate_governance import GovernanceValidator  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 SKILLS = library_skills_dir()
@@ -205,10 +209,217 @@ def test_gd13_envelope_adds_no_new_ladder():
         assert field in section, field
 
 
-def test_gd2_to_gd10_contract_set_has_nine_templates():
-    section = _section(_read(PACK), "## Contract Set")
-    for name in TEMPLATES:
-        assert f"### {name}" in section, name
+def _contract_result(tmp_path: Path, text: str):
+    skill = tmp_path / "reflective-prompt-library" / "skills" / "governed-delivery" / "SKILL.md"
+    skill.parent.mkdir(parents=True, exist_ok=True)
+    skill.write_text(text, encoding="utf-8")
+    return GovernanceValidator(str(tmp_path)).validate_all()
+
+
+def _template_result(tmp_path: Path, name: str, body: str):
+    """Send a mutated shipped template through the real governance consumer."""
+    text = _read(PACK)
+    match = re.search(
+        rf"(?ms)^### {re.escape(name)}\n.*?^```yaml\n(.*?)^```[ \t]*$",
+        text,
+    )
+    assert match is not None
+    text = text[:match.start(1)] + body.rstrip() + "\n" + text[match.end(1):]
+    return _contract_result(tmp_path, text)
+
+
+def _template_data(name: str):
+    match = re.search(
+        rf"(?ms)^### {re.escape(name)}\n.*?^```yaml\n(.*?)^```[ \t]*$",
+        _read(PACK),
+    )
+    assert match is not None
+    return yaml.safe_load(match.group(1))
+
+
+def _assert_template_rejected(result, field: str):
+    assert result["invalid_skills"] == 1, result
+    assert any(
+        field in error
+        for item in result["errors"]
+        for error in item["errors"]
+    ), result
+
+
+@pytest.mark.parametrize("name", TEMPLATES)
+def test_hollow_contract_template_fails_governance_consumer(tmp_path, name):
+    _assert_template_rejected(_template_result(tmp_path, name, "{}"), name)
+
+
+@pytest.mark.parametrize(
+    "name,path",
+    [
+        ("intent-record", ("unknowns", 0, "owner")),
+        ("intent-record", ("irreversible_assumptions", 0, "human_review")),
+        ("oracle-manifest", ("oracles", 0, "class")),
+        ("oracle-manifest", ("oracles", 0, "owner")),
+        ("oracle-manifest", ("oracles", 0, "host_seal")),
+        ("oracle-manifest", ("oracles", 0, "change_protocol")),
+        ("task-packet", ("spec_version",)),
+        ("task-packet", ("state_ledger_ref",)),
+        ("task-packet", ("oracle_manifest_ref",)),
+        ("failure-log", ("entries", 0, "error_class")),
+        ("verification-plan", ("channels", 0, "independent")),
+        ("evidence-ledger", ("entries", 0, "attester")),
+        ("evidence-ledger", ("entries", 0, "date_checked")),
+        ("acceptance-record", ("accepter",)),
+        ("acceptance-record", ("oracle_manifest_ref",)),
+        ("envelope", ("budget",)),
+        ("envelope", ("kill_conditions",)),
+        ("gate-retro", ("gates", 0, "bypassed")),
+    ],
+)
+def test_severed_contract_field_fails_governance_consumer(tmp_path, name, path):
+    data = _template_data(name)
+    parent = data
+    for key in path[:-1]:
+        parent = parent[key]
+    del parent[path[-1]]
+    _assert_template_rejected(
+        _template_result(tmp_path, name, yaml.safe_dump(data)), str(path[-1]),
+    )
+
+
+@pytest.mark.parametrize(
+    "name,path,value",
+    [
+        ("intent-record", ("status",), "signed"),
+        ("intent-record", ("irreversible_assumptions", 0, "human_review"), "optional"),
+        ("oracle-manifest", ("oracles", 0, "change_protocol"), "in_band"),
+        ("oracle-manifest", ("oracles", 0, "host_seal"), "none"),
+        ("task-packet", ("missing_acceptance",), "continue"),
+        ("task-packet", ("oracle_manifest_ref",), ["oracle.yaml"]),
+        ("failure-log", ("entries", 0, "exit"), "retry"),
+        ("failure-log", ("entries", 0, "after_correction"), "false"),
+        ("verification-plan", ("high_risk_pass_requires_non_model",), False),
+        ("verification-plan", ("channels", 0, "kind"), "self_assessment"),
+        ("evidence-ledger", ("entries", 0, "freshness_kind"), "assumed"),
+        ("evidence-ledger", ("entries", 0, "attester"), True),
+        ("acceptance-record", ("closed",), True),
+        ("acceptance-record", ("closed",), "false"),
+        ("acceptance-record", ("closed",), 0),
+        ("acceptance-record", ("product_evidence_refs",), ["unobserved.json"]),
+        ("envelope", ("failure_signature_limit",), 3),
+        ("envelope", ("allowed_sinks",), ["money"]),
+        ("gate-retro", ("gates", 0, "fired"), True),
+        ("gate-retro", ("policy_change",), "activate_now"),
+    ],
+)
+def test_unsafe_or_mistyped_template_fails_governance_consumer(tmp_path, name, path, value):
+    data = _template_data(name)
+    parent = data
+    for key in path[:-1]:
+        parent = parent[key]
+    parent[path[-1]] = value
+    _assert_template_rejected(
+        _template_result(tmp_path, name, yaml.safe_dump(data)), str(path[-1]),
+    )
+
+
+@pytest.mark.parametrize(
+    "name,field",
+    [
+        ("oracle-manifest", "spec_version"),
+        ("task-packet", "spec_version"),
+        ("task-packet", "state_ledger_ref"),
+        ("task-packet", "oracle_manifest_ref"),
+        ("acceptance-record", "spec_version"),
+        ("acceptance-record", "oracle_manifest_ref"),
+    ],
+)
+def test_template_does_not_prebind_version_or_reference(tmp_path, name, field):
+    data = _template_data(name)
+    data[field] = "old-run"
+    _assert_template_rejected(
+        _template_result(tmp_path, name, yaml.safe_dump(data)), field,
+    )
+
+
+@pytest.mark.parametrize("body", ["[]", "null", "closed: [", "closed: true\nclosed: false"])
+def test_malformed_or_shadowed_template_fails_governance_consumer(tmp_path, body):
+    _assert_template_rejected(
+        _template_result(tmp_path, "acceptance-record", body), "acceptance-record",
+    )
+
+
+def test_equivalent_yaml_and_safe_enum_choices_pass_governance_consumer(tmp_path):
+    data = _template_data("envelope")
+    data["strictness"] = "L4"
+    result = _template_result(tmp_path, "envelope", yaml.safe_dump(data, sort_keys=True))
+    assert result["invalid_skills"] == 0, result["errors"]
+    result = _template_result(
+        tmp_path, "acceptance-record",
+        "# Reordered fields; quoted keys and alternate boolean spelling.\n"
+        "'closed': FALSE\nproduct_evidence_refs: []\noracle_manifest_ref: ''\n"
+        "accepter: ''\nspec_version: ''",
+    )
+    assert result["invalid_skills"] == 0, result["errors"]
+
+
+@pytest.mark.parametrize(
+    "old,new,field",
+    [
+        ("### task-packet\n", "### task-packet\n### task-packet\n", "task-packet"),
+        ("## Contract Set\n", "## Contract Set\n\n## Contract Set\n", "Contract Set"),
+        ("```yaml\n", "```text\n", "intent-record"),
+    ],
+)
+def test_ambiguous_template_markup_fails_governance_consumer(tmp_path, old, new, field):
+    _assert_template_rejected(
+        _contract_result(tmp_path, _read(PACK).replace(old, new, 1)), field,
+    )
+
+
+def test_contract_headings_inside_example_fence_do_not_count(tmp_path):
+    text = _read(PACK).replace("## Contract Set", "````markdown\n## Contract Set", 1)
+    text = text.replace("## Delivery Invariants", "````\n## Delivery Invariants", 1)
+    _assert_template_rejected(_contract_result(tmp_path, text), "Contract Set")
+
+
+@pytest.mark.parametrize("marker", ["~~~", "````"])
+def test_standard_alternate_yaml_fences_pass_governance_consumer(tmp_path, marker):
+    before, section = _read(PACK).split("## Contract Set", 1)
+    section, after = section.split("## Delivery Invariants", 1)
+    section = section.replace("```", marker)
+    result = _contract_result(
+        tmp_path, before + "## Contract Set" + section + "## Delivery Invariants" + after,
+    )
+    assert result["invalid_skills"] == 0, result["errors"]
+
+
+@pytest.mark.parametrize("oracles", [[], [None], [{"name": ""}]])
+def test_missing_oracle_schema_specimen_fails_governance_consumer(tmp_path, oracles):
+    data = _template_data("oracle-manifest")
+    data["oracles"] = oracles
+    _assert_template_rejected(
+        _template_result(tmp_path, "oracle-manifest", yaml.safe_dump(data)), "oracles",
+    )
+
+
+def test_developer_oracle_and_dependent_model_channel_do_not_fake_authority(tmp_path):
+    data = _template_data("oracle-manifest")
+    data["oracles"][0].update({"class": "developer", "host_seal": "none"})
+    result = _template_result(tmp_path, "oracle-manifest", yaml.safe_dump(data))
+    assert result["invalid_skills"] == 0, result["errors"]
+    data = _template_data("verification-plan")
+    data["channels"].append({"kind": "self_assessment", "independent": False})
+    result = _template_result(tmp_path, "verification-plan", yaml.safe_dump(data))
+    assert result["invalid_skills"] == 0, result["errors"]
+
+
+def test_yaml_object_tag_cannot_execute_code(tmp_path):
+    marker = tmp_path / "unexpected-code-execution"
+    expression = f"__import__('pathlib').Path({str(marker)!r}).touch()"
+    body = "!!python/object/apply:builtins.eval\n" + yaml.safe_dump([expression])
+    _assert_template_rejected(
+        _template_result(tmp_path, "acceptance-record", body), "acceptance-record",
+    )
+    assert not marker.exists()
 
 
 def test_gd14_gd15_invariants_and_host_preconditions():

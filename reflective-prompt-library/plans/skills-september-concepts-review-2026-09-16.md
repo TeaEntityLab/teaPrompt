@@ -109,6 +109,8 @@ The first landing of F1 stalled every task outside git (both snapshots empty com
 
 Deterministic guard: `plans/tests/test_skills_september_concepts_review_record.py` (record shape and counts; backlog dry run on the landed template, failing on `75a99d4`; loop pack under budget).
 
+2026-10-10 scoped successor: user approval of H12-GD replaced the nine-template heading-only guard with parsed semantic developer checks in `validate_governance.py`, exercised through its real API/CLI. Required fields, safe defaults and unbound reference/version slots are covered in [the repair record](whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10). The original H12 Held row and September counts stay historical; the seven-fragment inventory remains unresolved and Held. No host, campaign or checkpoint gate changed.
+
 ## Evidence vs Inference
 
 | Claim | Status | Basis |

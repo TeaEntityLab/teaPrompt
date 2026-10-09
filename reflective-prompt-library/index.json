@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T20:47:12.213802",
+  "generated_at": "2026-10-10T01:23:52.502516",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1985,7 +1985,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10"
+        ]
       },
       "structure": [
         {
@@ -2037,8 +2039,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 152,
-      "char_count": 22255
+      "line_count": 154,
+      "char_count": 22815
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-review-2026-10-09.md",
@@ -2268,11 +2270,27 @@
         },
         {
           "level": 2,
+          "text": "H12-GD semantic developer-check repair (2026-10-10)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence actually exercised"
+        },
+        {
+          "level": 3,
+          "text": "Exercised source bindings"
+        },
+        {
+          "level": 3,
+          "text": "Disposition, limits and next action"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 415,
-      "char_count": 61726
+      "line_count": 463,
+      "char_count": 68103
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -8238,6 +8256,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "self-governance-dogfood-2026-09-24.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
@@ -8369,8 +8388,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 437,
-      "char_count": 25854
+      "line_count": 439,
+      "char_count": 26438
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",

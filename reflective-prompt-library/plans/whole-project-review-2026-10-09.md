@@ -377,6 +377,8 @@ This is maintenance continuation, not the date-gated checkpoint. The owning [roa
 
 ### H12 triggered guard-pass consideration
 
+The assessment below is the 2026-10-09 state. Its separately authorized H12-GD repair is recorded in [the dated successor](#h12-gd-semantic-developer-check-repair-2026-10-10); the original seven-guard branch remains Held.
+
 The [owning H12 row](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger) names the next guard pass. This pass considered its two branches separately; it does not adopt or close the original Held row, change protected oracles, or expand the nine-core/ten-pack registry.
 
 | ID | Candidate branch | Current assessment | Disposition / ruling owner |
@@ -391,6 +393,52 @@ Review decision: the candidate has a demonstrated heading-guard coverage gap and
 ### Verification tooling limits
 
 The initial H12 probe omitted the plans import path and could not load `validate_skill_examples`; correcting the harness import path produced the observed result above. Ruby safe parsing succeeded with the same two local native-extension warnings. Actual Chromium DOM/layout inspection retained all 18 findings, the new closure and no horizontal page overflow at 1200×800. PNG and JPEG screenshot helper calls both timed out; pixel capture is therefore unverified, not silently recorded as visual proof. The preview is an owned loopback process, not a user-browser session.
+
+## H12-GD semantic developer-check repair (2026-10-10)
+
+**Decision and scope:** the maintainer explicitly selected “Repair H12-GD + commit.” The approved repair covers required fields, safe defaults and reference slots in the nine existing YAML templates, through the developer governance consumer. It does not authorize changing protected acceptance oracles, the historical seven-guard inventory, host/campaign grants or the date-gated checkpoint.
+
+`plans/validate_governance.py` now safely parses the real fenced Contract Set, requires each named template once, and checks typed top-level and nested fields. Duplicate/non-string YAML keys, malformed objects and heading/fence decoys cannot substitute for a valid body. `PyYAML>=6.0` is declared in `requirements-dev.txt`; CI already installs that development file. The installed skill and its stdlib-only host preflight remain byte-unchanged.
+
+| Template | Consumer-visible protection |
+| --- | --- |
+| `intent-record` | Named intent, unknown owners and required Human Review slots; initial status remains unsigned |
+| `oracle-manifest` | Version slot and oracle name/class/owner/seal/change protocol; authoritative specimens cannot default to no seal |
+| `task-packet` | Version, State Ledger, oracle reference and file slots; missing acceptance stops and repairs |
+| `failure-log` | Oracle/error-class/surface signature, typed correction status and rollback/strategy-change/escalation exits; no identical-retry exit |
+| `verification-plan` | Typed channel/independence and compatibility slots; mandatory non-model rule and an independent non-model specimen; self-assessment cannot claim independence |
+| `evidence-ledger` | Separate claim/source/attester, supported freshness kind and date slot |
+| `acceptance-record` | Version, named accepter, oracle reference and product-evidence slots; initially open and without pre-claimed evidence |
+| `envelope` | Budget/pause/kill/accepter slots, task-declared failure limit, no pre-granted sinks and existing L1–L6 choices |
+| `gate-retro` | Named gate and typed initial receipt flags; policy change remains separate from activation |
+
+Version/reference checks concern required, string-typed **unbound template slots**. They do not resolve live artifacts, establish freshness, authenticate an oracle or validate an instantiated host contract. Editable text and legitimate enum choices are not exact-English prose pins.
+
+### Evidence actually exercised
+
+- Before-fix actual `validate_governance.py` CLI: baseline and equivalent-YAML controls exit 0; all **14 invalid inputs** also incorrectly exit 0, including one hollow body for each of the nine templates, `closed: true`, a removed oracle reference, pre-bound version, duplicate key and malformed YAML.
+- Final actual CLI: **20 controls**; four valid inputs exit 0, and 16 invalid inputs exit 1 with diagnostics and no traceback. Additional controls cover duplicate headings, a Contract Set hidden in an example fence, and standard tilde/four-backtick YAML fences.
+- Final focused developer suite: `test_governed_delivery_adoption_state.py` plus `test_validate_governance.py` — **100 passed**. Coverage includes missing nested owners/class/seal/change protocol, quoted/numeric boolean impostors, empty/mistyped oracle specimens, reference/version pre-binding, and an unsafe YAML object tag that cannot execute its marker expression.
+- Live repository governance CLI: **19 valid skills, 0 invalid**. Full repository gate: `generate_index.py && make all` passed with **1,733 tests**, zero validator errors and all three routing evaluations passed. Nine lint warnings and 35 historical-record warnings remain. Final documentation/index checks follow this receipt update; the full gate is not inferred from focused tests.
+- Chromium DOM/layout inspection of the review, final report, QUALITY_GATES, Decision Index and September successor passed at 1200×800 without horizontal page overflow; the review still exposes all 18 historical findings. The viewport screenshot exceeded the 20-second outer deadline, so pixel capture remains unverified. The owned tab was released; no user-browser session was used.
+- TWINS: searched heading-only `assert f"### {name}"` template guards and the retired GD heading-guard symbol - found 0 other executable sites: none. The surviving symbol mention above is historical evidence, not a live guard. This search does not reconstruct H12's seven historical fragments.
+
+### Exercised source bindings
+
+| Source path | SHA-256 |
+| --- | --- |
+| `reflective-prompt-library/plans/validate_governance.py` | `916dff2b1499d7e49faa1d4fe0ff02f262c07b48f8bd181314b6083eae4f39ca` |
+| `reflective-prompt-library/plans/tests/test_governed_delivery_adoption_state.py` | `6f0c4d92ff9e3dd146d75cbd0f5e801dacc1f3c8e4fa9d63bdb23a0b3b42e07e` |
+| `reflective-prompt-library/requirements-dev.txt` | `a765e0db320728c043e4ed8a606a2f710cb350f50308323f6ab08f363bb1c96c` |
+| `reflective-prompt-library/skills/governed-delivery/SKILL.md` (unchanged) | `43528a06eb02b4ce78ce7994c3b9049f7b00ffdadecd1fd8d2d90af087a166d5` |
+
+### Disposition, limits and next action
+
+The approved H12-GD consumer repair is implemented and its negative/positive paths are verified. The original September H12 row and counts remain historical; the unresolved seven-guard branch remains Held, with its inventory or separately accepted scope still maintainer-owned. No arbitrary current fragments replace that inventory.
+
+Consumer classes: direct validator API and CLI are covered; `make validate`/`make all` reach the same checker; CI's existing requirements-file install supplies the development dependency; dated records and generated discovery metadata carry this scoped successor. Installed skill contracts, host preflight, registry membership, actual-host authentication and campaign caps remain outside the change.
+
+TEST-001 and Stage-1/TEST-002–004 remain Held under their existing owner/evidence/grant gates. The October 11 checkpoint remains date-gated; no early outcome, demotion or policy activation is recorded. No provider/model call or push is part of this repair. Remote CI and host enforcement remain untested.
 
 ## Reviewed source bindings
 
