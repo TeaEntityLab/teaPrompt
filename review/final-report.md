@@ -3286,6 +3286,8 @@ PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting you
 
 ## Dogfooding advisory repair closure (2026-10-09)
 
+**Prior R2 verification snapshot, committed in `178547b`.** The residual advisory closure below supersedes current-source pins and the already-completed commit step. Historical receipts remain unchanged.
+
 ### Goal, summary and authority
 
 Close every reachable advisory repair, then commit the verified repository records before continuing the roadmaps. Of 31 advisories, 18 required a valid or mixed repair and 13 were stale or wrong-premise findings closed without re-editing. The later user instruction authorizes this commit, **not a push**, host adoption, campaign calls, settings changes or skill promotion.
@@ -3341,5 +3343,71 @@ Commit these verified repository records without pushing, then continue only unb
 
 Stage-1/TEST-002–004 still need the explicit campaign envelope, separately enforced session/model/reserve/spend ceilings, named roles and demonstrated worker/capture isolation with scoped memory/capture evidence. Local USD 0 is valid only when granted. The 2026-10-11 checkpoint is date-gated and remains due; no early checkpoint outcome, dormant-item adoption or direction change is inferred.
 
+
 PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting your authorization
 
+## Dogfooding residual advisory repair closure (2026-10-09)
+
+### Goal, summary and authority
+
+The later “Fix all” instruction authorizes scoped offline repairs and record corrections. Every reachable live advisory now has a passing final control; stale leaf, timeout and scorable-gate claims were checked without gratuitous product edits. This round makes no additional commit, push, model/provider request, native untrusted candidate dispatch, host adoption, settings/service change or skill promotion. The broader campaign remains blocked.
+
+### Files changed and current evidence
+
+Repository changes: the dogfood Test Plan, this report and regenerated `reflective-prompt-library/index.json`. Session-local changes: consumer, driver, packet stager, parent controls, offline/security controls and saved native/fault probes; a new audit-preservation regression is retained outside the repo. The generated classification regression was regenerated and remained byte-identical. No runtime is added to TeaPrompt.
+
+All ten frozen sources and six final receipt hashes are bound in `local://dogfood-fixall-r3-source-bindings-2026-10-09.json`; the private P0 manifest retains the previous R2 snapshot separately and still grants no authority.
+
+| Frozen session-local source | SHA-256 |
+| --- | --- |
+| `dogfood-test001-host-v2-2026-10-08.py` | `5eee3ea7ca2a766258277bff157449a2fd1b6c2607aaa98348c1a45d6433eedf` |
+| `dogfood-stage1-run-v2-2026-10-08.py` | `67f18ea756a2fac84216775988bddb671211ee154ace230de6c1fc065dcf05bc` |
+| `dogfood-test001-host-v2-regression-2026-10-08.py` | `332a3dd6cdab04312d2347f8b88358dc852f1d0f27950d63157f09b267a9ca09` |
+| `dogfood-security-native-policy-probe-2026-10-09.py` | `6b0af6b905dd781e73c6611298fedf4f99a1d01b295a5ade417f3b0181c775f7` |
+| `dogfood-security-fault-checks-2026-10-09.py` | `14d981ed5658851a31cd5cbf7f69cc1a8aab5bc38a69ec51f66618749290b9ce` |
+| `dogfood-advisory-parent-checks-2026-10-09.py` | `a929be4c969cae0418361e71e0e2988456b1df8ce88acf595025dc6402b69d5f` |
+| `dogfood-risk-offline-checks-2026-10-08.py` | `96fdbcd55eefc5438258077a3fd22b167ae0c9f5f564807a000874ea185409ac` |
+| `dogfood-security-followup-checks-2026-10-08.py` | `695334d6c190483c9b81baf259b3348c8e046f172f1206ad28a91ef5ec34c74c` |
+| `dogfood-stage1-classification-regression-2026-10-08.py` | `177e6aa87a35aaa6e26d63985ba126f6da2effcdb59e907dc5fc852ffbafc185` |
+| `dogfood-stage1-audit-preservation-regression-2026-10-09.py` | `4df74f8c2af6e0e237bc4af776e1113aed55f584042f74ef678eccc067222eba` |
+
+### Implementation, acceptance status and spec-to-code traceability
+
+R1/R2/R11–R13: `_admit_protected_oracle` admits independently attributed completed candidate errors as failing rows only with `error_origin='candidate'` and strict boolean `censored=False`. Oracle/unknown/missing metadata and cap-censored rows hold. Error text, including “budget”, “quota” or “overload”, is never a censoring authority. Identity, isolation, disclosed/undisclosed coverage and bool-versus-int checks remain strict. `decide_verdict` lets admitted failures override diagnostic error/timeout, but never a blocked/no-dispatch guard. Synthetic stager producers use the same schema.
+
+R8/R11/R12: firmlink, Unicode-normalization and case controls prove equal `(st_dev, st_ino)` with distinct resolved paths that defeat lexical containment. Verdict-sink, packet/workdir and anchor-specific gates all run, alongside positive fresh external sink/anchor and unknown-identity holds. No lowercasing/casefolding shortcut replaces physical ancestry.
+
+R5/R6/R13: the scorable gate and incomplete-receipt control were already correct and remain verified. Historical accounting stays 18 allocated / six completed / 12 censored; prospective diagnostic-only arithmetic pairs stay unscored. `audit_existing` exclusive-creates a distinct source-bound receipt and refuses reuse. The actual CLI repeat returns exit 4 with byte-identical receipt content.
+
+### Tests and checks run
+
+The final pass executes consumer `--offline-self-test`, saved parent/security/offline/native/fault scripts, classification and audit-preservation regressions, and driver `--audit-existing` twice. Native/fault receipts are generated before the security aggregator; source hashes are checked before and after the pass.
+
+| Check | Observed result | Evidence limit |
+| --- | --- | --- |
+| Consumer self-check | 45 PASS | Synthetic protocol/admission/precedence, not host qualification |
+| Parent direct API and orchestration controls | 49 PASS | Includes missing/false fields, unseen answers, typed errors, positive sinks and gate controls |
+| Actual consumer CLI packets and offline integration | 21 expected outcomes; 23 controls PASS | Signed synthetic packets and owned non-model HTTP stub; ten native candidate cases could not run |
+| Security and real alias controls | 45 PASS | Actual filesystem identity and CLI anchor/disjointness branches; native correctness still held |
+| Native policy/lifecycle controls | 7 PASS | Fixed trusted literals only; no candidate or hard-memory proof |
+| Mocked fault controls | 7 PASS | No child created; separate from real native evidence |
+| Classification and audit-preservation regressions | PASS | Historical allocations unchanged; API and actual CLI reuse preserve receipt bytes |
+| `ruff check --select F821` on ten frozen sources | PASS | Undefined-name check only |
+
+Final runtime receipts use `r3-2026-10-09-final` names; the exclusive audit uses `dogfood-stage1-outcomes-corrected-r3-2026-10-09.json`. The final command capture is `local://dogfood-fixall-r3-final-execution-2026-10-09.json`. Repository and rendered-document closure are recorded separately in `local://dogfood-fixall-r3-ledger-2026-10-09.json`, bound to the final plan/report/index revision.
+
+### Failures, skipped checks and residual risks
+
+The first pass failed two anchor fixtures because they changed descendants still lexically inside the work root. The fixture repair changes the root spelling, preserving the expected anchor-specific hold rather than weakening the assertion. `dogfood-fixall-r3-attempt1-bindings-2026-10-09.json` retains that failed pass, four receipts and all ten tested source snapshots. The final pass has no failed controls; 47 named prior source/receipt bindings remain unchanged.
+
+Ten native candidate cases remain **could-not-run**, not correctness or denial passes. Synthetic signed oracle fields do not authenticate a real host or prove expected-answer isolation/capture completeness. Fixed trusted-literal probes bypass the guard only within their owned process; no hard-memory guarantee, worker/capture isolation or skill-effect result follows. No missing recurrence evidence is converted to observed zero.
+
+TWINS: searched overwriting `write(CORRECTED_RECEIPT`, unconditional protected-error rejection and the retired `volume_alias_directory_identity` across repository records and affected live sources - found 0 other live sites; one retirement comment names the old alias control. Read-only historical snapshots intentionally preserve prior code.
+
+### Remaining work, next action and human review needs
+
+TEST-001 still requires a designated qualified host, pinned consumer/scorer/golden-ledger implementation, authenticated complete inventories/action/coverage evidence, independent protected oracle controls and named host/capture and leak-audit owners. The current reference still cannot dispatch candidates on any platform; selecting it cannot close TEST-001. Stage-1/TEST-002–004 require the explicit campaign envelope, independently enforced session/model/reserve/spend caps, scoped memory/capture evidence and isolated tool-using worker profile. A local USD 0 envelope is valid only when explicitly granted. These repairs resolve protocol defects, not those external prerequisites.
+
+**Checkpoint session owner: user, on 2026-10-11.** Follow the [checkpoint runbook](../reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md) and record the P6 branch, G9/AS9 proceed/hold/close, separate H5/H6 rulings, and the `governed-delivery` recurrence/retention-or-demotion decision, alongside the remaining agenda. Starting **2026-10-12**, `test_checkpoint_cannot_pass_undocumented` fails `make all` without `plans/checkpoint-2026-10-11-outcome.md`. The [owning demotion policy](../reflective-prompt-library/plans/governed-delivery-adoption-2026-09-03.md#demotion-triggers) also treats a skipped or unrecorded checkpoint as grounds to demote `governed-delivery`, with missing recurrence evidence still `unknown`, not an observed zero. This hand-off neither records an early outcome nor executes that demotion.
+
+PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting your authorization

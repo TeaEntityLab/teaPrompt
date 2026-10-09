@@ -211,6 +211,8 @@ The offline historical audit preserves all 18 allocated pairs, with six complete
 
 ### Advisory repair verification (2026-10-09)
 
+**Prior R2 verification snapshot.** The residual advisory verification below supersedes these current-source pins; the R2 receipts and source snapshots remain historical evidence.
+
 The current consumer (`426daa58cd58…`), prospective driver (`48bdf32ac452…`) and packet stager (`002f38275de0…`) passed the bounded offline protocol checks. Directory containment uses physical directory identities, including unknown-identity holds and a valid fresh external verdict file. Invalid timeouts remain serializable. Protected-oracle admission requires a separately identified executable, isolated expected-answer state, the disclosed boundary cases and at least four distinct host-chosen undisclosed integer pairs; synthetic signed fixtures prove that admission protocol, not actual-host execution or isolation.
 
 Saved `dogfood-security-native-policy-probe-2026-10-09.py`, `dogfood-security-fault-checks-2026-10-09.py` and parent integration controls now reproduce the native-policy/lifecycle and injected-fault claims separately. The native probe uses only fixed trusted literals; no candidate is loaded through its process-local guard bypass. New receipts carry `r2-2026-10-09` names and final source/probe hashes. Historical source/receipt bindings and all five pre-repair source snapshots remain unchanged. Historical accounting still retains 18 allocations, six completed comparisons and 12 censored pairs; a separate prospective regression marks diagnostic-only arithmetic pairs unscored without rewriting history.
@@ -218,6 +220,16 @@ Saved `dogfood-security-native-policy-probe-2026-10-09.py`, `dogfood-security-fa
 Prospective runs preserve an envelope-and-mode-specific directory, reject same-run reuse and restore the output root even after failure. Full arithmetic campaigns hold before any request while their only available oracle is diagnostic. The actual candidate guard remains non-viable on every platform; a qualified existing host or separately approved demonstrated replacement is still required. The [current advisory closure report](../../review/final-report.md#dogfooding-advisory-repair-closure-2026-10-09) records checks, limits and current bindings. No campaign approval, model call, actual-host qualification or skill change follows from this repair. The user's later instruction authorizes a verified repository-record commit without pushing, not adoption or campaign dispatch.
 
 
+
+### Residual advisory verification (2026-10-09)
+
+The final consumer (`5eee3ea7ca2a…`, scorer version `v4-2026-10-09`), driver (`67f18ea756a2…`) and stager (`332a3dd6cdab…`) passed the frozen offline checks. Protected candidate exceptions/early exits count as completed failures only with independently host-attributed `error_origin='candidate'` and explicit boolean `censored=False`. Oracle-side, unknown, missing-attribution or censored errors hold. Candidate-authored error text cannot declare a cap. An admitted complete failure overrides diagnostic error/timeout; blocked/no-dispatch diagnostics remain held.
+
+Direct admission/semantic controls exercise identity/isolation fields, five disclosed plus at least four distinct undisclosed pairs, wrong unseen answers, strict numeric typing and failure precedence. Actual firmlink, NFD and case aliases establish equal physical identities and different resolved spellings across verdict sinks, packet/workdir disjointness and trusted-anchor placement. Fresh external sink/anchor controls pass their placement gates. One first-pass fixture changed a descendant instead of the work root; its two failed controls, receipts and tested source snapshots are retained separately, and the repaired root-alias controls pass.
+
+The driver now exclusive-creates `dogfood-stage1-outcomes-corrected-r3-2026-10-09.json`; an actual repeat CLI audit exits 4 without changing its bytes. The audit preserves 18 historical allocations, six completed comparisons and 12 censored pairs, never regrading old model outputs. Final probe receipts use distinct `r3-2026-10-09-final` names. All ten executable dependencies were frozen before the final pass, and 47 named prior source/receipt bindings remained unchanged. The [residual closure report](../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09), `local://dogfood-fixall-r3-source-bindings-2026-10-09.json` and the private P0 manifest carry the current evidence; repository/render closure belongs to the repair ledger, not runtime qualification.
+
+TEST-001 and Stage-1/TEST-002–004 remain held. No model/provider request, native untrusted candidate execution, host adoption, skill change, settings/service change, additional commit or push follows from this repair. The user-owned 2026-10-11 checkpoint and its existing deadman/demotion consequences remain due, with the complete hand-off in the residual closure report.
 
 ## Falsifiability and next action
 

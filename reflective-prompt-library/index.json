@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T01:17:03.437359",
+  "generated_at": "2026-10-09T02:45:26.209754",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -5802,7 +5802,8 @@
           "flow-pack-usage-log.md#convention",
           "../../review/final-report.md#skill-dogfooding-experiment-plan-2026-10-08",
           "../../review/final-report.md#offline-dogfooding-risk-repairs-2026-10-08",
-          "../../review/final-report.md#dogfooding-advisory-repair-closure-2026-10-09"
+          "../../review/final-report.md#dogfooding-advisory-repair-closure-2026-10-09",
+          "../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09"
         ]
       },
       "structure": [
@@ -5883,12 +5884,16 @@
           "text": "Advisory repair verification (2026-10-09)"
         },
         {
+          "level": 3,
+          "text": "Residual advisory verification (2026-10-09)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 226,
-      "char_count": 61933
+      "line_count": 238,
+      "char_count": 64547
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
