@@ -180,3 +180,18 @@ before scoring. A scorer launch failure or timeout instead retains completed
 rows plus an execution-error row (`exit: null`, `error` class), writes
 `scorer_error` in the run note, and exits 4; partial scores are not a complete
 comparison.
+
+## Example 5 — Replay preserves the first run
+
+The first extraction writes its blinded candidates, sealed map, scores and run
+note. Invoking the same CONFIG again exits 4 before any scorer runs and leaves
+those bytes unchanged. An existing file or dangling symlink at any output also
+refuses; it is not permission to truncate or replace the path.
+
+For an authorized replay, give **all four outputs** fresh paths, such as
+`replay-2/blinded/`, `replay-2/map/sealed-map.json`,
+`replay-2/results/scores.jsonl` and `replay-2/results/run-note.json`. Keep the
+first namespace and raw receipts. Exclusive creation prevents replacing a
+pre-existing metadata file; filesystem/actor isolation still belongs to the
+host. Failed runs may retain reserved empty files or partial extraction, so
+they also require a new namespace rather than in-place retry.

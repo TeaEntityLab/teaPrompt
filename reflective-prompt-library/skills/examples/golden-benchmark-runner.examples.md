@@ -101,3 +101,35 @@ that timestamp field: equality passes; a changed candidate hash, score,
 scorer, arm order, identity, or caps fails. Timestamp normalization must not
 hide a measurement or setup difference. This is a mechanics check, not a
 model-utility comparison.
+
+## Example 5 — Complete failures are not censored pairs
+
+Illustrative receipt classifications, not an observed model comparison:
+
+| Allocated pair | Control | Treatment | Reportable delta |
+| --- | --- | --- | --- |
+| B001 | Completed, scorable 0 | Completed, scorable 100 | +100 |
+| B002 | Completed, scorable 100 | Host reports cap exhaustion; unscored | None |
+| B003 | Completed, scorable 0 | Oracle-side error; unscored | None |
+
+Report three allocated pairs, one completed comparison and two
+censored/incomplete comparisons. B002/B003 stay in the allocation ledger;
+neither becomes a zero-score loss or disappears from accounting. Discards and
+the separately reported preflight-hold fixture remain outside this population.
+
+For a protected executable result, a candidate exception containing “budget”
+still counts as a completed failure when the host attests
+`error_origin='candidate'` and boolean `censored=False`. Host-attested
+`censored=True`, missing/invalid censor metadata or an oracle/unknown origin
+keeps that error unscored. Candidate text cannot make the decision. A completed
+failure can override a diagnostic error/timeout, not a blocked/no-dispatch hold.
+
+An integer addition oracle checks the final result's type as well as value:
+`True` and `1.0` do not satisfy an expected integer `1`. A constant answer and
+a wrong unseen-case answer also fail. Protected host results bind the candidate
+and scorer executable/revision; the human semantic scorer is a separate role.
+Synthetic signed fixtures verify this protocol, not actual-host isolation.
+
+Preserve original receipts. A corrected audit writes a new, exclusive-created
+namespace and identifies its source snapshot and changed oracle; it never
+rewrites or silently regrades the historical model comparison.

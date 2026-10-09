@@ -1,6 +1,6 @@
 # Skill Improvement Through Dogfooding — Test Plan — 2026-10-08
 
-> **Status: experiment design with user-authorized risk repairs; campaign execution and skill changes remain unapproved.** Planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. This is a non-authoritative, dated Test Plan, not a new harness policy or runtime. The later instruction “Fix all and continue fix risks” authorizes correcting the consumer, measurement logic, and records with offline synthetic checks; it does not select a host, grant metered/model dispatch, or adopt a consumer. No efficacy result is claimed.
+> **Status: experiment design with user-authorized risk repairs and a scoped learning promotion; campaign execution remains unapproved.** Planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. This is a non-authoritative, dated Test Plan, not a new harness policy or runtime. The later instruction “Fix all and continue fix risks” authorizes correcting the consumer, measurement logic, and records with offline synthetic checks; it does not select a host, grant metered/model dispatch, or adopt a consumer. The 2026-10-09 learning-promotion exception is recorded below. No efficacy result is claimed.
 
 ## Goal and brief
 
@@ -230,6 +230,35 @@ Direct admission/semantic controls exercise identity/isolation fields, five disc
 The driver now exclusive-creates `dogfood-stage1-outcomes-corrected-r3-2026-10-09.json`; an actual repeat CLI audit exits 4 without changing its bytes. The audit preserves 18 historical allocations, six completed comparisons and 12 censored pairs, never regrading old model outputs. Final probe receipts use distinct `r3-2026-10-09-final` names. All ten executable dependencies were frozen before the final pass, and 47 named prior source/receipt bindings remained unchanged. The [residual closure report](../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09), `local://dogfood-fixall-r3-source-bindings-2026-10-09.json` and the private P0 manifest carry the current evidence; repository/render closure belongs to the repair ledger, not runtime qualification.
 
 TEST-001 and Stage-1/TEST-002–004 remain held. No model/provider request, native untrusted candidate execution, host adoption, skill change, settings/service change, additional commit or push follows from this repair. The user-owned 2026-10-11 checkpoint and its existing deadman/demotion consequences remain due, with the complete hand-off in the residual closure report.
+
+### Learning-promotion supersession and future pins (2026-10-09)
+
+The later user request to record docs or update existing skills where useful
+authorizes the narrow [learning promotion](dogfood-learning-promotion-2026-10-09.md):
+receipt preservation in `arm-blinded-eval-harness` and scoring/accounting rules
+in `golden-benchmark-runner`, with their examples, consumer regressions and
+records. It supersedes the earlier no-skill-change scope only for those
+amendments. It grants no campaign, model/provider request, host adoption or
+checkpoint outcome.
+
+| Arm-blinded harness revision | SHA-256 | Permitted interpretation |
+| --- | --- | --- |
+| Original 2026-10-08 P0 planning freeze | `fcb8550cb1c809e00769054f24e53563663323fa5c67c0b9cf3b91121880a6c1` | Historical pin; old pilot and mechanics receipts do not verify the updated contract |
+| Post-learning contract, rebound 2026-10-09 | `7f4ef03e3984f30dd2a6aa38d125d0ccae4c5d07e6003f865f64adb46f9de30c` | Current future-run input; offline lifecycle checks only, not model utility |
+
+The private P0 manifest's current `skill_sha256` map now uses the latter pin;
+its `skill_pin_history` preserves the original four-skill map and pilot receipt
+identity. The three core treatment pins are unchanged. Freeze the exact current
+bytes again with any separately approved Stage-1 run. Keep the earlier pilot's
+raw outputs, allocations, censoring and receipts under their old revision;
+never pool them with future results or retroactively describe them as checks of
+this contract.
+
+The [checkpoint runbook](checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion)
+retains dated measurement inputs separately from decisions. The private
+manifest records a source-hashed 2026-10-09 measurement snapshot; the user-owned
+2026-10-11 session must refresh its inputs. This is no early outcome, recurrence
+observation, demotion or change to the 2026-10-12 deadman consequence.
 
 ## Falsifiability and next action
 

@@ -3411,3 +3411,108 @@ TEST-001 still requires a designated qualified host, pinned consumer/scorer/gold
 **Checkpoint session owner: user, on 2026-10-11.** Follow the [checkpoint runbook](../reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md) and record the P6 branch, G9/AS9 proceed/hold/close, separate H5/H6 rulings, and the `governed-delivery` recurrence/retention-or-demotion decision, alongside the remaining agenda. Starting **2026-10-12**, `test_checkpoint_cannot_pass_undocumented` fails `make all` without `plans/checkpoint-2026-10-11-outcome.md`. The [owning demotion policy](../reflective-prompt-library/plans/governed-delivery-adoption-2026-09-03.md#demotion-triggers) also treats a skipped or unrecorded checkpoint as grounds to demote `governed-delivery`, with missing recurrence evidence still `unknown`, not an observed zero. This hand-off neither records an early outcome nor executes that demotion.
 
 PENDING: run TEST-001 and Stage-1/TEST-002–004 dogfood campaign - awaiting your authorization
+
+## Dogfooding learning promotion (2026-10-09)
+
+### Goal, summary and authority
+
+The user asked to record docs or update skills where the dogfooding evidence
+warrants it. Three lessons are incorporated into the two existing evaluation
+packs: immutable receipts, complete-versus-censored comparisons, and
+host-attributed/task-type-preserving scoring. The [dated promotion record](../reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md)
+names evidence, approval, destinations, no-change decisions and retirement
+triggers. No new skill, domain pack or owned runtime is admitted.
+
+### Files changed and implementation
+
+- `skills/arm-blinded-eval-harness/SKILL.md`: fresh-output preflight, non-reusable
+  blinded directory and exclusive-opened metadata files before scorer dispatch.
+- `skills/golden-benchmark-runner/SKILL.md`: nullable unscored outcomes,
+  allocation/completion/censoring accounting, protected error attribution and
+  final-consumer numeric-type checks; scorer identity is not a human role.
+- Both companion examples and `plans/tests/test_arm_blinded_eval_consumers.py`:
+  replay/classification shapes, eight existing/dangling-output regression
+  cases, and a same-run refusal/fresh-namespace replay preserving first-run
+  bytes and planted outcomes. Removed two incidental wording assertions,
+  retaining schedule privacy, pair accounting and discarded/hold separation.
+- The dated learning record, `PROJECT_KNOWLEDGE.md` decision pointer, this
+  completion section and regenerated `reflective-prompt-library/index.json`.
+  Skill/test paths above are relative to `reflective-prompt-library/`.
+
+### Acceptance criteria and spec-to-code traceability
+
+| Criterion | Applied surface / evidence | Status |
+| --- | --- | --- |
+| Promote only observed, reusable lessons | DFL-1–DFL-3 in the dated record; current repair provenance and explicit user direction | Verified |
+| Preserve old evidence and permit a fresh run | Blinded `main`: reuse guard plus exclusive file opens; existing-path regressions and real CLI repeat/replay | Verified for owned output paths |
+| Do not manufacture a delta or functional pass | Golden scoring/accounting procedure; synthetic classification and protected final-verdict controls | Verified within protocol scope; host enforcement not claimed |
+| Avoid new workflow/runtime scope | Existing pack names/routes/registry unchanged; native-host details retained as evidence, not promoted runtime | Verified |
+
+### Tests and checks run
+
+- Blinded consumer suite: **52 passed**, including **nine focused lifecycle
+  checks**. The original four seeded overwrite cases failed before the source
+  fix; existing and dangling outputs now refuse before extraction or scoring
+  while retaining historical bytes and symlink targets.
+- Initial end-to-end learning smoke: **13 checks passed** — extracted CLI
+  fresh/repeat/new-namespace behavior, dangling outputs, final verdicts and
+  allocation classification. Its saved parent protocol run passed **49
+  checks** under a distinct receipt name.
+- Advisory actual-CLI smoke: **11 checks passed** with whole-workspace
+  preservation around refusal and successful fresh-namespace replay. Its
+  receipt uses a new name; all **63** prior source/receipt bindings remain
+  unchanged.
+- Final repository/discovery command:
+  `python3 reflective-prompt-library/plans/generate_index.py && make all`.
+  Its current observed outcome and rendered-document evidence are retained in
+  `dogfood-learning-advisory-ledger-2026-10-09.json`; the initial learning ledger
+  remains historical. Both are private session artifacts, not runtime proof.
+
+- Advisory source rebind: the plan and private manifest distinguish the
+  original `fcb8550cb1c8…` P0 harness pin from current `7f4ef03e3984…`.
+  Old-revision pilot evidence is retained separately, never pooled with future
+  runs. The runbook and private manifest carry current source-hashed checkpoint
+  measurement inputs without recording an early outcome.
+- The claimed late-refusal defect was already fixed. Lifecycle checks exercise
+  the existing pre-extraction guard; no gratuitous contract edit was made.
+
+### Failures, skipped checks and residual risks
+
+The failing-before output-reuse checks reproduced a real emitted-scaffold
+overwrite defect; no historical model outputs were modified. The golden pack
+specifies a procedure, not an implemented runner. Signed synthetic oracle
+fixtures and trusted fixed CLI fixtures do not qualify the actual host, prove
+hard-memory/worker/capture isolation, or measure skill efficacy. Reserved
+files/partial extraction may remain after failure; use a new namespace rather
+than retrying in place. File exclusivity is not actor isolation or atomic
+multi-file publication.
+
+The original exact-name TWINS claim is superseded by the
+[receipt-writer sweep](../reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md#receipt-writer-twin-sweep-2026-10-09).
+The gitignore-respecting project-wide search covers truncating Python writes
+and literal/variable-path shell redirects; supplemental byte/JavaScript/`tee`
+searches distinguish test setup and quotations from artifact writers.
+Paths in the following line are relative to `reflective-prompt-library/`.
+
+TWINS: searched `write_text|open(..., w)|single > output redirects|tee` - found 31 other sites: `skills/flow-control-generator/SKILL.md`, `skills/flow-loop-harness/SKILL.md`, `plans/proposals/arm-blinded-eval-harness-proposal.md`, `plans/benchmark_tasks.py`, `plans/eval_harness.py`, `plans/generate_index.py`, `plans/prompt_composer.py`, `plans/route_paraphrase_eval.py`.
+
+These are structurally similar writers, not additional in-scope immutable
+receipt bugs: flow/loop working state is mutable, the proposal is historical,
+and developer exports/reports are replaceable. Reusing their paths can replace
+prior bytes, so they are not archival evidence stores. Their contracts remain
+unchanged; no persistence/crash-safety guarantee or extra runtime is added.
+Copying the old proposal instead of the live skill would restore the obsolete
+overwrite pattern. Current source-bound correction evidence is retained in
+`dogfood-twins-commit-ledger-2026-10-09.json`; prior private ledgers and receipts
+remain separate snapshots.
+
+### Remaining work and Human Review
+
+The narrow learning promotion is complete. TEST-001 qualification and
+Stage-1/TEST-002–004 remain **BLOCKED** under their existing evidence, budget,
+isolation and named-owner gates. The user-owned **2026-10-11 checkpoint** and
+its deadman/demotion consequences remain unchanged. The learning-promotion
+grant did not authorize campaign execution, host adoption, model/provider
+calls, settings/service changes, commit or push. The later TWINS correction
+and commit instruction authorizes the verified repository commit only;
+campaign/adoption/settings/model execution and push remain unapproved.

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T02:45:26.209754",
+  "generated_at": "2026-10-09T09:40:02.643978",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -83,6 +83,7 @@
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
             "ember-snn-llm-survey-2026-09-22.md",
+            "dogfood-learning-promotion-2026-10-09.md",
             "mattpocock-skills-v131-delta-survey-2026-10-07.md",
             "pstack-survey-2026-09-22.md",
             "all-skills-panel-record-2026-07-18.md",
@@ -5352,6 +5353,82 @@
       "char_count": 15267
     },
     {
+      "path": "reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "dogfood-learning-promotion-2026-10-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "skill-dogfood-test-plan-2026-10-08.md#residual-advisory-verification-2026-10-09",
+          "../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09",
+          "../skills/arm-blinded-eval-harness/SKILL.md",
+          "../skills/examples/arm-blinded-eval-harness.examples.md#example-5--replay-preserves-the-first-run",
+          "../skills/golden-benchmark-runner/SKILL.md",
+          "../skills/examples/golden-benchmark-runner.examples.md#example-5--complete-failures-are-not-censored-pairs",
+          "checkpoint-2026-10-11-runbook.md",
+          "skill-dogfood-test-plan-2026-10-08.md#learning-promotion-supersession-and-future-pins-2026-10-09",
+          "../../review/final-report.md#dogfooding-learning-promotion-2026-10-09"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Dogfooding Learning Promotion — 2026-10-09"
+        },
+        {
+          "level": 2,
+          "text": "Goal and scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Applied behavior and limits"
+        },
+        {
+          "level": 2,
+          "text": "No-change decisions"
+        },
+        {
+          "level": 2,
+          "text": "Test-integrity corrections"
+        },
+        {
+          "level": 2,
+          "text": "Source-pinned advisory closure"
+        },
+        {
+          "level": 2,
+          "text": "Verification and consumer coverage"
+        },
+        {
+          "level": 2,
+          "text": "Receipt-writer twin sweep (2026-10-09)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Remaining work and Human Review"
+        }
+      ],
+      "line_count": 210,
+      "char_count": 16430
+    },
+    {
       "path": "reflective-prompt-library/plans/mattpocock-skills-v131-delta-survey-2026-10-07.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5803,7 +5880,9 @@
           "../../review/final-report.md#skill-dogfooding-experiment-plan-2026-10-08",
           "../../review/final-report.md#offline-dogfooding-risk-repairs-2026-10-08",
           "../../review/final-report.md#dogfooding-advisory-repair-closure-2026-10-09",
-          "../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09"
+          "../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09",
+          "dogfood-learning-promotion-2026-10-09.md",
+          "checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion"
         ]
       },
       "structure": [
@@ -5888,12 +5967,16 @@
           "text": "Residual advisory verification (2026-10-09)"
         },
         {
+          "level": 3,
+          "text": "Learning-promotion supersession and future pins (2026-10-09)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 238,
-      "char_count": 64547
+      "line_count": 267,
+      "char_count": 66580
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -9136,6 +9219,7 @@
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
           "runtime-skills-experiments-2026-10-05.md",
+          "dogfood-learning-promotion-2026-10-09.md#source-pinned-advisory-closure",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "dormant-work-specs-2026-07-11.md",
@@ -9211,8 +9295,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 218,
-      "char_count": 14400
+      "line_count": 232,
+      "char_count": 15137
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -16957,7 +17041,7 @@
         }
       ],
       "line_count": 115,
-      "char_count": 11580
+      "char_count": 13385
     },
     {
       "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
@@ -17050,8 +17134,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 466,
-      "char_count": 31548
+      "line_count": 475,
+      "char_count": 32443
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -18658,5 +18742,5 @@
       "char_count": 28518
     }
   ],
-  "total_files": 206
+  "total_files": 207
 }

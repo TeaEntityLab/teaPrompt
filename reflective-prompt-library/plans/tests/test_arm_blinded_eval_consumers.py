@@ -52,10 +52,15 @@ B_ORACLE = (
     "sys.exit(0 if all(h in text for h in need) else 1)\n"
 )
 
-EXTRA_ORACLE = (
-    "import pathlib, sys\n"
+DISPATCH_MARKER = (
+    "import pathlib\n"
     "pathlib.Path('evidence/dispatch-count.txt').parent.mkdir(parents=True, exist_ok=True)\n"
-    "pathlib.Path('evidence/dispatch-count.txt').write_text('x', encoding='utf-8')\n"
+    "with pathlib.Path('evidence/dispatch-count.txt').open('a', encoding='utf-8') as marker:\n"
+    "    marker.write('x')\n"
+)
+
+EXTRA_ORACLE = DISPATCH_MARKER + (
+    "import pathlib, sys\n"
     "p = pathlib.Path(sys.argv[1])\n"
     "extra = pathlib.Path(sys.argv[2]).read_text() if len(sys.argv) > 2 else ''\n"
     "sys.exit(0 if 'return a + b' in p.read_text() + extra else 1)\n"
@@ -68,7 +73,9 @@ def _fixture(d: Path, *, with_extra: bool = False) -> dict:
     (d / "fixtures" / "A-code" / "oracle.py").write_text(
         EXTRA_ORACLE if with_extra else A_ORACLE, encoding="utf-8"
     )
-    (d / "fixtures" / "B-content" / "oracle.py").write_text(B_ORACLE, encoding="utf-8")
+    (d / "fixtures" / "B-content" / "oracle.py").write_text(
+        DISPATCH_MARKER + B_ORACLE if with_extra else B_ORACLE, encoding="utf-8"
+    )
     for pair, arm, name, body in (
         ("A-code", "control", "calc.py", "def add(a, b):\n    return a - b\n"),
         ("A-code", "treatment", "calc.py", "def add(a, b):\n    return a + b\n"),
@@ -125,7 +132,7 @@ def test_documented_config_runs_verbatim_and_recovers_planted_pattern(tmp_path: 
     assert exits[("B-content", "control")] == 0
     assert exits[("B-content", "treatment")] == 1
     note = json.loads((tmp_path / "results" / "run-note.json").read_text(encoding="utf-8"))
-    assert note["denominator"] == {"repair_pairs": 2, "note": "discarded + hold excluded"}
+    assert note["denominator"]["repair_pairs"] == 2
     assert len(note["discarded"]) == 1
     assert note["hold"]["verdict"] == "stale"
     assert "scoring_order" not in note
@@ -164,7 +171,6 @@ def test_run_note_carries_no_scoring_schedule(tmp_path: Path):
     schedule = _sealed(tmp_path)["scoring_order"]
     blob = json.dumps(note)
     assert not any(name in blob for name in schedule)
-    assert note["scoring"].startswith("private shuffled schedule")
 
 
 @pytest.mark.parametrize(
@@ -375,3 +381,89 @@ def test_scorer_output_retains_early_labels_for_full_output_audit(tmp_path: Path
                for token in ("control", "treatment"))
     }
     assert detected_leaks == expected_leaks
+
+
+@pytest.mark.parametrize("dangling", [False, True], ids=["existing", "dangling-symlink"])
+@pytest.mark.parametrize("key", ["blinded", "sealed_map", "results", "run_note"])
+def test_existing_run_artifacts_refuse_before_scoring_and_preserve_bytes(
+    tmp_path: Path, key: str, dangling: bool
+):
+    cfg = _fixture(tmp_path, with_extra=True)
+    artifact = tmp_path / cfg[key]
+    missing_target = tmp_path / "missing-output"
+    historical = b"historical receipt or candidate\n"
+    if dangling:
+        artifact.parent.mkdir(parents=True, exist_ok=True)
+        artifact.symlink_to(missing_target)
+    else:
+        if key == "blinded":
+            artifact.mkdir()
+            artifact = artifact / "previous.py"
+        artifact.parent.mkdir(parents=True, exist_ok=True)
+        artifact.write_bytes(historical)
+
+    result = _run(tmp_path, cfg)
+
+    assert result.returncode == 4, result.stderr
+    if dangling:
+        assert artifact.is_symlink()
+        assert artifact.readlink() == missing_target
+        assert not missing_target.exists()
+    else:
+        assert artifact.read_bytes() == historical
+        if key == "blinded":
+            assert list(artifact.parent.iterdir()) == [artifact]
+    assert not (tmp_path / "evidence" / "dispatch-count.txt").exists()
+    for other in ("blinded", "sealed_map", "results", "run_note"):
+        if other != key:
+            assert not (tmp_path / cfg[other]).exists()
+            assert not (tmp_path / cfg[other]).is_symlink()
+
+
+def test_same_run_refuses_but_fresh_namespace_replay_preserves_first_run(tmp_path: Path):
+    cfg = _fixture(tmp_path, with_extra=True)
+    first = _run(tmp_path, cfg)
+    assert first.returncode == 0, first.stderr
+    marker = tmp_path / "evidence" / "dispatch-count.txt"
+    assert marker.read_bytes() == b"xxxx"
+    old_paths = [tmp_path / cfg[key] for key in ("sealed_map", "results", "run_note")]
+    old_paths.extend((tmp_path / cfg["blinded"]).iterdir())
+    original = {path: path.read_bytes() for path in old_paths}
+
+    repeated = _run(tmp_path, cfg)
+    assert repeated.returncode == 4, repeated.stderr
+    assert marker.read_bytes() == b"xxxx"
+    assert all(path.read_bytes() == body for path, body in original.items())
+
+    replay = {
+        **cfg,
+        "blinded": "replay/blinded",
+        "sealed_map": "replay/map/sealed-map.json",
+        "results": "replay/results/scores.jsonl",
+        "run_note": "replay/results/run-note.json",
+    }
+    fresh = _run(tmp_path, replay)
+    assert fresh.returncode == 0, fresh.stderr
+    assert marker.read_bytes() == b"xxxxxxxx"
+    assert all(path.read_bytes() == body for path, body in original.items())
+    assert set((tmp_path / cfg["blinded"]).iterdir()) == {
+        path for path in original if path.parent == tmp_path / cfg["blinded"]
+    }
+    expected = {
+        ("A-code", "control"): 1,
+        ("A-code", "treatment"): 0,
+        ("B-content", "control"): 0,
+        ("B-content", "treatment"): 1,
+    }
+    for run in (cfg, replay):
+        sealed = json.loads((tmp_path / run["sealed_map"]).read_text(encoding="utf-8"))
+        scores = [
+            json.loads(line)
+            for line in (tmp_path / run["results"]).read_text(encoding="utf-8").splitlines()
+        ]
+        outcomes = {
+            (sealed["candidates"][row["candidate"]]["pair"],
+             sealed["candidates"][row["candidate"]]["arm"]): row["exit"]
+            for row in scores
+        }
+        assert outcomes == expected

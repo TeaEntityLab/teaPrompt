@@ -47,6 +47,7 @@ This pack fixes confound 1 by construction (blinded extraction directory plus a 
 - Private scoring schedule: scoring walks a shuffled candidate order drawn from `scoring_seed` (ticket-declared, or harness-derived and recorded when omitted). The schedule is stored in the sealed map only — never in the run note, scores, or any scorer-visible path — so an ordinal-only predictor reading the public order guesses at chance by construction.
 - Deterministic scorer invocation with a code/data boundary: each oracle's `argv[0]` plus the ticket-declared `scorer_code` entries are trusted scorer code; every other argv entry is candidate data. After `{CAND}` substitution the harness validates every oracle argv for every candidate BEFORE any scorer dispatch and refuses (exit 4) when any entry names an arm label, an arm dir, the config, sealed/results/run-note paths, or anything outside `blinded/`. Fixed options belong in the trusted scorer script, not undeclared data argv. argv lint is not filesystem isolation (see Honest Limits).
 - Discarded-invocation ledger: malformed or environment-incomplete invocations (wrong CLI spelling, tool-rejection with no proposal) are logged with raw receipts and re-run; they never enter the pair denominator. The denominator stays fixture-pair level (n = number of repair pairs).
+- Immutable run artifacts: use a fresh `blinded/` directory and fresh sealed-map, score and run-note files. Existing paths refuse with exit 4 before extraction or scoring; metadata files are exclusive-created before scorer dispatch. A replay or corrected audit uses a new output namespace and retains the original receipts.
 
 ### Never
 
@@ -125,6 +126,7 @@ inside blinded/. argv lint is not filesystem isolation: keeping the sealed
 map, arm dirs, and config off the scorer's read path is a host precondition.
 """
 import hashlib, json, os, random, secrets, shutil, subprocess, sys
+from contextlib import ExitStack
 from pathlib import Path
 
 ARM_TOKENS = ("control", "treatment")
@@ -190,7 +192,10 @@ def main(cfg_path: str) -> int:
     sealed_map = Path(cfg["sealed_map"])
     results_path = Path(cfg["results"])
     run_note_path = Path(cfg["run_note"])
-    blinded.mkdir(parents=True, exist_ok=True)
+    for path in (blinded, sealed_map, results_path, run_note_path):
+        if path.exists() or path.is_symlink():
+            return _fail(f"run artifact already exists; use a fresh output namespace: {path}")
+    blinded.mkdir(parents=True)
     for label, path in (("sealed_map", sealed_map), ("results", results_path),
                         ("run_note", run_note_path)):
         if _within(path, blinded):
@@ -345,44 +350,48 @@ def main(cfg_path: str) -> int:
     schedule = [name for name in sealed]
     rng.shuffle(schedule)
     scores, scorer_error = [], None
-    for name in schedule:
-        try:
-            r = subprocess.run(planned[name], capture_output=True, text=True,
-                               timeout=SCORER_TIMEOUT_S)
-        except (OSError, subprocess.TimeoutExpired) as exc:
-            out, err = getattr(exc, "stdout", None), getattr(exc, "stderr", None)
-            out = out.decode(errors="replace") if isinstance(out, bytes) else out or ""
-            err = err.decode(errors="replace") if isinstance(err, bytes) else err or ""
-            scores.append({"candidate": name, "exit": None, "error": type(exc).__name__,
-                           "stdout": out, "stderr": err})
-            scorer_error = f"scorer execution failed: {exc}"
-            break
-        scores.append({"candidate": name, "exit": r.returncode,
-                       "stdout": r.stdout, "stderr": r.stderr})
-    for path in (sealed_map, results_path, run_note_path):
-        path.parent.mkdir(parents=True, exist_ok=True)
-    sealed_doc = {"candidates": sealed, "scoring_order": schedule,
-                  "scoring_seed": seed, "scoring_seed_source": seed_source}
-    sealed_map.write_text(json.dumps(sealed_doc, indent=2))
-    results_path.write_text("".join(json.dumps(s) + "\n" for s in scores))
-    repair_ids = [p["id"] for p in cfg["pairs"] if p["id"] != hold_id]
-    note = {"order": cfg["order"], "final_state_hashes": final_state_hashes,
-            "scoring": "private shuffled schedule in sealed map; ordinal carries no arm information",
-            "scorer_isolation": ("host-precondition: argv lint only; filesystem/network "
-                                 "isolation of the scorer from arm dirs, config, and the "
-                                 "sealed map is enforced by the host, not by this scaffold"),
-            "caps": cfg.get("caps") or "not declared",
-            "discarded": discarded,
-            "hold": hold,
-            "denominator": {"repair_pairs": len(repair_ids),
-                            "note": "discarded + hold excluded"},
-            "noise_floor_basis": cfg.get("noise_floor_basis") or "missing",
-            "failure_categorization": cfg.get("failure_categorization") or "unresolved",
-            "selection_vs_final": cfg.get("selection_vs_final") or "not-a-final-claim",
-            "disclosure": "by-construction blinding only; zero observed blinded runs yet"}
-    if scorer_error:
-        note["scorer_error"] = scorer_error
-    run_note_path.write_text(json.dumps(note, indent=2))
+    with ExitStack() as outputs:
+        for path in (sealed_map, results_path, run_note_path):
+            path.parent.mkdir(parents=True, exist_ok=True)
+        sealed_output, scores_output, note_output = (
+            outputs.enter_context(path.open("x"))
+            for path in (sealed_map, results_path, run_note_path))
+        for name in schedule:
+            try:
+                r = subprocess.run(planned[name], capture_output=True, text=True,
+                                   timeout=SCORER_TIMEOUT_S)
+            except (OSError, subprocess.TimeoutExpired) as exc:
+                out, err = getattr(exc, "stdout", None), getattr(exc, "stderr", None)
+                out = out.decode(errors="replace") if isinstance(out, bytes) else out or ""
+                err = err.decode(errors="replace") if isinstance(err, bytes) else err or ""
+                scores.append({"candidate": name, "exit": None, "error": type(exc).__name__,
+                               "stdout": out, "stderr": err})
+                scorer_error = f"scorer execution failed: {exc}"
+                break
+            scores.append({"candidate": name, "exit": r.returncode,
+                           "stdout": r.stdout, "stderr": r.stderr})
+        sealed_doc = {"candidates": sealed, "scoring_order": schedule,
+                      "scoring_seed": seed, "scoring_seed_source": seed_source}
+        sealed_output.write(json.dumps(sealed_doc, indent=2))
+        scores_output.write("".join(json.dumps(s) + "\n" for s in scores))
+        repair_ids = [p["id"] for p in cfg["pairs"] if p["id"] != hold_id]
+        note = {"order": cfg["order"], "final_state_hashes": final_state_hashes,
+                "scoring": "private shuffled schedule in sealed map; ordinal carries no arm information",
+                "scorer_isolation": ("host-precondition: argv lint only; filesystem/network "
+                                     "isolation of the scorer from arm dirs, config, and the "
+                                     "sealed map is enforced by the host, not by this scaffold"),
+                "caps": cfg.get("caps") or "not declared",
+                "discarded": discarded,
+                "hold": hold,
+                "denominator": {"repair_pairs": len(repair_ids),
+                                "note": "discarded + hold excluded"},
+                "noise_floor_basis": cfg.get("noise_floor_basis") or "missing",
+                "failure_categorization": cfg.get("failure_categorization") or "unresolved",
+                "selection_vs_final": cfg.get("selection_vs_final") or "not-a-final-claim",
+                "disclosure": "by-construction blinding only; zero observed blinded runs yet"}
+        if scorer_error:
+            note["scorer_error"] = scorer_error
+        note_output.write(json.dumps(note, indent=2))
     # Captured-output label audit: caller checks scores.jsonl for ARM_TOKENS.
     return _fail(scorer_error) if scorer_error else 0
 

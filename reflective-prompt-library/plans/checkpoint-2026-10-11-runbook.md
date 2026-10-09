@@ -40,6 +40,20 @@ verification observations alongside the dated counts above. Maintenance
 experiments are not §Entries invocations, recurrence proof, full GDR refuter
 results or MR-3 qualifying failures, and do not clear this checkpoint.
 
+**2026-10-09 maintenance input:** the
+[dogfooding learning record](dogfood-learning-promotion-2026-10-09.md#source-pinned-advisory-closure)
+separates updated evaluation contracts from old-revision pilot evidence. The
+current whole-file measurements below are source-bound inputs, not checkpoint
+decisions or pack-invocation evidence. Preserve the dated counts above; refresh
+these measurements in the checkpoint session before taking a branch.
+
+| Skill | Source SHA-256 prefix | Whole-file characters |
+| --- | --- | --- |
+| `flow-control-generator` | `6a055fb9c92c` | 31,172 |
+| `flow-loop-harness` | `01adb6b9c7fd` | 28,518 |
+| `agent-governance-scaffold` | `7fe256e49ebe` | 27,769 |
+| `governed-delivery` | `43528a06eb02` | 36,053 |
+
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 
 Owning gate: [necessity record N11](governance-necessity-panel-record-2026-07-11.md);
