@@ -28,6 +28,7 @@ def _fixture(
     omit=None,
     value="true",
     threshold="0.50",
+    aspirational="0.50",
     omit_threshold=False,
     trace_fields=None,
     omit_trace=False,
@@ -39,7 +40,7 @@ def _fixture(
     ]
     if not omit_threshold:
         lines.append(f"  phase1_route_consistency_min: {threshold}")
-    lines.append("  aspirational_route_consistency_target: 0.50")
+    lines.append(f"  aspirational_route_consistency_target: {aspirational}")
     lines.extend(f"  {key}: {value}" for key in POLICIES if key != omit)
     if not omit_trace:
         lines.append("trace_required_fields:")
@@ -95,11 +96,31 @@ def test_invalid_threshold_refuses_before_evaluation(tmp_path: Path, threshold: 
     _refuses_before_routing(tmp_path, _fixture(tmp_path, threshold=threshold))
 
 
-def test_nonfinite_threshold_refuses_before_evaluation(tmp_path: Path):
+@pytest.mark.parametrize(
+    "aspirational",
+    ["-0.10", "1.10", "true", "none", "1.0e999", "9" * 320],
+)
+def test_invalid_aspirational_threshold_refuses_before_evaluation(
+    tmp_path: Path, aspirational: str
+):
+    _refuses_before_routing(tmp_path, _fixture(tmp_path, aspirational=aspirational))
+
+
+@pytest.mark.parametrize(
+    "field",
+    ["phase1_route_consistency_min", "aspirational_route_consistency_target"],
+)
+def test_nonfinite_threshold_refuses_before_evaluation(tmp_path: Path, field: str):
     evaluator = ParaphraseEval(str(tmp_path), _fixture(tmp_path))
-    evaluator.config["global_expectations"]["phase1_route_consistency_min"] = float("nan")
+    evaluator.config["global_expectations"][field] = float("nan")
     calls = []
-    evaluator.router.route = lambda text: calls.append(text)
+    real_route = evaluator.router.route
+
+    def route(text):
+        calls.append(text)
+        return real_route(text)
+
+    evaluator.router.route = route
 
     with pytest.raises(ValueError):
         evaluator.run_eval()
@@ -198,6 +219,10 @@ def test_cli_missing_policy_does_not_publish_success_report(tmp_path: Path, poli
         {"threshold": "none"},
         {"omit_trace": True},
         {"trace_fields": []},
+        {"aspirational": "9" * 320},
+        {"aspirational": "true"},
+        {"aspirational": "none"},
+        {"aspirational": "1.0e999"},
     ],
     ids=[
         "missing-threshold",
@@ -206,6 +231,10 @@ def test_cli_missing_policy_does_not_publish_success_report(tmp_path: Path, poli
         "string-threshold",
         "missing-trace",
         "empty-trace",
+        "overflowing-aspirational",
+        "boolean-aspirational",
+        "string-aspirational",
+        "infinite-aspirational",
     ],
 )
 def test_cli_invalid_config_does_not_publish_success_report(

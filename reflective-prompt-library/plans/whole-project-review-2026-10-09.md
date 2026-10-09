@@ -264,11 +264,11 @@ The user authorized repairs after the recording turn. The initial closure was re
 | F01 | `_fold()` rejects `..` before identity comparison; refusal runs before any output reservation | `test_arm_blinded_eval_consumers.py` traversal/refusal/corrected-run controls |
 | F02 | `_strip_examples` removes explicitly marked Example sections while retaining fenced primary instructions | Real `core-short`/`spec-writer` CLI retention plus marked-example regressions; no substantive example removal or token-saving claim for the seven primary directories |
 | F03 | `>`/`|` block scalars parse into field values; other scalar markers are refused as unsupported, never read as content | `test_router_trace_linter_scaffold.py` folded/literal parity tests green |
-| F04 | Both boolean policies required and typed; hard-gate threshold required, numeric (not bool), in `[0,1]`; trace-field list nonempty and supported | Actual baseline/repaired CLI comparison: missing threshold and missing/empty trace lists change from exit 0 with results to exit 2 without publication; `0.80` positive control retained |
+| F04 | Both boolean policies required and typed; mandatory hard-gate threshold required; both numeric thresholds (when present) exclude bool and lie in `[0,1]` before float conversion; trace-field list nonempty and supported | Actual baseline/repaired CLI comparisons: missing threshold/trace fields and invalid optional threshold refuse at exit 2 without publication; valid, omitted-optional and boundary controls retained |
 | F05 | Fan-out zero-survivor synthesis via guarded loop + `[zero-survivor]` note; holds evaluated before quorum | `test_fanout_zero_survivor_*` green in `test_flow_generator_consumers.py` |
 | F06 | All five templates carry `FAIL_SIGS`/`RETRY_REASON` repeated-failure discipline; ledger defaults beside resolved `STATE`, inside-`STATE` refused at exit 4 | refusal/retry/correction tests green in `test_flow_generator_consumers.py` |
 | F07 | Eager union annotations removed; Python 3.9+ declared; floor tests select only a live 3.9 interpreter; CI installs 3.9 and 3.10 | Actual extracted orchestrator/DAG run on Python **3.9.24**, dispatch and reach acceptance; empty command holds at 4 without redispatch; remote CI not observed |
-| F08 | Missing indexed input exits 1 before output publication | Real copied CLI/index positive control, then remove only `spec-writer`: stdout, fresh-file and existing-file cases refuse with a named missing-source diagnostic; old output unchanged |
+| F08 | Missing indexed input exits 1 before output publication; destination-write errors have independent coverage | Real copied CLI/index missing-source controls retain stdout/fresh/existing-file refusal; valid composition into a permission-denied existing destination exits 1 without success output or changing its bytes |
 | F09 | Install helpers propagate cd/mkdir/cp/ln failure and refuse zero-core sources before creating the destination | Copy/symlink missing-source, empty-source, nine-core and replacement-refusal controls |
 | F10 | Workflow has no path exclusions; local hook has no file filter and `always_run: true`; main push/PR scope retained | Workflow YAML parsed and `pre-commit validate-config` passed; actual outside-library hook invocation recorded in follow-up verification; remote branch protection remains untested |
 | F11 | Hazard token boundaries exclude the `author` family; field-scoped deferral; alias rationale seat; low-risk skipped forms pass | `test_low_risk_documented_forms_pass_without_weakening_hazards` + retained contrastive matrix green |
@@ -329,6 +329,68 @@ These SHA-256 hashes bind the runtime/configuration sources and regressions exer
 | `reflective-prompt-library/plans/tests/test_flow_generator_consumers.py` | `89a09592980d5ad721f0d18f9bc41f93ebcc86a8370e1bbea899eb0f6dcadaa2` |
 | `reflective-prompt-library/plans/tests/test_prompt_composer.py` | `8ec77e0fbafe1fa20ab3c096d698b7af29b2b6ba4f54c0b3f7e1a3ae575ac715` |
 | `reflective-prompt-library/plans/tests/test_harness_intent_drift_rethink_record.py` | `8153238f1fad5f1fc56e7116a43cd76f49b5d38eb451805092d7f8684e03af4f` |
+
+## Remaining-advisory closure (2026-10-09)
+
+The earlier **1,626** and **1,653** gate receipts and their source bindings remain historical. This later follow-up changes only optional numeric-threshold validation and developer regression coverage; fixture thresholds, routing rules, the optional `0.95` default and all external gates are unchanged.
+
+| Advisory | Disposition | Observable evidence |
+| --- | --- | --- |
+| Mandatory oversized threshold can still overflow during conversion | Stale: original-value range validation already precedes conversion | Retained mandatory 320-digit CLI control exits 2 without publication or traceback |
+| Optional aspirational threshold converts without validation | Valid; reuse the existing numeric/range guard before conversion | Before: valid control exits 0, oversized optional value exits 1 with OverflowError. After: oversized value exits 2 with a configuration diagnostic, no result and no traceback |
+| Missing-source coverage replaced the independent output-write-error case | Valid coverage gap; restored without removing missing-source controls | Deterministic PermissionError regression checks exit 1, empty stdout and preserved prior bytes; actual CLI control succeeds before the permission-denied destination case |
+
+### Current consumer evidence
+
+- Policy CLI: four positive controls (valid, optional omitted, optional zero, optional one) exit 0 and publish; seven invalid controls (optional oversized, bool, string, infinity, negative, above one; mandatory oversized) exit 2 without publication or traceback.
+- Composer CLI: successful two-input composition precedes a real permission refusal at a `0400` existing destination under uid 502. Refusal exits 1 with a destination diagnostic, empty stdout and unchanged prior bytes. This proves the permission-refusal path, not atomic recovery from a partial write or disk exhaustion.
+- Policy/composer regressions: **71 passed**, including direct-API nonfinite checks for both numeric fields and the retained three missing-source CLI output modes. Final repository gate: `generate_index.py && make all` passed with **1,665 tests**, zero validator errors and all three routing evaluations passed. Nine lint warnings and 35 historical-record warnings remain.
+- Consumer map: direct evaluation API, actual policy CLI, configuration defaults/boundaries, composer write-error branch and actual composer CLI are covered. Discovery regeneration and documentation/index checks are separate post-receipt verification steps. Remote CI, host isolation and comparative/model efficacy remain explicitly untested.
+- TWINS: searched unchecked aspirational_route_consistency_target float conversion - found 0 other sites: none.
+
+### Current source bindings
+
+These hashes bind the source exercised by the actual smoke, not the previous committed follow-up. The unchanged composer source is included because its separate write-error path was executed.
+
+| Source path | Current SHA-256 |
+| --- | --- |
+| `reflective-prompt-library/plans/route_paraphrase_eval.py` | `67631efb84d9dd31f19f4f11d0ccfaeeb219bbf46ebeb9e247c4c26170580104` |
+| `reflective-prompt-library/plans/prompt_composer.py` | `4645894f939ca1bd303681cc8fe5d5cf2823c542e620d44d43e6de2a9103c055` |
+| `reflective-prompt-library/plans/tests/test_route_policy_consumers.py` | `86a5ddeab454d8bc0f9785fa202f7d78f7064e923702288e385d747fa2497598` |
+| `reflective-prompt-library/plans/tests/test_prompt_composer.py` | `9ad6563cc38374586facd984b0c388d352d1dd5fcf14407749bbf36cdc9e8d91` |
+| `reflective-prompt-library/skills/governed-delivery/SKILL.md` (H12 assessment) | `43528a06eb02b4ce78ce7994c3b9049f7b00ffdadecd1fd8d2d90af087a166d5` |
+| `reflective-prompt-library/plans/tests/test_governed_delivery_adoption_state.py` (H12 assessment) | `a85ecdc1d83301d2918a3331a4e08ba2bd7ce63ce467ceb24489980b613e67f3` |
+
+### Roadmap continuation and owner gates
+
+This is maintenance continuation, not the date-gated checkpoint. The owning [roadmap](whole-project-roadmap-2026-07-11.md), [flow roadmap](flow-control-roadmap-2026-07-11.md), [runbook](checkpoint-2026-10-11-runbook.md), and [dogfood plan](skill-dogfood-test-plan-2026-10-08.md#execution-readiness-and-risk-gate) retain their existing authority and gates.
+
+| Reachable area | Current disposition / next action |
+| --- | --- |
+| Standing maintenance | Current consumer repairs, source-bound closure, Decision Index and test floor updated; final repository gate passed. Post-receipt discovery/documentation verification remains a separate step. No routing tune, adoption collision or pack-template edit in this follow-up |
+| T1–T4 and flow F3 | Completed dated outcomes remain completed; F3's template-evolution queue is empty. Do not re-adopt T2 or repeat completed repairs as new invocation evidence |
+| Flow F4 source watch | No new host-feature reliance or demotion claim is made. The October 1 source-only re-check remains dated evidence, not an October 9 refresh; re-check all six primary-source rows in the checkpoint session before taking a branch |
+| October 11 checkpoint | Still date-gated; no outcome file or early P6/GD/G9-AS9/H5-H6/lint-tier decision created. The operator must refresh sources, measurements and invocation evidence, preserve unknown-vs-zero, and record every owning agenda outcome; absence after the date activates the existing deadman consequence |
+| TEST-001 | Held pending accepted/pinned real-input consumer and scorer/golden-ledger procedure, authenticated actual-host evidence, named capture/leak-audit owners and passed controls. Neither the rejected historical `64b4556a` build nor fixture repair receipts supply those inputs |
+| Stage-1 / TEST-002–004 | Held pending the separate campaign grant, enforced session/model/reserve/spend caps, roles, memory/capture evidence and tool-using worker isolation. Zero approved spend is not by itself an envelope grant |
+| Other dormant candidates | Each named trigger/direction gate remains separate. New guard passes may prompt H12 consideration, not blanket H1–H8 adoption; H5/H6 remain separately seated at the checkpoint. No claim that watched-source guards prove the absence of external trigger events |
+
+### H12 triggered guard-pass consideration
+
+The [owning H12 row](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger) names the next guard pass. This pass considered its two branches separately; it does not adopt or close the original Held row, change protected oracles, or expand the nine-core/ten-pack registry.
+
+| ID | Candidate branch | Current assessment | Disposition / ruling owner |
+| --- | --- | --- | --- |
+| H12-GD | Nine static contract templates | Source review maps all nine bodies to `test_gd2_to_gd10_contract_set_has_nine_templates` at lines 208–211. A throwaway execution safely parses all nine YAML blocks as mappings, then confirms the existing heading guard accepts the baseline, a hollowed contract set and an `acceptance-record` changed to `closed: true`. This demonstrates the heading guard's discrimination limit, not a defect in today's parsed baseline or a whole-suite mutation result | Re-litigation executed; adoption remains Held. Maintainer owns an accepted developer-check scope for parsed fields/defaults/reference bindings; no new incidental English phrase pins |
+| H12-fragments | Historical seven-guard list | The durable record retains the count and references `L6RecordsGuards`, but not the itemized inventory; its packet was deleted after synthesis, and `history://L6RecordsGuards` is not registered here. Current source examples exist in AGS (`enforce` / `host`), artifact-promotion (`fails closed` / `prompt-injection` / `Memory writes`) and the later Agentflow 8.3 addendum (`unchanged` / `counterargument`). They are examples, not a reconstructed original seven | Original seven-item coverage remains unresolved and Held, not silently replaced with seven arbitrary matches. Maintainer owns the historical inventory or a separately accepted current assessment scope |
+
+The census covers `intent-record`, `oracle-manifest`, `task-packet`, `failure-log`, `verification-plan`, `evidence-ledger`, `acceptance-record`, `envelope` and `gate-retro`. Neighboring gate/anchor assertions and index staleness do not establish every template body's semantics; generated-index freshness cannot substitute for a semantic oracle. Short machine fields and statuses are not interchangeable with incidental prose fragments.
+
+Review decision: the candidate has a demonstrated heading-guard coverage gap and an explicitly bounded historical-inventory limit. A prospective repair should discriminate hollow/malformed objects, unsafe defaults and severed references at a real consumer; extending exact-English pins is not the chosen remedy. No guard redesign or host-enforcement claim is landed by this maintenance repair.
+
+### Verification tooling limits
+
+The initial H12 probe omitted the plans import path and could not load `validate_skill_examples`; correcting the harness import path produced the observed result above. Ruby safe parsing succeeded with the same two local native-extension warnings. Actual Chromium DOM/layout inspection retained all 18 findings, the new closure and no horizontal page overflow at 1200×800. PNG and JPEG screenshot helper calls both timed out; pixel capture is therefore unverified, not silently recorded as visual proof. The preview is an owned loopback process, not a user-browser session.
 
 ## Reviewed source bindings
 

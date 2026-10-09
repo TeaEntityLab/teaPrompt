@@ -216,6 +216,36 @@ def test_cli_stdout_failure_emits_no_success_output(composer, monkeypatch, capsy
     assert "Prompt file not found" in captured.err
 
 
+def test_cli_output_write_failure_preserves_existing_file(
+    composer, tmp_path, monkeypatch, capsys
+):
+    """A destination write failure is distinct from missing source input."""
+    import prompt_composer as composer_module
+
+    target = tmp_path / "composed.md"
+    previous = b"previous complete artifact\n"
+    target.write_bytes(previous)
+    real_write = Path.write_text
+
+    def denied_write(path, content, *args, **kwargs):
+        if path == target:
+            raise PermissionError(13, "Permission denied", str(path))
+        return real_write(path, content, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "write_text", denied_write)
+    monkeypatch.setattr(composer_module, "PromptComposer", lambda _root: composer)
+    monkeypatch.setattr(
+        sys, "argv",
+        ["prompt_composer.py", "core-full", "spec-writer", "--output", str(target)],
+    )
+
+    assert composer_module.main() == 1
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert str(target) in captured.err
+    assert target.read_bytes() == previous
+
+
 @pytest.mark.parametrize("output_mode", ["stdout", "fresh", "existing"])
 def test_cli_missing_source_does_not_publish_partial_output(
     composer, tmp_path, output_mode

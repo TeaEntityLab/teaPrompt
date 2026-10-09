@@ -3817,3 +3817,76 @@ without a global browser kill. TEST-001 host qualification, Stage-1 campaign,
 the October 11 checkpoint, hostile-worker isolation and comparative efficacy
 remain under their existing external gates. No new promotion or push.
 
+## Remaining advisory repair and roadmap continuation (2026-10-09)
+
+### Goal, changes and acceptance status
+
+Close the remaining valid existing-consumer advisories, preserve historical
+receipts, and continue only actions reachable under the existing roadmap gates.
+The earlier committed **1,653** receipt above is not rewritten as evidence for
+the later source revision.
+
+- F04: the mandatory oversized-threshold claim is stale. The optional
+  `aspirational_route_consistency_target` was still converted without validation;
+  both present numeric thresholds now share the existing type/range guard before
+  conversion. Requiredness, default `0.95`, fixture values and router are unchanged.
+- F08: restore independent PermissionError coverage of the composer output-write
+  branch without dropping stdout/fresh/existing missing-source controls. Composer
+  production code is unchanged.
+- Changed runtime/test files: `plans/route_paraphrase_eval.py`,
+  `tests/test_route_policy_consumers.py`, `tests/test_prompt_composer.py`.
+  Current closure, source pins and consumer evidence live in
+  [the existing review record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#remaining-advisory-closure-2026-10-09).
+  QUALITY_GATES, the Decision Index and discovery metadata carry the current count
+  and continuation pointers.
+
+### Exercised verification
+
+- Before-fix actual policy CLI: valid control exits 0; oversized optional value
+  exits 1 with OverflowError. Repaired CLI: valid/omitted/boundary controls publish;
+  invalid optional and mandatory controls exit 2 with no result or traceback.
+- Actual composer CLI: a valid two-input control exits 0, then a `0400` destination
+  refuses at exit 1 with a named write diagnostic, empty stdout and byte-preserved
+  previous output. This is permission-refusal evidence, not atomic-write proof.
+- Policy/composer regression suite: **71 passed**. Final repository gate:
+  `generate_index.py && make all` passed with **1,665 tests**, zero validator
+  errors and all three routing evaluations passed. Nine lint warnings and
+  35 historical-record warnings remain. Discovery/documentation checks are
+  separate post-receipt verification steps; no remote CI result is claimed.
+
+### Traceability, limits and next action
+
+F04 → direct-API numeric/boundary checks and real CLI publication/refusal.
+F08 → independent write-error regression and real destination refusal, alongside
+the retained missing-source controls.
+
+TWINS: searched unchecked aspirational_route_consistency_target float conversion - found 0 other sites: none.
+
+### Roadmap decisions and Human Review
+
+Standing maintenance continues through source-bound receipts, discovery refresh
+and the final gate. T1–T4 remain completed; flow F3's evolution queue is empty.
+F4's October 1 source watch remains dated and must be refreshed at the checkpoint
+before taking a branch; this follow-up makes no new host-feature reliance claim.
+
+H12's next-guard-pass trigger was considered through two read-only slices and a
+throwaway consumer probe. All nine YAML templates parse; the existing heading
+guard also accepts hollowed bodies and `closed: true`. H12 remains Held rather
+than being laundered into F01–F18 closure. The original seven-fragment inventory
+cannot be uniquely reconstructed from the durable record/current registered
+history; current examples are not substituted for it. The maintainer owns any
+accepted semantic-guard scope and protected-oracle ruling. Detail and source
+pins are in [the candidate assessment](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#h12-triggered-guard-pass-consideration).
+
+TEST-001 still needs accepted consumer/scorer ownership and authenticated
+actual-host evidence. Stage-1/TEST-002–004 still need a campaign grant, enforced
+caps, roles and capture/worker isolation. The October 11 runbook remains due;
+no early outcome, vocabulary adoption, demotion or lint-tier decision is taken.
+No model/provider request, new skill/runtime/dependency or push.
+
+Tooling limits: the bare `cx overview` invocation lacked its required path;
+`cx overview .` succeeded. The first H12 probe omitted the plans import path;
+the corrected probe succeeded. Ruby emitted two native-extension warnings.
+Chromium DOM/layout inspection succeeded at 1200×800 with no page overflow,
+but both PNG and JPEG screenshot helper calls timed out: no pixel-proof claim.
+

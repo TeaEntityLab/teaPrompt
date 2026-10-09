@@ -926,11 +926,14 @@ class ParaphraseEval:
                 raise ValueError(f"global expectations policy must be boolean: {key}")
         if "phase1_route_consistency_min" not in expectations:
             raise ValueError("global expectations missing required policy: phase1_route_consistency_min")
-        threshold = expectations["phase1_route_consistency_min"]
-        if type(threshold) is bool or not isinstance(threshold, (int, float)):
-            raise ValueError("global expectations policy must be numeric: phase1_route_consistency_min")
-        if not 0 <= threshold <= 1:
-            raise ValueError("global expectations policy out of range: phase1_route_consistency_min")
+        for key in ("phase1_route_consistency_min", "aspirational_route_consistency_target"):
+            if key not in expectations:
+                continue
+            threshold = expectations[key]
+            if type(threshold) is bool or not isinstance(threshold, (int, float)):
+                raise ValueError(f"global expectations policy must be numeric: {key}")
+            if not 0 <= threshold <= 1:
+                raise ValueError(f"global expectations policy out of range: {key}")
         supported_rules = {
             "route_equivalence",
             "low_confidence_visibility",

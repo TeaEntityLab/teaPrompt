@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T19:24:00.402636",
+  "generated_at": "2026-10-09T20:47:12.213802",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2081,7 +2081,12 @@
           "../../CONTRIBUTING.md",
           "../GLOSSARY.md",
           "recent-changes-review-handoff-2026-10-07.md#rv-08-p2-canonical-queue-read-failure-is-treated-as-empty--fixed",
-          "../../review/final-report.md#whole-project-repair-delayed-advisory-follow-up"
+          "../../review/final-report.md#whole-project-repair-delayed-advisory-follow-up",
+          "whole-project-roadmap-2026-07-11.md",
+          "flow-control-roadmap-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "skill-dogfood-test-plan-2026-10-08.md#execution-readiness-and-risk-gate",
+          "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger"
         ]
       },
       "structure": [
@@ -2239,11 +2244,35 @@
         },
         {
           "level": 2,
+          "text": "Remaining-advisory closure (2026-10-09)"
+        },
+        {
+          "level": 3,
+          "text": "Current consumer evidence"
+        },
+        {
+          "level": 3,
+          "text": "Current source bindings"
+        },
+        {
+          "level": 3,
+          "text": "Roadmap continuation and owner gates"
+        },
+        {
+          "level": 3,
+          "text": "H12 triggered guard-pass consideration"
+        },
+        {
+          "level": 3,
+          "text": "Verification tooling limits"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 353,
-      "char_count": 52115
+      "line_count": 415,
+      "char_count": 61726
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
