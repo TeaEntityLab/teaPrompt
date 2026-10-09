@@ -846,31 +846,44 @@ def test_dag_fail_sigs_inside_state_is_configuration_failure(tmp_path: Path):
 
 
 def _oldest_python3() -> str | None:
-    """Declared floor is Python 3.9; prefer the oldest installed python3.x that
-    still satisfies it, falling back to /usr/bin/python3, then the current one."""
-    candidates = []
-    for minor in range(9, 30):
-        path = shutil.which(f"python3.{minor}")
-        if path:
-            candidates.append((minor, path))
-    if candidates:
-        return min(candidates)[1]
-    for name in ("/usr/bin/python3", "python3"):
-        path = shutil.which(name) if name == "python3" else (name if Path(name).exists() else None)
-        if path:
-            r = subprocess.run([path, "-c", "import sys; print(sys.version_info[:2])"],
-                               capture_output=True, text=True, timeout=10)
-            if r.returncode == 0:
-                ver = tuple(int(x) for x in r.stdout.strip().strip("()").split(",") if x.strip())
-                if len(ver) >= 2 and ver >= (3, 9):
-                    return path
+    """Declared floor is Python 3.9; return a live 3.9 interpreter path."""
+    candidates: list[str] = []
+    hit = shutil.which("python3.9")
+    if hit:
+        candidates.append(hit)
+    if Path("/usr/bin/python3").exists():
+        candidates.append("/usr/bin/python3")
+    generic = shutil.which("python3")
+    if generic:
+        candidates.append(generic)
+    seen: set[str] = set()
+    for path in candidates:
+        if path in seen:
+            continue
+        seen.add(path)
+        try:
+            r = subprocess.run(
+                [path, "-c", "import sys; print(sys.version_info[0], sys.version_info[1])"],
+                capture_output=True, text=True, timeout=10,
+            )
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if r.returncode != 0:
+            continue
+        try:
+            major_s, minor_s = r.stdout.strip().split()[:2]
+            ver = (int(major_s), int(minor_s))
+        except (ValueError, IndexError):
+            continue
+        if ver == (3, 9):
+            return path
     return None
 
 
 OLDEST_PY = _oldest_python3()
 
 
-@pytest.mark.skipif(OLDEST_PY is None, reason="no python3 >= 3.9 on PATH")
+@pytest.mark.skipif(OLDEST_PY is None, reason="Python 3.9 unavailable")
 def test_dag_exercises_declared_oldest_python_runtime(tmp_path: Path):
     """The published DAG must dispatch and reach the merged gate under the
     declared oldest supported interpreter — no eager union annotations."""
@@ -880,7 +893,7 @@ def test_dag_exercises_declared_oldest_python_runtime(tmp_path: Path):
     assert (tmp_path / "gate-target.txt").read_text() == "deep/state/assemble.out\n"
 
 
-@pytest.mark.skipif(OLDEST_PY is None, reason="no python3 >= 3.9 on PATH")
+@pytest.mark.skipif(OLDEST_PY is None, reason="Python 3.9 unavailable")
 def test_orchestrator_exercises_declared_oldest_python_runtime(tmp_path: Path):
     env, state = _orchestrator_fixture(tmp_path, [{"id": "a", "task": "X"}])
     result = _run_orch(tmp_path, env, python=OLDEST_PY)

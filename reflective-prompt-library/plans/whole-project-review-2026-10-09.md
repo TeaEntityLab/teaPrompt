@@ -257,23 +257,24 @@ A finding closes only with the relevant changed consumer exercised against its r
 
 ## Repair closure (2026-10-09, later same day)
 
-The user authorized repairs after the recording turn. All 18 findings are **CLOSED**; the "all 18 remain OPEN" statements in the status banner and findings header above are historical at-recording text. The reviewed source bindings below remain pins of the *reviewed* revision, not of the repaired files.
+The user authorized repairs after the recording turn. The initial closure was recorded at `a4b238e`; delayed feedback subsequently identified residual F04/F10 gaps and an F07 coverage gap, now addressed below. The "all 18 remain OPEN" statements above are historical at-recording text. Original source bindings remain pins of the *reviewed* revision, not of the repaired files.
 
 | Finding | Repair | Closure evidence |
 | --- | --- | --- |
-| F01 | `_fold()` rejects `..` before identity comparison; refusal runs before any output reservation | `test_arm_blinded_eval_consumers.py` (20 tests) green incl. traversal probes |
-| F02 | `_strip_examples` removes only explicit `## Example(s)` sections; fenced primary instructions retained | `test_prompt_composer.py` (22 tests) green; low-token `core-short` keeps the anti-cheating fence |
+| F01 | `_fold()` rejects `..` before identity comparison; refusal runs before any output reservation | `test_arm_blinded_eval_consumers.py` traversal/refusal/corrected-run controls |
+| F02 | `_strip_examples` removes explicitly marked Example sections while retaining fenced primary instructions | Real `core-short`/`spec-writer` CLI retention plus marked-example regressions; no substantive example removal or token-saving claim for the seven primary directories |
 | F03 | `>`/`|` block scalars parse into field values; other scalar markers are refused as unsupported, never read as content | `test_router_trace_linter_scaffold.py` folded/literal parity tests green |
-| F04 | `require_route_trace_on_low_confidence`/`forbid_silent_downgrade` required and typed bool; missing → configuration error exit 2 | `test_route_policy_consumers.py` (4 tests) green |
+| F04 | Both boolean policies required and typed; hard-gate threshold required, numeric (not bool), in `[0,1]`; trace-field list nonempty and supported | Actual baseline/repaired CLI comparison: missing threshold and missing/empty trace lists change from exit 0 with results to exit 2 without publication; `0.80` positive control retained |
 | F05 | Fan-out zero-survivor synthesis via guarded loop + `[zero-survivor]` note; holds evaluated before quorum | `test_fanout_zero_survivor_*` green in `test_flow_generator_consumers.py` |
 | F06 | All five templates carry `FAIL_SIGS`/`RETRY_REASON` repeated-failure discipline; ledger defaults beside resolved `STATE`, inside-`STATE` refused at exit 4 | refusal/retry/correction tests green in `test_flow_generator_consumers.py` |
-| F07 | Eager union annotations removed; compatibility declares Python 3.9+ | `test_*_exercises_declared_oldest_python_runtime` green |
-| F08 | Missing indexed input propagates as nonzero; no success-shaped partial composition; output-write errors exit 1 | `test_prompt_composer.py` green |
-| F09 | Install helpers propagate cd/mkdir/cp/ln failure and refuse zero-core sources before creating the destination | `test_install_helper_failure_propagation.py` (3 tests) green |
-| F10 | CI/hook path filters cover `acceptance.yaml`, `VERIFY.md`, `features/**`, root README/CONTRIBUTING, configs | static diff verified; remote branch-protection behavior remains untested (unchanged boundary) |
+| F07 | Eager union annotations removed; Python 3.9+ declared; floor tests select only a live 3.9 interpreter; CI installs 3.9 and 3.10 | Actual extracted orchestrator/DAG run on Python **3.9.24**, dispatch and reach acceptance; empty command holds at 4 without redispatch; remote CI not observed |
+| F08 | Missing indexed input exits 1 before output publication | Real copied CLI/index positive control, then remove only `spec-writer`: stdout, fresh-file and existing-file cases refuse with a named missing-source diagnostic; old output unchanged |
+| F09 | Install helpers propagate cd/mkdir/cp/ln failure and refuse zero-core sources before creating the destination | Copy/symlink missing-source, empty-source, nine-core and replacement-refusal controls |
+| F10 | Workflow has no path exclusions; local hook has no file filter and `always_run: true`; main push/PR scope retained | Workflow YAML parsed and `pre-commit validate-config` passed; actual outside-library hook invocation recorded in follow-up verification; remote branch protection remains untested |
 | F11 | Hazard token boundaries exclude the `author` family; field-scoped deferral; alias rationale seat; low-risk skipped forms pass | `test_low_risk_documented_forms_pass_without_weakening_hazards` + retained contrastive matrix green |
 | F12 | Static shell grammar defined: `&&`-separated simple commands, leading `NAME=value`, `cd` directory context; unsupported syntax is refusal, never execution | `test_acceptance_join_golden_contract_consumers.py` (4 tests) green |
 | F13 | Golden-ledger rows carry completion/status_reason/scorer_executable/scorer_revision; `score:null` means unscored | same test file green |
+| F14 | Explicitly empty/whitespace `AGENT_CMD` holds as configuration failure, never falls back to a provider | All five template consumers; additional orchestrator/DAG floor smoke exits 4 with zero new dispatches |
 | F15 | Dated October supersessions and pointers added; test-pinned five-pack literal untouched | `test_september_skills_review_record.py` green |
 | F16 | S3 and July H3/H4 discovery pointers added preserving triggers/owners | `test_dormant_*` suites green |
 | F17 | Definition seats (heading, ID-led list/table row, `Requirement:`/`ID:` line) versus references, including `covers:` | same contract-consumer tests green |
@@ -282,6 +283,52 @@ The user authorized repairs after the recording turn. All 18 findings are **CLOS
 Repair-turn integration notes: a new `FAIL_SIGS` default initially shipped a `$STATE/../` literal that violated the repo-wide "no parent-relative paths in shipped bodies" invariant — the default now derives from `dirname "$(cd "$STATE" && pwd -P)"` (identical sibling-of-`STATE` semantics, no `../` literal). The doc-anti-drift pytest floor rose to 1,626 from the new regression files. A repeated-failure hold (exit 3) is a driver decision and is never quorum-tolerable, including under `MIN_OK=0`.
 
 Final receipt for this turn: `make all` → **1,626 passed, 0 validator errors, all three routing evals passed** after `generate_index.py`. External gates (TEST-001 host, Stage-1 campaign, 2026-10-11 checkpoint) remain unchanged and unclaimed by this repair turn.
+
+## Delayed-review residual closure
+
+This follow-up stays inside the authorized existing-consumer repair. No new skill, runner, dependency, route tuning, fixture threshold, host/campaign authorization, or early checkpoint outcome is introduced.
+
+### Advisory dispositions
+
+| Delayed claim | Disposition and evidence |
+| --- | --- |
+| FAIL_SIGS reorder must fix bash defaults and prose while preserving sibling placement | Already repaired: three bash defaults derive from resolved `STATE_ABS`; prose names the sibling; nested-STATE and explicit inside-STATE refusal controls remain |
+| The two earlier full-suite failures probably came from Python 3.9 execution | Refuted by the retained failure names: lesson wording assertion and parent-relative-path invariant, not floor execution |
+| QUALITY_GATES lost list items and a comma made the pytest floor parse as 626 | Already restored before this follow-up; full list/tail retained, comma-free live floor refreshed from actual collection |
+| GeneratorRepair's five failures are test-fixture bugs | Already fixed before this follow-up: one-call markers and lazy fixture selection; no prompt-construction change |
+| CI and the oldest-runtime helper can miss the declared 3.9 floor | Valid coverage gap; repaired and exercised as F07 above |
+| The earlier F08 smoke can fail before reaching a missing prompt | Evidence weakness addressed with a copied real CLI, live index, two-file positive control and named `spec-writer` refusal in all three output modes |
+| F02 retention passes without demonstrating actual example compression | Qualified: seven primary directories have no marked Example headings; `spec-writer` body is identical and `core-short` differs by one whitespace byte. The mode label remains; no meaningful token savings claimed |
+| F04 still defaults an omitted threshold and accepts an empty trace-field list | Valid residual defect; repaired and reproduced before/after as F04 above |
+| F10 still omits Markdown and other consumed inputs | Valid residual defect; input filters removed rather than expanding another fragile allowlist |
+| F01 should allow existing-ancestor `..` and ValueError might escape | Not adopted: the repair acceptance explicitly allows traversal rejection, the live contract documents it, and the caller catches ValueError as exit 4. Narrowing it is not necessary for this repair |
+
+### Evidence and limits
+
+- Focused policy/composer/lesson regressions: **65 passed**. Flow-generator regressions: **91 passed**, no floor skips; both Python templates executed on real **3.9.24**.
+- Actual policy CLI comparisons bind to baseline `a4b238e` and the repaired source below. The missing threshold previously published `0.70`; omission now holds before reporting. A 320-digit numeric threshold previously raised OverflowError; comparison before conversion now yields configuration exit 2. NaN, infinity, bool and out-of-range controls remain refusals.
+- Actual composer smoke used a copied live index and CLI, not `cwd` substitution or an absent-index shortcut. A valid two-input control precedes removal of `spec-writer`; stdout stays empty, a fresh file is absent, and a previous file is byte-preserved.
+- The incidental exact-English lesson-trigger assertion was **removed**, not re-pinned. Lesson/evidence registration and deferred-authority guards remain.
+- Browser lifecycle: managed-tab inventory was empty; scoped `browser.close(all=true, kill=true)` released zero tabs and targets only this process's spawned applications. No global Chromium kill or user-browser shutdown was used.
+- Verification tooling: Python Eval backend unavailable; equivalent Python subprocess smoke ran through the retained JavaScript Eval kernel. Python LSP unavailable. Ruby YAML parsing succeeded despite two local native-extension warnings; hook schema validation exited 0.
+- Consumer map: direct evaluation API and actual CLI, stdout/file composition, exact-floor/current templates, CI/hook configuration, documentation and generated index are checked here. Historical receipts keep their original pins. Remote Actions, branch protection, hostile-worker isolation, model utility and host/campaign execution remain explicitly untested.
+- Twin sweep: the route-fixture validator also reads trace-field defaults but already rejects missing required fields; it was left unchanged. The faulty threshold fallback and permissive floor-selection helper have no other executable sites.
+- Final outside-library hook: `pre-commit run make-all --files review/final-report.md --verbose` **Passed**; **1,653 passed**, zero validator errors, all three routing evaluations at **100%**. Nine lint warnings and 35 record warnings remain. The command and external limits are retained in [the final report](../../review/final-report.md#whole-project-repair-delayed-advisory-follow-up).
+
+### Follow-up source bindings
+
+These SHA-256 hashes bind the runtime/configuration sources and regressions exercised by this follow-up, not the original review. Unchanged composer source is included because the missing-source smoke executes it.
+
+| Source path | Follow-up SHA-256 |
+| --- | --- |
+| `.github/workflows/python-tools.yml` | `112129b6b24f334565b3d2de144fd7b13abbf7c9b472a56e3713d391d1e60fb5` |
+| `.pre-commit-config.yaml` | `56387c083107a4728a5bb3b09a4173ea0baa5659764001a546e93454e968c1ab` |
+| `reflective-prompt-library/plans/route_paraphrase_eval.py` | `1e7caddfc24e0e821a13df418cd7bf915a47fd51a4bb314e1ed4cdcb96f856ae` |
+| `reflective-prompt-library/plans/prompt_composer.py` | `4645894f939ca1bd303681cc8fe5d5cf2823c542e620d44d43e6de2a9103c055` |
+| `reflective-prompt-library/plans/tests/test_route_policy_consumers.py` | `908afda24bbd478b830e15d6f082293207a59294cc9a52b9cf6c39ad1de0a888` |
+| `reflective-prompt-library/plans/tests/test_flow_generator_consumers.py` | `89a09592980d5ad721f0d18f9bc41f93ebcc86a8370e1bbea899eb0f6dcadaa2` |
+| `reflective-prompt-library/plans/tests/test_prompt_composer.py` | `8ec77e0fbafe1fa20ab3c096d698b7af29b2b6ba4f54c0b3f7e1a3ae575ac715` |
+| `reflective-prompt-library/plans/tests/test_harness_intent_drift_rethink_record.py` | `8153238f1fad5f1fc56e7116a43cd76f49b5d38eb451805092d7f8684e03af4f` |
 
 ## Reviewed source bindings
 

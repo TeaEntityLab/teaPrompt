@@ -3,27 +3,7 @@ name: Python Tools
 on:
   push:
     branches: [main]
-    paths:
-      - 'reflective-prompt-library/**'
-      - 'Makefile'
-      - 'acceptance.yaml'
-      - 'VERIFY.md'
-      - 'features/**'
-      - 'README*.md'
-      - 'CONTRIBUTING.md'
-      - '.pre-commit-config.yaml'
-      - '.github/workflows/python-tools.yml'
   pull_request:
-    paths:
-      - 'reflective-prompt-library/**'
-      - 'Makefile'
-      - 'acceptance.yaml'
-      - 'VERIFY.md'
-      - 'features/**'
-      - 'README*.md'
-      - 'CONTRIBUTING.md'
-      - '.pre-commit-config.yaml'
-      - '.github/workflows/python-tools.yml'
 
 jobs:
   test:
@@ -32,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: |
+            3.9
+            3.10
       - run: pip install -r reflective-prompt-library/requirements-dev.txt
       - run: make all

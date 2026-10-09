@@ -856,8 +856,9 @@ class ParaphraseEval:
         self.repo_root = Path(repo_root).resolve()
         self.config_path = (config_path or Path(__file__).parent / "route-001-paraphrase-eval.yaml").resolve()
         self.config = load_route_eval_config(self.config_path)
+        self.validate_config()
         expectations = self.config.get("global_expectations", {})
-        self.phase1_consistency_min = float(expectations.get("phase1_route_consistency_min", 0.70))
+        self.phase1_consistency_min = float(expectations["phase1_route_consistency_min"])
         self.aspirational_consistency_target = float(
             expectations.get("aspirational_route_consistency_target", 0.95)
         )
@@ -923,7 +924,13 @@ class ParaphraseEval:
                 raise ValueError(f"global expectations missing required policy: {key}")
             if type(expectations[key]) is not bool:
                 raise ValueError(f"global expectations policy must be boolean: {key}")
-
+        if "phase1_route_consistency_min" not in expectations:
+            raise ValueError("global expectations missing required policy: phase1_route_consistency_min")
+        threshold = expectations["phase1_route_consistency_min"]
+        if type(threshold) is bool or not isinstance(threshold, (int, float)):
+            raise ValueError("global expectations policy must be numeric: phase1_route_consistency_min")
+        if not 0 <= threshold <= 1:
+            raise ValueError("global expectations policy out of range: phase1_route_consistency_min")
         supported_rules = {
             "route_equivalence",
             "low_confidence_visibility",
@@ -935,7 +942,9 @@ class ParaphraseEval:
         if unsupported_rules:
             raise ValueError(f"unsupported evaluation rules: {sorted(unsupported_rules)}")
 
-        required_trace_fields = set(self.config.get("trace_required_fields", []))
+        required_trace_fields = self.config.get("trace_required_fields", [])
+        if not isinstance(required_trace_fields, list) or not required_trace_fields:
+            raise ValueError("missing trace_required_fields")
         route_trace_fields = {
             "canonical_intent",
             "workflow",
@@ -944,8 +953,8 @@ class ParaphraseEval:
             "enhancements_available",
             "rationale",
         }
-        if not required_trace_fields.issubset(route_trace_fields):
-            unknown = sorted(required_trace_fields - route_trace_fields)
+        if not set(required_trace_fields).issubset(route_trace_fields):
+            unknown = sorted(set(required_trace_fields) - route_trace_fields)
             raise ValueError(f"unsupported route trace fields: {unknown}")
 
         for group in self.config.get("intent_groups", []):
@@ -972,7 +981,7 @@ class ParaphraseEval:
         return self.define_named_groups("holdout_sets", "holdout")
 
     def has_required_trace(self, trace: Dict[str, Any]) -> bool:
-        required_fields = self.config.get("trace_required_fields", [])
+        required_fields = self.config["trace_required_fields"]
         return all(field in trace and trace[field] not in (None, "") for field in required_fields)
     
     def run_eval(self) -> Dict:

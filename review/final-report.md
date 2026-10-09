@@ -3742,3 +3742,78 @@ Unchanged boundaries: TEST-001 qualified-host ownership, Stage-1/TEST-002–004
 campaign authorization, the user-owned 2026-10-11 checkpoint, and host
 isolation/efficacy claims remain under their existing gates. No push is
 authorized.
+
+## Whole-project repair delayed-advisory follow-up
+
+### Goal and acceptance status
+
+Finish the already-authorized F01–F18 repair against current evidence.
+Delayed findings are hypotheses: valid F04/F10 residuals and F07 coverage gaps
+were repaired; stale QUALITY_GATES, FAIL_SIGS and fixture-code claims were not
+re-applied. The per-finding table now includes F14 explicitly. Source-bound
+adjudications live in
+[the repair record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#delayed-review-residual-closure).
+
+### Changed files and implementation
+
+- `plans/route_paraphrase_eval.py` and `tests/test_route_policy_consumers.py`:
+  require an explicit numeric hard-gate threshold in `[0,1]` and a nonempty,
+  supported trace-field list before conversion or routing. No fixture,
+  threshold, router, or nonmandatory aspirational policy changes.
+- `.github/workflows/python-tools.yml` / `.pre-commit-config.yaml`: remove
+  input exclusions; keep main push/PR scope and set `always_run: true`.
+  Setup config supplies Python 3.9 and 3.10; remote execution is not observed.
+- `tests/test_flow_generator_consumers.py`: verify each candidate interpreter
+  is exactly 3.9, or explicitly report unavailable instead of silently choosing
+  3.10+. Current-runtime tests remain unchanged.
+- `tests/test_prompt_composer.py`: replace the vacuous previous-file assertion
+  with actual copied-CLI/index regressions for stdout, fresh and existing
+  destinations, including a valid two-file control.
+- `tests/test_harness_intent_drift_rethink_record.py`: remove the incidental
+  exact-English trigger assertion, superseding the prior re-pin; retain
+  registration/evidence and deferred-authority checks.
+- `QUALITY_GATES_SUMMARY.md`, `PROJECT_KNOWLEDGE.md`, the existing review
+  record/report and discovery index: live count, dated closure and evidence.
+
+### Exercised verification and failures
+
+- Focused policy/composer/lesson suite: **65 passed**; flow suite:
+  **91 passed**, no floor skips.
+- Actual baseline/repaired policy CLI: absent threshold previously published
+  `0.70`, missing/empty trace fields also published success; repaired inputs
+  exit **2**, stdout empty, no results file. Valid `0.80` control remains.
+  A 320-digit threshold now refuses without a float-conversion traceback.
+- Actual composer CLI/index copy: after the two-input success control, removal
+  of only `spec-writer` refuses in all three output modes with a named
+  missing-source error. Fresh output absent; existing output byte-preserved.
+- Actual extracted orchestrator and DAG on **Python 3.9.24**: exit 0 and
+  accepted worker/final output; whitespace-only command exits 4 with zero new
+  dispatches.
+- Workflow YAML parsed with no path exclusions and both runtime versions;
+  `pre-commit validate-config` exits 0. Ruby emitted two local native-extension
+  warnings; parsing succeeded. Python Eval/LSP unavailable; runtime smoke used
+  Python subprocesses from the retained JavaScript kernel.
+- Actual configured outside-library hook:
+  `pre-commit run make-all --files review/final-report.md --verbose` **Passed**,
+  executing the complete `make all` gate: **1,653 passed**, zero validator
+  errors, all three routing evaluations at **100%**. Nine lint warnings and
+  35 record warnings remain; no remote-CI result is claimed.
+
+### Traceability, risks and Human Review
+
+F04 → typed required policies + real CLI refusal. F07 → exact-floor execution.
+F08 → actual missing-input/no-publication behavior. F10 → unrestricted input
+triggers; configured local hook execution is checked separately from remote CI.
+F02 → semantic retention only: seven primary directories have no marked
+Example headings. `spec-writer` body is identical; `core-short` differs by one
+whitespace byte. No meaningful token saving is claimed by its mode label.
+
+TWINS: searched threshold fallback, empty trace defaults and permissive floor
+selection - found 1 other site: `plans/validate_route_fixture.py`, which already
+rejects missing required trace fields and was intentionally unchanged.
+
+The browser inventory was empty; scoped close/kill released zero managed tabs,
+without a global browser kill. TEST-001 host qualification, Stage-1 campaign,
+the October 11 checkpoint, hostile-worker isolation and comparative efficacy
+remain under their existing external gates. No new promotion or push.
+

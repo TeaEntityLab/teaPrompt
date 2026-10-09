@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T19:00:08.099841",
+  "generated_at": "2026-10-09T19:24:00.402636",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2080,7 +2080,8 @@
           "../../README.md",
           "../../CONTRIBUTING.md",
           "../GLOSSARY.md",
-          "recent-changes-review-handoff-2026-10-07.md#rv-08-p2-canonical-queue-read-failure-is-treated-as-empty--fixed"
+          "recent-changes-review-handoff-2026-10-07.md#rv-08-p2-canonical-queue-read-failure-is-treated-as-empty--fixed",
+          "../../review/final-report.md#whole-project-repair-delayed-advisory-follow-up"
         ]
       },
       "structure": [
@@ -2222,11 +2223,27 @@
         },
         {
           "level": 2,
+          "text": "Delayed-review residual closure"
+        },
+        {
+          "level": 3,
+          "text": "Advisory dispositions"
+        },
+        {
+          "level": 3,
+          "text": "Evidence and limits"
+        },
+        {
+          "level": 3,
+          "text": "Follow-up source bindings"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 306,
-      "char_count": 45040
+      "line_count": 353,
+      "char_count": 52115
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",

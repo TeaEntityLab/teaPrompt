@@ -75,7 +75,7 @@ def test_compose_low_token_preserves_primary_instructions(composer):
 
 
 def test_compose_low_token_preserves_secondary_template(composer):
-    """A second primary template keeps safety/acceptance content compressed."""
+    """A second primary template keeps safety and acceptance instructions."""
     low = composer.compose(["spec-writer"], low_token=True)
 
     assert "Acceptance Criteria" in low
@@ -216,25 +216,50 @@ def test_cli_stdout_failure_emits_no_success_output(composer, monkeypatch, capsy
     assert "Prompt file not found" in captured.err
 
 
-def test_cli_output_failure_leaves_existing_file_unchanged(
-    composer, tmp_path, monkeypatch
+@pytest.mark.parametrize("output_mode", ["stdout", "fresh", "existing"])
+def test_cli_missing_source_does_not_publish_partial_output(
+    composer, tmp_path, output_mode
 ):
-    """An --output failure leaves existing output unchanged, with no partial artifact."""
-    import prompt_composer as composer_module
+    """Exercise the real CLI with an index that still names a missing input."""
+    import json
+    import shutil
+    import subprocess
 
-    existing = tmp_path / "composed.md"
-    existing.write_text("previous complete artifact\n", encoding="utf-8")
-    missing = tmp_path / "missing-dir" / "composed.md"
+    library = tmp_path / "reflective-prompt-library"
+    plans = library / "plans"
+    plans.mkdir(parents=True)
+    script = plans / "prompt_composer.py"
+    shutil.copyfile(Path(__file__).resolve().parent.parent / script.name, script)
+    (library / "index.json").write_text(json.dumps(composer.index), encoding="utf-8")
+    for slug in ("core-full", "spec-writer"):
+        relative = composer.resolve_slug(slug)
+        source = tmp_path / relative
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text(composer.read_prompt(relative), encoding="utf-8")
 
-    monkeypatch.setattr(composer_module, "PromptComposer", lambda _root: composer)
-    monkeypatch.setattr(
-        sys,
-        "argv",
-        ["prompt_composer.py", "core-full", "spec-writer", "--output", str(missing)],
-    )
-    assert composer_module.main() == 1
-    assert existing.read_text(encoding="utf-8") == "previous complete artifact\n"
-    assert not missing.exists()
+    command = [sys.executable, str(script), "core-full", "spec-writer"]
+    valid = subprocess.run(command, cwd=tmp_path, capture_output=True, text=True, timeout=15)
+    assert valid.returncode == 0, valid.stderr
+    assert "## Prompt 1: core-full" in valid.stdout
+    assert "## Prompt 2: spec-writer" in valid.stdout
+    (tmp_path / composer.resolve_slug("spec-writer")).unlink()
+
+    target = tmp_path / "composed.md"
+    previous = b"previous complete artifact\n"
+    if output_mode == "existing":
+        target.write_bytes(previous)
+    if output_mode != "stdout":
+        command.extend(["--output", str(target)])
+    missing = subprocess.run(command, cwd=tmp_path, capture_output=True, text=True, timeout=15)
+
+    assert missing.returncode == 1
+    assert missing.stdout == ""
+    assert "Prompt file not found" in missing.stderr
+    assert "spec-writer" in missing.stderr
+    if output_mode == "existing":
+        assert target.read_bytes() == previous
+    else:
+        assert not target.exists()
 
 
 def test_resolve_slugs_returns_ordered_paths(composer):

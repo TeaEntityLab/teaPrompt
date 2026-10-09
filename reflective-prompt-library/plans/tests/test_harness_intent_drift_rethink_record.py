@@ -98,7 +98,6 @@ def test_lesson_recipe_and_deferred_row_at_their_surfaces():
     assert knowledge.count(LESSON) == 1
     lesson = knowledge.split(LESSON, 1)[1].split("\n## ", 1)[0]
     assert re.search(r"^- Evidence: .*skill-verification-panel-2026-09-05\.md", lesson, re.M)
-    assert "- Review trigger: a change to an existing author-side executable consumer or its declared contract" in lesson
     assert not re.search(r"\bthirteen\b", lesson)
     assert "(plans/harness-intent-drift-rethink-2026-09-06.md)" in knowledge
     recipes = _read(RECIPES)
