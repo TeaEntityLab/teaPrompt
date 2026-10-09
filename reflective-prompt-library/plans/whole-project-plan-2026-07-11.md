@@ -202,6 +202,8 @@ and the Makefile's record-hygiene validator. The original dated counts and gate
 measurements above/below remain historical; this correction asserts source
 reconciliation, not a fresh execution result.
 
+**Dated supersession 2026-10-09 (F15 current-count pointer, no cardinality change):** the live `DOMAIN_PACK_SKILLS` registry now holds ten packs after the 2026-10-06 five-pack admission (`headless-agent-cli-contract`, `arm-blinded-eval-harness`, `acceptance-join-validator`, `golden-benchmark-runner`, `router-trace-linter`; evidence: [survey](managed-skills-learned-survey-2026-10-06.md), ticket [runtime-skills-task001-ticket-2026-10-06.md](runtime-skills-task001-ticket-2026-10-06.md)). Every current count claim must use that registry. The "Five registered domain packs outside core routing" row above is a test-pinned historical literal, preserved exactly; it is not the current inventory.
+
 ## Verification (this plan)
 
 - Authored against: PROJECT_KNOWLEDGE.md, QUALITY_GATES_SUMMARY.md, GLOSSARY

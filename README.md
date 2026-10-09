@@ -32,7 +32,7 @@ Maintainers and governance operators start at [reflective-prompt-library/06-repo
 
 ## Governance
 
-- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) — quality gates, routing maintenance (R8–R12), `make all`
+- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md) — quality gates, routing maintenance (R8–R13), `make all`
 - **Panel record:** [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md) — six-lens Socratic consensus (Rounds 1–101)
 - **Operator playbook:** [GLOSSARY.md](reflective-prompt-library/GLOSSARY.md) — Governance Maintenance Playbook
 

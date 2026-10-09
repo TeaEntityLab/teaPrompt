@@ -7,6 +7,12 @@
 > adds no new gates: every row restates an existing gate with a pointer. If a row
 > and its source record disagree, the record wins.
 
+**2026-10-09 review state:** [Whole-project review and recording](whole-project-review-2026-10-09.md)
+retains 18 open correctness/contract/navigation findings and their proposed repair
+criteria. F15/F16 identify stale aggregate pack counts and omitted S3/July H3/H4
+discovery pointers; recording them does not reconcile those inventories or close
+the findings. Existing triggers, owners, and the October 11 date gate are unchanged.
+
 ## Horizon model
 
 TeaPrompt does not schedule by calendar quarters; it schedules by **gates**. Four
@@ -131,6 +137,14 @@ outside core routing. This records an already-landed admission, not a new one.
 | --- | --- | --- |
 | `verification-map-generator` — fifth registered pack | pack + examples; registry admission checklist and `PACK_SURFACES`; product VERIFY/features/spec pattern | `test_validate_skill_examples.py`, `test_verification_map_generator_adoption_state.py`; seeded classifications are judgment-tier evidence, not host enforcement; [owning pstack record](pstack-survey-2026-09-22.md) |
 
+### Adopted 2026-10-06 (five-pack admission; registry now ten, no cardinality change here)
+
+This records the already-landed 2026-10-06 admission of five packs, not a new admission or checkpoint decision. Current count claims must use the live `DOMAIN_PACK_SKILLS` registry.
+
+| Item | Surface | Guard |
+| --- | --- | --- |
+| `headless-agent-cli-contract`, `arm-blinded-eval-harness`, `acceptance-join-validator`, `golden-benchmark-runner`, `router-trace-linter` — sixth through tenth registered packs | packs + examples; registry admission checklist and `PACK_SURFACES`; install-guide loops and usage-log rows | `test_validate_skill_examples.py`, registry cardinality pins; [survey](managed-skills-learned-survey-2026-10-06.md); ticket [runtime-skills-task001-ticket-2026-10-06.md](runtime-skills-task001-ticket-2026-10-06.md) |
+
 ### Still trigger-gated
 
 | Item | Wakes when | Destination surface | Source |
@@ -236,6 +250,8 @@ owned by their [Decision Index records](../PROJECT_KNOWLEDGE.md#decision-index),
 while upstream-only runtime specimens are not new local queue work. The
 "missing at the next checkpoint" falsifier is prospective, not an elapsed
 deadline; no 2026-10-11 outcome or early proceed/hold/close decision is recorded.
+
+**F16 discovery pointers 2026-10-09 (navigation only; triggers, owners, and dormancy unchanged):** S3 distribution packaging stays trigger-gated on an adoption signal — [S3 spec](dormant-work-specs-2026-07-11.md#s3--distribution-packaging-beyond-copysymlinkgit-install), owning [skills-surface plan](skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated) and [Execution Ledger](skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation) ("packaging still trigger-gated"). July H3/H4 deferred holdout groups (`scheduled_check_boundary_trap`, `skill_authoring_holdout`) stay trigger-gated on a boundary-rule decision — [H3/H4 spec](dormant-work-specs-2026-07-11.md#h3h4--deferred-holdout-groups-genuinely-ambiguous), owning [routing-holdout plan](routing-holdout-plan-2026-07-11.md). These are distinct from the September H1–H4/H7–H8/H12 held candidates above; no September H row, trigger, or activation changes here.
 
 ## Verification
 

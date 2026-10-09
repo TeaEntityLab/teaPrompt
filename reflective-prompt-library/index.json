@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-09T10:48:52.145656",
+  "generated_at": "2026-10-09T19:00:08.099841",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -43,6 +43,7 @@
             "harness-intent-drift-rethink-2026-09-06.md",
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
+            "whole-project-review-2026-10-09.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -2040,6 +2041,194 @@
       "char_count": 22255
     },
     {
+      "path": "reflective-prompt-library/plans/whole-project-review-2026-10-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "whole-project-review-2026-10-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../../review/final-report.md#whole-project-review-recording-2026-10-09",
+          "../skills/arm-blinded-eval-harness/SKILL.md",
+          "prompt_composer.py",
+          "../skills/router-trace-linter/SKILL.md",
+          "route_paraphrase_eval.py",
+          "../skills/flow-control-generator/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "prompt_composer.py",
+          "../SKILL_INSTALLATION.md",
+          "../../.github/workflows/python-tools.yml",
+          "../../.pre-commit-config.yaml",
+          "../skills/router-trace-linter/SKILL.md",
+          "../skills/acceptance-join-validator/SKILL.md",
+          "../skills/examples/golden-benchmark-runner.examples.md",
+          "../skills/golden-benchmark-runner/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "whole-project-plan-2026-07-11.md",
+          "flow-pack-usage-log.md",
+          "../SKILL_INSTALLATION.md",
+          "whole-project-roadmap-2026-07-11.md",
+          "dormant-work-specs-2026-07-11.md",
+          "../skills/acceptance-join-validator/SKILL.md",
+          "../skills/examples/acceptance-join-validator.examples.md",
+          "QUALITY_GATES_SUMMARY.md",
+          "../../README.md",
+          "../../CONTRIBUTING.md",
+          "../GLOSSARY.md",
+          "recent-changes-review-handoff-2026-10-07.md#rv-08-p2-canonical-queue-read-failure-is-treated-as-empty--fixed"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Whole-Project Review and Recording — 2026-10-09"
+        },
+        {
+          "level": 2,
+          "text": "Goal and recording scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Provenance and limits"
+        },
+        {
+          "level": 3,
+          "text": "Claims ledger"
+        },
+        {
+          "level": 2,
+          "text": "Confirmed findings"
+        },
+        {
+          "level": 3,
+          "text": "F01 — High — Missing-parent traversal defeats blinded-output identity"
+        },
+        {
+          "level": 3,
+          "text": "F02 — High — Low-token composition removes primary instructions"
+        },
+        {
+          "level": 3,
+          "text": "F03 — Medium — Folded YAML hides the action from trace risk checking"
+        },
+        {
+          "level": 3,
+          "text": "F04 — Medium — Missing routing-policy keys disable mandatory checks"
+        },
+        {
+          "level": 3,
+          "text": "F05 — Medium — Zero quorum with no survivors never reaches the merged gate"
+        },
+        {
+          "level": 3,
+          "text": "F06 — Medium — Published pipeline omits its repeated-failure discipline"
+        },
+        {
+          "level": 3,
+          "text": "F07 — Medium — DAG has an undeclared Python-version requirement"
+        },
+        {
+          "level": 3,
+          "text": "F08 — Medium — Missing indexed input produces a successful partial composition"
+        },
+        {
+          "level": 3,
+          "text": "F09 — Medium — Core install helpers swallow source-resolution failure"
+        },
+        {
+          "level": 3,
+          "text": "F10 — Medium — CI trigger filters omit inputs consumed by checks"
+        },
+        {
+          "level": 3,
+          "text": "F11 — Medium — Trace linter rejects documented low-risk forms"
+        },
+        {
+          "level": 3,
+          "text": "F12 — Medium — Static command resolution misinterprets ordinary shell forms"
+        },
+        {
+          "level": 3,
+          "text": "F13 — Medium — Golden-ledger examples omit required evidence fields"
+        },
+        {
+          "level": 3,
+          "text": "F14 — Low — Empty agent command crashes instead of holding configuration"
+        },
+        {
+          "level": 3,
+          "text": "F15 — Low — Aggregate narratives still report five or six packs"
+        },
+        {
+          "level": 3,
+          "text": "F16 — Low — Aggregate queue omits S3 and July H3/H4 discovery pointers"
+        },
+        {
+          "level": 3,
+          "text": "F17 — Low — Requirement definitions and references are underspecified"
+        },
+        {
+          "level": 3,
+          "text": "F18 — Low — Maintenance descriptions lag executable and routing contracts"
+        },
+        {
+          "level": 2,
+          "text": "Advisory adjudication"
+        },
+        {
+          "level": 3,
+          "text": "Withdrawn claims"
+        },
+        {
+          "level": 3,
+          "text": "Qualified observations"
+        },
+        {
+          "level": 2,
+          "text": "Intent and roadmap traceability"
+        },
+        {
+          "level": 3,
+          "text": "Declined to Judge"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Remaining work and repair order"
+        },
+        {
+          "level": 3,
+          "text": "External gates — unchanged"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and continuation"
+        },
+        {
+          "level": 2,
+          "text": "Repair closure (2026-10-09, later same day)"
+        },
+        {
+          "level": 2,
+          "text": "Reviewed source bindings"
+        }
+      ],
+      "line_count": 306,
+      "char_count": 45040
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2340,7 +2529,9 @@
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "whole-project-roadmap-2026-07-11.md",
-          "september-skills-review-2026-09-14.md"
+          "september-skills-review-2026-09-14.md",
+          "managed-skills-learned-survey-2026-10-06.md",
+          "runtime-skills-task001-ticket-2026-10-06.md"
         ]
       },
       "structure": [
@@ -2425,8 +2616,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 215,
-      "char_count": 16081
+      "line_count": 217,
+      "char_count": 16777
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -4540,6 +4731,9 @@
           "external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion",
           "skills-september-concepts-review-2026-09-16.md",
           "../../review/final-report.md",
+          "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
+          "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
+          "routing-holdout-plan-2026-07-11.md",
           "skill-improvement-plan-2026-07-24.md",
           "checkpoint-2026-10-11-runbook.md",
           "skill-improvement-plan-2026-07-24.md",
@@ -4710,8 +4904,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 800,
-      "char_count": 55873
+      "line_count": 802,
+      "char_count": 56826
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -7059,6 +7253,7 @@
         "markdown_links": [
           "whole-project-plan-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md",
+          "whole-project-review-2026-10-09.md",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "ROUTING_CONTRACT.md",
           "QUALITY_GATES_SUMMARY.md",
@@ -7110,6 +7305,8 @@
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "pstack-survey-2026-09-22.md",
+          "managed-skills-learned-survey-2026-10-06.md",
+          "runtime-skills-task001-ticket-2026-10-06.md",
           "governance-rules-rethink-review-2026-07-11.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers",
@@ -7148,7 +7345,12 @@
           "agent-harness-convergence-survey-2026-08-25.md#technical-lineage-candidate-adoption-ledger",
           "september-skills-review-2026-09-14.md",
           "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
-          "../PROJECT_KNOWLEDGE.md#decision-index"
+          "../PROJECT_KNOWLEDGE.md#decision-index",
+          "dormant-work-specs-2026-07-11.md#s3--distribution-packaging-beyond-copysymlinkgit-install",
+          "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
+          "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
+          "dormant-work-specs-2026-07-11.md#h3h4--deferred-holdout-groups-genuinely-ambiguous",
+          "routing-holdout-plan-2026-07-11.md"
         ]
       },
       "structure": [
@@ -7190,6 +7392,10 @@
         },
         {
           "level": 3,
+          "text": "Adopted 2026-10-06 (five-pack admission; registry now ten, no cardinality change here)"
+        },
+        {
+          "level": 3,
           "text": "Still trigger-gated"
         },
         {
@@ -7209,8 +7415,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 250,
-      "char_count": 28644
+      "line_count": 266,
+      "char_count": 30876
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -8117,8 +8323,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 438,
-      "char_count": 25694
+      "line_count": 437,
+      "char_count": 25854
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -13419,6 +13625,8 @@
         "markdown_links": [
           "governance-necessity-panel-record-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
+          "managed-skills-learned-survey-2026-10-06.md",
+          "runtime-skills-task001-ticket-2026-10-06.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "self-governance-dogfood-2026-09-24.md",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -13492,8 +13700,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 476,
-      "char_count": 42307
+      "line_count": 478,
+      "char_count": 42811
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -16844,7 +17052,7 @@
         "name": "flow-control-generator",
         "description": "Use when a task needs an executable flow-control script that coordinates agent steps — sequential pipelines, parallel fan-out/fan-in, conditional routing, or orchestrator-worker delegation — over a host agent CLI or SDK. It classifies the task shape, picks the smallest topology, and writes a deterministic script with state files, verification gates, and budgets. For iterate-until-done loops, use flow-loop-harness.",
         "license": "MIT",
-        "compatibility": "Requires a POSIX host with bash 3.2+ (python3 for the Python templates) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.",
+        "compatibility": "Requires a POSIX host with bash 3.2+ (Python 3.9+ for the Python templates — no union annotations or post-3.9 stdlib) and a headless host agent CLI; generated scripts run on the host, not in TeaPrompt.",
         "metadata": "",
         "risk_level": "medium",
         "human_review_required": "false",
@@ -16907,6 +17115,14 @@
           "text": "generated-by: flow-control-generator / parallel / 2026-10-01 / dry-run-required"
         },
         {
+          "level": 1,
+          "text": "A repeated-failure hold (3) and a selected-preflight hold (4) are driver"
+        },
+        {
+          "level": 1,
+          "text": "decisions — never swallowed by quorum, including MIN_OK=0."
+        },
+        {
           "level": 2,
           "text": "Template: Conditional Router (bash)"
         },
@@ -16951,8 +17167,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 536,
-      "char_count": 31172
+      "line_count": 705,
+      "char_count": 44932
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
@@ -17045,7 +17261,7 @@
         }
       ],
       "line_count": 115,
-      "char_count": 13385
+      "char_count": 13674
     },
     {
       "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
@@ -17138,8 +17354,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 510,
-      "char_count": 34592
+      "line_count": 512,
+      "char_count": 34773
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -17687,6 +17903,22 @@
           "text": "Emitted Scaffold"
         },
         {
+          "level": 1,
+          "text": "Intentional token boundaries: \"auth\" still attaches to non-letter"
+        },
+        {
+          "level": 1,
+          "text": "continuations (auth-service, auth2, auth_) and to full hazard words"
+        },
+        {
+          "level": 1,
+          "text": "(authentication, authorize, authorise), but never to the author family"
+        },
+        {
+          "level": 1,
+          "text": "(author/authors/authorship/authored/authoring/authorial/authority)."
+        },
+        {
           "level": 2,
           "text": "Honest Limits"
         },
@@ -17699,8 +17931,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 328,
-      "char_count": 22985
+      "line_count": 398,
+      "char_count": 27646
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -18362,8 +18594,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 92,
-      "char_count": 8958
+      "line_count": 98,
+      "char_count": 11962
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -18746,5 +18978,5 @@
       "char_count": 28518
     }
   ],
-  "total_files": 207
+  "total_files": 208
 }

@@ -195,8 +195,7 @@ python3 reflective-prompt-library/plans/validate_governance.py
 
 **What it does:**
 - Validates golden-task shape in `benchmark_tasks.py` (workflow, criteria, uniqueness)
-- Regenerates `benchmark-tasks.json` for local/manual runs
-- Runs in `make validate` — **does not** execute LLM benchmark comparisons
+- Compares the committed `benchmark-tasks.json` against `benchmark_tasks.py` and reports drift — it does not rewrite the artifact (regenerate with `BenchmarkSet.save_benchmark` in `benchmark_tasks.py`, the actual existing generator)
 
 **Usage:**
 ```bash
@@ -370,7 +369,7 @@ evals 100% ([record](self-governance-dogfood-2026-09-24.md)).
 2. **ROUTE-001/002/003 in CI** — 128 + 138 + 108 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata, PROJECT_KNOWLEDGE, record hygiene, benchmark fixture, skill examples, route fixtures (eight validators; `Makefile` owns the composition)
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook
-  5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_human_review_library_registry.py`, `test_prompt_skill_links_library_registry.py`, `test_prompt_contract_library_registry.py`, `test_prompt_primary_workflow_surface_library_registry.py`, `test_workflow_skill_coverage_library_registry.py`, `test_prompt_eval_harness_score_library_registry.py`, `test_prompt_workflow_skill_reference_library_registry.py`, `test_prompt_eval_harness_fixture_library_registry.py`, `test_prompt_category_paths_library_registry.py`, `test_prompt_governance_surface_paths_library_registry.py`, `test_skill_verification_panel_record.py`, `test_installed_skills_general_lessons_record.py`, `test_llm_judge_lifecycle_survey_record.py`, `test_skill_scenario_panel_adoption_state.py`, `test_september_skills_review_record.py`, `test_flow_pack_adoption_state.py`, `test_governance_workflow_self_control_adoption.py`, `test_agent_governance_scaffold_adoption_state.py`, `test_flow_generator_consumers.py`, `test_flow_loop_consumers.py`, `test_skills_september_concepts_review_record.py`, `test_skill_module_contract.py` (Escalation subsection + Trigger/Methods/Output/Never; 1548+ pytest anti-drift suite in CI); reciprocal thinking-lens ↔ skill checks and `00-core` + composable `Primary workflow` / route-trace guards check registered surfaces, structure, and declared protocols, not exact live-skill prose.
+  5. **Doc anti-drift** — `test_routing_contract.py`, cheatsheet parity tests, `test_readme_governance.py`, `test_thinking_prompts_eval_harness.py`, `test_engineering_prompts_eval_harness.py`, `test_prompt_cross_links.py`, `test_core_prompts_eval_harness.py`, `test_human_review_library_registry.py`, `test_prompt_skill_links_library_registry.py`, `test_prompt_contract_library_registry.py`, `test_prompt_primary_workflow_surface_library_registry.py`, `test_workflow_skill_coverage_library_registry.py`, `test_prompt_eval_harness_score_library_registry.py`, `test_prompt_workflow_skill_reference_library_registry.py`, `test_prompt_eval_harness_fixture_library_registry.py`, `test_prompt_category_paths_library_registry.py`, `test_prompt_governance_surface_paths_library_registry.py`, `test_skill_verification_panel_record.py`, `test_installed_skills_general_lessons_record.py`, `test_llm_judge_lifecycle_survey_record.py`, `test_skill_scenario_panel_adoption_state.py`, `test_september_skills_review_record.py`, `test_flow_pack_adoption_state.py`, `test_governance_workflow_self_control_adoption.py`, `test_agent_governance_scaffold_adoption_state.py`, `test_flow_generator_consumers.py`, `test_flow_loop_consumers.py`, `test_skills_september_concepts_review_record.py`, `test_skill_module_contract.py` (Escalation subsection + Trigger/Methods/Output/Never; 1626+ pytest anti-drift suite in CI); reciprocal thinking-lens ↔ skill checks and `00-core` + composable `Primary workflow` / route-trace guards check registered surfaces, structure, and declared protocols, not exact live-skill prose.
 
 ### Ongoing maintenance (not blockers)
 
@@ -426,7 +425,7 @@ make all
 
 ## Conclusion
 
-Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 68 (R11 approved-spec delivery + R12 boundary quick-cue maintenance); treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
+Phase 1 quality-gate tooling and documentation are **complete**. Routing consistency on seeded fixtures (ROUTE-001 tuning, ROUTE-002 holdout, ROUTE-003 adversarial) is at **100%** as of Round 68 (R11 approved-spec delivery + R12 boundary quick-cue maintenance, with R13 review-led inspection live per ROUTING_CONTRACT.md); treat this as regression protection, not proof of broad semantic routing. TeaPrompt has:
 
 - ✅ Automated validation to prevent quality degradation
 - ✅ Machine-readable index for tool integration

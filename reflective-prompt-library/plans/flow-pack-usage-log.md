@@ -1,7 +1,8 @@
 # Flow-Pack Usage Log
 
 > **Status: living evidence ledger (non-authoritative).** Manual invocation log
-> for every registered domain pack (`DOMAIN_PACK_SKILLS`: five since 2026-09-23;
+> for every registered domain pack (`DOMAIN_PACK_SKILLS`: ten since 2026-10-06;
+> five since 2026-09-23 is the dated historical count, preserved below;
 > scope widened 2026-09-14 so the `governed-delivery` recurrence checkpoint reads
 > the same ledger), established 2026-07-11 per
 > [necessity record N11](governance-necessity-panel-record-2026-07-11.md) and
@@ -12,6 +13,7 @@
 > absence of entries is recorded `unknown`-vs-zero honestly: an empty log means
 > "no invocation was *recorded*", and the 2026-10-11 review must weigh whether
 > unlogged use is plausible before treating it as zero.
+> **Dated supersession 2026-10-09:** the prior "five since 2026-09-23" header is historical; the current count is ten from the live registry after the 2026-10-06 five-pack admission ([survey](managed-skills-learned-survey-2026-10-06.md), ticket [runtime-skills-task001-ticket-2026-10-06.md](runtime-skills-task001-ticket-2026-10-06.md)).
 
 ## Convention
 
@@ -150,12 +152,12 @@ not the 2026-10-11 checkpoint outcome. Host logs and private session histories
 were not supplied: the earlier git/plan-doc scan cannot establish global absence,
 zero recurrence, or independent `governed-delivery` use.
 
-**T2 / check 3:** an independent AST-registry/first-symbol smoke found the same
+**T2 / check 3 (dated 2026-10-01; five-pack historical receipt, preserved):** an independent AST-registry/first-symbol smoke found the same
 five `DOMAIN_PACK_SKILLS`, in registry order, followed by `reflective-dispatch`,
 in both appendices (six bullets each; exit 0). The most recent appendix edit is
 `5087ffe` (2026-09-29), adding the Software Factory / AI-native SDLC cue in both
 languages; this is the current stability baseline, not stability since July.
-Re-verify at the 2026-10-11 checkpoint; no new adoption or localization scope.
+Re-verify at the 2026-10-11 checkpoint against the live ten-pack registry; no new adoption or localization scope.
 
 **GD↔AGS / check 9:** semantic comparison, not identical block/schema text:
 

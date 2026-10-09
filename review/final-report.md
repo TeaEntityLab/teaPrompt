@@ -3632,3 +3632,113 @@ TEST-001 host qualification and the Stage-1/TEST-002–004 campaign remain
 **BLOCKED** under their existing gates. The user-owned **2026-10-11
 checkpoint** is date-gated and unchanged. The scoped repository commit is
 explicitly authorized; it does not resolve those external gates or grant a push.
+
+## Whole-project review recording (2026-10-09)
+
+### Goal, summary and authority
+
+User direction: **"Record everything into docs or skills if worthy it."**
+The full review of `116f05f047ddd121ff5f9224666714b8aa5ad4a7` is now retained in
+[a repository review/continuation record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md).
+It records all 18 confirmed findings, six offline runtime groups and 30 case
+records, nine withdrawn claims, ten qualified observations, 15 source bindings,
+proposed repair criteria, and named untested/externally held boundaries.
+**Request changes; all 18 findings remain open.** Recording is not repair.
+
+The existing template-drift lesson gained new local evidence and a limit on
+the earlier path-domain claim. Other candidates reuse current implementation,
+review, minimality, and handoff guidance; adding generic rules would duplicate
+contracts while leaving the actual consumers broken. No new skill, pack,
+runner, dependency, operating rule, oracle migration, provider call, commit,
+push, or checkpoint outcome is introduced.
+
+### Files changed and acceptance traceability
+
+- `reflective-prompt-library/plans/whole-project-review-2026-10-09.md`:
+  complete findings, observations, adjudications, promotion/no-change decisions,
+  repair order, source pins, falsifiers, and continuation/authority boundaries.
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md`: existing lesson evidence
+  amendment and Decision Index pointer, not new agent authority.
+- `reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md`:
+  review-discovery pointer only; F15/F16 inventory repairs stay open.
+- This section and regenerated `reflective-prompt-library/index.json`:
+  recording delivery and discovery.
+
+The source record preserves the requested whole-project, roadmap, intent, and
+test-quality dimensions separately. Original receipts remain historical; no
+known failure was rerun simply to record it.
+
+### Verification
+
+Before recording, all **15 reviewed source hashes matched** the repository.
+The prior same-revision gate was **1,568 tests passed, zero validator errors,
+three routing evaluations passed**, with nine skill warnings and 35 record
+warnings. It is reused review evidence, not closure of the newly found defects.
+
+Fresh recording verification:
+
+- Throwaway document-fidelity check: **PASS** for all F01–F18 and severity
+  labels, six probe groups / 30 case records, nine withdrawn claims, ten
+  qualified observations, and all 15 original source bindings. The only
+  changed hash among the reviewed files is the roadmap's record-only pointer;
+  the other 14 are unchanged. No permanent wording tests were added.
+- `python3 reflective-prompt-library/plans/generate_index.py && make all`:
+  **1,568 passed**, zero validator errors, all three routing evaluations
+  passed; index contains 208 files / 189 prompts / 19 skills. The nine
+  skill warnings and 35 historical-record warnings remain unchanged.
+  Recording-turn receipt: `artifact://2359`, not the earlier review baseline.
+- Actual Chromium loopback Markdown preview: inspected the complete record's
+  opening, High finding, advisory table and source-pin table, the amended
+  knowledge lesson, and the roadmap pointer. The DOM retains all 18 finding
+  headings and seven record tables; no horizontal page overflow was observed
+  at the actual 1200×614 viewport. This proves rendering of the records, not
+  installed-skill compliance, host isolation, or defect closure.
+
+Tooling-only failures: semantic discovery was unavailable (HTTP 403), so
+known-path reads and literal/filename searches supplied the scope. The first
+preview launch passed an unresolved internal URI to Python; launching its
+resolved native path succeeded. A valid top-level browser-open Eval expression
+was rejected at parse time; the separated open succeeded. These are not
+product failures or successful checks; no failing consumer was rerun for
+confirmation. Final report-only receipt updates receive focused documentation
+reverification after this full gate; executable sources and evidence are
+unchanged.
+
+### Risks, remaining work and Human Review
+
+F01's blinded metadata-boundary escape and F02's primary-instruction deletion
+are the first proposed repairs; the complete F01–F18 repair criteria live in
+the linked record. This request authorizes durable capture, not implementation.
+TEST-001 qualified-host ownership, Stage-1/TEST-002–004 campaign authorization
+and isolation, and the user-owned October 11 checkpoint stay under their
+existing gates. The private campaign manifest is not published or rebound.
+No commit or push is authorized by this recording request.
+
+## Whole-project repair turn (2026-10-09, later same day)
+
+User direction authorized repairs after the recording. All **18 confirmed
+findings (F01–F18) are CLOSED** with consumer-level evidence; the per-finding
+closure table lives in
+[the review record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#repair-closure-2026-10-09-later-same-day).
+Repairs span `arm-blinded-eval-harness`, `router-trace-linter`,
+`acceptance-join-validator`, `golden-benchmark-runner`, `flow-control-generator`
+(templates + examples), `prompt_composer.py`, `route_paraphrase_eval.py`,
+`SKILL_INSTALLATION.md` (+ zh-TW failure-contract bullet), CI/hook path
+filters, and the stale-count/discovery/navigation docs (F15/F16/F18).
+
+New regression files: `test_install_helper_failure_propagation.py`,
+`test_route_policy_consumers.py`,
+`test_acceptance_join_golden_contract_consumers.py`, plus added
+`test_flow_generator_consumers.py` and `test_router_trace_linter_scaffold.py`
+cases. The pytest anti-drift floor rose to **1,626**.
+
+Verification receipt for this turn: `generate_index.py` then `make all` →
+**1,626 passed, 0 validator errors, all three routing evaluations passed**.
+Test-pinned historical literals (e.g. the September five-pack sentence) were
+preserved; the lesson review-trigger pin was updated because its sentence was
+deliberately broadened by the recording.
+
+Unchanged boundaries: TEST-001 qualified-host ownership, Stage-1/TEST-002–004
+campaign authorization, the user-owned 2026-10-11 checkpoint, and host
+isolation/efficacy claims remain under their existing gates. No push is
+authorized.

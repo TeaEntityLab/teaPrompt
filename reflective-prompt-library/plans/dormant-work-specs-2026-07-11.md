@@ -109,6 +109,8 @@ adoption. Their owning rows remain unchanged.
 
 | Item | Disposition / unchanged condition | Owning-record pointer |
 | --- | --- | --- |
+| S3 — distribution packaging (beyond copy/symlink/git-install) | Trigger-gated on an adoption signal; cheap copy/symlink subset done, marketplace/plugin packaging not built. F16 pointer only — trigger, owner, and dormancy unchanged. | [S3 spec](#s3--distribution-packaging-beyond-copysymlinkgit-install); [skills-surface plan](skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated); [Execution Ledger](skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation) |
+| July H3/H4 — deferred holdout groups (`scheduled_check_boundary_trap`, `skill_authoring_holdout`) | Trigger-gated on a boundary-rule decision; fixtures must encode decided contracts, not open questions. F16 pointer only — distinct from September H1–H4/H7–H8/H12 rows; no September H change or activation. | [H3/H4 spec](#h3h4--deferred-holdout-groups-genuinely-ambiguous); [routing-holdout plan](routing-holdout-plan-2026-07-11.md) |
 | WGS-GOV-1 | Date-gated under AS8/R10; covered in the checkpoint map above, not fired early | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md); [runbook item 6](checkpoint-2026-10-11-runbook.md) |
 | WGS-SPC-2 | Live conditional deferral: lint warning or documented burying | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md) |
 | WGS-X4a | Live conditional deferral: documented misroute/metric regression | [skill-improvement ledger](skill-improvement-plan-2026-07-24.md) |

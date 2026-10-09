@@ -474,7 +474,7 @@ Ongoing upkeep after panel close (Rounds 1–101). Not agent instructions — op
 5. Reject a tenth **core** skill / full `SKILL.md` i18n unless its promotion gate is met; registered domain packs instead follow `06-repo/AGENTS.md` item 3 and never enter core routing by implication.
 6. When cheatsheet boundary quick cues change, update `BOUNDARY_QUICK_CUE_*` markers and probe snippets in `test_validate_route_fixture.py`; run `test_cheatsheet_boundary_quick_cues.py`.
 7. When holdout probe tuples change in `test_validate_route_fixture.py`, add zh-native cues in the zh-TW cheatsheet (verbatim English fixture phrases are no longer embedded there — see `ZH_NATIVE_EQUIVALENTS` in `test_cheatsheet_route003_parity.py`) and run `test_cheatsheet_*_parity.py` (e.g. `test_cheatsheet_dispatch_meta_parity.py`).
-8. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R12 when boundaries or cheatsheet parity steps change.
+8. Keep `CONTRIBUTING.md` Routing Maintenance aligned with `ROUTING_CONTRACT.md` R8–R13 when boundaries or cheatsheet parity steps change.
 9. When adding benchmark golden tasks, keep `test_benchmark_covers_all_nine_workflows` green and bump `MIN_TASK_COUNT` in `validate_benchmark_fixture.py` if the floor rises.
 10. When changing thinking-lens ↔ skill cross-links, update `SKILL_THINKING_SOURCES` and consumer lists in `01-thinking/` Purpose preambles; run `test_prompt_cross_links.py` (including reciprocal `THINKING_LENS_SKILL_CONSUMERS`).
 11. When changing Module Contract subsections on workflow skills, keep `Escalation:` present and run `test_skill_module_contract.py`.

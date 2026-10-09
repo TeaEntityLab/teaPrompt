@@ -29,12 +29,12 @@ Before tuning `route_paraphrase_eval.py`:
 
 1. Add fresh holdout phrases to `route-002-holdout-eval.yaml` and/or adversarial cases to `route-003-adversarial-eval.yaml`.
 2. Run `make all` — `validate_route_fixture.py` enforces minimum fixture coverage.
-3. When fixing routing boundaries, add holdout phrases **before** editing `route_paraphrase_eval.py` (see `ROUTING_CONTRACT.md` R8–R12).
+3. When fixing routing boundaries, add holdout phrases **before** editing `route_paraphrase_eval.py` (see `ROUTING_CONTRACT.md` R8–R13).
 4. When cheatsheet cues change, update exported probe tuples in `plans/tests/test_validate_route_fixture.py` and run `test_cheatsheet_*_parity.py` plus `test_cheatsheet_boundary_quick_cues.py`.
 5. Record governance-surface decisions in `PROJECT_KNOWLEDGE.md` Decision Index when routing contract changes.
 6. When adding benchmark golden tasks in `benchmark_tasks.py`, keep all nine workflows covered and update `MIN_TASK_COUNT` in `validate_benchmark_fixture.py`.
 
-See [ROUTING_CONTRACT](reflective-prompt-library/plans/ROUTING_CONTRACT.md) (R8–R12) and the [Governance Maintenance Playbook](reflective-prompt-library/GLOSSARY.md).
+See [ROUTING_CONTRACT](reflective-prompt-library/plans/ROUTING_CONTRACT.md) (R8–R13) and the [Governance Maintenance Playbook](reflective-prompt-library/GLOSSARY.md).
 
 ## Quality Standards
 
