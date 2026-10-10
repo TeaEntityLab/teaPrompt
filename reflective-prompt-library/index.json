@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-10T11:55:31.139980",
+  "generated_at": "2026-10-10T13:22:29.073852",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2090,7 +2090,9 @@
           "checkpoint-2026-10-11-runbook.md",
           "skill-dogfood-test-plan-2026-10-08.md#execution-readiness-and-risk-gate",
           "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
-          "checkpoint-2026-10-11-preparation-2026-10-10.md"
+          "checkpoint-2026-10-11-preparation-2026-10-10.md",
+          "flow-pack-usage-log.md#template-maintenance-not-invocations",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10"
         ]
       },
       "structure": [
@@ -2312,11 +2314,15 @@
         },
         {
           "level": 2,
+          "text": "Post-preparation evidence and CI reconciliation (2026-10-10)"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 553,
-      "char_count": 75151
+      "line_count": 613,
+      "char_count": 79029
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -8286,6 +8292,7 @@
           "whole-project-review-2026-10-09.md#h12-gd-advisory-follow-up-and-checkpoint-preparation-2026-10-10",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "self-governance-dogfood-2026-09-24.md",
+          "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -8416,7 +8423,7 @@
         }
       ],
       "line_count": 455,
-      "char_count": 27448
+      "char_count": 27815
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -9598,8 +9605,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 239,
-      "char_count": 15580
+      "line_count": 241,
+      "char_count": 15783
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -10019,16 +10026,28 @@
           "text": "Session source bounds"
         },
         {
+          "level": 3,
+          "text": "Post-preparation source reconciliation (later 2026-10-10)"
+        },
+        {
+          "level": 3,
+          "text": "Additional external artifact candidates"
+        },
+        {
           "level": 2,
           "text": "Developer verification receipt"
+        },
+        {
+          "level": 3,
+          "text": "Later independent Python-version receipt"
         },
         {
           "level": 2,
           "text": "Falsifiability and checkpoint handoff"
         }
       ],
-      "line_count": 98,
-      "char_count": 14445
+      "line_count": 255,
+      "char_count": 25214
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -13797,9 +13816,13 @@
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-verification-panel-2026-09-05.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
+          "rsiagent-survey-2026-09-16.md",
+          "rsiagent-survey-2026-09-16.md",
           "runtime-skills-experiments-2026-10-05.md",
           "recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07",
           "cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08",
+          "whole-project-review-2026-10-09.md",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../04-agent/workflow-acquisition.md",
           "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
@@ -13818,6 +13841,7 @@
           "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "governed-delivery-adoption-2026-09-03.md",
@@ -13870,8 +13894,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 489,
-      "char_count": 43447
+      "line_count": 514,
+      "char_count": 45372
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",

@@ -56,10 +56,12 @@ these measurements in the checkpoint session before taking a branch.
 
 **2026-10-10 preparation input:** the [dated eleven-check packet](checkpoint-2026-10-11-preparation-2026-10-10.md)
 refreshes source-page reads, live row/registry inventories, whole-file digests
-and complete S1–S5 EOF fingerprints. It distinguishes historical generation
-from admission mechanics and preserves unknown external usage. It is not
-the checkpoint session or an outcome; refresh its volatile inputs before
-taking any owning branch.
+and the earlier S1–S5 fingerprints. Its later source reconciliation covers all
+159 top-level local session files, separately scoped children and additional
+external artifact/creation/execution candidates. It distinguishes those
+candidates from convention-qualified Entries counts and preserves unknown
+usage. It is not the checkpoint session or an outcome; refresh its volatile
+inputs and classify tasks under the owning gates before taking a branch.
 
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 

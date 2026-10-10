@@ -383,7 +383,7 @@ evals 100% ([record](self-governance-dogfood-2026-09-24.md)).
 
 ### Done ✅
 
-1. **CI/CD** — `.github/workflows/python-tools.yml` runs `make all` on push/PR
+1. **CI/CD** — `.github/workflows/python-tools.yml` configures independent Python 3.9 and 3.10 matrix workers, each installing the existing development requirements with its selected interpreter and running `make all`. This corrects the former multiline input's single-default execution; remote runs remain unobserved ([record, accessed 2026-10-10](whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10)).
 2. **ROUTE-001/002/003 in CI** — 128 + 138 + 108 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata and GD template defaults, PROJECT_KNOWLEDGE, record hygiene, benchmark fixture, skill examples, route fixtures (eight validators; `Makefile` owns the composition)
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook

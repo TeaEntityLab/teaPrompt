@@ -13,7 +13,7 @@ The original September H12 row remains Held. Its explicitly approved H12-GD deve
 | Check | Observed input on 2026-10-10 | Source and limit |
 | --- | --- | --- |
 | 1 — Usage rows | Fresh live-registry/dated-row inventory is below; historical zero-state rows are preserved. | [Usage Entries](flow-pack-usage-log.md#entries) and §Convention. The five admission dry-run rows are reported separately, not promoted into production or recurrence evidence. |
-| 2 — Unlogged use | Named flow-file `git log --since=2026-07-11` found maintenance history through `d893719`; existing session receipts remain accessible. Full S1–S5 EOF fingerprints were refreshed below. | [Primary-receipt correction](flow-pack-usage-log.md#verification-correction-2026-10-01). EOF/JSON validation is not a new semantic classification of every event. External use stays `unknown`; three supplied IDs remain unlinked in the local filename search. |
+| 2 — Unlogged use | Named flow-file `git log --since=2026-07-11` found maintenance history through `d893719`. The later §Post-preparation reconciliation binds all 159 top-level local files, separately scoped child sources and 18 external header candidates; book-generation writes and a later production-loop record are identified. | [Primary-receipt correction](flow-pack-usage-log.md#verification-correction-2026-10-01). These are bounded source candidates, not new Entries counts or global absence. Unobserved usage stays `unknown`; three supplied IDs remain unlinked in the local filename search. |
 | 3 — T2 stability/parity | Both current appendices contain ten registered-pack bullets in registry order plus dispatch. The latest matching EN appendix change is `8f610df`, 2026-10-06. | [EN appendix](../skills/SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing), [zh-TW appendix](../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md), live `DOMAIN_PACK_SKILLS`. History also retains the September factory cue and prior pack admissions. Re-verification, not re-landing. |
 | 4 — F1 record | The July not-fired decision and October 1 source-only, four-template re-check exist. | [Demotion evaluation](flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01). Historical decision, not an early checkpoint verdict. |
 | 5 — F4 sources | Six named source rows were re-read; the bounded source claims and follow-ups are below. | [F4 owner](flow-control-roadmap-2026-07-11.md#f4--host-feature-watch-table-standing-re-check-before-reliance). No ecosystem-wide absence or live runtime equivalence claim. |
@@ -81,6 +81,132 @@ Locators are the existing [S1–S5 key](flow-pack-usage-log.md#verification-corr
 
 S5 has grown beyond its historical October 1 bound; the old 42,157,389-byte/8,537-row observation is not rewritten. No local session filename matching the three supplied fragments `01a0cbbd`, `01a0d1d3`, or `01a0e7b9` was found. Their missing linkage and unobserved external-host usage remain unknown, not zero.
 
+### Post-preparation source reconciliation (later 2026-10-10)
+
+The S1–S5 table above is the earlier fingerprint receipt, not a complete
+October activity inventory. The later scan selected from **159 top-level
+JSONL files** in the local session store with no filename-date or mtime
+prefilter. It parsed every row and inspected actual outer-event and message
+timestamps for `2026-10-01T00:00:00Z` through, exclusively,
+`2026-10-11T00:00:00Z`: **nine overlapping sources**, plus **three historical
+eng260729 controls**. All 159 files reached their opening-size byte bound:
+**2,629,099,214 bytes**, **zero invalid JSON rows**, stable size/mtime/inode
+during each read. Each SHA-256 binds that exact bound, not later append events.
+The retained manifest includes every excluded file and its timestamp reason.
+This is byte/event discovery, not semantic qualification of every task.
+
+Exact source keys below are relative to `~/.omp/agent/sessions/`. `P-Oct`,
+`P-Sep` and `P-Old` are TeaPrompt self-host context, not independent external
+consumer evidence. The last three rows are named corpus controls outside
+the October event window.
+
+| Key | Exact source locator | Bytes | Rows | SHA-256 prefix |
+| --- | --- | --- | --- | --- |
+| P-Oct | `-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb.jsonl` | 130,965,835 | 17,075 | `2a52418574e1` |
+| S5-later | `-dev-teaBrain/2026-09-23T14-32-13-403Z_01a0ceae-6f5b-7441-9282-1882389ca674.jsonl` | 172,275,091 | 29,283 | `5fd5f4f0bac8` |
+| Invest | `-dev-invest-suggestion-ai/2026-08-28T02-23-58-717Z_01a0462e-5cfd-7781-9013-5e8f974646b0.jsonl` | 60,293,363 | 12,534 | `2919f2881fd4` |
+| Trigger | `-dev-trigger-to-go-backend/2026-08-31T08-08-00-077Z_01a056dc-674d-71e6-8933-35b7ec01524e.jsonl` | 34,745,082 | 6,808 | `09b7810ef45f` |
+| Books | `-dev-assistantEngBooks/2026-10-03T15-55-28-104Z_01a1027a-3de8-7139-a642-1057f1b6a928.jsonl` | 31,387,378 | 4,221 | `3ab78efa08f0` |
+| Corpus-Oct | `-dev-eng260729/2026-10-02T13-40-11-974Z_01a0fcd8-0a46-7572-88f1-5d8aca9d6a7d.jsonl` | 24,127,096 | 3,209 | `4c14c251a898` |
+| HumanCodes | `-dev-Human Cheat Codes En/2026-10-02T16-35-14-269Z_01a0fd78-4add-7744-8583-95ede36cdfcf.jsonl` | 2,515,994 | 360 | `f8159985df8b` |
+| P-Sep | `-dev-teaPrompt/2026-09-30T04-37-27-198Z_01a0f09a-6c1e-73de-a366-0a0413076530.jsonl` | 66,526,884 | 7,356 | `c96daf6d2f42` |
+| P-Old | `-dev-teaPrompt/2026-09-19T02-50-04-428Z_01a0b792-290c-7495-9bf8-0d568b867c9f.jsonl` | 3,222,496 | 502 | `cf5ae670706a` |
+| Corpus-Sep23a | `-dev-eng260729/2026-09-23T15-29-55-403Z_01a0cee3-42cb-75ab-a051-dfeff9c08d1e.jsonl` | 2,693,631 | 532 | `97ecbf034c50` |
+| Corpus-Sep23b | `-dev-eng260729/2026-09-23T14-54-44-615Z_01a0cec3-0d87-7201-91f6-214844413b0f.jsonl` | 1,674,632 | 540 | `363cb6b51980` |
+| Corpus-Sep09 | `-dev-eng260729/2026-09-09T02-11-06-541Z_01a083ee-e4ac-70ab-9f65-afb1b51c316f.jsonl` | 44,840,606 | 18,503 | `6c9f358729c2` |
+
+**Known-positive sensitivity controls:** Books:6, event `cbf0d12c`, is a
+user-attributed `verification-map-generator` skill prompt. Books:10–14 are
+actual flow-generator, loop, AGS and GD read starts; Books:16–19 are their
+successful tool results (`174ca63b`, `f0b87ec5`, `35fc8fb5`, `59e44df3`).
+Later reloads are not separate invocations. Corpus-Oct:2794, event `8c4d81aa`,
+is a known `companion-ebook-candidates` hit at byte **21,003,567**, beyond
+the former 4 MiB search boundary. Corpus-Sep09's 22 pack-literal rows also
+all occur beyond 4 MiB; its `8ad4b2c0` user skill prompt is historical
+September evidence, not a new October use. S5-later's `9a51e259` is a
+model-selected GD read under a generic `next`, not an explicit new task.
+Literal matches, quoted skill text, successful loads, creation and execution
+must remain distinct; keyword sensitivity is not full usage classification.
+
+**Separate nested scope:** all **1,149 child/advisor JSONL files** beneath
+those twelve selected top-level source roots were streamed to opening-size
+bounds: **1,754,411,330 bytes**, **zero invalid rows**, **424** child sources
+with events in the October window. Every other child has an explicit
+timestamp exclusion in the retained manifest. Nested logs outside those
+twelve roots were not searched; they are not covered by the top-level result.
+One live TeaPrompt advisor appended during the read (47,250,180 opening bytes,
+47,255,466 closing bytes): its SHA-256 binds the opening prefix only, not
+current EOF. Own parent/advisor evidence stays self-host; child files are not
+silently merged into parent task counts.
+
+The book task has verified **creation**, not just read/header co-occurrence:
+under the `Books` source stem, `FlowAuthor.jsonl:125–128` records successful
+writes of both flow scripts (`ac90a358` → `9c8fef1e`; `8269e69f` → `8050ab55`).
+That child is 2,460,221 bytes / 365 rows, SHA-256 prefix `cad34f186015`.
+`Governor.jsonl:64–65,86–87` records successful oracle-manifest and handover
+writes (`6e39e5eb` → `a89fb5d9`; `ae9c2c7f` → `777c6828`); its bound is
+1,622,875 bytes / 142 rows, SHA-256 prefix `de9d3fbfd21a`. These are workers
+within the same user-directed book task, not new independent consumer tasks.
+This provenance corrects the header-only limitation for the book artifacts;
+it does not prove later execution, task-level solo use or host enforcement.
+
+### Additional external artifact candidates
+
+Paths below are relative to `/Users/teee/dev/`. The scoped six-repository
+inspection found these **18 header-bearing files**, with independently
+computed current SHA-256 values. Headers self-attribute a skill/date/topology;
+they do not authenticate creation, define a task, or establish P6 solo use.
+Every row remains an unclassified usage candidate; no Entries count changes.
+
+| Source path and header line | SHA-256 prefix |
+| --- | --- |
+| `koktai/flows/fanqie-miss-triage.sh:2` | `1c307b6603f5` |
+| `koktai/flows/fanqie-loop.sh:2` | `0606aee178f6` |
+| `ch2taigi/checks/flow/fresh-agent-proof.sh:2` | `dc3bf3eba8e8` |
+| `ch2taigi/checks/loop/map-repair.sh:2` | `619fc915ed3d` |
+| `teaJapanese/loops/fix-notation.sh:2` | `fb262a5df322` |
+| `xbasic-remake/governed-delivery/flow.sh:2` | `5b6ab50e306a` |
+| `Human Cheat Codes En/harness/agent-devin.sh:11` | `0bc5aba309f5` |
+| `Human Cheat Codes En/harness/batch-volumes.sh:6` | `263f8903865a` |
+| `Human Cheat Codes En/harness/new-volume-loop.sh:8` | `ae785a32bf08` |
+| `Human Cheat Codes En/harness/produce-volume-pipeline.sh:5` | `3cdd3449fcd0` |
+| `Human Cheat Codes En/harness/run-agent.sh:7` | `153abc0d3dbf` |
+| `Human Cheat Codes En/checks/check-draft.sh:5` | `24a5c172b204` |
+| `Human Cheat Codes En/checks/check-links.sh:5` | `aa4b2cc390eb` |
+| `Human Cheat Codes En/checks/check-volume-schema.sh:5` | `32e33c3bb34c` |
+| `Human Cheat Codes En/checks/verify-merged.sh:4` | `058fdb435ac0` |
+| `Human Cheat Codes En/checks/verify.sh:4` | `aedf7c6e99b2` |
+| `assistantEngBooks/flows/draft-chapter.sh:2` | `ead61e5ce1c6` |
+| `assistantEngBooks/flows/rethink-panel.sh:2` | `1567fda29b67` |
+
+Companion source bounds distinguish recorded stub drills from later execution:
+`koktai/flows/README.md:91–100`, `ch2taigi/.agent/HANDOVER.md:22–23,70–74`,
+`teaJapanese/loops/RUN-NOTE.md:38–68`, and
+`xbasic-remake/governed-delivery/run-note.md:1–60` retain narrow rig-tier claims.
+The book loop has a standalone entry point (`draft-chapter.sh:1–35`), separate
+from the lens fan-out, with local specimen acceptance explicitly not human
+publication. `assistantEngBooks/governance/HANDOVER.md:1–29` declares inactive
+templates, no live broker, no signed approvals and no real model call in that
+generation. Standalone script structure still does not decide task-level solo use.
+
+`Human Cheat Codes En/state/newvol-42/flow.log:1–24` records revision/critic
+rounds 1–3 with combined acceptance/floor gate 1 and round 4 with gate 0.
+`docs/handoff.md:73–86` records a first production run using Devin disk artifacts,
+three critic rejections, and a critic editing the draft directly. This is a
+later recorded execution candidate, not just header/stub evidence and not proof
+of worker/critic isolation, host enforcement, user acceptance or a complete
+governed-delivery campaign. It must not be flattened into an all-stub or
+all-paired conclusion. No external script/model was run by this reconciliation.
+
+Raw manifests with full digests and narrow event identities are retained in
+`local://postprep-source-selection-2026-10-10.json`,
+`local://postprep-session-evidence-2026-10-10.json`,
+`local://postprep-nested-session-evidence-2026-10-10.json`,
+`local://postprep-book-creation-controls-2026-10-10.json` and
+`local://postprep-external-artifacts-2026-10-10.json`. Other harness stores,
+deleted sources and unobserved hosts remain unknown. P6, G9/AS9 and actual-model
+GD qualification remain the checkpoint/host owners' decisions.
+
 ## Developer verification receipt
 
 - Clean Python 3.9.24 virtualenv, system site packages excluded and user site disabled; documented `requirements-dev.txt` installation resolved pytest 8.4.2 and PyYAML 6.0.3 inside that virtualenv.
@@ -90,6 +216,37 @@ S5 has grown beyond its historical October 1 bound; the old 42,157,389-byte/8,53
 - Nine local Chromium documentation previews passed content/layout inspection at 1200×800 without horizontal page overflow. A direct-CDP preparation viewport PNG was captured and viewed; earlier Puppeteer capture timeouts remain historical. These are developer/documentation checks, not actual-model or deployed-host evidence.
 
 Raw local inventory and CLI receipts remain session artifacts: `local://checkpoint-preparation-inventory-2026-10-10.json` and `local://h12-followup-cli-2026-10-10.json`. The compact observations, source locators and digests above are the durable packet; no temporary runner is added to the repository.
+
+### Later independent Python-version receipt
+
+After the source-reconciliation and CI configuration edits, the selected
+Python Tools branches were exercised independently in disposable local
+virtualenvs, with system/user packages excluded. Python 3.9.24 imported pytest
+8.4.2 / PyYAML 6.0.3; Python 3.10.17 imported pytest 9.1.1 / PyYAML 6.0.3.
+Both used the existing `requirements-dev.txt`, and both actual governance
+CLIs reported **19 valid, 0 invalid**.
+
+| Local branch | Command | Tests passed | Validator errors | Routing evaluations passed |
+| --- | --- | --- | --- | --- |
+| Python 3.9.24 | `env PATH=<py39>/bin:$PATH PYTHONNOUSERSITE=1 make all` | 1,745 | 0 | 3 |
+| Python 3.10.17 | `env PATH=<py310>/bin:$PATH PYTHONNOUSERSITE=1 make all` | 1,745 | 0 | 3 |
+
+The local runs were serial to avoid shared routing-result writes; GitHub's
+matrix workers have separate checkouts. This is local macOS evidence, not
+an observed remote Ubuntu/Actions run. Nine lint and 35 historical-record
+warnings remain. The Python download/provisioning command initially timed out;
+its retained extracted 3.10.17 executable was independently verified before
+creating and using that branch. The failed provisioning is not called success.
+
+Five changed-document Chromium views passed content/layout checks at
+1200×800 without horizontal page overflow. A misplaced usage-pointer smoke
+assertion was corrected against the actual source, without a product edit.
+Current direct-CDP capture timed out; an alternate visible-view capture
+returned `Unable to capture screenshot`. This later pass supplies no new
+pixel proof and does not reuse the earlier successful PNG as current evidence.
+Branch outputs and limits are retained in
+`local://postprep-reconciliation-2026-10-10.json`; raw gate receipts are
+`artifact://2766` and `artifact://2770`.
 
 ## Falsifiability and checkpoint handoff
 

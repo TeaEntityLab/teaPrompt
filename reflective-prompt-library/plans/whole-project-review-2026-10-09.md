@@ -530,6 +530,66 @@ The original H12 seven-guard branch, TEST-001 host qualification, Stage-1
 campaign and October 11 outcome retain their existing owners and gates.
 No model/provider call, runtime adoption or push belongs to this follow-up.
 
+## Post-preparation evidence and CI reconciliation (2026-10-10)
+
+This successor preserves the `d2c15f5` repair receipt and all prior reviewed
+source pins. The alleged commit/index omission is rejected: that commit used
+the recorded final generator/freshness check, staged all sixteen scoped paths
+and committed them with `--only`; the subsequent source/status check was clean.
+No gratuitous amend is made.
+
+Four missing same-change notes (`cdfa835`, `be0d16e`, `e88bf5b`, `d893719`)
+are now [late-recorded as template maintenance](flow-pack-usage-log.md#template-maintenance-not-invocations).
+Their original repair dates and incomplete/corrected STATE sequence remain
+visible. They add no Entries rows, real invocations or P6 solo-use counts.
+
+The CI coverage finding is valid. The original multiline Python 3.9/3.10
+input installed both versions but selected only the last version for the
+single `make all` step, as the [setup-python v5 contract](https://github.com/actions/setup-python/blob/v5/docs/advanced-usage.md#specifying-multiple-pythonpypy-versions)
+states (accessed 2026-10-10). The workflow now has two matrix workers, each
+with its own scalar version and interpreter-bound `python -m pip` installation
+of the existing development requirements. No dependency, path filter or
+host/campaign gate is added. Remote CI execution remains unobserved.
+
+The [expanded preparation evidence](checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10)
+replaces the earlier S1–S5-only discovery scope, without rewriting those dated
+fingerprints. All 159 local top-level JSONL files were streamed to their opening
+byte bounds without filename-date/mtime selection; nine overlap the October
+event window and three are explicit historical corpus controls. The twelve
+selected parents' 1,149 child/advisor files have a separate manifest and
+424 window-overlapping sources. One active self-host advisor appended during
+the read; its digest is an opening-prefix receipt, not current EOF. Other child
+roots, harness stores and deleted sources remain unknown.
+
+Independent source controls found a book-generation skill prompt, successful
+pack loads and worker writes, and corpus hits past the old 4 MiB boundary.
+The eighteen external header candidates include a standalone book loop;
+its confirmed workers belong to the same user-directed task. Human Cheat
+Codes En also retains later recorded model-backed production-loop execution, including
+three critic rejections and a critic editing the draft. Neither header/read
+co-occurrence nor that execution record proves independent utility,
+worker isolation, host enforcement or convention-qualified solo use.
+Candidates stay unclassified; Entries, P6 and G9/AS9 decisions are unchanged.
+No external script/model or held campaign was dispatched by this reconciliation.
+
+Both clean local Python branches ran `make all` after the source/configuration
+changes: **1,745 tests passed per branch**, zero validator errors and all three
+routing evaluations passed. Actual governance CLIs each returned 19 valid /
+0 invalid. The branches used Python 3.9.24 and 3.10.17 with independently
+installed developer dependencies; nine lint and 35 historical-record warnings
+remain. These local macOS checks do not establish remote Ubuntu CI behavior.
+Current document views passed DOM/layout checks; screenshot attempts failed,
+so no later pixel-proof claim is made. The source packet retains those failures
+and the earlier successful capture as separate receipts.
+
+TWINS: searched multiline `python-version` selection in `.github/workflows` - found 0 other sites: none.
+
+The existing local system hook still uses the
+active installed developer environment; its contract and path-filter scope
+are unchanged. Final receipt-only wording/discovery edits are checked separately
+before the scoped no-push commit.
+
+
 ## Reviewed source bindings
 
 SHA-256 hashes below bind the original review, not a future repair or the recording-turn discovery edit. Other cited locations are source observations, not additional hash-bound artifacts. Original source lines remain historical after edits.

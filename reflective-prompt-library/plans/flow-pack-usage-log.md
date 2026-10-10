@@ -81,6 +81,18 @@ themselves):
   deterministic floor, backlog preflights) — rig-tier stub runs only
   ([record](skill-verification-panel-2026-09-05.md)). Recorded 2026-09-14; the
   convention's same-change note was missed at the time.
+- 2026-09-15 — `cdfa835` changed the generator's orchestrator and DAG
+  templates to reject exit-0, zero-byte output; both flow packs' examples
+  were corrected to the observed stub-rig behavior ([second-pass record](governance-workflow-self-control-adoption-2026-09-14.md)).
+  Late-recorded 2026-10-10: the same-change maintenance note was missed.
+- 2026-09-16 — `be0d16e` repaired the DAG's stale-sink acceptance and the
+  fix-loop's STATE-only progress accounting ([RSIAgent repair record](rsiagent-survey-2026-09-16.md)).
+  Late-recorded 2026-10-10; the initial STATE repair was incomplete and was
+  corrected by the next entry. Rig-tier maintenance, not a real invocation.
+- 2026-09-16 — `e88bf5b` completed that fix-loop repair by excluding the
+  resolved STATE path literally across the seven recorded path forms
+  ([RS-2 correction](rsiagent-survey-2026-09-16.md)).
+  Late-recorded 2026-10-10: the same-change maintenance note was missed.
 - 2026-10-05 — user-directed runtime-aware maintenance of both flow packs,
   `governed-delivery` and `agent-governance-scaffold`: selected preflight
   dispatch/release gates, a finite evidence-record checker and matching
@@ -123,6 +135,11 @@ themselves):
   [Rulings and limits](cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08).
   Template maintenance only: not an Entries invocation, recurrence evidence,
   model-efficacy result, new admission, or 2026-10-11 checkpoint decision.
+- 2026-10-09 — `d893719` repaired generator zero-survivor synthesis,
+  driver-owned repeated-failure discipline, Python 3.9 compatibility and
+  empty-command holds (F05–F07/F14, [repair closure](whole-project-review-2026-10-09.md)).
+  Late-recorded 2026-10-10: the same-change maintenance note was missed.
+  These four late notes change no Entries rows or invocation/solo counts.
 
 ## Pre-checkpoint prep scans
 
@@ -475,6 +492,14 @@ reported separately from the historical generation population; neither
 maintenance nor this preparation adds a real invocation. P6 solo-use
 classification and the checkpoint's owner rulings remain open, and external
 use stays unknown. No early outcome, demotion, merge or policy activation.
+
+The packet's [later source reconciliation](checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10)
+binds all 159 top-level local source files and a separate twelve-parent nested
+scope, plus 18 external header-bearing candidates. Successful book-worker
+creation receipts and a later Human Cheat Codes En production-loop record
+are retained distinctly from headers, loads and stub drills. These candidates
+still need task-level classification; they do not add Entries rows or decide
+P6, G9/AS9, GD qualification or an all-stub/all-paired conclusion.
 
 ## Review checkpoints
 

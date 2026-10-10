@@ -4033,3 +4033,90 @@ scoped commit, not host adoption, a campaign, an original-H12 closure or an
 early checkpoint decision. The checkpoint session owns its refresh and rulings;
 host qualification and campaign prerequisites remain externally gated.
 
+## Post-preparation evidence and CI reconciliation (2026-10-10)
+
+### Goal, scope and acceptance status
+
+Reconcile delayed checkpoint-source, maintenance and CI coverage findings
+within the existing repair/roadmap authorization. Preserve original-H12,
+host qualification, campaign approval and checkpoint-date gates.
+
+| Criterion | Status | Evidence |
+| --- | --- | --- |
+| Commit/index omission claim | Rejected | Recorded `d2c15f5` final-generation/freshness and sixteen-path `--only` commit; subsequent tree observation clean |
+| Newly discovered source evidence | Verified within named scope | Complete top-level bounds, separate selected-parent child inventory, independent beyond-4-MiB and creation-result controls |
+| Missing maintenance notes | Verified | Four dated late notes; Entries and invocation/solo counts unchanged |
+| Independent Python floor coverage | Verified locally | Actual 3.9.24 and 3.10.17 governance CLI / `make all`; remote CI unobserved |
+
+### Files and implementation
+
+- `.github/workflows/python-tools.yml`: independent 3.9/3.10 matrix jobs,
+  scalar setup version and selected-interpreter `python -m pip` installation.
+  No dependency or path-filter change.
+- `plans/flow-pack-usage-log.md`: late maintenance notes for `cdfa835`,
+  `be0d16e`, `e88bf5b` and `d893719`; expanded candidate-evidence pointer,
+  not new real-invocation rows.
+- [Preparation packet](../reflective-prompt-library/plans/checkpoint-2026-10-11-preparation-2026-10-10.md):
+  exact source locators, byte/row/digest bounds, event/result identities and
+  explicit exclusions. Runbook, whole-project review and QUALITY_GATES
+  pointers describe the expanded evidence without making owner rulings.
+- This final report records traceability and limits. Discovery is regenerated
+  from the current sources; core/pack membership remains 9 + 10.
+
+### Exercised evidence and verification
+
+The top-level source scan streamed all 159 discovered JSONL files with no
+filename-date/mtime prefilter: nine October-window sources plus three explicit
+historical corpus controls. A separate twelve-parent child scan streamed
+1,149 sources, with 424 window overlaps. One live self-host advisor appended;
+its hash binds only the opening prefix. Other child roots, harness stores and
+deleted sources remain unknown.
+
+Eighteen external header candidates were independently hashed. Book-worker
+start/result pairs verify creation within the same user-directed task; later
+Human Cheat Codes En records describe a multi-round model-backed production
+loop with critic rejections and a direct critic edit. These are source
+candidates, not new Entries counts, global solo-use counts, role isolation or
+authenticated actual-model GD qualification. No external flow/model was run.
+
+| Actual local command | Observed result |
+| --- | --- |
+| Python 3.9.24 `make all` | 1,745 tests passed; zero validator errors; all three routing evaluations passed |
+| Python 3.10.17 `make all` | 1,745 tests passed; zero validator errors; all three routing evaluations passed |
+| Each branch's actual governance CLI | 19 valid, 0 invalid |
+| Five changed-document Chromium views | DOM/content/layout checks passed at 1200×800; no horizontal page overflow |
+
+Nine lint and 35 historical-record warnings remain. The source/configuration
+changes were included in both complete gate runs. Receipt-only wording and
+discovery edits are checked separately before the scoped commit.
+
+### Failures, risks and declined claims
+
+The 3.10 provisioning command timed out; the extracted executable was then
+independently verified and used through an isolated installed virtualenv.
+A misplaced usage-pointer smoke assertion was repaired as a harness input,
+not by changing documentation to satisfy it. Current direct-CDP screenshot
+timed out and alternate visible-view capture failed: no new pixel-proof
+claim or reuse of the earlier successful PNG as current evidence.
+Remote GitHub/Ubuntu execution, unobserved hosts, task-level solo-use
+classification and actual-host enforcement remain unverified.
+
+TWINS: searched multiline `python-version` selection in `.github/workflows` - found 0 other sites: none.
+
+### Spec-to-code traceability and remaining work
+
+CI version selection → two scalar matrix jobs → independent installed
+interpreter CLI/gate runs. Evidence discovery → full opening-size manifests
+and independent positive controls → bounded preparation/usage/runbook records.
+Maintenance convention → four historically dated late notes → unchanged counts.
+Commit concern → recorded `--only` scope → no gratuitous amend.
+
+The owning checkpoint session must refresh volatile evidence and classify
+tasks before P6, G9/AS9 and the other agenda decisions. TEST-001 still needs
+accepted consumer/scorer identities, authenticated host evidence and named
+owners; Stage-1/TEST-002–004 still need the campaign envelope, roles, memory
+digests and enforced isolation/caps. No campaign, runtime adoption, protected
+oracle change, early checkpoint outcome, new skill, router tune or push.
+Human review: the existing scoped repair/commit permission does not grant
+those blocked actions or close the original H12 seven-guard branch.
+
