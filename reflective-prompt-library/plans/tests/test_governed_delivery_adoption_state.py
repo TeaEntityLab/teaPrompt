@@ -291,6 +291,7 @@ def test_severed_contract_field_fails_governance_consumer(tmp_path, name, path):
         ("intent-record", ("status",), "signed"),
         ("intent-record", ("irreversible_assumptions", 0, "human_review"), "optional"),
         ("oracle-manifest", ("oracles", 0, "change_protocol"), "in_band"),
+        ("oracle-manifest", ("oracles", 0, "class"), "developer"),
         ("oracle-manifest", ("oracles", 0, "host_seal"), "none"),
         ("task-packet", ("missing_acceptance",), "continue"),
         ("task-packet", ("oracle_manifest_ref",), ["oracle.yaml"]),
@@ -367,6 +368,7 @@ def test_equivalent_yaml_and_safe_enum_choices_pass_governance_consumer(tmp_path
         ("### task-packet\n", "### task-packet\n### task-packet\n", "task-packet"),
         ("## Contract Set\n", "## Contract Set\n\n## Contract Set\n", "Contract Set"),
         ("```yaml\n", "```text\n", "intent-record"),
+        ("```yaml\n", "```yml\n", "intent-record"),
     ],
 )
 def test_ambiguous_template_markup_fails_governance_consumer(tmp_path, old, new, field):
@@ -392,6 +394,25 @@ def test_standard_alternate_yaml_fences_pass_governance_consumer(tmp_path, marke
     assert result["invalid_skills"] == 0, result["errors"]
 
 
+@pytest.mark.parametrize("name", TEMPLATES)
+def test_missing_whole_template_section_fails_governance_consumer(tmp_path, name):
+    text = _read(PACK)
+    section = re.search(
+        rf"(?ms)^### {re.escape(name)}\n.*?(?=^### |^## |\Z)", text,
+    )
+    assert section is not None
+    text = text[:section.start()] + text[section.end():]
+    _assert_template_rejected(_contract_result(tmp_path, text), name)
+
+
+def test_unsafe_duplicate_section_cannot_shadow_safe_template(tmp_path):
+    data = _template_data("envelope")
+    data["allowed_sinks"] = ["money"]
+    shadow = "### envelope\n\n```yaml\n" + yaml.safe_dump(data) + "```\n\n"
+    text = _read(PACK).replace("## Delivery Invariants", shadow + "## Delivery Invariants", 1)
+    _assert_template_rejected(_contract_result(tmp_path, text), "envelope")
+
+
 @pytest.mark.parametrize("oracles", [[], [None], [{"name": ""}]])
 def test_missing_oracle_schema_specimen_fails_governance_consumer(tmp_path, oracles):
     data = _template_data("oracle-manifest")
@@ -401,9 +422,9 @@ def test_missing_oracle_schema_specimen_fails_governance_consumer(tmp_path, orac
     )
 
 
-def test_developer_oracle_and_dependent_model_channel_do_not_fake_authority(tmp_path):
+def test_developer_oracle_and_dependent_model_channel_can_supplement_authority(tmp_path):
     data = _template_data("oracle-manifest")
-    data["oracles"][0].update({"class": "developer", "host_seal": "none"})
+    data["oracles"].append({**data["oracles"][0], "class": "developer", "host_seal": "none"})
     result = _template_result(tmp_path, "oracle-manifest", yaml.safe_dump(data))
     assert result["invalid_skills"] == 0, result["errors"]
     data = _template_data("verification-plan")

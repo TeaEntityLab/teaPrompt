@@ -54,6 +54,13 @@ these measurements in the checkpoint session before taking a branch.
 | `agent-governance-scaffold` | `7fe256e49ebe` | 27,769 |
 | `governed-delivery` | `43528a06eb02` | 36,053 |
 
+**2026-10-10 preparation input:** the [dated eleven-check packet](checkpoint-2026-10-11-preparation-2026-10-10.md)
+refreshes source-page reads, live row/registry inventories, whole-file digests
+and complete S1–S5 EOF fingerprints. It distinguishes historical generation
+from admission mechanics and preserves unknown external usage. It is not
+the checkpoint session or an outcome; refresh its volatile inputs before
+taking any owning branch.
+
 ## Agenda item 1 — P6 / N11: pack merge re-litigation
 
 Owning gate: [necessity record N11](governance-necessity-panel-record-2026-07-11.md);

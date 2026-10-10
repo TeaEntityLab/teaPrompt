@@ -225,6 +225,11 @@ def _governed_delivery_template_errors(content: str) -> List[str]:
             for index, oracle in enumerate(data["oracles"]):
                 if oracle["class"] == "authoritative" and oracle["host_seal"] == "none":
                     errors.append(f"{name}.oracles[{index}].host_seal: authoritative oracle needs a seal")
+            if not any(
+                oracle["class"] == "authoritative" and oracle["host_seal"] != "none"
+                for oracle in data["oracles"]
+            ):
+                errors.append(f"{name}.oracles.class: template needs a sealed authoritative oracle")
         elif name == "verification-plan":
             channels = data["channels"]
             for index, channel in enumerate(channels):

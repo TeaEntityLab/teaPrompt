@@ -5,5 +5,7 @@ repos:
         name: make all (tests + validators)
         entry: make all
         language: system
+        # Uses python3 on PATH: activate the development environment installed
+        # with python -m pip install -r reflective-prompt-library/requirements-dev.txt.
         pass_filenames: false
         always_run: true

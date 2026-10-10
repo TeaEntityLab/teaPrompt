@@ -17,7 +17,17 @@ TeaPrompt ships **nine frozen core workflow skills** as natural-language harness
 - Add or extend a domain pack only through the canonical admission rule in [`06-repo/AGENTS.md`](reflective-prompt-library/06-repo/AGENTS.md#harness-policy-nine-skills); keep it out of `reflective-dispatch` routes and update `DOMAIN_PACK_SKILLS`, its ledger, demotion triggers, and structural guards.
 - Routing fairness: [ROUTING_CONTRACT](reflective-prompt-library/plans/ROUTING_CONTRACT.md); panel record: [multi-agent-panel-consensus](reflective-prompt-library/plans/multi-agent-panel-consensus-2026-06-25.md).
 
+## Development Setup
+
+Repository tooling requires Python 3.9+. From the repository root, install the
+development requirements before running validators, tests or the pre-commit
+hook. The `language: system` hook uses `python3` on `PATH` and does not install
+dependencies; keep this environment active when invoking it.
+
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r reflective-prompt-library/requirements-dev.txt
 make all   # tests + validate (routing, governance, benchmarks fixture, skill examples)
 ```
 

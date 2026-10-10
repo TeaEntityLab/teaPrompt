@@ -465,6 +465,17 @@ Existing Agent Skills metadata-value/compatibility-length gaps are recorded,
 not repaired or called reference conformance. No skill, registry, validator,
 router, owning adoption ledger or checkpoint outcome is changed here.
 
+### Pre-checkpoint packet (2026-10-10)
+
+The [dated eleven-check preparation](checkpoint-2026-10-11-preparation-2026-10-10.md)
+records fresh source-page reads, live registry/row counts, character/source
+digests and complete S1–S5 EOF fingerprints. The older inventories above
+remain dated observations. Five October 6 admission dry-run rows are
+reported separately from the historical generation population; neither
+maintenance nor this preparation adds a real invocation. P6 solo-use
+classification and the checkpoint's owner rulings remain open, and external
+use stays unknown. No early outcome, demotion, merge or policy activation.
+
 ## Review checkpoints
 
 - 2026-10-11 — P6 merge re-litigation consumes this table

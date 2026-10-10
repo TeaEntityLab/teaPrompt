@@ -440,6 +440,96 @@ Consumer classes: direct validator API and CLI are covered; `make validate`/`mak
 
 TEST-001 and Stage-1/TEST-002–004 remain Held under their existing owner/evidence/grant gates. The October 11 checkpoint remains date-gated; no early outcome, demotion or policy activation is recorded. No provider/model call or push is part of this repair. Remote CI and host enforcement remain untested.
 
+## H12-GD advisory follow-up and checkpoint preparation (2026-10-10)
+
+**Scope:** continuation of the explicitly approved developer repair and scoped
+commit, not a new runtime/campaign grant. The earlier 100/1,733-pass receipts
+and source bindings above remain historical. This follow-up fixes a surviving
+authority-default gap, closes the clean-environment/setup evidence gap and
+prepares the eleven checkpoint inputs without writing an outcome.
+
+### Advisory dispositions
+
+| Claim | Current ruling and action |
+| --- | --- |
+| Developer-only oracle specimens pass as authority | Valid. The developer consumer now requires at least one `class: authoritative` specimen with a non-`none` seal. Legitimate developer specimens remain valid alongside that sealed authority. Actual CLI contrasts exercise both classes. |
+| Regex crosses sections or duplicate headings substitute for templates | Stale for the current line-oriented, fence-aware consumer. New regressions and actual CLI controls cover removal of every complete template section, unsupported `yml` fences and a shadowed unsafe envelope; the safe YAML parser is retained. |
+| PyYAML missing from standalone/local-hook setup | Valid setup drift. One `PyYAML>=6.0,<7.0` declaration lives in `plans/requirements.txt`; `requirements-dev.txt` includes it. CONTRIBUTING, VERIFY and the system hook require the installed, active developer environment. |
+| CI installs only pytest / author tooling must be stdlib-only | Wrong premise. The current workflow installs `requirements-dev.txt`. The stdlib-only boundary is the installed host checker, not author-side governance validation. CI configuration is inspected; remote execution is not claimed. |
+| Clean Python 3.9 was never exercised | Valid evidence gap. A new virtualenv without system/user site packages installs the documented requirements and runs the actual consumer plus focused regressions. |
+| Replace PyYAML with a custom YAML subset parser or add a silent import fallback | Declined. The existing safe loader parses the real nested templates. A parallel parser or optional import would hide setup failures; the dependency stays developer-only. Ruby is not a consumer dependency. |
+| The floor smoke reveals eager `tuple[...] \\| list[...]` annotations | Valid existing harness defect. Both eager helper annotations now use `typing.Union`; deferred annotations elsewhere remain unchanged. |
+| Checkpoint preparation is reachable | Completed as a [dated read-only packet](checkpoint-2026-10-11-preparation-2026-10-10.md), with source/usage/EOF limits. No P6 branch, demotion, G9 ruling or H5/H6 adoption is taken. |
+
+The checkpoint scout's proposed zero-solo loop count and early P6 branch were
+not adopted: S2/S3 composite tasks include separate script responsibilities.
+Its 95-entry figure is **inclusive** of July 11; the strict-after count is 84.
+Its blanket absence of GDR observations is also rejected: the October 6 ticket
+preserves granted narrow refuter receipts, without proving the full current
+actual-model campaign. The durable packet carries these distinctions.
+
+### Evidence actually exercised
+
+- Before repair, the developer-only regression failed while 35 other selected
+  controls passed. The surviving gap was not inferred from a static heading.
+- Python **3.9.24** virtualenv: `include-system-site-packages = false`, user
+  site disabled, pytest **8.4.2** and PyYAML **6.0.3** resolved inside the venv
+  by the documented requirements-file install.
+- Actual floor CLI smoke: **27 controls** — five valid controls accepted,
+  22 invalid controls refused with diagnostics and no traceback. Controls
+  include developer-only/mixed authority, each removed section, unsupported
+  fences, a shadowed unsafe envelope and standard equivalent YAML/fences.
+- Focused governance/adoption suite: **112 passed**. Live governance CLI:
+  **19 valid, 0 invalid**. Dormant-watch/conditional/calendar checks:
+  **64 passed**; the checkpoint outcome file remains absent.
+
+TWINS: searched eager PEP 604 type annotations without postponed evaluation - found 1 other site: `plans/tests/prompt_eval_helpers.py::assert_registry_matches_library_glob`; both helper sites are repaired. An AST sweep parsed all 129 Python files under `plans/` and found no remaining eager union annotation.
+
+### Final repository and rendered-record receipt
+
+- Actual `pre-commit run make-all --all-files --verbose`, with the clean
+  Python 3.9.24 environment first on `PATH` and `PYTHONNOUSERSITE=1`,
+  returned **Passed**. Its `make all` ran **1,745 tests**, eight validators
+  with **zero errors**, and all three routing evaluations passed. Nine lint
+  warnings and 35 historical-record warnings remain.
+- Nine disposable Chromium Markdown previews passed content and layout
+  inspection at 1200×800 without horizontal page overflow. Direct CDP
+  `Page.captureScreenshot` captured a **198,683-byte PNG** of the preparation
+  viewport, which was opened and inspected. Earlier Puppeteer screenshot
+  timeouts remain historical; this is local documentation preview evidence,
+  not deployed-host verification.
+- An earlier full-gate attempt had 1,744 passes and one record-hygiene failure:
+  the new packet lacked the required Evidence heading. The heading and
+  source-access dates were corrected; the successful hook receipt is separate.
+- Session receipts: `local://h12-followup-cli-2026-10-10.json`,
+  `local://h12-followup-2026-10-10.json` and `artifact://2700`.
+  The hook changed none of the sixteen scoped source/document files.
+
+
+### Current exercised source bindings
+
+| Source path | SHA-256 |
+| --- | --- |
+| `reflective-prompt-library/plans/validate_governance.py` | `ef7bb94ab92e3fcc6b683fb71df616cde791cce052f1b25716db77bac94277fb` |
+| `reflective-prompt-library/plans/tests/test_governed_delivery_adoption_state.py` | `e7ada2b42be642e5883c0813920ce75ed6085d8006987f3249fc972b7ac9fdff` |
+| `reflective-prompt-library/plans/tests/prompt_eval_helpers.py` | `e64b074d8f54cc880120bee53bc6585f5912c99c612c9fcd936cc4ba25c7d727` |
+| `reflective-prompt-library/requirements-dev.txt` | `c5d6aa2bbde86b799c5e79a0a81169ea9cd1b3872f7a2b17f3ea5b24fafb7dfa` |
+| `reflective-prompt-library/plans/requirements.txt` | `8860aecfb525fbabec6a15bf49f9e48b30d027a16e96c1d55e13c13a0d853872` |
+
+### Consumer coverage and remaining gates
+
+Direct developer API, actual CLI, clean dependency installation and focused
+regressions are covered. Make/system hook, final discovery and rendered
+records are verified in the final receipt. CI configuration consumes
+the same requirements file; remote CI remains untested. The installed skill,
+stdlib host checker, registry membership and protected oracles are unchanged.
+The source-bounded preparation does not establish absent external use,
+independent GD utility, model efficacy or actual-host containment.
+
+The original H12 seven-guard branch, TEST-001 host qualification, Stage-1
+campaign and October 11 outcome retain their existing owners and gates.
+No model/provider call, runtime adoption or push belongs to this follow-up.
+
 ## Reviewed source bindings
 
 SHA-256 hashes below bind the original review, not a future repair or the recording-turn discovery edit. Other cited locations are source observations, not additional hash-bound artifacts. Original source lines remain historical after edits.

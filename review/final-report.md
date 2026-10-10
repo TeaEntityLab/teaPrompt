@@ -3955,3 +3955,81 @@ and capture/worker isolation. The October 11 checkpoint remains date-gated.
 The historical seven-guard inventory or a separately accepted assessment scope
 remains maintainer-owned; it is not reconstructed from arbitrary current matches.
 
+## H12-GD advisory repair and checkpoint preparation (2026-10-10)
+
+### Goal, scope and acceptance status
+
+Finish valid advisories within the approved H12-GD developer repair; reconcile
+dependency setup, exercise the documented Python floor and prepare the
+eleven-check checkpoint packet. Preserve host/campaign gates and the original
+H12 Held history. The earlier repair receipts remain historical, not fresh
+verification of this source.
+
+| Technical acceptance | Status | Evidence |
+| --- | --- | --- |
+| Reject developer-only authority while accepting legitimate mixed specimens | Verified | Actual governance CLI contrasts and consumer regressions |
+| Reject removed, unsupported-fence and unsafe-shadow templates | Verified | Section-removal and fence/shadow controls through the same consumer |
+| One dependency source and runnable documented Python floor | Verified | Isolated requirements install, actual CLI and system-hook execution |
+| Eleven dated checkpoint inputs without an early outcome | Verified | Preparation packet; calendar/conditional guards; owning gates unchanged |
+| Current full repository gate and rendered-record inspection | Verified | Exercised receipts below; discovery refresh follows the final record edits |
+
+
+### Files changed and implementation
+
+- `plans/validate_governance.py`: a developer-only oracle list cannot satisfy
+  the authority template; at least one sealed authoritative specimen is needed.
+- `tests/test_governed_delivery_adoption_state.py`: consumer regressions for
+  developer-only versus mixed authority, complete-section removal, unsupported
+  fences and unsafe shadow sections.
+- `tests/prompt_eval_helpers.py`: two eager union annotations use
+  `typing.Union`, preserving Python 3.9 imports.
+- `plans/requirements.txt` is the constrained PyYAML source;
+  `requirements-dev.txt` includes it. CONTRIBUTING, VERIFY and system-hook
+  comments require the active installed developer environment.
+- [Checkpoint preparation](../reflective-prompt-library/plans/checkpoint-2026-10-11-preparation-2026-10-10.md),
+  runbook/usage-log pointers, scoped review successor, QUALITY_GATES and
+  Decision Index retain evidence classes and unchanged owning gates.
+  Discovery metadata is regenerated after final record edits.
+
+### Exercised checks and traceability
+
+Developer-only authority regression failed before repair; valid mixed
+authority remains supported. Clean Python 3.9.24 install resolved pytest
+8.4.2 and PyYAML 6.0.3 without system/user site packages. Actual governance
+CLI: **27 controls**, five valid accepted and 22 invalid refused without
+traceback. Focused governance/adoption suite: **112 passed**; live repository
+CLI: **19 valid, 0 invalid**. Watched conditional/calendar checks: **64 passed**.
+Actual clean-floor `pre-commit run make-all --all-files --verbose`: **Passed**,
+running **1,745 tests**, eight validators with zero errors and all three routing
+evaluations green. Nine lint and 35 historical-record warnings remain. An earlier
+attempt had one missing-Evidence-heading failure in the new preparation packet;
+the corrected record is included in the successful receipt.
+
+Nine local Chromium Markdown previews passed content/layout inspection at
+1200×800 without horizontal page overflow. Direct CDP captured a **198,683-byte
+preparation viewport PNG**, which was opened and inspected. Earlier Puppeteer
+capture timeouts remain historical. No deployed-host visual claim is made.
+
+Authority default → sealed-authoritative versus developer-only/mixed controls.
+Section isolation → real consumer removal/fence/shadow regressions.
+Setup compatibility → documented requirements install and actual Python 3.9 CLI.
+Checkpoint readiness → dated source, row, registry, digest and complete EOF
+observations, not an outcome or global absence claim.
+
+TWINS: searched eager PEP 604 type annotations without postponed evaluation - found 1 other site: `plans/tests/prompt_eval_helpers.py::assert_registry_matches_library_glob`; both helper sites are repaired. The 129-file AST sweep found no remaining eager union annotations.
+
+### Risks, declined claims and next action
+
+Retain PyYAML's safe loader; no custom subset parser, Ruby dependency or silent
+import fallback. Current CI installs the documented requirements; remote CI
+is unverified. Installed skill/stdlib host checker and protected oracles are
+unchanged. Composite script responsibilities do not establish a global zero
+solo-use count; granted narrow GDR receipts are not a full actual-model
+campaign. TEST-001, Stage-1 and the date-gated checkpoint stay owner-held.
+No model/provider call, new skill/runtime, routing tune, demotion or push.
+
+Human review: the existing approval covers this bounded developer repair and
+scoped commit, not host adoption, a campaign, an original-H12 closure or an
+early checkpoint decision. The checkpoint session owns its refresh and rulings;
+host qualification and campaign prerequisites remain externally gated.
+

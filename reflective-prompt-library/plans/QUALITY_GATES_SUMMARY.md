@@ -145,6 +145,22 @@ Field semantics: `external_io: true` means the skill expects the agent to reach 
 
 2026-10-10 developer-check extension: `validate_governance.py` also parses the nine governed-delivery Contract Set templates and validates required fields, safe defaults and unbound version/reference slots. PyYAML is a declared development dependency; installed skills and the stdlib-only host preflight are unchanged. These checks do not validate instantiated host records or prove enforcement; [scope and exercised evidence](whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10).
 
+The same-day [advisory follow-up](whole-project-review-2026-10-09.md#h12-gd-advisory-follow-up-and-checkpoint-preparation-2026-10-10)
+requires at least one sealed authoritative oracle specimen; developer
+specimens may supplement, not replace it. `requirements-dev.txt` includes
+the constrained `plans/requirements.txt` source, and contributor/verification
+setup plus the `language: system` hook require that active environment.
+Clean Python 3.9 installation and actual CLI controls are exercised locally;
+remote CI and host enforcement remain unverified.
+
+**Dated local receipt (2026-10-10):** the clean Python 3.9 system hook
+`pre-commit run make-all --all-files --verbose` passed with **1,745 tests**,
+zero errors across eight validators and all three routing evaluations green.
+Current governance/example membership is **9 core + 10 packs**; nine lint
+warnings and 35 historical-record warnings remain. This supersedes the older
+membership/warning snapshot below, not its dated history or external gates.
+
+
 **Applied to (risk_level, human_review_required, external_io, context_load):**
 - reflective-dispatch (low, false, false, low)
 - reflective-brief (low, false, false, low)

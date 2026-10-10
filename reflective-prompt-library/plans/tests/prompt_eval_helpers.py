@@ -2,6 +2,7 @@
 
 import re
 from pathlib import Path
+from typing import Union
 
 HUMAN_REVIEW_HEADING = re.compile(r"^## Human Review\s*$", re.MULTILINE)
 
@@ -94,7 +95,7 @@ def skill_map_path() -> Path:
 
 
 def assert_library_wide_unique_basenames(
-    prompt_paths: tuple[Path, ...] | list[Path],
+    prompt_paths: Union[tuple[Path, ...], list[Path]],
 ) -> None:
     """Composable prompt basenames must be unique across all categories."""
     basenames = [p.name for p in prompt_paths]
@@ -104,7 +105,7 @@ def assert_library_wide_unique_basenames(
 
 
 def assert_registry_matches_library_glob(
-    registry_paths: tuple[Path, ...] | list[Path],
+    registry_paths: Union[tuple[Path, ...], list[Path]],
 ) -> None:
     """Registry prompt tuples must match sorted_category_prompts across the library."""
     assert sorted(sorted_all_library_prompts()) == sorted(registry_paths)
