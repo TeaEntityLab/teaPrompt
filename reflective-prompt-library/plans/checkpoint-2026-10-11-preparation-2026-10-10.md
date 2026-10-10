@@ -13,7 +13,7 @@ The original September H12 row remains Held. Its explicitly approved H12-GD deve
 | Check | Observed input on 2026-10-10 | Source and limit |
 | --- | --- | --- |
 | 1 — Usage rows | Fresh live-registry/dated-row inventory is below; historical zero-state rows are preserved. | [Usage Entries](flow-pack-usage-log.md#entries) and §Convention. The five admission dry-run rows are reported separately, not promoted into production or recurrence evidence. |
-| 2 — Unlogged use | Named flow-file `git log --since=2026-07-11` found maintenance history through `d893719`. The later §Post-preparation reconciliation binds all 159 top-level local files, separately scoped child sources and 18 external header candidates; book-generation writes and a later production-loop record are identified. | [Primary-receipt correction](flow-pack-usage-log.md#verification-correction-2026-10-01). These are bounded source candidates, not new Entries counts or global absence. Unobserved usage stays `unknown`; three supplied IDs remain unlinked in the local filename search. |
+| 2 — Unlogged use | Named flow-file `git log --since=2026-07-11` found maintenance history through `d893719`. The later §Post-preparation reconciliation binds all 159 top-level local files, separately scoped child sources and 18 external header candidates; book-generation writes and a later production-loop record are identified. The additional Claude/Codex audit below binds all 641 discovered files. | [Primary-receipt correction](flow-pack-usage-log.md#verification-correction-2026-10-01). These are bounded source candidates, not new Entries counts or global absence. Unobserved usage stays `unknown`; three supplied IDs remain unlinked in the local filename search. |
 | 3 — T2 stability/parity | Both current appendices contain ten registered-pack bullets in registry order plus dispatch. The latest matching EN appendix change is `8f610df`, 2026-10-06. | [EN appendix](../skills/SKILL_TRIGGER_CHEATSHEET.md#domain-packs-host-invoked-not-core-routing), [zh-TW appendix](../skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md), live `DOMAIN_PACK_SKILLS`. History also retains the September factory cue and prior pack admissions. Re-verification, not re-landing. |
 | 4 — F1 record | The July not-fired decision and October 1 source-only, four-template re-check exist. | [Demotion evaluation](flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01). Historical decision, not an early checkpoint verdict. |
 | 5 — F4 sources | Six named source rows were re-read; the bounded source claims and follow-ups are below. | [F4 owner](flow-control-roadmap-2026-07-11.md#f4--host-feature-watch-table-standing-re-check-before-reliance). No ecosystem-wide absence or live runtime equivalence claim. |
@@ -139,16 +139,44 @@ One live TeaPrompt advisor appended during the read (47,250,180 opening bytes,
 current EOF. Own parent/advisor evidence stays self-host; child files are not
 silently merged into parent task counts.
 
-The book task has verified **creation**, not just read/header co-occurrence:
-under the `Books` source stem, `FlowAuthor.jsonl:125–128` records successful
-writes of both flow scripts (`ac90a358` → `9c8fef1e`; `8269e69f` → `8050ab55`).
-That child is 2,460,221 bytes / 365 rows, SHA-256 prefix `cad34f186015`.
+The book task has verified **initial creation**, not just read/header
+co-occurrence: under the `Books` source stem, `FlowAuthor.jsonl:125–128`
+records successful writes on **2026-10-03 UTC** (`ac90a358` → `9c8fef1e`,
+6,832 bytes for `rethink-panel.sh`; `8269e69f` → `8050ab55`, 6,863 bytes
+for `draft-chapter.sh`). That child is 2,460,221 bytes / 365 rows,
+SHA-256 prefix `cad34f186015`. The scripts' `2026-10-04` generated headers
+are artifact metadata, not the observed creation timestamp.
+
+The tool-start metadata omits bodies, but the matching assistant tool calls at
+`FlowAuthor.jsonl:124` retain the complete initial UTF-8 write payloads.
+Their reconstructed hashes below match the successful result call IDs and
+exact reported byte counts at rows 126/128. These bind **recorded payloads**,
+not independently retained historical disk snapshots or later artifact bytes.
+
+| Initial write payload | Bytes | Reconstructed SHA-256 |
+| --- | --- | --- |
+| `flows/rethink-panel.sh` | 6,832 | `7df73a866a82a0fc8cdae999962be9216c760174aa2341a213dce85eceb07338` |
+| `flows/draft-chapter.sh` | 6,863 | `7eaf553c46825ccc0bd7bac872baf5c3d3c73fe15f68c6643bb8c87f547aab42` |
+
+**Later revision provenance:** `FlowRepair.jsonl:57–58,60–61` records
+successful rewrites (`8d042aee` → `7e88f68a`, `58c77ccb` → `5dca3206`);
+`:79,81,89,91` then records successful comment edits. Its complete stable
+opening bound is **1,131,803 bytes / 100 rows**, SHA-256 prefix
+`1abffade80f1`, with zero invalid rows. The relative write inputs
+`flows/draft-chapter.sh` and `flows/rethink-panel.sh` resolve to
+`/Users/teee/dev/assistantEngBooks/flows/` in each successful result's
+`details.resolvedPath`; both raw and resolved paths remain in the repair
+receipt. The artifact hashes in the next table fingerprint later observed
+files, **not the bytes of the initial FlowAuthor writes**. The reconstructed
+payload hashes above fill the earlier receipt-only digest gap without
+substituting a later file hash.
+
 `Governor.jsonl:64–65,86–87` records successful oracle-manifest and handover
 writes (`6e39e5eb` → `a89fb5d9`; `ae9c2c7f` → `777c6828`); its bound is
 1,622,875 bytes / 142 rows, SHA-256 prefix `de9d3fbfd21a`. These are workers
 within the same user-directed book task, not new independent consumer tasks.
-This provenance corrects the header-only limitation for the book artifacts;
-it does not prove later execution, task-level solo use or host enforcement.
+Creation and later revision are separate receipts; neither proves later
+execution, task-level solo use or host enforcement.
 
 ### Additional external artifact candidates
 
@@ -203,9 +231,65 @@ Raw manifests with full digests and narrow event identities are retained in
 `local://postprep-session-evidence-2026-10-10.json`,
 `local://postprep-nested-session-evidence-2026-10-10.json`,
 `local://postprep-book-creation-controls-2026-10-10.json` and
-`local://postprep-external-artifacts-2026-10-10.json`. Other harness stores,
-deleted sources and unobserved hosts remain unknown. P6, G9/AS9 and actual-model
+`local://postprep-external-artifacts-2026-10-10.json`. The additional
+Claude/Codex audit below extends this named-store scope. Deleted sources,
+other stores and unobserved hosts remain unknown. P6, G9/AS9 and actual-model
 GD qualification remain the checkpoint/host owners' decisions.
+
+### Additional harness-store bounds (2026-10-10)
+
+The parent executed a separate audit of `~/.claude/projects/` and
+`~/.codex/sessions/`. Uncapped discovery covered all fifteen accessible
+Claude project partitions and the recursive Codex inventory, including nested
+logs. Every discovered file was parsed from byte zero through its opening
+descriptor's byte bound, with SHA-256 and before/after identity checks.
+Selection used root/message/first-class event timestamps in the UTC window
+`2026-10-01T00:00:00Z` through, exclusively, `2026-10-11T00:00:00Z`;
+filename dates and mtime were not prefilters.
+
+| Store | Found/scanned | Top-level | Nested | Window sources | Bytes read | JSON rows |
+| --- | --- | --- | --- | --- | --- | --- |
+| Claude | 455 | 42 | 413 | 1 | 281,506,557 | 72,897 |
+| Codex | 186 | 61 | 125 | 1 | 166,366,710 | 58,033 |
+
+Every found file reached its opening bound: zero found-but-unscanned files,
+invalid rows, incomplete tails or identity changes. The manifest explicitly
+retains event-window exclusions; these are not unscanned exclusions or proof
+of absent historical use. Digests bind the read prefix, not future EOF.
+
+- Claude's selected source is
+  `~/.claude/projects/-Users-teee-dev-Human-Cheat-Codes-En/80642d24-62f5-4211-bd65-348143591d96.jsonl`:
+  **127,702 bytes / 27 rows**, SHA-256
+  `ea0143f009b5228f9397b9d856dc3ee427c1e6300b3d06369f47f3c21fe65afa`.
+  Row 14 is a catalog attachment; row 25 records `rate_limit`. The input is
+  a reply-with-OK startup probe, with no tool dispatch.
+- Codex's selected source is
+  `~/.codex/sessions/2026/10/03/rollout-2026-10-03T00-01-25-01a0fd59-569d-7332-96ee-2b5b91fad55c.jsonl`:
+  **133,621 bytes / 13 rows**, SHA-256
+  `081fccb98e3af032bd58f022e2c142fde3d8ae462734728d9c59fd976f4e7279`.
+  Rows 3 and 7 contain catalog/context literals; row 13 records
+  `usage_limit_exceeded`. Its reply-with-OK startup probe did not dispatch
+  a tool or execute a flow.
+
+Catalog mentions in these failed startup probes do not establish pack use,
+book-loop execution, recurrence or task-level solo utility. Initial scout
+summaries claimed scans and manifest files without executable/write capability;
+those claims were rejected. Only the parent-executed receipts above are used.
+The first parent command failed to resolve a `local://` script argument;
+the resolved-path invocation then exited 0 and produced the real manifest.
+No external generated flow, held campaign or provider call was run by this audit.
+
+Source selections, full prefix digests, event locators and exclusions are in
+`local://checkpoint-additional-source-selection-2026-10-10.json` and
+`local://checkpoint-additional-session-evidence-2026-10-10.json`. The latter
+manifest's SHA-256 is
+`9c80fcc049eb565a4ddbc76bd0cf8546ccd449ac3d71e938b1953d622cb07c33`.
+The book creation/revision correlations and seventeen-commit maintenance
+sweep are retained in `local://checkpoint-evidence-advisory-2026-10-10.json`.
+Earlier local-source receipts remain separate. Deleted/unregistered sources,
+other stores and remote hosts remain unknown; owning usage and adoption
+decisions are unchanged.
+
 
 ## Developer verification receipt
 

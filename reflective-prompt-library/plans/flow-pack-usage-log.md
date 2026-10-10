@@ -74,13 +74,22 @@ themselves):
 
 ## Template maintenance (not invocations)
 
-- 2026-09-05 — skill-verification pass changed templates in both flow packs
+- 2026-09-05 — `74734de` added the generator's merged-result check to
+  fan-in and documented shared total budgets for nested loops/retries
+  ([general-lessons record](installed-skills-general-lessons-2026-09-05.md)).
+  Late-recorded 2026-10-10: template and guidance maintenance, not an invocation.
+- 2026-09-05 — `b8ef926` skill-verification pass changed templates in both flow packs
   (`flow-control-generator` D1–D7: quorum counting, merged-result gates, plan
   parsing, worker-id sanitizing, upstream-dependency consumption; `flow-loop-harness`
   FLH-1–FLH-10: progress detection, writer-critic sole-ACCEPT verdict and
   deterministic floor, backlog preflights) — rig-tier stub runs only
   ([record](skill-verification-panel-2026-09-05.md)). Recorded 2026-09-14; the
   convention's same-change note was missed at the time.
+- 2026-09-14 — `b711499` added Example 2's gates; `b5c3a10` added
+  orchestrator/DAG and writer-critic-floor/multi-wave companion examples
+  ([adoption record](governance-workflow-self-control-adoption-2026-09-14.md)).
+  Late-recorded 2026-10-10: examples only; neither commit changed executable
+  flow-template bodies or records a real invocation.
 - 2026-09-15 — `cdfa835` changed the generator's orchestrator and DAG
   templates to reject exit-0, zero-byte output; both flow packs' examples
   were corrected to the observed stub-rig behavior ([second-pass record](governance-workflow-self-control-adoption-2026-09-14.md)).
@@ -93,7 +102,25 @@ themselves):
   resolved STATE path literally across the seven recorded path forms
   ([RS-2 correction](rsiagent-survey-2026-09-16.md)).
   Late-recorded 2026-10-10: the same-change maintenance note was missed.
-- 2026-10-05 — user-directed runtime-aware maintenance of both flow packs,
+- 2026-09-16 — `1ab7f03` repaired the backlog's false completion: retire
+  only after verifier success plus workspace change; unchanged work stops
+  with exit 3, while outside-git detection is explicitly skipped. Companion
+  examples were reconciled to RS-1/RS-2 and the new stop condition
+  ([C1/F1 and F2](skills-september-concepts-review-2026-09-16.md#landed-fixes)).
+  Late-recorded 2026-10-10: the same-change maintenance note was missed.
+- 2026-09-16 — `e0beec1` documented that already-satisfied and
+  interrupted-after-edits tasks can also halt at the change gate, with
+  human confirmation and canonical-ledger retirement as the recovery step
+  ([F1 tradeoff](skills-september-concepts-review-2026-09-16.md#landed-fixes)).
+  Late-recorded 2026-10-10: guidance/examples changed; executable template
+  bodies did not. The behavior repair belongs to the preceding entry.
+- 2026-10-01 — `9699d5a` repaired both flow packs and their examples,
+  including worker-id collision, backlog cap-boundary and DAG sink handling;
+  `d63fe33` then restored settled boundaries and made a missing canonical
+  backlog fail closed during retirement and at loop completion
+  ([whole-library repair report](../../review/final-report.md)).
+  Late-recorded 2026-10-10: template maintenance only, not a host invocation.
+- 2026-10-05 — `40d7b70` user-directed runtime-aware maintenance of both flow packs,
   `governed-delivery` and `agent-governance-scaffold`: selected preflight
   dispatch/release gates, a finite evidence-record checker and matching
   role/binding/lifecycle contracts. [Implementation and experiment
@@ -109,12 +136,24 @@ themselves):
   record's source digests, both above the nonblocking 20k warning threshold.
   These measurements do not clear the checkpoint; final gate observations
   are recorded only after execution.
+- 2026-10-06 — `c454738` added generator guidance from the dry run:
+  stdin-safe Python dispatch, canonical seatbelt paths and driver-owned
+  failure-signature storage outside worker writes
+  ([task evidence](runtime-skills-task001-ticket-2026-10-06.md)).
+  Late-recorded 2026-10-10: guidance changed, not executable template bodies
+  or invocation counts; the historical enforcement limits remain.
 - 2026-10-07 — delayed-advisory correction in `validate_skill_examples.py`:
   removed the stale five-pack comment and pointed to the executable cardinality
   pin below it. The registry and guard already require ten domain packs;
   behavior, membership, and acceptance pins are unchanged. Maintenance only,
   not a domain-pack invocation or recurrence claim.
-- 2026-10-07 — user-directed RV repair of `flow-control-generator`,
+- 2026-10-07 — `b947fb4` made missing canonical backlog input exit 4;
+  `2989110` added generator and multi-wave numeric cap checks. Their limits
+  and subsequent repairs are preserved in the
+  [review/repair record](recent-changes-review-handoff-2026-10-07.md).
+  Late-recorded 2026-10-10: these precede the RV closure below; they are
+  template maintenance, not additional real invocations.
+- 2026-10-07 — `f86173b` user-directed RV repair of `flow-control-generator`,
   `flow-loop-harness`, `arm-blinded-eval-harness`, and `router-trace-linter`:
   canonical cap guards before arithmetic/dispatch, queue-read error handling,
   worker exit classification, private scoring order, blinded-only scorer data,
@@ -139,7 +178,17 @@ themselves):
   driver-owned repeated-failure discipline, Python 3.9 compatibility and
   empty-command holds (F05–F07/F14, [repair closure](whole-project-review-2026-10-09.md)).
   Late-recorded 2026-10-10: the same-change maintenance note was missed.
-  These four late notes change no Entries rows or invocation/solo counts.
+  Late notes change no Entries rows or invocation/solo counts.
+
+The 2026-10-10 advisory sweep covered all **17 commits** touching either
+flow skill or its companion examples since 2026-09-05: **13** changed
+executable bash/Python fences, **2** changed skill guidance only, and **2**
+changed companion examples only. Every commit is mapped above. Seven
+additional late notes supplement the four from the prior reconciliation;
+historical repair dates and behavior-versus-guidance distinctions are retained.
+Full commit identities and before/after source digests are in
+`local://checkpoint-evidence-advisory-2026-10-10.json`. No historical rig was
+re-run and no Entries count or checkpoint ruling changed.
 
 ## Pre-checkpoint prep scans
 
@@ -500,6 +549,14 @@ creation receipts and a later Human Cheat Codes En production-loop record
 are retained distinctly from headers, loads and stub drills. These candidates
 still need task-level classification; they do not add Entries rows or decide
 P6, G9/AS9, GD qualification or an all-stub/all-paired conclusion.
+
+The [additional harness-store audit](checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10)
+now covers all 455 discovered Claude and 186 Codex logs through their opening
+byte bounds, retaining event-window exclusions. The two selected sources are
+failed reply-with-OK startup probes; catalog/context literals do not establish
+pack invocations. Initial book creation and later revisions are separately
+bound in the packet. The seventeen-commit maintenance sweep above changes no
+Entries bytes or solo-use counts.
 
 ## Review checkpoints
 

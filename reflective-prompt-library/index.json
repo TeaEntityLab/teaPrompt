@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-10T13:22:29.073852",
+  "generated_at": "2026-10-10T17:54:52.181505",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2092,7 +2092,10 @@
           "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
           "flow-pack-usage-log.md#template-maintenance-not-invocations",
-          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10"
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10",
+          "flow-pack-usage-log.md#template-maintenance-not-invocations"
         ]
       },
       "structure": [
@@ -2318,11 +2321,27 @@
         },
         {
           "level": 2,
+          "text": "Checkpoint evidence advisory correction (2026-10-10)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Scope, falsifiability and remaining gates"
+        },
+        {
+          "level": 3,
+          "text": "Verification receipt"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 613,
-      "char_count": 79029
+      "line_count": 691,
+      "char_count": 83754
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -8293,6 +8312,7 @@
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "self-governance-dogfood-2026-09-24.md",
           "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
+          "whole-project-review-2026-10-09.md#checkpoint-evidence-advisory-correction-2026-10-10",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -8422,8 +8442,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 455,
-      "char_count": 27815
+      "line_count": 459,
+      "char_count": 28181
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -9605,8 +9625,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 241,
-      "char_count": 15783
+      "line_count": 242,
+      "char_count": 15861
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -10034,6 +10054,10 @@
           "text": "Additional external artifact candidates"
         },
         {
+          "level": 3,
+          "text": "Additional harness-store bounds (2026-10-10)"
+        },
+        {
           "level": 2,
           "text": "Developer verification receipt"
         },
@@ -10046,8 +10070,8 @@
           "text": "Falsifiability and checkpoint handoff"
         }
       ],
-      "line_count": 255,
-      "char_count": 25214
+      "line_count": 339,
+      "char_count": 30103
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -13815,11 +13839,18 @@
           "self-governance-dogfood-2026-09-24.md",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
+          "installed-skills-general-lessons-2026-09-05.md",
           "skill-verification-panel-2026-09-05.md",
+          "governance-workflow-self-control-adoption-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "rsiagent-survey-2026-09-16.md",
           "rsiagent-survey-2026-09-16.md",
+          "skills-september-concepts-review-2026-09-16.md#landed-fixes",
+          "skills-september-concepts-review-2026-09-16.md#landed-fixes",
+          "../../review/final-report.md",
           "runtime-skills-experiments-2026-10-05.md",
+          "runtime-skills-task001-ticket-2026-10-06.md",
+          "recent-changes-review-handoff-2026-10-07.md",
           "recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07",
           "cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08",
           "whole-project-review-2026-10-09.md",
@@ -13842,6 +13873,7 @@
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "governed-delivery-adoption-2026-09-03.md",
@@ -13894,8 +13926,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 514,
-      "char_count": 45372
+      "line_count": 571,
+      "char_count": 49326
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",

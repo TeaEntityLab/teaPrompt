@@ -559,7 +559,8 @@ event window and three are explicit historical corpus controls. The twelve
 selected parents' 1,149 child/advisor files have a separate manifest and
 424 window-overlapping sources. One active self-host advisor appended during
 the read; its digest is an opening-prefix receipt, not current EOF. Other child
-roots, harness stores and deleted sources remain unknown.
+roots, harness stores and deleted sources were outside that receipt's scope;
+the later advisory correction below extends the named-store coverage.
 
 Independent source controls found a book-generation skill prompt, successful
 pack loads and worker writes, and corpus hits past the old 4 MiB boundary.
@@ -588,6 +589,83 @@ The existing local system hook still uses the
 active installed developer environment; its contract and path-filter scope
 are unchanged. Final receipt-only wording/discovery edits are checked separately
 before the scoped no-push commit.
+
+
+## Checkpoint evidence advisory correction (2026-10-10)
+
+### Evidence Actually Checked
+
+The conditional Python/pytest warning is stale: `c411ce0` already recorded
+successful independent Python 3.9.24 and 3.10.17 `make all` runs, with
+**1,745 tests per branch**, zero validator errors and three passing routing
+evaluations each (`artifact://2766`, `artifact://2770`). This advisory repair
+does not rerun those branches merely to confirm that receipt. Remote Actions
+execution remains unobserved.
+
+Book-script evidence is corrected, not demoted to read/header co-occurrence.
+`assistantEngBooks/FlowAuthor.jsonl:125–128` contains successful **initial**
+writes of `flows/rethink-panel.sh` and `flows/draft-chapter.sh`.
+`FlowRepair.jsonl:57–61,79–91` contains later revisions; relative paths are resolved
+under the recorded `assistantEngBooks` workspace. Its distinct bound is
+**1,131,803 bytes / 100 rows**, SHA-256
+`1abffade80f1ab1d30f61784a41ecb8a1a49aa364e6d30e24099aa3c0648f5dd`.
+Current artifact hashes are not original-write hashes. The assistant tool calls
+at `FlowAuthor.jsonl:124` retain both initial bodies: reconstructed UTF-8 payload
+hashes match their successful result call IDs and exact reported byte counts
+at rows 126/128. The preparation packet records these separately from later
+file hashes; they are not independent historical disk snapshots. Worker
+creation/revision receipts belong to one book task and do not establish
+execution, solo use or host enforcement.
+Full source locators, bounds and write/result correlations are retained in
+`local://checkpoint-evidence-advisory-2026-10-10.json` and the
+[preparation packet](checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10).
+
+The parent-executed [additional harness-store audit](checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10)
+covers all **455 Claude / 186 Codex** discovered logs, including nested files,
+with event-window selection, opening-prefix digests and explicit exclusions.
+Every discovered file reached its bound; there were no invalid rows,
+incomplete tails or unstable reads. The two selected sources are failed
+reply-with-OK startup probes with catalog/context mentions, not flow-task
+execution. Unsupported scout scan/artifact claims are rejected; the actual
+parent manifest and its digest are retained in the packet. Deleted/unregistered
+sources, other stores and remote hosts remain unknown.
+
+The [maintenance reconciliation](flow-pack-usage-log.md#template-maintenance-not-invocations)
+now covers all **17 commits** touching both flow skills or companion examples
+since 2026-09-05: thirteen template-code changes, two guidance-only changes
+and two example-only changes. Seven additional late notes include `1ab7f03`
+and `e0beec1`; original repair dates and later corrections remain separate.
+No historical rig was rerun. The Entries section remains byte-identical to
+`c411ce0`, SHA-256
+`f502cf49e2d584a5a4a886e0c635c9b13b60c03a22ef5e34bb0a12ae3878447c`.
+
+### Scope, falsifiability and remaining gates
+
+This correction is invalid if initial writes are represented by later source
+hashes, relative paths lose their recorded workspace, window-excluded files are
+called unscanned, or catalog mentions/maintenance notes become invocation counts.
+Earlier source/verification receipts remain historical, not overwritten.
+TEST-001 host qualification, Stage-1/TEST-002–004 campaign/isolation/caps,
+the October 11 checkpoint and original H12 seven-guard branch remain held
+under their existing owners. P6, G9/AS9 and task-level usage classification are
+not decided here. No external generated flow, provider call, new skill,
+runtime grant, router tune or push is authorized by this correction.
+
+### Verification receipt
+
+The current source/record integration ran **103 affected record, checkpoint,
+conditional-contract and index tests**, all passing, plus actual `make validate`:
+eight validators with zero errors and all three routing evaluations passing
+(`artifact://2808`). Nine lint and 35 historical-record warnings remain.
+This is not a new full-suite or remote-CI claim.
+
+Six current Chromium document views passed content/layout checks at 1200×800
+without horizontal page overflow. One smoke assertion spelled the usage log's
+numeric `13` as `thirteen`; only that smoke input was corrected. Current
+direct-CDP capture timed out and produced no image; no current pixel proof
+or reuse of an earlier screenshot is claimed. The raw scan, write correlations,
+gate receipts and rendering limits remain in
+`local://checkpoint-evidence-advisory-2026-10-10.json`.
 
 
 ## Reviewed source bindings

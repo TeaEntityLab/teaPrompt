@@ -4120,3 +4120,85 @@ oracle change, early checkpoint outcome, new skill, router tune or push.
 Human review: the existing scoped repair/commit permission does not grant
 those blocked actions or close the original H12 seven-guard branch.
 
+## Checkpoint evidence advisory correction (2026-10-10)
+
+### Evidence Actually Checked
+
+- **Conditional version warning — stale:** the earlier independent Python
+  3.9.24 and 3.10.17 branches each passed `make all` with 1,745 tests, zero
+  validator errors and three passing routing evaluations. The existing
+  `artifact://2766` / `artifact://2770` receipts are retained, not rerun solely
+  to confirm the warning. Remote Actions execution is still unobserved.
+- **Book provenance — corrected:** `FlowAuthor.jsonl:125–128` records successful
+  initial writes; `FlowRepair.jsonl:57–61,79–91` records later revisions, with relative
+  paths resolved under the recorded workspace. The latter source's bound is
+  1,131,803 bytes / 100 rows; its full SHA-256 and all write/result correlations
+  are in the [durable review record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#checkpoint-evidence-advisory-correction-2026-10-10)
+  and `local://checkpoint-evidence-advisory-2026-10-10.json`. Assistant tool calls
+  at `FlowAuthor.jsonl:124` retained the initial bodies; reconstructed payload
+  hashes match their successful write result call IDs and exact byte counts.
+  They are not independent historical disk snapshots or later file hashes.
+  Workers remain one book task, not new independent consumer tasks.
+- **Additional stores — exercised:** the parent parsed all 455 Claude and
+  186 Codex logs through opening-byte bounds, including nested files, selected
+  actual event-window overlap, and retained every exclusion and prefix digest.
+  Zero found files were left unscanned; invalid rows, incomplete tails and
+  unstable reads were absent. The two selected sources are failed startup
+  probes with catalog/context mentions, not flow executions. Unsupported
+  scout scan/artifact claims were rejected and replaced by the actual parent
+  manifest. The initial URI-resolution failure remains a separate receipt;
+  the corrected resolved-path scan exited 0.
+- **Maintenance — reconciled:** all seventeen relevant commits since September
+  5 are classified: thirteen template-code, two guidance-only and two
+  example-only changes. Seven additional late notes include `1ab7f03` and
+  `e0beec1`. Entries remains byte-identical to `c411ce0`; no invocation or
+  solo-use count was changed.
+
+### Files changed and traceability
+
+Preparation packet → initial/revision source bounds and additional-store
+manifest; usage log → historically dated maintenance notes outside Entries;
+runbook → bounded evidence pointer; whole-project review and quality summary
+→ advisory dispositions; generated discovery index → refreshed after edits.
+The full [additional-store packet](../reflective-prompt-library/plans/checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10)
+retains source locators, digests, exclusions and failed-probe limits.
+
+### Risks and remaining work
+
+Initial write-payload hashes are reconstructed from recorded tool-call bodies;
+they do not establish independently captured historical disk state.
+Deleted/unregistered sources, other stores and remote hosts remain unknown.
+Generation, loading, catalog mentions and
+maintenance do not establish model execution, isolation, host enforcement or
+task-level solo utility. Refresh volatile inputs in the owning checkpoint
+session before P6, G9/AS9 or other agenda decisions.
+
+TEST-001 accepted consumer/scorer identities and authenticated host evidence;
+Stage-1/TEST-002–004 campaign authorization, named roles, memory digests and
+enforced isolation/caps; and the October 11 checkpoint remain externally gated.
+The original H12 seven-guard branch remains Held. No external generated flow,
+provider/model call, runtime adoption, protected-oracle change, early checkpoint
+outcome, new skill, router tune or push was performed.
+Human review: the scoped repair/commit permission grants none of those actions.
+
+### Acceptance criteria and exercised verification
+
+All five advisory-repair criteria are addressed: the conditional version
+warning is closed against prior exercised receipts; initial/revision book
+provenance is separated and bound; additional stores have actual bounded
+manifests; maintenance history is reconciled without Entries changes; and
+current records have runtime/documentation and repository-gate evidence.
+
+| Current check | Observed result |
+| --- | --- |
+| Affected record/checkpoint/conditional/index tests | 103 passed |
+| Actual `make validate` | Zero validator errors; all three routing evaluations passed |
+| Current Chromium documentation views | Six passed content/layout checks at 1200×800; no horizontal page overflow |
+| Current screenshot attempt | Direct-CDP timeout; no image or new pixel-proof claim |
+
+Raw gate receipt: `artifact://2808`. Nine lint and 35 historical-record warnings
+remain. The numeric-word usage smoke assertion was repaired as a smoke-input
+error without changing product wording. This round does not claim a new full
+Python-version suite or remote Actions run. Final discovery/record checks and
+the scoped commit preserve all externally held roadmap gates.
+
