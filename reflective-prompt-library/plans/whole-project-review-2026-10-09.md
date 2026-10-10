@@ -667,6 +667,65 @@ or reuse of an earlier screenshot is claimed. The raw scan, write correlations,
 gate receipts and rendering limits remain in
 `local://checkpoint-evidence-advisory-2026-10-10.json`.
 
+## Source coverage residual correction (2026-10-10)
+
+### Evidence Actually Checked
+
+The eight delayed findings were checked against `4e1cf87` and current
+source-bound records. Five are valid gaps (full affected-test coverage,
+temporary-script payload provenance, archive/auxiliary discovery scope,
+identity-search scope and executed adapter controls); two are stale
+(initial-body hashes and scout byte counts); the rewrite-chain finding
+retains a valid extension while its initial-creation objection is stale.
+The prior 103-test selection remains historical, not a full-suite claim.
+
+The [preparation packet's residual correction](checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10)
+records all 40 Codex archive files through stable opening bounds, three
+auxiliary JSONL inputs and read-only selected-column snapshots of three
+Codex SQLite stores. Archive and auxiliary JSONL events do not overlap the
+October window; they are date-excluded, not unscanned. SQLite separately
+corroborates the Codex startup usage-limit error. The supplied ID fragments
+have no match within named filenames/header/index/SQLite identity fields;
+unscanned transcript exports, diagnostic logs, deleted/unregistered sources
+and remote hosts prevent a global absence claim.
+
+The deleted scanner/renderer payloads are reconstructed and hashed from
+recorded arguments/literals. Two historical real-call controls and two
+October catalog-only startup controls passed; these prove parser
+sensitivity for those inputs, not usage or every adapter branch.
+Successful FlowRepair rewrites/comment edits plus three later parent edits
+reconstruct both book scripts byte-for-byte to the later observed hashes.
+Initial bodies, rewrite bodies and final file revisions remain separate;
+no model execution, independent task, solo-use or isolation inference follows.
+
+### Traceability, falsifiability and remaining gates
+
+SR1–SR3 bind triage, expanded source coverage and exercised provenance.
+SR4 requires current rendered-document smoke, full repository pytest and
+validator gates, fresh discovery and a scoped no-push commit; SR5 owns
+the final reachable-roadmap reconciliation. Their receipts and final
+statuses are retained in `local://source-coverage-residual-2026-10-10.json`.
+
+This correction fails if a recorded payload is described as an independent
+historical disk snapshot, metadata/catalog literals become invocation
+evidence, a date-excluded file is called unscanned, or an unsearched store
+is included in the ID-absence claim. Earlier scan/test receipts are retained.
+TEST-001 host qualification, Stage-1/TEST-002–004 campaign/isolation/caps,
+the October 11 checkpoint and original H12 seven-guard branch remain
+owner-held. No external flow/provider execution, runtime grant, router tune,
+adoption/demotion decision or push is authorized.
+
+### Current verification receipt
+
+Actual regenerated-discovery `make all` on Python 3.14.7 / pytest 9.0.3
+passed **all 1,745 tests**, including the earlier omitted consumer classes,
+with zero validator errors and three passing routing evaluations
+(`artifact://2849`). Six current rendered-document content/layout checks
+passed; the single viewport screenshot attempt timed out after 20 seconds,
+so no image or new pixel proof is claimed. Nine lint and 35 historical-record
+warnings remain. Final record-only and discovery checks are retained in
+the residual ledger; prior Python-version receipts remain distinct.
+
 
 ## Reviewed source bindings
 

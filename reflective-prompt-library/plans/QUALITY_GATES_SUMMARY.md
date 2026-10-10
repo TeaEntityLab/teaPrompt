@@ -388,6 +388,11 @@ evals 100% ([record](self-governance-dogfood-2026-09-24.md)).
    preserves the already-passed local branches, separates initial book-script
    creation from later revisions, and extends source bounds to Claude/Codex
    logs. Template-maintenance notes remain outside invocation/solo-use counts.
+   The [residual source correction](whole-project-review-2026-10-09.md#source-coverage-residual-correction-2026-10-10)
+   extends named-store coverage to Codex archives and auxiliary identity/time
+   metadata, explicitly excludes unscanned exports, and binds recovered
+   scanner/renderer payloads plus the complete book rewrite/edit chain.
+   Historical Python-version receipts remain separate from current verification.
 2. **ROUTE-001/002/003 in CI** — 128 + 138 + 108 paraphrases at 100% consistency (seeded fixtures); `validate_route_fixture.py` gates minimum coverage
 3. **Governance validators** — links, lint, governance metadata and GD template defaults, PROJECT_KNOWLEDGE, record hygiene, benchmark fixture, skill examples, route fixtures (eight validators; `Makefile` owns the composition)
 4. **Harness policy docs** — CONTRIBUTING, AGENTS, SKILL_INSTALLATION, maintenance playbook

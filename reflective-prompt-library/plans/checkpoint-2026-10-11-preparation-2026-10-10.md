@@ -290,6 +290,117 @@ Earlier local-source receipts remain separate. Deleted/unregistered sources,
 other stores and remote hosts remain unknown; owning usage and adoption
 decisions are unchanged.
 
+### Residual source coverage and provenance (2026-10-10)
+
+This extends the preceding receipt, not its historical input set. The same
+UTC window, `2026-10-01T00:00:00Z` inclusive through
+`2026-10-11T00:00:00Z` exclusive, was applied to all **40** discovered
+`~/.codex/archived_sessions/*.jsonl` files: **49,907,418 bytes / 26,102 rows**
+reached their opening byte bounds; none overlapped the window. Independent
+`wc -lc` over the same forty filenames matches both totals (`artifact://2846`).
+There were no invalid rows or unstable reads. Archive exclusion is date-based,
+not found-but-unscanned or evidence of no usage.
+
+The named auxiliary JSONL stores were read through stable opening bounds.
+They support identity/time correlation only, not primary execution evidence:
+
+| Auxiliary source | Bytes | Rows | SHA-256 |
+| --- | --- | --- | --- |
+| `~/.codex/history.jsonl` | 21,674 | 50 | `dde8aba9e1fb59de4f4e5a3bf701065a4f20f176670ee7eb7f00c5103acdb9bf` |
+| `~/.codex/session_index.jsonl` | 13,590 | 100 | `6a16bf15e120b24386211a64c3759b407f5d4665e6fc726413e73b0b724198bc` |
+| `~/.claude/history.jsonl` | 31,864 | 167 | `ca842fdcd61dc449ad2a899f4c27e3d654abfc32896f7270b7ffbad27d6ad386` |
+
+None has an in-window row. Three Codex SQLite stores were read with
+`mode=ro`, `query_only=ON` and a read transaction. Their hashes bind
+canonical selected-column snapshots, including WAL visibility, not raw
+database files or all table content:
+
+| SQLite source | Selected tables / rows | Logical metadata SHA-256 |
+| --- | --- | --- |
+| `~/.codex/state_5.sqlite` | `threads`: 226 | `1b67cf3df44670d31cf599e6e5d6cec70b424d6ff8e95fcce6bb39c07bf1ae4c` |
+| `~/.codex/sqlite/state_5.sqlite` | `threads`: 162 | `8439049abb4e421a578081f83302667ee3edc2392194368660ddb81cb56689b7` |
+| `~/.codex/thread_history_1.sqlite` | `thread_turns`: 539; `thread_items`: 8,507; `thread_history_projection_state`: 226 | `14bcb6c5a5b52cfc0911ca9f0eea4debd132e16e24b1a0ad6a00fc1bcbe74ecc` |
+
+For `threads`, selected columns are `id`, `rollout_path`, `created_at`,
+`updated_at`, `cwd`, `thread_source`. The history snapshot selects turn
+identity/status/times/rollout offsets; item identity/ordinal/time/type; and
+projection identity/next offsets. The separately retained `error_json`
+for thread `01a0fd59-569d-7332-96ee-2b5b91fad55c`, turn
+`01a0fd59-574d-7202-b3d1-2cd2e02feb59`, records `usageLimitExceeded`.
+This independently corroborates the primary startup-failure receipt;
+metadata is not a new flow invocation or host-enforcement proof.
+
+The supplied fragments `01a0cbbd`, `01a0d1d3`, `01a0e7b9` have **no
+identified match within the searched identity fields**: known primary
+filenames/header identities, archive filenames/headers, auxiliary
+`session_id` / `id` / `sessionId`, and SQLite
+`id` / `thread_id` / `turn_id` / `item_id`. Content/title mentions are
+not identity linkage. This is not a global absence claim:
+`~/.claude/transcripts/` has **1,164 found-but-unscanned exports** with
+an unvalidated event adapter; `~/.claude/sessions/` was empty at discovery;
+`~/.codex/logs_2.sqlite` is diagnostic and outside the primary audit.
+Deleted/unregistered sources and remote hosts remain unknown.
+The same filename/header and SQLite identity-field predicates detect the
+known-positive fragment `01a0fd59`; that sensitivity control is retained
+separately from the three no-match searches.
+
+Four recovered-scanner controls passed. Historical Claude
+`6c62c378-93fd-4acb-8150-23ea3107fdf8.jsonl:15–16` detects a real `Skill`
+call/result; historical Codex
+`rollout-2026-09-04T21-40-47-01a06ca6-85de-7e31-bc91-7607d55f44ee.jsonl:16,19`
+detects a real custom `exec` call/output. Both are parser positives,
+not October invocations. The two October failed-startup sources are
+negative controls: catalog literals retained, zero tool-call candidates.
+These controls do not claim coverage of every source format or tool variant.
+
+The deleted temporary scanner and renderer were reconstructed from recorded
+assistant arguments without executing historical commands:
+
+| Recorded payload | Source event in the TeaPrompt parent prefix | Bytes | Payload SHA-256 |
+| --- | --- | --- | --- |
+| Additional-store scanner | row 17,424, `b2460474`, assistant `write` argument | 11,487 | `36b8c135141f78ed4964d9828437b2f58e076e6a79dee85640234d643c047bdd` |
+| Document renderer | row 16,960, `47644e06`, recorded `String.raw` literal | 2,417 | `8524e4bc51027c8ee905f433c3d52543a4e430a7734711b561ea1195f49ac2e8` |
+
+That parent source is
+`~/.omp/agent/sessions/-dev-teaPrompt/2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb.jsonl`,
+opening bound **137,994,623 bytes / 17,646 rows**, SHA-256
+`aa367245a85a47c3ab5e9d9eae7dc782a23291bda9ae16cfd5bd4b626999b9`.
+The recovered renderer is byte-equal to the retained renderer used in the
+later round. Payload hashes bind recorded UTF-8 arguments/literals, not
+independently retained historical disk snapshots.
+
+The book rewrite chain is now complete within its named sources.
+`FlowRepair.jsonl:56–61` supplies both rewrite bodies and successful
+results; its comment edits are at `77–81,87–91`. The parent book source
+then changes the draft's acceptance comment at `799–801`, adds the panel
+concurrency cap at `853–855`, and updates its cap comment at `876–878`.
+That parent prefix is **31,387,378 bytes / 4,221 rows**, SHA-256
+`3ab78efa08f0b0794f349002bc66a2636c9b4400837b39f72486fb5ec53a7283`.
+Earlier parent edits at rows 292/351 are superseded by the full rewrites.
+
+| Book script | Rewrite bytes / SHA-256 | Reconstructed final bytes / SHA-256 |
+| --- | --- | --- |
+| `flows/draft-chapter.sh` | 9,687 / `c90d0656ff00affa8707a3d063373fc4600251bf55cffbb4c30e21a14cbed0b4` | 9,717 / `ead61e5ce1c67b8faa9c435f575600322dba24c52da93f0fae8038bf84d2e2f1` |
+| `flows/rethink-panel.sh` | 9,384 / `cefe1fdd0c34ab9c5f617bcd05cbb457505fb3484d87e0ed80d9e1b831ecc238` | 9,515 / `1567fda29b67833cf9cdd1b08ee1b11db1e72ad7d79a108c20ce02dfdf1d725f` |
+
+Both final reconstructed hashes equal the later independently observed
+file hashes. The initial FlowAuthor hashes above remain distinct.
+The chain proves recorded payload/edit provenance, not historical disk
+capture, model execution, isolation or task-level solo use.
+
+Raw inputs, per-file bounds, exact adapter controls, selected SQLite
+columns and identity-search scope are retained in
+`local://residual-source-selection-2026-10-10.json` and
+`local://residual-source-evidence-2026-10-10.json` (SHA-256
+`47a4572553060610010ebdd5731d06e8f2152fdfeb7e6862cc713f1ec880531c`).
+The complete book chain is in
+`local://residual-book-revision-chain-2026-10-10.json` (SHA-256
+`378ebb18543ea0761e76df97b693f942033b0fa52827d49ddb0c20be29f156bf`).
+`local://source-coverage-residual-2026-10-10.json` binds advisory
+dispositions and exercised verification. No provider or external flow
+was dispatched; usage and checkpoint decisions remain with their owners.
+
+
 
 ## Developer verification receipt
 
@@ -331,6 +442,26 @@ pixel proof and does not reuse the earlier successful PNG as current evidence.
 Branch outputs and limits are retained in
 `local://postprep-reconciliation-2026-10-10.json`; raw gate receipts are
 `artifact://2766` and `artifact://2770`.
+
+### Residual-source verification receipt
+
+After integrating the residual correction, actual
+`python3 reflective-prompt-library/plans/generate_index.py && make all`
+ran on Python **3.14.7** / pytest **9.0.3**: **1,745 tests passed**,
+all eight validators reported zero errors and all three routing
+evaluations passed (`artifact://2849`). This includes the quality-summary,
+candidate/direction/adoption, lint and September-record consumers omitted
+from the earlier 103-test selection. Historical 3.9/3.10 branch receipts
+remain separate; they were not rerun to confirm the stale warning.
+
+Six current Chromium document views passed content/layout checks at
+1200×800 without horizontal page overflow. One current
+`BrowserTab.screenshot` viewport attempt timed out after 20 seconds;
+no image or new pixel-proof claim is made. Nine lint and 35 historical-record
+warnings remain. Final record/discovery checks and the scoped commit are
+bound in `local://source-coverage-residual-2026-10-10.json`; no temporary
+runtime is installed in the repository.
+
 
 ## Falsifiability and checkpoint handoff
 

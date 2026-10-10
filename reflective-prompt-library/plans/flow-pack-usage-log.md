@@ -558,6 +558,16 @@ pack invocations. Initial book creation and later revisions are separately
 bound in the packet. The seventeen-commit maintenance sweep above changes no
 Entries bytes or solo-use counts.
 
+The [residual source correction](checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10)
+adds bounded Codex archive coverage, auxiliary identity/time correlations,
+explicit unscanned-export limits and exercised adapter controls. The book
+rewrite/edit chain now matches both later observed file hashes. These are
+source-provenance checks, not executions, independent tasks or new Entries;
+the three supplied ID fragments have no match within the named identity
+fields, not proven global absence. Existing invocation/solo-use counts and
+all owning checkpoint decisions remain unchanged.
+
+
 ## Review checkpoints
 
 - 2026-10-11 — P6 merge re-litigation consumes this table

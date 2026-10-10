@@ -4202,3 +4202,97 @@ error without changing product wording. This round does not claim a new full
 Python-version suite or remote Actions run. Final discovery/record checks and
 the scoped commit preserve all externally held roadmap gates.
 
+
+## Source coverage residual correction (2026-10-10)
+
+### Goal, scope and files changed
+
+Close the eight delayed source/verification findings without changing
+invocation counts or owner-held roadmap decisions. Five findings are valid,
+two stale, and one partly stale with a reachable revision-chain extension.
+The prior 103-test receipt and both independently passed Python-version
+branches remain historical; neither is rerun merely to confirm a stale warning.
+
+Changed surfaces: the checkpoint preparation, runbook, usage log,
+whole-project review, quality-gates summary, this report and regenerated
+`reflective-prompt-library/index.json`. Source scripts and raw manifests
+remain private session artifacts; no runtime, dependency, skill, test oracle
+or external repository is changed.
+
+### Evidence and implementation
+
+The [preparation packet](../reflective-prompt-library/plans/checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10)
+now distinguishes bounded archive scans, auxiliary identity/time correlation,
+read-only logical SQLite snapshots and found-but-unscanned exports.
+The forty archive files reached their opening byte bounds; independent
+`wc -lc` agrees with the scanner's byte/row totals. No archive or auxiliary
+JSONL row overlaps the October window. SQLite separately corroborates
+the Codex startup usage-limit error; it is not flow-execution evidence.
+
+The three supplied ID fragments have no match in named primary/archive
+filenames/header identities, auxiliary identity fields or SQLite identity
+columns. Known-positive filename/header and SQLite controls detect
+`01a0fd59`. Exported transcripts and diagnostic/deleted/remote sources are
+not covered by that absence statement.
+
+Recovered scanner and renderer bodies are hashed from recorded assistant
+arguments/literals, not called independent historical disk snapshots.
+Historical Claude real-Skill and Codex real-custom-call controls pass;
+both October failed-startup sources retain catalog literals without
+tool-call candidates. These are adapter controls, not new invocations.
+
+The complete book chain starts from successful FlowRepair rewrites,
+includes its comment edits and three later parent edits, and reconstructs
+both scripts to the independently later observed file hashes. Initial
+FlowAuthor bodies, rewrites and final file revisions remain separate.
+Creation/edit provenance does not establish model execution, isolation,
+independent tasks or task-level solo use.
+
+### Acceptance, traceability and remaining work
+
+SR1–SR3 are verified by current-state triage, expanded bounded source
+receipts, recovered payload hashes and executed controls. SR4 binds
+current full repository verification, rendered-document smoke, final
+discovery and scoped no-push commit. SR5 reconciles the standing cadence
+and next roadmap action against the same evidence. The evidence ledger is
+`local://source-coverage-residual-2026-10-10.json`; detailed source analysis
+and book-chain receipts are separately retained and linked in the packet.
+
+No source-provenance receipt changes Entries bytes, invocation/solo-use
+counts, P6, G9/AS9, GD qualification or the original H12 seven-guard branch.
+TEST-001 still needs accepted consumer/scorer identities, authenticated
+actual-host evidence and named owners. Stage-1/TEST-002–004 still needs its
+campaign envelope, roles, memory digests and enforced isolation/caps.
+The next calendar action is the October 11 checkpoint, with fresh evidence
+and owning rulings; no early outcome or demotion is taken here.
+
+Human review: existing scoped repair/commit permission grants none of
+those host/campaign/checkpoint decisions. Remote CI, unscanned exports,
+deleted/unregistered sources and external-host usage remain explicit unknowns.
+
+### Current verification and bounded trigger screen
+
+| Exercised check | Observed result |
+| --- | --- |
+| Current Python 3.14.7 / pytest 9.0.3 `make all` | All 1,745 tests passed, zero validator errors, three passing routing evaluations |
+| Archive `wc -lc` over the same forty files | Scanner byte/row totals match |
+| Cross-store adapter controls | Two historical real-call positives and two October catalog-only negatives passed |
+| Book rewrite/edit reconstruction | Both final SHA-256 values match later observed file hashes |
+| Six current Chromium documentation views | Content/layout checks passed at 1200×800; no horizontal page overflow |
+| Current viewport capture | Timed out after 20 seconds; no image or new pixel-proof claim |
+
+Full gate receipt: `artifact://2849`. Nine lint and 35 historical-record
+warnings remain. Final record/discovery verification and scoped commit
+bindings are retained in the residual ledger, not substituted for the
+full-suite receipt or either historical Python-version run.
+
+The reachable standing cadence is discovery, repository validation and
+evidence correction. The I-1/A-5 trigger screen used the owning rows:
+rejected scout model claims and explicitly capped/failed query returns
+do not establish a second same-class write-effect misreport or a shortened
+preview accepted as authoritative source. No reserved wording or
+absence-guard conversion is landed. This is a bounded ruling over these
+receipts, not a new all-session trigger census.
+
+TWINS: searched `local session filename|inspected local store|source-unavailable reported sessions` - found 3 other sites: the preparation's historical S5 note and two earlier usage-log paragraphs. Those dated bounded receipts are retained; the current correction explicitly widens the identity-search scope.
+

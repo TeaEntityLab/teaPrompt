@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-10T17:54:52.181505",
+  "generated_at": "2026-10-10T20:10:10.896045",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2095,7 +2095,8 @@
           "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10",
-          "flow-pack-usage-log.md#template-maintenance-not-invocations"
+          "flow-pack-usage-log.md#template-maintenance-not-invocations",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10"
         ]
       },
       "structure": [
@@ -2337,11 +2338,27 @@
         },
         {
           "level": 2,
+          "text": "Source coverage residual correction (2026-10-10)"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Traceability, falsifiability and remaining gates"
+        },
+        {
+          "level": 3,
+          "text": "Current verification receipt"
+        },
+        {
+          "level": 2,
           "text": "Reviewed source bindings"
         }
       ],
-      "line_count": 691,
-      "char_count": 83754
+      "line_count": 750,
+      "char_count": 87229
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -8313,6 +8330,7 @@
           "self-governance-dogfood-2026-09-24.md",
           "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
           "whole-project-review-2026-10-09.md#checkpoint-evidence-advisory-correction-2026-10-10",
+          "whole-project-review-2026-10-09.md#source-coverage-residual-correction-2026-10-10",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -8442,8 +8460,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 459,
-      "char_count": 28181
+      "line_count": 464,
+      "char_count": 28603
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -9550,6 +9568,7 @@
           "runtime-skills-experiments-2026-10-05.md",
           "dogfood-learning-promotion-2026-10-09.md#source-pinned-advisory-closure",
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "dormant-work-specs-2026-07-11.md",
@@ -9625,8 +9644,8 @@
           "text": "Falsifiability (this runbook)"
         }
       ],
-      "line_count": 242,
-      "char_count": 15861
+      "line_count": 244,
+      "char_count": 16048
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-reference-plan-2026-06-25.md",
@@ -10058,6 +10077,10 @@
           "text": "Additional harness-store bounds (2026-10-10)"
         },
         {
+          "level": 3,
+          "text": "Residual source coverage and provenance (2026-10-10)"
+        },
+        {
           "level": 2,
           "text": "Developer verification receipt"
         },
@@ -10066,12 +10089,16 @@
           "text": "Later independent Python-version receipt"
         },
         {
+          "level": 3,
+          "text": "Residual-source verification receipt"
+        },
+        {
           "level": 2,
           "text": "Falsifiability and checkpoint handoff"
         }
       ],
-      "line_count": 339,
-      "char_count": 30103
+      "line_count": 470,
+      "char_count": 38036
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -13874,6 +13901,7 @@
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10",
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "governed-delivery-adoption-2026-09-03.md",
@@ -13926,8 +13954,8 @@
           "text": "Review checkpoints"
         }
       ],
-      "line_count": 571,
-      "char_count": 49326
+      "line_count": 581,
+      "char_count": 49957
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
