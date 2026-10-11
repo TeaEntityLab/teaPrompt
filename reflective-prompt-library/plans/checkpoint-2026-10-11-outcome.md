@@ -125,3 +125,11 @@ Only two current owner-gated branches remain: TEST-001 accepted consumer/scorer
 and authenticated actual-host qualification; and Stage-1/TEST-002–004 campaign
 approval, roles, memory bindings and enforced isolation/caps. No provider/model
 run, protected-oracle edit, commit or push is authorized by either decision.
+
+> **Same-day runtime note (2026-10-11):** the private-replacement-runtime's
+> implementation and startup blockers are resolved — the Apple container
+> backend is integrated, pinned images retrieved, and `qualify_runtime.py`
+> reports 34/34 green on live containment and identity controls. This supplies
+> the demonstrated replacement runtime the TEST-001 branch required but does not
+> lift either owner gate above: consumer/scorer adoption and campaign approval
+> remain the open grants.
