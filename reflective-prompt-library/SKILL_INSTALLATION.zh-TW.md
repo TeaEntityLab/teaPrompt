@@ -39,6 +39,12 @@ reflective-prompt-library/skills/
 <skills-root>/<skill-name>/SKILL.md
 ```
 
+請安裝整個 skill 目錄，不要只複製 `SKILL.md`。兩個 flow packs 同目錄內的
+`TEMPLATES.md`，以及 `agent-governance-scaffold` 的 `ARTIFACTS.md`，都是套件
+的一部分；主合約會說明何時載入。英文版 copy／symlink helpers 已保留整個目錄，
+複製後不需要 TeaPrompt 原始碼目錄即可讀取或實例化參考內容。若 host 不支援
+skills 自動探索，除了貼上主合約，也須依選用分支貼上相應的範本或物件內容。
+
 範例檔屬於輔助說明面，建議一併放在：
 
 ```text

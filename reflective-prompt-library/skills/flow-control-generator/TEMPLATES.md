@@ -1,0 +1,583 @@
+# `flow-control-generator` Templates
+
+Portable sibling to `SKILL.md` in this directory; this file carries the moved template sections byte-for-byte, not a second copy. Read `SKILL.md` for the Module Contract, Topology Selection, Script Contract, Human Review Boundary, Verification, Demotion Triggers and provenance; those rules govern every body here. Templates are host-executable starts: instantiate the matching one, delete unused parts before adding anything, and dry-run with a stub agent before real use.
+
+## Template: Sequential Pipeline (bash)
+
+```bash
+#!/usr/bin/env bash
+# generated-by: flow-control-generator / pipeline / 2026-10-01 / dry-run-required
+set -euo pipefail
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; workdir=task root; protect checks/ (no `:` — explicit empty is a failure, not a default)
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
+STATE="${STATE:-./state}"; mkdir -p "$STATE"
+STATE_ABS="$(cd "$STATE" && pwd -P)"
+FAIL_SIGS="${FAIL_SIGS:-$(dirname "$STATE_ABS")/fail-signatures.jsonl}" # driver-owned; MUST resolve outside worker-writable STATE
+RETRY_REASON="${RETRY_REASON-}" # names the changed strategy/corrected input authorizing a redispatch
+log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
+SIG_DIR="$(dirname "$FAIL_SIGS")"; mkdir -p "$SIG_DIR" || { echo "fail-signatures dir not creatable: $SIG_DIR" >&2; exit 4; }
+SIG_ABS="$(cd "$SIG_DIR" && pwd -P)/$(basename "$FAIL_SIGS")"
+case "$SIG_ABS" in "$STATE_ABS"/*) log "fail-sigs configuration gate=4"; echo "fail-signatures ledger inside worker-writable STATE: $FAIL_SIGS" >&2; exit 4 ;; esac
+sig_of() { local c; c="$(cksum < "$1")"; printf '%s:%s' "${c%% *}" "$(basename "$1")"; }
+preflight() { # $1=stage: selected gate passes, or exit 4 before any dispatch/acceptance
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || return 4
+}
+run_agent() {
+  local sig rsum="-" ec
+  sig="$(sig_of "$1")"
+  if [ -f "$FAIL_SIGS" ] && grep -qF "sig=$sig " "$FAIL_SIGS"; then
+    [ -n "$RETRY_REASON" ] || { log "refuse-identical-retry sig=$sig step=$(basename "$1")"; echo "refuse-identical-retry: prior failure recorded for this prompt; fix the prompt or set RETRY_REASON naming the changed strategy" >&2; return 3; }
+    rsum="$(printf '%s' "$RETRY_REASON" | cksum)"; rsum="${rsum%% *}"
+    if grep -F "sig=$sig " "$FAIL_SIGS" | grep -qF "reason=$rsum"; then
+      log "refuse-identical-retry sig=$sig reason=$rsum"; echo "refuse-identical-retry: this RETRY_REASON was already spent on this failure" >&2; return 3
+    fi
+    log "retry-authorized sig=$sig reason=$rsum"
+  fi
+  preflight "$(basename "$2")" || return 4
+  log "start $1"
+  ec=0; $AGENT_CMD < "$1" > "$2" || ec=$?
+  log "end $1 exit=$ec"
+  if [ "$ec" -ne 0 ]; then
+    printf 'sig=%s exit=%s reason=%s class=agent-exit step=%s\n' "$sig" "$ec" "$rsum" "$(basename "$1")" >> "$FAIL_SIGS"
+    mv "$2" "$2.failed-$ec" 2>/dev/null || true # keep the raw failed receipt; leave no accepted output
+    return "$ec"
+  fi
+  preflight "$(basename "$2")-post" || return 4
+}
+run_agent prompts/01-spec.md "$STATE/01-spec.md"
+if test -s "$STATE/01-spec.md"; then log "spec gate=0"; else log "spec gate=2"; exit 2; fi
+{ cat prompts/02-implement.md; echo; cat "$STATE/01-spec.md"; } > "$STATE/02-prompt.md"
+run_agent "$STATE/02-prompt.md" "$STATE/02-impl.md"
+ec=0; ./checks/run-tests.sh || ec=$?
+log "tests gate=$ec"; [ "$ec" -eq 0 ] || exit "$ec"
+{ cat prompts/03-review.md; echo; cat "$STATE/02-impl.md"; } > "$STATE/03-prompt.md"
+run_agent "$STATE/03-prompt.md" "$STATE/03-review.md"
+# gate: none (accepted)
+log "review gate=none accepted; pipeline complete"
+```
+
+## Template: Parallel Fan-out/Fan-in (bash)
+
+```bash
+#!/usr/bin/env bash
+# generated-by: flow-control-generator / parallel / 2026-10-01 / dry-run-required
+set -euo pipefail
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; workdir=task root; protect checks/ (no `:` — explicit empty is a failure, not a default)
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
+STATE="${STATE:-./state}"; mkdir -p "$STATE"
+STATE_ABS="$(cd "$STATE" && pwd -P)"
+FAIL_SIGS="${FAIL_SIGS:-$(dirname "$STATE_ABS")/fail-signatures.jsonl}" # driver-owned; MUST resolve outside worker-writable STATE
+RETRY_REASON="${RETRY_REASON-}" # names the changed strategy/corrected input authorizing a redispatch
+MAX_JOBS="${MAX_JOBS-4}"
+MIN_OK="${MIN_OK-}" # empty=strict; 0=zero-quorum (accepts any branch tally, merged gate still decides); otherwise explicit partial-failure quorum
+log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "$MAX_JOBS" in ""|0|0*|*[!0-9]*) log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4 ;; esac
+MAX_JOBS_LEN="${#MAX_JOBS}"
+if [ "$MAX_JOBS_LEN" -gt 10 ] || { [ "$MAX_JOBS_LEN" -eq 10 ] && [ "$MAX_JOBS" \> 2147483647 ]; }; then log "max_jobs configuration gate=4: $MAX_JOBS"; echo "max_jobs configuration gate=4: $MAX_JOBS" >&2; exit 4; fi
+unset MAX_JOBS_LEN
+case "$MIN_OK" in ""|0) ;; 0*|*[!0-9]*) log "quorum configuration gate=4: $MIN_OK"; echo "quorum configuration gate=4: $MIN_OK" >&2; exit 4 ;; esac
+if [ -n "$MIN_OK" ]; then
+  MIN_OK_LEN="${#MIN_OK}"
+  if [ "$MIN_OK_LEN" -gt 10 ] || { [ "$MIN_OK_LEN" -eq 10 ] && [ "$MIN_OK" \> 2147483647 ]; }; then log "quorum configuration gate=4: $MIN_OK"; echo "quorum configuration gate=4: $MIN_OK" >&2; exit 4; fi
+  unset MIN_OK_LEN
+fi
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
+SIG_DIR="$(dirname "$FAIL_SIGS")"; mkdir -p "$SIG_DIR" || { echo "fail-signatures dir not creatable: $SIG_DIR" >&2; exit 4; }
+SIG_ABS="$(cd "$SIG_DIR" && pwd -P)/$(basename "$FAIL_SIGS")"
+case "$SIG_ABS" in "$STATE_ABS"/*) log "fail-sigs configuration gate=4"; echo "fail-signatures ledger inside worker-writable STATE: $FAIL_SIGS" >&2; exit 4 ;; esac
+sig_of() { local c; c="$(cksum < "$1")"; printf '%s:%s' "${c%% *}" "$(basename "$1")"; }
+preflight() { # $1=stage file stem: selected gate passes, or exit 4 (never swallowed by MIN_OK)
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; return 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || return 4
+}
+run_agent() {
+  local prompt="$1" out="$2"
+  local stem="fan-$(basename "$prompt" .md)"
+  local sig rsum="-" ec class
+  sig="$(sig_of "$1")"
+  if [ -f "$FAIL_SIGS" ] && grep -qF "sig=$sig " "$FAIL_SIGS"; then
+    [ -n "$RETRY_REASON" ] || { log "refuse-identical-retry sig=$sig step=$stem"; echo "refuse-identical-retry: prior failure recorded for $prompt; fix the prompt or set RETRY_REASON naming the changed strategy" >&2; return 3; }
+    rsum="$(printf '%s' "$RETRY_REASON" | cksum)"; rsum="${rsum%% *}"
+    if grep -F "sig=$sig " "$FAIL_SIGS" | grep -qF "reason=$rsum"; then
+      log "refuse-identical-retry sig=$sig reason=$rsum"; echo "refuse-identical-retry: this RETRY_REASON was already spent on this failure" >&2; return 3
+    fi
+    log "retry-authorized sig=$sig reason=$rsum"
+  fi
+  preflight "$stem-pre" || return 4
+  log "start $1"
+  ec=0; $AGENT_CMD < "$1" > "$2" || ec=$?
+  if [ "$ec" -eq 0 ] && [ -s "$2" ]; then
+    log "end $1 exit=0 output-gate=0"
+  else
+    log "end $1 exit=$ec output-gate=1" # raw exit is recorded; empty output counts as failure
+    class=agent-exit; [ "$ec" -eq 0 ] && class=empty-output
+    printf 'sig=%s exit=%s reason=%s class=%s step=%s\n' "$sig" "$ec" "$rsum" "$class" "$stem" >> "$FAIL_SIGS"
+    mv "$2" "$2.failed-$ec" 2>/dev/null || rm -f "$2" # keep the raw failed receipt
+    [ "$ec" -eq 0 ] && return 1
+    return "$ec"
+  fi
+  preflight "$stem-post" || { rm -f "$2"; return 4; }
+}
+FAILED=0; PREFLIGHT_FAILED=0; RETRY_REFUSED=0
+wave_wait() { local pid; for pid in "$@"; do wait "$pid" || { ec=$?; [ "$ec" -eq 4 ] && PREFLIGHT_FAILED=1; [ "$ec" -eq 3 ] && RETRY_REFUSED=1; FAILED=$((FAILED+1)); }; done; }
+rm -f "$STATE"/fan-*.md
+pids=(); i=0
+for prompt in prompts/fan/*.md; do
+  [ -e "$prompt" ] || { log "branch gate=2 no prompts"; exit 2; }
+  out="$STATE/fan-$(basename "$prompt" .md).md"
+  run_agent "$prompt" "$out" &
+  pids+=($!); i=$((i+1))
+  if [ $((i % MAX_JOBS)) -eq 0 ]; then wave_wait "${pids[@]}"; pids=(); fi
+done
+if [ "${#pids[@]}" -gt 0 ]; then wave_wait "${pids[@]}"; fi
+ok=0
+for f in "$STATE"/fan-*.md; do [ ! -s "$f" ] || ok=$((ok+1)); done
+# A repeated-failure hold (3) and a selected-preflight hold (4) are driver
+# decisions — never swallowed by quorum, including MIN_OK=0.
+if [ "$RETRY_REFUSED" -ne 0 ]; then log "repeated-failure gate=3 propagated"; exit 3; fi
+if [ "$PREFLIGHT_FAILED" -ne 0 ]; then log "preflight gate=4 propagated"; exit 4; fi
+if [ -n "$MIN_OK" ]; then
+  [ "$ok" -ge "$MIN_OK" ] || { log "quorum gate=2 $ok < $MIN_OK"; exit 2; }
+elif [ "$FAILED" -ne 0 ] || [ "$ok" -eq 0 ]; then
+  log "branch gate=2 failed=$FAILED successful=$ok"; exit 2
+fi
+log "branch gate=0 successful=$ok"
+fans=0
+{ cat prompts/synthesize.md; echo
+  for f in "$STATE"/fan-*.md; do [ -f "$f" ] || continue; cat "$f"; echo; fans=$((fans+1)); done
+  if [ "$fans" -eq 0 ]; then
+    echo "[zero-survivor] no branch output survived; synthesize from this note and the original task" # MIN_OK=0 accepts the tally; the merged gate still decides
+  fi
+} > "$STATE/synth-prompt.md"
+preflight "synth-pre" || exit 4
+run_agent "$STATE/synth-prompt.md" "$STATE/final.md" || exit "$?"
+preflight "final-post" || exit 4
+ec=0; ./checks/verify-merged.sh "$STATE/final.md" || ec=$?    # gate: merged result, not only the branch tally
+log "merged gate=$ec"; exit "$ec"
+```
+
+## Template: Conditional Router (bash)
+
+```bash
+#!/usr/bin/env bash
+# generated-by: flow-control-generator / router / 2026-10-01 / dry-run-required
+set -euo pipefail
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; workdir=task root; protect prompts/ (no `:` — explicit empty is a failure, not a default)
+PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
+STATE="${STATE:-./state}"; mkdir -p "$STATE"
+STATE_ABS="$(cd "$STATE" && pwd -P)"
+FAIL_SIGS="${FAIL_SIGS:-$(dirname "$STATE_ABS")/fail-signatures.jsonl}" # driver-owned; MUST resolve outside worker-writable STATE
+RETRY_REASON="${RETRY_REASON-}" # names the changed strategy/corrected input authorizing a redispatch
+log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
+SIG_DIR="$(dirname "$FAIL_SIGS")"; mkdir -p "$SIG_DIR" || { echo "fail-signatures dir not creatable: $SIG_DIR" >&2; exit 4; }
+SIG_ABS="$(cd "$SIG_DIR" && pwd -P)/$(basename "$FAIL_SIGS")"
+case "$SIG_ABS" in "$STATE_ABS"/*) log "fail-sigs configuration gate=4"; echo "fail-signatures ledger inside worker-writable STATE: $FAIL_SIGS" >&2; exit 4 ;; esac
+sig_of() { local c; c="$(cksum < "$1")"; printf '%s:%s' "${c%% *}" "$(basename "$1")"; }
+preflight() { # $1=stage: selected gate passes, or exit 4 before dispatch/acceptance
+  [ -n "$PREFLIGHT" ] || return 0
+  [ -x "$PREFLIGHT" ] || { log "preflight gate=4 stage=$1 missing/not-executable"; echo "preflight missing/not executable: $PREFLIGHT" >&2; exit 4; }
+  local ec=0
+  "$PREFLIGHT" > "$STATE/preflight-$1.out" 2>&1 || ec=$?
+  log "preflight gate=$ec stage=$1"
+  [ "$ec" -eq 0 ] || exit 4
+}
+run_agent() {
+  local sig rsum="-" ec
+  sig="$(sig_of "$1")"
+  if [ -f "$FAIL_SIGS" ] && grep -qF "sig=$sig " "$FAIL_SIGS"; then
+    [ -n "$RETRY_REASON" ] || { log "refuse-identical-retry sig=$sig step=$(basename "$1")"; echo "refuse-identical-retry: prior failure recorded for this prompt; fix the prompt or set RETRY_REASON naming the changed strategy" >&2; return 3; }
+    rsum="$(printf '%s' "$RETRY_REASON" | cksum)"; rsum="${rsum%% *}"
+    if grep -F "sig=$sig " "$FAIL_SIGS" | grep -qF "reason=$rsum"; then
+      log "refuse-identical-retry sig=$sig reason=$rsum"; echo "refuse-identical-retry: this RETRY_REASON was already spent on this failure" >&2; return 3
+    fi
+    log "retry-authorized sig=$sig reason=$rsum"
+  fi
+  preflight "$(basename "$2")" || exit 4
+  log "start $1"
+  ec=0; $AGENT_CMD < "$1" > "$2" || ec=$?
+  log "end $1 exit=$ec"
+  if [ "$ec" -ne 0 ]; then
+    printf 'sig=%s exit=%s reason=%s class=agent-exit step=%s\n' "$sig" "$ec" "$rsum" "$(basename "$1")" >> "$FAIL_SIGS"
+    mv "$2" "$2.failed-$ec" 2>/dev/null || true # keep the raw failed receipt; leave no accepted output
+    return "$ec"
+  fi
+  preflight "$(basename "$2")-post" || exit 4
+}
+{ cat prompts/classify.md; echo; cat "$1"; } > "$STATE/classify-prompt.md"
+run_agent "$STATE/classify-prompt.md" "$STATE/label.txt"
+# Preserve raw bytes; accept a whole case-insensitive label and at most one LF.
+RAW_LABEL="$(cat "$STATE/label.txt"; printf '.')"; RAW_LABEL="${RAW_LABEL%.}"
+LABEL="$(printf '%s' "$RAW_LABEL" | tr '[:upper:]' '[:lower:]'; printf '.')"
+LABEL="${LABEL%.}"; LABEL="${LABEL%$'\n'}"
+printf 'route-trace: raw=%q label=%q input=%q\n' "$RAW_LABEL" "$LABEL" "$1" >> "$STATE/flow.log"
+case "$LABEL" in
+  bug) route=prompts/route-bug.md ;;
+  feature) route=prompts/route-feature.md ;;
+  question) route=prompts/route-question.md ;;
+  # Unknown labels fail closed (exit 2). For low-risk flows a default-up route to
+  # the most rigorous handler is the alternative; either way policy is explicit.
+  *) log "route gate=2"; echo "unroutable label: $LABEL" >&2; exit 2 ;;
+esac
+log "route gate=0"
+{ cat "$route"; echo; cat "$1"; } > "$STATE/route-prompt.md"
+run_agent "$STATE/route-prompt.md" "$STATE/final.md"
+preflight "final-post" || exit 4
+# gate: none (accepted)
+log "handler gate=none accepted"
+```
+
+## Template: Orchestrator-Workers (Python, stdlib only)
+
+Boundary: a planner prompt plus capped worker calls inside ONE host-executed script — not the multi-agent orchestrator/swarm the 2026-06-25 panel rejected (`plans/multi-agent-panel-consensus-2026-06-25.md`); do not grow it toward one.
+
+```python
+#!/usr/bin/env python3
+"""Planner, capped workers, synthesis.
+generated-by: flow-control-generator / orchestrator / 2026-10-01 / dry-run-required
+"""
+import hashlib, json, os, pathlib, shlex, subprocess, sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/ (get, not setdefault — explicit empty is a failure, not a default)
+PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
+STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
+MAX_WORKERS, MAX_TASKS = 4, 12
+def log(line):
+    with (STATE / "flow.log").open("a") as f: f.write(line + "\n")
+if not AGENT_CMD:
+    log("agent_cmd configuration gate=4")
+    print("agent_cmd configuration gate=4: empty/whitespace AGENT_CMD", file=sys.stderr); sys.exit(4)
+FAIL_SIGS = pathlib.Path(os.environ.get("FAIL_SIGS", str(STATE.parent / "fail-signatures.jsonl")))
+RETRY_REASON = os.environ.get("RETRY_REASON", "") # names the changed strategy/corrected input authorizing a redispatch
+SIG_ABS = FAIL_SIGS.resolve()
+if STATE.resolve() in SIG_ABS.parents: # driver-owned; MUST resolve outside worker-writable STATE
+    log("fail-sigs configuration gate=4")
+    print(f"fail-signatures ledger inside worker-writable STATE: {FAIL_SIGS}", file=sys.stderr); sys.exit(4)
+try:
+    SIG_ABS.parent.mkdir(parents=True, exist_ok=True)
+except OSError as exc:
+    print(f"fail-signatures dir not creatable: {SIG_ABS.parent}: {exc}", file=sys.stderr); sys.exit(4)
+
+def sig_of(prompt: str, tag: str) -> str:
+    return hashlib.sha256(tag.encode() + b"\0" + prompt.encode()).hexdigest()[:24]
+
+def check_sig(sig: str, tag: str) -> str: # refuse identical redispatch before dispatch; a new RETRY_REASON authorizes once
+    if not SIG_ABS.is_file(): return "-"
+    prior = [line for line in SIG_ABS.read_text().splitlines() if line.startswith(f"sig={sig} ")]
+    if not prior: return "-"
+    if not RETRY_REASON:
+        log(f"refuse-identical-retry sig={sig} step={tag}")
+        print(f"refuse-identical-retry: prior failure recorded for {tag}; fix the prompt or set RETRY_REASON naming the changed strategy", file=sys.stderr)
+        sys.exit(3)
+    rsum = hashlib.sha256(RETRY_REASON.encode()).hexdigest()[:16]
+    if any(f"reason={rsum}" in line for line in prior):
+        log(f"refuse-identical-retry sig={sig} reason={rsum}")
+        print("refuse-identical-retry: this RETRY_REASON was already spent on this failure", file=sys.stderr)
+        sys.exit(3)
+    log(f"retry-authorized sig={sig} reason={rsum}")
+    return rsum
+
+def preflight(stage: str) -> None: # selected gate passes, or exit 4 before dispatch/acceptance
+    if not PREFLIGHT: return
+    gate = pathlib.Path(PREFLIGHT)
+    if not (gate.is_file() and os.access(gate, os.X_OK)):
+        log(f"preflight gate=4 stage={stage} missing/not-executable")
+        print(f"preflight missing/not executable: {PREFLIGHT}", file=sys.stderr); sys.exit(4)
+    out = STATE / f"preflight-{stage}.out"
+    try:
+        r = subprocess.run([PREFLIGHT], capture_output=True, text=True, timeout=600) # no shell: fixed argv
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"preflight gate=4 stage={stage} invocation failed: {exc}"); sys.exit(4)
+    out.write_text((r.stdout or "") + (r.stderr or ""))
+    log(f"preflight gate={r.returncode} stage={stage}")
+    if r.returncode: sys.exit(4)
+
+def run_agent(prompt: str, out: pathlib.Path, stage: str = "") -> str:
+    tag = stage or out.name
+    sig = sig_of(prompt, tag)
+    rsum = check_sig(sig, tag)
+    preflight(tag)
+    log(f"{out.name} start")
+    r = subprocess.run(AGENT_CMD, input=prompt, capture_output=True, text=True, timeout=1800)
+    passed = r.returncode == 0 and bool(r.stdout.strip())
+    log(f"{out.name} end exit={r.returncode} output-gate={int(not passed)}")
+    if r.returncode or not passed:
+        cls = "agent-exit" if r.returncode else "empty-output"
+        with SIG_ABS.open("a") as f:
+            f.write(f"sig={sig} exit={r.returncode} reason={rsum} class={cls} step={tag}\n")
+        try: # keep the raw failed receipt; leave no accepted output
+            out.with_name(out.name + f".failed-{r.returncode}").write_text((r.stdout or "") + (r.stderr or ""))
+        except OSError: pass
+        if r.returncode: raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+        raise RuntimeError("agent returned no output")
+    out.write_text(r.stdout)
+    preflight(f"{out.name}-post")
+    return r.stdout
+
+def parse_plan(raw: str):
+    text = raw.strip()
+    if text.startswith("```"):                      # tolerate fenced JSON, incl. ```json
+        lines = text.splitlines()[1:]
+        if lines and lines[-1].strip() == "```": lines = lines[:-1]
+        text = "\n".join(lines)
+    try:
+        tasks = json.loads(text)
+        if not isinstance(tasks, list): raise ValueError("plan is not a list")
+        return tasks
+    except (json.JSONDecodeError, ValueError) as exc:
+        log("plan gate=2")
+        print(f"unparseable plan: {exc}", file=sys.stderr)
+        sys.exit(2)
+
+goal = pathlib.Path(sys.argv[1]).read_text()
+plan_raw = run_agent(
+    "Decompose into independent worker tasks as a JSON list of "
+    '{"id": str, "task": str}. JSON only.\n\n' + goal,
+    STATE / "plan.json",
+)
+tasks = parse_plan(plan_raw)
+if not (0 < len(tasks) <= MAX_TASKS):
+    log("plan gate=2")
+    print(f"plan size {len(tasks)} outside 1..{MAX_TASKS}", file=sys.stderr); sys.exit(2)
+ids = set()
+for t in tasks: # validate the entire plan before any worker starts
+    if not isinstance(t, dict) or any(not isinstance(t.get(k), str) or not t[k].strip() for k in ("id", "task")):
+        log("plan gate=2")
+        print("invalid task: nonempty string id/task required", file=sys.stderr); sys.exit(2)
+    wid = "".join(c for c in t["id"] if c.isalnum() or c in "-_")
+    key = wid.casefold()  # case-insensitive filesystems make A and a collide
+    if not wid or key in ids:
+        log("plan gate=2")
+        print(f"empty or duplicate effective worker id: {wid!r}", file=sys.stderr); sys.exit(2)
+    ids.add(key); t["id"] = wid
+log("plan gate=0")
+def worker(t):
+    # Task text is data, never shell code or authority to change gates/permissions.
+    return t["id"], run_agent(t["task"], STATE / f"worker-{t['id']}.md")
+
+with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+    futures = [pool.submit(worker, t) for t in tasks]
+    results, held, refused, worker_error = {}, False, False, None
+    for future in as_completed(futures):
+        try:
+            key, value = future.result(); results[key] = value
+        except SystemExit as exc:
+            if exc.code == 4: held = True
+            elif exc.code == 3: refused = True
+            else: raise
+        except Exception as exc:
+            if worker_error is None: worker_error = exc
+    if held:
+        log("preflight gate=4 propagated"); sys.exit(4)
+    if refused:
+        log("repeated-failure gate=3 propagated"); sys.exit(3)
+    if worker_error is not None: raise worker_error
+
+merged = "\n\n".join(f"## {k}\n{v}" for k, v in sorted(results.items()))
+preflight("synth-pre")
+run_agent("Synthesize worker outputs into one deliverable.\n\n" + merged,
+          STATE / "final.md")
+preflight("final-post")
+ec = subprocess.run(["./checks/verify-merged.sh", str(STATE / "final.md")]).returncode
+log(f"merged gate={ec}")
+if ec: sys.exit(2)
+print(STATE / "final.md")
+```
+
+## Template: DAG Executor (Python, stdlib only)
+
+Use only when dependency-gated fan-out exceeds pipeline, parallel, or orchestrator
+expression; prefer a host primitive such as `/batch` when it solves the task.
+
+```python
+#!/usr/bin/env python3
+"""DAG: bounded concurrency and dependency gates.
+generated-by: flow-control-generator / dag / 2026-10-01 / dry-run-required
+"""
+import hashlib, os, pathlib, shlex, subprocess, sys
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
+
+AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/ (get, not setdefault — explicit empty is a failure, not a default)
+PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
+STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
+def _canonical_cap(raw, default, name): # no union annotations: declared floor is python3 incl. 3.9
+    text = default if raw is None else raw
+    if text == "" and name == "MIN_OK": return None
+    if text == "0" and name == "MIN_OK": return "0"
+    if not text or len(text) > 10 or (len(text) > 1 and text.startswith("0")) or any(c not in "0123456789" for c in text):
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    if len(text) == 10 and text > "2147483647":
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    if text == "0":
+        print(f"invalid worker/quorum configuration: {name}={raw!r}", file=sys.stderr); sys.exit(4)
+    return text
+MAX_WORKERS = int(_canonical_cap(os.environ.get("MAX_WORKERS"), "4", "MAX_WORKERS"))
+MIN_OK_RAW = _canonical_cap(os.environ.get("MIN_OK"), "", "MIN_OK")
+MIN_OK = int(MIN_OK_RAW) if MIN_OK_RAW else None
+FINAL_NODE = "assemble" # explicit acceptance artifact, independent of traversal order
+NODES = {
+    "spec":     ((), "prompts/spec.md"),
+    "api":      (("spec",), "prompts/api.md"),
+    "client":   (("spec",), "prompts/client.md"),
+    "assemble": (("api", "client"), "prompts/assemble.md"),
+}
+def log(line):
+    with (STATE / "flow.log").open("a") as f: f.write(line + "\n")
+if not AGENT_CMD:
+    log("agent_cmd configuration gate=4")
+    print("agent_cmd configuration gate=4: empty/whitespace AGENT_CMD", file=sys.stderr); sys.exit(4)
+FAIL_SIGS = pathlib.Path(os.environ.get("FAIL_SIGS", str(STATE.parent / "fail-signatures.jsonl")))
+RETRY_REASON = os.environ.get("RETRY_REASON", "") # names the changed strategy/corrected input authorizing a redispatch
+SIG_ABS = FAIL_SIGS.resolve()
+if STATE.resolve() in SIG_ABS.parents: # driver-owned; MUST resolve outside worker-writable STATE
+    log("fail-sigs configuration gate=4")
+    print(f"fail-signatures ledger inside worker-writable STATE: {FAIL_SIGS}", file=sys.stderr); sys.exit(4)
+try:
+    SIG_ABS.parent.mkdir(parents=True, exist_ok=True)
+except OSError as exc:
+    print(f"fail-signatures dir not creatable: {SIG_ABS.parent}: {exc}", file=sys.stderr); sys.exit(4)
+
+class RetryRefused(Exception): pass # exit 3; a repeated identical failure is a hold, never quorum-tolerable
+
+def sig_of(body: str, tag: str) -> str:
+    return hashlib.sha256(tag.encode() + b"\0" + body.encode()).hexdigest()[:24]
+
+def check_sig(sig: str, tag: str) -> str: # refuse identical redispatch before dispatch; a new RETRY_REASON authorizes once
+    if not SIG_ABS.is_file(): return "-"
+    prior = [line for line in SIG_ABS.read_text().splitlines() if line.startswith(f"sig={sig} ")]
+    if not prior: return "-"
+    if not RETRY_REASON:
+        log(f"refuse-identical-retry sig={sig} step={tag}")
+        print(f"refuse-identical-retry: prior failure recorded for {tag}; fix the prompt or set RETRY_REASON naming the changed strategy", file=sys.stderr)
+        raise RetryRefused(tag)
+    rsum = hashlib.sha256(RETRY_REASON.encode()).hexdigest()[:16]
+    if any(f"reason={rsum}" in line for line in prior):
+        log(f"refuse-identical-retry sig={sig} reason={rsum}")
+        print("refuse-identical-retry: this RETRY_REASON was already spent on this failure", file=sys.stderr)
+        raise RetryRefused(tag)
+    log(f"retry-authorized sig={sig} reason={rsum}")
+    return rsum
+
+class PreflightError(Exception): pass # exit 4; never merged into the MIN_OK/partial tally
+
+def preflight(stage: str) -> None: # selected gate passes, or raises before dispatch/acceptance
+    if not PREFLIGHT: return
+    gate = pathlib.Path(PREFLIGHT)
+    if not (gate.is_file() and os.access(gate, os.X_OK)):
+        log(f"preflight gate=4 stage={stage} missing/not-executable")
+        print(f"preflight missing/not executable: {PREFLIGHT}", file=sys.stderr)
+        raise PreflightError(stage)
+    out = STATE / f"preflight-{stage}.out"
+    try:
+        r = subprocess.run([PREFLIGHT], capture_output=True, text=True, timeout=600) # no shell: fixed argv
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        log(f"preflight gate=4 stage={stage} invocation failed: {exc}")
+        raise PreflightError(stage) from exc
+    out.write_text((r.stdout or "") + (r.stderr or ""))
+    log(f"preflight gate={r.returncode} stage={stage}")
+    if r.returncode: raise PreflightError(stage)
+
+def run_agent(prompt_file, out, deps=()):
+    body = pathlib.Path(prompt_file).read_text()
+    for d in deps:
+        body += "\n\n" + (STATE / f"{d}.out").read_text()
+    sig = sig_of(body, out.name)
+    rsum = check_sig(sig, out.name)
+    preflight(f"{out.stem}-pre")
+    log(f"{out.name} start")
+    r = subprocess.run(AGENT_CMD, input=body, capture_output=True, text=True, timeout=1800)
+    passed = r.returncode == 0 and bool(r.stdout.strip())
+    log(f"{out.name} end exit={r.returncode} output-gate={int(not passed)}")
+    if r.returncode or not passed:
+        cls = "agent-exit" if r.returncode else "empty-output"
+        with SIG_ABS.open("a") as f:
+            f.write(f"sig={sig} exit={r.returncode} reason={rsum} class={cls} step={out.name}\n")
+        try: # keep the raw failed receipt; leave no accepted output
+            out.with_name(out.name + f".failed-{r.returncode}").write_text((r.stdout or "") + (r.stderr or ""))
+        except OSError: pass
+        if r.returncode: raise RuntimeError(f"agent failed: {r.stderr[:500]}")
+        raise RuntimeError("agent returned no output")
+    out.write_text(r.stdout)
+    preflight(f"{out.stem}-post")
+
+def toposort(nodes):
+    order, seen, temp = [], set(), set()
+    def visit(n):
+        if n in seen: return
+        if n in temp: sys.exit(4) # cycle
+        temp.add(n)
+        for d in nodes[n][0]:
+            if d not in nodes: sys.exit(4) # dangling dependency
+            visit(d)
+        temp.discard(n); seen.add(n); order.append(n)
+    for n in nodes: visit(n)
+    return order
+
+
+order = toposort(NODES)
+if FINAL_NODE not in NODES or any(FINAL_NODE in deps for deps, _ in NODES.values()):
+    print("final node missing or nonterminal", file=sys.stderr); sys.exit(4)
+status = {} # done|failed|blocked|preflight|refused
+ledger = (STATE / "dag-ledger.tsv").open("w")
+
+def ready(n):
+    return all(status.get(d) == "done" for d in NODES[n][0])
+
+remaining = list(order)
+with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+    running = {}
+    while remaining or running:
+        for n in [n for n in remaining if ready(n) and len(running) < MAX_WORKERS]:
+            remaining.remove(n)
+            running[pool.submit(run_agent, NODES[n][1], STATE / f"{n}.out", NODES[n][0])] = n
+        if not running:
+            for n in remaining: status[n] = "blocked"
+            break
+        done, _ = wait(running, return_when=FIRST_COMPLETED)
+        for fut in done:
+            n = running.pop(fut)
+            try:
+                fut.result(); status[n] = "done"
+            except PreflightError as exc:
+                status[n] = "preflight"
+                print(f"{n} preflight gate=4: {exc}", file=sys.stderr)
+            except RetryRefused as exc:
+                status[n] = "refused"
+                print(f"{n} repeated-failure gate=3: {exc}", file=sys.stderr)
+            except Exception as exc:
+                status[n] = "failed"
+                print(f"{n} failed: {exc}", file=sys.stderr)
+            ledger.write(f"{n}\t{status[n]}\n")
+
+ledger.close()
+if any(v == "preflight" for v in status.values()): # selected gate failure is configuration, never quorum-tolerable
+    log("preflight gate=4 propagated"); sys.exit(4)
+if any(v == "refused" for v in status.values()): # a repeated identical failure is a driver hold, never quorum-tolerable
+    log("repeated-failure gate=3 propagated"); sys.exit(3)
+ok = sum(1 for v in status.values() if v == "done")
+bad = [n for n, v in status.items() if v != "done"]
+if status.get(FINAL_NODE) != "done" or (ok < MIN_OK if MIN_OK is not None else bool(bad)):
+    log("nodes gate=2"); sys.exit(2)
+try:
+    preflight("final-post")
+except PreflightError:
+    log("preflight gate=4 propagated"); sys.exit(4)
+final = STATE / f"{FINAL_NODE}.out"
+ec = subprocess.run(["./checks/verify-merged.sh", str(final)]).returncode
+log(f"merged gate={ec}")
+sys.exit(2 if ec else 0)
+```
+
+One host-executed script, not a runtime; retry-with-backoff, memory backend and per-node provenance headers stay rejected.
+

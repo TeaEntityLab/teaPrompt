@@ -20,6 +20,7 @@ from prompt_eval_helpers import (  # noqa: E402
     glossary_path,
     library_readme_path,
     library_skills_dir,
+    skill_package_docs,
     methodology_map_en_path,
 )
 
@@ -79,7 +80,7 @@ def _durable_surfaces() -> list[Path]:
         library_readme_path(),
         methodology_map_en_path(),
     ]
-    surfaces += sorted(library_skills_dir().rglob("SKILL.md"))
+    surfaces += sorted(skill_package_docs())
     for category in ("00-core", "01-thinking", "02-engineering", "03-context",
                      "04-agent", "05-domain", "06-repo"):
         surfaces += sorted((PROMPT_LIBRARY_ROOT / category).glob("*.md"))

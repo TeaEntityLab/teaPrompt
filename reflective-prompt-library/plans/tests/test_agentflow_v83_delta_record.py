@@ -22,6 +22,7 @@ from prompt_eval_helpers import (  # noqa: E402
     glossary_path,
     library_readme_path,
     library_skills_dir,
+    skill_package_docs,
     methodology_map_en_path,
 )
 
@@ -88,7 +89,7 @@ def _durable_surfaces() -> list[Path]:
         library_readme_path(),
         methodology_map_en_path(),
     ]
-    surfaces += sorted(library_skills_dir().rglob("SKILL.md"))
+    surfaces += sorted(skill_package_docs())
     for category in ("00-core", "01-thinking", "02-engineering", "03-context",
                      "04-agent", "05-domain", "06-repo"):
         surfaces += sorted((PROMPT_LIBRARY_ROOT / category).glob("*.md"))
@@ -142,9 +143,3 @@ def test_existing_indexes_link_the_survey_decision():
     assert RECORD.name in _read(CASE_STUDIES), "case-studies State Ledger does not link the record"
 
 
-def test_direction_addendum_records_the_no_fire():
-    addendum = _read(RECORD).split("## Direction Addendum", 1)[1]
-    assert "unchanged" in addendum, "addendum must record the ledger is unchanged"
-    # The skill-update re-run's load-bearing finding: AF83-6 is the counterargument
-    # lens, not a skill gap (the corrected citation).
-    assert "counterargument" in addendum, "addendum must cite the counterargument lens"

@@ -32,7 +32,7 @@ pytestmark = pytest.mark.skipif(BASH is None, reason="Published generators requi
 
 
 def _source() -> str:
-    return (library_skills_dir() / "flow-control-generator" / "SKILL.md").read_text(encoding="utf-8")
+    return (library_skills_dir() / "flow-control-generator" / "TEMPLATES.md").read_text(encoding="utf-8")
 
 
 def _executable(path: Path, body: str) -> None:

@@ -63,3 +63,15 @@ Inventory clustered A (4 TeaPrompt-targeted: parallel-lens-review-packet, teapro
 - Wrong if M1's subsection proves ceremony (its inline falsifier fires) and is not folded back.
 - M4/M6/M7 deferrals are live: their triggers moving without ledger movement is the drift failure this protocol exists to catch.
 - Guard: `plans/tests/test_managed_skill_promotion_adoption_state.py`; ledger lives in this record (M1–M8).
+
+## M5 checkpoint re-audit (2026-10-11)
+
+The governance checkpoint fired M5. The
+[outcome](checkpoint-2026-10-11-outcome.md#staleness-falsifiers-and-m5)
+records 47 inventoried directories and eight inspected bodies, not an
+exhaustive audit of every body. The managed primer's stale pack list became
+a live-registry pointer; the redacted panel's historical sensitivity/promotion
+scope was clarified. Both are host-side corrections; no memory-derived
+repository wording or additional skill was promoted. The original M5
+next-governance-panel trigger remains live.
+

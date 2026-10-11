@@ -106,7 +106,7 @@ def test_backlog_template_never_retires_untouched_work(tmp_path: Path):
     tradeoff (2026-09-16 advisory) an already-satisfied task and a task re-dispatched
     on resume after its edits share the no-op's exit 3: the loop cannot tell them
     apart and hands the call to the operator rather than retire on self-report."""
-    script = BACKLOG_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")).group(1) + "\n"
+    script = BACKLOG_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "TEMPLATES.md")).group(1) + "\n"
     cases = {
         "noop": ('echo "stub: done"\n', 3, ["task one", "task two", "task three"]),
         "crash": ("echo boom >&2; exit 1\n", 3, ["task one", "task two", "task three"]),

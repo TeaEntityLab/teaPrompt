@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "openai-model-guidance-survey-2026-09-10.md"
@@ -66,7 +66,7 @@ def _durable_surfaces() -> list[Path]:
     # Prompt-level surfaces only. The install guide is excluded on purpose: it
     # identifies hosts by vendor (a Codex config path, a skills-repository URL),
     # which is host naming, not surveyed guidance text.
-    return sorted(SKILLS.glob("*/SKILL.md")) + [glossary_path()] + sorted(AGENT_DOCS.glob("*.md"))
+    return sorted(skill_package_docs()) + [glossary_path()] + sorted(AGENT_DOCS.glob("*.md"))
 
 
 def _tokens(text: str) -> list[str]:

@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "agentflow-survey-2026-09-05.md"
@@ -143,7 +143,7 @@ def test_ledger_dispositions():
 
 
 def test_no_surveyed_vocabulary_on_skill_or_install_surfaces():
-    for path in list(library_skills_dir().glob("*/SKILL.md")) + [INSTALL_GUIDE]:
+    for path in list(skill_package_docs()) + [INSTALL_GUIDE]:
         assert not FOREIGN_TOKENS.search(path.read_text(encoding="utf-8")), path.name
 
 

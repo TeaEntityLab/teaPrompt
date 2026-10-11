@@ -111,6 +111,40 @@ Deterministic guard: `plans/tests/test_skills_september_concepts_review_record.p
 
 2026-10-10 scoped successor: user approval of H12-GD replaced the nine-template heading-only guard with parsed semantic developer checks in `validate_governance.py`, exercised through its real API/CLI. Required fields, safe defaults and unbound reference/version slots are covered in [the repair record](whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10). The original H12 Held row and September counts stay historical; the seven-fragment inventory remains unresolved and Held. No host, campaign or checkpoint gate changed.
 
+2026-10-11 checkpoint successor: [H5 and H6 were reviewed separately](checkpoint-2026-10-11-outcome.md#h5-and-h6-separately).
+H5 holds without a GLOSSARY vocabulary change; H6's review completed without
+blanket annotations or same-trigger merges. Each candidate retains its own
+direction/event condition. Approved [template disclosure](checkpoint-packaging-decision-2026-10-11.md)
+resolves H1's main-contract headroom alternative without cutting its
+safety paragraphs. H2–H4/H7–H8 are not adopted by that packaging decision.
+The historical H12 seven-guard branch remains separately Held.
+
+## H12 replacement-scope decision (2026-10-11)
+
+**Decision: Superseded — the maintainer explicitly selected “Accept the replacement scope.”**
+This later same-day ruling replaces the unidentified historical seven-guard
+branch with the completed, sampled FG-01–FG-11 assessment and its
+[bounded repairs](whole-project-review-2026-10-09.md#current-fragment-guard-repair-2026-10-11).
+The separately completed H12-GD nine-template consumer repair remains in place.
+H12 is no longer pending in the current roadmap; its original seven guard
+identities remain **unidentified and unverified**, not retrospectively tested.
+
+The accepted ruling includes the assessment's limits: the lexical census is
+not semantic coverage of every guard; incidental authority, fail-closed and
+provenance prose requires human review; credential and URI/email screens cover
+recognized syntax, not unknown secret formats or complete privacy detection.
+Retained typed fields, candidate/disposition ledgers, safe defaults, reference
+bindings and executable consumer regressions remain the mechanical protections.
+
+The September H12 `Held 2026-09-16` row, counts and earlier assessment/checkpoint
+receipts remain dated history. This is explicit acceptance of a replacement
+scope and ruling, not reconstruction of the lost inventory, an oracle change,
+blanket H1–H8 adoption, host qualification or a campaign grant. No protected
+acceptance/invariant/security oracle, installed contract or registry is changed.
+TEST-001 and Stage-1/TEST-002–004 retain their separate owner gates. A later claim
+that all original seven guards were verified, or that this sampled assessment
+proves arbitrary prose or host enforcement, would falsify this disposition.
+
 ## Evidence vs Inference
 
 | Claim | Status | Basis |

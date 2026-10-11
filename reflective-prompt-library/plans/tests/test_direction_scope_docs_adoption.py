@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "direction-scope-docs-adoption-2026-09-19.md"
@@ -53,7 +53,7 @@ def test_ds1_pinned_once_inside_signal_accounting():
 
 def test_ds1_absent_from_every_other_durable_surface():
     others = (
-        sorted(library_skills_dir().glob("*/SKILL.md"))
+        sorted(skill_package_docs())
         + sorted(library_skills_dir().glob("examples/*.md"))
         + sorted(PROMPT_LIBRARY_ROOT.glob("SKILL_INSTALLATION*.md"))
         + [p for p in sorted((PROMPT_LIBRARY_ROOT / "04-agent").glob("*.md")) if p != LENS]

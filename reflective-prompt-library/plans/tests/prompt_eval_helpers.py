@@ -54,6 +54,15 @@ def library_skills_dir() -> Path:
     return PROMPT_LIBRARY_ROOT / "skills"
 
 
+def skill_package_docs() -> tuple[Path, ...]:
+    """Return all markdown in installed skill folders, including sibling references."""
+    return tuple(
+        path
+        for skill in sorted(library_skills_dir().glob("*/SKILL.md"))
+        for path in sorted(skill.parent.glob("*.md"))
+    )
+
+
 def glossary_path() -> Path:
     """Resolve GLOSSARY.md under the prompt library root."""
     return PROMPT_LIBRARY_ROOT / "GLOSSARY.md"

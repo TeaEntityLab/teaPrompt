@@ -150,7 +150,7 @@ def _template_headings(path: Path) -> tuple[str, ...]:
 
 
 def test_p12_generator_template_set_pinned():
-    found = _template_headings(GENERATOR)
+    found = _template_headings(GENERATOR.with_name("TEMPLATES.md"))
     assert found == GENERATOR_TEMPLATES, (
         "flow-control-generator template set changed; P12 is user-directed adopted "
         f"and guarded as an exact pack contract -- {RELITIGATE}; found: {found}"
@@ -158,7 +158,7 @@ def test_p12_generator_template_set_pinned():
 
 
 def test_p13_harness_template_set_pinned():
-    found = _template_headings(HARNESS)
+    found = _template_headings(HARNESS.with_name("TEMPLATES.md"))
     assert found == HARNESS_TEMPLATES, (
         "flow-loop-harness template set changed; P13 is user-directed adopted "
         f"and guarded as an exact pack contract -- {RELITIGATE}; found: {found}"

@@ -163,3 +163,21 @@ means the admission ritual failed and the Option B discipline must be re-applied
 - [flow-control-pack-panel-record-2026-07-11.md](flow-control-pack-panel-record-2026-07-11.md) — the domain-pack admission precedent this decision follows.
 - [../06-repo/AGENTS.md](../06-repo/AGENTS.md) — binding domain-pack admission rule (item 3).
 - [../04-agent/runtime-trust-boundary.md](../04-agent/runtime-trust-boundary.md) — instruction/data/least-privilege lens.
+
+## Checkpoint disposition (2026-10-11)
+
+**Retained; AS8/R10/WGS-GOV-1 shrink adopted with explicit maintainer approval.**
+The [packaging decision](checkpoint-packaging-decision-2026-10-11.md) records
+the co-installed `ARTIFACTS.md`, unchanged emitted bodies and copied-package
+smoke. The main contract is 18,429 characters; the unchanged 20,000-character
+warning and four-power safety floor were not weakened. Five recorded
+generation groups include the October 3 book backfill; these are not
+enforcement or accepted-delivery evidence.
+
+G9/AS9 is **hold**, with no qualifying vocabulary event established by the
+inspected evidence and unobserved-host use unknown. The
+[outcome](checkpoint-2026-10-11-outcome.md#g9--as9-outcome) supplies rationale,
+owner and next action under the unchanged three-fresh-group/R8 pre-tune gate.
+The original ledger and demotion conditions remain historical and live,
+respectively; this disposition is not a router, runtime or campaign grant.
+

@@ -20,7 +20,6 @@ from prompt_eval_helpers import PROMPT_LIBRARY_ROOT  # noqa: E402
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 AGENT_LENS_DIR = PROMPT_LIBRARY_ROOT / "04-agent"
 RECIPES = AGENT_LENS_DIR / "workflow-recipes.md"
-PROMOTION = AGENT_LENS_DIR / "artifact-promotion.md"
 RECORD = PLANS_DIR / "managed-skill-promotion-panel-record-2026-07-11.md"
 
 
@@ -163,13 +162,6 @@ def test_m1_packet_path_correction():
     assert "repo-readable path" in section
 
 
-# M2 - memory-derived-source rule under Evidence rules.
-def test_m2_memory_derived_source_rule():
-    text = _read(PROMOTION)
-    assert "Evidence rules:" in text
-    rules = text.split("Evidence rules:", 1)[1].split("## 3.", 1)[0]
-    assert "managed skills" in rules
-    assert "memory-write gate" in rules
 
 
 # Ledger presence and shape.

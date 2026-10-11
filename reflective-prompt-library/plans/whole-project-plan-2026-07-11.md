@@ -204,6 +204,23 @@ reconciliation, not a fresh execution result.
 
 **Dated supersession 2026-10-09 (F15 current-count pointer, no cardinality change):** the live `DOMAIN_PACK_SKILLS` registry now holds ten packs after the 2026-10-06 five-pack admission (`headless-agent-cli-contract`, `arm-blinded-eval-harness`, `acceptance-join-validator`, `golden-benchmark-runner`, `router-trace-linter`; evidence: [survey](managed-skills-learned-survey-2026-10-06.md), ticket [runtime-skills-task001-ticket-2026-10-06.md](runtime-skills-task001-ticket-2026-10-06.md)). Every current count claim must use that registry. The "Five registered domain packs outside core routing" row above is a test-pinned historical literal, preserved exactly; it is not the current inventory.
 
+**Checkpoint completed 2026-10-11:** all nine runbook agenda items are recorded
+in the [outcome](checkpoint-2026-10-11-outcome.md). P6 retains separate packs;
+the next P6 evidence review is 2027-01-11, not a postponement of the original
+deadman. Explicitly approved [reference disclosure](checkpoint-packaging-decision-2026-10-11.md)
+resolves the AGS/flow main-contract size decisions without changing the
+registry or Makefile. G9/AS9 and H5 hold, H6 has no blanket merges, and
+host/campaign/original-H12 grants remain separate. Historical rows above
+and the live falsifiers stay unchanged.
+
+**Later maintainer ruling 2026-10-11:** the explicitly accepted
+[H12 replacement scope](skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11)
+supersedes the historical seven-guard obligation with the completed sampled
+FG-01–FG-11 assessment/repairs. The unidentified original inventory remains
+unverified, not an outstanding prerequisite for this accepted successor.
+September counts and earlier receipts remain historical; protected oracles,
+TEST-001 qualification and Stage-1/TEST-002–004 campaign gates are unchanged.
+
 ## Verification (this plan)
 
 - Authored against: PROJECT_KNOWLEDGE.md, QUALITY_GATES_SUMMARY.md, GLOSSARY

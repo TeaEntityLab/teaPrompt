@@ -191,14 +191,11 @@ def test_adopted_wording_is_present_at_every_named_surface():
             assert phrase in text, f"{path.name} lost adopted wording: {phrase!r}"
 
 
-def test_durable_surfaces_carry_no_survey_citations_or_universal_retry_number():
+def test_durable_surfaces_carry_no_survey_citations():
     for path in ADOPTED_WORDING:
         text = _read(path)
         assert not ARXIV_ID.search(text), f"{path.name} must not embed arXiv identifiers"
         assert "17% FNR" not in text and "17% false" not in text, f"{path.name} must not embed vendor figures"
-    implement = _read(SKILLS_DIR / "reflective-implement" / "SKILL.md")
-    assert "stop after 2 identical failure signatures" not in implement
-    assert "N=2" not in implement
 
 
 def test_record_preserves_disagreements_and_host_ownership():

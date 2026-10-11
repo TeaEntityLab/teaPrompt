@@ -77,6 +77,18 @@ The only calendar commitment currently on record. Agenda:
 | H5 — deferred-status sub-families | Review the proposed `Held` / `Record-only` / `Concept-only` / `Blocked` / `Reserved` gloss at its natural checkpoint seat; any GLOSSARY change still requires direction | Owning H5 row and existing literal-state guards; no vocabulary adoption here | [H5 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger), [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
 | H6 — closed-trigger annotations and same-trigger pairs | Review `—`-trigger annotations and same-trigger merges at the checkpoint; preserve each candidate's own disposition | Owning H6 row and L3 table; later scoped repairs do not close unrelated candidates | [H6 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger), [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
 
+**Completed 2026-10-11:** the [outcome](checkpoint-2026-10-11-outcome.md)
+records every agenda branch, source limits and remaining owner gates. P6
+retains separate packs and schedules its next evidence review for 2027-01-11;
+T2 parity holds; F4 sources were re-read; GD has generation evidence;
+G9/AS9 and H5 hold; H6 preserves each candidate's condition. The approved
+[packaging decision](checkpoint-packaging-decision-2026-10-11.md) implements
+AS8/R10/WGS-GOV-1 and flow-template disclosure without raising thresholds.
+I-1/A-5 received a bounded event-classification review, not installed
+wording. M5 fired here: 47 directories inventoried, eight bodies audited,
+two host-side corrections. This supersedes future-tense scheduling above
+without rewriting the historical agenda or extending campaign/runtime grants.
+
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next
 governance panel ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md)) —
 **fired 2026-09-13** at the GD-18 panel (four TeaPrompt managed skills audited, one
@@ -169,7 +181,13 @@ This records the already-landed 2026-10-06 admission of five packs, not a new ad
 | XM-12 — lock-failure probe widening | XM-3 repeated-escape gate: a second observed escaped failure class or candidate-specific Human Review; earlier source-identified races are not a second escape | Existing research probe method; no automatic widening | [XM-12](external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair) |
 | RS-9 — writer-critic prior verdict context | Observed cross-round oscillation in a TeaPrompt-run writer-critic loop; any fix stays within the pack size budget | `flow-loop-harness` writer-critic template | [RS-9](rsiagent-survey-2026-09-16.md) |
 | XM-8 — own-the-front-door recipe promotion | A second survey whose highest-yield rules sat in an unowned slice | Existing Parallel Lens Review recipe stanza, not a new workflow | [XM-8](external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion) |
-| H1–H4 / H7–H8 / H12 — September review held candidates | Each owning row's direction/event gate separately: H1 direction or next-generator-defect offset; H12 next guard pass. H2/H3/H4/H7/H8 retain their direction gates and named falsifiers; H5/H6 are separately seated in Horizon 2 | Named skill/doc/test surfaces; later WR repairs are scoped, not blanket adoption or closure of this cluster | [H ledger](skills-september-concepts-review-2026-09-16.md); [later WR repairs](../../review/final-report.md) |
+| H1–H4 / H7–H8 — September review held candidates | Each owning row's direction/event gate separately: H1 direction or next-generator-defect offset; H2/H3/H4/H7/H8 retain their direction gates and named falsifiers; H5/H6 are separately seated in Horizon 2 | Named skill/doc/test surfaces; later WR repairs are scoped, not blanket adoption or closure of this cluster | [H ledger](skills-september-concepts-review-2026-09-16.md); [later WR repairs](../../review/final-report.md) |
+
+H12 left the pending cluster only after the later 2026-10-11
+[maintainer-approved replacement-scope ruling](skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11).
+The original seven-guard inventory remains unverified; the accepted current
+FG-01–FG-11 assessment/repairs supersede that obligation without changing the
+other candidates' gates, TEST-001 qualification or campaign authority.
 
 Queue discipline: when a trigger fires, the item gets its own review/panel record
 with a Candidate Adoption Ledger — a fired trigger authorizes *re-litigation*, not

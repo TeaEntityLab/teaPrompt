@@ -748,3 +748,70 @@ SHA-256 hashes below bind the original review, not a future repair or the record
 | `reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md` | `9fd8dce6291959ca67b5ef60631ddc3a9c250d305e00d69bf632e7ab93963803` |
 | `reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md` | `4b678cb3b59122b1e760df8ab4062156d5b62973ef35066720f01d7760c922a4` |
 | `reflective-prompt-library/plans/flow-pack-usage-log.md` | `7d7fc07cbfdce3e42200d721cf79a75f8b37f2e6804f092bcec300088eb90903` |
+
+## Current fragment-guard repair (2026-10-11)
+
+**Authority and scope:** the maintainer requested “fix and next” after the
+fresh current-guard assessment. FG-01–FG-11 are repaired as bounded developer
+check cleanup, not reconstruction or closure of original H12. Protected
+acceptance/security oracles, correctly stated skill contracts, historical
+dispositions and host/campaign grants are unchanged.
+
+The source-bound baseline exercised 50 selected inputs: 20 violating fixtures
+were accepted and seven meaning-preserving rewrites rejected. These are two
+distinct defects, not a prevalence estimate. The original assessment,
+configuration and receipts remain unchanged in session-local evidence.
+
+| Findings | Repair | Retained protection / limit |
+| --- | --- | --- |
+| FG-01/02/07/09 | Retired incidental enforcement, promotion, advisory-banner and memory-source prose assertions; removed newly unused bindings | Contract fields, ledgers, metadata and existing authority validator remain. Natural-language authority/fail-closed/provenance duties require review; no replacement English pins claim semantics |
+| FG-03 | Retired the unbounded narrative no-fire test and its Nimble/TeaBrain twins | Exact candidate-ID→disposition ledger checks remain; narrative consistency is human-reviewed |
+| FG-04 | Replaced the five-token screen with record-specific credential-assignment, bearer-header and PEM-boundary syntax checks | Synthetic colon/equal/quoted-key inputs reject; ordinary mentions and empty fields pass. Unrecognized formats and actual secrecy remain review limits |
+| FG-05 | Removed the two-failure and `N=2` sentinels | Source-citation quarantine remains. Task-scoped `N=2` and `N=3` examples pass; no universal numeric regex or policy claim is substituted |
+| FG-06 | Removed proposal-field-name and approval-word assertions | CCSP4's deferred/PENDING ledger state remains checked; a field name alone establishes neither adoption nor enforcing-host approval |
+| FG-08 | Removed narrative invariant/host-word assertions | Five host-precondition fields still default to `unknown`; the actual nine-template governance consumer and its invalid-body/default/reference regressions remain |
+| FG-10 | Removed the redundant quorum word check | Actual extracted fan-out accepts zero-survivor zero quorum through the merged gate and rejects the inverted comparison |
+| FG-11 | Replaced `@`/`http` bans with recognized explicit URI/email locator syntax | Non-HTTP locators reject; ordinary `http` prose and non-address `@` markers pass. This is not complete identifier/privacy detection |
+
+Ten incidental test functions were retired, including three direct twins.
+Fourteen syntax-boundary regression cases were added in the two existing
+record-test modules. No dependency, runtime, schema, pack or core route was added.
+
+**Current proof:** the corrected guards and retained controls ran on 23
+disposable cases, all expectations matched, with zero execution errors and
+unchanged source bytes during the run. The executable Bash baseline/mutant
+receipts are retained, not replaced by source inspection. All 330 tests in
+the 14 affected/retained consumer modules passed, including the nine delivery
+template regressions. Regenerated-discovery `make all` on Python 3.14.7 /
+pytest 9.0.3 passed all **1,749 tests**, all three routing evaluations and
+validators with zero errors (`artifact://2903`). Nine lint warnings and
+35 historical-record warnings remain. Both changed sections rendered in
+Chromium at 1200×800 with no horizontal page overflow; viewport PNG capture
+timed out, so this receipt claims content/layout checks, not new pixel proof.
+
+Evidence: `local://current-fragment-guard-report-2026-10-10.md`,
+`local://current-fragment-guard-repair-2026-10-10.json` and
+`local://current-fragment-guard-repair-probe-results-2026-10-10.json`.
+The local artifact date retains the start of this repair, not a backdated
+checkpoint outcome. Delayed temp-alias/work-directory warnings were stale;
+the completed harness already resolves its temp root and creates work directories.
+
+Next: refresh the due checkpoint inputs and execute its agenda under the
+existing owning gates. TEST-001, Stage-1/TEST-002–004 and original H12 remain
+separately owner-held. No commit or push is included in this authorization.
+
+## H12 replacement-scope successor (2026-10-11)
+
+After the checkpoint and delayed-advisory triage, the maintainer explicitly
+accepted the completed sampled FG-01–FG-11 assessment/repairs and their
+documented human-review limits as the replacement for the unidentified
+historical seven-guard branch. The [owning decision](skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11)
+marks that branch **Superseded**, not its original seven guards verified.
+Earlier Held rows, assessment inputs and repair receipts remain historical.
+H12-GD's implemented nine-template consumer checks remain unchanged.
+
+This record-only successor changes no protected oracle, developer executable,
+installed skill, registry, host qualification or campaign grant. TEST-001 and
+Stage-1/TEST-002–004 are now the only remaining owner-gated execution branches;
+unrecognized secret formats and arbitrary prose semantics remain review limits.
+

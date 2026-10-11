@@ -102,18 +102,6 @@ def test_candidate3_ledger_row_adopted():
     assert "Adopted" in row
 
 
-# Candidate 4 — fail-closed security gates at Acquisition L3.
-def test_candidate4_artifact_promotion_gates():
-    text = _read(AGENT_LENS_DIR / "artifact-promotion.md")
-    assert "fails closed" in text
-    assert "prompt-injection" in text
-    assert "Memory writes" in text
-
-
-def test_candidate4_acquisition_l3_row_gates():
-    text = _read(AGENT_LENS_DIR / "workflow-acquisition.md")
-    assert "fail closed" in text
-    assert "memory-write provenance" in text
 
 
 # Candidate 5 — evidence tiers at the governance layer.

@@ -101,7 +101,9 @@ class IndexGenerator:
                                 "path": str(item.relative_to(self.repo_root)),
                                 "files": []
                             }
-                        self.index["categories"][skills_category]["subcategories"][skill_name]["files"].append("SKILL.md")
+                        self.index["categories"][skills_category]["subcategories"][skill_name]["files"].extend(
+                            path.name for path in sorted(item.glob("*.md"))
+                        )
     
     def process_prompt_file(self, file_path: Path, category: str, subcategory: str) -> Dict:
         """Process a single prompt file."""

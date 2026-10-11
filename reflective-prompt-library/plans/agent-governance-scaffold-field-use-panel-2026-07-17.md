@@ -229,3 +229,16 @@ Human Review before landing FU wording into the skill/examples/ledgers, and befo
 any lite-ad live wiring. Recommended order: **FU9 land** → **FU5/FU7 ledger
 annotate** → **FU1–FU4/FU6/FU10/FU13–FU15 skill+examples** → **FU12 lite-ad emit repair** →
 optional **FU8/FU11**.
+
+## R10 / G9 checkpoint successor (2026-10-11)
+
+The [packaging decision](checkpoint-packaging-decision-2026-10-11.md)
+implements the maintainer-approved R10 disclosure: an 18,429-character main
+contract with co-installed object bodies. The old FU8/R20 interim
+oversized-contract premise no longer applies; `context_load: medium` remains.
+This does not certify host wiring or reconstruct the original H12 guards.
+
+G9's required proceed/hold/close review is recorded as **hold** in the
+[outcome](checkpoint-2026-10-11-outcome.md#g9--as9-outcome), with its original
+misroute/discoverability, fresh-holdout and R8 gates preserved.
+

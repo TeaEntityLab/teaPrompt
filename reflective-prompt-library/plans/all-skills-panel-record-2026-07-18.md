@@ -150,3 +150,14 @@ surfaces; domain packs enter `reflective-dispatch` route rows without a new P7/G
 decision; `agent-governance-scaffold` R17 is cited as fully complete before the
 runtime rig exists; or R10 is deferred past 2026-10-11 without a shrink, demotion,
 or new decision record.
+
+## AS8 / AS9 checkpoint successor (2026-10-11)
+
+AS8 took the explicitly approved shrink path in the
+[packaging decision](checkpoint-packaging-decision-2026-10-11.md):
+`agent-governance-scaffold/SKILL.md` is 18,429 characters with unchanged
+object bodies in co-installed `ARTIFACTS.md`. AS9 is **hold**, not silently
+extended without review; the [G9 outcome](checkpoint-2026-10-11-outcome.md#g9--as9-outcome)
+records the bounded no-established-event finding, unknown host use and the
+unchanged holdout/pre-tune gate. Original AS8/AS9 rows are dated history.
+

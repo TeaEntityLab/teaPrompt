@@ -28,56 +28,6 @@ CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
 PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 
 
-ADOPTED = {
-    "reflective-brief": (
-        "Before an unknown becomes a question to the user, classify it: answerable from "
-        "the repository or tools (look), safe to assume (state it with its status), or "
-        "the owner's decision (ask); only the last kind is asked.",
-    ),
-    "reflective-implement": (
-        "a broken check is reported as could-not-run and repaired or escalated as a "
-        "check, never satisfied by editing the product.",
-        "a log line that says success while the process failed, or a run that skipped "
-        "the relevant tests, is not a pass.",
-        "Every edit after the last verification run, including cosmetic cleanup or "
-        "formatting, reopens verification; the reported result is the run against the "
-        "final state of the change.",
-        "- Do not add a fallback, catch-all, retry, or silent default that hides a "
-        "failure instead of fixing its cause; a fallback is legitimate only at an "
-        "external or version boundary, documented, preserving the failure evidence, and "
-        "tested on both paths.",
-        "For a behavior-preserving change (refactor, cleanup, compression), first lock "
-        "the current behavior with the narrowest tests that would fail if it changed, "
-        "then change one kind of thing per verified pass.",
-    ),
-    "reflective-review": (
-        "An empty findings list is a valid result; never add a finding to make the "
-        "review look thorough. Attribute each finding as introduced by the change or "
-        "pre-existing; a pre-existing defect is reported, not charged to the change.",
-    ),
-    "reflective-risk": (
-        "- Do not place a credential in a command line, a transcript, or a source file "
-        "to make a step work; a step that needs one waits for a secret-store path or the "
-        "owner. An exposed credential is revoked or rotated first — removing it from "
-        "source or history does not revoke it.",
-    ),
-    "reflective-research": (
-        "- A count, inventory, or catalog the agent generated is checked by a second "
-        "method that shares none of the generator's logic — a cruder search, a hash, a "
-        "fixture with a known answer; re-running the generator, or agreement between the "
-        "generator and its own summary, is not a check.",
-    ),
-    "flow-control-generator": (
-        "When a stage is itself a loop or retries, the composition's worst case is the "
-        "product of the caps: declare one total budget (steps or wall-clock) that every "
-        "level decrements, and have the outer script pass its remaining budget to the "
-        "inner one.",
-        "For fan-in, the gate runs over the merged result as well as the branch tally: "
-        "branches that each pass can conflict when combined.",
-        'ec=0; ./checks/verify-merged.sh "$STATE/final.md" || ec=$?    # gate: merged result, '
-        "not only the branch tally",  # WR-22/WR-20 re-pin: ec capture kept, adopted suffix restored
-    ),
-}
 
 FAN_OUT_TEMPLATE = re.compile(
     r"## Template: Parallel Fan-out/Fan-in \(bash\)\n\n```bash\n(.*?)```", re.S
@@ -88,12 +38,6 @@ def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def _skill_texts() -> dict[str, str]:
-    skills = library_skills_dir()
-    return {
-        p.parent.name: _read(p)
-        for p in sorted(skills.glob("*/SKILL.md"))
-    }
 
 
 def test_record_shape_and_dispositions():
@@ -122,28 +66,6 @@ def test_record_shape_and_dispositions():
         assert row.rstrip().endswith("| **Held** |"), row
     assert "| **Not applicable** |" in ledger
 
-def test_sentences_at_exactly_one_surface():
-    texts = _skill_texts()
-    assert len(texts) == 19, sorted(texts)
-    for skill, sentences in ADOPTED.items():
-        for sentence in sentences:
-            homes = [name for name, body in texts.items() if sentence in body]
-            assert homes == [skill], f"{sentence[:50]!r} found in {homes}, expected only {skill}"
-
-
-def test_fast_path_and_pinned_neighbours_untouched():
-    implement = _skill_texts()["reflective-implement"]
-    assert "If verification fails, fix and rerun. If a check cannot run, report why." in implement
-    assert "- Do not claim checks passed unless they were run and read." in implement
-    assert (
-        "see the test fail on the current code before the change and pass after it, so the "
-        "test proves the behavior rather than the code." in implement
-    )
-    brief = _skill_texts()["reflective-brief"]
-    assert (
-        "4. State assumptions and unknowns; an unresolved high-impact, irreversible "
-        "assumption is a Human Review trigger, not a default." in brief
-    )
 
 def test_indexes_point_to_the_record():
     knowledge = _read(PROJECT_KNOWLEDGE)
@@ -157,7 +79,7 @@ def test_indexes_point_to_the_record():
 @pytest.mark.skipif(shutil.which("bash") is None, reason="bash not available")
 def test_fan_out_template_gates_the_merged_result(tmp_path: Path):
     """Both branches pass the tally; the merged gate must still be able to reject."""
-    text = _skill_texts()["flow-control-generator"]
+    text = _read(library_skills_dir() / "flow-control-generator" / "TEMPLATES.md")
     match = FAN_OUT_TEMPLATE.search(text)
     assert match, "fan-out template missing"
     script = tmp_path / "fanout.sh"

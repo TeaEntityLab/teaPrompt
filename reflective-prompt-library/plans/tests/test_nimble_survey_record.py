@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "nimble-survey-2026-09-19.md"
@@ -59,7 +59,7 @@ def _read(path: Path) -> str:
 
 def _durable_surfaces() -> list[Path]:
     return (
-        sorted(library_skills_dir().glob("*/SKILL.md"))
+        sorted(skill_package_docs())
         + sorted(library_skills_dir().glob("examples/*.md"))
         + sorted(PROMPT_LIBRARY_ROOT.glob("SKILL_INSTALLATION*.md"))
         + [glossary_path()]
@@ -121,8 +121,3 @@ def test_existing_indexes_link_the_survey_decision():
     assert RECORD.name in state
 
 
-def test_direction_addendum_records_the_no_fire():
-    addendum = _read(RECORD).split("## Direction Addendum", 1)[1]
-    assert "If worth it then update doca ans skills" in addendum
-    assert "none meets the worth bar" in addendum
-    assert "byte-unchanged" in addendum

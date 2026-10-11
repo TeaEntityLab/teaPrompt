@@ -25,7 +25,7 @@ pytestmark = pytest.mark.skipif(
 
 
 def _source() -> str:
-    return (library_skills_dir() / "flow-loop-harness" / "SKILL.md").read_text(encoding="utf-8")
+    return (library_skills_dir() / "flow-loop-harness" / "TEMPLATES.md").read_text(encoding="utf-8")
 
 
 def _template(name: str) -> str:

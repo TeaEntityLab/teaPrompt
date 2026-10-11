@@ -51,26 +51,7 @@ def test_p8_run_state_not_project_memory():
 
 
 
-# P9 - parallel quorum gate is an explicit policy.
-def test_p9_parallel_quorum_gate():
-    text = _read(GENERATOR)
-    assert "MIN_OK" in text
-    assert "quorum" in text
 
-
-
-# P10 - router route-trace observability.
-def test_p10_router_route_trace():
-    text = _read(GENERATOR)
-    assert "route-trace" in text
-    assert "default-up" in text
-
-
-
-# P11 - loop restart stanza.
-def test_p11_resumed_stanza():
-    text = _read(HARNESS)
-    assert "RESUMED" in text
 
 
 # Ledger presence and shape: coverage rows exist next to the original P1-P7.

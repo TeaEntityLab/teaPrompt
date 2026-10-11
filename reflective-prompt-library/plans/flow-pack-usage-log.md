@@ -64,6 +64,10 @@ themselves):
 | 2026-09-27 | `flow-control-generator` | omp / metaCognitionAndSelfStudyByStories task (S3) | Sequential draft-production queue | **Late correction 2026-10-01:** skill read `95983354`, successful write `7d68c250` (`loops/produce-batch.sh`), with matching header and RUN-NOTE. Draft-complete only; not accepted-complete or publish authorization. |
 | 2026-09-27 | `flow-loop-harness` | omp / metaCognitionAndSelfStudyByStories task (S3) | Separate bounded supervised repair loop | **Late correction 2026-10-01:** skill read `d51e2324`, successful write `4c2aedb0` (`loops/repair-batch.sh`), with verifier hook and RUN-NOTE. A separate loop responsibility, not a nested loop inside draft production. |
 | 2026-09-27 | `verification-map-generator` | omp / metaCognitionAndSelfStudyByStories task (S3) | Learning-workflow verification map and locked acceptance file | **Late correction 2026-10-01:** skill read `671e8bb1`; successful writes `523914cf` (VERIFY.md), `98b0c4f4` (feature map), `b1531c5c` (acceptance.yaml). Generation confirmed; the earlier malformed checker run is historical harness-failure evidence, not a current map verdict. |
+| 2026-10-03 | `flow-control-generator` | omp / assistantEngBooks book workflow (book parent + FlowAuthor) | One-pass rethink-panel fan-out/fan-in generation | **Backfilled at the 2026-10-11 checkpoint:** successful skill load followed by `FlowAuthor:125–126`, write `ac90a358` → result `9c8fef1e`, 6,832-byte initial `flows/rethink-panel.sh`. One task/artifact group, not each worker, file or rewrite. October 4 headers are not creation dates. [Payload chain and bounds](checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10); no accepted production execution inferred. |
+| 2026-10-03 | `flow-loop-harness` | omp / assistantEngBooks book workflow (book parent + FlowAuthor) | Separate bounded chapter-drafting loop generation | **Backfilled at the 2026-10-11 checkpoint:** successful skill load followed by `FlowAuthor:127–128`, write `8269e69f` → result `8050ab55`, 6,863-byte initial `flows/draft-chapter.sh`. FlowRepair's rewrites are maintenance in this same task, not extra uses. [Initial and final payload provenance](checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10); neither provenance nor the generated header proves later model execution. |
+| 2026-10-03 | `agent-governance-scaffold` | omp / assistantEngBooks book workflow (Governor child) | Four-power policies, capabilities, effect/acceptance and worker contracts | **Backfilled at the 2026-10-11 checkpoint:** successful pack load, `Governor:44–60` contract writes and `:86–87` HANDOVER (`ae9c2c7f` → `777c6828`). One co-generated task/artifact group, not a new task per child/object; [source bounds](checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10). Static generation, not broker/policy enforcement. |
+| 2026-10-03 | `governed-delivery` | omp / assistantEngBooks book workflow (Governor child) | Nine-object delivery packet in the same governance task | **Backfilled at the 2026-10-11 checkpoint:** successful GD pack load, `Governor:62–79` records successful writes of all nine delivery objects; oracle manifest `6e39e5eb` → `a89fb5d9`, acceptance `96616faf` → `6310e83b`. One co-generation invocation, not an independent-GD or accepted-delivery proof. [Checkpoint disposition](checkpoint-2026-10-11-outcome.md#gd-outcome); host enforcement and full current GDR outcomes remain unknown. |
 
 | 2026-10-06 | `headless-agent-cli-contract` | teaPrompt runtime-skills dry run | Per-provider headless invocation recipes for ollama/devin/cursor-agent/agy (transport, permission flags, strip lists, BLOCKED policy) | Adopted same-day as sixth domain pack: contract emitted all four recipes from TASK-004 receipts; agy correctly BLOCKED on provider policy denial; evidence in `plans/runtime-skills-task001-ticket-2026-10-06.md` and `local://runtime-skill-planning-evidence-2026-10-06.json`. |
 
@@ -179,6 +183,13 @@ themselves):
   empty-command holds (F05–F07/F14, [repair closure](whole-project-review-2026-10-09.md)).
   Late-recorded 2026-10-10: the same-change maintenance note was missed.
   Late notes change no Entries rows or invocation/solo counts.
+- 2026-10-11 — explicitly approved [checkpoint disclosure](checkpoint-packaging-decision-2026-10-11.md):
+  AGS object bodies moved into `ARTIFACTS.md`; both flow packs' executable
+  bodies moved into `TEMPLATES.md`. All 27 fenced bodies are byte-identical
+  to their source-bound baselines; every extraction and package-wide scan
+  migrated without inline fallback. Copied-package smoke exercised nine
+  expected exit paths. This maintenance adds no invocation; the separately
+  backfilled October 3 generation rows above are historical task evidence.
 
 The 2026-10-10 advisory sweep covered all **17 commits** touching either
 flow skill or its companion examples since 2026-09-05: **13** changed
@@ -579,3 +590,20 @@ all owning checkpoint decisions remain unchanged.
 - 2026-10-11 — `governed-delivery` recurrence checkpoint consumes the
   `governed-delivery` row ([GD adoption §Demotion Triggers](governed-delivery-adoption-2026-09-03.md),
   [runbook Agenda item 7](checkpoint-2026-10-11-runbook.md)).
+
+## Checkpoint evidence and disposition (2026-10-11)
+
+The [outcome](checkpoint-2026-10-11-outcome.md) supersedes the preparation's
+pending decisions, not its dated receipts. Convention-qualified recorded
+generation groups are now 5 generator, 4 loop, 5 AGS, 4 GD and 4
+verification-map groups after book-task backfill: 22 groups. Five October 6
+admission/mechanics rows remain distinct; they are not host-generation or
+production-run totals.
+
+P6 uses conservative standalone-generation lower bounds of 3 generator and
+2 loop groups. The teaBrain G0 pipeline→loop pair contributes no solo use;
+the book rows are not needed for these lower bounds. GD is retained on
+generation evidence, with independent GD use unknown. No unknown is
+converted to observed zero, model efficacy or a whole-current-GDR pass.
+The next P6 evidence review is 2027-01-11.
+

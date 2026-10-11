@@ -4296,3 +4296,195 @@ receipts, not a new all-session trigger census.
 
 TWINS: searched `local session filename|inspected local store|source-unavailable reported sessions` - found 3 other sites: the preparation's historical S5 note and two earlier usage-log paragraphs. Those dated bounded receipts are retained; the current correction explicitly widens the identity-search scope.
 
+
+## Current fragment-guard repair (2026-10-11)
+
+User instruction: “fix and next.” All eleven current findings were repaired
+through developer-check cleanup; original H12 is not reconstructed or closed.
+See the [source-bound repair record](../reflective-prompt-library/plans/whole-project-review-2026-10-09.md#current-fragment-guard-repair-2026-10-11)
+for the per-finding changes and preserved protections.
+
+Ten incidental prose/sentinel test functions, including three direct twins,
+were retired rather than re-pinned to longer sentences. Existing field/default
+contracts, exact candidate dispositions and executable consumers remain.
+Two record-specific syntax screens replace the credential and `@`/`http`
+token bans, with 14 regression cases. They do not claim complete privacy.
+Task-scoped numeric examples remain valid; no blanket `N` regex was introduced.
+
+| Current exercised verification | Result |
+| --- | --- |
+| Original selected-input assessment | 20 false acceptances and seven meaning-preserving rejections across 50 cases; historical baseline retained |
+| Corrected guards and actual Bash/ledger controls | 23 cases, all expected results matched, zero execution errors; disposable fixtures removed |
+| Affected and retained consumer modules | 330 tests passed across 14 modules |
+| Regenerated-discovery `make all` | 1,749 tests passed; zero validator errors; all three routing evaluations passed (`artifact://2903`) |
+| Actual Chromium documentation smoke | Both changed sections rendered at 1200×800 without horizontal overflow; viewport PNG timed out, no new pixel-proof claim |
+
+The full repair-tree receipt is bound in
+`local://current-fragment-guard-repair-2026-10-10.json`; nine lint warnings and
+35 historical-record warnings remain. Final receipt prose was added after
+that run and will be checked with the checkpoint's final discovery/gates.
+The prior report's retired function names remain historical receipt references,
+not current adequacy claims. Arbitrary prose semantics, unknown secret formats
+and actual-host guarantees remain human-reviewed boundaries.
+
+TWINS: searched `test_direction_addendum_records_the_no_fire|assert "fail closed"|assert "memory-write provenance"` - found 3 other sites: `test_candidate_adoption_state.py`, `test_nimble_survey_record.py`, `test_teabrain_survey_record.py`. The incidental twins were removed; structured ledgers were retained.
+
+Next: refresh and execute the due checkpoint runbook, preserving each
+host/campaign, historical H12 and adoption/demotion condition.
+No commit, push, provider call or protected-oracle edit is authorized here.
+
+
+## Checkpoint completion and approved packaging (2026-10-11)
+
+**Goal and authority:** execute every item in the due checkpoint runbook and
+the maintainer-selected AGS/flow reference disclosure. This approves existing
+contract packaging only, not new packs, routing, runtime, campaign, commit or
+push. Complete decisions and final receipts:
+[checkpoint outcome](../reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md);
+[packaging decision](../reflective-prompt-library/plans/checkpoint-packaging-decision-2026-10-11.md).
+
+**Implementation summary:** main skill contracts keep their safety/menu
+surface; AGS object bodies move into `ARTIFACTS.md`, and both flow packs'
+executable bodies into `TEMPLATES.md`. Source consumers migrate directly
+with no inline fallback. Package-wide scans include all sibling Markdown;
+registry/frontmatter checks still count 19 main skills. The index discovers
+the references. Both installation guides require whole-directory installs.
+
+**Acceptance criteria and spec-to-code traceability:**
+
+| Criterion | Changed surface / evidence | Status |
+| --- | --- | --- |
+| All nine agenda decisions and owning gates | Outcome, owning ledger addenda, roadmap/plan/spec pointers, Decision Index | Recorded; final gate evidence in outcome |
+| Main-contract size without safety cuts | Three package menus/references; source-bound smoke | 14,988 / 11,128 / 18,429 characters, unchanged common limit |
+| Emitted-body preservation and portable installation | Published copy helper into ten disposable installed packs | All 27 fenced bodies match source-bound baselines; copied objects parse and scripts syntax-check |
+| Consumer-visible control flow | Actual copied pipeline/fan-out/DAG/loop paths | Nine expected exit cases matched; workspace removed |
+| Every affected consumer class | Direct extraction, dormant headings, package-wide scans, bilingual install guides, discovery | Migrated; actual commercial-host loading/enforcement untested |
+| No policy/runtime promotion from bookkeeping | Original ledger rows and protected contracts | Nine core + ten packs unchanged; host/campaign/original-H12 gates preserved |
+
+**Files changed:** three main pack contracts and three sibling references;
+affected developer extraction/scan helpers and consumers; bilingual install
+guides; checkpoint outcome/packaging records; usage log; owning AGS/GD,
+field-use, all-skill, managed-skill, September, F1 and I-1 records; active
+roadmap/plan/spec pointers; WGS-GOV-1; quality summary; Decision Index and
+generated discovery metadata. No Makefile, routing fixture or protected
+oracle change. Incidental wording assertions were removed, not re-pinned;
+behavioral regressions and meaningful schema/protocol contracts remain.
+
+**Tests / checks run:** the source-bound copied-package smoke preserved all
+27 fenced bodies and matched nine runtime-case exits. Final
+`python3 reflective-prompt-library/plans/generate_index.py && make all`
+passed **1,743 tests** with zero validator errors, 19/19 governance-valid
+skills, nine core plus ten pack examples, the 24-task benchmark artifact in
+sync, and all three routing evaluations passing. Five skill-length and
+35 record-hygiene warnings remain disclosed. Chromium content/layout checks
+at 1200×800 covered the outcome, packaging, main contracts, usage log and
+report without horizontal overflow. Source-bound evidence:
+`local://checkpoint-execution-evidence-2026-10-11.json`. Earlier 1,749-test
+current-fragment receipts remain historical, not this packaging gate.
+
+**Failures or skipped checks / residual risks:** the integration gate
+caught displaced original owning links in the spec-book coverage map.
+The links were restored across all five affected rows; the unchanged
+structural test and final suite passed. The corrected appendix parser
+retains its failed receipt. A browser argument error was repaired;
+PNG/JPEG and independent CDP viewport captures timed out, so no new pixel
+proof is claimed. Tool-contract/read-preview discrepancies received bounded
+I-1/A-5 classification review, not reserved skill wording. Generation and
+synthetic script checks do not prove model efficacy, accepted delivery or
+host enforcement. Eight of 47 managed bodies were audited; wider sources,
+unobserved hosts and independent GD use remain unknown. Historical source
+prefixes do not bind current EOF.
+TWINS: searched `Flow-pack lint tier decision|AS8 / R10 — governance-pack size re-litigation|G9 / AS9 — governance vocabulary|H[56] —` - found 4 other sites: `reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md` (AS8/R10, G9/AS9, H5, H6 rows; original owning links restored).
+
+**Remaining work / human review needs:** TEST-001 still needs accepted
+consumer/scorer identities and authenticated actual-host evidence;
+Stage-1/TEST-002–004 needs its campaign envelope, roles, memory digests and
+enforced isolation/caps; original H12 needs its historical seven-guard
+inventory or explicitly accepted replacement scope/oracle ruling.
+These are separate owner grants, not incomplete packaging work. No further
+unblocked implementation is queued. Next P6 evidence review: 2027-01-11,
+or the precise owning event earlier.
+
+## H12 accepted replacement scope (2026-10-11)
+
+**Goal / authority:** the maintainer explicitly selected “Accept the replacement
+scope.” Close the historical seven-guard obligation as **Superseded** by the
+completed sampled FG-01–FG-11 assessment and repairs, including their documented
+human-review limits. The unidentified original seven remain **unverified**.
+The [owning decision](../reflective-prompt-library/plans/skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11)
+is the current disposition; earlier Held statements in this report are history.
+
+**Implementation / acceptance:** the original September H12 row and counts
+remain unchanged. Only H12 leaves the pending roadmap cluster; every original
+owning path and the other candidates' direction/event gates remain. Current
+coverage, plan, checkpoint, review, packaging-limit and Decision Index surfaces
+point to the accepted successor. No executable, skill, registry or protected
+acceptance/invariant/security oracle change belongs to this cutover.
+
+**Files changed:** the September owning record; current roadmap, plan and
+spec-book coverage; checkpoint outcome and packaging record; whole-project
+review; PROJECT_KNOWLEDGE Decision Index; this final report; regenerated discovery.
+
+**Evidence / verification:** the source-bound eleven-finding assessment and
+repair receipts remain historical, not a reconstruction of the original seven.
+The 16 delayed findings were triaged against current consumers: no further
+repair was needed. The real lint/package consumers, complete original-owner
+coverage join and all 14 bounded credential/locator cases were exercised.
+Current successor integration evidence is retained in the session-local
+H12 replacement-scope ledger; no provider or model dispatch is part of it.
+
+The successor integration run completed with **1,743 tests passed**, zero
+validator errors, nine core skills and ten packs; five skill-length and 35
+record-hygiene warnings remain disclosed. The current 34-row coverage join
+preserves every original owner path, the September H12 row is byte-unchanged,
+and all 151 captured executable/skill/oracle source bindings are unchanged.
+Chromium exercised all nine successor documents and their owning-decision
+navigation at a 1200×800 viewport without horizontal overflow. A fresh PNG
+capture of the accepted ruling succeeded; earlier checkpoint capture failures
+remain historical. The private preview's missing heading IDs, an unrequired
+repeated-scope literal and a fractional-pixel visibility predicate were
+harness defects corrected without changing repository contracts or oracles.
+
+**Residual risks / remaining work:** this sampled assessment does not prove
+arbitrary authority/provenance prose, unknown secret formats, complete privacy
+detection or actual-host enforcement. Only TEST-001 qualification and the
+Stage-1/TEST-002–004 campaign branch remain owner-gated, with their accepted
+consumer/scorer, authenticated host evidence, roles, memory bindings and
+enforced isolation/caps still required. No commit or push is authorized.
+
+## Dogfood prospective-binding reconciliation (2026-10-11)
+
+**Goal and scope:** repair live continuation metadata after the accepted H12
+successor. No skill, runtime, protected oracle or campaign authorization changes.
+
+**Files changed:** the existing dogfood plan and this report; the private P0
+manifest; regenerated discovery metadata.
+
+**Implementation / acceptance:** the future-run blinded-harness pin now names
+`8d0266ed5e9ecc00309142b922d846b8ad061261344a6d4a2351852af60a3384`,
+not the earlier strict-parent-only revision. The private manifest binds the
+completed checkpoint outcome and the plan no longer schedules that completed
+review. Existing pin-history entries, the full prior pin-update record and
+the dated October 9 handoff measurements remain historical; the three core
+treatment pins, host decision, approval envelope and all 19 unrelated manifest
+root fields are unchanged.
+
+**Verification:** the source-pin check failed before correction and passes for
+all four prospective pins afterward. The real driver's readiness and
+diagnostic-only gates remain held; its actual `--run` CLI refuses an absent
+approved envelope at exit 4 without changing its work inventory. Final
+repository-gate, discovery and rendered-navigation results are bound in
+`local://dogfood-future-binding-reconciliation-2026-10-11-e73af6a2.json`;
+the earlier successor gate receipts are not substituted for this follow-up.
+
+TWINS: searched `8071a473` and pending-checkpoint continuation fields - found 3 other sites: the private P0 manifest (live drift corrected), `whole-project-review-2026-10-09.md` and this report's older closure section (dated source bindings retained, not current future-run pins).
+
+**Residual risks / next action:** TEST-001 still needs a designated qualified
+host/consumer/scorer/golden-ledger and authenticated actual-host evidence.
+An approved host designation permits mechanics qualification, not automatic
+closure. Stage-1/TEST-002–004 still separately need a campaign envelope, named
+roles, memory bindings and enforced isolation/caps. The always-held reference
+is not a viable host; the rejected `64b4556a…` build remains withdrawn. Resolve
+the TEST-001 host choice or explicitly retain its hold. No provider/model run,
+commit or push was performed by this reconciliation.
+

@@ -39,8 +39,8 @@ def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def _skill(name: str) -> str:
-    return _read(library_skills_dir() / name / "SKILL.md")
+def _templates(name: str) -> str:
+    return _read(library_skills_dir() / name / "TEMPLATES.md")
 
 
 def test_record_has_required_shape():
@@ -107,7 +107,7 @@ def _run_dag(
 @pytest.mark.skipif(shutil.which("sh") is None, reason="sh not available")
 def test_dag_template_quorum_path_still_reaches_the_merged_gate(tmp_path: Path):
     """D7: MIN_OK satisfied must not bypass checks/verify-merged.sh."""
-    match = DAG_TEMPLATE.search(_skill("flow-control-generator"))
+    match = DAG_TEMPLATE.search(_templates("flow-control-generator"))
     assert match, "DAG template missing"
     dag = match.group(1)
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="", conflict=False) == 0
@@ -126,10 +126,10 @@ def test_python_templates_treat_empty_success_as_failure(tmp_path: Path):
     """Second-pass review 2026-09-14: a node or worker that exits 0 with no output
     must not be marked done and feed empty text downstream (the bash templates
     already gate on `[ -s ]`)."""
-    dag = DAG_TEMPLATE.search(_skill("flow-control-generator")).group(1)
+    dag = DAG_TEMPLATE.search(_templates("flow-control-generator")).group(1)
     assert _run_dag(tmp_path, dag, fail_node=None, min_ok="", conflict=False, empty_node="api") == 2
 
-    orch = ORCHESTRATOR_TEMPLATE.search(_skill("flow-control-generator")).group(1)
+    orch = ORCHESTRATOR_TEMPLATE.search(_templates("flow-control-generator")).group(1)
     d = tmp_path / "orch"
     (d / "checks").mkdir(parents=True)
     (d / "goal.md").write_text("goal\n", encoding="utf-8")

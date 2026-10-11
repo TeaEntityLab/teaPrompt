@@ -67,19 +67,19 @@ the adoption update says an item landed.
 
 | Queue item | Disposition | Spec / owning-record pointer |
 | --- | --- | --- |
-| P6 / N11 — pack merge re-litigation | Date/usage-gated; keep / re-open / unknown-extend | [P6 spec](#date-gated-items-horizon-2); [pack owner](flow-control-pack-panel-record-2026-07-11.md); [necessity N11](governance-necessity-panel-record-2026-07-11.md) |
+| P6 / N11 — pack merge re-litigation | Reviewed 2026-10-11: separate packs retained; next evidence checkpoint 2027-01-11 | [outcome](checkpoint-2026-10-11-outcome.md#p6-outcome); original [P6 spec](#date-gated-items-horizon-2); [pack owner](flow-control-pack-panel-record-2026-07-11.md); [necessity N11](governance-necessity-panel-record-2026-07-11.md) |
 | Pack utility claims re-verification | Checkpoint evidence-tier review, not new utility proof | [pack record](flow-control-pack-panel-record-2026-07-11.md); [runbook item 2](checkpoint-2026-10-11-runbook.md) |
 | T2 stability check (landed-parity re-verification) | Adopted 2026-07-12; re-verify current parity/stability | [adoption](dormant-items-user-directed-adoption-2026-07-12.md); [runbook item 3](checkpoint-2026-10-11-runbook.md) |
 | T4 / F1 — loop-pack demotion evaluation | Done/not fired; F4 re-check duty remains | [pack owner](flow-control-pack-panel-record-2026-07-11.md); [evaluation](flow-pack-demotion-evaluation-2026-07-11.md); [live F4](flow-control-roadmap-2026-07-11.md) |
 | Roadmap self-review | Walk source triggers and staleness falsifiers | [plan](whole-project-plan-2026-07-11.md); [runbook item 5](checkpoint-2026-10-11-runbook.md) |
-| `governed-delivery` recurrence checkpoint | Date-gated policy decision; no demotion performed here | [GD adoption](governed-delivery-adoption-2026-09-03.md); [GD review](governed-delivery-review-2026-09-13.md); [runbook item 7](checkpoint-2026-10-11-runbook.md) |
-| GD↔AGS redundancy-in-use | Decide consolidation only under owning trigger | [GD review R6](governed-delivery-review-2026-09-13.md) |
-| Flow-pack lint tier decision | Held to checkpoint; existing 20k bounds unchanged | [September review](september-skills-review-2026-09-14.md); [GW-15](governance-workflow-self-control-adoption-2026-09-14.md) |
-| A1/E1 anchor tightening | Deferred checkpoint minimality decision | [GD review](governed-delivery-review-2026-09-13.md) |
-| AS8 / R10 — governance-pack size re-litigation | Date-gated shrink/demotion review; first use clears only zero-use | [AS8](all-skills-panel-record-2026-07-18.md); [AGS adoption](agent-governance-scaffold-adoption-2026-07-17.md); [WGS-GOV-1](skill-improvement-plan-2026-07-24.md) |
-| G9 / AS9 — governance vocabulary | Proceed/hold/close due even without a fire event; unchanged R8 gate | [G9](agent-governance-scaffold-adoption-2026-07-17.md); [AS9](all-skills-panel-record-2026-07-18.md); [runbook item 8](checkpoint-2026-10-11-runbook.md) |
-| H5 — deferred-status sub-families | Held; checkpoint review is the natural seat, but a GLOSSARY edit still requires direction | [H5 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger); [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
-| H6 — closed-trigger annotations and same-trigger pairs | Held to checkpoint review; preserve distinct candidate conditions, no blanket closure or merges here | [H6 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger); [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
+| `governed-delivery` recurrence checkpoint | Reviewed 2026-10-11: retained on contract-generation evidence, not actual-host enforcement | [outcome](checkpoint-2026-10-11-outcome.md#gd-outcome); [GD adoption](governed-delivery-adoption-2026-09-03.md); [GD review](governed-delivery-review-2026-09-13.md) |
+| GD↔AGS redundancy-in-use | Reviewed; independent use unknown, shared semantics coherent; no cutover adopted | [packaging ledger](checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger); [GD review R6](governed-delivery-review-2026-09-13.md) |
+| Flow-pack lint tier decision | User-approved template factoring adopted 2026-10-11; common 20k main-contract warning unchanged | [packaging decision](checkpoint-packaging-decision-2026-10-11.md); [September review](september-skills-review-2026-09-14.md); [GW-15](governance-workflow-self-control-adoption-2026-09-14.md) |
+| A1/E1 anchor tightening | Reviewed 2026-10-11: no change, optional tightening declined | [outcome](checkpoint-2026-10-11-outcome.md#gd-outcome); [GD review](governed-delivery-review-2026-09-13.md) |
+| AS8 / R10 — governance-pack size re-litigation | User-approved WGS-GOV-1 disclosure adopted; 18,429-char main contract, no demotion | [packaging decision](checkpoint-packaging-decision-2026-10-11.md); [AS8](all-skills-panel-record-2026-07-18.md); [AGS adoption](agent-governance-scaffold-adoption-2026-07-17.md); [WGS-GOV-1](skill-improvement-plan-2026-07-24.md) |
+| G9 / AS9 — governance vocabulary | Reviewed 2026-10-11: hold; no qualifying case established, unchanged R8 gate | [outcome](checkpoint-2026-10-11-outcome.md#g9--as9-outcome); [G9](agent-governance-scaffold-adoption-2026-07-17.md); [AS9](all-skills-panel-record-2026-07-18.md); [runbook item 8](checkpoint-2026-10-11-runbook.md) |
+| H5 — deferred-status sub-families | Reviewed 2026-10-11: hold, no GLOSSARY adoption; direction/case gate preserved | [outcome](checkpoint-2026-10-11-outcome.md#h5-and-h6-separately); [H5 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger); [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
+| H6 — closed-trigger annotations and same-trigger pairs | Reviewed 2026-10-11: no blanket rewrites or candidate merges; distinct conditions preserved | [outcome](checkpoint-2026-10-11-outcome.md#h5-and-h6-separately); [H6 ledger](skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger); [runbook item 9](checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review) |
 | E2 — archive restructuring (panel-transcript demotion, `00-core`/`03-context` merges) | Destructive/recurrence-gated; E2 spec below | [E2 owner](governance-rules-rethink-review-2026-07-11.md) |
 | `reflective-implement` default-invokes `reflective-minimality` | Three-recurrence gate; spec below, no default invocation adopted | [June backlog](multi-agent-panel-consensus-2026-06-25.md) |
 | Localized trigger cues beyond cheatsheet/glossary | Adoption-signal gate; spec below, no full localization | [June backlog](multi-agent-panel-consensus-2026-06-25.md) |
@@ -100,7 +100,17 @@ the adoption update says an item landed.
 | XM-12 — lock-failure probe widening | Held under XM-3 repeated-escape gate; second observed escape or candidate-specific Human Review, not earlier source-identified races | [XM-12 owner](external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair) |
 | RS-9 — writer-critic prior verdict context | Deferred to observed cross-round oscillation in a TeaPrompt-run loop; pack size budget unchanged | [RS-9 owner](rsiagent-survey-2026-09-16.md) |
 | XM-8 — own-the-front-door recipe promotion | Held to second survey with highest-yield rules in an unowned slice | [XM-8 owner](external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion) |
-| H1–H4 / H7–H8 / H12 — September review held candidates | Per-row direction/event conditions, not blanket activation; H5/H6 are separate checkpoint rows above; preserve dated Held rows and distinguish later scoped WR repairs | [H ledger](skills-september-concepts-review-2026-09-16.md); [later WR repairs](../../review/final-report.md) |
+| H1–H4 / H7–H8 — September review held candidates | Per-row direction/event conditions, not blanket activation; H5/H6 are separate checkpoint rows above; preserve dated Held rows and distinguish later scoped WR repairs | [H ledger](skills-september-concepts-review-2026-09-16.md); [later WR repairs](../../review/final-report.md) |
+
+The [checkpoint outcome](checkpoint-2026-10-11-outcome.md) is the successor
+for consumed October 11 reviews; the original July drafts below remain
+design history, not pending adoption. I-1/A-5's bounded
+[tool-claim review](harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11)
+does not promote reserved wording. The later 2026-10-11
+[H12 replacement-scope ruling](skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11)
+supersedes only the unidentified seven-guard branch with the accepted current
+FG-01–FG-11 assessment/repairs; the original inventory remains unverified.
+Host/campaign authority, S3 distribution and July H3/H4 boundary gates remain separate.
 
 ## Domain and retired-plan dispositions (2026-10-01)
 

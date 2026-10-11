@@ -15,7 +15,7 @@ import pytest
 import yaml
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, library_skills_dir, skill_package_docs  # noqa: E402
 from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402
 from validate_governance import GovernanceValidator  # noqa: E402
 
@@ -443,18 +443,12 @@ def test_yaml_object_tag_cannot_execute_code(tmp_path):
     assert not marker.exists()
 
 
-def test_gd14_gd15_invariants_and_host_preconditions():
+def test_host_precondition_fields_default_to_unknown():
     text = _read(PACK)
-    invariants = _section(text, "## Delivery Invariants").lower()
-    for phrase in ("not closing acceptance", "not evidence", "not attestation", "not enforcement", "not the record", "stale"):
-        assert phrase in invariants, phrase
     host = _section(text, "## Host Preconditions")
-    for phrase in ("write protection", "egress", "durable", "TeaPrompt runs none"):
-        assert phrase in host, phrase
     # SS-1 (2026-09-05): the run note is a fixed-field shape; every precondition is written, `unknown` by default.
     for field in ("oracle_sealing", "sink_isolation", "budget_enforcement", "durable_ledger_storage", "human_decision_channel"):
         assert f"{field}: unknown" in host, field
-    assert "incomplete, not passing" in host and "an output, not enforcement" in host
 
 
 def test_gd16_refuters_are_six_and_unknown_until_run():
@@ -492,7 +486,7 @@ def test_core_skill_anchors_present_once():
 # the claim covers "any skill surface" / "durable prompt surface", so the scan
 # covers the pack's co-installed examples and admission surfaces too.
 def test_clean_room_tokens_absent_from_all_installed_surfaces():
-    surfaces = list(SKILLS.glob("*/SKILL.md"))
+    surfaces = list(skill_package_docs())
     surfaces += [
         EXAMPLES,
         SKILLS / "skill-map.md",

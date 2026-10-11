@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "minimax-code-survey-2026-09-19.md"
@@ -52,7 +52,7 @@ def _read(path: Path) -> str:
 
 def _durable_surfaces() -> list[Path]:
     return (
-        sorted(library_skills_dir().glob("*/SKILL.md"))
+        sorted(skill_package_docs())
         + sorted(library_skills_dir().glob("examples/*.md"))
         + sorted(PROMPT_LIBRARY_ROOT.glob("SKILL_INSTALLATION*.md"))
         + [glossary_path()]

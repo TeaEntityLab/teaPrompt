@@ -160,6 +160,14 @@ Current governance/example membership is **9 core + 10 packs**; nine lint
 warnings and 35 historical-record warnings remain. This supersedes the older
 membership/warning snapshot below, not its dated history or external gates.
 
+**Packaging supersession (2026-10-11):** the explicitly approved
+[checkpoint decision](checkpoint-packaging-decision-2026-10-11.md)
+keeps 9 core + 10 packs and the common 20,000-character main-contract warning.
+AGS is 18,429 characters; generator/loop are 14,988/11,128. Three co-installed
+references carry the unchanged emitted bodies and are discoverable documents,
+not new routing units. Current final gate/warning counts are recorded in the
+[outcome](checkpoint-2026-10-11-outcome.md#verification); older receipts remain historical.
+
 
 **Applied to (risk_level, human_review_required, external_io, context_load):**
 - reflective-dispatch (low, false, false, low)
@@ -173,7 +181,7 @@ membership/warning snapshot below, not its dated history or external gates.
 - reflective-handoff-retro (low, false, false, medium)
 - flow-control-generator (medium, false, false, medium)
 - flow-loop-harness (medium, true, false, medium)
-- agent-governance-scaffold (high, true, false, high)
+- agent-governance-scaffold (high, true, false, medium)
 - governed-delivery (high, true, false, medium)
 - verification-map-generator (low, false, false, medium)
 

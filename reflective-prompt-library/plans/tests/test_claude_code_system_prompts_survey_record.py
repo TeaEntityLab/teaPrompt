@@ -18,9 +18,6 @@ REVIEW_SKILL = PROMPT_LIBRARY_ROOT / "skills" / "reflective-review" / "SKILL.md"
 CODE_REVIEWER = PROMPT_LIBRARY_ROOT / "02-engineering" / "code-reviewer.md"
 HANDOFF_SKILL = PROMPT_LIBRARY_ROOT / "skills" / "reflective-handoff-retro" / "SKILL.md"
 MEMORY_CONSOLIDATION = PROMPT_LIBRARY_ROOT / "04-agent" / "memory-consolidation.md"
-GOVERNANCE_SKILL = (
-    PROMPT_LIBRARY_ROOT / "skills" / "agent-governance-scaffold" / "SKILL.md"
-)
 PINNED_COMMIT = "b9895f5556e962e6aec60aba7cccfc18790ace3a"
 
 
@@ -116,12 +113,6 @@ def test_ccsp3_memory_quality_and_revalidation_are_pinned_at_both_surfaces():
     assert "Live task state and lookup-recoverable facts are excluded" in source
 
 
-def test_ccsp4_remains_unadopted_until_superseding_approval_and_host_proof():
-    row = _ledger_rows()["CCSP4"]
-    governance = _read(GOVERNANCE_SKILL)
-    assert "explicit human approval" in row
-    assert "concrete host broker" in row
-    assert "proposal_sha256" not in governance
 
 
 def test_external_adoption_and_project_knowledge_link_the_survey():

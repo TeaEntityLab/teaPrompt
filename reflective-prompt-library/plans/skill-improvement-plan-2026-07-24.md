@@ -216,6 +216,13 @@ Tickets: **WGS-FLH-1** (Phase 2) trim description tail.
 
 Tickets: **WGS-GOV-1** (Phase 3, checkpoint-bound) submit the disclosure design to the 2026-10-11 AS8/R10 review.
 
+**WGS-GOV-1 completed 2026-10-11:** the maintainer selected the co-installed
+reference design at AS8/R10; [decision and consumer map](checkpoint-packaging-decision-2026-10-11.md).
+The main contract is 18,429 characters, all 16 emitted bodies are preserved
+and the complete copied package was exercised. No threshold increase or
+demotion was needed. This also consumes WGS-X5's checkpoint submission;
+other tickets keep their own gates and are not blanket-adopted.
+
 ---
 
 ## Cross-Cutting Tickets

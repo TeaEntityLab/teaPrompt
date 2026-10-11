@@ -35,8 +35,8 @@ from prompt_eval_helpers import (  # noqa: E402
 REPO_ROOT = PROMPT_LIBRARY_ROOT.parent
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 
-GENERATOR = library_skills_dir() / "flow-control-generator" / "SKILL.md"
-HARNESS = library_skills_dir() / "flow-loop-harness" / "SKILL.md"
+GENERATOR = library_skills_dir() / "flow-control-generator" / "TEMPLATES.md"
+HARNESS = library_skills_dir() / "flow-loop-harness" / "TEMPLATES.md"
 RESEARCH_LEDGER = PLANS_DIR / "agent-flow-control-research-2026-07-11.md"
 MANAGED_LEDGER = PLANS_DIR / "managed-skill-promotion-panel-record-2026-07-11.md"
 

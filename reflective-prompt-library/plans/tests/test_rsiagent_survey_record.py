@@ -19,7 +19,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "rsiagent-survey-2026-09-16.md"
@@ -59,7 +59,7 @@ def _read(path: Path) -> str:
 
 def _durable_surfaces() -> list[Path]:
     return (
-        sorted(library_skills_dir().glob("*/SKILL.md"))
+        sorted(skill_package_docs())
         + sorted(library_skills_dir().glob("examples/*.md"))
         + sorted(PROMPT_LIBRARY_ROOT.glob("SKILL_INSTALLATION*.md"))
         + [glossary_path()]
@@ -158,7 +158,7 @@ def test_fix_loop_no_progress_exit_survives_state_inside_worktree(tmp_path: Path
     instead of exiting 3 at the first iteration. The same-day advisory added the
     forms a regex filter mishandled: trailing slash, absolute in-worktree path,
     and a dotted name whose regex swallows a sibling directory."""
-    loop = FIX_LOOP_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "SKILL.md")).group(1)
+    loop = FIX_LOOP_TEMPLATE.search(_read(library_skills_dir() / "flow-loop-harness" / "TEMPLATES.md")).group(1)
     stalls = {
         "default": dict(state="./state"),
         "subdir": dict(state="state", subdir=True),

@@ -70,3 +70,15 @@ This record is wrong if: any R1–R9 change is absent from its named surface whi
 | Index repair + consumer coverage | done | `index.json` regenerated (148 files); composer/harness/site verified |
 | Plan snapshot refresh | done | `QUALITY_GATES_SUMMARY.md` counts re-dated 2026-09-13 |
 | Full repository gate | verified | `make all` from repository root |
+
+## Checkpoint successor (2026-10-11)
+
+The [outcome](checkpoint-2026-10-11-outcome.md#gd-outcome) records R5's
+retention on generation evidence and R6's shared-contract/independent-use
+review. Four generation groups do not establish independent GD execution or
+current GDR acceptance. Consolidation is held in the
+[packaging ledger](checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger).
+A1/E1 optional tightening remains declined. The M5 re-audit inventoried
+47 directories and inspected eight bodies; two corrections remain host-side.
+The September ledger and its dated test counts are not rewritten.
+

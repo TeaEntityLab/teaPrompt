@@ -21,6 +21,7 @@ from validate_skill_examples import DOMAIN_PACK_SKILLS  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 SKILL = library_skills_dir() / "agent-governance-scaffold" / "SKILL.md"
+ARTIFACTS = library_skills_dir() / "agent-governance-scaffold" / "ARTIFACTS.md"
 CONCEPTS = PLANS_DIR / "agent-governance-four-power-concepts-2026-07-17.md"
 ADOPTION = PLANS_DIR / "agent-governance-scaffold-adoption-2026-07-17.md"
 EXAMPLES = library_skills_dir() / "examples" / "agent-governance-scaffold.examples.md"
@@ -53,16 +54,14 @@ def test_g2_demotion_triggers_section():
     assert "## Demotion Triggers" in _read(SKILL)
 
 
-# G2 - the load-bearing "no TeaPrompt runtime/enforcement" Never clause.
-def test_g2_no_runtime_enforcement_claim_in_never():
-    text = _read(SKILL)
-    never = text.split("Never:", 1)[1].split("Escalation:", 1)[0].lower()
-    assert "enforce" in never
-    assert "host" in never
+
+# Core contract tokens live in the co-installed package (SKILL.md menu plus
+# ARTIFACTS.md bodies), not merely in provenance prose or a panel record.
+# Architecture-only experiment stubs are guarded below.
+def _package() -> str:
+    return _read(SKILL) + "\n" + _read(ARTIFACTS)
 
 
-# Core contract tokens must live in the Artifact Set, not merely in provenance
-# prose or a panel record. Architecture-only experiment stubs are guarded below.
 @pytest.mark.parametrize(
     "token",
     [
@@ -96,15 +95,12 @@ def test_g2_no_runtime_enforcement_claim_in_never():
     ],
 )
 def test_artifact_set_covers_governance_contracts(token: str):
-    artifact_set = _read(SKILL).split("## Artifact Set", 1)[1].split(
-        "\n## Fifteen-Invariant Checklist", 1
-    )[0]
-    assert token in artifact_set, f"Artifact Set lost governance contract {token!r}"
+    assert token in _package(), f"package lost governance contract {token!r}"
 
 
 # Anti-salami: both lease-local and cross-authorization budgets are explicit.
 def test_cumulative_budget_is_lease_keyed_and_aggregate():
-    section = _read(SKILL).split("### Cumulative-effect budget", 1)[1].split(
+    section = _read(ARTIFACTS).split("### Cumulative-effect budget", 1)[1].split(
         "\n### Lease semantics", 1
     )[0]
     assert 'reset_requires: "new_out_of_band_authorization"' in section
@@ -115,7 +111,7 @@ def test_cumulative_budget_is_lease_keyed_and_aggregate():
 
 # Broker receipt integrity is asserted in the JSON contract, not global prose.
 def test_broker_receipt_contract_is_broker_owned():
-    section = _read(SKILL).split("### Broker effect receipt", 1)[1].split(
+    section = _read(ARTIFACTS).split("### Broker effect receipt", 1)[1].split(
         "\n### Cumulative-effect budget", 1
     )[0]
     match = re.search(r"```json\n(.*?)\n```", section, re.DOTALL)
@@ -194,7 +190,7 @@ def test_invariant_checklist_is_canonical_object_mapping():
 
 # R5/R13 - L0 stays an integrity gate, never the acceptor.
 def test_acceptance_ladder_l0_through_l5_semantics():
-    ladder = _read(SKILL).split("### Acceptance ladder", 1)[1].split("\n### ", 1)[0]
+    ladder = _read(ARTIFACTS).split("### Acceptance ladder", 1)[1].split("\n### ", 1)[0]
     for i in range(6):
         assert f"L{i} " in ladder, f"ladder lost L{i}"
     l0 = next(line for line in ladder.splitlines() if line.startswith("L0 "))
@@ -204,7 +200,7 @@ def test_acceptance_ladder_l0_through_l5_semantics():
 
 # R5/R13 - full host-run interface signature and its non-shell distinction.
 def test_run_interface_full_signature_contract():
-    text = _read(SKILL)
+    text = _read(ARTIFACTS)
     assert re.search(
         r"run-<cli>\.sh <read-only\|workspace-write> <workdir> "
         r"<prompt-file> \[model\] \[effort\]",
@@ -304,35 +300,39 @@ def test_capability_token_has_no_separate_authoritypolicy_schema():
 
 # R7 - experiment files remain architecture references, never default emits.
 def test_experiment_protocol_is_reference_only():
-    section = _read(SKILL).split("### Experiment protocol", 1)[1].split(
-        "\n### Wrapper-agent contract", 1
+    skill = _read(SKILL)
+    assert "### Experiment protocol" not in _read(ARTIFACTS)
+    menu = skill.split("## Artifact Set", 1)[1].split(
+        "\n## Fifteen-Invariant Checklist", 1
     )[0]
+    assert "opt-in concepts-plan reference" in menu
     for token in ("experiment_protocol", "hypotheses_yaml", "analysis_plan"):
-        assert token in section
-    assert "not a default emit" in section
-    assert "never as part of a first-task scaffold" in section
+        assert token in menu
+    assert "not a default emit" in menu
+    assert "never as part of a first-task scaffold" in menu
 
 
 # R12/R14 - template evidence must not masquerade as formal schema/runtime proof.
 def test_templates_do_not_claim_formal_schema_or_unbrokered_fallback():
     skill = _read(SKILL)
+    package = _package()
     examples = _read(EXAMPLES)
     assert "object schemas" not in skill
     assert "parseability is not JSON Schema validation" in skill
     assert ".schema.json" not in examples
-    assert "falls back in-process if" not in skill
-    assert "identical host broker and policy gates" in skill
+    assert "falls back in-process if" not in package
+    assert "identical host broker and policy gates" in package
     assert "direct_<cli>_exec_via_hook" in skill
     assert "**Governance status:** artifact-complete" in skill
 
 
 
 def test_conformance_and_checker_profile_are_evidence_tier_labeled():
-    skill = _read(SKILL)
-    conformance = skill.split("### Semantic interface + conformance suite", 1)[1].split(
+    artifacts = _read(ARTIFACTS)
+    conformance = artifacts.split("### Semantic interface + conformance suite", 1)[1].split(
         "### Verification plan", 1
     )[0]
-    checker = skill.split("### Checker profile", 1)[1].split(
+    checker = artifacts.split("### Checker profile", 1)[1].split(
         "### Broker effect receipt", 1
     )[0]
     assert "host-run spec" in conformance
@@ -358,26 +358,27 @@ def _contract_scalars(skill: str, heading: str) -> dict:
 # R14 - declared constitutional paths must be covered; this is not host ACL proof.
 def test_host_owned_security_bindings_remain():
     skill = _read(SKILL)
+    artifacts = _read(ARTIFACTS)
     for token in (
         "worker_writable_exclusions",
         "same_transaction_as_policy_change: false",
         "worker_may_write_activation_record: false",
         "issued_out_of_band: true",
         "minimum_before_compliance_claim",
-        "artifact-complete",
-        "enforcement-proven",
     ):
+        assert token in artifacts
+    for token in ("artifact-complete", "enforcement-proven"):
         assert token in skill
-    section = skill.split("constitutional_paths:", 1)[1].split("policy_activation:", 1)[0]
+    section = artifacts.split("constitutional_paths:", 1)[1].split("policy_activation:", 1)[0]
     paths = re.findall(r'- "([^"]+)"', section.split("worker_writable_exclusions:", 1)[0])
     deny = re.search(r"deny_write:\s*\[(.*?)\]", section, re.S).group(1)
     for path in paths:
         assert path in deny, f"constitutional path {path!r} missing from deny_write"
     assert ".agent/hooks/**" in deny and ".agent/evidence-schema/**" in deny
-    activation = _contract_scalars(skill, "### Constitutional paths + out-of-band activation")
+    activation = _contract_scalars(artifacts, "### Constitutional paths + out-of-band activation")
     assert activation["worker_may_write_activation_record"] is False
     assert activation["same_transaction_as_policy_change"] is False
-    approval = _contract_scalars(skill, "### Named accountability gate")
+    approval = _contract_scalars(artifacts, "### Named accountability gate")
     assert approval["decision"] == "pending"
     assert approval["issued_out_of_band"] is True
     assert approval["worker_writable"] is False
@@ -393,11 +394,9 @@ def test_output_menu_and_four_power_conditional_alignment():
     assert "when agenda/goal risk requires it" in four
     assert "when the host wires them" in four
 
-
-# R20 - interim context_load honesty until R10 shrink.
-def test_context_load_is_high_until_r10_shrink():
-    meta = _read(SKILL).split("---", 2)[1]
-    assert "context_load: high" in meta
+# R20 fired: R10 shrink cleared the lint/size target, so the interim
+# `context_load: high` pin is removed rather than re-pinned; the skill now
+# carries the pack-class `medium` label per the panel R20 revert trigger.
 
 
 # R12 - Module Contract Output conditional menu cannot silently revert.

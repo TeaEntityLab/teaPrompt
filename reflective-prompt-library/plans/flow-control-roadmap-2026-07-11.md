@@ -89,6 +89,15 @@ the consumer-Gemini S4 guide repair, and the narrow Agent Builder wind-down
 confirmation in both survey records. These are named follow-ups, not adoption,
 runtime enforcement proof, or the 2026-10-11 checkpoint verdict.
 
+**Checkpoint re-check completed 2026-10-11:** all six named primary-source
+rows and their bounded follow-ups are recorded in the
+[outcome](checkpoint-2026-10-11-outcome.md#f4-re-check). The
+[current F1 comparison](flow-pack-demotion-evaluation-2026-07-11.md#checkpoint-source-only-f1-re-check-2026-10-11)
+still establishes no all-template replacement with equivalent enforcement.
+P6 retains separate packs; its next evidence review is 2027-01-11.
+Approved sibling references change packaging, not runtime ownership or
+these watch conditions.
+
 ## Non-goals restated (pointers)
 
 No TeaPrompt-owned runtime, recorder, replay engine, or side-effect enforcer;

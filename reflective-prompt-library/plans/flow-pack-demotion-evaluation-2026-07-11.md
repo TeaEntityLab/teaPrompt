@@ -88,3 +88,24 @@ was exercised; deployed-host behavior and ecosystem-wide packaged alternatives
 remain `unknown`. The [prep evidence log](flow-pack-usage-log.md#verification-correction-2026-10-01)
 records the six F4 rows and separate S4/survey-note follow-ups; the 2026-10-11
 checkpoint must re-verify these volatile sources.
+
+## Checkpoint source-only F1 re-check (2026-10-11)
+
+The [six-row F4 outcome](checkpoint-2026-10-11-outcome.md#f4-re-check)
+refreshes the named official sources against the corrected October 1
+baseline. The current executable bodies live in the co-installed
+[loop templates](../skills/flow-loop-harness/TEMPLATES.md); factoring
+preserved their source bytes and adds no enforcement.
+
+| Current loop template | Current documented host comparison | Remaining acceptance/hygiene difference |
+| --- | --- | --- |
+| Verify-gated fix loop | `/goal` remains model-judged; command Stop hooks document a continuation cap | No packaged deterministic verifier, content-hash progress, protected-verifier and ledger/resume contract established by the checked pages |
+| Task-ledger backlog loop | Same `/goal` and Stop-hook surfaces | No canonical worker-excluded queue ownership or deterministic per-task retirement/change-check protocol established |
+| Writer-critic rounds | Prompt/agent Stop-hook judgment and the documented continuation cap | No equivalent unattended deterministic floor, protected rubric, retained round artifacts and declared round budget established |
+| Multi-wave fan-out | Subagent/Stop-hook composition | No packaged per-wave concurrency, failed/empty tally, deterministic merged verifier and resumed-ledger/output-reset protocol established |
+
+**Disposition: no demotion.** The partial cap documentation is real but
+does not establish all-template enforcement equivalence. Custom assembly
+and unobserved ecosystem alternatives remain unknown. No vendor runtime
+or model was exercised; copied-package synthetic smoke is not that proof.
+

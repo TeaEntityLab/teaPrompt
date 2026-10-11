@@ -80,7 +80,7 @@ def test_candidate_adoption_ledger_dispositions():
 
 
 def test_monotone_delegation_sentence_is_on_the_token_block():
-    text = _read(SKILL)
+    text = _read(PROMPT_LIBRARY_ROOT / "skills" / "agent-governance-scaffold" / "ARTIFACTS.md")
     token = text.split("### Authorization + capability token", 1)[1].split("### ", 1)[0]
     assert ADOPTED in token
     assert "only the broker enforces it" in token

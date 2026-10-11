@@ -41,9 +41,15 @@ Each install target expects this shape:
 <skills-root>/<skill-name>/SKILL.md
 ```
 
+Install the whole skill directory, not `SKILL.md` alone. The two flow packs
+carry a sibling `TEMPLATES.md`; `agent-governance-scaffold` carries
+`ARTIFACTS.md`. Their main contracts name when to load those references.
+The copy and symlink helpers below already preserve this package shape;
+copied packages need no TeaPrompt checkout to read or instantiate the bodies.
+
 ## No Agent Skills support?
 
-If your host cannot discover `SKILL.md` files at all, fall back to the library's prompt layer: every skill ends with a `## Prompt Sources` list naming the `00-core`–`06-repo` prompts it compiles. Paste the relevant skill body (or its listed source prompts) directly into the host's system/custom-instruction surface. The skills are prompt-level workflows by design, so this degrades cleanly — you lose auto-triggering by description, not the method.
+If your host cannot discover `SKILL.md` files at all, fall back to the library's prompt layer: paste the relevant skill body and, when its menu selects a template or object, the corresponding sibling reference body into the host's system/custom-instruction surface. Every skill also ends with a `## Prompt Sources` list naming its source prompts. You lose auto-triggering by description, not the method; a main contract's menu alone does not supply the executable or object body.
 
 ## Recommended Install Strategy
 

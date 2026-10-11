@@ -16,9 +16,11 @@ import re
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).parent))
 
-from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir  # noqa: E402
+from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skills_dir, skill_package_docs  # noqa: E402
 
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 RECORD = PLANS_DIR / "harness-intent-drift-rethink-2026-09-06.md"
@@ -26,6 +28,14 @@ PROJECT_KNOWLEDGE = PROMPT_LIBRARY_ROOT / "PROJECT_KNOWLEDGE.md"
 RECIPES = PROMPT_LIBRARY_ROOT / "04-agent" / "workflow-recipes.md"
 TRUST_BOUNDARY = PROMPT_LIBRARY_ROOT / "04-agent" / "runtime-trust-boundary.md"
 CASE_STUDIES = PLANS_DIR / "external-adoption-case-studies-2026-06-20.md"
+
+# Recognized explicit locators in this record only; ordinary words and @ markers
+# are not locators. This does not establish complete privacy/redaction coverage.
+_CONTACT_LOCATOR = re.compile(
+    r"\b[a-z][a-z0-9+.-]*://[^\s<>]+"
+    r"|\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b",
+    re.IGNORECASE,
+)
 
 HARNESS_TEST = (
     "a sentence that claims this\nlibrary or the skill enforces it is a defect."
@@ -74,7 +84,21 @@ def test_record_shape_and_ledger():
         row = next(line for line in ledger.splitlines() if line.startswith(f"| {cid} |"))
         assert status in row, cid
     assert "every hit is an `eval_harness` playbook test filename" in text  # packet correction kept
-    assert "@" not in text and "http" not in text
+    assert not _CONTACT_LOCATOR.search(text), (
+        "record contains an explicit URI or email locator; "
+        "human review is still required for unrecognized identifiers"
+    )
+
+
+@pytest.mark.parametrize("text, detected", [
+    ("https://example.invalid/private/transcript", True),
+    ("ftp://example.invalid/private/transcript", True),
+    ("mailto:synthetic@example.invalid", True),
+    ("No external http links are present in this record.", False),
+    ("A literal @ marker is not an email address.", False),
+])
+def test_locator_screen_distinguishes_addresses_from_mentions(text, detected):
+    assert bool(_CONTACT_LOCATOR.search(text)) is detected
 
 
 def test_glossary_terms_present_once_and_point_rather_than_restate():
@@ -105,7 +129,7 @@ def test_lesson_recipe_and_deferred_row_at_their_surfaces():
     assert "not a second epistemic channel" in recipes
     assert "harness-intent-drift-rethink-2026-09-06.md" in _read(CASE_STUDIES)
     # I-1 stays deferred: its sentence is on no skill and not on the trust boundary.
-    for skill in library_skills_dir().glob("*/SKILL.md"):
+    for skill in skill_package_docs():
         assert DEFERRED_I1 not in skill.read_text(encoding="utf-8"), skill
     assert DEFERRED_I1 not in _read(TRUST_BOUNDARY)
 
@@ -138,14 +162,14 @@ def test_hardened_i1_wording_is_recorded_but_stays_unadopted():
     assert text.count(HARDENED_I1) == 1
     # The vacuous disjunct five lenses rejected must not survive anywhere.
     assert "read the file or diff it against a copy taken before the write" not in text
-    for skill in library_skills_dir().glob("*/SKILL.md"):
+    for skill in skill_package_docs():
         body = skill.read_text(encoding="utf-8")
         assert HARDENED_I1 not in body, skill
     assert HARDENED_I1 not in _read(TRUST_BOUNDARY)
 
 
 def test_rejected_skill_candidates_stayed_off_the_installed_unit():
-    for skill in library_skills_dir().glob("*/SKILL.md"):
+    for skill in skill_package_docs():
         body = skill.read_text(encoding="utf-8")
         for token in REJECTED_ON_SKILLS:
             assert token not in body, f"{skill.parent.name}: {token}"

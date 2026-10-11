@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-10T20:10:10.896045",
+  "generated_at": "2026-10-11T12:28:06.641579",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -44,6 +44,7 @@
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
             "whole-project-review-2026-10-09.md",
+            "checkpoint-packaging-decision-2026-10-11.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -76,6 +77,7 @@
             "superpowers-v6.4-adoption-2026-10-03.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
+            "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
@@ -265,13 +267,15 @@
         "agent-governance-scaffold": {
           "path": "reflective-prompt-library/skills/agent-governance-scaffold",
           "files": [
+            "ARTIFACTS.md",
             "SKILL.md"
           ]
         },
         "flow-control-generator": {
           "path": "reflective-prompt-library/skills/flow-control-generator",
           "files": [
-            "SKILL.md"
+            "SKILL.md",
+            "TEMPLATES.md"
           ]
         },
         "golden-benchmark-runner": {
@@ -361,7 +365,8 @@
         "flow-loop-harness": {
           "path": "reflective-prompt-library/skills/flow-loop-harness",
           "files": [
-            "SKILL.md"
+            "SKILL.md",
+            "TEMPLATES.md"
           ]
         }
       }
@@ -1756,7 +1761,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "checkpoint-2026-10-11-outcome.md"
+        ]
       },
       "structure": [
         {
@@ -1858,10 +1865,18 @@
         {
           "level": 3,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint tool-claim review (2026-10-11)"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 185,
-      "char_count": 40252
+      "line_count": 215,
+      "char_count": 42869
     },
     {
       "path": "reflective-prompt-library/plans/coordinate-codex-tasks-eval-survey-2026-09-30.md",
@@ -1987,7 +2002,10 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10"
+          "whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10",
+          "checkpoint-2026-10-11-outcome.md#h5-and-h6-separately",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "whole-project-review-2026-10-09.md#current-fragment-guard-repair-2026-10-11"
         ]
       },
       "structure": [
@@ -2025,6 +2043,10 @@
         },
         {
           "level": 2,
+          "text": "H12 replacement-scope decision (2026-10-11)"
+        },
+        {
+          "level": 2,
           "text": "Evidence vs Inference"
         },
         {
@@ -2040,8 +2062,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 154,
-      "char_count": 22815
+      "line_count": 188,
+      "char_count": 25118
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-review-2026-10-09.md",
@@ -2096,7 +2118,8 @@
           "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
           "checkpoint-2026-10-11-preparation-2026-10-10.md#additional-harness-store-bounds-2026-10-10",
           "flow-pack-usage-log.md#template-maintenance-not-invocations",
-          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10"
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
         ]
       },
       "structure": [
@@ -2355,10 +2378,70 @@
         {
           "level": 2,
           "text": "Reviewed source bindings"
+        },
+        {
+          "level": 2,
+          "text": "Current fragment-guard repair (2026-10-11)"
+        },
+        {
+          "level": 2,
+          "text": "H12 replacement-scope successor (2026-10-11)"
         }
       ],
-      "line_count": 750,
-      "char_count": 87229
+      "line_count": 817,
+      "char_count": 92480
+    },
+    {
+      "path": "reflective-prompt-library/plans/checkpoint-packaging-decision-2026-10-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "checkpoint-packaging-decision-2026-10-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "checkpoint-2026-10-11-outcome.md",
+          "checkpoint-2026-10-11-runbook.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md#demotion-triggers",
+          "governed-delivery-review-2026-09-13.md",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Checkpoint Packaging Decision — 2026-10-11"
+        },
+        {
+          "level": 2,
+          "text": "Goal and authority"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Implementation and consumer map"
+        },
+        {
+          "level": 2,
+          "text": "Verification and limits"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 62,
+      "char_count": 8002
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -2380,7 +2463,9 @@
           "agent-governance-four-power-concepts-2026-07-17.md",
           "flow-control-pack-panel-record-2026-07-11.md",
           "../06-repo/AGENTS.md",
-          "../04-agent/runtime-trust-boundary.md"
+          "../04-agent/runtime-trust-boundary.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "checkpoint-2026-10-11-outcome.md#g9--as9-outcome"
         ]
       },
       "structure": [
@@ -2427,10 +2512,14 @@
         {
           "level": 2,
           "text": "Prompt / Source Pointers"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint disposition (2026-10-11)"
         }
       ],
-      "line_count": 165,
-      "char_count": 12653
+      "line_count": 183,
+      "char_count": 13628
     },
     {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
@@ -2663,7 +2752,10 @@
           "whole-project-roadmap-2026-07-11.md",
           "september-skills-review-2026-09-14.md",
           "managed-skills-learned-survey-2026-10-06.md",
-          "runtime-skills-task001-ticket-2026-10-06.md"
+          "runtime-skills-task001-ticket-2026-10-06.md",
+          "checkpoint-2026-10-11-outcome.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
         ]
       },
       "structure": [
@@ -2748,8 +2840,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 217,
-      "char_count": 16777
+      "line_count": 234,
+      "char_count": 17927
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -3244,7 +3336,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "checkpoint-2026-10-11-outcome.md#g9--as9-outcome"
+        ]
       },
       "structure": [
         {
@@ -3306,10 +3401,14 @@
         {
           "level": 2,
           "text": "Next Action"
+        },
+        {
+          "level": 2,
+          "text": "R10 / G9 checkpoint successor (2026-10-11)"
         }
       ],
-      "line_count": 231,
-      "char_count": 15508
+      "line_count": 244,
+      "char_count": 16136
     },
     {
       "path": "reflective-prompt-library/plans/routing-holdout-plan-2026-07-11.md",
@@ -4175,6 +4274,8 @@
           "../04-agent/workflow-acquisition.md",
           "flow-pack-usage-log.md#verification-correction-2026-10-01",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
+          "checkpoint-2026-10-11-outcome.md#f4-re-check",
+          "flow-pack-demotion-evaluation-2026-07-11.md#checkpoint-source-only-f1-re-check-2026-10-11",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
           "p7-pack-routing-decision-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals"
@@ -4214,8 +4315,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 106,
-      "char_count": 6879
+      "line_count": 115,
+      "char_count": 7422
     },
     {
       "path": "reflective-prompt-library/plans/september-skills-review-2026-09-14.md",
@@ -4808,6 +4909,7 @@
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "dormant-items-user-directed-adoption-2026-07-12.md",
           "flow-control-roadmap-2026-07-11.md",
+          "checkpoint-2026-10-11-outcome.md#p6-outcome",
           "flow-control-pack-panel-record-2026-07-11.md",
           "governance-necessity-panel-record-2026-07-11.md",
           "flow-control-pack-panel-record-2026-07-11.md",
@@ -4819,21 +4921,28 @@
           "flow-control-roadmap-2026-07-11.md",
           "whole-project-plan-2026-07-11.md",
           "checkpoint-2026-10-11-runbook.md",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
           "governed-delivery-adoption-2026-09-03.md",
           "governed-delivery-review-2026-09-13.md",
-          "checkpoint-2026-10-11-runbook.md",
+          "checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger",
           "governed-delivery-review-2026-09-13.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
           "september-skills-review-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
           "governed-delivery-review-2026-09-13.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
           "all-skills-panel-record-2026-07-18.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "skill-improvement-plan-2026-07-24.md",
+          "checkpoint-2026-10-11-outcome.md#g9--as9-outcome",
           "agent-governance-scaffold-adoption-2026-07-17.md",
           "all-skills-panel-record-2026-07-18.md",
           "checkpoint-2026-10-11-runbook.md",
+          "checkpoint-2026-10-11-outcome.md#h5-and-h6-separately",
           "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
+          "checkpoint-2026-10-11-outcome.md#h5-and-h6-separately",
           "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "governance-rules-rethink-review-2026-07-11.md",
@@ -4863,6 +4972,9 @@
           "external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion",
           "skills-september-concepts-review-2026-09-16.md",
           "../../review/final-report.md",
+          "checkpoint-2026-10-11-outcome.md",
+          "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
           "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
           "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
           "routing-holdout-plan-2026-07-11.md",
@@ -5036,8 +5148,98 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 802,
-      "char_count": 56826
+      "line_count": 812,
+      "char_count": 58264
+    },
+    {
+      "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "checkpoint-2026-10-11-outcome",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "checkpoint-2026-10-11-runbook.md",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "flow-pack-demotion-evaluation-2026-07-11.md#checkpoint-source-only-f1-re-check-2026-10-11",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "agent-flow-control-research-2026-07-11.md",
+          "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "agent-governance-scaffold-adoption-2026-07-17.md#candidate-adoption-ledger",
+          "agent-governance-scaffold-field-use-panel-2026-07-17.md",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Checkpoint Outcome — 2026-10-11"
+        },
+        {
+          "level": 2,
+          "text": "Goal and scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "P6 outcome"
+        },
+        {
+          "level": 2,
+          "text": "T2 decision"
+        },
+        {
+          "level": 2,
+          "text": "F4 re-check"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap self-review"
+        },
+        {
+          "level": 3,
+          "text": "Trigger-gated queue"
+        },
+        {
+          "level": 3,
+          "text": "H5 and H6 separately"
+        },
+        {
+          "level": 3,
+          "text": "Staleness falsifiers and M5"
+        },
+        {
+          "level": 2,
+          "text": "Ledger and index updates"
+        },
+        {
+          "level": 2,
+          "text": "GD outcome"
+        },
+        {
+          "level": 2,
+          "text": "G9 / AS9 outcome"
+        },
+        {
+          "level": 2,
+          "text": "Verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and remaining gates"
+        }
+      ],
+      "line_count": 127,
+      "char_count": 19983
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -5326,7 +5528,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "checkpoint-packaging-decision-2026-10-11.md"
+        ]
       },
       "structure": [
         {
@@ -5430,8 +5634,8 @@
           "text": "Human Review"
         }
       ],
-      "line_count": 295,
-      "char_count": 27322
+      "line_count": 302,
+      "char_count": 27787
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-research-record-2026-06-25.md",
@@ -5947,7 +6151,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "checkpoint-2026-10-11-outcome.md#g9--as9-outcome"
+        ]
       },
       "structure": [
         {
@@ -5993,10 +6200,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "AS8 / AS9 checkpoint successor (2026-10-11)"
         }
       ],
-      "line_count": 152,
-      "char_count": 9267
+      "line_count": 163,
+      "char_count": 9826
     },
     {
       "path": "reflective-prompt-library/plans/dormant-items-user-directed-adoption-2026-07-12.md",
@@ -6212,7 +6423,10 @@
           "../../review/final-report.md#dogfooding-advisory-repair-closure-2026-10-09",
           "../../review/final-report.md#dogfooding-residual-advisory-repair-closure-2026-10-09",
           "dogfood-learning-promotion-2026-10-09.md",
-          "checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion"
+          "whole-project-review-2026-10-09.md#repair-closure-2026-10-09-later-same-day",
+          "checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion",
+          "checkpoint-2026-10-11-outcome.md",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
         ]
       },
       "structure": [
@@ -6305,8 +6519,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 274,
-      "char_count": 67596
+      "line_count": 278,
+      "char_count": 68357
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -6491,7 +6705,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "checkpoint-2026-10-11-outcome.md#staleness-falsifiers-and-m5"
+        ]
       },
       "structure": [
         {
@@ -6529,10 +6745,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "M5 checkpoint re-audit (2026-10-11)"
         }
       ],
-      "line_count": 65,
-      "char_count": 10647
+      "line_count": 77,
+      "char_count": 11210
     },
     {
       "path": "reflective-prompt-library/plans/governance-necessity-panel-record-2026-07-11.md",
@@ -7428,6 +7648,8 @@
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "skills-september-concepts-review-2026-09-16.md#candidate-adoption-ledger",
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
+          "checkpoint-2026-10-11-outcome.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -7465,6 +7687,7 @@
           "external-adoption-case-studies-2026-06-20.md#2026-09-15-landing-review-and-tune-rule-promotion",
           "skills-september-concepts-review-2026-09-16.md",
           "../../review/final-report.md",
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
           "dormant-work-specs-2026-07-11.md#current-queue-coverage-2026-10-01",
           "dormant-work-specs-2026-07-11.md#domain-and-retired-plan-dispositions-2026-10-01",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
@@ -7547,8 +7770,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 266,
-      "char_count": 30876
+      "line_count": 284,
+      "char_count": 32091
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -7894,7 +8117,10 @@
           "september-skills-review-2026-09-14.md",
           "september-skills-review-2026-09-14.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
-          "runtime-skills-experiments-2026-10-05.md"
+          "runtime-skills-experiments-2026-10-05.md",
+          "flow-pack-usage-log.md#checkpoint-evidence-and-disposition-2026-10-11",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
+          "checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger"
         ]
       },
       "structure": [
@@ -7941,10 +8167,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint disposition (2026-10-11)"
         }
       ],
-      "line_count": 110,
-      "char_count": 14894
+      "line_count": 127,
+      "char_count": 15819
     },
     {
       "path": "reflective-prompt-library/plans/runtime-skills-task001-ticket-2026-10-06.md",
@@ -8326,6 +8556,8 @@
         "markdown_links": [
           "whole-project-review-2026-10-09.md#h12-gd-semantic-developer-check-repair-2026-10-10",
           "whole-project-review-2026-10-09.md#h12-gd-advisory-follow-up-and-checkpoint-preparation-2026-10-10",
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "checkpoint-2026-10-11-outcome.md#verification",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "self-governance-dogfood-2026-09-24.md",
           "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
@@ -8460,8 +8692,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 464,
-      "char_count": 28603
+      "line_count": 472,
+      "char_count": 29143
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -8929,7 +9161,9 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "governed-delivery-adoption-2026-09-03.md"
+          "governed-delivery-adoption-2026-09-03.md",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
+          "checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger"
         ]
       },
       "structure": [
@@ -8968,10 +9202,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint successor (2026-10-11)"
         }
       ],
-      "line_count": 72,
-      "char_count": 7365
+      "line_count": 84,
+      "char_count": 7986
     },
     {
       "path": "reflective-prompt-library/plans/cross-survey-rethink-2026-10-07.md",
@@ -13194,7 +13432,9 @@
           "flow-control-roadmap-2026-07-11.md",
           "flow-pack-usage-log.md",
           "../skills/flow-loop-harness/SKILL.md",
-          "flow-pack-usage-log.md#verification-correction-2026-10-01"
+          "flow-pack-usage-log.md#verification-correction-2026-10-01",
+          "checkpoint-2026-10-11-outcome.md#f4-re-check",
+          "../skills/flow-loop-harness/TEMPLATES.md"
         ]
       },
       "structure": [
@@ -13225,10 +13465,14 @@
         {
           "level": 2,
           "text": "Source-only F1 re-check (2026-10-01)"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint source-only F1 re-check (2026-10-11)"
         }
       ],
-      "line_count": 90,
-      "char_count": 6734
+      "line_count": 111,
+      "char_count": 8384
     },
     {
       "path": "reflective-prompt-library/plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md",
@@ -13866,6 +14110,10 @@
           "self-governance-dogfood-2026-09-24.md",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
           "agent-governance-scaffold-adoption-2026-07-17.md",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#residual-source-coverage-and-provenance-2026-10-10",
+          "checkpoint-2026-10-11-preparation-2026-10-10.md#post-preparation-source-reconciliation-later-2026-10-10",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
           "installed-skills-general-lessons-2026-09-05.md",
           "skill-verification-panel-2026-09-05.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
@@ -13881,6 +14129,7 @@
           "recent-changes-review-handoff-2026-10-07.md#repair-turn-closure-2026-10-07",
           "cross-survey-rethink-2026-10-07.md#latest-survey-refresh-2026-10-08",
           "whole-project-review-2026-10-09.md",
+          "checkpoint-packaging-decision-2026-10-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md#source-only-f1-re-check-2026-10-01",
           "../04-agent/workflow-acquisition.md",
           "whole-project-roadmap-2026-07-11.md#still-trigger-gated",
@@ -13905,7 +14154,8 @@
           "flow-control-pack-panel-record-2026-07-11.md",
           "flow-pack-demotion-evaluation-2026-07-11.md",
           "governed-delivery-adoption-2026-09-03.md",
-          "checkpoint-2026-10-11-runbook.md"
+          "checkpoint-2026-10-11-runbook.md",
+          "checkpoint-2026-10-11-outcome.md"
         ]
       },
       "structure": [
@@ -13952,10 +14202,14 @@
         {
           "level": 2,
           "text": "Review checkpoints"
+        },
+        {
+          "level": 2,
+          "text": "Checkpoint evidence and disposition (2026-10-11)"
         }
       ],
-      "line_count": 581,
-      "char_count": 49957
+      "line_count": 609,
+      "char_count": 53769
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -17114,7 +17368,7 @@
         "risk_level": "high",
         "human_review_required": "true",
         "external_io": "false",
-        "context_load": "high"
+        "context_load": "medium"
       },
       "dependencies": {
         "ref_file": [],
@@ -17155,122 +17409,6 @@
           "text": "Artifact Set"
         },
         {
-          "level": 3,
-          "text": "Proposal lifecycle and control decision (§1.4)"
-        },
-        {
-          "level": 3,
-          "text": "Semantic interface + conformance suite (§1.3, §7.5)"
-        },
-        {
-          "level": 1,
-          "text": "host-run spec — artifact presence does not prove conformance passed"
-        },
-        {
-          "level": 3,
-          "text": "Verification plan: Twin Check + heterogeneous evidence (§7.1, §7.3)"
-        },
-        {
-          "level": 3,
-          "text": "Experiment protocol (§13) — concepts-plan reference, not a default emit"
-        },
-        {
-          "level": 3,
-          "text": "Wrapper-agent contract (§15.1)"
-        },
-        {
-          "level": 1,
-          "text": "Contract (bounded-policy agent, not a deterministic executor)"
-        },
-        {
-          "level": 3,
-          "text": "Run interface contract (§15.2)"
-        },
-        {
-          "level": 3,
-          "text": "Escalate predicates (§15.3) — machine-readable, not introspective"
-        },
-        {
-          "level": 3,
-          "text": "Authorization + capability token (§5.1, §5.3)"
-        },
-        {
-          "level": 3,
-          "text": "Checker profile (§5.2) — failure independence, not just role names"
-        },
-        {
-          "level": 1,
-          "text": "illustrative placeholders — not calibrated benchmark scores"
-        },
-        {
-          "level": 1,
-          "text": "High-risk acceptance must cover a semantic axis AND an anti-manipulation axis,"
-        },
-        {
-          "level": 1,
-          "text": "each with at least one low-correlation checker."
-        },
-        {
-          "level": 3,
-          "text": "Broker effect receipt (§6.2) — issued by the broker, never the executor"
-        },
-        {
-          "level": 3,
-          "text": "Cumulative-effect budget (§6.3) — keyed on the lease, not the session"
-        },
-        {
-          "level": 1,
-          "text": "emit: .agent/policies/cumulative-effect-budget.yaml (worker-immutable)"
-        },
-        {
-          "level": 3,
-          "text": "Lease semantics (§5.7)"
-        },
-        {
-          "level": 3,
-          "text": "Acceptance ladder (§7.4) — L0 is a gate, not the acceptor"
-        },
-        {
-          "level": 3,
-          "text": "Constitutional verifiers vs task-mutable tests (§7.2)"
-        },
-        {
-          "level": 1,
-          "text": "Deleting a test or relaxing an assertion is always a high-risk diff."
-        },
-        {
-          "level": 3,
-          "text": "Constitutional paths + out-of-band activation (§10)"
-        },
-        {
-          "level": 1,
-          "text": "policy change != policy activation. A revert to a weaker version is also a change"
-        },
-        {
-          "level": 1,
-          "text": "and needs the same ceremony (monotonicity)."
-        },
-        {
-          "level": 3,
-          "text": "Named accountability gate (§11)"
-        },
-        {
-          "level": 1,
-          "text": "Even in a single-person system, mark the roles (requester / approver / executor /"
-        },
-        {
-          "level": 1,
-          "text": "evidence recorder) so responsibility never collapses into \"the system decided\"."
-        },
-        {
-          "level": 3,
-          "text": "Agenda check (§4.2) — proposal authority is the residual risk"
-        },
-        {
-          "level": 3,
-          "text": "Mutation / canary check set (§9.4, §13 H3)"
-        },
-        {
           "level": 2,
           "text": "Fifteen-Invariant Checklist"
         },
@@ -17291,8 +17429,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 411,
-      "char_count": 27769
+      "line_count": 166,
+      "char_count": 18429
     },
     {
       "path": "reflective-prompt-library/skills/flow-control-generator/SKILL.md",
@@ -17350,55 +17488,7 @@
         },
         {
           "level": 2,
-          "text": "Template: Sequential Pipeline (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-control-generator / pipeline / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 1,
-          "text": "gate: none (accepted)"
-        },
-        {
-          "level": 2,
-          "text": "Template: Parallel Fan-out/Fan-in (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-control-generator / parallel / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 1,
-          "text": "A repeated-failure hold (3) and a selected-preflight hold (4) are driver"
-        },
-        {
-          "level": 1,
-          "text": "decisions — never swallowed by quorum, including MIN_OK=0."
-        },
-        {
-          "level": 2,
-          "text": "Template: Conditional Router (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-control-generator / router / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 1,
-          "text": "Preserve raw bytes; accept a whole case-insensitive label and at most one LF."
-        },
-        {
-          "level": 1,
-          "text": "gate: none (accepted)"
-        },
-        {
-          "level": 2,
-          "text": "Template: Orchestrator-Workers (Python, stdlib only)"
-        },
-        {
-          "level": 2,
-          "text": "Template: DAG Executor (Python, stdlib only)"
+          "text": "Templates"
         },
         {
           "level": 2,
@@ -17421,8 +17511,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 705,
-      "char_count": 44932
+      "line_count": 147,
+      "char_count": 14988
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
@@ -19157,51 +19247,7 @@
         },
         {
           "level": 2,
-          "text": "Template: Verify-Gated Fix Loop (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-loop-harness / fix / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 2,
-          "text": "Template: Evaluator-Optimizer / Writer-Critic (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-loop-harness / writer-critic / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 1,
-          "text": "UNATTENDED PREFLIGHT: insert companion block here, before the draft call."
-        },
-        {
-          "level": 3,
-          "text": "Deterministic companion check (raise the ACCEPT floor)"
-        },
-        {
-          "level": 2,
-          "text": "Template: Task-Ledger Backlog Loop (bash, ralph-style)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-loop-harness / backlog / 2026-10-01 / dry-run-required"
-        },
-        {
-          "level": 1,
-          "text": "Only the script retires this queue; host write exclusion is REQUIRED."
-        },
-        {
-          "level": 1,
-          "text": "Last task retired on the final iteration is success, not cap."
-        },
-        {
-          "level": 2,
-          "text": "Template: Multi-Wave Fan-out (bash)"
-        },
-        {
-          "level": 1,
-          "text": "generated-by: flow-loop-harness / multi-wave / 2026-10-01 / dry-run-required"
+          "text": "Templates"
         },
         {
           "level": 2,
@@ -19228,9 +19274,9 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 473,
-      "char_count": 28518
+      "line_count": 132,
+      "char_count": 11128
     }
   ],
-  "total_files": 209
+  "total_files": 211
 }

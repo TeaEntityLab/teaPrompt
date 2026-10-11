@@ -108,3 +108,20 @@ This record is wrong if: an anchor sentence disappears while its guard passes; t
 | Prior guards reconciled | `verified` | `test_ga_skills_coverage_panel_record.py` cardinality 4 with supersession comment; `test_skill_scenario_panel_adoption_state.py` and `test_dormant_conditional_contracts.py` made registry-driven instead of hard-coded 12/4; `QUALITY_GATES_SUMMARY.md` counts 13/13, 9 core + 4 packs, floor 1060+ → 1080+ |
 | Decision Index and case-study rows | `verified` | `PROJECT_KNOWLEDGE.md`, `external-adoption-case-studies-2026-06-20.md` |
 | Repository verification | `verified` | `make all`: 1080 passed; links 174 files / 0 errors; lint 0 errors / 1 pre-existing warning (`agent-governance-scaffold` length, not the new pack); governance 13/13; benchmark 24 tasks / 9 of 9; examples 9 core + 4 packs; ROUTE-001/002/003 100% (16/44/22 groups); no pack on any routing surface (P7 guards) |
+
+## Checkpoint disposition (2026-10-11)
+
+**Retained on four recorded contract-generation groups**, not observed
+production acceptance or enforcement. The [usage log](flow-pack-usage-log.md#checkpoint-evidence-and-disposition-2026-10-11)
+includes the October 3 book packet's successful nine-object generation.
+Unknown external use is not zero; the no-invocation-evidence policy branch
+does not apply to this recorded checkpoint.
+
+The [outcome](checkpoint-2026-10-11-outcome.md#gd-outcome) records GD↔AGS
+redundancy review, unchanged A1/E1 anchors and the approved flow disclosure
+under the common warning. Independent GD use remains unknown; shared
+reference consolidation is reviewed and held in the
+[packaging ledger](checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger),
+not implemented or claimed unnecessary forever. Each demotion trigger,
+host qualification and campaign gate above remains unchanged.
+

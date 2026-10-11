@@ -183,3 +183,33 @@ This addendum is wrong or must be re-litigated if: (1) a second same-class tool 
 | Five packet corrections and two divergences recorded | `verified` | Packet corrections; Observed divergences |
 | Guard | `verified` | `plans/tests/test_harness_intent_drift_rethink_record.py` |
 | Repository verification | `verified` | `make all` — 1136 tests passed (1133 before this addendum's three guard tests), validators 0 errors, record hygiene 0/0, one pre-existing lint length warning |
+
+## Checkpoint tool-claim review (2026-10-11)
+
+> **Status: event-classification re-litigation opened and reviewed; no installed wording adopted.** This is the owning successor for I-1 and the related A-5 viewer/source question, not a change to either historical trigger.
+
+**Evidence Actually Checked:** this checkpoint's tool outputs and QA reports
+include an internal-URI glob returning no matches while explicit reads found
+the files, a rejected documentation selector, and ignored JSON projections
+that required a distinct extraction path. These are tool-contract/read-surface
+discrepancies. The appendix refresh also exposed an author-side parser
+mistake—counting a cross-reference rather than the leading skill—which
+was corrected with its failing receipt preserved. None establishes that a
+writer reported success for bytes it failed to write. The September 5
+writer-effect incident remains historical; no second same-class writer
+failure is inferred from read/preview or parser behavior.
+
+### Candidate Adoption Ledger
+
+| ID | Candidate | Disposition | Evidence / counterargument | Next action / falsifier |
+| --- | --- | --- | --- | --- |
+| I1-CP1 | Classify current tool reports under I-1's recurrence trigger | Reviewed; writer-effect recurrence not established | Tool-contract discrepancies merit this review, but read/glob behavior is not a write-effect oracle. A status claim still needs the relevant observable effect, not a broader label. | A source-bound writer/effect disagreement reopens the precise I-1 branch |
+| A5-CP1 | Merge viewer/source misuse into I-1 and adopt its reserved text | Not adopted | The current appendix parser bug and read-preview limitations have different consumers and repairs; sharing discovery does not make their acceptance conditions identical. | Reopen A-5 only on its own observed case and named smaller-alternative failure |
+| I1-CP2 | Install new tool-status wording from this review alone | Held; no promotion | Existing verification/trust-boundary duties and source-bound preservation checks remain; this record supplies no demonstrated second same-class failure that justifies the reserved addition. | Original I-1/S-1 gate and explicit adoption review remain required |
+
+**Falsifiability:** this ruling fails if it calls read/parser behavior a
+proven write-effect mismatch, treats the source-bound package comparison as
+a general independent-writer guarantee, or lands reserved skill wording
+without its own admission decision. Current private receipts and complete
+agenda disposition are linked from the [checkpoint outcome](checkpoint-2026-10-11-outcome.md).
+
