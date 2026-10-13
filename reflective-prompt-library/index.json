@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-13T11:02:07.608171",
+  "generated_at": "2026-10-13T15:36:17.321042",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2766,7 +2766,10 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
-          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13"
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13"
         ]
       },
       "structure": [
@@ -2851,8 +2854,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 334,
-      "char_count": 25047
+      "line_count": 362,
+      "char_count": 26874
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -4995,6 +4998,9 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
           "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
           "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
           "routing-holdout-plan-2026-07-11.md",
@@ -5168,8 +5174,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 888,
-      "char_count": 63735
+      "line_count": 913,
+      "char_count": 65346
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
@@ -5204,7 +5210,10 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-advisory-repair-and-resume-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
-          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13"
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13"
         ]
       },
       "structure": [
@@ -5269,8 +5278,8 @@
           "text": "Falsifiability and remaining gates"
         }
       ],
-      "line_count": 241,
-      "char_count": 28476
+      "line_count": 265,
+      "char_count": 30093
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -6817,11 +6826,27 @@
         },
         {
           "level": 2,
+          "text": "Stage-1 blinded human-score intake (2026-10-13)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 bounded descriptive unblinding (2026-10-13)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 outcome disposition (2026-10-13)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 score-intake provenance review (2026-10-13)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 950,
-      "char_count": 111617
+      "line_count": 1175,
+      "char_count": 123951
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -7960,6 +7985,9 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -8080,8 +8108,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 387,
-      "char_count": 39521
+      "line_count": 415,
+      "char_count": 41347
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
