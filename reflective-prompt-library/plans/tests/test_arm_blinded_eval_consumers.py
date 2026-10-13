@@ -315,6 +315,8 @@ def test_missing_scorer_preserves_failure_receipt_not_a_product_score(tmp_path: 
 
 def test_scorer_timeout_preserves_partial_output_and_stops(tmp_path: Path, monkeypatch):
     cfg = _fixture(tmp_path)
+    for pair in cfg["pairs"]:
+        pair["oracle"][0] = sys.executable
     (tmp_path / "fixtures" / "A-code" / "oracle.py").write_text(
         "import time\nprint('started', flush=True)\ntime.sleep(2)\n", encoding="utf-8"
     )
