@@ -168,6 +168,31 @@ references carry the unchanged emitted bodies and are discoverable documents,
 not new routing units. Current final gate/warning counts are recorded in the
 [outcome](checkpoint-2026-10-11-outcome.md#verification); older receipts remain historical.
 
+#### Lint warning disposition (2026-10-12)
+
+The completed Go/Heddle gate (`artifact://3995`) reports zero lint errors
+and five length warnings across three main contracts:
+
+| File under `skills/` | Observed warning(s) |
+| --- | --- |
+| `arm-blinded-eval-harness/SKILL.md` | 512 lines; 34,773 characters |
+| `router-trace-linter/SKILL.md` | 27,646 characters |
+| `governed-delivery/SKILL.md` | 636 lines; 36,053 characters |
+
+The reduction from the 2026-10-07 eight-warning/six-pack baseline follows
+the explicitly approved [reference factoring](checkpoint-packaging-decision-2026-10-11.md),
+not raised limits or discarded checks. The intervening nine-warning
+2026-10-10 receipt above remains historical. The linter measures complete
+file text; its common limits remain 500 lines and 20,000 characters.
+
+**Disposition:** retained maintainability findings, not lint errors or
+demonstrated routing/model regressions. The three remaining contracts keep
+their safety, scorer and template requirements. No additional factoring,
+contract deletion, registry change or runtime capability is inferred from
+the green gate. New growth or observed context-loading failures reopen the
+size assessment; the existing warning-review requirement is not waived.
+
+
 
 **Applied to (risk_level, human_review_required, external_io, context_load):**
 - reflective-dispatch (low, false, false, low)

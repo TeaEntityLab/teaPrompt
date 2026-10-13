@@ -53,6 +53,11 @@ Per-feature commands live in `features/`:
   Preserve the full warning output; new or changed warnings remain findings
   to triage. The R10 acceptance covers `agent-governance-scaffold` body length,
   not a blanket waiver for other warnings. Any lint error is a failure.
+- Dated supersession (2026-10-12): approved checkpoint reference factoring
+  reduced the observed set to five warnings in three main contracts:
+  `arm-blinded-eval-harness`, `router-trace-linter`, and `governed-delivery`.
+  The [current inventory and disposition](reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12)
+  preserves the earlier baseline and unchanged thresholds; it is not a waiver.
 - `make validate` runs the route evals; `make test` runs pytest. `make all`
   runs both.
 - Repository tooling requires Python 3.9+ and the development requirements

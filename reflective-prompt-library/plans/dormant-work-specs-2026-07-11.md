@@ -150,6 +150,44 @@ preparation preserves all 21 historical rows and 18 calls/three reserves;
 no role, P0 or selection result follows from approval alone. The old strict
 hold and every dormant trigger, usage, acceptance and Stage-2 gate remain intact.
 
+The [OpenCode Go continuation](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12)
+superseded local dispatch preparation, not dormant dispositions. Actual
+current-source admission and all three remote canaries passed; P0 froze,
+then selection held after 14/36 arm chains (six completed, eight censored,
+22 unrun). Cumulative usage is 128 calls/nine reserves/USD 0. Original-pinned
+offline audit retained seven held, seven leak-invalid and 22 unrun rows;
+all endpoints remain unscored. Prospective repairs have cold mechanics
+proof only; original source/P0/approvals/charges remain preserved. No further
+generation/replay is granted. A new full cohort needs a new source/envelope
+decision; existing 350/nine limits cannot cover its 446/12 worst case.
+No semantic acceptance, Stage-2 grant, dormant activation or usage increment
+follows from these private execution/repair receipts.
+
+The [2026-10-13 fresh repaired Go grant](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13)
+now supplies new private source/cohort authority and cumulative 446-call/
+12-reserve/USD 0 limits. The fresh admission and three new roles passed,
+then P0 froze and all 36 selection allocations were attempted: seven
+completed, 17 censored, 12 incomplete, zero unrun. All 12 handoff primaries
+were censored, so no selection successor ran. Cumulative usage is
+334 calls/12 reserves/USD 0; one functional pass, 17 held and 18 leak-invalid
+ledger rows do not supply semantic acceptance or a skill/transfer gain.
+All original history and 57 new frozen source copies remain preserved.
+Human scores/audit/outcome disposition remain owner-held; no old-run replay,
+unblinding, Stage-2, dormant activation, usage increment, operator change,
+runtime publication, commit or push follows.
+
+The [separate corrective offline audit](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13)
+was subsequently authorized and completed in a fresh namespace. Ten boundary
+controls passed; exact captured-request instruction echoes are exempt, not
+generated content or scored packets. Its 36-row ledger has one protected pass,
+35 held and no leak-invalid rows; the original ledger and all raw/P0/charge
+history remain unchanged. The actual 36-card review is ready for designated
+blinded human scoring and explicit audit/outcome disposition. No semantic
+acceptance, usage increment, unblinding, Stage-2, dormant activation, replay,
+operator change, commit or push follows from this measurement correction.
+
+
+
 ## Domain and retired-plan dispositions (2026-10-01)
 
 These pointers resolve discovery gaps, not scheduling, recurrence claims, or

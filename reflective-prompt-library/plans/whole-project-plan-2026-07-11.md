@@ -280,6 +280,47 @@ All 21 historical rows, 18 calls/three reserves and both approval hashes
 remain intact. Current preparation does not qualify any role or run P0/task
 pairs. Human acceptance, Stage-2 and other owning roadmap gates remain separate.
 
+**OpenCode Go continuation 2026-10-12:** explicit current-account disabled
+Use balance evidence enabled the already-approved cohort. Fresh admission
+and all three actual roles passed; P0 froze 57 source identities. The
+[selection stopped held after 14/36 chains](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12):
+six completed, eight censored, 22 unrun; cumulative 128 calls/nine reserves/USD 0.
+Original-pinned offline audit retained seven held, seven guidance-leak-invalid
+and 22 unrun rows with all endpoints null/pending. Prospective private fixes
+passed cold mechanics smoke, not a new model qualification. Original receipts,
+source/P0 and authorities remain preserved. Further generation/replay is
+held; a fresh full cohort at unchanged ceilings needs new source/envelope
+authority for 446 cumulative calls/12 reserves, beyond the existing 350/nine.
+No utility claim, human acceptance, Stage-2 or dormant activation follows.
+
+**Fresh repaired Go continuation 2026-10-13:** the maintainer explicitly
+[authorized new private source/cohort and cumulative 446 calls/12 reserves/USD 0](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13),
+retaining the exact earlier 128-call/nine-reserve history and all held
+evidence. Fresh 186-control/six-store/eleven-file admission and three new
+actual roles passed; P0 froze 57 identities. All 36 allocations were
+attempted: seven completed, 17 censored, 12 incomplete, zero unrun, at
+334 cumulative calls/12 reserves/USD 0. All 12 handoff primaries were
+censored and no selection successor ran. The ledger retains one functional
+pass, 17 held and 18 leak-invalid rows; semantic scores/audit/outcome
+disposition remain owner-held. Full selection retention is not Stage-1
+acceptance or a skill/transfer gain. No replay, unblinding or new dispatch
+follows from remaining call headroom; Stage-2 and all other owning roadmap
+gates stay separate.
+
+**Separate corrective audit 2026-10-13:** the maintainer subsequently
+[authorized a versioned zero-model request-echo correction](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13).
+Ten boundary controls and the complete retained-stream/packet audit passed;
+the corrected 36-row ledger contains one protected pass, 35 held and no
+leak-invalid rows. Exact request-instruction echoes are exempt; generated
+content and scored-packet leaks still refuse. The original ledger/P0/raw
+receipts and 334-call/12-reserve/USD 0 accounting remain unchanged. The
+36-card blinded review awaits designated human scores and explicit audit/
+outcome disposition. No skill/transfer claim, unblinding, replay, Stage-2,
+dormant activation, operator mutation, commit or push follows.
+
+
+
+
 ## Verification (this plan)
 
 - Authored against: PROJECT_KNOWLEDGE.md, QUALITY_GATES_SUMMARY.md, GLOSSARY

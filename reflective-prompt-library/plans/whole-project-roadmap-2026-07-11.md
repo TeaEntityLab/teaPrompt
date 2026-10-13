@@ -150,6 +150,48 @@ canary nor the approved criterion supplies a role pass. P0 and all selection
 pairs remain unrun. Later human scoring/acceptance, Stage-2, dormant events
 and P6 retain their separate owning gates.
 
+**OpenCode Go continuation (2026-10-12):** the explicit current-account
+Console observation enabled the already-granted cohort. Fresh 179-control
+admission and all three actual canaries passed; P0 froze 57 source identities.
+The [selection then stopped held after 14/36 arm chains](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12):
+six completed, eight censored, 22 unrun. Cumulative usage is 128 calls/nine
+reserves/USD 0. Original-pinned offline audit preserved all allocations:
+seven held, seven guidance-leak-invalid, 22 unrun; every endpoint remains
+unscored. Separate prospective fixes passed 68 cold controls/smokes with
+zero new charges, not new live qualification. Original receipts, approvals
+and P0 sources remain archived. No replay or further generation is granted;
+a fresh full cohort at unchanged ceilings needs a new owner envelope of
+446 cumulative calls/12 reserves, not the existing 350/nine. Blinded human
+scores/audit/outcome acceptance, Stage-2, dormant and P6 gates are unchanged.
+
+**Fresh repaired Go cohort (2026-10-13):** the maintainer subsequently
+[authorized a separately versioned source and complete new Stage-1 cohort](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13),
+under cumulative 446 calls/12 reserves/USD 0 and unchanged role/trial caps.
+The earlier 128-call/nine-reserve history and held P0 remain immutable.
+Fresh 186-control/six-store/eleven-file admission and three actual canaries
+passed; a new P0 froze 57 identities. All 36 allocations were attempted:
+seven completed, 17 censored, 12 incomplete, zero unrun. All 12 handoff
+primaries were censored; no selection successor ran. Cumulative usage is
+334 calls/12 reserves/USD 0. The complete ledger retains one functional
+pass, 17 held and 18 leak-invalid rows, with semantic scores pending-human;
+57 frozen source copies and raw bytes remain private and unchanged.
+Next: designated blinded human scores and leak-audit/outcome disposition.
+No replay, unblinding, skill-effect claim, Stage-2, dormant/P6 activation,
+commit or push follows from completing the selection attempt.
+
+**Separate corrective audit (2026-10-13):** the maintainer subsequently
+[authorized the versioned zero-model request-echo correction](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13).
+Ten boundary controls and the complete retained-stream/packet audit passed;
+only exact captured-request instruction echoes are exempt. The new 36-row
+ledger has one protected functional pass, 35 held and no leak-invalid rows.
+The original ledger/raw receipts/P0 and 334-call/12-reserve/USD 0 accounting
+are unchanged. The 36-card blinded review now awaits designated human scores
+and explicit audit/outcome disposition; all semantic endpoints remain null.
+This is not Stage-1 acceptance, a skill/transfer gain or permission to unblind,
+replay, activate dormant/P6 work, enter Stage-2, commit or push.
+
+
+
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next
 governance panel ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md)) —
 **fired 2026-09-13** at the GD-18 panel (four TeaPrompt managed skills audited, one

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-13T11:03:24.838628",
+  "generated_at": "2026-10-13T11:02:07.608171",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -116,6 +116,7 @@
             "runtime-skills-task001-ticket-2026-10-06.md",
             "agent-harness-convergence-survey-2026-08-25.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
+            "heddle-source-survey-2026-10-12.md",
             "QUALITY_GATES_SUMMARY.md",
             "pi-warden-survey-2026-09-20.md",
             "governable-autonomy-survey-2026-09-03.md",
@@ -2762,7 +2763,10 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
-          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12"
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13"
         ]
       },
       "structure": [
@@ -2847,8 +2851,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 293,
-      "char_count": 22280
+      "line_count": 334,
+      "char_count": 25047
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -4988,6 +4992,9 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
           "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
           "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
           "routing-holdout-plan-2026-07-11.md",
@@ -5161,8 +5168,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 850,
-      "char_count": 61164
+      "line_count": 888,
+      "char_count": 63735
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
@@ -5192,7 +5199,12 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
-          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12"
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-opencode-go-cutover-and-generation-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-advisory-repair-and-resume-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13"
         ]
       },
       "structure": [
@@ -5257,8 +5269,8 @@
           "text": "Falsifiability and remaining gates"
         }
       ],
-      "line_count": 188,
-      "char_count": 24558
+      "line_count": 241,
+      "char_count": 28476
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -6670,7 +6682,8 @@
           "checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion",
           "checkpoint-2026-10-11-outcome.md",
           "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
-          "../../review/final-report.md#test-001-zero-model-mechanics-acceptance-2026-10-11"
+          "../../review/final-report.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
+          "QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12"
         ]
       },
       "structure": [
@@ -6784,11 +6797,31 @@
         },
         {
           "level": 2,
+          "text": "Stage-1 OpenCode Go cutover and generation hold (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 Go advisory repair and resume (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 Go selection hold and original-pinned audit (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 Go fresh repaired cohort (2026-10-13)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 Go corrective offline audit (2026-10-13)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 610,
-      "char_count": 90275
+      "line_count": 950,
+      "char_count": 111617
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -7924,6 +7957,9 @@
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -8044,8 +8080,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 345,
-      "char_count": 36538
+      "line_count": 387,
+      "char_count": 39521
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -8817,6 +8853,74 @@
       "char_count": 9583
     },
     {
+      "path": "reflective-prompt-library/plans/heddle-source-survey-2026-10-12.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "heddle-source-survey-2026-10-12",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "product-runtime-ownership-panel-2026-08-25.md",
+          "whole-project-roadmap-2026-07-11.md",
+          "skill-dogfood-test-plan-2026-10-08.md",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-advisory-repair-and-resume-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Heddle Source Survey — 2026-10-12"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Offline Verification"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Classification and Prior Ruling"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 138,
+      "char_count": 17097
+    },
+    {
       "path": "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -8832,6 +8936,7 @@
           "whole-project-review-2026-10-09.md#h12-gd-advisory-follow-up-and-checkpoint-preparation-2026-10-10",
           "checkpoint-packaging-decision-2026-10-11.md",
           "checkpoint-2026-10-11-outcome.md#verification",
+          "checkpoint-packaging-decision-2026-10-11.md",
           "governance-workflow-self-control-adoption-2026-09-14.md",
           "self-governance-dogfood-2026-09-24.md",
           "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
@@ -8876,6 +8981,10 @@
         {
           "level": 3,
           "text": "5. Lightweight Governance Metadata ✅"
+        },
+        {
+          "level": 4,
+          "text": "Lint warning disposition (2026-10-12)"
         },
         {
           "level": 3,
@@ -8966,8 +9075,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 472,
-      "char_count": 29143
+      "line_count": 497,
+      "char_count": 30388
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -10374,7 +10483,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "heddle-source-survey-2026-10-12.md"
+        ]
       },
       "structure": [
         {
@@ -10416,10 +10527,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Later Pinned Source Survey (2026-10-12)"
         }
       ],
-      "line_count": 86,
-      "char_count": 14632
+      "line_count": 98,
+      "char_count": 15221
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-four-power-concepts-2026-07-17.md",
@@ -19553,5 +19668,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 212
+  "total_files": 213
 }

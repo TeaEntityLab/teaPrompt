@@ -186,3 +186,56 @@ run, protected-oracle edit, commit or push is authorized by either decision.
 > Current usage is 18 calls/three reserves; no fresh qualification or task
 > outcome is claimed. This changes neither the completed checkpoint nor
 > dormant dispositions, human acceptance or later Stage-2 authority.
+>
+> **Later OpenCode Go cutover (2026-10-12):** the maintainer replaced the local
+> cohort with a private Responses transport and approved 350 calls/nine
+> reserves, quota-only, then explicitly kept remote generation held.
+> [178 zero-model controls and full six-store/eleven-file admission passed](skill-dogfood-test-plan-2026-10-08.md#stage-1-opencode-go-cutover-and-generation-hold-2026-10-12).
+> All 38 historical rows preserve 32 calls/six reserves and three approval
+> hashes. Disabled Use balance remains unobserved; no Go model request, remote
+> role qualification, P0 freeze or selection trial occurred. Later live work
+> needs fresh current-source preparation/admission. This neither reopens the
+> completed checkpoint nor supplies dormant, human acceptance or Stage-2 authority.
+>
+> **Later explicit Go resume (2026-10-12):** the maintainer attested an actual
+> current-account Console disabled Use balance observation and authorized
+> [prospective resume under unchanged limits](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-advisory-repair-and-resume-2026-10-12).
+> The owner-bound quota-only gate and four zero-model repair paths passed;
+> fresh current-source admission and three remote roles are still required.
+> Earlier hold and 38-row/32-call/six-reserve history remain preserved.
+> This does not reopen checkpoint rulings or grant human acceptance,
+> Stage-2, dormant activation, runtime publication, commit or push.
+>
+> **Later observed Go selection hold (2026-10-12):** fresh admission and all
+> three actual remote canaries passed; P0 froze. The
+> [selection stopped held after 14/36 chains](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-selection-hold-and-original-pinned-audit-2026-10-12),
+> with six completed, eight censored and 22 unrun, at 128 calls/nine reserves/USD 0.
+> Original-pinned offline audit retained seven held, seven leak-invalid and
+> 22 unrun rows, with no new charges or scores. Separate prospective fixes
+> have cold smoke proof only. No replay/further generation is authorized;
+> a fresh full cohort requires a new root/source/envelope decision.
+> Human scores/audit/outcome acceptance, Stage-2 and dormant/P6 gates stay
+> separate; the completed checkpoint is not reopened.
+>
+> **Later fresh repaired Go grant (2026-10-13):** the maintainer
+> [authorized separately versioned private source and a complete new cohort](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13),
+> cumulative 446 calls/12 reserves/USD 0, retaining all earlier 128-call/
+> nine-reserve history and unchanged role/trial caps. Fresh 186-control/
+> six-store/eleven-file admission and three new actual roles passed; P0 froze
+> 57 identities and all 36 allocations were attempted: seven completed,
+> 17 censored, 12 incomplete, zero unrun. No selection successor ran because
+> all 12 handoff primaries were censored. Cumulative usage is 334 calls/
+> 12 reserves/USD 0. One functional pass, 17 held and 18 leak-invalid rows
+> remain semantically unscored. Human scores/audit/outcome disposition remain
+> owner-held. No old-run replay, unblinding, Stage-2 or dormant/P6 activation,
+> commit or push follows; this does not reopen the completed checkpoint.
+>
+> **Later corrective offline audit (2026-10-13):** the maintainer
+> [authorized a separate zero-model request-echo correction](skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13).
+> Ten boundary controls and the retained full-stream/packet audit passed. The
+> new 36-row ledger contains one protected pass, 35 held and no leak-invalid
+> rows; the frozen original ledger/P0/raw receipts and cumulative 334 calls/
+> 12 reserves/USD 0 remain unchanged. The 36-card review awaits designated
+> blinded human scores and explicit audit/outcome disposition. No unblinding,
+> Stage-2, dormant/P6 activation, replay, commit or push follows; the completed
+> checkpoint remains closed.

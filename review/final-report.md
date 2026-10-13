@@ -4910,3 +4910,329 @@ operator mutation, accepted TEST-001/oracle edit, installed-contract change,
 runtime publication, commit or push. Human semantic scoring, leak-audit/
 outcome acceptance and Stage-2 remain separate after observed execution.
 
+## OpenCode Go cutover and offline admission (2026-10-12)
+
+**Goal / authority / scope:** complete the owner-approved private Go provider
+replacement, preserve historical outcomes and verify all reachable offline
+work. The maintainer granted 350 total calls/nine reserves and included Go
+quota only, then explicitly answered “Keep remote generation held”.
+The owned local cohort/daemon stopped; no unrelated operator resource changed.
+The earlier WAL-aware local bare-primary passed at ten calls, guided-primary
+failed at two, and successor evidence was interrupted. No local qualification
+transfers to the new `p0-role-canary-v5-go-responses` model/profile.
+
+**Implementation / files / traceability:** GO-01/02 preserve 38 rows,
+9,803 exact bytes, all three original approval hashes and 32 calls/six reserves.
+GO-03 binds guarded credential metadata and authentic model/quota GETs,
+not a fabricated billing-setting observation. GO-05 migrates private transport,
+worker, provider/capture, source/preparation, qualification, accounting and
+campaign consumers to `muse-spark-1.3-contributor` over fixed HTTPS Responses.
+No local fallback or runtime publication. Four observed transport defects
+(explicit-ID mismatch, late/malformed SSE errors, discarded non-200 body)
+have failing-before/passing-after receipts. Integrated isolated loading,
+physical synthetic fixture paths and malformed-function producer handling
+were repaired without assertion weakening or accepted TEST-001/oracle edits.
+Existing plan, roadmap, coverage, checkpoint continuation, Decision Index,
+this report, discovery and private manifest carry the disposition.
+
+**Acceptance / observed checks:** GO-06 passed 178 zero-model controls:
+worker 37, scorer 23, memory 21, Go provider 22, Go transport 17, serial-role
+22 and integrated surfaces 36. `isolated_entry.py serial_preflight` exited
+zero; all four admission entrypoints passed, three complete live source
+boundary observations passed for six stores/eleven files, and fixture
+preparation produced six instances/18 pairs/36 arm trials. No real Go
+generation or canary reserve was dispatched. The actual transport refused
+the absent disabled-Use-balance proof before charge, network or artifacts.
+GO-04/07 remain owner-held; offline success is not a remote-role pass,
+P0 freeze or Stage-1 result. Human semantic/leak/outcome acceptance and
+Stage-2 remain separately unsupplied. GO-08 reader/repository evidence
+is retained separately from these mechanics receipts.
+
+**Evidence / preservation:** `local://stage1-go-cohort-b8tYiv/` holds the
+grant/billing decision, execution ledger, transport before/after receipts,
+held live-transport smoke, distinct failed revisions and successful source
+bindings. All 30 prepared inputs were copied and SHA-256 verified before
+outcome-record edits. The failed malformed-call producer source was reconstructed
+from the exact applied patch and verified against its observed failure digest;
+this reconstruction is explicitly labeled, not presented as an original copy.
+History SHA-256 remains
+`3bf6831552d37b625358b273b2f65511623bd818ae8cd776f9e74e4f3a4839b7`.
+Record edits changed three preparation-pinned documentation inputs; any
+future authorized dispatch needs a new current-source preparation/admission,
+not reuse of the preserved pre-record pass.
+
+**Risks / remaining work / human review:** Use balance being disabled for
+this credential/account remains `UNKNOWN`; public quota percentages and
+inference-proxy code cannot establish the setting. The explicit owner hold
+remains in force. No remote inference smoke, immutable-weight, equal
+provider cache/KV, training-scope, zero-data-retention or skill-utility claim.
+The remaining 318 responses/three reserves cover the complete fresh
+30-response canary envelope and 288-response selection population exactly;
+the first future POST is bare-primary's canary request, not an additional smoke.
+Keep 11/11/8 canary and six-response trial caps, 300-second deadlines, USD 0,
+every meaningful source/capture-change hold and all exclusions. No commit,
+push, installed-contract change, accepted-runtime/oracle edit, retrospective
+requalification, discarded charge or dormant/Stage-2 authority follows.
+
+## Go advisory repair and explicit resume (2026-10-12)
+
+**Goal / authority / scope:** fix every live delayed finding, reconcile docs
+and skill consumers, then continue the existing dogfooding stages. The
+maintainer subsequently selected “Resume — 已確認 Use balance 關閉” and
+attested an actual current-account Console disabled-setting observation.
+The bound owner receipt passed the real quota-only metadata gate, not API
+setting readback or assistant visual inspection. Earlier holds and source
+snapshots remain historical. Cumulative 350 calls/nine reserves, USD 0,
+11/11/8 canaries, six-response trials and 300-second sessions are unchanged.
+Only synthetic/public text may reach the Contributor endpoint; no operator
+mutation, oracle/accepted-runtime edit, commit, push or Stage-2 is granted.
+
+**Changes / traceability:** four live private defects were reproduced and
+repaired: isolated transport-control entry admission; nested list/tuple JSON
+preservation; deterministic-held versus escaped/unclean guest classification;
+and host-private diagnostics crossing into held blinded score input.
+Existing control groups gained behavioral regressions. Two initial smoke
+fixture/import errors remain labeled harness errors; the retained original
+guest predicate independently failed the corrected `predispatch` case.
+The four repaired runtime paths passed the actual bounded smoke with zero
+model calls/reserves. No assertion was weakened or acceptance oracle changed.
+The detailed read-only review dispositions and source snapshots remain in
+`local://stage1-go-cohort-b8tYiv/advisory-followup-9ajJDB/`.
+
+**Docs / skill assessment:** current plan, roadmap, coverage, checkpoint
+continuation, Decision Index and private manifest point to the prospective
+resume, not the stopped local cohort or superseded billing hold. `VERIFY.md`
+and the quality summary disclose five remaining size warnings under unchanged
+limits. Existing implementation, risk, blinded and benchmark contracts
+already cover the failures; runtime fixes and regressions are the smallest
+sufficient destination. No new skill, installed-contract edit, registry
+change or efficacy claim is warranted. Heddle remains a dated no-adoption
+survey with its original evidence boundaries.
+
+**Predispatch verification / execution history:** current-source controls,
+source/memory admission and three actual roles were pending when this
+resume record was written. The original predispatch ledger was 38 rows /
+9,803 bytes, 32 calls/six reserves with three original approvals. The later
+observed selection/audit below supersedes this pending-state wording,
+without reclassifying earlier failures or supplying human acceptance/Stage-2.
+
+**Admission harness correction:** the first resumed admission exposed an
+incidental historical-receipt/absent-proof assertion that contradicted the
+new actual owner observation. It was retired, not re-pinned to the new
+default; the isolated provider control still proves real missing-proof
+refusal before network. This was a control-fixture error, not a reason to
+weaken billing, source/memory or role acceptance. Its failed source and
+receipt remain preserved with zero model/reserve delta.
+
+## Go selection hold and original-pinned audit (2026-10-12)
+
+**Observed execution:** fresh **179-control** qualification, six-store/
+eleven-file admission and preparation passed. All three real canaries
+passed in order using **6/6/5 calls** under 11/11/8 caps. P0 froze **57
+source identities**. Selection then stopped `HELD_INCOMPLETE` after
+**14/36 arm chains: six completed, eight censored, 22 unrun**; no required
+successor chain was reached. Cumulative usage is **128 calls/nine reserves/
+USD 0**, with every original approval and the exact inherited 38-row prefix
+preserved. No complete paired comparison or utility result is claimed.
+
+**Demonstrated defects / repair boundary:** the last HTTP 200 terminal
+response had `incomplete_details.reason=max_output_tokens`, 2,048 output
+tokens and `error=null`. `transport-censored` was incorrectly treated as
+an unknown transport outcome. Early halt also skipped deferred scoring
+and mislabeled already-run allocations as unrun. Only separate prospective
+sources were repaired: known output limits remain censored, errors and
+malformed transport results keep conservative stop precedence, and
+retained-but-unscored chains receive neutral held rows with null endpoints.
+**40 worker controls, 25 serial controls and three actual-receipt/API smokes
+passed**, zero new model calls/reserves. A copied-root grant refusal is
+preserved as a smoke-harness context error; existing grant validation uses
+its exact historical read-only root, never a forged new authorization.
+No new live prospective qualification, retry or cap increase occurred.
+
+**Original-pinned audit / human evidence:** a fresh offline namespace
+completed deferred scoring only with the original frozen scorer/oracle.
+All 14 retained raw streams/reports were audited without changing bytes
+or original outputs. Seven contain forbidden guidance-name leaks and
+remain invalid; the full 36-row ledger is **seven held, seven invalid,
+22 unrun**, with all functional scores null and semantic scores pending.
+Non-repair/no candidate-reference verdict and incomplete candidate binding
+are held, not scored failures. The original report renderer produced
+seven neutral review cards; real Chromium proved blank ratings, separate
+freeze/audit gates, missing-gate refusal and no horizontal clipping at
+1280px/390px. Invalid/unrun allocations remain in the denominator; no
+arm map, unblinding, delta or retrospective qualification was supplied.
+
+**Docs / skills / residual gates:** active plan, roadmap, coverage, project
+plan, checkpoint continuation, Decision Index and private manifest now
+carry this observed hold instead of pending-role wording. Heddle's pinned
+survey/no-adoption ruling stays unchanged. Existing implementation, risk,
+blinded and benchmark contracts already require honest capped outcomes,
+null unscored endpoints and complete allocation retention; the private
+consumer repairs/regressions are the smallest sufficient destination.
+No skill/registry/installed-contract change or efficacy promotion follows.
+Five disclosed size warnings keep unchanged limits.
+
+**Next authority / evidence:** all original 57 source identities, original
+receipts/accounting, prospective source/control receipts, original-pinned
+offline audit bindings and actual reader captures are retained under
+`local://stage1-go-cohort-b8tYiv/advisory-followup-9ajJDB/`.
+Further generation/replay is held. A fresh full cohort with unchanged
+30-call canary and 288-call selection ceilings would require **446
+cumulative calls/12 reserves**, beyond the existing 350/nine grant.
+New source/cohort/envelope authority and designated blinded human
+scores/audit/outcome acceptance remain owner-held; Stage-2 and dormant/P6
+gates stay separate. No commit, push, operator mutation or accepted-oracle
+change occurred.
+
+
+
+## Fresh repaired Go Stage-1 authority (2026-10-13)
+
+**Granted:** the maintainer selected “授權完整新 Stage-1 cohort”, authorizing
+separately versioned private repaired source, fresh complete admission,
+three new canaries and all 18 selection pairs/declared successor chains.
+Cumulative caps are 446 calls/12 reserves/USD 0; ordinary sessions stay
+six responses/300 seconds and canaries 11/11/8. Same model/provider,
+quota-only, synthetic/public-only Contributor data policy and all exclusions
+remain. Human acceptance, Stage-2, old-run replay, operator/accepted-oracle
+changes, commit and push are not authorized.
+
+**Actual admission / execution:** the new root
+`/private/tmp/teaprompt-stage1-go-fresh-p33vNi` passed 186 final-source
+zero-model controls, all four admission entrypoints and the complete
+six-store/eleven-file boundary. Its three new actual roles passed in
+6/6/5 calls, with required writes, denials and current memory/capture proof.
+The first POST was bare-primary, not extra inference smoke. A new P0 froze
+57 identities; every one was current at execution close and has a
+byte-verified read-only private source copy.
+
+**Acceptance criteria / result:** all 18 selection pairs/36 allocations
+were attempted and retained: seven completed, 17 censored, 12 incomplete,
+zero unrun; no fatal transport or memory/source hold. All 12 handoff
+primaries were censored, so zero selection successors ran. Their required
+chains remain incomplete, not completed failures; TEST-004 transfer is
+not demonstrated. The ledger retains every allocation: one protected
+functional pass, 17 held and 18 leak-invalid. All semantic scores are
+pending-human. The frozen raw-stream audit flagged 18 allocations/
+96 stream-artifact entries. A separate zero-model provenance audit proved
+every flag occurs only in provider-echoed `response.instructions`: 288
+matching events exactly reproduce their captured request instructions.
+No flag occurred in another parsed event value or candidate report.
+This is request-metadata flagging, not observed model-authored report leakage.
+The original 18-invalid rows remain frozen pending owner audit disposition;
+no oracle edit or retrospective regrading follows. Candidate bytes remain
+unchanged and the sealed arm map remains unexposed. This is a complete
+selection attempt, not an accepted Stage-1 result or an isolated skill,
+speed/noise or transfer gain.
+
+**Exact accounting / preservation:** 17 new canary calls/three reserves
+plus 189 selection calls preserve the original 137-row/34,779-byte
+128-call/nine-reserve prefix and all four original authority identities.
+Cumulative usage is 334 calls/12 reserves/USD 0, zero CLI sessions.
+The old held run, P0, raw receipts and source archive remain unchanged.
+The original owner Console observation retains its timestamp and account
+binding; no fresh Console observation or API flag readback is claimed.
+Unused 112-call headroom is not another dispatch/replay grant.
+
+**Verification / consumers:** the actual blinded review shows 18
+non-leak-invalid cards. Both viewport checks observed all ratings blank,
+owner freeze/audit unchecked, no target-skill names in visible review text,
+and refused export without both explicit owner gates. Direct 1280px and
+390px captures were inspected; no owner score, audit acceptance, outcome
+acceptance or Stage-2 decision was fabricated. The active plan, roadmap,
+coverage, checkpoint continuation, project-plan pointer, Decision Index
+and private manifest consume this same disposition. Existing skill/oracle
+contracts and usage counts are intentionally unchanged.
+
+**Evidence / remaining work:** authority, revised source, current admission,
+actual roles, full selection, all 57 frozen sources and actual review
+captures are retained at
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/`.
+Designated blinded human scores and leak-audit/outcome disposition remain
+owner-held; unavailable semantic endpoints stay unscored, not zero.
+No further model dispatch, unblinding, operator/accepted-oracle mutation,
+commit, push, runtime publication or Stage-2 follows. Final documentation/
+discovery, repository-gate and raw-token provenance evidence is bound in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/final-evidence.json`;
+the separately retained `raw-stream-token-provenance.json` contains no
+candidate text or arm mapping and changes no frozen score.
+
+**TWINS:** searched `at 32+30+288` in the repository and the new private
+source root — found no other current sites. The original historical source
+and receipts were not edited.
+
+Owning record: [fresh repaired Go cohort](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md#stage-1-go-fresh-repaired-cohort-2026-10-13).
+
+## Fresh Go corrective offline audit (2026-10-13)
+
+**Goal / authority:** complete the maintainer-authorized separate zero-model
+corrective audit, excluding only exact captured-request instruction echoes.
+Original P0/oracles, ledgers, raw/candidate bytes and accounting remain unchanged;
+no model replay or acceptance authority was granted.
+
+**Implementation / acceptance criteria:** a fresh private stdlib auditor passed
+ten boundary controls and audited all 189 retained selection SSE files. Its
+96 metadata-only flagged artifacts contain 288 exact request-instruction echoes;
+actual generated-content, diagnostic and scored-packet leaks remain refusals.
+All candidate preflight precedes scoring. Eighteen original blind rows were
+reused exactly and 18 new isolated deterministic blind scorings passed, with
+zero protected functional dispatches or model/reserve changes. The corrected
+ledger retains all 36 allocations: one protected functional pass, 35 held and
+zero leak-invalid; all human semantic/outcome endpoints remain null.
+This corrects measurement classification, not task success or skill utility.
+
+**Verification / preservation:** 1,615 original evidence files and 54
+non-record P0 bindings remained unchanged; the 57-file frozen source archive is
+retained. The original ledger and its 18-invalid classification remain frozen.
+The new 36-card review was exercised at actual 1280px/390px widths, with blank
+ratings, no arm/guidance tokens, a correction notice and refused export when
+neither or only one of the two owner gates is set. No owner score or acceptance
+was fabricated. Actual chain disposition, zero selection successors and
+cumulative 334 model calls/12 reserves/USD 0 are unchanged.
+
+**Files / consumers:** the private auditor, controls, receipts and current
+review are in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/corrective-audit-mWEDQu/`.
+The owning plan, roadmap, queue coverage, checkpoint continuation, project-plan
+pointer, Decision Index and active private manifest now point to this corrected
+review while preserving original measurements. Skills, usage counts, protected
+oracles and installed/runtime contracts are unchanged.
+
+**TWINS:** searched `def raw_stream_leaks` and the raw decoded-substring
+construct in the repository and retained fresh-source root — found one other
+implementing site: `/private/tmp/teaprompt-stage1-go-fresh-p33vNi/campaign_run.py:47-77`.
+It is the frozen original implementation and was intentionally not edited.
+
+**Residual risk / next action:** designated blinded human scores and explicit
+audit/outcome acceptance remain owner-held. Missing, merged or overlength
+decision summaries and unavailable endpoints stay unscored, never zero. The
+maintainer owns all seven accountable roles, not independent-human review.
+No unblinding/arm analysis, skill/transfer gain, Stage-2, dormant activation,
+model replay, operator mutation, commit, push or runtime publication follows.
+Owning record: [corrective offline audit](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md#stage-1-go-corrective-offline-audit-2026-10-13).
+
+**Delayed-advisory repair (2026-10-13):** all 75 entries were rechecked against
+current source and receipts. No executable or measurement repair remained in
+scope. One obsolete standalone-API-smoke task was removed, not marked executed;
+15 historical blockers now describe the completed fresh attempt and remaining
+owner gates instead of claiming its grant is absent. The active private
+verification pointer now distinguishes the original cohort receipt from the
+corrective/current evidence. Full dispositions and final verification are
+retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/delayed-review-4RlKaN/`.
+The frozen qualifier still has a diagnostic-only `32 calls/six reserves`
+message behind its correct 128/nine guard; it is preserved, not edited or
+requalified. Human scores, audit/outcome acceptance and unblinding remain
+owner-held; this repair supplies no new call, replay or Stage-2 authority.
+
+**Terminal receipt / publication grant (2026-10-13):** the post-cleanup
+delayed-advisory receipt is
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/delayed-review-4RlKaN/final-evidence.json`,
+SHA-256 `21338cb421da1f02b1f0ccebb1f9343ab7bb774e1395245805b1e47c80e11c97`.
+This terminal artifact is not rewritten for publication; earlier execution-history
+hashes precede its final cleanup write. The subsequent explicit “Fix advisory and
+commit in multiple commits” instruction authorizes scoped repository commits,
+not publication of private evidence, model replay, human acceptance, unblinding,
+Stage-2 or push.
+
+

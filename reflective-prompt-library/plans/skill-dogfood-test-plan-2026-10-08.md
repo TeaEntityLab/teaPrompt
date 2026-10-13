@@ -1,8 +1,8 @@
 # Skill Improvement Through Dogfooding — Test Plan — 2026-10-08
 
-**Execution continuation (2026-10-12):** the maintainer approved the [prospective WAL-aware fresh cohort](#stage-1-prospective-wal-aware-cohort-2026-10-12), with cumulative 336 calls/six reserves and the narrow future empty-WAL exception. Preparation is in progress; the original bare-primary remains held, P0 and all selection pairs remain unrun, and later human acceptance and Stage-2 remain separate.
+**Execution continuation (2026-10-13):** the [separately versioned repaired Go cohort](#stage-1-go-fresh-repaired-cohort-2026-10-13) passed fresh admission and all three actual canaries, froze a new P0, and attempted every allocated selection chain: 36/36, with seven completed, 17 censored and 12 incomplete; none unrun. Cumulative usage is 334 calls/12 reserves/USD 0. All 12 handoff primaries were censored, so no selection successor ran. Original held outcomes and the 128-call/nine-reserve prefix remain immutable. The separately authorized [corrective offline audit](#stage-1-go-corrective-offline-audit-2026-10-13) is complete; human scores/audit/outcome acceptance remain pending. No replay, skill-effect claim or Stage-2 follows.
 
-> **Status: experiment design with user-authorized risk repairs and a scoped learning promotion; campaign execution remains unapproved.** Planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. This is a non-authoritative, dated Test Plan, not a new harness policy or runtime. The later instruction “Fix all and continue fix risks” authorizes correcting the consumer, measurement logic, and records with offline synthetic checks; it does not select a host, grant metered/model dispatch, or adopt a consumer. The 2026-10-09 learning-promotion exception is recorded below. No efficacy result is claimed.
+> **Status: complete fresh selection attempt; AWAITING_BLINDED_HUMAN_SCORING, not Stage-1 acceptance.** Original planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. This is a non-authoritative, dated Test Plan, not a new harness policy or public runtime. The original planning and repair instructions did not grant model dispatch or consumer adoption; subsequent explicit mechanics and Stage-1 grants are recorded below. The 2026-10-09 scoped learning promotion remains separate. No efficacy result is claimed.
 
 ## Goal and brief
 
@@ -598,11 +598,351 @@ runtime publication, commit or push. The completed checkpoint, dormant
 dispositions, accepted TEST-001 sources, installed contracts and oracles
 remain unchanged.
 
+## Stage-1 OpenCode Go cutover and generation hold (2026-10-12)
+
+**Authority / cutover:** the maintainer requested OpenCode Go Meta Muse Spark
+1.3 Contributor instead of local Ollama, selected “Full cohort: 350 calls /
+nine reserves” and “Included Go quota only”, then answered **“Keep remote
+generation held”**. Only the owned local cohort and daemon were stopped.
+The private protocol is now `p0-role-canary-v5-go-responses`, model alias
+`muse-spark-1.3-contributor`, fixed HTTPS Responses endpoint
+`https://opencode.ai/zen/go/v1/responses`, metadata checked 2026-10-12.
+No fallback, purchases or top-ups.
+
+**Historical outcome / accounting:** the stopped WAL-aware local cohort
+retains its bare-primary pass at ten calls, failed guided-primary at two
+calls and interrupted successor evidence. None transfers to the remote
+model. The complete **38-row / 9,803-byte** inherited ledger binds all three
+original approval hashes and remains SHA-256
+`3bf6831552d37b625358b273b2f65511623bd818ae8cd776f9e74e4f3a4839b7`.
+Cumulative usage is **32 model calls / six reserves / zero agent CLI
+sessions / USD 0**. Remaining authority is 318 responses and three reserves:
+30 fresh-canary plus 288 trial responses, not an extra standalone API smoke.
+Canary limits remain 11/11/8, trial limits six per primary or successor,
+300 seconds/session and 76 agent CLI sessions maximum.
+
+**Implementation / verification:** the private transport, worker,
+qualification, preparation, capture, accounting and campaign consumers
+use the Go binding without a local transport shim. Stateless requests
+retain exact explicit tool `call_id` pairing and opaque provider replay;
+raw streams/errors remain private. Four transport edge defects were
+reproduced and repaired: mismatched explicit IDs, late/malformed SSE errors
+and discarded non-200 bodies. Isolated script loading, synthetic policy
+fixture physical paths and malformed-call producer handling were repaired
+without weakening assertions or changing accepted TEST-001/oracle sources.
+
+The final integrated CLI run passed **178 zero-model controls**: worker 37,
+scorer 23, memory 21, Go provider 22, Go transport 17, serial-role 22 and
+actual integrated surfaces 36. All four admission entrypoints exited zero;
+all three live memory-boundary observations passed for six complete store
+snapshots and eleven capture/vector files under the approved narrow
+empty-WAL criterion. Six fixtures, 18 pairs and 36 arm trials were prepared,
+with **30 source inputs preserved before outcome-record edits**.
+Admission added **zero model calls and zero reserves**.
+
+**Billing / readiness hold:** authenticated model-catalog and quota GETs
+confirmed the installed alias and guarded credential without generation.
+Quota percentages do not expose whether provider-side **Use balance** is
+disabled. No actual disabled-setting observation was obtained; no policy
+receipt was fabricated. The real transport refused before charge, network
+or output creation while the proof was absent. The owner-held decision
+still forbids a model POST, canary reserve, P0 freeze or selection dispatch.
+No real Go inference, remote-role qualification, immutable-weight,
+provider cache equality, training-scope or zero-data-retention claim follows.
+
+**Evidence / next gate:** `local://stage1-go-cohort-b8tYiv/` retains the
+authority, execution ledger, failed source snapshots, transport before/after
+receipts, held live-transport smoke, successful admission and frozen input
+manifest. The admission is evidence for its observed source/capture snapshot,
+not perpetual readiness: record edits changed three pinned documentation
+inputs. Any later authorized generation requires fresh current-source
+preparation/admission, a bound actual disabled-Use-balance observation and
+three new remote canaries before P0/full selection. The first future model
+request belongs to bare-primary's approved 11-call cap, not a spare smoke.
+Human semantic scoring, leak-audit/outcome acceptance, Stage-2/TEST-003,
+checkpoint/dormant dispositions, installed contracts and publication gates
+remain separate. No commit or push is authorized by this cutover.
+
+## Stage-1 Go advisory repair and resume (2026-10-12)
+
+**Authority / prospective scope:** the maintainer selected **“Resume — 已確認
+Use balance 關閉”**, attesting an actual Console observation for the current
+Go credential/account and undertaking to keep the setting disabled through
+this cohort. This supersedes the earlier generation hold prospectively, not
+its historical receipts. The bound owner observation passed the actual
+quota-only metadata gate; it is not an assistant visual observation or API
+setting readback. `generation-resume.json`, the owner-only `quota-policy.json`
+and `current-provider-inventory.json` are retained in the private follow-up
+namespace below. Cumulative limits remain 350 calls/nine reserves, USD 0,
+11/11/8 canary calls, six responses per trial session and 300 seconds/session.
+Only synthetic fixtures and public source text may reach the Contributor
+training-permitted/non-ZDR endpoint. No fallback, purchase, top-up, operator
+mutation, local proof transfer, commit or push is authorized.
+
+**Advisory repairs / observed proof:** four live private defects were fixed
+without changing accepted TEST-001 sources or protected acceptance oracles:
+the isolated launcher omitted `go_transport_controls`; recursive JSON
+coercion lost nested list/tuple values; deterministic held diagnostics
+incorrectly aborted further trial/scoring dispatch; and host exception
+paths leaked into held blinded verdicts. The bounded real-entry smoke passed
+all four repaired paths with zero model calls/reserves. The new guest-risk
+predicate still stops escaped/unattributed faults or unconfirmed cleanup;
+resolved held task outcomes remain held, never converted to successes.
+The original smoke's two fixture/import errors are preserved as harness
+errors; the preserved original predicate independently failed the corrected
+`predispatch` fixture. Current structured transport, guest-risk and held
+blind-score regressions are included in the existing private control groups.
+
+**Documentation / promotion assessment:** the active plan, roadmap, coverage,
+checkpoint continuation, Decision Index and private manifest now distinguish
+the resumed Go cohort from the superseded local preparation and earlier hold.
+The [five remaining lint warnings](QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12)
+remain disclosed under unchanged limits. The runtime repairs belong in the
+already-authorized private consumers and their behavioral regressions;
+existing implementation, risk, blinded and benchmark contracts already
+require source-bound evidence, safe holds and honest accounting. No new
+skill, installed-contract edit, registry change or efficacy promotion is
+justified by these repair receipts. The Heddle source survey remains a dated
+no-adoption record, not campaign authority.
+
+**Predispatch execution gate, subsequently fulfilled below:** fresh qualification, preparation and complete
+six-store/eleven-file admission must run after these source/record edits.
+Only a passing current gate permits one fresh bare-primary, guided-primary
+and successor canary, in that order. All three role proofs must pass before
+freezing P0 and running all 18 declared selection pairs and successor chains.
+The first POST is bare-primary's canary, not an extra inference smoke.
+Preserve every outcome and charge; never replay an uncertain or failed role.
+Human semantic scoring, leak-audit/outcome acceptance, Stage-2 and dormant
+owning decisions remain separate.
+
+**Evidence:** `local://stage1-go-cohort-b8tYiv/advisory-followup-9ajJDB/`
+retains both read-only review dispositions, original source/record snapshots,
+failing-before/passing-after repair receipts and the bound resume observation.
+The exact inherited 38-row / 9,803-byte ledger and all three original approval
+hashes remain unchanged at this predispatch point.
+
+**Admission harness correction:** the first resumed zero-model admission
+failed a stale check that pinned the historical provider-inventory receipt
+and expected the live owner proof to remain absent. That incidental snapshot
+assertion was retired, not re-pinned. The existing isolated provider control
+still executes actual missing-proof refusal before any network access;
+the valid live owner proof is no longer an accidental negative-fixture input.
+The failed admission and source revision are preserved with zero charges.
+
+## Stage-1 Go selection hold and original-pinned audit (2026-10-12)
+
+**Readiness actually exercised:** current qualification passed **179 offline
+controls**, fresh preparation selected six fixtures/18 pairs/36 arm trials,
+and complete six-store/eleven-file source/memory admission passed with no
+new charges. Bare-primary, guided-primary and successor then passed all
+actual isolation/action/report checks in declared order, using **6/6/5 calls**
+under their 11/11/8 ceilings. No inference smoke was added. P0 froze **57
+source identities** before the selection; immutable copies and their
+original hashes are retained in `frozen-p0-source-manifest.json`.
+
+**Observed selection outcome:** **14/36 arm chains ran: six completed, eight
+censored, 22 unrun**. No required successor chain was reached. The unchanged
+350-call/nine-reserve, USD 0 envelope now contains **128 model calls/nine
+reserves/USD 0**: 32 historical calls, 17 fresh canary calls and 79 selection
+calls. Every original approval and the exact 38-row/9,803-byte inherited
+prefix remain retained. `HELD_INCOMPLETE` is the actual campaign receipt,
+not a complete paired comparison.
+
+**Live cause and prospective repair:** the final request was HTTP 200 with
+terminal `incomplete`, reason `max_output_tokens`, 2,048 output tokens and
+`error=null`. The worker labeled this known limit `transport-censored`;
+the driver treated that prefix as an unresolved outcome and stopped.
+An early stop also bypassed deferred scoring, leaving all 36 ledger rows
+incorrectly labeled unrun. Only the separate `prospective-repair/` copy
+was repaired: verified terminal caps stay censored/`output-cap-reached`,
+transport errors win over censoring and still stop dispatch, malformed
+transport results use the same fault class, and retained-but-unscored
+chains receive neutral held rows with null endpoints. No unfinished tool
+call is executed and no cap is raised. **40 worker controls, 25 serial
+controls and three bounded API smokes passed**, including the actual
+captured terminal response, with zero new calls/reserves. Copied source
+has no new root grant; the first smoke's root-identity refusal is retained,
+and grant checks use the exact historical read-only root as their fixture.
+This is prospective mechanics evidence, not new live role qualification.
+
+**Original-pinned offline audit:** the original run/source/P0 stayed
+unchanged. A fresh namespace completed only the originally deferred
+scoring/audit for the 14 retained chains, using the **original pinned
+scorer and acceptance oracle**, not the prospective repair. Zero model
+calls/reserves were added. All 14 raw-stream/report audits completed;
+seven allocations contain forbidden guidance-name leaks and remain
+invalid without byte stripping. The full allocation ledger contains
+**seven held, seven invalid and 22 unrun rows**, all functional endpoints
+null and all semantic endpoints pending. Why-only/no bound candidate and
+read-only/no arithmetic-reference verdict remain held, not task failures.
+No retrospective requalification, changed oracle, unblinding or delta
+calculation occurred.
+
+**Actual human surface / remaining authority:** the original report
+renderer produced seven label-free review cards with no rating defaults.
+Real Chromium exercised the missing-freeze refusal and inspected 1280px
+and 390px surfaces without horizontal clipping. The complete 36-row
+allocation and all 14 retained observations remain outside the card count;
+seven invalid rows are not silently dropped from the denominator.
+Designated maintainer scores and acceptance of the audit's **observed
+leaks and limits** are still absent; outcome acceptance and Stage-2 remain
+separate. Existing implementation, risk, blinded and benchmark contracts
+already require these boundaries. No skill/registry/installed-contract
+change or efficacy promotion is justified.
+
+**Evidence / next gate:** the follow-up namespace
+`local://stage1-go-cohort-b8tYiv/advisory-followup-9ajJDB/` retains the
+source archive, prospective repair/smoke, original-pinned audit bindings,
+neutral human-review files and actual reader captures. Further generation
+is held: no automatic continuation or replay is authorized. A fresh
+source-bound full cohort at unchanged role/trial ceilings would require
+**128 + 30 + 288 = 446 cumulative calls and 12 reserves**, beyond the
+existing 350/nine grant. Only a new explicit owner decision can authorize
+that new cohort; keeping the retained result held is also a complete
+disposition. Completed TEST-001/checkpoint and dormant/P6 gates are unchanged.
+
+## Stage-1 Go fresh repaired cohort (2026-10-13)
+
+**Authority / scope:** the maintainer selected “授權完整新 Stage-1 cohort”.
+This grants a separately versioned private repaired source, fresh complete
+admission, three new canaries and all 18 selection pairs/36 arm chains,
+including the declared successor chains. The cumulative ceiling is
+**446 model calls/12 reserves/USD 0**: 128 retained historical calls plus
+30 capped canary calls and 288 capped selection calls; nine retained reserves
+plus three fresh reserves. Ordinary sessions stay six responses/300 seconds;
+canaries stay 11/11/8. Same provider/model, included quota only,
+synthetic/public-only Contributor training-permitted/non-ZDR scope and all
+original exclusions remain. Human scores/audit/outcome acceptance, Stage-2,
+operator mutation, accepted-runtime/oracle changes, commit and push are not granted.
+
+**Preservation / source:** the prior Go run stays HELD_INCOMPLETE. Its exact
+137-row/34,779-byte ledger prefix contains 128 calls/nine reserves and four
+original approval identities; it is sealed into the new private root
+`/private/tmp/teaprompt-stage1-go-fresh-p33vNi` without relabeling any row.
+The source is based on the cold-verified prospective repair, not a mutation
+or replay of the old frozen P0. No prior local or remote role proof transfers.
+The actual earlier owner Console observation is retained at its original
+timestamp and bound to the unchanged account plus the new quota-only grant;
+no new Console observation or API flag readback is claimed.
+
+**Observed admission / execution:** final-source admission passed **186
+zero-model controls**, all four admission entrypoints and the complete
+six-store/eleven-file protected-memory boundary, with no new charge. A copied
+explanatory count was corrected before dispatch; its earlier passing admission
+is retained separately rather than reused with stale source pins. New
+bare-primary/guided-primary/successor canaries passed in **6/6/5 calls**,
+including required writes, denials, actual public checks and memory boundaries.
+Only then did a new P0 freeze **57 source identities** and the complete
+18-pair/36-chain selection population. No prior role proof was reused.
+
+| Fresh selection chain disposition | Count |
+| --- | --- |
+| Completed | 7 |
+| Censored | 17 |
+| Incomplete | 12 |
+| Unrun | 0 |
+| Allocated / retained | 36 |
+
+All 12 incomplete chains have a censored handoff primary and
+`required-successor-unavailable`: **zero selection successors ran**.
+They remain allocated with their actual primary costs; they are not
+completed failures or successful transfer evidence. TEST-004 transfer is
+not demonstrated by the separate successful successor canary.
+
+**Accounting / measurement:** new canaries used 17 calls/three reserves,
+and selection used 189 calls/no additional reserves. Together with the
+unchanged 128-call/nine-reserve prefix, cumulative usage is **334 calls/
+12 reserves/USD 0**, zero CLI sessions. The unused 112-call ceiling and
+zero remaining reserves do not authorize replay or another cohort.
+Every allocation appears in the 36-row ledger: **one protected functional
+pass, 17 held and 18 invalid**. All 36 semantic endpoints remain
+`pending-human`; functional pass is not human task/outcome acceptance.
+The frozen raw-stream audit flagged 18 allocations/96 stream-artifact
+entries. A separate zero-model provenance audit located every flag in
+provider-echoed `response.instructions`: all 288 matching events across
+those 96 files exactly reproduce the captured request instructions.
+No flagged token occurred in another parsed event value or candidate report.
+This identifies request-metadata flags, not observed model-authored report
+leaks. The frozen 18-invalid classification remains unchanged pending
+owner leak-audit disposition; no oracle change or retrospective regrading
+is supplied. Raw streams and candidate bytes remain retained, never
+laundered; the sealed map was not exposed. This does not support isolated
+skill utility, paired performance/noise or handoff-transfer claims.
+
+**Evidence / next gate:** all original outcomes remain unchanged. The private
+namespace `local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/`
+retains authority, source revision/rebind, admission, actual-role and full
+selection bindings, chain accounting and **57 byte-verified frozen P0
+source copies**. Current record updates are post-run documentation, not
+changes to the executed source revision. The actual blinded owner-review
+page contains 18 non-leak-invalid cards; all ratings default to unscored.
+Required owner freeze/audit gates refuse export when absent; actual
+1280px/390px views were exercised without supplying scores or approval.
+Designated blinded human scores and leak-audit/outcome disposition remain
+owner-held. No new dispatch, unblinding, accepted-runtime/oracle edit,
+operator mutation, commit, push or Stage-2 is authorized by this result.
+
+## Stage-1 Go corrective offline audit (2026-10-13)
+
+**Authority / scope:** the maintainer selected **Authorize separate corrective
+audit** after the request-echo provenance finding. This permits a new private,
+versioned zero-model audit of the retained fresh cohort, not an edit to the
+original ledger, P0, protected oracle or accepted runtime. Only exact
+captured-request `response.instructions` echoes are excluded; generated
+content, stderr, decoded diagnostic output and scored-packet leaks still refuse
+scoring. Audit authorization is not acceptance of the audit result.
+
+**Observed verification:** all ten boundary controls passed, including the
+original detector's false-positive echo and refusal of actual output/delta,
+mismatched/wrong-location metadata, header, stderr, diagnostic and scored-report
+leaks; missing request or malformed SSE fails closed. The complete audit
+examined 189 retained SSE artifacts and verified 288 exact instruction echoes
+across the 96 originally flagged files. No non-exempt stream, candidate or
+scored-packet token remained. Every candidate preflight finished before scoring.
+Eighteen original blind rows were reused unchanged; 18 additional deterministic
+blind scorings passed inside the adopted no-mount/network-denied Apple guest.
+No protected functional/candidate execution, model call, reserve or replay ran.
+
+| Functional ledger disposition | Frozen original | Corrective audit |
+| --- | --- | --- |
+| Protected pass | 1 | 1 |
+| Held / functional score null | 17 | 35 |
+| Leak-invalid | 18 | 0 |
+
+Both ledgers retain all 36 allocations. The changed classification is a
+measurement correction, not extra task success; held is not failed or zero.
+All human semantic and outcome endpoints remain null. Chain completion,
+the absent selection successors and cumulative 334 calls/12 reserves/USD 0
+are unchanged.
+
+**Preservation / consumers:** 1,615 original evidence-file digests and 54
+non-record P0 bindings verified unchanged; all 57 frozen source copies remain
+retained. The three updated public continuation records are post-run documents,
+not replacements for their archived P0 bytes. Raw/candidate bytes and the sealed
+map were not rewritten or exposed. A fresh label-free owner review contains
+36 cards, with blank ratings and unchecked freeze/audit gates. Actual
+1280px/390px views and all three missing-gate combinations were exercised;
+no score, audit acceptance or outcome acceptance was supplied. The original
+18-card review and ledger remain historical evidence.
+
+**Evidence / next gate:** the authority, executable, ten-control receipt,
+corrected ledger/audit, isolated scorer captures, preservation manifest and
+actual owner-review verification are retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/corrective-audit-mWEDQu/`.
+Designated blinded human scoring and explicit audit/outcome disposition remain
+owner-held. All seven accountable roles still share the maintainer; this is not
+independent-human review. No arm analysis/unblinding, skill/transfer claim,
+Stage-2, dormant/P6 activation, operator mutation, commit or push follows.
+
+
+
+
+
 ## Falsifiability and next action
 
 This design is wrong if an independent executor cannot determine arm construction, sample counts, authority boundaries, denominators or score meanings without guessing; if a known false-positive answer can earn success; or if host variability cannot be separated enough to answer the declared question. A skill-improvement claim is wrong if held-out gains disappear, healthy behavior regresses, or the benefit comes from extra model/tool authority rather than the declared treatment.
 
-**Next action:** integrate and exercise the explicitly approved [prospective WAL-aware cohort](#stage-1-prospective-wal-aware-cohort-2026-10-12), then run three fresh roles and the full granted selection population only after their gates pass. Do not request already-granted Stage-1, seven roles, provider startup, narrow prospective criterion or 336-call/six-reserve envelope again. Preserve all prior outcomes and charged accounting; no retrospective waiver, identical replay, ambient-commit exception or unrelated operator mutation. Human scoring/acceptance remains later; Stage-2/TEST-003 needs its separate grant. [TEST-001 mechanics](#test-001-zero-model-mechanics-acceptance-2026-10-11) stays complete; the completed checkpoint and dormant owning gates are unchanged.
+**Next action:** obtain designated blinded human scoring and explicit leak-audit/outcome disposition using the [corrective audit's 36-card review](#stage-1-go-corrective-offline-audit-2026-10-13). Keep missing/merged/overlength summaries and unavailable endpoints unscored; preserve every allocation and the frozen original ledger. Freeze scores/audit before any arm unblinding, which remains ungranted. No further generation or replay is authorized by unused call headroom. Do not merge the old held run into this cohort or infer a skill, performance or handoff gain. Stage-2, operator mutation, accepted-runtime/oracle changes, commit and push remain excluded; [TEST-001 mechanics](#test-001-zero-model-mechanics-acceptance-2026-10-11), the completed checkpoint and dormant owning gates stay unchanged.
 
 Earlier same-day qualification note, retained as history; the accepted successor
 and completed mechanics controls above supersede its open TEST-001 owner slots:

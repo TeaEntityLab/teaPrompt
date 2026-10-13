@@ -84,3 +84,15 @@ This decision must be re-litigated if: (1) an adopted surface disappears while i
 | Deterministic adoption guard | `verified` | `plans/tests/test_product_runtime_ownership_panel_record.py`: 6 passed |
 | Focused and repository verification | `verified` | affected set 96 passed; full suite and `make all`: 1052 passed |
 | Temporary packet removal and branch re-check | `verified` | packet removed after synthesis; shared worktree remained attached to `main` |
+
+## Later Pinned Source Survey (2026-10-12)
+
+The [Heddle source survey](heddle-source-survey-2026-10-12.md) inspected exact
+revision `80dccf24275b78b6df1db02e83a9e08b9709423c` and exercised bounded
+scheduler/checkpoint mechanisms offline. It observes a source pin and MIT
+license that this earlier article-only review did not verify. OW-1–OW-9
+dispositions remain unchanged: those new study facts do not supply runtime
+adoption, host integration/security proof, private company efficacy, or
+dogfooding campaign authority. The earlier counts and receipts above remain
+historical evidence.
+
