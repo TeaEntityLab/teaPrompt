@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-13T15:36:17.321042",
+  "generated_at": "2026-10-14T00:51:14.984112",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -35,17 +35,23 @@
             "governance-workflow-self-control-adoption-2026-09-14.md",
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
+            "roadmap-ecosystem-packaging-2026-10-13.md",
+            "roadmap-index-surveyed-plans-2026-10-13.md",
             "teabrain-concepts-experiments-survey-2026-09-21.md",
             "skills-surface-plan-2026-07-11.md",
             "runtime-skills-experiments-2026-10-05.md",
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "semantica-survey-2026-10-07.md",
+            "roadmap-execution-assurance-2026-10-13.md",
             "harness-intent-drift-rethink-2026-09-06.md",
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
+            "roadmap-governed-autonomy-2026-10-13.md",
             "whole-project-review-2026-10-09.md",
+            "surveyed-plans-unified-roadmaps-2026-10-13.md",
             "checkpoint-packaging-decision-2026-10-11.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
+            "roadmap-prompt-cognition-memory-2026-10-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
             "whole-project-plan-2026-07-11.md",
@@ -77,6 +83,7 @@
             "superpowers-v6.4-adoption-2026-10-03.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
+            "roadmap-software-factory-devops-2026-10-13.md",
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
@@ -163,6 +170,7 @@
             "agentflow-8.2-delta-survey-2026-09-13.md",
             "runtime-governance-learning-plan-2026-06-11.md",
             "stop-that-shit-survey-2026-09-30.md",
+            "roadmap-harness-flow-control-2026-10-13.md",
             "flow-pack-usage-log.md",
             "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -1334,6 +1342,177 @@
       "char_count": 4645
     },
     {
+      "path": "reflective-prompt-library/plans/roadmap-ecosystem-packaging-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-ecosystem-packaging-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../SKILL_INSTALLATION.md",
+          "dormant-work-specs-2026-07-11.md#e2--archive-restructuring-panel-transcript-demotion-category-merges",
+          "checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-outcome.md#t2-decision"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Ecosystem Packaging, Host Distribution and Governance Health Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Packaging and Distribution Architecture"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Distribution"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Source-Bound P6 / T2 Review"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 76,
+      "char_count": 7101
+    },
+    {
+      "path": "reflective-prompt-library/plans/roadmap-index-surveyed-plans-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-index-surveyed-plans-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "whole-project-roadmap-2026-07-11.md",
+          "whole-project-roadmap-2026-07-11.md",
+          "surveyed-plans-unified-roadmaps-2026-10-13.md",
+          "whole-project-roadmap-2026-07-11.md",
+          "checkpoint-2026-10-11-outcome.md",
+          "roadmap-harness-flow-control-2026-10-13.md",
+          "roadmap-execution-assurance-2026-10-13.md",
+          "roadmap-governed-autonomy-2026-10-13.md",
+          "roadmap-prompt-cognition-memory-2026-10-13.md",
+          "roadmap-software-factory-devops-2026-10-13.md",
+          "roadmap-ecosystem-packaging-2026-10-13.md",
+          "roadmap-harness-flow-control-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-execution-assurance-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-execution-assurance-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-governed-autonomy-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-harness-flow-control-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-governed-autonomy-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-prompt-cognition-memory-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-prompt-cognition-memory-2026-10-13.md#candidate-adoption-ledger",
+          "roadmap-software-factory-devops-2026-10-13.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-outcome.md#p6-outcome",
+          "checkpoint-2026-10-11-outcome.md#t2-decision",
+          "whole-project-roadmap-2026-07-11.md",
+          "checkpoint-2026-10-11-outcome.md#p6-outcome",
+          "checkpoint-2026-10-11-outcome.md#t2-decision"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Master Roadmap Index of Surveyed Plans — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Relationship to Whole-Project Roadmap (2026-07-11)"
+        },
+        {
+          "level": 2,
+          "text": "Domain Roadmaps Index"
+        },
+        {
+          "level": 2,
+          "text": "Parallel Socratic Critical Thinking Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Consensus Verdict: AGREE WITH CHANGES (single-channel consensus)"
+        },
+        {
+          "level": 2,
+          "text": "Consolidated Scheduling Horizons"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Cadence (Continuous)"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Source-Bound Next Review"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue (Active Watch)"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 88,
+      "char_count": 9845
+    },
+    {
       "path": "reflective-prompt-library/plans/teabrain-concepts-experiments-survey-2026-09-21.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -1753,6 +1932,75 @@
       "char_count": 29017
     },
     {
+      "path": "reflective-prompt-library/plans/roadmap-execution-assurance-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-execution-assurance-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Execution Assurance, Verifier Ecosystem and Evaluation Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Assurance Architecture"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 76,
+      "char_count": 7155
+    },
+    {
       "path": "reflective-prompt-library/plans/harness-intent-drift-rethink-2026-09-06.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2066,6 +2314,79 @@
       ],
       "line_count": 188,
       "char_count": 25118
+    },
+    {
+      "path": "reflective-prompt-library/plans/roadmap-governed-autonomy-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-governed-autonomy-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
+          "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Governed Autonomy, Runtime Trust Boundaries and Four-Power Governance Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Governance Architecture: The Four Powers"
+        },
+        {
+          "level": 3,
+          "text": "Critical Invariants"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — No New Date-Gated Commitment"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 82,
+      "char_count": 7078
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-review-2026-10-09.md",
@@ -2394,6 +2715,234 @@
       "char_count": 92480
     },
     {
+      "path": "reflective-prompt-library/plans/surveyed-plans-unified-roadmaps-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "surveyed-plans-unified-roadmaps-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "roadmap-index-surveyed-plans-2026-10-13.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger",
+          "checkpoint-2026-10-11-outcome.md#gd-outcome",
+          "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11",
+          "roadmap-index-surveyed-plans-2026-10-13.md#parallel-socratic-critical-thinking-consensus"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Surveyed Plans Unified Roadmaps and Parallel Socratic Synthesis — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose and Scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap I: Agent Harness Architecture, Flow Control & Orchestration Topology"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: Date-Gated Milestones"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap II: Agent Execution Assurance, Verifier Ecosystem & Empirical Evaluation"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap III: Governed Autonomy, Runtime Trust Boundaries & The Four Powers"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: No New Date-Gated Commitment"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap IV: Prompt Engineering, Contract Taxonomy & Context Architecture"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Shipped Prompts"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap V: Memory Architecture, Cognitive Foundations & Autonomous Software Factory Evolution"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Shipped Concepts"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Roadmap VI: Ecosystem Packaging, Host Distribution, Localization & Governance Health"
+        },
+        {
+          "level": 3,
+          "text": "1. Surveyed Evidence Base"
+        },
+        {
+          "level": 3,
+          "text": "2. Horizon Architecture"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 1: Standing Invariants & Distribution Factoring"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 2: Date-Gated Milestones"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 3: Trigger-Gated Backlog"
+        },
+        {
+          "level": 4,
+          "text": "Horizon 4: Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Parallel Socratic Critical Thinking Synthesis"
+        },
+        {
+          "level": 3,
+          "text": "Round 1: Survey Corpus Deep Dive (4 Specialist Lenses)"
+        },
+        {
+          "level": 3,
+          "text": "Round 2: Direct Audit of 8 Roadmap Drafts (3 Scout Lenses)"
+        },
+        {
+          "level": 3,
+          "text": "Policy Safeguards 1–8 (Status-Tagged)"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 264,
+      "char_count": 25389
+    },
+    {
       "path": "reflective-prompt-library/plans/checkpoint-packaging-decision-2026-10-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -2522,6 +3071,84 @@
       ],
       "line_count": 183,
       "char_count": 13628
+    },
+    {
+      "path": "reflective-prompt-library/plans/roadmap-prompt-cognition-memory-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-prompt-cognition-memory-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "human-cognition-adoption-2026-10-02.md#candidate-adoption-ledger",
+          "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11",
+          "teabrain-concepts-experiments-survey-2026-09-21.md#candidate-adoption-ledger"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Prompt Engineering, Context Architecture and Cognitive Memory Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Prompt & Memory Architecture"
+        },
+        {
+          "level": 3,
+          "text": "The Seven-Category Audit Vocabulary and the Procedure Layer"
+        },
+        {
+          "level": 3,
+          "text": "Context Hygiene and Memory Substrates"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Prompts"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 91,
+      "char_count": 8500
     },
     {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
@@ -5176,6 +5803,78 @@
       ],
       "line_count": 913,
       "char_count": 65346
+    },
+    {
+      "path": "reflective-prompt-library/plans/roadmap-software-factory-devops-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-software-factory-devops-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "rsiagent-survey-2026-09-16.md#candidate-adoption-ledger"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Autonomous Software Factory and Agentic DevOps Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Software Factory Architecture"
+        },
+        {
+          "level": 3,
+          "text": "Factory Realism & Disclaimers"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Recipes"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Review Proposal (Unscheduled)"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 85,
+      "char_count": 7597
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
@@ -7932,6 +8631,9 @@
           "whole-project-plan-2026-07-11.md",
           "../PROJECT_KNOWLEDGE.md",
           "whole-project-review-2026-10-09.md",
+          "roadmap-index-surveyed-plans-2026-10-13.md",
+          "surveyed-plans-unified-roadmaps-2026-10-13.md",
+          "checkpoint-2026-10-11-outcome.md#p6-outcome",
           "../GLOSSARY.md#governance-maintenance-playbook--治理維護手冊",
           "ROUTING_CONTRACT.md",
           "QUALITY_GATES_SUMMARY.md",
@@ -8108,8 +8810,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 415,
-      "char_count": 41347
+      "line_count": 418,
+      "char_count": 41994
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -14509,6 +15211,76 @@
       "char_count": 37864
     },
     {
+      "path": "reflective-prompt-library/plans/roadmap-harness-flow-control-2026-10-13.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "roadmap-harness-flow-control-2026-10-13",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "checkpoint-2026-10-11-outcome.md#p6-outcome",
+          "flow-pack-demotion-evaluation-2026-07-11.md#ledger",
+          "product-runtime-ownership-panel-2026-08-25.md#candidate-adoption-ledger"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Harness Architecture and Flow-Control Roadmap — 2026-10-13"
+        },
+        {
+          "level": 2,
+          "text": "Purpose"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Surveyed Plans Corpus"
+        },
+        {
+          "level": 2,
+          "text": "Architecture and Core Topologies"
+        },
+        {
+          "level": 2,
+          "text": "Horizon Milestones"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 1 — Standing Invariants & Shipped Packs"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 2 — Date-Gated Checkpoints"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 3 — Trigger-Gated Queue"
+        },
+        {
+          "level": 3,
+          "text": "Horizon 4 — Direction-Gated Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        }
+      ],
+      "line_count": 82,
+      "char_count": 6930
+    },
+    {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -19696,5 +20468,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 213
+  "total_files": 221
 }

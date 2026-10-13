@@ -13,13 +13,16 @@ criteria. F15/F16 identify stale aggregate pack counts and omitted S3/July H3/H4
 discovery pointers; recording them does not reconcile those inventories or close
 the findings. Existing triggers, owners, and the October 11 date gate are unchanged.
 
+**2026-10-13 survey navigation:** the [Master Roadmap Index](roadmap-index-surveyed-plans-2026-10-13.md) links six domain planning summaries; the [unified synthesis](surveyed-plans-unified-roadmaps-2026-10-13.md) preserves the review trail. Neither supersedes this scheduling companion or its owning decisions. The [checkpoint outcome](checkpoint-2026-10-11-outcome.md#p6-outcome) schedules P6 for 2027-01-11, with T2's conditional parity check; other audit ideas remain proposals, not a quarterly calendar.
+
+
 ## Horizon model
 
 TeaPrompt does not schedule by calendar quarters; it schedules by **gates**. Four
 horizon classes, ordered by certainty:
 
 1. **Standing cadence** — always-on maintenance duties tied to change events.
-2. **Date-gated** — a named calendar checkpoint exists (currently one: 2026-10-11).
+2. **Date-gated** — a named owning decision supplies the date. The 2026-10-11 checkpoint is completed; P6's next review is 2027-01-11, with T2 checked earlier on a registry/appendix change or at that review if unchanged.
 3. **Trigger-gated** — fires when a named, observable event occurs; until then the
    item is deliberately dormant (missing usage evidence is `unknown`, not zero).
 4. **Direction-gated (never-unless)** — Standing Non-Goals; only an explicit human
