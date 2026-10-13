@@ -1,8 +1,21 @@
 # Skill Improvement Through Dogfooding — Test Plan — 2026-10-08
 
-**Execution continuation (2026-10-13):** the [separately versioned repaired Go cohort](#stage-1-go-fresh-repaired-cohort-2026-10-13) passed fresh admission and all three actual canaries, froze a new P0, and attempted every allocated selection chain: 36/36, with seven completed, 17 censored and 12 incomplete; none unrun. Cumulative usage is 334 calls/12 reserves/USD 0. All 12 handoff primaries were censored, so no selection successor ran. Original held outcomes and the 128-call/nine-reserve prefix remain immutable. The separately authorized [corrective offline audit](#stage-1-go-corrective-offline-audit-2026-10-13) is complete; human scores/audit/outcome acceptance remain pending. No replay, skill-effect claim or Stage-2 follows.
+**Execution continuation (2026-10-13):** the
+[separately versioned repaired Go cohort](#stage-1-go-fresh-repaired-cohort-2026-10-13)
+attempted all 36 allocations: seven completed, 17 censored and 12 incomplete.
+Cumulative usage remains 334 calls/12 reserves/USD 0; no selection successor ran.
+The corrective audit, frozen human-score intake and explicitly authorized
+[bounded descriptive unblinding](#stage-1-bounded-descriptive-unblinding-2026-10-13)
+are complete. Original ledgers, raw evidence and charges remain unchanged.
+The maintainer subsequently [accepted the outcome as inconclusive](#stage-1-outcome-disposition-2026-10-13); Stage-1 is closed, with no efficacy claim, replay or Stage-2.
 
-> **Status: complete fresh selection attempt; AWAITING_BLINDED_HUMAN_SCORING, not Stage-1 acceptance.** Original planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`. This is a non-authoritative, dated Test Plan, not a new harness policy or public runtime. The original planning and repair instructions did not grant model dispatch or consumer adoption; subsequent explicit mechanics and Stage-1 grants are recorded below. The 2026-10-09 scoped learning promotion remains separate. No efficacy result is claimed.
+> **Status: Stage-1 accepted as inconclusive; Stage-2 not authorized.**
+> Original planning baseline: `3977dcd1eede7d6e2d2ed23203c83853476ddeb5`.
+> This is a non-authoritative, dated Test Plan, not a new harness policy or public
+> runtime. Original planning and repair instructions did not grant model dispatch
+> or consumer adoption; subsequent explicit mechanics and Stage-1 grants are
+> recorded below. The 2026-10-09 scoped learning promotion remains separate.
+> No efficacy result is claimed.
 
 ## Goal and brief
 
@@ -1061,6 +1074,35 @@ Stage-2/new generation requires a separately approved question, untouched
 population and envelope. Dormant/P6, operator/runtime changes, commit and push
 remain outside this grant.
 
+## Stage-1 outcome disposition (2026-10-13)
+
+**Authority / decision:** after frozen human scoring, leak-audit acceptance and
+the authorized descriptive analysis, the maintainer explicitly selected
+**Accept as inconclusive**. The fresh cohort's Stage-1 outcome acceptance gate
+is closed. This supersedes the prior pending-outcome pointers, not their
+historical receipts, measurements or scope at the time.
+
+**Retained outcome / acceptance:** all 18 pairs and 36 allocations, 29 unavailable
+primary endpoints, 26 unavailable summary-rubric endpoints and every raw human
+judgment remain unchanged. Three jointly available why-only pairs tie; the sole
+control repair pass has a censored treatment counterpart. No selection
+successor or transfer endpoint exists. Acceptance is **inconclusive**, not an
+efficacy PASS, a completed treatment failure, or permission to repair a skill.
+Retain the current skill contracts; no change is justified by this result.
+
+**Traceability / preservation:** the explicit owner ruling and the preceding
+handoff source bytes are retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/outcome-disposition-2NyLQg/`.
+The frozen analysis and its source-bound verification remain separate,
+unchanged artifacts. Cumulative accounting stays 334 calls/12 reserves/USD 0;
+this disposition adds no model call, reserve, scorer or protected-oracle replay.
+
+**Remaining work / human review:** no Stage-1 action remains under this scope.
+Any future Stage-2 requires a separately approved preregistered question,
+untouched instances and enforced envelope. No Stage-2, new generation,
+post-exposure regrading, dormant/P6 activation, operator/runtime change,
+commit or push is authorized by this acceptance.
+
 
 
 
@@ -1072,7 +1114,14 @@ remain outside this grant.
 
 This design is wrong if an independent executor cannot determine arm construction, sample counts, authority boundaries, denominators or score meanings without guessing; if a known false-positive answer can earn success; or if host variability cannot be separated enough to answer the declared question. A skill-improvement claim is wrong if held-out gains disappear, healthy behavior regresses, or the benefit comes from extra model/tool authority rather than the declared treatment.
 
-**Next action:** obtain designated blinded human scoring and explicit leak-audit/outcome disposition using the [corrective audit's 36-card review](#stage-1-go-corrective-offline-audit-2026-10-13). Keep missing/merged/overlength summaries and unavailable endpoints unscored; preserve every allocation and the frozen original ledger. Freeze scores/audit before any arm unblinding, which remains ungranted. No further generation or replay is authorized by unused call headroom. Do not merge the old held run into this cohort or infer a skill, performance or handoff gain. Stage-2, operator mutation, accepted-runtime/oracle changes, commit and push remain excluded; [TEST-001 mechanics](#test-001-zero-model-mechanics-acceptance-2026-10-11), the completed checkpoint and dormant owning gates stay unchanged.
+**Next action:** Stage-1 is [accepted as inconclusive](#stage-1-outcome-disposition-2026-10-13)
+and closed. Preserve every allocation, unavailable endpoint, frozen human
+judgment and original ledger; retain the current skill contracts. No further
+generation or replay follows from unused call headroom. Any future Stage-2
+needs its own approved question, untouched instances and envelope.
+Operator mutation, accepted-runtime/oracle changes, commit and push remain
+excluded; TEST-001 mechanics, the completed checkpoint and dormant owning gates
+stay unchanged.
 
 Earlier same-day qualification note, retained as history; the accepted successor
 and completed mechanics controls above supersede its open TEST-001 owner slots:

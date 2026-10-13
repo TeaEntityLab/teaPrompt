@@ -209,6 +209,13 @@ unchanged. Next: explicit owner outcome disposition, not model replay or an
 automatic repair. Stage-1 acceptance, Stage-2, dormant/P6, commit and push are
 still ungranted.
 
+**Owner outcome disposition (2026-10-13):** the maintainer subsequently
+[accepted Stage-1 as inconclusive](skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13).
+The fresh outcome gate is closed; retain current skill contracts and all frozen
+measurements/charges. No Stage-1 action remains. Stage-2 requires its own approved
+question, untouched instances and envelope; no replay, new generation,
+dormant/P6 activation, operator/runtime change, commit or push is granted.
+
 
 
 

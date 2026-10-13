@@ -203,6 +203,12 @@ ties do not demonstrate skill efficacy or handoff transfer; no selection
 successor ran. Outcome disposition remains owner-held. No dormant candidate,
 recurrence/use count, P6, Stage-2 or generation gate is activated by this analysis.
 
+**Owner outcome disposition (2026-10-13):** the maintainer subsequently
+[accepted the fresh Stage-1 outcome as inconclusive](skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13).
+This closes only that outcome gate. No skill change, recurrence/use increment,
+dormant candidate, P6, Stage-2 or generation authority follows; all original
+measurements, unavailable endpoints and charges remain unchanged.
+
 
 
 

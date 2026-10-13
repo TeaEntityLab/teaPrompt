@@ -257,4 +257,9 @@ run, protected-oracle edit, commit or push is authorized by either decision.
 > are unchanged. Owner outcome disposition, Stage-1 acceptance and Stage-2
 > remain separate. This neither reopens the checkpoint nor activates dormant/P6.
 >
+> **Owner outcome disposition (2026-10-13):** the maintainer subsequently
+> [accepted the fresh Stage-1 outcome as inconclusive](skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13).
+> That outcome gate is closed, without a skill-effect or transfer claim.
+> Stage-2, new generation and dormant/P6 authority remain ungranted;
+> the checkpoint stays closed and all frozen measurements/charges are unchanged.
 

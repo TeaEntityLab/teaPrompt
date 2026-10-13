@@ -337,6 +337,13 @@ unchanged. Outcome disposition/Stage-1 acceptance and a separate Stage-2 grant
 remain owner-held; no skill repair, new generation, dormant/P6 activation,
 operator/runtime change, commit or push follows.
 
+**Owner outcome disposition 2026-10-13:** the maintainer subsequently
+[accepted Stage-1 as inconclusive](skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13).
+The fresh cohort's outcome acceptance is complete, with current skill contracts,
+all frozen ratings/null endpoints and charges retained. No Stage-1 action remains.
+Stage-2 needs a separate approved question and envelope; no new generation,
+replay, dormant/P6 activation, operator/runtime change, commit or push follows.
+
 
 
 
