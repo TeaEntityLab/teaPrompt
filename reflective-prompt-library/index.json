@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T00:51:14.984112",
+  "generated_at": "2026-10-14T01:23:16.261641",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -7541,11 +7541,15 @@
         },
         {
           "level": 2,
+          "text": "Stage-2 readiness continuation (2026-10-14)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1175,
-      "char_count": 123951
+      "line_count": 1241,
+      "char_count": 128204
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",

@@ -17,6 +17,11 @@ The maintainer subsequently [accepted the outcome as inconclusive](#stage-1-outc
 > recorded below. The 2026-10-09 scoped learning promotion remains separate.
 > No efficacy result is claimed.
 
+**Readiness continuation (2026-10-14):** [metadata-only Stage-2 review](#stage-2-readiness-continuation-2026-10-14)
+is complete with **NO_GO**. The legacy pool's hashes are intact, but two
+implementation challenge inputs were exposed by a source search in this review.
+No final trial, new model call, scorer or protected-oracle dispatch occurred.
+
 ## Goal and brief
 
 **Goal:** use TeaPrompt to govern an evidence-led review of TeaPrompt, improving task correctness, observable decision quality, performance, and stability only where experiments justify an existing-skill change.
@@ -1149,6 +1154,65 @@ The [accepted-inconclusive disposition](#stage-1-outcome-disposition-2026-10-13)
 and all separate Stage-2, runtime/oracle, dormant/P6, commit and push gates remain
 unchanged.
 
+## Stage-2 readiness continuation (2026-10-14)
+
+**Scope / authority:** the maintainer asked to commit the verified documentation
+in multiple commits and continue stages. The roadmap/navigation commit
+`12d6b7c` and verification-receipt commit `131ee6d` are complete. Continuation
+here checks retained metadata and hashes only; it does not infer a Stage-2
+question, model/profile, execution envelope or host grant from that request.
+The accepted-inconclusive Stage-1 outcome remains closed.
+
+**Observed readiness, not a confirmation outcome:** the retained legacy
+`dogfood-stage1-work-2026-10-08/holdouts-manifest.json` lists nine files, records
+`ran: false` and claims sealing before Stage-1 outputs. A read-only Bun consumer
+verified all nine file hashes, all 57 frozen P0 source copies, the three current
+target-skill hashes against both P0 and pool pins, and the owner-disposition
+authority receipt. Original metadata inputs were unchanged during the check.
+Hash equality proves retained byte identity, not curator independence,
+candidate-author unread provenance, effective isolation or runnable oracle
+coverage. No model, scorer, protected oracle or accepted runtime was exercised.
+
+**Read-exposure incident / preservation:** the source search used to locate the
+legacy seal implementation displayed the literal inputs for both implementation
+challenge instances. Those inputs are now in this coordinator's read set and
+cannot qualify as untouched confirmation for this continuation. Their original
+files and manifest remain unchanged; exclusion from future eligibility is not
+deletion or retrospective regrading. Unread provenance for the remaining seven
+files is **unknown**, not established by the manifest's boolean. The hash
+consumer displayed no task/answer content.
+
+**Selection decision / remaining gates:** retain the current skills. The accepted
+Stage-1 outcome supplies no qualified target-skill repair diagnosis, measured
+removable overhead or positive paired utility result; available why-only pairs
+tie. No candidate is selected or efficacy recommendation made. Stage-2 is
+**NO_GO**, requiring all of:
+
+- A separately approved preregistered question and explicit CLI-session,
+  model-call, reserve-allocation, spend and timeout envelope. Historical
+  `envelope_granted: true` and 112 unused Stage-1 calls supply no Stage-2 authority.
+- Eligible, disjoint curator-sealed final inputs, including two challenges and
+  one healthy/authority-boundary sentinel per question, with verified unread
+  provenance. TEST-003 requires the pool to predate Stage-1 outputs; creating a
+  replacement now cannot silently satisfy that predicate. A replacement needs
+  an explicit owner-approved revised design or a fresh campaign with its final
+  pool sealed before that campaign's selection outputs.
+- Fresh source-bound executable, actual-role, capture/memory and host-enforcement
+  admission for any approved new campaign. Historical mechanics and role receipts
+  are not requalification of a new population or envelope.
+
+**Evidence / next action:** the metadata verifier and observed receipt are
+retained with the original campaign session's private artifacts in
+`local/stage2-readiness-2026-10-14.7lkrH7/` (`readiness.json` and
+`check-readiness.mjs`). The receipt binds the campaign/pool/source manifests,
+legacy generator, pre-documentation plan and verifier by SHA-256.
+Cumulative accounting remains 334 model calls/12 reserves/USD 0, with zero new
+campaign CLI sessions, model calls, reserves, scorer or protected-oracle
+dispatches. No private campaign manifest, allocation, rating, skill, runtime or
+oracle was changed. The next action is an owner decision on a separately scoped
+future question/design and eligible pool, not replay or silent holdout replacement.
+
+
 
 
 
@@ -1163,8 +1227,10 @@ This design is wrong if an independent executor cannot determine arm constructio
 **Next action:** Stage-1 is [accepted as inconclusive](#stage-1-outcome-disposition-2026-10-13)
 and closed. Preserve every allocation, unavailable endpoint, frozen human
 judgment and original ledger; retain the current skill contracts. No further
-generation or replay follows from unused call headroom. Any future Stage-2
-needs its own approved question, untouched instances and envelope.
+generation or replay follows from unused call headroom. The
+[Stage-2 readiness review](#stage-2-readiness-continuation-2026-10-14) records
+the exposed-input/provenance blocker; any future Stage-2 needs its own approved
+question, eligible untouched instances and envelope.
 Operator mutation, accepted-runtime/oracle changes, commit and push remain
 excluded; TEST-001 mechanics, the completed checkpoint and dormant owning gates
 stay unchanged.
