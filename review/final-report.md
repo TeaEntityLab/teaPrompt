@@ -5376,3 +5376,88 @@ dormant/P6 activation, commit or push is authorized.
 
 
 
+
+## Roadmap source reconciliation (2026-10-14)
+
+### Summary and acceptance
+
+Completed the requested continuation of roadmap fixes and source verification.
+The six domain summaries, master index, point-in-time synthesis, whole-project
+scheduling companion and project Decision Index now distinguish existing
+adoptions, unscheduled proposals and owning review conditions. No skill,
+runtime, routing rule, acceptance oracle or campaign grant changed.
+
+### Findings and corrections
+
+- P6's next evidence review is 2027-01-11; T2 runs on registry/appendix change
+  or that evidence review if unchanged. Removed invented quarterly commitments
+  for scorer, governance, prompt, memory and DevOps audits.
+- Restored selected-preflight semantics, both F1 reopening conditions,
+  AEAT-4's authorized named-product binding-gap predicate, the Stage-2 owner's
+  preregistered question/untouched instances/enforced envelope, and separate
+  I-1/A-5 conditions. TB-1, RS-9 and E2 retain their exact class/event scope.
+- Scoped the seven-category list and coaxing sweep to their original evidence.
+  Canonical-memory recovery is already specified; explicit non-goal reassertion
+  remains proposed. Human-learning guidance is not human efficacy or AI-learning
+  evidence.
+- The factory recipe already contains its substantive host/human boundary;
+  SF-03 is title-placement hardening, not a missing enforcement mechanism.
+  Mutation sensitivity and the illustrative 0.85 value are not correctness proof.
+- Corrected installation guidance to documented host surfaces, factoring to
+  the three approved packages, hygiene errors versus date warnings, and Heddle's
+  root-package 5.13.0 versus runtime-package 9.2.0 identity.
+- Replaced decorative trial-count falsifiers with observable record failures.
+  MR-02/UR-03 now record status navigation rather than a compound adoption;
+  the selected eight topics still resolve to four existing disclosures and four
+  proposal groups. Other candidates retain their own ledger rows.
+
+### Parallel Socratic review
+
+`RoadmapGateReview` checked harness/assurance/governance; `RoadmapScopeReview`
+checked prompt/factory/packaging. Both returned AGREE WITH CHANGES, followed by
+checked-clean landed-bytes reviews. Their source-backed findings were verified
+before integration. Scope review's earlier E2 checked-clean claim missed the OR
+predicate; the owning spec restored complaint OR qualifying navigation failure.
+Role diversity is not demonstrated provider independence; model review remains
+one epistemic channel, supplemented by deterministic checks.
+
+### Tests and observed evidence
+
+- Throwaway navigation consumer: eight roadmap documents, 194 dated-record
+  mentions, eight safeguard links and matching four/four statuses; no missing
+  dated reference or compound summary status. This is navigation/status proof,
+  not semantic acceptance or runtime enforcement.
+- `python3 reflective-prompt-library/plans/generate_index.py && make all`
+  completed successfully: 1,743 tests passed in 76.73 seconds; all eight
+  validators passed; ROUTE-001/002/003 each reported 100% fixture consistency.
+  Existing warnings remain: five skill-length warnings and 35 date-heuristic
+  warnings. No test, fixture, threshold or oracle was weakened.
+- The temporary shared review packet was removed after review. Python Eval was
+  unavailable; the throwaway document consumer ran with Bun instead. No live
+  provider, scorer, deployment or upstream refresh was performed.
+
+### Files and traceability
+
+| Criterion | Changed surface | Evidence / owning decision |
+|---|---|---|
+| Source-bound dates and triggers | Six `roadmap-*-2026-10-13.md` domain records; index/synthesis | Checkpoint P6/T2/GD outcome; F1 ledger; AEAT-4; I1-CP1/A5-CP1; TB-1; RS-9; E2; Stage-1 owner disposition |
+| Accurate adoption and evidence scope | Domain ledgers, index/synthesis, `PROJECT_KNOWLEDGE.md` | Existing skill/recipe clauses; taxonomy rethink; HCC-1/2/3; PKG-1/2; Heddle package identities |
+| Navigation does not grant authority | Index/synthesis, `whole-project-roadmap-2026-07-11.md` | Owning decisions retain precedence; selected-topic status joins checked |
+| Current discovery and delivery receipt | `index.json`, this report | Generator and complete repository gate; post-receipt document checks |
+
+TWINS: searched `Quarterly Scorer/Governance/DevOps audit` and
+`preventing in-context hallucinations` - found 4 other sites:
+execution-assurance, governed-autonomy, software-factory-devops and
+prompt-cognition-memory roadmaps. All scoped sites were corrected; the final
+old-claim sweep returned no matches.
+
+### Risks, declined judgments and remaining work
+
+Approve these documentation corrections only. External efficacy, fresh upstream
+capabilities and actual host enforcement were not assessed; their owners remain
+the external investigators and host/product maintainer. Additional audit ideas
+remain unscheduled proposals, not unfinished authorized implementation.
+Stage-1 remains accepted as inconclusive; Stage-2 needs its separate owner grant.
+No roadmap repair remains open under this request, and no new Human Review,
+generation, deployment, destructive-action, commit or push approval follows.
+
