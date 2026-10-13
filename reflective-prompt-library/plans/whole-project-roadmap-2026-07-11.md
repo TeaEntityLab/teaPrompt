@@ -200,6 +200,15 @@ original evidence are unchanged. Next: explicit bounded-unblinding/analysis
 authority, then separate outcome disposition. No map inspection, Stage-1
 acceptance, skill/transfer gain, replay, Stage-2, dormant/P6, commit or push.
 
+**Subsequent authorized analysis (2026-10-13):** the maintainer explicitly
+granted [bounded unblinding and description](skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13).
+All 18 pairs/36 allocations remain; only three paired primary/rubric endpoints
+are available, all why-only ties. No selection successor ran. The cohort is now
+unblinded, with raw scores, prior ledgers and 334-call/12-reserve/USD 0 charges
+unchanged. Next: explicit owner outcome disposition, not model replay or an
+automatic repair. Stage-1 acceptance, Stage-2, dormant/P6, commit and push are
+still ungranted.
+
 
 
 

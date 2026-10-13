@@ -249,4 +249,12 @@ run, protected-oracle edit, commit or push is authorized by either decision.
 > unblinding/analysis authority and outcome disposition remain owner-held;
 > Stage-2 and dormant/P6 are ungranted. No checkpoint decision is reopened.
 >
+> **Subsequent bounded analysis (2026-10-13):** the maintainer explicitly
+> authorized [descriptive unblinding](skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13).
+> All 18 pairs/36 allocations remain; the three available paired
+> primary/rubric comparisons are why-only ties. No selection successor ran.
+> The map is now exposed for analysis only; source scores, evidence and charges
+> are unchanged. Owner outcome disposition, Stage-1 acceptance and Stage-2
+> remain separate. This neither reopens the checkpoint nor activates dormant/P6.
+>
 

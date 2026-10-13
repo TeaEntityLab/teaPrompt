@@ -328,6 +328,15 @@ are unchanged. Bounded unblinding/analysis authority and outcome disposition
 remain separate; no skill/transfer claim, replay, Stage-2, dormant/P6, operator
 mutation, runtime publication, commit or push follows.
 
+**Subsequent descriptive analysis 2026-10-13:** the maintainer explicitly
+authorized [bounded unblinding](skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13)
+after score/audit freeze. The complete 18-pair/36-allocation analysis has only
+three paired primary/rubric comparisons, all why-only ties, and no successor
+transfer endpoint. Original sources, scores, ledgers and accounting remain
+unchanged. Outcome disposition/Stage-1 acceptance and a separate Stage-2 grant
+remain owner-held; no skill repair, new generation, dormant/P6 activation,
+operator/runtime change, commit or push follows.
+
 
 
 

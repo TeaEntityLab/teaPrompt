@@ -987,6 +987,80 @@ this is not independent-human review. No skill/transfer gain, new generation,
 replay, wider caps, Stage-2, dormant/P6 activation, operator mutation, runtime
 publication, commit or push follows from score intake.
 
+## Stage-1 bounded descriptive unblinding (2026-10-13)
+
+**Authority / scope:** after the verified frozen score export and accepted leak
+audit, the maintainer explicitly selected **Authorize analysis only**.
+The grant was recorded before the sealed map was inspected. It covers this
+retained cohort's arm/pair description, not new ratings, model/scorer/oracle
+dispatch, replay, skill edits, outcome acceptance, Stage-2, commit or push.
+C is the common task/host policy; T additionally receives the complete frozen
+target skill in a separate instruction message. Both use the same frozen Go
+model alias and six-response/300-second trial limits. The alias is not an
+immutable weight identity.
+
+**Complete denominator / observed arm results:** all 18 pairs and 36 allocated
+chains remain in the source-bound join. Missing primary/rubric values stay null.
+
+| Retained selection measure | C — no target skill | T — target skill |
+| --- | ---: | ---: |
+| Allocated task chains | 18 | 18 |
+| Completed chains / available human primary ratings | 4 | 3 |
+| Censored chains | 8 | 9 |
+| Incomplete chains | 6 | 6 |
+| Unavailable human primary ratings | 14 | 15 |
+| Admitted human primary ones / zeros | 4 / 0 | 3 / 0 |
+| Protected functional pass / held | 1 / 17 | 0 / 18 |
+| Available decision-summary rubric rows | 5 | 5 |
+| Charged selection model calls | 93 | 96 |
+
+**Paired findings:** only three pairs have both primary endpoints available:
+`B008-why-r1/r2/r3`. All are one/one ties. The same three pairs have both
+decision rubrics available; all three applicable dimensions are two/two ties.
+`B008-fix-r2` has the sole completed control repair and protected functional pass,
+but its treatment counterpart is censored, with a null primary endpoint.
+This is not a completed treatment failure or an isolated skill regression.
+The other 14 pairs have neither primary endpoint available.
+
+By fixture, `B008-why` completed 3/3 in each arm; `B008-fix` completed 1/3 in C
+and 0/3 in T; both `B012` review fixtures are entirely censored. Both `B010`
+handoff fixtures retain three incomplete chains per arm: every producer was
+censored and no selection successor ran. Two treatment handoff producers have
+eligible summary ratings, but these do not measure transfer or task completion.
+All ten admitted summary rows receive two in each applicable dimension.
+
+**Performance / claim limits:** the full analysis retains every chain's duration,
+calls, tool calls and recorded token counters. Only uncensored completed-chain
+durations enter completion-latency summaries. Three complete C repeats support
+one descriptive reference latency band for `B008-why` (25.06% maximum absolute
+deviation from its median); other fixtures have censored/incomplete reference
+repeats and no band. This is not a population noise floor. Token-counter
+completeness was not revalidated; the frozen transport can zero-fill absent
+usage, so no token-efficiency conclusion follows. No final/confirmation instance
+ran, serial/provider variance remains, alternation does not cancel order
+effects, and the maintainer holds all seven human roles. No causal efficacy,
+speed, stability, transfer, repair or simplification recommendation is supported.
+
+**Verification / preservation:** the actual private Python analysis ran over the
+frozen map, schedule, human ledger and all 36 chain files. An independent
+JavaScript recount checked arm totals, paired availability and chain digests.
+The analysis preserves the 60 pinned input identities and the original
+1,615-file execution evidence; no original measurement or oracle was rerun.
+Selection calls remain 189 and cumulative accounting remains
+334 calls/12 reserves/USD 0. No new call, reserve or scorer dispatch occurred.
+Authority, executable, joined rows/pairs, complete resource statistics and
+independent-check receipt are retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/descriptive-analysis-KTa9Wh/`.
+
+**Next gate at this analysis snapshot:** explicit owner outcome disposition. The cohort is now
+unblinded; its earlier blinded receipts are historical frozen evidence, not a
+claim that a future judge is still blind. The supported descriptive conclusion
+is limited paired coverage and no demonstrated skill/transfer gain, not a
+positive or negative efficacy result. Stage-1 acceptance remains ungranted;
+Stage-2/new generation requires a separately approved question, untouched
+population and envelope. Dormant/P6, operator/runtime changes, commit and push
+remain outside this grant.
+
 
 
 

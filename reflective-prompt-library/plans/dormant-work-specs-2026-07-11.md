@@ -196,6 +196,13 @@ activation, usage increments, outcome acceptance, unblinding or Stage-2.
 The next owner gate is bounded unblinding/analysis authority; historical
 ledgers, accounting and every dormant candidate's disposition are unchanged.
 
+**Subsequent bounded analysis (2026-10-13):** explicit owner authority allowed
+[descriptive unblinding](skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13)
+of the frozen cohort. Complete allocation retention and three why-only paired
+ties do not demonstrate skill efficacy or handoff transfer; no selection
+successor ran. Outcome disposition remains owner-held. No dormant candidate,
+recurrence/use count, P6, Stage-2 or generation gate is activated by this analysis.
+
 
 
 

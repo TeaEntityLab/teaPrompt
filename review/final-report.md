@@ -5279,6 +5279,41 @@ this is not independent-human review. No map inspection, skill/transfer gain,
 model replay, Stage-1 acceptance, Stage-2, dormant/P6, operator mutation,
 runtime publication, commit or push follows from intake.
 
+## Bounded Stage-1 descriptive unblinding (2026-10-13)
+
+**Goal / authority / acceptance:** the maintainer explicitly authorized analysis
+only after the human export and leak audit were frozen. The source-bound sealed
+map was read under that grant; all 36 allocations and 18 pairs are retained,
+with 29 primary and 26 summary-rubric endpoints still null. No regrading,
+scorer/oracle replay, model call or reserve allocation occurred.
+
+**Findings:** C has four completed, eight censored and six incomplete chains;
+T has three completed, nine censored and six incomplete. The only three
+complete primary/rubric pairs are the why-only fixture; all tie. The sole
+protected repair pass is C's `B008-fix-r2`; its T counterpart is censored, not a
+completed failure. Review fixtures are entirely censored and all handoff
+producers were censored, so no selection successor or transfer endpoint exists.
+Five summary rubrics per arm are available; those ceiling ratings do not supply
+task completion, transfer or causal skill efficacy.
+
+**Verification / traceability:** the actual private Python consumer joined frozen
+map/schedule/ledger/chain inputs and computed descriptive resource/availability
+statistics. An independent JavaScript recount checked all 36 chain bindings,
+both arms and 18 pairs. Source inputs, original execution files, P0, ledgers and
+accounting remain preserved: 189 selection calls, 334 cumulative calls,
+12 reserves and USD 0. The
+[owning analysis record](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md#stage-1-bounded-descriptive-unblinding-2026-10-13)
+defines the endpoint, variance and incomplete-telemetry limits.
+Private authority, executable, joined analysis and independent-check receipt:
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/descriptive-analysis-KTa9Wh/`.
+
+**Files / residual risks / human review:** updated existing dogfood/handoff,
+roadmap, dormant coverage, checkpoint, whole-project plan and Decision Index
+records; no runtime or skill contract changed. Only descriptive analysis is
+complete. Owner outcome disposition and Stage-1 acceptance remain pending;
+Stage-2 is separate. No positive/negative skill-effect claim, prompt repair,
+replay, operator mutation, runtime publication, commit or push follows.
+
 
 
 
