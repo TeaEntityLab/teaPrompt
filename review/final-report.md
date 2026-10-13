@@ -5341,6 +5341,37 @@ needs a separate question, untouched population and explicit envelope approval.
 No replay, new calls/reserves, regrading, skill/oracle/operator/runtime changes,
 dormant/P6 activation, commit or push follows from this outcome acceptance.
 
+## Delayed Stage-1 scoring-provenance review (2026-10-13)
+
+**Goal / findings / repair:** checked 19 delayed findings against current source
+bindings and retained evidence: 15 were already fixed or superseded, two assumed
+the wrong contract, and two warranted documentation clarification. The existing
+dogfood plan now distinguishes host-admitted completion/summary eligibility from
+raw isolated-scorer verdicts and documents the exclusive-output/fresh-namespace
+failure boundary. It also records the frozen scorer's unsupported human-note
+length description: the actual 150-word check is on model `DECISION.md`, not the
+human note; full export validation belongs to intake, not the scorer primitive.
+
+**Observed provenance / preservation:** the ten retained captures include three
+raw primary ones for noncompleted chains; the host correctly retains their
+primaries as `null` while admitting their eligible summary rubrics. No scorer
+was rerun and no frozen source, supplied judgment, ledger, allocation or charge
+was changed. This repairs attribution and limit disclosure, not scoring or a
+skill contract. Stage-1 stays accepted as inconclusive; Stage-2 and new execution
+remain ungranted.
+
+**Verification-harness repair:** the first repository gate exposed an existing
+0.2-second timeout fixture whose PATH-selected `python3` emitted no initial
+sentinel before timeout. The fixture now uses `sys.executable`, as its parent
+runner already does; the timeout, partial-output assertion and stop assertions
+are unchanged. No emitted skill scaffold or frozen campaign code is edited.
+
+**Traceability / remaining work:** the [owning provenance review](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md#stage-1-score-intake-provenance-review-2026-10-13)
+and source-bound evidence use
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/advisory-triage-xirBis/`.
+No post-exposure regrading, model/scorer/oracle replay, runtime/operator change,
+dormant/P6 activation, commit or push is authorized.
+
 
 
 

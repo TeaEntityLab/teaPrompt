@@ -1103,6 +1103,52 @@ untouched instances and enforced envelope. No Stage-2, new generation,
 post-exposure regrading, dormant/P6 activation, operator/runtime change,
 commit or push is authorized by this acceptance.
 
+## Stage-1 score-intake provenance review (2026-10-13)
+
+**Scope / ruling:** delayed findings were checked against current sources and
+retained evidence after the accepted-inconclusive disposition. Fifteen of the
+19 findings were already fixed or superseded, two assumed the wrong contract,
+and two exposed documentation limits clarified here. No frozen implementation,
+rating, ledger, allocation, receipt or charge is changed.
+
+**Host-admitted endpoints, not raw scorer verdicts:** the frozen
+`score_campaign.py:blind_score` admits a valid primary sidecar on authorized
+trials without checking chain completion. The private `intake.py:availability`
+adds the frozen completed-and-authorized primary gate and separately checks
+actual `DECISION.md` availability and its 150-word limit. Intake reapplies those
+availability gates after guest scoring (`intake.py:172-176`). Three retained
+isolated captures therefore contain a raw primary one for a noncompleted chain,
+while the host-admitted ledger correctly retains their primaries as `null`
+and preserves their eligible summary rubrics. The seven admitted primary ones
+are host-derived endpoints; ten successful isolated invocations do not mean
+that every raw primary verdict was admitted unchanged. All 36 allocations and
+the 29 primary-rating admissibility conflicts remain recorded.
+
+**Validation boundary / frozen description gap:** the scorer primitive checks
+the neutral ID, maintainer rater, integer primary score and nonempty observation
+string; its rubric gate checks applicable dimensions and actual model-summary
+length. Intake additionally validates exact export/row fields, complete unique
+neutral-ID coverage, frozen dimension keys/ranges, timezone-bearing timestamps
+and separate freeze/audit attestations. The frozen module header says overlength
+human notes are unavailable, but its body never calls the defined
+`_sidecar_words` helper; intake requires a string note without a note-length
+limit. The 150-word rule applies to the model's separate `DECISION.md`, not to
+the human review note. This description/body mismatch is retained and disclosed,
+not repaired by changing a frozen scorer or regrading after map exposure.
+
+**Partial-output lifecycle:** intake exclusive-creates outputs and verifies
+inputs again after scoring, but provides no atomic rollback. A late failure can
+leave controls, a private schedule and partial scorer captures without a final
+ledger/receipt. Retain those artifacts; any separately authorized corrected
+intake needs a fresh namespace, not overwrite or same-namespace replay. No such
+scoring, new execution or wider authority follows from this documentation repair.
+
+**Evidence / current outcome:** source-bound findings and read-only verification
+use `local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/advisory-triage-xirBis/`.
+The [accepted-inconclusive disposition](#stage-1-outcome-disposition-2026-10-13)
+and all separate Stage-2, runtime/oracle, dormant/P6, commit and push gates remain
+unchanged.
+
 
 
 
