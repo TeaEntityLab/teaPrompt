@@ -239,3 +239,14 @@ run, protected-oracle edit, commit or push is authorized by either decision.
 > blinded human scores and explicit audit/outcome disposition. No unblinding,
 > Stage-2, dormant/P6 activation, replay, commit or push follows; the completed
 > checkpoint remains closed.
+>
+> **Later blinded human-score intake (2026-10-13):** the maintainer's complete
+> frozen export and leak-audit acceptance are
+> [verified](skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13).
+> Seven completed primary ratings and ten eligible decision-summary rubric
+> rows are admitted; 29 censored/incomplete primaries remain null, not failed.
+> All raw ratings, original ledgers and charges are retained. Explicit
+> unblinding/analysis authority and outcome disposition remain owner-held;
+> Stage-2 and dormant/P6 are ungranted. No checkpoint decision is reopened.
+>
+

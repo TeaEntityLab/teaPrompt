@@ -190,6 +190,18 @@ and explicit audit/outcome disposition; all semantic endpoints remain null.
 This is not Stage-1 acceptance, a skill/transfer gain or permission to unblind,
 replay, activate dormant/P6 work, enter Stage-2, commit or push.
 
+**Later blinded score intake (2026-10-13):** the maintainer supplied the frozen
+36-row export and accepted the retained leak audit. The
+[source-bound intake](skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13)
+retains every rating unchanged: seven completed primary ratings are admitted,
+29 censored/incomplete primaries remain null, and ten eligible decision-summary
+rubric rows are admitted separately. Functional disposition and all charges/
+original evidence are unchanged. Next: explicit bounded-unblinding/analysis
+authority, then separate outcome disposition. No map inspection, Stage-1
+acceptance, skill/transfer gain, replay, Stage-2, dormant/P6, commit or push.
+
+
+
 
 
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next

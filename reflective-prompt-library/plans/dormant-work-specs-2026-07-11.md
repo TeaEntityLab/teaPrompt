@@ -186,6 +186,18 @@ blinded human scoring and explicit audit/outcome disposition. No semantic
 acceptance, usage increment, unblinding, Stage-2, dormant activation, replay,
 operator change, commit or push follows from this measurement correction.
 
+**Later human-score intake (2026-10-13):** the maintainer's complete frozen
+export and leak-audit acceptance are now
+[received and verified](skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13).
+Seven completed primary ratings and ten eligible summary-rubric rows are
+admitted; 29 censored/incomplete primaries remain null, with every supplied
+rating preserved. This supplies neither transfer/skill efficacy nor dormant
+activation, usage increments, outcome acceptance, unblinding or Stage-2.
+The next owner gate is bounded unblinding/analysis authority; historical
+ledgers, accounting and every dormant candidate's disposition are unchanged.
+
+
+
 
 
 ## Domain and retired-plan dispositions (2026-10-01)

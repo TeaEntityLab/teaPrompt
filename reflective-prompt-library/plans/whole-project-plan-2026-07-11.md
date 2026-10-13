@@ -318,6 +318,18 @@ receipts and 334-call/12-reserve/USD 0 accounting remain unchanged. The
 outcome disposition. No skill/transfer claim, unblinding, replay, Stage-2,
 dormant activation, operator mutation, commit or push follows.
 
+**Later blinded human-score intake 2026-10-13:** the
+[verified 36-row export](skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13)
+supplies owner score-freeze and leak-audit acceptance. Seven completed primary
+ratings and ten eligible decision-summary rubric rows are admitted without
+regrading; 29 censored/incomplete primaries remain null, with raw ratings kept.
+Original/corrective functional results and 334-call/12-reserve/USD 0 accounting
+are unchanged. Bounded unblinding/analysis authority and outcome disposition
+remain separate; no skill/transfer claim, replay, Stage-2, dormant/P6, operator
+mutation, runtime publication, commit or push follows.
+
+
+
 
 
 

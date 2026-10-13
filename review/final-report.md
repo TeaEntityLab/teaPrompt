@@ -5235,4 +5235,51 @@ commit in multiple commits” instruction authorizes scoped repository commits,
 not publication of private evidence, model replay, human acceptance, unblinding,
 Stage-2 or push.
 
+## Blinded human-score intake (2026-10-13)
+
+**Goal / acceptance:** admit the designated maintainer's supplied scores against
+the complete frozen cohort without silently rewriting ratings, manufacturing
+completed failures or exposing arm identities. The verbatim export is retained,
+SHA-256 `3cc3fd1a79a04e7ea1d2c6fad655cf62e9eeb3de3f37367e033aedb8522c45c0`.
+All 36 neutral IDs, row raters, dimension keys/ranges, timestamps and both owner
+freeze/audit flags validate. `outcome_acceptance` remains null.
+
+**Observed result:** seven completed primary ratings are admitted, all one.
+The other 29 primaries are unavailable, including six supplied ones and all
+23 supplied zeros; censored/incomplete chains are neither completed successes
+nor failures. Ten separate ≤150-word decision summaries retain their supplied
+rubric ratings; 26 dimension endpoints remain unavailable. Three of those ten
+summaries come from noncompleted chains, including two handoff producers:
+no selection successor ran, so no transfer result is established. Raw scores,
+notes and timestamps remain unchanged, with every eligibility conflict recorded.
+
+**Verification:** nine invalid-export controls refused before scoring. Ten
+actual deterministic blind-consumer runs completed in the adopted no-mount,
+network-denied, read-only Apple guest; cleanup was confirmed. They consume
+human judgments, not supply independent semantic confirmation. The fresh
+36-row ledger retains the existing one protected functional pass/35 held
+disposition. Verified 36 review-card bindings, 56 pinned inputs and 1,615 raw
+execution-evidence files unchanged. No model calls, reserves or protected
+functional-oracle dispatches; cumulative usage remains 334 calls/12 reserves/
+USD 0. All original ledgers, P0, source snapshots and earlier outcomes are kept.
+
+**Files / traceability:** the private intake implementation, original export,
+admissibility records, controls, isolated captures and ledger are retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/human-score-intake-9wjwn6/`;
+receipt SHA-256
+`726325fa82fc34c9d25aa1b7950a908dc5dc2933113af0df6ff12d22db538a9f`.
+Updated the existing dogfood plan, report, roadmap, dormant coverage, checkpoint,
+whole-project plan and project Decision Index; no runtime/skill contract changed.
+Owning record: [score intake and next gate](../reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md#stage-1-blinded-human-score-intake-2026-10-13).
+
+**Residual risks / next action at intake (superseded below):** owner freeze and leak-audit acceptance are
+now supplied; explicit bounded-unblinding/analysis authority, then outcome
+disposition, remain pending. Seven accountable roles share the maintainer;
+this is not independent-human review. No map inspection, skill/transfer gain,
+model replay, Stage-1 acceptance, Stage-2, dormant/P6, operator mutation,
+runtime publication, commit or push follows from intake.
+
+
+
+
 

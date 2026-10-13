@@ -934,6 +934,62 @@ owner-held. All seven accountable roles still share the maintainer; this is not
 independent-human review. No arm analysis/unblinding, skill/transfer claim,
 Stage-2, dormant/P6 activation, operator mutation, commit or push follows.
 
+## Stage-1 blinded human-score intake (2026-10-13)
+
+**Authority / preserved input:** the maintainer supplied `stage1-human-scores.json`
+and asked to continue. Its complete bytes are retained unchanged, SHA-256
+`3cc3fd1a79a04e7ea1d2c6fad655cf62e9eeb3de3f37367e033aedb8522c45c0`.
+All 36 neutral IDs match the frozen corrective review: no duplicate, missing or
+foreign ID, rater mismatch, dimension-key/range error or invalid timestamp.
+The export explicitly attests score freezing before unblinding and acceptance
+of the retained leak audit, including its limitations. Those owner attestations
+do not supply outcome acceptance or permission to inspect the arm map.
+
+**Endpoint availability, not human regrading:** the supplied primary ratings
+are 13 ones and 23 zeros. The frozen completion contract admits seven primary
+ratings, all one. The other 29 task chains are 17 censored and 12 incomplete:
+their primary endpoints remain `null`, not completed successes or failures.
+This includes six supplied ones and every supplied zero. All original ratings,
+notes and observation times remain intact in the source export and the explicit
+admissibility record; the derived ledger applies availability separately.
+Missing reports in a censored trial do not convert it into a completed failure.
+
+Ten separate `DECISION.md` summaries are within 150 whitespace-delimited words
+including headings; their supplied three-dimension ratings are admitted
+unchanged. The other 26 dimension endpoints remain unavailable. Three of the
+ten summaries belong to noncompleted task chains, including two handoff
+producers: their summary ratings do not establish completed task success or
+successor transfer. All 12 selection successors remain unrun.
+
+**Observed verification / evidence separation:** nine invalid-export controls
+refused before scoring. Ten actual deterministic blind-consumer invocations
+completed in the adopted no-mount, network-denied, read-only Apple guest with
+qualified caps and confirmed cleanup. These consume the supplied human
+judgments; they are not model judges or independent semantic confirmation.
+All 36 allocations remain in a fresh ledger; the functional disposition stays
+one protected pass and 35 held. The intake verified 36 review-card bindings,
+56 pinned inputs and all 1,615 original execution-evidence files unchanged.
+No model/provider call, reserve or protected-functional-oracle invocation ran;
+cumulative accounting stays 334 calls/12 reserves/USD 0. Original and corrective
+ledgers, P0, raw receipts, frozen source copies and prior outcomes are retained.
+
+The private implementation, immutable input manifest, verbatim export,
+admissibility records, validation controls, isolated captures, complete ledger
+and receipt are retained in
+`local://stage1-go-cohort-b8tYiv/fresh-446-12-LqFjEq/human-score-intake-9wjwn6/`.
+The intake receipt SHA-256 is
+`726325fa82fc34c9d25aa1b7950a908dc5dc2933113af0df6ff12d22db538a9f`.
+
+**Next gate at intake (superseded below):** explicit owner authority for bounded unblinding and
+descriptive analysis of this frozen cohort, then separate outcome disposition.
+No arm mapping was inspected. All seven accountable roles share the maintainer;
+this is not independent-human review. No skill/transfer gain, new generation,
+replay, wider caps, Stage-2, dormant/P6 activation, operator mutation, runtime
+publication, commit or push follows from score intake.
+
+
+
+
 
 
 
