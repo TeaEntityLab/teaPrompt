@@ -133,3 +133,56 @@ run, protected-oracle edit, commit or push is authorized by either decision.
 > the demonstrated replacement runtime the TEST-001 branch required but does not
 > lift either owner gate above: consumer/scorer adoption and campaign approval
 > remain the open grants.
+
+> **Later TEST-001 acceptance (2026-10-11):** the two-current-branches statement
+> and runtime note above are historical. The maintainer subsequently adopted
+> the pinned Apple consumer/scorer/golden procedure, owns both mechanics roles
+> and approved its private completion repair. The repaired successor passed
+> [all zero-model mechanics controls](skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11),
+> including actual observed fixture actions rather than synthetic attribution.
+> TEST-001 is complete. Stage-1/TEST-002–004's campaign approval, named campaign
+> roles, memory bindings and enforced worker/capture isolation/caps remain open.
+> This later grant changes no checkpoint agenda outcome or dormant disposition
+> and authorizes no model/provider run, protected-oracle edit, commit or push.
+
+> **Later Stage-1 continuation (2026-10-12):** the campaign-approval and role holds
+> above are superseded by explicit zero-cost local Stage-1 approval and all seven
+> maintainer-owned roles. The private matched worker/scorer passed 79 zero-model
+> controls; its first actual-role canary was censored at four calls without the
+> required legitimate write/report proof. [P0 remains held; no task trial ran](skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12).
+> Qualification, later human scores/acceptance and separate Stage-2 authority
+> remain gates. This continuation changes no checkpoint decision, dormant
+> disposition, usage count, runtime-publication rule or commit/push authority.
+>
+> **Later prospective P0 outcome (2026-10-12):** the authorized revision again
+> censored bare-primary without a repair/report; ambient VSCode/OpenAI activity
+> changed two monitored Codex stores. [P0 remains held](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12),
+> with eight model calls, two reserves consumed and two remaining. Every task
+> pair is still unrun. The protocol/store-scope decision returns to the owner;
+> this does not reopen the completed checkpoint or supply later grants.
+>
+> **Later serial-aware continuation (2026-10-12):** the owner granted 326 model
+> calls/five reserves and 11/11/8 canary bounds, keeping trial caps at six.
+> [97 final zero-model controls passed; live admission held before dispatch](skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12)
+> on an unresolved read-only SQLite source-opening fault. Accounting remains
+> eight calls/two reserves used, with three reserves under the new ceiling.
+> No new canary or task trial ran; complete quiet strict-memory proof remains
+> mandatory. The checkpoint, dormant dispositions and later grants are unchanged.
+>
+> **Later owned provider recovery (2026-10-12):** authorized localhost Ollama
+> 0.40.3 startup, 112 zero-model controls and complete strict admission passed.
+> Bare-primary completed in ten calls, then [qualification held on empty WAL
+> retirements](skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12),
+> despite unchanged complete snapshots and eleven files. The closing writer
+> remains unknown; the frozen family-identity criterion is not waived.
+> Accounting is 18 calls/three reserves used, two reserves remain; all selection
+> pairs are unrun. The prospective criterion/cohort owner decision changes
+> neither the completed checkpoint nor dormant or later acceptance/Stage-2 grants.
+>
+> **Later prospective WAL-aware cohort (2026-10-12):** the maintainer approved
+> the [narrow future empty-WAL criterion and 336-call/six-reserve envelope](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12).
+> A separately versioned private cohort is preparing fresh controls/roles;
+> the strict held canary remains held and all 21 historical rows remain exact.
+> Current usage is 18 calls/three reserves; no fresh qualification or task
+> outcome is claimed. This changes neither the completed checkpoint nor
+> dormant dispositions, human acceptance or later Stage-2 authority.

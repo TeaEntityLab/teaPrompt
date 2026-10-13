@@ -111,6 +111,44 @@ does not promote reserved wording. The later 2026-10-11
 supersedes only the unidentified seven-guard branch with the accepted current
 FG-01–FG-11 assessment/repairs; the original inventory remains unverified.
 Host/campaign authority, S3 distribution and July H3/H4 boundary gates remain separate.
+The later explicitly adopted private Apple successor passed
+[TEST-001 zero-model mechanics](skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11).
+Only that qualification hold is closed: the model-campaign grants/bindings and
+every dormant item's own trigger and disposition remain unchanged.
+
+The later [Stage-1 local grant and P0 hold](skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12)
+records explicit campaign approval and seven overlapping maintainer roles.
+Actual-role qualification failed to complete at its fixed canary cap; P0 is
+unfrozen and every task pair remains unrun. This changes the campaign's approval
+state, not any dormant item's trigger/disposition, usage evidence or Stage-2 grant.
+
+The subsequently authorized [prospective P0 revision](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12)
+also censored bare-primary without a repair/report and stopped on ambient
+Codex VSCode/OpenAI store changes. All pairs remain unrun; eight calls and
+two reserves are consumed, with two reserves remaining. No retry, dormant
+promotion, usage increment or broader store/campaign authority is implied.
+
+The owner subsequently selected the [serial-aware P0 envelope](skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12):
+326 total model calls, five reserves and 11/11/8 canary bounds; ordinary trial
+limits remain six. Final 97 zero-model controls passed, but live strict-memory
+setup failed before any role allocation. P0 and every task pair remain held;
+eight calls/two reserves consumed, three reserves now remaining. No dormant
+trigger, usage evidence, store-scope waiver or Stage-2 authority changes.
+
+The later [owned provider recovery](skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12)
+passed 112 zero-model controls and complete strict admission; bare-primary
+completed in ten calls but held on two empty WAL retirements. All six complete
+snapshot pairs and eleven files are unchanged, without a family-identity waiver.
+Current accounting is 18 calls/three reserves, with two reserves remaining;
+every selection pair is still unrun. The prospective criterion/cohort decision
+does not activate any dormant item or supply usage, acceptance or Stage-2 evidence.
+
+The maintainer then approved the [prospective WAL-aware fresh cohort](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12),
+limited to absent/zero-byte WAL lifecycle differences with complete six-store
+snapshot and eleven-file equality, plus 336 calls/six reserves. Current
+preparation preserves all 21 historical rows and 18 calls/three reserves;
+no role, P0 or selection result follows from approval alone. The old strict
+hold and every dormant trigger, usage, acceptance and Stage-2 gate remain intact.
 
 ## Domain and retired-plan dispositions (2026-10-01)
 

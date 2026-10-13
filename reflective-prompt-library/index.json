@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-11T12:58:21.025833",
+  "generated_at": "2026-10-13T11:03:24.838628",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -79,6 +79,7 @@
             "dormant-work-specs-2026-07-11.md",
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
+            "agent-ecosystem-harness-survey-2026-10-11.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
             "jev-diffusion-eval-survey-2026-09-19.md",
@@ -2755,7 +2756,13 @@
           "runtime-skills-task001-ticket-2026-10-06.md",
           "checkpoint-2026-10-11-outcome.md",
           "checkpoint-packaging-decision-2026-10-11.md",
-          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12"
         ]
       },
       "structure": [
@@ -2840,8 +2847,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 234,
-      "char_count": 17927
+      "line_count": 293,
+      "char_count": 22280
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -4975,6 +4982,12 @@
           "checkpoint-2026-10-11-outcome.md",
           "harness-intent-drift-rethink-2026-09-06.md#checkpoint-tool-claim-review-2026-10-11",
           "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
           "skills-surface-plan-2026-07-11.md#s3--distribution-channels-trigger-gated",
           "skills-surface-plan-2026-07-11.md#execution-ledger-2026-07-11-user-approved-implementation",
           "routing-holdout-plan-2026-07-11.md",
@@ -5148,8 +5161,8 @@
           "text": "Verification (this change)"
         }
       ],
-      "line_count": 812,
-      "char_count": 58264
+      "line_count": 850,
+      "char_count": 61164
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
@@ -5173,7 +5186,13 @@
           "checkpoint-packaging-decision-2026-10-11.md",
           "agent-governance-scaffold-adoption-2026-07-17.md#candidate-adoption-ledger",
           "agent-governance-scaffold-field-use-panel-2026-07-17.md",
-          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12"
         ]
       },
       "structure": [
@@ -5238,8 +5257,8 @@
           "text": "Falsifiability and remaining gates"
         }
       ],
-      "line_count": 135,
-      "char_count": 20473
+      "line_count": 188,
+      "char_count": 24558
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -5310,6 +5329,230 @@
       ],
       "line_count": 111,
       "char_count": 12253
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-ecosystem-harness-survey-2026-10-11.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-ecosystem-harness-survey-2026-10-11",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../06-repo/AGENTS.md",
+          "../04-agent/external-adoption-review.md",
+          "../PROJECT_KNOWLEDGE.md#lesson-external-tool-adoption-is-mechanism-vs-product-local-gap-gated",
+          "devops-agentic-trends-survey-2026-09-28.md",
+          "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
+          "../06-repo/AGENTS.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../06-repo/AGENTS.md#anti-cheating-rules",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../02-engineering/test-designer.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "ROUTING_CONTRACT.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/golden-benchmark-runner/SKILL.md",
+          "../skills/arm-blinded-eval-harness/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../SKILL_INSTALLATION.md",
+          "../03-context/context-engineering.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../04-agent/runtime-trust-boundary.md#4a-external-effect-recovery-boundary",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../SKILL_INSTALLATION.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../GLOSSARY.md#adoption-guard-closure",
+          "external-adoption-case-studies-2026-06-20.md#2026-09-30-absence-claim-method-repair",
+          "external-adoption-case-studies-2026-06-20.md#case-comparison",
+          "external-adoption-case-studies-2026-06-20.md#case-comparison",
+          "../PROJECT_KNOWLEDGE.md#decision-index"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Ecosystem and Harness Survey (2026-10-11)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Authority"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source Identity, Version and Access"
+        },
+        {
+          "level": 3,
+          "text": "Prior Local Decisions and Search Bound"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Classes and Retrieval Limits"
+        },
+        {
+          "level": 3,
+          "text": "Catalog Measurements — Different Populations, Not Quality Rankings"
+        },
+        {
+          "level": 2,
+          "text": "Production Synthesis — Ten Setups and Material Claims"
+        },
+        {
+          "level": 3,
+          "text": "1. Background Coding"
+        },
+        {
+          "level": 3,
+          "text": "2. Code Review"
+        },
+        {
+          "level": 3,
+          "text": "3. Migration"
+        },
+        {
+          "level": 3,
+          "text": "4. SRE / On-Call"
+        },
+        {
+          "level": 3,
+          "text": "5. Security"
+        },
+        {
+          "level": 3,
+          "text": "6. Data Analysis"
+        },
+        {
+          "level": 3,
+          "text": "7. Support"
+        },
+        {
+          "level": 3,
+          "text": "8. Research"
+        },
+        {
+          "level": 3,
+          "text": "9. Knowledge / Second Brain"
+        },
+        {
+          "level": 3,
+          "text": "10. Scheduled Automation"
+        },
+        {
+          "level": 3,
+          "text": "Foundations and Universal Prescriptions"
+        },
+        {
+          "level": 2,
+          "text": "Paper Survey — Method, Findings and Limits"
+        },
+        {
+          "level": 3,
+          "text": "Method and Definitions"
+        },
+        {
+          "level": 3,
+          "text": "Empirical Findings"
+        },
+        {
+          "level": 3,
+          "text": "Limits and Applicability"
+        },
+        {
+          "level": 2,
+          "text": "Five Pinned Repository Surveys"
+        },
+        {
+          "level": 3,
+          "text": "addyosmani/agent-skills — Engineering Workflow Pack"
+        },
+        {
+          "level": 3,
+          "text": "anthropics/claude-quickstarts — Heterogeneous Reference Applications"
+        },
+        {
+          "level": 3,
+          "text": "wshobson/agents — Marketplace, Adapters and Governance Hooks"
+        },
+        {
+          "level": 3,
+          "text": "anthropics/knowledge-work-plugins — Domain Prompts and Connector Declarations"
+        },
+        {
+          "level": 3,
+          "text": "msitarzewski/agency-agents — Persona Catalog and Distribution Utilities"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Integration Disagreements and Rejected Overclaims"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Competing Perspectives and Blind Spot"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Revisit Triggers"
+        },
+        {
+          "level": 2,
+          "text": "Verification and Consumer Map"
+        },
+        {
+          "level": 2,
+          "text": "Handoff and Remaining Work"
+        },
+        {
+          "level": 2,
+          "text": "Publication and Worthiness Follow-through (2026-10-11)"
+        },
+        {
+          "level": 2,
+          "text": "Survey Landing Advisory Ruling (2026-10-11)"
+        }
+      ],
+      "line_count": 673,
+      "char_count": 66313
     },
     {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
@@ -6426,7 +6669,8 @@
           "whole-project-review-2026-10-09.md#repair-closure-2026-10-09-later-same-day",
           "checkpoint-2026-10-11-runbook.md#pre-checkpoint-evidence-checklist-run-first-before-any-discussion",
           "checkpoint-2026-10-11-outcome.md",
-          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11"
+          "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
+          "../../review/final-report.md#test-001-zero-model-mechanics-acceptance-2026-10-11"
         ]
       },
       "structure": [
@@ -6515,12 +6759,36 @@
           "text": "Learning-promotion supersession and future pins (2026-10-09)"
         },
         {
+          "level": 3,
+          "text": "TEST-001 zero-model mechanics acceptance (2026-10-11)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 local grant and P0 hold (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 prospective P0 requalification (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 serial-aware P0 cohort (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 owned provider recovery and strict WAL hold (2026-10-12)"
+        },
+        {
+          "level": 2,
+          "text": "Stage-1 prospective WAL-aware cohort (2026-10-12)"
+        },
+        {
           "level": 2,
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 280,
-      "char_count": 70025
+      "line_count": 610,
+      "char_count": 90275
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -7650,6 +7918,12 @@
           "checkpoint-2026-10-11-runbook.md#agenda-item-9--h5--h6-september-held-candidate-review",
           "checkpoint-2026-10-11-outcome.md",
           "checkpoint-packaging-decision-2026-10-11.md",
+          "skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12",
           "managed-skill-promotion-panel-record-2026-07-11.md",
           "governed-delivery-review-2026-09-13.md",
           "dormant-items-user-directed-adoption-2026-07-12.md",
@@ -7770,8 +8044,8 @@
           "text": "Verification"
         }
       ],
-      "line_count": 284,
-      "char_count": 32091
+      "line_count": 345,
+      "char_count": 36538
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -9042,6 +9316,7 @@
           "mattpocock-skills-v131-delta-survey-2026-10-07.md",
           "system-prompts-leaks-survey-2026-10-07.md",
           "diagram-design-survey-2026-10-07.md",
+          "agent-ecosystem-harness-survey-2026-10-11.md#publication-and-worthiness-follow-through-2026-10-11",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -9146,8 +9421,8 @@
           "text": "State Ledger"
         }
       ],
-      "line_count": 394,
-      "char_count": 80275
+      "line_count": 395,
+      "char_count": 81045
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -19278,5 +19553,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 211
+  "total_files": 212
 }

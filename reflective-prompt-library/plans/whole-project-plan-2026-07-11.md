@@ -221,6 +221,65 @@ unverified, not an outstanding prerequisite for this accepted successor.
 September counts and earlier receipts remain historical; protected oracles,
 TEST-001 qualification and Stage-1/TEST-002–004 campaign gates are unchanged.
 
+**Later TEST-001 acceptance 2026-10-11:** the maintainer adopted the pinned
+private Apple host/scorer/golden procedure, owns both accountable mechanics
+roles and approved the separately versioned backend completion repair.
+[Zero-model mechanics passed](skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11)
+with actual observed fixture-action evidence and unchanged extracted templates.
+This supersedes the TEST-001 qualification hold, not Stage-1/TEST-002–004's
+campaign, role, memory or isolation/cap gates. Earlier source snapshots and
+failed receipts stay historical; no repository runtime or skill is added.
+
+**Later Stage-1 continuation 2026-10-12:** the maintainer explicitly approved the
+zero-cost local current-skill pilot and owns all seven accountable campaign roles.
+The matched private worker/scorer passed 79 zero-model controls, but its first
+actual-role canary was censored at four model calls without a legitimate workspace
+write or required report. [P0 remains held](skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12);
+all 18 pairs remain unrun. Campaign approval is no longer missing; actual-role
+qualification, later human scores/acceptance and a separate Stage-2 grant are.
+No dormant trigger, usage count, skill, oracle, runtime-publication or commit gate
+is changed; the prior draft's source bytes and failed receipts are preserved.
+
+**Prospective requalification outcome 2026-10-12:** the maintainer authorized a
+separate canary revision, not a replay or weaker gate. Fresh controls passed,
+but bare-primary again censored at four calls without a repair/report; ambient
+VSCode/OpenAI activity also changed two monitored Codex stores.
+[P0 remains held](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12).
+All 18 pairs remain unrun; cumulative accounting is eight model calls and two
+reserves, with two reserves remaining and USD 0. The next owner decision covers
+protocol feasibility and ambient-store isolation/scope; no further dispatch
+under the held protocol or change to other roadmap/adoption gates is implied.
+
+**Serial-aware continuation 2026-10-12:** the owner selected the private
+326-call/five-reserve envelope with 11/11/8 canary bounds and unchanged
+six-response trial limits. [Final zero-model controls passed; live admission
+is held before dispatch](skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12)
+on an unresolved read-only SQLite source-opening fault. No complete quiet
+six-store boundary exists; no new role, model call or reserve was allocated.
+Eight calls and two reserves remain consumed; three reserves remain under
+the new ceiling. All 18 pairs are unrun. The approved envelope need not be
+requested again; current strict-memory proof is still required, without
+waiving ambient writes or changing operator resources. Other owning gates remain intact.
+
+**Owned provider continuation 2026-10-12:** the maintainer approved a private
+localhost Ollama 0.40.3 startup using the pinned cache. Memory/source repairs
+passed 112 zero-model controls and complete six-store/eleven-file admission;
+bare-primary then completed in ten calls but [qualification held on two empty
+WAL retirements](skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12).
+All six full snapshots and eleven files are unchanged; the closing writer is
+unknown and the frozen family-identity gate is not waived. Accounting is
+18 calls/three reserves, with two reserves left; all 18 pairs remain unrun.
+Only a new prospective criterion/cohort decision can advance this hold;
+other roadmap/adoption and later human/Stage-2 gates remain intact.
+
+**Prospective WAL-aware continuation 2026-10-12:** the owner approved the
+[future absent/zero-byte WAL exception and complete fresh-cohort envelope](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12)
+of 336 cumulative model calls/six reserves. Meaningful data/source/capture
+changes still hold; all six complete snapshots and eleven files must match.
+All 21 historical rows, 18 calls/three reserves and both approval hashes
+remain intact. Current preparation does not qualify any role or run P0/task
+pairs. Human acceptance, Stage-2 and other owning roadmap gates remain separate.
+
 ## Verification (this plan)
 
 - Authored against: PROJECT_KNOWLEDGE.md, QUALITY_GATES_SUMMARY.md, GLOSSARY

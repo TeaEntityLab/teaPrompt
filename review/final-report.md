@@ -4488,3 +4488,425 @@ is not a viable host; the rejected `64b4556a…` build remains withdrawn. Resolv
 the TEST-001 host choice or explicitly retain its hold. No provider/model run,
 commit or push was performed by this reconciliation.
 
+## Agent ecosystem survey follow-through (2026-10-11)
+
+**Goal / authority:** close current survey publication advisories and update
+docs or existing skills only where worthwhile, under the user's explicit fix
+direction. This is not an upstream installation, runtime or campaign grant.
+
+**Files changed:** the existing agent-ecosystem survey, external-adoption case
+comparison and this report; regenerated discovery metadata. Skill contracts,
+examples, registries, routing, protected fixtures and project knowledge are
+intentionally unchanged.
+
+**Implementation / acceptance:** the truncated-preview finding is already fixed
+against the original publication's exact source/HTML bindings. The survey now
+preserves the harness corrections, citation-date repair and historical receipt
+scope, records why an additional paragraph-pin test is not warranted, and links
+the no-change ruling from the case comparison. All 16 AE dispositions stand;
+existing clauses cover the reusable concerns, not measured agent efficacy.
+
+**Verification / traceability:** final-source rendering, changed cross-link
+navigation, discovery regeneration and `make all` are exercised for this
+follow-through. Their observed output and source bindings belong in
+`local://agent-ecosystem-follow-through-evidence-2026-10-11.json`;
+the earlier 1,743-pass gate and 71,432-byte preview are historical baseline
+receipts, not substituted for the amended documents' verification.
+
+**Residual risks / next action:** vendor metrics remain source-reported,
+comparative local utility and unexecuted upstream enforcement remain unknown.
+AE-04/AE-05 require their stated local evidence and authority to reopen.
+Existing TEST-001 and campaign owner gates remain separate. Five pre-existing
+skill-length warnings and 35 older-record hygiene warnings were not in this
+repair scope. No new test, dependency, commit or push is part of the change.
+
+
+## Agent ecosystem survey landing advisory (2026-10-11)
+
+**Goal / authority:** apply “fix and next” to the current landing advisory,
+then advance only an actionable roadmap gate. The direction authorizes this
+navigation repair, not host adoption or campaign execution.
+
+**Findings / change:** the missing Case Comparison claim is stale: its row
+already links the survey, so it is left unchanged. Added one reference-only
+Decision Index pointer and updated the survey's consumer map/ruling. The sixteen
+AE dispositions and their reopen conditions are preserved; no new Durable
+Lesson or operating rule is promoted. A new permanent source-wording pin is
+not justified by the cited predecessor's fact/quote assertions.
+
+**Files changed:** `reflective-prompt-library/PROJECT_KNOWLEDGE.md`,
+`reflective-prompt-library/plans/agent-ecosystem-harness-survey-2026-10-11.md`,
+this report and regenerated `reflective-prompt-library/index.json`.
+Case rows, existing tests, skills, registries, routes and protected fixtures are
+intentionally unchanged.
+
+**Acceptance / verification:** a disposable reader check fails before the
+repair because the Decision Index cannot reach the survey, while the existing
+case link and known-present lookup control work. The after check compares all
+candidate rows/reopen conditions, the pre-index knowledge body and protected
+surface digests; actual knowledge/link/record/index consumers and rendered
+navigation cover the amended files. Observed results, exact source bindings
+and browser limits belong in
+`local://agent-ecosystem-landing-evidence-2026-10-11.json`.
+The initial and first-follow-through receipts are not reused as current proof.
+
+**Residual risks / next action:** source-reported metrics and unexecuted
+upstream enforcement remain qualified. The completed checkpoint and accepted
+H12 successor do not reopen dormant candidates. The qualified Apple private
+replacement resolves its implementation/startup blocker, not TEST-001's owner
+adoption or Stage-1's campaign approval, roles, memory and isolation/cap gates.
+No new test, dependency, runtime dispatch, commit or push is part of this repair.
+
+## TEST-001 zero-model mechanics acceptance (2026-10-11)
+
+**Goal / authority:** complete the explicitly adopted Apple TEST-001 mechanics,
+repair and re-pin its private terminal-state observation, and close only the
+criteria supported by observed evidence. Maintainer answers: “Adopt Apple host
+for TEST-001 only”, “I own both roles”, and “Repair and re-pin”. Host/capture
+and leak-audit accountability overlap; independent protected executable evidence
+does not establish independent-human review. Campaign, provider spend, Docker
+startup, protected repository oracle changes, commit and push are not granted.
+
+**Implementation / failures resolved:** the Apple CLI's `start --attach` can
+return exit 0 while the owned service entry still reports running. The original
+backend correctly held incomplete capture. The separately versioned successor
+bounds observation of that same owned guest before admitting completion; running,
+unknown, changed ownership and inspection errors remain held, with no candidate
+restart. Qualification is fresh on this repaired backend. An arm-labelled
+control-output directory and malformed-config receipt collector also broke the
+first private control run; the control driver was corrected, not the shipped
+scaffold. Original failed reports and their source snapshots are retained.
+
+**Acceptance / spec-to-code traceability:** TEST-001's DG-01/02/07/08 controls
+and host-authority, evidence, golden-ledger, containment and flow requirements
+map to the source-bound controls below. Publication uses the actual generator,
+existing repository consumers and rendered reader navigation; its fresh outcomes
+are retained in the acceptance receipt rather than borrowed from prior runs.
+
+| Check / exercised entry point | Result | Meaning |
+| --- | --- | --- |
+| `qualify_runtime.py --part all` on repaired Apple backend | 34/34 passed | Live containment and identity controls; synthetic qualification action fields remain qualified |
+| `host_controls.py` through `observed_capture.build_packet` and adopted `runtime_host.run_packet` | 22/22 passed | Actual bounded fixture actions, inventories and independently authenticated protected scoring |
+| Current published blinded scaffold and flow templates through `scaffold_checks.py` | 17/17 passed across three receipts | Thirteen boundary/flow controls, one real unmodified 300-second timeout, three selected-host scoring/negative controls |
+| `completion_replay.py` | 7/7 passed | Replay-only lifecycle boundaries; not live host qualification |
+
+Correct applied repair passes; wrong/constant/broken/empty/echo/fluent-false
+answers do not earn usable correctness. Restored writes and external capture
+are observed even without a lasting workspace diff. Identical final bytes do
+not collapse worker, independent-host and host-service initiation. Missing,
+partial or forged evidence fails closed while retaining known worker violations;
+candidate diagnostic claims never replace protected oracle results.
+
+Caller clone equality, two repair pairs with separate discarded/C-hold records,
+fixed private schedule under swapped public order, pre-dispatch escape refusal,
+fresh-namespace replay and full-stream stdout/stderr leak audits passed.
+The timeout retains partial output and incomplete rows. Two nine-case semantic
+ledgers match byte-for-byte after removing only `observed_at`; randomized
+blinded identifiers and raw resource IDs/timings remain separate provenance.
+There is no model or human-blinding utility claim.
+
+**Source / evidence:** adopted runtime
+`local://dogfood-runtime-v3r1-2026-10-11-f04301a0`;
+consumer `428d2bca5a7ad…`, scorer `3fbb7c3a7465…`, backend
+`79d84137f39a…`, golden procedure `07e215652063…`, configuration
+`41dbd468ac0d…`. Full identities and criterion/consumer maps are retained in
+`local://dogfood-test001-mechanics-2026-10-11-5d1beadf/acceptance.json`,
+with `adoption.json`, `state-ledger.json`, the 22-control selected-host report,
+three scaffold reports, repaired qualification and lifecycle replay.
+Source pins were checked before accepting these receipts.
+
+**Files changed:** existing dogfood plan, whole-project plan/roadmap,
+dormant-work coverage map, checkpoint outcome, Decision Index, this report and
+regenerated `reflective-prompt-library/index.json`; private adoption, manifest,
+control evidence and separately versioned runtime/configuration outside the repo.
+Skills, registries, routing, permanent tests and protected repository oracles are
+intentionally unchanged. No new dependency, exported runtime, commit or push.
+
+**Residual risks / remaining work / human review:** TEST-001 mechanics is complete;
+Stage-1/TEST-002–004 remains held to a separately approved campaign envelope,
+named campaign roles, matched model/CLI/profile, enforced session/model/reserve/
+spend caps, scoped memory-store digests and demonstrated model-worker/capture
+isolation. A zero-cost local envelope may be approved, but has not been.
+Only fixed zero-model guest requests and owned fixture effects were exercised;
+ambient model-worker capture, personal-store isolation, semantic-rubric scoring
+and comparative skill utility remain unverified. Docker is implemented but not
+live-qualified. The rejected `64b4556a…` consumer remains withdrawn; original
+H12 identities stay unverified under the accepted successor ruling. Existing
+warnings and earlier survey/checkpoint receipts are not erased or reused as
+current execution proof.
+
+## Stage-1 local campaign readiness hold (2026-10-12)
+
+**Goal / authority:** continue the explicitly approved zero-cost local Stage-1
+selection pilot while preserving TEST-001, P0, semantic-scoring and outcome gates.
+Maintainer answers were “Approve zero-cost local Stage-1” and “I own all seven
+roles”; the assistant is the execution delegate. This supplies campaign approval
+and named accountability, not independent-human review, completed execution,
+human scores, outcome acceptance or a Stage-2/TEST-003 grant.
+
+**Implementation / verification:** the scratch-only matched worker, capped direct
+Ollama transport, protected functional stage, isolated blind-scoring guest,
+timestamp-only golden ledger and neutral human-review renderer were integrated.
+Final source-bound zero-model qualification passed 30 worker, 23 scorer and 26
+actual-integration controls (79 total). The unchanged accepted TEST-001 Apple
+consumer/scorer remains the runtime authority; no repository runner is published.
+The first actual `qwen3:8b` bare-primary capability canary then ran through the same
+host gate and live guest check. Its four-call, 42.654-second outcome was censored,
+not a completed task failure or a transport-invalid discard.
+
+**Observed failure / diagnosis:** three allowlisted files were read; both denied
+host paths and two attempted `notes.txt` writes were refused. The model did not
+apply the legitimate `calc.py` repair or write the required task/decision reports,
+and ran the public check against unchanged broken code. No transport error or
+incorrect allowlist rejection appears in these receipts. This supports a bounded
+model/canary non-completion, not a causal target-skill finding. The driver stopped
+before guided-primary/successor canaries, P0 freeze, task dispatch or unblinding.
+The failed outcome is retained; no replay, weaker acceptance, model substitution
+or broader permission was used.
+
+**Acceptance criteria / traceability:** DG-01 mechanics has the separate 79-control
+receipt; observed canary denials and scoped memory boundaries support only their
+checked P0 parts. DG-02–DG-07 task utility/semantic/performance/stability endpoints
+have no current task-trial evidence. DG-08's stop condition held. All 18 declared
+pairs / 36 chains remain unrun. The primary/guided/successor isolation gate is not
+passed merely because denied markers were not recovered.
+
+**Source / evidence:** `local://stage1-p0-hold-2026-10-12/receipt.json`,
+SHA-256 `d210a7fc078285e0be671f17fc445d70e9c04ce1ddfc79d27b5700779346dc19`,
+binds the live grant, 16 private executable-source pins, final control receipts,
+failed canary, enforced accounting and three observed memory/capture boundaries.
+The adjacent snapshot preserves the original 14 preparation inputs before record
+corrections. Raw/private evidence stays outside the repository at
+`/private/tmp/teaprompt-stage1-20261011.YEQGRsS5`; a private archive and final
+reader/repository-gate receipt are retained alongside the continuation receipt.
+Earlier failed controls and successful historical TEST-001 receipts are separate,
+not discarded or converted into current model-role proof.
+
+**Files changed / unchanged:** existing dogfood plan, whole-project plan/roadmap,
+dormant coverage map, checkpoint continuation, Decision Index, this report,
+regenerated discovery and the private manifest/hold evidence. Skills, routing,
+registries, permanent tests, protected repository oracles, accepted TEST-001
+sources, operator memory/capture settings and usage counts are unchanged.
+No new dependency, exported runtime, cloud call, download, Docker startup,
+commit or push.
+
+**Risks / remaining work / human review:** four model calls and one reserve
+allocation consumed; zero CLI sessions and USD 0 provider spend; three reserves
+remain unused. Six consistent SQLite snapshots, five vector files and six
+capture/configuration files stayed unchanged at the observed boundaries, not
+globally or indefinitely. Provider cache/seed equivalence, pretrained skill
+knowledge, stylistic blinding and independent-human judgment remain limitations.
+P0 is held. The next owner choice is a prospective, separately versioned canary
+design or continued hold—not renewed approval of an already granted campaign.
+Any revision preserves this outcome, all qualification criteria, the existing
+ceilings and full selection population. Human scoring/acceptance stays later;
+Stage-2/TEST-003, dormant promotions and runtime publication stay ungranted.
+Current reader/discovery smoke and full repository-gate output are bound by the
+separate final verification receipt; a prior green suite is not reused as proof.
+
+## Prospective P0 requalification outcome (2026-10-12)
+
+**Goal / authority / scope:** execute the maintainer-selected “Revise and
+requalify” decision with a new private protocol/source namespace, unchanged
+model, skills, broker permissions, readiness criteria and cumulative caps.
+The existing seven maintainer-owned roles remain disclosed overlap, not
+independent-human review. This supersedes the next-owner-choice paragraph
+above; it does not supersede or discard either capped outcome.
+
+**Implementation / exercised checks:** only private canary scheduling and
+prospective-grant/source binding changed; the worker and accepted TEST-001
+dependencies stayed unchanged. The current namespace passed 30 worker,
+23 scorer and 26 integrated controls, plus 13 grant/accounting controls.
+The first setup failed before allocating a role or dispatching a model call;
+later metadata-only probes found all six read-only backups available.
+One fresh pre-dispatch namespace preserved the exact inherited ledger prefix
+and unchanged executable bytes. The setup fault remains recorded with unknown
+cause; this was not a replay of a model invocation.
+
+**Observed outcome:** bare-primary made four calls in 65.294 seconds, read
+`positive.txt`/`calc.py`, and received the three required negative refusals.
+It did not read the public test, repair the workspace, run the check or write
+reports. Its retained outcome is censored at the call cap, not transport-invalid
+or a completed task failure. The after-session memory gate then held: two
+Codex stores changed data versions 2→3 and actual snapshot bytes. Matching
+rollout/thread metadata identifies ambient VSCode/OpenAI activity; model tools
+could not write those stores. Four other DB snapshots and eleven bound files
+were unchanged. No prompt/message contents were selected for attribution.
+
+**Acceptance / traceability:** PQ-01–04 and PQ-07 source/accounting/mechanics
+checks are exercised; PQ-05 actual-role completion and PQ-06 unchanged-memory
+proof fail. The exact conditional hold is retained, not reported as READY.
+PQ-08's actual freeze command refused before P0 or task dispatch. Guided-primary
+and successor did not run; all 18 pairs / 36 chains remain unrun. Two capped
+attempts do not prove universal model incapability or a target-skill defect.
+
+**Evidence:** `local://stage1-p0-requalification-2026-10-12-PXGvLH/receipt.json`,
+SHA-256 `97c0f612dfe2b9a8f36ac492acbb223ed7ed3534f96c4d7b3276f32e46d51bb1`,
+binds controls, raw session, scope/attribution, cumulative accounting and the
+freeze refusal. Adjacent evidence preserves the pre-dispatch fault, both
+namespaces and all 15 prepared input bytes before continuation-record edits.
+Current reader and repository-gate results belong in its separate final
+verification receipt; earlier successful gates are not reused as current proof.
+
+**Files changed / preserved:** existing dogfood plan, whole-project plan/roadmap,
+dormant coverage, checkpoint continuation, Decision Index, this report,
+generated discovery and the private manifest/evidence. Repository skills,
+oracles, routing, registries, permanent tests, accepted TEST-001 sources,
+operator settings and usage counts are intentionally unchanged. No new
+dependency, exported runtime, cloud call, download, Docker startup, commit or push.
+
+**Residual risks / remaining work / human review:** cumulative accounting is
+eight model calls, two reserves, zero CLI sessions and USD 0; two reserves remain.
+No more dispatch under `p0-role-canary-v2`. The owner must decide the next
+versioned protocol and ambient-write isolation/scope; attribution is not a
+waiver of the existing unchanged-store criterion. P0 stays held. Later human
+scores, leak-audit/outcome acceptance and Stage-2/TEST-003 remain separate gates;
+there is no comparative skill-utility evidence.
+
+## Serial-aware P0 cohort predispatch hold (2026-10-12)
+
+**Goal / authority / scope:** implement and qualify the maintainer-selected
+“Serial-aware cohort” in a new private namespace, or preserve the exact hold.
+Approved cumulative ceilings are 326 model calls/five reserves; canary caps
+are 11/11/8 and ordinary trial caps remain six, with 300 seconds/session and
+USD 0. Every other readiness criterion, pinned model, seven accountable roles,
+broker permission and exclusion remains in force. No Stage-2 or publication grant.
+
+**Implementation / acceptance / traceability:** SC-01 seals the exact
+eight-call/two-reserve historical prefix and preserves its approval hashes;
+only a new suffix can bind the new grant. SC-02/03 add the serial-aware protocol
+and explicit role bounds without widening trials. SC-04's final isolated
+zero-model run passed 35 worker + 23 scorer + 12 serial-role + 27 integrated
+controls (**97 total**), and fresh preparation binds 25 inputs, all six fixtures,
+18 pairs and 36 arm trials. Full theoretical exposure is 8 + 288 + 30 = 326.
+The initial developer controls' missing nested fixture parent and zero-ledger
+assumptions were corrected against actual inherited totals and byte identity;
+failed receipts remain retained, not converted into passes.
+
+**Failed live prerequisite / actual smoke:** initial strict-memory setup returned
+`OperationalError: unable to open database file`, after two completed initial
+snapshots. No complete six-store/eleven-file quiet boundary exists; cause unknown.
+Final offline success does not supersede that false/stale live admission.
+The actual qualifier refused before any profile/reserve/model allocation;
+freeze refused the absent qualified profile. SC-05–08 remain blocked; no P0
+or campaign directory exists, all three new roles and every task pair are unrun.
+No identical live retry, operator-process pause, capture/store/settings mutation,
+prompt/message content query or strict-criterion waiver was performed.
+
+**Evidence:** `local://stage1-p0-serial-cohort-EugNcS/receipt.json`,
+SHA-256 `9b47eb5b558cde417f14d38a649724a96bb97c46394404b82746067339fbfb0a`,
+binds the new grant, immutable inheritance, final source-bound controls,
+initial live/control failures and actual qualifier/freeze refusals.
+Adjacent evidence preserves all 25 prepared input bytes before record edits.
+Current reader/discovery and repository-gate evidence belongs in the separate
+final verification receipt; old successful suites are not reused as current proof.
+
+**Files changed / preserved:** private budget, worker, qualifier, preparation,
+driver and developer controls; existing dogfood plan, whole-project plan/roadmap,
+coverage, checkpoint continuation, Decision Index, this report, discovery and
+private manifest/evidence. Repository skills/oracles/tests/registries, accepted
+TEST-001 dependencies, operator resources and usage counts are unchanged.
+No new dependency, exported runtime, cloud call, download, Docker startup,
+commit or push. The twin sweep found no other live empty-ledger refusal or
+stale v2 protocol consumer; historical ledger/document references are preserved.
+
+**Risks / remaining work / human review:** cumulative accounting stays eight
+calls/two reserves consumed, zero CLI sessions and USD 0; three reserves remain
+under cap five. Establish fresh complete quiet strict-memory proof before any
+actual role allocation; do not request the already-granted envelope/roles again,
+reset accounting, replay capped outcomes or silently excuse ambient commits.
+Human scores, leak-audit/outcome acceptance and Stage-2 remain separate gates.
+No real serial-role compliance, absence of hidden guidance or skill utility is claimed.
+
+## Owned provider recovery and strict WAL hold (2026-10-12)
+
+**Goal / authority / scope:** continue qualified local Stage-1 under the
+maintainer-approved serial envelope and newly approved session-owned localhost
+Ollama 0.40.3 process, or preserve the exact unmet gate. Live startup/version
+and cached `qwen3:8b` identity are bound. Cloud, history, request logging and
+startup pruning are disabled for the owned process; no downloads, persistent
+settings, capture-service changes, unrelated shutdown, commit or push.
+
+**Implementation / checks / traceability:** PR-01 binds the owned provider.
+PR-02 preserves the preparation source-pin failure and historical accounting.
+PR-03's repaired real isolated preflight passed 35 worker + 23 scorer +
+12 memory + 12 serial-role + 30 integrated controls (**112**), prepared 29 inputs and
+passed the complete strict six-store/eleven-file admission with zero new
+model/reserve charges. Guarded DB/WAL/journal reads and private SQLite mirrors
+avoid SQL connections to operator stores; every live source identity/byte
+change still holds. The four omitted memory/provider preparation pins were
+added through the existing source list; failed source bytes and receipts survive.
+
+**Actual outcome / acceptance:** PR-04 ran bare-primary once: completed in
+10 model calls and 68.029 seconds, with actual denied reads/write, repaired
+workspace, five-pair guest public diagnostic and both required reports.
+The diagnostic is not authoritative task acceptance. Post-session qualification
+held on removed empty WAL files for `.codex/state_5.sqlite` and
+`.codex/queue_1.sqlite`. The exact-integer retained-byte witness independently
+hashed both complete snapshot sets: all six pairs are byte-identical and all
+eleven capture/vector files unchanged. Writer identity remains unknown.
+Twelve of thirteen frozen criteria are observed true; the strict family-identity
+criterion fails. No role pass is inferred or manufactured; PR-05/06 are unrun,
+PR-07 freeze actually refused failed role proof, and PR-08's 18 pairs remain unrun.
+
+**Evidence / files changed:** private memory/capture/preparation controls and
+source-bound evidence; existing dogfood plan, whole-project plan/roadmap,
+coverage, checkpoint continuation, Decision Index, this report, discovery and
+private manifest. Outcome: `local://stage1-provider-recovery-qwx3Bi/receipt.json`,
+SHA-256 `7bfcc72e4964b27ef63aec9580f836ac7e66c8d67cd942c31e99f4f329ea732b`.
+All 29 prepared input bytes were preserved before record edits. Current
+reader/discovery and repository checks are recorded separately, not inherited
+from an older successful gate. Accepted TEST-001 sources, installed skill
+contracts, oracles/tests/registries, usage counts and operator resources remain
+unchanged except for the explicitly authorized owned provider startup.
+
+TWINS: searched `driver protocol file missing` - found 0 other sites: none.
+The exact-error sweep covered the current private execution namespace and repository;
+historical private sources are retained evidence, not live repair targets.
+
+**Risks / remaining work / human review:** accounting is now 18 model calls,
+three reserves, zero agent CLI sessions and USD 0; the original eight-call/
+two-reserve prefix remains exact. Two reserves/308 calls remain under 326/five.
+The next owner decision is a prospective strict-gate versus empty-WAL-lifecycle
+criterion, not an ambient-commit waiver. A full fresh three-role cohort and
+288-response trial population require a separately approved 336-call/six-reserve
+envelope. No retrospective requalification, identical replay, higher budget,
+operator pause/change, human score/acceptance, Stage-2 or utility claim follows
+from this witness. The stage remains incomplete at this explicit owner gate.
+
+
+## Prospective WAL-aware fresh cohort grant (2026-10-12)
+
+**Goal / authority / scope:** live maintainer answers approved the narrow
+future absent/zero-byte WAL exception and cumulative 336 calls/six reserves.
+Implement a separately versioned private `p0-role-canary-v4-wal-aware`
+cohort, then run full Stage-1 only after all three fresh roles qualify.
+The original strict held canary remains held; no retrospective requalification.
+
+**Acceptance / traceability:** W-01 permits only regular empty-WAL
+presence/absence differences, with all six complete current snapshot hashes
+and all eleven capture/vector states equal. Every meaningful source or
+configuration change still holds; SQL remains confined to private copies.
+W-02 preserves all 21 historical rows, exact bytes and both approval hashes:
+18 prior calls/three reserves plus at most 30 fresh-canary and 288 trial
+responses under the newly granted total. Current usage is still 18/three.
+W-03 through W-07 require current controls/admission, three fresh role proofs,
+READY P0 and the complete declared selection population, in that order.
+
+**Files / evidence / checks:** new private namespace, existing budget/memory
+and version consumers, existing continuation records and private manifest.
+Packet and ledger: `local://stage1-wal-cohort-ux13w5/`. Original owned-provider
+archive SHA-256 is `369ca1dcc33dce46eeda8a36476142f1d8463d6be94e0518c41d4c0da13aca94`;
+streamed verification matched 44/44 pinned members with no missing,
+mismatched or duplicate member. Two extended-attribute warnings remain;
+no xattr-preservation claim. New cohort controls and model execution are
+pending; earlier successful repository checks are not a new-state pass.
+
+**Risks / remaining work / human review:** the historical empty-WAL writer
+is unknown. No global host isolation or equal provider cache/KV-state claim.
+Keep 11/11/8 canary caps, six-response trial caps, 300-second sessions, pinned
+cached `qwen3:8b`, USD 0 and all exclusions. No provider restart, unrelated
+operator mutation, accepted TEST-001/oracle edit, installed-contract change,
+runtime publication, commit or push. Human semantic scoring, leak-audit/
+outcome acceptance and Stage-2 remain separate after observed execution.
+

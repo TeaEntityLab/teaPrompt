@@ -89,6 +89,67 @@ wording. M5 fired here: 47 directories inventoried, eight bodies audited,
 two host-side corrections. This supersedes future-tense scheduling above
 without rewriting the historical agenda or extending campaign/runtime grants.
 
+**Later TEST-001 continuation (2026-10-11):** explicit maintainer adoption,
+owner designation and approved private backend repair are followed by
+[passed zero-model mechanics](skill-dogfood-test-plan-2026-10-08.md#test-001-zero-model-mechanics-acceptance-2026-10-11).
+The accepted successor has source-bound live containment, observed fixture
+action/capture, extracted-scaffold and golden-ledger evidence. TEST-001 is no
+longer an owner hold; Stage-1/TEST-002–004 campaign approval, named campaign
+roles, memory bindings and enforced worker/capture isolation/caps remain open.
+No model dispatch or dormant-candidate adoption follows from mechanics closure.
+
+**Later Stage-1 continuation (2026-10-12):** explicit zero-cost local approval and
+all seven maintainer-owned roles supersede the campaign-approval holds above,
+not the execution prerequisites. The private matched worker/scorer passed 79
+zero-model controls; the first actual-role canary was censored before the required
+legitimate write/report proof. [P0 is held; no task pair ran](skill-dogfood-test-plan-2026-10-08.md#stage-1-local-grant-and-p0-hold-2026-10-12).
+The next branch is the prospective actual-role qualification decision, followed
+only after qualification by the full selection pilot and human scoring/acceptance.
+Stage-2/TEST-003 remains separately ungranted; dormant events and the January P6
+checkpoint are unchanged.
+
+**Prospective P0 revision outcome (2026-10-12):** the owner authorized the
+revision; it passed fresh offline controls but again censored bare-primary at
+four calls without legitimate write/report proof. Matching Codex metadata also
+attributes two changed stores to ambient VSCode/OpenAI activity.
+[The current hold](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-p0-requalification-2026-10-12)
+retains every unrun pair and both capped outcomes. Eight model calls and two
+reserves are consumed; two reserves remain, not permission to replay the held
+protocol. Protocol feasibility and ambient-write isolation/scope return to
+the owner; human scoring, Stage-2 and dormant gates stay separate.
+
+**Serial-aware P0 continuation (2026-10-12):** the owner selected a private
+326-call/five-reserve envelope and 11/11/8 canary bounds; ordinary trials
+remain at six. [97 final zero-model controls passed; live admission held before
+dispatch](skill-dogfood-test-plan-2026-10-08.md#stage-1-serial-aware-p0-cohort-2026-10-12)
+on an unresolved read-only SQLite source-opening fault, with only two initial
+snapshots and no complete quiet six-store boundary. No fresh role, model call
+or reserve was allocated; eight calls/two reserves stay consumed and three
+reserves remain under the new ceiling. All 18 pairs are unrun. Establish fresh
+strict-memory proof rather than requesting the already-granted envelope again,
+replaying capped outcomes or changing unrelated operator resources. Human
+scoring/acceptance, Stage-2, dormant events and P6 retain their owning gates.
+
+**Owned provider recovery (2026-10-12):** the approved localhost-only Ollama
+0.40.3 process and pinned cache are bound; 112 zero-model controls and complete
+strict admission passed. Bare-primary completed in ten calls, then [the strict
+gate held on two empty WAL retirements](skill-dogfood-test-plan-2026-10-08.md#stage-1-owned-provider-recovery-and-strict-wal-hold-2026-10-12).
+All six snapshot pairs and eleven capture/vector files are byte-unchanged;
+writer unknown, no gate waiver. Current cumulative accounting is 18 calls/
+three reserves; two reserves remain. Guided-primary, successor, P0 and every
+selection pair remain unrun. The next branch is the owner’s prospective
+criterion/full-cohort decision, not a retry or the already-approved startup.
+Human scoring/acceptance, Stage-2, dormant events and P6 remain separate.
+
+**Prospective WAL-aware cohort (2026-10-12):** the maintainer approved the
+[narrow future empty-WAL exception and 336-call/six-reserve envelope](skill-dogfood-test-plan-2026-10-08.md#stage-1-prospective-wal-aware-cohort-2026-10-12).
+All 21 historical rows and original approval hashes remain exact; current
+usage is still 18 calls/three reserves. A separately versioned private cohort
+is preparing current controls and three fresh roles; neither the old held
+canary nor the approved criterion supplies a role pass. P0 and all selection
+pairs remain unrun. Later human scoring/acceptance, Stage-2, dormant events
+and P6 retain their separate owning gates.
+
 Event-gated sibling (no fixed date): **M5 managed-skill re-audit** fires at the next
 governance panel ([managed-skill record](managed-skill-promotion-panel-record-2026-07-11.md)) —
 **fired 2026-09-13** at the GD-18 panel (four TeaPrompt managed skills audited, one
