@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 continuation authorized; fresh complete memory snapshots and actual native containment/censor probes passed. Campaign dispatch remains held on protected curator/dispatcher custody, current quota and actual-role admission; zero new model calls or campaign allocations.**
+> **Status: v2 continuation authorized; owner confirmed subscription-only Go usage without balance fallback. Prior complete memory/native mechanics observations are retained. Campaign dispatch remains held on protected curator/dispatcher custody, exact current quota bindings and actual-role admission; zero new model calls or campaign allocations.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -433,9 +433,12 @@ fixture or authoritative oracle was created.
    independent functional/authority oracles and applicable rubric dimensions.
    Supply the real dispatcher/principal interface and read-denial/assigned-case
    delivery evidence. Do not paste final inputs, hidden answers or arm maps here.
-2. A fresh actual observation that **Use balance is disabled** for the current
-   Go account, maintained through this DF-C2 phase; bind it later to the exact
-   credential/source/phase grant. The generic authorization is not this fact.
+2. **Owner setting confirmation received; exact bindings pending:** the maintainer
+   confirmed subscription-only usage without excess balance deduction in the
+   [later Go owner observation](#owner-confirmed-go-quota-only-setting-2026-10-14).
+   Bind that observation to the exact current account/credential/source/phase
+   grant during actual admission; live catalog/headroom remains unexercised.
+   This is no longer a missing owner confirmation, but is not a phase quota proof.
 
 Full current memory/capture/role evidence and protected scoring/extraction then
 remain mandatory; the public diagnostic checker and arbitrary hashed metadata
@@ -604,3 +607,27 @@ snapshot proofs nor manufactures a pool, quota observation or qualified role.
 Captured public artifact identities, static auth/route evidence, the actual 401
 receipt and the complete remaining-work ledger are retained under
 `local/df-c2-alternate-paths-2026-10-14.QZj4v7/`.
+
+### Owner-confirmed Go quota-only setting (2026-10-14)
+
+The maintainer explicitly replied **“Yes 是用訂閱的量，不會超額扣餘額”**
+to whether the current Go account's **Use balance / Use credit** control is
+disabled. Accept this as **owner-reported subscription-only/no-balance-fallback
+evidence**. Do not repeat Console/API checks merely to confirm the owner's
+observation, and do not request the same setting confirmation again.
+
+This supplies the previously missing owner observation, not an authenticated
+API response or a dispatchable `quota-proof.json`. Exact current account,
+credential metadata, source and phase-grant bindings, live catalog/headroom
+and actual pool/role admission remain pending. Consume the observation during
+real phase preparation; reassess bindings if account, credential, source or
+phase changes, or the owner reports a changed setting. No new grant or blanket
+billing guarantee is inferred.
+
+The next external prerequisite is the actual protected curator/dispatcher
+boundary and fresh case/oracle metadata. The owner-confirmation receipt is in
+`local/df-c2-go-owner-confirmation-2026-10-14.mpj7Yr/owner-observation.json`,
+under a separate intake schema that cannot substitute for the consumer's phase
+proof/grant. The earlier anonymous 401 and every original outcome remain
+preserved. This intake adds zero credential reads, provider requests, model
+calls, campaign allocations, native guests and spend.

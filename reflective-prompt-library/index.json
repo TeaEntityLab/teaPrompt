@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T20:05:27.058089",
+  "generated_at": "2026-10-14T21:38:17.099143",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4096,10 +4096,14 @@
         {
           "level": 3,
           "text": "Alternate execution-path search (2026-10-14)"
+        },
+        {
+          "level": 3,
+          "text": "Owner-confirmed Go quota-only setting (2026-10-14)"
         }
       ],
-      "line_count": 606,
-      "char_count": 60346
+      "line_count": 633,
+      "char_count": 62079
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",

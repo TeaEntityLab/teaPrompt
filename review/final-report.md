@@ -6605,3 +6605,51 @@ bindings matched. `advisory-triage.json` retains all ten dispositions;
 `verification.json` records the checks and all seven blocked campaign obligations.
 Neither reruns the status or native/snapshot probes. Post-report consistency
 checks bind this final addition.
+
+## Explicit Go quota-only owner confirmation (2026-10-14)
+
+### Goal and accepted evidence
+
+The maintainer explicitly confirmed **“Yes 是用訂閱的量，不會超額扣餘額”**
+in response to the current-account disabled Use balance / Use credit question.
+Recorded this as current **owner-reported quota-only/no-balance-fallback
+evidence**, not a new grant, inferred default or authenticated API result.
+The setting-confirmation portion is received; no repeated owner confirmation
+or Console/API probe is required.
+
+### Acceptance status, files and consumer coverage
+
+Updated the owning preregistration's status and current input list, added its
+dated [owner observation](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#owner-confirmed-go-quota-only-setting-2026-10-14)
+and refreshed the existing generated index. The quota task remains blocked
+only on exact account/credential/source/phase bindings, live catalog/headroom
+and genuine pool/admission evidence, not missing owner setting confirmation.
+Direct consumer APIs, private implementation, frozen v2, skills, fixtures,
+oracles and original source/outcome records are unchanged.
+
+`owner-observation.json` in
+`local/df-c2-go-owner-confirmation-2026-10-14.mpj7Yr/` preserves the exact quote,
+reported values, pending bindings and all seven remaining campaign obligations.
+Its separate intake schema is not `quota-proof.json` or a phase approval.
+
+### Checks, residual risks and next action
+
+Record navigation and consistency checks cover this intake; provider/native
+checks and prior model outcomes are not replayed. No credential/cookie read,
+settings mutation, authenticated or anonymous provider request, new native
+guest, model call, campaign allocation or spend follows the owner observation.
+The earlier 401 remains historical evidence for that anonymous request; it
+does not contradict the later owner observation.
+
+Continue with the actual protected curator/dispatcher and fresh case/oracle
+metadata, then bind this observation during real current-source admission.
+The existing seven campaign obligations and later scoring/freeze/audit/exact
+confirmation-subset/outcome gates remain. No generic reapproval, skill/runtime
+adoption or push is implied.
+
+**Verification:** 29 focused tests passed in 0.43 seconds; links, record hygiene
+and project-knowledge validation returned zero errors with the same 35 warnings.
+The intake/navigation consumer resolved the 633-line/62,079-character owning
+record and preserved seven implementation pins, the frozen v2 body and three
+named original evidence bindings. `verification.json` binds the owner quote
+and partial-admission state; final reporting-addition checks are bound separately.
