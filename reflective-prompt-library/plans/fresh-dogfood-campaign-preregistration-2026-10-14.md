@@ -495,3 +495,47 @@ the five mandatory API-role canaries. New model calls/agent CLI sessions/
 campaign allocations/provider API requests/spend remain zero; no campaign
 population or authoritative oracle was created. The old cohort remains
 accepted-inconclusive at **334 calls / 12 reserves / USD 0**.
+
+### Exhaustive reachable-work closure (2026-10-14)
+
+The maintainer then requested **“do all you can do until nothing to do”**.
+All seven delayed advisories were checked against current sources, retained
+receipts and the retired-driver state. No passed snapshot/native test was
+rerun merely to confirm it, no retired probe was recreated as active code,
+and no stopped service, image pull, login or provider request was attempted.
+
+A new `python3 -I -S -B audit_abi_probe.py` investigation on fresh private
+**public non-campaign control files** passed six actual filesystem/audit checks:
+`os.open` reports `(path, mode, flags)` with integer flags at index 2;
+`fdopen` emits its own integer-FD event and passes a real receipt inode/UID
+match; an unknown FD before receipt creation is refused before writing;
+rename/unlink emit separate `os.rename`/`os.remove` events; and explicit
+private marker rename/unlink refusals preserve the marker bytes. The advisory
+to read flags from index 1 was rejected from this observed ABI, not adopted.
+
+**Historical audit coverage clarification:** the earlier open-write fences
+did not deny every namespace mutation event. Their zero-source-write rows
+describe the reviewed read-only paths and sampled unchanged bytes, not a
+complete independent audit of transient/restored rename, unlink or other
+actors. The new control smoke does not retroactively upgrade those receipts
+or establish actual-role capture/delayed-ingestion or final-custody proof.
+The missing-receipt branch is intentionally fail-closed; the legitimate
+fresh-create receipt exists before its `fdopen`, so no permissive fallback
+was added. There is no current permanent error-message test to loosen.
+
+The current consumer/native interfaces still require genuine immutable
+source/pool/admission and session bindings. Production inventory validates live
+authority before in-memory credential access, then checks exact provider binding
+and current quota proof before provider API requests. Native diagnostics need
+the separately bound live scope. Arbitrary metadata, the public diagnostic and further
+unbound native probes cannot supply the external curator/oracle, authenticated
+current setting, role/capture or blinded-human prerequisites.
+
+All currently independently runnable work is complete. The seven campaign
+criteria remain explicitly held on those actual inputs and later score/subset/
+outcome decisions, not another generic authorization. New campaign calls,
+reserves, provider requests, native guests and spend in this closure are zero.
+Receipts: session-private `local/df-c2-reachable-closure-2026-10-14.HXJsfB/`
+contains authority, `audit-abi.json`, `advisory-triage.json` and the final
+source-bound reachability/record checks. The public control files were removed
+after observation; the disposable driver is removed after identity binding.
