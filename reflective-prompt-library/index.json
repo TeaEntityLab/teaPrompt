@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T18:24:43.198053",
+  "generated_at": "2026-10-14T19:10:34.012761",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4092,10 +4092,14 @@
         {
           "level": 3,
           "text": "Exhaustive reachable-work closure (2026-10-14)"
+        },
+        {
+          "level": 3,
+          "text": "Alternate execution-path search (2026-10-14)"
         }
       ],
-      "line_count": 541,
-      "char_count": 55759
+      "line_count": 584,
+      "char_count": 58679
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",

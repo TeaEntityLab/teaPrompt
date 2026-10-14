@@ -539,3 +539,46 @@ Receipts: session-private `local/df-c2-reachable-closure-2026-10-14.HXJsfB/`
 contains authority, `audit-abi.json`, `advisory-triage.json` and the final
 source-bound reachability/record checks. The public control files were removed
 after observation; the disposable driver is removed after identity binding.
+
+### Alternate execution-path search (2026-10-14)
+
+The maintainer requested an actual execution path before preserving the campaign
+as gated. This search kept the v2 protocol and USD 0 boundary unchanged.
+
+Sources accessed 2026-10-14: the deployed [Console account bundle](https://opencode.ai/console/assets/app-pages-DsmtMIvR.js)
+declared `GET /api/go/status`; the [shared bundle](https://opencode.ai/console/assets/index-DwMGnlpP.js)
+bound its nullable subscription response to a boolean `useBalance` field,
+workspace-scoped authentication and the `x-org-id` header. The browser client
+uses the `/console/` base. One actual, credential-free
+`GET https://opencode.ai/console/api/go/status` returned **401 `Unauthorized`** (checked 2026-10-14).
+No current-account setting was observed. The retained relay/default/login
+observations remain unavailable authentication evidence; the managed-tab
+inventory was empty. No login, cookie extraction, key reuse or settings mutation
+was attempted. Inference-key compatibility with this Console route is **unknown**,
+not inferred from the shared bearer scheme. The typed browser contract does not
+establish supported public-management API compatibility.
+
+Both source-map requests returned HTTP 200 HTML, not useful source-map JSON.
+The minified bundles remain deployed-source evidence, not recovered backend code.
+Upstream checked 2026-10-14: `anomalyco/opencode` at `34d8ded0c58dd66808c1d60e081e8c66da12a896`
+instead [proxies the legacy usage route](https://github.com/anomalyco/opencode/blob/34d8ded0c58dd66808c1d60e081e8c66da12a896/packages/console/app/src/lib/inference-proxy.ts)
+to `/go/v1/usage`; this does not disclose the downstream setting response or
+establish identity with the deployed Console bundles. Recheck if those assets or
+the authenticated API contract change.
+
+The reviewed private-file helpers still require the coordinator's owner UID.
+The retained actual `0400` marker readability and native guest containment do
+not establish coordinator-denied curator custody. No configured SSH destination
+or separately supplied protected curator/dispatcher case-oracle interface was
+available in this search; this is not a whole-host infrastructure absence claim.
+No final was created, read or admitted.
+
+**Disposition:** preserve the authorized campaign as gated, not closed or run.
+All seven campaign requirements remain retained on genuine external admission
+and later scoring/subset/outcome inputs. This search made one anonymous
+non-generating status request, **zero authenticated provider requests, campaign
+calls/reserves, native guests and spend**. It neither repeats successful native/
+snapshot proofs nor manufactures a pool, quota observation or qualified role.
+Captured public artifact identities, static auth/route evidence, the actual 401
+receipt and the complete remaining-work ledger are retained under
+`local/df-c2-alternate-paths-2026-10-14.QZj4v7/`.
