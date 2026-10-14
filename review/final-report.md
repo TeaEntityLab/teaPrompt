@@ -5573,3 +5573,127 @@ eligible curator-sealed pool and separate CLI/model-call/reserve/spend/timeout
 limits before fresh qualification and dispatch. No remaining Stage-1 allowance
 is reused. Push, publication, service changes, metered execution and skill
 adoption are not authorized by this continuation.
+
+## Fresh-campaign preregistration (2026-10-14)
+
+### Goal, scope and acceptance status
+
+Completed the maintainer-selected **Fresh campaign preregistration** as protocol
+v2 for `DF-C2-2026-10-14`. This is a planning-only successor, not Stage-2 or an
+amendment of the closed accepted-inconclusive cohort. The three current target
+skills remain unchanged; no repair or efficiency candidate was diagnosed.
+The document specifies C/T construction, fresh pilot/final populations,
+measurement rules, eight requirement/check joins and five ordered task slices.
+Planning acceptance is complete; curation and execution remain **NO_GO**.
+
+No new campaign fixture, oracle, runtime source, provider request, allocation
+or score was created. Old outcome, evidence and accounting remain
+334 calls/12 reserves/USD 0; no unused allowance is transferred.
+
+### Review findings and disposition
+
+Two parallel reviewers produced three budget findings and six evidence/design
+findings on v1. All required corrections are resolved in v2; both focused
+landed-text reviews returned checked-clean planning verdicts:
+
+- Admission canaries debit the already-approved gating phase. There is one
+  bare primary, one full-target guided primary per included family, and one
+  successor iff Q-HOF is included. A neutral host-authored handoff avoids an
+  unbudgeted canary producer. The three-family set consumes five reserves and
+  at most 52 calls; seven reserves/77 calls remain for permitted replacements.
+- Reserves are per logical API-role context, not whole chains or CLI sessions.
+  A permitted handoff-chain replacement consumes two allocations.
+- Confirmation uses one nonempty subset and one envelope; no stacking or
+  counter reset. Derive handoff funding from the family list; the empty subset
+  has no confirmation allocation, canary or model call.
+- Both screens share an observed-change/unexplained-setup boundary. Opaque
+  weights/cache/provider state remain limitations, not verified equality or
+  an isolated causal skill effect.
+- Challenge/healthy/sentinel identifier mappings, positive final-input reader
+  scope and curator content-similarity adjudication are explicit. An attestation
+  records a judgment; a hash or seal artifact is not independent freshness proof.
+
+The budget re-review contained one transcription error for the one-family
+non-handoff subset: two canary allocations, not three; its 22-call bound was
+correct. The arithmetic consumer computed the correct count and the reviewer
+acknowledged the correction. The proposal did not need another edit.
+Both reviewers belong to one model-family evidence channel; their verdicts
+are not runtime, containment or efficacy proof.
+
+### Checks actually exercised
+
+A throwaway Bun consumer read v2 and recomputed both phase tables and every
+nonempty confirmation subset. Pilot: 18 paired blocks, 36 primary API contexts,
+12 successors and a 624-call ceiling including reserves. Maximum confirmation:
+27 blocks, 54 primaries, 18 successors and an 870-call ceiling including reserves.
+All seven nonempty subsets matched the formula and remained within the reserve
+and phase maxima. All eight requirement IDs resolved to their planned test
+headings; five task slices were present. Declared empty/second-envelope policies
+were checked as document rules, **not** actual dispatcher refusal evidence.
+
+All FTEST-01–08 checks remain prospective/unrun. No campaign canary, protected
+oracle, scorer, model request or host qualification was executed by this work.
+The planning-smoke receipt is retained in the current planning session's
+`local/fresh-preregistration-review-2026-10-14.bDulo6/`.
+
+### Files and traceability
+
+| Acceptance item | Changed surface / evidence |
+|---|---|
+| New questions, populations, ceilings and bounded decisions | `plans/fresh-dogfood-campaign-preregistration-2026-10-14.md`, protocol v2 |
+| No amendment or authority inherited from the old cohort | Planning-only successor pointer in `plans/skill-dogfood-test-plan-2026-10-08.md` |
+| Durable discovery without adoption | `PROJECT_KNOWLEDGE.md` Decision Index; regenerated `index.json` |
+| Review, actual checks and limits | This report; private planning-smoke receipt |
+
+Paths above are relative to `reflective-prompt-library/` except this report.
+The affected consumers are human planning/navigation and the generated index,
+not a campaign runner. No exported executable API or schema changed; no skill,
+router, usage-log, installation or runtime cutover follows.
+
+### Residual risks, declined judgments and Human Review
+
+Runtime adequacy of 11/8 calls, 4,096 output tokens and 300-second role sessions
+is unmeasured. Current provider/data-policy identity, enforceable quota-only
+USD 0, actual-role/capture isolation, content disjointness and final-reader
+enforcement require fresh evidence; same-family review cannot supply it.
+Complete-endpoint screens may legitimately yield another inconclusive result.
+
+The maintainer must approve or reject v2's profile/data boundary and phase
+limits, designate curator/host/scorer/audit/acceptance roles, and separately
+authorize protected curation and qualification. Confirmation additionally
+requires the completed pilot screen and its exact subset/envelope grant.
+Planning approval is not fixture creation, provider egress, execution,
+skill adoption, deployment or push authority.
+
+### Repository verification and smoke failures
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed:
+1,743 tests in 76.49 seconds; all eight validators returned zero errors;
+all 19 skill contracts/examples passed and ROUTE-001/002/003 each reported
+100% fixture consistency. Link/lint checks scanned 278 Markdown files.
+The index contains 222 entries, including the new planning record.
+These are repository/fixture checks, not campaign qualification or efficacy.
+
+The navigation smoke initially counted a terminal newline as an extra logical
+line. The generator correctly uses Python `splitlines()`. Only the throwaway
+consumer was corrected; it then passed the indexed line/character counts, seven
+navigation headings and both public discovery links. No generator or test
+contract was weakened.
+
+The full gate reported five existing skill-length and 36 date-heuristic warnings.
+One new warning was the historical API URL without a nearby source-check date.
+A scoped read of historical P0 model/cap metadata confirmed the recorded identity;
+the proposal now dates that metadata check and explicitly says the endpoint was
+not contacted. This changes no question, population, numeric limit or approval.
+The full-suite receipt predates this citation-only addition; final focused
+index/link/hygiene/project-knowledge checks cover the delivered record.
+
+Final focused checks passed: 29 tests in 0.40 seconds, current generated index,
+zero link/hygiene errors and valid project knowledge. Date-heuristic warnings
+returned to the 35 pre-existing warnings. Final navigation matched the delivered
+196-line/30,805-character proposal and all seven checked headings.
+The campaign, legacy-pool and intake-input metadata digests also matched the
+earlier follow-through receipt; no sealed fixture content was opened.
+The final planning receipt binds the delivered proposal `7b618512...`; removing
+only the metadata-check note reproduces the reviewed/arithmetic-checked source.
+No new campaign call/reserve or experimental check was added.
