@@ -5513,12 +5513,47 @@ than rewritten; the remaining seven files' unread provenance is unknown. Their
 recorded seal flag and intact hashes do not prove curator isolation or complete
 executable/oracle readiness.
 
+Read-only follow-through additionally confirmed all nine inputs have matching
+byte copies embedded in both legacy generators, outside `holdouts-sealed/`.
+An AST consumer reduced those constants to digests without displaying their
+text or opening a sealed-pool file. A seal claim must cover source copies and
+readers; source-copy availability does not establish historical worker access.
+No additional fixture text entered the coordinator's read set.
+
 Stage-1 remains accepted as inconclusive; no candidate or skill repair is
 justified. TEST-003 requires a pre-Stage-1 sealed pool. Creating a replacement now
 needs an owner-approved revised design or fresh campaign, not silent amendment.
 Fresh actual-role, capture/memory and host/executable admission must precede any
 newly approved dispatch. Semantic ratings, runtime isolation and efficacy were
 not newly assessed.
+
+### Retained-identity follow-through
+
+`python3 verify-retained.py` passed: 13 direct receipt/source bindings and 56
+historical intake input pins cover 66 unique artifacts. The intake receipt's
+`726325fa...` identity, preserved export/ledgers, analysis/source, final receipts
+and outcome authority all matched. This does not rerun scoring or establish
+runtime containment, whole-tree integrity or efficacy. Campaign accounting and
+the closed Stage-2 gate remain unchanged.
+
+All six delayed advisories were triaged against current state. The missing
+source-copy disclosure was valid and is now explicit; root recovery, active
+outcome authority, failed-search/non-absence handling, record-only continuation
+and atomic documentation/index delivery were already correct. Historical
+`NOT_SUPPLIED`/awaiting fields were not promoted into active holds or rewritten.
+Detailed evidence is retained in the original campaign session's
+`local/stage2-readiness-followthrough-2026-10-14.VrH5yi/`.
+
+Affected consumers remain the human record and generated index only. No new
+question, envelope, campaign grant, skill, runtime or scoring oracle was created.
+
+For these record-only follow-through additions, the regenerated index and
+record-hygiene tests passed (12 tests, 0.19 seconds), and `make validate`
+passed all eight validators plus the three 100% fixture-routing evaluations.
+The five skill-length and 35 date-heuristic warnings are unchanged.
+The earlier 1,743-pass full-suite run predates this follow-through; the full
+suite was not rerun for these documentation-only additions. Post-receipt
+index/link/hygiene checks cover the final verification-note addition.
 
 ### Files changed and consumer scope
 

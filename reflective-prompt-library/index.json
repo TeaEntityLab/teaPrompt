@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T01:23:16.261641",
+  "generated_at": "2026-10-14T09:08:37.280353",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -7548,8 +7548,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1241,
-      "char_count": 128204
+      "line_count": 1260,
+      "char_count": 129461
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",

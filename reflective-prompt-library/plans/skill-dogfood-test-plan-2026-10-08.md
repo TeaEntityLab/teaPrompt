@@ -1182,6 +1182,17 @@ deletion or retrospective regrading. Unread provenance for the remaining seven
 files is **unknown**, not established by the manifest's boolean. The hash
 consumer displayed no task/answer content.
 
+**Source-copy boundary follow-through:** a separate read-only AST check reduced
+the `seal_holdouts` string constants in both legacy generators to SHA-256
+metadata. All nine embedded inputs in each generator match the original pool
+manifest's byte identities. Thus the pool's contents are recoverable from
+source outside the directory named `holdouts-sealed/`; a seal/unread claim must
+cover those copies and their readers too. This establishes source-copy
+availability, not that the historical model-worker role could access them.
+That role access remains unknown. The check opened no sealed-pool file,
+displayed no fixture literal text and added none of the remaining seven inputs
+to the coordinator's read set; the earlier two-input exposure remains recorded.
+
 **Selection decision / remaining gates:** retain the current skills. The accepted
 Stage-1 outcome supplies no qualified target-skill repair diagnosis, measured
 removable overhead or positive paired utility result; available why-only pairs
@@ -1211,6 +1222,14 @@ campaign CLI sessions, model calls, reserves, scorer or protected-oracle
 dispatches. No private campaign manifest, allocation, rating, skill, runtime or
 oracle was changed. The next action is an owner decision on a separately scoped
 future question/design and eligible pool, not replay or silent holdout replacement.
+
+The same follow-through verified 13 direct receipt/source bindings and all 56
+historical intake input pins, covering 66 unique bound artifacts, including the
+intake receipt, frozen export/ledgers, analysis/source, final-verification
+receipts and owner disposition. These are identity checks, not replayed scoring,
+new host qualification or a whole-tree integrity claim. The verifier and receipt
+are retained in the original session's
+`local/stage2-readiness-followthrough-2026-10-14.VrH5yi/`.
 
 
 
