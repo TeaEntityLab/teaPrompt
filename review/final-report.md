@@ -6210,11 +6210,11 @@ outage/restart strings (`frozen-p0-sources/001-worker-service.cjs:223-224`);
 they were treated as quoted implementation data, not authority. No restart,
 settings change or service action was taken.
 
-Current state: **AUTHORIZED_HELD_ON_EXTERNAL_PREREQUISITES**. Seven downstream
+Initial admission state: **AUTHORIZED_HELD_ON_EXTERNAL_PREREQUISITES**. Seven downstream
 work items remain explicitly blocked on their own custody/admission/scoring
 dependencies, not silently completed. `continuation-hold.json` preserves each
-item and reason; actual provider requests/model calls/reserves/guests,
-campaign fixtures/oracles and spend remain zero. The accepted-inconclusive
+item and reason; at this initial intake, actual provider requests/model
+calls/reserves/guests, campaign fixtures/oracles and spend were zero. The accepted-inconclusive
 cohort is unchanged. Repository/document verification follows; it cannot
 remove those external blockers.
 
@@ -6248,3 +6248,111 @@ confirmed only JSON authority/identity/probe/hold receipts remained.
 Final document/link/index/hygiene checks cover this reporting addition; the
 full suite is not rerun for that record-only addition. No campaign dispatch,
 runtime/skill adoption or push is implied.
+
+## Fresh observed tests after continued-testing instruction (2026-10-14)
+
+### Goal and authority
+
+The maintainer requested continued testing despite missing records and fresh
+acquisition of necessary information. Completed every currently runnable
+no-generation probe; did not invent unavailable pool/setting facts or change
+the frozen v2 protocol. Prior continuation permission remains granted, not
+awaiting repeated authorization.
+
+### Implementation summary and exercised evidence
+
+| Actual path / acceptance slice | Observed result | Qualification limit |
+|---|---|---|
+| Complete current memory snapshots | Six guarded live-byte mirrors backed up to consistent private SQLite snapshots; all six sealed rehashes match; eleven declared capture/vector files unchanged; 13 private SQL connections, zero live SQL/source writes; mirrors/snapshots removed | Current declared-byte consistency only, no actual-role capture/global inventory proof |
+| Native containment | Real pinned `AppleBackend.execute`: UID/EUID 65534; 256 MiB cgroup memory cap; readonly root/write refusal; host paths absent; route refusal errno 101 | Candidate guest confinement, not coordinator/curator separation |
+| Native process bound | Soft/hard `RLIMIT_NPROC=16`; 15 children and further-fork refusal errno 11 | Exact emitted `--ulimit nproc`; observed `pids.max=max` is not a claimed cgroup PID bound |
+| Native timeout/output censoring | Both controls incomplete/censored with unknown origin; output limited to 1,024 bytes; all three guests started and cleanup confirmed | Developer mechanics, not task success, provider canaries or campaign reserve allocations |
+| Post-native memory continuity | All six stores and eleven files unchanged across 902.726542 seconds, no live SQL/source writes/audit violations | Finite no-generation interval, not a demonstrated model-role delayed-ingestion horizon |
+| Fresh provider setting attempt | Relay timed out, default adoption had no Tern/relay session, actual managed Console rendered login; no login/setting action | Current `Use balance` remains unknown, not false |
+| Current production admission | Seven current consumer pins match; inventory held on genuine missing `pool_binding`, before credential/network | Actual refusal, not quota/catalog admission or permission failure |
+
+Actual commands: `python3 -I -S -B memory_snapshot_probe.py`,
+`python3 -I -S -B native_containment_probe.py`,
+`python3 -I -S -B preoutput_admission_probe.py`, and the corrected
+`python3 -I -S -B memory_after_native_probe.py`, under the fresh session-private
+`local/df-c2-reobserved-tests-2026-10-14.hsKc8b/` namespace. Native execution
+used only an already-cached pinned image, no pull or service startup/change.
+The current native source/configuration/interpreter/CLI pins were checked;
+no private consumer/runtime source was edited.
+
+### Failures, scope corrections and residual risks
+
+Before execution, the driver was corrected from its initially assumed cgroup
+PID bound to the actual source-emitted `RLIMIT_NPROC` mechanism and a verified
+fork refusal. A generic network timeout does not prove network isolation:
+the actual accepted result was route-denial errno 101, with native preflight
+and readonly mount evidence also required.
+
+The backend start wait includes a fixed 30-second grace. The timeout control's
+1-second requested policy produced **31.004880 seconds** of actual start wait,
+not a one-second wallclock lifetime. This distinction was bound before guest
+dispatch and is not retuning, a strict timeout promise or campaign latency
+evidence.
+
+The post-native fingerprint probe initially failed while the audit fence
+refused `os.fdopen` on its own fresh receipt descriptor. Preserved the failing
+driver hash, error/exit and empty receipt; added exact owned receipt inode/UID
+matching for this descriptor, leaving SQL/network/operator-write refusal
+unchanged. The corrected run passed with zero violations. This was a
+throwaway harness error, not a campaign failure or evidence of source drift.
+
+Complete snapshots and native mechanics close only those observation gaps.
+An independently protected curator/dispatcher and case-bound oracle contracts,
+current authenticated disabled-Use-balance evidence, actual-role capture/
+delayed-ingestion admission and qualified blinded scoring remain unavailable.
+Permission is already recorded; another generic grant would not supply these
+facts. No native diagnostic substitutes for a protected campaign oracle.
+
+### Files changed, consumer coverage and remaining work
+
+Updated the fresh preregistration, closed-cohort successor pointer, Decision
+Index and this delivery record; regenerated `index.json` for current discovery.
+Only new disposable probe drivers and private receipts were created outside
+the repository. Seven consumer sources, four runtime sources, installed skills,
+oracles, registry and routing remain unchanged. The old accepted-inconclusive
+cohort's 334 calls/12 reserves/USD 0 and original evidence are not amended.
+
+Three started native mechanics guests are distinct from the five mandatory
+API-role canaries. New model calls, agent CLI sessions, campaign allocations,
+provider API requests, campaign fixtures/oracles and spend remain zero.
+Preserve all seven downstream campaign criteria with their exact prerequisites:
+protected population/oracles; quota/provider admission; complete actual-role
+memory/capture admission; canaries; fixed pilot; frozen qualified human screen;
+and the exact single confirmation subset/envelope plus outcome decision.
+No skill efficacy, general safety guarantee, adoption, promotion or push follows.
+
+Source/receipt binding, disposable cleanup and current record-consumer checks
+are recorded after completion; repository checks cannot manufacture missing
+custody, quota or role facts.
+
+### Current verification and disposition
+
+`generate_index.py`, the 29 focused index/record/project-knowledge tests and
+`make validate` passed: eight validators had zero errors, all 19 skills/examples
+were valid and ROUTE-001/002/003 retained 100% fixture consistency. Existing
+five skill-length and 35 date-heuristic warnings remain. The full 1,743-test
+suite was not rerun for these record-only changes; it is not claimed as a new
+runtime or full-suite result.
+
+The actual record consumer resolved the new observation heading through the
+497-line/52,907-character indexed preregistration, matched all seven current
+consumer hashes and verified byte equality of the frozen protocol body
+(`f2807a4ee9b28e220fcccbab3f3e0e2332449384f7d50a325a4f41ddba073f64`).
+`final-verification.json` binds four exercised driver hashes and ten original
+authority/observation/failure receipts. After retaining that binding, removed
+all four drivers; directory observation showed only private JSON evidence,
+including the preserved failed empty receipt, with no mirrors, snapshots,
+guest resources or probe cache left.
+
+**Disposition:** currently runnable continued testing is complete; campaign
+prerequisites remain held, not unimplemented permission requests. Native/
+snapshot observations do not qualify five provider-role canaries or activate
+the pilot/confirmation envelope. Seven campaign criteria remain explicitly
+blocked on the genuine external evidence and owner decisions listed above.
+Final post-record checks and scoped local documentation commits are recorded
+separately; no push or campaign generation follows.
