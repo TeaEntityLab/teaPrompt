@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T19:10:34.012761",
+  "generated_at": "2026-10-14T20:05:27.058089",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4098,8 +4098,8 @@
           "text": "Alternate execution-path search (2026-10-14)"
         }
       ],
-      "line_count": 584,
-      "char_count": 58679
+      "line_count": 606,
+      "char_count": 60346
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",

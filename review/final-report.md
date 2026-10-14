@@ -6451,10 +6451,12 @@ receipt identities. After binding, deleted the driver; directory observation
 showed only five private JSON authority/observation/triage/reachability/
 verification artifacts. Public control files were already removed.
 
-**Terminal reachable-work disposition:** no independently actionable local
-campaign work remains in the reviewed interfaces/current tool-accessible
-evidence. All seven external-input-dependent campaign requirements stay
-explicitly blocked, with permission present and no fabricated admission.
+**Point-in-time reviewed-interface disposition:** no admitted local campaign
+work remained at this stage. The [later alternate-path search](#alternate-campaign-execution-path-result-2026-10-14)
+qualifies this scope with an additional anonymous read-only probe; this was not
+an exhaustive public-route inventory. All seven external-input-dependent
+campaign requirements stay blocked, with permission present and no fabricated
+admission.
 Final post-report consistency checks and scoped local documentation commits
 certify this record-only closure; no push, login, service change, new native
 guest, provider request, campaign allocation or model output follows.
@@ -6464,10 +6466,12 @@ guest, provider request, campaign allocation or model output follows.
 ### Summary and goal
 
 The maintainer requested an actual executable path before retaining DF-C2 as
-gated. Investigated deployed read-only quota-setting routes and existing
-protected curator/dispatcher capabilities. Found a real Console status route,
-but no newly admitted campaign work: preserve the already-authorized campaign
-as gated, not closed or executed. Protocol v2 and USD 0 remain unchanged.
+gated. The additional anonymous read-only route probe qualifies the earlier
+interface-scoped closure, not its retained mechanics results or admission holds.
+Investigated deployed quota-setting routes and existing protected curator/
+dispatcher capabilities. Found a real Console status route, but no newly
+admitted campaign work: preserve the already-authorized campaign as gated,
+not closed or executed. Protocol v2 and USD 0 remain unchanged.
 
 ### Acceptance criteria status and spec-to-source traceability
 
@@ -6549,3 +6553,55 @@ answers, arm maps, cookies or keys into conversation. This is missing execution
 evidence, not another request for generic approval, a new runtime adoption or
 a reason to weaken the protocol. No push, login, service change or model
 dispatch follows this record-only result.
+
+### Delayed alternate-path advisory correction (2026-10-14)
+
+**Goal / changes:** the maintainer requested **Fix**. Checked all ten delayed
+advisories against the current records and captured source/401 evidence.
+Corrected three record issues: schema-derived response wording, explicit
+point-in-time closure qualification and the missing official quota-toggle
+semantic citation. The owning [alternate-path record](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#alternate-execution-path-search-2026-10-14)
+now separates official meaning, captured UI/schema/proxy contracts and the
+unobserved authenticated account/backend state.
+
+| Advisory age | Disposition | Evidence / repair |
+|---|---|---|
+| 7 turns | Valid precision issue, fixed | Response schema is not a live 200 body; the sole status observation stays 401 |
+| 13 turns | Valid closure-scope issue, fixed | Both owning records explicitly qualify the earlier closure with the later anonymous probe |
+| 16 turns | Wrong provenance premise | Complete pinned console filename check plus readable public Go landing page do not establish identity with the deployed status client |
+| 17 turns | Valid semantic-citation gap, fixed | Pinned official Go text defines beyond-limit pay-as-you-go fallback; no blanket USD 0 guarantee or current value follows |
+| 18 turns | Wrong premise / already-bounded source claim | Proxy source is not live authenticated availability; captured UI connects `useBalance` to extra usage, not an inferred unrelated payment meaning |
+| 19 turns | Source request resolved; no current response-schema defect | Checked pinned Go and billing docs; they do not supply a current authenticated status/usage result |
+| 20 turns | Stale, already complete | Pinned `inference-proxy.ts` was read and cited before the prior delivery |
+| 21 turns | Stale source/auth concern | Usage/proxy reads and zero-authenticated-request boundary were already recorded; existing campaign permission is not missing admission evidence |
+| 22 turns | Wrong API-absence premise | Old issue text cannot negate the pinned usage mapping or prove global unauthenticated-route absence; neither claim is adopted |
+| 23 turns | Stale sampling/absence concern | Full literal extraction replaced truncated grep in the captured two-bundle corpus; no exhaustive-product or issue-derived absence claim is made |
+
+**Acceptance / consumer coverage:** repaired the preregistration and this report;
+the generated index is refreshed for their owning navigation. Frozen v2,
+private consumer APIs, installed skills, fixtures/oracles, prior receipts and
+all seven blocked campaign obligations remain unchanged. Original verification
+figures above describe the pre-correction snapshot; new source-bound record
+checks have separate receipts in
+`local/df-c2-alternate-advisory-repair-2026-10-14.oVvJxB/`.
+
+TWINS: searched `nullable subscription response` and unqualified
+`All currently independently runnable work is complete` /
+`no independently actionable local` closure claims - found 1 other site:
+`review/final-report.md`; both owning records now explicitly scope/refine closure.
+
+**Residual risks / next action:** no authenticated status body, matching deployed
+backend or genuine protected curator admission was observed. No credential,
+cookie, login/settings action, new status/API probe, native guest, model call,
+campaign allocation or spend was added by this repair. No generic reapproval,
+runtime/skill adoption or push follows it.
+
+**Verification:** 29 focused tests passed in 0.38 seconds; links,
+record hygiene and project-knowledge validation returned zero errors, with
+the same 35 pre-existing date warnings. The corrected record consumer resolved
+the 606-line/60,346-character owning record through the generated index.
+Seven implementation pins, the frozen v2 body and seven named original evidence
+bindings matched. `advisory-triage.json` retains all ten dispositions;
+`verification.json` records the checks and all seven blocked campaign obligations.
+Neither reruns the status or native/snapshot probes. Post-report consistency
+checks bind this final addition.

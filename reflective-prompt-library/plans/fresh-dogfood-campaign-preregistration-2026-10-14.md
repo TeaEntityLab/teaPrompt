@@ -531,10 +531,13 @@ the separately bound live scope. Arbitrary metadata, the public diagnostic and f
 unbound native probes cannot supply the external curator/oracle, authenticated
 current setting, role/capture or blinded-human prerequisites.
 
-All currently independently runnable work is complete. The seven campaign
-criteria remain explicitly held on those actual inputs and later score/subset/
-outcome decisions, not another generic authorization. New campaign calls,
-reserves, provider requests, native guests and spend in this closure are zero.
+At this point, work in the reviewed consumer/native interfaces was complete.
+The later [alternate execution-path search](#alternate-execution-path-search-2026-10-14)
+qualifies that reachability claim with an additional anonymous read-only probe.
+The seven campaign criteria remain explicitly held on actual admission inputs
+and later score/subset/outcome decisions, not another generic authorization.
+New campaign calls, reserves, provider requests, native guests and spend in
+this earlier closure were zero.
 Receipts: session-private `local/df-c2-reachable-closure-2026-10-14.HXJsfB/`
 contains authority, `audit-abi.json`, `advisory-triage.json` and the final
 source-bound reachability/record checks. The public control files were removed
@@ -544,10 +547,13 @@ after observation; the disposable driver is removed after identity binding.
 
 The maintainer requested an actual execution path before preserving the campaign
 as gated. This search kept the v2 protocol and USD 0 boundary unchanged.
+It qualifies the earlier closure: an additional reachable anonymous read-only
+probe was discovered and exercised. That closure was a point-in-time review of
+consumer/native interfaces, not an exhaustive inventory of public API routes.
 
 Sources accessed 2026-10-14: the deployed [Console account bundle](https://opencode.ai/console/assets/app-pages-DsmtMIvR.js)
 declared `GET /api/go/status`; the [shared bundle](https://opencode.ai/console/assets/index-DwMGnlpP.js)
-bound its nullable subscription response to a boolean `useBalance` field,
+bound its subscription response schema to a boolean `useBalance` field,
 workspace-scoped authentication and the `x-org-id` header. The browser client
 uses the `/console/` base. One actual, credential-free
 `GET https://opencode.ai/console/api/go/status` returned **401 `Unauthorized`** (checked 2026-10-14).
@@ -558,13 +564,29 @@ was attempted. Inference-key compatibility with this Console route is **unknown*
 not inferred from the shared bearer scheme. The typed browser contract does not
 establish supported public-management API compatibility.
 
+Official setting semantics, checked 2026-10-14: the [pinned Go documentation](https://github.com/anomalyco/opencode/blob/34d8ded0c58dd66808c1d60e081e8c66da12a896/services/www/src/docs/content/console/go.mdx#L353-L355)
+defines **Use balance** as permitting Go to fall back to the Console
+pay-as-you-go balance after plan usage limits instead of blocking requests.
+This supplies the setting's meaning, not the current account value or a blanket
+USD 0 guarantee. A schema/default or identically named subscription/payment
+field alone is insufficient. The captured account UI associates `useBalance`
+with its `extraUsage` / **Use credit** toggle and `go.updateSettings` payload;
+that is static client evidence, not a verified backend or authenticated result.
+
 Both source-map requests returned HTTP 200 HTML, not useful source-map JSON.
 The minified bundles remain deployed-source evidence, not recovered backend code.
 Upstream checked 2026-10-14: `anomalyco/opencode` at `34d8ded0c58dd66808c1d60e081e8c66da12a896`
 instead [proxies the legacy usage route](https://github.com/anomalyco/opencode/blob/34d8ded0c58dd66808c1d60e081e8c66da12a896/packages/console/app/src/lib/inference-proxy.ts)
-to `/go/v1/usage`; this does not disclose the downstream setting response or
-establish identity with the deployed Console bundles. Recheck if those assets or
-the authenticated API contract change.
+to `/go/v1/usage`; it reads the incoming Authorization token and forwards a
+non-anonymous key as bearer. This proves the checked proxy implementation,
+not live authenticated availability, its downstream setting response or identity
+with the deployed Console. Recheck if those assets or the API contract change.
+
+The complete pinned console filename check found the usage route as a
+known-present control, but no `/api/go/` named route. The checked public
+`routes/go/index.tsx` is a Go landing page, not the deployed status client.
+This is not an implementation-text absence proof; a matching readable
+Console client/backend was not identified by these named-route checks.
 
 The reviewed private-file helpers still require the coordinator's owner UID.
 The retained actual `0400` marker readability and native guest containment do
