@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 fresh private-consumer implementation and offline verification complete; protected campaign curation/oracle creation, live qualification/canaries and provider dispatch remain held.**
+> **Status: v2 continuation authorized; held on actual curator/dispatcher custody and fresh quota/admission evidence. Private implementation and reachable source/metadata/refusal checks are complete; zero new campaign calls or allocations.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -182,10 +182,10 @@ Prospective usage, **not executed**: (1) operator lacks current quota-only evide
 
 | ID | Proposal | Status | Evidence / limit | Next action / trigger |
 |---|---|---|---|---|
-| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit readiness and later implementation-only selections below; old cohort remains closed | Private consumer/offline verification complete; obtain protected population/oracle curation grant |
-| FP-P2 | Historical API profile with increased matched ceilings | Private consumer implemented; no live admission, trial or canary grant | Exact 4,096-token serializer and ordinary 11/8-call paths exercised with synthetic HTTP; actual provider identity, adequacy and quota enforcement unverified | Obtain fresh source-bound live admission and separately scoped execution authority; no proposed allowance is active |
-| FP-P3 | Curator-held all-copy final boundary | Approved design; no pool created or creation grant | Maintainer designated curator; all-copy and coordinator-exclusion boundaries still need actual enforcement evidence | Custody review complete; obtain protected curation grant and demonstrate final-reader enforcement before new outputs |
-| FP-P4 | Conditional, separately granted utility confirmation | Approved design; no confirmation subset/envelope grant | Pilot screen remains prospective; proposal approval does not allocate finals | Complete separately authorized pilot; exact single-subset confirmation grant later |
+| FP-P1 | Fresh C/T-only questions and populations | Protected curation authorized; no population created or admitted yet | Current continuation authorization below; old cohort remains closed | Establish enforced curator/all-copy reader boundary and preseal all selection/final inputs and oracles before any model output |
+| FP-P2 | Historical API profile with increased matched ceilings | Implementation verified offline; fresh live qualification and pilot envelope authorized, not admitted | Exact 4,096-token serializer and ordinary 11/8-call paths exercised with synthetic HTTP; current provider/quota/host evidence still required | Bind actual custody, quota, memory/capture and role evidence before provider/canary dispatch |
+| FP-P3 | Curator-held all-copy final boundary | Curation authorized; no pool created or custody proof supplied yet | Maintainer remains curator; coordinator exclusion is not supplied by role ownership or authorization | Curator/dispatcher supplies protected pool manifest and demonstrated reader denial without exposing finals |
+| FP-P4 | Conditional, separately granted utility confirmation | Continuation authorized in principle; exact single subset/envelope not yet approved | Frozen pilot screen and separate exact-subset grant remain required | Run admitted pilot, freeze qualified scores/audit, then obtain exact eligible subset/envelope decision before confirmation |
 
 ## Falsifiability and planning completion
 
@@ -193,7 +193,7 @@ This proposal fails as an executable design if an independent operator cannot re
 
 Planning acceptance: questions, fixed populations, numeric ceilings, preserved-old-state boundary, oracle/test traceability, examples and owner gates are specified and a throwaway consumer checks the arithmetic, identifier joins and linked discovery. No experimental test above is claimed run. No fixture, oracle, campaign manifest, model request or host/skill mutation is created by this plan.
 
-**Remaining Human Review / next action:** the [fresh private implementation below](#fresh-private-consumer-implementation-2026-10-14) and its offline verification are complete. Protected campaign population/oracle creation, live qualification/canaries, provider requests and actual pilot/confirmation envelopes remain separately held. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. Experiment dispatch remains **NO_GO**; the old accepted-inconclusive campaign remains closed.
+**Remaining Human Review / next action:** the [current continuation authorization](#campaign-continuation-authorization-and-admission-2026-10-14) supersedes the earlier curation/execution permission hold, not the protocol's readiness gates. Protected pre-output custody, current USD 0 quota evidence and fresh source-bound admission must be demonstrated before dispatch; exact confirmation subset/envelope and qualified human-score/freeze/audit/outcome decisions remain separate. No new campaign allocation or model call has occurred; the old accepted-inconclusive cohort remains closed.
 
 ## v2 approval and zero-model readiness (2026-10-14)
 
@@ -297,6 +297,26 @@ remain unchanged; no historical execution or role proof transfers.
 `protocol.py`, `campaign_support.py`, `go_provider.py`, `go_transport.py`,
 `worker.py`, `public_diagnostic.py` and `consumer.py` are bound by the seven-file
 `source-manifest.json` (SHA-256 `67fc99522cecadcbe93f2342929f0f654a0ebbee7b4620a0a16236ea5602aa14`).
+
+| Implemented private source | SHA-256 |
+|---|---|
+| `protocol.py` | `0c7cff04c04f04366833aedaccae166037b6e3585b88812f11d87099f9cc8381` |
+| `campaign_support.py` | `e25d49f6b6576c1d4d66a4f2254e95d7229016f746666ddfdace9f0d605c15dd` |
+| `go_provider.py` | `a9d56ec447a7067bfd20339d0849ce92d6ba9ca18cdb4e36a16030a050ca92ab` |
+| `go_transport.py` | `b436c2cd03385c44edfe1c4a072bdebaf7c295a0ab8ab67eec034648f7205720` |
+| `worker.py` | `6c51b492899fedcb6e75b363e1878f94c48ad08bd80fad104804a2b310c3fd27` |
+| `public_diagnostic.py` | `4602e3fad40ac575d961b2e5b99fa0fc1c5fd8935730ac4e4f1901be5792e6da` |
+| `consumer.py` | `5cb780b17f620ca57604f9f39839fb388e364de9055018f96543191de7d32783` |
+
+Custody expectation: the maintainer/artifact owner retains these private source
+bytes, the manifest and source-bound receipts for the campaign's lifetime;
+session-local availability is not a durable archival guarantee. This repository
+ledger retains independent hashes, not a distributed runtime or source backup.
+If the private bytes disappear, digests cannot reconstruct them: source admission
+holds until an owner-held byte-identical copy is supplied and verified, with
+fresh locality bindings. A changed implementation needs a versioned decision,
+not restoration by guess or reuse of an unavailable root's historical pass.
+
 The new consumer has fresh phase accounting, one immutable confirmation subset,
 separate zero-valued CLI/spend units, exact 4,096-token/temperature-0 requests,
 ordinary primary/successor caps of 11/8 under the original 300-second role
@@ -330,9 +350,98 @@ continuation; the cause is unknown and the temporary root was not recreated.
 This is not a whole-tree/raw-output integrity claim. The recorded closed
 outcome and 334-call/12-reserve/USD 0 accounting are unchanged.
 
-**Next owner decision:** separately authorize protected population/oracle
-curation and fresh source-bound qualification when ready. Live quota/identity,
-current six-store/eleven-file memory and capture isolation, actual role adequacy,
-all-copy final custody and qualified arm-blind scoring remain untested.
-Pilot/confirmation dispatch still needs its own envelope; implementation
-completion does not activate the proposed 624/870 ceilings. **NO_GO**.
+**Next owner decision at implementation completion (historical):** protected
+population/oracle curation and fresh source-bound qualification/phase execution.
+The [current continuation authorization](#campaign-continuation-authorization-and-admission-2026-10-14)
+below supplies permission to proceed through those gates, not evidence that
+they pass. No source/custody/quota/role proof or confirmation-subset decision is
+implied by implementation completion or by the later authorization.
+
+## Campaign continuation authorization and admission (2026-10-14)
+
+**Authority:** the maintainer replied **“授權”** to the preceding completion
+report's pending protected population/oracle curation, fresh live
+qualification/canaries and pilot/confirmation provider dispatch. This is a new
+continuation grant under the unchanged v2 protocol; the seven explicitly named
+maintainer roles and disclosed conflicts remain. The assistant is the execution
+delegate, not a substitute human curator, semantic scorer or outcome accepter.
+
+The granted pilot is all three families, 18 paired blocks, 36 primary and 12
+conditional successor contexts, at most **624 model-call attempts / 12 reserves /
+zero agent CLI sessions / USD 0**, with ordinary primary 11/successor 8 and
+4,096 output tokens under each role's original 300-second deadline. Its five
+mandatory canaries debit those same reserves/calls; no extra smoke funding or
+old headroom is inherited. Canaries and trials still wait on valid pre-output
+selection/final sealing and actual current-source admission.
+
+Confirmation is authorized as a future gated continuation, not an unknown
+subset allocation: the frozen pilot screen, qualified blinded human endpoints,
+score freeze/leak-audit and **separate exact nonempty subset/envelope approval**
+remain required. The maximum 870-call figure is not an active grant. No second
+subset, counter reset, retuning, automatic score/audit/outcome acceptance,
+unblinding, skill edit, adoption or positive-dollar spending follows.
+
+**Current admission work:** the seven private implementation hashes match the
+durable table above. The authorization and current identity observations are in
+`local/df-c2-admission-2026-10-14.wXgQoe/authority-intake.json` and
+`source-identity.json`. A metadata grant record is not a dispatchable phase
+approval: the consumer still requires actual immutable pool/admission/source
+bindings and current credential/phase-bound disabled-Use-balance evidence.
+No setting observation was supplied by the word “授權”; historical screenshots
+or quota percentages do not establish that control.
+
+The coordinator will not create or inspect finals through a same-principal
+generator and then call them curator-held. Existing candidate guest containment
+must not be conflated with coordinator/curator principal separation. Host
+custody and current memory/capture/role evidence are assessed before any model
+output; unavailable evidence remains a hold rather than a fabricated seal.
+No new campaign model call, reserve allocation, native guest, population or
+authoritative oracle has been created at this authorization intake.
+
+### Current admission disposition — authorized, externally blocked
+
+Two read-only source maps found candidate guest/ToolGate confinement and
+same-EUID private-file checks, but no coordinator-versus-curator read-denial
+service/principal in the reviewed consumer/runtime surfaces. This is scoped
+source evidence, not a claim to have inventoried every possible host facility.
+The actual current coordinator EUID is **502**; its non-final 0400 marker probe
+confirmed owner-readable access. Neither an opaque path nor a same-principal
+subagent/generator can fill the missing final-custody boundary.
+
+The current Apple CLI and four runtime source hashes match their pinned
+configuration. Actual `AppleBackend.availability()` ran only `system version`
+and `system status`, confirmed the configured service roots and returned
+available; no guest was created and no service was started or changed.
+Two opaque fingerprint observations covered the six declared stores and eleven
+capture/vector files with no within-probe drift or errors, zero live SQLite
+connections, no prompt/message SELECTs and no source writes. This is not
+complete consistent SQLite snapshots, a global inventory, current capture
+configuration proof or a delayed-ingestion/actual-role pass.
+
+The actual provider inventory entrypoint held on missing immutable
+`pool_binding` before any secret read or network request. No current
+disabled-Use-balance proof was supplied, so catalog/headroom admission was
+not attempted. No actual canary, scored trial, reserve allocation, final
+fixture or authoritative oracle was created.
+
+**Required curator/operator inputs, not another authorization request:**
+
+1. An actual protected curator/dispatcher boundary outside coordinator and
+   candidate-author read capability, plus answer-free pre-output metadata for
+   all six selection and nine final instances: identities/digests, genuine
+   semantic disjointness, recoverable-copy locations/read grants, frozen
+   independent functional/authority oracles and applicable rubric dimensions.
+   Supply the real dispatcher/principal interface and read-denial/assigned-case
+   delivery evidence. Do not paste final inputs, hidden answers or arm maps here.
+2. A fresh actual observation that **Use balance is disabled** for the current
+   Go account, maintained through this DF-C2 phase; bind it later to the exact
+   credential/source/phase grant. The generic authorization is not this fact.
+
+Full current memory/capture/role evidence and protected scoring/extraction then
+remain mandatory; the public diagnostic checker and arbitrary hashed metadata
+cannot substitute for case-bound consequence/authority oracles. The single
+confirmation subset, human score/freeze/audit and final outcome decisions are
+not supplied by this hold. Receipts: current admission namespace's
+`custody-prerequisite.json`, `admission-probe.json`, `host-metadata.json`,
+`memory-metadata.json`, `native-availability.json` and `continuation-hold.json`.
+The old cohort and all frozen sources/ratings/accounting remain unchanged.

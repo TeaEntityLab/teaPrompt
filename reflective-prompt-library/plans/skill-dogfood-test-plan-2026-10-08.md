@@ -1250,15 +1250,25 @@ The later implementation-only ruling below now owns the fresh-consumer status;
 curation, live qualification/canaries and provider requests remain held.
 No new campaign allocation or authority is inherited by this closed cohort.
 
-**Current successor implementation ruling:** the maintainer separately selected
+**Successor implementation ruling (historical):** the maintainer separately selected
 **Fresh consumer implementation only**. The [versioned private consumer and
 offline verification](fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-private-consumer-implementation-2026-10-14)
 are complete with 69 synthetic scenarios and zero campaign/provider/native
 dispatch. The ten original temporary implementation paths are now unavailable,
 with cause unknown; 57 frozen P0 copies and three metadata manifests still
 matched the final named-pin check. No old root was recreated or outcome amended.
-Protected population/oracle curation and fresh live admission/phase envelopes
-remain separate owner gates. This closed cohort remains accepted as inconclusive.
+At implementation completion, protected curation and fresh live admission/phase
+execution still required the later owner decision below. This closed cohort
+remains accepted as inconclusive.
+
+**Current successor continuation ruling:** the maintainer subsequently replied
+**“授權”** to protected population/oracle curation, fresh live
+qualification/canaries and gated pilot/confirmation continuation. The [current
+DF-C2 authorization/admission record](fresh-dogfood-campaign-preregistration-2026-10-14.md#campaign-continuation-authorization-and-admission-2026-10-14)
+owns that permission, not this closed cohort. Pre-output all-copy custody,
+current quota and source-bound admission evidence still gate the new pilot;
+the later exact confirmation subset/envelope remains separately approved.
+No model output, allocation or outcome amendment follows from authority intake.
 
 
 
