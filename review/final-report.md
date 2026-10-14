@@ -6458,3 +6458,94 @@ explicitly blocked, with permission present and no fabricated admission.
 Final post-report consistency checks and scoped local documentation commits
 certify this record-only closure; no push, login, service change, new native
 guest, provider request, campaign allocation or model output follows.
+
+## Alternate campaign execution-path result (2026-10-14)
+
+### Summary and goal
+
+The maintainer requested an actual executable path before retaining DF-C2 as
+gated. Investigated deployed read-only quota-setting routes and existing
+protected curator/dispatcher capabilities. Found a real Console status route,
+but no newly admitted campaign work: preserve the already-authorized campaign
+as gated, not closed or executed. Protocol v2 and USD 0 remain unchanged.
+
+### Acceptance criteria status and spec-to-source traceability
+
+| Criterion | Evidence | Status |
+|---|---|---|
+| Seek an actual read-only setting route | Captured account bundle declares `GET /api/go/status`; shared response schema contains `useBalance`; resolved client prefixes `/console/` and uses workspace auth | Verified deployed browser contract; not supported public-management compatibility |
+| Exercise that path without spending or changing account state | Actual anonymous `GET /console/api/go/status` returned 401 `Unauthorized` | Route smoke executed; account setting remains unknown |
+| Use an existing protected curator/dispatcher, not a guessed replacement | Retained same-EUID 0400 readability, owner-UID file helpers and candidate-only guest confinement; no supplied separate interface or configured SSH destination | No final-custody evidence in the reviewed available surfaces; not a whole-host absence claim |
+| Preserve protocol, sources and full campaign obligations | Frozen body SHA-256 `f2807a4ee9b28e220fcccbab3f3e0e2332449384f7d50a325a4f41ddba073f64`; seven implementation pins match; all seven remaining criteria retained in the private ledger | Preserved; none reclassified as completed |
+
+### Tests / checks run
+
+One new credential-free Console status GET was executed, not another synthetic
+pass or repeated successful native/snapshot proof. Deployed bundle identities,
+static method/auth bindings and the 401 receipt are retained in
+`local/df-c2-alternate-paths-2026-10-14.QZj4v7/`.
+The managed-tab inventory was empty; retained relay/default/login observations
+were read, not rerun. No login, cookie extraction or inference-key reuse was tried.
+
+The public upstream pin `34d8ded0c58dd66808c1d60e081e8c66da12a896` was read:
+legacy Go usage GET now proxies to `/go/v1/usage`; new inference owns auth and
+billing. This does not reveal its downstream setting response or prove identity
+with the deployed Console. Both `.map` responses were HTTP 200 HTML, not useful
+source-map JSON; no recovered backend implementation is claimed.
+
+Final delivered-record checks passed **29 tests in 0.43 seconds**. Links and
+project-knowledge validation passed; record hygiene returned zero errors and
+the original 35 warnings after correcting the four new source-date entries.
+No validator changed. The navigation consumer resolved the new heading in the
+584-line/58,679-character record, matched the generated index and retained the
+frozen protocol hash. Seven implementation source pins remain matched.
+`verification.json` binds twelve current discovery/observation/preservation
+artifacts and retains every blocked campaign criterion.
+
+TWINS: searched external URLs lacking adjacent checked/accessed/as-of/retrieved
+dates in enforced `plans/` records - found 35 other sites:
+`agentflow-8.3-delta-survey-2026-09-21.md`,
+`agentflow-8.3.2-delta-survey-2026-09-22.md`,
+`ember-snn-llm-survey-2026-09-22.md`, `gliner2-survey-2026-09-19.md`,
+`hotline-verification-redundancy-survey-2026-09-22.md`,
+`jev-diffusion-eval-survey-2026-09-19.md`, `minimax-code-survey-2026-09-19.md`,
+`nimble-survey-2026-09-19.md`, `pstack-survey-2026-09-22.md`,
+`pstack-synthesis-survey-2026-09-22.md`. These pre-existing heuristic warnings
+are outside this search; no historical source access date was fabricated.
+The full suite, old model campaign and passed containment/snapshot controls are
+not replayed for this record-only investigation.
+
+### Files changed and consumer coverage
+
+Added the dated result to the existing preregistration and this delivery report;
+regenerated `reflective-prompt-library/index.json` for navigation. Direct
+consumer/runtime APIs, private source, installed skills, fixtures, acceptance
+oracles, registry and routing remain unchanged. The existing closed-cohort and
+Decision Index links already point to the owning continuation record; their
+recorded authorization/held disposition has not changed.
+
+### Failures, residual risks and remaining work
+
+The 401 is an observed authentication refusal, not a campaign failure or a
+`useBalance: false` observation. Source-map HTTP 200 is not source-map success.
+The shared bearer label does not prove that an inference key can access the
+Console; credential interoperability remains untested.
+
+All seven campaign obligations remain held on actual protected population/
+oracle metadata, current account quota/source/role admission and later human
+score/freeze/audit/subset/outcome decisions. Same-owner files and candidate
+guest isolation cannot replace the curator read-denial boundary. The fresh
+campaign has no model calls, CLI sessions, reserves, native guests, population/
+oracle creation or spend from this search; the sole status request was
+anonymous and non-generating. Old accounting stays 334 calls/12 reserves/USD 0.
+
+### Human review needs and next action
+
+Continue the existing authorization only when an actual protected curator/
+dispatcher supplies the fresh all-copy case/oracle/read-grant metadata and an
+owner-authenticated current workspace observation proves disabled balance
+fallback with the exact phase/source/credential binding. Do not paste finals,
+answers, arm maps, cookies or keys into conversation. This is missing execution
+evidence, not another request for generic approval, a new runtime adoption or
+a reason to weaken the protocol. No push, login, service change or model
+dispatch follows this record-only result.
