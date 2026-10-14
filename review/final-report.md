@@ -5854,14 +5854,14 @@ Index, generated index and this report. Human status/navigation is the affected
 consumer; no executable API/schema, installed skill or runtime source changed.
 Private receipts are evidence, not a campaign P0 or self-issued trial approval.
 
-The approved offline phase is complete; experiment dispatch remains **NO_GO**.
-Next is a separately approved versioned fresh private consumer (or revised
-profile/design) and protected curator creation, followed by fresh source-bound
-quota/identity, actual-role/capture/memory and blind-read/scoring admission.
-No proposed 624/870 allowance becomes active through readiness completion,
-and no historical allowance or role proof transfers.
+At that readiness completion, experiment dispatch remained **NO_GO** and the
+fresh private consumer still needed a separate grant. The [later implementation
+ruling](#fresh-private-consumer-implementation-2026-10-14) below now owns current
+source status. Protected curation, quota/identity, actual-role/capture/memory and
+blind-read/scoring admission remain separate; no proposed 624/870 allowance or
+historical role proof became active through readiness.
 
-PENDING: fresh private-consumer implementation, protected curation/oracle creation, live qualification/canaries and provider dispatch - awaiting your authorization
+Historical gate: fresh private-consumer implementation and protected curation/live dispatch were still awaiting authorization at offline-readiness completion.
 
 ### Final current-state verification
 
@@ -5960,9 +5960,141 @@ TWINS: searched `Planning-only successor|FP-TASK-001's new approval/role/custody
 
 ### Next action and Human Review
 
-Choose a separately scoped fresh private-consumer implementation with offline
-verification only, or retain the implementation hold. Neither option silently
-grants protected campaign curation/oracle creation, live qualification/canaries,
-provider/model dispatch, trial/confirmation envelopes, spend or operator changes.
-The old accepted-inconclusive cohort and 334-call/12-reserve/USD 0 accounting
-remain unchanged.
+At repair completion, the next owner choice was fresh private-consumer
+implementation versus continued hold. The maintainer subsequently selected
+implementation only; its disposition is recorded below. Protected campaign
+curation/oracle creation, live qualification/canaries, provider/model dispatch,
+trial/confirmation envelopes, spend and operator changes were not granted.
+The accepted-inconclusive cohort's recorded 334-call/12-reserve/USD 0 accounting
+is unchanged.
+
+## Fresh private-consumer implementation (2026-10-14)
+
+### Goal, authority and implementation summary
+
+Complete the maintainer's explicit **Fresh consumer implementation only**
+selection: a new versioned session-private DF-C2 v2 consumer and guarded
+nonexperimental offline verification, not a TeaPrompt runtime or campaign.
+The new root is `local/df-c2-consumer-v2-2026-10-14.bENK4T/` in the planning session.
+The seven source files have manifest SHA-256
+`67fc99522cecadcbe93f2342929f0f654a0ebbee7b4620a0a16236ea5602aa14`.
+No historical grant, counter, role proof or old consumer alias is inherited.
+
+Two read-only reviewer lenses supplied advisory findings from one model channel.
+Current quota-proof, producer pairing, replay/reasoning, dispatch classification,
+same-byte provider binding and synthetic-label defects were corrected.
+Accounting uses one root-wide thread lock plus `flock`, an append-only journal
+and a separate atomic tail anchor; the delegated SQLite projection/one-phase
+anchor and unused helpers were removed, not retained as compatibility paths.
+
+### Acceptance criteria status and spec-to-code traceability
+
+| Criterion | Implemented surface / observed check | Status |
+|---|---|---|
+| Exact output profile without clamp/fallback | `protocol.py`, `go_transport.py`; actual serializer emits 4,096/temperature 0; malformed profile refused | Verified offline |
+| Distinct ordinary primary 11 / successor 8 with fixed 300-second deadline | `worker.py`, `Budget`; real worker loops reached 11/8 calls, retained pending-tool censoring and denied deadline extension | Verified offline |
+| Fresh pilot and all seven confirmation subsets; zero CLI/spend | `protocol.py`, `campaign_support.py`; 624 pilot, confirmation `198*k + 144*h + 132`, separate zero-base phases and immutable subset | Verified offline |
+| Fixed populations and reserve conservation | `Budget.allocate_session`; five mandatory pilot canaries, seven remaining reserves, no extra trial slot, two replacement role contexts debit two reserves | Verified offline |
+| No canary/trial identity substitution | Trial successor requires a completed matching trial/replacement producer; guided canary cannot substitute; failed mandatory canary cannot enable scored trials or rerun | Verified offline |
+| Charge before effect; unknown/crash cannot retry | `GoTransport` and journal; post-dispatch unknown/profile hold retain one charge; receipt crash remains unresolved on reopen | Verified offline |
+| Actual consumer/transport/tools integrated | `consumer.py`, `worker.py`, `public_diagnostic.py`; allowed workspace/report writes, paired replay, traversal/symlink/unknown-host denials | Verified offline |
+| No live effects under implementation grant | Real inventory/credential/transport/native paths refused before effect; zero actual calls/reserves/guests/fixtures/oracles | Verified within guarded run |
+| Closed named evidence preserved without wider integrity claim | 57 frozen P0 copies and three metadata manifests match; ten original temporary paths became unavailable, cause unknown | Verified available pins; temporary paths unavailable |
+| Documentation and reachable consumer coverage | Fresh status/ledger, closed successor pointer, Decision Index, this report and regenerated index; runtime/skills not adopted | Verified document navigation/gates |
+
+### Tests / checks run
+
+`python3 -I -S -B offline_controls.py` passed **69 scenarios** on the final
+seven-source manifest. It exercised the real consumer -> serializer/SSE ->
+worker -> budget path with in-memory HTTP and owned synthetic workspaces,
+including reopen, tamper and concurrent duplicate allocation.
+The audit recorded zero forbidden operations. These checks are not live
+provider, native containment, protected custody or efficacy proof.
+
+The known-body EOF probe failed before with `AttributeError` on `response.fp=None`,
+then passed both an emulated response and an actual stdlib `HTTPResponse` on a
+memory socket after the fix. Standalone `consumer.py payload` emitted the exact
+profile. `consumer.py snapshot --root . --phase pilot --families Q-IMP Q-REV Q-HOF`
+against the implementation-only root returned `HELD`, exit 4,
+`retry_safe: false`; no phase grant was manufactured.
+
+Source-bound evidence is retained in `implementation-verification.json` and
+`smoke-receipts.json`. The latter preserves final observations, the failing-before
+and passing-after EOF observations, and removed driver digests. Throwaway drivers,
+synthetic grants/workspaces and import caches were removed after proof.
+
+### Files changed and consumer coverage
+
+Private source: `protocol.py`, `campaign_support.py`, `go_provider.py`,
+`go_transport.py`, `worker.py`, `public_diagnostic.py`, `consumer.py`.
+Private approval/contract/source manifest and retained verification JSON bind the
+implementation separately from every prospective phase grant.
+Repository records: fresh preregistration, closed dogfood successor pointer,
+`PROJECT_KNOWLEDGE.md` Decision Index, generated `index.json`, this report.
+No governing skill, registry, route, oracle or installation changed.
+
+Direct Python `Consumer.run` and standalone payload/snapshot CLI: exercised.
+Generated index and human discovery/status: document checks below. Synthetic
+persisted grants, journals and receipts: exercised for transitions, reopen and
+corruption. Archived old callers are not compatibility clients and are not
+imported or migrated into the new ledger. Live `run_files`/CLI execution,
+provider, native host/capture/memory and final scoring are explicitly untested
+owner-held boundaries; no consumer success claim there.
+
+### Failures, preservation limits and residual risks
+
+The integration harness initially misrepresented stdlib HTTP EOF and read stale
+private import caches; its corrected setup retained source-only audited reads.
+The EOF defect also failed against a faithful stdlib response before its source
+fix. Invalid allowlist preflight was normalized to the consumer's held error
+surface; synthetic held diagnostics retained their label.
+
+The final preservation check could no longer open historical
+`/private/tmp/teaprompt-stage1-go-fresh-p33vNi`: ten earlier checked implementation
+paths were unavailable. Cause unknown; no root recreation or retrospective
+rewrite was performed. All 63 available named pins matched, including 57 frozen
+P0 copies and three closed metadata manifests. This is not a whole-tree,
+original raw-output, scoring or isolation claim. The closed disposition and
+recorded 334 calls/12 reserves/USD 0 are unchanged.
+
+Local locks/hash/inode checks do not authenticate the human approver or prevent
+an owner replacing every protected record together. Live quota/identity and the
+disabled Use balance setting, current six-store/eleven-file memory/capture
+isolation, actual 4,096-token/11/8 role adequacy, all-copy final-reader custody and
+qualified arm-blind human scoring still require separately authorized evidence.
+The seven human role overlaps remain disclosed, not proven independent.
+
+### Next action and Human Review
+
+Implementation/offline verification is complete. Protected population/oracle
+curation and source-bound live qualification are the next separately scoped
+owner decisions; a pilot and any later single-subset confirmation each still
+need their own approved envelope. Proposed ceilings are not allocations.
+No experimental FTEST, provider/model/native guest, canary, scorer or protected
+oracle ran; no runtime/skill adoption or push follows. Dispatch remains **NO_GO**.
+
+PENDING: protected population/oracle curation, fresh live qualification/canaries and pilot/confirmation provider dispatch - awaiting your authorization
+
+### Final repository verification
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed:
+1,743 tests in 70.44 seconds, all eight validators with zero errors, 19 valid
+skills/examples and ROUTE-001/002/003 at 100% fixture consistency. Existing
+warnings remain five skill-length and 35 historical date-heuristic warnings;
+278 Markdown files were checked. This gate checks repository records, not the
+private consumer's live provider/host boundaries.
+
+The document consumer observed the delivered 338-line/41,300-character
+preregistration, its new implementation heading, closed successor and Decision
+Index links, and all seven confirmation subset ceilings. Its seven-source
+identity check matched the tested manifest. Actual private directory observation
+confirmed the drivers, synthetic work and import caches were gone; retained
+JSON receipts are not campaign grants. `document-smoke.json` preserves these
+observations separately from the behavioral smoke.
+
+TWINS: searched `PENDING: fresh private-consumer implementation|separately scoped fresh private-consumer implementation grant|separately authorize a versioned fresh private-consumer|obtain separate fresh-consumer implementation|Authorize a fresh versioned consumer` - found 0 other sites: none.
+
+Post-receipt document/index/link/hygiene checks cover this verification-note
+addition; the full suite was not rerun for this record-only addition. No private
+source, experimental criterion or campaign input changed after the 69-scenario
+run. No campaign or live qualification is implied by either set of checks.
