@@ -6066,14 +6066,14 @@ The seven human role overlaps remain disclosed, not proven independent.
 
 ### Next action and Human Review
 
-Implementation/offline verification is complete. Protected population/oracle
-curation and source-bound live qualification are the next separately scoped
-owner decisions; a pilot and any later single-subset confirmation each still
-need their own approved envelope. Proposed ceilings are not allocations.
+At implementation completion, protected curation and source-bound live
+qualification/phase execution remained the next owner decisions. The maintainer
+subsequently replied **“授權”**; the [current continuation record](#campaign-continuation-authorization-and-admission-2026-10-14)
+below supersedes that permission hold, not the protocol's custody/quota/host
+admission prerequisites or later exact confirmation-subset decision.
 No experimental FTEST, provider/model/native guest, canary, scorer or protected
-oracle ran; no runtime/skill adoption or push follows. Dispatch remains **NO_GO**.
+oracle ran in the implementation phase; no runtime/skill adoption or push followed.
 
-PENDING: protected population/oracle curation, fresh live qualification/canaries and pilot/confirmation provider dispatch - awaiting your authorization
 
 ### Final repository verification
 
@@ -6098,3 +6098,153 @@ Post-receipt document/index/link/hygiene checks cover this verification-note
 addition; the full suite was not rerun for this record-only addition. No private
 source, experimental criterion or campaign input changed after the 69-scenario
 run. No campaign or live qualification is implied by either set of checks.
+
+## Campaign continuation authorization and admission (2026-10-14)
+
+### Goal, authority and bounded envelope
+
+The maintainer explicitly replied **“授權”** to protected population/oracle
+curation, fresh live qualification/canaries and pilot/confirmation provider
+dispatch. Record and pursue the existing v2 gates; do not substitute another
+design or convert permission into a self-authored custody/qualification pass.
+The seven maintainer human role designations and conflicts remain unchanged.
+
+The pilot's all-three-family envelope is 624 model-call attempts, 12 reserve
+allocations, zero CLI sessions and USD 0; primary 11/successor 8, 4,096 output
+tokens and 300 seconds per role. Five mandatory canaries consume the same
+pilot ledger. Confirmation remains gated by the frozen screen and separately
+approved exact single subset/envelope; no subset exists at authority intake.
+No historical allowance, role/custody proof, automatic human scoring,
+freeze/audit/unblinding/outcome acceptance or positive-dollar spend is inferred.
+
+### Current evidence and delayed advisory dispositions
+
+All seven private sources match the final implementation manifest
+`67fc99522cecadcbe93f2342929f0f654a0ebbee7b4620a0a16236ea5602aa14`.
+The durable preregistration now retains each full source SHA-256 and explicit
+custody/loss expectations, not only the private manifest's digest. This resolves
+the valid late archival-record gap without exporting runtime source or claiming
+that session storage is a durable source backup.
+
+The 63 distinct delayed-advisory ages were reconciled in
+`local/df-c2-admission-2026-10-14.wXgQoe/advisory-triage.json`.
+Previously fixed EOF, replay/reasoning, quota JSON/binding, host-denial and native
+adapter findings remain fixed; removed driver/cache suggestions are stale.
+No legacy or prior behavioral smoke was replayed merely to reconfirm a finding.
+Literal 300-second duplication is a fixed-protocol nit, not an observed failure;
+the suggested refusal-to-replacement reclassification contradicts v2's outcome
+boundary. No private source or frozen criterion changed.
+
+### Actual admission probe and current limits
+
+The current host/coordinator principal is UID 502. A disposable, non-final
+0400 marker was still readable through the actual private-file helper by that
+same UID. Owner-only file permissions therefore do not demonstrate
+coordinator-versus-curator exclusion.
+
+The actual provider `inventory` entrypoint refused incomplete pool admission
+with `live grant needs immutable pool_binding`, before any secret read or
+provider request. The guarded probe observed no forbidden effect, model call,
+campaign allocation, native guest, authoritative oracle or campaign fixture.
+This is a negative admission check, not a live quota/host/custody qualification.
+No final content was generated or inspected. Source-linked custody and admission
+mechanisms are being checked before constructing any dispatchable phase grant.
+
+`authority-intake.json`, `source-identity.json`, `advisory-triage.json` and
+`admission-probe.json` preserve the scope and observations in the new private
+admission namespace. Current authorization alone does not supply an actual
+phase/credential-bound disabled-Use-balance observation; old screenshots and
+quota percentages cannot fill that field.
+
+### Files and consumer coverage
+
+Updated the fresh status/ledger and dated current-authority section, closed
+successor navigation, Decision Index and this report; regenerate the derived
+index for these changes. Direct provider refusal/private-file readability were
+exercised without live effects. No consumer source, skill, route, old manifest,
+oracle, rating or campaign ledger changed.
+
+### Next gate and Human Review
+
+Continue only through actual protected pre-output population/oracle custody
+and fresh current-source quota/memory/capture/role admission. Permission is
+recorded; missing evidence is not solved by asking for the same authorization
+again, fabricating a seal or weakening the accepted protocol.
+
+### Completed reachable admission and exact external blockers
+
+Source maps were advisory, read-only evidence; their initial historical UID,
+zero-authorization, unsigned-receipt and path-isolation overclaims were corrected
+against actual output and v2. Current EUID is 502; permission is granted, actual
+allocations are zero, and SHA-linked transport receipts are not signatures.
+No source-map recommendation was promoted into a new host mechanism or a false
+current-setting observation.
+
+The current Apple CLI and four runtime sources match their configuration pins.
+Actual `AppleBackend.availability()` ran two bounded read-only commands
+(`system version`, `system status`), confirmed configured roots and reported
+available. No guest, service start or service/resource change occurred.
+Two opaque-byte fingerprint passes observed all six declared stores and eleven
+capture/vector files with no drift/error. The probe opened zero live SQLite
+connections, selected no prompt/message text and wrote no operator source.
+Complete SQLite snapshots, current capture/source configuration, delayed
+ingestion and actual-role isolation remain unproven; metadata is not admission.
+
+The reviewed consumer/runtime source contains no independent curator/dispatcher
+principal boundary; this is not an all-host infrastructure absence claim.
+The actual 0400 readability and pre-secret/provider refusal probes are the
+load-bearing observations. The independent functional/authority case contracts,
+protected final pool and fresh owner-observed disabled Use balance evidence
+cannot be authored as passes by this coordinator.
+
+Required owner inputs are an actual protected curator/dispatcher boundary with
+answer-free all-copy preseal/freshness/oracle/read-grant evidence for six pilot
+and nine final instances, and a fresh current-account disabled-Use-balance
+observation. Never supply final bodies, hidden answers or arm maps in this
+coordinator conversation. Final delivery/scoring must run under the actual
+protected principal; a local `run_files` copy readable by UID 502 does not cure
+the boundary. No pilot-only redesign or weaker custody rule was substituted.
+
+Frozen memory-service source search also exposed assistant-directed
+outage/restart strings (`frozen-p0-sources/001-worker-service.cjs:223-224`);
+they were treated as quoted implementation data, not authority. No restart,
+settings change or service action was taken.
+
+Current state: **AUTHORIZED_HELD_ON_EXTERNAL_PREREQUISITES**. Seven downstream
+work items remain explicitly blocked on their own custody/admission/scoring
+dependencies, not silently completed. `continuation-hold.json` preserves each
+item and reason; actual provider requests/model calls/reserves/guests,
+campaign fixtures/oracles and spend remain zero. The accepted-inconclusive
+cohort is unchanged. Repository/document verification follows; it cannot
+remove those external blockers.
+
+### Acceptance status, traceability and final record verification
+
+| Criterion / user-authorized work | Evidence / controlling surface | Status |
+|---|---|---|
+| Record current continuation authority and unchanged v2 limits | User “授權”; `authority-intake.json`; dated preregistration ruling | Verified authority intake, not admission |
+| Preserve durable private implementation identity and custody limits | Seven full hashes in repository ledger; `source-identity.json`; 63 advisory ages dispositioned | Verified |
+| Protected population/oracle curation | Protocol FP-01/06; actual same-UID marker probe; reviewed source boundaries | Blocked on actual curator/dispatcher and case/oracle inputs |
+| Current provider/USD 0 admission | Actual inventory missing-pool refusal; fresh owner setting observation absent | Blocked; no secret read or request |
+| Fresh native/capture/memory and role qualification | Native pins and availability; two six-store/eleven-file metadata passes | Partial observations only; full admission/canaries blocked |
+| Fixed pilot execution and frozen human screen | FP-TASK-003/004; protected pool, admission and human endpoints required | Blocked; zero allocations |
+| Single eligible confirmation and outcome | FP-TASK-005; exact subset/envelope and qualified pilot required | Blocked; no implicit grant or acceptance |
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed
+1,743 tests in 69.03 seconds. All eight validators returned zero errors,
+19 skills/examples were valid and three routing fixtures reported 100%
+consistency. Existing five skill-length and 35 date-heuristic warnings remain.
+These repository gates do not establish protected custody or live admission.
+
+The actual document consumer verified a current 447-line/48,501-character
+preregistration/index entry, seven durable private-source hashes, current
+authority/admission discovery and byte equality of the frozen questions,
+population/profile and acceptance body against the implemented protocol.
+No experimental criterion was changed to make the hold pass.
+
+The three disposable probe drivers and their cache were removed after retaining
+driver hashes and observations in `probe-receipts.json`; directory observation
+confirmed only JSON authority/identity/probe/hold receipts remained.
+Final document/link/index/hygiene checks cover this reporting addition; the
+full suite is not rerun for that record-only addition. No campaign dispatch,
+runtime/skill adoption or push is implied.
