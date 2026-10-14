@@ -6356,3 +6356,105 @@ the pilot/confirmation envelope. Seven campaign criteria remain explicitly
 blocked on the genuine external evidence and owner decisions listed above.
 Final post-record checks and scoped local documentation commits are recorded
 separately; no push or campaign generation follows.
+
+## Exhaustive reachable continuation and advisory closure (2026-10-14)
+
+### Summary, authority and findings
+
+The maintainer requested **“do all you can do until nothing to do”**.
+Finished the remaining independently runnable audit investigation and checked
+all seven delayed advisories against the current source/receipt/retired-driver
+state. Prior campaign continuation permission stays recorded; it is neither
+an invented external fact nor a reason to rerun successful proofs.
+
+| Advisory | Current disposition | Evidence |
+|---|---|---|
+| Verify the real FD/inode match | Existing fix confirmed | Actual `fdopen` integer-FD audit event and matching dev/inode/UID permit the fresh private receipt write |
+| Guard missing receipt; fence remove/rename | Mixed: missing receipt must deny unknown FD; historical mutation-event coverage limitation is valid | Actual missing-target refusal preserves control bytes; unlink uses `os.remove`, rename its separate event; neither is an `open` write |
+| Read flags from audit `args[1]` | Rejected: wrong ABI | Python 3.14.7 reports `(path, mode, flags)`, mode `None`, integer write/create flags at index 2 |
+| Loosen exact missing-pool error assertion | No active defect | Disposable pinned-source probe is retired; retained real refusal remains, with no permanent wording test |
+| Managed Console is not an owner session | Already correct | Receipt separates relay failure/default unavailability from managed login render; setting null, zero login/settings actions |
+| Elided task prompts may omit kill conditions | Rejected transcript-visibility premise | Actual task/authority contract required read-only source work, no service startup/image pull, holds and uniquely owned cleanup; preparers did not execute |
+| Do not start stopped service or bypass relay failure | Already correct | Actual native receipts used the available existing service/cached image, no system-start/image-pull verbs; relay failure remains unavailable evidence |
+
+**Valid correction:** explicitly bound the earlier no-source-write observations
+to reviewed read-only paths and sampled unchanged bytes. The historical
+open-write fences did not deny every namespace mutation event and are not
+complete independent mutation/actor provenance. Preserved every earlier
+receipt and outcome; did not recreate retired code, add a permissive missing-FD
+fallback, move the audit flag index or retroactively claim stronger coverage.
+
+### Acceptance criteria status, tests and traceability
+
+`python3 -I -S -B audit_abi_probe.py` passed six actual ABI/filesystem checks:
+open argument order; real owned-FD event/inode matching; unknown-FD-before-
+receipt denial; distinct rename/unlink events; and protected private marker
+unlink/rename refusal before effect. All control files were freshly owned,
+public and non-campaign; no operator/credential/SQL/provider/native access.
+They were removed after observation. This investigation does not test or
+qualify a campaign oracle, model role, curator boundary or delayed ingestion.
+
+Read current `Budget._validate_grant`, `_verify_binding`,
+`mark_canary_qualified`, `require_live`, native
+`validate_native_contract`/`apple_check` and worker session entrypoints.
+Their immutable source/pool/admission/session and separate live-native scope
+requirements do not produce external custody, current quota or independent
+case/role evidence. Fabricating those inputs or using a public developer
+diagnostic as a task oracle would not complete the user-authorized campaign.
+No eligible but unexecuted independent local path was identified in that
+reviewed consumer/native scope; this is not a whole-host capability inventory.
+
+### Files changed, residual risks and human-held work
+
+Corrected the existing preregistration's audit scope, added this dated closure
+and regenerated the existing index for navigation. No permanent consumer,
+runtime, skill, oracle, registry, route or test was changed. Private smoke
+identity/observations and every advisory disposition are retained under
+`local/df-c2-reachable-closure-2026-10-14.HXJsfB/`; removed the throwaway driver
+after binding its identity. No new model call, campaign reserve, provider
+request, native guest, fixture/oracle or spend occurred.
+
+All seven campaign requirements are retained separately: actual protected
+population/oracles, current provider/USD 0 evidence, full actual-role capture/
+memory admission, five provider canaries, the fixed pilot, frozen qualified
+human screen and exact single confirmation subset/envelope/outcome.
+They remain blocked on genuine external inputs and later owner decisions.
+The accessible Console is unauthenticated; no actual curator/dispatcher
+read-denial/case contract was supplied. Neither is solved by another generic
+grant, an arbitrary checksum, further synthetic runs or recycled old data.
+Old accepted-inconclusive accounting remains 334 calls/12 reserves/USD 0;
+the frozen v2 body and every original outcome stay unchanged.
+
+Final record checks and local commit receipts follow; they certify current
+documentation and source identity, never missing admission or campaign efficacy.
+
+### Verified closure and final record boundary
+
+Current focused checks passed **29 tests in 0.39 seconds**; links, record hygiene
+and project-knowledge validators returned zero errors, with the same 35
+date-heuristic warnings. The new discovery consumer resolved the closure
+heading in the **541-line/55,759-character** preregistration/index entry and
+matched all seven current consumer source pins. The frozen v2 protocol body is
+byte-identical to the earlier bound body; no scored or unscored campaign
+criterion was changed. The full repository suite and passed native/snapshot
+controls were not replayed for these record-only corrections.
+
+Source inspection also kept provider ordering precise: live authority precedes
+an in-memory credential read; exact provider-binding/current quota proof
+precedes provider API requests. Missing `pool_binding` still refuses before
+credential/network. The closure does not claim all quota checks precede every
+credential access.
+
+`verification.json` binds the six-behavior ABI receipt, exercised driver hash,
+seven advisory dispositions, seven current source pins and original named
+receipt identities. After binding, deleted the driver; directory observation
+showed only five private JSON authority/observation/triage/reachability/
+verification artifacts. Public control files were already removed.
+
+**Terminal reachable-work disposition:** no independently actionable local
+campaign work remains in the reviewed interfaces/current tool-accessible
+evidence. All seven external-input-dependent campaign requirements stay
+explicitly blocked, with permission present and no fabricated admission.
+Final post-report consistency checks and scoped local documentation commits
+certify this record-only closure; no push, login, service change, new native
+guest, provider request, campaign allocation or model output follows.
