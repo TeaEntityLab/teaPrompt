@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 approved for zero-model readiness only; campaign fixture/oracle creation, qualification canaries and provider dispatch remain held.**
+> **Status: v2 offline readiness complete; fresh private-consumer implementation, protected campaign curation/oracle creation, live qualification/canaries and provider dispatch remain held.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -182,9 +182,9 @@ Prospective usage, **not executed**: (1) operator lacks current quota-only evide
 
 | ID | Proposal | Status | Evidence / limit | Next action / trigger |
 |---|---|---|---|---|
-| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit zero-model readiness selection below; old cohort remains closed | Complete offline readiness; obtain protected curation grant before creation |
-| FP-P2 | Historical API profile with increased matched ceilings | Approved proposal limits/data boundary; no trial or canary grant | Contributor/non-ZDR and mutable-weight limitations accepted for the proposed public/synthetic profile; actual identity, adequacy and quota enforcement unverified | Offline source review now; fresh source-bound admission and explicit dispatch envelope later |
-| FP-P3 | Curator-held all-copy final boundary | Approved design; no pool created or creation grant | Maintainer designated curator; all-copy and coordinator-exclusion boundaries still need actual enforcement evidence | Custody review now; protected curation grant before any new model output |
+| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit zero-model readiness selection below; old cohort remains closed | Offline readiness complete; obtain separate fresh-consumer implementation and protected curation grants |
+| FP-P2 | Historical API profile with increased matched ceilings | Approved proposal limits/data boundary; no trial or canary grant | Contributor/non-ZDR and mutable-weight limitations accepted for the proposed public/synthetic profile; actual identity, adequacy and quota enforcement unverified | Authorize a fresh versioned consumer or explicitly revise the design; live admission/dispatch remains separate |
+| FP-P3 | Curator-held all-copy final boundary | Approved design; no pool created or creation grant | Maintainer designated curator; all-copy and coordinator-exclusion boundaries still need actual enforcement evidence | Custody review complete; obtain protected curation grant and demonstrate final-reader enforcement before new outputs |
 | FP-P4 | Conditional, separately granted utility confirmation | Approved design; no confirmation subset/envelope grant | Pilot screen remains prospective; proposal approval does not allocate finals | Complete separately authorized pilot; exact single-subset confirmation grant later |
 
 ## Falsifiability and planning completion
@@ -193,7 +193,7 @@ This proposal fails as an executable design if an independent operator cannot re
 
 Planning acceptance: questions, fixed populations, numeric ceilings, preserved-old-state boundary, oracle/test traceability, examples and owner gates are specified and a throwaway consumer checks the arithmetic, identifier joins and linked discovery. No experimental test above is claimed run. No fixture, oracle, campaign manifest, model request or host/skill mutation is created by this plan.
 
-**Remaining Human Review / next action:** proceed only with the zero-model source/custody review and disposable offline plumbing checks granted below. Protected campaign curation/oracle creation, qualification canaries, provider requests and any actual pilot/confirmation envelope remain separately held. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. The new experiment remains **NO_GO for dispatch** and the old accepted-inconclusive campaign remains closed.
+**Remaining Human Review / next action:** the [offline assessment below](#offline-readiness-outcome) is complete. The next step requires a separately scoped fresh private-consumer implementation grant or an explicit profile/design revision. Protected campaign curation/oracle creation, live qualification/canaries, provider requests and actual pilot/confirmation envelopes remain separate gates. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. Experiment dispatch remains **NO_GO**; the old accepted-inconclusive campaign remains closed.
 
 ## v2 approval and zero-model readiness (2026-10-14)
 

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T11:43:02.918946",
+  "generated_at": "2026-10-14T13:33:18.337550",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4075,7 +4075,7 @@
         }
       ],
       "line_count": 281,
-      "char_count": 37336
+      "char_count": 37545
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -7662,7 +7662,7 @@
         }
       ],
       "line_count": 1279,
-      "char_count": 130895
+      "char_count": 130914
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
