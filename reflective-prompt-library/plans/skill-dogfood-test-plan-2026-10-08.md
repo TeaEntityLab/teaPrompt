@@ -1231,6 +1231,14 @@ new host qualification or a whole-tree integrity claim. The verifier and receipt
 are retained in the original session's
 `local/stage2-readiness-followthrough-2026-10-14.VrH5yi/`.
 
+**Planning-only successor:** the maintainer subsequently selected **Fresh campaign
+preregistration**. The [new campaign protocol](fresh-dogfood-campaign-preregistration-2026-10-14.md)
+defines fresh selection and confirmation populations, not a reopening of this
+cohort or replacement of its final inputs. Its profile, limits, curator/host
+roles, fixture creation and qualification remain separate approval gates.
+No new campaign model call, scorer/oracle replay or skill/runtime change follows
+from planning; the old accepted-inconclusive outcome and accounting remain intact.
+
 
 
 

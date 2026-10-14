@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T09:08:37.280353",
+  "generated_at": "2026-10-14T10:26:27.643997",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -62,6 +62,7 @@
             "durable-skills-flows-panel-2026-08-25.md",
             "llm-judge-lifecycle-survey-2026-09-05.md",
             "gpt-instruct-survey-2026-09-10.md",
+            "fresh-dogfood-campaign-preregistration-2026-10-14.md",
             "agent-governance-scaffold-field-use-panel-2026-07-17.md",
             "routing-holdout-plan-2026-07-11.md",
             "recent-changes-review-handoff-2026-10-07.md",
@@ -3967,6 +3968,108 @@
       "char_count": 33074
     },
     {
+      "path": "reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "fresh-dogfood-campaign-preregistration-2026-10-14",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-2-readiness-continuation-2026-10-14",
+          "skill-dogfood-test-plan-2026-10-08.md#requirements-and-acceptance-coverage"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Fresh Dogfood Campaign — Preregistration — 2026-10-14"
+        },
+        {
+          "level": 2,
+          "text": "Purpose and scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence and decision basis"
+        },
+        {
+          "level": 2,
+          "text": "Questions and population"
+        },
+        {
+          "level": 2,
+          "text": "Profile and proposed limits"
+        },
+        {
+          "level": 2,
+          "text": "Readiness, sealing and authority"
+        },
+        {
+          "level": 2,
+          "text": "Execution and measurement contract"
+        },
+        {
+          "level": 2,
+          "text": "Fixed decision rules"
+        },
+        {
+          "level": 2,
+          "text": "Requirements, acceptance and test plan"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-01: Population and preservation"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-02: Matched construction and profile"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-03: Real-role and capacity admission"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-04: Allocation conservation and stopping"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-05: Final scoring consumer"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-06: Source copies and blind extraction"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-07: Healthy sensitivity and immutable selection"
+        },
+        {
+          "level": 3,
+          "text": "FTEST-08: Human judgments and acceptance"
+        },
+        {
+          "level": 2,
+          "text": "Usage and task slices"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and planning completion"
+        }
+      ],
+      "line_count": 196,
+      "char_count": 30805
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -7391,7 +7494,8 @@
           "checkpoint-2026-10-11-outcome.md",
           "skills-september-concepts-review-2026-09-16.md#h12-replacement-scope-decision-2026-10-11",
           "../../review/final-report.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
-          "QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12"
+          "QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md"
         ]
       },
       "structure": [
@@ -7548,8 +7652,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1260,
-      "char_count": 129461
+      "line_count": 1268,
+      "char_count": 130039
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -20472,5 +20576,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 221
+  "total_files": 222
 }
