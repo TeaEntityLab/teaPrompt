@@ -5509,9 +5509,12 @@ the final gate.
 The source search for legacy seal creation exposed two implementation challenge
 inputs from the generator. They are not untouched for this continuation and
 cannot be used as final confirmation. Original holdouts were preserved rather
-than rewritten; the remaining seven files' unread provenance is unknown. Their
-recorded seal flag and intact hashes do not prove curator isolation or complete
-executable/oracle readiness.
+than rewritten. Whether the remaining seven were actually read by other contexts
+is unknown; source-copy availability is established for all nine by the
+follow-through below. Recoverability does not establish actual reads or historical
+worker access. None of the nine old instances is eligible for the fresh campaign's
+final pool. A seal flag and intact hashes do not prove curator isolation or
+complete executable/oracle readiness.
 
 Read-only follow-through additionally confirmed all nine inputs have matching
 byte copies embedded in both legacy generators, outside `holdouts-sealed/`.
@@ -5697,3 +5700,60 @@ earlier follow-through receipt; no sealed fixture content was opened.
 The final planning receipt binds the delivered proposal `7b618512...`; removing
 only the metadata-check note reproduces the reviewed/arithmetic-checked source.
 No new campaign call/reserve or experimental check was added.
+
+## Advisory correction and next campaign gate (2026-10-14)
+
+### Goal and acceptance status
+
+Completed the requested current-state advisory fixes. Clarified three human
+records and regenerated the index; no experiment rule, limit, skill, fixture,
+old score, outcome or campaign grant changed. Source-copy availability for all
+nine old inputs is known; actual additional reads and historical worker access
+are not established. All nine are excluded from the fresh campaign's final pool.
+
+### Every delayed advisory disposition
+
+| Advisory age | Claim | Current-state disposition |
+|---|---|---|
+| 7 turns | Metadata citation changes source pins; rerun both smokes | Prior receipt already bound its delivered source; both smokes rerun directly against the newly clarified source |
+| 9 turns | Trailing-newline convention and 36-versus-35 warnings | Already fixed; current check uses `splitlines()` semantics and hygiene again reports 35 warnings |
+| 10 turns | Navigation failure was a regeneration race | Rejected premise: observed counts were 195 logical lines versus 196 newline-split entries, with matching character counts; generator/index did not need a fix |
+| 17 turns | Keep five canary reserves/seven replacement reserves visible | Already explicit in v2; retain it in the next approval decision |
+| 18 turns | Arithmetic and check references consistent | Checked clean; direct current-source arithmetic again passes all seven subsets/eight joins |
+| 30 turns | Candidate Adoption Ledger heading required | Already present; current hygiene passes |
+| 40 turns | Source-copy follow-through resolves actual unread provenance | Rejected inference; clarify copy availability versus actual readers rather than label unknown reader access resolved |
+| 42 turns | Whole-pool recoverability makes unread provenance knowable/compromised | Copy-boundary failure is known; actual reads and historical role access remain unknown. Exclude all nine old instances without claiming they were all read |
+
+TWINS: searched `Unread provenance for the remaining seven|remaining seven.*unread provenance` - found 2 other sites: `plans/skill-dogfood-test-plan-2026-10-08.md`, `review/final-report.md` (besides the fresh preregistration); all three clarified.
+
+### Verification, source pins and consumer coverage
+
+The regenerated index and 29 focused document tests passed (0.47 seconds).
+`make validate` passed all eight validators and three routing fixtures at
+100% consistency. Existing warnings remain five skill-length and 35 date-heuristic.
+The earlier full 1,743-test result predates these evidence-wording changes;
+it is not claimed as a new full-suite run.
+
+Both direct document smokes bind current proposal SHA-256 `4b257560...`:
+all seven nonempty confirmation subset ceilings and eight planned check joins
+pass; navigation matches 196 lines/31,029 characters, seven headings and both
+discovery links. Previous receipts retain their original source identities;
+the current arithmetic/navigation receipts supersede their current-source use,
+not their historical evidence. Private receipts are in the existing
+`local/fresh-preregistration-review-2026-10-14.bDulo6/` namespace.
+No experimental FTEST, provider request, scorer, oracle or canary was run.
+
+Human records and generated/cached index: covered. Historical receipts: preserved
+with their original pins, with current receipts separately recorded. Campaign
+runner schemas, API callers, fixture/score/skill/runtime consumers: not applicable;
+no executable contract or private experimental input changed.
+
+### Remaining authorization
+
+The next phase is FP-TASK-001's new approval/role/custody decision, not automatic
+dispatch. The pilot's five mandatory reserves leave seven for permitted
+replacements; exhaustion yields a hold/inconclusive result, never extra N.
+The maintainer must explicitly choose the new scope and designate accountable
+roles; historical grants do not transfer. Execution remains **NO_GO**.
+
+PENDING: protected curation/qualification and provider dispatch - awaiting your authorization

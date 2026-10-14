@@ -1178,8 +1178,11 @@ legacy seal implementation displayed the literal inputs for both implementation
 challenge instances. Those inputs are now in this coordinator's read set and
 cannot qualify as untouched confirmation for this continuation. Their original
 files and manifest remain unchanged; exclusion from future eligibility is not
-deletion or retrospective regrading. Unread provenance for the remaining seven
-files is **unknown**, not established by the manifest's boolean. The hash
+deletion or retrospective regrading. Whether the remaining seven were actually
+read by other contexts is **unknown**, not established by the manifest's boolean.
+Their source-copy availability is established by the follow-through below;
+that is distinct from actual reads or historical worker access. None of the
+nine old instances is eligible for the fresh campaign's final pool. The hash
 consumer displayed no task/answer content.
 
 **Source-copy boundary follow-through:** a separate read-only AST check reduced

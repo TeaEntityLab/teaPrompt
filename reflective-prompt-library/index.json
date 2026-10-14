@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T10:26:27.643997",
+  "generated_at": "2026-10-14T10:37:32.082679",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4067,7 +4067,7 @@
         }
       ],
       "line_count": 196,
-      "char_count": 30805
+      "char_count": 31029
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -7652,8 +7652,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1268,
-      "char_count": 130039
+      "line_count": 1271,
+      "char_count": 130275
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
