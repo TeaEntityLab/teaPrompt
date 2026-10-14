@@ -5757,3 +5757,123 @@ The maintainer must explicitly choose the new scope and designate accountable
 roles; historical grants do not transfer. Execution remains **NO_GO**.
 
 PENDING: protected curation/qualification and provider dispatch - awaiting your authorization
+
+## Approved zero-model readiness continuation (2026-10-14)
+
+### Goal, authority and acceptance status
+
+Completed the approved source/custody assessment and disposable offline checks.
+The user explicitly selected **Approve v2 + zero-model readiness** and
+**Maintainer owns the human roles**, against proposal SHA-256 `4b257560...`.
+The v2 record now carries the ruling, all seven new designations and their
+conflicts; the Decision Index and closed-cohort successor point to it.
+This supersedes the earlier planning-only/undesignated-role state, not the
+experimental protocol or the original accepted-inconclusive outcome.
+
+Source review and nonexperimental synthetic plumbing checks were permitted;
+actual campaign model calls, agent CLI sessions, reserves and spend authorized
+by this selection were zero. No campaign fixture/authoritative oracle creation,
+live qualification, provider request, runtime-source/skill change, installation,
+operator-service/resource/memory change or push was granted.
+
+### Source and custody assessment
+
+Two read-only scouts mapped transport/budget and custody/capture paths.
+Main verified the actual consumers and corrected advisory overclaims:
+knowing a task's facts does not inherently reveal its arm, an ordinary successor's
+old six-call cap is not the eight-call canary cap, and the provider secret-store
+attribution was a reviewer error rather than proved host drift.
+Source review alone is not live admission or current provider evidence.
+
+All human roles are explicitly assigned to the maintainer. Curator/host/artifact
+ownership can expose answers or arm maps; authoring/capture and auditing, and
+scoring/accepting, each share one human. These are recorded conflicts, not
+independent human channels. Qualified arm-blind packets and absence of actual
+arm-identity exposure remain required; style recognition is a disclosed limit,
+not automatic semantic failure or guaranteed blinding.
+
+### Checks actually run and observed incompatibility
+
+| Check group | Observed result |
+|---|---|
+| Synthetic provider credential/quota boundaries | 22 passed; no real credentials or provider-setting observation |
+| Fake-HTTP transport, SSE and tool-call pairing | 18 passed; no provider requests |
+| Synthetic six-store/eleven-file memory families | 21 passed; no operator-store access |
+| 4,096-token option through actual historical serializer | Emitted 2,048; DF-C2 incompatible |
+| Ordinary primary/successor cap guards | 11 and 8 refused before workspace/transport |
+| Fresh pilot/confirmation budget guards | 624 and 870 envelopes refused before ledger creation |
+
+The historical consumer remains pinned to its closed 446-call/12-reserve
+cumulative selection grant, old CLI ceiling, six-call ordinary sessions,
+2,048-token ceiling and inherited accounting prefix. Fresh phase/subset and
+single-envelope enforcement are not implemented there. These are observable
+consumer incompatibilities, not diagnosed prompt/skill defects.
+No constants were patched to make the checks green, and no closed source was
+cut over or used as a new campaign. The CLI unit remains separately tracked
+and must be constrained to zero, not removed as an alleged fix.
+
+### Failure ownership, limits and preservation
+
+Semantic `find` failed with judge-provider 403; its no-hit label did not prove
+absence. Filesystem metadata and literal source discovery supplied the map.
+The first disposable launch held on a public benchmark-loader read absent from
+its allowlist. Only that exact reviewed dependency was added to the harness,
+then it ran in fresh scratch. This was a harness import-fence failure, not a
+campaign/runtime failure; network/process and operator-store guards remained.
+
+The successful process recorded no forbidden operations and no provider/native
+guest dispatch, campaign calls/reserves, campaign fixtures or authoritative
+oracles. Eleven named implementation/public-loader source digests were unchanged.
+Existing private trial, score, oracle and source artifacts were not rewritten.
+Synthetic HTTP, quota and capture results do not qualify the live provider,
+live memory/capture boundary, actual worker role or future pool custody.
+The disposable audit guard is not a production security/isolation mechanism.
+
+Old `serial_preflight`, `prepare_capture` and campaign freeze/execute entries were
+not run: source inspection shows provider metadata queries, live credential/
+capture/memory access or writes into the closed root. Scorer/oracle/native
+qualification suites were also not executed. The limited synthetic control
+results are not acceptance scores, efficacy, transfer or final confirmation.
+
+Private scope/role approval and observations are retained at
+`local/fresh-preregistration-review-2026-10-14.bDulo6/offline-readiness.151faq/`.
+The exercised throwaway harness was pinned as `36bc3af4...` before cleanup.
+Historical/current-source receipts retain separate identity scopes; current
+document smokes and repository checks below bind the later recorded ruling.
+
+### Files, consumer coverage and remaining owner gates
+
+Updated the fresh preregistration, closed-cohort successor pointer, Decision
+Index, generated index and this report. Human status/navigation is the affected
+consumer; no executable API/schema, installed skill or runtime source changed.
+Private receipts are evidence, not a campaign P0 or self-issued trial approval.
+
+The approved offline phase is complete; experiment dispatch remains **NO_GO**.
+Next is a separately approved versioned fresh private consumer (or revised
+profile/design) and protected curator creation, followed by fresh source-bound
+quota/identity, actual-role/capture/memory and blind-read/scoring admission.
+No proposed 624/870 allowance becomes active through readiness completion,
+and no historical allowance or role proof transfers.
+
+PENDING: fresh private-consumer implementation, protected curation/oracle creation, live qualification/canaries and provider dispatch - awaiting your authorization
+
+### Final current-state verification
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed
+against the recorded approval/outcome: 1,743 tests in 68.92 seconds, all eight
+validators with zero errors, 19 valid skill contracts/examples and three routing
+fixtures at 100% consistency. Warnings remain five skill-length and 35 historical
+date-heuristic warnings; 278 Markdown files were checked.
+
+The current document smoke binds proposal `81b1e889...`, distinct from the
+user-approved pre-ruling snapshot `4b257560...`. All seven confirmation subset
+ceilings and eight planned check joins still pass; the 281-line/37,336-character
+index entry exposes the approval and offline outcome. The seven role assignments
+match the explicit user selection and every actual dispatch-authority unit is zero.
+Eleven exercised source digests and three historical metadata digests match.
+The disposable harness/synthetic work were removed; directory inspection shows
+only the four retained JSON approval/observation/execution/document receipts.
+
+Private final pins are in `offline-readiness.151faq/document-smoke.json`.
+Post-receipt checks cover the final reporting addition; no new campaign
+execution or source change follows from repository verification.
