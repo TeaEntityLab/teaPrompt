@@ -5748,7 +5748,7 @@ with their original pins, with current receipts separately recorded. Campaign
 runner schemas, API callers, fixture/score/skill/runtime consumers: not applicable;
 no executable contract or private experimental input changed.
 
-### Remaining authorization
+### Remaining authorization at preregistration (historical)
 
 The next phase is FP-TASK-001's new approval/role/custody decision, not automatic
 dispatch. The pilot's five mandatory reserves leave seven for permitted
@@ -5757,6 +5757,12 @@ The maintainer must explicitly choose the new scope and designate accountable
 roles; historical grants do not transfer. Execution remains **NO_GO**.
 
 PENDING: protected curation/qualification and provider dispatch - awaiting your authorization
+
+**Superseded for scope/role readiness:** the [recorded v2 grant](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14)
+resolved offline approval and all seven role designations. The
+[current remaining gates](#files-consumer-coverage-and-remaining-owner-gates)
+are fresh-consumer implementation and protected curation, followed by separate
+live admission/dispatch. Neither curation nor trial allocation was granted.
 
 ## Approved zero-model readiness continuation (2026-10-14)
 
@@ -5865,15 +5871,98 @@ validators with zero errors, 19 valid skill contracts/examples and three routing
 fixtures at 100% consistency. Warnings remain five skill-length and 35 historical
 date-heuristic warnings; 278 Markdown files were checked.
 
-The current document smoke binds proposal `81b1e889...`, distinct from the
+At offline completion, the document smoke bound proposal `81b1e889...`, distinct from the
 user-approved pre-ruling snapshot `4b257560...`. All seven confirmation subset
 ceilings and eight planned check joins still pass; the 281-line/37,336-character
 index entry exposes the approval and offline outcome. The seven role assignments
 match the explicit user selection and every actual dispatch-authority unit is zero.
 Eleven exercised source digests and three historical metadata digests match.
-The disposable harness/synthetic work were removed; directory inspection shows
-only the four retained JSON approval/observation/execution/document receipts.
+The disposable harness/synthetic work were removed. The cleanup-time directory
+inspection showed only approval/observation/execution/document receipts; later
+completion and commit receipts are additional metadata, not restored scratch.
 
-Private final pins are in `offline-readiness.151faq/document-smoke.json`.
+Offline-completion pins are in `offline-readiness.151faq/document-smoke.json`.
 Post-receipt checks cover the final reporting addition; no new campaign
 execution or source change follows from repository verification.
+
+## Readiness advisory follow-through (2026-10-14)
+
+### Goal and scope
+
+Resolve all six delayed advisories against current committed evidence, repair
+current navigation only, and expose the next separate owner decision. No
+runtime implementation, protected curation or execution grant is inferred from
+"Fix and next"; the explicitly granted offline phase is already complete.
+
+### Files changed and implementation summary
+
+Changed the fresh preregistration's status/next-action navigation, the closed
+cohort's historical successor label, this report's local historical/current
+gate distinction, and regenerated `index.json`. The cleanup receipt count is
+now explicitly inspection-time evidence; later completion/commit metadata
+did not restore the deleted harness or synthetic work.
+The Decision Index already points to the correct ruling and is unchanged.
+No skill, executable consumer, campaign input, oracle, rating or ledger changed.
+
+### Findings and dispositions
+
+| Advisory age | Current disposition | Evidence and action |
+|---|---|---|
+| 14 turns | Partly valid navigation | The later grant already existed. Initial successor/preregistration gate now carries a historical label and current ruling/gate link; three completed-readiness ledger actions now point to implementation/curation decisions. |
+| 22 turns | Already handled; no wider read grant | Transport imports `worker` then `campaign_fixtures` then the public benchmark loader. That exact loader is in the retained eleven-source digest map; the execution receipt records the import-fence repair. No private/source-root allowlist was widened in this continuation and no guard was rerun. |
+| 27 turns | No v2 admission claim to fix | `Budget.__init__` requires literal old caps before the inherited descriptor/hash binding. Current outcome already records fresh pilot/confirmation refusal, not successful new-ledger validation. Historical plumbing does not validate fresh phase/subset enforcement. |
+| 36 turns | Incompatibility already recorded | `prepare_campaign.check_grant` still requires old v5 grant identity and 76/446/12/0/300 caps. No preparation entry ran and no frozen source or evidence was patched. |
+| 39 turns | Conflicts already recorded | Seven maintainer owners, three conflict groups, and deferral of an exposed/unqualified semantic endpoint are present in approval and protocol. Role designation is not independence or blinding proof. |
+| 50 turns | Historical-receipt rewrite rejected | Committed snapshots verify initial delivery, approved snapshot and offline-completion pins. Removing only the historical metadata-contact note really reproduces the original arithmetic-reviewed hash; that equality claim remains scoped to its original delivery. A new current receipt describes the full cumulative delta instead. |
+
+### Acceptance criteria status and traceability
+
+| Criterion | Artifact / observed evidence | Status |
+|---|---|---|
+| Every advisory accounted for | Six dispositions above; private `advisory-followthrough.json` | Verified |
+| Current navigation distinguishes completed readiness from pending authority | Fresh ledger/header, closed-cohort historical label, report supersession links; direct navigation consumer | Verified |
+| Approved experimental contracts unchanged | Only five status/next-action lines changed in the proposal; other proposal bytes, seven subset ceilings and eight planned joins match | Verified |
+| Original receipts and state preserved | Five public-snapshot lineage checks, eleven named source hashes and three historical metadata hashes | Verified within named scope |
+| Current corrected source bound separately | `advisory-navigation-smoke.json`: proposal `563f5f1e...`, 281 lines/37,545 characters; generated index and decision anchors match | Verified |
+| Next work cannot inherit dispatch authority | Current approval still grants zero model calls, agent CLI sessions, reserves and spend; experiment dispatch remains `NO_GO` | Verified |
+
+### Tests / checks run
+
+Read-only committed-snapshot and metadata consumers verified the lineage and
+named source pins without importing private controls or displaying task/answer
+contents. The corrected document consumer observed the actual index, next-action
+rows and decision links; it checked all seven confirmation subsets and eight
+planned joins, not the prospective FTESTs. Historical single-note equality and
+the full later delta are separate claims in the new receipt.
+
+`make all` passed against the corrected records: 1,743 tests in 70.43 seconds,
+all eight validators with zero errors, 19 valid skills/examples and three route
+fixtures at 100% consistency. Existing warnings remain five skill-length and
+35 historical date-heuristic warnings. Post-receipt index/link/hygiene checks
+cover this verification-note addition; no new campaign check is implied.
+
+### Failures or skipped checks
+
+No new check failure in this follow-through. No legacy control, preparation,
+provider/native guest, canary, model, scorer or protected-oracle execution was
+replayed. Existing fence/refusal observations were not rerun to reconfirm them.
+
+### Consumer coverage and residual risks
+
+Human status/navigation and generated index: covered. Historical receipts:
+preserved under their original source identities, with a new current receipt.
+Runtime/API callers, campaign fixtures/scores/oracles and installed skills:
+not applicable, unchanged. The removed disposable harness is historical
+plumbing evidence, not independently re-audited current isolation; role conflicts
+and live provider/custody/scoring adequacy remain bounded as in the ruling.
+
+TWINS: searched `Planning-only successor|FP-TASK-001's new approval/role/custody decision|Complete offline readiness;|Offline source review now;|Custody review now;` - found 4 other sites: three next-action rows in the fresh preregistration (fixed); `review/final-report.md`'s original planning traceability row (historical evidence, intentionally unchanged).
+
+### Next action and Human Review
+
+Choose a separately scoped fresh private-consumer implementation with offline
+verification only, or retain the implementation hold. Neither option silently
+grants protected campaign curation/oracle creation, live qualification/canaries,
+provider/model dispatch, trial/confirmation envelopes, spend or operator changes.
+The old accepted-inconclusive cohort and 334-call/12-reserve/USD 0 accounting
+remain unchanged.
