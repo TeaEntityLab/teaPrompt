@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 continuation authorized; held on actual curator/dispatcher custody and fresh quota/admission evidence. Private implementation and reachable source/metadata/refusal checks are complete; zero new campaign calls or allocations.**
+> **Status: v2 continuation authorized; fresh complete memory snapshots and actual native containment/censor probes passed. Campaign dispatch remains held on protected curator/dispatcher custody, current quota and actual-role admission; zero new model calls or campaign allocations.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -398,7 +398,7 @@ output; unavailable evidence remains a hold rather than a fabricated seal.
 No new campaign model call, reserve allocation, native guest, population or
 authoritative oracle has been created at this authorization intake.
 
-### Current admission disposition — authorized, externally blocked
+### Initial admission disposition — authorized, externally blocked
 
 Two read-only source maps found candidate guest/ToolGate confinement and
 same-EUID private-file checks, but no coordinator-versus-curator read-denial
@@ -445,3 +445,53 @@ not supplied by this hold. Receipts: current admission namespace's
 `custody-prerequisite.json`, `admission-probe.json`, `host-metadata.json`,
 `memory-metadata.json`, `native-availability.json` and `continuation-hold.json`.
 The old cohort and all frozen sources/ratings/accounting remain unchanged.
+
+### Fresh no-generation tests after continuation (2026-10-14)
+
+**Authority and scope:** the maintainer subsequently said **“資料有缺沒關係,
+繼續你的測試,若必要的資訊就再跑就好”**. Missing records did not stop
+runnable checks: current facts were reacquired with actual bounded
+no-generation probes. No unavailable pool, setting, role or acceptance fact
+was filled with a synthetic pass; the frozen v2 question/population/profile,
+USD 0 boundary and scoring/confirmation rules did not change.
+
+| Exercised path | Observed result | Evidence limit |
+|---|---|---|
+| Complete current memory snapshots | Six guarded DB/WAL/journal byte mirrors → complete private SQLite backups → sealed snapshots; all six rehashes match, eleven capture/vector files unchanged; 13 private SQLite connections, zero live SQL/source writes | Strict current-source equality only; no old empty-WAL exception, actual-role capture or whole-host claim |
+| Actual pinned Apple guest containment | UID/EUID 65534; `memory.max=268435456`; readonly `/`, root writes denied, `/Users`/`/host`/`/private` absent, external route denied with errno 101 | Candidate guest confinement, not curator/coordinator principal separation |
+| Actual process cap | Soft/hard `RLIMIT_NPROC=16`; 15 children created and further fork denied with errno 11 | The emitted `--ulimit nproc` mechanism; observed `pids.max=max` is not claimed as a cgroup PID cap |
+| Native timeout/output controls | Timeout and output-cap captures are incomplete/censored with unknown origin; stdout bounded to 1,024 bytes in the output control; all three started guests have confirmed cleanup | Mechanical censor semantics, not available task endpoints or API-role canaries |
+| Memory continuity after native probes | Six stores/eleven files unchanged over the observed 902.726542-second interval; zero live SQL/source writes or audit violations | Finite no-generation observation; no known delayed-ingestion horizon or model-role exclusion proof |
+| Current provider setting access | Relay unavailable; managed Console rendered the login page, not an authenticated account setting | `Use balance` remains unknown; no login, setting mutation or fabricated owner observation |
+| Actual provider admission | Current seven source pins match; production inventory refuses absent genuine `pool_binding` before secret/network | Permission is present; no credential read, catalog/headroom admission or model request |
+
+The pinned backend's start wait includes a fixed 30-second grace: the requested
+1-second timeout control actually waited **31.004880 seconds**, not one second.
+This and the `RLIMIT_NPROC` mechanism were recorded before dispatch from the
+source, not retuned to fit a result. No runtime source was changed.
+
+The continuity probe's first launch failed at the audit fence on its **owned
+receipt file descriptor**, not an operator write. The failed driver identity and
+empty receipt were retained; matching the descriptor to the owned receipt
+inode fixed the harness, and the corrected run observed no violations. No
+campaign fault or memory drift was inferred from that harness failure.
+
+Receipts are session-private under
+`local/df-c2-reobserved-tests-2026-10-14.hsKc8b/`: `test-authority.json`,
+`memory-snapshots.json`, `native-containment.json`, `native-observed-facts.json`,
+`memory-after-native.json`, `memory-continuity-failure.json`,
+`provider-console.json` and `preoutput-admission.json`. Private byte
+mirrors/snapshots were removed after their digest evidence was retained;
+disposable drivers are removed after receipt binding.
+
+**Current boundary:** complete snapshots and native mechanics supersede the
+initial metadata-only/availability evidence above, not the remaining
+pre-output admission predicates. An actual protected curator/dispatcher with
+case-bound oracle contracts and a fresh current-account disabled-Use-balance
+observation are still unavailable through the reviewed interfaces. Actual-role
+capture/delayed-ingestion evidence and qualified blind scoring remain separate.
+Three native mechanics probes consumed **zero campaign reserves** and are not
+the five mandatory API-role canaries. New model calls/agent CLI sessions/
+campaign allocations/provider API requests/spend remain zero; no campaign
+population or authoritative oracle was created. The old cohort remains
+accepted-inconclusive at **334 calls / 12 reserves / USD 0**.

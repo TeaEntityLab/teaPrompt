@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T16:56:52.147861",
+  "generated_at": "2026-10-14T17:57:28.777605",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4083,11 +4083,15 @@
         },
         {
           "level": 3,
-          "text": "Current admission disposition — authorized, externally blocked"
+          "text": "Initial admission disposition — authorized, externally blocked"
+        },
+        {
+          "level": 3,
+          "text": "Fresh no-generation tests after continuation (2026-10-14)"
         }
       ],
-      "line_count": 447,
-      "char_count": 48501
+      "line_count": 497,
+      "char_count": 52907
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -7518,7 +7522,8 @@
           "fresh-dogfood-campaign-preregistration-2026-10-14.md",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-private-consumer-implementation-2026-10-14",
-          "fresh-dogfood-campaign-preregistration-2026-10-14.md#campaign-continuation-authorization-and-admission-2026-10-14"
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#campaign-continuation-authorization-and-admission-2026-10-14",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-no-generation-tests-after-continuation-2026-10-14"
         ]
       },
       "structure": [
@@ -7675,8 +7680,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1299,
-      "char_count": 132387
+      "line_count": 1312,
+      "char_count": 133333
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",

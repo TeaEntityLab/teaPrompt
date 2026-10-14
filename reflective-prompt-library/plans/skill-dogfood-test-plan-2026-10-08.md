@@ -1270,6 +1270,19 @@ current quota and source-bound admission evidence still gate the new pilot;
 the later exact confirmation subset/envelope remains separately approved.
 No model output, allocation or outcome amendment follows from authority intake.
 
+**Fresh successor observations:** after the maintainer requested continued tests
+and fresh acquisition of necessary missing facts, the
+[DF-C2 no-generation probes](fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-no-generation-tests-after-continuation-2026-10-14)
+completed six consistent current private SQLite snapshots, eleven-file byte
+coverage and three actual pinned Apple containment/timeout/output-cap guest
+controls with confirmed cleanup. A later six-store/eleven-file fingerprint
+observation was unchanged over 902.726542 seconds. Current Console access
+rendered login; actual production inventory again refused absent genuine
+`pool_binding` before credential/network. These are fresh mechanical
+observations, not API-role canaries, protected final custody, delayed-ingestion
+completeness or pilot/scoring acceptance. New model calls and campaign reserves
+remain zero; old 334-call/12-reserve/USD 0 accounting is unchanged.
+
 
 
 
