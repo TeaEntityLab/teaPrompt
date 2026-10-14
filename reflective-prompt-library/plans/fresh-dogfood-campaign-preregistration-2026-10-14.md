@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: planning-only preregistration; execution and fixture creation not approved.**
+> **Status: v2 approved for zero-model readiness only; campaign fixture/oracle creation, qualification canaries and provider dispatch remain held.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -182,10 +182,10 @@ Prospective usage, **not executed**: (1) operator lacks current quota-only evide
 
 | ID | Proposal | Status | Evidence / limit | Next action / trigger |
 |---|---|---|---|---|
-| FP-P1 | Fresh C/T-only questions and populations | Proposed; planning only | Closed old outcome; no supported repair/efficiency diagnosis | Approve this version before curation/outputs |
-| FP-P2 | Historical API profile with increased matched ceilings | Proposed; not qualified or granted | Old cap-limited coverage; higher ceilings are untested, mutable weights/data policy/current zero-spend controls unknown | Explicit profile/data/cap approval, then actual-role/capacity admission |
-| FP-P3 | Curator-held all-copy final boundary | Proposed; no pool created | Verified old literals outside named seal; role access not inferred | Named curator and protected creation/read/capture grant before any new model output |
-| FP-P4 | Conditional, separately granted utility confirmation | Proposed; no final allocation | Original fixed-count engineering rule; pilot screen is not final efficacy | Complete pilot screen and separate subset/envelope/outcome decisions |
+| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit zero-model readiness selection below; old cohort remains closed | Complete offline readiness; obtain protected curation grant before creation |
+| FP-P2 | Historical API profile with increased matched ceilings | Approved proposal limits/data boundary; no trial or canary grant | Contributor/non-ZDR and mutable-weight limitations accepted for the proposed public/synthetic profile; actual identity, adequacy and quota enforcement unverified | Offline source review now; fresh source-bound admission and explicit dispatch envelope later |
+| FP-P3 | Curator-held all-copy final boundary | Approved design; no pool created or creation grant | Maintainer designated curator; all-copy and coordinator-exclusion boundaries still need actual enforcement evidence | Custody review now; protected curation grant before any new model output |
+| FP-P4 | Conditional, separately granted utility confirmation | Approved design; no confirmation subset/envelope grant | Pilot screen remains prospective; proposal approval does not allocate finals | Complete separately authorized pilot; exact single-subset confirmation grant later |
 
 ## Falsifiability and planning completion
 
@@ -193,4 +193,89 @@ This proposal fails as an executable design if an independent operator cannot re
 
 Planning acceptance: questions, fixed populations, numeric ceilings, preserved-old-state boundary, oracle/test traceability, examples and owner gates are specified and a throwaway consumer checks the arithmetic, identifier joins and linked discovery. No experimental test above is claimed run. No fixture, oracle, campaign manifest, model request or host/skill mutation is created by this plan.
 
-**Remaining Human Review / next action:** approve or reject version 2's profile/data policy and proposed phase limits; explicitly designate curator/host/scoring/audit/acceptance roles and authorize protected curation/qualification separately. Current approval is planning only. Until those decisions and fresh admission exist, the new campaign is **NO_GO**; the old accepted-inconclusive campaign remains closed.
+**Remaining Human Review / next action:** proceed only with the zero-model source/custody review and disposable offline plumbing checks granted below. Protected campaign curation/oracle creation, qualification canaries, provider requests and any actual pilot/confirmation envelope remain separately held. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. The new experiment remains **NO_GO for dispatch** and the old accepted-inconclusive campaign remains closed.
+
+## v2 approval and zero-model readiness (2026-10-14)
+
+**Authority:** the maintainer explicitly selected **Approve v2 + zero-model
+readiness** and **Maintainer owns the human roles** after the advisory fixes.
+The selected proposal was bound by SHA-256 `4b257560...`. This dated ruling
+supersedes only the planning-only approval/undesignated-role state above;
+it neither changes the experimental protocol nor supplies historical grants.
+
+Permitted: source/custody review and disposable offline plumbing checks using
+owned scratch and nonexperimental synthetic inputs. The proposed public/synthetic,
+contributor/non-ZDR and mutable-weight limitations are accepted as a design
+boundary, not verified current provider facts. Actual model calls, agent CLI
+sessions and reserve allocations authorized by this selection are **zero**.
+No campaign fixtures or authoritative oracles may be created; no qualification
+canary, provider request, service/resource/operator-memory change, spend,
+installation, runtime-source change or skill adoption follows.
+
+| Accountable role | Explicit new owner | Duty / current boundary |
+|---|---|---|
+| Approver | Maintainer, the user in this conversation | Approve exact later action/envelope; this selection permits offline readiness only |
+| Fixture curator | Maintainer | Hold finals outside coordinator/candidate-author access; creation still unapproved |
+| Host/capture operator | Maintainer | Own current-source admission and capture controls; no live qualification/canary yet |
+| Artifact owner | Maintainer | Preserve identity-bound receipts, source-copy inventory and protected maps |
+| Human semantic scorer | Maintainer | Consume only arm-blind allowlisted packets; absent qualified blinding defers the endpoint |
+| Leak-audit owner | Maintainer | Audit every recoverable copy/extraction boundary before unblinding |
+| Outcome accepter | Maintainer | Close a later result separately; no execution-to-acceptance inference |
+
+**Recorded role conflicts:** curator/host/artifact ownership can expose answers
+or arm maps; authoring/capture and auditing share one human; scoring and accepting
+share one human. The design allows recorded overlaps, not a claim of independent
+human channels. Arm-blind scoring must still be demonstrated: prior access to
+arm identity cannot be cured by an opaque path or a role label. If that boundary
+cannot be met, name a separately designated qualified scorer or retain the
+affected semantic endpoint as unavailable. No actual scoring is authorized now.
+No historical person/role grant is inherited by this new designation.
+
+### Offline readiness outcome
+
+The approved offline assessment completed against the frozen historical private
+consumer; it did not qualify or adapt that consumer for DF-C2. Guarded disposable
+checks passed **22 provider**, **18 transport** and **21 synthetic memory**
+controls. HTTP/inventory/credential values were synthetic; the memory controls
+used owned six-store/eleven-file synthetic families, not operator stores.
+These are plumbing observations, not actual role, quota, custody or efficacy proof.
+
+| Current consumer | DF-C2 proposal | Observed offline result |
+|---|---|---|
+| Output serializer | 4,096 maximum output tokens | Supplying the 4,096 option still serialized 2,048; incompatible |
+| Ordinary primary session | 11-call cap | Refused before workspace creation or transport invocation |
+| Ordinary successor session | 8-call cap | Refused before workspace creation or transport invocation; the old 8-call canary is a different context |
+| Fresh pilot ledger | 624 calls / 12 reserves / zero agent CLI sessions | Historical budget refused before ledger creation |
+| Fresh confirmation ledger | Maximum 870 calls / 12 reserves, one subset | Historical budget refused before ledger creation; new phase/subset enforcement is not implemented there |
+
+The historical budget retains a 446-call/12-reserve cumulative selection grant,
+76 as the old CLI ceiling and an exact inherited-ledger binding. None is a new
+allocation or an eligible fresh zero-base ledger. Preserve this source and
+every old result; do not relabel ordinary trials as canaries, patch constants
+to manufacture admission or borrow its unused allowance. Separate unit counters,
+including agent CLI sessions constrained to zero, must remain visible.
+
+The disposable guard observed zero forbidden network/process dispatch,
+operator-store access or out-of-scratch mutation; 11 named implementation/public
+loader source digests were unchanged. No provider request, native guest,
+campaign model call/reserve, campaign fixture or authoritative oracle was added.
+The guard is not a production isolation or live-admission mechanism.
+
+Do not run the old `serial_preflight`, `prepare_capture` or campaign
+freeze/execute entries as offline work: they can inventory the provider using
+host credentials, inspect live capture/memory and write the closed source root.
+Source inspection found those effects; no such entry was executed.
+
+The first disposable launch held at its read fence on the public benchmark
+loader import. The harness alone was repaired to allow that exact reviewed
+source dependency, then rerun in fresh scratch; provider/network and operator
+boundaries remained guarded. An import fence failure is not a campaign failure.
+Receipts: current planning session's
+`local/fresh-preregistration-review-2026-10-14.bDulo6/offline-readiness.151faq/`.
+
+**Next owner decision:** separately authorize a versioned fresh private-consumer
+implementation or revise the proposed profile/design, plus protected curator
+creation when ready. Neither source changes nor curation was granted by the
+offline selection. Live quota/identity, actual-role/capture isolation, complete
+current memory boundaries, final-reader enforcement and qualified arm-blind
+human scoring still require fresh evidence. Experiment dispatch remains **NO_GO**.

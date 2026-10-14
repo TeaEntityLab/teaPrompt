@@ -1242,6 +1242,14 @@ roles, fixture creation and qualification remain separate approval gates.
 No new campaign model call, scorer/oracle replay or skill/runtime change follows
 from planning; the old accepted-inconclusive outcome and accounting remain intact.
 
+**Later successor readiness ruling:** the maintainer explicitly approved
+[v2 zero-model readiness and all seven human role designations](fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14).
+Only source/custody review and disposable offline plumbing checks were granted.
+The offline assessment found the historical consumer incompatible with the
+new caps/fresh ledger; source changes, campaign curation/oracle creation,
+live qualification/canaries and provider requests remain separately held.
+No new campaign allocation or authority is inherited by this closed cohort.
+
 
 
 
