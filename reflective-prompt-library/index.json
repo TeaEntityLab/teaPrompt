@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-14T13:33:18.337550",
+  "generated_at": "2026-10-14T16:05:25.712143",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4072,10 +4072,14 @@
         {
           "level": 3,
           "text": "Offline readiness outcome"
+        },
+        {
+          "level": 2,
+          "text": "Fresh private-consumer implementation (2026-10-14)"
         }
       ],
-      "line_count": 281,
-      "char_count": 37545
+      "line_count": 338,
+      "char_count": 41300
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -7504,7 +7508,8 @@
           "../../review/final-report.md#test-001-zero-model-mechanics-acceptance-2026-10-11",
           "QUALITY_GATES_SUMMARY.md#lint-warning-disposition-2026-10-12",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md",
-          "fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14"
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-private-consumer-implementation-2026-10-14"
         ]
       },
       "structure": [
@@ -7661,8 +7666,8 @@
           "text": "Falsifiability and next action"
         }
       ],
-      "line_count": 1279,
-      "char_count": 130914
+      "line_count": 1289,
+      "char_count": 131674
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",

@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 offline readiness complete; fresh private-consumer implementation, protected campaign curation/oracle creation, live qualification/canaries and provider dispatch remain held.**
+> **Status: v2 fresh private-consumer implementation and offline verification complete; protected campaign curation/oracle creation, live qualification/canaries and provider dispatch remain held.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -10,7 +10,7 @@ Language: English
 
 Determine whether the current `reflective-implement`, `reflective-review` and `reflective-handoff-retro` layers improve observed task success over the same common host/safety policy under one fixed, instrumented API profile. This is a **new selection population and new confirmation pool**, not Stage-2 of the accepted-inconclusive cohort. Retain that cohort, its 334 calls/12 reserves/USD 0, ratings and unavailable endpoints unchanged; do not pool results, reuse its unused allowance, regrade it or replace its holdouts.
 
-No T0/T1 repair or efficiency experiment is proposed: the old outcome diagnosed neither a target-skill defect nor removable overhead. No remaining-core breadth, router tune, new skill/domain pack, owned runner, installation, deployment or private/customer-data use is in scope. One dated Test Plan holds the spec, usage and task slices; no runtime code or final fixture content accompanies it.
+No T0/T1 repair or efficiency experiment is proposed: the old outcome diagnosed neither a target-skill defect nor removable overhead. No remaining-core breadth, router tune, new skill/domain pack, owned runner, installation, deployment or private/customer-data use is in scope. One dated Test Plan holds the spec, usage and task slices; the separately approved consumer remains session-private, with no distributed runtime or final fixture content.
 
 ## Evidence and decision basis
 
@@ -182,8 +182,8 @@ Prospective usage, **not executed**: (1) operator lacks current quota-only evide
 
 | ID | Proposal | Status | Evidence / limit | Next action / trigger |
 |---|---|---|---|---|
-| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit zero-model readiness selection below; old cohort remains closed | Offline readiness complete; obtain separate fresh-consumer implementation and protected curation grants |
-| FP-P2 | Historical API profile with increased matched ceilings | Approved proposal limits/data boundary; no trial or canary grant | Contributor/non-ZDR and mutable-weight limitations accepted for the proposed public/synthetic profile; actual identity, adequacy and quota enforcement unverified | Authorize a fresh versioned consumer or explicitly revise the design; live admission/dispatch remains separate |
+| FP-P1 | Fresh C/T-only questions and populations | Approved v2 design; no population-creation grant | Explicit readiness and later implementation-only selections below; old cohort remains closed | Private consumer/offline verification complete; obtain protected population/oracle curation grant |
+| FP-P2 | Historical API profile with increased matched ceilings | Private consumer implemented; no live admission, trial or canary grant | Exact 4,096-token serializer and ordinary 11/8-call paths exercised with synthetic HTTP; actual provider identity, adequacy and quota enforcement unverified | Obtain fresh source-bound live admission and separately scoped execution authority; no proposed allowance is active |
 | FP-P3 | Curator-held all-copy final boundary | Approved design; no pool created or creation grant | Maintainer designated curator; all-copy and coordinator-exclusion boundaries still need actual enforcement evidence | Custody review complete; obtain protected curation grant and demonstrate final-reader enforcement before new outputs |
 | FP-P4 | Conditional, separately granted utility confirmation | Approved design; no confirmation subset/envelope grant | Pilot screen remains prospective; proposal approval does not allocate finals | Complete separately authorized pilot; exact single-subset confirmation grant later |
 
@@ -193,7 +193,7 @@ This proposal fails as an executable design if an independent operator cannot re
 
 Planning acceptance: questions, fixed populations, numeric ceilings, preserved-old-state boundary, oracle/test traceability, examples and owner gates are specified and a throwaway consumer checks the arithmetic, identifier joins and linked discovery. No experimental test above is claimed run. No fixture, oracle, campaign manifest, model request or host/skill mutation is created by this plan.
 
-**Remaining Human Review / next action:** the [offline assessment below](#offline-readiness-outcome) is complete. The next step requires a separately scoped fresh private-consumer implementation grant or an explicit profile/design revision. Protected campaign curation/oracle creation, live qualification/canaries, provider requests and actual pilot/confirmation envelopes remain separate gates. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. Experiment dispatch remains **NO_GO**; the old accepted-inconclusive campaign remains closed.
+**Remaining Human Review / next action:** the [fresh private implementation below](#fresh-private-consumer-implementation-2026-10-14) and its offline verification are complete. Protected campaign population/oracle creation, live qualification/canaries, provider requests and actual pilot/confirmation envelopes remain separately held. Current model-call/reserve authorization is zero; proposed ceilings are not allocations. Experiment dispatch remains **NO_GO**; the old accepted-inconclusive campaign remains closed.
 
 ## v2 approval and zero-model readiness (2026-10-14)
 
@@ -273,9 +273,66 @@ boundaries remained guarded. An import fence failure is not a campaign failure.
 Receipts: current planning session's
 `local/fresh-preregistration-review-2026-10-14.bDulo6/offline-readiness.151faq/`.
 
-**Next owner decision:** separately authorize a versioned fresh private-consumer
-implementation or revise the proposed profile/design, plus protected curator
-creation when ready. Neither source changes nor curation was granted by the
-offline selection. Live quota/identity, actual-role/capture isolation, complete
-current memory boundaries, final-reader enforcement and qualified arm-blind
-human scoring still require fresh evidence. Experiment dispatch remains **NO_GO**.
+**Next owner decision at offline completion (historical):** authorize a
+versioned fresh private consumer or revise the profile/design. The
+[later implementation-only ruling](#fresh-private-consumer-implementation-2026-10-14)
+completed that source work; neither ruling grants protected curation or live
+execution. Live quota/identity, actual-role/capture isolation, complete current
+memory boundaries, final-reader enforcement and qualified arm-blind human
+scoring still require fresh evidence. Experiment dispatch remains **NO_GO**.
+
+## Fresh private-consumer implementation (2026-10-14)
+
+**Authority and disposition:** the maintainer explicitly selected **Fresh
+consumer implementation only** after the verified readiness repairs. The
+selection authorized a new versioned session-private consumer, nonexperimental
+offline synthetic verification, and source-bound documentation/local commits.
+It did not authorize campaign populations/oracles, provider/model/native-guest
+dispatch, live canaries, spend, installation, operator/service changes, skill
+adoption or push. The seven human role designations and their disclosed conflicts
+remain unchanged; no historical execution or role proof transfers.
+
+**Implemented surface:** session-private
+`local/df-c2-consumer-v2-2026-10-14.bENK4T/`, not a TeaPrompt runtime or installation.
+`protocol.py`, `campaign_support.py`, `go_provider.py`, `go_transport.py`,
+`worker.py`, `public_diagnostic.py` and `consumer.py` are bound by the seven-file
+`source-manifest.json` (SHA-256 `67fc99522cecadcbe93f2342929f0f654a0ebbee7b4620a0a16236ea5602aa14`).
+The new consumer has fresh phase accounting, one immutable confirmation subset,
+separate zero-valued CLI/spend units, exact 4,096-token/temperature-0 requests,
+ordinary primary/successor caps of 11/8 under the original 300-second role
+deadline, and actual ToolGate/transport integration without old-grant shims.
+
+**Observed offline evidence:** 69 integrated scenarios passed using the actual
+consumer, serializer, SSE parser, worker and budget with in-memory HTTP and
+owned disposable workspaces. They exercised all seven confirmation subsets,
+canary/reserve conservation, separate handoff replacement contexts,
+reopen/tamper/concurrency, allowed writes and denied traversal/symlinks,
+charged-but-unknown outcomes, receipt crashes and refusal of live effects.
+The HTTP EOF regression failed before and passed after with an actual stdlib
+`HTTPResponse` on a memory socket. Standalone CLI payload serialization passed;
+missing phase authority returned `HELD`, exit 4 and `retry_safe: false`.
+No provider request, native guest, campaign model call/reserve or authoritative
+campaign fixture/oracle was created.
+
+Two read-only reviewer lenses were advisory evidence from one model channel.
+Quota-proof, replay/reasoning, producer pairing, dispatch classification,
+same-byte binding and synthetic-label findings were corrected. Failed mandatory
+canaries cannot authorize scored trials or an ungranted rerun; unresolved
+receipt/journal writes cannot manufacture a finish or retry permission.
+Receipts are `implementation-verification.json` and `smoke-receipts.json` in the
+private root; throwaway drivers/work are removed after preserving their evidence.
+
+**Preservation boundary:** the final named-pin check matched 57 frozen P0 source
+copies and three historical metadata manifests, with no mismatched available
+pin. The ten originally checked implementation paths under historical
+`/private/tmp/teaprompt-stage1-go-fresh-p33vNi` became unavailable during this
+continuation; the cause is unknown and the temporary root was not recreated.
+This is not a whole-tree/raw-output integrity claim. The recorded closed
+outcome and 334-call/12-reserve/USD 0 accounting are unchanged.
+
+**Next owner decision:** separately authorize protected population/oracle
+curation and fresh source-bound qualification when ready. Live quota/identity,
+current six-store/eleven-file memory and capture isolation, actual role adequacy,
+all-copy final custody and qualified arm-blind scoring remain untested.
+Pilot/confirmation dispatch still needs its own envelope; implementation
+completion does not activate the proposed 624/870 ceilings. **NO_GO**.

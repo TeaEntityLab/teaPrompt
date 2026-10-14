@@ -1242,13 +1242,23 @@ planning was granted; the later approval/role ruling below now owns current stat
 No new campaign model call, scorer/oracle replay or skill/runtime change follows
 from planning; the old accepted-inconclusive outcome and accounting remain intact.
 
-**Later successor readiness ruling:** the maintainer explicitly approved
+**Successor readiness ruling (historical):** the maintainer explicitly approved
 [v2 zero-model readiness and all seven human role designations](fresh-dogfood-campaign-preregistration-2026-10-14.md#v2-approval-and-zero-model-readiness-2026-10-14).
-Only source/custody review and disposable offline plumbing checks were granted.
-The offline assessment found the historical consumer incompatible with the
-new caps/fresh ledger; source changes, campaign curation/oracle creation,
-live qualification/canaries and provider requests remain separately held.
+That grant covered only source/custody review and disposable offline plumbing.
+The historical consumer was incompatible with the new caps/fresh ledger.
+The later implementation-only ruling below now owns the fresh-consumer status;
+curation, live qualification/canaries and provider requests remain held.
 No new campaign allocation or authority is inherited by this closed cohort.
+
+**Current successor implementation ruling:** the maintainer separately selected
+**Fresh consumer implementation only**. The [versioned private consumer and
+offline verification](fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-private-consumer-implementation-2026-10-14)
+are complete with 69 synthetic scenarios and zero campaign/provider/native
+dispatch. The ten original temporary implementation paths are now unavailable,
+with cause unknown; 57 frozen P0 copies and three metadata manifests still
+matched the final named-pin check. No old root was recreated or outcome amended.
+Protected population/oracle curation and fresh live admission/phase envelopes
+remain separate owner gates. This closed cohort remains accepted as inconclusive.
 
 
 
