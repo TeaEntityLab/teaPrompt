@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-15T02:00:51.670925",
+  "generated_at": "2026-10-16T00:52:26.024986",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -147,6 +147,7 @@
             "agent-governance-four-power-concepts-2026-07-17.md",
             "checkpoint-2026-10-11-preparation-2026-10-10.md",
             "frozen-core-parity-review-2026-07-11.md",
+            "df-c2-protected-custody-workflow-spec-2026-10-15.md",
             "openfugu-technical-brief-2026-06-25.md",
             "diagram-design-survey-2026-10-07.md",
             "agentflow-survey-2026-09-05.md",
@@ -3981,7 +3982,8 @@
         "markdown_links": [
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
           "skill-dogfood-test-plan-2026-10-08.md#stage-2-readiness-continuation-2026-10-14",
-          "skill-dogfood-test-plan-2026-10-08.md#requirements-and-acceptance-coverage"
+          "skill-dogfood-test-plan-2026-10-08.md#requirements-and-acceptance-coverage",
+          "df-c2-protected-custody-workflow-spec-2026-10-15.md"
         ]
       },
       "structure": [
@@ -4144,10 +4146,46 @@
         {
           "level": 3,
           "text": "Requirement-by-requirement campaign disposition"
+        },
+        {
+          "level": 2,
+          "text": "Protected pool and dispatcher design decision (2026-10-15)"
+        },
+        {
+          "level": 2,
+          "text": "Private v3 dispatcher implementation and offline verification (2026-10-15)"
+        },
+        {
+          "level": 3,
+          "text": "Implemented boundaries and observed evidence"
+        },
+        {
+          "level": 3,
+          "text": "Repairs, source identity and preservation"
+        },
+        {
+          "level": 3,
+          "text": "Remaining actual admission"
+        },
+        {
+          "level": 2,
+          "text": "Private v3r1 native deadline repair and continuation (2026-10-15)"
+        },
+        {
+          "level": 3,
+          "text": "Confirmed findings and bounded repair"
+        },
+        {
+          "level": 3,
+          "text": "Exercised evidence and limits"
+        },
+        {
+          "level": 3,
+          "text": "Continuation boundary"
         }
       ],
-      "line_count": 759,
-      "char_count": 82921
+      "line_count": 956,
+      "char_count": 96807
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-field-use-panel-2026-07-17.md",
@@ -7580,7 +7618,8 @@
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-private-consumer-implementation-2026-10-14",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#campaign-continuation-authorization-and-admission-2026-10-14",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#fresh-no-generation-tests-after-continuation-2026-10-14",
-          "fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15"
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3r1-native-deadline-repair-and-continuation-2026-10-15",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15"
         ]
       },
       "structure": [
@@ -7738,7 +7777,7 @@
         }
       ],
       "line_count": 1322,
-      "char_count": 134088
+      "char_count": 134163
     },
     {
       "path": "reflective-prompt-library/plans/openai-model-guidance-survey-2026-09-10.md",
@@ -11711,6 +11750,124 @@
       ],
       "line_count": 90,
       "char_count": 4968
+    },
+    {
+      "path": "reflective-prompt-library/plans/df-c2-protected-custody-workflow-spec-2026-10-15.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "df-c2-protected-custody-workflow-spec-2026-10-15",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#readiness-sealing-and-authority",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#same-uid-claim-correction-and-distinct-uid-controls-2026-10-15"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "DF-C2 Protected Pool and Dispatcher — Workflow Spec — 2026-10-15"
+        },
+        {
+          "level": 2,
+          "text": "Goal, authority and scope"
+        },
+        {
+          "level": 2,
+          "text": "Evidence actually checked"
+        },
+        {
+          "level": 2,
+          "text": "Decisions and rejected alternatives"
+        },
+        {
+          "level": 2,
+          "text": "1. Existing pool: manifest and all-copy custody plan"
+        },
+        {
+          "level": 3,
+          "text": "Source of truth and preservation"
+        },
+        {
+          "level": 3,
+          "text": "Answer-free projection contract"
+        },
+        {
+          "level": 2,
+          "text": "2. Protected dispatcher: boundary and interfaces"
+        },
+        {
+          "level": 3,
+          "text": "Host and readers"
+        },
+        {
+          "level": 3,
+          "text": "Adapter contract — planned, not implemented"
+        },
+        {
+          "level": 3,
+          "text": "Phase authority and late-bound session tickets"
+        },
+        {
+          "level": 3,
+          "text": "Binding order, locality and durability"
+        },
+        {
+          "level": 2,
+          "text": "Fixed workflow, ownership and gates"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance and scenario checks — future execution remains unrun"
+        },
+        {
+          "level": 2,
+          "text": "Task plan and definition of done"
+        },
+        {
+          "level": 2,
+          "text": "Risk gate, recovery and stopping"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Advisory review and disposition"
+        },
+        {
+          "level": 3,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "Shared Findings"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        }
+      ],
+      "line_count": 252,
+      "char_count": 41968
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-technical-brief-2026-06-25.md",
@@ -20661,5 +20818,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 222
+  "total_files": 223
 }

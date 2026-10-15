@@ -1284,14 +1284,14 @@ completeness or pilot/scoring acceptance. New model calls and campaign reserves
 remain zero; old 334-call/12-reserve/USD 0 accounting is unchanged.
 
 **Current source revision and full continuation disposition:** the
-[seven-obligation v2r1 continuation](fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15)
-fixes a newly observed malformed-input reservation defect in a fresh private
-source revision, with five guarded file/CLI observations, six lifecycle
-regressions and nine public-template observations. Original source/receipts,
-the owner-reported pool and the accepted quota confirmation are preserved.
-All seven real campaign obligations remain separately held on actual protected
-custody, exact current admission and later qualified human/subset/outcome evidence;
-no new campaign call/reserve or old-cohort outcome amendment follows.
+[private v3r1 repair](fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3r1-native-deadline-repair-and-continuation-2026-10-15)
+corrects native probe timeouts and cleanup-reserve inspection after the
+[v3 implementation](fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15).
+Its 109 offline regressions and native API/dispatcher CLI smoke preserve the v3
+and v2r1 sources/receipts, experimental protocol, owner-reported pool and accepted
+quota confirmation. Protected-host deployment and all seven real campaign
+obligations remain held on actual custody/current admission and later qualified
+human/subset/outcome evidence; no new campaign call/reserve or old-cohort amendment.
 
 
 

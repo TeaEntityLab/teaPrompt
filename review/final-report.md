@@ -6762,3 +6762,236 @@ Use the actual owner-supplied answer-free pool/custody locator and protected dis
 
 The actual generated-index consumer resolved the 759-line/82,921-character owning record and the new continuation heading. It verified all seven current durable source hashes, all seven campaign dispositions, unchanged frozen protocol SHA-256 `f2807a4e…`, three original raw-byte snapshots/current paths, four original capture pins and nine retained continuation receipts. Three throwaway drivers, the public payload input and six owned scratch directories were removed after evidence binding; the permanent private source/regressions remain. `document-smoke.json` and `repository-gates.json` retain these observations. Post-addition checks/final file bindings are recorded separately; no real phase, custody, role or scoring admission is implied.
 
+## Protected pool and dispatcher workflow design (2026-10-15)
+
+### Goal, authority and summary
+
+Complete the delegated **“You design and decide plans for both”** request. Decided
+the manifest/custody and dispatcher designs rather than requesting a design from
+the maintainer. [Workflow spec v2](../reflective-prompt-library/plans/df-c2-protected-custody-workflow-spec-2026-10-15.md)
+is the bounded implementation plan; it does not create setup/source/deployment
+or model-dispatch authority.
+
+### Files changed and implementation decisions
+
+Added the workflow spec; updated the owning campaign decision/current status,
+project discovery pointer, generated index and this report. Current private
+consumer/runtime/skills, raw evidence, old pinned local plan and experimental
+protocol are intentionally unchanged.
+
+Selected: independent maintainer-controlled Apple Silicon host with no
+coordinator/author management access; existing-pool preservation and an
+answer-free projection; owner-mediated safe metadata handoff; a future private
+one-case dispatcher with native bindings and immutable per-session tickets.
+No permanent service, coordinator SSH, queue, new skill or TeaPrompt runtime.
+
+### Acceptance status and spec-to-code traceability
+
+The plan defines exact projection/ticket/export fields, reader/control boundaries,
+hash/locality ordering, successor/replacement derivation, unchanged budgets and
+human gates, four owned implementation slices and ten acceptance scenarios
+covering CUST-AC-1–5/FTEST-01–08. Planning completeness is distinct from execution:
+host availability, real pool/copy evidence, authenticated issuer and actual
+role/capture/human-blinding qualification remain unknown/unexecuted.
+
+Compatibility evidence requires new private source work: `consumer.py` exposes
+native bindings only on `run`, not `run_files`/CLI; exact session inputs are fixed
+inside the phase grant and Budget rejects later mutation. The planned adapter/
+ticket extension is not represented as an existing command or qualified runner.
+
+### Tests / checks run and failures
+
+Actual `consumer.py run --help` completed. A guarded current-interface probe
+observed unsupported `native_contract` on `run_files` before allocation, then
+rejection of a late successor-input addition to the same phase approval with
+unchanged journal bytes. Zero audited provider/native/process effects, model
+calls or actual campaign allocations. An initial synthetic scratch-root
+placement error was corrected only in the disposable harness input; its failure
+receipt is retained. This is compatibility evidence, not custody or native proof.
+
+Both read-only lenses returned **AGREE WITH CHANGES** on the working v2 design.
+The corrected workflow spec is v3: it puts raw/canonical/native ticket enforcement
+inside Consumer, pins issuer/schedule/producer relationships, gates session export
+on freeze/audit/human release, completes the source/CLI cutover, preserves the
+seven human roles and names provider-account/credential/platform-copy channels.
+The spec's advisory-disposition table records each correction and the narrowed
+backup suggestion. These are coordinator-resolved plan findings, not an
+independent operational pass. Final documentation/navigation checks follow.
+
+### Risks, remaining work and human review
+
+Source hashes, host labels, role names, safe-looking exports and old mechanics
+cannot supply actual protected custody or qualified human arm blinding. The
+selected host/issuer/adapter does not yet exist as an admitted implementation.
+All seven campaign obligations and old accepted-inconclusive accounting remain
+unchanged; existing pool/quota/role decisions are retained.
+
+PENDING: implement/deploy the new private dispatcher/ticket authority and perform
+exact protected-host setup/transfer/permission changes - awaiting your authorization.
+No generic campaign/Go reconfirmation is needed. Human scores/freeze/audit,
+exact confirmation subset/envelope and final acceptance remain separate.
+
+### Final repository and document-consumer verification
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed:
+**1,743 tests in 74.01 seconds**, all eight validators without errors, 19 valid
+skills/examples and ROUTE-001/002/003 fixtures at 100% consistency. Five existing
+skill-length warnings and 35 existing record-date warnings remain unchanged.
+
+The actual index consumer reached the 252-line/41,968-character workflow spec v3
+and 790-line/84,909-character campaign record and their new decision/review headings.
+It verified unchanged frozen protocol SHA-256 `f2807a4e…` and the original pinned
+local v1 plan SHA-256 `8422ad82…`; the earlier probe preserved all seven v2r1 source
+pins. Disposable compatibility code and both scratch directories are removed;
+private receipts remain under `local/df-c2-custody-plan-2026-10-15.ddeQjU/`.
+Post-report checks/final file bindings are retained there separately.
+
+Acceptance: both requested **designs** and their documentation/navigation are
+complete. The ten future CUST-CHK scenarios, selected host/issuer/adapter, real
+pool/copy evidence, role/scoring admission and all seven real campaign obligations
+are explicitly unexecuted/held, not converted into passes. No experimental
+provider request, credential read, native guest, campaign call/allocation, host
+setup, source implementation, pool/oracle creation, commit or push occurred.
+
+## Private v3 dispatcher implementation (2026-10-15)
+
+### Goal and files changed
+
+Continue the maintainer's **Next** from the decided protected workflow. Implement
+the private CUST-TASK-03 boundary and reachable metadata checks; do not infer
+actual pool/host/campaign admission. Eight private executables and developer
+regressions live under `local/df-c2-consumer-v3-2026-10-15.soqI2t/`. The
+[owning record](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15)
+contains exact source hashes, interface coverage, failures and remaining gates.
+Updated campaign status, closed-cohort successor, project discovery and index;
+original workflow spec remains the pinned design baseline. No skill change.
+
+### Implementation and acceptance
+
+Closed metadata schemas; immutable registered tickets under one parent grant;
+raw/canonical/native validation inside every active consumer; bounded dispatcher;
+completed-producer handoff and distinct replacement lineage; phase-only export
+until registered freeze/audit/human release. Removed the old live free-argv CLI.
+Native objects bind exact materialized origins/state and the complete manifest;
+temporary deadline wrapper is removed after the check, including failure.
+
+CUST-TASK-03 is implemented/offline-verified, not deployed/admitted. Synthetic
+metadata validates shape and refusal, not CUST-AC-1/2 custody. Actual CHK/FTEST
+admission remains unrun. Eleven original source/manifest/test/design/receipt
+identities and the explicitly bounded experimental protocol matched their pins.
+
+### Checks run and failure classification
+
+Guarded `python3 -I -B offline_verify.py`: **103 passed**, no failures/errors/skips
+or audit violations. Actual dispatcher smoke exercised raw mismatch/no allocation,
+valid restored input/INCOMPLETE, duplicate/no journal mutation, bounded
+payload/snapshot/export and retired CLI refusal. Actual worker wrote the public
+handoff and receipt, then executed one successor with unchanged grant and no
+target skill. Scripted development calls are not campaign calls.
+
+Initial harness/import/helper failures, malformed binding and ticket/native/export
+defects remain in separate failing-before receipts. Handoff smoke initially
+miscounted two trial sessions as reserves; corrected only the driver to the
+unchanged accounting contract. Final observed development ledger: seven completed
+sessions/eight scripted calls/five canary reserves. No actual provider/native
+execution or role/custody/scoring qualification is claimed.
+
+TWINS: searched `_pinned_bytes(`, `backend._run =` and `_read_ticket_file(` —
+found one additional production ticket-reader caller in `campaign_support.py`;
+shared reader repair covers both registration and resolution. No other defective
+raw-binding or temporary-wrapper restoration site exists in the active v3 source.
+
+### Risks, remaining work and human review
+
+All seven real campaign obligations remain held on existing-pool answer-free
+metadata/custody, an independently controlled host, exact target/source/phase/
+credential-quota/readiness/native/role evidence and later qualified human gates.
+Same-process object checks do not isolate against arbitrary trusted host code.
+Original pool/Go/role approvals and old 334-call/12-reserve/USD 0 accounting remain
+unchanged; no generic permission request, pool reconstruction or final read.
+
+PENDING: deploy on the selected protected host and perform exact host setup or
+transfer/permission changes - awaiting your authorization and target evidence.
+No commit, push, skill/runtime adoption or campaign/model/provider/native effect.
+
+### Final repository verification and cleanup
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed:
+**1,743 tests in 125.15 seconds**, all eight validators without errors, 19 valid
+skills/examples and ROUTE-001/002/003 fixtures at 100% consistency. Five existing
+skill-length warnings and 35 existing record-date warnings remain.
+
+The actual generated-index consumer resolved the new implementation heading in
+the 882-line/92,105-character campaign record, its successor pointer and all eight
+durable source hashes. The original workflow spec and bounded experimental body
+remain unchanged. Five disposable verification scripts and their owned scratch
+tree were removed only after binding 13 receipts, nine regression/helper files
+and eight public synthetic smoke artifacts. Permanent private sources/tests and
+both failing-before and passing-after receipts remain; `document-smoke.json` and
+`development-evidence-bindings.json` retain the exercised evidence.
+
+## Private v3r1 native deadline repair (2026-10-15)
+
+### Goal, files and acceptance
+
+The maintainer's **Fix and continue** authorizes the bounded private repair and
+reachable continuation, not missing real host/custody evidence. Created separate
+`local/df-c2-consumer-v3r1-2026-10-15.KBNgBK/`, preserving v3 and all historical
+receipts. Changed only `public_diagnostic.py` among the eight executable bodies,
+added six behavioral deadline regressions, and rebound the successor manifest.
+Updated the [owning campaign record](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3r1-native-deadline-repair-and-continuation-2026-10-15),
+closed-cohort successor, project discovery and generated index. No skill change.
+
+Confirmed defects: implicit probes inherited 2 seconds rather than the pinned
+backend's 20 seconds; cleanup's stop/delete recovery inspection incorrectly
+preserved the work-only 100-second reserve. The wrapper now uses the bound
+callable's timeout default and tracks entry into cleanup. Explicit timeouts,
+normal inspection reserve, total-deadline refusal and backend restoration remain.
+The old source manifest was already single-link `0600`; no permission repair.
+
+### Checks, failures and evidence limits
+
+Guarded private suite: **109 passed**, zero failures/errors/skips/audit violations.
+The corrected before-suite had four failures; the initial virtual-clock fixture
+advanced time inside create beyond its existing timeout. Corrected only that
+driver model to between-command elapsed time and retained both failed receipts.
+
+Separate smoke used the actual native API, pinned backend and pipe/selector
+capture with public process replies/virtual time. Stop and delete fault recovery
+completed within the remaining cleanup allowance; the same pinned backend then
+worked again. Actual dispatcher CLI accepted the new source under developer-only
+authority, finished INCOMPLETE with one synthetic reserve/zero model calls,
+rejected duplicate dispatch without journal mutation and emitted phase-only
+snapshot. No native executable, guest or provider was run.
+
+### Remaining work and risk
+
+Both wrapper defects are fixed and offline-verified. CUST-TASK-03 deployment and
+all seven real campaign obligations remain held: no new existing-pool metadata,
+independently controlled host or target-bound source/readiness/phase/quota/
+native evidence was supplied. Existing pool/Go/campaign/role approvals remain;
+no generic reapproval request, pool reconstruction, final read or fake custody.
+Next is curator answer-free metadata and actual selected-host/control evidence,
+then exact setup/transfer permission and source-bound admission. Later human
+scoring/subset/outcome gates are unchanged. Actual calls, provider requests,
+credential reads, native guests, campaign allocations and spend remain zero;
+old cohort accounting is 334 calls/12 reserves/USD 0. No commit or push.
+
+### Final repository verification and preservation
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed:
+**1,743 tests in 118.69 seconds**, all eight validators without errors, 19 valid
+skills/examples and ROUTE-001/002/003 fixtures at 100% consistency. Existing five
+skill-length and 35 record-date warnings remain; none was suppressed.
+
+The generated-index consumer resolved the v3r1 heading and current successor,
+matched all eight durable source pins, and verified the unchanged bounded
+experimental protocol. All 40 files in the original v3 tree and 11 earlier
+source/design/receipt bindings matched their original hashes. In-memory smoke/
+verification drivers, six run/baseline/admission receipts, ten regression/helper
+file identities and 25 public synthetic smoke artifacts were preserved before
+removing four owned scratch trees. `document-smoke.json`,
+`development-evidence-bindings.json` and `public-smoke-artifacts.json` retain
+those observations under the v3r1 source root. This evidence does not qualify
+the protected host, pool, actual model roles or later human acceptance.
+

@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: protocol-v2 continuation authorized; owner subscription-only Go confirmation retained. Consumer v2r1 fixes malformed-input reservation ordering, with offline lifecycle/public-consumer checks complete. All seven campaign obligations remain held on actual protected custody, exact admission bindings and later qualified scoring/subset/outcome evidence; zero new campaign calls or allocations.**
+> **Status: protocol-v2 continuation authorized; owner quota confirmation retained. Private consumer v3r1 repairs native probe timeouts and cleanup-reserve handling; 109 offline regressions and native API/dispatcher CLI smoke pass. Protected-host deployment and all seven real campaign obligations remain held on actual custody/current admission and later human evidence; zero new campaign calls or allocations.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -756,4 +756,201 @@ Expanded read-only discovery covered repository metadata and 30 retained project
 **Next input:** the actual answer-free pool/custody metadata locator and protected assigned-case dispatcher interface, followed by exact current v2r1 source/phase/credential and role admission. Do not rebuild the reported pool, ask for finals/answers/arm maps or another generic grant/Go-setting confirmation.
 
 Receipts: session-private `local/df-c2-all-obligations-2026-10-15.SnbCre/` retains the task/risk packet, original and repaired entrypoint observations, separate harness failures, standalone CLI observation, public-consumer observation and `continuation-disposition.json`. Source/driver digests, cleanup and final record/index verification are bound separately; no historical receipt/pin is retargeted.
+
+## Protected pool and dispatcher design decision (2026-10-15)
+
+The maintainer delegated **“You design and decide plans for both”**. The owning
+[workflow spec v3](df-c2-protected-custody-workflow-spec-2026-10-15.md) selects an
+independently controlled maintainer-operated Apple Silicon host, preserves the
+existing pool, defines an answer-free manifest projection and uses owner-mediated
+metadata handoff rather than a permanent API or coordinator login.
+
+The dispatcher is a planned private single-invocation adapter. Current v2r1
+`run_files` cannot bind native parameters, and fixed per-session hashes inside an
+immutable phase grant cannot prebind a later producer handoff. Two actual
+zero-model interface observations confirmed those limits. The selected next
+private revision uses uniform immutable session tickets under one unchanged
+phase envelope; it must bind actual native inputs, a protected ticket issuer,
+current locality/source identities and completed-producer derivation without
+rewriting the parent grant or resetting accounting.
+
+This completes the delegated **design**, not implementation, host availability,
+sealing, human blinding or admission. The four CUST-TASK slices own metadata,
+actual host/control proof, versioned private adapter/ticket work and real
+qualification/continuation. Exact source/setup/transfer changes need their
+specific authorization; existing campaign/Go permission is not requested again.
+The pinned session-local v1 plan, original sources/receipts, frozen experimental
+protocol, seven real obligations and old 334-call/12-reserve/USD 0 cohort remain
+unchanged. No host/account/service, pool, oracle, credential transfer, model/native
+dispatch, skill/runtime adoption, commit or push was performed.
+
+Planning receipts: `local/df-c2-custody-plan-2026-10-15.ddeQjU/`; the compatibility
+observations concern current interfaces only. New host/adapter/ticket/scoring
+examples and CUST-CHK-01–10 remain explicitly unexecuted.
+
+## Private v3 dispatcher implementation and offline verification (2026-10-15)
+
+**Authority and scope:** the maintainer's **“Next”** follows the completed
+protected-pool/dispatcher design and its named private implementation next action.
+This implements CUST-TASK-03 and the reachable metadata-validator portion of
+CUST-TASK-01. It does not create the reported pool, provision a host, transfer a
+credential, supply a phase grant, qualify an actual role or authorize an export
+of finals. Experimental protocol remains **2**; workflow spec **3** is retained
+unchanged as the design baseline. Source revision v3 is a new private identity,
+not an amendment of v2r1 or its receipts.
+
+### Implemented boundaries and observed evidence
+
+| Surface / acceptance destination | Current implementation and verification | Evidence limit |
+|---|---|---|
+| Pool metadata; CHK-01/03 | Closed six-selection/nine-final metadata schema, typed freshness/custody/copy records, duplicate/nonfinite/unknown-field and excluded-reader refusal; guarded file reader | Public synthetic metadata only; no actual population, semantics or all-copy custody admitted |
+| Ticket authority; CHK-05/09 | Fixed parent grant, protected schedule/policy, exclusive immutable ticket, journal registration and raw/canonical identities; renamed body/file identity, stale source/grant, duplicate and unresolved context refuse before reserve | UID/hash checks do not authenticate an independent protected issuer |
+| Consumer and dispatcher; CHK-04/05 | `Consumer.run` and `run_files` require authenticated tickets; private `dispatch_case.py run` accepts root/phase/session ID only. Removed free-argument live `consumer.py run`; payload/snapshot remain bounded | Actual CLI smoke used developer-only inputs, not a live admitted phase |
+| Native binding; CHK-05 | Manifest/config/interpreter/CLI/source identities, exact materialized module/class/instance and full-manifest binding; caller-created objects, changed policy/env/source and method overrides refuse | Reviewed runtime source copies plus public executable identity stub; no CLI process or native guest executed |
+| Handoff; CHK-06 | Real worker-written `reports/HANDOFF.md` and completed producer receipt feed a later successor ticket; common prefix and C-null/T-full primary construction checked; successor receives no target skill; replacement lineage remains distinct | Scripted public transport and synthetic canary qualification, never campaign/model-role evidence |
+| Export; CHK-07 | Phase aggregates before release; exact registered freeze/audit/named-human release required for session scope. External paths, changed release/evidence and unfinished sessions refuse; CLI failures retain HELD/4 with no raw error text | Human identity strings and synthetic release records do not establish real blindness or human acceptance |
+
+Final guarded regression command: `python3 -I -B offline_verify.py` —
+**103 tests passed**, zero failures/errors/skips and zero audit violations.
+The launcher denied network, provider/native subprocesses, SQLite and unrelated
+file access. Native failure-path testing intercepted process construction before
+any process effect; it is not live containment evidence.
+
+Actual dispatcher smoke observed raw-byte mismatch → **HELD/4, no allocation**;
+restoring the original input under the unchanged ticket/grant → one synthetic
+reserve and **FINISHED/INCOMPLETE**, zero model calls; duplicate dispatch → refusal
+with unchanged journal. Snapshot/export remained phase-only and the retired live
+CLI returned usage/2. Payload serialization retained 4096 output tokens,
+temperature 0 and `store:false`.
+
+Actual worker→ticket smoke completed the public producer and one successor under
+the same grant, using only the handoff plus frozen common setup. Its development
+ledger contained seven sessions, eight scripted calls and five canary reserves;
+the two ordinary trials did not consume reserve slots. **Actual campaign/model
+calls, provider requests, credential reads and native guests remained zero.**
+
+### Repairs, source identity and preservation
+
+Failures were retained, not relabelled as passes: initial launcher/import/helper
+errors; raw-binding shape mismatch; incomplete negative-test inputs; renamed
+ticket registration; unbound native-manifest policy; leftover native `_run`
+override; release authority/path/digest gaps; raw CLI exception disclosure.
+The handoff smoke's initial seven-reserve assertion was a **driver error**:
+the unchanged contract counts canaries/replacements, not ordinary trials.
+The corrected driver checks reserve conservation and exact session/call deltas.
+
+Private source root: `local/df-c2-consumer-v3-2026-10-15.soqI2t/`.
+Eight-file manifest SHA-256:
+`2bd2a6d4dd7009c9ce77ee7c3f766de88ddb4d0f34ee60fa51dff1ff844c6f16`.
+
+| Executable | SHA-256 |
+|---|---|
+| `protocol.py` | `012cd2d229a468d540acef6d6182beb8609e3b83ce66ef75f0d6e9279b075414` |
+| `campaign_support.py` | `d2f1055eb5667516047eda4395572cd2ac81c175149994f223c7cf6b5af128e2` |
+| `go_provider.py` | `0e6cdcc9bdf28153e7bb04ff7c63309b14288e6fa5fddc49d969b3370dc15483` |
+| `go_transport.py` | `b436c2cd03385c44edfe1c4a072bdebaf7c295a0ab8ab67eec034648f7205720` |
+| `worker.py` | `20e6dcffcbda62c2c5ed6cffa02095143f3ac0d3428838574b3f43f5b8e9e278` |
+| `public_diagnostic.py` | `5c60c170e446eb0e2cf70c01ffa6f67a320d4e07446a5bb5c47736e4c45b8034` |
+| `consumer.py` | `57c795b0c63a7125ad44308e6ec3e918edc0877c45636fee1fb90ae8f9454eb6` |
+| `dispatch_case.py` | `867e5534b9c567795d06b9a523e6389660e993a766e16a0113b71585cd460d77` |
+
+Receipts include `offline-verification-sjnoe7k_.json`,
+`dispatcher-smoke-observation.json`, `handoff-smoke-observation.json`, separate
+failing-before/harness observations, `pre-edit-preservation.json` and
+`admission-disposition.json`. The preservation check matched all seven v2r1
+sources, its manifest/lifecycle tests, the prior planning receipt and original
+workflow spec. The exact pre-edit experimental body remains SHA-256
+`4e12d6e70205c5cac397ef6ac41aad0d9a1ea4c61b42dba0538100d6c06cca48`;
+its range is recorded explicitly and does not retarget older differently bounded
+pins. Final navigation, repository checks and disposable cleanup are recorded
+separately after execution.
+
+### Remaining actual admission
+
+CUST-TASK-03 is **implemented and offline-verified, not deployed/admitted**.
+CUST-TASK-01 still needs the curator's actual answer-free existing-pool export and
+semantic/copy evidence; CUST-TASK-02 needs the selected independently controlled
+host and actual control/assigned-case denial evidence. CUST-TASK-04 then needs
+new target-locality/source/readiness/phase/credential-quota/native/canary binding.
+No such new owner-held inputs accompanied this continuation; synthetic records
+cannot replace them. All [seven campaign obligations](#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15)
+remain separately held. Existing pool, roles, campaign permission and Go
+subscription/no-balance observation are preserved and are not re-requested.
+Human scoring/freeze/audit, exact confirmation subset and outcome acceptance
+remain later gates. No skill/runtime adoption, original-cohort amendment, commit
+or push follows.
+
+## Private v3r1 native deadline repair and continuation (2026-10-15)
+
+**Authority and disposition:** the maintainer requested **“Fix and continue.”**
+Two native-wrapper defects were confirmed in current v3 source and repaired in
+a separate private revision. The original v3 tree and receipts remain unchanged;
+neither historical evidence nor a live grant is repinned to the new source.
+Experimental protocol 2, workflow spec 3, budgets and admission criteria are
+unchanged. This supersedes the current implementation pointer, not the historical
+[v3 verification record](#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15).
+
+### Confirmed findings and bounded repair
+
+- `apple_check` imposed a 2-second default on commands whose pinned backend
+  default is 20 seconds. It now takes the default from the actual bound `_run`
+  callable, retaining explicit command timeouts and the remaining-role clamp.
+- Stop/delete failure recovery uses `inspect` before delete/force-delete. The
+  wrapper incorrectly deducted the 100-second work reserve from those cleanup
+  probes. Cleanup is now tracked locally after stop/delete/list; only subsequent
+  cleanup inspection can use the reserve. Preflight/post-start inspection still
+  preserves it, and exhausted total time still forbids another command.
+- The reported manifest-permission concern was not present: current v3 manifest
+  and diagnostic source were already single-link `0600` files. No historical
+  permission change was needed; the new manifest is also owner-only.
+
+Private successor: `local/df-c2-consumer-v3r1-2026-10-15.KBNgBK/`.
+Eight-file manifest SHA-256:
+`e9094a608e635a2cdef8d42d0e901ff9bf8a7ac19f491447935c611b504e69f6`.
+Only `public_diagnostic.py` changes among the eight executable bodies; its digest
+is `ab2c4c3a4cb5053d99e3a74919a85be3515be58b70bca7edeba61875d84415d8`.
+The seven other executable digests and two pinned backend/common fixture sources
+are unchanged. `test_native_deadlines.py` adds six behavioral boundary cases.
+There is no new dependency, public runtime export or skill change.
+
+### Exercised evidence and limits
+
+Guarded private verification passed **109 tests**, zero failures/errors/skips or
+audit violations. Six new cases cover slow-but-valid probes, stop-fault recheck,
+delete-fault recheck/force-delete, ordinary inspection reserve protection, work
+deadline clamping and exhausted cleanup. The corrected pre-repair suite retained
+four failures; the initial clock fixture's create-time jump incorrectly exceeded
+the backend's existing command timeout and was corrected to model time between
+commands. Both original failing receipts remain; no acceptance oracle changed.
+
+A separate throwaway driver called the actual `apple_check` API through the
+pinned Apple backend and real pipe/selector capture, substituting only public
+process replies and virtual time. With stop and delete faults and 60 seconds
+remaining, cleanup reached inspect → delete → inspect → force-delete → absence
+confirmation. The same materialized backend then completed another diagnostic;
+its temporary `_run` override was absent after each call. These are transport
+simulations, **not actual CLI/guest execution or containment qualification**.
+
+The actual dispatcher CLI admitted the new source under a fresh developer-only
+grant: one synthetic reserve ended FINISHED/INCOMPLETE with zero model calls.
+Duplicate dispatch returned HELD/4 without journal mutation; consumer snapshot
+remained phase-only and the parent grant was unchanged. Network, subprocess,
+credential and unrelated-file boundaries stayed closed. Receipts:
+`native-deadlines-before.json`, `native-deadlines-corrected-before.json`,
+`private-regressions-after.json`, `native-dispatch-smoke.json` and
+`baseline-preservation.json` in the successor root.
+
+### Continuation boundary
+
+The instruction supplied no new protected-host locator, curator-produced
+answer-free metadata export, all-copy custody or target-bound admission evidence.
+The [seven-obligation disposition](#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15)
+therefore remains held, not passed or restarted. Next is actual CUST-TASK-01/02
+metadata and independent host/control evidence, then fresh locality/source/
+readiness/phase/credential-quota/native/canary bindings. Do not recreate the pool,
+read finals, reuse old grants, or ask again for generic campaign/Go permission.
+Human scoring/freeze/audit, exact confirmation subset and outcome acceptance
+remain separate. Actual model calls, provider requests, credential reads, native
+guests, campaign allocations and spend were zero; old accounting remains
+334 calls/12 reserves/USD 0. No host setup, commit, push or skill/runtime adoption.
 
