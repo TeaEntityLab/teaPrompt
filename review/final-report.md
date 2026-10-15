@@ -6653,3 +6653,112 @@ The intake/navigation consumer resolved the 633-line/62,079-character owning
 record and preserved seven implementation pins, the frozen v2 body and three
 named original evidence bindings. `verification.json` binds the owner quote
 and partial-admission state; final reporting-addition checks are bound separately.
+
+## Custody lookup and non-final-marker verification (2026-10-14)
+
+### Goal and files changed
+
+Completed the maintainer's request to locate the corresponding existing pool/custody metadata and run missing independently runnable checks. Repository/session scouts used answer-free metadata only; scoped zero verified matches do not refute the owner-reported external sealed pool.
+
+Updated the owning [campaign audit trail](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#custody-metadata-search-and-non-final-marker-experiments-2026-10-14) and regenerated `reflective-prompt-library/index.json`. This report records the result. The former session-only isolation plan is now summarized durably in that owning record; its local path/hash is provenance, not a dependency. No private consumer/runtime source, skill, oracle or campaign input changed.
+
+### Implementation summary and acceptance status
+
+- Existing source/admission/plan/historical manifests were located; no verified fresh pool/oracle manifest or coordinator-denied dispatcher was found within the reviewed repo and two retained session trees. Internal-glob and failed semantic-judge results were not treated as absence proof.
+- Nine actual `ToolGate` marker situations exercised assigned reads and six denials, plus a deliberately mis-delivered initial-clone marker that remained readable. Assignment is a trusted-dispatcher obligation; a mutation allowlist is not a read ACL.
+- One pinned Apple guest exercised a UID-65534 creator and UID-65534 reader for its `0400` non-final marker. Digest matched; owned stop/delete/absence confirmed. Separate `same-uid-interpretation-correction.json` narrows the claim to `HOST_EXEC_SAME_UID_READS_GUEST_MARKER`: expected owner-UID read and host-exec reachability, not cross-UID DAC bypass or qualified curator custody. Original pinned receipt/investigation bytes and pins are unchanged.
+- All requested scoped lookup/independently runnable mechanics checks are complete. Genuine pool/custody, actual-role/capture admission and later score/subset/outcome obligations remain held, with the existing continuation grant and accepted Go owner observation preserved.
+
+### Tests / checks run and failures preserved
+
+The actual source-bound commands and claim limits are in the owning record and `local/df-c2-custody-investigation-2026-10-14.nN2p4I/investigation.json`. Public escape/preflight regressions: five passed, 101 deselected, in 0.37 seconds. Both disposable probes recorded zero audit violations and unchanged exercised source digests.
+
+The first native attempt failed during metadata capture with `PermissionError`, before any guest creation; its receipt was retained. An alternate read-only inspection measured 7,598 bytes over the probe's 4,096-byte metadata cap. Correcting that probe-only cap allowed the new experiment to run; guest caps were unchanged. The exact failing syscall was not separately diagnosed, and no general runtime error-handling fix is claimed. Prior model/native/snapshot suites were not replayed.
+
+### Residual risks and next action
+
+This is mechanics evidence, not qualified custody, task correctness, blinding or skill efficacy. Real answer-free pool/oracle metadata and an effective coordinator-denied curator/dispatcher interface remain required; source hashes, booleans and successful public tests cannot supply them. No finals/answers/arm maps, private memories or credentials were read; no Go provider request, campaign call/reserve, image pull, principal/service provisioning, adoption or push followed. One owned non-final-marker guest was started and cleaned up, not a mandatory API-role canary.
+
+Preserve the owner-reported pool and obtain its actual metadata locator/protected interface; do not rebuild it here or request another generic permission/Go-setting confirmation. Record-consumer checks and disposable-driver cleanup are bound separately below.
+
+**Final record-consumer verification:** 29 focused record/index/project-knowledge tests passed in 0.51 seconds; links, hygiene and project-knowledge validators returned zero errors with the same 35 pre-existing warnings. The actual generated-index consumer resolved the 676-line/70,033-character owning record and its new heading, preserved the frozen v2 body and four observation pins, and observed no disposable driver/marker paths left. Directory observation showed only retained JSON evidence. Post-addition checks and final file/evidence bindings are recorded separately in `final-verification.json`; no whole-suite, custody-admission or campaign-efficacy claim follows.
+
+## Same-UID advisory correction and UID contrast (2026-10-15)
+
+### Goal, authority and files changed
+
+Complete the maintainer's **“Fix and continue”** request: narrow the same-UID claim, preserve pinned raw evidence, then exercise distinct guest process identities without fabricating curator custody. Updated the [owning preregistration](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#same-uid-claim-correction-and-distinct-uid-controls-2026-10-15), its generated index and this report. Only disposable private probe code and separate JSON correction/observation evidence were added; consumer/runtime source, skills, registry, routing, campaign population/oracles and the accepted-inconclusive cohort are unchanged.
+
+### Implementation summary and acceptance criteria
+
+- **Correct scope:** the original `0400` marker creator/reader were both UID 65534; this was expected owner-DAC read and host-exec reachability. Separate `same-uid-interpretation-correction.json` supplies `HOST_EXEC_SAME_UID_READS_GUEST_MARKER`, not a cross-UID privacy-bypass claim.
+- **Preserve pins:** the attempted in-place schema/status rewrite and pin retarget was reverted. Original observation `80e3c19b…`, investigation `af5113c1…` and final verification `308728ae…` retain exact original bytes at original paths; the first failed attempt is preserved. The prior final verification's repository hashes are explicitly historical, not silently retargeted.
+- **Exercise identity contrast:** `python3 -I -S -B uid_dac_probe.py` started one newly owned guest. UID/EUID/FSUID 65534 read the marker with matching digest; 65533 and 0 received errno-13 `PermissionError`. Actual GID/groups and capability fields were recorded; CapEff/CapBnd were zero for all three. Root with other capabilities was not tested.
+- **Preserve boundary:** owned stop/delete/absence confirmed; four runtime sources/CLI stayed pinned, with zero audit violations, provider requests, credential reads, campaign calls/reserves or actual-role canaries. The host controller can still select owner UID; this is not an independently protected curator/dispatcher, pool or campaign result.
+
+### Tests / checks run and failure disposition
+
+The actual UID contrast completed in 8.37 seconds; raw receipt status is `UID_DAC_CONTROLS_OBSERVED_CUSTODY_UNQUALIFIED`. Current correction/evidence/document bindings and final record checks are recorded separately below. No old model/native/snapshot campaign checks are replayed for this correction.
+
+The two pin-integrity advisories were valid and resolved by exact-byte restoration plus a separate interpretation record, not by certifying rewritten evidence. Original same-UID observation, original metadata-capture failure and their immutable pin lineage remain available.
+
+### Residual risks, remaining work and human review
+
+No cross-UID bypass was observed under these exact zero-capability identities. Choosing owner UID through host exec remains possible; guest DAC is not host-controller exclusion. Missing actual protected pool/dispatcher metadata and later current-source/role/scoring/subset/outcome prerequisites remain held; no real pool was read or created, no final/answer/arm-map content was inspected, and no provider/model/campaign dispatch, image pull, host principal/service provisioning, skill/runtime adoption or push follows.
+
+**Final current record verification:** 29 focused tests passed in 0.39 seconds; links, record hygiene and project-knowledge validators returned zero errors, with 35 pre-existing date warnings. The actual correction/index consumer resolved the 705-line/73,913-character owning record and UID-control heading, preserved the frozen protocol body, verified all three original byte snapshots/current paths and four old capture pins, and observed removed disposable driver/scratch. Seven consumer sources stayed unchanged. The separate `document-smoke.json` and new final-verification binding record preserve these checks without modifying the original final verification; no whole-suite, custody-admission or efficacy claim follows.
+
+## Full seven-obligation continuation and private v2r1 repair (2026-10-15)
+
+### Goal, authority and implementation summary
+
+Continue **all seven campaign obligations as possible** under the existing protocol-v2 authority, owner-selected pool and quota-only confirmation. Expanded metadata discovery and previously untested consumers progressed; one real malformed-input reservation defect was fixed. No generic permission, setting confirmation or replacement pool was invented.
+
+`Consumer.run_files` / `consumer.py run` previously returned `HELD`, exit 4 after consuming one developer canary reserve and leaving `ALLOCATED` / null state. Current source revision `local/df-c2-consumer-v2r1-2026-10-15.xf1GVZ/` validates fixture/messages/intervention before reserving a context; direct worker entry retains validation. Only `consumer.py` and `worker.py` changed. Original seven sources, manifests and failure receipts remain unchanged; no old grant or historical pass was rebound to the new manifest.
+
+### Files changed and consumer coverage
+
+- Private: the two source files, new source manifest/repair-authority record and six behavioral lifecycle regressions; retained JSON observations and disposition records remain outside the repository.
+- Repository: [owning preregistration and seven-item disposition](../reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15), closed-cohort successor pointer, `PROJECT_KNOWLEDGE.md` discovery entry, generated index and this report.
+- Covered: direct API, guarded file/CLI inputs, standalone serializer, persisted terminal/session states, source/receipt lineage and current public extracted templates. Actual current phase admission, curator delivery, provider/native dispatch, complete actual-role memory/capture and human scoring remain **untested/held**.
+- TWINS: searched `allocate_session( / run_session( / validate_inputs(` in the repaired consumer and public library - found 1 other active worker entrypoint: `worker.py:run_session`, which retains input validation. Original defective v2 copies are immutable historical evidence, not active callers.
+
+### Acceptance criteria status and spec-to-code traceability
+
+| Criterion | Exercised evidence | Status |
+|---|---|---|
+| Refuse malformed inputs before reservation/workspace creation | Actual repaired file/CLI path: zero developer reserves and no session; six regressions include corrected reuse of the unreserved identity | Verified offline |
+| Keep valid consumer behavior and exact request profile | Corrected input reaches `FINISHED` / `INCOMPLETE` with zero model calls; standalone payload emits 4,096/temperature-0/store-false | Verified offline |
+| Preserve source and receipt lineage | Seven original source digests matched; new manifest changes only two files; originals are not retargeted | Verified |
+| Exercise remaining public scoring/readiness mechanisms | Nine current extracted-template observations, including planted outcomes, null scorer-error endpoint, future/missing evidence and caller/isolation limits | Verified mechanics only |
+| Retain every campaign requirement and supplied authority | Owning record and `continuation-disposition.json` enumerate all seven, each with its exact missing prerequisite | Held on real external inputs |
+
+### Tests / checks run
+
+- `python3 -I -S -B alternate_entrypoint_repaired_smoke.py`: five guarded file/CLI boundaries and six lifecycle regressions passed, zero audited provider/native/process effects.
+- Standalone v2r1 CLI: malformed `run` refused with exit 4; valid `payload` serialized the exact profile without dispatch.
+- `python3 -I -S -B public_consumer_smoke.py`: nine offline observations completed on current public templates. Coherent records emitted `ready`; future evidence `stale`; missing evidence `hold`; missing scorer retained a null endpoint rather than a product score.
+- Current repository/index checks and final record-consumer evidence are recorded separately below. No prior native, snapshot, UID or model campaign was replayed for this continuation.
+
+### Failures or skipped checks
+
+Preserved the original product defect and two repaired-smoke harness failures: terminal-state inspection incorrectly used the dispatch-only session getter, and stdlib directory-FD cleanup needed owner-descriptor path resolution. Repaired the driver/test inspection, not the production gate or oracle. Standalone payload attempts initially used a list instead of the required `{messages, tools}` object, then an input lacking owner-only permissions; both held before any dispatch and were corrected only on the newly owned public control.
+
+The prior 69-scenario integrated pass belongs to original v2. It is not a current-v2r1, actual-role or efficacy result. The expanded read-only repository/30-session metadata search found six named controls but no verified fresh pool/dispatcher locator in that bounded scope; it does not disprove the owner's external sealed pool.
+
+### Residual risks, remaining work and human review
+
+All seven campaign obligations remain separately held: actual protected pool/oracles and coordinator-denied assigned-case delivery; exact current provider/quota binding; complete current-role native/memory/capture admission; five mandatory role canaries; fixed pilot; qualified arm-blind pilot screen/freeze/audit and exact subset disposition; separately granted confirmation/final scoring and outcome acceptance.
+
+Prior native/DAC and snapshot mechanics, public synthetic scores and record coherence do not supply those missing facts. The current seven-file manifest is source identity only, not a phase grant or protected custody proof. All current campaign/provider/model/reserve/canary/native/spend counters remain zero; the old accepted-inconclusive cohort remains 334 calls/12 reserves/USD 0.
+
+### Next action
+
+Use the actual owner-supplied answer-free pool/custody locator and protected dispatcher interface, then bind current v2r1 source/phase/credential quota and actual roles. Do not rebuild the reported pool, inspect finals/answers/arm maps, request another generic grant/Go-setting confirmation or substitute synthetic judgments. No skill/runtime adoption, host provisioning or push follows.
+
+### Final repository and record-consumer verification
+
+`python3 reflective-prompt-library/plans/generate_index.py && make all` passed: **1,743 tests in 64.03 seconds**, all eight validators without errors, all 19 skills/examples valid and ROUTE-001/002/003 fixtures at 100% consistency. Five existing skill-length warnings and 35 existing record-date warnings remain; none is suppressed or a campaign result.
+
+The actual generated-index consumer resolved the 759-line/82,921-character owning record and the new continuation heading. It verified all seven current durable source hashes, all seven campaign dispositions, unchanged frozen protocol SHA-256 `f2807a4e…`, three original raw-byte snapshots/current paths, four original capture pins and nine retained continuation receipts. Three throwaway drivers, the public payload input and six owned scratch directories were removed after evidence binding; the permanent private source/regressions remain. `document-smoke.json` and `repository-gates.json` retain these observations. Post-addition checks/final file bindings are recorded separately; no real phase, custody, role or scoring admission is implied.
+

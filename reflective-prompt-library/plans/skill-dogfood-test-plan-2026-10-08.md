@@ -1283,6 +1283,16 @@ observations, not API-role canaries, protected final custody, delayed-ingestion
 completeness or pilot/scoring acceptance. New model calls and campaign reserves
 remain zero; old 334-call/12-reserve/USD 0 accounting is unchanged.
 
+**Current source revision and full continuation disposition:** the
+[seven-obligation v2r1 continuation](fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15)
+fixes a newly observed malformed-input reservation defect in a fresh private
+source revision, with five guarded file/CLI observations, six lifecycle
+regressions and nine public-template observations. Original source/receipts,
+the owner-reported pool and the accepted quota confirmation are preserved.
+All seven real campaign obligations remain separately held on actual protected
+custody, exact current admission and later qualified human/subset/outcome evidence;
+no new campaign call/reserve or old-cohort outcome amendment follows.
+
 
 
 

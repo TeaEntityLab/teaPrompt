@@ -2,7 +2,7 @@
 
 Language: English
 
-> **Status: v2 continuation authorized; owner confirmed subscription-only Go usage without balance fallback. Prior complete memory/native mechanics observations are retained. Campaign dispatch remains held on protected curator/dispatcher custody, exact current quota bindings and actual-role admission; zero new model calls or campaign allocations.**
+> **Status: protocol-v2 continuation authorized; owner subscription-only Go confirmation retained. Consumer v2r1 fixes malformed-input reservation ordering, with offline lifecycle/public-consumer checks complete. All seven campaign obligations remain held on actual protected custody, exact admission bindings and later qualified scoring/subset/outcome evidence; zero new campaign calls or allocations.**
 > Campaign: `DF-C2-2026-10-14`; protocol version: `2` (supersedes the reviewed, unapproved v1 draft).
 > Non-authoritative experiment record. The maintainer selected **Fresh campaign preregistration** after the closed cohort's readiness review. That selection authorizes this plan, not provider requests, canaries, qualification, fixture/oracle creation, service changes, spend, skill edits or adoption.
 
@@ -631,3 +631,129 @@ under a separate intake schema that cannot substitute for the consumer's phase
 proof/grant. The earlier anonymous 401 and every original outcome remain
 preserved. This intake adds zero credential reads, provider requests, model
 calls, campaign allocations, native guests and spend.
+
+## Custody metadata search and non-final-marker experiments (2026-10-14)
+
+**Authority and prior planning intake:** the maintainer selected **“沒有現成環境，先規劃隔離”** and **“使用已隔離封存的新 pool”**, then requested **“幫我查一下，若沒有對應的東西，那就再跑對應的實驗或測試”**. Preserve the reported existing pool; its metadata and custody were not supplied or inspected. This authorizes the scoped lookup and corresponding non-final-marker experiments below, not account/service provisioning, privilege changes, pool/credential transfer or model dispatch. Existing gated continuation authority and the accepted Go owner observation remain intact.
+
+### Durable minimum isolation plan
+
+The prior session-local spec is `local/df-c2-custody-workflow-spec.md` (SHA-256 `8422ad8242af66e630c4c46ae5f7d873c3c2c4bb63760fb199beca33d0e9eb76`); its planning/negative-guard receipt is `local/df-c2-custody-plan-guard-observation.json`. These are provenance, not prerequisites for understanding this durable summary:
+
+- Reuse the private v2 consumer on a curator/operator-controlled execution side outside coordinator/candidate-author **read and control capabilities**. The owner manually invokes it; no new always-on server or TeaPrompt runtime is proposed.
+- That side retains the pool, independent frozen oracles, private schedules and content-bearing requests/logs/caches/copies. Workers receive only their assigned case; scorers receive only their allowlisted blinded packet. The coordinator receives answer-free metadata and permitted receipts.
+- `Consumer.run_files` reads fixture/messages there, not through this conversation; live `allowed_inputs` and `session_inputs` must bind the actual paths, bytes and role/session context. Source/pool/admission and current credential/phase bindings remain mandatory.
+- Review exact principal privileges, trusted-source ownership, service/control interfaces and any transfer before setup. A different folder, same-UID `0400`, a process/session label or a guest controlled by this coordinator is not the required boundary. Use non-final markers to prove read/control denial **and** legitimate assigned-case delivery; do not inspect a final to prove its protection.
+- No existing pool is silently replaced, rewritten or deleted. An accessible final copy holds eligibility. Current capture/native/actual-role qualification, frozen human scoring/audit and the later exact confirmation subset remain separate under v2.
+
+This internalizes the earlier plan without changing the experimental protocol, creating a runtime product, or treating the owner's pool selection as admission proof.
+
+### Bounded discovery and source classification
+
+Two read-only scouts searched repository evidence/metadata (`plans`, `review`, public tests/skills/features and root metadata) and the retained `2026-10-13T15-27-39-936Z_01a135e0-61a0-71d3-8b94-49c930e8df94/local` and `2026-10-02T16-31-46-425Z_01a0fd75-1ef9-755b-93da-b2926ccffbfb/local` experiment trees. Filename enumeration, public-record literal searches and JSON key/scalar projections found the existing source manifest, custody/admission holds, prior planning receipt and historical cohort/catalog artifacts, but no verified fresh DF-C2 pool/oracle manifest or coordinator-denied dispatcher interface in those reviewed surfaces.
+
+This is **not** a whole-host absence claim and does not refute an externally held owner-reported pool. No final, answer, arm map, sealed fixture/generator body or private memory content was inspected. Historical P0's 57 entries are source files, not 57 case instances; the existing semantic-disjointness contract is not expanded with a new signing requirement.
+
+Discovery limitations were retained: internal `local://**` globbing missed known-present controls, so host-path enumeration was used; semantic `find` reported 26 failed judgments with OpenRouter HTTP 403, so its “no hits” was not absence evidence. Host-path checks detected the known-present planning, custody-prerequisite and source-manifest controls. Scoped metadata coverage is recorded in `investigation.json`, with qualified scout provenance.
+
+### Executed mechanism evidence, not campaign acceptance
+
+| Surface / actual command | Observed result | Boundary of the claim |
+|---|---|---|
+| `python3 -I -B toolgate_probe.py`, actual private `worker.ToolGate`, public non-final markers only | Nine situations exercised: distinct assigned-marker reads, six escape/unknown/report/root-rebind refusals, and one deliberately mis-delivered foreign marker readable from the initial clone | `workspace_allow` is a mutation allowlist, not a read ACL; the initial clone is trusted. This proves workspace mechanics, not an authenticated case dispatcher or curator exclusion |
+| `python3 -I -B native_control_probe.py`, pinned Apple 1.5.0 CLI/backend and cached image | One uniquely owned guest started; creator and reader both used UID 65534 for the `0400` marker, with matching digest; owned stop/delete/absence confirmed. Separate `same-uid-interpretation-correction.json` disposition: `HOST_EXEC_SAME_UID_READS_GUEST_MARKER` | Expected file-owner read and host-exec reachability only. The original pinned receipt and investigation remain unchanged; their historical label is superseded by the separate interpretation. No distinct-UID denial/bypass was measured in this run, nor qualified curator custody |
+| Two public consumer suites, `-k 'candidate_escape_refuses_without_copying_or_scoring or denial_exit_code_is_not_a_met or coherent_evidence_is_ready'` | Five tests passed, 101 deselected, in 0.37 seconds | Relative/absolute/symlink refusal and preflight evidence/denial handling; not live custody qualification |
+
+The native first attempt is preserved in `native-control-attempt-1.json`: `PermissionError` during metadata capture, zero guests started. An alternate untruncated read-only inspection measured 7,598 bytes, exceeding the probe's 4,096-byte CLI metadata cap. The disposable probe's metadata cap was corrected to 65,536 before the successful run; its 4,096-byte guest-output cap and 256 MiB/one CPU/pids 16/network-denied/read-only/no-host-mount policy were not widened. The failed receipt was not promoted to isolation evidence. The seven consumer and two used runtime source digests stayed unchanged; both probe audit fences recorded zero violations.
+
+The pinned [Apple exec command reference](https://raw.githubusercontent.com/apple/container/1.5.0/docs/command-reference.md) was accessed 2026-10-14 for the explicit process-UID/owned-container invocation; the result above comes from the executed local CLI, not documentation alone.
+
+**Disposition:** scoped lookup and these independently runnable mechanism experiments are complete; protected pool/dispatcher admission remains held. The existing owner-reported pool is preserved, not declared nonexistent or newly qualified. No generic authorization or repeated Go setting confirmation is requested. Actual answer-free pool/oracle metadata and its protected delivery/control boundary remain the next missing inputs; tests cannot manufacture them.
+
+This work made **zero Go provider requests, credential reads, campaign model calls/agent CLI sessions/reserve allocations, real population/oracle creations, image pulls or spend**. It started and cleaned up **one non-final-marker guest**, distinct from the five mandatory API-role canaries. No principal/service was provisioned, no private consumer/runtime source or skill was changed, and the old cohort remains closed at 334 calls/12 reserves/USD 0. All seven campaign obligations and later confirmation/scoring/outcome gates remain intact.
+
+Receipts and source/driver digests: `local/df-c2-custody-investigation-2026-10-14.nN2p4I/investigation.json`, `toolgate-observation.json`, `native-control-attempt-1.json`, `native-control-observation.json` and `native-image-metadata-size.json`. Disposable drivers and marker scratch are removed after evidence binding; rendered navigation and record-consumer verification are recorded separately. Repository validation cannot convert these bounded mechanics results into custody or experimental efficacy.
+
+
+## Same-UID claim correction and distinct-UID controls (2026-10-15)
+
+**Authority and scope:** the maintainer requested **“Fix and continue”** after the same-UID advisory. This turn corrects the interpretation and exercises one new uniquely owned non-final-marker guest through the existing pinned Apple CLI. It does not change the campaign protocol, host principals/services, consumer/runtime source, pool custody or dispatch gates.
+
+### Corrected interpretation and immutable receipt lineage
+
+The original creator and reader were both UID 65534. Reading an owner-UID `0400` file is expected DAC behavior; that observation measured host-exec reachability, not a cross-UID privacy bypass. The current interpretation is **`HOST_EXEC_SAME_UID_READS_GUEST_MARKER`**, in the separate `same-uid-interpretation-correction.json` record. The historical raw label is not a current custody conclusion.
+
+An attempted in-place receipt relabel and investigation-pin retarget was withdrawn after two pin-integrity advisories. The original observation (`80e3c19b…`), investigation (`af5113c1…`) and original final verification (`308728ae…`) remain at their original paths with exact original bytes and pins. The original first-attempt failure is unchanged. No historical final-verification file was rewritten; its repository-file pins describe its earlier document snapshot, not this later correction.
+
+### Executed distinct-UID evidence
+
+Command: `python3 -I -S -B uid_dac_probe.py`. One new guest; existing cached image and pinned CLI/four runtime sources; 256 MiB, one CPU, pids 16, network denied, read-only root, no host mounts, all capabilities dropped. Only a public synthetic `0400` marker owned by UID/GID 65534 was created or read.
+
+| Requested and observed UID/EUID/FSUID | Observed GID / supplementary groups | CapEff / CapBnd | Marker read |
+|---|---|---|---|
+| 65534 / 65534 / 65534 | 65534 / `[65534]` | both zero | succeeded; digest matched |
+| 65533 / 65533 / 65533 | 0 / `[0]` | both zero | `PermissionError`, errno 13 |
+| 0 / 0 / 0 | 0 / `[0,1,2,3,4,6,10,11,20,26,27]` | both zero | `PermissionError`, errno 13 |
+
+All four `/proc/self/status` UID values matched each requested UID; GID/groups and capability fields are retained in the raw receipt. **No cross-UID DAC bypass was observed in this capability-dropped guest.** This is not a claim that root with different capabilities would be denied. The host controller can still select the file-owner UID and read the marker; therefore process-level DAC results do not establish coordinator-denied curator custody.
+
+Owned stop/delete/absence was confirmed. The run recorded unchanged source digests and zero audit violations, Go provider requests, credential reads, campaign calls/reserves, actual-role canaries, real pool reads, image pulls or spend. This one new marker guest is separate from the prior marker guest and from the five mandatory API-role canaries.
+
+**Disposition:** the claim correction and requested UID contrast are complete; actual protected curator/dispatcher custody, fresh source/phase/credential admission, current-role/capture qualification and later scoring/subset/outcome requirements remain held. Preserve the owner-reported pool and accepted Go owner observation. Do not rebuild finals, infer a protected curator from guest DAC, or request another generic grant/Go-setting confirmation.
+
+Receipts: session-private `local/df-c2-custody-uid-controls-2026-10-14.qGywS0/` holds `triage-and-authority.json`, `same-uid-interpretation-correction.json`, the three original byte snapshots and `uid-dac-observation.json`. Source/receipt bindings, disposable-driver cleanup and current document-consumer verification are recorded separately; none grants campaign admission.
+
+## Full seven-obligation continuation and v2r1 repair (2026-10-15)
+
+**Authority and scope:** the maintainer requested **“continue all seven campaign obligations as possible”**. Existing protocol-v2 continuation, seven designated human roles, the owner-reported isolated/sealed fresh pool and the accepted subscription-only/no-balance-fallback observation remain supplied. This continuation exercises previously untested consumers and fixes one observed private-consumer defect; it does not manufacture the missing pool, curator interface, quota binding, role admission or human judgments.
+
+### Observed input-lifecycle defect and source revision
+
+The actual `Consumer.run_files` / `consumer.py run` path returned `HELD`, exit 4 for a malformed fixture **after** consuming one developer canary reserve and leaving the session `ALLOCATED` with a null outcome. The original failure receipt and original seven-file v2 source are preserved, not relabelled.
+
+The new private source revision `local/df-c2-consumer-v2r1-2026-10-15.xf1GVZ/` reuses `worker.validate_inputs` before `Consumer.run` reserves a session; direct `worker.run_session` retains the same validation. Only `worker.py` and `consumer.py` changed. Protocol, profile, accounting/transport policy, 11/8-call roles, 300-second deadline and campaign ceilings did not change. There is no compatibility shim or rebound historical grant.
+
+Current seven-file manifest SHA-256: `fe93c45343a4e3267daecf4845e9668498ed5dc98bdde144b19470ca323cca34`.
+
+| Current v2r1 private source | SHA-256 |
+|---|---|
+| `protocol.py` | `0c7cff04c04f04366833aedaccae166037b6e3585b88812f11d87099f9cc8381` |
+| `campaign_support.py` | `e25d49f6b6576c1d4d66a4f2254e95d7229016f746666ddfdace9f0d605c15dd` |
+| `go_provider.py` | `a9d56ec447a7067bfd20339d0849ce92d6ba9ca18cdb4e36a16030a050ca92ab` |
+| `go_transport.py` | `b436c2cd03385c44edfe1c4a072bdebaf7c295a0ab8ab67eec034648f7205720` |
+| `worker.py` | `58f092a3952e517df9d9e375f1f8b11be08f9dcd9746f265e682a05563df59f3` |
+| `public_diagnostic.py` | `4602e3fad40ac575d961b2e5b99fa0fc1c5fd8935730ac4e4f1901be5792e6da` |
+| `consumer.py` | `83c9c691ef90f6b5ad51f25152c3a184c9d86f33ca28b4a6acfdc7d37ae3abf5` |
+
+The original implementation table and 69-scenario receipt describe **v2**, not a rerun against v2r1. All seven original source hashes still matched. The maintainer/artifact owner must retain the actual private bytes, manifests and receipts; repository hashes cannot reconstruct unavailable source or grant custody. A future real phase must bind the new manifest and fresh qualification; old source-bound grants/canaries do not transfer.
+
+### Executed new consumer checks
+
+- `python3 -I -S -B alternate_entrypoint_repaired_smoke.py`: five guarded file/CLI boundaries and six lifecycle regressions passed. Malformed fixtures, reserved workspace sinks, oversized file content, untyped messages and empty interventions refused before allocation/workspace effects; a corrected input reused the unreserved identity and reached the expected `FINISHED` / `INCOMPLETE` provider-admission refusal with zero model calls. The malformed-fixture observation changed from one developer reserve to zero, with no session record.
+- Standalone v2r1 `consumer.py run` also returned `HELD`, exit 4 before reservation. Standalone `payload` emitted the exact 4,096-token/temperature-0 request with `store: false`; it serialized only and did not dispatch. Wrong payload shape and non-owner-only file permissions were driver-input failures, corrected only on the newly owned public control.
+- `python3 -I -S -B public_consumer_smoke.py`: nine observations on the current extracted `arm-blinded-eval-harness` and `governed-delivery` templates. Planted outcomes were recovered; missing scorer remained `exit: null` / `FileNotFoundError`, not a product-failure score; future evidence was `stale`, missing evidence `hold`, coherent evidence `ready`. Interpreter-invoked candidate code read an owned public marker, trusted hold configuration excluded a pair, shared arm roots produced equal hashes, and an absolute owned reference outside the synthetic task root was accepted. These expose existing caller/scorer-isolation and record-coherence preconditions, not qualified campaign blinding, custody or human scoring.
+
+The repaired-smoke driver initially misused the dispatch-only `Budget.session` getter to inspect a finished session and mishandled stdlib dir-FD cleanup. Its separate failure record is retained; the corrected read-only state inspection and owner-descriptor path resolution passed without widening reviewed roots. No runtime or authoritative oracle was changed to satisfy a harness error.
+
+Consumer coverage includes direct API calls, guarded file/CLI inputs, standalone serialization, retained journal/session states, original source/receipt lineage and public extracted templates. Actual v2r1 phase grants, provider/native execution, protected case delivery, memory/capture role admission and semantic scoring are explicitly **untested/held**, not covered by these controls.
+
+### Requirement-by-requirement campaign disposition
+
+Expanded read-only discovery covered repository metadata and 30 retained project-session trees; six known-present metadata controls were found. No verified fresh DF-C2 pool/oracle manifest or coordinator-denied dispatcher locator was found **within that scope**. This does not refute the owner-reported external pool or claim an all-host absence.
+
+| Campaign obligation | Progress retained or observed | Exact remaining prerequisite |
+|---|---|---|
+| 1. Protected fresh selection/final populations and oracles | Existing owner-reported pool preserved; expanded metadata discovery complete | Answer-free metadata locator, all recoverable-copy/reader grants, independent frozen oracles, coordinator/candidate-author denial and assigned-case curator/dispatcher delivery |
+| 2. Current provider identity and quota-only USD 0 | Owner subscription-only/no-balance-fallback confirmation retained; production admission guard preserved | Genuine current pool/source/phase/credential binding and immutable exact-current quota evidence before production inventory; no repeated owner confirmation or key/cookie disclosure |
+| 3. Fresh native, memory and capture admission | Prior six-store/eleven-file and bounded native/UID mechanics retained without replay; v2r1 input repair verified offline | Qualification of actual protected roles on the current source, complete memory/capture/configuration and delayed-ingestion evidence, independent actor/action and functional-oracle provenance |
+| 4. Mandatory actual-role canaries | Five pilot canaries remain inside the same 12-reserve/call ledger, not extra smoke allocations | Obligations 1–3 before bare primary, three exact-skill guided primaries and neutral successor canaries |
+| 5. Fixed pilot and complete accounting | All-family 18-paired-block pilot permission and 624-call/12-reserve/USD 0 ceilings retained; preallocation defect fixed | Protected six selection instances, fresh admission and qualified canaries before actual trial allocation |
+| 6. Frozen pilot screen and exact subset disposition | Public extraction/readiness boundaries exercised; no surrogate scores or synthetic screen | Actual paired pilot endpoints, protected task/action oracles, qualified arm-blind human judgments and explicit score/audit freeze; unchanged per-family screen and human subset decision |
+| 7. Eligible confirmation and outcome | One nonempty subset/envelope and `198*k + 144*h + 132` rule retained; maximum 870 is not an allocation | Eligible frozen pilot, separately approved exact subset/envelope, admitted final instances/current canaries/scoring/audit and separate human outcome acceptance |
+
+**Disposition:** all independently reachable continuation work above is complete; all seven real campaign requirements remain separately **held**, with existing permission retained. No new campaign calls/reserves, provider requests, credential reads, native guests, real pool reads/creation, authoritative oracles or spend occurred. The accepted-inconclusive cohort and its 334-call/12-reserve/USD 0 accounting remain unchanged. No skill, registry, routing, runtime installation/adoption or push follows.
+
+**Next input:** the actual answer-free pool/custody metadata locator and protected assigned-case dispatcher interface, followed by exact current v2r1 source/phase/credential and role admission. Do not rebuild the reported pool, ask for finals/answers/arm maps or another generic grant/Go-setting confirmation.
+
+Receipts: session-private `local/df-c2-all-obligations-2026-10-15.SnbCre/` retains the task/risk packet, original and repaired entrypoint observations, separate harness failures, standalone CLI observation, public-consumer observation and `continuation-disposition.json`. Source/driver digests, cleanup and final record/index verification are bound separately; no historical receipt/pin is retargeted.
+
