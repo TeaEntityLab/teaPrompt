@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-16T00:52:26.024986",
+  "generated_at": "2026-10-16T00:10:49.265245",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -139,6 +139,7 @@
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "ROUTING_CONTRACT.md",
             "software-factory-rethink-panel-record-2026-09-28.md",
+            "procedural-blind-dogfood-preregistration-2026-10-15.md",
             "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
             "human-cognition-adoption-2026-10-02.md",
@@ -11130,6 +11131,101 @@
       "char_count": 13337
     },
     {
+      "path": "reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "procedural-blind-dogfood-preregistration-2026-10-15",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md",
+          "df-c2-protected-custody-workflow-spec-2026-10-15.md",
+          "benchmark-tasks.json",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#questions-and-population"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Procedural-Blind Dogfood Preparation — 2026-10-15"
+        },
+        {
+          "level": 2,
+          "text": "Goal and authority"
+        },
+        {
+          "level": 2,
+          "text": "Selected method and limits"
+        },
+        {
+          "level": 2,
+          "text": "Population and input contracts"
+        },
+        {
+          "level": 2,
+          "text": "Private artifacts and public exports"
+        },
+        {
+          "level": 2,
+          "text": "Acceptance and verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Execution sequence and ownership"
+        },
+        {
+          "level": 2,
+          "text": "Risk and remaining human gates"
+        },
+        {
+          "level": 2,
+          "text": "Evidence and disposition"
+        },
+        {
+          "level": 3,
+          "text": "Completed preparation evidence"
+        },
+        {
+          "level": 3,
+          "text": "Evidence identities"
+        },
+        {
+          "level": 3,
+          "text": "Acceptance disposition and remaining gates"
+        },
+        {
+          "level": 3,
+          "text": "Readiness continuation and scope correction"
+        },
+        {
+          "level": 3,
+          "text": "Private offline consumer implementation and verification"
+        },
+        {
+          "level": 4,
+          "text": "Offline entrypoints and output boundary"
+        },
+        {
+          "level": 4,
+          "text": "Verification results and retained failures"
+        },
+        {
+          "level": 4,
+          "text": "Source-review closure and current v1r1 source"
+        }
+      ],
+      "line_count": 314,
+      "char_count": 34097
+    },
+    {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -20818,5 +20914,5 @@
       "char_count": 11128
     }
   ],
-  "total_files": 223
+  "total_files": 224
 }

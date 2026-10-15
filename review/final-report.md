@@ -6995,3 +6995,216 @@ removing four owned scratch trees. `document-smoke.json`,
 those observations under the v3r1 source root. This evidence does not qualify
 the protected host, pool, actual model roles or later human acceptance.
 
+
+## Procedural-blind preparation completed (2026-10-15)
+
+### Goal and files changed
+
+Continue the maintainer's explicit 「改採程序性盲測」 choice after the public-marker
+preflight disproved current subagent strong custody. The owning
+[PB1 preparation record](../reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md)
+defines a separate protocol and records the actual evidence. Added its
+PROJECT_KNOWLEDGE decision pointer and regenerated the library index.
+Private generation, audit and consumer artifacts remain outside the repository
+in session-local `df-pb1-2026-10-15.chUGBO`; no skill or runtime was promoted.
+
+### Implementation and acceptance
+
+Three independent curators produced Q-IMP, Q-REV and Q-HOF; a fourth,
+non-authoring auditor checked the actual artifacts and emitted closed
+answer-free exports. The coordinator did not open withheld cases, answers,
+oracle bodies or curator/auditor histories.
+
+PB-AC-01–04 and PB-AC-06–08 are satisfied at the preparation boundary:
+the protocol is separate, the independent audit covers 15 cases and 60
+functional/authority calibration controls, and the actual metadata consumer
+and negative controls were exercised. PB-AC-05 retains a scoped comparison
+receipt with freshness UNKNOWN; complete historical freshness and campaign
+admission are not claimed. Successor calibration is not a live transfer result.
+
+### Checks, failures and scope
+
+`python3 -I -B check_exports.py` returned `PASS_PUBLIC_EXPORTS`; its output
+preserved procedural-only blinding and execution HELD. The final guarded smoke
+exited 0 over 24 scenarios: one valid actual export set and 23 refused
+content/identity/count/gate/digest/file-boundary controls. No withheld reads,
+audit-boundary violations or raw-marker disclosure occurred in that run.
+
+Two consumer reader defects have failing-before/passing-after observations:
+misclassifying a historical public `0644` receipt as private, and blocking on
+a FIFO before checking its type. The former now uses an explicit public
+receipt read without changing old bytes/modes; the latter uses nonblocking
+open. Other export reads remain owner-only.
+
+TWINS: searched `preflight_observation_path` and `os.O_RDONLY | os.O_NOFOLLOW`
+(repository plus coordinator consumer) - found 0 other sites: none.
+
+Two discarded smoke-driver attempts failed at guarded source loading and
+relative-dirfd cleanup. Neither was counted as a passing run or a campaign
+outcome. Their identities and the successful replayable public-only driver are
+retained in `public/verification-receipt.json`; owned scratch was removed.
+Original DF-C2 document/source-manifest bindings, the public failure receipt,
+the PB1 frozen inputs and all three target-skill digests remained unchanged.
+
+### Residual risk and next gate
+
+Blinding is voluntary context separation, not technical confidentiality.
+Custody explicitly records recoverable files/transcripts/tool/capture channels
+and unknown provider retention. No efficacy or skill improvement is inferred.
+At preparation close, `FRESHNESS`, `SOURCE_PHASE_BINDING`, `QUOTA_NATIVE_CAPTURE`,
+`ACTUAL_ROLE_CANARIES`, `HUMAN_SCORING_FREEZE`, `CONFIRMATION_SUBSET` and
+`OUTCOME_ACCEPTANCE` remained held. Missing evidence and a source/phase-bound
+PB1 decision are prerequisites to further execution; existing Go confirmation
+is retained, not requested again.
+
+No campaign trial/canary dispatch, credential read or native guest occurred.
+The four generation/audit subagents did use host/model resources; this is not
+zero total model usage. Old cohort accounting remains 334 calls/12 reserves/
+USD 0. No commit, push, skill edit or runtime adoption.
+
+### Final repository and navigation verification
+
+The first full run retained 1,741 passing tests and two documentation failures:
+the new record linked a nonexistent catalog `.md` and lacked the required
+Falsifiability heading. The link now uses the actual catalog JSON; the existing
+failure condition has its heading. No test or oracle was weakened.
+TWINS: searched `(benchmark-tasks.md)` - found 0 other sites: none.
+
+After index regeneration, `make all` passed **1,743 tests in 50.71 seconds**,
+all eight validators with zero errors, all 19 skill/example contracts, and
+ROUTE-001/002/003 fixture evaluations at 100% consistency. Existing five
+skill-length warnings and 35 record-date warnings remain.
+
+The navigation smoke initially used an incorrect `headings.structure` field
+path. Correcting the driver to the actual `structure` schema required no index
+schema change. It then resolved the one PB1 entry, all expected headings and
+the actual 126-line/17,948-character record. Its source/index identities and
+the failed-attempt classification are retained in session-local
+`pb1-document-verification-2026-10-15.json`. This verifies navigation and
+record consistency, not campaign readiness or semantic routing efficacy.
+
+## PB1 readiness continuation and audit-scope correction (2026-10-15)
+
+Continued the maintainer's 「繼續」 through independent freshness/source reviews
+and actual public-only interoperability smoke. The owning
+[readiness correction](../reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md#readiness-continuation-and-scope-correction)
+contains acceptance traceability, source findings and evidence identities.
+
+PB-AC-05 is now PASSED_SCOPED for its unchanged frozen comparison universe:
+15 current cases, 105 within-population pairs, 11 historical source artifacts,
+nine historical cases and zero missing required sources. The old auditor
+assignment had added an unbound owner-reported pool; correcting that scope
+error changed no case, oracle, protocol or original UNKNOWN receipt.
+Global novelty and the unlocated pool remain outside-scope unknowns.
+
+Five public smoke observations verified metadata/intake, pre-secret authority
+refusal, fixed-diagnostic and actual event-shape boundaries. The final driver
+exited 0 with no audit violations and unchanged original public/source bytes.
+Its failed undeclared-import attempt remains separate, not counted as a pass.
+The reviewed DF-C2 source cannot honestly represent or score PB1; a separate
+PB1 source/phase binding is needed, not relabeling or another Go-setting question.
+
+Six execution gates remain held. No PB1 phase grant, campaign/model/provider
+request, native guest, credential read or campaign allocation occurred.
+The two review contexts used host/model resources; old cohort accounting
+remains 334 calls/12 reserves/USD 0. No skill or runtime adoption, commit or push.
+
+TWINS: searched `PB-AC-05|Freshness remains|complete freshness UNKNOWN|FRESHNESS.*SOURCE_PHASE_BINDING|owner-reported DF-C2 pool` - found 2 other status sites: `review/final-report.md` initial PB-AC-05 and held-gate paragraphs. Their historical values are preserved; this continuation supplies the current disposition.
+
+### Continuation repository and navigation verification
+
+After regenerating the index, `make all` passed **1,743 tests in 63.77 seconds**;
+all eight validators reported zero errors, all 19 skills/examples were valid,
+and the three routing fixture evaluations remained at 100% consistency.
+Five skill-length and 35 record-date warnings remain unchanged.
+The actual index consumer resolved the new readiness heading, the current
+167-line/24,028-character record and both published continuation receipt digests.
+This verifies navigation/evidence binding, not PB1 execution readiness.
+The disposable smoke source was removed only after both revisions were embedded
+in their receipts; all owned smoke scratch was already removed. No permanent
+test, skill or runtime implementation was added by this investigation.
+
+## PB1 private offline consumer delivery (2026-10-15)
+
+Implemented the maintainer-selected **完成新版 consumer，僅離線驗證** in the
+new private `df-pb1-consumer-v1-2026-10-15.BHPWWv` source root. The owning
+[offline implementation record](../reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md#private-offline-consumer-implementation-and-verification)
+contains acceptance-to-consumer traceability, entrypoints, evidence digests
+and the retained failing-before/passing-after history.
+
+Three Python sources implement digest-bound loading, bounded real filesystem
+operations, host-derived authority events, hidden data-only oracle evaluation,
+producer-bound successor execution and closed public CLI output. No live
+provider adapter or grant was added. Final public regressions passed 52 tests;
+the actual CLI/operation smoke passed. The independent frozen-artifact executor
+completed 15 cases, 60 calibration controls, five handoff chains and eight
+negative controls without failures or audit violations. The original
+group/world-write prohibition was preserved; an invalid stronger owner-write
+test was corrected rather than changing frozen case modes.
+
+Changed repository surfaces: the owning preparation record, its
+`PROJECT_KNOWLEDGE.md` decision pointer, generated index and this report.
+Private sources/tests/evidence are not a new repository runtime or skill.
+Original source/pool/acceptance identities remain unchanged. The six live
+execution gates remain held; no campaign call/allocation, provider request,
+credential read or native guest occurred. Coordination/review model usage is
+separate, not zero total usage; old cohort accounting remains
+334 calls / 12 reserves / USD 0. No commit or push.
+
+### Offline delivery repository and navigation verification
+
+After index regeneration, `make all` passed **1,743 tests in 63.93 seconds**.
+All eight validators reported zero errors; all 19 skills/examples were valid,
+and ROUTE-001/002/003 fixture consistency remained 100%. The five skill-length
+and 35 record-date warnings are unchanged.
+The actual generated-index consumer resolved the offline implementation
+heading, the current 255-line/30,260-character record and all five published
+source/evidence digests. Its replayable observation is `navigation.json` under
+the private source root. This is navigation and evidence-binding verification,
+not campaign admission. Owned stale Python bytecode was removed; original
+source snapshots, failed-run receipts and passing controls remain preserved.
+
+### Source-review triage and separate v1r1 repair
+
+The source-only reviewer checked the initial sealed source, not frozen cases.
+Current-byte triage confirmed unauthorized parent-directory creation and
+rejected the claimed `_Denial` escape: the existing `Exception` handler already
+converts it to `OperationError`, also observed by a public collision probe.
+The [current v1r1 record](../reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md#source-review-closure-and-current-v1r1-source)
+binds the correction, failure controls and preserved predecessor.
+
+Only worker parent-creation ordering changed among the three executable
+sources. Four focused controls first retained seven assertion failures;
+the final combined public suite then passed 56 tests with zero failures,
+errors, skips or audit violations. Five actual CLI/API smoke scenarios passed,
+including denied nested paths, absent deletes and successful nested writes.
+The previous source/evidence root was not edited or relabeled.
+
+TWINS: searched `_ensure_dir_nolink(` - found 2 other callsites: the `pb1_worker.py` report branch (same defect, repaired) and `_clone_files` (authorized fixture creation, intentionally unchanged).
+
+The independent executor re-ran the complete frozen-corpus procedure against
+the final v1r1 manifest `5c77e9f29a4ba3d31f83f086c290eb4320e496909f20007891a7f584ff2a3575`:
+15 completed consumer runs, 60/60 calibration controls, five actual handoff
+chains and the same eight negative controls passed, with zero audit violations
+and unchanged original bindings. Main checked only the closed summary and
+source/receipt digests. One metadata-integration expression failed to parse
+before execution; its corrected rerun passed, without product/oracle changes.
+The offline acceptance criteria are satisfied; the six live execution gates
+and all no-effect/unknown-content limits remain unchanged.
+
+### Final v1r1 repository verification
+
+After updating the source pointer and regenerating the index, `make all`
+passed **1,743 tests in 63.12 seconds**. All eight validators reported zero
+errors, all 19 skills/examples remained valid, and all three routing fixture
+evaluations remained at 100% consistency. Five skill-length and 35 record-date
+warnings remain unchanged.
+The actual index consumer resolved the current v1r1 heading, the
+314-line/34,097-character owning record and all six current evidence digests;
+its replayable receipt is `navigation.json` in the v1r1 root.
+The current delivery ledger covers direct CLI/API calls, hidden evaluator and
+handoff chains, source loading, persisted offline contexts, generated
+navigation and intentionally unchanged predecessor artifacts. Live transport
+and human scoring are outside this explicitly offline scope, not skipped
+offline acceptance checks.
+
