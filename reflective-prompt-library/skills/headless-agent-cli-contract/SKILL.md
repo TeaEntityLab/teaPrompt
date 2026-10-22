@@ -16,7 +16,7 @@ metadata:
 
 ## Purpose
 
-Every agent CLI spells "run headlessly" differently, and guessing the spelling wastes billable invocations or silently corrupts outputs. This pack turns the observed 2026-10-06 dry-run receipts into a contract: given a target CLI and an intended mode, emit the exact invocation recipe for that provider — or block, with reasons, when the CLI cannot run non-interactively. Evidence: `plans/runtime-skills-task001-ticket-2026-10-06.md` TASK-004/005 receipts.
+Every agent CLI spells "run headlessly" differently, and guessing the spelling wastes billable invocations or silently corrupts outputs. This pack turns the observed 2026-10-06 dry-run receipts into a contract: given a target CLI and an intended mode, emit the exact invocation recipe for that provider — or block, with reasons, when the CLI cannot satisfy that mode non-interactively. Evidence: `plans/runtime-skills-task001-ticket-2026-10-06.md` TASK-004/005 receipts.
 
 ## Module Contract
 
@@ -43,7 +43,7 @@ Every agent CLI spells "run headlessly" differently, and guessing the spelling w
    - *Side-channels to strip* — provider-specific noise observed in receipts: `cursor-agent` stderr `claude-mem …` hook lines (side-path, not the proposal); `ollama` spinner glyphs (`⠙ ⠹ …`) and timing/stat block (`total duration: …`, `eval rate: …`) — channel varies run-to-run: 2026-10-06 run A put spinner+stats on **stdout**, run B put ANSI-wrapped spinner on **stderr** with stats absent entirely. Strip rules MUST cover both streams. TASK-005 B-control failed its oracle because stdout spinner pollution dropped the `## Next` heading form.
    - *Known malformed spellings* — `devin -p -` treats the literal dash as the prompt text (observed malformed invocation, re-run; receipt kept in `evidence/task005/`). Never assume `-` means stdin for a CLI that defines its own prompt argv.
 3. **Blocking policy.** When the CLI lacks a non-interactive mode, or headless would require auto-approving destructive permissions, output `BLOCKED: <reason>` and stop. No pseudo-tty hacks, no expect-scripts, no silent `--dangerously-skip-permissions`. `agy` in the dry run is the reference case: headless auto-denied the `command` tool permission and produced no output — a provider policy, not a model failure; the correct outcome is a blocked receipt, not a retry with wider permissions.
-4. **Mode separation.** `read-only-proposal` recipes MUST NOT include tool-use permission flags; `tool-using` recipes MUST name the human approval recorded before first unattended run (per flow-control-generator's Human Review Boundary) and the blast radius (host write-exclusions, egress stance).
+4. **Mode separation.** `read-only-proposal` recipes MUST NOT include tool-use permission flags and require a verified no-tool configuration at the pinned version; a prompt asking for no tools, workspace trust, or merely omitting force flags does not establish that boundary. If it is unverified, output `BLOCKED` before dispatch. `tool-using` recipes MUST name the human approval recorded before first unattended run (per flow-control-generator's Human Review Boundary) and the blast radius (host write-exclusions, egress stance).
 
 ### Never
 
@@ -58,7 +58,7 @@ Every agent CLI spells "run headlessly" differently, and guessing the spelling w
 ### Output
 
 - One invocation recipe for the (`target_cli`, `mode`) pair: transport spelling, permission flags, output-isolation discipline, strip list, inventory evidence — or a `BLOCKED` verdict with reason.
-- One read-only proposal run per named CLI with raw receipts (stdout/stderr captured separately, exit code, artifact hashes) filed under the task's evidence dir.
+- For each qualified, authorized read-only proposal run, file raw receipts (stdout/stderr captured separately, exit code, artifact hashes) under the task's evidence dir. A blocked pair gets inventory evidence and the blocking reason, not a model call.
 
 ### Escalation
 
@@ -79,7 +79,7 @@ Every agent CLI spells "run headlessly" differently, and guessing the spelling w
 Before the recipe is handed to a host harness:
 
 1. Run the zero-cost inventory probe; record binary, version, model list.
-2. Run one `read-only-proposal` per named CLI with stdout/stderr split; file raw receipts. Expected shapes: `ollama`/`devin`/`cursor-agent` return the minimal fix (`return a + b` on the A-code fixture); `agy` without an allow-rule returns the policy-denial receipt (blocked, not failed).
+2. Only after the requested mode is qualified and the run is authorized, run one `read-only-proposal` with stdout/stderr split and file raw receipts. For blocked pairs, stop at the inventory/blocking receipt. The 2026-10-06 `ollama`/`devin`/`cursor-agent` outputs returned the minimal fix (`return a + b` on the A-code fixture), but correct proposal text does not prove tools were disabled; `agy` returned a policy denial. Do not reuse those historical outputs as current permission qualification.
 3. Score only the stripped stdout against the oracle; confirm the strip rules turn the observed polluted outputs into passes without touching model content.
 4. Confirm no billable call ran before inventory, and no `BLOCKED` verdict was bypassed with widened permissions.
 

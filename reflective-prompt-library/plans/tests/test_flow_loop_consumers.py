@@ -74,6 +74,52 @@ COUNT = ('n=0; [ ! -f state/calls ] || n="$(cat state/calls)"\n'
          'n=$((n+1)); echo "$n" > state/calls\n')
 
 
+@pytest.mark.parametrize("template", [
+    "Verify-Gated Fix Loop (bash)",
+    "Evaluator-Optimizer / Writer-Critic (bash)",
+    "Task-Ledger Backlog Loop (bash, ralph-style)",
+    "Multi-Wave Fan-out (bash)",
+])
+@pytest.mark.parametrize("agent_cmd", ["", " \t\r\n"])
+def test_blank_agent_command_refuses_dispatch(tmp_path: Path, template: str, agent_cmd: str):
+    # Backlog requires a green starting verifier before it can dispatch.
+    verify = "exit 0\n" if template.startswith("Task-Ledger") else "exit 1\n"
+    _workspace(tmp_path, git=False, verify=verify)
+    for name in ("draft", "critic-rubric", "revise"):
+        (tmp_path / "prompts" / f"{name}.md").write_text(name + "\n", encoding="utf-8")
+    (tmp_path / "prompts/wave").mkdir()
+    (tmp_path / "prompts/wave/worker.md").write_text("worker\n", encoding="utf-8")
+    (tmp_path / "TASKS.md").write_text("first\n", encoding="utf-8")
+    guard_bin = tmp_path / "bin"
+    _executable(guard_bin / "claude", COUNT + "echo unreviewed-default\nexit 7\n")
+    result = _run(
+        tmp_path, _template(template), COUNT + "echo configured-worker\n",
+        AGENT_CMD=agent_cmd, PATH=f"{guard_bin}{os.pathsep}{os.environ['PATH']}",
+        VERIFY="./checks/verify.sh", MAX_ITER="1", MAX_ROUNDS="1", MAX_WAVES="1", MAX_JOBS="1",
+    )
+    assert result.returncode == 4, result.stdout + result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("template", [
+    "Verify-Gated Fix Loop (bash)",
+    "Task-Ledger Backlog Loop (bash, ralph-style)",
+    "Multi-Wave Fan-out (bash)",
+])
+def test_blank_agent_command_refuses_zero_call_acceptance(tmp_path: Path, template: str):
+    _workspace(tmp_path, git=False, verify="exit 0\n")
+    (tmp_path / "TASKS.md").write_text("", encoding="utf-8")
+    result = _run(
+        tmp_path, _template(template), COUNT + "echo unexpected-worker\n",
+        AGENT_CMD="", VERIFY="./checks/verify.sh",
+    )
+    assert result.returncode == 4, result.stdout + result.stderr
+    assert not (tmp_path / "state/calls").exists()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+
 @pytest.mark.parametrize("action", [
     'printf "stage%03d\\n" "$n" > work.txt\n',
     'printf "stage%03d\\n" "$n" > new.txt\n',

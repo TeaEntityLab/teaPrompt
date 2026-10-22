@@ -7265,3 +7265,75 @@ line and its immediate neighbors; section-level refresh dates do not satisfy it.
 These warnings are reported rather than suppressed or presented as a clean lint
 result. No test, validator, oracle or skill was changed to obtain this result.
 The temporary interpreter launcher was removed after verification.
+
+## Known skill defect repairs (2026-10-22)
+
+### Goal, authority and changes
+
+The maintainer authorized fixing the two confirmed defects from the 19-skill
+review and committing the repair. Scope is existing contracts and developer-only
+consumers, not a new pack, runtime, host installation, permission grant or campaign.
+
+- SR-1: replaced the Cursor read-only example with a version-bound `BLOCKED`
+  outcome. The headless contract now requires verified no-tool mode evidence
+  before dispatch and does not demand a proposal run for blocked pairs.
+- SR-2: all four loop templates use the existing generator's unset-only
+  `AGENT_CMD` default and blank-command guard. Empty and whitespace commands
+  exit 4 before dispatch or zero-call acceptance; unset and configured commands
+  retain their intended behavior.
+- Updated the two contracts, companion examples, the historical TASK-004
+  permission qualification and generated navigation. Added behavioral cases
+  to `plans/tests/test_flow_loop_consumers.py`; no source-word assertions,
+  new runtime surface or acceptance-oracle changes.
+
+### Acceptance and observed evidence
+
+| Requirement | Exercised evidence | Disposition |
+| --- | --- | --- |
+| SR-1: do not label force-enabled Cursor invocation read-only | Actual `cursor-agent --version` / `--help`, version `2026.10.19-6bbf2c4`: force/yolo, trust and print-tool semantics; no verified no-tool mode | Current example blocked; zero provider calls |
+| SR-2: reject blank commands without fallback | Four extracted entrypoints under `/bin/bash` 3.2.57; empty and whitespace each exit 4 without a dispatch or work mutation | Verified offline |
+| Preserve valid command selection and completion | Same four entrypoints with unset default and explicit reviewed-worker command: expected worker selected, work changed, backlog retired or final output verified as applicable | Verified offline |
+| Preserve zero-call configuration holds | Three regression cases for already-verified fix, empty backlog and already-converged wave | Included in the final repository gate |
+
+The direct smoke completed 16 scenarios plus four `bash -n` checks, all in
+temporary credential-free workspaces with offline executables shadowing Claude.
+Its source-bound receipt and replayable driver are session-local
+`known-skill-repair-smoke-2026-10-22.json`; owned scratch was removed.
+The pre-repair regression run failed all 11 new cases. An initial post-repair
+focused run passed 175 loop/generator consumer tests. The direct smoke then
+exposed a harness mistake: backlog requires a green starting verifier, unlike a
+fix loop. The smoke and backlog regression setup were corrected without changing
+the product, and the corrected direct smoke passed. Final repository gate results
+are reported with the commit delivery, not inferred from the earlier run.
+
+### Boundaries, twin sweep and remaining work
+
+TWINS: searched `AGENT_CMD.*:-claude|cursor-agent -f|-f trusts|trusts the directory only` - found 0 other sites: none.
+The four known loop entries and the one stale Cursor recipe were repaired.
+Historical receipts and authorization remain unchanged. Installed skill copies
+were not modified; generated scripts must be regenerated from the repaired
+portable templates. No live provider/model, benchmark, deployment, campaign or
+push ran. Cursor no-tool qualification remains an explicit prerequisite for any
+future read-only dispatch; a help check and a `BLOCKED` recipe are not runtime
+containment proof. No further known-defect repair remains in this scope.
+
+### Final repository verification
+
+The first full gate reported 1 failed / 1,753 passed: adding the 11 regression
+cases made the documented 1,733-test floor exceed the existing 20-test drift
+tolerance against 1,754 collected cases. Updated `QUALITY_GATES_SUMMARY.md` to
+the observed count and regenerated the index; the test and its threshold were
+not changed.
+
+The corrected `make all`, using Python 3.14.7, passed **1,754 tests in
+162.56 seconds**. All eight validators reported zero errors; all 19
+skills/examples remained valid, and ROUTE-001/002/003 each reported 100% fixture
+consistency. Five existing skill-length warnings and 164 record-date heuristic
+warnings remain; neither warning category was suppressed.
+
+The final navigation consumer resolved all 225 indexed documents, including
+19 skill entries, and matched their line counts, character counts and complete
+heading structure. Session-local `known-skill-repair-final-navigation-2026-10-22.json`
+retains the source-bound driver and index digest. ShellCheck was unavailable;
+the four extracted Bash templates passed `bash -n` and the 16 direct scenarios
+above. The temporary Python launcher was removed after verification.

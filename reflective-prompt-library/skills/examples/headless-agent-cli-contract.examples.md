@@ -23,14 +23,14 @@ Expected output shape:
 - BLOCKED: n/a
 ```
 
-## Example 2 — argv transport with trust flag (cursor-agent / devin)
+## Example 2 — argv transport and mode qualification (devin / cursor-agent)
 
 Expected output shape:
 
 ```markdown
 ## Inventory probe
 - ~/.local/bin/devin — `swe-2-max`, `[262K context, Free]` (observed 2026-10-06)
-- ~/.local/bin/cursor-agent — 2026.10.01-e373342 (observed 2026-10-06)
+- ~/.local/bin/cursor-agent — 2026.10.19-6bbf2c4 (`--version` and `--help` checked 2026-10-22; no model call)
 
 ## Recipe (devin swe-2-max / read-only-proposal)
 - transport: argv — `devin --respect-workspace-trust false --model swe-2-max -p "<prompt>"` (array-form exec; `-p -` treats the literal dash as the prompt — never use it)
@@ -40,13 +40,14 @@ Expected output shape:
 - strip list: none observed
 - BLOCKED: n/a
 
-## Recipe (cursor-agent / read-only-proposal)
-- transport: argv — `cursor-agent -f -p --output-format text "<prompt>"` (array-form exec; -f/--trust required headlessly)
-- permission flags: -f trusts the directory only; keep default tool permissions (no --yolo)
-- output isolation: `--output-format text` keeps stdout to the proposal
+## BLOCKED (cursor-agent / read-only-proposal)
+- transport: argv; no invocation emitted while this mode is blocked
+- permission evidence: this version's help defines `-f` / `--force` as "Force allow commands unless explicitly denied"; `--yolo` is its alias. `--trust` only skips the workspace-trust prompt. `--print` still has tools, including write and shell. `--mode plan/ask` advertises read-only behavior, not a no-tool configuration; none of this qualifies the required no-tool boundary.
+- output isolation: historical `--output-format text`; capture stdout/stderr separately if a future qualified run is authorized
 - prompt-length cap: UNKNOWN — not probed
-- side-channels: stderr `claude-mem …` hook lines may precede the proposal — strip; they are side-path noise, not model output
-- malformed spellings: none observed
+- side-channels: historical stderr `claude-mem …` hook lines are side-path noise, not model output
+- malformed spellings: `-f` is a valid force flag, not an alias for workspace trust
+- BLOCKED: no verified no-tool configuration for this pinned version. Requalify the requested mode before dispatch; do not substitute `--trust`, merely remove `-f`, or silently switch to tool-using mode.
 ```
 
 ## Example 3 — provider policy denial = BLOCKED, not failure (agy)

@@ -8,13 +8,14 @@ Portable sibling to `SKILL.md` in this directory; this file carries the moved lo
 #!/usr/bin/env bash
 # generated-by: flow-loop-harness / fix / 2026-10-01 / dry-run-required
 set -euo pipefail
-AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; task-root cwd; protect checks/; unset-only default
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 VERIFY="${VERIFY:-./checks/verify.sh}"   # truth layer: exit 0 = done
 MAX_ITER="${MAX_ITER-8}"
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
 case "$MAX_ITER" in ""|0|0*|*[!0-9]*) log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4 ;; esac
 MAX_ITER_LEN="${#MAX_ITER}"
 if [ "$MAX_ITER_LEN" -gt 10 ] || { [ "$MAX_ITER_LEN" -eq 10 ] && [ "$MAX_ITER" \> 2147483647 ]; }; then log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4; fi
@@ -98,11 +99,12 @@ Deviations: advisory model ACCEPT, no ledger or progress detector; round artifac
 #!/usr/bin/env bash
 # generated-by: flow-loop-harness / writer-critic / 2026-10-01 / dry-run-required
 set -euo pipefail
-AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/ + rubric
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; task-root cwd; protect checks/ + rubric; unset-only default
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 MAX_ROUNDS="${MAX_ROUNDS-4}"
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
 case "$MAX_ROUNDS" in ""|0|0*|*[!0-9]*) log "max_rounds configuration gate=4: $MAX_ROUNDS"; echo "max_rounds configuration gate=4: $MAX_ROUNDS" >&2; exit 4 ;; esac
 MAX_ROUNDS_LEN="${#MAX_ROUNDS}"
 if [ "$MAX_ROUNDS_LEN" -gt 10 ] || { [ "$MAX_ROUNDS_LEN" -eq 10 ] && [ "$MAX_ROUNDS" \> 2147483647 ]; }; then log "max_rounds configuration gate=4: $MAX_ROUNDS"; echo "max_rounds configuration gate=4: $MAX_ROUNDS" >&2; exit 4; fi
@@ -182,13 +184,14 @@ Fail-fast exit 3 on verify failure or unchanged workspace: a green verifier does
 #!/usr/bin/env bash
 # generated-by: flow-loop-harness / backlog / 2026-10-01 / dry-run-required
 set -euo pipefail
-AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed flags; task-root cwd; protect checks/ + TASKS.canon
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed flags; task-root cwd; protect checks/ + TASKS.canon; unset-only default
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 TASKS_SRC="${TASKS:-TASKS.md}"           # human-owned backlog
 VERIFY="${VERIFY:-./checks/verify.sh}"
 MAX_ITER="${MAX_ITER-20}"               # justified: backlogs often exceed ten items
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
 case "$MAX_ITER" in ""|0|0*|*[!0-9]*) log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4 ;; esac
 MAX_ITER_LEN="${#MAX_ITER}"
 if [ "$MAX_ITER_LEN" -gt 10 ] || { [ "$MAX_ITER_LEN" -eq 10 ] && [ "$MAX_ITER" \> 2147483647 ]; }; then log "max_iter configuration gate=4: $MAX_ITER"; echo "max_iter configuration gate=4: $MAX_ITER" >&2; exit 4; fi
@@ -276,7 +279,7 @@ For repeated breadth, compose parallel-inside-loop first; use this only when tha
 #!/usr/bin/env bash
 # generated-by: flow-loop-harness / multi-wave / 2026-10-01 / dry-run-required
 set -euo pipefail
-AGENT_CMD="${AGENT_CMD:-claude -p}" # reviewed host flags; task-root cwd; protect checks/
+AGENT_CMD="${AGENT_CMD-claude -p}" # reviewed host flags; task-root cwd; protect checks/; unset-only default
 PREFLIGHT="${PREFLIGHT:-}" # one executable pathname, not shell text; empty = attended example, never met
 VERIFY="${VERIFY:-./checks/converged.sh}"  # truth layer: exit 0 = converged
 MAX_WAVES="${MAX_WAVES-4}"                 # cap: distinct exit, not a failure
@@ -284,6 +287,7 @@ MAX_JOBS="${MAX_JOBS-4}"                   # per-wave concurrency budget
 STATE="${STATE:-./state}"; mkdir -p "$STATE"
 LEDGER="$STATE/ledger.md"; touch "$LEDGER"
 log() { printf '%s\n' "$*" >> "$STATE/flow.log"; }
+case "${AGENT_CMD//[[:space:]]/}" in "") log "agent_cmd configuration gate=4"; echo "agent_cmd configuration gate=4: empty AGENT_CMD" >&2; exit 4 ;; esac
 case "$MAX_WAVES" in ""|0|0*|*[!0-9]*) log "max_waves configuration gate=4: $MAX_WAVES"; echo "max_waves configuration gate=4: $MAX_WAVES" >&2; exit 4 ;; esac
 MAX_WAVES_LEN="${#MAX_WAVES}"
 if [ "$MAX_WAVES_LEN" -gt 10 ] || { [ "$MAX_WAVES_LEN" -eq 10 ] && [ "$MAX_WAVES" \> 2147483647 ]; }; then log "max_waves configuration gate=4: $MAX_WAVES"; echo "max_waves configuration gate=4: $MAX_WAVES" >&2; exit 4; fi

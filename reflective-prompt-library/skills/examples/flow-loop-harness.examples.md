@@ -2,6 +2,8 @@
 
 Illustrative output shapes, not new execution evidence. Dated rig results below are historical, not verification of the 2026-10-01 repairs. Every generated loop carries the shared selected-preflight gate: `PREFLIGHT` names one executable pathname (never shell text); empty preserves the attended example below and claims no runtime enforcement, and a workflow requiring observed host preconditions names its gate in the run note. When set, the gate is checked before each agent dispatch and after that dispatch before acceptance/publication/retirement — including the zero-call already-done path — with per-stage capture under `$STATE/preflight-<stage>.out`; failure exits 4 and is never a tolerable branch failure under partial multi-wave policy. Gate output is point-in-time evidence, never enforcement proof; no cancellation manager is added (driver SIGTERM can leave an in-flight child alive; examine the process group).
 
+Command configuration applies to all four examples: an unset `AGENT_CMD` keeps the example default; an explicitly empty or all-whitespace value is a configuration error (exit 4, zero dispatches), even when the verifier already passes or the backlog is empty. Supply reviewed host flags explicitly; blank never means approval to select a different command.
+
 ## Example 1
 
 Input:

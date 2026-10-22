@@ -76,6 +76,17 @@ Post-acceptance (2026-10-06): the user instructed "continue runtime skills" on t
 - TASK-004 inventory probe (zero-cost): installed — claude 2.1.290, codex-cli 0.160.1, gemini 0.43.0, cursor-agent 2026.10.01, devin, agy, ollama (`qwen2.5-coder:1.5b` cached), cx 0.7.4.
 - TASK-004 executed (user granted ollama-local + provider quota): four receipts under `evidence/task004/` — `ollama qwen2.5-coder:1.5b` → correct minimal fix (`return a + b`, 74 tok in / 17 out, 1.68 s; run unsandboxed — declared exception since the profile denies the loopback egress the daemon needs); `devin swe-2-max` (Free tier per `devin models list`) → correct fix; `cursor-agent` → correct fix (stderr `claude-mem` allowance line is a side-path hook, not the proposal); `agy gemini-3.8-flash` → environment blocker (headless auto-denied a tool "command" permission; no proposal — provider policy, not model failure). Transports: ollama stdin; devin/cursor-agent/agy take the prompt as a CLI argv argument — those are their own prompt flags, distinct from the worker-prompt stdin contract enforced inside `flow.py`. Each: single bounded read-only proposal, no tool/write grants, real usage/result recorded.
 
+**Permission qualification correction (2026-10-22):** the historical Cursor output
+above proves proposal content, not disabled tools. The current zero-cost
+`cursor-agent` inventory (`2026.10.19-6bbf2c4`, checked 2026-10-22) identifies
+`-f` as `--force`, with `--yolo` its alias; `--trust` is a separate workspace
+prompt flag. Print mode has write/shell tools, and plan/ask modes advertise
+read-only behavior without establishing this pack's stricter no-tool boundary.
+The [current example](../skills/examples/headless-agent-cli-contract.examples.md)
+therefore blocks `read-only-proposal` until that mode is qualified. Original
+TASK-004/005 receipts, scores, grants and historical versions are unchanged;
+this correction grants no provider dispatch or permission widening.
+
 ## TASK-005 pilot — user-granted 2026-10-06, executed same day
 
 Fixtures (self-contained synthetic, independent of skill content): A-code (broken `add`, arithmetic oracle), B-content (report missing required sections, section+substance oracle), C-hold (stale binding → preflight hold, zero dispatch). Alternated arm order (A: control,treatment; B: treatment,control); fresh contexts; blinded deterministic scorer = oracle scripts run on extracted final candidates.
