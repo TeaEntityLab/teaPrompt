@@ -228,3 +228,15 @@ This record should be revised if any of the following happens:
 - Do not re-run the full panel unless the artifact boundary changes.
 - If continuing hands-on work, start with the artifact-format question, not model
   serving or benchmark claims.
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: commit `7ad7ccf` (depth-1 clone, 2026-06-25). Latest checked: main `7ad7ccf977c1b5f38bbd07ba33d86fe655c17be8` (2026-06-23T03:32:22+08:00, "Fugu-Ultra: local Conductor + local pool end-to-end (honest DSL finding)") — byte-identical, zero commits since the survey (git ls-remote + shallow clone, 2026-10-22). No releases or tags. Repo metadata at check: 461 stars / 84 forks / 3 open issues+PRs, Apache-2.0, pushed 2026-06-22T19:31:43Z. Proven equal refs: full SHA `7ad7ccf9…` extends the survey's short pin. All source observations (`mini.py` constants, `ultra.py` parser, `serve.py` bind, fetch paths) remain valid at the identical revision.
+
+Artifact-boundary re-check (the survey's central blocker): still broken, unchanged. Both documented `.npy` fetch URLs still return HTTP 404 (re-checked 2026-10-22); the HF dataset `nshkrdotcom/trinity-coordinator-adapted-qwen3-0.6b` is untouched (lastModified 2026-05-22) with the same safetensors-only layout (nine checkpoints + `router_head.safetensors` + `manifest.json`); issue #1 (`model_iter_60.npy not exists`) remains OPEN with no maintainer activity beyond the 2026-06-23 "let me check" reply. No converter has landed. None of the record's falsifiers have fired.
+
+New since the survey: issue #2 (open, 2026-07-02) reports a fresh-install `ImportError` — pinned `transformers==4.57.6` requires `tokenizers<=0.23.0`, which does not exist on PyPI (only 0.23.1) — with no maintainer response. This adds a dependency-rot blocker on top of the artifact blocker and reinforces the reference-only decision.
+
+Effect on prior findings: the reference-only decision, the defer-vendor/reject-runtime dispositions, and the full Required Risk Block stand unchanged; append issue #2's dependency-rot note to the block's "stale imports" line when next citing. No skill or runtime change warranted.
+
+Inspected immutable links: [HEAD commit](https://github.com/trotsky1997/OpenFugu/commit/7ad7ccf977c1b5f38bbd07ba33d86fe655c17be8), [issue #1](https://github.com/trotsky1997/OpenFugu/issues/1), [issue #2](https://github.com/trotsky1997/OpenFugu/issues/2), [HF dataset](https://huggingface.co/datasets/nshkrdotcom/trinity-coordinator-adapted-qwen3-0.6b) (all checked 2026-10-22). Untested limits: no clone executed beyond metadata; 404s via HEAD requests; issue contents read as reports.

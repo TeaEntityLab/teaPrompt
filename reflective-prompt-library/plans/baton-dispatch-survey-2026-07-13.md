@@ -309,3 +309,18 @@ not re-opened:
 
 Re-evaluation must update BA1–BA7 rather than creating a disconnected decision
 record. Guard: `plans/tests/test_baton_survey_record.py`.
+
+## Latest-version refresh — 2026-10-22
+
+Scope: latest default-branch and release/tag identities for `cablate/baton`. Source/ref inspection only; no builds, tests, smokes, installs, commits, or adoption changes. The 2026-07-13 no-change decision and BA1–BA7 dispositions stand; this section is an update to those rows' evidence, not a disconnected decision record.
+
+| Identity | Observation |
+| --- | --- |
+| Prior baseline in this record | `baton-dispatch` v0.1.1 → tag object `2abd554ba877f3e8f3264021cf70c5323f8bc28a` → commit `77f12e600406065a6e62a22a66347355e278a9d7` (2026-07-13), MIT |
+| Latest checked `main` | `0ab4d2ec5c69820001eeac2a12fab2c87fd3e943` (2026-07-17, "Prevent delegated scope expansion") via `git ls-remote` |
+| Latest release/tag | Still **v0.1.1** — no newer tag exists (`v0.1.0`, `v0.1.1` only; checked 2026-10-22). So: latest tag v0.1.1; latest code `main` one commit ahead. License MIT, unchanged |
+| Delta since v0.1.1 | Exactly **one commit, one file** (`SKILL.md`, +12/−0): a new `## Preserve the approved release scope` section plus one stop-condition bullet |
+
+Actual change (full diff read): delegation "does not authorize scope expansion" — the owner-approved release slice is a hard dispatch boundary, worker briefs must state in-scope outcomes and excluded adjacent capabilities, workers may report (not implement) adjacent opportunities, adding a new domain/table/API/service/deployment outside the slice requires a pause and a new decision, control returns to the main agent when the actual surface materially exceeds the estimate, and slice completion is a checkpoint rather than auto-dispatch of the next phase. The stop conditions gain "work crosses the approved release boundary or materially exceeds its scope estimate".
+
+Effect on prior findings: this is a wording-level scope brake that rhymes with this record's Required Wording Changes #8 (direct-work output) and the dispatch-brake center of gravity, but it is prompt prose, not enforcement — the record's core verdict (advisory instruction text; host must enforce ownership/isolation/cancellation/caps) is unchanged. Falsifier #3 (concrete fixture, per-trial schema, active control, paired results) still has no upstream evidence; falsifier #5 (repaired topology/workspace/staleness/failure/data boundaries) is not met by this change. No BA row moves. Inspected immutable links: [latest commit](https://github.com/cablate/baton/commit/0ab4d2ec5c69820001eeac2a12fab2c87fd3e943), [SKILL.md @ latest](https://github.com/cablate/baton/blob/0ab4d2ec5c69820001eeac2a12fab2c87fd3e943/SKILL.md), [v0.1.1 release](https://github.com/cablate/baton/releases/tag/v0.1.1) (checked 2026-10-22; GitHub API releases endpoint returned 403, tag refs via `git ls-remote` used instead). Untested: all runtime behavior; benchmark status still `not_run` with no new materials observed.

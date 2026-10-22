@@ -7208,3 +7208,60 @@ navigation and intentionally unchanged predecessor artifacts. Live transport
 and human scoring are outside this explicitly offline scope, not skipped
 offline acceptance checks.
 
+## Known-reference project version refresh (2026-10-22)
+
+### Goal, scope and completed changes
+
+Refreshed the known primary reference projects and explicit project comparisons
+from existing surveys, plus recoverable prior-chat references. Fourteen bounded
+research/edit slices and a separate read-only inventory were integrated into
+existing records; no new repository survey file was created.
+The [coverage catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md#known-reference-project-refresh--2026-10-22)
+maps each group to its owning current-source section. The Decision Index and
+master roadmap index point to that catalogue without changing adoption statuses,
+candidate gates or schedules. Source history, prior failures and old probe
+results remain dated rather than being overwritten by current source findings.
+
+The coverage receipt lists **67 existing Markdown documents**, including two
+root surveys and the Decision Index; this report is an additional existing
+delivery record. Branch HEAD, release/tag, package/registry and living-document
+identities remain distinct. Unpinned baselines yield current-only observations,
+not invented exact deltas. AutoBE/Simlab access failures and private industrial
+deployment versions remain explicit unknowns; alternate primary routes were
+attempted. Newly discovered adjacent projects are named but not recursively
+counted as refreshed prior projects.
+
+### Verification evidence and limits
+
+The actual generated-index/navigation consumer passed for all **67 covered
+documents**: 64 indexed plan records matched their complete heading structures,
+line counts and character counts; two root surveys and `PROJECT_KNOWLEDGE.md`
+were checked directly because the generator intentionally excludes library-root
+and repository-root Markdown. All **58 distinct linked catalogue targets**
+resolved. Replayable driver, source/index digests and observation are retained in
+session-local `reference-refresh-navigation-2026-10-22.json`; the coverage list
+is `reference-refresh-coverage-2026-10-22.json`.
+
+The first navigation driver incorrectly expected `PROJECT_KNOWLEDGE.md` in the
+subdirectory-only index. That harness failure is preserved with the corrected
+driver; no generator or document contract was weakened. Initial `make all`
+stopped before tests because the default Python 3.15 lacked pytest. The installed
+Python 3.14.7 / pytest 9.0.3 environment was located without installing packages
+or changing user configuration.
+
+No latest-upstream program, installer, hook, model, benchmark, hosted deployment
+or campaign was run. Repository verification does not establish upstream runtime
+safety, comparative quality, hidden-service changes or adoption readiness.
+Skills, runtime code, private experiment artifacts, campaign gates, commits and
+pushes are unchanged by this source/documentation refresh.
+
+Final repository verification used the existing Python 3.14.7 through a
+session-local `python3` launcher, with no permanent configuration change:
+`make all` passed **1,743 tests in 69.01 seconds**, all eight validators reported
+zero errors, all 19 skill/example contracts remained valid, and ROUTE-001/002/003
+each reported 100% fixture consistency. Five skill-length warnings and **164
+record-date heuristic warnings** remain. The date heuristic considers only a URL
+line and its immediate neighbors; section-level refresh dates do not satisfy it.
+These warnings are reported rather than suppressed or presented as a clean lint
+result. No test, validator, oracle or skill was changed to obtain this result.
+The temporary interpreter launcher was removed after verification.

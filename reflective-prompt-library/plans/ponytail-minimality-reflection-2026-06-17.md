@@ -2,6 +2,8 @@
 
 > **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
 
+> **Refresh 2026-10-22:** upstream is now Ponytail 5 (v5.3.2); current state appended below. No `reflective-minimality` change. Historical status unchanged.
+
 
 Date: 2026-06-17
 Skill route: `reflective-dispatch` -> `reflective-research` + `reflective-review` + `reflective-implement`
@@ -101,3 +103,13 @@ Consider a script or hook only if at least five real tasks show repeated need fo
 - Enforcing a minimality review before implementation on high-bloat tasks.
 
 Until then, keep it as a skill-level gate.
+
+## Latest-version refresh — 2026-10-22
+
+(The 2026-06-17 pass was unpinned, so this is current-state evidence, not an exact delta.)
+
+- Upstream: `DietrichGebert/ponytail`, MIT.
+- Latest checked: `main` HEAD `09c434ab73ca43761c5d8b0c5d341926c2fba710` (2026-10-18, bench fix #1116); latest release `v5.3.2` (2026-10-16). HEAD is two days past the release tag.
+- Current shape (source read at HEAD, 214 tracked files): Ponytail 5 rebuilt the rules/review/audit. Skills are now `ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-help`, plus new `ponytail-gain` (renders a measured-savings scoreboard); `AGENTS.md` is rewritten and ~half as long, ending every reply with skipped/unchecked items plus risks; v5.3 adds a Claude Code cost/token/reuse/test "band" above the prompt with a local board; deliberate shortcuts are marked with a neutral `shortcut:` comment while `/ponytail-debt` still finds legacy `ponytail:` markers (v5.1.0). Review is now correctness→safety→load→tested→fast→lean, reading connected code beyond the diff; v5.1.1 fixed a codebase-map prompt-injection/symlink hang. Benchmark claims are now agentic (39 tasks × 5 runs, Opus 5.5: −53% code, −41% time, −26% cost, −45% tokens, 98% vs 68% risky-logic test coverage) — author-reported, not reproduced here.
+- Effect on prior findings: the Minimality Gate decision stands; the adopted `reflective-minimality` concepts (existence challenge, deletion ladder, safety floor, debt markers, complexity review) remain aligned with upstream's direction. Two observations for the record: (1) upstream's own marker rename (`ponytail:` → `shortcut:`) confirms brand-neutral marker wording was the right call for our `ponytail:`-shaped convention — no action, ours is documented as a convention not a dependency; (2) the promotion-gate items (debt-ledger scanning, dependency/abstraction diff detection, pre-implementation minimality review) map to upstream's still-runtime mechanisms (hooks, band, board) — still correctly rejected as runtime territory. No adoption change.
+- Inspected: `git ls-remote` HEAD + tags, HEAD tree + `README.md` + `AGENTS.md` + `ponytail-review`/`ponytail-gain` skill heads + `docs/`/`benchmarks/` listings, `https://github.com/DietrichGebert/ponytail/releases` feed (v4.11.0–v5.3.2 read). Release-note figures are author reports; no install or runtime verification.

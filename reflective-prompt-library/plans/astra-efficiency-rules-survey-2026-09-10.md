@@ -1,6 +1,7 @@
 # Context-Efficiency Instruction Profile (`sh58702e/astra-efficiency-rules`) — Survey and Panel Record (2026-09-10)
 
 > **Status: decided, guarded, and verified — panel record-only, then one user-directed adoption (A-7a). Eight read-only lenses (8/8 delivered over hub; 2 `AGREE`, 6 `AGREE WITH CHANGES`, 0 `DISAGREE`) surveyed a three-file, single-commit instruction profile pinned at `5576ceb931c91cc14c19dd4f6a6358996e793f20` (2026-09-08) and recommended no installed change: every candidate is already installed, forbidden here (fixed numeric caps), host-owned by construction, or shares the single occurrence behind the already-deferred I-1 rule. After the panel, A-7a (external-change verification invalidation) was adopted on `reflective-implement` by user direction (commit `20a80a4`); A-5 stays deferred beside I-1. Two reserved wordings and their triggers are recorded; the frame test went 8/8 for the coordinator's frame while correcting two of the coordinator's own claims.** User instruction: "Survey and socratic critical thinking in multi roles" plus the repository URL.
+> **Refresh pointer (2026-10-22):** latest-version check appended at the end of this record. Upstream HEAD is byte-identical to the surveyed pin — no changes; panel dispositions and the A-7a adoption stand.
 
 ## Research Question
 
@@ -126,3 +127,10 @@ This record is wrong or must be re-litigated if: (1) a TeaPrompt record document
 | Guard (survey tokens and cap literals absent from skills, install guide, GLOSSARY, `04-agent/`; ledger dispositions; reserved wordings record-only; indexes) | `verified` | `plans/tests/test_astra_efficiency_rules_survey_record.py` |
 | Indexes | `verified` | `PROJECT_KNOWLEDGE.md` Decision Index; case-study Case Comparison row and State Ledger row |
 | Packet deleted; repository verification | `verified` | `make all` after the changes |
+
+## Latest-version refresh — 2026-10-22
+
+- **Upstream `sh58702e/astra-efficiency-rules`:** prior pin `5576ceb931c91cc14c19dd4f6a6358996e793f20` (2026-09-08, single commit) → `git ls-remote HEAD` returns the **identical SHA** today. Proven equal refs: zero new commits, no tags/releases observed. The three-file, v1.0.0, single-unsigned-commit characterization carries forward unchanged.
+- **Effect on prior findings:** none — every concept-map row, ledger disposition (A-1/A-2/A-3/A-6/A-7b rejected, A-5 deferred beside I-1, A-7a adopted by user direction, A-8 record-only), reserved wording, and guard assertion remains current. A-5's trigger (an observed read-side occurrence) did not fire in this refresh's scope.
+- **Inspected:** `git ls-remote https://github.com/sh58702e/astra-efficiency-rules.git HEAD` only (sufficient given ref equality; no file re-fetch needed).
+- **Unknowns:** none new; standing unknowns from the original record (author identity, product-name denotation, real-world efficacy) are untouched.

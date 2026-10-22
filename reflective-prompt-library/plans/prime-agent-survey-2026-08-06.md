@@ -282,3 +282,77 @@ runtime surface. Deterministic guard for this record:
   drift failure the adoption ledger exists to catch.
 
 Guard: `plans/tests/test_prime_agent_survey_record.py`.
+
+## Latest-version refresh — 2026-10-22
+
+- Prior baseline: `v0.7.0` → `c22549a37b73cc603c6f0d202517cb0ca856c7d3`
+  (2026-08-05). Status: changed — fundamentally (language port).
+- Latest checked: default branch `main` HEAD
+  `8aac8692456c00c01d4e53e60e6d3347a3506559` (2026-10-21, "release:
+  v0.10.1", #3717). Release split: stable `v0.10.1` == HEAD; `v0.10.0`
+  (`763094e1`, 2026-10-09); last TypeScript release `v0.9.8` (2026-09-29);
+  prerelease family latest `v0.10.1-beta.52` (nightly tag-only cut); `beta`
+  branch is stale (`e2fb7bfa`, 2026-09-17). Workspace version `0.10.1`.
+  License still MIT, now "Copyright (c) 2025-2026 Prime Intellect Ltd."
+  with the Zechner attribution kept as a derivative notice. Delta: 695
+  commits, 2,696 files.
+- Actual meaningful changes:
+  - **TypeScript → Rust port** ("Port Prime Agent to Rust (#2524)",
+    `39bc99a9`, 2026-09-29; ~668k insertions / ~416k deletions): `packages/`
+    deleted entirely; Cargo workspace (`pa-core`, `pa-daemon`, `pa-tui`,
+    `pa-cli`, `pa-ai`, `pa-agent`, `pa-models`, `pa-types`,
+    `pa-telemetry`, `pa-perf`, vendored `crossterm`). `install.sh` →
+    `install-rust.sh` + `install.ps1`, served from
+    `app.primeintellect.ai`; Homebrew packaging added. Root `CHANGELOG.md`
+    is new (TS history linked at `v0.9.8`). Every TS-side source finding
+    below must be re-read against the Rust tree — old `.ts` paths no
+    longer exist.
+  - The Python kernel shim (`prime-agent-runtime`) survives and grows ~30k
+    lines: `factory.py` (MACHINE.md machine library:
+    builder/pr-manager/review-sweep), `bash.py`, `repl.py`, `mcp.py`,
+    `rlm.factory.run`, `rlm.rename`, `prime-agent factory` CLI.
+  - PA-5 blocker 1 (extension auto-load RCE): the audited
+    `extensions/loader.ts` `jiti.import` path is gone with the TS tree.
+    The Rust `skills/loader.rs` loads `SKILL.md` + `pyproject.toml` skills
+    from project-local `cwd` and other scopes; whether project-local
+    Python skills install/execute without confirmation at HEAD was **not**
+    traced in this refresh — the RCE shape changed but a fix is **not**
+    claimed. README trust warning is now explicit ("use trusted
+    repositories, instructions, and skills only").
+  - PA-5 blocker 2 (harness wipe): half-fixed at source tier.
+    `harness.py save()` now does temp-file + `os.replace` with fsync, mode
+    preservation, and lock-ownership checks — the torn-write vector is
+    closed. But the corrupt-file fallback persists on **both** sides:
+    `harness.py:549-551` still treats corrupt state as empty ("the next
+    save() rewrites it cleanly") and Rust `refinement/mod.rs` degrades
+    corrupt/unreadable files to `empty_harness_state()`. A corrupt
+    `harness_state.json` can still be wiped on next save. PA-5 stays
+    blocked.
+  - Required wording change #6 (Python tests in CI) is **done**: `ci.yml`
+    gains a `runtime` job (`uv run --python 3.11 python -m unittest
+    discover -s test`) documented as the runtime's only CI gate.
+  - Windows: still openly partial — CI comments record that the full MSVC
+    battery is red (named-pipe ACP attach deadlock) and `windows-latest`
+    promotion is pending product fixes. `/refine rollback` docs,
+    reasoning-JSON fragility, and the "self-improving" tagline were not
+    re-audited.
+  - Notable hardening in 0.10.1 notes: session-header path-traversal fix,
+    spawn-ledger corruption tolerance, CodeQL cleartext-logging cleanup,
+    ACP/daemon parity work, crash-safe persistent `bash()` shells.
+- Effect on prior findings: PA-1/PA-2 stay deferred with triggers unchanged
+  (ledger + auto-refine gate now live in Rust:
+  `refinement/{planner,executor,ranking}`, `harness_digest`,
+  `refinement_gate`); PA-3 concept-only; PA-4 rejected; PA-5 **blocked**
+  (unchanged verdict, updated evidence: atomic writes landed, corrupt
+  fallback remains, extension path needs re-tracing). The 2026-08-06
+  doc-fidelity verdict does not transfer to the rewritten tree. No
+  TeaPrompt artifact change.
+- Inspected (immutable): `main@8aac8692`, `v0.7.0@c22549a3`, `39bc99a9`
+  (port), `v0.9.8`, `v0.10.0` trees; `CHANGELOG.md`, `Cargo.toml`, `ci.yml`
+  runtime job, `harness.py` save/read paths, `refinement/mod.rs` load path,
+  `skills/{loader,discovery}.rs`, README trust section at
+  `https://github.com/PrimeIntellect-ai/prime-agent`.
+- Untested limits: source tier only — no checkout execution, no pytest
+  re-run (so the 62/2 reproduction is historical-only), no TS-build
+  comparison; project-local skill auto-execution, `/refine` outcome
+  quality, and Windows behavior unverified at HEAD.

@@ -8,6 +8,12 @@
 > verifier, dependency, runtime, or project-knowledge rule was created or
 > changed. `06-repo/AGENTS.md` and governed skill contracts remain authoritative;
 > this record is evidence and a decision, not an operating rule.
+> **Latest-version refresh — 2026-10-22:** upstream renamed to
+> `J-Space-Cognition-Suite`, default branch `main` at `b202312…` (SV1,
+> 2026-09-14) with annotated tags `v3.7.4` and `sv1`; the v3.6.1 pin below
+> is preserved as the executed baseline. See
+> `## Latest-version refresh — 2026-10-22`.
+
 
 ## Purpose
 
@@ -366,3 +372,112 @@ runtime, or project-knowledge rule. Deterministic guard for this record:
   update/rollback/uninstall.
 - This ledger is dead text if a trigger fires and no re-evaluation occurs, or if
   a rejected candidate ships without changing its recorded status and guard.
+
+## Latest-version refresh — 2026-10-22
+
+Source-bound status only; no upstream code was executed and no historical
+finding below was rewritten. Dispositions (`study` yes, reproduce
+source/controller only, no adoption, deploy blocked) are unchanged.
+
+- **Prior baseline:** tag/commit `v3.6.1`
+  `feac3df52d702ced67dda217f7a5167e1935d442` (2026-08-19, lightweight
+  unsigned tag, since deleted from the ref listing); Zenodo
+  `10.5281/zenodo.22004675` (v3.6.1, 2026-08-19,
+  `md5:316deab7d66b2a9f10fa7e13607dafec` — record still resolves).
+- **Latest checked:** repository renamed to
+  [`Tiger3807861189/J-Space-Cognition-Suite`](https://github.com/Tiger3807861189/J-Space-Cognition-Suite)
+  (old `…-V3.6` URL 301-redirects); default branch `main`
+  `b2023124a1fa08278e3ee82aefa8ed9faeade995` (2026-09-14, "Release: SV1
+  — persistent controller, host adapter, and four new modules"); annotated
+  (GPG-unsigned) tags `sv1` → `b202312…` (tag object `ce712be…`) and
+  `v3.7.4` → `988d07b8b5e70cea72533699f0c0f620ebfa3bc6` (tag object
+  `ccb9341…`, 2026-09-02). Old pin is an ancestor of `main`; 49 commits
+  ahead (48 to v3.7.4, plus the SV1 release commit). Zenodo concept DOI
+  `10.5281/zenodo.21971181` now resolves to v3.7.4
+  (`10.5281/zenodo.22254189`, 2026-09-02,
+  `md5:fb1d9e515ecd859ecb5e078fd17a66cb`); no SV1 Zenodo archive was
+  found — `CITATION.cff` (now `version: "SV1"`) says to cite the concept
+  DOI and "a fixed release DOI when a matching SV1 archive is published."
+- **Material changes (v3.6.1 → v3.7.4 → SV1; ~4,964 added / 817 removed
+  lines):**
+  - v3.7.x line (Aug–Sep 2026): full-file v3.7.0 re-upload of all modules/
+    references/scripts/tests; benchmark tables realigned to a
+    GLM-5.3-Flash baseline with vendor-official figures, third-party
+    Terminal Bench 2.1 measurements, `*`/`†` labeled estimates, and a
+    GAIA-basis 1.87 speed / 1.41 token-efficiency pair; controller
+    edge-case fixes (exit-code escape, hand-restatement rule, issue #52
+    `--by` echo); CI bumped to `checkout@v5` / `setup-python@v6`.
+  - SV1 (2026-09-14, per release notes: 14 added / 26 revised / 0 deleted
+    files): new persistent `scripts/control.py` (875 lines: file locks
+    via `fcntl`/`msvcrt`, atomic writes, `safe_path` symlink/junction
+    rejection, content-hash evidence, read-only snapshot revalidation);
+    new `scripts/host_bridge.py` adapter; four new modules (`repository`,
+    `orchestration`, `epistemics`, `cyber`); three new references
+    (`controller`, `engineering-evidence`, `host-integration`); five new
+    test files (`test_jspace.py` 18 → 33 tests, `test_control.py` 45
+    tests); `SKILL.md` refactored 272 → 177 lines.
+  - Claim-framing shift: SV1 README drops the score-pair tables entirely;
+    "Research and claim boundaries" + `engineering-evidence.md` state the
+    suite "does not modify model weights, measure neural workspace size,
+    or guarantee activation of different MoE experts," that the cited
+    study "does not establish that a Markdown skill directly reads,
+    writes, or enlarges neural activations," and that "SV1's data and
+    conclusions stand on their own stated measurement basis; nothing is
+    carried forward from an earlier version."
+- **Effect on prior findings (source-read, execution unverified):**
+  - Repaired at source-read level (new code paths): the SV1 `control.py`
+    controller addresses the old `jspace.py` containment and concurrency
+    findings *for its own state* — `safe_path` rejects symlinks/junctions
+    (POSIX + Windows attributes), `locked()` serializes writers with
+    non-blocking file locks + timeout, `atomic()` commits via
+    temp-file + `os.replace`, and task text is quoted inside a data block.
+  - Still present at source-read level (legacy path): `jspace.py` itself
+    shows no symlink/`lstat`/`realpath`/lock guard — `ensure_dir` still
+    `makedirs` the plain `.jspace` path and writes still go through the
+    same read-modify-`os.replace` flow, so the `.jspace`-symlink and
+    concurrent-loss probes remain structurally unaddressed there (the new
+    locking lives in `control.py`, not `jspace.py`); no content
+    encryption/restrictive permissions observed for `.jspace` state;
+    install acquisition still documented as a plain directory copy with
+    no digest-bound installer, update/rollback/uninstall procedure, or
+    signed release attestation (tags are annotated but GPG-unsigned).
+  - Partially addressed: `ship` scanner reworked (fenced-code masking,
+    escape-aware spans, narrower table handling, per-claim `--by`
+    verifier/coverage checks) but remains heuristic/advisory by design;
+    `verify_suite.py` adds frontmatter/local-link/Python-syntax checks but
+    remains a source-shape checker; citation drift fixed directionally
+    (SV1 + concept DOI) but no version DOI exists yet for SV1.
+  - Benchmark status changed in kind: the disputed v3.6 DeepSeek pairs are
+    gone from the README; v3.7.4 carried labeled-estimate GLM tables; SV1
+    carries no score tables and disclaims carried-forward conclusions. No
+    raw/pinned evaluation bundle was found at any inspected revision, so
+    benchmark reproducibility remains unverified and old community-issue
+    contradictions (#6/#10/#26) remain unreconciled testimony.
+  - Unaffected: activation-ontology wording persists in the entry premise
+    ("where your unspoken thoughts live") alongside the new engineering
+    disclaimers; study-only JS-1–JS-4 triggers and JS-5/JS-6 rejections
+    still hold — no neutral-framing ablation or verified local gap
+    observed.
+- **Inspected immutable links:**
+  [`main`/SV1 `b202312`](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/commit/b2023124a1fa08278e3ee82aefa8ed9faeade995),
+  [`v3.7.4` `988d07b`](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/commit/988d07b8b5e70cea72533699f0c0f620ebfa3bc6),
+  [SV1 release notes](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/releases/tag/sv1)
+  and [V3.7 release notes](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/releases/tag/v3.7.4)
+  (author reports),
+  [Zenodo v3.7.4](https://zenodo.org/records/22254189) and
+  [Zenodo v3.6.1](https://zenodo.org/records/22004675) (prior pin, still
+  resolves), [old repo URL](https://github.com/Tiger3807861189/J-Space-Cognition-Suite-V3.6)
+  (301 → renamed repo).
+- **Untested limits:** nothing executed (no `verify_suite.py`, no
+  unittest discovery, no probes re-run). GitHub REST API was
+  rate-limited at check time (HTTP 403); identities were established via
+  `git ls-remote`, clone metadata, rendered release pages, and Zenodo
+  API. New-controller safety properties are "implemented at inspected
+  revision" only; legacy-path gaps are structural source reads, not
+  re-executed probes.
+- **Smoke candidate (not run):** none beyond the standing volatility
+  trigger. To re-verify, pin `b202312…`, run `verify_suite.py` + `python
+  -m unittest discover -s tests -v`, then re-run the symlink/concurrency/
+  scanner/parser probe matrix against *both* `jspace.py` and
+  `control.py` state paths in an isolated single-writer workspace;
+  prerequisite: Python 3.10+ per README.

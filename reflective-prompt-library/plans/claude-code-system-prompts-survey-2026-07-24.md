@@ -11,6 +11,7 @@
 > TeaPrompt skill, route, dependency, runner, or runtime surface was created.
 > `06-repo/AGENTS.md` and governed skill contracts remain authoritative; this
 > record is evidence and a decision trail, not an operating rule.
+> **Refresh pointer (2026-10-22):** latest-version check appended at the end of this record. Pinned decisions/CCSP dispositions unchanged; the snapshot has since grown from v2.1.218 / 603 fragments to v2.1.306 / 997 fragments, official Claude Code is at v2.1.308, and tweakcc is at v4.4.0.
 
 ## Purpose and Research Question
 
@@ -319,3 +320,14 @@ This decision is wrong if any of the following occurs:
   attributed to this survey; that contradicts the decision.
 
 Guard: `plans/tests/test_claude_code_system_prompts_survey_record.py`.
+
+## Latest-version refresh — 2026-10-22
+
+Source/ref inspection only (bare-clone `git log`/`ls-tree`/`diff --stat`, `git ls-remote`, release pages, registry metadata); no binary unpack, no extractor run, no prompt-body study. Pinned 2026-07-24 decisions and the CCSP1–CCSP8 ledger are unchanged; this refresh adds current identities and safe inventory deltas, not new adoptions.
+
+- **Piebald `claude-code-system-prompts`:** prior pin `b9895f5` (2026-07-22, v2.1.218 changelog) → latest `e3a84c5` (2026-10-21, `Update changelog for v2.1.306`). 154 commits between; tags now 319 (prior survey: 244 versions; README now says 320 versions since v2.0.14); CHANGELOG carries 261 version sections, 79 of them no-change markers. Corpus: 603 → **997 Markdown fragments** under `system-prompts/` (+512 added / −121 removed / 235 modified filenames). Family prefixes (by filename): agent 65→103, data 88→176, skill 80→75, system 216→363, tool 154→277. README still labels the snapshot v2.1.306 as of Oct 20, 2026.
+- **Official `anthropics/claude-code`:** prior corroboration v2.1.218 (tag still present) → latest tag **v2.1.308** (`5ed799e`, released Oct 22 with `Bug fixes and reliability improvements` notes; npm `@anthropic-ai/claude-code@2.1.308` tarball confirmed as registry `latest`). Piebald's snapshot (v2.1.306) therefore trails official by two patch versions at check time — the expected lag shape, not a finding.
+- **Piebald `tweakcc`:** prior pin `d0830a7` (2026-07-23) → latest `1aa238e` (2026-10-21, `Prompts for 2.1.306 (#1050)`). 107 commits between; latest tag/release **v4.4.0** (2026-10-10; prior: v4.3.2), also npm `latest`. Non-prompt-subject commits are dominated by per-version patch maintenance (2.1.219→2.1.296 support, code-split native builds, ELF/Bun repacking, ESM bundles) plus two extraction-adjacent fixes (#958 prompt identity across source-format changes, #949 concatenated-description recovery). Material to the old 416/603 blocker: **`tools/promptExtractor.js` is byte-identical between the prior pin and HEAD** (15,469 bytes both), so the extraction-count divergence noted in 2026-07-24 was not re-tested and remains unresolved — no reproduction is claimed either way.
+- **Effect on prior findings:** the volatility warning held exactly as written — versions, counts, and families moved substantially while every decided disposition (CCSP1/CCSP2-narrow/CCSP3 adopted wording, CCSP4 deferred, CCSP5–CCSP8 no-change/rejected) stays valid on its own evidence. The `no-copy` license boundary is unaffected; no prompt text was quoted here.
+- **Inspected:** bare-clone logs/diffs above; https://github.com/Piebald-AI/claude-code-system-prompts/blob/main/CHANGELOG.md (head through v2.1.290); https://github.com/Piebald-AI/tweakcc/releases; https://github.com/anthropics/claude-code/releases/tag/v2.1.308; `git ls-remote` tag listings; npm registry `latest` documents for both packages.
+- **Unknowns:** per-version token totals (not tallied); whether any new fragment would reopen a CCSP trigger (no fragment bodies read); extraction-count reproduction at the new pins (not run by design).

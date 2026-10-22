@@ -1,5 +1,7 @@
 # Knowie / Project-Knowledge Reflection - 2026-06-17
 
+> **Refresh 2026-10-22:** upstream is now v0.7.6; current state appended below. No project-knowledge contract change.
+
 ## Dispatch
 
 Mode: reflective-dispatch routed to an inline reflective-review of an already-formed
@@ -136,3 +138,13 @@ Escalate to a richer directory or a dedicated skill only after: three cross-sess
 decision drifts, three lessons recurring across tasks, the single file becoming hard to
 search, deterministic health checks outgrowing one validator, or a real cross-tool
 sharing need beyond this repo.
+
+## Latest-version refresh — 2026-10-22
+
+(The 2026-06-17 pass was unpinned, so this is current-state evidence, not an exact delta.)
+
+- Upstream: `timcsy/knowie` ("Give your AI a structured project brain").
+- Latest checked: `main` HEAD `25adae72503d687374f223e42706fc9b69654587` (2026-09-20) = tag `v0.7.6` (lightweight tag on HEAD); `package.json` version `0.7.6` matches. 119 tracked files.
+- Current shape (source read at HEAD): six chat skills now — `knowie-init`, `knowie-capture`, `knowie-consolidate`, `knowie-next`, `knowie-judge`, `knowie-migrate` (beta) — installed into cross-tool `.agents/skills/` with per-skill relative symlinks into other dirs (v0.7.6 fixed single-hardcoded-dir blindness); `knowledge/` keeps principles/vision/experience plus concepts/episodes/history/draft tiers; judge's mechanical checks grew (orphans, dead links, conceptual dead refs, stale, backlinks, derivation blast-radius, draft↔vision sync, retirement debt, done:open ratio, pointer-notation hygiene); `/knowie-next` hands off to registered spec tools with a named-carrier fallback; `CHANGELOG.md` is detailed per release.
+- Effect on prior findings: the adopted contract (single `PROJECT_KNOWLEDGE.md` + validator + stale-milestone warning) remains sufficient at our scale; nothing in v0.7.6 reopens the promotion gate (no observed cross-session decision drift attributable to missing tiers). The deferred "undocumented decisions" check stays deferred — still noisy/false-positive-prone by the same reasoning. One correction to the old follow-up note: the stale-milestone mechanism (`knowie-judge` retirement-debt/done:open checks) has since been elaborated upstream, but our non-blocking-warning posture already matches its propose-don't-block boundary. No adoption change.
+- Inspected: `git ls-remote` HEAD + tags, HEAD tree + `README.md` + `package.json` + `CHANGELOG.md` head + `skills/` listing + `knowie-judge/SKILL.md` head. No install or runtime verification.

@@ -2,6 +2,8 @@
 
 > **Status: decided, implemented, guarded, and verified.** Non-authoritative decision record. TeaPrompt remains a natural-language policy library: this survey adds no runtime, context compiler, outbox, sandbox, dependency, directory, pack, or tenth core skill. It adopts nine narrow in-place wording repairs (GA-1–GA-9, several narrowed) and records the rest as study-only, no-change, deferred, or rejected.
 
+Current software-reference status is recorded in the [2026-10-22 refresh](#latest-version-refresh--2026-10-22); the September evidence and adoption decisions below remain historical.
+
 ## Research Question
 
 A user-pasted corpus (4,523 lines, SHA-256 `36e09db964d01e73bf48e22b958da9e4b2e43e6e3406bcb414e39feff7362dbf`; five stacked documents on "governable autonomous delivery": three operating planes, knowledge/work ladders, consequence classes, G0–G6 gates, P1–P12 controls, a context compiler, an evidence ledger, a verifier mesh, a consequence gateway, structural human review, fault injection, and a meta-governance loop) asked: given 2026-09 agent workflow/loop engineering — layered memory (raw → memory → skills), evidence-based Socratic multi-role critique, grill-style spec blind-spot probing for SDD, web search as an escape from closed-system "heat death", programmatic workflows and gates — can fully automatic LLM agent delivery be trusted? Are requirement/intent drift and context rot solved or still open? And: should TeaPrompt update docs and skills?
@@ -164,3 +166,18 @@ This record is wrong and must be re-litigated if: (1) an adopted sentence disapp
 | Deterministic guard | `verified` | `plans/tests/test_governable_autonomy_survey_record.py`: 7 passed |
 | Focused and repository verification | `verified` | full suite and `make all`: 1059 passed |
 | Packet removal and branch re-check | `verified` | packet deleted after synthesis; shared worktree remained attached to `main` |
+
+## Latest-version refresh — 2026-10-22
+
+Scope: the two named software references in F4/F13, not a re-evaluation of
+the original pasted corpus or its adopted GA clauses. Both original rows were
+unpinned; an exact September-to-current code delta cannot be reconstructed.
+
+| Reference | Current identity and evidence, checked 2026-10-22 | Change / limitation | Disposition |
+| --- | --- | --- | --- |
+| `max4c/skills`, F4 `grill-me` | `git ls-remote --symref` resolved `main` to `825b94d5c28b81d5cf1c66ce2f474dc2d3c87048`; no tag refs and the [release feed](https://github.com/max4c/skills/releases) had no entries. The [pinned contract](https://github.com/max4c/skills/blob/825b94d5c28b81d5cf1c66ce2f474dc2d3c87048/skills/grill-me/SKILL.md) was read. | Current-only evidence: five ambiguity dimensions; separate spec/ticket/freeform modes; aggregate thresholds and a disclosed user override; resolved answers written back on subroutine exit. These are prompt procedures and author-selected thresholds, not measured ambiguity or deterministic enforcement. The repository metadata reports a June 6 push, before the old September read, but that does not recover the old bytes. | Preserve F4's methodology reference and all GA dispositions; no installation or skill adoption. |
+| `wrtnlabs/autobe`, F13 | Both the [repository API](https://api.github.com/repos/wrtnlabs/autobe) and [GitHub page](https://github.com/wrtnlabs/autobe) returned HTTP 404; credential-disabled `git ls-remote` could not read the public remote. The publisher URL `https://autobe.dev/docs/` failed DNS resolution. | Current commit/release and changes are **unknown**. Search results still index the old project and package claims, but stale indexed material cannot establish a current release, relocation, or deletion. The original README existence claim remains dated September 3. | Unavailable at refresh, not evidence of project abandonment. Preserve the compilation-loop reference as historical; do not repeat its pass-rate claims as independently verified. |
+
+This was source/ref inspection only: no upstream code, installer, hosted service,
+model, benchmark or campaign was run. Recheck the upstream refs or a verified
+publisher relocation before relying on either reference for implementation.

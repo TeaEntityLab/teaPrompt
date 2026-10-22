@@ -6,6 +6,10 @@
 > surface was adopted. `06-repo/AGENTS.md` and governed skill contracts remain
 > authoritative; this record is evidence and a no-change decision, not an
 > operating rule.
+> **Latest-version refresh — 2026-10-22:** all five public API payloads
+> re-fetched; UTF-8/LF SHA-256 hashes match the 2026-07-13 pins exactly
+> (content unchanged). See `## Latest-version refresh — 2026-10-22`.
+
 
 ## Purpose
 
@@ -431,3 +435,59 @@ Adoption Ledger is not re-opened:
 Until one of those observations exists, the durable outcome is: **study the
 traceability and artifact-separation ideas; reproduce no claimed outcome; adopt
 no TeaPrompt surface; deploy nothing.**
+
+## Latest-version refresh — 2026-10-22
+
+Source-bound status only. No external instruction was installed, executed,
+or redistributed; no historical finding below was rewritten. All
+dispositions (`study` yes, reproduce no effectiveness result, no adoption,
+no deploy) are unchanged.
+
+- **Prior baseline:** five unversioned public share/API payloads pinned
+  2026-07-13 by UTF-8/LF SHA-256 (`6c8af51b…`, `0d035f71…`, `a35e9c1b…`,
+  `cf095604…`, `334608fe…`; 570 / 8,798 / 1,858 / 269 / 11,812 chars).
+- **Latest checked:** all five share pages return HTTP 200 and the public
+  JSON endpoint `GET /api/aiscribe/public?id=<share-id>` returns all five
+  payloads. Recomputed UTF-8/LF SHA-256 over the `content` field matches
+  all five 2026-07-13 hashes exactly — **content unchanged**. Payload
+  metadata still reports author `atticus` / 阿堤克斯 and `visibility:
+  public` on every document; no per-document version, timestamp, revision
+  history, changelog, or document-level license field observed (payload
+  keys: `author`, `content`, `id`, `isOwner`, `layers`, `paper_pref`,
+  `paper_settings`, `title`, `view_count`, `visibility`).
+- **Character-count note:** recomputed lengths are 569 / 8,798 / 1,858 /
+  268 / 11,812 vs recorded 570 / 8,798 / 1,858 / 269 / 11,812. The two
+  1-char differences are a counting convention (trailing newline), not a
+  content change — the SHA-256 of the LF-normalized bytes matches exactly
+  on all five.
+- **Material changes:** none observed in the five reviewed payloads. No
+  new version/changelog/license surface appeared on the share pages or in
+  the API payloads; page HTML carries no document license statement.
+  Platform terms (`/terms`, re-fetched 2026-10-22) still describe the same
+  uploader license-choice model (CC0 / CC BY / CC BY-SA options) without
+  exposing a selected license for these documents. Share-page `og:image`
+  version stamps (`v4-17837…`, i.e. 2026-07-10/11 UTC) predate the survey
+  pin and are render-cache markers, not content versions.
+- **Effect on prior findings:** all load-bearing gaps stand unchanged —
+  no outcome evidence, mutable/undated sources, no document-level
+  license, queue/concurrency/archive/restart semantics still absent from
+  the (unchanged) text. DJ1–DJ8 triggers are unaffected; no falsifiability
+  condition fired.
+- **Inspected links (all read 2026-10-22):**
+  [core overview](https://dilinai.com/ai-scribe/share/09440e8e-b691-407d-af43-5eb378e71065),
+  [detailed article](https://dilinai.com/ai-scribe/share/4c399415-4839-4447-9795-41039b54d073),
+  [compact skill](https://dilinai.com/ai-scribe/share/97554219-6eb2-4a34-b9e7-7be14cf81ab3),
+  [manager overview](https://dilinai.com/ai-scribe/share/d1cadcc8-8f44-42ee-a7dc-3f349a1c31dc),
+  [full scaffold](https://dilinai.com/ai-scribe/share/76af6f05-6ac0-42c3-8a76-359d8bd51e54),
+  [platform terms](https://dilinai.com/terms), and the public JSON
+  endpoint `https://dilinai.com/api/aiscribe/public?id=<share-id>` for
+  each of the five IDs (endpoint path recovered from the share page's
+  Next.js chunk `app/ai-scribe/share/[id]/page-5b3dd0485cbd1528.js`).
+- **Untested limits:** byte-equality is proven for served `content`, but
+  the platform exposes no revision history, so interim edit-and-revert
+  cycles remain unknowable; view counts observed (63 / 38 / 10 / 117 /
+  87) are volatile metadata, not evidence. No author contact or license
+  clarification obtained.
+- **Smoke candidate (not run):** none — byte-identical content needs no
+  re-verification. Next refresh repeats the five `GET
+  /api/aiscribe/public?id=…` fetches and compares SHA-256.

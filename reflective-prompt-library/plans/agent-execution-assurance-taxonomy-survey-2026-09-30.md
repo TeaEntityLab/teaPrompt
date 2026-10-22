@@ -154,3 +154,39 @@ Repository link-validator scope: `validate_links.py` L152–153 removes fragment
 ## Handoff
 
 The original survey's two advisor reminders referred to already completed shared-integration ownership and RRSI scratch cleanup; neither was repeated. This follow-through internalizes that survey and adds discovery pointers only. Schemas, skills, runtime code, and governing contracts remain unchanged. AEAT-4's acceptance-oracle join is held with a named-product trigger and falsifier, not an unfinished authorized implementation or experiment. Original-citation recovery and efficacy/prevalence remain unknown. Amend or retire this record if a cited source pin is corrected, an authorized product join assessment resolves AEAT-4, or an explicit governing-artifact promotion supersedes a disposition; do not silently turn this archive into policy.
+
+## Latest-version refresh — 2026-10-22
+
+> Refresh pointer: pins below are current as of 2026-10-22. Historical findings, the exercised loop/ralph results, and AEAT-1–AEAT-6 dispositions are unchanged. AEAT-4's acceptance-oracle join remains held under its named-product trigger; nothing in this refresh assesses a product join or fires it.
+
+Checked 2026-10-22 via git ref queries and source reads; no execution, no installs, no provider calls.
+
+| Project | Prior baseline (2026-09-30) | Latest checked HEAD | Release / version | Disposition |
+| --- | --- | --- | --- | --- |
+| `snarktank/ralph` (`ralph.sh`) | `6c53cb0` (2026-02-02) | `6c53cb0b831ebe8739c6a003e22af14902d8b0b5` (identical) | No tags | Unchanged (equal refs proven) |
+| `cursor/plugins` (pstack generator/map/principle) | `fae2c6e` (2026-09-29, manifest `0.15.5`) | `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10` (2026-10-21, manifest `0.15.30`) | No tags | Changed (wording-level; taxonomy findings stand) |
+| `michael-denyer/pstack-claude` (port) | `eefcfaf` (2026-09-29) | `903e7385382389806c59d6989b6274e24165082b` (2026-10-21) | Tag `v0.9.101` = HEAD | Changed (port growth; corroboration stands) |
+
+### snarktank/ralph — unchanged
+
+Remote `main` HEAD is byte-identical to the survey pin: `6c53cb0b831ebe8739c6a003e22af14902d8b0b5`. The completion gate still matches model-emitted `<promise>COMPLETE</promise>` at line 99 and exits 1 only on the iteration cap; no verifier-gated stop was added. The recorded finding (Ralph is not necessarily verification-gated) and AEAT-2 stand without re-execution.
+
+### cursor/plugins pstack — `fae2c6e` → `eb4db2b` (219 commits repo-wide)
+
+Load-bearing diffs read in full; the taxonomy-relevant mechanics are refined, not restructured:
+
+- `create-verification-skill/SKILL.md`: Launch readiness now means a usable state from an empty data dir (migrations/seed included; "a database health check can pass while its init scripts are still running"); missing seed preconditions must fail the journey with the reason in `Gotchas` ("never weaken the journey"); stand-in-target runs must list every setup step the real target will not perform. The Launch/Doctor/Drive/Evidence/Cleanup contract, feature-map seeding shape, and one-feature proof requirement are unchanged.
+- `principle-test-behavior-not-implementation/SKILL.md`: rewritten from the "would still pass if every imported function returned `undefined`" check to a contract-decides framing with two imagined edits (catches behavior break, survives internal change), including mock-payload-as-behavior and error-type-vs-message guidance. Same behavioral-testing direction; no new enforcement mechanism.
+- `orchestrate.md` / `shipping.md` / `autopilot-full.md`: Graphite/`gt` removed; topology mutation serialized per stack; landing still requires the contiguous verified run from the root and the operator's grant plus an independent clean verdict. Host-owned spawn/wake/merge direction unchanged (AEAT-3).
+- The 2026-09-22 pilot results and PS-C1/PS2-3 qualifications are historical executions at their own pins and are not re-characterized by this upstream movement.
+- Inspected: [generator @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/create-verification-skill/SKILL.md), [behavior-testing principle @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/principle-test-behavior-not-implementation/SKILL.md), [manifest @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/.cursor-plugin/plugin.json).
+
+### michael-denyer/pstack-claude — `eefcfaf` → `903e738` (122 commits, tag `v0.9.101`)
+
+- Three upstream pstack syncs in range: `v0.15.21` (#262), `v0.15.25` (#272, adds `/in-your-own-words` and `/sharpen`), `v0.15.27` (#291, formal-verification skills). The ported `create-verification-skill/SKILL.md` carries the same readiness/Gotchas/stand-in refinements plus new GitHub Copilot and Muse platform-mapping references. Remaining commits are host-adapter work (Pi transcript/agent support, Claude Code plugin cache/session handling, worktree hold rules, comparison-tool calibration).
+- The port still corroborates skill-text portability across hosts; no independent live-product efficacy evidence is added or claimed. The AEAT-4 held item is unaffected: generator-input wording and port breadth do not establish a per-product REQ/AC→acceptance-oracle→driver→evidence binding.
+- Inspected: [ported generator @ 903e738](https://github.com/michael-denyer/pstack-claude/blob/903e7385382389806c59d6989b6274e24165082b/plugins/pstack/skills/create-verification-skill/SKILL.md).
+
+### Limits
+
+Source/ref inspection only; no shell, template, or plugin execution. Live docs (Temporal, Stripe, Anthropic engineering) cited in the original record were not re-read; they are publication/documentation references, not versioned survey objects in this slice.

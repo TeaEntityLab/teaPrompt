@@ -122,3 +122,88 @@ Verdict: goals stand; no goals-text edit is warranted; this section is the recor
 | Guard written | done | `plans/tests/test_pi_warden_survey_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: `main` at `c9921c3ebc48f62348199eb03119c645d98cdb8b`
+(v0.29.1, four days old), checked 2026-09-20. Latest checked: `main` at
+`117a24f6b592195012adb84c5f64741fdcdd87f0` (2026-10-21); latest tag
+`v1.14.0` (also `v1.13.1` on a prior commit). 150 commits separate the
+pins (422 files, +192884/−2522); the project shipped 1.0.0 on the way
+(upgrading guide `docs/upgrading.md` from 0.74.1). License still MIT;
+`pi-typesafe` now ^0.9.x (Liquid AI + SubQ backends added). Authorship
+widened beyond the single author but remains maintainer-centric (Ryan
+Joshua 112, Ryan Gapac 22, plus ~8 one-to-three-commit contributors).
+This refresh stays at docs/metadata tier — `src/` still not audited, no
+numbers reproduced.
+
+Material changes bearing on prior findings:
+
+- **A second prose-vs-warden comparison has arrived and warrants
+  re-examination under PW-5 — arrival is not contradiction.** The
+  registered A/B thesis run v4 (`eval/reports/2026-10-10-thesis-v4/`, 780
+  paired runs, two models, pre-registered decision rules) reports: model
+  A — success rule supported (+1.67 pts), violation rule inconclusive
+  (rate ratio 1.50, wrong side); model B — success and violation rules
+  supported (ratio 0.50 at threshold, p 0.0436), cost inconclusive on
+  both; pooled violation ratio 0.667 (p 0.12, not significant), pooled
+  success +1.15 pts (bounds include 0), and warden runs used MORE tokens
+  than control (geometric-mean ratio 1.22). The run also could not test
+  the hallucination claim (4 contradicted claims in 780 runs). The
+  original 6/150→0 number remains in the README Receipts as a dated
+  claim. Three distinctions, against PW-5's trigger language as
+  historically written: (a) *arrival* — a second measured comparison
+  now exists where none did (this matches the broader §Goals Rethink
+  phrasing "a second independent measurement lands" in its arrival
+  sense, and is new evidence either way); (b) *contradiction* — not
+  established at the registered level, since model B supports the
+  violation rule while model A is inconclusive and the pooled result is
+  non-significant, so the canonical ledger row's "contradicts the
+  first" bar is not met on this read; (c) *independence* — not
+  established either, since v4 is the same maintainer's own harness and
+  not an independent replication. The historical ledger row and the
+  §Goals Rethink subsection are preserved byte-true above with their
+  past mismatch intact; this refresh only records the new evidence and
+  the three-way distinction. No goals-text edit is warranted by this
+  refresh alone, and no host grant or adoption follows from it.
+- **Measurement discipline deepened** (C2/C3 corroboration strengthened):
+  pre-registered A/B with seeded blocks, resume, infra-error rules,
+  holdout-driven approval round 2 (wrong releases 12→1), blind-label
+  steer calibration, per-project field reports (1,168 sessions, 53,868
+  judged actions, 419 holds), and published negative results
+  (off-task/should-proceed steers trace-only after failing the ship
+  gate; three more negative results in 1.0.0 notes).
+- **Authority hardening directly in the C4/C7 family:** new built-in
+  `warden-config-write` floor rule holds agent writes to pi-warden's own
+  config (redirect/tee/heredoc/`-c`/wrapper/script shapes, full `cp`/`mv`/
+  `sed -i`/`curl -o` destination coverage, `cd`-relative and symlink
+  resolution), configs snapshotted once per session, project files
+  stricter-only, loosening notices with per-project records, case-folded
+  config-path comparison. The "checked-out repo cannot ship itself a
+  hold-free floor" charter line is now substantially more implemented
+  than at the pin — still docs-tier, code not audited.
+- **PW-7 citer notes, updated:** the CONTRIBUTING "no AI attribution
+  lines" rule persists and the latest merges carry no model co-author
+  trailers (the pin-scoped inconsistency is not visible at HEAD).
+  `docs/deterministic-floor-spec.md` still opens "Status: design spec.
+  Not yet implemented" — the spec-vs-shipped mismatch note persists.
+  The `pi-typesafe` dependency and fail-open advisory posture persist.
+- Effect on dispositions: PW-1 (adopted) unchanged — the confidence
+  ratchet sentence is untouched by upstream churn. PW-2/PW-3/PW-4 (no
+  change), PW-5/PW-6/PW-7 (noted) unchanged; v4 is recorded above as
+  evidence warranting re-examination under PW-5's trigger language, with
+  arrival, contradiction, and independence explicitly distinguished.
+
+Inspected immutable links:
+`https://github.com/DevMortimer/pi-warden/commit/117a24f6b592195012adb84c5f64741fdcdd87f0`,
+[thesis-v4 report](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/eval/reports/2026-10-10-thesis-v4/README.md),
+[model-a metrics](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/eval/reports/2026-10-10-thesis-v4/model-a-metrics.json),
+[model-b metrics](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/eval/reports/2026-10-10-thesis-v4/model-b-metrics.json),
+[preregistration](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/eval/preregistration.md),
+[README Receipts](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/README.md) (6/150→0 retained),
+[CHANGELOG](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/CHANGELOG.md) (1.0.0, 1.13.0–1.14.0),
+[CONTRIBUTING](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/CONTRIBUTING.md),
+[floor-spec](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/docs/deterministic-floor-spec.md),
+[package.json](https://github.com/DevMortimer/pi-warden/blob/117a24f6b592195012adb84c5f64741fdcdd87f0/package.json) (`1.14.0`, MIT).
+Untested limits: `src/`/`tests/` unaudited; no eval reproduced; v4 numbers
+are author-reported from committed reports.

@@ -18,6 +18,8 @@ Companion files:
 - [openfugu-reference-plan-2026-06-25.md](openfugu-reference-plan-2026-06-25.md)
   — non-goals, task slices, no-code test plan.
 
+
+> Refresh pointer (2026-10-22): upstream main is byte-identical to this brief's `7ad7ccf` pin (zero commits; artifact boundary still broken; new open issue #2 adds a transformers/tokenizers dependency-rot blocker). Full refresh in [openfugu-research-record-2026-06-25.md](openfugu-research-record-2026-06-25.md) § "Latest-version refresh — 2026-10-22". This brief's mechanism detail stands unchanged.
 ## What OpenFugu Is
 
 An Apache-2.0 Python reimplementation of Sakana AI's Fugu orchestrator family.

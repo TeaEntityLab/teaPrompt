@@ -1,5 +1,7 @@
 # teaBrain Concepts & Experiments Survey — `~/dev/teaBrain` @ `27b4d25` (2026-09-21)
 
+> **Refresh pointer (2026-10-22):** Sibling repo read-only at `2e7de2f` (2026-10-17), 241 commits ahead of the `27b4d25` pin; governance gained a delivery-lifecycle layer and a G0 reference packet, standing governance still `artifact-complete`. Details in `## Latest-version refresh — 2026-10-22` below; the pinned reproduction evidence above is unchanged.
+
 > **Status: decided — record-only; no installed change, no wording adopted.** The
 > object is a sibling research repository (`~/dev/teaBrain`, HEAD
 > `27b4d25a9516075c4fe6753e71c2ab1dc1b5465f`, tree
@@ -307,3 +309,19 @@ against no named failure.
 
 Direction outcome recorded so it is not re-litigated; the reopen triggers stand as
 written.
+
+## Latest-version refresh — 2026-10-22
+
+Read-only metadata/methodology refresh of the sibling repo; no experiment re-runs, no training data, secrets, experiment output, sessions, or histories touched. The 2026-09-21 pinned evidence above is preserved as-is.
+
+- **Prior baseline:** `~/dev/teaBrain` HEAD `27b4d25a9516075c4fe6753e71c2ab1dc1b5465f` (2026-09-21), clean tree; 12/12 pytest + 9 benches reproduced at the pin.
+- **Latest checked:** HEAD `2e7de2f624baa8242d5f5d1c963c58db3a0bca13` (2026-10-17, `Anchor memory summaries to durable event-trace satellites`); **241 commits ahead** of the pin. Working tree showed the HEAD commit only (no dirty-file enumeration retained beyond a clean `status --porcelain` head check). Delta scale: 231 files changed, +79,364/−68 (207 added, 24 modified) — overwhelmingly new plans, benches, tests, and governance packets.
+- **Meaningful changes (methodology/governance tier only):**
+  - **Delivery-lifecycle layer added to standing governance** (new `docs/governance/delivery-lifecycle.md`; +2 lines in `authority-map.md`, +17 in `invariant-map.md`, +37 in `contracts.yaml`): a per-delivery artifact packet (`intent → spec → plan → execution → verification → acceptance → retro` gates, `releases.yaml` human/host-written, auto-release never for intent/acceptance, model self-report releases nothing, `spec_version` staleness marks the packet stale, explicit non-grant status vocabulary). `invariant-map.md` maps each packet artifact to the pack's fifteen invariants and names the unwired host obligation. This is a second downstream extension of `agent-governance-scaffold` vocabulary (cf. TB-1's runtime-learner primitives) — still usage evidence, not promotion evidence.
+  - **G0 reference packet archived** at `docs/governance/archived/g0-llm-facade/` (unsigned, unaccepted; "copy shapes, not values"): intent/acceptance records, oracle manifest, verification plan, envelope, budgets, capability token, effect receipt, gate retro, evidence ledgers. `docs/governance/deliveries/` exists and is currently empty. Standing status literal unchanged: **artifact-complete, not enforcement-proven** (no broker/verifier wired).
+  - **Runtime-learner primitives (TB-1's gap subject) still present** in `authority-map.md` / `invariant-map.md` / `contracts.yaml` (`runtime_agent_budget`, `reward_channel_provenance`, `behavioral_wireheading_monitors` all still grep-hit); the pack-side gap is therefore still open by source inspection, and TB-1's reopen trigger stands.
+  - **Plan set grew from 00–06 to 00–18** (12 new plan files, all methodology-headline tier): 07 dual-process router (Track C′ L0+L1, SOFAI-shaped, explicitly non-novel), 08 LLM API layers, 09–10 proxy mechanisms/correctness, 11 brain cognitive-architecture research, 12 mind-mechanisms/RSI, 13 mechanism-readiness/Rust decision, 14 cognitive-substrate roadmap, 15 plan-set rethink, 16 thalamic-executive mechanisms, 17 intelligence-test rethink, 18 native intellectual tasks + automatic planning. Plans 00–06 and `intents.md` also modified. No new-plan content was evaluated for correctness; recorded as scope growth only.
+  - Commit subjects indicate continued offline-repair, privacy-evidence, calibration, and publication-continuity work (e.g. `Record final offline runtime repair and full privacy evidence`, `Record T7 calibration evidence`), plus new router/proxy/test surface (`tests/test_router.py`, `tests/test_router_trace.py`). Experiment outputs and any session/history artifacts were not opened per scope.
+- **Effect on prior findings:** No disposition change. TB-1 (runtime-learner governance gap) remains logged-not-landed: still n=1 same-author usage, still no adoption direction, and the new delivery-lifecycle layer is likewise a downstream application. TB-3 still unfired (artifact-complete). C9's honesty-discipline corroboration is consistent with the new layer's explicit non-grant vocabulary, but that is corroboration, not a new candidate. The 12/12 reproduction claim stays bounded to the old pin.
+- **Inspected:** local `git log`/`diff --stat`/`diff --name-only` metadata, new-file headlines (`delivery-lifecycle.md` head, plan 07 head), governance diff hunks, status-literal greps. No file content beyond public methodology/governance docs was read.
+- **Untested limits:** nothing executed at the new HEAD; benchmark/test outcomes at `2e7de2f` are unknown (not claimed broken, not claimed passing). Per-commit review covered governance + plan headlines + file inventory only; bench/test/code-body changes were inventoried, not audited.

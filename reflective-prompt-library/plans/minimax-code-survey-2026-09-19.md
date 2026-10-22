@@ -2,6 +2,10 @@
 
 > **Status: decided — one sentence adopted in a same-day follow-up under user direction (MC-5; Adoption Addendum); otherwise record-only.** The object is an open-source terminal coding agent (TypeScript, MIT default for first-party code, 779 stars; repo created 2026-06-01; HEAD `e3724a13d72d`, 2026-09-18) published as the **reviewed public projection of an internal monorepo**: a machine-readable file inventory is the publication boundary, upstream changes arrive by a three-way merge whose candidates are quarantined as unreviewed internal material, and the release audit publishes its own gaps — including a root-license attribution error caught after the audit and a currently-red typecheck gate. The harness is built on a vendored Pi-lineage agent core (`third_party/pi-mono`) — shared ancestry with the host harness TeaPrompt sessions run on. Its repo ships five co-located agent skills whose rules converge, independently, on TeaPrompt's own: evidence-backed retro lessons with a recurrence gate and an explicit "a retrospective is not authorization", paired old/new token sweeps with a don't-touch-unrelated-matches rule, and a tri-state consumer map with a "never declare complete while a consumer is `unknown`" bar. Ten concepts mapped: nine covered by installed rules or host-territory non-goals; the tri-state consumer map is deferred with an observed-failure trigger. Clean-room throughout.
 
+> **Refresh note (2026-10-22):** the `e3724a13` pin above is the historical
+> baseline; current `main` HEAD is `da22f11c` — see
+> `## Latest-version refresh — 2026-10-22` at the end.
+
 ## Research Question
 
 User instruction: "Survey this https://github.com/MiniMax-AI/minimax-code". Two questions: (1) what the artifact is and what its governance actually does; (2) does any concept expose a verified gap on an installed TeaPrompt surface. A bare "survey" carries no adoption direction; the standing bar applied per candidate.
@@ -118,3 +122,56 @@ Deterministic guard: `plans/tests/test_minimax_code_survey_record.py` (identity,
 ## Adoption Addendum (2026-09-19, same day, user direction)
 
 The user's follow-up ("if worth then update skills") supplied adoption direction of the generic form: it fires no named or dated gates (GE-1, RS-9, the September holds, and DM-5 are untouched — their triggers name their own conditions), and it delegates the worth judgment to the standing bar. Under that bar the survey's ledger was re-read: MC-1–MC-4 and MC-6–MC-9 stay no-change (each is covered; adding any would duplicate an installed rule), MC-7/MC-10 stay record-only notes. MC-5 converted: its deferral had rested on "no verified local gap", and the precise re-read of `reflective-implement` performed under this direction found the gap is textual and real — the ledger tri-state governs items already listed, the Sufficiency Gate stops at the listed criteria, the Twin sweep enumerates twin defects, and "if a check cannot run, report why" covers known checks; nothing forces the consumer classes of a changed contract into the record, which is exactly the silent-unknown failure the surveyed skill exists to prevent in a production harness. One additive single-line bullet landed after the Twin sweep (its structural sibling: enumerate, tri-state, report), scoped to changes other surfaces consume so the Small-Change Fast Path is unaffected; clean-room held (the sentence carries no surveyed vocabulary and the record-name citation is omitted on the surface, per the prior token-conflict precedent); the guard flipped MC-5 to Adopted and pins the bullet exactly once at its surface.
+
+## Latest-version refresh — 2026-10-22
+
+- Prior baseline: HEAD `e3724a13d72d61c9bdc68a1a72b5c020f065ba26`
+  (2026-09-19, "fix: preserve bash permission policy…", #167). Status:
+  changed.
+- Latest checked: default branch `main` HEAD
+  `da22f11c55d4748155d7162c1030414228a00565` (2026-10-21, "fix(skills)…",
+  #522). Release split: latest tag `v0.6.5` (`309e2855`, 2026-10-09) ≠ HEAD
+  — HEAD is 12 days of `main` past the tag. Root + TUI versions aligned at
+  `0.6.5` (was `0.4.12`). `docs/open-source-status.md` declares the current
+  *source target* TUI 0.6.3 while noting npm `latest` was 0.6.9 on
+  2026-10-13 — tree, tag, and registry versions are explicitly distinct.
+  Delta: 150 commits, 633 files (heaviest: `packages/tui`,
+  `packages/local-runtime-v2`).
+- Actual meaningful changes:
+  - Governance retained and extended: `release/extraction.json`
+    `sourceRevision` unchanged (`9b9885e4…`); `docs/source-sync.md` gains a
+    "Selective release updates" section with a worked review
+    (`docs/source-sync-0.5.5.md`: included behavior vs excluded
+    boundaries).
+  - `docs/releasing.md` rewritten around tag-triggered CLI installation
+    packages: `pnpm release:cli` bumps root+TUI together, tags, pushes
+    branch+tag atomically, opens a version PR; CI requires tag/source/
+    `mcode --version` agreement, runs the full profile + secret scans, and
+    publishes the tarball with `.sha256` only after Linux+macOS install
+    checks pass; tags are never moved or overwritten.
+  - `docs/verification.md` gains dated import records and a "Current source
+    verification status" section (TUI 0.6.3 target; fresh login/logout,
+    cross-platform interactive acceptance, and three-platform candidate
+    still NOT RUN — the red-gate honesty pattern continues).
+  - Windows full validation explicitly paused (Node compat); candidate
+    reports cover Linux+macOS only, stated in both `releasing.md` and the
+    testing-workflow skill.
+  - `testing-workflow` skill: `package` verification profile (authenticate
+    + install an npm archive into a temp prefix), `perf:full` label gate,
+    `lint:tui` row. Plugin V1 format contract published
+    (`docs/plugins/package-format-v1.md` + JSON schemas + validator). TUI
+    user changelog (`packages/tui/CHANGELOG.md`) through 0.6.5.
+- Effect on prior findings: C1–C10 and MC-1–MC-10 dispositions stand; the
+  adopted MC-5 sentence is untouched by this delta (no conflicting or
+  sharper form found). The publication-boundary model (C1/C2) is
+  corroborated by continued practice: inventory extended (+182 files),
+  baseline pinned, selective-update reviews recorded. The docs-tier bound
+  remains: no execution evidence in this refresh either.
+- Inspected (immutable): `main@da22f11c`, `main@e3724a13`,
+  `v0.6.5@309e2855` trees; the five governance docs, both manifests,
+  `release/extraction.json`, `source-sync-0.5.5.md` at
+  `https://github.com/MiniMax-AI/minimax-code`.
+- Untested limits: docs/manifest tier only (same tier as the original
+  survey); `scripts/verify.mjs`, workflows, and CI results still unaudited;
+  nothing executed; npm registry not queried (npm versions above are the
+  repo's own recorded observations).

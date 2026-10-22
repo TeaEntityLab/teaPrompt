@@ -2,6 +2,8 @@
 
 > **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
 
+> **Refresh 2026-10-22:** `jnMetaCode/superpowers-zh` current state appended below; upstream `obra/superpowers` disposed in `superpowers-v6.4-adoption-2026-10-03.md` (v7.0.1). Historical status unchanged.
+
 
 ## Goal
 
@@ -75,3 +77,14 @@ Design a concise, maintainable skills-as-workflow layer for the Reflective Promp
 - No skill requires reading the whole prompt library before use.
 - High-risk work is gated before implementation.
 - Prompting remains the source of nuance; skills remain the execution wrapper.
+
+## Latest-version refresh — 2026-10-22
+
+(`jnMetaCode/superpowers-zh` only; `mattpocock/skills` belongs to another slice. The early pass was unpinned, so this is current-state evidence, not an exact delta.)
+
+- Upstream: `jnMetaCode/superpowers-zh`, Chinese community edition of `obra/superpowers`.
+- Latest checked: `main` HEAD `3def275abaf0e704b675f163108f6b6b48c1d389` (2026-10-20) = tag `v1.8.0` peel; `package.json` version `1.8.0` matches. Own release lineage (`RELEASE-NOTES.zh.md`) is separate from the upstream-synced English `RELEASE-NOTES.md`.
+- Upstream alignment: `.upstream-sync.json` records sync to upstream `bb92a777` = `obra/superpowers` `v7.0.0` on 2026-10-19 — one upstream release behind HEAD (`v7.0.1`). The v1.8.0 notes document the v7 brainstorming re-translation plus hook/script fixes, with one intentional fork divergence (Chinese "你看着办" treated as "propose an option", never as permission to skip approval — added after evals caught skipped-approval behavior).
+- Current shape (source read at HEAD): 21 skills (15 translated + 4 China-original + 2 retained upstream-historical, incl. `chinese-code-review`, `chinese-commit-conventions`, `chinese-documentation`, `chinese-git-workflow`, `mcp-builder`, `workflow-runner`), 26 supported tools, npm package `superpowers-zh`, project site, eval summaries in release notes (small samples, e.g. 1–2 runs per group — author-reported).
+- Effect on prior findings: the localization lesson stands and now has a concrete mechanism example — a fork-maintained upstream-sync baseline (commit/version/date/evidence) so audit can compute per-file upstream drift, plus CI checks for doc tag references and `$`-arg substitution hazards. No adoption change: still reference-only; TeaPrompt's zh-TW localization path is separate and this fork's install/product surface remains out of scope.
+- Inspected: `git ls-remote` HEAD + tags, HEAD tree + `README.md` + `package.json` + `.upstream-sync.json` + `RELEASE-NOTES.zh.md` head. No install or runtime verification.

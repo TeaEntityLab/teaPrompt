@@ -1,6 +1,7 @@
 # Fable 5 Scaffold Provenance Reflection
 
 > **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
+> **Refresh pointer (2026-10-22):** latest-version check appended at the end of this record. Historical/retired status unchanged; the surveyed mirror file is untouched since 2026-06-15 while the hosting repo has since added Fable 5.1 / Opus 5.5 / GPT-6 mirrors (metadata only, bodies not read).
 
 
 Date: 2026-06-11
@@ -103,3 +104,14 @@ Completion evidence must show that links remain valid, skills still pass lint/go
 - The third-party mirror may be incomplete, stale, or mixed across product surfaces.
 - Official documentation can change; this plan should be revisited if Anthropic changes its public Fable 5 guidance.
 - The new provenance prompt improves review discipline, but it does not prove any external prompt leak is authentic.
+
+## Latest-version refresh — 2026-10-22
+
+Historical record stays retired; no guidance change. Metadata/methodology only — no mirrored prompt bodies fetched or quoted.
+
+- **Mirror repo `elder-plinius/CL4R1T4S` (current-only; the original record pinned no commit):** HEAD `a4d3da0` (2026-09-22, `Rename GPT-6_Astra_Prompts.md to GPT-6-Astra_Prompts.md`); 206 total commits, no tags, ~80 tracked files across ~19 vendor top-level buckets. Since the 2026-06-11 dispatch: 18 commits, all additions/renames of sibling mirrors — `ANTHROPIC/Claude-Fable-5.1.md` (2026-09-01), `ANTHROPIC/OPUS-5.md` (2026-07-24), `ANTHROPIC/CLAUDE-OPUS-5.5.md` (2026-09-22), GPT-5.6-Sol / GPT-6-Astra / GPT-6-Sol prompt and tools files (Jul–Sep), plus `Prompts.md`/`Tools.json`/`Skills.md` (2026-08-14).
+- **Surveyed file `ANTHROPIC/CLAUDE-FABLE-5.md`:** last touched 2026-06-15 (`09916a9`, +14/−2 lines), i.e. four days after the dispatch and untouched for ~4 months since. Current blob is 122,750 bytes. The record's staleness warning therefore stands and has aged: the file predates the Fable 5.1 sibling mirror in the same repo.
+- **Official Anthropic docs cited in the Evidence Ledger:** all three URLs still return HTTP 200 today (system-prompts release notes, release-notes overview, prompting-claude-fable-5). Page bodies were not diffed, so guidance drift since 2026-06-11 is unknown — the record's `revisit if Anthropic changes its public Fable 5 guidance` trigger is neither fired nor cleared.
+- **Effect on prior findings:** provenance verdicts unchanged — the mirror remains an unverified third-party extraction, official docs remain the higher-confidence source, and the surface-separation / transferability lessons are unaffected by sibling-file growth.
+- **Inspected:** bare-clone `log`/`ls-tree`/`cat-file -s`/`show --stat`; HTTP status checks of the three official doc URLs.
+- **Unknowns:** content of the 2026-06-15 edit to the surveyed file (diff not read, to avoid ingesting mirrored prompt text); current official-doc wording vs 2026-06-11; authenticity/freshness of every mirror file including the new siblings.

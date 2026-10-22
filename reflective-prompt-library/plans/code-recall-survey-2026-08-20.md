@@ -8,6 +8,11 @@
 > dependency, runtime, or project-knowledge rule was created or changed.
 > `06-repo/AGENTS.md` and governed skill contracts remain authoritative; this
 > record is evidence and a decision, not an operating rule.
+> **Latest-version refresh — 2026-10-22:** upstream now reports `2.15.0` on
+> `master` (`d8fd1dd…`, 2026-09-17) with a new lightweight tag `v2.15.0`
+> (`e7e8eec…`) matching npm `gitHead`; the 2026-08-20 pins below are preserved
+> as the executed baseline. See `## Latest-version refresh — 2026-10-22`.
+
 
 ## Purpose
 
@@ -375,3 +380,100 @@ runtime, or project-knowledge rule. Deterministic guard for this record:
   baseline/treatment agent evaluation tying the tool to task outcomes.
 - This ledger is dead text if a trigger fires and no re-evaluation occurs, or if a
   rejected candidate is adopted without changing its recorded status and guard.
+
+## Latest-version refresh — 2026-10-22
+
+Source-bound status only; no upstream code was executed and no historical
+finding below was rewritten. Dispositions (`study` yes, reproduce pinned
+sandbox only, no adoption, deploy blocked) are unchanged.
+
+- **Prior baseline:** `master` `116512be98ce6ee8b8a4ba190ca229e99b42515b`
+  (2026-08-14); tag `v2.10.0` at `03f09e7ad45783f13dc23c0a434d0f222a8a3b34`
+  (2026-06-26); npm `@erikhuang/coderecall@2.10.0` `gitHead`
+  `81f0bb188c03ea06629e64656faa015606d08cbc`.
+- **Latest checked:** `master` `d8fd1dd7d93961f85be310a902e74c4ab28629ef`
+  (2026-09-17, "ledger: record the npm EOTP / security-key 2FA lesson");
+  release tag `v2.15.0` at `e7e8eecead49cda16d1df90dc6bd01a9599d9f97`
+  (2026-09-17, merge of PR #50; lightweight, unsigned — `git cat-file -t`
+  returns `commit`). Old pin is an ancestor of `master`; 15 commits ahead.
+- **Version-identity split — resolved for this release.** `package.json`
+  reports `2.15.0` identically at `master`, at tag `v2.15.0`, and in the
+  npm `latest` metadata; npm `gitHead` equals the tag commit
+  (`e7e8eec…`); the published tarball's `coderecall.js` is byte-identical
+  (after CRLF→LF normalization) to the tag's `coderecall.js`. `master` is
+  one commit past the tag and differs only in `.ai/memory/LESSONS.md`
+  (an 8-line ledger note), so the runtime is identical across channels.
+  Remaining provenance gaps: tag still unsigned, no signed annotated
+  release/SBOM/attestation observed, CI still pins `actions/*@v4`, and
+  `SECURITY.md` is still absent from `package.json.files`.
+- **Material changes (CHANGELOG v2.11.0–v2.15.0; `coderecall.js`
+  3,459 → 4,769 lines; selftest 93 → 166 checks per notes, 167 `check(`
+  call sites observed):**
+  - v2.11.0 ledger integrity: `consolidate` no longer merges/drops entries
+    (near-duplicates reported for explicit `--supersedes`); supersede is
+    explicit and must match exactly one active entry; age adds a
+    `- recheck:` marker instead of rewriting `confidence`; pre-consolidate
+    backups in `.ai/memory/.backups/` (abort if unwritable) with
+    archive-first + content-keyed retry semantics; MCP `update_task` checks
+    the write result and returns `isError`; library paths throw a tagged
+    `ledgerError` instead of `process.exit(1)` so the MCP server survives
+    failures (SPEC's v2.10.0 `isError` deviation is marked fixed).
+  - v2.12.0 retrieval: search snippets return entry bodies windowed on the
+    match; `--full` / MCP `detail:"full"` bounded at 1500/6000 chars.
+  - v2.13.0 digest honesty: envelope-fitted sections, truthful "N of M
+    shown", per-section entry lines, surrogate-safe truncation,
+    CJK-aware token estimates.
+  - v2.14.0 Codex: `sync --codex` registers a SessionStart hook with two
+    measured silent-failure traps documented; `doctor` gained a `[codex]`
+    section; PreCompact/Stop deliberately not registered under Codex.
+  - v2.15.0 setup: new `coderecall setup` wires clients on the machine
+    (hook merge moved from installers into the CLI); duplicate-hook
+    idempotency bug fixed in `setup`/`install.sh`/`install.ps1`; skill
+    installed to `.agents/skills/` + `.claude/skills/`; `deinit` removes
+    them while preserving user content.
+- **Effect on prior findings (source-read, execution unverified):**
+  - Repaired at source-read level: MCP false-success and server termination
+    (`isError` + tagged throws + `ping`-alive selftest assertions);
+    `consolidate` destructive merge (nothing merged/dropped); age-rewrites-
+    confidence; `update_task` header-region/duplication writes.
+  - Still present at source-read level: parent-symlink containment escape
+    (no symlink/`lstat`/canonicalization guard on `MEM_DIR` or `rmrf`
+    beyond the existing final-component `lstat`; `doctor` still executes
+    the settings-provided hook command through a shell); ledger-grammar
+    forgery (`upsertEntry` still serializes `'## ' + title` with no
+    newline/`## ` stripping observed, though TASK header fields now
+    collapse newlines); expiry off-by-one (`entryExpired` still uses
+    `Date.parse(e) < Date.parse(today)` while SPEC still says
+    "auto-forget on/after"); `graduate --global` still an unlocked
+    read-modify-write under only the per-project lock; receipt-less
+    cleanup deletions (installer matching only widened to
+    `(sessionstart|precompact|stop|userpromptsubmit)\.js`; `deinit` still
+    removes `@AGENTS.md` imports / `AGENTS.md` `contextFileName` entries /
+    cursor hooks by pattern); unfenced MCP/CLI search output
+    (`search_memory`/`list_decisions` return raw entry text;
+    `neutralizeLedger` still only strips fence-spoof lines); heuristic
+    sanitizer (pattern list unchanged for the probed `mysql://` and
+    `rk_live_` shapes); `affected` still uses `git diff --name-only`
+    (untracked files still unlisted); SECURITY.md's touched-surface table
+    and "never touches anything else" claim byte-unchanged.
+  - Unaffected: no live-agent efficacy evaluation shipped
+    (`bench/bench.js` remains synthetic detection coverage); efficacy
+    language stays advisory-scoped.
+- **Inspected immutable links:**
+  [`master` `d8fd1dd`](https://github.com/erikhuang76821/code-recall/commit/d8fd1dd7d93961f85be310a902e74c4ab28629ef),
+  [`v2.15.0` `e7e8eec`](https://github.com/erikhuang76821/code-recall/commit/e7e8eecead49cda16d1df90dc6bd01a9599d9f97),
+  [v2.15.0 release notes](https://github.com/erikhuang76821/code-recall/releases/tag/v2.15.0)
+  (author report, 2026-09-17),
+  [CHANGELOG v2.11.0–v2.15.0](https://github.com/erikhuang76821/code-recall/blob/master/CHANGELOG.md),
+  [npm tarball `@erikhuang/coderecall@2.15.0`](https://registry.npmjs.org/@erikhuang/coderecall/-/coderecall-2.15.0.tgz)
+  (`sha512-kADVNDwKWrLoeYlAvFtFjrGejpUYSf3c6OxBF+jP833Qtul2J5ihoyqHhYP/2aID506woC8EKOjCe47Xza+bCQ==`).
+- **Untested limits:** nothing executed (no `selftest`, no upstream suite,
+  no adversarial probes re-run). GitHub REST API was rate-limited at check
+  time (HTTP 403); release identity was established via `git ls-remote`,
+  clone metadata, rendered release pages, and npm registry instead. Fix
+  claims above are "implemented at inspected revision" only.
+- **Smoke candidate (not run):** none beyond the standing volatility
+  trigger. To re-verify, pin `d8fd1dd…`, run `node coderecall.js selftest`
+  plus the §Evidence Actually Checked probe matrix in an isolated
+  single-project workspace (no symlinked `.ai/`, no pre-existing
+  `coderecall`/`stop.js` hooks); prerequisite: Node 18/20 per CI.

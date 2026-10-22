@@ -1,6 +1,7 @@
 # System Prompts Leaks Survey & Architectural Rethink (2026-10-07)
 
 > **Status:** Reference-only record. Pinned upstream at `f015440d2c6a5c880e7503d0d17bfad1cd02133f` (`main`, checked 2026-10-07). Evaluated across four parallel lenses (Provenance/Epistemic, Architecture/Taxonomy, Coding Agent Discipline, Safety/Jailbreak Defenses); SPL-1 reference-only, no skill, runtime, schema, or gate change. `06-repo/AGENTS.md`, `04-agent/agent-scaffold-provenance.md`, and the invoked skill contracts remain authoritative.
+> **Refresh pointer (2026-10-22):** latest-version check appended at the end of this record. SPL-1 stays reference-only; corpus grew from 1,245 to 1,314 tracked entries with 24 new commits, dominated by mirrored Claude Code/Anthropic additions.
 
 ## Purpose
 
@@ -66,3 +67,14 @@ The interrupted parallel review identified unsupported universal/enforcement cla
 This assessment is wrong if:
 1. Monolithic prompt architectures without progressive disclosure demonstrate superior multi-task reasoning and token efficiency over composable, tiered skill libraries across reproducible benchmarks.
 2. Natural language prompt secrecy directives reliably prevent prompt extraction and indirect prompt injection without requiring out-of-model harness boundaries or architectural parameter isolation.
+
+## Latest-version refresh — 2026-10-22
+
+Metadata/change-inventory/methodology only; no mirrored prompt bodies were fetched or quoted. SPL-1 remains reference-only; no skill, runtime, schema, or gate change.
+
+- **Upstream `asgeirtj/system_prompts_leaks`:** prior pin `f015440d` (2026-10-06, `Update claude-sonnet-5.5.md`) → latest `e7e53f2b` (2026-10-19, `Add built in mod "you-should-know" prompt`). 24 commits between; no tags/releases in this repo (branch pin only).
+- **Inventory delta:** tracked entries 1,245 → **1,314** (+69 net). The pin-to-pin diff touches 215 files (+34,579/−9,787 lines); 191 of the 215 paths sit under `Anthropic/`, with small spillover into Google, OpenAI, Misc, Meta, GLM, Kimi, Perplexity, and xAI. 72 added vs 7 deleted filenames: additions are dominated by a new `Anthropic/artifact-types/` tree (Slides/Dashboard/Design/Docs/Design-System SKILL + reference files), new Claude Code skills/prompts (`plan-mode.md`, `you-should-know.md`, `claude-code-haiku-5.5.md`, managed-agents quickstarts, per-language opentelemetry notes), Haiku 5.5 mirrors (official/raw/claude-code variants), plus `Google/gemini-4-argon-api-ai-studio.md` and `Misc/duck-ai.md`. Deletions remove six stale Claude Code/Design skill files and one schedule skill. Top-level bucket set is unchanged in kind (same vendor buckets plus repo dotfiles/license/README); count method preserved from the original record.
+- **README/methodology notes:** the curator's README now highlights the artifact-types and Haiku 5.5 additions, swaps a trend badge for a star-history badge, and drops vendor shield badges — presentation churn, not a sourcing-method change. New `.editorconfig`/formatting commits (`normalize formatting`, `Some formatting fixes`) explain part of the line churn without new corpus meaning. Commit subjects continue the curator's update-in-place pattern (`Update claude-code system prompts (2.1.293/2.1.295)`, `Update claude-code-fable-5.1.md to latest (2.1.304)`), so several version bumps are refreshes of existing mirrors, not independently new captures.
+- **Effect on prior findings:** the heterogeneous five-source-class characterization still holds; the growth is concentrated in the same packaged-tool-extraction and official-mirror classes already described. Authentication, per-turn-context, and enforcement unknowns are unchanged — no entry was authenticated here, and file growth is not evidence of vendor provenance.
+- **Inspected:** bare-clone `log`/`diff --stat`/`diff --name-only`/`ls-tree` between the two pins; commit subjects only. No file contents opened.
+- **Unknowns:** whether any added mirror corresponds to a currently deployed vendor payload; exact recomputation of the 1,237 file-like bucket population at the new pin (tracked-tree count 1,314 reported instead; the original bucket scan was not re-run).

@@ -2,6 +2,8 @@
 
 > **Status: decided — record-only; no installed change, no wording adopted.** The objects are a mature Apache-2.0 repository (created 2025-07-07, 2,004 stars, maintained by GLiNER's original author under the Fastino AI org) and its EMNLP 2025 System Demonstrations paper (2025.emnlp-demos.10, pp. 130–140, read in full): a schema-driven information-extraction stack where one ~200M bidirectional encoder scores entities, classifications, structured records, relations, and span attributes in a single forward pass, with runtime-defined labels supplied as prompt tokens. Two findings organize the record: this is a production existence proof for the encoder hypothesis the Jev-architecture survey held open — with a lineage that predates Jev, so it is feasibility evidence, not identity evidence, exactly as that record's own rule bounds it — and its constraint-decoded joint classification is the first system in the surveyed decision-interface ecosystem where cross-answer consistency is a decode-time contract rather than a caller's problem. A bare "survey" carries no adoption direction; per the installed direction-scope rule only this survey's own candidates could fire, and none met the bar.
 
+> Refresh pointer (2026-10-22): upstream moved 66 commits past the September pin (`d7c7274` → `ca4f682`, tag `v2.1.0`); new Decide classification checkpoints, a `fast-decisions` eval dataset, and a performance/feature delta below. The 2026-09-19 verdicts stand unless the refresh section says otherwise.
+
 ## Research Question
 
 User instruction: "survey https://github.com/fastino-ai/GLiNER2 https://aclanthology.org/2025.emnlp-demos.10.pdf". Three questions: (1) what the artifact pair is, at a pinned revision and a fixed publication; (2) how the 2025 paper and the 2026 repository relate — one identity or a drifted pair; (3) whether any concept exposes a verified gap on an installed TeaPrompt surface.
@@ -109,3 +111,29 @@ Deterministic guard: `plans/tests/test_gliner2_survey_record.py` (identity and n
 | Guard written | done | `plans/tests/test_gliner2_survey_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Latest-version refresh — 2026-10-22
+
+Record-only; no installed change, no wording adopted. All 2026-09-19 dispositions (G2-1..G2-6) stand.
+
+| Project | Prior baseline (2026-09-19) | Latest checked (2026-10-22) | Release / registry split |
+| --- | --- | --- | --- |
+| `fastino-ai/GLiNER2` (branch) | `d7c727458bf6929bc9ef5ee04e13c3f717a7c455` (2026-09-18) | `ca4f68235b50fe4c3ecf3876851d748fe4b15c6c` (2026-10-20, merge of PR #199 DDP gradient-averaging fix) | Branch HEAD; tags below |
+| `fastino-ai/GLiNER2` (tags) | Unpinned (package `__version__` 2.0.0) | `v2.1.0` = `b86d35c02f2c1a4d9840ea50197bd1b6d13b031e` (2026-10-09, Transformers 5 support); HEAD is `v2.1.0-2-gca4f682`; package `__version__` now 2.1.0 | Do not conflate tag with branch HEAD |
+| `fastino/gliner2.5-base-v1` (HF) | sha `78cea040597df251eedefa9d7ee2a756af39fe64`, 34,615 downloads | sha `54785d51df8d86a0d8f2eb212fec15871aad2c4d`, modified 2026-10-08, 108,229 downloads; card license field now fetched: `apache-2.0` | Registry revision, not a git branch |
+| EMNLP 2025 Demos paper 2025.emnlp-demos.10 | Read in full (fixed publication) | PDF re-fetched 2026-10-22 (HTTP 200, 619,687 bytes); publication immutable, no re-read | Publication reference, not software |
+
+Actual meaningful changes since the baseline (66 commits, 73 files, +8,966/−726; delta inspected via bare-clone diff, not executed):
+
+- **New Decide classification specialists** (new to the surveyed surface): `fastino/GLiNER2.5-Decide` (340M DeBERTa-v3-large, span; created 2026-09-23, 131,879 downloads, 421 likes) and `fastino/GLiNER2.5-multi-Decide` (287M mDeBERTa-v3-base, boundary, multilingual), evaluated on the new `fastino/fast-decisions` dataset (created 2026-09-24). README: use `classify_text`/`batch_classify_text`; `GLiNER2.5-Decide` is a span checkpoint despite the 2.5 name (loads under `GLiNER2.from_pretrained`), the multi-Decide is boundary-only. Author-claimed; nothing reproduced.
+- **Constraint-decoder correctness fix inside the G2-2 parked pattern** (Henry Fawcett, 2026-09-23, `ce84c48`): `retain()` previously pinned an exclusive task to a constraint-rescued label when no label cleared the candidate threshold; the unconstrained fallback now fires correctly. Tutorial 14 itself is byte-unchanged in the delta, so the record's quoted infeasibility semantics still stand; the fix strengthens the pattern's production credibility without creating a local coupled-verdict instance — G2-2's reopen trigger stays unfired.
+- **Performance direction**: DisentangledFlash attention backend with packed-layout auto-selection and H200-tuned thresholds; span-scoring, boundary/accelerator decoder-synchronization optimizations plus a decoder-sync benchmark matrix; DDP gradient-averaging fix (`fe3145e`, "gradients were never averaged across GPUs"). Runtime/host territory; no prompt-level surface affected.
+- **Serving/inference APIs**: precomputed encoder hidden states accepted on every batch inference API; `Schema.from_dict` covers the whole builder; Transformers 5 support with refreshed dependency caps; quieter model load; hosted fine-tuning via the Fastino API documented (PIONEER_API_KEY → FASTINO_API_KEY rename).
+- **Gold-contract hardening**: explicit character spans in training gold with validation and shared pool-scorer scoring; classification-pair decode narrowed with the training gold contract locked; classification augmentation no longer trains the gold label as a negative; boundary entity-alignment/phantom-span fixes; WhitespaceTokenSplitter keeps combining marks inside words.
+- **Docs drift**: README grew 1,366 → 1,474 lines; the "entities, labels, records, relations, and span attributes" five-task tagline is unchanged; tutorials 15 (joint IE) and 16 (safety/PII) predate the baseline (added 2026-08-21) and were already visible at the pin; only tutorials 7/8/9 changed in the delta. The Falsifiability license caveat is now partially settled (card field fetched for the base checkpoint; Decide cards' license fields not fetched).
+
+Effect on prior findings: Finding 1 (encoder existence proof) and Finding 2 (decode-time cross-answer constraints) are corroborated, not weakened — the Decide line extends the encoder-typed-decision family into classification specialists, and the constraint-decoder fix shows the joint-feasibility machinery under active maintenance. No local instance of jointly infeasible coupled workflow verdicts was observed, so G2-2 stays parked.
+
+Inspected immutable links: `https://github.com/fastino-ai/GLiNER2/commit/ca4f68235b50fe4c3ecf3876851d748fe4b15c6c`, `https://github.com/fastino-ai/GLiNER2/commit/d7c727458bf6929bc9ef5ee04e13c3f717a7c455`, `https://github.com/fastino-ai/GLiNER2/releases/tag/v2.1.0`, `https://huggingface.co/fastino/gliner2.5-base-v1`, `https://huggingface.co/fastino/GLiNER2.5-Decide`, `https://huggingface.co/datasets/fastino/fast-decisions`, `https://aclanthology.org/2025.emnlp-demos.10.pdf`.
+
+Untested limits: no execution, no reproduction of Decide/fast-decisions numbers, no `gliner2/` package source audit (the pre-existing docs-tier bound); GitHub REST star counts unavailable (API rate limit, recorded 2026-10-22); Decide checkpoint card license fields not fetched.

@@ -311,3 +311,27 @@ runtime, or project-knowledge rule. Deterministic guard for this record:
   not automatically justify a new skill.
 - This ledger is dead text if a trigger fires and no re-evaluation occurs, or if
   a rejected candidate ships without changing its recorded status and guard.
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: `bundle-v0.1.0`, commit
+`bea12d3c0a1b25672fd027f627c148075a7f8ed7` (2026-08-16), checked 2026-08-20.
+Latest checked: default branch `main` at
+`40bb5160d452bb3c2971c4a4d2c0b81107e36d8d` (2026-08-31, "Add Final Demo Paper
+Bridge sample asset"); no release newer than `bundle-v0.1.0` exists. The
+delta since the pin is exactly one added binary demo asset
+(`.../demo/upload-workshop/AI_TA_DEMO_PAPER_BRIDGE.pdf`, 100,819 bytes);
+tracked file count 53 → 54, zero source/doc/CI changes.
+
+- Effect on prior findings: none. Every executed finding (verifier false
+  passes, containment gaps, fail-open CI, install/source-identity gaps) stands
+  on identical code; the new asset does not touch the verifier, audits,
+  self-check, lifecycle, or install routes. The 3XA-1–3XA-6 ledger and the
+  blocked-deployment disposition are unchanged.
+- Inspected immutable links:
+  `https://github.com/3xachris/3xa-harness/commit/40bb5160d452bb3c2971c4a4d2c0b81107e36d8d`,
+  compare
+  `bea12d3...` → `40bb516...` via local clone (one-file diff), release list
+  showing `bundle-v0.1.0` as latest (GitHub API, 2026-10-22).
+- Untested limits: the new PDF's bytes were not rendered or scanned; no
+  build/lint/tests executed in this refresh.

@@ -15,6 +15,8 @@
 > external witness to `teaBrain`'s TB-1 runtime-learner governance class. Code is
 > "released upon publication" (unavailable); all results are N=1 and author-claimed.
 > Bare survey → DS-1: nothing installed. Guard: `plans/tests/test_ember_survey_record.py`.
+>
+> Refresh pointer (2026-10-22): arXiv record is still **v1-only** (14 Apr 2026, CC BY-NC-ND 4.0, no journal/DOI); code/logs remain unreleased; the author's `digitalember.dev` domain now resolves to a registrar parking page. See `## Latest-version refresh — 2026-10-22` at the end. Record-only boundary unchanged.
 
 ## Research Question
 
@@ -189,3 +191,50 @@ which there are still zero. Recorded so the recurrence accounting stays honest
 | Guard written | done | `plans/tests/test_ember_survey_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Latest-version refresh — 2026-10-22
+
+**Baseline:** 2026-09-22 pin at `arXiv:2604.12167v1` (14 Apr 2026, CC BY-NC-ND
+4.0, William Savage, "released upon publication" code/logs unavailable).
+
+**Latest version:** still **v1** — no v2 exists (`/abs/2604.12167v2` → HTTP
+404). arXiv abstract page shows a single-entry submission history (`[v1] Tue,
+14 Apr 2026 00:51:47 UTC (131 KB)`), no journal reference, no DOI beyond the
+arXiv-issued DataCite DOI, license icon still `by-nc-nd-4.0`. Both
+`https://arxiv.org/html/2604.12167v1` and the bare `/html/2604.12167` return
+200. Prior identity assertions stand unchanged.
+
+**Code/log availability recheck:** still **unreleased**. No GitHub/code link on
+the arXiv page; a web search for the id + author + code surfaces only the
+arXiv/PDF/HTML/ADS mirrors plus one unrelated `GrimmSnark/paperCodeSavage2026`
+retinal-waves repo (different Savage, eLife 2026); GitHub repo search for
+ember+spiking+llm returns 0 results. Nothing executed or reproduced; every
+number remains author-claimed at docs tier, N=1.
+
+**Author-site change:** `digitalember.dev` (the affiliation/contact domain in
+the paper) no longer serves author content. `https://digitalember.dev` times
+out (curl exit 28, two attempts: `read`-tool fetch and 20 s curl); plain-HTTP
+follows to `https://www.digitalember.dev/`, which returns a **Namecheap
+registrar parking page** ("has been recently registered with namecheap.com").
+The contact email `william@digitalember.dev` is therefore presumed dead, but
+that is `[INFERENCE]` — only the parking page was observed. This does not
+alter any paper-content assertion; it only weakens the "released upon
+publication" channel the record already marked unavailable.
+
+**Effect on prior findings:** none. The v1 text is the same pinned object, so
+the concept map (EM-1…EM-6), the candidate ledger (all No change), and the
+TB-1 cross-link (second external witness, trigger unfired) are unaffected.
+Adoption boundary unchanged: record-only, DS-1, CC BY-NC-ND (quote, do not
+adapt). Historical source assertions are preserved, not rewritten.
+
+**Inspected links:** `https://arxiv.org/abs/2604.12167`,
+`http://export.arxiv.org/api/query?id_list=2604.12167`,
+`https://arxiv.org/abs/2604.12167v2` (404),
+`https://arxiv.org/html/2604.12167v1` (200),
+`https://digitalember.dev` (timeout), `http://digitalember.dev` →
+`https://www.digitalember.dev/` (parking page).
+
+**Untested limits:** paper body not re-read in full (identity/version/license
+metadata + availability only); no citation-chain audit; no N=1 log access.
+`paste-1.md` relationship untouched (paste is local, lower-fidelity copy of
+the same v1).

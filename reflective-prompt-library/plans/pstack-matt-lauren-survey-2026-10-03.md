@@ -157,3 +157,28 @@ All entries below were checked 2026-10-03; dates describe access, not publicatio
 | Guide Pt.1 | [original article](https://x.com/i/article/2094151284949688320); [retrieved mirror](https://api.fxtwitter.com/status/2094457600259842065) | checked 2026-10-03 |
 | Guide Pt.2 | [original article](https://x.com/i/article/2094940651607715840); [retrieved mirror](https://api.fxtwitter.com/status/2097732320606507506) | checked 2026-10-03 |
 | Loops You Can Trust | [original article](https://x.com/i/article/2066965659259686912); [retrieved mirror](https://api.fxtwitter.com/status/2069824386283319343) | checked 2026-10-03 |
+
+## Latest-version refresh — 2026-10-22
+
+> Refresh pointer: the 2026-10-03 pins below are historical source identities. Current pstack HEAD is `eb4db2b` (manifest `0.15.30`); the recorded checker artifact, verdicts, and PML-1–PML-7 dispositions are unchanged. (Matt Pocock's repo is refreshed by a sibling slice; this section covers only pstack-side currency.)
+
+`cursor/plugins` `main` HEAD checked 2026-10-22: `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10` (2026-10-21, "feat(pstack): add the statechart skill to draw TLA+ models as charts (#741)"). 206 commits after the survey pin `7022c81` (2026-10-02); the repo carries no tags/releases, and the pstack manifest moved `0.15.5` → `0.15.30` (`.cursor-plugin/plugin.json`; new Agent Plugins v1 root `pstack/plugin.json` added at `e5a02f8`). The `poteto-mode` playbook count is unchanged at 23 files. Source/ref inspection only; nothing was executed.
+
+| Inspected surface | Prior pin | Latest checked | Change family |
+| --- | --- | --- | --- |
+| `check-plan.mjs` | 7,684 bytes, blob `6c07f4e9` | 8,153 bytes, blob `c8626766` at `eb4db2b` | Structural markers + fence handling only |
+| `orchestrate.md` | at `7022c81` | at `eb4db2b` | Graphite/`gt` removal, topology-mutation wording |
+| `shipping.md` | at `7022c81` | at `eb4db2b` | Restructured landing steps, same authority rule |
+| `autopilot-full.md` | at `7022c81` | at `eb4db2b` | Swarm-verdict rewording, same grant requirement |
+| `bug-fix.md` / `eval.md` / `tdd` path | at `7022c81` | at `eb4db2b` | One-line subagent speed/reasoning-level additions (`bug-fix`, `eval`); no `tdd` diff observed |
+| `principle-encode-lessons-in-structure` | at `7022c81` | at `eb4db2b` | −22/+? distillation (restated as reasoning, not rules) |
+| New skills since pin | — | at `eb4db2b` | `correct`, `in-your-own-words`, `ketchup`, `sharpen`, `create-formal-verification-skill`, `maintain-formal-verification-skill`, `statechart` |
+| `poteto/verification-skill-example` | unpinned (fictional Atlas note) | `d5abe70d0d8c671672b6cef4069363f26c488feb` (2026-07-30, single commit, no tags) | Unchanged — predates survey, still current HEAD |
+
+Checker boundary still holds at the new revision (read, not executed): `PROGRAM_MARKERS` changed from `["/goal", "git show origin/main:", /30[- ]minute/, "status message"]` to `["git show origin/main:", "/loop 1h", "status message"]`, and fence detection now handles indented/tilde fences with proper open/close pairing (`87c8103` "respect fenced code blocks in plan checks"). The script still parses plan structure — required boxes, ten lanes, perf items, program markers — and still contains no receipt-file existence check or execution attestation. The recorded finding (structural validation, not evidence attestation) stands for both artifacts; the old digest remains the executed-evidence identity and must not be replaced by the new blob.
+
+Authority findings stand: `shipping` still lands only the contiguous verified run from the root with patch-bound verdicts; `autopilot-full` still requires the operator's grant plus a clean swarm verdict from agents that never wrote the code; `orchestrate` still assigns spawn/wait/wake to the host with coordinator-owned bookkeeping (Graphite/`gt` references removed in `ce649c0`, units now forbid "PR retargets or merges" instead of "no gt"). The `eval` playbook keeps sanitized dirs, same-prompt candidates, and blinded judging; the one-line addition only routes subagent speed/reasoning level.
+
+New-skill note (read at HEAD, not surveyed in depth): formal-verification skills (TLA+ default, no-verifier fallback), a statechart→TLA+ charting skill with scripts, and `/ketchup` progress-catch-up, `/sharpen`, `/correct`, `/in-your-own-words` interaction skills. None was exercised; no new adoption is implied and PML-7's non-adoption of unverified automation claims is unaffected.
+
+Inspected immutable links: [check-plan.mjs @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/scripts/check-plan.mjs), [orchestrate @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/orchestrate.md), [shipping @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/shipping.md), [autopilot-full @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/autopilot-full.md), [manifest @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/.cursor-plugin/plugin.json). Limits: diffs read for load-bearing files only across the 206-commit range; new skills listed from the tree, not content-audited; no execution, so the new checker's structural-only boundary is source-read, not runtime-verified.

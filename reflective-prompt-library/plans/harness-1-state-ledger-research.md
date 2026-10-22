@@ -148,3 +148,15 @@ Only the harness design transfers to a prompt library.
 - Paper: https://arxiv.org/abs/2606.02373 (v1, 2026-06-01)
 - Repo: https://github.com/pat-jj/harness-1
 - DeepWiki: https://deepwiki.com/pat-jj/harness-1 (indexed 2026-06-10, commit c8384c)
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: DeepWiki indexed commit `c8384c` (2026-06-10); follow-up re-check (2026-07-02) recorded the 2026-06-15 checkpoint/data release. Latest checked: main `8ac4012167858f6478fb2a8fd840e4550e2af161` (2026-06-15T11:34:24-05:00, "remove training data badge") — no commits after 2026-06-15 (git ls-remote + clone, 2026-10-22). No releases or tags. Repo metadata at check: 1022 stars / 151 forks / 1 open issue+PR, Apache-2.0, pushed 2026-06-15T16:34:26Z.
+
+Actual changes since `c8384c` (3 commits, README-only, inspected via git): a "Training Data And Corpora" section documenting `pat-jj/harness-1-train-data` (899 SFT trajectories + 3,453 RL SEC records, `stage` column, `corpora/` chunks for BrowseComp+/web/patents/SEC with `load_dataset` snippets) and a rewritten "Dataset Availability" section pointing at those published corpora. Zero source changes: `harness/`, training, and eval code are untouched across the range. This matches the 2026-07-02 re-check's description — HEAD `8ac4012` is that same release state, now pinned to the full SHA.
+
+Paper and artifacts: arXiv 2606.02373 remains v1 only (published 2026-06-01; v2 404s; abstract re-read 2026-10-22). HF checkpoint `pat-jj/harness-1` and dataset `pat-jj/harness-1-train-data` both lastModified 2026-06-15, unchanged. Replication re-check: no peer review, third-party replication, or critique found (web search 2026-10-22 surfaced only the repo itself, a tinker-cookbook recipe path, and a `paperwave/harness--1` mirror); the 0.730 / +11.4 figures remain author-reported. The DeepWiki spelling artifact ("SearchCorusTool") was not re-verified and stays a cite-with-care note.
+
+Effect on prior findings: the State Ledger / Sufficiency Gate / Budget Rule adoption is unaffected — the upstream delta is documentation of already-released artifacts, and the paper is unchanged. The open follow-up "re-check before citing performance numbers load-bearing" is satisfied by this refresh (still v1, still unreplicated); next re-check only if citing numbers load-bearing. No skill change warranted.
+
+Inspected immutable links: [HEAD commit](https://github.com/pat-jj/harness-1/commit/8ac4012167858f6478fb2a8fd840e4550e2af161), [paper abstract](https://arxiv.org/abs/2606.02373), [HF checkpoint](https://huggingface.co/pat-jj/harness-1), [HF train data](https://huggingface.co/datasets/pat-jj/harness-1-train-data) (all checked 2026-10-22). Untested limits: no code or weights fetched beyond metadata; no replication search beyond web results (reddit blocked per standing constraint).

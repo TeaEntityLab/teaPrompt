@@ -4,6 +4,11 @@ Language: English
 
 > **Status: master planning index (record-only; non-authoritative).** Unified entry point indexing all six domain roadmaps derived from the surveyed-plan corpus. Establishes the relationship to [whole-project-roadmap-2026-07-11.md](whole-project-roadmap-2026-07-11.md) and incorporates parallel Socratic critical thinking findings. No new runtime or core skill is adopted by this record.
 
+> **Source freshness (2026-10-22):** the survey-basis versions below describe the
+> October 13 planning snapshot. [Current reference-project refreshes](external-adoption-case-studies-2026-06-20.md#known-reference-project-refresh--2026-10-22)
+> now live in their existing owning records. Refreshed source evidence does not
+> change this index's candidate dispositions, schedule or authorization gates.
+
 ## Purpose
 
 Provide a single navigation index across the six domain roadmaps established on 2026-10-13. The domain files own their planning summaries; the cited decisions own adoption, triggers and authority. [whole-project-roadmap-2026-07-11.md](whole-project-roadmap-2026-07-11.md) remains the scheduling companion, and [surveyed-plans-unified-roadmaps-2026-10-13.md](surveyed-plans-unified-roadmaps-2026-10-13.md) preserves the point-in-time synthesis and review trail. None supersedes an owning decision.

@@ -2,6 +2,10 @@
 
 Research record for the `flow-control-generator` and `flow-loop-harness` domain-pack skills. Follows the external-adoption case-study discipline: mechanism-vs-product, evidence tiers preserved, promotion decision recorded.
 
+> **Latest-version refresh pointer (2026-10-22):** platform rows below are the
+> 2026-07-11 assessment (plus the dated F4 follow-up); current pins and
+> material deltas live in [Latest-version refresh — 2026-10-22](#latest-version-refresh--2026-10-22).
+
 ## Purpose
 
 Ground a "skills that write flow-control scripts" capability in the current (2026-07-11) flow concepts of the main LLM/agent platforms, and record the promotion decision that created two domain-pack skills.
@@ -125,3 +129,169 @@ Primary documentation (retrieved 2026-07-11):
 - Geoffrey Huntley, Ralph pattern — https://ghuntley.com/ralph/
 
 Secondary/search-derived (2026-07-11 web search snapshots): Anthropic 2026 Agentic Coding Trends Report summary; AgentKit wind-down reports; practitioner loop-harness posts. These remain historical search evidence; the narrow Agent Builder lifecycle claim is superseded by the 2026-10-01 primary-source follow-up above. Other claims still require re-verification before reliance.
+
+## Latest-version refresh — 2026-10-22
+
+Current-state refresh of the named framework comparison rows. The July record
+was docs-based with no exact repo pins, so there is no old-pin equality to
+prove; baseline is the July row text, and "delta" below means a material
+mechanism/spec change relative to that baseline (current-only, not a
+commit-range diff). LangGraph runtime refresh is owned by RefreshDurable
+(pin cited below for the shared LangChain row); Deep Agents is covered here.
+No adoption or hold changes; evidence tier: release notes = author reports,
+source read = implemented at inspected revision, runtime unverified.
+
+### Anthropic (Claude Agent SDK)
+
+- Prior baseline: code-first harness; workflows-vs-agents split; subagents with
+  isolated context; lifecycle hooks; headless `claude -p`.
+- Current: `anthropics/claude-agent-sdk-python` HEAD `6b4a557e`,
+  release `v0.2.99`; `anthropics/claude-agent-sdk-typescript` HEAD `c17fea55`,
+  release `v0.3.308`. Docs hub moved to
+  https://code.claude.com/docs/en/agent-sdk/overview (old docs.claude.com
+  Agent SDK URL redirects).
+- Material changes: Python SDK gained a durable `SessionStore` protocol with
+  transcript mirroring, store-backed resume/fork helpers, and reference
+  adapters (S3/Redis/Postgres examples), closing the "host guarantee"
+  session-resume gap the July row left to the CLI; hook surface grew
+  (`include_hook_events` streaming, `defer` decision, `updatedToolOutput`
+  replacement, concurrent-dispatch clarification); subagent transcript
+  helpers (`list_subagents`, `get_subagent_messages`), session
+  fork/delete/pagination, top-level `skills` option. Docs now position a
+  four-way split: Agent SDK vs CLI vs Client SDK vs hosted Managed Agents.
+- Effect: July primitives all still present and extended; hooks-as-gate
+  enforcement is stronger (defer + output-rewrite hooks). No demotion impact:
+  session stores are host/adapter guarantees, not TeaPrompt-verified.
+- Inspected:
+  https://github.com/anthropics/claude-agent-sdk-python/blob/main/CHANGELOG.md
+  (v0.2.99), https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md
+  (v0.3.308), https://code.claude.com/docs/en/agent-sdk/overview.
+
+### OpenAI (Agents SDK)
+
+- Prior baseline: agents, handoffs vs agent-as-tool, guardrails, sessions,
+  tracing; AgentKit wind-down `[search-derived]` (F4-confirmed for Agent
+  Builder only).
+- Current: `openai/openai-agents-python` HEAD `841dfdd9`, release `v0.24.0`
+  (tag `17d994bd`); `openai/openai-agents-js` HEAD `be4f1f9a`, release
+  `v0.21.0` (tag `6782de99`). PyPI package `openai-agents`.
+- Material changes: **Sandbox agents** are now a first-class shipped surface
+  (`src/agents/sandbox/`, 111 paths in the v0.24.0 tarball;
+  `SandboxAgent`, `Manifest`, `Capabilities`, `SandboxRunConfig`, resumable
+  sessions, Unix-local/Docker/hosted clients) — the July-row "new since the
+  prior record" note from the companion survey is now release-backed. Docs
+  index adds Sandbox agents, Realtime agents (`gpt-realtime-2.1`), and
+  `codex_tool` (experimental Codex CLI wrapper with sandbox_mode). Core
+  primitives (agents, handoffs, guardrails, sessions, tracing) unchanged in
+  kind. Agent Builder deprecation page still reads: announced 2026-06-03,
+  shutdown scheduled 2026-11-30; ChatKit remains; migration = Agents SDK or
+  ChatGPT Workspace Agents — F4 follow-up still accurate.
+- Effect: July row stands; Sandbox agents corroborate the survey's
+  sandbox-agents watch row as Standing Non-Goal reference-only (host-owned
+  runtime). No new local gap.
+- Inspected: v0.24.0 release tarball (`src/agents/sandbox/`,
+  `docs/sandbox_agents.md`), https://openai.github.io/openai-agents-python/,
+  https://openai.github.io/openai-agents-python/sandbox_agents/,
+  https://developers.openai.com/api/docs/deprecations.
+
+### Google (ADK)
+
+- Prior baseline: `SequentialAgent`, `ParallelAgent`, `LoopAgent`,
+  `output_key` session state, composable nesting, A2A interop.
+- Current: `google/adk-python` HEAD `636a8e3d`, release `v2.9.2`
+  (2026-09-18, tag `dafa8e95`); `google/adk-js` release `v2.3.0`. Docs host
+  moved `google.github.io/adk-docs` → https://adk.dev (old links redirect).
+- Material changes: **graph-based workflows are now the headline
+  architecture.** Since ADK 2.0 (Python/Go) template workflow agents are
+  documented as superseded by graph-based `Workflow` (nodes/edges, explicit
+  routing, branching, state management, YAML authoring in 2.9.0) plus
+  dynamic workflows (programmatic orchestration), with the three template
+  agents retained as higher-level building blocks. Flow-relevant 2.4→2.9
+  changelog items: failed-node rerun-on-resume (breaking; nodes must be
+  idempotent), sub-agent escalation events in `ParallelAgent`,
+  `transfer_reason` anti-loop, native A2A task mode on `RemoteA2aAgent`,
+  `ADK_MAX_LLM_CALLS` budget env var, automatic model failover
+  (`FallbackModel`), skill loading/telemetry, LiveKit voice runner.
+- Effect: July's "deterministic workflow agents" row is accurate but
+  incomplete — the code-owns-control-flow convergent concept is reinforced
+  (graphs + dynamic workflows + "run chains of functions without AI"), and
+  the resume-convention caution gains a concrete instance (idempotent-node
+  requirement). No skill changes; graphs are host-side.
+- Inspected: v2.9.2 CHANGELOG (2.4.0→2.9.2), https://adk.dev/agents/workflow-agents/,
+  https://adk.dev/graphs/.
+
+### LangChain (Deep Agents; LangGraph via RefreshDurable)
+
+- Prior baseline: planning artifact + virtual filesystem + subagents.
+- Current (Deep Agents): `langchain-ai/deepagents` HEAD `0324ff31`,
+  release `deepagents==0.7.30` (2026-10-22, tag `42adc1bc`).
+- Material changes: v0.7.0 (2026-07-29, just after the July survey) was a
+  breaking lean-defaults release — `TodoListMiddleware`/planning prompt no
+  longer default (now opt-in middleware), base prompts trimmed,
+  `virtual_mode=True` default with `..` containment, new destructive
+  recursive `delete` tool, `write_file` create-or-overwrite semantics.
+  0.7.10→0.7.30 adds async-subagent maturation (fork mode, queued
+  follow-ups, `notify_parent`/webhook, human-waiting status, parent-trace
+  attribution), `SkillsMiddleware` with skill pinning/lazy tool loading,
+  `FilesystemMiddleware(tools=[...])` allowlists, symlink-resolved
+  permission checks, summarization/context-offload hardening. Docs now frame
+  Deep Agents as an "agent harness" with execution-environment /
+  context-management / delegation / steering capability layers.
+- LangGraph runtime (RefreshDurable's row, cited for the shared LangChain
+  row): monorepo HEAD `3cd57c03` (2026-10-21); no semver release tag on the
+  monorepo tag surface — package versions `langgraph` 1.2.16 /
+  `langgraph-checkpoint` 4.3.0 at that commit. Replay semantics unchanged:
+  post-checkpoint nodes re-execute on replay/fork, interrupts always
+  re-trigger.
+- Effect: Deep Agents pattern still matches the July row (planning artifact
+  now opt-in, filesystem + subagents richer); the durability caution stands.
+  No new local gap; harness remains host-owned.
+- Inspected: `libs/deepagents/CHANGELOG.md` (0.6.12→0.7.30),
+  https://docs.langchain.com/oss/python/deepagents/overview.
+
+### Microsoft (Agent Framework)
+
+- Prior baseline: graph workflows over executors/edges; Sequential,
+  Concurrent, Handoff, Group Chat, Magentic; checkpointing, HITL pauses,
+  typed messages, OpenTelemetry.
+- Current: `microsoft/agent-framework` HEAD `02005995`; Python release
+  `python-1.22.0` (2026-10-15, tag `14229b08`); .NET release
+  `dotnet-1.25.0` (tag `07596f36`).
+- Material changes: July topologies all still present
+  (`_sequential.py`, `_concurrent.py`, `_handoff.py`, `_group_chat.py`,
+  `_magentic.py` in `agent-framework-orchestrations`, stable since 1.9.0).
+  Notable 1.13→1.22 additions: declarative (YAML) workflows, workflows
+  exposed as agents (`as-agents`), fully replayable checkpoints from
+  initial input + HITL responses (breaking, 1.13.0), checkpoint type
+  registry with restricted deserialization, approval state bound to stable
+  function-call occurrences (FIDES), maximum-duration bound and
+  stop-reason on the tool loop, sequential function-call option,
+  switch-case shared targets; docs hub adds Agent Harness, background
+  agents, durable hosting extension, Autogen/Semantic-Kernel migration
+  guides. Package surface grew to 30+ provider/hosting connectors.
+- Effect: July row accurate and extended; checkpoint-replayability and
+  occurrence-bound approvals strengthen the host-guarantee side of the
+  resume-convention caution. No skill changes.
+- Inspected: `python/CHANGELOG.md` (1.13.0→1.22.0), release tarball
+  package layout, https://learn.microsoft.com/en-us/agent-framework/,
+  https://learn.microsoft.com/en-us/agent-framework/workflows/.
+
+### Practitioner layer (Ralph loop)
+
+- Prior baseline: `while` loop around headless CLI + task ledger; external
+  verifier as stop condition.
+- Current: https://ghuntley.com/ralph/ live (published 2025-07-14, modified
+  2026-02-19); canonical form unchanged — `while :; do cat PROMPT.md |
+  claude-code ; done`, one item per loop, subagent fan-out with single
+  validation agent, test/build backpressure. A Claude Code Ralph plugin
+  exists and is explicitly disavowed by the author as "not it".
+- Effect: no change to the convergent loop-harness concept; current-only
+  availability check, not a framework delta.
+
+### Untested limits
+
+No SDK was installed or executed; hooks, checkpoints, replay, and sandbox
+semantics are source/docs-read only. Registry versions (PyPI/npm) were not
+re-verified except skills-ref (see the companion survey refresh). Model
+names quoted in vendor examples (e.g. `gpt-5.6-sol`, `claude-sonnet-5`) are
+vendor-doc claims, not TeaPrompt endorsements.

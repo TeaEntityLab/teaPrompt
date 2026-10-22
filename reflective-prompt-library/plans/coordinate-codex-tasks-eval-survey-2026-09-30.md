@@ -213,3 +213,60 @@ The existing date-scoped [record-hygiene validator](validate_record_hygiene.py),
 - Acceptance criteria 1–5 are satisfied: source pins/refutations map to the State Ledger, authority/adoption boundaries to the local mapping and ECT-1–ECT-8, and execution/closure to the package/access/selection results and repository gate above. This is evidence for the scoped survey, not installed-agent efficacy.
 - A future runnable pilot needs a named local task, approved/isolated eval, objective/budget, bounded optimization, untouched baseline/winner final comparison, and independent host wake/pause/recovery evidence only if cross-Task monitoring is required.
 - No human approval is requested for this record-only closure. A future oracle change, hidden-evaluation task, new surface, or runtime direction change retains its existing Human Review/admission boundary.
+
+## Latest-version refresh — 2026-10-22
+
+> Refresh pointer: source pins below supersede the 2026-09-30 table for currency only. Historical findings, A5/A6/C6 refutations, and ECT-1–ECT-8 dispositions are unchanged.
+
+Checked 2026-10-22 via git ref queries and source reads; no provider calls, no installs, no execution. Branch HEAD, release/tag, and registry versions are split below and never conflated.
+
+| Project | Prior baseline (2026-09-30) | Latest checked HEAD | Release / registry | Disposition |
+| --- | --- | --- | --- | --- |
+| `easyvibecoding/coordinate-codex-tasks` | `bfdc289` (2026-09-28, tag `v0.2.0`) | `953b495cf3531b0e6620b923dba955f42742617b` (2026-10-01) | Tag `v0.3.0` = HEAD | Changed (docs/instructions only) |
+| `anthropics/skills` (evals guides) | `8a1541c` (2026-09-28) | `dbd4588f9e1033efb41dad4bef2f7947c8993d44` (2026-10-09) | No tags/releases on repo | Changed (minor wording) |
+| `langchain-ai/agentevals` | Unpinned row (repo link only) | `946ad15b9f2ce9bc9843edd2bb773bd07d78ca7e` (2026-07-13) | Tag `py==0.0.9` (2025-07-24); `python/pyproject.toml` version `0.0.9` | Current-only (prior unpinned; HEAD predates survey) |
+| `collinear-ai/simlab` | Unpinned row (repo link only) | Unknown (git + web reads failed) | Unknown | Unavailable (repo); current-only via official docs |
+| DSPy (`stanfordnlp/dspy`) | Unpinned (docs URLs only) | `b4beb23d94711857f618042f4e89260b2e8e09b3` (2026-10-21) | `__version__ = "3.4.1"` at HEAD | Current-only (no prior pin; split semantics confirmed) |
+| Promptfoo (`promptfoo/promptfoo`) | Unpinned (docs URL only) | `03844fb957487102bd21f7434a229915cee90e02` (2026-10-22) | `package.json` `0.124.1` at HEAD; latest `promptfoo-v*` tag `0.119.13` (2025-11-25) is stale vs HEAD | Current-only (no prior pin; split semantics confirmed) |
+| OpenAI dataset-backed Evals/Optimizer | Read-only 2026-10-31; shutdown 2026-11-30 | Official docs re-read 2026-10-22 | N/A (docs) | Unchanged timeline |
+
+### easyvibecoding/coordinate-codex-tasks — `bfdc289` → `953b495` (2 commits)
+
+- `2f5a0fe` (2026-09-30): new `docs/privacy.md` (69 lines) for plugin submission — package declares no server, MCP endpoint, hooks, or telemetry; runtime data stays host-managed. Packaging/policy text only.
+- `953b495` (2026-10-01, tag `v0.3.0`): explicit coordinator/worker identity wording in `SKILL.md` (new "Keep identities explicit across Tasks" section; bans context-dependent "this Task/本 Task" carry-over; heartbeat `targetThreadId` must match the coordinator), mirrored examples in `docs/examples*.md`, and a 2026-10-01 identity-wording experiment note in `docs/verification.md` (self-described announced-test caveat; natural-work comparison found no role mistake in the old wording, so no failure-rate reduction is established).
+- `scripts/check.py` and CI are untouched in this range. No scheduler implementation, event hook, timed wake-and-react proof, or monitor concurrency/restart semantics were added; the verification file still lists timed wake-and-react under "Not established". C1–C10 and ECT-5/ECT-6 stand.
+- Inspected: `git diff bfdc289..953b495` for `SKILL.md`, `docs/verification.md`, `docs/privacy.md`; tag list. Immutable links: [v0.3.0 SKILL.md](https://github.com/easyvibecoding/coordinate-codex-tasks/blob/953b495cf3531b0e6620b923dba955f42742617b/SKILL.md), [v0.3.0 verification](https://github.com/easyvibecoding/coordinate-codex-tasks/blob/953b495cf3531b0e6620b923dba955f42742617b/docs/verification.md).
+
+### anthropics/skills evals guides — `8a1541c` → `dbd4588` (evals dir: 1 commit)
+
+- Only `9d63080` touches `skills/claude-api/shared/evals/`: `build-eval.md` rewords one judge-output clause ("reasoning" → "short explanation") and updates the Haiku judge default to `claude-haiku-5-5`; `cost-hillclimb.md` rewords billing-basis passages from an internal page-counted route to harness-ledger vs API-breakpoint-exact-token accounting (worked example now ~-40% on the baseline comparison); `eval-hillclimb.md` adds an explicit `timeout` (normally ≤ 7,200,000 ms; background commands may stop after 30 minutes without one; resume is idempotent) to the run-in-background runner call.
+- No change to sign-off structure, analyzer train-only handoff, per-round test scoring/selection, runner-SHA change-detector scope, or grader-repair provisions. A5/A6/A9/A10 and ECT-1–ECT-4 stand.
+- Inspected: full `git diff` of the three files. Links: [build-eval @ dbd4588](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/evals/build-eval.md), [hillclimb @ dbd4588](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/evals/eval-hillclimb.md), [cost-hillclimb @ dbd4588](https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/claude-api/shared/evals/cost-hillclimb.md).
+
+### langchain-ai/agentevals — current-only
+
+- The 2026-09-30 row carried no pin, so no exact delta is claimed. Current `main` HEAD is `946ad15b` (2026-07-13, a dependabot merge — predates the survey, so the survey's read was of this or an adjacent tree); latest tag `py==0.0.9` (2025-07-24) matches `python/pyproject.toml` version `0.0.9`. The Python tree still exposes `trajectory/` (llm/match/strict/subset/superset/unordered) and `graph_trajectory/` evaluators — trajectory/tool-call/graph scope as originally recorded. No runtime or environment-provisioning expansion observed in the tree listing. Prior row stands, now pinned.
+
+### collinear-ai/simlab — repo unavailable; docs current-only
+
+- `git ls-remote` for `collinear-ai/simlab` fails with an auth-prompt error (terminal prompts disabled) and both `https://github.com/collinear-ai/simlab` and `/tree/main` return HTTP 404 via the reader, while web search still indexes the repo description. This is recorded as a retrieval failure with status unknown — not evidence of deletion, rename, or privacy change. Exact commit identity and any delta are unknown.
+- Official docs (`docs.collinear.ai/simulation-lab/`, read 2026-10-22) describe a `simulationlab` PyPI package / `simlab` CLI with Daytona-or-Docker sandboxes, LiteLLM-routed agent models, and programmatic or rubric-based verifiers writing `reward.txt`/`reward.json`. This corroborates the "simulated-state verification, author-described" row and adds the external-access/key prerequisite already noted. No license or adoption recommendation; prior row stands.
+- Unknowns: repo HEAD, release identity, any source change since 2026-09-30.
+
+### DSPy — current-only, split semantics re-confirmed at HEAD
+
+- No prior repo pin existed (docs URLs only), so no exact delta is claimed. Current `main` HEAD `b4beb23` (2026-10-21) carries `__version__ = "3.4.1"`. (Stale `v2.4.x` tags from 2024 exist but are not current; not cited as the release.)
+- Source re-read at HEAD: `GEPA.compile(student, *, trainset, valset=None)` still documents "`valset` defaults to `trainset` when not provided"; COPRO's `compile` still builds `Evaluate(devset=trainset, ...)`. The live [GEPA in depth](https://dspy.ai/current/diving-deeper/gepa-in-depth/) page additionally documents Pareto-frontier sampling, reflective proposal mechanics, `Prediction(score, feedback)` metric contract, and budget knobs — richer mechanism detail than the 2026-09-30 row, but no change to the recorded finding that split support is not automatic independent evaluation. Prior row stands, now pinned.
+
+### Promptfoo — current-only, split semantics re-confirmed at HEAD
+
+- No prior repo pin existed (docs URL only), so no exact delta is claimed. Current `main` HEAD `03844fb` (2026-10-22) carries `package.json` version `0.124.1`. (Latest `promptfoo-v*` tag is `0.119.13` from 2025-11-25 — stale relative to HEAD; the GitHub "latest" release pointer currently resolves to the unrelated `code-scan-action-0.2.2` tag. Neither is cited as the current release.)
+- Source re-read at HEAD: `src/commands/optimize.ts` `parseValidationSplit` still enforces `0 < split ≤ 0.5`, and the live [Prompt Optimization](https://www.promptfoo.dev/docs/usage/prompt-optimization/) page still documents one prompt/provider pair, full-set search by default, and optional held-out validation. The optimize command surface last changed 2026-05-28 (input validation), predating the survey. The recorded qualification — selection validation is not untouched final testing — stands, now pinned.
+
+### OpenAI Evals/Optimizer retirement timeline — re-verified, unchanged
+
+- Re-read 2026-10-22: the [prompt optimizer guide](https://developers.openai.com/api/docs/guides/prompt-optimizer) and the [deprecations page §2026-06-03 Evals platform](https://developers.openai.com/api/docs/deprecations#2026-06-03-evals-platform) still state announced 2026-06-03, read-only 2026-10-31, dashboard/API shutdown scheduled 2026-11-30. The deprecations page additionally points to a "Moving from OpenAI Evals to Promptfoo" cookbook migration path. ECT-8 (avoid new coupling) stands; scope remains the retiring dataset-backed surfaces only.
+
+### Limits
+
+Source/ref inspection only; no package execution, no provider or model calls. Release notes and docs are author reports. SimLab repo identity could not be retrieved — retried via git and two web routes, then recorded unknown per contract.

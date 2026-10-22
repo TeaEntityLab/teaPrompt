@@ -25,6 +25,8 @@ and [openfugu-research-record-2026-06-25.md](openfugu-research-record-2026-06-25
 with the panel framing in
 [multi-agent-panel-consensus-2026-06-25.md](multi-agent-panel-consensus-2026-06-25.md).
 
+> Refresh pointer (2026-10-22): upstream has moved substantially — latest release v0.4.0 "Hermes" (2026-09-27), main at `767106a` (2026-10-22); the five recipes persist but the looper dir grew 12 → 127 files, the unreachable RL-driven looper was removed (PR #2872), and collaboration is reframed as Mixture-of-Models with Vela/Decision model families. The §284 verification snapshot is now historical. Full refresh in [vllm-micro-agent-research-record-2026-06-30.md](vllm-micro-agent-research-record-2026-06-30.md) § "Latest-version refresh — 2026-10-22". This brief's per-recipe mechanism detail stands subject to that section.
+
 ## Route Trace (how this was handled)
 
 ```markdown

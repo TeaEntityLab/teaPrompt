@@ -6,6 +6,14 @@
 > It proposes verification tasks and gated candidates; it adopts nothing. Authority
 > stays with [`06-repo/AGENTS.md`](../06-repo/AGENTS.md) and skill contracts; every
 > adoption below requires its own ledger row and, where marked, human approval.
+>
+> **Latest-version refresh pointer (2026-10-22):** the spec/validator state
+> this plan builds on was re-checked in the [survey's 2026-10-22
+> refresh](../../surveys/agent-skills-flow-control-survey-2026-07-11.md#latest-version-refresh--2026-10-22)
+> — frontmatter table unchanged, `allowed-tools` still experimental,
+> skills-ref still 0.1.1, strict unknown-field rejection confirmed in
+> current source. Execution Ledger results below stand as dated evidence;
+> no task is reopened.
 
 ## Why
 

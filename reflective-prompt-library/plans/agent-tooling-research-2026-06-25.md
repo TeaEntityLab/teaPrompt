@@ -2,6 +2,10 @@
 
 Language: English
 
+> **Refresh note (2026-10-22):** the OmO plugin-era description below is
+> historical (see the dedicated OmO record); Hermes/oh-my-pi current state
+> is in `## Latest-version refresh — 2026-10-22` at the end.
+
 ## Purpose
 
 Survey Hermes Agent, Oh My Pi / `oh my pip`, and Oh My OpenAgent as external
@@ -202,3 +206,85 @@ Use this survey when future work proposes a harness, persistent agent, or
 multi-agent runtime. First classify the idea as methodology vs operationalization.
 TeaPrompt can adopt methodology; runtime surfaces need a separate product decision
 and Human Review.
+
+## Latest-version refresh — 2026-10-22
+
+Scope: Hermes Agent and Oh My Pi current-state refresh against the unpinned
+2026-06-25 baseline (no commit was pinned then; the June-2026 commits below
+are date-recovered approximations, not the original read pins). Oh My
+OpenAgent is refreshed in its dedicated record
+([oh-my-openagent-survey-2026-10-01.md](oh-my-openagent-survey-2026-10-01.md));
+its plugin-era characterization here stays historical. Dispositions unchanged:
+no adoption, no dependency, no runtime change.
+
+### Hermes Agent (`NousResearch/hermes-agent`)
+
+- Prior baseline: unpinned README/docs read, 2026-06-25. Nearest `main`
+  commit `e62afaca6259278ef08d23cb178abf477597f986` (2026-06-25) used only
+  as an approximate diff base. Status: current-only with approximate delta.
+- Latest checked: default branch `main` HEAD
+  `81a55437f3f31a9f12a30c53b6c5d49d420898aa` (2026-10-21, "fix(providers):
+  allow external-process plugins to opt into streaming"). Release split:
+  latest stable tag `v0.22.4` (`4d043038`, 2026-10-21, ancestor of HEAD);
+  date-tag family latest `v2026.9.24`; prerelease
+  `v0.22.4+canary.20261022T070155Z`. Root `package.json` stays `1.0.0`
+  (not a release version). License still MIT.
+- Actual changes (44,694 commits in range; README + surface inventory, not a
+  full re-survey): README delta is small — provider list condensed to a docs
+  link, seven terminal backends (Vercel Sandbox added), Desktop subagent
+  routing, `hermes config get`, PM-delegated installer, Termux signed APT
+  repo (`stable`/`canary` channels), MSIX/App Installer packaging. New
+  structural surfaces: `plugin-catalog/` (763 YAML registry entries),
+  `hermes_state_*` split from one module into ~60, `native/fts5_cjk`,
+  `evals/`, `SOUL.md`. Security doc now states an eight-layer
+  defense-in-depth model (authorization, command approval, write sandbox,
+  container isolation, MCP credential filtering, injection scanning,
+  cross-session isolation, input sanitization). Skills top-level dirs
+  reorganized (18 → 14).
+- Effect on prior findings: identity (persistent self-improving agent,
+  messaging gateways, memory/skills/tools) confirmed unchanged; the "runtime
+  reference only" judgement stands. Historical risk block stands and widens
+  at source tier: plugin-catalog supply chain (hundreds of pinned
+  third-party plugins), Desktop app, and MSIX/APT channels are new trust
+  surfaces since June.
+- Inspected: commit-pinned README, LICENSE, root trees, tag objects at
+  `https://github.com/NousResearch/hermes-agent` (`main@81a55437`,
+  `v0.22.4@4d043038`). No GitHub Release body read; tag objects + tree
+  reads only.
+- Untested limits: nothing installed or executed; provider/model counts,
+  gateway behavior, and benchmark claims unverified; the 44k-commit range
+  means the delta is sampled (README, roots, security doc, catalog
+  presence), not exhaustive.
+
+### Oh My Pi (`can1357/oh-my-pi`, CLI `omp`)
+
+- Prior baseline: unpinned README read, 2026-06-25. Nearest `main` commit
+  `c7d9abbcfdd3f39ed89448f8936e39c1b089ed50` (2026-06-25) used only as an
+  approximate diff base. Status: current-only with approximate delta.
+- Latest checked: default branch `main` HEAD
+  `3a2758b68f7c8e6bdf22c3a76b86c8675e5e0c9e` (2026-10-21, Merge PR #16706,
+  Anthropic API-version opt-in). Release split: latest tag `v18.12.6`
+  (`45c35e40`, 2026-10-21) is a *distinct, earlier* commit — HEAD carries an
+  `[Unreleased]` changelog section on top. Package
+  `@oh-my-pi/pi-coding-agent` 16.1.18 → 18.12.6. License still MIT.
+- Actual changes (22,486 commits, 9,364 files): README now credits "Built by
+  Stencil Labs"; **60+** providers (was 40+), **31** built-in tools, ~80k
+  Rust core lines (was ~55k). New documented tools since June: `computer`
+  (desktop control), `security_scan` (opt-in, `security.enabled=false`
+  default), `context-notes`, `manage_skill`, `learn`, `ida` (IDA Pro
+  daemon), `generate_image`, `tts`, `todo`, `rewind`, `new-context`,
+  `memory_edit`; `search` doc renamed to `grep` (version drift: old `search`
+  references are stale). New packages: `browser-relay`, `metaharness`,
+  `omptype`; removed: `hashline`, `swarm-extension`, `terminal-bench`.
+  Build/install: Bazel + Nix flake (incl. Home Manager module), prebuilt
+  binary from `build.stencil.so` with SHA-256 check, musl/`libstdc++` note;
+  PRs temporarily open to all as a trial (vouch requirement lifted).
+- Effect on prior findings: "host harness, not library content" stands —
+  every new surface is harness/runtime-side. The falsifier still holds: no
+  TeaPrompt promise may depend on omp-only enforcement.
+- Inspected: commit-pinned README, LICENSE, package manifests, tool-doc
+  inventory, `packages/coding-agent/CHANGELOG.md` head at
+  `https://github.com/can1357/oh-my-pi` (`main@3a2758b6`,
+  `v18.12.6@45c35e40`).
+- Untested limits: source/doc tier only; no install, no execution; provider
+  counts and benchmark rows (e.g. MiniMax 2.1×) unverified.

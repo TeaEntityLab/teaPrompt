@@ -394,3 +394,55 @@ re-opened:
 
 Re-evaluation must update FM1–FM4 rather than creating a disconnected decision
 record. Guard: `plans/tests/test_fable_method_survey_record.py`.
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: tag `v1.4.0`, commit
+`88b5cf36b10ee3679e08ee0f0181b9774d481508` (2026-07-15), checked 2026-07-16.
+Latest checked: default branch `main` at
+`9924067e82bd48cf3b0426378db93238bfb33e9b` (2026-10-03, "Add standalone
+Codex skill installation (#9)"); no release newer than `v1.4.0` exists.
+Exactly one commit separates the pins (first merged external contribution,
+by pannal). Upstream license still MIT.
+
+Material changes (all in that single commit; 12 files, +147/−29):
+
+- **False-complete install repaired (Required Wording Change 9 closed).**
+  Both `install.sh` and `install.ps1` now install all four skills via a
+  skills loop (previously 3 of 4 behind a success banner). Installers gained
+  `--claude|--codex` (`-Target claude|codex`) targeting
+  `~/.claude/skills` vs `${CODEX_HOME:-~/.codex}/skills`, a `--dest` /
+  `-Destination` override, and usage/exit-2 argument handling. Codex support
+  arrives as four new `skills/*/agents/openai.yaml` display-metadata files.
+  CI now smoke-tests both installers on both targets and asserts
+  `fable-domain/SKILL.md` lands (`checks.yml`); `checks.py` validates the
+  new metadata files. The repair was traced in installer source and CI
+  text; no installer was executed here, so the fix is source-verified,
+  execution unverified.
+- **README install/eval claims partially recalibrated.** The "Any other
+  agent" line now excludes Codex (it has its own path); the tree documents
+  the new metadata files. The README results table, run counts, judge
+  description, and trap rows flagged as stretched/unsupported were NOT
+  touched — the honesty-asymmetry findings stand.
+- **Skill prose deltas are cosmetic.** `fable-domain`/`fable-judge`
+  frontmatter generalized trigger placeholders (`<sector>` → `SECTOR`
+  style); `fable-method` dropped a redundant `trigger:` frontmatter line.
+  No loop, AUTH, TWINS, or judge semantics changed; the FM1/FM2 adopted
+  wording is unaffected. `AGENTS.md` and `fable-loop` staleness findings
+  were not re-audited line-by-line (out of the one-commit diff scope) and
+  stand as historical.
+- Eval artifacts untouched: no round-14 JSON committed, no new rounds, no
+  fixture regeneration. FM3's contamination analysis and FM4's rejection
+  stand. The single-commit delta also means no new supply-chain surface
+  (still `cp`/`Copy-Item` installers, no install-time execution).
+
+Effect on dispositions: FM1/FM2 (adopted) unchanged — no upstream semantic
+change touches the adopted wording; FM3 (deferred) and FM4 (rejected)
+unchanged. The `reproduce: conditional` and `deploy: no` verdicts stand.
+
+Inspected immutable links:
+`https://github.com/Sahir619/fable-method/commit/9924067e82bd48cf3b0426378db93238bfb33e9b`,
+full one-commit diff (install.sh, install.ps1, README.md, checks.py,
+checks.yml, four openai.yaml files, three SKILL.md frontmatter lines).
+Untested limits: installers and `checks.py` not executed; Codex
+skill-loading behavior not verified; eval JSONs not re-tallied.

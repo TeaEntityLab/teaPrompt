@@ -9,6 +9,13 @@
 > Later AH-19 (same record's lineage addendum) is an adopted narrow in-place repair, already recorded below.
 > `06-repo/AGENTS.md` and governed skill contracts remain authoritative.
 
+> **Refresh pointer (2026-10-22):** pinned 2026-08-25 findings below are
+> preserved; latest-version status for Pi, Maka, Amplio, Ankole, and the
+> Temporal/LangGraph/DBOS/Restate/Orleans/OTP lineage is in
+> `## Latest-version refresh — 2026-10-22` at the end of this record.
+> That section is source/doc inspection only: no runtime adoption, no
+> deployment endorsement, no skills changed.
+
 ## Purpose
 
 Preserve the completed six-lens survey prompted by the claim that Pi, Maka,
@@ -837,3 +844,226 @@ This addendum is wrong or must be re-litigated if:
    trust-boundary, risk, external-adoption, or main-survey contracts;
 7. AH-10–AH-17 status changes without the recorded trigger and deterministic
    guard changing with it.
+
+## Latest-version refresh — 2026-10-22
+
+> **Scope:** dated latest-version status for the four primary systems (Pi,
+> Maka, Amplio, Ankole) plus the six named lineage comparisons already in
+> this record (Temporal, LangGraph, DBOS, Restate, Orleans, Erlang/OTP).
+> Source/doc inspection only at the pins below; nothing executed, no
+> adoption/hold changed, no deployment or safety endorsement. Historical
+> 2026-08-25 pins, findings, and AH-1–AH-19 dispositions above are unchanged.
+
+### Primary systems
+
+| System | Prior baseline (2026-08-25) | Latest checked (2026-10-22) | Release / version split | Status |
+| --- | --- | --- | --- | --- |
+| Pi (`earendil-works/pi`) | `dcd4619` (2026-08-24), `@earendil-works/pi-agent-core` 0.84.3, full harness scaffolded (`HarnessNotImplemented`) | `main`/`HEAD` `7c22a93d0ed02092142fa63823e63d76aa4e2406` (2026-10-22T09:02:01+02:00, `feat(ai): add totalFromProvider flag to usage cost (#11178)`); 1,256 commits since baseline | tag `v1.4.0` = `4a08025` (Release v1.4.0, 2026-10-22), 2 commits behind HEAD; `packages/agent/package.json` now `@earendil-works/pi-agent-core` 1.4.0; new sibling `@earendil-works/pi-durable` 1.4.0 | changed |
+| Maka (`apache/maka`) | `3a9824a` root 0.2.0, runtime packages 0.1.0; T1/T2 + crash recovery implemented, production generic reconciler future | `main`/`HEAD` `2b0e4a25fa01e6ee6d60bc5c5d6e4f682caecfbf` (2026-10-22T16:47:26+11:00, `fix(release): update Node and audited dependencies (#6229)`); 1,311 commits since baseline | root `package.json` 0.2.2 (was 0.2.0); `@maka/runtime`, `runtime-host`, `storage`, `core` all still 0.1.0; latest incubating tag `v0.2.2-incubating-rc1` = `6772a34` (2026-10-19, `refactor(runtime): remove unused tool reconciliation writer (#6130)`) | changed |
+| Amplio (`google-deepmind/amplio`) | `8c2e009`, no reachable release tag; DB event-loop recovery implemented; missing outcomes become synthetic interrupted results | `main`/`HEAD` `e40f4917cda5b5e0787aef602999b8e4a5e11d22` (2026-10-21T10:34:28-07:00, `OSS Export (better context management for many-image cases)`); 19 commits since baseline | still no tags on any `refs/tags/*` surface (tagless upstream) | changed (minor) |
+| Ankole (`AgentBull/ankole`) | `29cfcd3` = tag `v0.76.2`; addressable actor/runtime + provider outbox with `unknown_after_send` | `main`/`HEAD` `d5b2e9688224271ca3d0643ce586cfd6aa300f13` (2026-10-21T21:28:19+08:00, `Merge pull request #126`); 128 commits since baseline; root `package.json` is private/unversioned | tag `v2.0.0-alpha.19` = same SHA as HEAD (2026-10-21); `CHANGELOG.md` head confirms; v2 alpha series supersedes the v0.76.x line | changed |
+
+#### Pi — durable harness implemented in a new package; spec/scaffold finding superseded
+
+- **What changed:** the experimental harness was removed from `pi-agent-core`
+  (`7fd478a`, 2026-10-01, "remove the experimental harness from
+  pi-agent-core": agent loop only remains) and re-implemented as
+  `@earendil-works/pi-durable`, an "experimental" durable agent harness with a
+  normative spec at `packages/durable/docs/spec.md`. The old
+  `packages/agent/docs/harness.md` no longer exists at HEAD. SQLite/JSONL/
+  IndexedDB storages, task graph, crash-loop guard, durable sleeps/timers,
+  Cloudflare Durable-Object hibernation support, and compaction now exist.
+- **Persistence/recovery/cancel/effect semantics (source-read at HEAD):**
+  Sessions atomically commit entries/tasks/Chord documents ("only committed
+  state is observable"; spec §1); tool tasks record a durable intent
+  (`phase: "execute"`, final arguments, `replay: "safe" | "unsafe"`) before
+  execution, and recovery re-runs only when both stored and current policy
+  say `safe` — otherwise the call settles failed with "was interrupted and
+  may have partially run" (`packages/durable/src/harness/tool.ts`, `ToolTask`
+  `execute` phase, `version: 2`). Abort/cancel is explicit
+  (`abortSubmission`, `abortTask`, `Conversation.abort()`), with restart
+  interruption honestly labeled. No generic cross-boundary reconciliation or
+  sink-enforced idempotency proof was found; retry policy governs durable
+  generation attempts, not external-effect settlement.
+- **Effect on prior findings:** the 2026-08-25 "spec/scaffold,
+  `HarnessNotImplemented`" verdict is superseded for current Pi: a real
+  commit-before-observe durable harness with an explicit safe/unsafe tool
+  replay rule now exists in source. The panel's central
+  event-replay/effect-replay distinction still holds (interrupted unsafe
+  tools stay uncertain, not proven failed). Execution unverified here.
+- **Inspected immutable links:**
+  [HEAD](https://github.com/earendil-works/pi/commit/7c22a93d0ed02092142fa63823e63d76aa4e2406),
+  [v1.4.0](https://github.com/earendil-works/pi/releases/tag/v1.4.0),
+  [harness removal](https://github.com/earendil-works/pi/commit/7fd478a2e888ebc28869566f33a186303d372838),
+  [durable spec](https://github.com/earendil-works/pi/blob/7c22a93d0ed02092142fa63823e63d76aa4e2406/packages/durable/docs/spec.md),
+  [tool task](https://github.com/earendil-works/pi/blob/7c22a93d0ed02092142fa63823e63d76aa4e2406/packages/durable/src/harness/tool.ts).
+
+#### Maka — T1/T2 retained; generic tool reconciliation retired, not shipped
+
+- **What changed:** 1,311 commits of product/runtime-host/desktop work; root
+  version 0.2.0 → 0.2.2 with incubating RCs through `v0.2.2-incubating-rc1`.
+  The resume architecture doc now states the current contract "retains safe
+  continuation and unknown-outcome handling; tool-specific reconciliation has
+  been retired": Phase table shows Later Phase 3 as "Retired design; no
+  current producer", and commit `6772a34` (2026-10-19, the RC target)
+  "remove unused tool reconciliation writer" deleted the Phase 3A writer,
+  write transitions, and failpoints while keeping historical recovery
+  readers. Current tool declarations accept only `never_auto_retry` (default)
+  and `outcome_unknown`; decoding historical `replay_safe`/`idempotent`/
+  `reconcile`/`reattach` never authorizes execution.
+- **Persistence/recovery/cancel/effect semantics:** T1 (`commitToolPrepared`
+  + `actions.toolDispatch` after preflight) and T2 (`commitToolOutcome`
+  before model continuation) remain implemented in SQLite canonical mode;
+  T1-without-T2 seals the invocation as `outcome_unknown` without writing a
+  tool response (Client Capability recovery persists an error response with
+  `uncertainOutcome: { code: 'outcome_unknown', retrySafe: false }`); Phase
+  4 workspace checkpoint binding is still "Designed", and host-ownership/
+  workspace-continuity work proceeds independently of any generic reconciler.
+- **Effect on prior findings:** strengthens the panel's verdict rather than
+  overturning it — Maka explicitly converged on "retain uncertainty, fresh
+  explicit user turn inspects state" instead of generic automatic effect
+  settlement. The AH-8 unknown-gate and falsifiability item 3 (generic
+  production reconciler) remain correctly scoped.
+- **Inspected immutable links:**
+  [HEAD](https://github.com/apache/maka/commit/2b0e4a25fa01e6ee6d60bc5c5d6e4f682caecfbf),
+  [v0.2.2-incubating-rc1](https://github.com/apache/maka/tree/6772a345622325141f557a671ed7b34b38f81ff2),
+  [resume architecture](https://github.com/apache/maka/blob/2b0e4a25fa01e6ee6d60bc5c5d6e4f682caecfbf/docs/architecture/runtime-resume-architecture.md),
+  [retirement commit](https://github.com/apache/maka/commit/6772a345622325141f557a671ed7b34b38f81ff2).
+
+#### Amplio — recovery contract unchanged; loop hardening around refusal/limits
+
+- **What changed:** 19 OSS-export commits, mostly UX/mobile/skills plus
+  provider handling (`openai: route idless chunks`, `preserve parallel tool
+  calls with duplicate indexes`, `preserve tool-call provider metadata
+  across replay`) and event-loop guards: `eventloop: don't conclude on
+  output-limited turns` (`da24743`), `don't conclude on an unreadable event
+  count` (`44d8ed5`), `Force the final answer at the iteration cap`
+  (`7693f21`), `headless: backfill reports for resting resumes` (`dd403f3`).
+- **Persistence/recovery/cancel/effect semantics:** `repairOrphanToolCalls`
+  in `internal/agent/eventloop/eventloop.go` is unchanged in contract — a
+  placeholder `ToolResultEvent` with "[Tool execution interrupted by process
+  crash; no result available.]" and `IsError: true`, still with no external
+  reconciliation evidence and no distinct post-preflight dispatch-intent
+  identity found. New recovery-path guards (refusal, output-limit) share
+  reporting between live loop and recovery path.
+- **Effect on prior findings:** none material; the "synthetic interrupted
+  result preserves protocol shape but hides business uncertainty" verdict
+  and AH-8 disposition stand.
+- **Inspected immutable links:**
+  [HEAD](https://github.com/google-deepmind/amplio/commit/e40f4917cda5b5e0787aef602999b8e4a5e11d22),
+  [event loop](https://github.com/google-deepmind/amplio/blob/e40f4917cda5b5e0787aef602999b8e4a5e11d22/internal/agent/eventloop/eventloop.go).
+
+#### Ankole — v2 restructure; durable delivery/outbox semantics preserved under new paths
+
+- **What changed:** 128 commits moving the v0.76.x tree to the v2.0.0-alpha
+  series (HEAD = `v2.0.0-alpha.19`). The Elixir control plane split:
+  `app/control_plane/lib/ankole/signals_gateway/` (old outbox path) is gone;
+  durable delivery now lives in `app/control_plane_core/lib/ankole/
+  conversations/delivery/` (`intent.ex`, `dispatch.ex`, `recovery.ex`,
+  `mirror.ex`, `supervisor.ex`, `jobs/`), with a new Rust
+  `app/kernel` (Rustler/NAPI native transport, AI client, object store) and
+  `RuntimeFabric` moved to Phoenix Channel with dual-stack ZeroMQ/HTTP file
+  relay (`0cd83f0`). Notable durability fix: `1dcc6ef` (2026-10-16) started
+  the Delivery outbox Oban queue that alpha.5 had left unstarted (final
+  replies stayed pending) plus a regression test that every application job
+  has an enabled production queue.
+- **Persistence/recovery/cancel/effect semantics (source-read at HEAD):**
+  `dispatch.ex` `finalize_intent_send` still maps adapter outcomes to
+  succeeded / bounded-retry failed / `unknown_after_send`, re-locking the
+  intent row after the unlocked network call and treating late results after
+  recovery takeover as stale; `recovery.ex` keeps monotonic attempt counts,
+  a 60s in-flight reclamation window, and possible-duplicate notices on
+  uncertain requeues. Worker route fencing (`worker_route.ex`: PostgreSQL
+  route fence, stale-entry rejection) and `sessions/fence.ex` retain the
+  stale-writer rejection surface. Scope remains subsystem-specific (delivery
+  intents), not universal arbitrary-tool recovery.
+- **Effect on prior findings:** the "provider outbox + actor fencing, scoped
+  to named durable subsystems" verdict survives the restructure at new
+  paths; no independent production verification was attempted here, and the
+  prior Elixir-toolchain test blocker was not relitigated (still read-only).
+- **Inspected immutable links:**
+  [HEAD / v2.0.0-alpha.19](https://github.com/AgentBull/ankole/commit/d5b2e9688224271ca3d0643ce586cfd6aa300f13),
+  [delivery dispatch](https://github.com/AgentBull/ankole/blob/d5b2e9688224271ca3d0643ce586cfd6aa300f13/app/control_plane_core/lib/ankole/conversations/delivery/dispatch.ex),
+  [delivery recovery](https://github.com/AgentBull/ankole/blob/d5b2e9688224271ca3d0643ce586cfd6aa300f13/app/control_plane_core/lib/ankole/conversations/delivery/recovery.ex),
+  [outbox-queue fix](https://github.com/AgentBull/ankole/commit/1dcc6ef809a5fbafcc747828180c7667ee33e8b7),
+  [kernel README](https://github.com/AgentBull/ankole/blob/d5b2e9688224271ca3d0643ce586cfd6aa300f13/app/kernel/README.md).
+
+### Lineage comparisons (already in this record; doc/release surfaces only)
+
+| Project | Prior baseline (2026-08-25) | Latest checked (2026-10-22) | Release / version split | Status |
+| --- | --- | --- | --- | --- |
+| Temporal (`temporalio/temporal` + docs) | live docs: Workflow replay / Event History / retry-policy / Go versioning | `main` `e8ee627110a98501103827745aab18aedf312dd0` (2026-10-21T18:00:20-07:00); docs re-read 2026-10-22 | server tags: `v1.32.1` = `af08a5e` (2026-10-07, latest plain release tag); `v1.33.0-165.0` = `37b6e7ae` (newer dated-branch tag) | unchanged (semantics) |
+| LangGraph (`langchain-ai/langgraph` + docs) | live docs: time travel / interrupts | `main` `3cd57c038ad827d05f80c6488adea9994156c58c` (2026-10-21T21:22:40+09:00, `fix(checkpoint): reject NUL bytes in namespace labels (#9383)`); docs re-read 2026-10-22 | monorepo has no semver release tag for the Python lib; package versions at HEAD: `langgraph` 1.2.16, `langgraph-checkpoint` 4.3.0 | unchanged (semantics) |
+| DBOS (`dbos-inc/dbos-transact` + docs) | live docs: workflow / Go transaction / outbox / concurrent execution | `main` `2945d186b97d5adafbae037e9e34483784b57b70` (2026-10-21T18:23:44-07:00); docs re-read 2026-10-22 | tag `v5.3` = `8ca1292` (commit 2026-10-14) | unchanged (semantics) |
+| Restate (`restatedev/restate` + docs) | live docs: architecture / request lifecycle | `main` `edd5d318d1c7867d61020b3d1b91703ca3afbe8a` (2026-10-21T15:07:35+02:00, `Bump version to 1.8.2-dev`); docs re-read 2026-10-22 | tag `v1.8.1` = `655b13c` (release commit `20efb1b`, 2026-10-21) | unchanged (semantics) |
+| Orleans (`dotnet/orleans` + Learn) | Learn overview at source commit `a4303ce92aa169102f57793c84aae0603c75c3a3` | repo `main` `845672b8d84813859aa54245efd0eebb8f0233e2` (2026-10-21T14:58:47-07:00); Learn overview re-read 2026-10-22 | tag `v10.4.0` = `d114d75` (2026-10-02) | unchanged (semantics) |
+| Erlang/OTP (docs) | System Documentation v29.0.5 / `OTP-29.0.5` supervision docs | docs re-read 2026-10-22 at v29.1.2 | tags `OTP-29.1` = `56d5478`, `OTP-29.1.2` = `faae228` (2026-10-14); repo `master` `0961685119796964cae49a398e095bb57f183418` (2026-10-21) | changed (version only) |
+
+- **Temporal:** current docs repeat the panel's exact qualification — Workflow
+  replay reuses recorded Activity results ("Activities aren't executed again
+  during replay") while Activity executions retry by default with exponential
+  backoff and are expected to be idempotent; Go versioning still uses
+  `GetVersion` patching plus Worker Versioning deployments. Inspected:
+  <https://docs.temporal.io/workflows>,
+  <https://docs.temporal.io/encyclopedia/retry-policies>,
+  <https://docs.temporal.io/workflow-execution/event-history>,
+  <https://docs.temporal.io/develop/go/versioning>.
+- **LangGraph:** current time-travel docs still state replay/fork re-executes
+  post-checkpoint nodes including LLM calls, API requests, and interrupts
+  ("Replay re-executes nodes — it doesn't just read from cache"; interrupts
+  "always re-triggered during time travel"). No change to the
+  execution-replay verdict. Inspected:
+  <https://docs.langchain.com/oss/python/langgraph/use-time-travel.md>,
+  <https://docs.langchain.com/oss/python/langgraph/persistence>. (Shared with
+  the framework-refs slice for its Deep Agents-adjacent row; Deep Agents
+  itself is out of this slice.)
+- **DBOS:** current docs keep the panel's scoping — transactions commit
+  exactly-once (checkpoint in the same DB transaction), steps are at-least-
+  once and "should be idempotent", workflow timeouts/cancellation are
+  durable and cooperative (`cancelSignal`/`timeoutSignal` AbortSignals),
+  fork/rewind re-execute from a chosen step. Inspected:
+  <https://docs.dbos.dev/tutorials/workflow-tutorial/>,
+  <https://docs.dbos.dev/typescript/tutorials/step-tutorial>,
+  <https://docs.dbos.dev/typescript/tutorials/transaction-tutorial>,
+  <https://docs.dbos.dev/python/examples/outbox>,
+  <https://docs.dbos.dev/typescript/tutorials/workflow-management>.
+- **Restate:** current docs keep journal-mediated guarantees scoped to
+  Context operations: `ctx.run` wraps non-deterministic work for
+  record/replay, cross-service calls go through Restate for end-to-end
+  idempotency, raw unmediated side effects remain outside the replay proof.
+  No evidence found that epochs fence already-accepted remote mutations.
+  Inspected: <https://docs.restate.dev/foundations/key-concepts>,
+  <https://docs.restate.dev/foundations/actions>,
+  <https://docs.restate.dev/guides/request-lifecycle>.
+- **Orleans:** the Learn overview page still renders at the exact prior
+  source commit `a4303ce92aa169102f57793c84aae0603c75c3a3` (byte-identical
+  provenance; zones now list through Orleans 10.0 with CancellationToken
+  support), and grain persistence still uses explicit `WriteStateAsync`
+  with ETag-gated providers — addressability/lifecycle without external-
+  effect atomicity. Inspected:
+  <https://learn.microsoft.com/en-us/dotnet/orleans/overview>,
+  <https://learn.microsoft.com/en-us/dotnet/orleans/grains/grain-persistence/>.
+- **Erlang/OTP:** supervision documentation moved v29.0.5 → v29.1.2
+  (one_for_one/one_for_all/rest_for_one strategies, restart
+  intensity/period, auto-shutdown unchanged in substance); still liveness
+  control, not effect settlement. Inspected:
+  <https://www.erlang.org/doc/system/sup_princ.html> (title reports v29.1.2).
+
+### Disposition
+
+- AH-1–AH-19 unchanged. The Pi durable-harness implementation is a material
+  upstream change but creates no TeaPrompt runtime, skill, dependency, or
+  project-knowledge gap: it is new external study material under the
+  existing no-adoption boundary, and its safe/unsafe replay rule is
+  consistent with (not a replacement for) the record's unknown/reconcile/
+  compensate/Human-Review vocabulary.
+- Maka's retirement of generic tool reconciliation is evidence for, not
+  against, the record's central claims; Amplio/Ankole/lineage deltas are
+  consistent with the pinned verdicts.
+- Limits: no builds, tests, fault injection, or provider/model calls were
+  run; all "implemented" claims are source-read at the inspected revisions.
+  Smoke candidates for Main (unrun): Pi `packages/durable` crash-window
+  tests at `7c22a93` per its README/spec; Maka `runtime-resume-crash` and
+  `recovery-resolver` suites at `2b0e4a2`; Ankole delivery
+  `recovery_test`/`commit_test` at `d5b2e96` with the documented
+  Elixir/PostgreSQL environment.

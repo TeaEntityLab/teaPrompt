@@ -11,6 +11,8 @@
 > `plans/pstack-survey-2026-09-22.md` (the first-order repo survey). Bare survey →
 > DS-1: nothing installed. Guard: `plans/tests/test_pstack_synthesis_survey_record.py`.
 
+> Refresh pointer (2026-10-22): historical pin `53e579f` (manifest `0.15.2`); current `cursor/plugins` HEAD is `eb4db2b` (2026-10-21, manifest `0.15.30`). PS2-* dispositions and pilot addenda below are preserved. Current pstack deltas live in [pstack-matt-lauren-survey-2026-10-03.md](pstack-matt-lauren-survey-2026-10-03.md#latest-version-refresh--2026-10-22) and [agent-execution-assurance-taxonomy-survey-2026-09-30.md](agent-execution-assurance-taxonomy-survey-2026-09-30.md#latest-version-refresh--2026-10-22).
+
 ## Research Question
 
 User instruction: "Survey for pstack further: local://paste-4.md". Three

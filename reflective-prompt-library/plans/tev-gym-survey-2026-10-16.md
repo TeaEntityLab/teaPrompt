@@ -3,6 +3,7 @@
 Language: English
 
 > **Status:** Survey completed 2026-10-16: project page, arXiv v1 paper, and both Hugging Face model cards inspected. No executable Tev-Gym code/data release was located in the checked project links or public `tev-agent` organization inventory; no training or benchmark execution was performed here. Reference-only: this record adopts nothing and authorizes no skill, runtime, or campaign change.
+> **Refresh pointer (2026-10-22):** latest-version check appended at the end of this record. Release status unchanged: paper still v1, project page still shows internal-approval badges with no code/data links, org still lists one public repository.
 
 ## Research Question
 
@@ -108,3 +109,15 @@ This survey's coverage mapping is invalid if a mapped surface does not support t
 ## Handoff
 
 Evidence sufficient to stop this source review: the cited mechanisms and numbers were checked against primary-source text, experimental outcomes remain attributed to the authors, and each candidate has an explicit disposition and trigger. Changes are limited to this survey and its navigation/index entries; no skill, operating contract, runtime or campaign change is adopted. If a code/data release link appears on the project page or a public repository appears under `github.com/tev-agent`, a follow-up delta survey can inspect the exact executable revision and exercise the declared gaming/Φ/verifier gates. Any future adoption would require that evidence plus a verified local gap, not this reading alone.
+
+## Latest-version refresh — 2026-10-22
+
+All sources re-checked 2026-10-22. Disposition unchanged: record-only, no adoption; TEV-1–TEV-8 triggers unfired.
+
+- **Paper (arXiv 2610.18868):** still v1 only, published 2026-10-13; the arXiv API record shows no v2. Prior baseline v1 → latest v1 (no revision).
+- **Project page (https://tev-agent.github.io/):** still carries `Code release under internal approval` / `Data release under internal approval` badges and the note `Under internal approval, will release in 7 days` (verbatim from the fetched HTML). No code/data release link was added. Outbound links remain arXiv (abs + PDF), the two Hugging Face cards, author pages, and one X post.
+- **GitHub org `tev-agent`:** still exactly one public repository, `tev-agent/tev-agent.github.io` (the project page; `updated_at`/`pushed_at` 2026-10-15, unchanged since the prior check). No code/data repository appeared in this scoped inventory; other orgs, private repos, and mirrors were not inventoried. Page-repo HEAD is now pinned (current-only; the prior survey did not record it): `39b59db823b49bfd80ad02114bb49b24a91c3aac`.
+- **Model cards:** both still public under CC BY-NC-4.0 with the `reproduced version, not official model weights trained at Adobe` notice verified present in both READMEs today. Current-only identities (prior survey recorded no SHAs): `gordonhu/Tev-27B` @ `60c36fd4a8db1244856ef6a5abc0b4f1a121978b` (lastModified 2026-10-14, base `Qwen/Qwen3.8-27B`, ~27B params); `gordonhu/Tev-320B` @ `08addaf62d7183d111e4f8ec68e92052b5f3740d` (lastModified 2026-10-14, base `zai-org/GLM-5.3-Flash`, ~321B params). Popularity/order metadata observed but not used as evidence.
+- **Effect on prior findings:** the `Code soon / Data soon` tracking point is still open — the undated 7-day promise now reads as stale rather than imminent, but that is a calendar observation, not a claim about the authors' plans. All State Ledger rows keep their 2026-10-16 values; published-weight equivalence and all experimental numbers remain author-reported and unverified here.
+- **Inspected:** https://arxiv.org/abs/2610.18868, http://export.arxiv.org/api/query?id_list=2610.18868, https://tev-agent.github.io/ (HTML), https://api.github.com/orgs/tev-agent/repos, https://huggingface.co/api/models/gordonhu/Tev-27B, https://huggingface.co/api/models/gordonhu/Tev-320B, both `.../resolve/main/README.md`.
+- **Untested limits:** no weights downloaded; no training or benchmark execution; no inference about code/data existence outside the checked org inventory and page links. A GitHub REST commit query for the page repo hit an unauthenticated rate limit (HTTP 403); the org inventory and `git ls-remote` HEAD pin succeeded, so the tracking point is covered.

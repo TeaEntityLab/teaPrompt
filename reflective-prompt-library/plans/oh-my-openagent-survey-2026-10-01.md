@@ -137,3 +137,63 @@ record-only/no-adoption stance are unchanged.
 - The install-checksum script is `packages/get-worker/scripts/install.sh`;
   the earlier `get-worker/scripts/install.sh` path omitted the package
   prefix.
+
+## Latest-version refresh — 2026-10-22
+
+- Prior baseline: checked commit `37659a4c15cdbb5e2eb10d21109ae42829bcf2cd`
+  (2026-10-01), tag `v5.1.7` → `89688165`. Status: changed.
+- Latest checked: default branch `dev` HEAD
+  `e63990197933e32d6486740d1e43823db097586f` (2026-10-22, merge of
+  test-audit PR #10861). Release split: `master` branch == tag `v5.1.40`
+  (`eb585410`, 2026-10-20); `dev` HEAD is 2 days ahead of the latest stable
+  tag. Root `package.json` still named `oh-my-opencode`, version `5.1.40`.
+  Engine `@code-yeongyu/senpi` 2026.9.30 → **2026.10.19-2**. Only
+  prerelease tag in range: `v5.1.34-beta.1`. License: `LICENSE.md`
+  byte-identical — SUL-1.0 unchanged. Delta: 4,342 commits, 3,266 files;
+  changelog 5.1.8 → 5.1.40 plus `[Unreleased]`.
+- Actual meaningful changes (changelog claims + source spot-checks at `dev`
+  HEAD):
+  - Memory sync becomes an end-to-end encrypted multi-device engine
+    (crash-safe journal, ≤8 MiB batches, compare-and-swap commits, device
+    keyring verification, passkey recovery, weak/malformed Ed25519-key
+    refusal). OmO accounts groundwork ships ahead of the service
+    (`omo login/whoami/logout`, OS-credential-store-only keys).
+  - Credential hygiene: the launcher deletes a legacy plaintext
+    `~/.omo/credentials.json` on upgrade; `/feedback` reports reuse the
+    `/share` redactor and never send memory.
+  - New methodology-adjacent surface: standing-instruction agreements
+    (`system/agreements.md`, repetition counter, human-only edits,
+    `/agreements`) — a disclosure/counter pattern, noted, not adopted.
+  - Computer-use hardening: foreground whole-screen input needs approval
+    (`ControlRequired` otherwise); stop chord honors physical keyboards
+    only; `senpi-desktop-safety` +888 lines (supervisor stop paths);
+    `gate.rs` byte-identical (198 lines).
+  - DAG scheduler: infra-failed `mass ulw` children retry ≤2 with backoff
+    instead of failing the branch. `ulw-plan` review drops the fixed
+    five-round cap for a finding-driven stop rule.
+  - `omo update`: refuses package-manager-owned binaries with the manager's
+    own upgrade command (#9585) — but the remaining path is still raw
+    `curl+mv` with no checksum/signature verification: the 2026-10-01 gap
+    persists (verified: no `sha256|checksum|sigstore|verify` in
+    `packages/omo-native/compiled-update.ts` at HEAD).
+  - OpenCode 2 plugin shape supported alongside 1.x, with an OmO Native
+    notice; migration doc retained — standalone pivot confirmed, adapters
+    maintained. Release binaries: Bun 1.4.3 (CVE-2026-48618), size budget
+    160 → 182 MiB; workflow node-id path-traversal fix; locale-safe
+    archive-entry validation.
+- Effect on prior findings: all six OO-* dispositions stand. Anchors
+  re-verified at HEAD: Kibitzer imperative/second-person rejection prose
+  intact in `packages/memory-core/src/recall/gate.ts`; skills catalog
+  still 18 SKILL.md entries; `boulder-state`, `json-error-recovery`,
+  install-time SHA256SUMS check all present; ultrawork verification claims
+  still prompt text in `packages/prompts-core/prompts/ultrawork/` (small
+  per-model edits only). Record-only / no-adoption stance unchanged; the
+  account-service and sync surfaces widen the credential/exfil footprint
+  without changing the methodology boundary.
+- Inspected (immutable): `dev@e6399019`, `v5.1.40@eb585410`,
+  `v5.1.7@89688165` trees; `CHANGELOG.md`, `LICENSE.md` (zero-diff),
+  `package.json`, `compiled-update.ts`, `recall/gate.ts`, `gate.rs` at
+  `https://github.com/code-yeongyu/oh-my-openagent`.
+- Untested limits: no install, no `omo` execution, no provider calls;
+  changelog entries are author reports; sync/crypto correctness not
+  audited; execution of the safety gate unverified.

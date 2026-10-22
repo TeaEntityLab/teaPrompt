@@ -1,6 +1,8 @@
 # Diagram Design Survey (2026-10-07)
 
 > **Status:** Reference-only, non-authoritative evidence record (English). Upstream `cathrynlavery/diagram-design` pinned at `d1376371965f513d99cc9ec388835d255c5c88d5` (commit 2026-10-06, checked 2026-10-07). No installation, skill/pack adoption, runtime, or verifier change; registry unchanged (9 core + 10 packs).
+>
+> **Refresh pointer (2026-10-22):** the pin above is historical. Latest `main` `7a12007b5a4246894f342a2e52e78facbc62eca3` (2026-10-21, manifest `2.6.119`, 45 visual types) is covered in `## Latest-version refresh — 2026-10-22` below; DD-1–DD-7 stay reference-only.
 > **Scope:** The earlier survey mutated no TeaPrompt files and installed, committed, or pushed nothing; its owned browser/server were closed. This recording turn adds documentation and commits the related records, not the upstream skill.
 
 ## Research question
@@ -130,3 +132,40 @@ This record is falsified by contrary evidence at the same pinned revision and de
 - [Architecture example](https://github.com/cathrynlavery/diagram-design/blob/d1376371965f513d99cc9ec388835d255c5c88d5/skills/diagram-design/assets/example-architecture.html), [animated policy example](https://github.com/cathrynlavery/diagram-design/blob/d1376371965f513d99cc9ec388835d255c5c88d5/skills/diagram-design/assets/example-policy-trace-animated.html), and [font/privacy boundary](https://github.com/cathrynlavery/diagram-design/blob/d1376371965f513d99cc9ec388835d255c5c88d5/PRIVACY.md) (checked 2026-10-07).
 - Existing TeaPrompt contracts, unchanged: [project judgment](../PROJECT_KNOWLEDGE.md), [creative-spec acceptance/fallbacks](../05-domain/creative-template.md), [runtime trust boundary](../04-agent/runtime-trust-boundary.md). The [review handoff](recent-changes-review-handoff-2026-10-07.md) tracks unresolved local defects separately from this no-adoption survey.
 - Temporary survey paths used during the run are provenance only; this record embeds the values needed to continue without them.
+
+## Latest-version refresh — 2026-10-22
+
+Reference-only update. All historical evidence above (15/15 helper receipts, browser receipts, 44-type inventory, DD-1–DD-7 ledger) is preserved; DD-1–DD-7 stay **reference-only**. No installation, skill/pack adoption, runtime, or verifier change; registry unchanged.
+
+### Version identities (checked 2026-10-22)
+
+- Prior baseline: `d1376371965f513d99cc9ec388835d255c5c88d5` (committed 2026-10-06, checked 2026-10-07); manifest `2.6.64`, skill frontmatter `2.6`.
+- Latest `main`: `7a12007b5a4246894f342a2e52e78facbc62eca3`, committed 2026-10-21 (`chore(release): bump plugin manifests to 2.6.119`).
+- Manifest version now `2.6.119`; skill frontmatter `metadata.version` still `"2.6"` (label-to-revision split persists, recorded without assuming behavioral divergence).
+- Tag/release inventory (dated, mutable): tag enumeration still returns no tag refs; no releases feed entries. Same inventory observation as before, not a permanent absence claim.
+- Delta: `git rev-list --count d137637..7a12007` = **118 reachable commits** (~half are per-change `chore(release)` manifest bumps); 447 changed files, +16,823 / −3,981.
+- Visual-type inventory: **45 shipped types** (was 44). Both independent methods agree at the new pin: filesystem glob over `skills/diagram-design/references/type-*.md` finds 45 files, and extraction of the `SKILL.md` visual-type guide finds the same 45 unique references. The `SKILL.md` header, semantic-patterns preamble, and description now all state 45 consistently. New: `type-service-blueprint.md` (service blueprint).
+
+### Material changes since the prior pin (source-read at `7a12007`)
+
+- Installed self-check scope widened: `skills/diagram-design/scripts/self_check.py` gained a **viewBox containment check** (`check_viewbox`: flags content painted past the SVG viewBox edge with overshoot size and remediation direction) plus CSS/static-analysis helpers (`svg_length`, `painted_points`, unstatic-CSS subject matching). The previously recorded scope statement (accessible naming, prohibited references/scripts, motion basics; no layout proof) is therefore extended by one geometric check; visual-layout and rendered-fidelity verification remain out of scope. Not executed here — the preserved 15/15 receipts above bind the old pin only.
+- Import discipline fixes (extract-inert-structure shape unchanged): Mermaid flowchart statements after header semicolons retained; invisible links no longer drop nodes; single-line state notes retained; whitespace before pipe labels accepted; UTF-8 BOM accepted; standalone bare states retained; sequence fragments preserved across highlight blocks; Markdown-fenced Mermaid samples ignored; draw.io `visible=0` cells skipped; excessive Excalidraw JSON nesting reported. The four-grammar Mermaid boundary (flowchart, sequence, state-v2, ER) is unchanged.
+- Export procedure fixes (scoped-CSS/namespaced-defs shape unchanged): stylesheet media conditions preserved; CSS-escaped local paint references preserved; comment-like text in CSS strings preserved; live references alongside commented defs preserved; CSS selector literals preserved while scoping; SVG CDATA unwrapped before scoping; RGBA alpha retained with presentation opacity; metadata ignored when collecting def IDs; nested icon SVGs and double-hyphen comments exported; svg-only/png-only exclusion rule restored in commands. Playwright PNG renderer repackaged (still host-provisioned; still not executed here).
+- New visual type: **service blueprint** (`type-service-blueprint.md`, with a follow-up fix accepting Japanese two-line printed labels); architecture type gained containment scopes. Nine semantic patterns unchanged; one pattern-primitive wording tweak (`sublabel` slot naming).
+- Skill-contract wording: default accent token changed `#eb6c36` → `#bf4520` in the brand-onboarding gate; wiretext downgraded from shipped tool to "a separate plain-text tool … this skill doesn't ship one"; onboarding now requires source trust and output verification; new-type author checklist added; Qoder native plugin support added; loop station-0 placement wording aligned with the formula.
+- Policy/CI: merge now requires a same-head Greptile score of 4 or 5; GitHub Actions hardened with pinned versions; contribution queue capped (five PRs); verifier-coverage audit with waterfall-mismatch enforcement.
+- No permission/adapter/execution-surface change beyond the above: no new installed runtime, no new host capability, no connector/credential surface.
+
+### Effect on prior findings
+
+- All seven DD ledger mechanisms are still present at the new pin; the self-check (DD-4) and geometry-heuristic (DD-5) shapes are strictly extended, not reversed. The viewBox check is a new lint-shaped reference consistent with DD-4/DD-5, but no local structural failure of that class has been demonstrated, so no new ledger row or adoption is warranted.
+- The 44→45 count change is a genuine catalog addition (service blueprint), measured with the same two-method rule; the old 44 figure stands as the historic shipped set at the old pin.
+- The known mobile local-scroll violation (390px case) and Google Fonts network dependence were not re-tested; the prior receipts stand as dated observations at the old pin.
+
+### Inspected links
+
+- [Prior tree](https://github.com/cathrynlavery/diagram-design/tree/d1376371965f513d99cc9ec388835d255c5c88d5) vs [latest tree](https://github.com/cathrynlavery/diagram-design/tree/7a12007b5a4246894f342a2e52e78facbc62eca3); [new service-blueprint type](https://github.com/cathrynlavery/diagram-design/blob/7a12007b5a4246894f342a2e52e78facbc62eca3/skills/diagram-design/references/type-service-blueprint.md); [self-check at new pin](https://github.com/cathrynlavery/diagram-design/blob/7a12007b5a4246894f342a2e52e78facbc62eca3/skills/diagram-design/scripts/self_check.py) (all checked 2026-10-22 via git fetch + blob diff, no checkout hooks, no code executed).
+
+### Limits
+
+- Source inspection only; no helper, extractor, exporter, verifier, or browser path was executed. Helper/browser receipts above are preserved historical evidence at the old pin, not reruns. Release/manifest text is an author report.

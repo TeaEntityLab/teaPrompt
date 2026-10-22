@@ -90,3 +90,20 @@ Deterministic guard: `plans/tests/test_minimax_code_trace_map_survey_record.py` 
 | Guard written | done | `plans/tests/test_minimax_code_trace_map_survey_record.py` |
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Latest-version pointer — 2026-10-22 (pointer only, no re-verification)
+
+The 2026-09-19 verdict (29 exact / 4 near / 1 far / 1 paraphrased / 0 absent
+at `e3724a13`) is immutable and unchanged. Against current `main` HEAD
+`da22f11c` (2026-10-21; full pin in the repository survey's refresh
+section), anchor status by file: `docs/architecture.md`,
+`packages/local-runtime-v2/src/local/app.ts`, and
+`packages/agent-core/src/index.ts` are byte-identical; `README.md`,
+`packages/tui/src/cli/{main,program}.ts`, and
+`packages/local-runtime-v2/src/local/cli-service.ts` changed. Both semantic
+boundary anchors still hold verbatim at the new HEAD: the in-process entry
+comment at `cli-service.ts:106` and the `sendMessage` ternary at
+`cli-service.ts:289-291`. The README-table rows (items 1a/2a/3a, formerly
++2-offset at 120/121/122) moved with the demo-section rewrite and would need
+re-verification before citation at the new pin. Cite the 2026-09-19 tally
+only against `e3724a13`.

@@ -217,3 +217,74 @@ All primary links below were checked **2026-09-30** against the immutable resear
 - [Evidence](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/EVIDENCE.md), [fixture evaluator](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/scripts/evaluate-cases.cjs), [manifest](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/package.json), [license](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/LICENSE) (checked 2026-09-30).
 - [Contract parser](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/src/contracts.cjs), [session state and lock](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/src/state.cjs), [runtime audit](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/src/runtime-audit.cjs), [runtime storage](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/src/runtime-storage.cjs), [hook entrypoint](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/hooks/stop-that-shit.cjs), [contract tests](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/test/contracts.test.cjs) (checked 2026-09-30).
 - [Install guide](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/INSTALL.md), [English README](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/README_EN.md), [changelog](https://github.com/lennney/stop-that-shit/blob/749c921e988f1a6714500da4b1c140311684dbbb/CHANGELOG.md) (checked 2026-09-30).
+
+## Latest-version refresh — 2026-10-22
+
+Prior baseline: `main` at `749c921e988f1a6714500da4b1c140311684dbbb`
+(2026-09-29), package `0.2.4`, checked 2026-09-30. Latest checked: `main`
+at `8bc1ac558167121e7f28d9fb0bec05c039952206` (2026-10-15, merge of
+release 0.2.5-final); latest tag/release `0.2.5` (tag object
+`6e842eca1be24888d133e145c1724e8f274a4747` peels to the same HEAD).
+~55 commits separate the pins (97 files, +5151/−1361). License still MIT;
+manifest still `@opencode/schema` (now `2.0.26`) + `effect 4.0.0-rc.112`.
+
+Material changes bearing on prior findings (source-trace tier; the offline
+hook probes were NOT re-executed, so behavioral repairs are traced, not
+observed):
+
+- **Session-lock recovery reworked (partially addresses the abandoned-lock
+  finding).** `src/state.cjs` replaced the single-file `pid:uuid` lock with
+  a lock-directory + per-owner marker protocol (`ownerHasExited` via
+  `kill(pid,0)` + `ESRCH`), stale-owner reclamation, Windows atomic-rename
+  retry (no more copy fallback), failed-write temp cleanup, and a
+  `recoveryState` read-only mode for damaged legacy locks (`STS_LOCK_DAMAGED`,
+  documented in INSTALL.md recovery section). Corrupt state JSON now yields
+  recovery state instead of fresh state. However, **contention still fails
+  open**: `acquireSessionLock` still throws `STS_LOCK_TIMEOUT` after
+  1500 ms and the hook entrypoint still catches everything into exit 0 /
+  empty stdout (`hooks/stop-that-shit.cjs` line ~40, unchanged), so the
+  held-lock fail-open probe result stands as the expected current behavior
+  until re-probed. The audit-append fail-open is likewise unchanged
+  (`appendFileSync` without error surfacing).
+- **`agents=N` accounting hardened against bypass.** Reused execution IDs
+  now rejected, ambiguous-lifecycle capacity preserved (not zeroed), saved
+  state validated, dependency-section changes detected (`CHANGELOG 0.2.5`).
+  The UUID/named-task completion-identity limits were not re-audited and
+  stand as historical.
+- **Lexical authority findings mostly stand.** The leading-verb change rule
+  and session-scoped grant inheritance are untouched in `contracts.cjs`
+  (no inheritance documentation added; only Pi child-process inheritance is
+  discussed in INSTALL.md). One adjacent fix: #66 narrows Chinese
+  observation-object phrases ("只观察…" with an object no longer demotes to
+  monitor) while standalone read-only instructions still apply; plus a new
+  `DIRECTIVE_NOT_ARMED` warning for directives not on the first line (Codex
+  also gets a user-facing message). The `Fix nothing yet` negation probe was
+  not re-run.
+- **Path boundary still lexical.** `pathAllowed` in `decision.cjs` remains
+  normalize-and-prefix matching with no `realpath`/canonicalization; the
+  symlink realpath-outside-`src` finding stands.
+- **Sixth host: OMP native adapter** (`src/adapters/omp-*.cjs`,
+  `omp/stop-that-shit.ts`, native `/sts` commands, task budgets, audited
+  parent-link recovery) plus OpenCode stale-authority retry fix and Hermitian
+  bundle rebuilds. The host-coverage table gains one family; STS-8 (no
+  installation) is unaffected.
+- **Verification evidence grew but the efficacy bar is unchanged.**
+  Author-reported: 609 tests pass (was 428), 22/22 paired-case arms (was
+  18/18; 4 new fixtures), 218-file release allowlist, packed-plugin
+  acceptance re-run on OpenCode 1.18.18/2.0.18. The 144-session default
+  matrix is STILL not run/published (EVIDENCE.md "Not yet verified"), and
+  0.2.5 claims "No new model-effectiveness claim". STS-1–STS-8 dispositions
+  unchanged (record-only; XM-11/XM-12 untouched).
+
+Inspected immutable links:
+`https://github.com/lennney/stop-that-shit/commit/8bc1ac558167121e7f28d9fb0bec05c039952206`,
+`https://github.com/lennney/stop-that-shit/releases/tag/0.2.5`,
+`CHANGELOG.md` 0.2.5 section, `EVIDENCE.md` (609/22/22 counts, "Not yet
+verified" matrix), `src/state.cjs` lock diff, `src/contracts.cjs`
+(`unarmedDirectiveWarning`, #66 regex), `src/decision.cjs` (`pathAllowed`),
+`hooks/stop-that-shit.cjs` fail-open catch, `package.json` (`0.2.5`).
+Untested limits: no hook subprocess probes, no evaluator run, no
+installed-host checks; all repair assessments are source traces at the new
+pin, execution unverified. Suggested smoke for Main: re-run the pinned
+offline lock/negation/path probes against `8bc1ac5` under the same
+`sandbox-exec`+`env -i` harness before quoting any repair as observed.

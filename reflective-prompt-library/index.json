@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-16T10:10:13.679071",
+  "generated_at": "2026-10-22T16:05:04.198703",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1286,10 +1286,14 @@
         {
           "level": 2,
           "text": "Future Promotion Criteria"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 103,
-      "char_count": 7055
+      "line_count": 115,
+      "char_count": 9587
     },
     {
       "path": "reflective-prompt-library/plans/storm-perspective-discovery-reflection-2026-06-18.md",
@@ -1340,10 +1344,14 @@
         {
           "level": 2,
           "text": "State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 82,
-      "char_count": 4645
+      "line_count": 93,
+      "char_count": 6312
     },
     {
       "path": "reflective-prompt-library/plans/roadmap-ecosystem-packaging-2026-10-13.md",
@@ -1429,6 +1437,7 @@
         "ref_snippet": [],
         "markdown_links": [
           "whole-project-roadmap-2026-07-11.md",
+          "external-adoption-case-studies-2026-06-20.md#known-reference-project-refresh--2026-10-22",
           "whole-project-roadmap-2026-07-11.md",
           "surveyed-plans-unified-roadmaps-2026-10-13.md",
           "whole-project-roadmap-2026-07-11.md",
@@ -1513,8 +1522,8 @@
           "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 88,
-      "char_count": 9845
+      "line_count": 93,
+      "char_count": 10247
     },
     {
       "path": "reflective-prompt-library/plans/teabrain-concepts-experiments-survey-2026-09-21.md",
@@ -1585,10 +1594,14 @@
         {
           "level": 2,
           "text": "Direction Addendum (2026-09-21, generic direction)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 309,
-      "char_count": 27495
+      "line_count": 327,
+      "char_count": 32418
     },
     {
       "path": "reflective-prompt-library/plans/skills-surface-plan-2026-07-11.md",
@@ -1605,6 +1618,7 @@
           "whole-project-plan-2026-07-11.md",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "../06-repo/AGENTS.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md#latest-version-refresh--2026-10-22",
           "routing-holdout-plan-2026-07-11.md",
           "validate_links.py",
           "../SKILL_INSTALLATION.md"
@@ -1668,8 +1682,8 @@
           "text": "Falsifiability"
         }
       ],
-      "line_count": 140,
-      "char_count": 8594
+      "line_count": 148,
+      "char_count": 9081
     },
     {
       "path": "reflective-prompt-library/plans/runtime-skills-experiments-2026-10-05.md",
@@ -1828,10 +1842,14 @@
         {
           "level": 2,
           "text": "Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 117,
-      "char_count": 6656
+      "line_count": 133,
+      "char_count": 10877
     },
     {
       "path": "reflective-prompt-library/plans/semantica-survey-2026-10-07.md",
@@ -1930,10 +1948,14 @@
         {
           "level": 2,
           "text": "Recording-turn consumer evidence (2026-10-07)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 192,
-      "char_count": 29017
+      "line_count": 211,
+      "char_count": 34319
     },
     {
       "path": "reflective-prompt-library/plans/roadmap-execution-assurance-2026-10-13.md",
@@ -2239,10 +2261,46 @@
         {
           "level": 2,
           "text": "Risks, Acceptance, and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "easyvibecoding/coordinate-codex-tasks — `bfdc289` → `953b495` (2 commits)"
+        },
+        {
+          "level": 3,
+          "text": "anthropics/skills evals guides — `8a1541c` → `dbd4588` (evals dir: 1 commit)"
+        },
+        {
+          "level": 3,
+          "text": "langchain-ai/agentevals — current-only"
+        },
+        {
+          "level": 3,
+          "text": "collinear-ai/simlab — repo unavailable; docs current-only"
+        },
+        {
+          "level": 3,
+          "text": "DSPy — current-only, split semantics re-confirmed at HEAD"
+        },
+        {
+          "level": 3,
+          "text": "Promptfoo — current-only, split semantics re-confirmed at HEAD"
+        },
+        {
+          "level": 3,
+          "text": "OpenAI Evals/Optimizer retirement timeline — re-verified, unchanged"
+        },
+        {
+          "level": 3,
+          "text": "Limits"
         }
       ],
-      "line_count": 215,
-      "char_count": 30475
+      "line_count": 272,
+      "char_count": 39768
     },
     {
       "path": "reflective-prompt-library/plans/skills-september-concepts-review-2026-09-16.md",
@@ -3600,10 +3658,14 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 110,
-      "char_count": 21029
+      "line_count": 123,
+      "char_count": 24029
     },
     {
       "path": "reflective-prompt-library/plans/fable-5-scaffold-provenance-reflection-2026-06-11.md",
@@ -3662,10 +3724,14 @@
         {
           "level": 2,
           "text": "Residual Risks"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 105,
-      "char_count": 8071
+      "line_count": 117,
+      "char_count": 10475
     },
     {
       "path": "reflective-prompt-library/plans/methodology-only-rethink-panel-2026-10-01.md",
@@ -4036,10 +4102,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 205,
-      "char_count": 33074
+      "line_count": 219,
+      "char_count": 37386
     },
     {
       "path": "reflective-prompt-library/plans/fresh-dogfood-campaign-preregistration-2026-10-14.md",
@@ -4736,10 +4806,26 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Agentflow: prior baselines and latest identities"
+        },
+        {
+          "level": 3,
+          "text": "Agentflow: 8.4.14→8.4.15 change families (actual diffs read, not only notes)"
+        },
+        {
+          "level": 3,
+          "text": "Firstmate (separate project): prior baseline and latest identity"
         }
       ],
-      "line_count": 244,
-      "char_count": 23070
+      "line_count": 281,
+      "char_count": 31230
     },
     {
       "path": "reflective-prompt-library/plans/astra-efficiency-rules-survey-2026-09-10.md",
@@ -4818,10 +4904,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 128,
-      "char_count": 34381
+      "line_count": 136,
+      "char_count": 35609
     },
     {
       "path": "reflective-prompt-library/plans/handover-docs-survey-2026-09-23.md",
@@ -4876,10 +4966,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 73,
-      "char_count": 8300
+      "line_count": 91,
+      "char_count": 10998
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-technical-brief-2026-06-30.md",
@@ -4896,7 +4990,8 @@
           "vllm-micro-agent-research-record-2026-06-30.md",
           "openfugu-technical-brief-2026-06-25.md",
           "openfugu-research-record-2026-06-25.md",
-          "multi-agent-panel-consensus-2026-06-25.md"
+          "multi-agent-panel-consensus-2026-06-25.md",
+          "vllm-micro-agent-research-record-2026-06-30.md"
         ]
       },
       "structure": [
@@ -4993,8 +5088,8 @@
           "text": "Documentation Maintenance Note"
         }
       ],
-      "line_count": 352,
-      "char_count": 16292
+      "line_count": 354,
+      "char_count": 16922
     },
     {
       "path": "reflective-prompt-library/plans/hotline-verification-redundancy-survey-2026-09-22.md",
@@ -5105,10 +5200,14 @@
         {
           "level": 2,
           "text": "Promotion Gate (for future escalation)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 138,
-      "char_count": 8726
+      "line_count": 150,
+      "char_count": 10808
     },
     {
       "path": "reflective-prompt-library/plans/dream-rsi-survey-2026-09-18.md",
@@ -5179,10 +5278,14 @@
         {
           "level": 2,
           "text": "Adoption Addendum (2026-09-18, same day, user direction)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 117,
-      "char_count": 20202
+      "line_count": 129,
+      "char_count": 23029
     },
     {
       "path": "reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md",
@@ -5372,10 +5475,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 159,
-      "char_count": 28066
+      "line_count": 173,
+      "char_count": 31313
     },
     {
       "path": "reflective-prompt-library/plans/self-governance-dogfood-2026-09-24.md",
@@ -5512,10 +5619,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 311,
-      "char_count": 22412
+      "line_count": 326,
+      "char_count": 25277
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md",
@@ -5751,10 +5862,14 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 61,
-      "char_count": 8445
+      "line_count": 75,
+      "char_count": 11415
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -5821,10 +5936,14 @@
         {
           "level": 2,
           "text": "Direction Addendum (2026-09-19, generic direction)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 123,
-      "char_count": 20660
+      "line_count": 150,
+      "char_count": 26826
     },
     {
       "path": "reflective-prompt-library/plans/dormant-work-specs-2026-07-11.md",
@@ -6563,10 +6682,46 @@
         {
           "level": 2,
           "text": "Survey Landing Advisory Ruling (2026-10-11)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "1. addyosmani/agent-skills — changed"
+        },
+        {
+          "level": 3,
+          "text": "2. anthropics/claude-quickstarts — unchanged"
+        },
+        {
+          "level": 3,
+          "text": "3. wshobson/agents — changed"
+        },
+        {
+          "level": 3,
+          "text": "4. anthropics/knowledge-work-plugins — changed (content + remote bumps)"
+        },
+        {
+          "level": 3,
+          "text": "5. msitarzewski/agency-agents — changed (content fixes + lint rule)"
+        },
+        {
+          "level": 3,
+          "text": "Unknowns and limits"
+        },
+        {
+          "level": 3,
+          "text": "Supplemental repository identities: Lore, Azure SRE Agent and gh-aw"
+        },
+        {
+          "level": 3,
+          "text": "Industrial reference systems: publication refresh, not hidden release claims"
         }
       ],
-      "line_count": 673,
-      "char_count": 66313
+      "line_count": 912,
+      "char_count": 85608
     },
     {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
@@ -6645,10 +6800,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 284,
-      "char_count": 21109
+      "line_count": 358,
+      "char_count": 25699
     },
     {
       "path": "reflective-prompt-library/plans/minimax-code-trace-map-survey-2026-09-19.md",
@@ -6707,10 +6866,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version pointer — 2026-10-22 (pointer only, no re-verification)"
         }
       ],
-      "line_count": 92,
-      "char_count": 11967
+      "line_count": 109,
+      "char_count": 12946
     },
     {
       "path": "reflective-prompt-library/plans/jev-diffusion-eval-survey-2026-09-19.md",
@@ -6769,10 +6932,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 93,
-      "char_count": 11884
+      "line_count": 121,
+      "char_count": 17452
     },
     {
       "path": "reflective-prompt-library/plans/skill-improvement-plan-2026-07-24.md",
@@ -6978,10 +7145,14 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 230,
-      "char_count": 13120
+      "line_count": 242,
+      "char_count": 15497
     },
     {
       "path": "reflective-prompt-library/plans/jspace-cognition-survey-2026-08-20.md",
@@ -7068,10 +7239,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 368,
-      "char_count": 29135
+      "line_count": 483,
+      "char_count": 36587
     },
     {
       "path": "reflective-prompt-library/plans/ember-snn-llm-survey-2026-09-22.md",
@@ -7134,10 +7309,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 191,
-      "char_count": 15267
+      "line_count": 240,
+      "char_count": 18228
     },
     {
       "path": "reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md",
@@ -7282,10 +7461,34 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Version identities (checked 2026-10-22)"
+        },
+        {
+          "level": 3,
+          "text": "Material changes since the prior pin (source-read at `5beb35b`)"
+        },
+        {
+          "level": 3,
+          "text": "Effect on prior findings"
+        },
+        {
+          "level": 3,
+          "text": "Inspected links"
+        },
+        {
+          "level": 3,
+          "text": "Limits"
         }
       ],
-      "line_count": 59,
-      "char_count": 7244
+      "line_count": 96,
+      "char_count": 12257
     },
     {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
@@ -7298,7 +7501,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "pstack-matt-lauren-survey-2026-10-03.md#latest-version-refresh--2026-10-22",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#latest-version-refresh--2026-10-22"
+        ]
       },
       "structure": [
         {
@@ -7392,10 +7598,14 @@
         {
           "level": 2,
           "text": "Primary source map"
+        },
+        {
+          "level": 2,
+          "text": "Pilot-project version refresh — 2026-10-22"
         }
       ],
-      "line_count": 340,
-      "char_count": 26828
+      "line_count": 362,
+      "char_count": 30220
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -7649,10 +7859,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 108,
-      "char_count": 18571
+      "line_count": 137,
+      "char_count": 26486
     },
     {
       "path": "reflective-prompt-library/plans/skill-dogfood-test-plan-2026-10-08.md",
@@ -7969,10 +8183,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 186,
-      "char_count": 19310
+      "line_count": 198,
+      "char_count": 22535
     },
     {
       "path": "reflective-prompt-library/plans/harness-1-state-ledger-research.md",
@@ -8019,10 +8237,14 @@
         {
           "level": 2,
           "text": "Sources"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 150,
-      "char_count": 8935
+      "line_count": 162,
+      "char_count": 11521
     },
     {
       "path": "reflective-prompt-library/plans/managed-skill-promotion-panel-record-2026-07-11.md",
@@ -8360,10 +8582,14 @@
         {
           "level": 2,
           "text": "Source Corrections (2026-10-02)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 139,
-      "char_count": 10649
+      "line_count": 199,
+      "char_count": 14402
     },
     {
       "path": "reflective-prompt-library/plans/agent-workflows-plan.md",
@@ -8636,10 +8862,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 396,
-      "char_count": 27902
+      "line_count": 448,
+      "char_count": 30917
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-panel-record-2026-07-18.md",
@@ -8826,10 +9056,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 68,
-      "char_count": 9982
+      "line_count": 80,
+      "char_count": 13070
     },
     {
       "path": "reflective-prompt-library/plans/code-recall-survey-2026-08-20.md",
@@ -8916,10 +9150,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 377,
-      "char_count": 30733
+      "line_count": 479,
+      "char_count": 37558
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-roadmap-2026-07-11.md",
@@ -9254,10 +9492,42 @@
         {
           "level": 2,
           "text": "Sources"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Anthropic (Claude Agent SDK)"
+        },
+        {
+          "level": 3,
+          "text": "OpenAI (Agents SDK)"
+        },
+        {
+          "level": 3,
+          "text": "Google (ADK)"
+        },
+        {
+          "level": 3,
+          "text": "LangChain (Deep Agents; LangGraph via RefreshDurable)"
+        },
+        {
+          "level": 3,
+          "text": "Microsoft (Agent Framework)"
+        },
+        {
+          "level": 3,
+          "text": "Practitioner layer (Ralph loop)"
+        },
+        {
+          "level": 3,
+          "text": "Untested limits"
         }
       ],
-      "line_count": 127,
-      "char_count": 16181
+      "line_count": 297,
+      "char_count": 26222
     },
     {
       "path": "reflective-prompt-library/plans/governance-rules-rethink-review-2026-07-11.md",
@@ -9439,10 +9709,14 @@
         {
           "level": 2,
           "text": "Sources"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 159,
-      "char_count": 26442
+      "line_count": 184,
+      "char_count": 31321
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-adoption-2026-09-03.md",
@@ -9800,10 +10074,42 @@
         {
           "level": 3,
           "text": "Addendum Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Primary systems"
+        },
+        {
+          "level": 4,
+          "text": "Pi — durable harness implemented in a new package; spec/scaffold finding superseded"
+        },
+        {
+          "level": 4,
+          "text": "Maka — T1/T2 retained; generic tool reconciliation retired, not shipped"
+        },
+        {
+          "level": 4,
+          "text": "Amplio — recovery contract unchanged; loop hardening around refusal/limits"
+        },
+        {
+          "level": 4,
+          "text": "Ankole — v2 restructure; durable delivery/outbox semantics preserved under new paths"
+        },
+        {
+          "level": 3,
+          "text": "Lineage comparisons (already in this record; doc/release surfaces only)"
+        },
+        {
+          "level": 3,
+          "text": "Disposition"
         }
       ],
-      "line_count": 839,
-      "char_count": 60799
+      "line_count": 1069,
+      "char_count": 79334
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -9950,10 +10256,14 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 138,
-      "char_count": 17097
+      "line_count": 176,
+      "char_count": 19626
     },
     {
       "path": "reflective-prompt-library/plans/QUALITY_GATES_SUMMARY.md",
@@ -10178,10 +10488,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 124,
-      "char_count": 21326
+      "line_count": 209,
+      "char_count": 27349
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -10264,10 +10578,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 166,
-      "char_count": 29898
+      "line_count": 183,
+      "char_count": 32352
     },
     {
       "path": "reflective-prompt-library/plans/managed-skills-learned-survey-2026-10-06.md",
@@ -10353,7 +10671,8 @@
         "markdown_links": [
           "skills-and-spec-systems-research-2026-06-25.md",
           "memory-mechanisms-research-2026-06-25.md",
-          "external-adoption-case-studies-2026-06-20.md"
+          "external-adoption-case-studies-2026-06-20.md",
+          "oh-my-openagent-survey-2026-10-01.md"
         ]
       },
       "structure": [
@@ -10404,10 +10723,22 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Hermes Agent (`NousResearch/hermes-agent`)"
+        },
+        {
+          "level": 3,
+          "text": "Oh My Pi (`can1357/oh-my-pi`, CLI `omp`)"
         }
       ],
-      "line_count": 204,
-      "char_count": 9771
+      "line_count": 290,
+      "char_count": 14941
     },
     {
       "path": "reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md",
@@ -10476,7 +10807,66 @@
           "rrsi-survey-2026-09-30.md",
           "mgd-form-theory-survey-2026-10-02.md",
           "superpowers-v6.4-adoption-2026-10-03.md",
-          "pstack-matt-lauren-survey-2026-10-03.md"
+          "pstack-matt-lauren-survey-2026-10-03.md",
+          "agentflow-8.4.1-delta-survey-2026-09-30.md",
+          "agentic-sop-workflow-reflection-2026-06-13.md",
+          "baton-dispatch-survey-2026-07-13.md",
+          "agent-flow-control-research-2026-07-11.md",
+          "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
+          "skills-surface-plan-2026-07-11.md",
+          "agent-tooling-research-2026-06-25.md",
+          "oh-my-openagent-survey-2026-10-01.md",
+          "minimax-code-survey-2026-09-19.md",
+          "prime-agent-survey-2026-08-06.md",
+          "agent-harness-convergence-survey-2026-08-25.md",
+          "heddle-source-survey-2026-10-12.md",
+          "superpowers-v6.4-adoption-2026-10-03.md",
+          "skills-and-spec-systems-research-2026-06-25.md",
+          "skill-workflow-research-synthesis.md",
+          "ponytail-minimality-reflection-2026-06-17.md",
+          "knowie-project-knowledge-reflection-2026-06-17.md",
+          "storm-perspective-discovery-reflection-2026-06-18.md",
+          "mattpocock-skills-v131-delta-survey-2026-10-07.md",
+          "agent-ecosystem-harness-survey-2026-10-11.md",
+          "diagram-design-survey-2026-10-07.md",
+          "3xa-harness-survey-2026-08-20.md",
+          "agnix-agent-skills-hook-survey-2026-08-04.md",
+          "fable-method-survey-2026-07-16.md",
+          "stop-that-shit-survey-2026-09-30.md",
+          "pi-warden-survey-2026-09-20.md",
+          "coordinate-codex-tasks-eval-survey-2026-09-30.md",
+          "pstack-matt-lauren-survey-2026-10-03.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
+          "rsiagent-survey-2026-09-16.md",
+          "dream-rsi-survey-2026-09-18.md",
+          "rrsi-survey-2026-09-30.md",
+          "openfugu-research-record-2026-06-25.md",
+          "harness-1-state-ledger-research.md",
+          "vllm-micro-agent-research-record-2026-06-30.md",
+          "gliner2-survey-2026-09-19.md",
+          "nimble-survey-2026-09-19.md",
+          "decision-model-survey-2026-09-18.md",
+          "jev-architecture-synthesis-survey-2026-09-19.md",
+          "jev-diffusion-eval-survey-2026-09-19.md",
+          "semantica-survey-2026-10-07.md",
+          "memory-mechanisms-research-2026-06-25.md",
+          "teabrain-concepts-experiments-survey-2026-09-21.md",
+          "handover-docs-survey-2026-09-23.md",
+          "claude-code-system-prompts-survey-2026-07-24.md",
+          "system-prompts-leaks-survey-2026-10-07.md",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md",
+          "gpt-instruct-survey-2026-09-10.md",
+          "astra-efficiency-rules-survey-2026-09-10.md",
+          "openai-model-guidance-survey-2026-09-10.md",
+          "tev-gym-survey-2026-10-16.md",
+          "ember-snn-llm-survey-2026-09-22.md",
+          "../../surveys/ornith-1.0-survey.md",
+          "code-recall-survey-2026-08-20.md",
+          "jspace-cognition-survey-2026-08-20.md",
+          "dilinai-nuwa-jiyao-survey-2026-07-13.md",
+          "governable-autonomy-survey-2026-09-03.md",
+          "agent-ecosystem-harness-survey-2026-10-11.md",
+          "pstack-survey-2026-09-22.md#pilot-project-version-refresh--2026-10-22"
         ]
       },
       "structure": [
@@ -10563,10 +10953,26 @@
         {
           "level": 2,
           "text": "State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Known-reference project refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Coverage and current source map"
+        },
+        {
+          "level": 3,
+          "text": "Legacy unlinked references"
+        },
+        {
+          "level": 3,
+          "text": "Proprietary-feature documentation: Codex Record & Replay"
         }
       ],
-      "line_count": 395,
-      "char_count": 81045
+      "line_count": 492,
+      "char_count": 92322
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -10709,7 +11115,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "pstack-matt-lauren-survey-2026-10-03.md#latest-version-refresh--2026-10-22",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#latest-version-refresh--2026-10-22"
+        ]
       },
       "structure": [
         {
@@ -10757,8 +11166,8 @@
           "text": "Primary source map"
         }
       ],
-      "line_count": 202,
-      "char_count": 14609
+      "line_count": 204,
+      "char_count": 15126
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3.2-delta-survey-2026-09-22.md",
@@ -10919,10 +11328,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 321,
-      "char_count": 23638
+      "line_count": 333,
+      "char_count": 27037
     },
     {
       "path": "reflective-prompt-library/plans/dilinai-nuwa-jiyao-survey-2026-07-13.md",
@@ -11025,10 +11438,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 433,
-      "char_count": 31078
+      "line_count": 493,
+      "char_count": 34893
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -11410,7 +11827,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "openfugu-research-record-2026-06-25.md"
+        ]
       },
       "structure": [
         {
@@ -11482,8 +11901,8 @@
           "text": "Completion Criteria for This Plan"
         }
       ],
-      "line_count": 163,
-      "char_count": 8246
+      "line_count": 165,
+      "char_count": 8582
     },
     {
       "path": "reflective-prompt-library/plans/human-cognition-adoption-2026-10-02.md",
@@ -12050,7 +12469,8 @@
         "ref_snippet": [],
         "markdown_links": [
           "openfugu-research-record-2026-06-25.md",
-          "openfugu-reference-plan-2026-06-25.md"
+          "openfugu-reference-plan-2026-06-25.md",
+          "openfugu-research-record-2026-06-25.md"
         ]
       },
       "structure": [
@@ -12107,8 +12527,8 @@
           "text": "Bottom Line"
         }
       ],
-      "line_count": 161,
-      "char_count": 8579
+      "line_count": 163,
+      "char_count": 8981
     },
     {
       "path": "reflective-prompt-library/plans/diagram-design-survey-2026-10-07.md",
@@ -12196,10 +12616,34 @@
         {
           "level": 2,
           "text": "Provenance and citations"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "Version identities (checked 2026-10-22)"
+        },
+        {
+          "level": 3,
+          "text": "Material changes since the prior pin (source-read at `7a12007`)"
+        },
+        {
+          "level": 3,
+          "text": "Effect on prior findings"
+        },
+        {
+          "level": 3,
+          "text": "Inspected links"
+        },
+        {
+          "level": 3,
+          "text": "Limits"
         }
       ],
-      "line_count": 132,
-      "char_count": 21932
+      "line_count": 171,
+      "char_count": 28391
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-survey-2026-09-05.md",
@@ -12213,6 +12657,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agentflow-8.4.1-delta-survey-2026-09-30.md",
           "../../review/final-report.md#delayed-advisory-follow-up-2026-10-08"
         ]
       },
@@ -12530,8 +12975,8 @@
           "text": "Guard mechanism supersession (2026-10-08)"
         }
       ],
-      "line_count": 675,
-      "char_count": 143047
+      "line_count": 676,
+      "char_count": 143399
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -12590,10 +13035,14 @@
         {
           "level": 2,
           "text": "Validation Checklist"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 77,
-      "char_count": 4870
+      "line_count": 90,
+      "char_count": 7097
     },
     {
       "path": "reflective-prompt-library/plans/skill-verification-panel-2026-09-05.md",
@@ -12737,10 +13186,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 296,
-      "char_count": 35542
+      "line_count": 308,
+      "char_count": 38168
     },
     {
       "path": "reflective-prompt-library/plans/skill-scenario-panel-record-2026-07-12.md",
@@ -14758,10 +15211,30 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "mem0 (`mem0ai/mem0`, default branch `main`)"
+        },
+        {
+          "level": 3,
+          "text": "MemPalace (`MemPalace/mempalace`, default branch `develop`)"
+        },
+        {
+          "level": 3,
+          "text": "LLM Wiki (Karpathy gist `442a6bf555914893e9891c11519de94f`)"
+        },
+        {
+          "level": 3,
+          "text": "ChatGPT Memory (OpenAI help center)"
         }
       ],
-      "line_count": 220,
-      "char_count": 10689
+      "line_count": 274,
+      "char_count": 21388
     },
     {
       "path": "reflective-prompt-library/plans/decision-model-survey-2026-09-18.md",
@@ -14832,10 +15305,14 @@
         {
           "level": 2,
           "text": "Review Addendum (2026-09-18, same day)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 129,
-      "char_count": 20036
+      "line_count": 155,
+      "char_count": 25915
     },
     {
       "path": "reflective-prompt-library/plans/flow-coverage-panel-record-2026-07-11.md",
@@ -14969,10 +15446,26 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "GitHub Spec Kit (`github/spec-kit`)"
+        },
+        {
+          "level": 3,
+          "text": "Karpathy skills (`multica-ai/andrej-karpathy-skills`)"
+        },
+        {
+          "level": 3,
+          "text": "Karpathy autoresearch (`karpathy/autoresearch`)"
         }
       ],
-      "line_count": 204,
-      "char_count": 9236
+      "line_count": 230,
+      "char_count": 13140
     },
     {
       "path": "reflective-prompt-library/plans/vllm-micro-agent-research-record-2026-06-30.md",
@@ -15043,10 +15536,14 @@
         {
           "level": 2,
           "text": "8. Falsifiability of This Record"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 168,
-      "char_count": 9960
+      "line_count": 183,
+      "char_count": 14224
     },
     {
       "path": "reflective-prompt-library/plans/flow-pack-demotion-evaluation-2026-07-11.md",
@@ -15231,10 +15728,14 @@
         {
           "level": 2,
           "text": "Adoption Addendum (2026-09-19, same day, user direction)"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 120,
-      "char_count": 22145
+      "line_count": 177,
+      "char_count": 25516
     },
     {
       "path": "reflective-prompt-library/plans/3xa-harness-survey-2026-08-20.md",
@@ -15317,10 +15818,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 313,
-      "char_count": 23100
+      "line_count": 337,
+      "char_count": 24373
     },
     {
       "path": "reflective-prompt-library/plans/gliner2-survey-2026-09-19.md",
@@ -15383,10 +15888,14 @@
         {
           "level": 2,
           "text": "Completion Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 111,
-      "char_count": 19149
+      "line_count": 139,
+      "char_count": 24670
     },
     {
       "path": "reflective-prompt-library/plans/prompt-library-build-plan.md",
@@ -15723,10 +16232,14 @@
         {
           "level": 2,
           "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 219,
-      "char_count": 37864
+      "line_count": 290,
+      "char_count": 42286
     },
     {
       "path": "reflective-prompt-library/plans/roadmap-harness-flow-control-2026-10-13.md",
@@ -16020,10 +16533,30 @@
         {
           "level": 2,
           "text": "Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "snarktank/ralph — unchanged"
+        },
+        {
+          "level": 3,
+          "text": "cursor/plugins pstack — `fae2c6e` → `eb4db2b` (219 commits repo-wide)"
+        },
+        {
+          "level": 3,
+          "text": "michael-denyer/pstack-claude — `eefcfaf` → `903e738` (122 commits, tag `v0.9.101`)"
+        },
+        {
+          "level": 3,
+          "text": "Limits"
         }
       ],
-      "line_count": 156,
-      "char_count": 30707
+      "line_count": 192,
+      "char_count": 35668
     },
     {
       "path": "reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md",
@@ -16110,10 +16643,22 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 3,
+          "text": "agnix"
+        },
+        {
+          "level": 3,
+          "text": "agent-skills-hook"
         }
       ],
-      "line_count": 307,
-      "char_count": 23337
+      "line_count": 425,
+      "char_count": 30351
     },
     {
       "path": "reflective-prompt-library/plans/graph-engineering-synthesis-survey-2026-09-16.md",

@@ -2,6 +2,8 @@
 
 > **Status: implemented — verified within the recorded fixture scope.** User direction: "Survey https://github.com/obra/superpowers (updated recently)" (accessed 2026-10-03). Continuing the selective adoption pattern: two narrowed contracts land on existing core skills; no new skill, domain pack, helper, route, runtime, or install-time behavior. Supersedes the earlier high-level pass in `plans/skills-and-spec-systems-research-2026-06-25.md`, which covered Superpowers only at category level before the current release line.
 
+> **Refresh 2026-10-22:** upstream moved v6.4.2 → v7.0.1; adopted SP-1/SP-2 surfaces verified byte-identical — see `## Latest-version refresh — 2026-10-22` below. Policy unchanged.
+
 ## Source Identity
 
 - Upstream: `obra/superpowers`, MIT license, default branch `main`.
@@ -59,3 +61,15 @@ This record is wrong if (a) either adopted section silently duplicates an existi
 ## Handoff
 
 When future work asks whether to import more of Superpowers: start from the local-gap question — what failure in TeaPrompt is not already covered by the nine skills and governance validators — not from upstream's table of contents. SP-3–SP-6 rejections stand on the runtime non-goal, not on quality judgments about those skills.
+
+## Latest-version refresh — 2026-10-22
+
+- Prior baseline: tag `v6.4.2` → commit `8ca22dba9a94f28898bce59f2537ff4d87c747d7` (released 2026-09-25).
+- Latest checked: `main` HEAD `2ce8aa15d05bd57213e6f746f953aafb7ded7a8b` (2026-10-21) = tag `v7.0.1` peel; intermediate release `v7.0.0` (`bb92a77741419a4ab5f06e711a283343f1ada0c3`, 2026-10-09). Branch, tag, and commit identities kept distinct; both releases are squash-merge commits on `main`.
+- Range `8ca22dba..2ce8aa15`: 3 commits, 95 files (+2,381/−14,013). Most deletions are retired `docs/specs/` + `docs/plans/` design docs.
+- Material upstream changes (release notes = author reports; range diff inspected):
+  - v7.0.0: brainstorming rebuilt from scratch (playback with marked guesses, sized process, builder-check subagent replaces the spec-document reviewer); native Antigravity Marketplace manifest; hook hardening (broken-PATH SessionStart, Windows `run-hook.cmd` no longer executes cwd-planted `bash`/`where`, exit codes propagated); `task-done` records silent passes; `sdd-workspace` preserves repo `.gitignore` and uses repo-relative Windows paths; `requesting-code-review` BASE_SHA example `awk`→`cut` (Claude `$1` arg substitution); `systematic-debugging` secret-leak example fixed; Hermes skill descriptions.
+  - v7.0.1: brainstorming retune (reads project context before asking, one open question at a time, skip-offer only when self-started, approaches + approved design doc before building); compaction survival (`subagent-driven-development`/`writing-skills` bodies moved to `references/`, new 20,000-byte `SKILL.md` size test); contribution templates require a human-written <200-word summary and decline agent-written PRs fixing others' issues unless requested.
+- Adopted SP/FM policy: unchanged. Verified by diff: `skills/writing-plans/SKILL.md`, `skills/requesting-code-review/code-reviewer.md`, and `skills/using-superpowers/` are byte-identical across the range; the only requesting-code-review touch is the one-line BASE_SHA example fix. SP-1/SP-2 contracts stand; SP-3–SP-6 rejections (host-harness territory) unaffected. The brainstorming rebuild is prompt-layer but maps to `reflective-brief`, which already covers intent clarification; no local gap demonstrated, so reference-only, no new adoption.
+- Observation: the annotated tag object for `v6.4.2` now hashes `668b16d4d8d4d603fd257567684fbbffccbf2022`, differing from the peel recorded 2026-10-03 — the tag object appears recreated; the commit identity `8ca22dba` is stable and is the authoritative pin.
+- Inspected: `git ls-remote` HEAD + tags on `https://github.com/obra/superpowers`, `https://raw.githubusercontent.com/obra/superpowers/main/RELEASE-NOTES.md`, and the range diff above. No runtime verification; remaining-skills audit still not done.

@@ -1,5 +1,7 @@
 # Handover-Docs Methodology Survey — 2026-09-23
 
+> **Refresh pointer (2026-10-22):** Current-only snapshot — not a git repo; no later mtime observed (all 16 files carry 2026-09-23 mtimes); sha256 snapshot below in `## Latest-version refresh — 2026-10-22` establishes a hash baseline but proves no byte-equality with 2026-09-23 content. Prior findings stand.
+
 > **Status: decided — record-only; one durable lesson adopted into PROJECT_KNOWLEDGE.md, no skill or wording installed.** The object is `~/dev/handover-docs/` — a local, reusable **project handover documentation kit** (16 markdown files by documented enumeration: 1 README methodology + 1 glossary + 9 handbook volumes + 2 ops SOPs + 3 templates; the original banner said "15 markdown files" — corrected 2026-10-02) written in Traditional Chinese. Its goal: a successor engineer with **no oral handover and no live support from the original team** can understand the system, operate it safely, and rebuild from zero using only repo docs. All content is templates and placeholders — no credentials, hosts, or real values exist in the kit; nothing sensitive was recorded. Guard: `plans/tests/test_handover_docs_survey_record.py`.
 
 ## Research Question
@@ -71,3 +73,19 @@ Coordinator reported reading all files in full (2026-09-23). The kit's documente
 | PK durable lesson written | done | `PROJECT_KNOWLEDGE.md` |
 | Guard written | done | `plans/tests/test_handover_docs_survey_record.py` |
 | Full repository gate | done | `make all` from the repository root |
+
+## Latest-version refresh — 2026-10-22
+
+Read-only metadata refresh; no content re-audit, no sensitive data handled. The kit is **not a git repository** (`git rev-parse` fails), so there is no commit pin to compare — current-only snapshot evidence.
+
+- **Prior baseline:** 16-file documented enumeration surveyed 2026-09-23 (all-read claim is a self-report without per-file receipts; see Method).
+- **Latest checked:** same 16 files present at the same paths (`README.md`, `glossary.md`, `handbook/01–09`, `ops/secrets-management.md`, `ops/offsite-backup.md`, `templates/{task-card,incident-entry,agent-memory}.md`); **all mtimes 2026-09-23 11:37–11:42** — no later mtime observed, no files added or removed. **Status: current-only** (mtime + enumeration tier; no prior hashes exist, so byte-equality with 2026-09-23 content is not claimed — this snapshot establishes the hash baseline for future diffs).
+- **sha256 snapshot (2026-10-22, methodology files only):**
+  - `README.md` `e1e4910f…0102b6`, `glossary.md` `ef41a1f4…0014b53`
+  - `handbook/01-business-context.md` `35520efe…be3db`, `02-architecture.md` `24a3a2a4…e6e0`, `03-data-model.md` `fb5381c9…1609b47`, `04-pipelines-sync.md` `3868698d…a02e30`, `05-operations-runbook.md` `14b88b26…9642f`, `06-decisions-incidents.md` `c6ac4359…82d`, `07-current-state.md` `2eafe744…89c302`, `08-rebuild-runbook.md` `a3480a9d…5cda139`, `09-running-tests.md` `63099dfe…48734a`
+  - `ops/offsite-backup.md` `bfdf722e…4c15f`, `ops/secrets-management.md` `4cf9e9e5…40fcab`
+  - `templates/agent-memory.md` `021c8a57…23c3b8da`, `templates/incident-entry.md` `1e790e19…04300ab1a`, `templates/task-card.md` `9fe1680d…25e51a`
+  - (Full 64-hex digests recorded in the refresh receipt `local://refresh-RefreshMemory.json`; prefixes above are collision-irrelevant for a 16-file snapshot but the receipt is authoritative.)
+- **Effect on prior findings:** None. The HD-1..4,6 PK lesson stands; HD-5/7/8/9 no-change dispositions stand. No new methodology to evaluate.
+- **Inspected:** directory listing, per-file mtimes, `shasum -a 256` of all 16 files. No file bodies re-read (same-mtime tier only; the no-sensitive-values claim still rests on the 2026-09-23 audit).
+- **Untested limits:** no byte-equality claim — byte comparison against 2026-09-23 content is impossible without prior hashes. A future refresh can diff against this snapshot's full digests.

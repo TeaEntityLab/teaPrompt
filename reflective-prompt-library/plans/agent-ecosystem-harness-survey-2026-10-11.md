@@ -3,6 +3,8 @@
 > **Status: decided — research-reference-only; no skill, pack, routing, runtime, dependency or oracle adoption.**
 > All seven supplied inputs are addressed. Company figures remain source-reported, with access and denominator limits below.
 > This decision archive is evidence, not agent operating instructions, a host-adoption decision or a campaign grant.
+>
+> **Refresh pointer (2026-10-22):** pins below are historical. Latest checks — Osmani `aeac41d` (2026-10-13, tag `0.6.13`), Quickstarts unchanged `9ec32b9`, wshobson `0874a27` (2026-10-17), Knowledge Work `33d3dea` (2026-10-21), Agency `4e3ac3c` (2026-10-19) — are covered in `## Latest-version refresh — 2026-10-22` at the end; all AE ledger rows stay non-adopted.
 
 ## Research Question and Authority
 
@@ -671,3 +673,240 @@ Resolve that owner choice before dispatch; Stage-1 additionally retains its
 approval, roles, memory bindings and enforced isolation/cap requirements.
 No skill, test, dependency, protected oracle, commit or push changes here.
 
+
+## Latest-version refresh — 2026-10-22
+
+Reference-only update to the five pinned repository surveys. Historical pins,
+counts, findings and the AE-01–AE-16 ledger above are preserved; all rows stay
+**non-adopted**. No skill, pack, routing, runtime, dependency, oracle, campaign
+or commitment change. Production-synthesis company figures, the arXiv paper and
+the Lore/SRE supplemental references are out of this slice's scope and left
+unchanged here.
+
+Evidence method (checked 2026-10-22): `git ls-remote --symref` for current
+`HEAD`, tag enumeration, then bare-repo fetch of prior + current SHAs with
+`rev-list --count`, `diff --stat`/`--name-status` and blob reads. No checkout
+hooks, no upstream program/installer/hook/model execution. Counts below reuse
+the original named populations; the independent method is full-tree `git
+ls-tree -r` plus depth-matching regex over the same pins.
+
+### 1. addyosmani/agent-skills — changed
+
+- Prior baseline: `1be8e34` (committed 2026-10-10, checked 2026-10-11).
+- Latest `main`: `aeac41d4d005999432bb7312f7ff06383a91d59d`, committed
+  2026-10-13 (`chore(release): bump plugin manifests to 0.6.13`).
+- Release/tag: `0.6.13` tag object `8595f3f` peels to `aeac41d` — tag and
+  latest main coincide (prior pin sat on manifest `0.6.12`; tag `0.6.12` peels
+  to `a06bc63`, a different commit).
+- Delta: **25 reachable commits**, 35 files, +442 / −81.
+- Inventory recheck (same populations, both methods agree): 25 skills, 4
+  personas, 25 eval case files, 14 JS files, 7 shell hooks, 2 hook documents —
+  **identical to the recorded historic counts**.
+- Material changes (source-read):
+  - Delivery/authority: `/review` and `/test` no longer wrap the
+    `code-reviewer`/`test-engineer` personas; they run the
+    `code-review-and-quality` / `test-driven-development` skills in the main
+    session. Personas are reachable via direct invocation or `/ship` fan-out
+    only (`agents/*.md`, `docs/agents.md`, command files). This narrows the
+    persona-spawning surface rather than widening it.
+  - Review severity taxonomy changed from Critical/Important/Suggestion to
+    **Critical/Required/Optional/Nit** (`commands/review.toml`,
+    `.claude/commands/review.md`, `.gemini/commands/review.toml`).
+  - `simplify-ignore` hook: a change reverted with git/undo while masked now
+    stays reverted and re-hides the file; the superseded session backup is
+    retained as `<id>.superseded.<pid>` for manual review (docs + `Test 18`
+    coverage). Operational-risk character unchanged: crash/manual recovery
+    still documented, still unexercised here.
+  - Eval harness hardening: behavioral grading now requires non-blank
+    evidence (blank verdicts are retained as raw, distinctly reported);
+    `run-evals.js`/`validate-commands.js` share the `parseFrontmatter`
+    reader; `evals/README.md` documents Tier-1 structural checks and Tier-2
+    `--min-rank1 95`, plus a pinned-model TDD trigger experiment (description
+    clause taking 4 prompts from 6/24 to 19/24 fires) — upstream observation,
+    not a rerun.
+  - Skill prose: `idea-refine` conformed to skill anatomy (Overview/When to
+    Use/Common Rationalizations sections); `test-driven-development` applies
+    to pasted code even when tests are unmentioned (with a fires/stays-quiet
+    plugin eval pair); `performance-optimization` code-fence language
+    corrections; Codex manifest now states 25 skills.
+- Effect on prior findings: the recorded AE-03/AE-06/AE-07/AE-09 concerns
+  still hold. The in-main-session `/review` routing is compatible with, and
+  does not reopen, the rejected blanket later-turn approval rule (AE-06).
+  Issue #361's standalone-install boundary was not re-verified.
+- Links: [prior tree](https://github.com/addyosmani/agent-skills/tree/1be8e34187e34647bb83adc3a1323b26ae6f6abe),
+  [latest tree](https://github.com/addyosmani/agent-skills/tree/aeac41d4d005999432bb7312f7ff06383a91d59d).
+
+### 2. anthropics/claude-quickstarts — unchanged
+
+- Prior baseline: `9ec32b91df50b0d4906cae64b13c6298055ff40d` (committed
+  2026-10-07, checked 2026-10-11).
+- Latest `main` (checked 2026-10-22): `9ec32b91df50b0d4906cae64b13c6298055ff40d`
+  — **identical ref, no new commits**. No tag refs returned (unchanged).
+- No source re-inspection needed; all recorded findings, including the
+  `autonomous-coding/README.md` "Internal Anthropic use" licence note and the
+  self-attesting completion limits, stand as written.
+- Link: [unchanged tree](https://github.com/anthropics/claude-quickstarts/tree/9ec32b91df50b0d4906cae64b13c6298055ff40d).
+
+### 3. wshobson/agents — changed
+
+- Prior baseline: `46891e7` (committed 2026-10-04, checked 2026-10-11).
+- Latest `main`: `0874a27b17a22e2b7c2e2bcd725768e0803cad06`, committed
+  2026-10-17 (`docs(documentation-generation): avoid overwriting ADR README in
+  toc example (#778)`).
+- Release/tag: no tag refs (unchanged); no releases.
+- Delta: **16 reachable commits**, 71 files, +2,842 / −2,142.
+- Inventory recheck (same populations, both methods agree): 202 agents
+  (unchanged), **185 skills** (was 184: +1 `social-evidence-research`), 105
+  commands (unchanged), 92 local plugin manifests (unchanged), 94 marketplace
+  entries = 92 local + 2 external (unchanged split; externals remain Pensyve
+  Cloud and hol-guard git-subdir entries).
+- Material changes (source-read):
+  - New skill `plugins/content-marketing/skills/social-evidence-research/`
+    with evidence-record/report-template/acceptance-examples references:
+    read-only social research with discovery-only vs inspected-part
+    distinction, duplicate grouping, per-comment attribution, claim tables
+    and access-gap accounting. Prompt guidance, not a browsing/execution
+    capability; aligns with the survey's source-failure accounting theme but
+    adds no enforced mechanism.
+  - Security-relevant example fix: FastAPI template CORS changed from
+    `allow_origins=["*"]` with credentials to settings-driven explicit
+    origins, with a comment on the Starlette credentialed-echo hazard; test
+    fixtures updated for httpx 0.28 (`ASGITransport`) and
+    pytest-asyncio strict mode. Example-code correction, not a runtime
+    guarantee; prior adapter findings unaffected.
+  - Governance hook: `protect-mcp/hooks/evaluate.sh` now invokes
+    `protect-mcp@0.31.1` (was `0.7.4`); pin-evaluate history notes Node
+    18/20 policy loading and decimal-input handling. Still a declared
+    host-executed hook, not exercised here; Cedar/signing trust boundaries
+    unchanged.
+  - Content maintenance: 8 oversized skills split with reference files;
+    broken examples repaired in three skills; Turborepo 2/pnpm monorepo
+    update; Cypress/Playwright API corrections; git reflog/reset warnings;
+    Copilot skill-reference and asset preservation fix; CI pins plugin-eval
+    to Python 3.14; dependency bumps.
+  - No adapter-framework change: `tools/adapters/` untouched in this range
+    (test file `tools/tests/test_adapters.py` gained cases; inspected, not
+    run).
+- Effect on prior findings: AE-07/AE-08/AE-15 coverage stands. The new skill
+  is a further prompt component, not a new enforcement surface.
+- Links: [prior tree](https://github.com/wshobson/agents/tree/46891e7e60da0e52baf1050b7b6391b64e84c6d9),
+  [latest tree](https://github.com/wshobson/agents/tree/0874a27b17a22e2b7c2e2bcd725768e0803cad06),
+  [new skill](https://github.com/wshobson/agents/blob/0874a27b17a22e2b7c2e2bcd725768e0803cad06/plugins/content-marketing/skills/social-evidence-research/SKILL.md).
+
+### 4. anthropics/knowledge-work-plugins — changed (content + remote bumps)
+
+- Prior baseline: `02ffa99` (committed 2026-10-11, checked 2026-10-11).
+- Latest `main`: `33d3dea41a341b341d4f5da2e8801ae0c89be2b8`, committed
+  2026-10-21 (security-guidance remote bump merge).
+- Release/tag: no tag refs (unchanged); no releases.
+- Delta: **51 reachable commits**, 38 files, +148 / −91. All commits are the
+  sales 2.1.0 feature plus remote-marketplace SHA bumps; the name-status
+  delta is modify-only (no added/deleted tracked files).
+- Inventory recheck (same populations, both methods agree): 22 local plugin
+  manifests (17 root + 5 partner, unchanged), **225 single-level skill
+  files** (unchanged; a naive recursive `**/SKILL.md` glob returns 252
+  because of nested zoom-plugin platform variants — excluded per the
+  original population, which counts `skills/<name>/SKILL.md` one level
+  deep), 123 marketplace entries (unchanged count; remote SHAs advanced).
+- Material changes (source-read):
+  - `sales` plugin 2.0.1 → **2.1.0**: all 36 sales skills gained an inline
+    "links to check the work" convention (plain-text source + short
+    app-link per row/tile/action) and a rendering rule that day/book-wide
+    views are openable artifacts updated in place, never reply-drawn
+    tables, with a 2–3 line reply. Prompt/procedure change; connector
+    permission model (settings-owned allow/ask/block, content-originated
+    action gating) is untouched.
+  - ~50 remote-entry SHA bumps in `.claude-plugin/marketplace.json`
+    (security-guidance ×3, incident-io, dropbox, canva, qodo pair,
+    signoz, atlan, figma, etc.). These advance pointers to external
+    sources that were not inspected inside this checkout; no local
+    implementation content follows from them.
+  - No change to the `data` plugin connector config, analytical-QA
+    checklist character, memory conventions, or licence exceptions.
+- Effect on prior findings: AE-10/AE-11/AE-14 coverage stands. The sales
+  citation-link convention is a useful procedural reference consistent with
+  provenance accounting, not a new enforcement mechanism.
+- Links: [prior tree](https://github.com/anthropics/knowledge-work-plugins/tree/02ffa99ff00ce4d3046ccebabb8357cb39f3ab06),
+  [latest tree](https://github.com/anthropics/knowledge-work-plugins/tree/33d3dea41a341b341d4f5da2e8801ae0c89be2b8).
+
+### 5. msitarzewski/agency-agents — changed (content fixes + lint rule)
+
+- Prior baseline: `f99f6aa` (committed 2026-10-07, checked 2026-10-11).
+- Latest `main`: `4e3ac3ca6604c75113f52c695dbddcc7af928b46`, committed
+  2026-10-19 (content batch 5–6 integration merge).
+- Release/tag: no tag refs (unchanged); no releases.
+- Delta: **111 reachable commits**, 50 files, +469 / −326. Dominantly
+  per-persona content `fix(...)` merges (Godot/Roblox/Unity, grant-writer
+  rate, incident burn-rate, Feishu path param, etc.); the only added tracked
+  file is `scripts/test-lint-qwen-placeholders.sh`.
+- Inventory recheck: `divisions.json` still declares **18 divisions**
+  (names identical, file untouched), `tools.json` still **17 tool keys**
+  (file untouched), broader `**/*.md` population still **329 files** at both
+  pins. The selected-persona (frontmatter-name) population was not
+  re-derived file-by-file because the delta is modify-only for personas
+  (46 `.md` modifications, zero persona add/delete/rename); the historic
+  282 figure stands with no evidence of change. Note the Hermes README's
+  generated-agent figure moved 279 → 282, converging with the survey's
+  historic count rather than contradicting it.
+- Material changes (source-read):
+  - New lint rule: `scripts/lint-agents.sh` rejects
+    `${task_prompt}`/`${hook_context}`/`${external_inputs_override}` in
+    agent bodies (Qwen Code fills these at launch); `integrations/qwen/`
+    README now requires Qwen Code ≥ 0.25.1 and documents the
+    launch-placeholder hazard (#1081); CI gained a Qwen-placeholder test
+    step. Author-side static check, consistent with the survey's
+    converter/installer trust-boundary analysis; no containment proof.
+  - Persona content corrections across ~46 files (rates, API shapes, code
+    examples). Instructions/aspirations character unchanged; no controlled
+    evaluation added.
+- Effect on prior findings: AE-15/AE-16 coverage stands. No new persona,
+  division, tool target, router or runtime component.
+- Links: [prior tree](https://github.com/msitarzewski/agency-agents/tree/f99f6aa910a442b0197b768ce0ea7751e35e2060),
+  [latest tree](https://github.com/msitarzewski/agency-agents/tree/4e3ac3ca6604c75113f52c695dbddcc7af928b46).
+
+### Unknowns and limits
+
+- No upstream demo, generator, eval, hook, installer or model call was
+  executed; behavioural/permission claims remain source-level. Remote
+  marketplace entries (Knowledge Work bumps, wshobson externals) were not
+  fetched. Company-figure and paper rows above were not re-checked in this
+  slice. Quickstarts equality is proven by identical `HEAD` SHA.
+
+### Supplemental repository identities: Lore, Azure SRE Agent and gh-aw
+
+Checked 2026-10-22. The October 11 company rows did not pin these repositories,
+so these are **current-only** updates, not reconstructed October 11 code deltas.
+Refs were obtained with `git ls-remote --symref <repo> HEAD refs/heads/main
+'refs/tags/*'` and checked against the linked public source/release pages.
+
+| Reference | Current identity | Material evidence and limit |
+| --- | --- | --- |
+| Notion Lore | [`main` `6e741b1bb91a36b47213f4d3af5bbdfaa2f2081d`](https://github.com/makenotion/lore/tree/6e741b1bb91a36b47213f4d3af5bbdfaa2f2081d); latest release `v1.0.0` peels to `95c3558b5e9ccdbc6a6f5e253c0f58b008ad2291`; manifest `@notionhq/lore` `1.0.0`. | [Release-to-main diff](https://github.com/makenotion/lore/compare/95c3558b5e9ccdbc6a6f5e253c0f58b008ad2291...6e741b1bb91a36b47213f4d3af5bbdfaa2f2081d.diff) changes restricted-resource error reporting and its test: surface the server error rather than assert integration tokens are unsupported. That is not a new memory-quality result. The [release](https://github.com/makenotion/lore/releases/tag/v1.0.0) announces public npm availability; registry identity and installation were not verified here. Historical 27 improvements/seven regressions remain author-reported. |
+| Azure SRE Agent public repository | [`main` `ff317310cca5894fcd42ccc32f5452c3f408cc3c`](https://github.com/microsoft/sre-agent/tree/ff317310cca5894fcd42ccc32f5452c3f408cc3c); no tag refs or release-feed entries observed. | Public resources, documentation and labs, not the complete deployed Azure service. No prior source SHA permits an exact delta. Current service revision, private orchestration and incident-effect claims remain unknown; repository availability does not resolve the inaccessible company-blog bodies or validate the 4.5/5 versus 1.7/5 comparison. |
+| GitHub Agentic Workflows (`github/gh-aw`) | [`main` `f5092b615d369ee1869619ca7871fb583fd40d6c`](https://github.com/github/gh-aw/tree/f5092b615d369ee1869619ca7871fb583fd40d6c); latest tag `v0.93.0` (`8df88b66`), distinct from branch HEAD. | The [README](https://github.com/github/gh-aw/blob/f5092b615d369ee1869619ca7871fb583fd40d6c/README.md) describes Markdown/YAML compilation to Actions `.lock.yml`, five built-in engines and scoped `safe-outputs`; it warns that `>=0.83.3,<0.85.4` releases were retired under [GHSA-8h78-hpm7-29gg](https://github.com/github/gh-aw/security/advisories/GHSA-8h78-hpm7-29gg). The [Unreleased changelog](https://github.com/github/gh-aw/blob/f5092b615d369ee1869619ca7871fb583fd40d6c/CHANGELOG.md) adds reviewed checksum-manifest pins, stricter dry-run refusals and recorded episode identities. These are source/document claims, not executed compile/Actions proof or a claim that every HEAD change shipped in `v0.93.0`. |
+
+### Industrial reference systems: publication refresh, not hidden release claims
+
+Checked 2026-10-22 against the publisher URLs in the ten setup tables above.
+This pass inspected public article availability and version/source links; it did
+not remeasure company outcomes or compare article bytes with an archived snapshot.
+The systems below were cited as engineering reports, not pinned public software.
+Their current deployed versions and changes since October 11 remain **unknown**.
+Public implementation exceptions are Lore, Quickstarts and GitHub Agentic
+Workflows, whose source identities are handled separately.
+
+| Existing reference group | Current publication access / source boundary |
+| --- | --- |
+| Stripe Minions; Spotify Honk/Fleet; Shopify River | Both Stripe parts, both Spotify posts and River returned readable publisher bodies. Stripe identifies an internal fork of Goose, not a release identity for Minions. No new deployment-version conclusion follows. |
+| Cloudflare AI Code Review; Uber uReview/software factory; DoorDash reviewer | Cloudflare and both Uber bodies were readable. DoorDash returned HTTP 403; publisher-indexed search still finds the exact article. The historical syndication evidence is not upgraded to current primary-body access. |
+| Airbnb test migration; Google large-scale migrations; DoorDash flag cleanup | Airbnb and the InfoQ report were readable. Google remains the fixed experience-report citation; InfoQ remains secondary evidence. None is a versioned release of the described private migration system. |
+| Ramp OCA; Meta reliability flywheel; Azure SRE guidance | Ramp and the conference account were readable. Both Microsoft blog URLs returned HTTP 403; the official repository above was accessible. No refreshed incident denominator, service release or scoring validation is claimed. |
+| Cloudflare agentic SecOps; Figma internal security agents; Shopify Dispatch | Publisher bodies were readable (Figma redirects to `www.figma.com`). Architectural descriptions are not source/runtime containment evidence. |
+| DoorDash Vera; Notion Data Scout; OpenAI in-house data agent | Notion and OpenAI bodies were readable. Vera returned HTTP 403; the publisher's engineering index still names it. The historical mirror remains mirror evidence, not authenticated primary-body access. |
+| Lyft support platform; DoorDash Dasher support; Coinbase CEEcil | LangChain's vendor case study was readable. DoorDash and Coinbase bodies returned HTTP 403; Coinbase's indexed publisher article/sitemap still identifies CEEcil. Current implementation versions are unavailable through these sources. |
+| Anthropic multi-agent research; Harvey Playbook Review; Perplexity Deep Research | Anthropic redirects from `/engineering/` to `/research/`; that body and Harvey's were readable. Both cited Perplexity routes returned HTTP 403. This is an access update, not a measured model/service change. |
+| Meta tribal knowledge and organizational second brain; Notion Lore | All three publisher bodies were readable. Lore's article still links the official `makenotion/lore` implementation. Private Meta deployments are not version-pinned by these publications. |
+| Anthropic effective automations | Current publisher body is available through its Markdown alternate and still links the Quickstarts `managed-agents/daily-brief` reference. The Quickstarts exact-HEAD check above applies to that public code, not to hosted automation guarantees. |
+
+AE-01–AE-16 remain unchanged. A refreshed article or repository ref neither
+admits a dependency nor turns a self-reported number into independent evidence.

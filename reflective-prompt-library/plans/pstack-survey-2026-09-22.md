@@ -2,6 +2,8 @@
 
 > **Status: record-only.** The user requested the survey and then explicitly requested documentation and a commit. This authorizes preserving the findings, not installing pstack, changing skills, or operating a runtime. This document is evidence and project analysis, not agent operating policy.
 
+> Refresh pointer (2026-10-22): historical pin `53e579f` (manifest `0.15.2`); current `cursor/plugins` HEAD is `eb4db2b` (2026-10-21, manifest `0.15.30`). Pilot results and PS-C* dispositions below are preserved executions at their own pins. Current pstack deltas live in [pstack-matt-lauren-survey-2026-10-03.md](pstack-matt-lauren-survey-2026-10-03.md#latest-version-refresh--2026-10-22) and [agent-execution-assurance-taxonomy-survey-2026-09-30.md](agent-execution-assurance-taxonomy-survey-2026-09-30.md#latest-version-refresh--2026-10-22).
+
 ## Research question and recommendation
 
 Evaluate three layers: correctness verification, engineering-quality skills, and agent-friendly architecture. The central lesson is not to persuade an agent to obey a longer prompt. It is to turn engineering judgment into repeatable tools, observable evidence, and enforceable constraints.
@@ -338,3 +340,23 @@ All links below name the reviewed immutable revision, accessed 2026-09-22.
 - [skills/poteto-mode/scripts/orch/store.ts](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/scripts/orch/store.ts)
 - [skills/poteto-mode/scripts/watch-pr/policy.ts](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/skills/poteto-mode/scripts/watch-pr/policy.ts)
 - [automations/benny/FOR_AGENTS.md](https://github.com/cursor/plugins/blob/53e579f1481697931fc44f5445171397cfa2b24b/pstack/automations/benny/FOR_AGENTS.md)
+
+## Pilot-project version refresh — 2026-10-22
+
+Scope: read-only commit/ref and changed-path metadata for the four named pilot
+repositories, not a new experiment or examination of private cases. Commands:
+`git -C <local-repo> log`, `rev-parse`, `diff --stat`, and
+`git ls-remote --symref https://github.com/TeaEntityLab/<repo>.git HEAD
+'refs/tags/*'` (plus `refs/heads/generics` for fpGo).
+
+| Pilot project | Current source identity | Change since the recorded pilot / evidence limit |
+| --- | --- | --- |
+| wsgiLite.js | [`master` `a8b85211e612a4cf8e12e1e7d53d7955746ae57d`](https://github.com/TeaEntityLab/wsgiLite.js/tree/a8b85211e612a4cf8e12e1e7d53d7955746ae57d); latest observed tag `v1.0.70` peels to `b623130cc02c010e6c0ba19ffd0ee724280eee8e`. | Local and remote HEAD equal the September pilot's recorded `a8b8521`. No later commit delta; this equality does not constitute a new pilot run or verify uncommitted files. |
+| fpGo | Pilot branch [`generics` `e49b234d3bcda0b67cc31d36ef3254877f87e758`](https://github.com/TeaEntityLab/fpGo/tree/e49b234d3bcda0b67cc31d36ef3254877f87e758), also tag `v2.6.0`; default `master` remains `1547e5ec4dbe70588e420117de1b9dcbbb3009bd`. | Eleven commits after pilot `1f20bc4d8a6534a296b7871ba2751655494c1388`, touching source/tests plus `VERIFY.md` and five feature maps. Commit messages report Maybe short-circuiting, bounded PMap, scheduler/queue/publisher/coroutine/actor fixes, fresh removal slices, HTTP error-body/query handling and worker panic recovery. Metadata inspected; implementations and current test outcomes not audited. Default-branch HEAD is not the pilot branch and must not replace its identity. |
+| fpEs | [`master` `c17f5998c472bed72801106d5a6da64a057dc9c2`](https://github.com/TeaEntityLab/fpEs/tree/c17f5998c472bed72801106d5a6da64a057dc9c2); latest observed tag `v1.2.0` peels to `5de0213e174d784d9e10ed14769116493d18eb1f`. | Local/remote HEAD is the September 23 verification-map documentation commit; no later commit observed. The original survey did not retain a full pilot SHA, so this is current-only identity recovery, not a byte-equality claim for the old experiment. |
+| fpRust | [`master` `28713f5140baabe964c84ea8db1d1f0a87040868`](https://github.com/TeaEntityLab/fpRust/tree/28713f5140baabe964c84ea8db1d1f0a87040868); latest observed tag `v0.3.5` peels to `5381203f823c3b0d0080d7070022379bbd525c02`. | Local/remote HEAD is the September 23 verification-map documentation commit; no later commit observed. As with fpEs, missing original exact-source binding prevents asserting equality of experimental inputs. |
+
+Tag identities are not registry-publication checks. Historical pilot counts,
+recurrence and skill-promotion decisions remain unchanged; none of these
+metadata reads reran a pilot, inspected hidden artifacts or authorized changes
+to the sibling repositories.

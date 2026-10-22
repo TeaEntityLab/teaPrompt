@@ -2,6 +2,8 @@
 
 Language: English
 
+> **Refresh 2026-10-22:** the 2026-06-25 pass was unpinned; current-state versions below. Superpowers disposed in `superpowers-v6.4-adoption-2026-10-03.md` (now refreshed to v7.0.1). No adoption change.
+
 ## Purpose
 
 Survey the requested skill/workflow systems and preserve the adoption judgement for
@@ -202,3 +204,27 @@ Recommended Core Additions:
 Use this survey when future work asks whether to import Superpowers, Spec Kit, or
 Karpathy-inspired rules. Start from the local-gap question: what failure in
 TeaPrompt is not already covered by the nine skills and governance validators?
+
+## Latest-version refresh — 2026-10-22
+
+The 2026-06-25 survey recorded no commit pins, so the entries below are current-state evidence, not exact deltas. Superpowers is owned by `superpowers-v6.4-adoption-2026-10-03.md` and is not re-covered here.
+
+### GitHub Spec Kit (`github/spec-kit`)
+
+- Latest checked: `main` HEAD `dc2cec4f568d0f6e2cdfb8571c69116bc55c1aaf` (2026-10-21, "fix(events): preserve dispatcher ownership during cleanup (#5055)"); latest release `v1.2.2` (2026-10-19). Repo now holds ~985 tracked files.
+- Current shape (source read at HEAD): the constitution → spec → plan → tasks → implement core (`templates/commands/*.md`) persists, but the product has grown into a process platform — bundled bug-fixing and idea-assessment entry points, extensions/hooks/runtime events, presets, workflows + overlays + custom steps, bundles, catalogs with auth, MCP artifact tools, and offline/air-gapped install support. Core `/speckit.taskstoissues` is deprecated in favor of a github extension (v1.1.0).
+- Notable correction to the 2026-06-25 record: PyPI `specify-cli` is now an **official** second distribution channel (published by the Spec Kit maintainers alongside GitHub source installs), per current `docs/installation.md`. The old "PyPI lookalikes are not affiliated" warning no longer describes `specify-cli` itself.
+- Effect on prior findings: the "second planning grammar + CLI dependency" rejection reason is, if anything, stronger — adopting Spec Kit today means adopting the extension/workflow/catalog platform, not just the five-command flow. Disposition unchanged: conceptually aligned, no install by default. The falsifier (machine-managed spec/task directories for long-running feature specs) is not met.
+- Inspected: `git ls-remote` HEAD + tags, HEAD tree + `README.md` + `docs/installation.md` + `templates/` listing + `CHANGELOG.md` head, `https://github.com/github/spec-kit/releases` feed (v1.0.11–v1.2.2 entries read). Release-note details are author reports; no install or runtime verification.
+
+### Karpathy skills (`multica-ai/andrej-karpathy-skills`)
+
+- Latest checked: `main` HEAD `2c606141936f1eeef17fa3043a72095b4765b9c2` (2026-04-20, "Sync Chinese README with English version (add Cursor section) (#95)"). No tags/releases. HEAD predates the 2026-06-25 survey, so the prior record's description is current: still a 9-file community repo (`CLAUDE.md`, `CURSOR.md`, `EXAMPLES.md`, `README.md` + zh, Cursor rule, `skills/karpathy-guidelines/SKILL.md`, plugin manifests) built on the same four principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution). Still community-authored, not an official Karpathy repo.
+- Disposition unchanged: already adopted in spirit; reference-only.
+- Inspected: `git ls-remote` HEAD (no tags), HEAD tree + `CLAUDE.md` + `EXAMPLES.md` + `SKILL.md` heads, repo page. No runtime verification.
+
+### Karpathy autoresearch (`karpathy/autoresearch`)
+
+- Latest checked: default branch `master` HEAD `228791fb499afffb54b46200aca536f79142f117` (2026-03-25, merge PR #342). No tags/releases. HEAD predates the 2026-06-25 survey, so the prior record's description is current: same tiny loop — human-edited `program.md` (agent instructions incl. 5-minute fixed budget, lowest-val_bpb goal, simplicity criterion), agent-edited `train.py`, fixed `prepare.py`; README documents platform support, small-compute tuning guidance, and notable forks (macOS/Windows/AMD).
+- Disposition unchanged: autonomous experimental loop, not a general coding skill; no core TeaPrompt adoption.
+- Inspected: `git ls-remote` symref + HEAD (no tags), HEAD tree + `program.md` + `train.py` budget lines, repo page. No runtime verification.

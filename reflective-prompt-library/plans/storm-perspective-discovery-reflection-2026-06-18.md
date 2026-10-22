@@ -2,6 +2,8 @@
 
 > **Status: historical record (retired from active guidance, 2026-07-11).** Kept for provenance and as Decision Index / Durable Lesson evidence. Wording may predate the nine-skill surface and current governance; do not cite as current policy — see `PROJECT_KNOWLEDGE.md` Decision Index for live decisions.
 
+> **Refresh 2026-10-22:** upstream `stanford-oval/storm` is quiet (HEAD 2025-09-30); paper/code availability confirmed below. No `reflective-research` change. Historical status unchanged.
+
 
 ## Dispatch
 
@@ -80,3 +82,12 @@ plus external (NAACL) evidence, and remains optional pending such a case.
 | Sufficiency gate made auditable for expansion | done | SKILL.md Sufficiency Gate |
 | Blind-spot output added | done | 05-domain/research.md |
 | Decision recorded and indexed | done | this file + PROJECT_KNOWLEDGE.md Decision Index |
+
+## Latest-version refresh — 2026-10-22
+
+(The 2026-06-18 pass was unpinned, so this is current-state evidence, not an exact delta. Upstream identity recovered as `stanford-oval/storm`, default branch `main`.)
+
+- Latest checked: `main` HEAD `fb951af7744dab086e34962e9bc6fe878e145f83` (2025-09-30, "Merge pull request #400 … patch/requirement-change"). Latest release `v1.1.0` (2025-01-23, LiteLLM integration); `setup.py` names `knowledge-storm` version `1.1.1`. ~16 months of HEAD quiet; the repo is a stable research artifact, not an actively developed product.
+- Paper/code availability: NAACL 2024 STORM paper (arXiv 2402.14207) and EMNLP 2024 Co-STORM paper (arXiv 2408.15232) links live in README; `knowledge_storm/` ships both `storm_wiki` and `collaborative_storm` modules; demo site and PyPI `knowledge-storm` references unchanged. No new methods, papers, or major versions since the prior survey.
+- Effect on prior findings: none — the transferable mechanism (source-grounded perspective expansion, optional, no quotas) and all rejections (no `R-STORM` skill, no runtime/retriever/citation import, no mandatory expansion) stand exactly as recorded. No adoption change.
+- Inspected: `git ls-remote` symref + HEAD + tags, HEAD tree + `README.md` head + `setup.py` version + `knowledge_storm/` listing, `https://github.com/stanford-oval/storm/releases` feed (all six releases read). arXiv/paper links checked for presence, not re-read; no install or runtime verification.

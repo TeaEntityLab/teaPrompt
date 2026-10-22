@@ -4,6 +4,11 @@ Language: English
 
 > **Status:** Survey completed: pinned source inspected and bounded offline mechanisms exercised. No runtime adoption, skill promotion, company-efficacy verdict, or dogfooding campaign dispatch is authorized by this record.
 
+> **Refresh pointer (2026-10-22):** pinned 2026-10-12 findings below are
+> preserved; latest-version status is in
+> `## Latest-version refresh — 2026-10-22` at the end of this record.
+> Upstream `main` is byte-identical to the surveyed pin (no new commits).
+
 ## Research Question
 
 Which parts of the supplied Heddle/Threads narrative are supported by executable public mechanisms, what remains private or self-reported, and does the evidence change TeaPrompt's existing product/runtime ownership ruling?
@@ -134,5 +139,38 @@ receipts, not a complete paired or efficacy result. Further generation
 requires a new owner-held source/envelope decision; human acceptance,
 Stage-2 and dormant gates remain separate. None of this changes the pinned
 Heddle survey evidence or its no-adoption ruling.
+
+## Latest-version refresh — 2026-10-22
+
+> **Scope:** dated latest-version status only. Source/ref inspection, no
+> execution; product-runtime ownership ruling unchanged; no
+> deployment/safety endorsement. Historical 2026-10-12 pins, ledger, and
+> handoff above are unchanged.
+
+| Item | Prior baseline (2026-10-12) | Latest checked (2026-10-22) | Status |
+| --- | --- | --- | --- |
+| `roackb2/heddle` default branch | `main`/`HEAD` `80dccf24275b78b6df1db02e83a9e08b9709423c` (2026-09-30T14:50:33+08:00, merge of PR #403) | `main`/`HEAD` `80dccf24275b78b6df1db02e83a9e08b9709423c` — identical SHA via `git ls-remote` and bare-clone `rev-parse`; zero commits since baseline | unchanged |
+| Root package identity | `@roackb2/heddle` 5.13.0 | tag `v5.13.0` = `0d289e6` (2026-08-11) is an ancestor of HEAD (151 commits behind it); root `package.json` version at HEAD unchanged from the surveyed pin | unchanged |
+| Runtime package identity | `@heddleagent/runtime` 9.2.0 | unchanged at the identical HEAD pin; no new tag or branch movement observed | unchanged |
+
+- **Equality proof:** `git ls-remote
+  https://github.com/roackb2/heddle.git HEAD refs/heads/main` returned
+  `80dccf24275b78b6df1db02e83a9e08b9709423c` for both refs on 2026-10-22,
+  matching the surveyed pin exactly; a bare clone confirms the same SHA and
+  the same 2026-09-30 commit subject. No tag newer than the surveyed state
+  exists on the default branch line (`v5.13.0` predates HEAD and is its
+  ancestor).
+- **Effect on prior findings:** none. The State Ledger verdicts
+  (verified loop/concurrency/approval/checkpoint mechanisms; refuted broad
+  durable-in-flight claim; qualified/unknown company-effect claims), the
+  OW-1–OW-9 dispositions, and the keep-ownership-ruling recommendation all
+  stand without modification. The offline smoke digests and evidence packet
+  references above remain bound to the same source revision.
+- **Inspected immutable links:**
+  [HEAD pin](https://github.com/roackb2/heddle/tree/80dccf24275b78b6df1db02e83a9e08b9709423c)
+  (same revision as surveyed).
+- **Limits:** ref/metadata inspection only; no source re-read beyond pin
+  comparison was needed (identical revision), no tests, builds, or model
+  calls run. No smoke candidate: there is no delta to exercise.
 
 

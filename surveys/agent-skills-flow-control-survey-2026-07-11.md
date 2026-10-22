@@ -10,6 +10,10 @@
 > [skills-surface plan](../reflective-prompt-library/plans/skills-surface-plan-2026-07-11.md),
 > [flow-control roadmap](../reflective-prompt-library/plans/flow-control-roadmap-2026-07-11.md),
 > [routing-holdout plan](../reflective-prompt-library/plans/routing-holdout-plan-2026-07-11.md).
+>
+> **Latest-version refresh pointer (2026-10-22):** findings below are the
+> 2026-07-11 assessment (plus the dated F4 follow-up); current pins and
+> material deltas live in [Latest-version refresh — 2026-10-22](#latest-version-refresh--2026-10-22).
 
 ## Method and evidence tiers
 
@@ -194,3 +198,91 @@ watch table owns re-check triggers.
 - https://learn.chatgpt.com/docs/build-skills (Codex skills)
 - https://geminicli.com/docs/cli/skills/
 - https://openai.github.io/openai-agents-python/
+
+## Latest-version refresh — 2026-10-22
+
+Current-state refresh of the Agent Skills standard/spec, the skills-ref
+validator, and the OpenAI Agents SDK flow deltas. The July survey was
+docs-based with no exact pins; old rules/budgets below stay historical, not
+current evidence. No adoption or hold changes; runtime unverified.
+
+### Agent Skills specification (agentskills.io)
+
+- Prior baseline: six-field frontmatter table; `metadata` as extension point;
+  `allowed-tools` experimental; progressive disclosure (~100 tokens metadata,
+  <5000 body, <500 lines); 30+ host registry.
+- Current: frontmatter table **unchanged** — `name`, `description`,
+  `license`, `compatibility` (1–500 chars), `metadata` (string→string map),
+  `allowed-tools` (still Experimental) per https://agentskills.io/specification
+  re-read 2026-10-22; progressive-disclosure numbers unchanged. No tagged
+  release exists for the spec repo (`agentskills/agentskills` has no tags;
+  main HEAD `69ef37e9`); the spec is a living page, not a versioned release.
+- Registry presentation changed: the "30+ hosts" list is now a Client
+  Showcase component (46 `name:` entries in `docs/snippets/clients.jsx` at
+  HEAD, including the July-cited Claude Code, ChatGPT & Codex, Gemini CLI,
+  GitHub Copilot, VS Code, Cursor, OpenCode, Goose, Junie, Amp, Roo Code,
+  Letta, Factory, OpenHands, Mistral AI Vibe, TRAE, Spring AI, Databricks
+  Genie Code, Qodo, Laravel Boost, pi, plus newer entries such as ZeroClaw,
+  Kiro, Tabnine). Count by source read, not a vendor claim.
+- Effect: the July Part 1 table, the S1 migration rationale (unknown
+  top-level fields still rejected by the validator — `ALLOWED_FIELDS` in
+  `skills-ref/src/skills_ref/validator.py` at HEAD still the same six),
+  and the F1/October "no observed schema change" notes all stand. The known
+  metadata-value/compatibility-length validation gaps noted in October are
+  neither confirmed fixed nor exercised here.
+- Inspected: https://agentskills.io/specification,
+  https://agentskills.io/home, https://agentskills.io/clients, main-branch
+  tarball (`docs/specification.mdx`, `docs/snippets/clients.jsx`,
+  `skills-ref/src/skills_ref/validator.py`).
+
+### skills-ref reference library
+
+- Prior baseline: `skills-ref` 0.1.1 rejects unknown top-level fields
+  (observed FAIL on all 11 skills → S1 migration).
+- Current: PyPI `skills-ref` latest is still **0.1.1** (uploaded
+  2026-01-10; only 0.1.0/0.1.1 exist); repo `pyproject.toml` at HEAD reads
+  `0.1.0` (registry vs manifest split — do not conflate). CLI surface:
+  `agentskills validate|read-properties|to-prompt` (module renamed to
+  `agentskills` entry point in the shipped package; `skills-ref validate`
+  was the July invocation). Strict unknown-field rejection confirmed in
+  current source (`_validate_metadata_fields` → "Unexpected fields in
+  frontmatter").
+- Effect: S1's "FAIL observed, migration executed" verdict stands on
+  current source; no re-run was triggered (no spec/validator drift found).
+  The S2 guard's spec-whitelist basis is unchanged.
+- Inspected: https://pypi.org/pypi/skills-ref/json,
+  `skills-ref/{pyproject.toml,src/skills_ref/cli.py,validator.py}` at HEAD.
+
+### OpenAI Agents SDK (flow deltas)
+
+- Prior baseline: agents, handoffs/agents-as-tools, parallel guardrails,
+  sessions, HITL, tracing; Sandbox agents + realtime agents "new since the
+  prior record".
+- Current: `openai/openai-agents-python` HEAD `841dfdd9`, release `v0.24.0`
+  (tag `17d994bd`); JS `v0.21.0`. Sandbox agents now a full shipped
+  subsystem (`src/agents/sandbox/` in the v0.24.0 tarball: `SandboxAgent`,
+  `Manifest`, `Capabilities`, `SandboxRunConfig`, snapshots, Unix-local /
+  Docker / hosted clients) with its own quickstart and clients/memory
+  guides; the SDK index positions "Agents SDK or Responses API?" and adds
+  `codex_tool` (experimental Codex CLI sub-agent). Agent Builder
+  deprecation re-confirmed: announced 2026-06-03, shutdown scheduled
+  2026-11-30, ChatKit remains, migration via Agents SDK or ChatGPT
+  Workspace Agents — the F4 follow-up stands; whole-AgentKit retirement
+  still unestablished.
+- Effect: July Part 2 OpenAI section stands and the Sandbox-agents line is
+  now release-backed; Standing Non-Goal reference-only disposition
+  unchanged. Full row detail lives in the companion research record's
+  2026-10-22 refresh.
+- Inspected: v0.24.0 tarball, https://openai.github.io/openai-agents-python/,
+  https://openai.github.io/openai-agents-python/sandbox_agents/,
+  https://developers.openai.com/api/docs/deprecations.
+
+### Untested limits
+
+No validator runs, skill installs, or SDK executions were performed; the
+July "Executed locally" ledger (11/11 conformance, S3 smoke) remains
+point-in-time evidence. Host context budgets (Codex 2%/8k, Claude 1,536
+chars), host skill paths, invocation-control fields, and the Gemini→
+Antigravity transition are other owners' scope and were not re-verified
+here. Record & Replay and gh-aw findings are in this refresh's receipt
+only, for Main's integration into the shared owning docs.

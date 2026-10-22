@@ -1,5 +1,7 @@
 # External-Adoption Case Studies — 2026-06-20
 
+> Latest source status: [known-reference project refresh — 2026-10-22](#known-reference-project-refresh--2026-10-22). Historical adoption decisions below are not current-version certifications.
+
 ## Dispatch
 
 Synthesize the recent "should TeaPrompt adopt this external tool/method?"
@@ -393,3 +395,98 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | Misfit-Governed Development form-theory survey published | Recorded; reference-only | [MGD record](mgd-form-theory-survey-2026-10-02.md), arXiv `2610.01372v1`: complete PDF and official metadata checked; author-reported single-system rebuilds, gate/rule/telemetry denominators and remaining predicate/S=T/outer-loop limits preserved. Two constructive Bun probes, not upstream/PIT replication; seven MGD-* dispositions map existing contracts or a product-bound audit target. No skill/runtime/oracle change or local-gap claim; AEAT-4 hold unchanged. |
 | 2026-10-03 | Superpowers v6.4.2 selective adoption (`obra/superpowers` @ `8ca22dba`, MIT, tag `v6.4.2`; `writing-plans` SKILL.md + `requesting-code-review/code-reviewer.md` + release notes read in full at the pin; supersedes 2026-06-25 category-level pass) | pinned tag + git ls-remote peel + two files read in full + fresh-consumer pre/post-edit contract probes | yes, narrow — plan failure-directions ("lines that decide nothing") and named declined-judgment surface were not explicit; decision gates and Claims Ledger already induced | Adopted in place: SP-1 decision-only planning → `reflective-spec-plan` §Planning Fidelity; SP-2 `Declined to Judge` → `reflective-review` (Output/Never/step 8/Output Shape/example); SP-3–SP-6 rejected as host-harness territory | [record](superpowers-v6.4-adoption-2026-10-03.md) + guard `plans/tests/test_superpowers_v642_adoption.py` |
 | pstack / Matt–Lauren claims survey internalized (2026-10-03) | Recorded; reference-only | [Record](pstack-matt-lauren-survey-2026-10-03.md); both supplied themes and corrected public-practice comparison, immutable source pins, mirror/transcript access limits, four evidence dimensions and three exact-artifact Node CLI controls preserved. Checker success establishes structure, not receipt validity; author PR counts and comparative quality remain unverified outcomes. PML-1–PML-7 introduce no adoption; historical pilot denominators, verification-map promotion and AEAT-4 hold unchanged. |
+
+## Known-reference project refresh — 2026-10-22
+
+This is a source/version refresh, not a new adoption round. Historical pins,
+experiments and candidate decisions above remain unchanged. The population is
+the named primary software projects and explicit project/tool/library comparisons
+in the existing survey records, plus recoverable prior-chat references. Generic
+installation targets, transitive dependencies and immutable paper/blog citations
+are not each treated as a separate software project. Paper-led projects retain
+their code/model-availability limits. Latest branch, release/tag and manifest
+versions are separate identities; an unpinned earlier citation permits a
+current-state update, not an invented exact delta.
+
+### Coverage and current source map
+
+Coverage was reconciled from the existing survey/research records, Decision Index,
+root surveys, explicit comparison rows and recoverable prior-chat references.
+A separate read-only inventory cross-checked literal URLs/names against the
+Decision Index and survey guards. The rows below identify the owning refreshes;
+they do not turn every paper citation, installation host or transitive dependency
+into a new survey object. Each linked record retains its own pins, material
+changes, source tier and unresolved limits.
+
+| Reference projects / comparison surfaces | Owning current-source record |
+| --- | --- |
+| Agentflow; Firstmate | [Agentflow delta and separate Firstmate section](agentflow-8.4.1-delta-survey-2026-09-30.md) |
+| Agentic SOP to Work; Baton | [SOP](agentic-sop-workflow-reflection-2026-06-13.md); [Baton](baton-dispatch-survey-2026-07-13.md) |
+| Claude Agent SDK; OpenAI Agents SDK; Google ADK; Deep Agents; Microsoft Agent Framework; Geoffrey Huntley's Ralph pattern | [Framework comparisons](agent-flow-control-research-2026-07-11.md) |
+| Agent Skills specification and `skills-ref` | [Specification and reference validator](../../surveys/agent-skills-flow-control-survey-2026-07-11.md); [existing surface plan pointer](skills-surface-plan-2026-07-11.md) |
+| Hermes Agent; Oh My Pi; Oh My OpenAgent; MiniMax Code; Prime Agent | [Tooling](agent-tooling-research-2026-06-25.md); [OmO](oh-my-openagent-survey-2026-10-01.md); [MiniMax](minimax-code-survey-2026-09-19.md); [Prime](prime-agent-survey-2026-08-06.md) |
+| Pi; Maka; Amplio; Ankole; Temporal; LangGraph; DBOS; Restate; Orleans; Erlang/OTP | [Durability and lineage](agent-harness-convergence-survey-2026-08-25.md) |
+| Heddle | [Heddle](heddle-source-survey-2026-10-12.md) |
+| Superpowers; spec-kit; Andrej Karpathy Skills; autoresearch; superpowers-zh | [Superpowers](superpowers-v6.4-adoption-2026-10-03.md); [skills/spec systems](skills-and-spec-systems-research-2026-06-25.md); [Chinese-language fork](skill-workflow-research-synthesis.md) |
+| Ponytail; Knowie; STORM/Co-STORM | [Ponytail](ponytail-minimality-reflection-2026-06-17.md); [Knowie](knowie-project-knowledge-reflection-2026-06-17.md); [STORM](storm-perspective-discovery-reflection-2026-06-18.md) |
+| Matt Pocock skills; Addy Osmani agent-skills; Claude Quickstarts; wshobson/agents; Knowledge Work Plugins; Agency Agents; diagram-design | [Matt Pocock](mattpocock-skills-v131-delta-survey-2026-10-07.md); [ecosystem repositories](agent-ecosystem-harness-survey-2026-10-11.md); [diagram-design](diagram-design-survey-2026-10-07.md) |
+| 3xA Harness; agnix; agent-skills-hook; Fable Method; Stop That Shit; pi-warden | [3xA](3xa-harness-survey-2026-08-20.md); [agnix and hook](agnix-agent-skills-hook-survey-2026-08-04.md); [Fable Method](fable-method-survey-2026-07-16.md); [stop hook](stop-that-shit-survey-2026-09-30.md); [pi-warden](pi-warden-survey-2026-09-20.md) |
+| Coordinate Codex Tasks; Anthropic eval guides/skills; agentevals; Simlab; DSPy; Promptfoo; OpenAI Evals/Optimizer docs | [Evaluation comparison refresh](coordinate-codex-tasks-eval-survey-2026-09-30.md) |
+| pstack; pstack-claude; snarktank/ralph; verification-skill-example | [pstack claims](pstack-matt-lauren-survey-2026-10-03.md); [execution assurance](agent-execution-assurance-taxonomy-survey-2026-09-30.md) |
+| RSIAgent; Dream-RSI; RRSI; OpenFugu; harness-1; vLLM semantic-router | [RSIAgent](rsiagent-survey-2026-09-16.md); [Dream-RSI](dream-rsi-survey-2026-09-18.md); [RRSI](rrsi-survey-2026-09-30.md); [OpenFugu](openfugu-research-record-2026-06-25.md); [harness-1](harness-1-state-ledger-research.md); [semantic-router](vllm-micro-agent-research-record-2026-06-30.md) |
+| GLiNER2 and checkpoint; Nimble; Qwen Decision/RLCD artifacts; TypeSafe Jev and SDKs; SemIf/OpenJev reimplementations; DiffusionGemma/vLLM patch | [GLiNER2](gliner2-survey-2026-09-19.md); [Nimble](nimble-survey-2026-09-19.md); [decision artifacts/vendor docs](decision-model-survey-2026-09-18.md); [architecture](jev-architecture-synthesis-survey-2026-09-19.md); [diffusion serving](jev-diffusion-eval-survey-2026-09-19.md) |
+| Semantica; Mem0; MemPalace; Karpathy llm-wiki; ChatGPT memory docs; teaBrain; local handover-docs | [Semantica](semantica-survey-2026-10-07.md); [memory comparisons](memory-mechanisms-research-2026-06-25.md); [teaBrain](teabrain-concepts-experiments-survey-2026-09-21.md); [handover-docs](handover-docs-survey-2026-09-23.md) |
+| Claude Code prompt snapshots/tweakcc and official version corroboration; system_prompts_leaks; CL4R1T4S/Fable provenance; gpt-instruct; Astra efficiency rules; OpenAI model guidance | [Claude snapshots](claude-code-system-prompts-survey-2026-07-24.md); [mirror inventory](system-prompts-leaks-survey-2026-10-07.md); [provenance](fable-5-scaffold-provenance-reflection-2026-06-11.md); [gpt-instruct metadata](gpt-instruct-survey-2026-09-10.md); [Astra rules](astra-efficiency-rules-survey-2026-09-10.md); [official guidance](openai-model-guidance-survey-2026-09-10.md) |
+| Tev-Gym/Tev; EMBER; Ornith 1.0 and current 1.5 family | [Tev](tev-gym-survey-2026-10-16.md); [EMBER](ember-snn-llm-survey-2026-09-22.md); [Ornith](../../surveys/ornith-1.0-survey.md) |
+| Code Recall; J-Space Cognition Suite; DilinAI Nuwa/Jiyao | [Code Recall](code-recall-survey-2026-08-20.md); [J-Space](jspace-cognition-survey-2026-08-20.md); [DilinAI](dilinai-nuwa-jiyao-survey-2026-07-13.md) |
+| Loop-Skill; preflight-checker; Codex Record & Replay | Legacy and proprietary-feature subsections below |
+| max4c/skills (`grill-me`); AutoBE | [Governable-autonomy reference refresh](governable-autonomy-survey-2026-09-03.md) |
+| Notion Lore; Azure SRE Agent public resources; GitHub Agentic Workflows; named private industrial systems | [Repository identities and publication-access limits](agent-ecosystem-harness-survey-2026-10-11.md) |
+| wsgiLite.js; fpGo; fpEs; fpRust | [Pilot-project metadata refresh](pstack-survey-2026-09-22.md#pilot-project-version-refresh--2026-10-22) |
+
+Interpretation: **changed** means a source/version delta, not improved outcomes;
+**current-only** means no exact prior source pin supports that delta;
+**unchanged** is component-scoped (equal refs/bytes where proven, or explicitly
+unchanged documented semantics—not an entire repository equality claim).
+**Unavailable** records attempted primary/alternate access and leaves the current
+version unknown. AutoBE and Simlab remain in that last category.
+
+Newly encountered adjacent references (RSIGame, JevResearch, the System One
+adapter, and the Nimble README's Decider/Drex/dashboard comparisons) are named
+but not recursively surveyed or counted as refreshed prior projects. Managed
+host procedures are not upstream software releases; their separate promotion
+and checkpoint records are unchanged.
+
+No latest-revision upstream program, installer, model or benchmark was run by
+this refresh. Earlier runtime probes remain bound to their old pins; current
+source inspection does not silently renew them. Repository checks and navigation
+smoke verify the documentation, not upstream safety, efficacy or adoption.
+
+### Legacy unlinked references
+
+The following public identities match the historical name/date/version
+fingerprints in the June 20 rows. Those rows did not save an owner URL or SHA;
+the current pins do not retroactively supply that missing provenance.
+
+| Reference | Current identity, checked 2026-10-22 | Meaningful update / evidence limit | Adoption |
+| --- | --- | --- | --- |
+| Loop-Skill | [`Toolsai/Loop-Skill`](https://github.com/Toolsai/Loop-Skill/tree/37e073d3471c7bd9152e9d189b690549799c2fda), `main` = `37e073d3471c7bd9152e9d189b690549799c2fda`; no tag refs or release-feed entries. | Current tree still has one root commit: the [commit patch](https://github.com/Toolsai/Loop-Skill/commit/37e073d3471c7bd9152e9d189b690549799c2fda.patch) dates it June 17. No later history observed. The README describes filesystem-backed generation/audit/validation/rewrite/report artifacts and objective-versus-judgment checks; that is documentation evidence, not a new runtime result. Root listing has no license file. GitHub API access returned 403; Git refs and the public page supplied the current identity. | June no-adoption decision unchanged. |
+| preflight-checker | [`zz41354899/preflight-checker`](https://github.com/zz41354899/preflight-checker/tree/e44ca9468ed8d7250497ec82db109aff7bbb0f48), `main` = `e44ca9468ed8d7250497ec82db109aff7bbb0f48`; no tag refs or release-feed entries. | [History](https://github.com/zz41354899/preflight-checker/commits/e44ca9468ed8d7250497ec82db109aff7bbb0f48) contains four June 19 commits; no later update observed. The [manifest](https://github.com/zz41354899/preflight-checker/blob/e44ca9468ed8d7250497ec82db109aff7bbb0f48/package.json) remains private package `0.1.0`, not a published skill release. The [contract](https://github.com/zz41354899/preflight-checker/blob/e44ca9468ed8d7250497ec82db109aff7bbb0f48/SKILL.md) routes by artifact, limits secondary references, and discloses inaccessible input/professional-advice boundaries. Root listing has no license file. | June no-adoption decision unchanged; no website/install execution. |
+
+The current refs were obtained with `git ls-remote --symref <upstream> HEAD
+refs/heads/main 'refs/tags/*'`, independently of the GitHub history and manifest
+reads. Neither project has a recoverable exact old pin, so these are
+**current-only, with no observed post-survey history**, not byte-for-byte
+old-versus-new equality claims.
+
+### Proprietary-feature documentation: Codex Record & Replay
+
+Checked 2026-10-22: the [official documentation](https://learn.chatgpt.com/docs/extend/record-and-replay.md)
+remains live. It describes recording a demonstrated workflow, drafting a skill,
+and replaying it with Computer Use/browser/plugin capabilities. Availability is
+macOS-only with Computer Use enabled; managed `requirements.toml`
+`[features].computer_use = false` disables both. Team distribution is described
+through plugin packaging. The June/July records did not pin documentation bytes,
+so this is current-only documentation evidence, not a recovered release delta.
+No recording, replay, installation, current service revision or execution
+guarantee was verified. The operationalization non-goal is unchanged.

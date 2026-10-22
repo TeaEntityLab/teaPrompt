@@ -9,6 +9,8 @@ silently turning an external research repo into a runtime dependency.
 
 This is a **plan artifact**, not an agent instruction source.
 
+
+> Refresh pointer (2026-10-22): upstream main is byte-identical to the `7ad7ccf` pin (zero commits; TASK-003's artifact gate still deferred; new open issue #2 adds dependency rot). Full refresh in [openfugu-research-record-2026-06-25.md](openfugu-research-record-2026-06-25.md) § "Latest-version refresh — 2026-10-22". No plan change.
 ## Goal
 
 Preserve OpenFugu as a reference for orchestration concepts while preventing

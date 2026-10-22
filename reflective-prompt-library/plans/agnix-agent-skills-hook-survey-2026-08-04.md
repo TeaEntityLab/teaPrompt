@@ -305,3 +305,121 @@ runtime surface. Deterministic guard for this record:
   drift this record's guard exists to catch.
 
 Guard: `plans/tests/test_agnix_agent_skills_hook_survey_record.py`.
+
+## Latest-version refresh — 2026-10-22
+
+### agnix
+
+Prior baseline: `v0.45.0`, commit
+`572a860971a18c48c7a830eb00cb411d5b87dd3f` (2026-08-01), checked 2026-08-04.
+Latest checked: default branch `main` at
+`96df606d7e2298a624c958f671c9917ee08c2e1d` (2026-10-18); latest release
+`v0.59.0` (tag commit `cc559089a2e5fec8b84229c810827ff8d4685a22`,
+published 2026-10-17). 240 commits separate the pins; the release trail runs
+`v0.46.0` … `v0.59.0` (23 releases). Workspace version is `0.59.0`;
+authorship remains single-primary (Avi Fenesh, 201 of 240 commits).
+`rules.json` grew 444 → 702 rules (`total_rules: 702`, `last_updated:
+2026-10-17`); eval manifest grew 61 → 68 expected-case entries. License
+unchanged: dual MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`).
+
+Material changes bearing on prior findings:
+
+- **CC-MEM-005 retired (finding mooted, not refuted).** The survey's
+  HIGH→LOW severity complaint is closed by removal: the changelog records
+  "Retire duplicate memory advice CC-MEM-005, CC-MEM-006, and CC-MEM-008 in
+  favor of the PE rules", with "Generic-instruction advice remains under
+  PE-005" (PE-005 now MEDIUM, still stylistic severity). `removed-rules.json`
+  records the retirement. CC-MEM-014 and PE-006 remain at MEDIUM, so the
+  style-as-structure calibration critique persists for those two.
+- **CC-HK-008 systematically reworked but not closed by source read.**
+  Extraction moved to shell-word parsing (`shell_words`, operator-split
+  segments, `-c` fragment recursion, first-path-per-segment) with a candidate
+  filter rejecting globs/regex/URLs (`is_script_path_candidate`) and exec-form
+  handling (`extract_exec_script_paths`). The old `grep 'main.py' log`
+  illustration is no longer obviously a hit (a bare `grep` argv[0] is not an
+  interpreter, and the quote/literal word is quoted rather than a bare
+  extension token), but no fixture for that exact case was found and no
+  execution was run, so the false-positive repair claim stays unverified.
+- **README Vercel row unchanged.** Line 34 still carries the exact
+  "invoke at 0% … without correct syntax … invisible" wording flagged as
+  marketing drift; the finding stands unrepaired.
+- **`learn.chatgpt.com` citations persist and grew.** 64 hits in
+  `crates/agnix-rules/rules.json` (plus mirrors in `knowledge-base/`);
+  authority status still unverified; the finding stands.
+- **Per-rule tool gating** (v0.59.0): single-tool rules run only in scope
+  (PE-006 now gated to Claude Code), reducing cross-tool noise — adjacent
+  improvement, not a disposition change.
+- **Roo Code support removed** (vendor shutdown 2026-05-15); Kiro V2/V3,
+  Copilot, Cursor, Cline, Gemini, Amp, Windsurf coverage added; eval stays a
+  self-referential regression floor (68 labeled fixtures), not an external
+  benchmark.
+- Effect on dispositions: AX1 (concept-only), AX2 (no-change), AX3
+  (rejected) unchanged — the methodology boundary rationale is unaffected by
+  rule-count growth. No build/test/self-lint/eval was re-executed in this
+  refresh; the 5121-test pin remains historical.
+
+Inspected immutable links:
+`https://github.com/agent-sh/agnix/commit/96df606d7e2298a624c958f671c9917ee08c2e1d`,
+`https://github.com/agent-sh/agnix/releases/tag/v0.59.0`, rule JSON at
+`crates/agnix-rules/rules.json` (`total_rules: 702`), `CHANGELOG.md` v0.59.0
+section, `crates/agnix-core/src/rules/hooks/helpers.rs`
+(`extract_script_paths`, `is_script_path_candidate`, `has_script_extension`),
+`tests/eval.yaml` (68 cases).
+
+### agent-skills-hook
+
+Prior baseline: commit `116e26b85768277026e1b9646d3207451f21344b`
+(2026-08-04), untagged, checked 2026-08-04. Latest checked: default branch
+`main` at `0afb4b41563c2657392a9079ecfa832ef2b358d6` (2026-10-21); still
+zero releases/tags. 61 commits separate the pins. Still **no top-level
+LICENSE**.
+
+Material changes bearing on prior findings:
+
+- **License posture unchanged — still disqualifying for reuse.** The four
+  Anthropic-proprietary `LICENSE.txt` copies (`docx`, `pdf`, `pptx`, `xlsx`,
+  forbidding redistribution and derivative works) are byte-identical to the
+  pin (zero diff). AGPL-3.0 (`guizang-ppt-skill`) and the non-commercial
+  grant (`mediacrawler`) also persist. The two other license files in the
+  tree (`algorithmic-art`, `webapp-testing`) are Apache-2.0, unchanged since
+  before the pin — the "six Anthropic copies" count in the original verdict
+  is best re-read as four Anthropic-proprietary copies plus the AGPL and
+  non-commercial grants; the disqualifying substance is identical.
+- **OMX attribution still not restored.** `visual-verdict` and `ddev-clean`
+  carry no OMX/upstream/attribution marker; `ddev-clean` still presents as
+  the in-house "AI Slop Cleaner" (lightly edited, 25+/15- lines). The
+  de-branding finding stands.
+- **Supply chain still unpinned.** `config/shared/mcp_servers.json` still
+  invokes `npx -y context-mode` (unversioned); `opencode.json` still pins
+  `@tarquinen/opencode-dcp@latest` and still routes models through
+  `rayplus/gpt-5.4*`. Findings stand.
+- **Installers restructured but both load-bearing findings persist.**
+  `deploy.sh`/`deploy.ps1` gained a `TARGET=` selector (codex/opencode/
+  claude/dsh) and per-target backups; the Linux Claude block still backs up
+  and links `~/.claude/skills` with no `~/.claude/agents` handling (source
+  read, lines ~266–287). The Windows script still performs destructive
+  `Remove-Item` inside `Safe-Copy`/`Safe-Link` with no privilege/admin
+  pre-flight anywhere in the file (no `admin`/`privilege` mention); the file
+  does use Junctions for directories (no elevation needed there) but
+  `mklink` symlinks for files, where the destroy-before-capability ordering
+  remains. Neither installer defect is repaired.
+- **Scope grew: 63 → 68 skill directories with SKILL.md** (net +5:
+  `animate`, `archify`, `caveman`, `lvgl-v9`, `review-animations`; the
+  `ddev-*` family was reorganized in place and `code-review-graph` was added
+  then fully removed). The README tree still claims "61 个技能" — the
+  undercount finding stands, now off by 7. New skills name their upstreams
+  in commit messages and `archify` carries MIT + third-party notices
+  (improved per-skill provenance hygiene), but the repo-level license and
+  Anthropic-copy findings dominate. A fourth runtime (DSH/DeepSeek Harness)
+  was added; "zero hooks" characterization unchanged (prompt-text regime).
+- Effect on dispositions: SH1 (deferred) and SH2 (concept-only) unchanged;
+  the never-adopt/never-deploy verdict stands.
+
+Inspected immutable links:
+`https://github.com/docevilOck/agent-skills-hook/commit/0afb4b41563c2657392a9079ecfa832ef2b358d6`,
+`config/shared/mcp_servers.json`, `config/opencode/opencode.json`,
+`linux/deploy.sh` (claude block), `windows/deploy.ps1` (Safe-Link/Safe-LinkFile),
+`agents/skills/{docx,pdf,pptx,xlsx}/LICENSE.txt` (zero diff vs pin).
+Skill count: local directory scan (68 dirs with SKILL.md). Untested limits:
+no installer executed, no MCP/model traffic observed; Windows ordering is a
+static read.
