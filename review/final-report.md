@@ -7431,3 +7431,21 @@ Acceptance and consumer coverage are recorded in
 `local://pack-optimization-ledger-2026-10-24.json`; installed-host qualification,
 model efficacy, campaign execution, commit and push remain outside this delivery.
 
+### Delayed advisory disposition
+
+Current-source triage confirmed that describing the entire deleted function as
+“prose-only” understated its scope. Corrected the preceding account and the
+acceptance ledger. All 19 current main contracts still disclose that their
+source-repository paths are not runtime dependencies; this source inspection
+does not establish future prose-drift coverage or installed-host behavior.
+The PORT-1 provenance convention remains unchanged.
+
+Restoring or loosening exact-English assertions, or changing the correct
+directory-level contract to satisfy them, was declined: text-only tests are not
+being re-pinned. The copied-package executions remain evidence for the exercised
+portability behavior, not a replacement for an every-skill wording guard.
+Requests to correct the collection floor or add final gate results were stale:
+the floor is already 1,753 and the final gate receipt is recorded above.
+This triage changes only this report and the session-local ledger; no skill,
+consumer, test, configuration or recorded execution result was changed.
+
