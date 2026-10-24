@@ -22,6 +22,7 @@ from validate_governance import GovernanceValidator  # noqa: E402
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 SKILLS = library_skills_dir()
 PACK = SKILLS / "governed-delivery" / "SKILL.md"
+ARTIFACTS = PACK.with_name("ARTIFACTS.md")
 EXAMPLES = SKILLS / "examples" / "governed-delivery.examples.md"
 ADOPTION = PLANS_DIR / "governed-delivery-adoption-2026-09-03.md"
 
@@ -212,13 +213,14 @@ def test_gd13_envelope_adds_no_new_ladder():
 def _contract_result(tmp_path: Path, text: str):
     skill = tmp_path / "reflective-prompt-library" / "skills" / "governed-delivery" / "SKILL.md"
     skill.parent.mkdir(parents=True, exist_ok=True)
-    skill.write_text(text, encoding="utf-8")
+    skill.write_text(_read(PACK), encoding="utf-8")
+    skill.with_name("ARTIFACTS.md").write_text(text, encoding="utf-8")
     return GovernanceValidator(str(tmp_path)).validate_all()
 
 
 def _template_result(tmp_path: Path, name: str, body: str):
     """Send a mutated shipped template through the real governance consumer."""
-    text = _read(PACK)
+    text = _read(ARTIFACTS)
     match = re.search(
         rf"(?ms)^### {re.escape(name)}\n.*?^```yaml\n(.*?)^```[ \t]*$",
         text,
@@ -231,7 +233,7 @@ def _template_result(tmp_path: Path, name: str, body: str):
 def _template_data(name: str):
     match = re.search(
         rf"(?ms)^### {re.escape(name)}\n.*?^```yaml\n(.*?)^```[ \t]*$",
-        _read(PACK),
+        _read(ARTIFACTS),
     )
     assert match is not None
     return yaml.safe_load(match.group(1))
@@ -373,30 +375,26 @@ def test_equivalent_yaml_and_safe_enum_choices_pass_governance_consumer(tmp_path
 )
 def test_ambiguous_template_markup_fails_governance_consumer(tmp_path, old, new, field):
     _assert_template_rejected(
-        _contract_result(tmp_path, _read(PACK).replace(old, new, 1)), field,
+        _contract_result(tmp_path, _read(ARTIFACTS).replace(old, new, 1)), field,
     )
 
 
 def test_contract_headings_inside_example_fence_do_not_count(tmp_path):
-    text = _read(PACK).replace("## Contract Set", "````markdown\n## Contract Set", 1)
-    text = text.replace("## Delivery Invariants", "````\n## Delivery Invariants", 1)
+    text = _read(ARTIFACTS).replace("## Contract Set", "````markdown\n## Contract Set", 1)
+    text += "\n````\n"
     _assert_template_rejected(_contract_result(tmp_path, text), "Contract Set")
 
 
 @pytest.mark.parametrize("marker", ["~~~", "````"])
 def test_standard_alternate_yaml_fences_pass_governance_consumer(tmp_path, marker):
-    before, section = _read(PACK).split("## Contract Set", 1)
-    section, after = section.split("## Delivery Invariants", 1)
-    section = section.replace("```", marker)
-    result = _contract_result(
-        tmp_path, before + "## Contract Set" + section + "## Delivery Invariants" + after,
-    )
+    text = _read(ARTIFACTS).replace("```", marker)
+    result = _contract_result(tmp_path, text)
     assert result["invalid_skills"] == 0, result["errors"]
 
 
 @pytest.mark.parametrize("name", TEMPLATES)
 def test_missing_whole_template_section_fails_governance_consumer(tmp_path, name):
-    text = _read(PACK)
+    text = _read(ARTIFACTS)
     section = re.search(
         rf"(?ms)^### {re.escape(name)}\n.*?(?=^### |^## |\Z)", text,
     )
@@ -409,7 +407,7 @@ def test_unsafe_duplicate_section_cannot_shadow_safe_template(tmp_path):
     data = _template_data("envelope")
     data["allowed_sinks"] = ["money"]
     shadow = "### envelope\n\n```yaml\n" + yaml.safe_dump(data) + "```\n\n"
-    text = _read(PACK).replace("## Delivery Invariants", shadow + "## Delivery Invariants", 1)
+    text = _read(ARTIFACTS) + shadow
     _assert_template_rejected(_contract_result(tmp_path, text), "envelope")
 
 

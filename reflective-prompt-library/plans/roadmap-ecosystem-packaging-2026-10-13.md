@@ -36,7 +36,7 @@ This roadmap derives directly from the following surveyed plans:
 TeaPrompt maintains a strictly decoupled architecture separating natural-language policy from host environments:
 1. **The Frozen Nine Core Skills:** `reflective-dispatch`, `reflective-brief`, `reflective-spec-plan`, `reflective-implement`, `reflective-minimality`, `reflective-review`, `reflective-research`, `reflective-risk`, and `reflective-handoff-retro`. Gated by three-recurrence proof and explicit human approval.
 2. **Registered Domain Packs:** 10 registered packs in `DOMAIN_PACK_SKILLS`, invoked by host agents or scripts, never auto-routed by dispatch.
-3. **Scoped Factoring:** The October 11 decision moved governance objects to `agent-governance-scaffold/ARTIFACTS.md` and flow bodies to the two flow packs' `TEMPLATES.md`, preserving contracts and body semantics. Other packs are not claimed factored.
+3. **Scoped Factoring:** The October 11 decision moved governance objects to `agent-governance-scaffold/ARTIFACTS.md` and flow bodies to the two flow packs' `TEMPLATES.md`. The [user-directed October 24 continuation](checkpoint-packaging-decision-2026-10-11.md#three-pack-optimization-continuation-2026-10-24) also factors `arm-blinded-eval-harness`, `router-trace-linter`, and `governed-delivery`, preserving contracts and emitted bodies. No other packs are claimed factored; total package size and host reference-loading efficacy remain separate from main-file disclosure.
 4. **Registry-Relative Parity:** English and zh-TW appendices mirror the live domain-pack registry plus the dispatch pointer. Eleven bullets is this snapshot's count, not a future fixed cardinality.
 5. **Managed-Skill Boundary:** Host-side managed skills in `~/.omp/agent/managed-skills` remain isolated from repository-authored skills. Memory-derived insights require `04-agent/artifact-promotion.md` §4 gates.
 
@@ -70,7 +70,7 @@ This planning summary is wrong or stale if:
 
 | ID | Candidate / Mechanism | Status | Evidence / Surface | Next Action / Trigger |
 |---|---|---|---|---|
-| EP-01 | Scoped TEMPLATES/ARTIFACTS Factoring | Adopted | `skills/agent-governance-scaffold/ARTIFACTS.md`, both flow packs' `TEMPLATES.md`; [owning packaging decision](checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger) | Reopen on missing copied reference, stale extraction consumer, changed body semantics or the governance main contract exceeding 20,000 characters |
+| EP-01 | Scoped TEMPLATES/ARTIFACTS Factoring | Adopted | AGS and GD `ARTIFACTS.md`; both flow packs, blinded eval, router linter and GD `TEMPLATES.md`; [owning decision](checkpoint-packaging-decision-2026-10-11.md#candidate-adoption-ledger), including the user-directed October 24 continuation | Reopen on missing copied reference, stale extraction consumer, changed body semantics or a factored main contract exceeding 20,000 characters |
 | EP-02 | T2 Registry-Relative Bilingual Parity | Adopted | `skills/SKILL_TRIGGER_CHEATSHEET*.md`; [owning T2 decision](checkpoint-2026-10-11-outcome.md#t2-decision) | Check on registry/appendix change, or 2027-01-11 evidence review if unchanged |
 | EP-03 | Multi-Host Installation Guide | Adopted | `SKILL_INSTALLATION.md` | None |
 | EP-04 | Managed-Skill Isolation Boundary | Adopted | `04-agent/artifact-promotion.md` | None |

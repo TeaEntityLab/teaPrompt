@@ -111,7 +111,7 @@ def test_excluded_content_and_deferred_contract_do_not_enter_installed_surfaces(
         assert not SURVEY_TOKENS.search(body), path
         assert not CAP_LITERALS.search(body), path
         assert RESERVED_E5 not in body, path
-    pack = _read(library_skills_dir() / "governed-delivery" / "SKILL.md")
+    pack = _read(library_skills_dir() / "governed-delivery" / "ARTIFACTS.md")
     acceptance = pack.split("### acceptance-record", 1)[1].split("\n### ", 1)[0]
     assert not re.search(r"^unmet_oracles\s*:", acceptance, re.M)
 

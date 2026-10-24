@@ -15,7 +15,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-SKILL = ROOT / "reflective-prompt-library/skills/router-trace-linter/SKILL.md"
+TEMPLATES = ROOT / "reflective-prompt-library/skills/router-trace-linter/TEMPLATES.md"
 DISPATCH = ROOT / "reflective-prompt-library/skills/examples/reflective-dispatch.examples.md"
 
 COMPLETE = """
@@ -55,12 +55,12 @@ rationale: the banner is copy only, so a wider workflow would not change the res
 
 
 def _checker():
-    text = SKILL.read_text(encoding="utf-8")
+    text = TEMPLATES.read_text(encoding="utf-8")
     match = re.search(r"```python\n(.*?)```", text, re.S)
     assert match, "router-trace-linter scaffold fence missing"
     spec = importlib.util.spec_from_loader("lint_route_trace", loader=None)
     module = importlib.util.module_from_spec(spec)
-    exec(compile(match.group(1), str(SKILL), "exec"), module.__dict__)
+    exec(compile(match.group(1), str(TEMPLATES), "exec"), module.__dict__)
     return module
 
 

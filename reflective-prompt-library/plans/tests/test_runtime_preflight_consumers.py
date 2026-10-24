@@ -1,7 +1,7 @@
 """Behavioral tests for the governed-delivery preflight checker template.
 
 Execute the emitted checks/preflight.py template (extracted verbatim from
-governed-delivery SKILL.md) against coherent and incoherent evidence in
+governed-delivery TEMPLATES.md) against coherent and incoherent evidence in
 isolated task-root workspaces. These checks exercise record-coherence
 behavior only: they do not prove host write exclusions, event authenticity,
 continuous sealing, model quality, or accepted delivery.
@@ -24,7 +24,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).parent))
 from prompt_eval_helpers import library_skills_dir  # noqa: E402
 
-SKILL = library_skills_dir() / "governed-delivery" / "SKILL.md"
+TEMPLATES = library_skills_dir() / "governed-delivery" / "TEMPLATES.md"
 CONTROLS = (
     "oracle_sealing",
     "sink_isolation",
@@ -35,7 +35,7 @@ CONTROLS = (
 
 
 def _template_source() -> str:
-    text = SKILL.read_text(encoding="utf-8")
+    text = TEMPLATES.read_text(encoding="utf-8")
     section = text.split("### Template: checks/preflight.py", 1)[1]
     match = re.search(r"```python\n(.*?)```\n", section, re.S)
     assert match, "preflight template fence missing"

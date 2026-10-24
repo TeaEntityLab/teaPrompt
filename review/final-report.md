@@ -7337,3 +7337,97 @@ heading structure. Session-local `known-skill-repair-final-navigation-2026-10-22
 retains the source-bound driver and index digest. ShellCheck was unavailable;
 the four extracted Bash templates passed `bash -n` and the 16 direct scenarios
 above. The temporary Python launcher was removed after verification.
+
+## Three-pack disclosure optimization (2026-10-24)
+
+### Goal, authority and implementation
+
+The maintainer authorized optimization of the three remaining oversized domain
+packs after the current Skills/Plans review. Scope is behavior-preserving
+disclosure factoring, not a new skill, runtime, installed-host change, campaign,
+commit or push. The owning [packaging decision](../reflective-prompt-library/plans/checkpoint-packaging-decision-2026-10-11.md#three-pack-optimization-continuation-2026-10-24)
+records the exact before/after sizes, PKG-6/7 dispositions and falsifiers.
+
+Changed surfaces:
+
+- `skills/arm-blinded-eval-harness/{SKILL.md,TEMPLATES.md}` and
+  `skills/router-trace-linter/{SKILL.md,TEMPLATES.md}`: moved emitted bodies;
+  main contracts retain methods, output/refusal rules, verification and limits.
+- `skills/governed-delivery/{SKILL.md,ARTIFACTS.md,TEMPLATES.md}`: retained
+  the object-invariant menu, gate sequence and preflight requirements; moved
+  nine YAML contracts and the Python/shell bodies without changing them.
+- `plans/validate_governance.py` and five direct/schema/deferred-field consumers:
+  `test_arm_blinded_eval_consumers.py`, `test_router_trace_linter_scaffold.py`,
+  `test_runtime_preflight_consumers.py`, `test_governed_delivery_adoption_state.py`,
+  and `test_gpt_instruct_survey_record.py`. Reads use the sibling directly,
+  without inline fallback; behavioral expectations are unchanged.
+- Both installation guides, the existing packaging decision, packaging roadmap,
+  `QUALITY_GATES_SUMMARY.md`, this report and generated `index.json`.
+
+### Acceptance and direct evidence
+
+| Requirement | Evidence | Status |
+| --- | --- | --- |
+| Shrink the main contracts without raising warning thresholds | Each is below 500 lines and 20,000 characters; safety/workflow sections were compared with the saved baseline | Verified |
+| Preserve emitted behavior and complete portable packages | All 15 fenced bodies match baseline byte-for-byte; documented helper copies all ten packs | Verified |
+| Preserve refusal and acceptance paths after extraction | Nine baseline and nine copied-package scenarios exercise router CLI, preflight wrapper and blinded harness; expected exits and observable results match | Verified |
+| Keep delivery schema validation fail-closed | Copied packages validate; unsafe closed acceptance and a missing artifact reference both fail the real governance consumer | Verified |
+
+The smoke ran one installation command plus eighteen actual consumer commands;
+all 19 returned their expected results. It checked planted scoring outcomes,
+zero scorer calls on leakage refusal, unchanged receipts on duplicate-run refusal,
+and preflight `ready`/`hold`/`stale` behavior. The synthetic fixture workspace was
+removed. The source-bound receipt includes commands, stdout/stderr, hashes and
+the replayable driver in `local://pack-optimization-smoke-2026-10-24.json`.
+
+### Boundaries and remaining work
+
+This reduces initial main-contract disclosure, not total installed bytes or
+proven model errors. No new test of copies or wording was added. Existing
+behavioral fixtures remain; historical source-line citations were not re-pinned.
+Installed skill copies and host settings were not changed. Real host discovery,
+reference loading, containment and model efficacy were not qualified; no provider
+or benchmark campaign ran. Nine core skills, ten packs, separate GD/AGS ownership
+and all existing campaign gates remain unchanged.
+
+### Verification repair and navigation
+
+The first full gate reported 1,753 passed and one failed
+(`artifact://2048`). The failing assertion in
+`test_skill_scenario_panel_adoption_state.py` required “the installed skill
+is self-contained” rather than the more precise “the installed skill directory
+is self-contained.” Removed the combined registry/headings/provenance-wording
+test and its unused import instead of re-pinning prose or reverting the contract.
+The registry-equality and nine-core assertions remain in
+`test_quality_gates_summary.py` and `test_readme_governance.py`; core-workflow
+Prompt Sources headings remain checked by `test_prompt_cross_links.py`.
+The deleted function's every-skill heading and exact-disclaimer assertions were
+also removed; do not describe this as deleting only the failing assertion or
+preserving every prior structural guard. Executable consumer assertions were
+unchanged. Updated the documented collection floor from 1,754 to 1,753.
+
+The direct navigation consumer resolved all 225 indexed documents, including
+19 skill entries, and checked line/character counts and complete heading
+sequences. All four new references are discoverable in their package file lists;
+they are not additional skills or standalone indexed prompt entries.
+Receipt: `local://pack-optimization-navigation-2026-10-24.json`.
+
+### Final repository gate
+
+Regenerated `reflective-prompt-library/index.json`, then ran
+`env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all` from the repository
+root with Python 3.14.7. The final receipt (`artifact://2052`) records
+**1,753 passed in 53.07 seconds**, zero errors across all eight validators,
+and zero skill-lint warnings across 285 scanned files. All 19 skills have valid
+governance metadata and examples. ROUTE-001/002/003 each report 100% fixture
+consistency and low-confidence trace coverage. These are fixture results,
+not a claim of universal routing accuracy or model improvement.
+
+The 164 existing record-date heuristic warnings remain; they are distinct from
+the five skill-size warnings eliminated by this factoring. The standalone smoke
+driver was removed after its source, commands and outputs were preserved in the
+receipt. No implementation work remains in the authorized optimization scope.
+Acceptance and consumer coverage are recorded in
+`local://pack-optimization-ledger-2026-10-24.json`; installed-host qualification,
+model efficacy, campaign execution, commit and push remain outside this delivery.
+

@@ -1,9 +1,9 @@
 """Extracted-template behavioral regressions for the arm-blinded-eval scaffold.
 
-Extracts ``eval-harness/run_blinded_eval.py`` from the skill and executes it
-with offline stub oracles in isolated workspaces. RV-03/RV-06/RV-07 are
-behavioral (order leakage, scorer boundary, runnable config), so these
-checks run the template — never the prose.
+Extracts ``eval-harness/run_blinded_eval.py`` from the skill's co-installed
+``TEMPLATES.md`` sibling and executes it with offline stub oracles in isolated
+workspaces. RV-03/RV-06/RV-07 are behavioral (order leakage, scorer boundary,
+runnable config), so these checks run the template — never the prose.
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from prompt_eval_helpers import library_skills_dir  # noqa: E402
 
 
 def _source() -> str:
-    return (library_skills_dir() / "arm-blinded-eval-harness" / "SKILL.md").read_text(
+    return (library_skills_dir() / "arm-blinded-eval-harness" / "TEMPLATES.md").read_text(
         encoding="utf-8"
     )
 

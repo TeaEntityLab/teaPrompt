@@ -41,9 +41,10 @@ Each install target expects this shape:
 <skills-root>/<skill-name>/SKILL.md
 ```
 
-Install the whole skill directory, not `SKILL.md` alone. The two flow packs
-carry a sibling `TEMPLATES.md`; `agent-governance-scaffold` carries
-`ARTIFACTS.md`. Their main contracts name when to load those references.
+Install the whole skill directory, not `SKILL.md` alone. The two flow packs,
+`arm-blinded-eval-harness`, `router-trace-linter`, and `governed-delivery` carry
+a sibling `TEMPLATES.md`; `agent-governance-scaffold` and `governed-delivery`
+carry `ARTIFACTS.md`. Their main contracts name when to load those references.
 The copy and symlink helpers below already preserve this package shape;
 copied packages need no TeaPrompt checkout to read or instantiate the bodies.
 

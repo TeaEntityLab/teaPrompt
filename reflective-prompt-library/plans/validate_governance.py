@@ -331,7 +331,8 @@ class GovernanceValidator:
                     )
 
             if skill_name == "governed-delivery":
-                skill_errors.extend(_governed_delivery_template_errors(content))
+                artifacts = skill_file.with_name("ARTIFACTS.md").read_text(encoding="utf-8")
+                skill_errors.extend(_governed_delivery_template_errors(artifacts))
 
             if skill_errors:
                 self.results["invalid_skills"] += 1

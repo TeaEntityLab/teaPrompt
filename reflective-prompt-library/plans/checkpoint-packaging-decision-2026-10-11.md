@@ -31,6 +31,8 @@ Full source hashes, case names/exits and disposal evidence: `local://checkpoint-
 | PKG-3 | Raise the flow-pack lint threshold or invent a pack-specific tier | Rejected for this decision | Factoring satisfies the existing main-contract limit without hiding growth behind a larger threshold. References are discoverable documents, not routing inputs; ordinary document warnings remain visible. | A measured routing/reference-consumption problem would justify a new scoped review, not an automatic threshold increase. |
 | PKG-4 | Demote `agent-governance-scaffold` | Branch not taken | Recorded host generation is present and the explicitly adopted shrink is implemented. Its owning zero-use/oversized-without-shrink condition is not met. Generation does not establish enforcement. | The original [demotion triggers](agent-governance-scaffold-adoption-2026-07-17.md#demotion-triggers) remain live. |
 | PKG-5 | Shared-reference consolidation of GD/AGS boilerplate | Reviewed, held; no cutover adopted | Shared constitutional-path, `artifact-complete` and host-precondition meanings remain coherent. Independent GD use is not established by generation rows or a GD-only skill load; absence is unknown, not proof of never-independent use. The delivery lifecycle and four-power split remain distinct. | Reopen the implementation decision on documented coupled-only use or a shared-contract divergence, under [R6](governed-delivery-review-2026-09-13.md). |
+| PKG-6 | Blinded-eval and router-linter bodies in co-installed `TEMPLATES.md` | Adopted, user-directed 2026-10-24 | [Continuation evidence](#three-pack-optimization-continuation-2026-10-24): unchanged Python/CONFIG bodies; main contracts keep methods, refusals and honest limits. Counterargument: this reduces initial disclosure, not total installed content or proven model error. | Reopen on missing copied reference, stale extraction consumer or changed emitted behavior. |
+| PKG-7 | Delivery YAML objects in `ARTIFACTS.md`; preflight bodies in `TEMPLATES.md` | Adopted, user-directed 2026-10-24 | Same continuation: main keeps every object invariant, gate, preflight requirement and demotion boundary. Schema consumer follows the sibling and rejects missing/unsafe artifacts. This does not adopt the held GD/AGS consolidation in PKG-5. | Reopen on lost invariant, changed schema/default, failed copied emission or main contract exceeding 20,000 characters. |
 
 ## Implementation and consumer map
 
@@ -60,3 +62,63 @@ Later same-day [maintainer acceptance of the H12 replacement scope](skills-septe
 supersedes that historical seven-guard hold, without claiming its original
 inventory was verified. The paragraph above records the packaging decision's
 own limits; actual-host qualification and campaign authority remain held.
+
+## Three-pack optimization continuation (2026-10-24)
+
+The maintainer asked to optimize after the current Skills/Plans review identified
+the three remaining oversized main contracts. This authorizes the existing
+packaging pattern, not new skills, changed emitted behavior, host installation,
+model/provider calls, campaign activation, a commit or a push. The October 11
+measurements and decisions above remain dated evidence.
+
+| Package | Baseline main characters | Factored main characters | Preserved fenced bodies |
+| --- | --- | --- | --- |
+| `arm-blinded-eval-harness` | 34,773 | 16,220 | 2 |
+| `governed-delivery` | 36,053 | 19,788 | 12 |
+| `router-trace-linter` | 27,646 | 16,097 | 1 |
+
+All 15 language/body sequences match the saved baseline byte-for-byte and in
+emission order. The delivery package retains its run-note YAML in the main
+contract; its nine contract objects move to `ARTIFACTS.md`, while Python
+preflight and the shell wrapper move to `TEMPLATES.md`. Both other packs move
+their emitted scaffold sections, including the blinded harness's JSON CONFIG,
+to `TEMPLATES.md`. Large references expose contents links. No body is duplicated
+or served through an inline fallback; all three mains stay below the unchanged
+500-line and 20,000-character limits.
+
+The documented copy helper installed all ten packs in a disposable destination.
+The direct smoke then executed nine scenarios against the saved baseline and
+the same nine against copied packages:
+
+- Router CLI: complete trace passes; blank confidence and missing high-risk
+  Human Review fail.
+- Delivery wrapper: coherent records return `ready`/0; an omitted control
+  returns `hold`/4; changed bound input returns `stale`/4.
+- Blinded harness: arm-path leakage refuses before any scorer call; synthetic
+  code/content candidates recover the planted pass/fail pattern with two repair
+  pairs and the discarded/hold records outside that denominator; a repeated
+  output namespace refuses without overwriting receipts or scoring again.
+
+The governance consumer accepted all ten copied packs, rejected an unsafe
+`acceptance-record.closed: true`, and rejected a missing `ARTIFACTS.md`.
+These are synthetic package/consumer checks, not real host or model evidence.
+The 19 command scenarios (one copy plus eighteen baseline/copied executions)
+passed; owned scratch was removed. Full commands, outputs, source hashes and
+replayable driver are retained in
+`local://pack-optimization-smoke-2026-10-24.json`; the pre-edit sources are in
+`local://pack-optimization-baseline-2026-10-24.json`.
+
+Consumer closure: direct extraction tests and the governance schema validator
+read the new siblings; the deferred-field guard reads delivery `ARTIFACTS.md`;
+package-wide scans already enumerate sibling Markdown. English/zh-TW install
+guidance, the packaging roadmap, warning disposition and generated navigation
+are synchronized. Existing behavioral assertions remain unchanged; no new
+copy/wording tests, generic loader or dependency was added. Historical line
+citations remain tied to their original snapshots, not silently re-pinned.
+
+Final repository-gate results are recorded in
+[the delivery report](../../review/final-report.md#three-pack-disclosure-optimization-2026-10-24).
+This is reduced initial main-contract disclosure, not smaller total packages,
+measured model improvement, host enforcement or installed-host qualification.
+Nine core skills, ten packs, all existing campaign holds and PKG-5 remain unchanged.
+
