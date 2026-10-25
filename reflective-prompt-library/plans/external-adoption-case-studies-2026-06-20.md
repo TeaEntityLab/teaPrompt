@@ -1,6 +1,6 @@
 # External-Adoption Case Studies — 2026-06-20
 
-> Latest source status: [known-reference project refresh — 2026-10-22](#known-reference-project-refresh--2026-10-22). Historical adoption decisions below are not current-version certifications.
+> Latest source status: [Agentflow 9 follow-through — 2026-10-25](#agentflow-9-follow-through--2026-10-25); other reference projects retain the [2026-10-22 refresh](#known-reference-project-refresh--2026-10-22). Historical adoption decisions below are not current-version certifications.
 
 ## Dispatch
 
@@ -389,6 +389,7 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | pstack deep-research synthesis survey recorded (`'/Users/teee/.omp/agent/sessions/-dev-teaPrompt/2026-09-22T14-10-34-853Z_01a0c974-42e5-723b-8563-6b4647c88d6f/local/paste-4.md'`, zh-TW synthesis proposing governance integration for pstack; repo claims verified at `cursor/plugins` @ `53e579f`): 23 playbooks confirmed; shipping's verifier≠author + patch-id binding + contiguous-verified-run landing confirmed; autopilot-full's operator-grant + root-verdict merge confirmed; `poteto/verification-skill-example` confirmed fictional (Atlas/Harbor Labs, CLI omitted on purpose); "Gardener" absent from pinned tree (zero hits) | paste read in full; pinned repo re-verified via API tree + raw reads + full-tarball grep; METR/DORA/OpenAI/GitHub/Cursor external claims verified against primary sources; nothing executed | record-only (bare survey, DS-1) — eight PS2-* candidates: seven no-change (installed coverage via governed-delivery, agent-governance-scaffold, runtime-trust-boundary); PS2-7 recorded as A/B/C pilot-evaluation design for deferred PS-C1 → `plans/pstack-synthesis-survey-2026-09-22.md` + guard `plans/tests/test_pstack_synthesis_survey_record.py` |
 | 2026-09-30 research-method follow-through | done | XM-11 adopted on the existing research State Ledger; XM-12 held under XM-3; Code Recall's absence wording scoped to its recorded documents; user direction and falsifiers above |
 | Agentflow 8.4.1 follow-through recorded | done | `agentflow-8.4.1-delta-survey-2026-09-30.md`; immutable requested pin and delta, two sandboxed native probes; nine upstream candidates unadopted |
+| Agentflow 9.0.0 survey internalized; unchanged-source freshness checked | done | [v9 addendum](agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25); AF9-DOC1 documentation sync only; AF9-SK1–SK5 do not change skills or runtime ownership; historical smoke remains `INCOMPLETE_HOST_PRECONDITION` |
 | RRSI survey recorded | done | `rrsi-survey-2026-09-30.md`; pinned source/paper, core and supplemental selector smoke, twelve candidate dispositions; gains and cost-saving scopes remain author-claimed |
 | Advisor banner and local recipe attribution repaired | done | STS headline distinguishes XM-11; AF841-M1 fixes recipe #2 only; three-case consumer smoke; Decision Index links both records; existing named holds unchanged |
 | Agent Execution & Assurance taxonomy survey internalized | done | `agent-execution-assurance-taxonomy-survey-2026-09-30.md`; original pins and scripted-smoke bounds preserved, AEAT precedents linked, current PS2-3/PS-C1 history reconciled; AEAT-4 acceptance-oracle join held with the verification-map lesson and a named-product trigger/falsifier; no schema/skill/runtime or existing gate change |
@@ -420,7 +421,8 @@ changes, source tier and unresolved limits.
 
 | Reference projects / comparison surfaces | Owning current-source record |
 | --- | --- |
-| Agentflow; Firstmate | [Agentflow delta and separate Firstmate section](agentflow-8.4.1-delta-survey-2026-09-30.md) |
+| Agentflow | [V9 source, v8 lineage and bounded execution evidence](agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25), surveyed 2026-10-24 and source-unchanged on 2026-10-25 |
+| Firstmate (separate project) | [October 22 source snapshot](agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity); not re-surveyed by the Agentflow follow-through |
 | Agentic SOP to Work; Baton | [SOP](agentic-sop-workflow-reflection-2026-06-13.md); [Baton](baton-dispatch-survey-2026-07-13.md) |
 | Claude Agent SDK; OpenAI Agents SDK; Google ADK; Deep Agents; Microsoft Agent Framework; Geoffrey Huntley's Ralph pattern | [Framework comparisons](agent-flow-control-research-2026-07-11.md) |
 | Agent Skills specification and `skills-ref` | [Specification and reference validator](../../surveys/agent-skills-flow-control-survey-2026-07-11.md); [existing surface plan pointer](skills-surface-plan-2026-07-11.md) |
@@ -490,3 +492,34 @@ through plugin packaging. The June/July records did not pin documentation bytes,
 so this is current-only documentation evidence, not a recovered release delta.
 No recording, replay, installation, current service revision or execution
 guarantee was verified. The operationalization non-goal is unchanged.
+
+## Agentflow 9 follow-through — 2026-10-25
+
+The [existing owning survey](agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25)
+now internalizes the October 24 v9.0.0 source survey and offline observations.
+The October 25 `git ls-remote` and
+[release-feed check](https://api.github.com/repos/agfnow/agentflow/releases?per_page=3)
+still resolve `main` and stable v9.0.0 to
+`1edfce9f805defd6493a800b91075e461d8540f4`; no new delta or repeated upstream
+execution was needed. V8 is preserved at `agfnow/agentflow-v8`; old v8 pins,
+experiments and adoption decisions remain historical, not v9 certifications.
+
+The material distinction is **removed ordinary helper/hook enforcement versus
+retained host-followed obligations and an optional executable looper**. Guarded
+migration, changed policy/default semantics and incompatible CLI/queue surfaces
+are recorded at the immutable source pin, not offered as an installation recipe.
+
+**AF9-DOC1 is complete as documentation only.** The owning record preserves
+AF9-SK1–SK5's no-skill-change, host-owned or guard-preservation dispositions and
+their reopening evidence. No dependency, host adoption, migration, model call,
+runtime/campaign authority or prior hold changes. Firstmate is separate and
+retains its October 22 scope.
+
+The historical probe completed 13 mechanism scenarios and five containment
+controls before the coordinator process-identity precondition failed. Its overall
+classification remains **`INCOMPLETE_HOST_PRECONDITION`**, not PASS, and no new
+native/provider/integration/recovery result is claimed by this documentation
+sync. Full source identities, inventory methods, observed failure and unexecuted
+boundaries are in the owning addendum; the current-source pointer above
+supersedes the October 22 catalogue freshness only for Agentflow.
+

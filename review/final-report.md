@@ -7449,3 +7449,86 @@ the floor is already 1,753 and the final gate receipt is recorded above.
 This triage changes only this report and the session-local ledger; no skill,
 consumer, test, configuration or recorded execution result was changed.
 
+## Agentflow 9 survey documentation sync (2026-10-25)
+
+### Goal and implementation summary
+
+The maintainer requested completing all identified Agentflow documentation
+repairs and committing them. Internalized the October 24 v9.0.0 survey and the
+October 25 unchanged-source check into the existing owning record and catalogue;
+updated the older survey's successor pointer and regenerated navigation.
+This is AF9-DOC1 documentation follow-through, not another upstream survey,
+a skill change, adoption, installation, migration or campaign grant.
+
+The record separates v8 history from the successor source at
+`1edfce9f805defd6493a800b91075e461d8540f4`, removed ordinary helpers/hooks from
+the retained optional looper, and bounded observations from unexecuted guarantees.
+The historical probe remains `INCOMPLETE_HOST_PRECONDITION`; the 13 completed
+mechanism scenarios and five controls do not become a fully passing smoke.
+No existing skill, test, configuration or prior candidate disposition changed.
+
+### Files changed
+
+- `reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md`
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`
+- `reflective-prompt-library/plans/agentflow-survey-2026-09-05.md`
+- `reflective-prompt-library/index.json`
+- `review/final-report.md`
+
+### Acceptance criteria status and traceability
+
+| Criterion | Artifact / consumer evidence | Status |
+| --- | --- | --- |
+| Preserve pinned v8/v9 identities, material delta and execution limits | [Owning v9 addendum](../reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25); exact source checkout and historical receipts inspected | verified |
+| Preserve earlier decisions and Firstmate's separate scope | Additive v9 section; historical findings remain; AF9-DOC1 is documentation-only and AF9-SK1–SK5 retain their dispositions; existing survey and clean-room guards passed | verified |
+| Make current evidence discoverable from every identified entry point | Catalogue banner/map/completion row, September successor pointer, three actual composer CLI runs and all 225 index entries | verified |
+| Keep evidence dated without creating a new prose-pin test | Adjacent known check dates added; final repository gate passes with no new/changed tests | verified |
+
+Consumer classes are covered for direct readers, alternate document entry points,
+generated values and existing record assertions. Dated roadmaps and
+`PROJECT_KNOWLEDGE.md` remain intentionally unchanged: they resolve through the
+owning survey/catalogue, and no scheduling, product or promotion decision changed.
+Installed artifacts and runtime callers are not affected.
+
+TWINS: searched plans/ and PROJECT_KNOWLEDGE.md for the owning Agentflow survey reference, latest-refresh links and Agentflow v8.4.15 pointers - found 1 other site: reflective-prompt-library/plans/agentflow-survey-2026-09-05.md (active successor pointer updated; dated historical statements retained).
+
+### Tests / checks run
+
+- Regenerated `index.json` with `plans/generate_index.py`: 225 entries, 19 skills.
+- Executed `plans/prompt_composer.py` with each of the owning survey, catalogue
+  and September survey slugs. All three returned exit 0 and exposed the current
+  addendum or its successor links.
+- Independently consumed every indexed file and checked unique paths, path
+  resolution, Unicode character/line counts and complete heading sequences.
+- Ran `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all` after the final
+  citation/index changes: **1,753 passed in 51.24 seconds**, eight validators
+  with zero errors, skill lint with zero warnings, and ROUTE-001/002/003 at 100%
+  fixture consistency and low-confidence trace coverage. Receipt: `artifact://2079`.
+- Record hygiene reports **162 existing date-heuristic warnings** elsewhere.
+  The first gate had 171: seven newly added citation-date gaps and two historical
+  gaps in the owning survey were corrected with their known check dates. None
+  remains in the three changed survey/catalogue documents.
+
+Actual CLI outputs and final index digest are retained in
+`local://agentflow-doc-sync-smoke-2026-10-25.json`; the acceptance/consumer ledger
+is `local://agentflow-doc-sync-2026-10-25.json`. The durable survey embeds the
+decision-bearing source, observations and limits rather than depending on those
+session artifacts.
+
+### Failures, skipped checks and residual risks
+
+Semantic discovery was unavailable (403); named-file reads and literal searches
+resolved the affected consumers. No verification was replaced with a model claim.
+No upstream program, provider, real-project migration or new host qualification
+was run. Historical native execution, concurrency, integration/recovery and
+Windows limits remain explicitly unknown, not passing. The unchanged-source
+result expires on changed refs/releases or contrary local evidence.
+The unrelated historical date warnings are outside this Agentflow sync.
+
+### Remaining work and human review
+
+No documentation or verification blocker remains in the authorized scope.
+The maintainer has authorized this documentation commit; no push or operational
+adoption is included. Any future host/runtime change needs its own authority and
+qualification rather than inheriting permission from this record.
+

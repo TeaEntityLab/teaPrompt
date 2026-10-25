@@ -2,6 +2,8 @@
 
 > **Status: decided — nine upstream candidates not adopted; one local recipe correction adopted (AF841-M1); no skill, routing, permission, dependency, or runtime change.** The delta starts at the 8.3.3 baseline `738d0b3f4aa1df870835813d9dcc015136628434`, recorded in the [2026-09-28 factory rethink panel](software-factory-rethink-panel-record-2026-09-28.md), downstream of the [8.3.2](agentflow-8.3.2-delta-survey-2026-09-22.md), [8.3.0](agentflow-8.3-delta-survey-2026-09-21.md), [8.2.0](agentflow-8.2-delta-survey-2026-09-13.md), and [2026-09-05](agentflow-survey-2026-09-05.md) surveys. The user authorized worthwhile doc/skill updates, not automatic promotion. The span carries 8.3.4, 8.4.0, and 8.4.1; the requested 8.4.1 patch itself is documentation/metadata-only. Existing guards cover the doc repair; no new paragraph-pin test is added.
 
+> **Current-source pointer (2026-10-25):** the [Agentflow 9 refresh](#agentflow-9-refresh--2026-10-25) internalizes the 2026-10-24 survey of v9.0.0 (`1edfce9`) and the unchanged-source check on 2026-10-25. The v8 observations below remain dated evidence; Firstmate remains a separate project, last checked here on 2026-10-22.
+
 ## Research Question and Scope
 
 User instruction: "Fix advisor notes; Survey agfnow/agentflow v8.4.1; Survey https://github.com/google-research/rrsi; and if worth it then update docs or skills" (checked 2026-09-30). Which changes since the recorded 8.3.3 pin alter the methodology, which are host implementation or relocated prose, and does any concept expose a **verified local gap**? The conditional update direction permits a narrow worthwhile repair; it does not supply evidence that an upstream candidate's named promotion trigger fired.
@@ -265,6 +267,7 @@ Scope: latest default-branch and release/tag identities for `agfnow/agentflow` a
 3. **Notebook-compact keeps the latest completed round even under force.** The archive loop now stops before the latest round with reply text (`findLastIndex`), so forced compaction retains one completed round beside the current Ask. The prior finding stands: `--include-answered true` still accepts only the literal `true` and still performs no mechanical check that the request was handled (latest `notebook-compact.js:88-181`); the added message text only advises verifying answers first.
 4. **zh-TW setup fallback parity (#29)** plus version labels, changelog, and 8.4.7-template `away-gates` default flip in `ag-settings.js` (`off` → `on` in the host template; the persisted/absent default documented at 8.4.5 stays `off` unless explicitly set — template value vs documented default, not a behavior re-verification).
 
+Sources in the following paragraph were checked 2026-10-22.
 Effect on prior findings: the 8.4.14 chat baseline's core limits are confirmed at 8.4.15 — the answered-round override still bypasses retention without proving completeness, hash verification still protects bytes not intent, and the author still makes no full-suite-green claim (8.4.15 notes: "Three broader fixtures reproduce on the pre-change source"). No new methodology candidate; no gate fired. Inspected immutable links: [v8.4.15 tag](https://github.com/agfnow/agentflow/tree/v8.4.15), [8.4.15 commit](https://github.com/agfnow/agentflow/commit/80fcd7f81e21b2c1cbcaeda53a40a0ede8fcab1d), [CHANGELOG @ 8.4.15](https://github.com/agfnow/agentflow/blob/80fcd7f81e21b2c1cbcaeda53a40a0ede8fcab1d/CHANGELOG.md), [v8.4.15 release](https://github.com/agfnow/agentflow/releases/tag/v8.4.15). Untested: all runtime behavior (no smoke run in this refresh), live hosts, Windows.
 
 ### Firstmate (separate project): prior baseline and latest identity
@@ -278,4 +281,139 @@ Effect on prior findings: the 8.4.14 chat baseline's core limits are confirmed a
 
 Change families since `f470a01` (source-tier; no execution in this refresh): (a) **new worker/session adapters** — Commandcode (`bin/fm-commandcode-mod.ts`, harness adapter + verification doc), Polytoken (`bin/fm-polytoken-lib.sh`, adapter + verification doc), Paseo experimental session backend (`bin/backends/paseo.sh`, `docs/paseo-backend.md`, backend smokes); (b) **new forge/review rails** — `forge=external` never-push review rail (`bin/fm-external-review-lib.sh`, `docs/external-review-forge.md`), Forgejo/Gitea via `tea` CLI (`docs/forgejo-tea-integration.md`), Git push guard (`bin/fm-git-push-guard.sh`), review check (`bin/fm-review-check.sh`), PR-thread re-raise and PR-ready withholding behind opt-in flags; (c) **governance tightening** — self-repo boundary (`config/firstmate-role` maintainer opt-in required to publish upstream; `docs/configuration.md`), explicit authority for upstream contributions (#7172), unguarded Herdr lifecycle-brief refusal at spawn behind an opt-in flag, per-home worker tool exclusions; (d) **capacity/observability** — `bin/fm-capacity.sh` (open lanes + host headroom), per-project spawn capacity caps, pipeline spend recording, task-status-history archival, wedge-escalation caps and operator evidence guards; (e) **supervision/compat fixes** — Pi/OpenCode/Grok/Cursor/Opencode adapter fixes, secondmate busy-contract/convergence/relaunch fixes, stale-alarm bounds.
 
+Sources in the following paragraph were checked 2026-10-22.
 Former limits re-checked at the latest pin and still holding: the lease threat model is still explicitly confused-agent-grade — "A deliberately forging shell running as the same uid ... can evade any in-process discriminator ... adversarial-grade separation is explicitly out of scope" (`bin/fm-lease-lib.sh`); worker launch still defaults to bypass-grade permissions (`CLAUDE_PERMISSION_MODE=bypass` default in `bin/fm-spawn.sh`, `--dangerously-skip-permissions`); the worktree-is-not-a-sandbox boundary stands. Preserved contracts: `bin/fm-brief.sh` still refuses `--yolo` ("it is firstmate's merge authority, not a [worker input]") and still separates Captain's intent from generated spec; delivery-mode vs merge-authority split unchanged in the README. Effect: prior chat findings corroborated, none contradicted; the contract-separation patterns remain study/reference material, the fleet runtime remains non-adopted. Inspected immutable links: [latest commit](https://github.com/kunchenguid/firstmate/commit/6eb8b7f8277dc37637e3ba58c2fc461d88dc4ff3), [README @ latest](https://github.com/kunchenguid/firstmate/blob/6eb8b7f8277dc37637e3ba58c2fc461d88dc4ff3/README.md), [lease threat model @ latest](https://github.com/kunchenguid/firstmate/blob/6eb8b7f8277dc37637e3ba58c2fc461d88dc4ff3/bin/fm-lease-lib.sh), [brief yolo guard @ latest](https://github.com/kunchenguid/firstmate/blob/6eb8b7f8277dc37637e3ba58c2fc461d88dc4ff3/bin/fm-brief.sh). Untested: all runtime behavior; "zero-token watcher" and "restart-proof" remain author descriptions, not verified here.
+
+## Agentflow 9 refresh — 2026-10-25
+
+### Scope and direct recommendation
+
+The maintainer authorized completing the documentation sync and committing it.
+This addendum internalizes the source survey and bounded offline probe performed
+on **2026-10-24**, then the **2026-10-25** ref/release freshness check. The earlier
+survey was session-only; this record now carries its decision-bearing evidence
+and limits without requiring that session to understand the recommendation.
+It does not replace the dated v8 findings or re-survey Firstmate.
+
+**Decision: documentation refresh only.** Preserve the v8/v9 lineage and the
+changed enforcement boundary. No new skill, pack, runtime dependency, installation,
+migration, provider qualification or campaign is adopted. All earlier
+AF/EP/AF82/AF83/AF841/SFR dispositions and AF841-M1 remain unchanged.
+
+### Version and source identity
+
+Primary sources below were inspected at their immutable pins; current refs and
+release metadata were checked on 2026-10-25.
+
+| Surface | Observation and scope |
+| --- | --- |
+| Actually surveyed v8 baseline | Baseline ref checked 2026-10-24: v8.4.15 at `80fcd7f81e21b2c1cbcaeda53a40a0ede8fcab1d`, now preserved in [agfnow/agentflow-v8](https://github.com/agfnow/agentflow-v8/tree/80fcd7f81e21b2c1cbcaeda53a40a0ede8fcab1d). The original v8.4.1 and later v8 observations above are not relabeled as v9 evidence. |
+| Surveyed v9 source | Source checked 2026-10-24; pinned text re-read 2026-10-25: [agfnow/agentflow at `1edfce9f805defd6493a800b91075e461d8540f4`](https://github.com/agfnow/agentflow/tree/1edfce9f805defd6493a800b91075e461d8540f4). The [README](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/README.md) identifies stable Agentflow 9; the successor was developed as aglite. Existing installations are not replaced by the repository rename. |
+| Stable release and branch | Checked 2026-10-25: [v9.0.0 release](https://github.com/agfnow/agentflow/releases/tag/v9.0.0), published and last updated `2026-10-23T00:37:45Z`; not a prerelease. Annotated tag object `32540a4be701f61bd30b3ed068b4b5c5140561ab` peels to the surveyed commit. `HEAD` and `main` still equal that commit. |
+| Package, schema and license | Pinned files checked 2026-10-25: the [package manifest](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/skills/agentflow/package.json) identifies private package `@agfnow/agentflow` version `9.0.0`; the [configuration template](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/skills/agentflow/assets/.agentflow/ag.json) uses `"schema-version": 13`; the [source license](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/LICENSE) is Apache-2.0. These are distinct identities, not installed-copy or npm-registry qualification. |
+
+Freshness evidence (checked 2026-10-25): the following command and the
+[releases API](https://api.github.com/repos/agfnow/agentflow/releases?per_page=3)
+returned the same source/tag/release identities as the October 24 survey:
+
+```sh
+git ls-remote --symref https://github.com/agfnow/agentflow.git HEAD refs/heads/main 'refs/tags/v9*'
+```
+
+There is **no new source delta between those two checks**, so no upstream program
+or smoke was rerun on October 25. A changed branch/tag/release identity or a new
+local failure invalidates that freshness conclusion and requires another scoped
+delta review.
+
+### Material change families: v8.4.15 versus v9.0.0
+
+The October 24 inventory compared these exact fixed trees, not a claimed linear
+release ancestry:
+
+```sh
+git diff --name-status 80fcd7f81e21b2c1cbcaeda53a40a0ede8fcab1d 1edfce9f805defd6493a800b91075e461d8540f4
+```
+
+It found **174 changed paths: 39 added, 20 modified, 115 deleted**. An independent
+comparison of pathname/mode/blob maps from `git ls-tree -r --full-tree` for both
+commits confirmed that population. This is a complete changed-path inventory and
+material-family review, not line-by-line certification of every changed file.
+The [pinned public comparison](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/skills/agentflow/docs/agv8-aglite-comparison.md)
+(checked 2026-10-25) corroborates the following boundaries:
+
+- **Ordinary runtime removed; obligations retained.** Startup, capture, notebook
+  validation and closeout move from ordinary helpers/hooks to host-followed
+  instructions. The legacy ordinary Stop-hook backstop is absent. The optional
+  looper remains executable code; “no ordinary runtime” does not mean no runner.
+- **CLI reuse is incompatible.** The actual
+  [launcher](https://github.com/agfnow/agentflow/blob/1edfce9f805defd6493a800b91075e461d8540f4/skills/agentflow/scripts/agf.js)
+  (checked 2026-10-25) accepts `agf loop run/status`; ordinary chat commands are not replacement shell
+  subcommands for old startup/settings/closeout automation.
+- **Migration is policy translation, not a schema-number edit.** Guarded
+  owner-facing conversion must preserve effective restrictions, recoverable
+  originals and foreign integrations. V8 queues are not runnable v9 queues.
+  Allowlist/independence rules, reversed external-profile priority order and
+  changed approval defaults cannot be preserved by copying keys alone.
+- **Advisors and reference loading are task-specific.** Question-driven advisors
+  replace the old fixed pipeline; `product-docs` and `final-audit` are source
+  roles, not evidence of a missing TeaPrompt workflow.
+- **Feature ownership and cleanup change.** Feature records/worktrees no longer
+  use the old root-notebook coordination model; merge and cleanup are separate
+  decisions. Neither native subagents nor group worktrees establish OS isolation.
+- **The redesigned looper is still host machinery.** Queue schema 2 registers
+  groups, task attempts and request identities; source implements bounded repair,
+  native handoff and serialized integration. Native execution needs the live
+  host; the coordinator is not an automatic restart or absent-host service.
+
+Fewer helper files and retained prompt requirements do not establish preserved
+enforcement, lower cost, better reliability or improved agent efficacy.
+
+### Historical offline execution — 2026-10-24
+
+The bounded probe used the pinned production exports and actual launcher against
+a disposable synthetic Git fixture: one registered task/group, immutable request
+bytes and owner content, explicit configuration and no remote/provider dispatch.
+Historical invocation (the owned scratch and driver were subsequently removed):
+
+```text
+/usr/bin/sandbox-exec -f /private/tmp/teaprompt-agentflow9-survey-E0tAEw/smoke.sb /opt/homebrew/bin/node /private/tmp/teaprompt-agentflow9-survey-E0tAEw/smoke.cjs
+```
+
+| Exercised input set | Observed result |
+| --- | --- |
+| Eight direct-export configuration/path scenarios | Explicit saving/worker/repair choices preserved; missing or boolean saving mode, old schema, zero workers, canonical-root collision, absent selected role and parent-symlink write were refused in the exercised cases. |
+| Five actual CLI scenarios | `loop status` reported planned work read-only; changed request digest, absent authority and missing route blocked `loop run` before claims/worktrees; status also exposed the request blocker. |
+| Five containment controls | Scratch read/write succeeded; synthetic-canary read and out-of-scope write were denied; loopback returned `EPERM`; child processes inherited the file denials. These controls apply to this profile, not arbitrary malicious code or full confidentiality. |
+| Native-run continuation | Stopped with exit **1** and `Cannot prove coordinator process identity`. The driver expected exit 2, so its overall result was failed, not a passing run. `/bin/ps` and PATH `ps` both failed with `spawnSync EPERM` under that profile. |
+| Post-hold inspection | Queue remained `planned`; no coordinator claim or worktree existed; original request and owner bytes were preserved. |
+
+Overall classification: **`INCOMPLETE_HOST_PRECONDITION`**. The completed
+13 mechanism scenarios and five controls are bounded observations; they do not
+turn the interrupted smoke into PASS or establish an upstream defect. Neither the
+sandbox nor the expected result was weakened to make the continuation succeed.
+
+Native mailbox execution, wrong-attempt/stopped-result handling, live-owner
+takeover, concurrent claims, task checks/integration, crash recovery, real
+providers and Windows were **not exercised**. Real-project migration, installed
+host compliance and comparative cost/reliability/efficacy remain unknown.
+The original `agentflow9-smoke-2026-10-24.json` receipt retains command/env,
+source digests, driver/profile and outputs as supplementary session provenance;
+the decision and failure classification above do not depend on opening it.
+
+### V9 candidate dispositions
+
+| ID | Candidate | Decision and checked destination | Counterargument / reopening evidence |
+| --- | --- | --- | --- |
+| AF9-DOC1 | Version/lineage and enforcement-boundary refresh | Applied here and in the existing adoption catalogue by maintainer direction; documentation only. | Dated v8 findings were not false. An additive refresh preserves their source and experiment scope rather than rewriting them. |
+| AF9-SK1 | On-demand advisors/reference loading | Already covered by `reflective-dispatch` smallest-workflow and Context Load Deferral rules; no skill edit. | Reopen on a local selection/procedure-preservation failure, not a new advisor name. |
+| AF9-SK2 | Planner/reviewer model diversity | Study only; `reflective-review` already distinguishes independent evidence channels and non-model high-risk verification. | Provider/model labels alone do not prove epistemic independence or better outcomes; controlled local evidence could change the decision. |
+| AF9-SK3 | Product-doc ownership/final audit | No confirmed skill gap; `reflective-implement` already requires consumer coverage and observable verification, with review in `reflective-review`. | Reopen on a missing delivered instruction, not failure to perform an existing check. |
+| AF9-SK4 | Config holds, request identity and integration | Existing CLI/preflight boundaries corroborated; coordinator operationalization remains host-owned under the standing runtime non-goal. | A local structural failure and explicit product-direction decision, not upstream existence, are needed to reopen ownership. |
+| AF9-SK5 | Delete guards because v9 is lighter | Automatic guard deletion rejected; `reflective-minimality` retains its Safety Floor and originating-failure replacement check. | An authorized replacement must pass the originating failure while preserving the named protection. |
+
+Only AF9-DOC1 changes repository documentation. No earlier adoption/hold is
+superseded, no new recurrence is asserted, and Firstmate's separate October 22
+snapshot remains unchanged. Future contrary source/runtime evidence or a
+reproduced local contract gap reopens the corresponding recommendation; an
+unchanged upstream pin does not clear the unexecuted host checks.
+
