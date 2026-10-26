@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-25T15:43:58.880411",
+  "generated_at": "2026-10-27T07:09:07.164065",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -141,6 +141,7 @@
             "ROUTING_CONTRACT.md",
             "software-factory-rethink-panel-record-2026-09-28.md",
             "procedural-blind-dogfood-preregistration-2026-10-15.md",
+            "agensh-source-survey-2026-10-27.md",
             "checkpoint-2026-10-11-runbook.md",
             "openfugu-reference-plan-2026-06-25.md",
             "human-cognition-adoption-2026-10-02.md",
@@ -10794,6 +10795,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agensh-source-survey-2026-10-27.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "knowie-project-knowledge-reflection-2026-06-17.md",
           "storm-perspective-discovery-reflection-2026-06-18.md",
@@ -10834,6 +10836,7 @@
           "system-prompts-leaks-survey-2026-10-07.md",
           "diagram-design-survey-2026-10-07.md",
           "agent-ecosystem-harness-survey-2026-10-11.md#publication-and-worthiness-follow-through-2026-10-11",
+          "agensh-source-survey-2026-10-27.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -10851,6 +10854,7 @@
           "mgd-form-theory-survey-2026-10-02.md",
           "superpowers-v6.4-adoption-2026-10-03.md",
           "pstack-matt-lauren-survey-2026-10-03.md",
+          "agensh-source-survey-2026-10-27.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11020,8 +11024,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 525,
-      "char_count": 94863
+      "line_count": 527,
+      "char_count": 96127
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11762,6 +11766,111 @@
       ],
       "line_count": 314,
       "char_count": 34097
+    },
+    {
+      "path": "reflective-prompt-library/plans/agensh-source-survey-2026-10-27.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agensh-source-survey-2026-10-27",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "external-adoption-case-studies-2026-06-20.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../skills/headless-agent-cli-contract/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../../review/final-report.md#agensh-survey-recording-2026-10-27"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agensh Source Survey — 2026-10-27"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Mechanisms and Boundaries"
+        },
+        {
+          "level": 3,
+          "text": "Decentralized task choice still uses shared infrastructure"
+        },
+        {
+          "level": 3,
+          "text": "Typed context helps navigation; its labels are not truth"
+        },
+        {
+          "level": 3,
+          "text": "A work claim is not an exclusive lease"
+        },
+        {
+          "level": 3,
+          "text": "Notice delivery is not proof of agent consumption"
+        },
+        {
+          "level": 3,
+          "text": "Security controls have specific, unproven outer boundaries"
+        },
+        {
+          "level": 2,
+          "text": "Reported Results: Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Executed Verification"
+        },
+        {
+          "level": 2,
+          "text": "Assessment and Counterarguments"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Residual Risks and Handoff"
+        }
+      ],
+      "line_count": 162,
+      "char_count": 21528
     },
     {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-runbook.md",
@@ -21535,5 +21644,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 225
+  "total_files": 226
 }

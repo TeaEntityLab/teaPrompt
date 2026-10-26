@@ -7532,3 +7532,92 @@ The maintainer has authorized this documentation commit; no push or operational
 adoption is included. Any future host/runtime change needs its own authority and
 qualification rather than inheriting permission from this record.
 
+
+## Agensh survey recording (2026-10-27)
+
+### Goal and implementation summary
+
+The maintainer requested “Record your thoughts” after the completed Microsoft
+Agensh survey. Preserved the research as a source-bound, non-authoritative plans
+record, with evidence-qualified assessments and counterarguments rather than
+turning the external system into a new workflow or runtime commitment.
+
+The record distinguishes advisory claims from exclusive leases, textual
+`verified` state from executed verification, peer merge privileges from
+independent acceptance, and equal wall-clock budgets from equal resource cost.
+It retains the declared source pin, historical mechanism outcomes,
+author-attributed benchmark figures, release-versus-experiment differences,
+local coverage map and candidate-specific reopening evidence.
+
+### Files changed
+
+- [Agensh source survey](../reflective-prompt-library/plans/agensh-source-survey-2026-10-27.md):
+  new research/assessment record.
+- [External-adoption catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md):
+  latest-source pointer, comparison row and state-ledger entry.
+- [Generated index](../reflective-prompt-library/index.json): regenerated discovery metadata.
+- `review/final-report.md`: this delivery entry.
+
+### Acceptance criteria status and traceability
+
+| Criterion | Status | Evidence / owning surface |
+| --- | --- | --- |
+| Preserve findings and thoughts without session-only dependencies | Verified | Survey embeds source identities/links, twelve historical scenarios, five containment controls, qualified assessments/counterarguments and AGSH-DOC1/AGSH-1–AGSH-6 dispositions/falsifiers. The raw session receipt is supplemental, not needed to understand the decision. |
+| Make the record discoverable through existing surfaces | Verified | Catalogue links the record; actual composer and slug-listing commands expose it; regenerated navigation resolves the survey as a document, not a skill. |
+| Keep skill contracts and operational authority unchanged | Preserved | Documentation-only writes; no skill, registry, routing, project-knowledge rule, installer, host configuration, model call or runtime/campaign gate change. No commit or push. |
+| Exercise the changed document/navigation surfaces | Verified | Three actual CLI scenarios and direct consumption of the complete generated index passed, as detailed below. |
+
+Only AGSH-DOC1 is completed as documentation. AGSH-1–AGSH-6 retain their
+research dispositions; no existing adoption or dogfooding ruling is reopened.
+The checked portable contracts are not a claim of installed-agent compliance.
+
+### Tests / checks run
+
+- Regenerated navigation with `plans/generate_index.py`: 226 indexed documents,
+  including 19 skills.
+- Ran the actual `plans/prompt_composer.py` CLI for
+  `agensh-source-survey-2026-10-27`,
+  `external-adoption-case-studies-2026-06-20`, and `--list-slugs`:
+  all three exited zero; outputs expose the new source record, qualified
+  assessments and catalogue entry.
+- Consumed `index.json` as a navigation client: all 226 paths are unique and
+  resolve; line counts, Unicode character counts and complete heading sequences
+  match current files; the new survey is not classified as a skill.
+  Index SHA-256:
+  `509bc6a97aeb675a8b6ad37d429050f54b278b4131022f410bbe0cfdc75606b4`.
+- Ran `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all` against
+  the written documents and regenerated index: **1,753 passed in 60.94 seconds**,
+  eight validators with zero errors, all 19 skills valid, skill lint with zero
+  warnings, and ROUTE-001/002/003 at 100% fixture consistency and low-confidence
+  trace coverage. Full gate receipt: `artifact://2097`. These are repository
+  checks, not upstream runtime or model-efficacy evidence.
+
+Exact commands and CLI stdout/stderr are retained in
+`local://agensh-recording-smoke-2026-10-27.json`; acceptance and consumer coverage
+are tracked in `local://agensh-recording-2026-10-27.json`. The historical upstream
+probe is a separate observation, not another execution during this recording.
+
+### Failures, skipped checks and residual risks
+
+Semantic discovery remained unavailable (403); literal searches and named
+source reads resolved documentation consumers. No permanent survey-wording test,
+upstream fixture or new runtime harness was added.
+
+Record hygiene reports 162 date-heuristic warnings. The project-knowledge
+validator also reports one advisory commit-cue warning for the earlier
+`a5c4bfa` packaging refactor occurring after the latest Decision Index date.
+Neither is a validation error or an Agensh adoption decision; this recording
+does not modify the knowledge layer to silence that warning.
+
+The original probe covers selected production-module mechanisms only. Full
+HTTP/database/container execution, Copilot permission behavior, concurrency and
+crash/recovery, merge safety, hostile-worker isolation and benchmark efficacy
+remain unqualified. Author-reported scaling figures are not local reproductions,
+equal-cost efficiency measurements or production-readiness evidence.
+
+### Remaining work and human review
+
+No content or navigation blocker remains in the requested recording scope.
+Current skills and runtime/campaign gates remain unchanged. Future adoption,
+installation, deployment or model campaigns need their own scope, authority and
+qualification; this documentation request grants none of them.
