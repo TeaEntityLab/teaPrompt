@@ -7621,3 +7621,126 @@ No content or navigation blocker remains in the requested recording scope.
 Current skills and runtime/campaign gates remain unchanged. Future adoption,
 installation, deployment or model campaigns need their own scope, authority and
 qualification; this documentation request grants none of them.
+
+
+## DeepSeek paired source survey (2026-10-27)
+
+### Goal and implementation summary
+
+Surveyed the two user-supplied repositories, then applied the conditional
+“if worth it then update docs or skills” direction to this review's candidates.
+Documentation is worthwhile; no missing delivered skill instruction was
+demonstrated. Recorded the source/artifact boundaries and executed counterexamples
+without creating a runtime, wrapper, skill, wording-pin test or benchmark campaign.
+
+DeepInfer is an offline inference engine, not the complete production service.
+deepseek-recipe is protocol/prompt/token/output adaptation, not training recipes
+or tool execution. DS-DOC1 records that distinction; DS-1–DS-7 preserve current
+skill, routing, oracle, runtime-ownership and adoption boundaries.
+
+### Files changed and ownership
+
+The coordinator owns every changed family:
+
+- [Paired source survey](../reflective-prompt-library/plans/deepseek-inference-recipe-survey-2026-10-27.md):
+  identities, selected mechanism analysis, bounded execution, local coverage,
+  candidate decisions, counterarguments and falsifiers.
+- [External-adoption catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md):
+  latest-source pointer, comparison row and state-ledger entry.
+- [Generated index](../reflective-prompt-library/index.json): discovery metadata.
+- `review/final-report.md`: this delivery entry.
+
+### Acceptance criteria and traceability
+
+| Criterion | Evidence / owning surface |
+| --- | --- |
+| Both repositories correctly identified and pinned | Survey Version / Date Context and immutable source links; separately hashed PyPI wheel is not claimed equal to the reviewed source. |
+| Claims separated from mechanisms and observed behavior | Source findings, Executed Verification and Evidence vs Inference sections; no GPU performance or production-readiness certification. |
+| Conditional updates genuinely considered | DS-DOC1 and DS-1–DS-7 ledger cites checked repository-delivered contracts, objections and reopening evidence; documentation only, no host-instruction-as-coverage substitution. |
+| Changed discovery surfaces exercised | Actual composer/index consumer checks and repository gate results are recorded in the verification result below. |
+| No unauthorized operational expansion | No skill, registry, route, installer, host configuration, oracle or campaign gate changed; no hosted model call, commit or push. |
+
+### Tests / checks run
+
+Completed bounded upstream checks:
+
+- Unchanged pinned DeepInfer environment module: seven configuration scenarios
+  after five containment controls; source hash and exact scenario scope embedded
+  in the survey.
+- Hash-verified recipe 0.2.0 macOS arm64 wheel: eleven public-API scenarios with
+  synthetic backend chunks under no-network, home-read-denied, scratch-write-only
+  Seatbelt. Observed zero-context output budget of 1, EOF normalized to Chat
+  `stop`, and parser passthrough outside a requested regex; these do not prove
+  source/wheel equality, inference correctness or a live service exploit.
+- Actual pinned DeepInfer rule-scoring CLI: complete/missing-row controls plus
+  replacement sample indices and a truncated-but-correct answer. An independent
+  expected-pair set check exposed `coverage_complete=true` despite missing
+  identities; the explicit rule-judge path still scored the truncated correct
+  answer as correct. No real dataset or default LLM judge was run.
+
+The supplemental session receipt `deepseek-survey-smoke-2026-10-27.json`
+preserves driver/profile contents, source hashes and raw scorer output.
+The survey itself embeds the observations and limits needed to interpret them.
+
+### Verification result
+
+The actual composer CLI passed for the paired survey slug, catalogue slug and
+`--list-slugs`. An independent navigation client checked all 227 index paths
+for uniqueness/existence and the new survey's document classification,
+line/Unicode-character counts and heading sequence.
+
+The first `make all` attempt reported **1 failed, 1,752 passed**: the new record
+contained candidate-specific falsifiers but lacked the required standalone
+Falsifiability heading. This was owned documentation-shape drift, not an oracle
+error. Added that section without changing tests or decisions; regenerated
+navigation and final gate results are recorded below.
+
+Final command `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`
+exited zero against the corrected indexed documents: **1,753 passed in 51.10
+seconds**, eight validators with zero errors, all 19 skills valid, skill lint
+with zero warnings, and ROUTE-001/002/003 passing with 100% fixture consistency
+and low-confidence trace coverage. Gate receipt: `artifact://137`.
+
+Regenerated the index and reran all three CLI scenarios after the heading repair.
+The final independent navigation check again resolved all 227 unique paths and
+matched the survey's document type, line/Unicode-character counts and complete
+heading sequence. Final index SHA-256:
+`23661aa55a749adba36d6bc4b9157230a9f80fa7c6498b5e9464a23f79db59e2`.
+Exact navigation commands/output: `local://deepseek-navigation-final-2026-10-27.json`.
+
+Record hygiene reports 178 date-proximity heuristic warnings, including source
+links in this survey whose check date and immutable revision are declared at
+record/source-section level. The unchanged project-knowledge validator reports
+one advisory commit-cue warning for `a5c4bfa`; this pass does not edit historical
+records or project direction to silence either warning class. Neither is a
+validation error or an upstream efficacy result.
+
+The final reporting-only append is checked separately by the link validator;
+it changes no indexed source, fixture, skill or runtime semantics. Owned scratch
+sources, wheel, fixtures and drivers were removed after receipt preservation.
+
+### Failures, skipped checks and residual risks
+
+Semantic discovery was unavailable (403); literal searches and named-source reads
+resolved scope. The initial strict allowlist sandbox profile exited 134 even for
+`/usr/bin/true`; it yielded no upstream result. The corrected explicit-denial
+profile passed containment controls before upstream imports. Other system reads
+remained permitted, so this is not a complete confidentiality certification.
+
+GPU/NPU execution, full service deployment, source/wheel build equivalence,
+integration of both repositories, tokenizer-ID behavior, image-fetch destination
+policy, external model/checkpoint code, dependency licence qualification and
+benchmark efficacy remain untested. Source inspection and synthetic probes do
+not establish those guarantees. Source-specific findings were documented, not
+repaired in the upstream projects.
+
+### Remaining work and human review
+
+No operational adoption is included. Current skills and all existing holds remain
+unchanged. A future installation, metered model experiment, deployment or runtime
+ownership change requires its own scope, authority and qualification; this
+documentation decision supplies none of them.
+
+All requested source-survey and documentation/navigation criteria are satisfied;
+no in-scope implementation or human-review blocker remains. Operational unknowns
+above remain unknown rather than becoming follow-up promises or implicit grants.
