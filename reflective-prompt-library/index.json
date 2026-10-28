@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-27T15:55:09.538446",
+  "generated_at": "2026-10-28T11:07:25.791163",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -178,6 +178,7 @@
             "stop-that-shit-survey-2026-09-30.md",
             "roadmap-harness-flow-control-2026-10-13.md",
             "flow-pack-usage-log.md",
+            "thorsten-ball-agent-workflow-survey-2026-10-28.md",
             "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
@@ -10796,6 +10797,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "agensh-source-survey-2026-10-27.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -10840,6 +10842,7 @@
           "agent-ecosystem-harness-survey-2026-10-11.md#publication-and-worthiness-follow-through-2026-10-11",
           "agensh-source-survey-2026-10-27.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -10859,6 +10862,7 @@
           "pstack-matt-lauren-survey-2026-10-03.md",
           "agensh-source-survey-2026-10-27.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11028,8 +11032,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 529,
-      "char_count": 97522
+      "line_count": 531,
+      "char_count": 98917
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -16728,6 +16732,106 @@
       "char_count": 53769
     },
     {
+      "path": "reflective-prompt-library/plans/thorsten-ball-agent-workflow-survey-2026-10-28.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "thorsten-ball-agent-workflow-survey-2026-10-28",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-spec-plan/SKILL.md#workflow",
+          "../skills/reflective-spec-plan/SKILL.md#workflow",
+          "../skills/reflective-minimality/SKILL.md#safety-floor",
+          "../skills/verification-map-generator/SKILL.md#generation-procedure",
+          "../skills/reflective-implement/SKILL.md#verification",
+          "../skills/reflective-risk/SKILL.md#rules",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/golden-benchmark-runner/SKILL.md#methods",
+          "../skills/arm-blinded-eval-harness/SKILL.md#honest-limits",
+          "../skills/reflective-review/SKILL.md#claims-ledger",
+          "../skills/reflective-spec-plan/SKILL.md#workflow-design-mode",
+          "../skills/flow-control-generator/SKILL.md#script-contract",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../skills/reflective-handoff-retro/SKILL.md#continuation-packet",
+          "../03-context/context-engineering.md",
+          "../04-agent/memory-consolidation.md",
+          "../skills/reflective-review/SKILL.md#four-evidence-dimensions",
+          "../skills/reflective-minimality/SKILL.md#safety-floor",
+          "../skills/reflective-risk/SKILL.md#sink-inventory-and-unattended-envelope",
+          "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
+          "../../review/final-report.md#thorsten-ball-agent-workflow-survey-2026-10-28"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Thorsten Ball: How I Work with Agents — Source Survey (2026-10-28)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context and Evidence Used"
+        },
+        {
+          "level": 3,
+          "text": "Executed source-identity and extraction check"
+        },
+        {
+          "level": 2,
+          "text": "What the Article Recommends"
+        },
+        {
+          "level": 2,
+          "text": "Three Load-Bearing Distinctions"
+        },
+        {
+          "level": 3,
+          "text": "Outcome delegation is not contract deletion"
+        },
+        {
+          "level": 3,
+          "text": "Legibility and autonomy do not transfer authority"
+        },
+        {
+          "level": 3,
+          "text": "Evidence production, behavioral checks and efficacy are different outcomes"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger and Checked Local Coverage"
+        },
+        {
+          "level": 2,
+          "text": "Assessment and Counterargument"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns and Handoff"
+        }
+      ],
+      "line_count": 127,
+      "char_count": 21686
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -21780,5 +21884,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 227
+  "total_files": 228
 }

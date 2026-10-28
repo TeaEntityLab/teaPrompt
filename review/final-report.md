@@ -7744,3 +7744,107 @@ documentation decision supplies none of them.
 All requested source-survey and documentation/navigation criteria are satisfied;
 no in-scope implementation or human-review blocker remains. Operational unknowns
 above remain unknown rather than becoming follow-up promises or implicit grants.
+
+## Thorsten Ball agent-workflow survey (2026-10-28)
+
+### Goal and implementation summary
+
+Survey the supplied Thorsten Ball status and linked “How I work with Agents”
+article. Preserve source-access limits, assess its advice against current
+repository-delivered methods, and record only reference evidence. The bare
+survey request does not inherit earlier update, commit or push grants.
+
+The source record covers all fifteen advice units and distinguishes official
+post/article identity, mirror-delivered body text, an earlier official
+presentation transcript, and vendor feature documentation. Primary attribution
+is not independent efficacy evidence; the earlier talk contextualizes rather
+than silently revising the later article.
+
+TB-DOC1 records the research. TB-1–TB-7 introduce no skill, routing, runtime,
+permission, model-default or experiment-gate change. The useful synthesis is
+outcome-oriented delegation backed by executable product surfaces and observable
+checks, not less acceptance rigor or automatic production authority.
+
+### Files changed and traceability
+
+| Surface | Change / acceptance covered |
+| --- | --- |
+| [Source survey](../reflective-prompt-library/plans/thorsten-ball-agent-workflow-survey-2026-10-28.md) | Source identities/dates, complete advice map, qualifications, checked local contracts, candidate dispositions, counterargument, unknowns and falsifiers |
+| [Adoption catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md) | Latest-source pointer, Case Comparison and State Ledger discoverability |
+| `reflective-prompt-library/index.json` | Generated survey/catalogue metadata and slug discovery |
+| `review/final-report.md` | Delivery evidence and explicit verification limits |
+
+Skills, registries, fixtures, acceptance oracles, historical survey decisions and
+operational/campaign gates are intentionally unchanged. No wording-pin test,
+dependency or new runtime surface was added.
+
+### Acceptance criteria status
+
+| Criterion | Status / evidence |
+| --- | --- |
+| Identify the supplied post/article and read the available complete body | Verified: official/mirror identity comparison, full returned body read and extraction controls |
+| Separate source practice from efficacy, authority and generalization | Verified: source qualifications, fifteen-unit map, evidence/inference split and named unknowns |
+| Compare with current delivered contracts, not the assistant's host instructions | Verified: TB-1–TB-7 cite the inspected repository skill sections and ownership boundaries |
+| Discoverable survey/catalogue and actual consumer output | Verified: regenerated index, three real CLI scenarios, independent metadata/path and link-anchor checks |
+| Repository gate | Verified: `make all` completed; 1,753 tests passed, eight validators without errors and all three route evals passed |
+
+### Verification results
+
+The read-only source check compared post ID, article ID, author, title and exact
+post text across official syndication and the public mirror. It extracted one
+date lead plus fifteen advice blocks; a separate manually enumerated prefix scan
+matched each advice unit once. The article's returned link-entity fields were
+empty, with the official post's one URL as a positive control. Snapshot digest,
+encoding and limits are recorded in the survey and supplemental session receipt.
+This checks extraction and identity binding, not native-body authentication or
+agent-workflow efficacy.
+
+Regenerated `index.json` and exercised the actual `prompt_composer.py` CLI for
+the survey slug, catalogue slug and `--list-slugs`; all three exited zero with
+the expected source/decision content. Independent checks found all 228 index
+paths unique and present (209 prompt entries, 19 skills), both changed documents'
+line/Unicode-character metadata matching their files, and all 19 unique local
+survey links and heading anchors resolving. Receipt:
+`thorsten-navigation-smoke-2026-10-28.json` in the supplemental session artifacts.
+
+The link-validator doctor scanned 288 files with zero errors; governance
+validation found all 19 delivered skills valid. These are documentation and
+discovery checks, not an operational Amp or agent-utility experiment.
+
+Final gate command:
+`env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`.
+Pytest reported **1,753 passed in 96.11 seconds**. All eight validator scripts
+completed without errors and ROUTE-001/002/003 passed their consistency
+thresholds. The complete run is preserved as supplemental `artifact://148`.
+Skill lint reported zero warnings.
+
+Record hygiene reported 184 date-proximity heuristic warnings. Six belong to
+the new survey's source rows and timestamped presentation links; the source
+section explicitly records the October 28 check date and separates publication
+dates. These remain disclosed heuristic findings, not absent source dates or
+validation errors. Project-knowledge validation retained the existing advisory
+commit-cue warning for `a5c4bfa`; no unrelated Decision Index change was made.
+
+The final reporting-only result append is checked separately by the link
+validator. It changes no indexed document, skill, fixture or runtime semantics;
+the source and discovery checks above therefore retain their stated scope.
+
+### Failures, skipped checks and residual risks
+
+Native X full-body access was unavailable; the complete article body is
+mirror-delivered. The published official transcript was read, not watched or
+listened to. Semantic discovery failed with provider 403; literal searches and
+named repository surfaces resolved the local scope without treating failure as
+proof of absence.
+
+No private demo, Orb runtime, production permission system, scheduled wake-up,
+customer action, model comparison or agent experiment was executed. Comparative
+quality/cost, longitudinal maintenance, compaction fidelity, isolation and
+retention claims remain unqualified. Agent-written demonstrations and repeated
+same-author statements are not independent verification.
+
+### Remaining work and human review
+
+No operational adoption or publication is included. Any future implementation,
+metered experiment, deployment or changed review/permission boundary needs its
+own scope, evidence and authority. This record supplies none of those grants.
