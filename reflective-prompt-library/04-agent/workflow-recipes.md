@@ -122,6 +122,14 @@ prompt recipe — the `flow-control-generator` / `flow-loop-harness` domain pack
 | Fusion (disagreement as signal) | Contested factual or judgment calls where one confident answer is brittle | Parallel Lens Review with disagreements preserved and counterargument before consensus |
 | Workflows (roles under a budget) | Multi-step engineering with distinct planner/patcher/verifier roles | Engineering Task recipe + `workflow-engine.md` state model via `reflective-spec-plan` |
 
+**Revising an existing topology while preserving behavior:** compare the same
+acceptance cases and inspect per-task outcomes, not only an aggregate. Retain
+a boundary whose relevant context-isolation or independent-work property is
+lost by the replacement. Use the smallest existing runnable checks; unrun
+comparisons remain unverified, and changing an acceptance criterion remains
+a separate owner decision. This is comparison discipline, not an experiment
+or runtime grant.
+
 Caution transfer: consensus can amplify shared error. vLLM's grounded-fusion
 findings default to *weighting* rather than *dropping* the least-consistent
 response — three models can be confidently wrong together while the lone

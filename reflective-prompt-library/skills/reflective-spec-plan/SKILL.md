@@ -86,6 +86,7 @@ An implementation plan is the set of decisions the executor cannot recover alone
    - Non-goals
    - Actors
    - Inputs / outputs
+   - Data/state model, when relevant: identify valid alternatives, forbidden field combinations and boundary validation points; prefer a representation excluding forbidden combinations when the implementation language and task scope support it
    - Functional requirements
    - Non-functional requirements
    - Edge cases

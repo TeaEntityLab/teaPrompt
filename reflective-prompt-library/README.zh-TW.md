@@ -38,6 +38,7 @@ TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，�
 - `skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md`：一頁式觸發口訣（英文版：[SKILL_TRIGGER_CHEATSHEET.md](skills/SKILL_TRIGGER_CHEATSHEET.md)）
 - `skills/examples/`：每個已註冊核心與 domain-pack skill 的 input/output 示例
 - `plans/`：規劃與研究紀錄
+- 外部來源調查目錄：[目前參考狀態](plans/external-adoption-case-studies-2026-06-20.md)。來源查核與未解限制屬參考證據，不構成執行授權。
 - `plans/multi-agent-panel-consensus-2026-06-25.md`：多視角 Socratic 共識紀錄（單一宿主，非 agent runtime）
 
 ## Skills as Workflow

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-28T11:07:25.791163",
+  "generated_at": "2026-10-30T14:03:10.112607",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -50,6 +50,7 @@
             "whole-project-review-2026-10-09.md",
             "surveyed-plans-unified-roadmaps-2026-10-13.md",
             "checkpoint-packaging-decision-2026-10-11.md",
+            "agent-engineering-five-source-survey-2026-10-30.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "roadmap-prompt-cognition-memory-2026-10-13.md",
             "socratic-change-inquiry-2026-06-11.md",
@@ -884,7 +885,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 1426
+      "char_count": 1481
     },
     {
       "path": "reflective-prompt-library/06-repo/codex-opencode.md",
@@ -3068,6 +3069,180 @@
       ],
       "line_count": 124,
       "char_count": 12447
+    },
+    {
+      "path": "reflective-prompt-library/plans/agent-engineering-five-source-survey-2026-10-30.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-engineering-five-source-survey-2026-10-30",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-implement/SKILL.md#during-editing",
+          "../skills/reflective-implement/SKILL.md#verification",
+          "../skills/reflective-implement/SKILL.md#failure-loop-local_feedback",
+          "../skills/reflective-minimality/SKILL.md#safety-floor",
+          "../skills/reflective-review/SKILL.md#claims-ledger",
+          "../skills/flow-control-generator/SKILL.md#script-contract",
+          "../skills/flow-control-generator/SKILL.md#topology-selection",
+          "../skills/reflective-spec-plan/SKILL.md#workflow-design-mode",
+          "../skills/reflective-handoff-retro/SKILL.md#continuation-packet",
+          "../skills/reflective-implement/SKILL.md#failure-loop-local_feedback",
+          "../skills/reflective-risk/SKILL.md#sink-inventory-and-unattended-envelope",
+          "../04-agent/runtime-trust-boundary.md#2-authority-map",
+          "../04-agent/runtime-trust-boundary.md#2a-product--runtime-ownership-boundary",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../skills/golden-benchmark-runner/SKILL.md#methods",
+          "../../review/final-report.md#agent-engineering-five-source-survey-2026-10-30",
+          "../04-agent/external-adoption-review.md#5-signal-accounting",
+          "../04-agent/artifact-promotion.md#5-minimality-gate",
+          "../skills/reflective-spec-plan/SKILL.md#workflow",
+          "../02-engineering/spec-writer.md",
+          "../skills/examples/reflective-spec-plan.examples.md",
+          "../skills/flow-control-generator/SKILL.md#topology-selection",
+          "../skills/reflective-minimality/SKILL.md#safety-floor",
+          "../skills/flow-control-generator/SKILL.md#verification",
+          "../skills/golden-benchmark-runner/SKILL.md#verification",
+          "../../review/final-report.md#agent-engineering-owner-approved-corrections-2026-10-30",
+          "../skills/reflective-risk/SKILL.md#rules",
+          "../04-agent/runtime-trust-boundary.md#2a-product--runtime-ownership-boundary",
+          "external-adoption-case-studies-2026-06-20.md",
+          "../../review/final-report.md#agent-engineering-multi-role-update-review-2026-10-30",
+          "../GLOSSARY.md#adoption-guard-closure"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Engineering: ub-mode, Topology and Production Evidence — Five-Source Survey (2026-10-30)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context and Evidence Used"
+        },
+        {
+          "level": 3,
+          "text": "All five supplied inputs"
+        },
+        {
+          "level": 3,
+          "text": "Immutable repository identities and inspection scope"
+        },
+        {
+          "level": 2,
+          "text": "U and L: Engineering Discipline Is Useful; a Report Is Not Necessarily a Gate"
+        },
+        {
+          "level": 3,
+          "text": "Checked discrepancies and gate semantics"
+        },
+        {
+          "level": 3,
+          "text": "Distribution and source-instruction boundaries"
+        },
+        {
+          "level": 2,
+          "text": "F: Anthropic's Sources Exist, but Do Not Say “Always Use One Agent”"
+        },
+        {
+          "level": 3,
+          "text": "Numeric claims and their actual populations"
+        },
+        {
+          "level": 2,
+          "text": "K and T: Production Evidence Helps Diagnosis; It Does Not Authorize the Fix"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger / Checked TeaPrompt Delivery"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference and Counterargument"
+        },
+        {
+          "level": 2,
+          "text": "Executed Checks and Verification Boundary"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Multi-Role Socratic Update Review"
+        },
+        {
+          "level": 3,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Frame Test and Shared Findings"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "Disagreements / Residual Risks"
+        },
+        {
+          "level": 3,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 2,
+          "text": "Owner-Approved Corrections"
+        },
+        {
+          "level": 3,
+          "text": "ModellingDesign — Representation Is a Design Decision, Not a Validation Slogan"
+        },
+        {
+          "level": 3,
+          "text": "GateValidity — A Gate Must Distinguish Acceptance From Rejection"
+        },
+        {
+          "level": 3,
+          "text": "TopologyArchitecture — Simplify Boundaries Only While Preserving Their Work"
+        },
+        {
+          "level": 3,
+          "text": "OperationsSafety — Comparable Evidence Is Not Permission or Causation"
+        },
+        {
+          "level": 3,
+          "text": "DocsUsability — Teach One Decision and Link Existing Navigation"
+        },
+        {
+          "level": 3,
+          "text": "FrameMinimality — Bound the Whole Batch, Not Only Each Addition"
+        },
+        {
+          "level": 3,
+          "text": "Landing and Verification Contract"
+        }
+      ],
+      "line_count": 296,
+      "char_count": 54383
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -10797,9 +10972,11 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agent-engineering-five-source-survey-2026-10-30.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "agensh-source-survey-2026-10-27.md",
+          "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "knowie-project-knowledge-reflection-2026-06-17.md",
           "storm-perspective-discovery-reflection-2026-06-18.md",
@@ -10843,6 +11020,8 @@
           "agensh-source-survey-2026-10-27.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
+          "agent-engineering-five-source-survey-2026-10-30.md",
+          "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -10863,6 +11042,10 @@
           "agensh-source-survey-2026-10-27.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
+          "agent-engineering-five-source-survey-2026-10-30.md",
+          "agent-engineering-five-source-survey-2026-10-30.md#multi-role-socratic-update-review",
+          "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
+          "../../review/final-report.md#agent-engineering-owner-approved-corrections-2026-10-30",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11032,8 +11215,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 531,
-      "char_count": 98917
+      "line_count": 538,
+      "char_count": 102670
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -17965,8 +18148,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 281,
-      "char_count": 15932
+      "line_count": 289,
+      "char_count": 16409
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -20164,7 +20347,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 14988
+      "char_count": 15307
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",
@@ -21797,8 +21980,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 278,
-      "char_count": 16338
+      "line_count": 279,
+      "char_count": 16582
     },
     {
       "path": "reflective-prompt-library/skills/flow-loop-harness/SKILL.md",
@@ -21884,5 +22067,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 228
+  "total_files": 229
 }

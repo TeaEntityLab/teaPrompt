@@ -48,6 +48,7 @@ Multi-agent Socratic consensus on project goals and the nine skills (Rounds 1–
 - `skills/SKILL_TRIGGER_CHEATSHEET.md`: one-page trigger cues and anti-misuse rules for the 9 core workflow skills, with a host-invoked domain-pack appendix.
 - `skills/examples/`: worked input/output examples for every registered core or domain-pack skill.
 - `plans/`: decision records, research reflections, eval fixtures, and governance contracts; live pointers are summarized in [PROJECT_KNOWLEDGE.md](PROJECT_KNOWLEDGE.md).
+- External-source survey catalogue: [current reference status](plans/external-adoption-case-studies-2026-06-20.md). Source checks and open limits are reference evidence, not operating authority.
 - `plans/ROUTING_CONTRACT.md`: routing fairness, observability, and risk-based default-up contract.
 - `plans/route-001-paraphrase-eval.yaml`: paraphrase routing eval seed for ROUTE-001.
 - `GLOSSARY.md`: operational definitions of load-bearing terms used across the library.

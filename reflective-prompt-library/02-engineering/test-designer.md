@@ -63,6 +63,6 @@ Name a test that would fail if the spec's happiest path hides a wrong invariant.
 - expected output changed to match bug
 
 ## 7. Minimal Test Set
-若時間有限，最少要跑哪些？
+若時間有限，最少要跑哪些案例？列出選取案例、未涵蓋範圍，以及這組檢查必須拒絕的一個合理錯誤結果，避免誤判為通過；未涵蓋的範圍仍屬未驗證。
 ```
 

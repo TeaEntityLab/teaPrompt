@@ -7848,3 +7848,377 @@ same-author statements are not independent verification.
 No operational adoption or publication is included. Any future implementation,
 metered experiment, deployment or changed review/permission boundary needs its
 own scope, evidence and authority. This record supplies none of those grants.
+
+## Agent-engineering five-source survey (2026-10-30)
+
+### Goal and implementation summary
+
+Survey all five supplied inputs: `unclebob/ub-mode` and the Longhai, lifcc,
+Kevin Ma and tison posts. Keep repository/source identity, author experience,
+vendor measurements and inference distinct. The user requested a survey, not
+installation, upstream software execution, skill admission or publication.
+
+The reference record preserves the engineering-discipline mechanisms, corrects
+two article defaults against fixed companion-tool sources, qualifies the real
+Anthropic single-agent guidance, and separates production observations from
+permission to act. It does not treat a connected quote-post discussion as an
+independent diagnostic benchmark.
+
+AE5-DOC1 records evidence. AE5-1–AE5-6 make no skill, metric-threshold, runtime,
+registry, route, permission or experiment-gate change. Data-first domain
+modelling remains useful reference material without claiming every existing
+skill contains its exact type-level method.
+
+### Files changed and traceability
+
+| Surface | Change / acceptance covered |
+| --- | --- |
+| [Five-source survey](../reflective-prompt-library/plans/agent-engineering-five-source-survey-2026-10-30.md) | All supplied inputs, exact revisions, source/measurement bounds, default corrections, checked local coverage, counterargument and falsifiers |
+| [Adoption catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md) | Latest-source pointer, Case Comparison and State Ledger discovery |
+| `reflective-prompt-library/index.json` | Generated survey/catalogue metadata and slug discovery |
+| `review/final-report.md` | Delivery evidence and verification limits |
+
+Skills, tests, acceptance oracles, historical decisions and operational/campaign
+gates are intentionally unchanged. No external prompt was imported, no permanent
+wording-pin test was added and no dependency was installed.
+
+### Acceptance criteria status
+
+| Criterion | Status / evidence |
+| --- | --- |
+| Survey `ub-mode` at an immutable revision | Verified: full pinned tree/documents plus independent root listing and Git blob identity checks |
+| Survey Longhai's post/article and source claims | Verified within limits: complete available article, official post/article identity, decisive passages and pinned companion source |
+| Survey lifcc's post/article and Anthropic attribution | Verified within limits: complete available article, official identity, two primary publications and pinned migration-kit README |
+| Survey Kevin's workflow note | Verified within limits: complete mirror note, official prefix/quote binding, explicit human-approval distinctions; private operation unverified |
+| Survey tison's claim and related primary context | Verified attribution: full official text/quote identity and ScopeDB/Raft source context; near-perfect diagnosis remains unmeasured |
+| Compare against actual delivered TeaPrompt contracts | Verified: named implementation, minimality, topology, handoff, review, risk and ownership clauses; no host-policy substitution |
+| Exercise generated discovery and real documentation consumers | Verified: regenerated index, actual survey/catalogue/list CLI outputs, independent path/metadata and local-anchor checks |
+| Final repository gate and report links | Full `make all` verified; this reporting-only update receives the final link-validator check |
+
+### Verification results
+
+The executed read-only binding check matched four official post identities and
+dates, three full raw post texts and Kevin's leading note prefix, article
+identities/titles/previews and official quote edges. Full article/note bodies
+retain their mirror provenance; this does not authenticate every body sentence.
+
+The independent source smoke compared Git Trees and root Contents API
+populations, checked both complete files' bytes against their Git blob SHA-1s,
+and observed a 152-line SKILL.md with no license declaration or license file at
+the pin. Citation absence in lifcc's returned article was checked through both
+text-URL search and link-entity extraction, with Longhai's known-present URLs
+and link entities as controls. Receipts are retained in supplemental session
+artifacts, not confused with upstream software/agent efficacy results.
+
+Regenerated `index.json` after the source-document anchor correction. The actual
+`prompt_composer.py` CLI exited zero for the new survey slug, the catalogue slug
+and `--list-slugs`, with all five input identities and expected decision content
+present. Independent checks found 229 unique, existing index paths (210 prompt
+entries and 19 skills), correct line/Unicode-character counts for both changed
+documents, and all 15 unique local survey targets/heading anchors resolving.
+Output hashes and metadata are retained in
+`agent-engineering-navigation-smoke-2026-10-30.json`.
+
+Final command `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`
+completed successfully: **1,753 tests passed in 66.26 seconds**, eight validators
+reported no errors, and ROUTE-001/002/003 passed their fixture consistency
+thresholds (`artifact://195`). Skill lint reported zero warnings. This proves
+repository documentation/governance consistency, not upstream tool behavior or
+agent efficacy. The only repository edit after that run is this reporting-only
+update; indexed source, skills, fixtures, oracles and runtime semantics remain
+unchanged. The link validator checks the final report separately.
+
+### Failures, skipped checks and residual risks
+
+The first independent navigation precheck found the new survey's ownership
+fragment used one hyphen where the existing slash-containing heading produces
+two. Corrected the source link and regenerated the index without changing the
+target heading, validator or oracle; the corrected precheck and real CLI
+scenarios passed. At the pre-repair whole-repository sweep:
+
+`TWINS: searched #2a-product-runtime-ownership-boundary - found 1 other sites: reflective-prompt-library/index.json (generated copy; regenerated)`
+
+
+The first two preview-check attempts failed on driver assumptions: the official
+preview spans two article blocks and uses one LF where the reading view joins
+blocks with two LF. A diagnostic localized the whitespace difference; preview
+normalization was corrected while exact identity/title/date/raw-post checks
+remained. No source claim was changed to make the driver pass.
+
+Semantic discovery failed with provider 403. Literal searches and known-source
+reads resolved scope; the failed search was not interpreted as absence.
+
+Record hygiene retained **207 advisory date-proximity warnings**, including 23
+for the new survey. Its source section explicitly states the common check date,
+2026-10-30; the proximity heuristic still flags the later source rows and links.
+These diagnostics remain disclosed, not suppressed or treated as a failed
+source check. The pre-existing project-knowledge commit-cue warning for
+`a5c4bfa` also remains; no Decision Index or historical decision was rewritten.
+
+All upstream tool behavior is source-derived, not CLI execution. No companion
+tool, GUI, installer, migration workflow or model was executed. Screenshots,
+private project/production results, vendor measurement generation, permissions,
+log isolation, compaction/recovery and comparative maintenance/utility remain
+unqualified. No private log, customer account or production system was accessed.
+
+The external skill's cleanup/commit/push instructions were treated as data and
+not executed. License absence is a checked source boundary, not a legal opinion
+or copying grant; an ordinary push instruction does not itself bypass branch
+protection.
+
+### Remaining work and human review
+
+No operational adoption, metered experiment, installation, commit or push is
+included. Those future actions require their own scope, evidence and authority;
+the survey does not supply them or promise them as follow-up.
+
+All five requested source investigations, delivered-contract mapping and
+documentation/discovery criteria are satisfied. No in-scope implementation or
+Human Review blocker remains. Unreproduced measurements and unexamined
+operational boundaries remain explicitly unknown, not passing claims or promised
+follow-up work.
+
+## Agent-engineering multi-role update review (2026-10-30)
+
+### Summary and scope
+
+The user requested parallel multi-role Socratic/critical thinking about worthwhile
+docs or skills updates after the five-source survey. Six read-only role reviews
+ran in one batch: ModellingDesign, GateValidity, TopologyArchitecture,
+OperationsSafety, DocsUsability and FrameMinimality. Complete reviews and a
+frame-test-first response were recovered before synthesis. Summary-only
+deliveries were not treated as complete; final-payload recovery supplied the
+missing fields without repeating the source research.
+
+Decision: propose four existing-file documentation improvements and two narrowly
+scoped skill clauses; defer the production-observation example and reject
+heavier or duplicate changes. All are recommendations, not landed operating
+wording. The request to think about updates is consideration authority only.
+Role consensus is one advisory model-family channel, not independent efficacy
+verification. No skill, prompt contract, registered set, routing fixture,
+acceptance oracle, threshold, permission or runtime changed.
+
+### Acceptance criteria status and traceability
+
+| Criterion | Evidence / status |
+| --- | --- |
+| Multi-role work actually runs in parallel | Verified: one task batch launched six named roles |
+| Complete Socratic/critical review outputs | Verified: findings, at least three questions, strongest objection, candidate drafts, terminal verdict and limits recovered for every role |
+| Prior no-edit frame challenged | Verified: FrameMinimality answered current surface, prior assumption and falsifier before candidates; disagreement on examples and skill clauses retained |
+| Proposals grounded in delivered text | Verified: Main read the named sections, checked distinctions and narrowed overclaims; no constructed scenario reported as an observed incident |
+| Every candidate gets a disposition | Recorded: AE5-P1–P10 in the owning survey addendum, with exact seats, drafts and approval/verification conditions |
+| Source record and catalogue discoverable | Verified: regenerated index; three actual CLI scenarios returned all required panel/proposal content; independent path, metadata and 25 local-target/anchor checks passed |
+| Final repository gate and report links | Full `make all` verified; this reporting-only update receives the final link-validator check |
+
+### Files changed and implementation summary
+
+- `reflective-prompt-library/plans/agent-engineering-five-source-survey-2026-10-30.md`:
+  appended the separate reference-only panel synthesis, candidate ledger, original
+  drafts, frame test, disagreements, rejected overclaims and evidence limits;
+  preserved the original survey as a historical assessment.
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`:
+  added a review-follow-through pointer and comparison/state-ledger rows without
+  rewriting prior dispositions.
+- `reflective-prompt-library/index.json`: regenerated discovery after final
+  indexed-document edits; registry cardinalities and source-path population unchanged.
+- `review/final-report.md`: this scoped delivery report.
+
+The proposed README/example/prompt/skill edits were deliberately not applied.
+No new permanent test re-pins wording: no operating clause was adopted. Actual
+consumer checks verify reference recording and discovery, not skill efficacy.
+
+### Tests and checks run
+
+Initial checks: `cx overview .`, HEAD identity and SHA-256s for sixteen named
+review surfaces; current authority, promotion and panel contracts; targeted
+source reads and literal search fallback. The actual
+`prompt_composer.py spec-writer test-designer --task …` CLI returned the task and
+both standalone prompt bodies. No agent ran on the composed prompt.
+
+Regenerated `index.json` and exercised the actual survey, catalogue and
+`--list-slugs` CLI entry points: all three exited zero with the required
+candidate IDs, six role names and proposal labels. Independent checks found
+229 unique existing indexed paths, 210 prompt entries and 19 skills; changed-file
+line/Unicode-character metadata matched, and all 25 unique local survey
+targets/heading anchors resolved. Receipt:
+`ae5-update-panel-navigation-2026-10-30.json`.
+
+A final source-identity check compared all sixteen packet-manifest paths:
+fifteen reviewed contracts/source prompts remained byte-identical; the only
+changed member was the owning survey's reference-only addendum. Receipt:
+`ae5-update-panel-surface-identities-2026-10-30.json`.
+Final command `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`
+completed successfully: **1,753 tests passed in 65.29 seconds**, eight validators
+without errors, and ROUTE-001/002/003 passed (`artifact://300`). Skill lint
+reported zero warnings. This is repository consistency evidence, not a prompt
+effect or runtime-safety result. Only this reporting-only update follows that
+run; indexed source, contracts, fixtures and runtime semantics remain unchanged.
+The link validator checks the final report separately.
+
+### Findings, failures and residual risks
+
+Main rejected three flawed proposed drafts before any landing:
+
+1. Runtime-rejected transition pairs were called unrepresentable; the revised
+   proposed example distinguishes internal alternatives from boundary validation.
+2. A fix-confirmation query required identical release/window bindings, which
+   can select only pre-fix or empty data after a release changes; the corrected
+   candidate uses relevant comparable populations and remains deferred.
+3. A vacuous required gate could be relabelled `none (accepted)`, silently
+   weakening acceptance; the revised proposal requires both-direction evidence
+   and leaves a failing required gate unverified for repair/escalation.
+
+Semantic find failed provider 403; direct reads and literal searches resolved the
+bounded review without treating the failed search as absence. Some reviewer line
+references/counts were stale or overbroad; synthesis uses Main's current reads,
+not the role labels or unsupported coverage totals.
+
+No controlled reader study, with/without-guidance model evaluation, topology
+comparison, generated-variant gate probe, upstream tool run or production access
+was performed. Missing usage is unknown. The role suggestions and constructed
+cases do not demonstrate prompt effect, a current runtime defect, or deployment
+safety. Current source evidence retains the earlier mirror/native, license and
+vendor-measurement limits.
+
+Record hygiene retains 207 advisory date-proximity warnings, the same count as
+the preceding survey; the common source-check date is recorded in its source
+section. The pre-existing project-knowledge commit-cue warning for `a5c4bfa`
+also remains. Neither diagnostic was suppressed or converted into a clean claim.
+
+A preliminary cleanup-and-gate command stopped at `rmdir` because three
+role-authored scratch reports remained; `make all` did not start in that
+attempt. The gate was then run directly. The reports and shared packet were
+preserved as supplemental session evidence, their owned scratch copies removed,
+and the empty temporary directory removed successfully. This was a cleanup
+precondition failure, not a test failure or repository regression.
+
+### Remaining work and human review
+
+All requested assessment and discovery criteria are satisfied; no in-scope
+blocker remains. Candidate operating edits need separate applicable approval
+and verification, not continuation under this consideration-only request.
+No installation, model campaign, permission change, commit or push is included.
+The panel record lifts no existing hold or Standing Non-Goal.
+
+## Agent-engineering owner-approved corrections (2026-10-30)
+
+### Goal, authority and implementation summary
+
+The user approved the preceding recommendation with “好的，幫我記錄所有想法及推理，並且開始修正”.
+Applied four existing-file documentation improvements and two narrow existing-skill
+clauses. The owning survey preserves evidence-linked six-role arguments, Socratic
+questions, strongest counterarguments, disagreements, rejected drafts, decisions
+and falsifiers. These are auditable decision rationales, not measurements of
+agent behavior. Earlier source and consideration phases remain distinguishable.
+
+No new skill, runtime, tool dependency, registry member, threshold, installation,
+permission, external model experiment, commit or push is included. AE5-P7 remains
+deferred; AE5-P8–P10 remain rejected/not selected. Usage and prompt utility remain
+unknown, not zero demand or demonstrated improvement.
+
+### Acceptance criteria status and traceability
+
+| Criterion | Applied surface | Check / status |
+| --- | --- | --- |
+| Preserve all six roles and non-selected ideas | Five-source survey, Owner-Approved Corrections and current Candidate Adoption Ledger | Six evidence/question/objection/decision/verification summaries recorded; original drafts and corrections retained |
+| AE5-P1 catalogue discovery | Library README and paired README.zh-TW Directory Map | Verified both README → catalogue → owner-approved record paths |
+| AE5-P2 concrete optional model example | Spec-plan companion examples, Example 3 | Seven extracted wire cases checked independently: three valid alternatives accepted; mixed/missing/empty-reason/unknown-variant cases rejected |
+| AE5-P3 honest minimal-test scope | test-designer §7 | Actual standard and low-token CLI outputs retain selected/omitted scope and false-positive rejection |
+| AE5-P4 behavior-preserving topology revision | workflow-recipes, Looper Topologies | Actual standard and low-token CLI outputs retain same-case/per-task comparison, boundary retention and no experiment grant |
+| AE5-P5 both-direction declared-gate dry run | flow-control-generator, existing Verification item 3 | Eleven actual copied-template scenarios passed; required failures cannot become accepted absent gates; optional no-gate paths retained |
+| AE5-P6 conditional model checklist | reflective-spec-plan, ordinary Workflow checklist | One conditional representation/boundary item; standalone copy includes it; unrelated copy edits do not require a new model |
+| Generated discovery, structural guards and repository gate | Existing index, validators and tests | Verified generated metadata/paths, seven real CLI scenarios, 27 survey targets/anchors, 1,753 tests and all eight validators / three routing evals |
+
+### Files changed
+
+Seven acting surfaces:
+
+- `reflective-prompt-library/README.md`
+- `reflective-prompt-library/README.zh-TW.md`
+- `reflective-prompt-library/02-engineering/test-designer.md`
+- `reflective-prompt-library/04-agent/workflow-recipes.md`
+- `reflective-prompt-library/skills/examples/reflective-spec-plan.examples.md`
+- `reflective-prompt-library/skills/flow-control-generator/SKILL.md`
+- `reflective-prompt-library/skills/reflective-spec-plan/SKILL.md`
+
+Five existing record/discovery/report surfaces:
+
+- `reflective-prompt-library/plans/agent-engineering-five-source-survey-2026-10-30.md`
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md` — genuine owner-approved adoption
+  pointer, not a survey-discovery backfill or a change to curated-index policy
+- `reflective-prompt-library/index.json` — regenerate after indexed edits
+- `review/final-report.md`
+
+### Verification results
+
+Executed a disposable Python smoke against a copied package outside the checkout,
+reusing the existing developer fixtures to instantiate all five published
+flow-control templates. Eleven scenarios exercised pipeline and merged-result
+acceptance/rejection, router valid/invalid labels, valid orchestrator plans and an
+invalid plan stopped before worker dispatch. All expected exits held: success 0,
+pipeline/fan-out gate rejection 1, router/orchestrator/DAG rejection 2. Successful
+pipeline/router runs retained their explicitly accepted optional no-gate paths.
+`bash -n` passed for the three Bash scripts; Python compilation passed for both
+Python scripts. Zero model calls.
+
+The copied spec-plan example's seven wire cases were checked with a disposable
+decoder independently of the table's expected decisions. This verifies the
+illustrative shape decisions, not a shipped parser, compiler enforcement,
+arbitrary JSON safety or improved agent planning.
+
+Supplemental receipt `local://ae5-approved-corrections-behavior-2026-10-30.json`
+preserves exact package/driver hashes, driver source, native outputs and expected
+exits. Its input-log metric counts physical lines, not agent invocations.
+Temporary fixtures are removed after evidence preservation.
+
+Regenerated `index.json` after the final indexed-document edits: 229 unique,
+existing paths, comprising 210 prompts and 19 skills. Independent line/Unicode
+character metadata checks passed for changed indexed prompts/skills and the
+owning records; all 27 survey link targets and heading anchors resolved.
+Seven actual composer CLI scenarios exited zero with the required content:
+survey, catalogue, slug listing, standalone test-designer and workflow-recipes,
+plus each acting prompt's low-token entry. Both English and zh-TW README →
+catalogue → owner-approved record chains resolved. Supplemental receipt:
+`local://ae5-approved-corrections-navigation-2026-10-30.json`.
+
+Final repository command `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`
+completed successfully: **1,753 tests passed in 65.32 seconds**, all eight
+validators passed and all three route evals passed (`artifact://316`). Existing
+template consumers cover selected preflight, retry refusal, quorum and runtime
+floors. Skill lint reports zero errors and zero warnings; record hygiene retains
+207 advisory date-proximity warnings, the same count as the preceding round.
+The genuine adoption pointer satisfies the project-judgment contract; this is
+not a survey-only backfill to suppress a warning.
+
+After this gate only the reporting section is updated. The final delivery check
+targets that reporting-only update with `validate_links.py`; no indexed source,
+skill, test, template, registry or fixture changes after the full gate.
+
+### Findings, failures, skipped checks and residual risks
+
+No shipped-runtime defect was claimed or repaired. No permanent paragraph/wording
+pins were added: Adoption Guard Closure retains existing structural/registry and
+executable consumers. Published template bodies, routing fixtures, accepted
+measurements and historical campaign decisions are unchanged.
+
+One edit attempt was refused because a newly appended target line had not yet
+been displayed. The current anchors were re-read and the patch applied; the
+refused attempt changed no file. It was an editing precondition, not a test or
+product failure.
+
+The earlier semantic-find provider failure remains an access limit; direct
+current-file reads and literal searches establish only the checked scope.
+There is no controlled with/without-prompt comparison, topology migration,
+independent reader study, live provider run or host-enforcement evidence.
+Installed/global user skill directories are not updated by this repository edit.
+The production-observation example remains deferred; no private system is accessed.
+
+### Remaining work and human review
+
+All six approved corrections and the requested reasoning/decision trail are
+complete. Native smoke, actual discovery consumers and the full repository gate
+are verified; no in-scope implementation or Human Review blocker remains.
+Controlled prompt-utility/reader/topology studies remain unknown, not promised
+follow-up work. Any additional operating change, external experiment,
+installation, commit or push requires its own applicable authority.
