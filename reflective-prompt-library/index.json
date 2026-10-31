@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-30T14:03:10.112607",
+  "generated_at": "2026-10-31T17:41:13.251726",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -134,6 +134,7 @@
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "governed-delivery-review-2026-09-13.md",
+            "loop-mechanisms-assurance-inference-2026-10-31.md",
             "cross-survey-rethink-2026-10-07.md",
             "pstack-synthesis-survey-2026-09-22.md",
             "agentflow-8.3.2-delta-survey-2026-09-22.md",
@@ -3098,8 +3099,8 @@
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "../skills/golden-benchmark-runner/SKILL.md#methods",
           "../../review/final-report.md#agent-engineering-five-source-survey-2026-10-30",
-          "../04-agent/external-adoption-review.md#5-signal-accounting",
-          "../04-agent/artifact-promotion.md#5-minimality-gate",
+          "../04-agent/external-adoption-review.md",
+          "../04-agent/artifact-promotion.md",
           "../skills/reflective-spec-plan/SKILL.md#workflow",
           "../02-engineering/spec-writer.md",
           "../skills/examples/reflective-spec-plan.examples.md",
@@ -3242,7 +3243,7 @@
         }
       ],
       "line_count": 296,
-      "char_count": 54383
+      "char_count": 54373
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -5854,7 +5855,7 @@
         "markdown_links": [
           "agentflow-8.2-delta-survey-2026-09-13.md",
           "agentflow-survey-2026-09-05.md",
-          "../04-agent/external-adoption-review.md#4-local-gap-test",
+          "../04-agent/external-adoption-review.md",
           "teabrain-concepts-experiments-survey-2026-09-21.md",
           "ember-snn-llm-survey-2026-09-22.md",
           "agentflow-8.3.2-delta-survey-2026-09-22.md"
@@ -5915,7 +5916,7 @@
         }
       ],
       "line_count": 271,
-      "char_count": 24828
+      "char_count": 24825
     },
     {
       "path": "reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md",
@@ -7958,7 +7959,8 @@
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
           "../skills/reflective-review/SKILL.md",
           "../skills/reflective-research/SKILL.md",
-          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger"
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger",
+          "loop-mechanisms-assurance-inference-2026-10-31.md"
         ]
       },
       "structure": [
@@ -8005,10 +8007,14 @@
         {
           "level": 2,
           "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Source and Inference Follow-Through — 2026-10-31"
         }
       ],
-      "line_count": 198,
-      "char_count": 17735
+      "line_count": 209,
+      "char_count": 18424
     },
     {
       "path": "reflective-prompt-library/plans/jev-architecture-synthesis-survey-2026-09-19.md",
@@ -10972,6 +10978,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
@@ -11022,6 +11029,7 @@
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
+          "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11215,8 +11223,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 538,
-      "char_count": 102670
+      "line_count": 539,
+      "char_count": 103545
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11279,6 +11287,90 @@
       ],
       "line_count": 84,
       "char_count": 7986
+    },
+    {
+      "path": "reflective-prompt-library/plans/loop-mechanisms-assurance-inference-2026-10-31.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "loop-mechanisms-assurance-inference-2026-10-31",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "mgd-form-theory-survey-2026-10-02.md",
+          "external-adoption-case-studies-2026-06-20.md",
+          "agent-execution-assurance-taxonomy-survey-2026-09-30.md#candidate-adoption-ledger",
+          "../skills/flow-loop-harness/SKILL.md#loop-anatomy",
+          "../skills/governed-delivery/SKILL.md#module-contract",
+          "../skills/reflective-implement/SKILL.md#verification",
+          "../04-agent/artifact-promotion.md",
+          "../skills/reflective-handoff-retro/SKILL.md#memory-consolidation",
+          "../skills/reflective-research/SKILL.md#state-ledger"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Loop Mechanisms and Assurance — Evidence and Inferences (2026-10-31)"
+        },
+        {
+          "level": 2,
+          "text": "Question, Authority and Acceptance"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference — Source Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Analytical Map — Different Objects Can Repeat"
+        },
+        {
+          "level": 2,
+          "text": "Further Deductions and Their Limits"
+        },
+        {
+          "level": 3,
+          "text": "D2 — Coverage needs identities, not only equal totals"
+        },
+        {
+          "level": 3,
+          "text": "D3 — Stability, correctness and permission are different claims"
+        },
+        {
+          "level": 3,
+          "text": "D4 — A fixed-state memory claim has a task boundary"
+        },
+        {
+          "level": 3,
+          "text": "D5 — Per-step contraction does not license changing the rule mid-run"
+        },
+        {
+          "level": 3,
+          "text": "D6 — More optimization cannot repair an unspecified objective by implication"
+        },
+        {
+          "level": 2,
+          "text": "Constructive Checks — Reproducible, Not Model Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Hypotheses and Unknowns — What Could Be Learned Next"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger — Docs and Skills Decision"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability, Limits and Handoff"
+        }
+      ],
+      "line_count": 231,
+      "char_count": 22982
     },
     {
       "path": "reflective-prompt-library/plans/cross-survey-rethink-2026-10-07.md",
@@ -22067,5 +22159,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 229
+  "total_files": 230
 }

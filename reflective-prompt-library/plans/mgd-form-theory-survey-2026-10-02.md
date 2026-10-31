@@ -196,3 +196,14 @@ publication supersedes only that publication status. Reference-only candidate di
 released artifacts or a new paper version may reopen the relevant row; none is an unfinished authorized
 implementation. Any later norm/oracle/permission cutover keeps its existing Human Review gate. No
 permanent tests, skills, runtime code or installation are added by this record.
+
+## Source and Inference Follow-Through — 2026-10-31
+
+The official metadata recheck returned the same `2610.01372v1`; the relevant
+definitions and disclosed limits were re-read without finding a new paper result.
+The user subsequently requested recording ideas and further deductions.
+[Loop mechanisms and assurance](loop-mechanisms-assurance-inference-2026-10-31.md)
+separates computational recurrence, environment loops and governance revision;
+it records source corrections, reproducible counterexamples, untested hypotheses
+and positive existing-contract mappings. This follow-through is documentation,
+not new empirical evidence or a change to MGD-1–MGD-7, AEAT-4, Skills or runtime.

@@ -8222,3 +8222,121 @@ are verified; no in-scope implementation or Human Review blocker remains.
 Controlled prompt-utility/reader/topology studies remain unknown, not promised
 follow-up work. Any additional operating change, external experiment,
 installation, commit or push requires its own applicable authority.
+
+## Loop mechanisms — inference recording (2026-10-31)
+
+### Goal
+
+Record the requested ideas and further deductions from the preceding MGD /
+supplied-loop-synthesis survey; update Docs or Skills only where justified.
+This is documentation authority, not a model campaign or governing-rule change.
+
+### Files Changed
+
+- `reflective-prompt-library/plans/loop-mechanisms-assurance-inference-2026-10-31.md`
+- `reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md`
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`
+- `reflective-prompt-library/index.json`
+- `review/final-report.md`
+
+### Implementation Summary
+
+One reference record preserves source-qualified facts, six deductions, four
+untested hypotheses, counterarguments and falsifiers. Native constructive
+checks distinguish report totals from subject coverage, per-map contraction
+from convergence under changing maps, and fixed-state encoding from exact
+history recall. These are logical examples, not model or host measurements.
+
+The existing MGD survey and catalogue link to the record. No new Decision Index
+row, Durable Lesson, taxonomy, permanent test, runtime or skill was introduced.
+Positive current-file coverage in LOOP-1–LOOP-3 supports the no-Skill-change
+decision; MGD-1–MGD-7 and AEAT-4 retain their previous dispositions.
+
+### Acceptance Criteria Status
+
+- Source-qualified facts and accessible citations: verified in the record's F1–F11 ledger.
+- Deductions, unknowns, hypotheses and falsifiers: recorded separately in D1–D6 and H1–H4.
+- Skills worthiness assessment: complete; existing delivered contracts mapped without new rules.
+- Document discovery and reproducible examples: exercised through the actual composer CLI and Python binary.
+- Repository compatibility: final corrected-source `make all` passed.
+
+### Tests / Checks Run
+
+The three new native logical controls passed. The code block copied from actual
+composer output also exited zero and matched the executed source. Composer
+loaded the new record, catalogue and prior MGD survey, and listed the new slug;
+the final corrected record was loaded again after the link repair.
+
+Independent navigation checks passed for 19 local links/anchors across the new
+record and prior MGD survey. Both English and zh-TW README → catalogue → record
+chains resolved. The regenerated index has 230 unique existing paths: 211 prompts
+and 19 skills; independent line/Unicode-character counts matched the three
+changed indexed documents.
+
+Final command: `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`.
+Observed in `artifact://2045`: 1,753 tests passed in 51.34 seconds, all eight
+validators passed, and ROUTE-001/002/003 consistency was 100% on 128/138/108
+phrases. Skill lint had zero errors/warnings; record hygiene retained 207
+date-proximity advisories, unchanged from the preceding publication.
+This report-only addition follows that gate; its final link check is retained
+with the publication evidence in `local://loop-inference-publication-2026-10-31.json`.
+
+### Failures or Skipped Checks
+
+A reporting wrapper initially called unavailable `display()` after the native
+probe had completed. Retained stdout/exit were recovered without rerunning it.
+The first navigation smoke found a fragment targeting a heading inside a fenced
+template; the link now targets the file with template-section identification in
+prose. Index regeneration and final navigation/composer/repository checks followed.
+TWINS: searched artifact-promotion.md#4-promotion-gates - found 1 other sites: reflective-prompt-library/index.json (generated dependency, repaired by regeneration).
+
+Semantic search's earlier provider 403 remains an access limitation; scoped
+literal searches and current-file reads supplied the local mappings. No new
+source retrieval, model benchmark, upstream installation/runtime execution,
+controlled reader study or live-host enforcement audit was performed in this
+recording turn.
+
+### Residual Risks
+
+Original paper results remain author-reported; some source access was
+abstract-level and living documentation remains revision-sensitive. Synthetic
+counterexamples establish only their stated logical boundaries. Hypothesis
+utility, prompt efficacy, costs and installed-host compliance remain unknown.
+Repository gates are not evidence of those effects.
+
+### Next Action
+
+Requested recording, further inference and Docs/Skills assessment are complete.
+No in-scope implementation or Human Review blocker remains. Later product-bound
+assessment or authority changes retain their existing gates; no installation,
+commit or push was performed.
+
+### Delayed advisory triage — same-class citation repair
+
+The warning that the full gate predated LOOP-3 was stale: the corrected link,
+regenerated index and `artifact://2045` gate occurred in that order. The earlier
+claim that the fragment checker mishandled a numeric heading was incorrect;
+the target heading is inside a fenced template, not a rendered heading.
+
+A valid residual concerned the October 30 record's `#5-minimality-gate` citation.
+The bounded twin sweep over links to `artifact-promotion.md` and
+`external-adoption-review.md` found three invalid references across two records:
+October 30 line 188 (two links) and September 21 Agentflow line 231 (one link).
+Only the URLs and explicit template-section locators changed; source meaning,
+historical adoption decisions and governing surfaces did not.
+The two records and regenerated `index.json` are the additional repair files.
+TWINS: searched (artifact-promotion|external-adoption-review).md# - found 2 other sites: reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md; reflective-prompt-library/index.json (generated dependencies).
+
+Native navigation probe: three invalid fragments before, zero after; both real
+outside-fence `Human Review` heading controls passed. Actual composer output
+for both repaired records exited zero and delivered the corrected links.
+Final citation-only checks (`artifact://2052`): 43 existing focused tests passed
+in 0.58 seconds, including index freshness, affected Agentflow record, link
+validator and composer tests; `make validate` passed all eight validators and
+three route evals. Record-hygiene advisories remain 207; lint warnings remain zero.
+
+The 1,753-test full-gate receipt remains the preceding publication snapshot;
+it is not relabeled as a fresh full-suite run after these citation-only edits.
+No Skills, tests, runtime, oracle, installation, commit or push changed.
+This report-only addendum's link check and the before/after receipts are retained
+in `local://loop-inference-publication-2026-10-31.json`. No advisory repair remains.
