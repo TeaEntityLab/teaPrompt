@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-31T17:41:13.251726",
+  "generated_at": "2026-11-01T16:27:31.147727",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -97,6 +97,7 @@
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
             "ember-snn-llm-survey-2026-09-22.md",
+            "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
             "dogfood-learning-promotion-2026-10-09.md",
             "mattpocock-skills-v131-delta-survey-2026-10-07.md",
             "pstack-survey-2026-09-22.md",
@@ -7532,6 +7533,131 @@
       "char_count": 18228
     },
     {
+      "path": "reflective-prompt-library/plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-efficiency-autonomy-learning-survey-2026-11-01",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "loop-mechanisms-assurance-inference-2026-10-31.md",
+          "../04-agent/workflow-acquisition.md",
+          "../05-domain/learning-coach.md",
+          "../03-context/large-context.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/external-adoption-review.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../04-agent/workflow-acquisition.md",
+          "../04-agent/artifact-promotion.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../05-domain/learning-coach.md",
+          "external-adoption-case-studies-2026-06-20.md",
+          "../03-context/large-context.md",
+          "../skills/examples/reflective-research.examples.md",
+          "../skills/examples/reflective-risk.examples.md",
+          "../../review/final-report.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Efficiency, Autonomy, Memory and Learning — Survey (2026-11-01)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 2,
+          "text": "TokenEconomizer and Mistral Vibe"
+        },
+        {
+          "level": 3,
+          "text": "Source Findings"
+        },
+        {
+          "level": 3,
+          "text": "Executed Boundary and Counterexample"
+        },
+        {
+          "level": 3,
+          "text": "Socratic Assessment"
+        },
+        {
+          "level": 2,
+          "text": "DeepSeek Super-agent: Article, Prototype and Product Are Different Surfaces"
+        },
+        {
+          "level": 3,
+          "text": "Secondary Performance Claims"
+        },
+        {
+          "level": 2,
+          "text": "Four Architecture Forecasts"
+        },
+        {
+          "level": 2,
+          "text": "Grok Bot Workflow and Authority Boundaries"
+        },
+        {
+          "level": 2,
+          "text": "Writing, Learning, Detection and Preference"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Reproducibility and Ephemeral Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Panel Consensus"
+        },
+        {
+          "level": 3,
+          "text": "Frame Test and Disagreements / Residual Risks"
+        },
+        {
+          "level": 3,
+          "text": "Required Wording Changes"
+        },
+        {
+          "level": 3,
+          "text": "Shared Findings and Existing Coverage"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Untested Ideas"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked and Handoff"
+        }
+      ],
+      "line_count": 240,
+      "char_count": 47875
+    },
+    {
       "path": "reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -10978,11 +11104,13 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "agensh-source-survey-2026-10-27.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md#panel-consensus",
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "knowie-project-knowledge-reflection-2026-06-17.md",
@@ -11030,6 +11158,7 @@
           "agent-engineering-five-source-survey-2026-10-30.md",
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11054,6 +11183,7 @@
           "agent-engineering-five-source-survey-2026-10-30.md#multi-role-socratic-update-review",
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "../../review/final-report.md#agent-engineering-owner-approved-corrections-2026-10-30",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11223,8 +11353,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 539,
-      "char_count": 103545
+      "line_count": 541,
+      "char_count": 105299
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -22159,5 +22289,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 230
+  "total_files": 231
 }

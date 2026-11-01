@@ -8340,3 +8340,104 @@ it is not relabeled as a fresh full-suite run after these citation-only edits.
 No Skills, tests, runtime, oracle, installation, commit or push changed.
 This report-only addendum's link check and the before/after receipts are retained
 in `local://loop-inference-publication-2026-10-31.json`. No advisory repair remains.
+
+## Agent efficiency, autonomy, memory and learning — survey publication (2026-11-01)
+
+### Goal
+
+Record the completed non-MCP surveys and the requested parallel, evidence-based
+Socratic/critical assessment of possible Docs/Skills updates. Preserve source
+qualifications, execution limits, disagreements and candidate dispositions.
+MCP is excluded by the user, not a remaining blocker.
+
+### Files Changed
+
+- [Survey and five-role assessment](../reflective-prompt-library/plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md).
+- [Existing source catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): latest-source/review pointers, case row and state-ledger entry.
+- `reflective-prompt-library/index.json`: regenerated after final source edits.
+- `review/final-report.md`: this delivery record.
+
+### Implementation Summary
+
+MSS-DOC1 adopts reference documentation and existing discovery only. All five
+complete reviewer outputs were integrated: one AGREE and four AGREE WITH CHANGES,
+with reasons preserved rather than counted as authority to alter operating rules.
+The lenses are one host/model-family advisory channel, not independent empirical
+replications.
+
+No Skill, companion example, runtime, routing rule, curated-knowledge entry or
+permanent test changed. The first proposed docs action is clarification of the
+`200K–1M`/`200K+` scope ambiguity; this is not a proven hard cap or a demonstrated
+capability above it. A credential-reuse/cost/egress worked example is the strongest
+optional teaching candidate. Other proposals retain their distinct statuses and
+falsifiers in MSS-1–MSS-8; they are not unfinished authorized implementation.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Delivered evidence | Status |
+| --- | --- | --- |
+| TokenEconomizer/Vibe comparison | Three mechanisms versus five analytical stages; source/default/sidecall distinctions, controlled lost update, partial smoke and actual CLI limits | Verified as recorded evidence, not savings or host-integration proof |
+| Supplied DeepSeek article and prototype | Immutable public pin, secondary simulation attribution, domain-transition smoke and separate policy/cancellation limits | Verified at the stated source/execution tiers |
+| Four architecture forecasts | Separate long-context, TTT/Titans, diffusion and RAG claims with measurement, product-contract and forecast boundaries | Recorded with source-specific falsifiers |
+| Grok workflow and writing/learning | Docs-only shared-state/credential limits; learning, detection, preference and metaphor separated; practice idea explicitly untested | Recorded without efficacy or authority promotion |
+| Parallel critical review and Docs/Skills judgment | Five complete reviews; frame test, disagreements, coordinator corrections and MSS candidate ledger | Complete; no operating-text adoption |
+| Durable discovery | Real composer/slug invocations, both README catalogue chains, local navigation and regenerated index | Passed on final indexed source |
+
+### Tests / Checks Run
+
+- Actual `prompt_composer.py` invocations for the new survey, the catalogue and
+  `--list-slugs` all exited 0 after the final citation-date edits. The survey
+  output delivered all topic sections and MSS-DOC1/MSS-1–MSS-8.
+- Bounded navigation smoke checked 22 local link occurrences, including the
+  catalogue's panel fragment, and both English/zh-TW README → catalogue → survey
+  paths. This is CLI/navigation evidence, not a rendered-browser or reader study.
+- Regenerated index: 231 files, comprising 212 prompts and 19 Skills; source
+  counts and unique paths checked. Existing index-freshness tests also passed.
+- Final `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 passed in 50.24 seconds**, all eight validators passed, and
+  ROUTE-001/002/003 each reached 100% consistency on 128/138/108 phrases.
+  Link validation scanned 291 files with zero errors; skill lint had zero
+  errors/warnings. Record hygiene retained 207 existing date-proximity advisories,
+  with none added by this record. Full output: `artifact://2222`.
+- The sealed source-survey ledger's SHA-256 still matches the panel input
+  (`a6d0776e4447792b762644fabdf5d75e05266969924922ed60215d0319c84c93`).
+
+The full gate covers the final indexed sources. This report-only append follows
+that gate; its final link check is retained with the publication receipt at
+`local://survey-publication-evidence-2026-11-01.json`, alongside source hashes,
+CLI outputs, navigation checks and the earlier gate snapshot.
+
+### Failures or Skipped Checks
+
+The first index command used a nonexistent hyphenated filename; the documented
+`generate_index.py` then succeeded. An inline smoke wrapper failed JavaScript
+parsing before launching Python; the corrected wrapper ran successfully. One
+edit batch was rejected for a truncated anchor and was reapplied only after
+reading the full anchor. None required product-code or oracle changes.
+
+The initial full gate passed but emitted 22 new per-claim date-proximity
+advisories. Already-established check dates were carried beside those citations;
+the index, actual consumer smoke and full gate were then rerun on the final
+source. The initial `artifact://2217` receipt is not relabeled as final.
+
+Earlier source-study limitations remain explicit: the Vibe tool-manager import
+was unavailable without `dotenv`; the original Zhihu body and writing
+meta-analysis full text were inaccessible; social-post recovery was partial and
+the forecast image was not supplied. No new install, surveyed-product model
+call, benchmark campaign, hosted account action or human-learning experiment
+was performed for this publication.
+
+### Residual Risks
+
+Documented product behavior is not hosted enforcement evidence. Source-reported
+performance is not a replicated matched-task comparison. Generic textual
+coverage is not proof that a reader or installed agent will apply the rule.
+Teaching-example utility, net savings, deployment forecasts, human transfer and
+local recurrence remain unknown. Green repository gates do not resolve them.
+
+### Next Action / Human Review
+
+The requested record and update assessment are complete. No in-scope blocker
+remains. Any later operating-clause change, installation, credential use,
+deployment or experiment retains its own authority boundary. No commit or push
+was performed in this publication.
