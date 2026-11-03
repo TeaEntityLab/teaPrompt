@@ -8441,3 +8441,97 @@ The requested record and update assessment are complete. No in-scope blocker
 remains. Any later operating-clause change, installation, credential use,
 deployment or experiment retains its own authority boundary. No commit or push
 was performed in this publication.
+
+## Super-agent full-text follow-through — documentation publication (2026-11-02)
+
+### Goal
+
+Apply the owner's "If worth it then update docs or skills" instruction to the
+completed Super-agent survey. MSS-DOC2 adopts the worthwhile reference supplement
+and its discovery entries, not a Skill, runtime, or any other held MSS proposal.
+
+### Files Changed
+
+- [Existing survey](../reflective-prompt-library/plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02): dated full-text follow-through and MSS-DOC2 disposition.
+- [Source catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): latest-source pointer, dated case and state-ledger entry.
+- [Generated index](../reflective-prompt-library/index.json): refreshed existing entries with the repository generator.
+- `review/final-report.md`: this delivery receipt.
+
+### Implementation Summary
+
+The supplement separates supplied essay/comment text, inspected public code,
+executed domain behavior and inference. The prototype pin is unchanged; the
+separately pinned Harness source supports only the inspected async claims.
+Neither publication nor a green repository gate upgrades the research prototype
+to a production or security guarantee.
+
+The record preserves the multi-owner handback observations, benchmark sample
+and denominator limits, source-only recall/monitoring/async distinctions and
+calibrated responses to the supplied comments. The worked domain probe is
+attributed to the completed source survey, not presented as a new publication
+run or an integrated-host experiment.
+
+Existing research, review, runtime-boundary, context and promotion contracts
+already cover the relevant decision classes. Skill inventory and file hashes
+remain unchanged; no companion example, operating rule, permanent test, runtime,
+dependency or new documentation file was added.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Delivered evidence | Status |
+| --- | --- | --- |
+| Source identity and attribution | Dated supplement distinguishes supplied full text, inaccessible online original/figures and separate immutable code pins | Verified as qualified reference documentation |
+| Multi-owner behavior and limits | Actual Engine scenario, both handbacks, retained scopes/subscriptions and explicit synthetic-repository/captured-port boundary | Preserved from the completed source survey |
+| Claims and counterarguments | Benchmark denominators, source-only async/recall/monitoring and bounded criticism | Recorded without performance, isolation or deployment certification |
+| Docs-only scope | MSS-DOC2 disposition, existing-contract links and unchanged Skill inventory/hashes | Verified; other proposal states preserved |
+| Discovery | Real composer and slug calls, both README catalogue paths, local fragments and regenerated index | Passed on final indexed sources |
+| Repository verification | Full gate below and final report link check retained in the publication receipt | Passed; report append checked separately |
+
+### Tests / Checks Run
+
+- Actual `prompt_composer.py` calls for the survey, catalogue and `--list-slugs`
+  each exited 0. The survey output contained the complete new supplement.
+- Navigation smoke checked 15 local link/fragment occurrences and both
+  English/zh-TW README → catalogue → supplement paths. This is CLI/file-navigation
+  evidence, not a rendered-browser or reader study.
+- Regenerated index contains 231 files: 212 prompts and 19 Skills. The smoke
+  checked unique existing paths, the new section heading and current character
+  metadata; the existing index-freshness tests passed in the full gate.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 passed in 64.28 seconds**; all eight validators passed.
+  ROUTE-001/002/003 each reached 100% consistency on 128/138/108 phrases.
+  Link validation scanned 291 files with zero errors; Skill lint had zero
+  errors/warnings. Record hygiene retained 207 existing date-proximity
+  advisories, with none added by this supplement. Full output: `artifact://2245`.
+- The source-survey ledger remained unchanged at SHA-256
+  `0e71af5eebf939333ece4a30e18f85d75ac759ecf52fa8af3053717ef22aa1ae`.
+  Skill file hashes and inventory also matched the pre-edit snapshot.
+
+The full gate covers the final indexed survey, catalogue and index. This
+report-only append follows that gate and is not retroactively included in its
+snapshot. Its final link check, consumer outputs and source bindings are retained
+in `local://superagent-publication-evidence-2026-11-02.json`.
+
+### Failures or Skipped Checks
+
+No publication smoke or repository check failed. No upstream probe was rerun
+solely to publish its existing result. The online original, figures and raw
+benchmark data remain unavailable; no SQLite concurrency, live DSH/worker,
+GitHub/Feishu integration, model-quality or product-security test is claimed.
+The inline publication smoke added no repository test fixture or script.
+
+### Residual Risks
+
+Source inspection does not prove deployed behavior. Synthetic domain transitions
+do not establish transactional isolation, semantic decisions, external delivery
+or reliable cancellation. Author-reported scheduling experiments do not establish
+general coding speedups. Generic contract coverage is not measured reader or
+agent efficacy.
+
+### Next Action / Human Review
+
+The authorized documentation update is complete; no in-scope work or approval
+blocker remains. Skills and other held proposals remain unchanged. A future
+change needs its own demonstrated local gap and authority; this supplement
+grants no installation, credential use, deployment or model campaign. No commit
+or push was performed for this update.

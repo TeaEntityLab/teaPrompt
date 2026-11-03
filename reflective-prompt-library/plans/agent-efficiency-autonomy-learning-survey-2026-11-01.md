@@ -1,6 +1,8 @@
 # Agent Efficiency, Autonomy, Memory and Learning — Survey (2026-11-01)
 
 > **Status: reference evidence and Docs/Skills update assessment.** The user requested a durable account of the non-MCP surveys and evidence-based, multi-role Socratic evaluation of possible updates. Recording a proposal is not approval to change an operating contract. MCP is explicitly excluded, not an unresolved blocker. No installation, account setup, surveyed-product model calls, benchmark campaign, commit or push is authorized by this request.
+>
+> **2026-11-02 follow-through:** the later owner request, “If worth it then update docs or skills,” authorizes the worthwhile Super-agent documentation supplement below. MSS-DOC2 records that evidence in place; no Skill, runtime or other held proposal is adopted.
 
 ## Research Question
 
@@ -17,14 +19,16 @@ This record preserves evidence, decision criteria, counterarguments and falsifie
 
 ## Version / Date Context
 
-Source checks and the bounded smoke runs below occurred on **2026-11-01**. The publication packet used TeaPrompt base `cb949b4d1e5a7b0098dd3d862dbd4aac6710be78`; local-coverage claims refer to the delivered repository files, not the reviewer's installed host skills.
+Initial source checks and bounded smoke runs occurred on **2026-11-01**; the separately dated **2026-11-02** Super-agent follow-through adds supplied full-text/comment review, a new domain-transition probe and narrow Harness source inspection. The initial publication packet used TeaPrompt base `cb949b4d1e5a7b0098dd3d862dbd4aac6710be78`; local-coverage claims refer to delivered repository files, not the reviewer's installed host skills.
 
 | Source | Checked identity / material | Evidence scope and freshness |
 | --- | --- | --- |
 | Microsoft TokenEconomizer | [main `c53a4a6dcdebaeb9df6fcaa5c7026f0401cd8f23`](https://github.com/microsoft/TokenEconomizer/tree/c53a4a6dcdebaeb9df6fcaa5c7026f0401cd8f23); release v0.1.0 separately resolves to `ec8ff5ec7ed5924520ee71b705a920ee64fe2918` | Checked 2026-11-01. Source and smoke bind to main, not automatically to the release. Identity difference alone is not behavioral difference; recheck the candidate artifact before adoption. |
 | Mistral Vibe | [v3.0.4 / main `338ad4bf0f73c4dd879d667cf7ab011555ae1751`](https://github.com/mistralai/mistral-vibe/tree/338ad4bf0f73c4dd879d667cf7ab011555ae1751) | Checked 2026-11-01. Selected source paths and two standalone helpers; not a complete capability census or installed CLI evaluation. |
-| DeepSeek Super-agent prototype | [main `6337fc823ce20251c8de8085948165c81aaa701e`](https://github.com/deepseek-ai/dsh-superagent-prototype/tree/6337fc823ce20251c8de8085948165c81aaa701e) | Checked 2026-11-01. Public research code and bounded domain-module execution; not the internal system described by the article. |
+| DeepSeek Super-agent prototype | [main `6337fc823ce20251c8de8085948165c81aaa701e`](https://github.com/deepseek-ai/dsh-superagent-prototype/tree/6337fc823ce20251c8de8085948165c81aaa701e) | Checked 2026-11-01; rechecked unchanged 2026-11-02. Public research code and separately dated domain-module probes; not the internal system described by the article. |
 | Supplied DeepSeek article | User-provided `paste-6.md`, attributed to `hao.cnyes.com`; [original-design URL attempted](https://zhuanlan.zhihu.com/p/2099987320443237060) | Checked 2026-11-01 at the stated access tier: secondary article text was read; original Zhihu body returned HTTP 403. Article-only numbers remain secondary-attributed. |
+| Supplied full Super-agent essay and comments | User-provided `paste-7.md`, attributed to DeepSeek, “Super-agent Design Exploration: Towards a More Autonomous Agent System,” edited 2026-11-01 | Checked 2026-11-02. Supplied article and comments read in full; original Zhihu body still returned HTTP 403. Transcription fidelity, figure bodies and raw experiment data remain unverified; the earlier secondary account is not silently upgraded to fetched primary evidence. |
+| DeepSeek Harness, async slice | [master `ce7073d51254c26cd63b22a60835b8f948deb447`](https://github.com/deepseek-ai/deepseek-harness/tree/ce7073d51254c26cd63b22a60835b8f948deb447) | Checked 2026-11-02. Background jobs, completion delivery and cancellation source only; not a released-artifact evaluation, live-host run or whole-runtime recertification. |
 | Four architecture forecasts | User-provided transcription/analysis, checked against the primary sources linked below | Original forecast image was not supplied; image authorship and wording are not certified. Future deployment predictions remain predictions. |
 | Grok Bot | [official skills/routines](https://docs.x.ai/grok-bot/skills-routines-and-automations), [Bots](https://docs.x.ai/grok-bot/bots), [Vault](https://docs.x.ai/grok-bot/vault), [approvals/security/privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) | Living documentation, checked 2026-11-01; no account or hosted workflow exercised. Recheck on product/rollout changes before use. |
 | Human writing and learning | Original indexed meta-analysis abstract; original ACL study abstracts and label-preference paper text, linked below | Published-source evidence, not local replication. Populations, tasks and measured constructs constrain each conclusion. |
@@ -101,6 +105,57 @@ The supplied `paste-6.md` reports synthetic workloads of roughly 300 messages in
 **Socratic questions:** What becomes authorized when a thread is observed? Only the applicable explicit request or current policy, not the subscription itself. What does an idle worker prove? Not delivery or business acceptance. What would justify adopting the architecture? A named host's task/authority/delivery requirements and end-to-end evidence, not the simulated latency numbers alone.
 
 **[INFERENCE]** A useful transferable design question is where attention, authority and delivery are tracked separately. TeaPrompt can ask that question through existing lenses; it does not acquire the prototype's runtime by recording it.
+
+### Full-Text Follow-through (2026-11-02)
+
+The new material is the supplied full essay and discussion, not a prototype revision. This supplement preserves the initial evidence above and distinguishes supplied-text claims, inspected public code, executed domain behavior and design inference. The online original and its figures were not obtained. Two read-only source-gathering slices informed the review; they are not another adoption panel or independent benchmark replications.
+
+#### Executed Multi-owner Handback
+
+On 2026-11-02, a standalone Bun driver imported the actual pinned [`Engine`](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/core/engine.ts) (source checked 2026-11-02) and core dependencies. It ran under macOS `sandbox-exec` with network denied and writes confined to the probe directory. Repositories were synthetic in-memory implementations, and executor ports captured requests rather than executing work.
+
+The scenario bound two scoped tickets, `fix-a` and `fix-b`, to one thread through `bindThread`, added `context-reader` through `followForContext`, received one cross-topic event through `receive`, and called `handback` for each owner in sequence. The process exited **0** with these observations:
+
+| Transition | Observed domain result |
+| --- | --- |
+| Receive the shared event | Delivery requested for all three tickets; owners are only `fix-a` and `fix-b`; no fresh evaluation is pending |
+| `fix-a` hands back | Returns false for queued evaluation; `fix-b` still owns the event |
+| `fix-b` also hands back | Returns true; no owners remain and the event enters the pending evaluation queue with both reasons retained |
+| After both handbacks | All three original Mandate scopes and subscriptions remain unchanged |
+
+This exercises the core's routing and ownership transitions, not SQLite transaction/concurrency behavior, semantic scope judgment, actual worker delivery, GitHub/Feishu, or a running DSH host. An `atomic` wrapper in an in-memory fixture is not transaction proof. Re-evaluation being queued does not prove that the next model decision or cross-task solution is correct.
+
+#### Reported Benchmark Denominators
+
+The supplied full text, checked 2026-11-02, §7.1 describes approximately 300 messages, about 20 work requests and five runs per configuration. Coding is replaced by a time-consuming tool. Arrivals and simulated task durations are scaled to one quarter while model-call time remains real; §7.2 uses a real Router model and mock Workers. These are author-reported scheduling experiments, not locally replicated coding, cost or safety measurements.
+
+| Reported comparison | Bounded interpretation |
+| --- | --- |
+| Neutral single-Session p95 29.5 minutes versus Super-agent 15.7 minutes | The neutral baseline never delegated in the five reported runs; the delegation-favoring baseline delegated in four. This compares the stated scheduling policies and workload, not every single-Session/Subagent design or real coding quality. |
+| Removing bypass raises cache-read tokens from 23.23M to 31.77M | `(31.77 - 23.23) / 23.23` is about 36.8%, consistent with the reported 37% increase. Adding bypass relative to the no-bypass baseline reduces that metric by about 26.9%, not 37% of total monetary cost. |
+| Trigger rate about 1 to 40/minute; batch 1.0 to 2.8; request time 2.5 to 3.9 seconds; amortized decision time 6.4 to 1.6 seconds | Request and decision aggregates cannot be reconciled by simple division without step counts and raw aggregation definitions. Missing traces prevent verification; they do not establish false numbers. |
+
+**[INFERENCE]** Keeping model latency unscaled changes its weight relative to task duration and arrivals. Generalization needs a matched workload, defined aggregation/variance and accepted-output accounting. The strongest contrary interpretation is that the essay already labels these experiments preliminary: their narrow scheduling hypothesis can be useful without establishing deployment readiness or general superiority.
+
+#### Source-only Mechanisms and Comment Adjudication
+
+| Mechanism or criticism | Checked evidence and bounded judgment |
+| --- | --- |
+| “There is no coordinating center” | Checked 2026-11-02: the executed Engine transitions and [main-session prompt](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/prompts/orchestrator.md) support assessment/routing with implementation assigned to Workers. Lack of direct execution tools is not absence of coordination; notification fan-out does not solve shared-resource conflicts or prove cross-task technical synthesis. |
+| Chain-of-Recall; “versioned files solve memory” | Checked 2026-11-02: [cards](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/app/cards.ts) expose previews/read pointers; [resources](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/app/resources.ts) paginate and check main-only, same-ticket and trigger visibility. **[INFERENCE]** Durable bytes and exact matches do not establish freshness, retrieval relevance, summary completeness or semantic reconciliation. These API guards are not audited multi-tenant/OS isolation. |
+| Background tasks and cancellation | Checked 2026-11-02: [bash](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/shell/tool-bash/src/index.ts) supports background work and timeout promotion subject to registry/configuration/admission. [Job tools](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/jobs/tool-jobs/src/index.ts) wake an idle owner or inject a notice, and `job_kill` returns `cancellation-requested` or `already-finished`. Notice delivery, model processing, cancellation request, resource termination and already-escaped effects are different observations; none was live-host-tested here. The essay's illustrative tool names are not established API defects. |
+| Independent Watchdog and cloud daemon | Checked 2026-11-02: the inspected [Passes](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/app/passes.ts) path periodically drives effects/evaluations and health status. It does not verify the essay's separate model Watchdog or cloud daemon. The README's explicit internal/public distinction prevents treating unverified internal features as disproven. |
+| Workspace separation as security | Checked 2026-11-02: [environment guardrails](https://github.com/deepseek-ai/dsh-superagent-prototype/blob/6337fc823ce20251c8de8085948165c81aaa701e/src/infra/environment.ts#L1-L5) explicitly are not an OS security boundary; Workers run under the operator's OS user. The survey's own execution sandbox does not certify upstream deployment isolation. |
+
+**[INFERENCE]** The useful Watchdog challenge is to separate detection, intervention and changes to policy/acceptance criteria, with a named enforcement owner; another model Session is not automatically an independent verifier. Missing or stale monitoring data is unknown, not clean. Discarding speculative computation does not retract a published PR or disclosed information, and indefinite retention of discarded work is not automatically desirable either.
+
+The essay itself leaves intermediate human intervention and broader context/A2A/security boundaries open. Source-visible ticket/transcript resources refute categorical unobservability, not demonstrate good UX; no interface was exercised. A short-reply target is a channel heuristic, not a measured universal optimum. Commenter outage histories, originality/copying allegations and AGI predictions remain unverified; the survey coordinator declines to adjudicate them from anecdotes.
+
+#### Documentation Disposition
+
+**MSS-DOC2: adopt this supplement and existing discovery only.** Its local benefit is preserving the concrete scenario, denominators and evidence boundaries without requiring the original temporary files. [Research](../skills/reflective-research/SKILL.md) and [Review](../skills/reflective-review/SKILL.md) already separate source, execution and extrapolation; [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) already assigns authority, concurrency and external effects to the host; [Flow Loop Harness](../skills/flow-loop-harness/SKILL.md) already requires caps, a verifier and protected acceptance artifacts. [Context Engineering](../03-context/context-engineering.md) and [Artifact Promotion](../04-agent/artifact-promotion.md) cover canonical context and memory provenance.
+
+That is delivered textual coverage, not proof of reader compliance or runtime capability. No new local structural gap warrants a Skill, example or runtime change. Reopen on a concrete consumer failure, newly available original/raw experiment evidence, or a different candidate source revision before adoption. The broader MSS-1–MSS-8 proposals retain their own dispositions; this owner request concerns the immediately preceding Super-agent survey.
 
 ## Four Architecture Forecasts
 
@@ -204,11 +259,12 @@ The necessary publication corrections are incorporated in this record: three ups
 
 ## Candidate Adoption Ledger
 
-Only `MSS-DOC1` is adopted here, as reference documentation and discovery. `Proposed` and `deferred` rows are complete recommendations with reopening conditions, not unfinished authorized implementation. No operating text, companion example, prompt or Skill change is landed by these rows.
+`MSS-DOC1` and the separately authorized `MSS-DOC2` supplement are adopted here as reference documentation and discovery only. `Proposed` and `deferred` rows are complete recommendations with reopening conditions, not unfinished authorized implementation. No operating text, companion example, prompt or Skill change is landed by these rows; the Super-agent follow-through does not reopen unrelated held proposals.
 
 | ID | Candidate / existing destination | Status and decision | Evidence / dissent | Next action, falsifier and smallest useful check |
 | --- | --- | --- | --- | --- |
 | MSS-DOC1 | This record, [existing catalogue](external-adoption-case-studies-2026-06-20.md), generated index and delivery report | **Adopted — reference documentation only** | Explicit user request; unique source pins, execution limits and adjudicated disagreements cannot fit in a catalogue row. Consolidates EFF-1–6, AUT-1–4/7, FOR-1–3, HUM-4, FRM-1–5. | Exercise actual composition/slug discovery, relative navigation and existing repository checks. Wrong if a conclusion needs private session files or silently becomes an operating instruction. |
+| MSS-DOC2 | [Super-agent full-text follow-through](#full-text-follow-through-2026-11-02), existing catalogue/index and delivery report | **Adopted 2026-11-02 — reference documentation only** | Later owner request; unchanged prototype pin, supplied-full-text limits, executed multi-owner handback, benchmark arithmetic and source-only async boundaries. Not a new panel verdict or internal-system replication. | Exercise final composer output, local file/fragment navigation and existing repository checks; preserve Skill bytes. Reopen on a named local consumer gap or new source/experiment evidence, not anecdotal agreement. |
 | MSS-1 | [Large Context](../03-context/large-context.md), introduction, Purpose and composition note | **Proposed — bounded documentation clarification; not applied** | FOR-4 observed `200K–1M` versus `200K+`; coordinator rejects calling this a proven hard cap or runtime defect. | Suggested direction: “Use this for large-context tasks while avoiding context rot,” with matching Purpose/composition wording; do not imply a validated maximum. If a deliberate bounded scope is documented, retain that scope and clarify the composition note instead. Check a reader's applicability decision without inferring comprehension from window size. |
 | MSS-2 | [Research examples](../skills/examples/reflective-research.examples.md), a credential-reuse worked example | **Deferred — optional example, strongest teaching candidate** | EFF-7 / FRM-5/7: this survey required correction of “local/no extra key” → “no cost/egress”; current mechanism-versus-product and sink rules already cover it. Teaching benefit and recurrence are unknown. | Proposed text: “A local plugin can call the host's authenticated model CLI. Check the provider path, billing/quota and transmitted context before concluding no egress or cost.” Owner-authorized example work or a named reader ambiguity can reopen it; compare against the existing rule, not exact-word presence. |
 | MSS-3 | Research examples, Example 3 State Ledger | **Deferred — optional attributed-measurement example** | FOR-5 proposes a `needs-qualification` row. FRM-6 rejects another generic secondary-source example because Example 3 already covers that distinction. | Distinct draft: “Vendor reports X tokens/s under a dated input/output workload; report text checked, performance not reproduced; end-to-end task benefit unknown.” Reopen only if it teaches attribution/extrapolation beyond the existing summary row; remove if redundant. Do not label a copied real number an invented example without saying which it is. |

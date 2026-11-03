@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-01T16:27:31.147727",
+  "generated_at": "2026-11-02T17:46:13.061716",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -7545,6 +7545,12 @@
         "ref_snippet": [],
         "markdown_links": [
           "loop-mechanisms-assurance-inference-2026-10-31.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../03-context/context-engineering.md",
+          "../04-agent/artifact-promotion.md",
           "../04-agent/workflow-acquisition.md",
           "../05-domain/learning-coach.md",
           "../03-context/large-context.md",
@@ -7606,6 +7612,26 @@
           "text": "Secondary Performance Claims"
         },
         {
+          "level": 3,
+          "text": "Full-Text Follow-through (2026-11-02)"
+        },
+        {
+          "level": 4,
+          "text": "Executed Multi-owner Handback"
+        },
+        {
+          "level": 4,
+          "text": "Reported Benchmark Denominators"
+        },
+        {
+          "level": 4,
+          "text": "Source-only Mechanisms and Comment Adjudication"
+        },
+        {
+          "level": 4,
+          "text": "Documentation Disposition"
+        },
+        {
           "level": 2,
           "text": "Four Architecture Forecasts"
         },
@@ -7654,8 +7680,8 @@
           "text": "Evidence Actually Checked and Handoff"
         }
       ],
-      "line_count": 240,
-      "char_count": 47875
+      "line_count": 296,
+      "char_count": 59104
     },
     {
       "path": "reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md",
@@ -11104,7 +11130,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md",
@@ -11159,6 +11185,7 @@
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11184,6 +11211,7 @@
           "agent-engineering-five-source-survey-2026-10-30.md#owner-approved-corrections",
           "../../review/final-report.md#agent-engineering-owner-approved-corrections-2026-10-30",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11353,8 +11381,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 541,
-      "char_count": 105299
+      "line_count": 543,
+      "char_count": 106619
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
