@@ -8535,3 +8535,279 @@ blocker remains. Skills and other held proposals remain unchanged. A future
 change needs its own demonstrated local gap and authority; this supplement
 grants no installation, credential use, deployment or model campaign. No commit
 or push was performed for this update.
+
+## Agentflow 9.1.6 documentation publication (2026-11-04)
+
+### Goal
+
+Apply the owner's "Update docs or skills if worth it" instruction to the
+completed Agentflow delta survey. AF916-DOC1 preserves useful reference evidence
+in the existing owning record without adopting an upstream runtime or changing
+TeaPrompt Skills.
+
+### Files Changed
+
+- [Owning survey](../reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04): current-source pointer and dated v9.1.6 supplement.
+- [Source catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): latest-source pointer, case row and state-ledger entry.
+- [Generated index](../reflective-prompt-library/index.json): refreshed existing entries using `plans/generate_index.py`; no new indexed document.
+- `review/final-report.md`: this delivery receipt.
+
+### Implementation Summary
+
+The supplement distinguishes source-verified mechanisms, executed synthetic
+scenarios and untested host/model claims. It records the expanded initializer,
+feature and looper CLI boundary; ordinary-review source binding; target
+advancement; check/push/platform policies; and prompt-only explanation changes.
+
+The cleanup-state counterexample is a bounded reproduced inconsistency.
+Feature creation's post-write Trash failure and the earlier process-identity
+failure remain separate `INCOMPLETE_HOST_PRECONDITION` results, not complete
+lifecycle passes or universal product failures. The original survey receipt is
+unchanged. Earlier adoption dispositions, Firstmate scope and runtime non-goals
+are preserved.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Delivered evidence | Status |
+| --- | --- | --- |
+| Preserve exact source and delta identities | Dated supplement names baseline/current commits, annotated tag, release date and reconciled diff accounting | Verified |
+| Preserve execution and failure boundaries | Three driver outcomes, synthetic review history, retained claims and unexecuted host paths are recorded separately | Verified |
+| Keep the smallest justified destination | AF916-DOC1 is documentation only; SK1/SK2/RT1 record no-change decisions and reopening evidence; all 48 Skills/example/companion Markdown hashes and their inventory are unchanged | Verified |
+| Make the supplement discoverable | Actual composer emits the survey and catalogue; slug listing exposes both; existing English/zh-TW README paths reach the catalogue and supplement | Verified |
+| Verify repository compatibility | Existing index freshness guard, full test suite, validators and route evaluations passed; no new wording-pin test or runtime fixture | Verified |
+
+### Tests / Checks Run
+
+- Actual `prompt_composer.py` invocations for the owning survey, catalogue and
+  `--list-slugs` all exited **0**. Nine local navigation checks covered the
+  supplement's existing-contract links, three catalogue entry points and both
+  README entry paths. The newly appended delivery-report link is checked
+  separately after this report is written.
+- Regenerated index: **231 files, 212 prompts, 19 Skills**.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 passed in 63.00 seconds**; all **8 validators** passed;
+  ROUTE-001/002/003 consistency **100%** over **128/138/108** paraphrases.
+- Link validation scanned **291 files**, with **0 errors**. Skill lint had
+  **0 errors and 0 warnings**. Record hygiene had **0 errors and 207 date
+  advisories**, the same advisory count as the preceding publication.
+- Full-gate output: `artifact://2305`. Commands, outputs, SHA-256 bindings,
+  unchanged-Skill/source checks and the post-report link receipt are retained
+  in `local://agentflow-9.1.6-publication-2026-11-04.json`. The full-gate snapshot
+  covers the final survey, catalogue and index; this report-only append is
+  checked separately, not retroactively included in that snapshot.
+
+### Failures or Skipped Checks
+
+No publication smoke or repository check failed. Existing upstream failures
+were retained, not rerun to seek a passing outcome. No upstream full-suite,
+model/provider, successful feature merge/drop, completed-run Trash cleanup,
+installed-host or native Windows/Linux test is claimed. No browser-rendered
+HTML lesson or learning/cost benchmark was produced.
+
+The publication smoke ran inline and added no repository script or fixture.
+No test, oracle, Skill, example, routing rule or dependency was modified.
+
+### Residual Risks
+
+Source inspection does not establish deployed enforcement. Synthetic queue
+receipts and one concurrent-initializer schedule do not establish model
+compliance, complete race safety or crash recovery. Documentation and routing
+gates do not measure reader utility, learning efficacy or upstream safety.
+
+### Next Action / Human Review
+
+The authorized documentation update is complete; no in-scope implementation
+or approval blocker remains. New source evidence or a concrete local consumer
+gap can reopen the corresponding decision. Host installation, credential use,
+runtime adoption and model campaigns retain separate authority boundaries.
+No commit or push was performed.
+
+## Grok methodology documentation publication (2026-11-04)
+
+### Goal
+
+Apply the owner's “Update docs or skills if worth it” instruction to the
+completed Grok methodology survey. `GB-DOC1` preserves useful source recovery,
+methodological qualifications and bounded checker evidence in existing records;
+it does not adopt a Bot runtime or add a TeaPrompt Skill.
+
+### Files Changed
+
+- [Owning Grok supplement](../reflective-prompt-library/plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04): author-source map, authority/reliability limits, six-role adjudication and GB candidate dispositions.
+- [pstack checker supplement](../reflective-prompt-library/plans/pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04): exact current/prior pins and digests, six synthetic input comparisons, containment controls and source-only authority findings.
+- [Existing catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): latest source/review pointers, case row and state-ledger entry.
+- [Generated index](../reflective-prompt-library/index.json): existing entries refreshed by `plans/generate_index.py`; no new indexed file or schema.
+- `review/final-report.md`: this delivery receipt.
+
+### Implementation Summary
+
+The supplement separates mirror-recovered author text, transcript-only or
+unresolved quotations, official product documentation, pinned implementation
+and actual synthetic CLI observations. It preserves the distinction between
+one-shot execution and reliability, role organization and authority, a private
+one-hour timer and product approvals, and plan grammar and evidence validity.
+
+Only `GB-DOC1` is adopted. `GB-BR1` remains an optional deferred example,
+`GB-SK1` records no Skill change and `GB-RUN1` remains unadopted. Existing
+MSS/PML dispositions and historical access/execution tiers are preserved.
+The preceding Agentflow document and catalogue rows remain unchanged.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Delivered evidence | Status |
+| --- | --- | --- |
+| Preserve source identity, access tiers and disagreement | Dated source map and six-role adjudication; exact input/checker identities agree with the completed survey ledger | Verified |
+| Preserve what execution proves | Six checker scenarios, artifact digests, containment and arithmetic scope recorded; no hosted-workflow or efficacy upgrade | Verified |
+| Keep the smallest justified destination | GB-DOC1 is reference-only; all 48 Skills/example/companion Markdown hashes and their inventory are unchanged | Verified |
+| Preserve earlier work | November 1 Grok section, historical pstack evidence, MSS rows, Agentflow record/rows and original survey ledger retain their prior bytes | Verified |
+| Expose the documentation to consumers | Complete-document composer output, slug discovery, catalogue links, both README entry paths and generated headings checked | Verified |
+| Verify repository compatibility | Full suite, eight validators, index freshness and three routing evaluations passed | Verified |
+
+### Tests / Checks Run
+
+- Actual composer invocations for both survey slugs, the catalogue and
+  `--list-slugs` all exited **0**. Complete source content appeared in each
+  composition. Thirteen local file/fragment checks covered the supplements,
+  contract links and English/zh-TW README discovery paths.
+- Generated index: **231 files, 212 prompts, 19 Skills**.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 passed in 63.82 seconds**, all **8 validators** passed;
+  ROUTE-001/002/003 consistency **100%** over **128/138/108** paraphrases.
+- Link validation: **291 files, 0 errors**. Skill lint: **0 errors and
+  0 warnings**. Record hygiene: **0 errors and 207 date advisories**, unchanged
+  in count from the preceding publication.
+- Full-gate receipt: `artifact://2379`. Commands, observations, source/document
+  bindings and protected-file comparisons are retained in
+  `local://grok-methodology-publication-2026-11-04.json`. The newly appended
+  report links and catalogue review anchor are checked separately after this
+  append; the full-suite snapshot covers the final surveys, catalogue and
+  index, not this later report-only addition.
+
+### Failures or Skipped Checks
+
+No publication smoke or repository gate failed. The completed survey's
+upstream probes were not rerun to publish their results. No hosted Grok Bot,
+routine, payment, merge, installation, model-quality comparison, reader study
+or product-security test is claimed. The smoke ran inline; no permanent test,
+script, fixture, dependency, Skill, example, prompt or oracle was added.
+
+### Residual Risks
+
+Living product docs can change and require rechecking before operation.
+Mirrored author text does not authenticate private deployment or measure
+outcomes. A structural checker and green repository gates cannot establish
+correct acceptance criteria, reviewer independence, cost savings or installed
+agent compliance. Individual unresolved quotations remain explicitly unknown.
+
+### Next Action / Human Review
+
+The authorized documentation update is complete. New source/enforcement evidence
+or a concrete local consumer gap can reopen the corresponding decision.
+Deployment, credential use, operating-rule changes and model campaigns retain
+their own authority boundaries. No commit or push was performed.
+
+## Agent control-plane comparison publication (2026-11-04)
+
+### Goal
+
+Complete the owner's comparative survey and worthwhile documentation update:
+three supplied articles, five named repositories, four related GitHub
+comparators and thirteen reference comments. Adopt only `CP-DOC1`, a
+source-bound reference record; do not add a Skill or operate a runtime.
+
+### Files Changed
+
+- [Comparative survey](../reflective-prompt-library/plans/agent-control-plane-comparison-survey-2026-11-04.md): new owning record for matched-layer comparison, article provenance, pinned sources, executed observations, comment analysis, review adjudications and adoption decisions.
+- [Prime refresh](../reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04): append-only current-source and Python-fixture evidence; PA-1–PA-5 unchanged.
+- [Existing catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): current comparison/review pointers, case row and state-ledger row.
+- [Generated index](../reflective-prompt-library/index.json): 232 files, 213 prompts and 19 Skills; existing schema unchanged.
+- `review/final-report.md`: this delivery receipt.
+
+### Implementation Summary
+
+The comparison separates AIHOT's public product/event producer, LongHorizon's
+long-task verification, Prime's local execution/context state, khazix-skills'
+workflows/helpers and Agent-Autoloop's public hub rewrite. n8n, Temporal,
+LangGraph and OpenHands Canvas are compared at their respective layers, not
+ranked as interchangeable products.
+
+The later Agent-Autoloop disclosure supersedes blanket public-source
+unavailability, not the unknowns about historical private operations. Internal
+deduplication, deterministic results and external effect idempotency remain
+separate; observed card resend does not prove once-only provider delivery.
+The final record preserves ten read-only advisory lenses in scoped 6+2+2
+batches, their corrections and disagreements—not ten independent experiments.
+
+`CP-SK1` remains no change, `CP-EVAL1` deferred and `CP-RUN1` not adopted.
+Earlier Prime, Grok/pstack, Super-agent and Agentflow dispositions are retained.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Delivered evidence | Status |
+| --- | --- | --- |
+| Cover all supplied material | Three article identities, five named repository pins, four comparators and C1–C13 with questions, counterarguments and falsifiers | Verified |
+| Complete parallel Socratic review | Six initial lenses, two khazix lenses and two Autoloop lenses; complete outputs and scoped adjudications retained | Verified |
+| Separate claims from observations | Five successful bounded drivers, 33 named scenario groups, failed invocation and execution limits preserved | Verified |
+| Use the smallest justified destination | CP-DOC1 reference documentation only; all 48 protected Skill/example/companion Markdown hashes unchanged | Verified |
+| Preserve earlier work | Prime's historical prefix, all previous catalogue lines in order and the preceding report retained | Verified |
+| Expose the result through real consumers | Complete-document composer output, slug discovery, generated headings and README-to-catalogue navigation | Verified |
+| Verify repository compatibility | 1,753 tests, eight validators and all three routing evaluations passed; non-blocking date advisories disclosed | Verified |
+
+### Tests / Checks Run
+
+- Source execution: **33 named scenario groups** across five successful
+  drivers—8 Python state/CLI, 6 AIHOT migration, 3 additional LongHorizon
+  state, 6 khazix storage/report and 10 Autoloop host/kernel. These are bounded
+  synthetic inputs, not independent product trials. The initial Python and
+  Autoloop drivers each passed six containment controls.
+- Actual composer invocations for the comparison, Prime and catalogue slugs,
+  plus `--list-slugs`, all exited **0**. Each composition included its complete
+  source. **17 local file/fragment checks** covered document and contract
+  links plus both README discovery paths before this report-only append.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 passed in 67.70 seconds**; all **8 validators** passed.
+  ROUTE-001/002/003 consistency was **100%** over **128/138/108** paraphrases.
+- Link validation: **292 files, 0 errors**. Skill lint: **0 errors,
+  0 warnings**. Record hygiene: **0 errors, 220 warnings**. This includes
+  **13 new nearby-access-date advisories** (10 in the globally dated
+  comparison, 3 in the dated Prime append), versus 207 in the preceding
+  publication; it is not a zero-warning result.
+- Full-gate output: `artifact://2473`. Source pins, commands, captured
+  stdout/stderr, probe/profile digests, review-output bindings, publication
+  hashes and navigation receipts are retained in
+  `local://agent-control-plane-survey-evidence-2026-11-04.json`.
+  The full-suite snapshot covers the final surveys, catalogue and index;
+  post-append report navigation and link validation have separate receipts
+  in that ledger rather than a claim that the report existed during the gate.
+
+### Failures or Skipped Checks
+
+The first additional LongHorizon state probe exited 1 before scenarios because
+`-S` hid its declared `packaging` dependency. The successful invocation used
+isolated `-I` with already-installed `packaging 25.0`, without installation,
+source edits or stubs. AIHOT's migration probe retained denied macOS cache-write
+diagnostics while its disposable Git/checker cases completed; containment was
+not relaxed.
+
+No full upstream suite, Rust runtime, model campaign, private deployment,
+HTTP/plugin/provider integration, GUI/browser, forced crash, power-loss,
+HA/restore, real-home cleanup or performance study was run. Source smoke
+drivers remain out-of-tree evidence, not shipped tests or dependencies.
+Repository tests, operating contracts, Skills and oracles were not changed.
+
+### Residual Risks
+
+Private deployment claims, operator effort distribution, omitted events,
+external effect recovery and actual host/provider security remain unknown.
+Clean reload and replay do not establish crash recovery; source checks and
+green repository gates do not establish product safety, comparative efficacy
+or prompt compliance. Branch/release distinctions and the new public rewrite
+must be rechecked before any later operational decision.
+
+### Next Action / Human Review
+
+The authorized survey and reference publication are complete. New local
+consumer failures or source/host evidence can reopen the corresponding
+decision; external recurrence alone does not promote a Skill or runtime.
+Installation, credentials, deployment, policy activation and model campaigns
+retain separate authorization boundaries. No commit or push was performed.

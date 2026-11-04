@@ -3,6 +3,8 @@
 > **Status: reference evidence and Docs/Skills update assessment.** The user requested a durable account of the non-MCP surveys and evidence-based, multi-role Socratic evaluation of possible updates. Recording a proposal is not approval to change an operating contract. MCP is explicitly excluded, not an unresolved blocker. No installation, account setup, surveyed-product model calls, benchmark campaign, commit or push is authorized by this request.
 >
 > **2026-11-02 follow-through:** the later owner request, “If worth it then update docs or skills,” authorizes the worthwhile Super-agent documentation supplement below. MSS-DOC2 records that evidence in place; no Skill, runtime or other held proposal is adopted.
+>
+> **2026-11-04 follow-through:** the later owner request, “Update docs or skills if worth it,” authorizes `GB-DOC1`: the [Grok methodology supplement](#grok-methodology-follow-through--2026-11-04), linked pstack checker evidence and existing discovery surfaces. Skills, optional examples, runtime adoption and unrelated held candidates remain unchanged.
 
 ## Research Question
 
@@ -20,6 +22,8 @@ This record preserves evidence, decision criteria, counterarguments and falsifie
 ## Version / Date Context
 
 Initial source checks and bounded smoke runs occurred on **2026-11-01**; the separately dated **2026-11-02** Super-agent follow-through adds supplied full-text/comment review, a new domain-transition probe and narrow Harness source inspection. The initial publication packet used TeaPrompt base `cb949b4d1e5a7b0098dd3d862dbd4aac6710be78`; local-coverage claims refer to delivered repository files, not the reviewer's installed host skills.
+
+The **2026-11-04** Grok follow-through adds newly recovered author text, current product-documentation boundaries, a six-role advisory review and pinned checker/arithmetic observations. It does not retroactively upgrade the November 1 access tier or reuse the earlier five-role panel as new experimental evidence.
 
 | Source | Checked identity / material | Evidence scope and freshness |
 | --- | --- | --- |
@@ -188,6 +192,63 @@ The [Vault](https://docs.x.ai/grok-bot/vault) and [approval/security](https://do
 
 The useful workflow idea is to preserve a proven sequence with boundaries before automating it. [Workflow Acquisition](../04-agent/workflow-acquisition.md) already distinguishes trace evidence, human-owned decisions, side effects, replay and promotion. Product-specific recommendations in this section do not become a new TeaPrompt bot-management workflow.
 
+### Grok methodology follow-through — 2026-11-04
+
+**Decision:** preserve the useful method with source, reliability and authority qualifications; adopt reference documentation only (`GB-DOC1`). The completed survey read all 538 supplied lines of `paste-8.md`, attributed to Kyle_13 / `@kylewmi`, dated 2026-11-03; input SHA-256: `33eabeb77d9718e983f09907f8d02726a18730f05f7121602caa072919725390`. The supplied synthesis is evidence about its sources, not exact speech or an operating contract.
+
+#### Recovered sources and remaining attribution limits
+
+Checked 2026-11-04: the following author text was read through FxTwitter's structured mirror. This advances the November 1 partial-text finding without claiming authenticated X access, complete corpus coverage, verified private deployment or independently measured outcomes.
+
+| Author source | Checked material | Access and bounded finding |
+| --- | --- | --- |
+| October 31 bot guide | [Original](https://x.com/poteto/status/2116576229319233596); [read mirror](https://api.fxtwitter.com/status/2116576229319233596) | Checked 2026-11-04: few clearly owned Bots, voice/restatement, learned skills and private-repository backup are author advice. Connecting tools is not itself a grant of authority. |
+| October 31 routine reply | [Original](https://x.com/poteto/status/2116580481236115933); [read mirror](https://api.fxtwitter.com/status/2116580481236115933) | Checked 2026-11-04: hourly is the author's highest recommended scheduled frequency, a usage recommendation rather than a platform limit; filter events and script repeatable work. |
+| October 6 first/last-mile workflow | [Original](https://x.com/poteto/status/2107510472601985336); [read mirror](https://api.fxtwitter.com/status/2107510472601985336) | Checked 2026-11-04: the author explicitly describes auto-merging after a one-hour no-veto window. Timer implementation and enforcement were not observed. |
+| August 16 structural hierarchy | [Original](https://x.com/poteto/status/2089067865098113024); [read mirror](https://api.fxtwitter.com/status/2089067865098113024) | Checked 2026-11-04: architecture/data structures, lint/test, skill/rule, then human review is an actual author list, not an aggregator invention. The supplied appendix's October 16 date is wrong; universal optimality is not established. |
+| August 23 usage advice | [Original](https://x.com/poteto/status/2091368467060662497); [read mirror](https://api.fxtwitter.com/status/2091368467060662497) | Checked 2026-11-04: dedicated fresh Bots and lower wake frequency are practical suggestions, not measured savings. |
+| *Loops You Can Trust* | [Original article](https://x.com/i/article/2066965659259686912); [read mirror](https://api.fxtwitter.com/status/2069824386283319343) | Checked 2026-11-04: failing/passing evidence, deterministic computed-output comparison and rerunning on main supplement screenshots/video. Declining downstream work is not undoing an external effect. |
+
+Third-party interview transcriptions corroborate some passages at transcript grade only. The native YouTube reader still supplied no captions; the exact Peter Yang 39:33 passage, October 7 one-Bot post and some Galaxy/Maven/MTS details remain unresolved, not fabricated. A transcription's processing date is not proof of its broadcast date. The supplied “seven-day” guide has an empty §11.3 and only an observable six-day sequence; extraction loss remains possible. Its appendix already labels PR figures as author-reported and chapter 11 as the compiler's extension. Neither the PR count nor a reportedly exhaustive tweet collection establishes quality, net value or completeness.
+
+#### Product boundaries and methodological qualifications
+
+Checked 2026-11-04: the [skills/routines guide](https://docs.x.ai/grok-bot/skills-routines-and-automations) calls a learned skill a **draft**, requiring decision rules, validation, failure handling and approval boundaries that one example may not reveal. It also names missing/stale-data handling and retesting after source changes.
+
+**[INFERENCE]** A one-shot invocation is not the same as one lifetime trial, and a few successful observations do not establish future reliability. Risk-conditioned replay across inputs and failures, omission reconciliation and revalidation after changes are more defensible than a universal success-count threshold. Output sampling alone cannot expose work never selected. These are methodological judgments, not a measured Grok reliability protocol.
+
+Checked 2026-11-04: [security/approvals](https://docs.x.ai/grok-bot/approvals-security-and-privacy), [Vault](https://docs.x.ai/grok-bot/vault) and [Bots](https://docs.x.ai/grok-bot/bots) document the following boundaries; no hosted-product security test was performed.
+
+| Question | Bounded answer |
+| --- | --- |
+| Does a new Bot name isolate authority? | No documented personal-Bot isolation: computer, files, browser sessions and credentials are shared; personal Vault entries cannot be restricted to one Bot. Shared/team Bots do not support personal Vault and use separate Secrets/app/file facilities. Copying a public Bot template is not the same as teammates using one shared Bot. |
+| Does hiding a secret imply approval before use? | No. Saved-card use does not require a separate approval each time; Link's approved one-time-card flow is a different path. Auto Review is model judgment, not a substitute for least privilege. No payment was exercised. |
+| Is read-only preparation risk-free? | **[INFERENCE]** It reduces direct external side effects but retains omission, misinformation, disclosure and untrusted-input risks. A human publisher can still act on a contaminated briefing. A disclaimer is not fact verification; its legal effect was not researched. |
+| Is the one-hour window a product approval rule? | No. The author describes a private workflow; public pstack requires scoped operator authority and current-patch verification; Grok background approval cards expire without acting after 30 minutes. These are different mechanisms. Absence of a verified private timer is not proof it cannot exist; silence alone is not a new grant. |
+| Does Stop reverse completed work? | No. The docs distinguish stopping further activity from undoing completed actions. Actual in-flight cancellation, sink reconciliation and compensation were not exercised. |
+
+Checked 2026-11-04: [Routines](https://cursor.com/help/grok-bot/routines) allows scheduled spacing of at least five minutes. Thus a 30-minute demonstration does not contradict an hourly cost recommendation. Its webhook acceptance is not completion, and its no-automatic-retry statement concerns rate-limit failures, not every failure class.
+
+Checked 2026-11-04: [Bots](https://docs.x.ai/grok-bot/bots) recommends the smallest useful roster; [chat/collaboration](https://docs.x.ai/grok-bot/chat-and-collaboration) describes handoffs and their usage cost. A chief-of-staff-only topology is an option, not a universal requirement. Fresh Bots, scripts and delegation have unmeasured net savings; the inspected docs do not establish that every wake replays the entire raw chat. Personal Bots in Slack channel threads cannot hand off; shared Bots can hand off to the requester's own Bots.
+
+The executed non-model arithmetic probe exited **0**: independent minute-slot enumeration and duration division agreed for fixed schedules; a two-trial example also shows that two independent successes remain possible with only 50% per-trial success probability. Fixed-sample iid assumptions were not established for real agent work, so neither calculation estimates product cost or reliability. The separately pinned [checker differential](pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04) exercises plan structure, not Grok workflows or completion evidence.
+
+#### Six-role review and adjudicated disagreement
+
+QuotationProvenance, PlatformAuthority, TrustCalibration, DelegationArchitecture, EngineeringEvidence and IntentWorkflow reviewed a common packet in parallel. All returned **AGREE WITH CHANGES**; they are advisory lenses, not six empirical replications or demonstrated independent model channels. Their questions concern attribution, actual authority, generalization from success, topology/cost, what verification proves, and intent without unnecessary approval friction.
+
+The strongest counterargument is that this is a personal-workflow compilation, not a formal deployment standard; it already discloses transcriptions, self-reported PR counts and compiler-added advice. That objection is accepted: keep the useful method, qualify unsafe inferences, and avoid inventing a new framework. The coordinator rejected or narrowed these review suggestions:
+
+- The structural hierarchy is author-written, but that does not prove a universal ranking. The private one-hour timer is **unverified**, not established nonexistent.
+- Correlated reviewer errors remain a risk; actual same-model/shared-context deployment was not observed. Different models alone do not establish an independent acceptance oracle.
+- Private GitHub backup does not inherently bypass approval. A disclaimer's legal protection was not established. Bounded preauthorization is distinct from requiring a new human click for every action.
+- Internally inconsistent quote-confirmation counts, unfetched scientific citations, an invented rework formula and direct transfer of human-learning gates to agent reliability are not accepted empirical support.
+- Restatement may expose misunderstanding; it does not justify mandatory user confirmation for every ambiguous request. Generic contracts already cover the decision, while incremental teaching benefit remains unknown.
+
+The delivered [Brief](../skills/reflective-brief/SKILL.md#workflow), [Workflow Acquisition](../04-agent/workflow-acquisition.md), [Artifact Promotion](../04-agent/artifact-promotion.md), [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) and [Minimality Safety Floor](../skills/reflective-minimality/SKILL.md#safety-floor) already cover intent, replay failures, draft promotion, side-effect authority and guard preservation. This is textual coverage, not measured installed-agent compliance. No new Skill, universal confirmation step or imported auto-merge policy is justified; `GB-BR1`, `GB-SK1` and `GB-RUN1` retain the dispositions below.
+
+**Falsifiers:** a reproduced missing local instruction can reopen a Skill repair; a named real-host grant/timer/cancellation/sink probe can change the enforcement judgment; representative matched outcome/cost/omission evidence can support efficacy claims; original audio can resolve individual quotations. None is supplied by a green document gate or panel agreement.
+
 ## Writing, Learning, Detection and Preference
 
 Four claims that sound mutually supportive actually measure different things.
@@ -259,12 +320,16 @@ The necessary publication corrections are incorporated in this record: three ups
 
 ## Candidate Adoption Ledger
 
-`MSS-DOC1` and the separately authorized `MSS-DOC2` supplement are adopted here as reference documentation and discovery only. `Proposed` and `deferred` rows are complete recommendations with reopening conditions, not unfinished authorized implementation. No operating text, companion example, prompt or Skill change is landed by these rows; the Super-agent follow-through does not reopen unrelated held proposals.
+`MSS-DOC1`, the separately authorized `MSS-DOC2` supplement and `GB-DOC1` are adopted here as reference documentation and discovery only. `Proposed` and `deferred` rows are complete recommendations with reopening conditions, not unfinished authorized implementation. No operating text, companion example, prompt or Skill change is landed by these rows; each follow-through leaves unrelated held proposals unchanged.
 
 | ID | Candidate / existing destination | Status and decision | Evidence / dissent | Next action, falsifier and smallest useful check |
 | --- | --- | --- | --- | --- |
 | MSS-DOC1 | This record, [existing catalogue](external-adoption-case-studies-2026-06-20.md), generated index and delivery report | **Adopted — reference documentation only** | Explicit user request; unique source pins, execution limits and adjudicated disagreements cannot fit in a catalogue row. Consolidates EFF-1–6, AUT-1–4/7, FOR-1–3, HUM-4, FRM-1–5. | Exercise actual composition/slug discovery, relative navigation and existing repository checks. Wrong if a conclusion needs private session files or silently becomes an operating instruction. |
 | MSS-DOC2 | [Super-agent full-text follow-through](#full-text-follow-through-2026-11-02), existing catalogue/index and delivery report | **Adopted 2026-11-02 — reference documentation only** | Later owner request; unchanged prototype pin, supplied-full-text limits, executed multi-owner handback, benchmark arithmetic and source-only async boundaries. Not a new panel verdict or internal-system replication. | Exercise final composer output, local file/fragment navigation and existing repository checks; preserve Skill bytes. Reopen on a named local consumer gap or new source/experiment evidence, not anecdotal agreement. |
+| GB-DOC1 | [Grok methodology follow-through](#grok-methodology-follow-through--2026-11-04), [pstack checker supplement](pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04), existing catalogue/index and delivery report | **Adopted 2026-11-04 — reference documentation only** | Later owner request; recovered mirror text, attribution corrections, documented authority boundaries, six-role disagreements and actual pinned checker/arithmetic observations. | Exercise final composer output, local file/fragment navigation and existing checks; preserve historical access tiers and Skill bytes. New source or consumer evidence reopens only the corresponding decision. |
+| GB-BR1 | Brief voice/restatement example | **Deferred — optional teaching candidate** | Existing Workflow / Intent Fidelity and material-question rules already cover the intent decision. Incremental teaching value is unmeasured. | A concrete local intent-drift case plus a comparison showing benefit; not a new mandatory confirmation step. |
+| GB-SK1 | New Grok-management Skill or generalized operating rule | **No change — not recommended** | Existing acquisition, promotion, brief, trust-boundary and minimality contracts cover the relevant decisions. | A named reproduced missing/contradictory instruction, not product popularity or panel agreement. |
+| GB-RUN1 | One-hour auto-merge or account-wide Bot runtime adoption | **Not adopted** | Private execution, hosted enforcement, costs and outcome rates were not observed. | Separately authorized workflow with scoped authority, sink controls, failure/omission probes and real-host receipts. |
 | MSS-1 | [Large Context](../03-context/large-context.md), introduction, Purpose and composition note | **Proposed — bounded documentation clarification; not applied** | FOR-4 observed `200K–1M` versus `200K+`; coordinator rejects calling this a proven hard cap or runtime defect. | Suggested direction: “Use this for large-context tasks while avoiding context rot,” with matching Purpose/composition wording; do not imply a validated maximum. If a deliberate bounded scope is documented, retain that scope and clarify the composition note instead. Check a reader's applicability decision without inferring comprehension from window size. |
 | MSS-2 | [Research examples](../skills/examples/reflective-research.examples.md), a credential-reuse worked example | **Deferred — optional example, strongest teaching candidate** | EFF-7 / FRM-5/7: this survey required correction of “local/no extra key” → “no cost/egress”; current mechanism-versus-product and sink rules already cover it. Teaching benefit and recurrence are unknown. | Proposed text: “A local plugin can call the host's authenticated model CLI. Check the provider path, billing/quota and transmitted context before concluding no egress or cost.” Owner-authorized example work or a named reader ambiguity can reopen it; compare against the existing rule, not exact-word presence. |
 | MSS-3 | Research examples, Example 3 State Ledger | **Deferred — optional attributed-measurement example** | FOR-5 proposes a `needs-qualification` row. FRM-6 rejects another generic secondary-source example because Example 3 already covers that distinction. | Distinct draft: “Vendor reports X tokens/s under a dated input/output workload; report text checked, performance not reproduced; end-to-end task benefit unknown.” Reopen only if it teaches attribution/extrapolation beyond the existing summary row; remove if redundant. Do not label a copied real number an invented example without saying which it is. |

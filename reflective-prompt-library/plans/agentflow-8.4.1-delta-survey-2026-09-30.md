@@ -2,7 +2,7 @@
 
 > **Status: decided — nine upstream candidates not adopted; one local recipe correction adopted (AF841-M1); no skill, routing, permission, dependency, or runtime change.** The delta starts at the 8.3.3 baseline `738d0b3f4aa1df870835813d9dcc015136628434`, recorded in the [2026-09-28 factory rethink panel](software-factory-rethink-panel-record-2026-09-28.md), downstream of the [8.3.2](agentflow-8.3.2-delta-survey-2026-09-22.md), [8.3.0](agentflow-8.3-delta-survey-2026-09-21.md), [8.2.0](agentflow-8.2-delta-survey-2026-09-13.md), and [2026-09-05](agentflow-survey-2026-09-05.md) surveys. The user authorized worthwhile doc/skill updates, not automatic promotion. The span carries 8.3.4, 8.4.0, and 8.4.1; the requested 8.4.1 patch itself is documentation/metadata-only. Existing guards cover the doc repair; no new paragraph-pin test is added.
 
-> **Current-source pointer (2026-10-25):** the [Agentflow 9 refresh](#agentflow-9-refresh--2026-10-25) internalizes the 2026-10-24 survey of v9.0.0 (`1edfce9`) and the unchanged-source check on 2026-10-25. The v8 observations below remain dated evidence; Firstmate remains a separate project, last checked here on 2026-10-22.
+> **Current-source pointer (2026-11-04):** the [Agentflow 9.1.6 supplement](#agentflow-916-delta--2026-11-04) records the delta from v9.0.0 and bounded offline observations; AF916-DOC1 adopts documentation only. The [October v9 refresh](#agentflow-9-refresh--2026-10-25) and v8 findings remain dated evidence, not current-host certifications. Firstmate remains separate, last checked here on 2026-10-22.
 
 ## Research Question and Scope
 
@@ -416,4 +416,135 @@ superseded, no new recurrence is asserted, and Firstmate's separate October 22
 snapshot remains unchanged. Future contrary source/runtime evidence or a
 reproduced local contract gap reopens the corresponding recommendation; an
 unchanged upstream pin does not clear the unexecuted host checks.
+
+## Agentflow 9.1.6 delta — 2026-11-04
+
+### Scope and direct recommendation
+
+The owner's subsequent **"Update docs or skills if worth it"** instruction
+authorizes this in-place supplement, catalogue discovery and publication checks.
+**AF916-DOC1 adopts reference documentation only.** The research found useful
+version, executable-boundary and failure-state changes, but no reproduced
+TeaPrompt structural gap requiring a Skill change.
+
+Earlier AF/AFP/AF82/AF83/AF841/SFR dispositions, AF841-M1 and AF9-DOC1/SK1–SK5
+remain unchanged. No runtime, dependency, installation, routing, permission,
+model campaign or guard removal is adopted. Firstmate is outside this delta.
+
+### Version identity and delta coverage
+
+Source identities were checked 2026-11-04 using `git ls-remote`, the latest-release
+API and the pinned checkout, not inferred from a version string alone.
+
+| Identity | Checked value |
+| --- | --- |
+| Accepted baseline | v9.0.0, `1edfce9f805defd6493a800b91075e461d8540f4` |
+| Current main / peeled v9.1.6 tag / stable release source | `0e9f1e44d58836d9a8c3288d1cd8ae2948670774` |
+| Annotated v9.1.6 tag object | `9841f81fb95a99b0737c37b166741a4196016838` |
+| Release publication | `2026-11-02T21:53:14Z`; not a prerelease |
+| Delta inventory | Four release commits; 53 diff records: 35 modified, 17 added, one rename; 54 path endpoints when both rename names are counted |
+
+Checked 2026-11-04: [release](https://github.com/agfnow/agentflow/releases/tag/v9.1.6), [immutable source](https://github.com/agfnow/agentflow/tree/0e9f1e44d58836d9a8c3288d1cd8ae2948670774), [baseline comparison](https://github.com/agfnow/agentflow/compare/1edfce9f805defd6493a800b91075e461d8540f4...0e9f1e44d58836d9a8c3288d1cd8ae2948670774).
+The `git diff --name-status` inventory was independently reconciled against
+pathname/mode/blob maps from `git ls-tree -r --full-tree -z` at both pins,
+including both rename endpoints. This establishes delta coverage, not complete
+runtime qualification. Changed branch, tag or release identity invalidates
+freshness; an installed copy is a separate artifact.
+
+### Evidence vs inference — material source changes
+
+Every source link in this table was checked 2026-11-04 at the current pin.
+These are implementation or prompt requirements, not inferred host guarantees.
+
+| Surface | Source-verified change and boundary |
+| --- | --- |
+| Executable entry points | Checked 2026-11-04: [launcher](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/agf.js#L11-L97) adds `agf init` and terminal feature lifecycle operations; `agf looper` replaces the earlier `agf loop` spelling. Initializer/feature CLI are runtime exceptions alongside the looper, not merely new prompt text. This is version evidence, not a migration recipe. |
+| Ordinary review | Checked 2026-11-04: [source snapshot binding](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/looper.js#L329-L381) and [mailbox handling](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/looper.js#L622-L675) bind attempt, request ID/digest, HEAD and source hashes. Passing results are revalidated before commit/checks. No real model review or malicious-worker isolation was exercised. |
+| Moving integration target | Checked 2026-11-04: [target adoption](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/looper-integration.js#L145-L191) permits a same-branch forward tip and records adoption; branch mismatch and non-descendant tips are rejected. The bounded execution below does not establish concurrent landing or crash recovery. |
+| Feature checks and publication | Checked 2026-11-04: [merge check selection](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/feature-merge.js#L64-L76) can produce no checks when neither explicit checks nor a package test script exists; [configured auto-push](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/feature-merge.js#L111-L154) can publish main. The Git wrapper bypasses hooks. Source presence is not proof a project was tested or publication authorized; neither merge nor push was exercised. |
+| Platform and recovery | Checked 2026-11-04: [preflight and claim disposal](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/feature-common.js#L113-L129) require recoverable Trash on macOS and reject Linux feature operations; Windows claim disposal uses unlink and [checkout removal](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/feature-common.js#L327-L350) is permanent recursive deletion. macOS recoverability is not a cross-platform guarantee. Linux/Windows branches were read, not executed. |
+| Prompt-level methods | Checked 2026-11-04: [simple-check](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/references/simple-check.md) requests independent read-only plan review without a host fallback; [eli5](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/references/eli5.md) treats explanation payloads as data and specifies interactive, preferably self-contained HTML, accessibility fallbacks and Astra/high or Opus/high authoring. Neither model superiority, rendered quality nor learning efficacy was measured. |
+
+### Executed offline observations
+
+Three standalone Node drivers used the actual pinned CLI/exported functions in
+synthetic Git repositories under macOS `sandbox-exec`. Network access and writes
+outside scratch were denied; HOME and Git identity were synthetic, provider CLIs
+were absent from PATH, and fixtures had no remotes. Five containment controls
+passed: owned read/write, outside-read denial, outside-write denial, loopback
+denial and inherited child-process denial. These controls qualify this profile,
+not arbitrary hostile-code isolation.
+
+| Driver / input set | Observed result and limit |
+| --- | --- |
+| Initial CLI driver — exit **1** | Before its failure, actual `init` created schema-13 zh-tw setup with empty provider routes; repeat preserved HEAD, files and locale. Old `loop` spelling, unsafe feature name, malformed locale and untracked owner instructions were refused. Valid unsupported locale `ja-jp` saved `en-us`, as documented. The later feature failure below keeps the overall driver failed, not PASS. |
+| Boundary driver — exit **0** | Symlinked config parent and foreign setup claim were refused without fixture overwrite. Two simultaneous initializers yielded exits 0/1, one setup receipt and one setup commit; this is one schedule, not all-race proof. Missing-queue status/cleanup refused the invalid root. Read-only inspection of the failed feature found its worktree, branch and owner marker retained. |
+| State-gate driver — exit **0** | Actual status displayed a planned queue and target identity; cleanup refused it. The historical-review counterexample below was reproduced through the actual cleanup CLI. Actual exported `adopt_target` accepted a forward commit and recorded one adoption; different-branch and non-descendant refs were rejected. Real Git refs were used, but queue/review receipts were synthetic. |
+
+#### Reproduced cleanup-state inconsistency
+
+An otherwise accepted completed synthetic queue with a latest passing ordinary
+review was first accepted by `assert_completed`. Adding a **settled historical
+blocked review**, without changing the latest passing result, caused both that
+gate and the actual `agf looper cleanup` command to reject it:
+
+```text
+Cleanup: failed; inspect retained state before retrying
+Unsettled ordinary review
+```
+
+The CLI exited **1** before acquiring a cleanup claim; queue bytes remained
+unchanged. Checked 2026-11-04: [cleanup gate](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/looper-cleanup.js#L21-L55) checks every historical review for complete/cancelled state, whereas [ordinary-review handling](https://github.com/agfnow/agentflow/blob/0e9f1e44d58836d9a8c3288d1cd8ae2948670774/skills/agentflow/scripts/looper.js#L663-L675) can retain a blocked result before a later passing latest review.
+This is a confirmed, bounded state-gate inconsistency, not a model-quality
+finding. No end-to-end model run generated the fixture history, and no upstream
+repair or cleanup bypass was applied.
+
+#### Separate incomplete feature path
+
+Actual `new-feature` created the worktree, branch and feature records, then
+exited **1** while releasing the owner claim through `/usr/bin/trash`.
+The diagnostic was `Claim retained: dispose through recoverable Trash`.
+This is **`INCOMPLETE_HOST_PRECONDITION`** in the restricted sandbox with synthetic
+HOME, not a completed create/merge/drop lifecycle or proof of universal failure
+on a provisioned host. No Trash substitute, relaxed sandbox, retry, claim takeover
+or manual claim deletion was used.
+
+The October v9.0.0 process-identity failure also remains
+**`INCOMPLETE_HOST_PRECONDITION`**; the release change did not rerun or clear it.
+Successful feature merge/drop, completed-run Trash cleanup, real-host/model
+review, installed shell/editor journeys, native Windows/Linux and cost or
+learning benchmarks remain unexecuted. The upstream full test suite was not run.
+
+Two read-only advisory reviews covered initializer/feature lifecycle and
+looper/cleanup/integration. Parent source checks and the three drivers supplied
+the observations above; reviewer agreement is not independent empirical
+replication. Semantic search returned provider 403, so literal searches and
+source reads were used; that outage is not evidence of missing functionality.
+
+### Candidate Adoption Ledger — v9.1.6
+
+| ID | Disposition / existing destination | Evidence, objection and reopening trigger |
+| --- | --- | --- |
+| AF916-DOC1 | **Adopted: documentation only**, this existing survey, catalogue and generated discovery; publication receipt in the delivery report. | The prior record ended at v9.0.0. CLI/runtime boundaries and the bounded cleanup counterexample merit durable reference coverage. A separate survey or operating-rule rewrite would duplicate the owning surface. Recheck changed upstream identity, a cleanup fix or contrary source/runtime evidence. |
+| AF916-SK1 | **No Skill change** for independent review or compact evidence. Existing [reflective-review](../skills/reflective-review/SKILL.md) evidence-channel rules and [minimality Safety Floor](../skills/reflective-minimality/SKILL.md#safety-floor) cover the decision classes. | Upstream freshness and concise proof presentation are useful, but neither establishes missing delivered instructions or measured token savings. Reopen on a concrete local consumer failure or missing contract, not a new command name. |
+| AF916-SK2 | **No Skill change** for interactive explanations. Existing [learning-coach](../05-domain/learning-coach.md#acceptance-criteria) requires observed mastery, delayed retention and application. | HTML, animation and model selection can support teaching but do not prove learning. Reopen on a demonstrated local teaching-contract gap; efficacy requires learner evidence. |
+| AF916-RT1 | **No runtime adoption**; ownership remains with the host/product under the [runtime trust boundary](../04-agent/runtime-trust-boundary.md#acceptance-criteria) and the standing TeaPrompt non-goal. | Source-bound review/integration/recovery are executable mechanisms, not guarantees acquired by importing their prose. A product-direction change and local structural need require separate authority; an authorized host pilot would also need explicit check/push policy and platform/Trash/process-identity evidence. |
+
+### Falsifiability and publication boundary
+
+A new revision or changed check/push/platform behavior requires rechecking the
+affected source claims. A correctly bound completed queue that retains the same
+historical blocked review and now passes the cleanup gate would retire that
+specific finding at the new pin, not retroactively rewrite this result.
+An authorized provisioned-host run could resolve the Trash/process-identity
+unknowns; source inspection or a green documentation gate cannot.
+
+The survey's commands, inputs, driver/profile digests and outputs are retained
+in the session receipt `agentflow-9.1.6-survey-2026-11-04.json` as supplementary
+provenance. This section contains the decision-bearing identities, procedures,
+results and limits without depending on scratch files. Publication verification
+exercises the real composer/slug and catalogue paths plus existing generic
+repository checks; it does not rerun upstream or add paragraph-pinning tests.
+The observed publication results belong in the
+[delivery receipt](../../review/final-report.md#agentflow-916-documentation-publication-2026-11-04).
 

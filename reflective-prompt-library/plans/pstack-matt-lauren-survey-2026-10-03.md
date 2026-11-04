@@ -1,6 +1,8 @@
 # pstack / Matt–Lauren Claims Survey — 2026-10-03
 
 > **Status: recorded — reference-only; no new adoption.** User direction: survey two supplied zh-TW syntheses, then “update docs as possible and commit push”. This record internalizes the completed source checks and offline checker observations. It does not authenticate the unavailable conversation, change skills or routing, authorize upstream installation or auto-merge, or reopen an existing adoption/deferred gate.
+>
+> **2026-11-04 follow-through:** the later “Update docs or skills if worth it” request adopts the [Grok-related checker supplement](#grok-methodology-checker-follow-through--2026-11-04) as `GB-DOC1` reference documentation only. Earlier pins and PML dispositions remain historical; no Skill/runtime adoption, installation, commit or push is authorized by this follow-through.
 
 ## Research Question
 
@@ -182,3 +184,41 @@ Authority findings stand: `shipping` still lands only the contiguous verified ru
 New-skill note (read at HEAD, not surveyed in depth): formal-verification skills (TLA+ default, no-verifier fallback), a statechart→TLA+ charting skill with scripts, and `/ketchup` progress-catch-up, `/sharpen`, `/correct`, `/in-your-own-words` interaction skills. None was exercised; no new adoption is implied and PML-7's non-adoption of unverified automation claims is unaffected.
 
 Inspected immutable links: [check-plan.mjs @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/scripts/check-plan.mjs), [orchestrate @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/orchestrate.md), [shipping @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/shipping.md), [autopilot-full @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/playbooks/autopilot-full.md), [manifest @ eb4db2b](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/.cursor-plugin/plugin.json). Limits: diffs read for load-bearing files only across the 206-commit range; new skills listed from the tree, not content-audited; no execution, so the new checker's structural-only boundary is source-read, not runtime-verified.
+
+## Grok methodology checker follow-through — 2026-11-04
+
+**Scope:** internalize the completed Grok-methodology survey's named verification/merge/comment source checks and actual checker differential. This is not an exhaustive upstream delta audit, plugin adoption or new defect in TeaPrompt. The [owning Grok supplement](agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04) preserves author provenance, product boundaries, reviewer disagreements and `GB-DOC1`/`GB-BR1`/`GB-SK1`/`GB-RUN1` dispositions.
+
+Checked 2026-11-04: source pin `cursor/plugins@fd268b808c786469e6dd8c8d9db864d0de4d669e`; comparison pin `eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10`. The newly executed [current checker](https://github.com/cursor/plugins/blob/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills/poteto-mode/scripts/check-plan.mjs) and [prior checker](https://github.com/cursor/plugins/blob/eb4db2b55b2b7dec3d9282754cddf0a56bf4ff10/pstack/skills/poteto-mode/scripts/check-plan.mjs) differ in inline multi-backtick span handling. The October 22 source-only finding above remains source-only for that date; the October 3 executed artifact retains its own identity.
+
+### Executed differential and evidence boundary
+
+A standalone driver invoked the real `node check-plan.mjs <synthetic-plan.md>` subprocess for each artifact, under macOS `sandbox-exec`, Node `v25.1.0`. The November 4 driver exited **0**; no model response or stubbed checker verdict was used.
+
+| Synthetic input | Current `fd268b8` exit | Prior `eb4db2b` exit | Observation |
+| --- | --- | --- | --- |
+| Structurally complete, all boxes unchecked | 0 | 0 | Plan grammar does not require completed work. |
+| All boxes checked, every referenced screenshot absent | 0 | 0 | Acceptance does not attest evidence existence. |
+| Missing live lane | 1 | 1 | Structural negative control. |
+| Missing verification rule | 1 | 1 | Required-rule negative control. |
+| Em dash inside a multi-backtick code span | 0 | 1 | The changed parser has an observed behavioral difference. |
+| Em dash in ordinary prose | 1 | 1 | The code-span fix does not disable the prose check. |
+
+Direct `fs.existsSync` checks established that every fixture screenshot was absent. The checker accepted both structurally valid checked and unchecked plans anyway. This bounds its function as a **structural validator, not a completion/evidence verifier**; it is not a newly demonstrated production authorization vulnerability.
+
+| Executed artifact | SHA-256 |
+| --- | --- |
+| Current checker | `e3d4e9ca638c6fb4a2b52c434c17c7af30da4fdd44605ccfe9906f82fe37b555` |
+| Prior checker | `e58c3d871b09d477be00628d69dd23ffa6c2e3a1728f5b867a841baa8e90278b` |
+| Standalone driver | `caeaf26f357a115f09c777efa8f63e7b570759268f35637ead846e1d75b9cb27` |
+| Sandbox profile | `44b1eb8ab0ade12a96f80319ed6f284e3d6b71c13b14e8448c340f307fb5cf55` |
+
+Containment controls passed before the checker scenarios: scratch read/write succeeded; outside writes, synthetic-canary and `/Users` reads, and loopback network were denied with `EPERM`; a child inherited read denial and exited with its expected code 42. This proves only the local macOS probe envelope, not Grok isolation or cross-platform safety. No hosted Bot, routine, credential use, merge, payment or product/model-quality test was performed.
+
+### Source-only authority and guard-preservation findings
+
+Checked 2026-11-04: [shipping](https://github.com/cursor/plugins/blob/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills/poteto-mode/playbooks/shipping.md) and [autopilot-full](https://github.com/cursor/plugins/blob/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills/poteto-mode/playbooks/autopilot-full.md) retain scoped operator authority, non-author verifier verdicts bound to the patch and CI for the current head. These prompt contracts do not prove actual forge enforcement or the author's private one-hour timer.
+
+Checked 2026-11-04: [verification upkeep](https://github.com/cursor/plugins/blob/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills/maintain-verification-skill/SKILL.md) calls for live feature evidence and separates harness gaps from product defects. [No-comments](https://github.com/cursor/plugins/blob/fd268b808c786469e6dd8c8d9db864d0de4d669e/pstack/skills/no-comments/SKILL.md) includes review and encoding proposals but still directs deletion with an unresolved constraint when encoding is not approved. Its audit step alone does not make that deletion safe; TeaPrompt does not import the branch or weaken its existing Safety Floor.
+
+`GB-DOC1` adds only this reference supplement and discovery links; PML-1–PML-7 and earlier pilot/oracle holds are unchanged. A future checker that validates artifact contents or actual executions would require a new pinned consumer probe before carrying forward the structural-only claim. A demonstrated local contract gap can reopen the smallest corresponding repair; source recurrence alone cannot.
