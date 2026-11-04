@@ -8811,3 +8811,90 @@ consumer failures or source/host evidence can reopen the corresponding
 decision; external recurrence alone does not promote a Skill or runtime.
 Installation, credentials, deployment, policy activation and model campaigns
 retain separate authorization boundaries. No commit or push was performed.
+
+## Creator-attention documentation publication (2026-11-04)
+
+### Goal
+
+Fulfil the owner's “Update docs” request following the completed Dan Koe /
+SI Axiom creator-attention survey. Preserve its useful methods, source
+attribution and evidence limits as `CA-DOC1` reference documentation, without
+changing Skills, operating rules or runtime authority.
+
+### Files Changed
+
+- [Creator-attention survey](../reflective-prompt-library/plans/creator-attention-survey-2026-11-04.md): self-contained source record, market-category corrections, product boundaries, optional worked reference and candidate dispositions.
+- [Existing catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): additive current-reference pointer, comparison row and state-ledger row.
+- [Generated index](../reflective-prompt-library/index.json): 233 files, 214 prompts and 19 Skills; unchanged schema.
+- `review/final-report.md`: this append-only delivery receipt.
+
+### Implementation Summary
+
+The record distinguishes global TAM, platform advertising, creator-related
+spend and individual profit; forecast values remain forecasts. WPP's official
+summary and Business Insider's secondary details are attributed separately.
+Eden/Grok capabilities remain documentation observations, not product trials
+or verified approval/isolation guarantees.
+
+The [optional worked reference](../reflective-prompt-library/plans/creator-attention-survey-2026-11-04.md#optional-worked-reference-a-small-creator-content-batch)
+combines existing brief, research, strategy, writing and review surfaces:
+separate personal facts from quotations and model hypotheses, include
+ordinary/unsuccessful samples, retain human editorial responsibility and
+count total effort and accepted outcomes. It is explicitly illustrative,
+not an executed client experiment or a new mandatory workflow.
+
+`CA-SK1` leaves Skills unchanged; `CA-RUN1` does not authorize products,
+accounts, outreach, publishing or paid trials. No new generic rule,
+dependency, permanent test or separate example-pack entry was added.
+
+### Acceptance Criteria Status and Traceability
+
+| Criterion | Evidence | Status |
+| --- | --- | --- |
+| Internalize the accepted survey without session-file dependencies | Public source table, input/report digests, category corrections, original-abstract limits and bounded results in the repository record | Verified |
+| Preserve method value without promoting operating instructions | Optional worked reference and CA-DOC1/CA-SK1/CA-RUN1 ledger; 48 Skill/example/companion Markdown hashes unchanged | Verified |
+| Deliver through existing consumers | Complete survey/catalogue composition, slug discovery, required index headings and both README → catalogue → survey paths | Verified |
+| Preserve earlier work and repository compatibility | Five preceding survey hashes unchanged; all prior catalogue lines retained in order; full repository gate passed | Verified |
+
+### Tests / Checks Run
+
+- Actual survey and catalogue composer invocations plus `--list-slugs`:
+  **3 commands exited 0**; complete source delivery was checked.
+- **12 local navigation checks** passed before this report append, covering
+  linked contracts, catalogue, both library READMEs and the existing report.
+  Generated headings/character count and 14 source/limit sentinels were checked.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`:
+  **1,753 tests passed in 66.87 seconds**; all **8 validators** passed.
+  ROUTE-001/002/003 consistency was **100%** over **128/138/108** paraphrases.
+- Link validation: **293 files, 0 errors**. Skill lint: **0 errors,
+  0 warnings**. Record hygiene: **0 errors, 220 non-blocking warnings**,
+  unchanged from the preceding publication; not a zero-warning result.
+- Full-gate output: `artifact://2515`. Commands, captured consumer output,
+  hashes, preservation checks and final report navigation are retained in
+  `local://creator-attention-docs-publication-2026-11-04.json`.
+  The full-suite snapshot covers the final survey, catalogue and index;
+  this report-only append has separate navigation/link-validation evidence.
+
+### Failures or Skipped Checks
+
+No publication command failed. The prior research's publisher HTTP 403,
+metadata-only WPP table access and mirror/abstract limitations remain
+explicit in the record. Publication did not repeat source research,
+arithmetic or product experiments; historical calculations are labelled as
+such. No account, MCP, product, model, browser, client or business-effect
+trial was run, and no permanent wording-pinning tests were introduced.
+
+### Residual Risks
+
+Actual profit, workload, conversion/retention, long-term trust, product data
+coverage/licensing, authenticated isolation and enforced publishing approvals
+remain unknown. Documentation delivery and green repository gates establish
+neither commercial efficacy nor product safety or model compliance.
+
+### Next Action / Human Review
+
+The authorized documentation update is complete. Source changes or a
+reproduced local contract gap can reopen the corresponding finding;
+unmeasured outcomes are not implicit follow-up authority. Installation,
+external actions and paid experiments require a separate scoped decision.
+No commit or push was performed.

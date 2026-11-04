@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-04T09:31:10.735715",
+  "generated_at": "2026-11-04T10:04:23.884900",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -56,6 +56,7 @@
             "roadmap-prompt-cognition-memory-2026-10-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
+            "creator-attention-survey-2026-11-04.md",
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
             "tev-gym-survey-2026-10-16.md",
@@ -3708,6 +3709,78 @@
       ],
       "line_count": 175,
       "char_count": 17017
+    },
+    {
+      "path": "reflective-prompt-library/plans/creator-attention-survey-2026-11-04.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "creator-attention-survey-2026-11-04",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-brief/SKILL.md",
+          "../05-domain/business-strategy.md",
+          "../skills/reflective-research/SKILL.md",
+          "../04-agent/workflow-acquisition.md",
+          "../05-domain/writing-article.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../05-domain/creative-template.md",
+          "../../review/final-report.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Creator Attention, AI-Assisted Writing and the One-Person Creative Team — Survey (2026-11-04)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference: Market Size and Individual Profit"
+        },
+        {
+          "level": 2,
+          "text": "Transferable Method and Failure Modes"
+        },
+        {
+          "level": 3,
+          "text": "What the writing experiments support"
+        },
+        {
+          "level": 2,
+          "text": "Product Boundaries: Eden and Grok Bot"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference: A Small Creator-Content Batch"
+        },
+        {
+          "level": 2,
+          "text": "Bounded Checks Actually Executed"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Remaining Unknowns"
+        }
+      ],
+      "line_count": 128,
+      "char_count": 20300
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-plan-2026-07-11.md",
@@ -11345,6 +11418,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "creator-attention-survey-2026-11-04.md",
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#parallel-socratic-review-and-adjudicated-disagreement",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
@@ -11412,6 +11486,7 @@
           "pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04",
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
+          "creator-attention-survey-2026-11-04.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11443,6 +11518,7 @@
           "pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04",
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
+          "creator-attention-survey-2026-11-04.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11612,8 +11688,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 551,
-      "char_count": 111974
+      "line_count": 555,
+      "char_count": 113572
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -22548,5 +22624,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 232
+  "total_files": 233
 }
