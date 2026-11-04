@@ -8898,3 +8898,57 @@ reproduced local contract gap can reopen the corresponding finding;
 unmeasured outcomes are not implicit follow-up authority. Installation,
 external actions and paid experiments require a separate scoped decision.
 No commit or push was performed.
+
+## FlashProve source survey publication (2026-11-04)
+
+### Goal
+
+Fulfil the owner's survey request for `anthropics/FlashProve` and update
+docs or skills only if warranted. Outcome: `FP-DOC1` reference documentation;
+no Skill, operating-rule or runtime change.
+
+### Files Changed
+
+- [FlashProve source survey](../reflective-prompt-library/plans/flashprove-source-survey-2026-11-04.md): pinned source record (`9e2bdd8`, v0.16.0), proved/tested/argued boundaries, bounded build observation, candidate ledger and falsifiers.
+- [Existing catalogue](../reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md): latest-reference banner, comparison row and state-ledger row.
+- [Generated index](../reflective-prompt-library/index.json): 234 files, 215 prompts, 19 Skills.
+- `review/final-report.md`: this append-only receipt.
+
+### Implementation Summary
+
+FlashProve is an unmaintained cryptographic research prototype (ZK proofs
+that a reply came from committed model weights). Adoption is rejected:
+runtime is a Standing Non-Goal, and its genuinely careful three-tier
+evidence separation (Lean-proved / tested / paper-argued) is already
+mandated by existing contracts. FP-2/3/4 record `no change` rather than
+duplicating covered mechanisms. The one pattern flagged for future reuse is
+its exhaustive machine-readable limits registry, noted only as a model if a
+released-product surface ever needs one.
+
+### Tests / Checks Run
+
+- Bounded build: sparse checkout at pin; `verifier/build.sh --clang` exits 2
+  at `open_above()` on BSD userland (GNU `stat`/`readlink` requirements) —
+  consistent with documented platform constraints, not a defect. No GNU
+  toolchain installed; nothing built or verified locally.
+- `env PATH="/opt/homebrew/opt/python@3.14/bin:$PATH" make all`: **exit 0**
+  — 1,753 tests, 8 validators, ROUTE-001/002/003 at 100%.
+- Link validation: 294 files, 0 errors. Record hygiene: 0 errors, 220
+  non-blocking advisories (unchanged). Composer: new slug composes and lists.
+
+### Failures or Skipped Checks
+
+One transient gate failure: `test_index_json_current` flagged the catalogue
+as stale because the banner landed after the first index regeneration.
+Regenerated and re-ran; full gate passes on the final tree. The Lean library,
+prover, SUITE.md, paper and most of the ~1.2 MB docs were identified but not
+audited; no GPU route exists on this host.
+
+### Residual Risks
+
+Unmaintained upstream artifact; re-pin before future citation. The survey
+audits no Lean/prover correctness, weight-hiding, or performance claims.
+
+### Next Action / Human Review
+
+Complete. No commit or push performed in this session.
