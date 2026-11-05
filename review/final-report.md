@@ -8952,3 +8952,61 @@ audits no Lean/prover correctness, weight-hiding, or performance claims.
 ### Next Action / Human Review
 
 Complete. No commit or push performed in this session.
+
+## Lieflat AI-tone source survey publication (2026-11-06)
+
+### Goal
+
+Fulfil the owner's survey request for
+`larashero3-dotcom/lieflat-less-ai-tone`, updating docs or skills only if
+warranted. Outcome: `LT-DOC1` reference documentation; no Skill,
+operating-rule or runtime change.
+
+### Scope / Authority
+
+- Pinned commit `53160078` on `main` (pushed 2026-11-05); license read as
+  **CC BY-NC 4.0** — non-commercial reuse bound recorded.
+- `detect.py` was executed locally (no dependencies, no network) on two
+  crafted ≥500-字 probes: AI-tone-loaded vs plain rewrite of the same
+  content. Detector fired the documented A/B/F/C tiers on the loaded probe
+  and only one borderline B-tier 頓號 hit on the control — directional
+  discrimination verified.
+- `--candidates` emitted the documented four-list typed schema
+  (rename/cohesion/colon/iso3) with `label/confidence/reason` write-back
+  fields; example judgment JSON inspected. Applying labels is in-session
+  model judgment by design and was not independently checked.
+- The <500-字 refusal was exercised — a real fail-closed evidence floor.
+- Corpus statistics (ratios, 270-pair replication reversals, ~43 萬
+  judgments) are author-reported; the corpora are not shipped and were not
+  re-run — recorded as `[INFERENCE]`.
+
+### Decisions
+
+- `LT-DOC1` adopted: survey record, catalogue banner/row and ledger row.
+- `LT-1` rejected: domain-pack registration. The novel contribution is a
+  Chinese-prose ruleset, not a harness mechanism; no demonstrated local
+  need. Mechanism-level patterns (detect→report→confirm→rewrite gating,
+  closed-label per-item judging, script/model/human tiering, visible
+  vetoed rules) are already covered by existing contracts.
+- `LT-2`, `LT-3` no change: CC BY-NC bounds verbatim threshold reuse;
+  vetoed-rule visibility matches settled-decision practice.
+- Upstream is active but corpus-free; re-pin before any future citation.
+
+### Files
+
+- Added: `plans/lieflat-ai-tone-survey-2026-11-06.md`.
+- Modified: `plans/external-adoption-case-studies-2026-06-20.md` (banner,
+  comparison row, ledger row), `index.json` (regenerated).
+
+### Verification
+
+- `generate_index.py` rerun; `validate_links.py` 294→ files, 0 errors;
+  `update_record_hygiene.py` clean; composer resolves the new slug;
+  `make all` green (index-current test included).
+- Smoke evidence lives in the survey record; no permanent test added —
+  the artifact is a docs-only reference row.
+
+### Next Action / Human Review
+
+Complete. No Skill, operating-rule or runtime change. The survey audits
+no corpus statistics, semantic-label quality, or English transferability.

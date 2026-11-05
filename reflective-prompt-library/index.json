@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-04T16:55:50.524282",
+  "generated_at": "2026-11-06T00:23:05.403656",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -100,6 +100,7 @@
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
             "ember-snn-llm-survey-2026-09-22.md",
+            "lieflat-ai-tone-survey-2026-11-06.md",
             "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
             "dogfood-learning-promotion-2026-10-09.md",
             "mattpocock-skills-v131-delta-survey-2026-10-07.md",
@@ -7832,6 +7833,68 @@
       "char_count": 18228
     },
     {
+      "path": "reflective-prompt-library/plans/lieflat-ai-tone-survey-2026-11-06.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "lieflat-ai-tone-survey-2026-11-06",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Lieflat Less AI Tone Source Survey — Empirical AI-Tone Editing (2026-11-06)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Source pins"
+        },
+        {
+          "level": 2,
+          "text": "What the artifact is"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Executed verification (this survey)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs inference"
+        },
+        {
+          "level": 2,
+          "text": "Coverage against TeaPrompt"
+        },
+        {
+          "level": 2,
+          "text": "Risks and constraints"
+        },
+        {
+          "level": 2,
+          "text": "Decisions"
+        },
+        {
+          "level": 2,
+          "text": "Next Action / Human Review"
+        }
+      ],
+      "line_count": 138,
+      "char_count": 8122
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11467,6 +11530,7 @@
         "markdown_links": [
           "creator-attention-survey-2026-11-04.md",
           "flashprove-source-survey-2026-11-04.md",
+          "lieflat-ai-tone-survey-2026-11-06.md",
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#parallel-socratic-review-and-adjudicated-disagreement",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
@@ -11536,6 +11600,7 @@
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
           "creator-attention-survey-2026-11-04.md",
           "flashprove-source-survey-2026-11-04.md",
+          "lieflat-ai-tone-survey-2026-11-06.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11568,6 +11633,7 @@
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
           "creator-attention-survey-2026-11-04.md",
+          "lieflat-ai-tone-survey-2026-11-06.md",
           "flashprove-source-survey-2026-11-04.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
@@ -11738,8 +11804,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 559,
-      "char_count": 114996
+      "line_count": 563,
+      "char_count": 116615
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -22674,5 +22740,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 234
+  "total_files": 235
 }
