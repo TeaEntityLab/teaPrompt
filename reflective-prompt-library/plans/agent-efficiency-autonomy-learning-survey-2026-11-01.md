@@ -161,6 +161,10 @@ The essay itself leaves intermediate human intervention and broader context/A2A/
 
 That is delivered textual coverage, not proof of reader compliance or runtime capability. No new local structural gap warrants a Skill, example or runtime change. Reopen on a concrete consumer failure, newly available original/raw experiment evidence, or a different candidate source revision before adoption. The broader MSS-1–MSS-8 proposals retain their own dispositions; this owner request concerns the immediately preceding Super-agent survey.
 
+#### Prototype identity recheck (2026-11-06)
+
+Checked 2026-11-06: `main` now points to a force-pushed single root commit, [`8c32a9dc5d72c033816c6a8110b37f40cf94fba4`](https://github.com/deepseek-ai/dsh-superagent-prototype/tree/8c32a9dc5d72c033816c6a8110b37f40cf94fba4), with no common ancestor with `6337fc8` but the identical tree `3efbb036e5a56183c6bf642e2e1856a1f64e7be3`. Every tracked byte is unchanged, so the source reads, line anchors and probe observations above transfer to the new commit. The `6337fc8` links cited here returned 200 on 2026-11-06 although that commit is no longer reachable from a branch; if they stop resolving, re-anchor them to `8c32a9d` without changing the findings. A later secondary comparison is adjudicated in the [control-plane follow-through](agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06): it confirms the Philosophy and orchestrator wording, and its "reopen under the original authorization" statement is qualified by the revalidation rule recorded above.
+
 ## Four Architecture Forecasts
 
 The supplied forecast is treated as four claims to qualify, not a forced choice between accepting every prediction and dismissing the mechanisms. Source existence, source-reported measurement, evaluation conditions and future extrapolation are separate evidence dimensions.

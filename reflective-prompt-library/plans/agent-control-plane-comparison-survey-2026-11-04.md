@@ -3,6 +3,8 @@
 Language: English
 
 > **Status: reference documentation adopted (`CP-DOC1`); no Skill or runtime adoption.** The owner requested a survey of AIHOT, LongHorizon-Harness and Prime Agent, then added khazix-skills and the Agent-Autoloop announcement; related GitHub comparisons, parallel evidence-based Socratic review and worthwhile documentation updates remain in scope. Thirteen supplied comments are references, not additional authority. This record does not authorize installations, credentials, model campaigns, deployment, policy activation, commit or push. Earlier Prime, Grok/pstack, Super-agent and Agentflow decisions remain unchanged.
+>
+> **2026-11-06 follow-through:** the owner's request to survey Leo's Agent-Autoloop/Super-agent comparison adds [`CP-DOC2`](#comparison-follow-through--2026-11-06): re-pinned sources, article fidelity verdicts, an executed two-pin Autoloop delta probe and comment dispositions. Reference documentation only; every earlier disposition is unchanged.
 
 ## Research Question and Direct Recommendation
 
@@ -326,3 +328,102 @@ Existing contracts already address the decision classes: [research](../skills/re
 - A local consumer failure against an existing declared contract could justify an in-place repair; a separately authorized operational product might justify a runner. External recurrence alone establishes neither.
 
 Publication acceptance: preserve all three articles, five named projects, four comparator roles, thirteen references, the scoped 6+2+2 review, failures/limits and prior dispositions; expose the record through the existing catalogue/index and actual composer; verify repository compatibility. The [delivery report](../../review/final-report.md#agent-control-plane-comparison-publication-2026-11-04) records publication checks separately from upstream observations. No Skill, operating-rule, oracle, runtime or deployment change is made.
+
+## Comparison follow-through — 2026-11-06
+
+The owner asked to survey a supplied compilation (`paste-13.md`) of Leo (@double_burger_2)'s X article comparing Agent-Autoloop with DeepSeek's Super-agent design and `dsh-superagent-prototype`, plus source excerpts, eight comments and an unattributed appended analysis. This dated delta re-pins both repositories, checks the article against the earlier supplied primaries and current code, and re-executes the 2026-11-04 Autoloop driver at the new pin. **Outcome: `CP-DOC2` reference documentation only.** No Skill, operating-rule, runtime or deployment change; CP-SK1, CP-EVAL1, CP-RUN1, MSS-DOC1/DOC2 and PA-1–PA-5 are unchanged. No new review panel was convened: four parallel read-only or sandboxed evidence slices reported to the coordinator, who re-checked each load-bearing citation below. The article is a secondary comparison, not new primary evidence about either private system.
+
+### Inputs, access and pins
+
+| Input | Checked identity (2026-11-06) | Access and limit |
+| --- | --- | --- |
+| `paste-13.md` | SHA-256 `3576375cb200c01c13f2a4775aa51200519d04021f1b7261382863f6e00d10e3` | Supplied text only. The article object ID `2118193072916123648` decodes to 2026-11-05 04:05:57 UTC; FxTwitter article and status endpoints returned 404 (account endpoint 200), so neither the article wording nor the comments were independently recovered. Comment attribution is unauthenticated |
+| [Agent-Autoloop](https://github.com/KKKKhazix/agent-autoloop/tree/d5ffe1cc360174085ce8ca3ec33b70a36d0ef440), checked 2026-11-06 | `main` `d5ffe1cc360174085ce8ca3ec33b70a36d0ef440` (`v1.4.1-8-gd5ffe1c`); latest release `v1.4.1` → `bf07d8d5f492878b0a84a206e294545b00148275` | 88 commits after CP-DOC1's `cecec75` (`v1.0.0`): 142 files, +9,536/−1,120, about 46% of changed files under `tests/`. Six releases (`v1.1.0`–`v1.4.1`) were published on 2026-11-05 UTC. Release notes are claims; the diff and probes below are the evidence |
+| [dsh-superagent-prototype](https://github.com/deepseek-ai/dsh-superagent-prototype/tree/8c32a9dc5d72c033816c6a8110b37f40cf94fba4), checked 2026-11-06 | `main` `8c32a9dc5d72c033816c6a8110b37f40cf94fba4` | Force-pushed single root commit with no common ancestor with MSS pin `6337fc8`, but the **same tree** `3efbb036e5a56183c6bf642e2e1856a1f64e7be3`; MSS-DOC1/DOC2 source and probe evidence therefore transfers. Old-pin blob and raw URLs for four files cited there returned 200, but now depend on an unreachable commit |
+| DeepSeek essay §7.1 table | Supplied transcription `paste-7.md`; [secondary table](https://halfatoken.com/insights/deepseek-super-agent/), checked 2026-11-06 (`datePublished` 2026-11-01) | The Zhihu original still returned 403 and the official X article was not machine-readable. Figures absent from the transcription are secondary-consistent only |
+
+### Article fidelity
+
+| Article claim | Verdict | Evidence |
+| --- | --- | --- |
+| One person follows only 3–5 active sessions; similar constraints yield similar architectures | verified (quotation / paraphrase) | `paste-7.md:44`, `:61` |
+| Autoloop is a hub "installed on your own computer" | qualified | Khazix's historical hub ran on a light online server while Mac workers long-polled it, so the Macs needed no public exposure (`paste-10.md:63`, `:85`); in the rewrite, workers pull over HTTP and `join` registers remote workers (`cli/main.ts:286` @ `d5ffe1c`) |
+| Kernel "under 1,800 lines", no third-party dependency, four duties | line count version-drifted; dependency and duty claims verified | README states about 1,650 lines at `v1.0.0`, about 1,800 for `v1.1.0`–`v1.4.0` and about 1,650 again from `v1.4.1`. Measured non-blank non-test `kernel/*.ts` lines are 1,668; 1,782–1,813; 1,552. The `v1.4.1` drop includes moving `kernel/state.ts` to `host/state.ts`. The announcement said about 1,600 (`paste-11.md:48`). The article object was created between the `v1.1.1` and `v1.2.0` releases, matching the then-current README. Neither pin declares `dependencies` in `package.json`; four duties: `paste-11.md:50-51` |
+| A test rejects product names and outbound requests in the kernel | verified; since expanded | `tests/purity.test.ts:13-28` @ `cecec75` and `:14-52` @ `d5ffe1c`; `v1.4.1` extended the vendor check to `host/`, `protocol/` and `worker/`. A separate kernel line-cap test added in `v1.4.1` was removed on `main` by `d3e6d26` |
+| Rules: one round per item, one concurrent round per item, bounded parallelism; queued duplicates merge | verified | `paste-10.md:84`; `protocol/rules.ts` (`group`, `parallel`, `resume`) and `kernel/decide.ts` `enqueue` / `claimNext` @ `d5ffe1c`; source-event deduplication executed at both pins |
+| Must-ask classes; owner-decision and declined-decision files | verified as an author report and shipped guidance | `paste-10.md:176-179`; the shipped skill recommends `docs/decisions.md` and `docs/declined.md` (`skills/agent-autoloop/SKILL.md:39` @ `cecec75`, `:42` @ `d5ffe1c`). Compliance by an installed agent is untested |
+| External text is data; events carrying agent, directory or permission fields are rejected | verified; mechanism qualified | Context file plus contract wording (`worker/contract.ts:32-35`, `worker/worker.ts:390-395` @ `d5ffe1c`; `paste-11.md:86-95`). Rejection is a generic seven-field event whitelist (`protocol/validate.ts:50-57` @ `d5ffe1c`, `:44-51` @ `cecec75`), not a dedicated authority check; routing authority comes only from rules. Executed at both pins below |
+| Hop limit 8, "not reset by human questions or scheduled rechecks", then a stop card | verified with scope | `MAX_HOPS = 8` and the stop path (`kernel/decide.ts:41`, `:215-223` @ `d5ffe1c`); answers copy the card's depth (`:469-470`, executed); timers carry the scheduling run's depth (`:371`, `:523`, source-read); depth increments only on rule `emits` (`:404`). The limit bounds agent-to-agent emission depth. Answers and rechecks neither reset nor consume it, so it is not a global cost, recheck or rate budget, as CP-DOC1 already recorded |
+| Router executes nothing and "may not even carry Bash"; workers implement; external text cannot change policy | verified for the essay and prompt; prototype differs on Bash | `paste-7.md:85`; `prompts/orchestrator.md:4`, `:11`. The prototype Router keeps a guarded `bash` among seven tools (`src/app/sessions.ts:263-264`): "without Bash" is an essay design option, not the shipped configuration |
+| Fast / Slow Path; thread-subscription bypass; one evaluation per thread with arrivals batched | verified | `paste-7.md:113-131`; `docs/001-domain.md:43`; `src/core/engine.ts:83` |
+| Philosophy: least attention for most value; act only when asked or ruled; one concrete structured question; 100-word IM cap | verified | `docs/000-philosophy.md:5`, `:11-13`, `:33`; `paste-7.md:179` |
+| A reply "reopens the ticket under the original authorization" | qualified | Resumption first revalidates against **current** policy. Failure revokes the Mandate, leaves the Ticket ended and sends waiting messages to a fresh Eval (`docs/002-authorization.md:131-141`), as MSS-DOC1 recorded |
+| Unrequested work starts in observation mode | verified for the prototype | `EvalConfigSchema.mode` defaults to `observe` (`src/policy.ts:84`); `docs/000-philosophy.md:11` |
+| Watchdog; speculative execution; stateless cloud loop with a light local daemon | essay design only | `paste-7.md:156-159`, `:187`, §6; not implemented by the prototype (MSS-DOC2). On these rows, the article's §5 compares a shipped implementation with a design essay—the layer mismatch CP-DOC1's matched-layer comparison avoids |
+| Ablation: median 12.4 min versus 13.8–20.4 min; cache reads 6.1M–10.8M versus 23.2M | secondary-consistent; qualified | The transcription has 12.4 / 15.7 / 29.5 min and 23.23M / 31.77M (`paste-7.md:224-226`); 13.8 / 20.4 min and 6.05M / 10.82M come from the omitted table image and match the secondary reproduction. Against delegation-first prompting, the P50 gap is 1.4 min and the P95 gap 13.3 min, so the gain is mainly tail stability, on a synthetic five-run workload with read-cache tokens only |
+| Khazix borrowed DeepSeek Harness's "everything is a plugin" | verified; incomplete | `paste-11.md:19` credits Pi's minimal core/Extensions design as well as DSH; the article names only DSH |
+
+Two facts limit the "independent convergence" reading. Khazix read and cited the DeepSeek essay before open-sourcing the rewrite (`paste-11.md:12`, `:19`); the article discloses this. And `v1.3.0` ships a `dsh` agent plugin, so the systems now compose as well as resemble each other. Its permission tiers are documentation-derived: the maintainers did not run DSH or Claude Code against a model (`docs/plugins.md:116` @ `d5ffe1c`). Convergence remains plausible, but it is not independent evidence.
+
+### Executed delta probe
+
+The CP-DOC1 driver was copied unedited into `/private/tmp/teaprompt-leo-delta-Jk65Pn/reprobe/<pin>/` beside `git archive` trees. Each run used `sandbox-exec` with network denied, writes confined to `work/`, `/Users` and a canary unreadable, Node v25.1.0, disposable SQLite and a declared `/usr/bin/true` agent that was never spawned. All six controls passed in every run.
+
+| Run | Exit | Result |
+| --- | --- | --- |
+| `cecec75`, original driver | 0 | 10/10 scenarios, matching 2026-11-04 |
+| `d5ffe1c`, original driver | 1 | API drift before the second scenario: `hub.ingest is not a function` (helpers moved to `tests/hub.ts` by `980fe3a`, 2026-11-06) |
+| `d5ffe1c`, call-site-adapted driver plus four scenarios | 0 | 14/14. Adaptations: import `tests/hub.ts`; answer links through the real HTTP door (`kernel/http.ts:24`, `:105`) because `b18288b` removed the test-only runtime copy; add a fixture `emits` rule for the chain scenario. No expectation changed |
+| `cecec75`, original plus the same four scenarios | 0 | 14/14; contrast cases record absence |
+
+| New scenario | `cecec75` | `d5ffe1c` |
+| --- | --- | --- |
+| Depth across ask → answer → emission | answer event keeps depth 8; emitted depth 9 recorded, not routed, with a `hops:` card | identical |
+| Event carrying `to` | `InputError` (`不认识的字段：to`); nothing recorded | identical |
+| Repeated failure | still `queued` after 12 failures; warning card only | stops at exactly 10; run `cancelled`; stop card (`kernel/decide.ts:43`, `:335-341`) |
+| `fyi: true` notice | receipt rejected by the `v1.0.0` notice schema | card created `closed`, with no options |
+
+All ten original behaviors reproduce at `d5ffe1c`. Through the HTTP door, a fresh link answered (303); an expired link returned 401 for POST and GET. At `v1.0.0`, opening an expired link by GET still rendered card content; `b18288b` (2026-11-05) fixed that. The 2026-11-04 expiry scenario exercised only the answer path, and it did discriminate: the same card answered when fresh and raised `AuthError` after seven days.
+
+**Retained correction:** one delegated report first claimed that the 2026-11-04 driver had passed an undefined link token and therefore expired by accident. A targeted sandboxed check at `cecec75` refuted this. The `cards` view computed `token` through a registered SQL function (`host/runtime.ts:41-51` @ `cecec75`); `cardByToken` round-tripped, the fresh call succeeded and the expired call raised `AuthError`. CP-DOC1's expiry row stands. The HEAD adaptation is justified because that view column was removed, not because it never existed.
+
+Not run: the HTTP server beyond the in-process door, plugins, real agent CLIs, models, `tick`-driven timers, SIGKILL or power loss, backup/restore, MCP, installation, multi-machine `join` or any external sink.
+
+### Delta mechanisms and stale observations
+
+- **New since `v1.0.0`:** a 10-consecutive-failure stop with backoff and a warning card (`v1.1.0`); `status --json`, `rules explain`, `emit --dry-run` and backup/restore (`v1.2.0`); `resume: true`, `fyi` notices, the `dsh` plugin and a `join` one-liner (`v1.3.0`); literal prompt substitution in the `command` adapter (`ec526dd`, 2026-11-06). Before that fix, `{cwd}` and `$&`-style patterns inside a prompt could be rewritten.
+- **Removed:** `v1.4.0` deleted guards that, according to its notes, no real user had hit and some of which caused regressions: a process-group stop after agent crashes, 90-day usage pruning (`KEEP_DAYS`), rejection of pre-1.0 databases and MCP `initialize` handshake checks (diff `a3b77bf..8e5cfc1`: 26 files, +102/−593). On `main`, `d3e6d26` removed the kernel line cap added in `v1.4.1`, and `9bddfa4` removed unsupported numeric limits from tests and documentation. `MAX_HOPS`, `MAX_ATTEMPTS` and the seven-day link lifetime remain.
+- **Stale or qualified CP-DOC1 observations:** its driver no longer imports at HEAD; answer links are now HTTP-only; "kernel size" depends on the boundary moved in `v1.4.1`; the adapter list now includes `dsh`. None of the nine executed CP-DOC1 behaviors changed.
+- **Deployment qualifications, not assessed further:** backups include the master key and `secrets.env` (documented); `join --key` places a worker key on the command line, where local process listings may expose it [INFERENCE]; ACP `access` governs only operations the agent asks about; and `read` tiers do not imply local secrets are unreadable (`docs/plugins.md:116-118`).
+
+### Comments and appended analysis
+
+| Input | Disposition |
+| --- | --- |
+| Khazix: "解讀的好細緻" | Author appreciation, not an accuracy audit. The paste's inference that it "validates" the interpretation is rejected: the line count drifted, the Bash/Watchdog/cloud rows mix layers and the reopen statement omits revalidation |
+| 觀默: personal versus team token constraints explain the differences | Consistent with both sources' stated constraints; restates the article |
+| Ap: hard-code the escalation threshold by task type, or rely on model confidence? | Answered by existing contracts below: classify by effect and capability; confidence may only route upward |
+| Haosen: rules-first saves tokens only when event types are stable | Consistent with codifying observed stable recurrence (Formalization L0–L4, minimality); both upstreams pair deterministic rules with model judgment |
+| EAAI; octopusaia; ajs6888; Leo ("read the originals") | Echo or appreciation. Persisted waits are verified; token/cost savings and "most multi-agent systems burn money while waiting" remain unmeasured generalizations |
+| Appended "核心價值／戰術／策略" analysis (unattributed) | Untrusted summary, not evidence. Its grid is broadly faithful, but "完全規則（可預測、可測試）" holds for routing decisions, not model work; the turning-point and efficiency language is opinion |
+
+### TeaPrompt mapping and dispositions
+
+Existing contracts cover the transferable decisions. Ap's threshold question already has an explicit local answer. Never emit a self-classifying risk gate the model can lower; classify by capability class (`skills/agent-governance-scaffold/SKILL.md:55`). Must-approve applies when an effect is irreversible, external or touches money, identity, permission or privacy, and approval thickness does not fall as model capability rises (`:82`). Low confidence defaults up or triggers a probe; high-risk work routes through Human Review (`plans/ROUTING_CONTRACT.md:47-51`; `skills/reflective-dispatch/SKILL.md:163`, "Prefer evidence over confidence").
+
+Khazix's must-ask list overlaps `reflective-risk` triggers for permissions, destructive operations, spend, production and data egress (`skills/reflective-risk/SKILL.md:49-64`); "stop service" and "change product direction" are not named separately. Autoloop's `v1.4.0` rationale contrasts with TeaPrompt's Safety Floor: search for an unexplained guard's originating failure and record the result before cutting it (`skills/reflective-minimality/SKILL.md:97`); unavailable usage data is `unknown`, not zero demand (`PROJECT_KNOWLEDGE.md:85`). The upstream notes do report a negative incident search and regression costs. This survey checked neither claim, so no defect follows.
+
+| ID | Candidate | Disposition | Evidence / reopen trigger |
+| --- | --- | --- | --- |
+| CP-DOC2 | This dated follow-through, an MSS prototype-identity note, catalogue/index discovery and delivery report | **Adopted — reference documentation only** | Owner's survey request; source-bound fidelity and execution limits need a durable record |
+| CP-W1 | FYI-versus-action notice taxonomy | No change | TeaPrompt emits no notifications; brevity, material-question and Human Review rules cover the prompt-layer decision. Reopen if a host consumer confuses information with a required decision |
+| CP-W2 | Name service stop/restart and product-direction changes among `reflective-risk` triggers | Deferred | External lists are not local failure evidence; production, destructive and must-approve classes cover the main cases. Reopen on a local route or risk trace in which such an action skipped review |
+| CP-W3 | Require host routing dry-run / explain | No change | Host-runtime surface (standing non-goal); R5 route traces cover prompt-layer explainability |
+| CP-SK1, CP-EVAL1, CP-RUN1; MSS and PA dispositions | Earlier candidates | Unchanged | As recorded above and in their owning records |
+
+### Falsifiability
+
+- Recovered original article text or comments, or a primary copy of the §7.1 table, could correct the fidelity rows. Either would replace the supplied-text or secondary tier; it would not retroactively strengthen this record.
+- A later Autoloop release that changes `MAX_HOPS`, timer depth, `MAX_ATTEMPTS`, the event whitelist, link lifetime or the purity tests invalidates the corresponding row. Re-pin and rerun the drivers instead of editing these results.
+- A prototype commit with a different tree ends the evidence transfer from `6337fc8`. If old-pin links stop resolving, citations need re-anchoring; the findings do not change.
+- A local consumer failure on a named class—missed escalation, a confidence-lowered gate or an unbounded recheck loop in a TeaPrompt-generated flow—could justify an in-place repair. External recurrence or reviewer agreement alone does not.

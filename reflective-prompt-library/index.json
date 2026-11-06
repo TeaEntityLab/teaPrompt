@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-06T00:23:05.403656",
+  "generated_at": "2026-11-06T10:11:43.803256",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3201,10 +3201,42 @@
         {
           "level": 2,
           "text": "Falsifiability and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Comparison follow-through — 2026-11-06"
+        },
+        {
+          "level": 3,
+          "text": "Inputs, access and pins"
+        },
+        {
+          "level": 3,
+          "text": "Article fidelity"
+        },
+        {
+          "level": 3,
+          "text": "Executed delta probe"
+        },
+        {
+          "level": 3,
+          "text": "Delta mechanisms and stale observations"
+        },
+        {
+          "level": 3,
+          "text": "Comments and appended analysis"
+        },
+        {
+          "level": 3,
+          "text": "TeaPrompt mapping and dispositions"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 328,
-      "char_count": 64324
+      "line_count": 429,
+      "char_count": 82757
     },
     {
       "path": "reflective-prompt-library/plans/agent-engineering-five-source-survey-2026-10-30.md",
@@ -7913,6 +7945,7 @@
           "../skills/flow-loop-harness/SKILL.md",
           "../03-context/context-engineering.md",
           "../04-agent/artifact-promotion.md",
+          "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "../04-agent/workflow-acquisition.md",
           "pstack-matt-lauren-survey-2026-10-03.md#grok-methodology-checker-follow-through--2026-11-04",
           "../skills/reflective-brief/SKILL.md#workflow",
@@ -8001,6 +8034,10 @@
           "text": "Documentation Disposition"
         },
         {
+          "level": 4,
+          "text": "Prototype identity recheck (2026-11-06)"
+        },
+        {
           "level": 2,
           "text": "Four Architecture Forecasts"
         },
@@ -8065,8 +8102,8 @@
           "text": "Evidence Actually Checked and Handoff"
         }
       ],
-      "line_count": 361,
-      "char_count": 72187
+      "line_count": 365,
+      "char_count": 73230
     },
     {
       "path": "reflective-prompt-library/plans/dogfood-learning-promotion-2026-10-09.md",
@@ -11534,6 +11571,7 @@
           "agent-control-plane-comparison-survey-2026-11-04.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#parallel-socratic-review-and-adjudicated-disagreement",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
+          "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
@@ -11601,6 +11639,7 @@
           "creator-attention-survey-2026-11-04.md",
           "flashprove-source-survey-2026-11-04.md",
           "lieflat-ai-tone-survey-2026-11-06.md",
+          "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11635,6 +11674,8 @@
           "creator-attention-survey-2026-11-04.md",
           "lieflat-ai-tone-survey-2026-11-06.md",
           "flashprove-source-survey-2026-11-04.md",
+          "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md#prototype-identity-recheck-2026-11-06",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11804,8 +11845,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 563,
-      "char_count": 116615
+      "line_count": 567,
+      "char_count": 118669
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",

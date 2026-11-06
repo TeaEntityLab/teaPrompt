@@ -9000,9 +9000,13 @@ operating-rule or runtime change.
 
 ### Verification
 
-- `generate_index.py` rerun; `validate_links.py` 294→ files, 0 errors;
-  `update_record_hygiene.py` clean; composer resolves the new slug;
-  `make all` green (index-current test included).
+- `generate_index.py` rerun (235 files); `validate_links.py` 295 files,
+  0 errors. `validate_record_hygiene.py` first failed (missing status
+  blockquote and Falsifiability heading), then passed with 0 errors and
+  221 warnings after the record was fixed; `prompt_composer.py
+  --list-slugs` lists the new slug; `make all` exit 0. (Corrected
+  2026-11-06: an earlier version of this bullet named a nonexistent
+  `update_record_hygiene.py` and was written before the checks ran.)
 - Smoke evidence lives in the survey record; no permanent test added —
   the artifact is a docs-only reference row.
 
@@ -9010,3 +9014,73 @@ operating-rule or runtime change.
 
 Complete. No Skill, operating-rule or runtime change. The survey audits
 no corpus statistics, semantic-label quality, or English transferability.
+
+## Agent-Autoloop / Super-agent comparison follow-through (2026-11-06)
+
+### Goal
+
+Fulfil the owner's request to survey `local://paste-13.md`: Leo's
+comparison of Agent-Autoloop with DeepSeek's Super-agent, source excerpts,
+eight comments and an unattributed appended analysis. Outcome: `CP-DOC2`
+reference documentation; no Skill, operating-rule or runtime change.
+
+### Scope / Authority
+
+- Delta survey against CP-DOC1 (Agent-Autoloop `cecec75`, `v1.0.0`) and
+  MSS-DOC1/DOC2 (prototype `6337fc8`). Re-pinned Agent-Autoloop `main`
+  `d5ffe1c` (`v1.4.1-8`, 88 commits later) and prototype `main`
+  `8c32a9d`, a force-pushed root with the identical tree `3efbb036`.
+- Four parallel evidence slices: Autoloop static claims, a two-pin Autoloop
+  reprobe, prototype/essay fidelity and TeaPrompt coverage. The
+  coordinator re-checked each load-bearing citation; no review panel was
+  convened.
+- The reprobe ran under `sandbox-exec` with network denied, writes
+  confined to scratch, disposable SQLite and no model, plugin, installation
+  or external sink.
+
+### Decisions
+
+- `CP-DOC2` adopted: dated follow-through in the control-plane record, a
+  prototype identity note in the MSS record, catalogue discovery.
+- `CP-W1` (FYI/action notice taxonomy) and `CP-W3` (host routing dry-run)
+  no change; `CP-W2` (naming service stop/restart and product-direction
+  changes among `reflective-risk` triggers) deferred pending a local
+  failure. CP-SK1/EVAL1/RUN1, MSS and PA dispositions unchanged.
+
+### Evidence highlights
+
+- Original driver: `cecec75` exit 0 (10/10); `d5ffe1c` exit 1 on API
+  drift (`hub.ingest is not a function`). Call-site-adapted driver with
+  four new scenarios: exit 0 (14/14) at both pins. All ten prior
+  behaviors are unchanged. New at HEAD: stop after exactly 10 failures;
+  `fyi` notices close without options.
+- Article fidelity: kernel line count version-drifted (README ~1,650 →
+  ~1,800 → ~1,650); reopen-under-original-authorization omits
+  revalidation; Bash, Watchdog and cloud rows mix essay design with
+  implementation. The 13.8–20.4 min and 6.05M–10.82M ablation figures
+  match a secondary table but not the primary, which remains inaccessible.
+- Retained correction: a delegated report's claim that the 2026-11-04
+  link-expiry check passed on an undefined token was refuted by a
+  targeted sandboxed check; CP-DOC1's expiry row stands.
+
+### Files
+
+- Modified: `plans/agent-control-plane-comparison-survey-2026-11-04.md`
+  (status follow-through line, dated section),
+  `plans/agent-efficiency-autonomy-learning-survey-2026-11-01.md`
+  (prototype identity note),
+  `plans/external-adoption-case-studies-2026-06-20.md` (banner, comparison
+  row, ledger row), `index.json` (regenerated), and this report, including
+  the corrected lieflat verification bullet above.
+
+### Verification
+
+- `generate_index.py` rerun (235 files); `validate_links.py` 295 files,
+  0 errors; `validate_record_hygiene.py` 0 errors with warnings unchanged
+  at 221; the composed control-plane record contains the new section;
+  `make all` run after these edits, including this report.
+
+### Next Action / Human Review
+
+Complete. No commit or push performed. Private-system guarantees, model
+efficacy and the primary §7.1 table remain unverified.
