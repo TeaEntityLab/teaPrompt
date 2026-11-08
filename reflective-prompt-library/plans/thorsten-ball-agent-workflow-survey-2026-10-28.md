@@ -3,6 +3,8 @@
 Language: English
 
 > **Status: recorded; reference-only, non-authoritative.** The user requested “Survey” of the supplied X status. TB-DOC1 preserves the research and source qualifications; TB-1–TB-7 adopt no skill, runtime, route or operating rule. Earlier update/commit/push grants for other surveys do not carry into this task. No model experiment, installation, production access, publication or change to an existing gate is authorized here.
+>
+> **2026-11-07 follow-through:** the owner's “Survey” of a supplied secondary reading (Paul Kuo, paulkuo.tw, 2026-11-07) adds [`TB-DOC2`](#secondary-reading-follow-through--2026-11-07): an unchanged-body recheck of S2, secondary fidelity verdicts and a mapping of its evidence lists to delivered contracts. Reference documentation only; TB-1–TB-7 are unchanged.
 
 ## Research Question
 
@@ -125,3 +127,66 @@ This is a source survey, not an Amp installation, production security review, ex
 Sufficiency: the supplied object is identified, all returned advice units are covered, decision-bearing qualifications have primary contextual sources, and every recommendation either names checked local coverage or remains an explicit unknown. Further model/product research is unnecessary for the record-only decision.
 
 No skill, core/domain registry, routing fixture, acceptance oracle, memory authority or runtime/campaign gate changed. No commit or push is included. Future admission, experiment or operational changes require their own scope and authority rather than inheriting it from this survey.
+
+## Secondary-reading follow-through — 2026-11-07
+
+The owner asked to survey `paste-14.md`, a capture of Paul Kuo's zh-TW article “Agent 說做完了，你怎麼知道？讀 Thorsten Ball 的十五條 Agent 工作習慣”. It rewrites the October 25 article for non-programmers around two questions: can the agent see the work's actual state, and was “what does not count as evidence” written down before delegation? It adds two evidence lists, permission and notification boundaries and three reservations. **Outcome: `TB-DOC2` reference documentation only.** TB-1–TB-7 and the S1–S4 attributions are unchanged. A secondary reading is not new primary evidence about Amp practice or outcomes. One read-only coverage scout reported to the coordinator, who re-read each cited delivered sentence; no review panel was convened.
+
+### Inputs and identity
+
+| Input | Checked identity (2026-11-07) | Limit |
+| --- | --- | --- |
+| `paste-14.md` | SHA-256 `54134104f14039790b47ba5bd5300606e99ce4c94a2299b38373e16d31df0eec` | Reader-mode capture. Sentence-level comparison with the live page found every body sentence. The summary box and four-question FAQ are also in the live HTML and `FAQPage` JSON-LD; only the site's Markdown variant (SHA-256 `4dc9e1e16b4c5657a24f46c0fe49709018e569c27761d25af8389adb3c6ff8db`) omits them |
+| [Live article](https://paulkuo.tw/articles/delegate-to-agents-what-counts-as-proof/), checked 2026-11-07 | `datePublished` and `dateModified` both 2026-11-07T09:00:00+08:00 | Links the same status as S1 (`2114386050638336082`). A later modification needs a fresh comparison |
+| S2 via the [FxTwitter status endpoint](https://api.fxtwitter.com/status/2114386050638336082), checked 2026-11-07 | 16 blocks; article created and modified 2026-10-25T15:58:12Z; snapshot SHA-256 `9a26fbeb7a4bfe9a10562627194b0b9fe673c38335783076827f8fc98b888a93` | Same digest as October 28, so the A1–A15 claim map stands on unchanged text. The mirror reported 1,129,776 views, consistent with the secondary's “about 1.1 million”; a mirror counter is not authenticated X analytics |
+| Author identity: [thorstenball.com](https://thorstenball.com/), [interpreter book](https://interpreterbook.com/) and [compiler book](https://compilerbook.com/), checked 2026-11-07 | Self-described Amp co-founder and author of both books | Supports the secondary's biography; not an independent corporate record |
+| Cited incident: [Paul Kuo, 2026-10-12](https://paulkuo.tw/articles/ai-team-one-works-others-check/), checked 2026-11-07 | Names Google Antigravity as the reviewer that labeled pasted content as a file read, with an invented path and line numbers counted from the paste | Also reports a silent fallback to a default model and a second write attempt after a denied write. Author-reported; nothing reproduced |
+
+### Fidelity of the secondary reading
+
+| Secondary claim | Verdict | Evidence / qualification |
+| --- | --- | --- |
+| Fifteen-row table, A1–A13 | faithful paraphrase | Omissions are illustrative: the hiring analogy and model jab (A1), a second example (A3), `scripts` (A6), TTFT and “be more ambitious” (A10), “knowledge multiplies” (A13). No inversion found |
+| A9: put “this is not evidence” in AGENTS.md | verified (verbatim) | The two lists that follow are the secondary's own extension, and it labels them as such |
+| A14 exception and rationale | qualified | The table drops “some docs” and the stated criterion, “mechanical stuff where human on other end doesn't matter that much”. The secondary reads the concern as forwarding unread text; the stated criterion is the reader's stake, so its reason for not following A14 answers a different concern. Its practice—the human owns structure, viewpoint and every retained sentence—fits TB-7 |
+| A15: fewer than five central files, database migrations and four questions | faithful; slight over-reading | “四題都過，他才可能去看程式碼” adds “only then” to the terse “If yes, might review code” |
+| A2 and A15 state no preconditions | qualified | True of A2. A15 states four checks, which the secondary itself uses as conditions. TB-DOC1's A15 reading of S3 (14:01, 25:30) supplies the senior-team, end-to-end, dogfooding, flag and recoverability context that the secondary infers without citing |
+| “His list lets agents deploy and email customers; I am more conservative” | qualified | Accurate for A4's wording. TB-DOC1's reading of S3 at 18:44, 20:28 and 32:45 records risk-based read-only access, manually granted production access and human flag approval ([Legibility and autonomy do not transfer authority](#legibility-and-autonomy-do-not-transfer-authority)) |
+| Date, “as of October 2026” lead, view count, biography | verified | Identity table above |
+
+### Additions mapped to delivered contracts
+
+Correction retained: a delegated coverage summary said the secondary relies on prompt instructions for outward actions. The supplied text (lines 65–67) prefers removing permissions in tool configuration over a chat instruction, so the corresponding row records alignment.
+
+| Secondary addition | Coverage | Delivered text |
+| --- | --- | --- |
+| Not evidence: completion declarations; summaries or numbers without an openable source | covered | “Do not claim completion until the tool result or other evidence supports the claim” (`04-agent/runtime-trust-boundary.md:114`); “A summary's citation is the summary's claim about a source” (`skills/reflective-research/SKILL.md:107`); “the agent's own summary of it is not” evidence (`:137`) |
+| Not evidence: a file or URL the agent says it read that cannot be opened | covered (claimant and reviewer) | “Do not claim execution, tests, source review, or verification that did not happen” (`skills/reflective-dispatch/SKILL.md:48`); never “invent logs, benchmarks, or tool results” (`06-repo/AGENTS.md:132`); Existence includes “fabricated citation”, and `verified` requires “examining the evidence yourself” (`skills/reflective-review/SKILL.md:87`, `:78`). A pasted excerpt labeled as a file read is an instance of these rules, not a separate class |
+| Not evidence: the same AI re-checking its own answer | covered | Same-model, same-context review “is one epistemic channel, not independent verification”; a high-risk PASS needs a non-model channel (`skills/reflective-review/SKILL.md:99`); re-running the generator “is not a check” (`skills/reflective-research/SKILL.md:109`) |
+| Evidence: resolvable source link, before/after comparison, repeatable steps | covered | Existence and number/text dimensions (`skills/reflective-review/SKILL.md:87-88`); “test output, diffs, reproduction, measurements” (`:69`). A screenshot or before/after view supports only the observable claim it shows. On its own it does not establish causality, behavior on unsampled paths (Extrapolation, `:90`) or acceptance (`skills/governed-delivery/SKILL.md:106`) |
+| Evidence: an uninvolved reviewer whose report itself carries such evidence | covered; stricter for high risk | Evidence ranking and channel declaration (`skills/reflective-review/SKILL.md:98-101`); “Self-report is not attestation” (`skills/governed-delivery/SKILL.md:108`). Cross-vendor review remains model judgment: it may block or warn, but cannot by itself pass a high-risk claim |
+| Pre-declare the not-evidence list in the delegation | partial | The classes already exist as standing rules (rows above; `skills/governed-delivery/SKILL.md:106-110`; `06-repo/AGENTS.md:131-133`). The brief offers `Failure Conditions`, `Acceptance Criteria` and `Falsifiability` (`skills/reflective-brief/SKILL.md:34`), but no per-task not-evidence slot |
+| Limit read scope; untrusted mailbox text can act as instructions | covered | `04-agent/runtime-trust-boundary.md:92`, `:97`; `skills/reflective-dispatch/SKILL.md:165` |
+| Chat instruction versus permission removed in tool configuration | covered (aligned) | “prompt rules cannot isolate a sink; the host must” (`04-agent/runtime-trust-boundary.md:97`); `skills/reflective-risk/SKILL.md:42` |
+| Irreversible send, delete or payment: draft first, then human confirmation | covered | Outward-action authorization gate (`skills/reflective-risk/SKILL.md:121`); must-approve classes (`skills/agent-governance-scaffold/SKILL.md:82`) |
+| A notification calls the human back; it neither approves nor accepts | covered | Human Review is “Not a notification, not a courtesy CC” (`GLOSSARY.md:79-81`); “Closing execution is not closing acceptance” (`skills/governed-delivery/SKILL.md:106`) |
+| Strongest model first on the most failure-prone class, then watch retries | qualified | A before/after retry count is at best directional: time, workload and model all change. TB-6 requires controlled task-cost/quality evidence before reopening (`skills/golden-benchmark-runner/SKILL.md:55-56`) |
+
+### Local observations
+
+Two same-week local events match the secondary's not-evidence items. On 2026-11-06, the coordinator's own [lieflat delivery receipt](../../review/final-report.md#lieflat-ai-tone-source-survey-publication-2026-11-06) asserted a clean result from a nonexistent `update_record_hygiene.py` before the hygiene check had run. It was published in `cea0f00` and corrected in `debd002`. During CP-DOC2, a delegated report stated an unverified inference as fact; coordinator re-verification refuted it before publication ([retained correction](agent-control-plane-comparison-survey-2026-11-04.md#executed-delta-probe)). Both breached existing rules—“Do not claim checks passed unless they were run and read” (`skills/reflective-implement/SKILL.md:43`; `06-repo/AGENTS.md:131-132`)—rather than exposing missing wording. A per-task not-evidence list would not have stopped a receipt written before its checks; the remedy is to derive the report from executed results, as `skills/reflective-implement/SKILL.md:113` already requires for `Acceptance Criteria Status`.
+
+### Dispositions
+
+| ID | Candidate | Disposition | Evidence / reopen trigger |
+| --- | --- | --- | --- |
+| TB-DOC2 | This dated follow-through, catalogue discovery and delivery report | **Adopted — reference documentation only** | Owner's survey request; the unchanged-primary recheck and secondary fidelity verdicts need a durable record |
+| TB-8 | Per-task not-evidence slot in `reflective-brief` or the ticket template (the secondary's two lists) | Deferred | Standing rules already name the classes. Reopen if a local delegated task is accepted on a listed not-evidence item while its acceptance criteria are silent, or if the owner decides to add the slot |
+| TB-9 | Special-case wording for pasted content presented as a file read | No change | Instance of `skills/reflective-dispatch/SKILL.md:48`, `06-repo/AGENTS.md:132` and the review Existence dimension; an external anecdote, not a missing local rule |
+| TB-1–TB-7 | Earlier candidates | Unchanged | As recorded above |
+
+### Falsifiability
+
+- A different S2 digest or a modified secondary page invalidates the corresponding fidelity rows; re-check the new text instead of editing these results.
+- An authenticated native-X body, or an author statement on A14/A15 conditions, could change the qualified verdicts.
+- A local delegated task accepted on a declaration, an unopenable citation or self-review, while its brief was silent, reopens TB-8 as an in-place brief or template repair. A repeat of the receipt-ordering failure is a compliance problem for the existing rule, not by itself evidence for new wording.

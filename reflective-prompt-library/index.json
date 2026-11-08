@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-06T10:11:43.803256",
+  "generated_at": "2026-11-08T11:03:04.886448",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -11577,7 +11577,7 @@
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
-          "thorsten-ball-agent-workflow-survey-2026-10-28.md",
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
           "deepseek-inference-recipe-survey-2026-10-27.md",
           "agensh-source-survey-2026-10-27.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#six-role-review-and-adjudicated-disagreement",
@@ -11640,6 +11640,7 @@
           "flashprove-source-survey-2026-11-04.md",
           "lieflat-ai-tone-survey-2026-11-06.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11676,6 +11677,7 @@
           "flashprove-source-survey-2026-11-04.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#prototype-identity-recheck-2026-11-06",
+          "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11845,8 +11847,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 567,
-      "char_count": 118669
+      "line_count": 569,
+      "char_count": 120102
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -17660,7 +17662,9 @@
           "../skills/reflective-minimality/SKILL.md#safety-floor",
           "../skills/reflective-risk/SKILL.md#sink-inventory-and-unattended-envelope",
           "skill-dogfood-test-plan-2026-10-08.md#stage-1-outcome-disposition-2026-10-13",
-          "../../review/final-report.md#thorsten-ball-agent-workflow-survey-2026-10-28"
+          "../../review/final-report.md#thorsten-ball-agent-workflow-survey-2026-10-28",
+          "../../review/final-report.md#lieflat-ai-tone-source-survey-publication-2026-11-06",
+          "agent-control-plane-comparison-survey-2026-11-04.md#executed-delta-probe"
         ]
       },
       "structure": [
@@ -17723,10 +17727,38 @@
         {
           "level": 2,
           "text": "Risks / Unknowns and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Secondary-reading follow-through — 2026-11-07"
+        },
+        {
+          "level": 3,
+          "text": "Inputs and identity"
+        },
+        {
+          "level": 3,
+          "text": "Fidelity of the secondary reading"
+        },
+        {
+          "level": 3,
+          "text": "Additions mapped to delivered contracts"
+        },
+        {
+          "level": 3,
+          "text": "Local observations"
+        },
+        {
+          "level": 3,
+          "text": "Dispositions"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 127,
-      "char_count": 21686
+      "line_count": 192,
+      "char_count": 33428
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",

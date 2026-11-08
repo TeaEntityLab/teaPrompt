@@ -9084,3 +9084,74 @@ reference documentation; no Skill, operating-rule or runtime change.
 
 Complete. No commit or push performed. Private-system guarantees, model
 efficacy and the primary §7.1 table remain unverified.
+
+## Thorsten Ball secondary-reading follow-through (2026-11-07)
+
+### Goal
+
+Fulfil the owner's request to survey `local://paste-14.md`: Paul Kuo's
+zh-TW reading of Thorsten Ball's “How I work with Agents” for
+non-programmers. Outcome: `TB-DOC2` reference documentation; no Skill,
+operating-rule or runtime change.
+
+### Scope / Authority
+
+- Delta against TB-DOC1 (2026-10-28). Its S2 article body was re-fetched
+  through the same mirror; the snapshot digest `9a26fbeb…` is unchanged.
+- The supplied capture was compared sentence by sentence with the live page
+  (published 2026-11-07T09:00+08:00). The author biography was checked
+  against self-published pages, and the cited 2026-10-12 incident article
+  was read without reproduction.
+- One read-only coverage scout; the coordinator re-read every cited
+  delivered sentence and corrected one delegated characterization. No
+  review panel, model call, installation or external action.
+
+### Decisions
+
+- `TB-DOC2` adopted: dated follow-through in the TB record, catalogue
+  banner item, comparison row and ledger row.
+- `TB-8` (per-task not-evidence slot in the brief or ticket template)
+  deferred; `TB-9` (special wording for pasted content presented as a file
+  read) no change. TB-1–TB-7 unchanged.
+
+### Evidence highlights
+
+- Secondary fidelity: A1–A13 and A9 are faithful. A14 drops “some docs” and
+  the stated reader-stake criterion. A15 adds a slight only-then.
+  “No preconditions” and the conservative-permission contrast are qualified
+  by S3 context the secondary does not cite.
+- Every not-evidence and evidence item maps to delivered rules; only a
+  per-task not-evidence slot is absent.
+- Local observation: this report's 2026-11-06 lieflat receipt claimed a
+  check from a nonexistent script before any check ran (published in
+  `cea0f00`, corrected in `debd002`). The governing rule already existed.
+  This entry was therefore written only after the checks below had run;
+  the full gate is recorded after it.
+
+### Files
+
+- Modified: `plans/thorsten-ball-agent-workflow-survey-2026-10-28.md`
+  (status follow-through line and dated section),
+  `plans/external-adoption-case-studies-2026-06-20.md` (banner item,
+  comparison row, ledger row), `index.json` (regenerated) and this report.
+
+### Verification
+
+- Observed before this entry: `generate_index.py` (235 files);
+  `validate_links.py` 0 errors; `validate_record_hygiene.py` 0 errors,
+  warnings unchanged at 221, with no warning on new lines; the composed TB
+  record contains the new section.
+- Observed after this entry was written: `make all` exit 0, with all
+  validators, the pytest suite and ROUTE-001/002/003 included. This bullet
+  was added after that run.
+- 2026-11-08 post-review fix before first commit: one TB-DOC2 mapping row
+  claimed that before/after evidence must be bound to pinned revisions. The
+  cited contracts do not require that. The row now says that a screenshot
+  supports only the observable claim it shows, citing Extrapolation and
+  `governed-delivery` acceptance. `index.json` was regenerated and
+  `make all` rerun: exit 0, observed before this bullet was written.
+
+### Next Action / Human Review
+
+Complete. TB-8 needs a local failure or an owner decision before any
+brief/template change.
