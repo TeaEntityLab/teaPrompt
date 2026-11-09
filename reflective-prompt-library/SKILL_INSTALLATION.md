@@ -641,19 +641,24 @@ Use symlink installs only for your own workspace, not as the default team instal
 
 ### Enforcing TeaPrompt's review gates host-side
 
-TeaPrompt skills declare intent via `metadata.human_review_required`; hosts, not
-TeaPrompt, enforce it. When installing `reflective-risk`, `flow-loop-harness`,
-`agent-governance-scaffold`, `governed-delivery`, `headless-agent-cli-contract`, `arm-blinded-eval-harness`, or `golden-benchmark-runner` (all `human_review_required: true`), map the
-declaration to your host's
-invocation control:
+TeaPrompt skills declare intent via `metadata.human_review_required`; that
+metadata does not itself create a host approval gate. When installing
+`reflective-risk`, `flow-loop-harness`, `agent-governance-scaffold`,
+`governed-delivery`, `headless-agent-cli-contract`, `arm-blinded-eval-harness`, or
+`golden-benchmark-runner` (all `human_review_required: true`), the following
+host controls can restrict implicit skill invocation:
 
 | Host | Mechanism |
 | --- | --- |
 | Claude Code | add `disable-model-invocation: true` to your installed copy so only explicit `/skill-name` runs it |
 | Codex | `agents/openai.yaml` with `policy.allow_implicit_invocation: false` |
 
-These are host features documented at the sources below; TeaPrompt cannot
-verify or enforce them (runtime-trust boundary).
+Invocation control is not per-action authorization or acceptance. Explicitly
+invoking a skill does not approve every action it describes or accept its result.
+Configure the host's action permissions and required human checkpoints
+separately; review the evidence before accepting the result. The table documents
+host features, not a guarantee that a configured host enforces TeaPrompt's review
+requirements. TeaPrompt cannot verify or enforce those controls.
 
 ## Sources
 

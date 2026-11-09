@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-09T09:25:46.323347",
+  "generated_at": "2026-11-09T13:49:38.829878",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -37,6 +37,7 @@
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "roadmap-ecosystem-packaging-2026-10-13.md",
             "roadmap-index-surveyed-plans-2026-10-13.md",
+            "mini-swe-agent-survey-2026-11-09.md",
             "teabrain-concepts-experiments-survey-2026-09-21.md",
             "skills-surface-plan-2026-07-11.md",
             "runtime-skills-experiments-2026-10-05.md",
@@ -139,6 +140,7 @@
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "governed-delivery-review-2026-09-13.md",
+            "cat-wu-product-method-survey-2026-11-09.md",
             "loop-mechanisms-assurance-inference-2026-10-31.md",
             "cross-survey-rethink-2026-10-07.md",
             "pstack-synthesis-survey-2026-09-22.md",
@@ -146,6 +148,7 @@
             "token-quota-decomposition-survey-2026-11-09.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
+            "addy-osmani-agent-management-survey-2026-11-09.md",
             "ROUTING_CONTRACT.md",
             "deepseek-inference-recipe-survey-2026-10-27.md",
             "software-factory-rethink-panel-record-2026-09-28.md",
@@ -1540,6 +1543,69 @@
       ],
       "line_count": 93,
       "char_count": 10247
+    },
+    {
+      "path": "reflective-prompt-library/plans/mini-swe-agent-survey-2026-11-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mini-swe-agent-survey-2026-11-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "addy-osmani-agent-management-survey-2026-11-09.md#documentation-follow-through--invocation-is-not-approval-2026-11-09",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/headless-agent-cli-contract/SKILL.md",
+          "../03-context/context-engineering.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../../review/final-report.md#mini-swe-agent-survey-and-addy-documentation-follow-through-2026-11-09"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "mini-swe-agent — Source Survey and Execution Boundaries (2026-11-09)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources, Version and Access"
+        },
+        {
+          "level": 3,
+          "text": "Architecture and qualifications"
+        },
+        {
+          "level": 3,
+          "text": "Benchmark claims are narrower than the headline"
+        },
+        {
+          "level": 2,
+          "text": "Executed Offline Boundary Check"
+        },
+        {
+          "level": 2,
+          "text": "Coverage and Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Handoff"
+        }
+      ],
+      "line_count": 106,
+      "char_count": 16300
     },
     {
       "path": "reflective-prompt-library/plans/teabrain-concepts-experiments-survey-2026-09-21.md",
@@ -11573,6 +11639,11 @@
           "agent-control-plane-comparison-survey-2026-11-04.md#parallel-socratic-review-and-adjudicated-disagreement",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
+          "addy-osmani-agent-management-survey-2026-11-09.md",
+          "addy-osmani-agent-management-survey-2026-11-09.md#documentation-follow-through--invocation-is-not-approval-2026-11-09",
+          "mini-swe-agent-survey-2026-11-09.md",
+          "cat-wu-product-method-survey-2026-11-09.md",
+          "cat-wu-product-method-survey-2026-11-09.md#review-of-the-recent-surveys",
           "token-quota-decomposition-survey-2026-11-09.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
@@ -11644,6 +11715,9 @@
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
           "token-quota-decomposition-survey-2026-11-09.md",
+          "addy-osmani-agent-management-survey-2026-11-09.md",
+          "mini-swe-agent-survey-2026-11-09.md",
+          "cat-wu-product-method-survey-2026-11-09.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11682,6 +11756,9 @@
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#prototype-identity-recheck-2026-11-06",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
           "token-quota-decomposition-survey-2026-11-09.md",
+          "addy-osmani-agent-management-survey-2026-11-09.md",
+          "mini-swe-agent-survey-2026-11-09.md",
+          "cat-wu-product-method-survey-2026-11-09.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11851,8 +11928,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 571,
-      "char_count": 121494
+      "line_count": 583,
+      "char_count": 126843
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -11915,6 +11992,85 @@
       ],
       "line_count": 84,
       "char_count": 7986
+    },
+    {
+      "path": "reflective-prompt-library/plans/cat-wu-product-method-survey-2026-11-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "cat-wu-product-method-survey-2026-11-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../05-domain/business-strategy.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../05-domain/business-strategy.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "addy-osmani-agent-management-survey-2026-11-09.md",
+          "mini-swe-agent-survey-2026-11-09.md",
+          "token-quota-decomposition-survey-2026-11-09.md",
+          "../../review/final-report.md#cat-wu-concepts-and-recent-survey-review-2026-11-09"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Cat Wu: Product Experiments, Model Re-evaluation and Conditional Simplification (2026-11-09)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources, Identity and Access"
+        },
+        {
+          "level": 2,
+          "text": "Concepts and Existing Coverage"
+        },
+        {
+          "level": 3,
+          "text": "Important interview context"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference: Revisit a Model-Dependent Product Bet"
+        },
+        {
+          "level": 2,
+          "text": "Corrections and Evidence Limits"
+        },
+        {
+          "level": 2,
+          "text": "Review of the Recent Surveys"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Promotion boundary"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference and Verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Handoff"
+        }
+      ],
+      "line_count": 162,
+      "char_count": 26464
     },
     {
       "path": "reflective-prompt-library/plans/loop-mechanisms-assurance-inference-2026-10-31.md",
@@ -12210,7 +12366,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../skills/reflective-review/SKILL.md",
+          "decision-model-survey-2026-09-18.md#claim-check-the-paste-against-its-sources"
+        ]
       },
       "structure": [
         {
@@ -12266,8 +12425,8 @@
           "text": "Risks / Unknowns and Handoff"
         }
       ],
-      "line_count": 125,
-      "char_count": 19084
+      "line_count": 131,
+      "char_count": 20048
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -12480,6 +12639,104 @@
       ],
       "line_count": 493,
       "char_count": 34893
+    },
+    {
+      "path": "reflective-prompt-library/plans/addy-osmani-agent-management-survey-2026-11-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "addy-osmani-agent-management-survey-2026-11-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../06-repo/AGENTS.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/reflective-spec-plan/SKILL.md",
+          "../skills/flow-control-generator/SKILL.md",
+          "../04-agent/workflow-recipes.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/workflow-recipes.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../04-agent/workflow-recipes.md",
+          "../06-repo/AGENTS.md",
+          "../../review/final-report.md#addy-osmani-agent-management-survey-2026-11-09",
+          "../SKILL_INSTALLATION.md#enforcing-teaprompts-review-gates-host-side",
+          "../SKILL_INSTALLATION.zh-TW.md#安全性注意事項",
+          "../../review/final-report.md#mini-swe-agent-survey-and-addy-documentation-follow-through-2026-11-09"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Addy Osmani: Agent Management — Source Survey (2026-11-09)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources, Identity and Access"
+        },
+        {
+          "level": 3,
+          "text": "Extraction receipt"
+        },
+        {
+          "level": 2,
+          "text": "Twelve-Section Assessment and Delivered Coverage"
+        },
+        {
+          "level": 2,
+          "text": "Product Claims: Documentation Is Not Execution"
+        },
+        {
+          "level": 2,
+          "text": "Human Study: Finding, Denominator and Remedy"
+        },
+        {
+          "level": 2,
+          "text": "Executed Boundary Check: Worktrees"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference and Adjudication"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Documentation Follow-Through — Invocation Is Not Approval (2026-11-09)"
+        }
+      ],
+      "line_count": 165,
+      "char_count": 27120
     },
     {
       "path": "reflective-prompt-library/plans/ROUTING_CONTRACT.md",
@@ -20290,7 +20547,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/cat-wu-product-method-survey-2026-11-09.md#optional-worked-reference-revisit-a-model-dependent-product-bet",
+          "../skills/reflective-risk/SKILL.md"
+        ]
       },
       "structure": [
         {
@@ -20316,10 +20576,14 @@
         {
           "level": 2,
           "text": "方案"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 56,
-      "char_count": 1292
+      "line_count": 66,
+      "char_count": 1945
     },
     {
       "path": "reflective-prompt-library/05-domain/high-risk.md",
@@ -22887,5 +23151,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 236
+  "total_files": 239
 }

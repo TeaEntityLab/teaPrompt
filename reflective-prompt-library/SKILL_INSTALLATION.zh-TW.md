@@ -147,8 +147,10 @@ find . -path './.git' -prune -o -path '*/skills/examples/*.examples.md' -print
 - 除非 skill 確實需要，否則不要授予工具權限或 hook。
 - 高風險工作流程請保留在 `reflective-risk` 之後再執行。
 - `reflective-risk`、`flow-loop-harness`、`agent-governance-scaffold`、`governed-delivery`、`headless-agent-cli-contract`、`arm-blinded-eval-harness` 與 `golden-benchmark-runner` 的
-  metadata 都設為 `human_review_required: true`；這只是意圖宣告，安裝後仍須由
-  host 的呼叫控制實際執行 Human Review，TeaPrompt 本身不會強制執行。
+  metadata 都設為 `human_review_required: true`；這只是意圖宣告，不會自行建立
+  host 的核准關卡。限制 Skill 自動呼叫只控制觸發方式，不等於逐次動作授權或
+  結果驗收；手動呼叫 Skill 也不代表核准其中所有動作。仍須另外設定 host 的
+  動作權限與必要的人工檢查點，並檢視證據後才驗收。TeaPrompt 本身不會強制執行。
 - `examples/*.examples.md` 只示範輸入/輸出形狀與證據層級，不代表已實際執行、已核准，或 host 已完成強制執行。
 
 ## 注意事項

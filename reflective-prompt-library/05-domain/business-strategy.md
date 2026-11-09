@@ -54,3 +54,13 @@ Name one assumption that, if false, would invalidate the proposed business model
 - 是否能用更簡單方法驗證
 ```
 
+## Optional Worked Reference
+
+[Cat Wu: revisiting a model-dependent product bet](../plans/cat-wu-product-method-survey-2026-11-09.md#optional-worked-reference-revisit-a-model-dependent-product-bet)
+applies the existing questions to short experiments, model-upgrade re-evaluation
+and conditional simplification. It separates obsolete model workarounds from
+user-visible value and safety controls. This is a source-qualified illustration,
+not a new workflow, release authorization or demonstrated efficacy result.
+If a proposal changes safety controls, use
+[reflective-risk](../skills/reflective-risk/SKILL.md) and its Human Review gate
+before execution.

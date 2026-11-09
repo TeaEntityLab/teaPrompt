@@ -8,7 +8,7 @@ Language: English
 
 Does splitting work into single-purpose model calls save free-tier quota and improve quality, and does the appended review assess that claim correctly?
 
-**The practical advice mostly holds; the explanation and several numbers do not.** Google's limits page supports the core usage mechanism for the Gemini app: long chats cost more usage because history is re-read, and starting a new chat per topic saves usage. But the free allowance is a compute-based limit, not a published token balance. Under full re-reading, cumulative tokens grow quadratically, not exponentially, and decomposition improves quality only when a task splits cleanly. The appended review corrects the growth rate but adds its own errors: an outdated request-count quota model, a fallback that applies only to subscribers, cache ratios higher than currently published, “100% parse success”, API-only controls presented as Gem settings, and a pipeline that fails open.
+**The practical advice mostly holds; the explanation and several numbers do not.** Google's limits page supports the core usage mechanism for the Gemini app: long chats cost more usage because history is re-read, and starting a new chat per topic saves usage. But the free allowance is a compute-based limit, not a published token balance. Under full re-reading, cumulative tokens grow quadratically, not exponentially, and decomposition improves quality only when a task splits cleanly. The appended review corrects the growth rate but adds its own errors: an outdated request-count quota model and a context-triggered lighter-model fallback the source does not describe. The source describes Flash-Lite only for subscribers who reach their usage limit. The review also gives cache ratios higher than currently published, claims “100% parse success”, presents API-only controls as Gem settings and offers a pipeline that fails open.
 
 ## Sources, Access and Identity
 
@@ -47,7 +47,7 @@ Four read-only scouts gathered product, cost, research and local-coverage eviden
 | --- | --- | --- |
 | Cumulative cost is O(N²), N(N+1)/2 | verified as a model | Holds for full re-reading with equal per-step growth; caching changes price, not token count |
 | Free web limits are request-count or rate based, not tokens | partly contradicted | The current page describes compute-based limits that include chat length; it also says prompts and conversations may be capped |
-| Long context triggers fallback to a lighter model | contradicted for free users | “If you have a Google AI subscription and reach your limit, you can continue your conversation with Flash-Lite”; otherwise upgrade or wait. Reaching the limit triggers it, not context length |
+| Long context triggers fallback to a lighter model | not established; no fallback for free users | “If you have a Google AI subscription and reach your limit, you can continue your conversation with Flash-Lite”; others can upgrade or wait. The documented condition is reaching the usage limit, and chat length counts toward usage. No context-length trigger is described for either tier |
 | Cached prefixes cost 10–25% of the input price | outdated | Anthropic cache reads are 0.1× base (0.05× on two named models), with writes at 1.25× or 2×. Several Gemini API models list cached input at 5–10% of input price, implicit caching only, and “Not available” in the free tier. Consumer-app quotas are a different meter |
 | Moving deterministic steps to code “eliminates hallucination” | contradicted (overclaim) | It removes model error from the moved I/O steps only; the transform step can still invent content |
 | Effective context of 1M–2M models degrades after about 32K; instruction following drops | qualified | RULER: of models claiming 32K or more, “only half of them can maintain satisfactory performance at the length of 32K”. NoLiMa: “At 32K, for instance, 11 models drop below 50% of their strong short-length baselines.” These measure retrieval and reasoning, not instruction following; Part B cites neither, and the free app's window is 32k anyway |
@@ -93,9 +93,15 @@ A real model's response to empty input was not tested.
 | Fail-closed pipelines with gates | covered | Deterministic exit-code gates (`skills/flow-control-generator/SKILL.md:80`); “bash `set -euo pipefail` … failed gates exit nonzero” (`:84`) |
 | Untrusted fetched content reaching an outbound sink | covered | `04-agent/runtime-trust-boundary.md:97` |
 | Numeric thresholds | covered differently | Caps bound observable mechanisms—`MAX_ITER` is “mandatory and small by default (≤ 10 unless justified)” (`skills/flow-loop-harness/SKILL.md:43`). Unobservable size targets from another profile were kept out of installed surfaces (`plans/astra-efficiency-rules-survey-2026-09-10.md:16`, `:52`) |
-| Schema validity as correctness | covered (rejects the overclaim) | “Schema-scoped … not a correctness claim” (`plans/decision-model-survey-2026-09-18.md:78`) |
+| Schema validity as correctness | covered by general review/verification requirements; explicit schema example is reference-only | [Review](../skills/reflective-review/SKILL.md), Review Flow and Claims Ledger, requires correctness against the requirement and observable evidence for each claim. The [decision-model survey](decision-model-survey-2026-09-18.md#claim-check-the-paste-against-its-sources) illustrates the distinction; it is not itself a delivered Skill rule |
 | Motive attribution | covered | “`asserted` means only the author's word supports it — treat as unverified” (`skills/reflective-review/SKILL.md:77`) |
 | Context rot | covered | “intent drift and context rot are bounded, not solved” (`skills/governed-delivery/SKILL.md:19`) |
+
+Documentation follow-through (2026-11-09): the owner requested review of these
+surveys and worthwhile Docs/Skills updates. The schema row previously cited only
+a historical survey as its delivered coverage. It now names the actual general
+review contract and labels that example reference-only. This corrects the map,
+not the contract or TQ-1–TQ-4 dispositions; no parser guarantee is added.
 
 ## Candidate Adoption Ledger
 

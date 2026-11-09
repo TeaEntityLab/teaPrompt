@@ -9218,7 +9218,285 @@ runtime change.
 - Observed after this entry was written: `make all` exit 0, covering the
   full pytest suite, eight validators and ROUTE-001/002/003. This bullet
   was added after that run.
+- Post-review wording fix: the fallback verdict now says that only
+  subscribers who reach their usage limit are described as able to
+  continue with Flash-Lite, and that no context-length trigger is
+  described for either tier. The record's recommendation and catalogue
+  row were aligned with this. `index.json` was regenerated and `make all`
+  rerun: exit 0, observed before this bullet was written.
 
 ### Next Action / Human Review
 
 Complete. No commit or push performed.
+
+## Addy Osmani agent-management survey (2026-11-09)
+
+### Goal and Decision
+
+Survey the supplied X status, *Your coding agents made you a manager*,
+and assess its mechanisms against current TeaPrompt contracts.
+`AOM-DOC1` records reference material only. All twelve sections are mapped;
+no verified local contract gap warrants a Skill or operating-rule change.
+The proposed universal diff-size gate and post-merge metric schema are not
+adopted without local evidence.
+
+### Files Changed and Traceability
+
+- Added `plans/addy-osmani-agent-management-survey-2026-11-09.md`.
+- Updated `plans/external-adoption-case-studies-2026-06-20.md` with a
+  discovery banner, comparison row and state-ledger row.
+- Regenerated `index.json` is part of the publication scope; this report
+  records the delivery evidence. No Skill, runtime or test changes.
+- The survey's source table, twelve-section map, mechanism table, study
+  assessment and Candidate Adoption Ledger trace the requested survey
+  through AOM-DOC1/SK1/W1/W2/RUN1.
+
+### Evidence and Acceptance
+
+- Complete mirrored extraction: 105 blocks, with the embedded Markdown
+  example recovered separately. Native X was inaccessible; mirror hashes
+  do not authenticate publisher provenance. January's linked blog is a
+  distinct predecessor, not the November article.
+- Three read-only research scouts, with coordinator checks of decisive
+  sources; no consensus panel or model-efficacy campaign.
+- `/goal` evaluates conversation evidence, Stop hooks have a documented
+  consecutive-block override, and `/rewind` omits some edits/effects.
+  These are dated documentation findings, not exercised Claude behavior.
+- The mirrored primary manuscript reports wrong-answer adoption on a
+  conditional trial denominator. It tests time pressure and
+  incentives/feedback, not self-counterargument prompts or coding review.
+
+### Tests / Checks Run
+
+- Executed actual Git CLI and a same-user Python worker in a disposable
+  repository: main remained `baseline`, worktree A became `worker-a-local`,
+  and the worker successfully read/wrote B as `cross-worktree-write`.
+  Setup and worker exited 0. This proves checkout separation, not process
+  confinement. Fixture and worktrees were removed; a session receipt remains.
+- `generate_index.py`: 237 files (218 prompts, 19 skills).
+- Actual `prompt_composer.py --list-slugs` listed the new slug; composing
+  it exited 0 and returned the twelve-section map, worktree evidence and
+  candidate ledger (24,491 output bytes).
+- Observed before this bullet was written: `make all` completed
+  successfully; 1,753 tests passed, all eight validators passed, and
+  ROUTE-001/002/003 passed. Link/schema validation scanned 297 files with
+  0 errors; record hygiene had 0 errors and 221 warnings, unchanged from
+  the preceding survey. This gate checks repository consistency, not
+  agent-management efficacy or configured-host enforcement.
+
+### Failures, Skipped Checks and Residual Risks
+
+- Native X and direct SSRN access were unavailable; a complete X mirror
+  and mirrored full manuscript supplied the inspected text. No study-data
+  replication or authenticated publication-provenance claim.
+- The first composer listing used invalid `--list --slugs` arguments
+  and exited 2. Corrected to the CLI's documented `--list-slugs`; both
+  discovery and composition then exited 0. No code change was needed.
+- No Claude runtime, OS sandbox, model call, installation, production
+  action or human-learning trial. Product efficacy and configured-host
+  enforcement remain unknown.
+
+### Next Action / Human Review
+
+Complete. No remaining publication work or Human Review requirement for
+this reference-only record. Skill/runtime adoption would require separate
+scope, evidence and authority. No commit or push performed.
+
+## mini-swe-agent survey and Addy documentation follow-through (2026-11-09)
+
+### Goal and Scope
+
+Fulfil the owner's request to update Docs or Skills if worthwhile after the
+Addy survey, and survey `SWE-agent/mini-swe-agent`. Preserve existing unrelated
+work. No host installation, model campaign, runtime adoption, commit or push.
+
+### Implementation and Acceptance Criteria
+
+- **Addy assessment — complete:** `AOM-DOC2` repairs a concrete ambiguity in
+  both installation guides. Skill invocation control is not per-action
+  authorization or evidence-based acceptance; metadata alone creates no gate.
+- **Upstream survey — complete:** branch `04d809ceab9df28f9adaed044884180159172930`,
+  release `v2.4.6` at `a83fcae82d2a08f0ee0c688f9d137b3566c097f8` and PyPI `2.4.6`
+  are distinguished. Runtime, CLI, dependency and benchmark claims are scoped
+  to checked source or attributed publication, not assumed operational proof.
+- **Execution — complete:** real pinned agent/local-environment code ran with
+  deterministic replies in a disposable deny-default sandbox. Final exit 0;
+  16 named observations (three host controls, thirteen mechanism cases).
+- **Publication — complete:** both survey slugs were exercised through the
+  actual composer; the full repository gate passed as recorded below.
+- Skills, routing, runtime and permanent tests remain unchanged. Existing
+  loop, review, trust-boundary and headless contracts cover the mechanisms;
+  no new wrapper, fixed threshold or unqualified CLI recipe was added.
+
+### Files Changed and Traceability
+
+- `reflective-prompt-library/SKILL_INSTALLATION.md` and
+  `SKILL_INSTALLATION.zh-TW.md`: AOM-DOC2 clarification.
+- `reflective-prompt-library/plans/addy-osmani-agent-management-survey-2026-11-09.md`:
+  owner-authorized follow-through, sources, narrow decision and reopen trigger.
+- `reflective-prompt-library/plans/mini-swe-agent-survey-2026-11-09.md`:
+  MSW-DOC1 pin/source map, execution evidence, benchmark qualifications,
+  coverage, candidate dispositions and falsifiers.
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`:
+  discovery banners, comparison rows and ledger entries.
+- `reflective-prompt-library/index.json`: generated discovery metadata.
+- `review/final-report.md`: this delivery receipt.
+
+TWINS: searched invocation control|呼叫控制|disable-model-invocation|allow_implicit_invocation - found 2 other sites: SKILL_INSTALLATION.zh-TW.md (fixed), plans/skills-surface-plan-2026-07-11.md (historical proposal, not rewritten).
+
+That count is the ambiguous-enforcement mappings beyond the English guide,
+not every keyword match. Context-load notes and unrelated source records did
+not make the same enforcement claim. The consumer map retains both language
+surfaces and the existing review-required metadata-set check; no host
+configuration or installed Skill was migrated.
+
+### Tests / Checks Run
+
+- Upstream core-file diff between the two source pins was empty; the complete
+  version diff named two files (lint tooling and the ProgramBench prompt).
+- Real sandboxed smoke observed protected read/write and IP-literal egress
+  denial (`EPERM`), retained filesystem effects despite shell reset,
+  submission without the required artifact, submission negative controls,
+  query-count limits, synthetic cost overshoot, format-error accounting,
+  non-preemptive wall time, timeout partial effects, shell-error continuation
+  and trajectory/config serialization.
+- `generate_index.py`: 238 files (219 prompts, 19 skills).
+- `python3 reflective-prompt-library/plans/prompt_composer.py --list-slugs`
+  found the mini survey. Composing the mini and Addy slugs exited 0 and
+  exposed the new evidence/decision sections (16,541 and 27,475 output bytes).
+- Observed before this receipt was updated: `make all` completed successfully;
+  1,753 tests passed, all eight validators passed, and ROUTE-001/002/003
+  each reached 100% consistency on their 128/138/108 fixture phrases.
+  Link/schema validation scanned 298 files with zero errors; record hygiene
+  reported zero errors and 221 warnings, unchanged from the preceding survey.
+  These results establish repository consistency, not runtime safety or
+  model efficacy.
+- Temporary checkout, dependency environment, driver and protected fixture
+  were removed after receipts were retained in
+  `local://mini-swe-ledger-2026-11-09.json` and
+  `local://mini-swe-smoke-2026-11-09.json`. The latter retains probe source,
+  SHA-256, sandbox profile, clean environment and failed/final executions.
+
+### Failures, Skipped Checks and Residual Risks
+
+- Three failed probe runs are retained: missing root-directory read prevented
+  launch; missing signal permission blocked timeout cleanup; direct-child-only
+  permission did not cover the grandchild. Kernel denial evidence drove the
+  final same-sandbox signal permission. Egress/write restrictions were not
+  relaxed. These were host-harness failures, not upstream regressions.
+- The first composer command used the wrong path, omitting `plans/`, and
+  exited 2. File discovery located the actual documented entrypoint; the
+  corrected discovery and composition commands passed. No product change
+  was made to satisfy that failed command.
+- No real provider/parser billing, installed mini CLI, Claude/Codex approval
+  flow, container confinement, benchmark reproduction or efficacy experiment
+  was exercised. The Datacurve comparison is a ten-task SWE-Bench Pro pilot;
+  its GPT-5.5 pass rate ties Codex, rather than beating it.
+- Source inspection is not a transitive telemetry or supply-chain audit.
+  Synthetic exception/cost probes do not establish provider retry behavior.
+  Process-group timeout cleanup is not universal descendant containment or
+  rollback of external effects.
+
+### Next Action / Human Review
+
+Complete. No remaining work or Human Review requirement for this
+documentation-only delivery. Operational adoption requires separate scope,
+evidence and authority. No commit or push performed.
+
+## Cat Wu concepts and recent-survey review (2026-11-09)
+
+### Goal and Scope
+
+Internalize Cat Wu's concepts as useful documentation, review the four immediately
+preceding survey families, apply warranted Docs/Skills improvements and commit
+the related work. The owner explicitly authorizes this commit, not a push.
+Existing survey evidence and decisions remain historical; no runtime, installed
+configuration, model campaign or external account action is in scope.
+
+### Implementation, Findings and Acceptance
+
+- `CW-DOC1`: durable English source record preserves all seventeen directly
+  cited targets with their access limits, the concept/coverage map, corrected
+  dates and arithmetic, and an illustrative model-upgrade worked reference.
+- `CW-DOC2`: optional discovery pointer outside the existing business-strategy
+  prompt fence; no change to the copied prompt or its output contract.
+- Addy: retain the staged `AOM-DOC2` correction in both installation guides:
+  invocation restriction is not per-action authorization or result acceptance.
+- mini: retain the source pins and sixteen bounded historical observations;
+  no new CLI recipe, runtime or benchmark claim.
+- Token-quota: retain the corrected usage-limit fallback wording; repair the
+  schema-coverage row, which previously cited a reference-only survey as
+  delivered coverage. It now points at the general Review contract and keeps
+  the schema example explicitly non-authoritative.
+- No Skill change: existing exploration, minimality, evidence and topology
+  contracts cover the relevant obligations. Missing usage data remains unknown;
+  no arbitrary recurrence count blocks a narrow in-place repair.
+- Two scoped read-only advisory reviews informed the decision. Their agreement
+  is not an efficacy result; the parent corrected source-tier/coverage
+  qualifications rather than adopting every returned citation or conclusion.
+
+### Files Changed and Consumer Traceability
+
+- `plans/cat-wu-product-method-survey-2026-11-09.md`: new source record,
+  optional worked reference and four-survey review (`CW-DOC1`).
+- `05-domain/business-strategy.md`: reference navigation (`CW-DOC2`).
+- `plans/token-quota-decomposition-survey-2026-11-09.md`: corrected fallback
+  qualification carried from the preceding survey; current coverage-map repair.
+- Existing staged `plans/addy-osmani-agent-management-survey-2026-11-09.md`,
+  `plans/mini-swe-agent-survey-2026-11-09.md` and bilingual `SKILL_INSTALLATION`
+  changes: reviewed, retained and included in the requested survey commit.
+- `plans/external-adoption-case-studies-2026-06-20.md`: discovery banner,
+  comparison row and state-ledger entry; earlier IDs/dispositions preserved.
+- `index.json`: generated discovery metadata; actual composer is the final
+  documentation consumer. Skills, runtime, routing fixtures and permanent tests
+  are intentionally unchanged.
+- `review/final-report.md`: this receipt. Paths above are under
+  `reflective-prompt-library/` unless otherwise stated.
+
+TWINS: searched decision-model-survey-2026-09-18.md:78|Schema validity as correctness|Schema-scoped - found 0 other sites: none.
+
+That count concerns misleading delivered-coverage mappings, not every keyword
+hit: the decision-model record itself correctly remains reference-only.
+
+### Tests / Checks Run
+
+- `generate_index.py`: 239 files indexed (220 prompts, 19 Skills).
+- Actual `prompt_composer.py --list-slugs` found all four survey records and
+  `business-strategy`; each of the five individual composition commands exited
+  0. Output exposed the Cat source limitations and worked reference, the
+  strategy navigation, Addy's invocation/approval distinction, mini's bounded
+  observations and the corrected token-quota coverage qualification.
+- The first `make all` stopped at two prompt-score failures for
+  `business-strategy.md` (1,751 passed). The new reference's `authorization`
+  matched the existing high-risk keyword check, with no Human Review pointer on
+  that page. The reference now links the existing Risk/Human Review gate when a
+  proposal changes safety controls; no rubric, floor or test was weakened.
+  The corrected `make all` then passed: 1,753 tests, all eight validators and
+  ROUTE-001/002/003 at 100% fixture consistency. Link/schema validation scanned
+  299 files with 0 errors; lint reported 0 errors and 0 warnings.
+- Record hygiene initially reported 222 warnings, including one on the new
+  Cat record despite its stated access date. The date qualifier was normalized
+  to the validator's `checked YYYY-MM-DD` form without changing its meaning.
+  After that metadata-only edit: index regenerated; current-index guard passed;
+  final Cat composition and `make validate` exited 0, including all eight
+  validators and three route evaluations. Hygiene returned to the existing
+  221 warnings, with none added by the Cat record.
+
+### Failures, Skipped Checks and Residual Risks
+
+- Semantic discovery returned judge-account HTTP 403, not evidence of absence;
+  literal searches, current repository reads and scoped reviews supplied coverage.
+- No upstream probes, provider/model trials, human-learning experiments,
+  audio verification, configured-host approvals or security certification were
+  repeated or claimed. Cat's source limits remain explicit in the new record.
+- The worked example is illustrative, not an executed product experiment.
+  Composition/link checks can establish discoverability, not better decisions.
+- Historical proposal counts and earlier “no commit performed” receipts are
+  not rewritten as current state; this section records the new authorization.
+
+### Next Action / Human Review
+
+Documentation delivery and verification are complete. The commit scope is the
+ten owner-authorized documentation/index paths; push is excluded. No additional
+Human Review decision is required. Commit execution and identity are reported
+in the delivery response rather than inserted recursively into this receipt.
