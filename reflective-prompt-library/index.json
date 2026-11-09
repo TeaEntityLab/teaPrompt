@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-08T11:03:04.886448",
+  "generated_at": "2026-11-09T09:25:46.323347",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -143,6 +143,7 @@
             "cross-survey-rethink-2026-10-07.md",
             "pstack-synthesis-survey-2026-09-22.md",
             "agentflow-8.3.2-delta-survey-2026-09-22.md",
+            "token-quota-decomposition-survey-2026-11-09.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "ROUTING_CONTRACT.md",
@@ -11572,6 +11573,7 @@
           "agent-control-plane-comparison-survey-2026-11-04.md#parallel-socratic-review-and-adjudicated-disagreement",
           "prime-agent-survey-2026-08-06.md#control-plane-comparison-refresh--2026-11-04",
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
+          "token-quota-decomposition-survey-2026-11-09.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
@@ -11641,6 +11643,7 @@
           "lieflat-ai-tone-survey-2026-11-06.md",
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
+          "token-quota-decomposition-survey-2026-11-09.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11678,6 +11681,7 @@
           "agent-control-plane-comparison-survey-2026-11-04.md#comparison-follow-through--2026-11-06",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#prototype-identity-recheck-2026-11-06",
           "thorsten-ball-agent-workflow-survey-2026-10-28.md#secondary-reading-follow-through--2026-11-07",
+          "token-quota-decomposition-survey-2026-11-09.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11847,8 +11851,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 569,
-      "char_count": 120102
+      "line_count": 571,
+      "char_count": 121494
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -12194,6 +12198,76 @@
       ],
       "line_count": 147,
       "char_count": 10937
+    },
+    {
+      "path": "reflective-prompt-library/plans/token-quota-decomposition-survey-2026-11-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "token-quota-decomposition-survey-2026-11-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Free-Tier Token Quotas and Task Decomposition — Source Survey and Critical Assessment (2026-11-09)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources, Access and Identity"
+        },
+        {
+          "level": 2,
+          "text": "Claim Assessment"
+        },
+        {
+          "level": 3,
+          "text": "Part A — the post"
+        },
+        {
+          "level": 3,
+          "text": "Part B — the appended review"
+        },
+        {
+          "level": 2,
+          "text": "Executed Checks"
+        },
+        {
+          "level": 2,
+          "text": "Critical Reasoning"
+        },
+        {
+          "level": 2,
+          "text": "Coverage Against TeaPrompt"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns and Handoff"
+        }
+      ],
+      "line_count": 125,
+      "char_count": 19084
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -22813,5 +22887,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 235
+  "total_files": 236
 }

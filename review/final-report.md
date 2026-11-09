@@ -9155,3 +9155,70 @@ operating-rule or runtime change.
 
 Complete. TB-8 needs a local failure or an owner decision before any
 brief/template change.
+
+## Free-tier token quota and decomposition survey (2026-11-09)
+
+### Goal
+
+Fulfil the owner's request to survey `local://paste-15.md` and assess its
+reasoning critically. The paste contains a Bahamut post on free Gemini
+quotas and task decomposition, plus an unattributed appended review.
+Outcome: `TQ-DOC1` reference documentation; no Skill, operating-rule or
+runtime change.
+
+### Scope / Authority
+
+- Original post identified (劍心san / `sanboy289`, 2026-11-09); Part A
+  matched line by line, and Part B is absent from the page.
+- Four read-only scouts gathered product, cost, research and local-coverage
+  evidence. The coordinator re-fetched every decisive external sentence
+  and local line, and rejected two scout statements that the current
+  sources did not support.
+- Executed: growth arithmetic, a stub-based pipeline differential in
+  `/private/tmp/teaprompt-token-jig-dBkPdZ` and a `jq` shape check. No
+  account, quota, model call or upload.
+
+### Decisions
+
+- `TQ-DOC1` adopted: new survey record, catalogue status item,
+  comparison row and ledger row.
+- `TQ-1` (consumer-app advice in a portable surface) and `TQ-4`
+  (decomposition by default) no change; `TQ-2` (fixed thresholds) rejected;
+  `TQ-3` (the appended pipeline as a template) rejected as written.
+
+### Evidence highlights
+
+- Google's limits page confirms that ongoing chats cost more usage as they
+  grow and advises a new chat per topic. Limits are compute-based, refresh
+  every 5 hours up to a weekly limit, and use a 32k context window without
+  a plan.
+- Contradicted: “near exponential” growth, free-tier fallback to a lighter
+  model, cache reads at 10–25% as current pricing, and 100% parse success
+  at `temperature=0`. The appended pipeline exited 0 after a failed
+  fetch and logged an upload; the hardened variant exited 4 with no model
+  call or upload.
+- Gems become read-only for personal accounts on 2026-11-17 and are removed
+  on 2026-12-17.
+
+### Files
+
+- Added: `plans/token-quota-decomposition-survey-2026-11-09.md`.
+- Modified: `plans/external-adoption-case-studies-2026-06-20.md` (status
+  item, comparison row, ledger row), `index.json` (regenerated) and this
+  report.
+
+### Verification
+
+- Observed before this entry: `generate_index.py` (236 files);
+  `validate_links.py` 0 errors. `validate_record_hygiene.py` first failed
+  because the ledger heading was missing; after the heading was renamed
+  to `Candidate Adoption Ledger`, it reported 0 errors, warnings unchanged
+  at 221 and none on the new record. `prompt_composer.py` lists and
+  composes the new slug.
+- Observed after this entry was written: `make all` exit 0, covering the
+  full pytest suite, eight validators and ROUTE-001/002/003. This bullet
+  was added after that run.
+
+### Next Action / Human Review
+
+Complete. No commit or push performed.
