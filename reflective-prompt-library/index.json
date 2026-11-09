@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-09T13:49:38.829878",
+  "generated_at": "2026-11-09T16:50:53.820258",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -91,6 +91,7 @@
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
             "roadmap-software-factory-devops-2026-10-13.md",
+            "eian-video-workflow-survey-2026-11-09.md",
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
@@ -6896,6 +6897,82 @@
       "char_count": 7597
     },
     {
+      "path": "reflective-prompt-library/plans/eian-video-workflow-survey-2026-11-09.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "eian-video-workflow-survey-2026-11-09",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../05-domain/creative-template.md",
+          "../04-agent/sop-compiler.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../04-agent/sop-compiler.md",
+          "../05-domain/creative-template.md",
+          "../04-agent/workflow-recipes.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../03-context/context-handoff.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../../review/final-report.md#eian-video-workflow-documentation-follow-through-2026-11-09"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Eian: Staged Video Production, Approval Boundaries and Color Evidence (2026-11-09)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Sources, Identity and Access"
+        },
+        {
+          "level": 2,
+          "text": "Article Coverage"
+        },
+        {
+          "level": 2,
+          "text": "Product Claims and Interpretation Boundaries"
+        },
+        {
+          "level": 2,
+          "text": "Executed Color Boundary Check"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference: Staged Video Acceptance"
+        },
+        {
+          "level": 2,
+          "text": "Existing Coverage and Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference and Verification"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Handoff"
+        }
+      ],
+      "line_count": 156,
+      "char_count": 21652
+    },
+    {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11644,6 +11721,7 @@
           "mini-swe-agent-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md#review-of-the-recent-surveys",
+          "eian-video-workflow-survey-2026-11-09.md",
           "token-quota-decomposition-survey-2026-11-09.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
@@ -11718,6 +11796,7 @@
           "addy-osmani-agent-management-survey-2026-11-09.md",
           "mini-swe-agent-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md",
+          "eian-video-workflow-survey-2026-11-09.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11759,6 +11838,7 @@
           "addy-osmani-agent-management-survey-2026-11-09.md",
           "mini-swe-agent-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md",
+          "eian-video-workflow-survey-2026-11-09.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -11928,8 +12008,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 583,
-      "char_count": 126843
+      "line_count": 587,
+      "char_count": 128441
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -20501,7 +20581,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/eian-video-workflow-survey-2026-11-09.md#optional-worked-reference-staged-video-acceptance"
+        ]
       },
       "structure": [
         {
@@ -20531,10 +20613,14 @@
         {
           "level": 2,
           "text": "Creative Intent"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 68,
-      "char_count": 1780
+      "line_count": 76,
+      "char_count": 2311
     },
     {
       "path": "reflective-prompt-library/05-domain/business-strategy.md",
@@ -23151,5 +23237,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 239
+  "total_files": 240
 }

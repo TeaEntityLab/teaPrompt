@@ -66,3 +66,11 @@ Escalate to `reflective-risk` before publishing creative output that affects bra
 - fallback（靜態、停用 JavaScript、減少動態效果時，仍保留完整且有意義的內容）
 ```
 
+## Optional Worked Reference
+
+[Eian: staged video acceptance](../plans/eian-video-workflow-survey-2026-11-09.md#optional-worked-reference-staged-video-acceptance)
+applies these fields to storyboards, frame pairs and final audiovisual review.
+It distinguishes quoted cost from permission to spend, still-frame checks from
+motion/audio acceptance, and color metadata from pixel conversion. This is a
+source-qualified example, not a new workflow or proof of creative efficacy;
+the existing Risk / Human Review boundary still applies.

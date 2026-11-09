@@ -9500,3 +9500,68 @@ Documentation delivery and verification are complete. The commit scope is the
 ten owner-authorized documentation/index paths; push is excluded. No additional
 Human Review decision is required. Commit execution and identity are reported
 in the delivery response rather than inserted recursively into this receipt.
+
+## Eian video-workflow documentation follow-through (2026-11-09)
+
+### Goal, Scope and Acceptance
+
+Internalize the completed Eian video-workflow survey and commit the related
+documentation, as explicitly requested by the owner. Preserve source access,
+cost/permission limits and bounded experimental evidence. No Skill, runtime,
+installation, provider call, account access or push is in scope.
+
+### Implementation and Files Changed
+
+- `reflective-prompt-library/plans/eian-video-workflow-survey-2026-11-09.md`:
+  `EI-DOC1` source-qualified record, article coverage, eleven support sources,
+  conditional pricing, cancellation/permission/context boundaries, complete
+  synthetic color-check parameters/results and an optional worked reference.
+- `reflective-prompt-library/05-domain/creative-template.md`: `EI-DOC2`
+  navigation outside the unchanged creative prompt fence and output contract.
+- `reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md`:
+  discovery, comparison and state-ledger entries; earlier decisions retained.
+- `reflective-prompt-library/index.json`: generated discovery metadata.
+- `review/final-report.md`: this delivery receipt.
+
+The existing SOP, Review, intent/handoff and trust-boundary contracts cover the
+transferable mechanisms. No new Skill, operating rule, permanent wording test
+or execution wrapper was added. The worked reference is illustrative, not an
+executed production workflow; durable documentation does not depend on session
+artifacts.
+
+### Tests / Checks Run
+
+- `generate_index.py`: 240 files indexed (221 prompts, 19 Skills).
+- Actual `prompt_composer.py --list-slugs` exposed the survey and
+  `creative-template`; both individual composition commands exited 0. The
+  survey output retained source limitations, all three recorded filter strings
+  and pixel hashes, with no session-URI dependencies. The creative output
+  exposed the optional reference and existing Risk / Human Review boundary.
+- Focused domain-prompt and current-index checks: **23 passed**.
+- Link/schema validation: **300 files scanned, 0 errors**.
+- `check_record` from the existing record-hygiene validator, applied to the
+  new survey: **0 errors, 0 warnings**.
+
+Acceptance criteria are verified for durable source preservation, existing
+navigation, generated metadata and actual document consumption. Commit scope
+is limited to the five paths above; publication checks do not establish model
+efficacy, installed-host behavior or permission to generate/publish media.
+
+### Failures, Skipped Checks and Residual Risks
+
+- The first `cx overview` invocation supplied two paths and exited 2. Its
+  single-path retry succeeded; no product repair was needed.
+- The earlier survey's three FFmpeg cases are retained evidence, not a new
+  Seedance execution. Native-X authenticity, actual account costs, complete
+  audiovisual quality and configured four-role enforcement remain unknown.
+- Repository checks establish documentation consistency, not creative efficacy.
+  No routing/governance/runtime behavior changed; unrelated broad suites and
+  live generation experiments are outside this publication check.
+
+### Next Action / Human Review
+
+Documentation and scoped publication verification are complete. Commit only
+the five owner-authorized paths above; commit identity belongs in the delivery
+response rather than recursively in this receipt. No additional Human Review
+decision is needed for this documentation-only scope. Push and operational
+adoption are excluded.
