@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-09T16:50:53.820258",
+  "generated_at": "2026-11-10T15:47:52.630807",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -92,6 +92,7 @@
             "dormant-work-specs-2026-07-11.md",
             "roadmap-software-factory-devops-2026-10-13.md",
             "eian-video-workflow-survey-2026-11-09.md",
+            "craft-anything-survey-2026-11-10.md",
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
@@ -6973,6 +6974,65 @@
       "char_count": 21652
     },
     {
+      "path": "reflective-prompt-library/plans/craft-anything-survey-2026-11-10.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "craft-anything-survey-2026-11-10",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../04-agent/sop-compiler.md",
+          "../03-context/context-handoff.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../PROJECT_KNOWLEDGE.md",
+          "../04-agent/external-adoption-review.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Craft Anything Source Survey — Acceptance and Evidence Boundaries (2026-11-10)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What Was Executed"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference: Acceptance Is Narrower Than a Terminal Status"
+        },
+        {
+          "level": 2,
+          "text": "Existing Coverage and Candidate Adoption Ledger"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 97,
+      "char_count": 12661
+    },
+    {
       "path": "reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11709,6 +11769,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "craft-anything-survey-2026-11-10.md",
           "creator-attention-survey-2026-11-04.md",
           "flashprove-source-survey-2026-11-04.md",
           "lieflat-ai-tone-survey-2026-11-06.md",
@@ -11797,6 +11858,7 @@
           "mini-swe-agent-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md",
           "eian-video-workflow-survey-2026-11-09.md",
+          "craft-anything-survey-2026-11-10.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11839,6 +11901,7 @@
           "mini-swe-agent-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md",
           "eian-video-workflow-survey-2026-11-09.md",
+          "craft-anything-survey-2026-11-10.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12008,8 +12071,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 587,
-      "char_count": 128441
+      "line_count": 593,
+      "char_count": 130223
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -19032,7 +19095,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status"
+        ]
       },
       "structure": [
         {
@@ -19098,10 +19163,14 @@
         {
           "level": 2,
           "text": "Output"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 195,
-      "char_count": 12141
+      "line_count": 206,
+      "char_count": 12831
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -23237,5 +23306,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 240
+  "total_files": 241
 }

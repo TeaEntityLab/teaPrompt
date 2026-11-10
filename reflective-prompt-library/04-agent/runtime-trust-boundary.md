@@ -193,3 +193,14 @@ Return:
 9. Verification Plan
 10. Go / No-go Decision
 ```
+
+## Optional Worked Reference
+
+[Craft Anything: acceptance is narrower than a terminal status](../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status)
+applies the existing execution-versus-acceptance boundary to one pinned external
+engine. It separates a `Ready` status from that engine's stricter `good()`
+predicate, a program-written self-test from an independent oracle, a content
+checksum from producer authenticity, and a reused check from a changed likeness
+bar. The likeness-bar row is an unreproduced inference. This is a
+source-qualified example, not a new workflow, install authorization, or proof
+of rebuild quality.
