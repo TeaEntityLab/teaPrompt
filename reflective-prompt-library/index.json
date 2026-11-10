@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-10T15:47:52.630807",
+  "generated_at": "2026-11-10T17:59:03.839546",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -99,6 +99,7 @@
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
             "jev-diffusion-eval-survey-2026-09-19.md",
+            "mcode-stack-survey-2026-11-10.md",
             "skill-improvement-plan-2026-07-24.md",
             "openfugu-research-record-2026-06-25.md",
             "jspace-cognition-survey-2026-08-20.md",
@@ -7692,6 +7693,68 @@
       "char_count": 17452
     },
     {
+      "path": "reflective-prompt-library/plans/mcode-stack-survey-2026-11-10.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mcode-stack-survey-2026-11-10",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MiniMax mcode-stack Source Survey — Harness Habits and Team Stacks (2026-11-10)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What Was Read"
+        },
+        {
+          "level": 2,
+          "text": "Counts"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 3,
+          "text": "Ronny: harness habits"
+        },
+        {
+          "level": 3,
+          "text": "Jiachen, req-tpm, and youfang"
+        },
+        {
+          "level": 3,
+          "text": "Source inconsistency, same pin"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 126,
+      "char_count": 16444
+    },
+    {
       "path": "reflective-prompt-library/plans/skill-improvement-plan-2026-07-24.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11769,6 +11832,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
           "creator-attention-survey-2026-11-04.md",
           "flashprove-source-survey-2026-11-04.md",
@@ -11859,6 +11923,7 @@
           "cat-wu-product-method-survey-2026-11-09.md",
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
+          "mcode-stack-survey-2026-11-10.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11902,6 +11967,7 @@
           "cat-wu-product-method-survey-2026-11-09.md",
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
+          "mcode-stack-survey-2026-11-10.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12071,8 +12137,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 593,
-      "char_count": 130223
+      "line_count": 597,
+      "char_count": 131829
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -23306,5 +23372,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 241
+  "total_files": 242
 }
