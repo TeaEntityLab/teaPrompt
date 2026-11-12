@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-10T17:59:03.839546",
+  "generated_at": "2026-11-12T09:21:55.621413",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -4176,7 +4176,24 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../04-agent/agent-scaffold-provenance.md",
+          "../04-agent/artifact-promotion.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-research/SKILL.md",
+          "../03-context/context-engineering.md",
+          "../03-context/context-engineering.md",
+          "../04-agent/artifact-promotion.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/agent-scaffold-provenance.md"
+        ]
       },
       "structure": [
         {
@@ -4226,10 +4243,62 @@
         {
           "level": 2,
           "text": "Latest-version refresh — 2026-10-22"
+        },
+        {
+          "level": 2,
+          "text": "Fable 5.2 mirror check — 2026-11-12"
+        },
+        {
+          "level": 3,
+          "text": "Research question and direct recommendation"
+        },
+        {
+          "level": 3,
+          "text": "Version / date context and evidence used"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference — provenance and surface ledger"
+        },
+        {
+          "level": 3,
+          "text": "Transferable mechanisms and local coverage"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger — Fable 5.2"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability, risks and handoff"
+        },
+        {
+          "level": 2,
+          "text": "Fable version differences and reflection — 2026-11-12"
+        },
+        {
+          "level": 3,
+          "text": "Research question and reading frame"
+        },
+        {
+          "level": 3,
+          "text": "Evidence used and version context"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference — what actually differs"
+        },
+        {
+          "level": 3,
+          "text": "Reflections, counterarguments and local implications"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability, limits and handoff"
         }
       ],
-      "line_count": 117,
-      "char_count": 10475
+      "line_count": 359,
+      "char_count": 35683
     },
     {
       "path": "reflective-prompt-library/plans/methodology-only-rethink-panel-2026-10-01.md",
@@ -11847,6 +11916,7 @@
           "cat-wu-product-method-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md#review-of-the-recent-surveys",
           "eian-video-workflow-survey-2026-11-09.md",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "token-quota-decomposition-survey-2026-11-09.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
@@ -11924,6 +11994,8 @@
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
           "mcode-stack-survey-2026-11-10.md",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -11968,6 +12040,8 @@
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
           "mcode-stack-survey-2026-11-10.md",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
+          "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12137,8 +12211,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 597,
-      "char_count": 131829
+      "line_count": 599,
+      "char_count": 133466
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
