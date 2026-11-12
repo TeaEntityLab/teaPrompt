@@ -2,7 +2,7 @@
 
 > **Status: decided — nine upstream candidates not adopted; one local recipe correction adopted (AF841-M1); no skill, routing, permission, dependency, or runtime change.** The delta starts at the 8.3.3 baseline `738d0b3f4aa1df870835813d9dcc015136628434`, recorded in the [2026-09-28 factory rethink panel](software-factory-rethink-panel-record-2026-09-28.md), downstream of the [8.3.2](agentflow-8.3.2-delta-survey-2026-09-22.md), [8.3.0](agentflow-8.3-delta-survey-2026-09-21.md), [8.2.0](agentflow-8.2-delta-survey-2026-09-13.md), and [2026-09-05](agentflow-survey-2026-09-05.md) surveys. The user authorized worthwhile doc/skill updates, not automatic promotion. The span carries 8.3.4, 8.4.0, and 8.4.1; the requested 8.4.1 patch itself is documentation/metadata-only. Existing guards cover the doc repair; no new paragraph-pin test is added.
 
-> **Current-source pointer (2026-11-04):** the [Agentflow 9.1.6 supplement](#agentflow-916-delta--2026-11-04) records the delta from v9.0.0 and bounded offline observations; AF916-DOC1 adopts documentation only. The [October v9 refresh](#agentflow-9-refresh--2026-10-25) and v8 findings remain dated evidence, not current-host certifications. Firstmate remains separate, last checked here on 2026-10-22.
+> **Current-source pointer (2026-11-12):** the [Agentflow 9.1.10 supplement](#agentflow-9110-delta--2026-11-12) records the source-only delta from v9.1.6; AF9110-DOC1 adopts reference documentation only. The [November 4 observations](#agentflow-916-delta--2026-11-04), [October v9 refresh](#agentflow-9-refresh--2026-10-25) and v8 findings remain dated evidence, not current-host certifications. Firstmate remains separate, last checked here on 2026-10-22.
 
 ## Research Question and Scope
 
@@ -548,3 +548,81 @@ repository checks; it does not rerun upstream or add paragraph-pinning tests.
 The observed publication results belong in the
 [delivery receipt](../../review/final-report.md#agentflow-916-documentation-publication-2026-11-04).
 
+## Agentflow 9.1.10 delta — 2026-11-12
+
+### Research question and direct recommendation
+
+What changed after v9.1.6, and does it alter TeaPrompt's no-Skill/no-runtime
+decision? The owner's subsequent **"Update docs and check these files"**
+authorizes publication of the November 12 source check in this existing record,
+the catalogue and generated discovery. **AF9110-DOC1 adopts reference
+documentation only.** No new local structural gap was demonstrated.
+Earlier AF/AFP/AF82/AF83/AF841/SFR, AF9 and AF916 dispositions remain unchanged;
+Firstmate is outside this delta. No install, model call, commit or push is
+authorized by this supplement.
+
+### Version / date context and evidence used
+
+Checked 2026-11-12: [release and publication metadata](https://api.github.com/repos/agfnow/agentflow/releases/tags/v9.1.10), [pinned changelog](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/CHANGELOG.md), [baseline comparison](https://github.com/agfnow/agentflow/compare/0e9f1e44d58836d9a8c3288d1cd8ae2948670774...39331e372c58ff36f6fce13b29897bb65beeddc8).
+
+| Identity | Checked value |
+| --- | --- |
+| Prior durable baseline | v9.1.6, `0e9f1e44d58836d9a8c3288d1cd8ae2948670774` |
+| Main / HEAD / peeled v9.1.10 | `39331e372c58ff36f6fce13b29897bb65beeddc8` |
+| Annotated v9.1.10 tag object | `918f627a8a1083f6914a6f82973986cf194f232e` |
+| Stable release publication | `2026-11-11T08:04:28Z`; draft/prerelease false |
+| Configuration schema | Remains 13; publication does not migrate an installed copy |
+
+`git ls-remote` and the exact-tag checkout agreed. Across these two pins,
+`git diff --name-status BASE TIP` yielded 28 records: 26 modified, one added,
+one rename. Independently comparing pathname/mode/type/blob maps from
+`git ls-tree -r -z` at both pins yielded the same 29 changed pathname endpoints
+(a rename has two). The relevant method/runtime/test patch was read; bilingual
+guides and cheatsheets were checked through their diff inventory and change
+summaries, not independently audited line by line. A changed branch, tag or
+release invalidates freshness, not these immutable source observations.
+
+### Evidence vs inference — source-only delta
+
+All links below were checked 2026-11-12 at the pinned revision. **Verified**
+means the stated source change was inspected, not that a model followed it.
+
+| Release / surface | Verified source change | Boundary |
+| --- | --- | --- |
+| v9.1.7 writing | [Writing reference](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/writing.md): reading paths/contents for long or multi-audience documents; CJK/English/number spacing. | No readability measurement; not a new local writing mandate. |
+| v9.1.8 feature records | [Feature implementation](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/scripts/feature.js) adds a retained-local-record guard before Git creation and checks the feature artifact namespace in ignore preflight. [Feature reference](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/features.md) puts new managed artifacts under `<ag-dir>/features/<name>/artifacts/A-NNN/`, retaining historical paths. | The only changed non-test `scripts/*.js` file is `feature.js`. Added feature/merge tests were read, not run; constructed paths do not prove host creation behavior. |
+| v9.1.9 work and answers | [Work reference](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/work.md) requires observed focused red/green for executable changes, with a documented infeasibility exception. Writing guidance quotes the first 50 Unicode code points of each external-file question, or the whole shorter question. | Upstream conventions, not authority to impose universal red-first checks or quotation lengths on TeaPrompt. |
+| v9.1.10 review | [Review routing](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/review.md) distinguishes low/mid/high risk from findings/verdict. [Deep review](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/deep-review.md) adds adaptive mid/high inspection, or explicit invocation at any risk; normally fresh-context read-only inspection, host verification and host-owned acceptance. | Existing host-only waivers remain. The procedure integrates with existing review, rather than adding an independent assurance channel by name. No measured benefit or deterministic enforcement shown. |
+| v9.1.10 questions and authority | [Session reference](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/session.md) centralizes owner questions/approval fields in the devlog with stable IDs, one answer field and recovery links, preserving history and exceptions. [Delivery](https://github.com/agfnow/agentflow/blob/39331e372c58ff36f6fce13b29897bb65beeddc8/skills/agentflow/references/delivery.md) keeps inferred goals as hypotheses and advice/agreement separate from execution authority. `browfield` is renamed `brownfield`. | Prompt-defined workflow, not filesystem enforcement. Ordinary authorized substeps remain authorized; inferred intent does not widen scope. |
+
+### Prior findings and unexecuted boundaries
+
+Exact mode/type/blob comparison with v9.1.6 found the relevant sources unchanged:
+
+| Prior finding / limit | Unchanged source identity |
+| --- | --- |
+| Historical blocked-review cleanup inconsistency | `looper-cleanup.js`: `6695a6ea85ec3be95c99e083f1c4f0e3713922e7`; `looper.js`: `d5a96c305a6c7ca3e624a7276fa4fa93455fd247` |
+| Restricted-host Trash/process-identity and merge/check/push limits | `feature-common.js`: `31fe6fdfe463c9ca9a9d3751ceba032c4b3f3d91`; `feature-merge.js`: `d788b2da15cf9ab0cd325b306108a11352873697` |
+
+No repair to those sources is present in this delta. Their earlier observations
+were **not rerun**, and the restricted-host failures remain
+`INCOMPLETE_HOST_PRECONDITION`, not universal product failures. No upstream
+suite, feature lifecycle, native Trash journey, model review, installed-host
+journey, efficacy test or cost benchmark ran in this update check.
+
+### Candidate Adoption Ledger — v9.1.10
+
+| ID | Disposition / existing coverage | Reopen when |
+| --- | --- | --- |
+| AF9110-DOC1 | **Adopted: documentation only**, this supplement, catalogue and generated index; no new survey or operating surface. | A new pin or contrary source evidence changes the record. |
+| AF9110-SK1 | **No Skill change.** [Reflective review](../skills/reflective-review/SKILL.md) owns evidence channels/risk escalation; [brief](../skills/reflective-brief/SKILL.md) owns assumptions and intent fidelity; [implement](../skills/reflective-implement/SKILL.md) owns scope and proportionate verification; [handoff/retro](../skills/reflective-handoff-retro/SKILL.md) owns canonical artifacts and promotion. Exact devlog layout, command names and quote lengths remain upstream conventions. | A delivered local contract gap or consumer failure is demonstrated; upstream novelty alone is insufficient. |
+| AF9110-RT1 | **No runtime adoption or new authority.** Prior AF916-RT1, platform holds, runtime non-goal and adoption gates remain. | Separate owner authority, a local need, and relevant provisioned-host evidence exist. |
+
+### Falsifiability and handoff
+
+The source inventory, actual method patch, unchanged issue-owning blobs and
+existing local contracts suffice for this bounded documentation decision.
+They do not establish review effectiveness. A new source repair or an authorized
+host reproduction can change a corresponding finding, without rewriting the
+historical receipt. Documentation validation establishes discoverability and
+record consistency only; it cannot clear runtime holds.

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-12T09:21:55.621413",
+  "generated_at": "2026-11-12T09:17:12.196329",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -54,6 +54,7 @@
             "agent-control-plane-comparison-survey-2026-11-04.md",
             "agent-engineering-five-source-survey-2026-10-30.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
+            "openmausbot-survey-2026-11-12.md",
             "roadmap-prompt-cognition-memory-2026-10-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
@@ -3561,6 +3562,76 @@
       "char_count": 13628
     },
     {
+      "path": "reflective-prompt-library/plans/openmausbot-survey-2026-11-12.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openmausbot-survey-2026-11-12",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-risk/SKILL.md",
+          "../04-agent/artifact-promotion.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/workflow-acquisition.md",
+          "../PROJECT_KNOWLEDGE.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenMausBot Source Survey — Approval, Portable Teams, and Execution Boundaries (2026-11-12)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Actually Checked"
+        },
+        {
+          "level": 3,
+          "text": "Source map"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Bounded Execution Receipt"
+        },
+        {
+          "level": 2,
+          "text": "Local Gap Test"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference — Portability Does Not Carry Approval"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability and Residual Risks"
+        }
+      ],
+      "line_count": 150,
+      "char_count": 25305
+    },
+    {
       "path": "reflective-prompt-library/plans/roadmap-prompt-cognition-memory-2026-10-13.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5307,7 +5378,11 @@
           "../skills/reflective-minimality/SKILL.md#safety-floor",
           "../05-domain/learning-coach.md#acceptance-criteria",
           "../04-agent/runtime-trust-boundary.md#acceptance-criteria",
-          "../../review/final-report.md#agentflow-916-documentation-publication-2026-11-04"
+          "../../review/final-report.md#agentflow-916-documentation-publication-2026-11-04",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/reflective-handoff-retro/SKILL.md"
         ]
       },
       "structure": [
@@ -5454,10 +5529,38 @@
         {
           "level": 3,
           "text": "Falsifiability and publication boundary"
+        },
+        {
+          "level": 2,
+          "text": "Agentflow 9.1.10 delta — 2026-11-12"
+        },
+        {
+          "level": 3,
+          "text": "Research question and direct recommendation"
+        },
+        {
+          "level": 3,
+          "text": "Version / date context and evidence used"
+        },
+        {
+          "level": 3,
+          "text": "Evidence vs inference — source-only delta"
+        },
+        {
+          "level": 3,
+          "text": "Prior findings and unexecuted boundaries"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger — v9.1.10"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability and handoff"
         }
       ],
-      "line_count": 550,
-      "char_count": 55926
+      "line_count": 628,
+      "char_count": 63914
     },
     {
       "path": "reflective-prompt-library/plans/astra-efficiency-rules-survey-2026-09-10.md",
@@ -11901,6 +12004,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "openmausbot-survey-2026-11-12.md",
           "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
           "creator-attention-survey-2026-11-04.md",
@@ -11916,10 +12020,10 @@
           "cat-wu-product-method-survey-2026-11-09.md",
           "cat-wu-product-method-survey-2026-11-09.md#review-of-the-recent-surveys",
           "eian-video-workflow-survey-2026-11-09.md",
+          "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9110-delta--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "token-quota-decomposition-survey-2026-11-09.md",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#grok-methodology-follow-through--2026-11-04",
-          "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-916-delta--2026-11-04",
           "agent-efficiency-autonomy-learning-survey-2026-11-01.md#full-text-follow-through-2026-11-02",
           "loop-mechanisms-assurance-inference-2026-10-31.md",
           "agent-engineering-five-source-survey-2026-10-30.md",
@@ -11994,6 +12098,8 @@
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
           "mcode-stack-survey-2026-11-10.md",
+          "openmausbot-survey-2026-11-12.md",
+          "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9110-delta--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12040,6 +12146,8 @@
           "eian-video-workflow-survey-2026-11-09.md",
           "craft-anything-survey-2026-11-10.md",
           "mcode-stack-survey-2026-11-10.md",
+          "openmausbot-survey-2026-11-12.md",
+          "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9110-delta--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
@@ -12211,8 +12319,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 599,
-      "char_count": 133466
+      "line_count": 605,
+      "char_count": 136367
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -19236,7 +19344,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status"
+          "../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status",
+          "../plans/openmausbot-survey-2026-11-12.md#optional-worked-reference--portability-does-not-carry-approval"
         ]
       },
       "structure": [
@@ -19309,8 +19418,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 206,
-      "char_count": 12831
+      "line_count": 213,
+      "char_count": 13337
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -23446,5 +23555,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 242
+  "total_files": 243
 }

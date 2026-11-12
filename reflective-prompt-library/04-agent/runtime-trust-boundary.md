@@ -204,3 +204,10 @@ checksum from producer authenticity, and a reused check from a changed likeness
 bar. The likeness-bar row is an unreproduced inference. This is a
 source-qualified example, not a new workflow, install authorization, or proof
 of rebuild quality.
+
+[OpenMausBot: portability does not carry approval](../plans/openmausbot-survey-2026-11-12.md#optional-worked-reference--portability-does-not-carry-approval)
+applies the same authority and action checks to imported teams, recipient approval
+defaults, direct product changes, computer placement, and active-work limits.
+The pinned source and offline function receipt do not establish live-host
+isolation or authorize installation. This is an optional worked example; the
+prompt contract above is unchanged.
