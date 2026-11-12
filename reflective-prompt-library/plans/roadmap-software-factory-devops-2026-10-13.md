@@ -52,9 +52,11 @@ The reference design distinguishes two cycles; TeaPrompt supplies workflow contr
 
 ### Horizon 1 — Standing Invariants & Shipped Recipes
 - **Factory Recipe:** Documented in `04-agent/workflow-recipes.md` §Autonomous Software Factory.
-- **Factory Title Cue** *(proposed; record-only)*: Make the already-installed host-boundary/intent/acceptance clauses easier to discover beside the recipe title. The substantive boundary is present in `workflow-recipes.md` Factory Composition Rules; this is placement hardening, not missing enforcement or a new guarantee.
-- **Oracle-Legibility Caveat** *(proposed; record-only)*: Consider a separate disclosure that a read-only but readable oracle can permit lookup-table/property overfitting. The caveat is not adopted here, and no secrecy/anti-gaming guarantee follows from write protection.
 - **Deterministic Companion Floor:** Writer-critic templates offer a deterministic syntax/schema companion check raising the ACCEPT floor (catches malformed drafts, not plausible errors — advisory tier), and bounded loops carry no-progress exits. Semantic cross-round oscillation remains unmitigated (RS-9).
+
+### Record-only proposals (not shipped)
+- **Factory Title Cue** (SF-03; proposed; record-only): Make the already-installed host-boundary/intent/acceptance clauses easier to discover beside the recipe title. The substantive boundary is present in `workflow-recipes.md` Factory Composition Rules; this is placement hardening, not missing enforcement or a new guarantee.
+- **Oracle-Legibility Caveat** (SF-04; proposed; record-only): Consider a separate disclosure that a read-only but readable oracle can permit lookup-table/property overfitting. The caveat is not adopted here, and no secrecy/anti-gaming guarantee follows from write protection.
 
 ### Horizon 2 — Review Proposal (Unscheduled)
 - **DevOps Integration Review** *(proposed; record-only)*: Consider recipe compatibility review on a named host/CI integration change or explicit owner assignment; P6's January 11 evidence date does not schedule this audit.
@@ -80,6 +82,6 @@ This planning summary is wrong or stale if:
 |---|---|---|---|---|
 | SF-01 | Autonomous Software Factory Recipe | Adopted | `04-agent/workflow-recipes.md` | None |
 | SF-02 | Cheatsheet Factory In-Place Cue | Adopted | `skills/SKILL_TRIGGER_CHEATSHEET.md` | None |
-| SF-03 | Factory Title Boundary Cue | Proposed (Record-only in this roadmap) | Existing recipe enforcement/intent/acceptance clauses in `04-agent/workflow-recipes.md`; title-placement proposal in Horizon 1 | Consider on a named recipe-discovery failure or explicit recipe review; no substantive boundary adoption |
-| SF-04 | Oracle Legibility Overfitting Caveat | Proposed (Record-only in this roadmap) | This roadmap §Horizon 1 | Re-litigate upon next recipe review |
+| SF-03 | Factory Title Boundary Cue | Proposed (Record-only in this roadmap) | Existing recipe enforcement/intent/acceptance clauses in `04-agent/workflow-recipes.md`; title-placement proposal in §Record-only proposals (not shipped) | Consider on a named recipe-discovery failure or explicit recipe review; no substantive boundary adoption |
+| SF-04 | Oracle Legibility Overfitting Caveat | Proposed (Record-only in this roadmap) | This roadmap §Record-only proposals (not shipped) | Re-litigate upon next recipe review |
 | SF-05 | Named Host/CI Compatibility Review | Proposed (Record-only in this roadmap) | Horizon 2 review idea; installed recipe host preconditions remain unchanged | Consider on a named integration change or owner assignment; no recurring date |

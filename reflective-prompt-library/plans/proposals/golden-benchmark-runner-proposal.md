@@ -1,6 +1,6 @@
 ---
 name: golden-benchmark-runner
-description: Use to run a baseline-vs-skill comparison over the golden benchmark tasks — each task runs twice (bare prompt vs prompt+skill layer) with deterministic structural scoring, an optional declared-but-not-required LLM-judge slot, and a results ledger carrying per-task deltas plus confound notes.
+description: Admission record for the registered golden-benchmark-runner domain pack; live contract at skills/golden-benchmark-runner/SKILL.md. Original proposal body retained below as history.
 license: MIT
 metadata:
   risk_level: medium
@@ -9,11 +9,17 @@ metadata:
   context_load: medium
 ---
 
-# Golden Benchmark Runner
+# Golden Benchmark Runner (admission record)
 
 **Status:** ADOPTED 2026-10-06 — registered domain pack; live contract at `skills/golden-benchmark-runner/SKILL.md`. This file is the admission record.
 
-**Type:** Domain-pack skill proposal — inert until admission review. NOT registered; NOT edited into `skill-map.md`.
+> **Supersession 2026-10-06:** the "Domain-pack skill proposal — inert until
+> admission review / NOT registered" line below is pre-admission text,
+> retained verbatim as history. Authority now lives at the registered pack's
+> `SKILL.md`; this file no longer prohibits registry or skill-map membership.
+
+> Pre-admission text (retained verbatim): **Type:** Domain-pack skill proposal
+> — inert until admission review. NOT registered; NOT edited into `skill-map.md`.
 
 ## Purpose
 

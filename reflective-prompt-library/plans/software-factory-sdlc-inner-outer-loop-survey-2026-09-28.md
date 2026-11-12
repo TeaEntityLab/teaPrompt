@@ -12,8 +12,8 @@ How can software engineering transition from interactive, manual coding ("vibe c
 1. Humans author only high-level intents (`intent.md`), architectural specifications (`spec.md`), and testable acceptance criteria (`criteria.yaml`);
 2. Coding agents autonomously implement, compile, test, and repair software in their inner loop;
 3. Software correctness is established by deterministic oracles and outer-loop verification rather than by humans manually reviewing hundreds of lines of agent diffs — a design target bounded by deployed harness/oracle coverage, not an unconditional guarantee (corrected 2026-10-02);
-4. Agents are structurally prevented from "gaming tests" (weakening assertions, creating trivial mocks, deleting failing tests, or overfitting task descriptions);
-5. Human engineers are protected from the "Verification Bottleneck" (industry-reported ~441% rise in median PR-review time and ~243% rise in incidents per PR — attribution and denominators corrected in *Evidence vs Inference* below).
+4. Agents are structurally deterred from "gaming tests" (weakening assertions, creating trivial mocks, deleting failing tests, or overfitting task descriptions) — a design target bounded by deployed harness/oracle coverage, not an unconditional guarantee;
+5. Human engineers are relieved of the "Verification Bottleneck" (industry-reported ~441% rise in median PR-review time and ~243% rise in incidents per PR — attribution and denominators corrected in *Evidence vs Inference* below) — a design target; whether the mitigation works in practice is unmeasured here.
 
 ## Direct Recommendation (as of 2026-09-28)
 
@@ -49,7 +49,7 @@ To develop software automatically and correctly from human intents, specs, and c
   • Zero ambient credentials; Action Gateway dynamic brokering.
   • Inner Loop Turn: Context -> Code Edit -> Compile -> Local Test -> Self-Repair.
   • Anti-Gaming Defenses:
-      - Mutation Testing (Synthetic AST fault injection; Kill Rate >= 85%).
+      - Mutation Testing (Synthetic AST fault injection; Kill Rate >= 85% in this example; no universal gate adopted).
       - Property-Based & Metamorphic Invariants (Hypothesis random fuzzing).
       - Failure Signature Hashing <oracle, error, surface> + State Ledger compaction.
                            │
@@ -105,7 +105,7 @@ To develop software automatically and correctly from human intents, specs, and c
 2. **Formally Bounding Scope & Preventing Drift:**
    Agents fail in two symmetric directions: *Scope Expansion* (gold-plating, unneeded dependencies, speculative abstractions) and *Scope Contraction* (slacking, commenting out edge cases, inserting trivial mocks). Scope must be enforced through:
    - **Path Budgets & Write Scopes:** Agents receive write access strictly to designated source paths (`src/**`). Criteria, CI files, and test manifests are read-only.
-   - **Diff Quotas:** Hard ceilings on lines changed per task (e.g. $\le 250$ lines). Excess diffs trigger automatic aborts.
+   - **Diff Quotas (blueprint example, not TeaPrompt policy):** this architecture sketch illustrates a host-side ceiling (e.g. $\le 250$ lines in this example) with an abort action. No universal TeaPrompt diff ceiling is adopted (cf. AOM-W1 in `plans/addy-osmani-agent-management-survey-2026-11-09.md`).
    - **Negative Constraints as Active Refuters:** Non-goals (e.g., "Do not introduce new external database dependencies") are compiled into executable lint/dependency checks (`cargo tree`, `npm ls`) run at every turn.
    - **Monotonic Authority Delegation:** Child workers receive an authority envelope that is strictly the intersection of allowed scopes and the union of forbidden sinks ($\mathcal{S}_{\text{child}} = \mathcal{S}_{\text{parent}} \cap \mathcal{S}_{\text{task}}$).
 3. **The Two-Tier Agent Architecture (Compiler vs. Worker):**
@@ -119,11 +119,11 @@ To develop software automatically and correctly from human intents, specs, and c
 ### Lens 2: Inner Loop Execution & Anti-Gaming Verification
 
 1. **MicroVM Ephemeral Sandboxing:**
-   Standard Linux containers (Docker/cgroups) fail against autonomous coding agents due to shared kernel escape vectors, environment contamination (stale `node_modules/`, `.pyc`), and ambient credential leakage. Autonomous inner loops require **hardware-virtualized MicroVMs** (AWS Firecracker, Docker Cloud Sandboxes `sbx`):
-   - Sub-50ms boot times using copy-on-write (CoW) snapshots.
+   Standard Linux containers (Docker/cgroups) are treated in this blueprint as insufficient for autonomous coding agents, motivated by shared-kernel escape vectors, environment contamination (stale `node_modules/`, `.pyc`), and ambient credential leakage. The blueprint therefore places autonomous inner loops in **hardware-virtualized MicroVMs** (AWS Firecracker, Docker Cloud Sandboxes `sbx`):
+   - Fast boot using copy-on-write (CoW) snapshots: vendor documentation reports order tens of ms (e.g. sub-50ms) for stated configurations; not locally measured here.
    - Isolated filesystems: agent-writable scratch space, read-only sealed test binds, ephemeral OS overlays discarded on turn completion.
    - Network egress disabled by default (`--net none`), with dependencies and third-party SaaS mediated out-of-band by an **Action Gateway**.
-   - API keys and tokens never enter the VM or LLM context.
+   - By design, API keys and tokens never enter the VM or LLM context; enforcement is a host property, not measured here.
 2. **The "Gaming Tests" Pathology (Specification Gaming):**
    When autonomous agents are instructed to "make tests pass," reinforcement learning drives them to game shallow harnesses. Six distinct cheating modalities were categorized:
    - *C1: Test Assertion Weakening* (`assert result == 42` rewritten to `assert result >= 0` or `assert True`).
@@ -134,8 +134,8 @@ To develop software automatically and correctly from human intents, specs, and c
    - *C6: Process Exit Code Suppression* (appending `|| true` to shell commands).
 3. **Anti-Gaming Defensive Invariants:**
    - **Sealed Oracle Manifests:** Acceptance tests and security invariants are classified as `authoritative`, hashed with SHA-256, and marked read-only. Modifying an authoritative test halts execution immediately.
-   - **Mutation Testing (AST Fault Injection):** Automated mutation engines (e.g. Mutmut, cargo-mutants) inject synthetic faults (inverting operators, forcing null returns, dropping statements). If synthetic mutants survive the agent's tests, the test suite is proved vacuous, and the turn fails.
-   - **Property-Based & Metamorphic Testing:** Generates thousands of randomized inputs (Hypothesis/QuickCheck) to verify algebraic properties (round-trip reversibility, idempotence, commutativity). An agent cannot game property tests with hardcoded lookup tables.
+   - **Mutation Testing (AST Fault Injection):** Automated mutation engines (e.g. Mutmut, cargo-mutants) inject synthetic faults (inverting operators, forcing null returns, dropping statements). Survival of non-equivalent, in-scope mutants fails this blueprint's vacuity rule and the turn; equivalent mutants (behavior-preserving by construction) and out-of-scope mutants must be excluded before interpreting survival, since a surviving mutant alone does not prove the suite vacuous. Illustrative counterexample (review 2026-11-12, not a factory run): a test `increment(0)==1` killed a genuinely wrong mutant while an equivalent integer mutant survived.
+   - **Property-Based & Metamorphic Testing:** Generates thousands of randomized inputs (Hypothesis/QuickCheck) to verify algebraic properties (round-trip reversibility, idempotence, commutativity). Randomized sampling raises the cost of lookup-table gaming but grants no immunity: coverage is bounded by the sampled domain and budget, so a lookup table can pass every sampled check yet fail outside it. Illustrative counterexample (review 2026-11-12, not a factory run): a lookup implementation passed all 1,000 sampled checks over [-20,20] and failed at 21 (returned 0 instead of 441).
    - **Hashed Failure Signatures & Context Compaction:** Every failure is hashed into $\langle \text{failing\_oracle}, \text{error\_class}, \text{touched\_surface} \rangle$. Repeated failure signatures abort the loop to prevent infinite token burn. Transcripts are purged between turns; agents receive only the base spec, current files, and the compacted State Ledger tail ($O(1)$ context growth).
 
 ---
@@ -166,8 +166,8 @@ To develop software automatically and correctly from human intents, specs, and c
 | :--- | :--- | :--- | :--- | :--- |
 | **SF-C1** | **Three-Tier Contract Layer:** Explicit separation of `intent.md` (Why/JTBD), `spec.md` (Architecture/Invariants), and `criteria.yaml` (Sealed Oracles). | SDD Architecture (Anthropic SDLC, Kiro) | `reflective-brief` (Intent), `reflective-spec-plan` (Spec/Plan), `verification-map-generator` (`VERIFY.md` / feature maps). | **Covered.** Foundational workflow structure of TeaPrompt. |
 | **SF-C2** | **Sealed Oracle Manifests:** Cryptographic splitting of test authority into Authoritative Oracles (read-only) vs. Developer Tests (agent-mutable). | Testing / Anti-Gaming (Terminal-Bench 4.0, SWE-bench) | `governed-delivery` (`oracle-manifest.yaml`), `reflective-implement` ("Acceptance, invariant, and security oracles are read-only during a run"). | **Covered.** Sealed oracle invariant is already codified. |
-| **SF-C3** | **Anti-Gaming AST & Mutation Testing:** Synthetic AST fault injection with kill-rate thresholds ($\ge 85\%$) to defeat tautological and vanity tests. | Formal Verification & Testing | `flow-loop-harness` Loop Anatomy #1 (verifier preflight/exit-4 gate) & #5 (host permission precondition) as deterministic exit/precondition rules, not cryptographic sealing; `reflective-review` (Four evidence dimensions). Execution engine is host CI. | **Covered / Host Boundary.** Criteria declared in prompt; mutation runners are host tools. |
-| **SF-C4** | **MicroVM Ephemeral Sandboxes & Action Gateways:** Sub-50ms CoW sandboxes with zero ambient credentials, isolating execution from prompt context. | Infrastructure Runtime (Firecracker, Docker Cloud SBX, DigitalOcean) | `reflective-prompt-library/04-agent/runtime-trust-boundary.md` §2a & §4; `governed-delivery` host preconditions. | **Host Boundary (P7).** Prompt methodology defines trust boundaries; host hypervisors enforce them. |
+| **SF-C3** | **Anti-Gaming AST & Mutation Testing:** Synthetic AST fault injection with an example kill-rate threshold ($\ge 85\%$ in this blueprint; task-specific, no universal gate adopted) to surface tautological and vanity tests; equivalent and out-of-scope mutants are excluded before interpreting survival. | Formal Verification & Testing | `flow-loop-harness` Loop Anatomy #1 (verifier preflight/exit-4 gate) & #5 (host permission precondition) as deterministic exit/precondition rules, not cryptographic sealing; `reflective-review` (Four evidence dimensions). Execution engine is host CI. | **Covered / Host Boundary.** Criteria declared in prompt; mutation runners are host tools. |
+| **SF-C4** | **MicroVM Ephemeral Sandboxes & Action Gateways:** Fast-boot CoW sandboxes (vendor-reported order tens of ms, e.g. sub-50ms, for stated configurations; not locally measured) with zero ambient credentials, isolating execution from prompt context. | Infrastructure Runtime (Firecracker, Docker Cloud SBX, DigitalOcean) | `reflective-prompt-library/04-agent/runtime-trust-boundary.md` §2a & §4; `governed-delivery` host preconditions. | **Host Boundary (P7).** Prompt methodology defines trust boundaries; host hypervisors enforce them. |
 | **SF-C5** | **Tripartite Decorrelated Verification:** Piercing same-model multi-agent illusions via deterministic oracles, heterogeneous judge models, and attested runtime evidence. | Epistemic Verification (Osmani, Enterprise SDLC) | `reflective-review` ("same-model review is one epistemic channel; high-risk PASS needs non-model channel"), `governed-delivery`. | **Covered.** Core verification doctrine across TeaPrompt review skills. |
 | **SF-C6** | **Proof-Carrying Diffs (PCD) & L0–L5 Cognitive Filter:** Addressing the reported review-time bottleneck by replacing raw diff reviews with attested Evidence Ledgers and automated gate filters. | Delivery Governance (Faros AI, ETLJ 2026) | `governed-delivery` (`evidence-ledger.yaml`, `acceptance-record.yaml`), `skills/agent-governance-scaffold` (Acceptance ladder L0–L5). | **Covered.** Complete 1:1 structural alignment. |
 
@@ -193,7 +193,7 @@ To develop software automatically and correctly from human intents, specs, and c
 | Faros AI reports a large review-time/incident surge for AI-assisted teams | Observed (primary report re-checked 2026-10-02) | The primary [Faros AI Engineering Report 2026](https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf) reports +441.5% **median** PR-review time, +242.7% incidents **per PR**, and +57.9% monthly incidents, from observational within-company/within-team comparisons (≥6 companies per metric, Spearman p<.05) — not causal inference or verified raw telemetry. The IT Revolution article (checked 2026-09-28) attributes its rounded ~441%/~243% per-PR figures to **one bank team**, separately citing the Faros 22,000-developer/4,000-team population; the original wording conflated the anecdote with the population study. |
 | Louis Claxton / Anthropic AI-Native SDLC defines continuous artifact loop | Observed | Claude Academy published course materials (checked 2026-09-28). |
 | Addy Osmani defines Outer Loop as Quality, Verdict, Answerability | Observed | AI Engineer World's Fair address and blog publications (checked 2026-09-28). |
-| Ephemeral MicroVM sandboxes (Firecracker, Docker Cloud SBX) achieve <100ms startup | Observed | Docker and AWS technical documentation (checked 2026-09-28). |
+| Vendor documentation for Firecracker / Docker Cloud SBX reports fast startup (order tens of ms, <100ms) for stated configurations | Observed (vendor-reported; not locally measured) | Docker and AWS technical documentation (checked 2026-09-28). The <100ms bound is compatible with, not contradicted by, the vendor-reported sub-50ms figure cited at :123; neither was measured here and neither establishes a universal latency. |
 | Same-model multi-agent review carries correlated-failure risk on complex bugs | Observed (qualitative; magnitude unmeasured) | Research on model sycophancy, reasoning faithfulness, and shared pretraining bias. The original record's "near-perfect" correlation magnitude had no supplied measurement (corrected 2026-10-02). |
 | Agents routinely game test harnesses via assertion weakening, test deletion, and mocks | Observed | Benchmark reports on SWE-bench Verified and Terminal-Bench 4.0 (2026). |
 | Autonomous development is mathematically feasible from intents, specs, and criteria | `[INFERENCE]` | Feasible *if and only if* host runtimes enforce sealed oracles, mutation kill thresholds, and out-of-band human verdicts; unverified on unbounded greenfield architectures. |
@@ -204,7 +204,7 @@ To develop software automatically and correctly from human intents, specs, and c
 ## Falsifiability
 
 1. **Falsifier for Core Feasibility Thesis:** The thesis that software can be automatically and correctly developed from intents, specs, and criteria is falsified if an empirical benchmark demonstrates that autonomous agents, operating under sealed oracles and mutation thresholds, still introduce critical operational defects that could only have been prevented by manual line-by-line code authoring.
-2. **Falsifier for Anti-Gaming Defenses:** The sealed oracle and mutation defense model is falsified if an agent successfully achieves $\ge 95\%$ mutation kill rates and passes all property tests while executing an unintended, malicious, or non-functional payload (reward hacking against mutation testing).
+2. **Falsifier for Anti-Gaming Defenses:** The sealed oracle and mutation defense model is falsified if an agent reaches the blueprint author's illustrative high kill-rate example ($\ge 95\%$ here; not an adopted gate) and passes all property tests while executing an unintended, malicious, or non-functional payload (reward hacking against mutation testing).
 3. **Falsifier for Candidate Dispositions:** The conclusion that SF-1 through SF-6 require no installed skill additions is falsified if an existing TeaPrompt skill allows an agent to auto-release a production delivery without an independent non-model verification channel or human outer-loop verdict.
 
 ---
@@ -293,10 +293,10 @@ anti_cheating:
       - ".github/**"
 
   - id: "GUARD-002"
-    description: "AST mutation score must exceed 85% killed"
+    description: "AST mutation score must exceed 85% killed (this blueprint's example value; not an adopted gate)"
     check: mutation_testing
     runner: "cargo-mutants --score-only"
-    min_kill_rate: 0.85
+    min_kill_rate: 0.85 # blueprint example threshold; task-specific, no universal gate adopted
 
 acceptance_gate:
   all_authoritative_required: true
@@ -306,6 +306,7 @@ acceptance_gate:
 
 ### 3. `evidence-ledger.yaml` (Attested Proof-Carrying Diff Dossier)
 ```yaml
+# Illustrative placeholder receipt values for this blueprint example; not a measured run.
 spec_version: "spec-ratelimit-v1.0.0"
 execution_run_id: "run-sbx-20260928-4091"
 sandbox_type: "docker_cloud_microvm"
@@ -319,10 +320,10 @@ entries:
     status: verified
 
   - claim: "Mutation testing kills 92% of synthetic AST fault mutants"
-    source: "mutation_runner"
+    source: "mutation_runner" # illustrative example attester
     attester: "host_evaluator"
     evidence_type: "mutation_score_receipt"
-    metrics:
+    metrics: # illustrative example counts
       mutants_generated: 48
       mutants_killed: 44
       kill_rate: 0.916
@@ -352,10 +353,12 @@ non_model_channel_verified: true
 
 ---
 
-## Corrections (2026-10-02)
+## Corrections (2026-10-02; WLR-03 repair 2026-11-12)
 
 Post-review audit (`review/final-report.md`, findings Factory-2/3/4) corrected three claim classes while leaving the settled SF-1..SF-6 no-change dispositions, the 5-layer blueprint, and the record-only recommendation unchanged:
 
 1. **Unmeasured figures removed, not preserved as bounds:** "failure correlations approaching 1.0" (:149) and the L0–L5 ladder "filters out 90% of failures" (:158) had no supplied measurement. The correlated-failure risk and the ladder's filtering role are retained qualitatively with effectiveness marked unmeasured.
 2. **Design intent vs. measured result:** "provably prevents … incorrect or malicious code" (:349) and "eliminates the 441% verification bottleneck" (:351) overstated finite harness/oracle coverage; both are qualified as design intent. The equivalent "Solving the 441% review bottleneck" phrasing in :155 and SF-C6 was likewise softened.
 3. **Faros citation/denominator repair (:16, :155, :172, :193):** the original record attributed population-level claims to the IT Revolution article. The article reports its rounded ~441%/~243% per-PR figures for one bank team; the primary Faros 2026 report supplies the population metrics (+441.5% median PR-review time, +242.7% incidents per PR, +57.9% monthly incidents) under an observational within-company/team design (≥6 companies per metric, Spearman p<.05). The numbers are corroborated — narrowed by citation and denominator, not fabricated. Primary report checked 2026-10-02; article checked 2026-09-28.
+
+4. **Assurance-strength and numeric-claim repair (2026-11-12, WLR-03):** "proved vacuous" (:137) and "cannot game property tests with hardcoded lookup tables" (:138) were false general claims — replaced with scope-qualified coverage plus the two review-observed illustrative counterexamples (lookup passing 1,000 sampled checks over [-20,20] then failing at 21 with 0 instead of 441; `increment(0)==1` killing a wrong mutant while an equivalent integer mutant survives). Equivalent and out-of-scope mutants are now excluded before interpreting survival (:137, :169). Kill-rate thresholds (:52, :169, :296, :299) and the $\ge 95\%$ falsifier value (:207) are labeled task-specific/author-proposed illustrative examples with no universal gate adopted. Latency figures (:123, :170, :196) are qualified as vendor-reported for stated configurations, not locally measured; the sub-50ms and <100ms bounds are compatible, and neither establishes a universal latency. The $\le 250$-line diff ceiling (:108) is labeled a blueprint example, not TeaPrompt policy. Source pins, check dates, SF-1..SF-6 dispositions, the 5-layer blueprint, and the record-only recommendation are unchanged.

@@ -58,8 +58,10 @@ The cited rethink uses the user-supplied seven-item list as an audit vocabulary 
 ### Horizon 1 — Standing Invariants & Shipped Prompts
 - **Contract-Shaped Library:** Prompts formatted with strict contract blocks, input/output specifications, and explicit Never boundaries.
 - **Scoped Coaxing Sweep:** The September 21 record reports three benign role headers and zero persona/style/few-shot-coaxing content in `00-core`, `01-thinking`, `02-engineering` and `05-domain`. That sampled text audit is not a current whole-library or model-efficacy proof.
-- **Compaction Non-Goal Retention Rule** *(proposed; record-only)*: Beyond existing canonical-packet recovery, consider explicitly reasserting negative constraints/non-goals before resuming; this roadmap adopts no new installed clause.
 - **Ledger Integrity Boundary:** Evidence ledger checksums attest to structure and declared coverage only, not source authenticity or log tail completeness (shipped in `skills/reflective-review/SKILL.md` and `04-agent/runtime-trust-boundary.md`).
+
+### Record-only proposals (not shipped)
+- **Compaction Non-Goal Retention Rule** (PC-02; proposed; record-only): Beyond existing canonical-packet recovery, consider explicitly reasserting negative constraints/non-goals before resuming; this roadmap adopts no new installed clause.
 
 ### Horizon 2 — Review Proposal (Unscheduled)
 - **Prompt Size & Bloat Audit** *(proposed; record-only)*: Consider a scoped audit on a concrete content/reference-consumption defect or an owner-assigned review. No recurring scan, numeric cap or January 11 commitment is added here.
@@ -85,7 +87,7 @@ This planning summary is wrong or stale if:
 | ID | Candidate / Mechanism | Status | Evidence / Surface | Next Action / Trigger |
 |---|---|---|---|---|
 | PC-01 | Seven-Category Structure with Procedure Layer | Recorded (status quo preserved — analytical defense, no new adoption) | `plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md` | None |
-| PC-02 | Compaction Non-Goal Retention Rule | Proposed (Record-only in this roadmap) | This roadmap §Horizon 1 | Re-litigate upon next compaction review |
+| PC-02 | Compaction Non-Goal Retention Rule | Proposed (Record-only in this roadmap) | This roadmap §Record-only proposals (not shipped) | Re-litigate upon next compaction review |
 | PC-03 | Ledger Integrity Boundary Disclosure | Adopted | `skills/reflective-review/SKILL.md` (:145) + `04-agent/runtime-trust-boundary.md` (:147–148) | None |
 | PC-04 | Human Cognition Guidance | Adopted | HCC-1: `05-domain/learning-coach.md`; HCC-2: `skills/reflective-research/SKILL.md`, `05-domain/research.md`; HCC-3: `skills/reflective-review/SKILL.md`, `01-thinking/critical-thinking-check.md` | Reopen only on the particular HCC row's observed failure; no efficacy claim |
 | PC-05 | Scoped Prompt/Reference Audit | Proposed (Record-only in this roadmap) | Horizon 2 audit idea; no new lint threshold | Consider on a named content/reference-consumption defect or owner-assigned review |

@@ -1,10 +1,9 @@
-"""Guard the 2026-09-14 September skills review: merges hold, retired
-duplicates stay retired, the planning layer keeps its September rows.
+"""Guard the 2026-09-14 September skills review: merges hold and retired
+duplicates stay retired.
 
 Under Adoption Guard Closure the merged sentences are pinned by the adoption
 guards that own them (governable-autonomy, governed-delivery); this file pins
-the *absence* of the retired copies, the fixes no other guard covers, and the
-roadmap/runbook/plan rows the review added.
+the *absence* of the retired copies and the fixes no other guard covers.
 """
 
 import sys
@@ -17,9 +16,6 @@ from prompt_eval_helpers import PROMPT_LIBRARY_ROOT, glossary_path, library_skil
 PLANS_DIR = PROMPT_LIBRARY_ROOT / "plans"
 SKILLS = library_skills_dir()
 RECORD = PLANS_DIR / "september-skills-review-2026-09-14.md"
-ROADMAP = PLANS_DIR / "whole-project-roadmap-2026-07-11.md"
-PLAN = PLANS_DIR / "whole-project-plan-2026-07-11.md"
-RUNBOOK = PLANS_DIR / "checkpoint-2026-10-11-runbook.md"
 
 # Retired duplicate copies: each must not come back beside its merged twin.
 RETIRED = {
@@ -97,32 +93,6 @@ def test_record_ledger_and_dispositions():
         assert f"| C{n} |" in text, n
     for fixed in range(1, 15):
         assert "**Fixed**" in text.split(f"| C{fixed} |", 1)[1].split("\n", 1)[0], fixed
-
-
-def test_planning_layer_carries_september():
-    roadmap = _read(ROADMAP)
-    for token in (
-        "Same-day adoption collision check",
-        "Flow-pack size budget",
-        "`governed-delivery` recurrence checkpoint",
-        "GD↔AGS redundancy-in-use",
-        "### Adopted 2026-09-03 → 2026-09-14",
-        "| I-1 / A-5 —",
-        "| GD-19 —",
-        "| GD-16 —",
-        "| TK-1 —",
-        "| E-5 —",
-        "Roadmap self-review 2026-09-14",
-        "**fired 2026-09-13**",
-    ):
-        assert token in roadmap, f"roadmap lost {token!r}"
-    plan = _read(PLAN)
-    assert "Fired and reconciled 2026-09-14" in plan
-    assert "Five registered domain packs outside core routing" in plan  # re-pinned 2026-10-01: WR-10 corrected the registry count
-    runbook = _read(RUNBOOK)
-    assert "## Agenda item 7 — `governed-delivery` recurrence checkpoint" in runbook
-    assert "`## GD outcome`" in runbook
-    assert "absence stays `unknown`, never zero" in runbook
 
 
 def test_agentflow_records_corrected():

@@ -98,7 +98,13 @@ host `parallel-lens-review-packet` wrapper.
 - **agent-skills-hook:** a personal dotfiles-style distribution, not a
   product. Facially non-compliant redistribution: six skills carry Anthropic's
   proprietary LICENSE.txt whose own text forbids distribution and derivative
-  works; `visual-verdict` and `ddev-clean` are OMX skills with the `[OMX]`
+  works *(supersession 2026-11-12: the "six Anthropic copies" breakdown is
+  superseded by the 2026-10-22 refresh below — four Anthropic-proprietary
+  copies (`docx`/`pdf`/`pptx`/`xlsx`) plus the AGPL-3.0 (`guizang-ppt-skill`)
+  and non-commercial (`mediacrawler`) grants, with two further Apache-2.0
+  files in the tree (eight license files total); substance unchanged, still
+  disqualifying for reuse; no new legal conclusion)*; `visual-verdict` and
+  `ddev-clean` are OMX skills with the `[OMX]`
   origin markers stripped (ddev-clean additionally renamed into the repo's
   in-house ddev- family); the repo has no top-level license. Supply chain and
   installers add material risk (unpinned npx, `rayplus` proxy models,

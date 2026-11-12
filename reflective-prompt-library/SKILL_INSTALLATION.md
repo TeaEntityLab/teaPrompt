@@ -64,7 +64,7 @@ Use one of these scopes:
 
 For this repository, project-local install is the safest default.
 
-**Copy vs symlink:** use `cp -R` for team installs and published repos. Use `ln -s` or `ln -sfn` when you develop TeaPrompt in place and want the host to read skills directly from this checkout (see [Symlink install](#symlink-install) below).
+**Copy vs symlink:** use `cp -R` for team installs and published repos. Use `ln -s` or `ln -sfn` when you develop TeaPrompt in place and want the host to read skills directly from this checkout (see [Install helpers](#install-helpers) below).
 
 ## Choose an Install Tier
 
@@ -112,11 +112,15 @@ the shipped `SKILL.md` frontmatter stays host-portable. **Dated supersession 202
 
 Companion examples live under `reflective-prompt-library/skills/examples/` and are part of the host-facing documentation surface. Co-install them when the target host supports companion files or when operators need example output shapes; the examples are not semantic execution proof.
 
-## Symlink install
+## Install helpers
 
-Run these definitions from the TeaPrompt repository root. Every helper accepts
-the destination first and an optional TeaPrompt `skills/` source directory
-second. It copies or links only directories containing `SKILL.md`.
+Prerequisites: a POSIX `sh` with `cp` and `ln`. Load the definitions below
+once per shell from the TeaPrompt repository root; every helper accepts the
+destination first and an optional TeaPrompt `skills/` source directory second.
+It copies or links only directories containing `SKILL.md`. These definitions
+are the single maintained implementation of the install recipe: the
+Traditional Chinese companion (`SKILL_INSTALLATION.zh-TW.md`) invokes the
+same helpers and keeps no second copy.
 
 ```bash
 install_core_skills_copy() {
@@ -225,7 +229,8 @@ install_skill_examples_symlink() {
 }
 ```
 
-Run these definitions once (or paste them before a command below). Every
+Run these definitions once per shell. Paste them before the first command
+below in a fresh shell, including non-interactive shells. Every
 helper returns nonzero without reporting success when source resolution,
 destination creation, or a copy/link step fails: a missing source directory,
 a source with none of the expected core skills, a missing pack skill, or a

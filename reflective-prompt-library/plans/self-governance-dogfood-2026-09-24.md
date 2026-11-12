@@ -69,9 +69,9 @@ measured post-tune.
 
 The traps for the other workflows were written before the tune. They cover
 every workflow that shares the review verbs or the spec/plan nouns, so a
-boundary that stole their phrases would have failed them. All 12 cross-workflow
-trap phrases held before and after the tune. After the tune, all three evals
-remain at 100%.
+boundary that stole their phrases would have failed them. All 13 cross-workflow
+trap phrases (3+2+3+3+2 across the five groups above) held before and after
+the tune. After the tune, all three evals remain at 100%.
 
 Fix (`route_paraphrase_eval.py` `boundary_adjustments`): the boundary fires when
 a phrase opens with a review verb and names an existing planning artifact, and

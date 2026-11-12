@@ -1,6 +1,6 @@
 # d025db7 Publication Review — Eight-Role Panel Record — 2026-10-02
 
-> **Status: review record (non-authoritative); corrections deferred.** The eight-role post-publication review of commit `d025db7e0b6384b2c2ce78c794d246d15ebbb09` ("docs: record MGD form theory and repair survey provenance"), all 18 changed paths. The full adjudicated verdict lives in `review/final-report.md` (section "Final Report — d025db7 Eight-Role Publication Review"); this record holds the durable queue-facing summary so the deferred corrections survive the working report. Authority chain unchanged: `06-repo/AGENTS.md` and invoked `SKILL.md` contracts govern; this record is evidence, not an operating rule.
+> **Status: review record (non-authoritative); corrections deferred (DPR-1 closed 2026-11-12 — see Closure Notes; DPR-2–DPR-9 remain deferred).** The eight-role post-publication review of commit `d025db7e0b6384b2c2ce78c794d246d15ebbb09` ("docs: record MGD form theory and repair survey provenance"), all 18 changed paths. The full adjudicated verdict lives in `review/final-report.md` (section "Final Report — d025db7 Eight-Role Publication Review"); this record holds the durable queue-facing summary so the deferred corrections survive the working report. Authority chain unchanged: `06-repo/AGENTS.md` and invoked `SKILL.md` contracts govern; this record is evidence, not an operating rule.
 
 ## Panel Consensus
 
@@ -10,7 +10,7 @@
 
 ## Deferred Correction Proposals (the queue)
 
-DPR-1–9 are deferred proposals, not applied edits. Applying any of them is a new change that re-triggers its own verification.
+Historical queue as of 2026-10-02: DPR-1–9 were deferred proposals, not applied edits. The original findings below are retained; the dated Closure Notes record DPR-1's later repair. DPR-2–9 remain deferred, and applying any still re-triggers its own verification.
 
 | # | Severity | Origin | Location | Correction |
 | --- | --- | --- | --- | --- |
@@ -23,6 +23,11 @@ DPR-1–9 are deferred proposals, not applied edits. Applying any of them is a n
 | DPR-7 | low | pre-existing | `review/final-report.md` (this record presents the corpus as corrected) | Four pre-existing residual overclaims remain on the record; an optional qualification pass was scoped to same-file repairs only. |
 | DPR-8 | low | pre-existing | review metadata corpus | Recency-weighted freshness triggers name all 5 live-source rows but nothing monitors arXiv version drift between v1 and v2. |
 | DPR-9 | low | pre-existing | `plans/agentflow-8.3-delta-survey-2026-09-21.md` | "144 LOC" + "wiring" tags and pin lines persist after the wording fix; the reader-level staleness ritual (recheck every claim at the pin) fixes these as a class. |
+
+## Closure Notes (2026-11-12)
+
+- **DPR-1 closed:** `plans/agentflow-8.3-delta-survey-2026-09-21.md` Source Corrections now records `delegation-route.test.js` as modified +240/−8 per the pinned compare receipt (`status=modified`), replacing the false "new-file entry" clause. The DPR-1 queue row above is preserved as the dated 2026-10-02 finding; AF83-* dispositions unchanged. Verification: the consolidated repository gate run that lands this correction.
+- DPR-2–DPR-9 remain deferred as written; applying any of them still re-triggers its own verification.
 
 ## Evidence Actually Checked
 
@@ -49,4 +54,4 @@ This record is wrong if: (a) `delegation-route.test.js` was in fact `added` (not
 - `reflective-prompt-library/plans/d025db7-publication-review-2026-10-02.md` (this record)
 - regenerated `reflective-prompt-library/index.json`
 
-No DPR correction was applied; `review/final-report.md` (already modified in the working tree by the appended review section) is the full adjudication ledger.
+No DPR correction was applied in the 2026-10-02 pass; `review/final-report.md` (already modified in the working tree by the appended review section) is the full adjudication ledger. DPR-1 was applied 2026-11-12 under the whole-library repair authorization; see Closure Notes.

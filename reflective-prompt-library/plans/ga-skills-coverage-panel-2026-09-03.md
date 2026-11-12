@@ -2,6 +2,13 @@
 
 > **Status: decided, implemented, guarded, and verified.** Non-authoritative decision record. TeaPrompt remains a natural-language policy library: this panel adds **no extra skill**, domain pack, tenth core skill, runtime, compiler, outbox, sandbox, routing cue, or checklist import. It adopts two in-place Never sentences (skill-layer parity for GA-3 and GA-7) after a seven-lens review of all twelve existing skills.
 
+> **Supersession 2026-09-03 (pointer only):** XS-8/XS-9 below were superseded
+> the same day by
+> [governed-delivery-adoption-2026-09-03.md](governed-delivery-adoption-2026-09-03.md)
+> under explicit user direction; recurrence remains `unknown`. The two Never
+> sentences (GS-A/GS-B) stand; the no-extra-pack verdict does not. Dated
+> votes, ledger rows, and receipts below are preserved as history.
+
 ## Research Question
 
 User instruction (2026-09-03): *"Governable Autonomous Delivery, try to review all skills to achieve those possibilities as possible, if further extra skills are needed then implement them."*
@@ -54,6 +61,11 @@ No routing cue, cheatsheet, `reflective-dispatch` route row, Small-Change Fast P
 - **Residual:** none of the adopted wording is enforced by TeaPrompt. Recurrence for extra skills remains `unknown`. `agent-governance-scaffold` remains lint-long; this panel did not grow it.
 
 ## Candidate Adoption Ledger
+
+XS-8/XS-9 are historical dispositions: the [same-day coverage
+decision](governed-delivery-adoption-2026-09-03.md) supersedes
+their narrowed/no-extra-pack scope by explicit user direction, not by observed
+recurrence. GS-A/GS-B remain adopted.
 
 | ID | Candidate | Status | Evidence | Next action or trigger |
 |---|---|---|---|---|

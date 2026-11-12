@@ -91,7 +91,7 @@ Deterministic guard: `plans/tests/test_minimax_code_trace_map_survey_record.py` 
 | Decision Index row (at head), case-studies row, `index.json` | done | `PROJECT_KNOWLEDGE.md`; `external-adoption-case-studies-2026-06-20.md` |
 | Full repository gate | done | `make all` from the repository root |
 
-## Latest-version pointer — 2026-10-22 (pointer only, no re-verification)
+## Latest-version pointer — 2026-10-22 (file-level delta plus two semantic anchors only; full 35-anchor tally not re-verified)
 
 The 2026-09-19 verdict (29 exact / 4 near / 1 far / 1 paraphrased / 0 absent
 at `e3724a13`) is immutable and unchanged. Against current `main` HEAD

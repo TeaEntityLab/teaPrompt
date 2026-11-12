@@ -1,6 +1,6 @@
 ---
 name: router-trace-linter
-description: Use when a router emits a route trace and you need to check it against the Router Output Contract before accepting the route — required fields present, confidence parseable, downgrade/defer claims carrying explicit rationale (R5), and high-risk routes carrying Human Review (R4/R7). Outputs pass/fail plus a field-level diff.
+description: Admission record for the registered router-trace-linter domain pack; live contract at skills/router-trace-linter/SKILL.md. Original proposal body retained below as history.
 license: MIT
 metadata:
   risk_level: low
@@ -9,11 +9,21 @@ metadata:
   context_load: low
 ---
 
-# Router Trace Linter (Proposal)
+# Router Trace Linter (admission record)
 
 **Status:** ADOPTED 2026-10-06 — registered domain pack; live contract at `skills/router-trace-linter/SKILL.md`. This file is the admission record.
 
-**Type:** Domain-pack proposal (verification artifact) — NOT a registered skill, NOT one of the nine frozen core workflow skills, NOT selected by `reflective-dispatch` route rows. Inert until admission review; do not add to `skill-map.md` or `plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS` without passing the promotion gates.
+> **Supersession 2026-10-06:** the "Domain-pack proposal — NOT a registered
+> skill / inert until admission review" line below is pre-admission text,
+> retained verbatim as history. Authority now lives at the registered pack's
+> `SKILL.md`; this file no longer prohibits registry or skill-map membership.
+
+> Pre-admission text (retained verbatim): **Type:** Domain-pack proposal
+> (verification artifact) — NOT a registered skill, NOT one of the nine
+> frozen core workflow skills, NOT selected by `reflective-dispatch` route
+> rows. Inert until admission review; do not add to `skill-map.md` or
+> `plans/validate_skill_examples.py` `DOMAIN_PACK_SKILLS` without passing the
+> promotion gates.
 
 ## Purpose
 
@@ -75,3 +85,20 @@ Verification: three self-contained fixtures, runnable without network or model c
 - High-risk keyword list is heuristic English-first (`production|auth|billing|…`); non-English or novel hazard phrasing can miss the review check. Misses are linter gaps, not route approvals — the underlying R4 duty still binds the router.
 - Alias mode (machine six-field form) is leniency by construction: display-only gaps warn instead of fail. Gates that need strictness should require the full ten-field form.
 - No recurrence evidence yet: this proposal has zero observed misroute catches. Admission needs ≥2 real failing traces caught pre-release plus a no-false-positive run over the existing `reflective-dispatch.examples.md` traces before registry consideration.
+
+## Admission basis (2026-10-06; pointer only)
+
+This pack was registered after throwaway mechanics smoke on three synthetic
+fixtures (pass, downgrade-flag, missing-confidence), recorded in the
+[usage log](../flow-pack-usage-log.md) 2026-10-06 `router-trace-linter` row
+and the [managed-skills survey](../managed-skills-learned-survey-2026-10-06.md#procedures-recorded)
+`inert-proposal-mechanics-smoke` procedure. That smoke is mechanics proof,
+not the "≥2 real failing traces caught pre-release plus a
+no-false-positive run over `reflective-dispatch.examples.md`" bar named in
+Honest Limits above, and not a recurrence claim. The live contract at
+`skills/router-trace-linter/SKILL.md` §Honest Limits discloses the same
+zero-observed-catches state. Canonical policy
+(`06-repo/AGENTS.md` Harness Policy item 3) permits an explicit
+user-directed domain-pack exception with recurrence recorded `unknown`,
+never as proof of recurrence; this note records the disclosed basis, not a
+new receipt or a satisfied bar.

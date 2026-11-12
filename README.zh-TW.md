@@ -1,6 +1,6 @@
 Language: [English](README.md) | 繁體中文
 
-> **翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](README.md)存在差異。完整、權威的內容請以英文版為準。翻譯管理見 [LANGUAGE_POLICY.md](reflective-prompt-library/LANGUAGE_POLICY.md)。
+> **範圍說明**：本文件是繁體中文**精簡版導覽**，不是英文版的逐句翻譯。完整、權威的內容請以英文版為準；`skills/*/SKILL.md` 契約維持英文，不在繁中面翻譯。翻譯管理見 [LANGUAGE_POLICY.md](reflective-prompt-library/LANGUAGE_POLICY.md)。
 
 # TeaPrompt
 
@@ -27,8 +27,8 @@ TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，�
 1. `README.md` — 北極星：TeaPrompt 是什麼、不是什麼。
 2. [reflective-prompt-library/README.zh-TW.md](reflective-prompt-library/README.zh-TW.md) — 各層與如何組合。
 3. [reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md](reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md) — 快速選出 workflow skill。
-4. [reflective-prompt-library/METHODOLOGY_MAP.md](reflective-prompt-library/METHODOLOGY_MAP.md) — 各層背後的原則。
-5. [reflective-prompt-library/SKILL_INSTALLATION.md](reflective-prompt-library/SKILL_INSTALLATION.md) — 將 skills 安裝進你的 agent host。
+4. [reflective-prompt-library/METHODOLOGY_MAP.zh-TW.md](reflective-prompt-library/METHODOLOGY_MAP.zh-TW.md) — 各層背後的原則（精簡版；後期 addenda 見英文版）。
+5. [reflective-prompt-library/SKILL_INSTALLATION.zh-TW.md](reflective-prompt-library/SKILL_INSTALLATION.zh-TW.md) — 將 skills 安裝進你的 agent host（精簡版；helper 定義只在英文版）。
 
 維護者與治理操作者請改從 [reflective-prompt-library/06-repo/AGENTS.md](reflective-prompt-library/06-repo/AGENTS.md) 與 GLOSSARY 的 Governance Maintenance Playbook 開始。
 
@@ -43,9 +43,9 @@ TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，�
 - `reflective-prompt-library/`：可重用的提示詞文件（思考、規劃、實作、審查、研究、風險、交接）。
 - `reflective-prompt-library/skills/`：精簡的 `SKILL.md` 工作流包裝。
 - `reflective-prompt-library/plans/`：決策紀錄、研究檔案、eval fixtures 與延後的自動化候選。
-- `reflective-prompt-library/SKILL_INSTALLATION.md`：Claude / Codex / Cursor / Antigravity / OpenCode 安裝說明。
-- `reflective-prompt-library/METHODOLOGY_MAP.md`：方法論分類與嚴格度分級地圖。
-- `reflective-prompt-library/LANGUAGE_POLICY.md`：語言政策（操作層英文 + 本地化 prompt source）。
+- `reflective-prompt-library/SKILL_INSTALLATION.md`：Claude / Codex / Cursor / Antigravity / OpenCode 安裝說明（英文完整版；繁中精簡版見 `SKILL_INSTALLATION.zh-TW.md`）。
+- `reflective-prompt-library/METHODOLOGY_MAP.md`：方法論分類與嚴格度分級地圖（英文完整版；繁中精簡版見 `METHODOLOGY_MAP.zh-TW.md`）。
+- `reflective-prompt-library/LANGUAGE_POLICY.md`：語言政策（操作層英文 + 本地化 prompt source；繁中精簡版見 `LANGUAGE_POLICY.zh-TW.md`）。
 - `surveys/`：外部模型與工具的調查筆記，作為參考證據保存。
 
 ## 快速開始
@@ -64,10 +64,10 @@ reflective-prompt-library/README.md
 .agents/skills/<skill-name>/SKILL.md
 ```
 
-各平台安裝路徑請見 [Skill Installation Guide](reflective-prompt-library/SKILL_INSTALLATION.md)。
+各平台安裝路徑請見 [Skill Installation Guide（繁中精簡版）](reflective-prompt-library/SKILL_INSTALLATION.zh-TW.md)，helper 定義以[英文版](reflective-prompt-library/SKILL_INSTALLATION.md)為準。
 Workflow skill 觸發口訣請見 [Skill Trigger Cheatsheet（繁中）](reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)。
-方法論邊界請見 [Methodology Map](reflective-prompt-library/METHODOLOGY_MAP.md)。
-語言規範請見 [Language Policy](reflective-prompt-library/LANGUAGE_POLICY.md)。
+方法論邊界請見 [Methodology Map（繁中精簡版）](reflective-prompt-library/METHODOLOGY_MAP.zh-TW.md)，後期 addenda 見[英文版](reflective-prompt-library/METHODOLOGY_MAP.md)。
+語言規範請見 [Language Policy（繁中精簡版）](reflective-prompt-library/LANGUAGE_POLICY.zh-TW.md)，canonical 見[英文版](reflective-prompt-library/LANGUAGE_POLICY.md)。
 
 ## 推薦入口
 

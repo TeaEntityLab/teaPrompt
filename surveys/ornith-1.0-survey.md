@@ -148,26 +148,22 @@ to a pinned revision."
   not independently reproduced**.
 
 ### Ornith-1.5 — current release survey (current-only, 2026-10-22)
-+
 The org's current lead release is **Ornith-1.5** ("From Self-Scaffolding to
 Self-Improvement"), blog `https://ornith.ai/ornith_1_5.html`. No prior
 TeaPrompt record of 1.5 exists, so everything below is **current-only**; 1.0
 comparisons quote the maintainer's own 1.0-column figures where the 1.5
 sources carry them.
-+
 **Release / model identities (HF `ornith-ai`, MIT, `qwen3_5_moe`, main-branch
 SHAs, no tags/releases):** 29 repos across four base scales —
-397B-MoE, **122B-MoE (new scale, released 2026-10-21, i.e. yesterday)**,
+397B-MoE, **122B-MoE (new scale, released 2026-10-21)**,
 35B-A3B-MoE, 9B-Dense — each with FP8 / NVFP4 / GGUF / DFlash / MLX
 quant variants. Base-repo pins:
-+
 | Repo | SHA | Last modified |
 |---|---|---|
 | `Ornith-1.5-397B` | `8f6cc8a7aea505364523f84ccf37706e8aea0ee7` | 2026-08-23T06:21:27Z |
 | `Ornith-1.5-122B` | `7681ef608624e7532d8164128bcffdbdbaf1b1af` | 2026-10-21T08:29:30Z |
-| `Ornith-1.5-35B-A3B` | `10fbf86fed7e…` (full in receipt) | 2026-08-23T03:17:39Z |
-| `Ornith-1.5-9B` | `489cb97981b8…` (full in receipt) | 2026-08-23T06:24:01Z |
-+
+| `Ornith-1.5-35B-A3B` | `10fbf86fed7ecee4a061f8b499a618f46001cac1` | 2026-08-23T03:17:39Z |
+| `Ornith-1.5-9B` | `489cb97981b8654bcfcf30ce1f94ed1b62e07b53` | 2026-08-23T06:24:01Z |
 Notable quant pins: `397B-NVFP4@065b3455` (2026-10-20), `122B-NVFP4@f049036f`
 / `122B-FP8@40f77767` / `122B-GGUF@8d5893d7` (all 2026-10-21),
 `35B-A3B-FP8@b93dbd81` (2026-10-20), `9B-GGUF@abdd624b` (2026-08-24, 5.0M
@@ -175,7 +171,6 @@ downloads, the family's most-pulled repo). The 1.5 lineage claim per the
 cards: built on Qwen3.5/Gemma4 with continued pretraining, mid-training, and
 post-training. The 1.5 cards use current `ornith-ai/` idents (the stale
 `deepreinforce-ai/` links of the 1.0 cards are fixed here).
-+
 **Claimed method change vs 1.0:** the loop expands from two stages (scaffold →
 rollout) to three (task → scaffold → rollout). The model proposes
 progressively harder tasks from an environment/codebase plus its own
@@ -189,17 +184,14 @@ delta for the §1 concept list: **self-generated curriculum with
 frontier-difficulty targeting** (p\*≈0.2 Gaussian) layered on the 1.0
 scaffold-as-learnable-object thesis. No paper, ablations, datasets, compute,
 or monitor/judge prompts are published — same methodology opacity as 1.0.
-+
 **Claimed benchmark deltas vs 1.0** (all maintainer-reported, 5-run averages
 unless noted; not independently reproduced):
-+
 | Scale | Headline 1.5 claim | Maintainer's 1.0 column |
 |---|---|---|
 | 397B | TB-2.1 86.1 (Terminus-2) / 85.2 (Claude Code); SWE-Verified 86.0; **DeepSWE 56.0**; HLE-tools 56.1; ClawEval 81.4 — "on par with Claude Opus 4.8" | 77.5 / 78.2; 82.4; **8.0**; 47.5; 77.1 |
 | 122B (new) | TB-2.1 81.2; CyberGym 80.0; SWE-Verified(non-hack) 84.5; ClawEval 79.4; card claims single-GPU + `122B-Mobile` edge variant | n/a (no 1.0 counterpart) |
 | 35B-A3B (3B active) | TB-2.1 67.8/68.5; SWE-Verified 79.0; DeepSWE 22.0 | 64.2/62.8; 75.6; 0 |
 | 9B | TB-2.1 46.2/47.0; SWE-Verified 70.6; `9B-Mobile` iPhone/Android claim | 43.1/40.6; 69.4 |
-+
 New benchmark surfaces in 1.5 tables (no 1.0 rows to compare): DeepSWE,
 Frontier-Bench v0.1, HLE, GPQA-Diamond, MCP-Atlas, Toolathlon-Verified,
 WideSearch, BrowseComp, SciCode, CyberGym. The 122B card uses "(non-hack)"
@@ -207,7 +199,6 @@ SWE variants and its table header names a 397B-scale "Beam (501B)"
 comparator. The 122B card has a minor typo ("efficient.member").
 Neither `122B-Mobile` nor `9B-Mobile` appears as an HF repo — the Mobile
 variants are card/blog claims only, with no pinned artifact.
-+
 **1.5 availability subrow:** all four base repos + quants resolve live with
 the SHAs above; 122B family published 2026-10-21 (1 day before this refresh).
 No code/training-data release beyond weights, cards, chat templates, and the

@@ -50,8 +50,10 @@ The surveyed reference vocabulary separates deterministic control flow from mode
 - **Quorum Policy:** Parallel templates implement `MIN_OK` quorum checks where non-empty output does not equal correct output.
 - **State Hygiene:** Loops use disposable `state/`, RESUMED restart stanzas, and tail compaction budgets.
 - **Preflight:** P16 invokes a selected host-owned `PREFLIGHT` executable before dispatch and before result acceptance. An unset checker preserves an attended example, not proof that host preconditions are met.
-- **Host-Counted Termination Invariant** *(proposed; record-only)*: Broader termination wording would require observed iteration/concurrency counters and host wall-clock supervision, including the single-call hang boundary; it is not a shipped end-to-end guarantee.
-- **Stop-Hook Fail-Open Disclosure** *(proposed; record-only)*: Emitted loop documentation would disclose that host stop-hooks can fail open under contention; no shipped template carries this wording yet.
+
+### Record-only proposals (not shipped)
+- **Host-Counted Termination Invariant** (HF-03; proposed; record-only): Broader termination wording would require observed iteration/concurrency counters and host wall-clock supervision, including the single-call hang boundary; it is not a shipped end-to-end guarantee.
+- **Stop-Hook Fail-Open Disclosure** (HF-04; proposed; record-only): Emitted loop documentation would disclose that host stop-hooks can fail open under contention; no shipped template carries this wording yet.
 
 ### Horizon 2 — Date-Gated Checkpoints
 - **2027-01-11 P6 Review Checkpoint:** Review documented standalone-generation use under the [owning usage convention](checkpoint-2026-10-11-outcome.md#p6-outcome). A documented zero reopens consolidation evaluation; unavailable host usage remains `unknown`, not zero, and generation is not accepted delivery or efficacy.
@@ -78,5 +80,5 @@ This planning summary is wrong or stale if:
 |---|---|---|---|---|
 | HF-01 | Separate Flow Packs Retained | Adopted | `checkpoint-2026-10-11-outcome.md` | Re-audit at 2027-01-11 checkpoint |
 | HF-02 | Parallel `MIN_OK` Quorum Gate | Adopted | `skills/flow-control-generator/SKILL.md` | None |
-| HF-03 | Host-Enforced Termination Invariant | Proposed (Record-only in this roadmap) | This roadmap §Horizon 1 | Re-litigate upon host looper integration |
-| HF-04 | Stop-Hook Fail-Open Disclosure | Proposed (Record-only in this roadmap) | This roadmap §Horizon 1 | Re-litigate upon host looper integration |
+| HF-03 | Host-Enforced Termination Invariant | Proposed (Record-only in this roadmap) | This roadmap §Record-only proposals (not shipped) | Re-litigate upon host looper integration |
+| HF-04 | Stop-Hook Fail-Open Disclosure | Proposed (Record-only in this roadmap) | This roadmap §Record-only proposals (not shipped) | Re-litigate upon host looper integration |

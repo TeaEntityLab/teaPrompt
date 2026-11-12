@@ -88,3 +88,11 @@ Panel consensus (Round 6):
 without a translated `SKILL.md`; deeper contracts load in English. ROUTE-002
 includes Traditional Chinese holdout phrases to test intent-normalization fairness
 in the deterministic router — not full skill contract translation.
+
+Shipped abridged aids and their maintenance scope: `README.zh-TW.md`
+(navigation only), `SKILL_TRIGGER_CHEATSHEET.zh-TW.md` (routing cues only),
+`SKILL_INSTALLATION.zh-TW.md` (destinations and helper invocations; the
+executable helper definitions live only in the English install guide), and
+`METHODOLOGY_MAP.zh-TW.md` (core conclusion, taxonomy, strictness levels; the
+later EN addenda stay untranslated). Abridgement is the supported scope; it
+does not create an obligation to translate a full contract.

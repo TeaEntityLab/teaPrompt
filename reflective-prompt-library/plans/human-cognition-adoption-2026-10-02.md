@@ -25,12 +25,13 @@ The preceding survey also checked ten primary publications, mostly abstracts or 
 | [Gignac/Zajenkowski (2020)](https://research-repository.uwa.edu.au/en/publications/the-dunning-kruger-effect-is-mostly-a-statistical-artefact-valid-/) | Author-university abstract; publisher access returned HTTP 403; carried forward as of 2026-10-02 | Quartile analysis confounds regression to the mean and better-than-average effects; do not retain a universal inverse competence-confidence law. |
 | [Wixted/Wells (2017)](https://pubmed.ncbi.nlm.nih.gov/28395650/) | Primary synthesis abstract, accessed 2026-10-02 | Adult confidence and identification accuracy can be strongly related under initial, uncontaminated, fair lineups without administrator influence and with immediate confidence statements. Do not generalize to contaminated procedures. |
 | [Sisk et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/29505339/) | Meta-analysis abstract; carried forward as of 2026-10-02 | Overall mindset associations/intervention effects were weak, with some contextual benefits; no support for mindset overriding talent, resources and environment. |
-| [Kahneman/Klein (2009)](https://pubmed.ncbi.nlm.nih.gov/19739881/) | Primary article abstract; carried forward as of 2026-10-02 | Intuitive expertise depends on environmental predictability and opportunity to learn regularities; neither blanket rejection nor unconditional trust in intuition follows. |
-| [Hauenstein et al. (2025)](https://pubmed.ncbi.nlm.nih.gov/39630638/) | Primary reanalysis abstract; carried forward as of 2026-10-02 | Controlling method variance reduced, eliminated or reversed some tournament team/training effects; journaling does not guarantee superforecaster performance. |
-| [Ezra/Feldman/Kupfer (2021)](https://www.ijcai.org/proceedings/2021/0025.pdf) | Abstract, introduction and model opening; carried forward as of 2026-10-02 | Random order, immediate irrevocable choice and selecting the maximum define the classic secretary model; changed selection/competition conditions do not support a universal 37%-of-time prescription. |
+| [Kahneman/Klein (2009)](https://pubmed.ncbi.nlm.nih.gov/19739881/) † | Primary article abstract; carried forward as of 2026-10-02 | Intuitive expertise depends on environmental predictability and opportunity to learn regularities; neither blanket rejection nor unconditional trust in intuition follows. |
+| [Hauenstein et al. (2025)](https://pubmed.ncbi.nlm.nih.gov/39630638/) † | Primary reanalysis abstract; carried forward as of 2026-10-02 | Controlling method variance reduced, eliminated or reversed some tournament team/training effects; journaling does not guarantee superforecaster performance. |
+| [Ezra/Feldman/Kupfer (2021)](https://www.ijcai.org/proceedings/2021/0025.pdf) † | Abstract, introduction and model opening; carried forward as of 2026-10-02 | Random order, immediate irrevocable choice and selecting the maximum define the classic secretary model; changed selection/competition conditions do not support a universal 37%-of-time prescription. |
 
-**2026-10-02 source-table correction:** these three parent-override sources
-complete the preceding ten-publication list; the earlier seven-row selection
+**2026-10-02 source-table correction:** the three parent-override sources are
+Kahneman/Klein (2009), Hauenstein et al. (2025), and Ezra/Feldman/Kupfer
+(2021), marked † in the table above; the earlier seven-row selection
 omitted their names, not their checks. No full-paper, raw-data or human-benefit
 verification is inferred from the recorded abstract/opening access.
 

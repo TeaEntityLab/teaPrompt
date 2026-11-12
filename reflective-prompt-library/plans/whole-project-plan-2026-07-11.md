@@ -38,7 +38,13 @@
   [Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals). Scheduling
   semantics (cadence / date / trigger / direction gates) belong to the roadmap.
 
-## Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11)
+## Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11; current registry pointer 2026-10-09)
+
+> The five-pack enumeration in the table below is the dated 2026-10-01
+> historical row. Live truth is the `DOMAIN_PACK_SKILLS` registry (ten packs
+> after the 2026-10-06 five-pack admission); see the F15 current-count
+> pointer under Falsifiability. History is preserved semantically, not as a
+> present-tense inventory.
 
 ### Product surfaces
 

@@ -46,6 +46,7 @@ run_agent() {
   if [ "$ec" -ne 0 ]; then
     printf 'sig=%s exit=%s reason=%s class=agent-exit step=%s\n' "$sig" "$ec" "$rsum" "$(basename "$1")" >> "$FAIL_SIGS"
     mv "$2" "$2.failed-$ec" 2>/dev/null || true # keep the raw failed receipt; leave no accepted output
+    if [ "$ec" -eq 3 ] || [ "$ec" -eq 4 ]; then log "worker gate=5 agent-exit=$ec"; return 5; fi # 3/4 are driver holds; remap raw worker 3/4 to branch-failure 5
     return "$ec"
   fi
   preflight "$(basename "$2")-post" || return 4
@@ -124,6 +125,7 @@ run_agent() {
     printf 'sig=%s exit=%s reason=%s class=%s step=%s\n' "$sig" "$ec" "$rsum" "$class" "$stem" >> "$FAIL_SIGS"
     mv "$2" "$2.failed-$ec" 2>/dev/null || rm -f "$2" # keep the raw failed receipt
     [ "$ec" -eq 0 ] && return 1
+    if [ "$ec" -eq 3 ] || [ "$ec" -eq 4 ]; then log "worker gate=5 agent-exit=$ec"; return 5; fi # 3/4 are driver holds; remap raw worker 3/4 to branch-failure 5
     return "$ec"
   fi
   preflight "$stem-post" || { rm -f "$2"; return 4; }
@@ -144,6 +146,7 @@ ok=0
 for f in "$STATE"/fan-*.md; do [ ! -s "$f" ] || ok=$((ok+1)); done
 # A repeated-failure hold (3) and a selected-preflight hold (4) are driver
 # decisions — never swallowed by quorum, including MIN_OK=0.
+# Raw worker 3/4 never reach this tally: run_agent remaps them to branch-failure 5.
 if [ "$RETRY_REFUSED" -ne 0 ]; then log "repeated-failure gate=3 propagated"; exit 3; fi
 if [ "$PREFLIGHT_FAILED" -ne 0 ]; then log "preflight gate=4 propagated"; exit 4; fi
 if [ -n "$MIN_OK" ]; then
@@ -210,6 +213,7 @@ run_agent() {
   if [ "$ec" -ne 0 ]; then
     printf 'sig=%s exit=%s reason=%s class=agent-exit step=%s\n' "$sig" "$ec" "$rsum" "$(basename "$1")" >> "$FAIL_SIGS"
     mv "$2" "$2.failed-$ec" 2>/dev/null || true # keep the raw failed receipt; leave no accepted output
+    if [ "$ec" -eq 3 ] || [ "$ec" -eq 4 ]; then log "worker gate=5 agent-exit=$ec"; return 5; fi # 3/4 are driver holds; remap raw worker 3/4 to branch-failure 5
     return "$ec"
   fi
   preflight "$(basename "$2")-post" || exit 4
@@ -252,7 +256,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 AGENT_CMD = shlex.split(os.environ.get("AGENT_CMD", "claude -p")) # reviewed flags; task-root cwd; protect checks/ (get, not setdefault — explicit empty is a failure, not a default)
 PREFLIGHT = os.environ.get("PREFLIGHT", "") # one executable pathname, not shell text; empty = attended example, never met
 STATE = pathlib.Path(os.environ.get("STATE", "state")); STATE.mkdir(parents=True, exist_ok=True)
-MAX_WORKERS, MAX_TASKS = 4, 12
+MAX_WORKERS, MAX_TASKS = 4, 12 # fixed template constants, not env inputs
 def log(line):
     with (STATE / "flow.log").open("a") as f: f.write(line + "\n")
 if not AGENT_CMD:

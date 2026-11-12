@@ -1,6 +1,6 @@
 # Parallel Lens Review: SDLC & Software Factory Entry Points Rethink (2026-09-28)
 
-> **Status: decided — two surfaces updated; new core skill and domain pack rejected; router keyword tuning deferred.** A 4-lens Parallel Lens Review (`MinimalityArchitectureLens`, `RoutingDiscoveryParityLens`, `WorkflowRecipeSynthesisLens`, `AdversarialSkepticLens`) evaluated whether TeaPrompt should introduce a dedicated "Software Factory" or "AI-Native SDLC" skill or entry point, following the survey of `agfnow/agentflow` v8.3.3 and late-2026 DevOps trends. All four lenses unanimously agreed with changes: a new standalone skill is 95% redundant with `governed-delivery` and violates the 9-core freeze and Principle P7; doing nothing leaves a real discovery gap; the optimal solution updates the existing `governed-delivery` bullet in place in both cheatsheets (preserving the 6-bullet invariant T2 and 105 parity tests) and adds the canonical 4-phase composition recipe to `04-agent/workflow-recipes.md`. Router keyword tuning for "factory" is deferred under ROUTING_CONTRACT R8 due to an existing collision with `reflective-minimality`. Guard: `plans/tests/test_software_factory_rethink_panel_record.py`.
+> **Status: decided — two surfaces updated; new core skill and domain pack rejected; router keyword tuning deferred.** A 4-lens Parallel Lens Review (`MinimalityArchitectureLens`, `RoutingDiscoveryParityLens`, `WorkflowRecipeSynthesisLens`, `AdversarialSkepticLens`) evaluated whether TeaPrompt should introduce a dedicated "Software Factory" or "AI-Native SDLC" skill or entry point, following the survey of `agfnow/agentflow` v8.3.3 and late-2026 DevOps trends. All four lenses unanimously agreed with changes: a new standalone skill substantially overlaps `governed-delivery` (panel estimate, unmeasured; no uncovered contract artifact or gate was identified) and violates the 9-core freeze and Principle P7; doing nothing leaves a real discovery gap; the optimal solution updates the existing `governed-delivery` bullet in place in both cheatsheets (preserving the 6-bullet invariant T2 and 105 parity tests) and adds the canonical 4-phase composition recipe to `04-agent/workflow-recipes.md`. Router keyword tuning for "factory" is deferred under ROUTING_CONTRACT R8 due to an existing collision with `reflective-minimality`. Guard: `plans/tests/test_software_factory_rethink_panel_record.py`.
 
 ## Research Question & Problem Context
 
@@ -21,7 +21,7 @@ Questions addressed by the panel:
 
 - **Decision:** **AGREE WITH CHANGES (4/4 Lenses Unanimous).**
   - Reject Option A (New Core Skill: breaks 9-core freeze).
-  - Reject Option B (New Domain Pack: 95% redundant with `governed-delivery`).
+  - Reject Option B (New Domain Pack: substantially overlaps `governed-delivery` — panel estimate, unmeasured — with no uncovered contract identified).
   - Reject Option E (Status Quo / Do Nothing: leaves developer discovery broken).
   - **Adopt Option C (In-Place Cheatsheet Cues) + Option D (Architectural Composition Recipe).**
 - **Use-Case Recommendation:**
@@ -83,7 +83,7 @@ Questions addressed by the panel:
 | :--- | :--- | :--- | :--- | :--- |
 | **SFR-1** | Cheatsheet `governed-delivery` in-place cue update (Software Factory / AI-native SDLC) | Adopted 2026-09-28 | `SKILL_TRIGGER_CHEATSHEET.md` line 245; `SKILL_TRIGGER_CHEATSHEET.zh-TW.md` line 234. Exactly 6 bullets preserved. | Parity test failure or user reports of delivery cue ambiguity. |
 | **SFR-2** | Autonomous Software Factory composition recipe in `04-agent/workflow-recipes.md` | Adopted 2026-09-28 | `04-agent/workflow-recipes.md` lines 183–221. 4-phase outer/inner loop graph. Clean-room tokens verified. | A multi-skill delivery workflow failing to follow the 4-phase sequence. |
-| **SFR-3** | Standalone 10th core skill or 6th domain pack (`software-factory` / `ai-native-sdlc`) | Rejected 2026-09-28 | 4/4 lens consensus: 95% redundant with `governed-delivery`; violates 9-core freeze and Principle P7. | An autonomous delivery failure that cannot be represented by existing core skills + domain packs. |
+| **SFR-3** | Standalone 10th core skill or 6th domain pack (`software-factory` / `ai-native-sdlc`) | Rejected 2026-09-28 | 4/4 lens consensus: substantially overlapping `governed-delivery` (panel estimate, unmeasured); no contract artifact or gate outside `governed-delivery` / `reflective-spec-plan` / `verification-map-generator` was identified; violates 9-core freeze and Principle P7. | An autonomous delivery failure that cannot be represented by existing core skills + domain packs. |
 | **SFR-4** | Core router keyword tuning for "factory" in `route_paraphrase_eval.py` | Deferred 2026-09-28 | Collision with `reflective-minimality` (line 223); R8 requires holdout/adversarial fixtures before tuning. | A verified holdout failure where a user asks for a software factory plan and minimality misroutes it. |
 
 ---
@@ -126,9 +126,11 @@ Questions addressed by the panel:
 
 ---
 
-## Corrections (2026-10-02)
+## Corrections (2026-10-02; WLR-03 repair 2026-11-12)
 
 Post-review audit (`review/final-report.md`, finding Factory-5) corrected two attributions while leaving the settled SFR-1/SFR-2 adoptions, the SFR-3 rejection, the SFR-4 deferral, and the panel's decision history unchanged:
 
 1. **Packet lifecycle (:63):** the original wording implied the `parallel-lens-review-packet` recipe makes the packet ephemeral and deleted upon synthesis. The canonical recipe (`workflow-recipes.md` :158) requires only that the packet be at a path every reviewer can actually read; deleting it after synthesis is this host's manual/panel convention, not recipe authority.
 2. **Evidence row (:100):** the claim "the temporary review packet is ephemeral and deleted after synthesis — Observed, contract stated in `workflow-recipes.md`" conflated a host cleanup action with a recipe contract. The deletion happened under the managed host's convention; it was not instructed or verified by the cited recipe text.
+
+3. **Redundancy-figure repair (2026-11-12, WLR-03):** the "95% redundant" figure (:3, :24, :86) had no overlap rubric, count, or denominator and could be mis-cited as a measured result. It is replaced with the panel's qualitative basis — substantially overlapping `governed-delivery` (panel estimate, unmeasured), with no contract artifact or gate outside `governed-delivery` / `reflective-spec-plan` / `verification-map-generator` identified. The SFR-3 rejection, its reopen trigger, and all other dispositions are unchanged.

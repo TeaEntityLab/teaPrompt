@@ -152,13 +152,16 @@ def test_compose_missing_second_source_raises_only_partial_avoided(composer, mon
         composer.compose(["core-full", "spec-writer"])
 
 
-def test_template_engineering_task(composer):
-    """engineering-task template should expand to 8 slugs."""
-    slugs = composer.expand_template("engineering-task")
-    assert len(slugs) == 8
-    assert "core-full" in slugs
-    assert "task-start" in slugs
-    assert "code-reviewer" in slugs
+def test_template_engineering_task_plans_tests_before_implementation(composer):
+    """The composed engineering workflow plans its checks before writing code."""
+    output = composer.compose(composer.expand_template("engineering-task"))
+    sections = [
+        line.split(": ", 1)[1]
+        for line in output.splitlines()
+        if line.startswith("## Prompt ")
+    ]
+    assert sections.index("test-designer") < sections.index("implementation-agent")
+    assert sections.index("test-designer") < sections.index("code-reviewer")
 
 
 def test_template_long_research(composer):

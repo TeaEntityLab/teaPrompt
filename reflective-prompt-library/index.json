@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-12T09:17:12.196329",
+  "generated_at": "2026-11-12T11:58:57.114420",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1159,7 +1159,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "governed-delivery-adoption-2026-09-03.md",
+          "governed-delivery-adoption-2026-09-03.md"
+        ]
       },
       "structure": [
         {
@@ -1211,8 +1214,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 99,
-      "char_count": 11613
+      "line_count": 111,
+      "char_count": 12257
     },
     {
       "path": "reflective-prompt-library/plans/governance-workflow-self-control-adoption-2026-09-14.md",
@@ -2514,6 +2517,10 @@
         },
         {
           "level": 3,
+          "text": "Record-only proposals (not shipped)"
+        },
+        {
+          "level": 3,
           "text": "Horizon 2 — No New Date-Gated Commitment"
         },
         {
@@ -2533,8 +2540,8 @@
           "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 82,
-      "char_count": 7078
+      "line_count": 84,
+      "char_count": 7150
     },
     {
       "path": "reflective-prompt-library/plans/whole-project-review-2026-10-09.md",
@@ -3687,6 +3694,10 @@
         },
         {
           "level": 3,
+          "text": "Record-only proposals (not shipped)"
+        },
+        {
+          "level": 3,
           "text": "Horizon 2 — Review Proposal (Unscheduled)"
         },
         {
@@ -3706,8 +3717,8 @@
           "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 91,
-      "char_count": 8500
+      "line_count": 93,
+      "char_count": 8572
     },
     {
       "path": "reflective-prompt-library/plans/socratic-change-inquiry-2026-06-11.md",
@@ -4045,7 +4056,7 @@
         },
         {
           "level": 2,
-          "text": "Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11)"
+          "text": "Current State (source reconciliation, 2026-10-01; original evidence dated 2026-07-11; current registry pointer 2026-10-09)"
         },
         {
           "level": 3,
@@ -4112,8 +4123,8 @@
           "text": "Verification (this plan)"
         }
       ],
-      "line_count": 362,
-      "char_count": 26874
+      "line_count": 368,
+      "char_count": 27234
     },
     {
       "path": "reflective-prompt-library/plans/skill-optimization-reflection-2026-06-11.md",
@@ -5337,6 +5348,10 @@
         },
         {
           "level": 2,
+          "text": "Closure Notes (2026-11-12)"
+        },
+        {
+          "level": 2,
           "text": "Evidence Actually Checked"
         },
         {
@@ -5352,8 +5367,8 @@
           "text": "Files Changed"
         }
       ],
-      "line_count": 52,
-      "char_count": 6824
+      "line_count": 57,
+      "char_count": 7714
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.4.1-delta-survey-2026-09-30.md",
@@ -6259,7 +6274,7 @@
         }
       ],
       "line_count": 122,
-      "char_count": 8163
+      "char_count": 8204
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -6437,8 +6452,8 @@
           "text": "Source Corrections (2026-10-02)"
         }
       ],
-      "line_count": 271,
-      "char_count": 24825
+      "line_count": 279,
+      "char_count": 25370
     },
     {
       "path": "reflective-prompt-library/plans/runtime-skills-workflow-spec-2026-10-06.md",
@@ -7048,6 +7063,10 @@
         },
         {
           "level": 3,
+          "text": "Record-only proposals (not shipped)"
+        },
+        {
+          "level": 3,
           "text": "Horizon 2 — Review Proposal (Unscheduled)"
         },
         {
@@ -7067,8 +7086,8 @@
           "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 85,
-      "char_count": 7597
+      "line_count": 87,
+      "char_count": 7701
     },
     {
       "path": "reflective-prompt-library/plans/eian-video-workflow-survey-2026-11-09.md",
@@ -7220,6 +7239,9 @@
           "checkpoint-2026-10-11-runbook.md",
           "checkpoint-2026-10-11-preparation-2026-10-10.md",
           "checkpoint-packaging-decision-2026-10-11.md",
+          "flow-control-pack-panel-record-2026-07-11.md",
+          "governance-necessity-panel-record-2026-07-11.md",
+          "checkpoint-2026-10-11-runbook.md",
           "flow-pack-demotion-evaluation-2026-07-11.md#checkpoint-source-only-f1-re-check-2026-10-11",
           "../../surveys/agent-skills-flow-control-survey-2026-07-11.md",
           "agent-flow-control-research-2026-07-11.md",
@@ -7306,8 +7328,8 @@
           "text": "Falsifiability and remaining gates"
         }
       ],
-      "line_count": 265,
-      "char_count": 30093
+      "line_count": 277,
+      "char_count": 30890
     },
     {
       "path": "reflective-prompt-library/plans/workflow-possibilities-constraints-review-2026-07-06.md",
@@ -7792,11 +7814,11 @@
         },
         {
           "level": 2,
-          "text": "Latest-version pointer — 2026-10-22 (pointer only, no re-verification)"
+          "text": "Latest-version pointer — 2026-10-22 (file-level delta plus two semantic anchors only; full 35-anchor tally not re-verified)"
         }
       ],
       "line_count": 109,
-      "char_count": 12946
+      "char_count": 12999
     },
     {
       "path": "reflective-prompt-library/plans/jev-diffusion-eval-survey-2026-09-19.md",
@@ -11746,8 +11768,8 @@
           "text": "Latest-version refresh — 2026-10-22"
         }
       ],
-      "line_count": 209,
-      "char_count": 27349
+      "line_count": 210,
+      "char_count": 28221
     },
     {
       "path": "reflective-prompt-library/plans/governable-autonomy-survey-2026-09-03.md",
@@ -12320,7 +12342,7 @@
         }
       ],
       "line_count": 605,
-      "char_count": 136367
+      "char_count": 136706
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -13427,11 +13449,11 @@
         },
         {
           "level": 2,
-          "text": "Corrections (2026-10-02)"
+          "text": "Corrections (2026-10-02; WLR-03 repair 2026-11-12)"
         }
       ],
-      "line_count": 134,
-      "char_count": 13337
+      "line_count": 136,
+      "char_count": 14214
     },
     {
       "path": "reflective-prompt-library/plans/procedural-blind-dogfood-preregistration-2026-10-15.md",
@@ -13891,8 +13913,8 @@
           "text": "Falsifiability and Residual Risks"
         }
       ],
-      "line_count": 129,
-      "char_count": 21465
+      "line_count": 130,
+      "char_count": 21538
     },
     {
       "path": "reflective-prompt-library/plans/project-knowledge-authority-promotion-decision-2026-06-17.md",
@@ -14269,6 +14291,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3r1-native-deadline-repair-and-continuation-2026-10-15",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#readiness-sealing-and-authority",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#full-seven-obligation-continuation-and-v2r1-repair-2026-10-15",
           "fresh-dogfood-campaign-preregistration-2026-10-14.md#same-uid-claim-correction-and-distinct-uid-controls-2026-10-15"
@@ -14372,8 +14396,8 @@
           "text": "Evidence Actually Checked"
         }
       ],
-      "line_count": 252,
-      "char_count": 41968
+      "line_count": 260,
+      "char_count": 42601
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-technical-brief-2026-06-25.md",
@@ -14895,8 +14919,8 @@
           "text": "Guard mechanism supersession (2026-10-08)"
         }
       ],
-      "line_count": 676,
-      "char_count": 143569
+      "line_count": 677,
+      "char_count": 143304
     },
     {
       "path": "reflective-prompt-library/plans/skill-workflow-research-synthesis.md",
@@ -17581,7 +17605,7 @@
         }
       ],
       "line_count": 97,
-      "char_count": 12151
+      "char_count": 12390
     },
     {
       "path": "reflective-prompt-library/plans/minimax-code-survey-2026-09-19.md",
@@ -18209,6 +18233,10 @@
         },
         {
           "level": 3,
+          "text": "Record-only proposals (not shipped)"
+        },
+        {
+          "level": 3,
           "text": "Horizon 2 — Date-Gated Checkpoints"
         },
         {
@@ -18228,8 +18256,8 @@
           "text": "Candidate Adoption Ledger"
         }
       ],
-      "line_count": 82,
-      "char_count": 6930
+      "line_count": 84,
+      "char_count": 7033
     },
     {
       "path": "reflective-prompt-library/plans/flow-pack-usage-log.md",
@@ -18707,8 +18735,8 @@
           "text": "agent-skills-hook"
         }
       ],
-      "line_count": 425,
-      "char_count": 30351
+      "line_count": 431,
+      "char_count": 30775
     },
     {
       "path": "reflective-prompt-library/plans/graph-engineering-synthesis-survey-2026-09-16.md",
@@ -18899,16 +18927,20 @@
           "text": "3. `evidence-ledger.yaml` (Attested Proof-Carrying Diff Dossier)"
         },
         {
+          "level": 1,
+          "text": "Illustrative placeholder receipt values for this blueprint example; not a measured run."
+        },
+        {
           "level": 2,
           "text": "Architectural Synthesis"
         },
         {
           "level": 2,
-          "text": "Corrections (2026-10-02)"
+          "text": "Corrections (2026-10-02; WLR-03 repair 2026-11-12)"
         }
       ],
-      "line_count": 361,
-      "char_count": 32984
+      "line_count": 364,
+      "char_count": 36344
     },
     {
       "path": "reflective-prompt-library/plans/project-adjustment-reflection-2026-06-11.md",
@@ -19329,8 +19361,8 @@
           "text": "任務"
         }
       ],
-      "line_count": 67,
-      "char_count": 1509
+      "line_count": 76,
+      "char_count": 2091
     },
     {
       "path": "reflective-prompt-library/04-agent/runtime-trust-boundary.md",
@@ -19623,8 +19655,8 @@
           "text": "Practical Principle"
         }
       ],
-      "line_count": 289,
-      "char_count": 16409
+      "line_count": 290,
+      "char_count": 16600
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-acquisition.md",
@@ -20814,7 +20846,7 @@
         }
       ],
       "line_count": 252,
-      "char_count": 13349
+      "char_count": 13380
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -20886,7 +20918,7 @@
         }
       ],
       "line_count": 241,
-      "char_count": 7661
+      "char_count": 7669
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -21127,7 +21159,7 @@
         }
       ],
       "line_count": 82,
-      "char_count": 4279
+      "char_count": 4530
     },
     {
       "path": "reflective-prompt-library/05-domain/deep-analysis.md",
@@ -21521,7 +21553,7 @@
         }
       ],
       "line_count": 79,
-      "char_count": 1684
+      "char_count": 1704
     }
   ],
   "skills": [
@@ -21835,7 +21867,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 15307
+      "char_count": 15647
     },
     {
       "path": "reflective-prompt-library/skills/golden-benchmark-runner/SKILL.md",

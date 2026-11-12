@@ -37,9 +37,9 @@ TEMPLATES: Dict[str, List[str]] = {
         "task-start",
         "spec-writer",
         "usage-first",
+        "test-designer",
         "task-slicer",
         "implementation-agent",
-        "test-designer",
         "code-reviewer",
     ],
     "long-research": [

@@ -1,6 +1,6 @@
 Language: [English](README.md) | 繁體中文
 
-> **翻譯一致性說明**：本文件為繁體中文翻譯，可能與[英文版](README.md)存在差異。**英文版包含完整的 Recommended Defaults、Use Case Selection 表格及 Skills as Workflow 詳細說明**，請以英文版為完整參考。翻譯管理見 [LANGUAGE_POLICY.md](LANGUAGE_POLICY.md)。
+> **範圍說明**：本文件是繁體中文**精簡版導覽**，不是英文版的逐句翻譯。它保留北極星、目錄說明與 skills 對照表；**英文版包含完整的 Recommended Defaults、Use Case Selection 表格及 Skills as Workflow 詳細說明**，請以英文版為完整參考。安裝的可執行作法只有英文版 helper 一種（見 [SKILL_INSTALLATION.zh-TW.md](SKILL_INSTALLATION.zh-TW.md)）；`skills/*/SKILL.md` 契約維持英文，不在繁中面翻譯。翻譯管理見 [LANGUAGE_POLICY.md](LANGUAGE_POLICY.md)。
 
 # Reflective Prompt Library
 
@@ -63,9 +63,9 @@ TeaPrompt 幫助人類與宿主 agent 為任務選擇**恰當的嚴謹度**，�
 
 ## 延伸文件
 
-- 安裝： [SKILL_INSTALLATION.zh-TW.md](SKILL_INSTALLATION.zh-TW.md)
-- 方法論地圖： [METHODOLOGY_MAP.zh-TW.md](METHODOLOGY_MAP.zh-TW.md)
-- 語言政策： [LANGUAGE_POLICY.zh-TW.md](LANGUAGE_POLICY.zh-TW.md)
+- 安裝： [SKILL_INSTALLATION.zh-TW.md](SKILL_INSTALLATION.zh-TW.md)（精簡版；helper 定義只在英文版）
+- 方法論地圖： [METHODOLOGY_MAP.zh-TW.md](METHODOLOGY_MAP.zh-TW.md)（精簡版；後期 addenda 維持英文）
+- 語言政策： [LANGUAGE_POLICY.zh-TW.md](LANGUAGE_POLICY.zh-TW.md)（精簡版；英文版是 canonical）
 - 分流口訣：[SKILL_TRIGGER_CHEATSHEET.zh-TW.md](skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md)
 
 ## 使用建議

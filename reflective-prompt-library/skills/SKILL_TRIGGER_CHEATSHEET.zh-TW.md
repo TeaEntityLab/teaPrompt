@@ -55,7 +55,7 @@ Skill 契約語言：
 
 L1 快速路徑：
 
-- Strictness 為 L1 且任務瑣碎時，直接回答並附最小路由軌跡，不必另走 `reflective-brief`。
+- Strictness 為 L1 且任務瑣碎時，直接回答並附完整十欄路由軌跡（值可精簡），不必另走 `reflective-brief`。
 
 ## `reflective-brief`
 

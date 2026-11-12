@@ -18,6 +18,18 @@ Execute all nine agenda items in the [runbook](checkpoint-2026-10-11-runbook.md)
 
 **Branch: closed — retain separate `flow-control-generator` and `flow-loop-harness` packs.** Both have documented standalone generation responsibilities under the usage convention, which explicitly does not require successful execution of the generated script. The next P6 evidence checkpoint is **2027-01-11** (+3 months); no merge or tenth core skill is adopted.
 
+> **Next-review instruction (2027-01-11; WLR-10, no new authority):** classify
+> each flow pack under the existing P6/N11 zero-solo trigger
+> ([pack record](flow-control-pack-panel-record-2026-07-11.md), [necessity
+> N11](governance-necessity-panel-record-2026-07-11.md)) as exactly one of:
+> (a) zero recorded invocations of either kind; (b) paired-only — zero solo
+> but ≥1 paired generation group, which fires the zero-solo re-litigation
+> trigger exactly as (a) does once unlogged-use plausibility is weighed per
+> the usage-log convention; or (c) ≥1 recorded solo invocation, which keeps
+> the merge question closed. This instruction clarifies the sealed
+> [2026-10-11 runbook](checkpoint-2026-10-11-runbook.md) branches without
+> changing their bytes or the retained-separate result above.
+
 | Pack | Recorded generation groups after backfill | Conservative standalone groups used for P6 | Explicit paired G0 groups excluded from standalone |
 | --- | --- | --- | --- |
 | `flow-control-generator` | 5 | 3 | 1 |

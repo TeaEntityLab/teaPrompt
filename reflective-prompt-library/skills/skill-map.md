@@ -58,8 +58,8 @@ Routing fairness rule:
 | Prompt Area | Workflow Skill |
 | --- | --- |
 | Core minimal, core short, master, daily minimal, global controller | `reflective-dispatch`, `reflective-brief` |
-| Socratic, critical thinking, counterargument, falsifiability, Why/What/How/Done | `reflective-brief`, `reflective-review` |
-| Task start, spec writer, usage-first, task slicer, test designer (plan-only), workflow design (plan-only), workflow engine, SOP compiler | `reflective-spec-plan`, with `04-agent/workflow-engine.md` and `04-agent/sop-compiler.md` as supporting source material |
+| Socratic, critical thinking, counterargument, falsifiability, Why/What/How/Done, Task start | `reflective-brief`, `reflective-review` |
+| Spec writer, usage-first, task slicer, test designer (plan-only), workflow design (plan-only), workflow engine, SOP compiler | `reflective-spec-plan`, with `04-agent/workflow-engine.md` and `04-agent/sop-compiler.md` as supporting source material |
 | Implementation agent, executable tests, test design during code work, local feedback, Codex/OpenCode | `reflective-implement` |
 | Code reviewer, review-rating-fix | `reflective-review` |
 | Minimality, anti-overengineering, YAGNI, stdlib/native/dependency ladder | `reflective-minimality`, with `reflective-review` or `reflective-implement` as needed |

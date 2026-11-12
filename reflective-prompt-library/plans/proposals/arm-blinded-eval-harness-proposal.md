@@ -1,6 +1,6 @@
 ---
 name: arm-blinded-eval-harness
-description: Use when running a with/without-skill pilot on paired repair fixtures and the scorer must not see arm labels. It emits a paired-arm evaluation scaffold — fixture cloning, alternated arm order, treatment-only artifact exclusion, label-stripped candidate extraction into a blinded dir, deterministic scorer invocation, and a discarded-invocation ledger kept separate from the denominator. By-construction guarantees only; zero observed blinded runs yet.
+description: Admission record for the registered arm-blinded-eval-harness domain pack; live contract at skills/arm-blinded-eval-harness/SKILL.md. Original proposal body retained below as history.
 license: MIT
 metadata:
   risk_level: medium
@@ -9,13 +9,19 @@ metadata:
   context_load: low
 ---
 
-# Arm-Blinded Eval Harness (proposal — inert until admission review)
+# Arm-Blinded Eval Harness (admission record)
 
 **Status:** ADOPTED 2026-10-06 — registered domain pack; live contract at `skills/arm-blinded-eval-harness/SKILL.md`. This file is the admission record.
 
-**Status:** Proposal artifact. NOT a registered skill; NOT listed in any skill map.
-Admission review decides whether this becomes a domain pack. Until then, copy the
-scaffold below by hand; no runner auto-discovers it.
+> **Supersession 2026-10-06:** the "Proposal artifact / NOT a registered
+> skill" paragraph below is pre-admission text, retained verbatim as history.
+> Authority now lives at the registered pack's `SKILL.md`; this file no
+> longer prohibits registry or skill-map membership.
+
+> Pre-admission text (retained verbatim): **Status:** Proposal artifact. NOT a
+> registered skill; NOT listed in any skill map. Admission review decides
+> whether this becomes a domain pack. Until then, copy the scaffold below by
+> hand; no runner auto-discovers it.
 
 ## Purpose
 
@@ -235,3 +241,16 @@ recorded in the run note outside `scores.jsonl` and outside the denominator.
 - Discarded-invocation re-runs cost budget: each re-run decrements the ticket's
   declared invocation cap (spec: at most 13 host-agent invocations for the first
   pilot). Ledger entries without raw receipts invalidate the run note.
+
+## Admission note — clone-equality ownership
+
+The "Seed hash mismatch between clones → exit 4" failure signal above is
+satisfied caller-side: the caller copies each fixture once per arm from a
+read-only seed and verifies identical start states before dispatch (exit 4
+on mismatch), per the live contract at
+`skills/arm-blinded-eval-harness/SKILL.md` §Methods (Fixture cloning) and
+§Failure signals. The scaffold's directory hashes are final-state
+provenance recorded after the arms ran; differing final states are the
+expected arm effect, not a clone defect. Do not implement an equality gate
+on final states from this record, and do not read this note as adding a
+new check beyond the live contract.

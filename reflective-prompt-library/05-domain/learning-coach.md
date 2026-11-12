@@ -67,7 +67,7 @@ separates literature support from protocol recommendations and untested human ou
 12. Misconception Remediation：依答錯與 Failure Signals 診斷具體誤解，針對該誤解補教並重測，而非整段重來
 13. Spaced Repetition Plan：依遺忘與錯誤調整複習間隔；依材料選用交錯練習，不把混題或挫折當成效果保證
 14. Failure Signals：學歪的徵兆
-15. Support Choice：從支援選單挑少量適用方法，說明對應的瓶頸、成效指標與何時修改或停用
+15. Support Choice：從以下支援選單挑少量適用方法（針對已觀察到的瓶頸，不必全用），說明對應的瓶頸、成效指標與何時修改或停用：Retrieval and spacing、Task-specific practice、Self-assessment and calibration、Base rates and risk、Alternatives and belief revision、If-then plans and manageable starts、External memory and attention、Independent judgment and cooperation
 16. Schedule：只排符合可用時間的節奏；需要時才提供 7／30 天計畫，里程碑以 mastery gate 標示
 
 規則：

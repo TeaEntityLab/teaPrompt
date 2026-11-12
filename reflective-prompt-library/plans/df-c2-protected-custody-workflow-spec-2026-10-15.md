@@ -4,6 +4,14 @@ Language: English
 
 > **Status: design decided; implementation, host setup and real admission unexecuted.** Workflow spec version `3`; campaign protocol remains `DF-C2-2026-10-14` / `2`. Version 3 resolves advisory findings on the working v2 design; v2-keyed implementation/readiness conclusions are stale, not execution evidence. This is a non-authoritative campaign plan, not TeaPrompt harness policy or an adopted runtime.
 
+> **Successor pointer 2026-10-15 (no new authority):** the separate private
+> v3 metadata/ticket/dispatcher implementation and v3r1 native
+> timeout/cleanup repair are recorded in
+> [fresh-dogfood-campaign-preregistration-2026-10-14.md](fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3-dispatcher-implementation-and-offline-verification-2026-10-15)
+> and its [v3r1 section](fresh-dogfood-campaign-preregistration-2026-10-14.md#private-v3r1-native-deadline-repair-and-continuation-2026-10-15).
+> This spec stays the v3 design baseline; protected-host deployment and all
+> seven campaign obligations remain held there.
+
 ## Goal, authority and scope
 
 The maintainer requested **“You design and decide plans for both”**: the answer-free manifest/custody arrangement and the protected curator/dispatcher interface. This record makes those design choices rather than asking the maintainer to supply a design. It supersedes the undecided boundary/intake step of session-local `df-c2-custody-workflow-spec.md` v1, without rewriting that pinned artifact.

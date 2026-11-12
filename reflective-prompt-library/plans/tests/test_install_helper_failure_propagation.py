@@ -3,8 +3,12 @@
 These tests extract the documented shell helpers from SKILL_INSTALLATION.md
 and exercise consumer-visible behavior: failure propagation, destination
 handling, and non-symlink refusal. They do not assert prose wording.
+
+WLR-02 also executes the localized copy recipe with the canonical helper
+loaded, so restoring an unchecked raw-copy path is a consumer-visible failure.
 """
 
+import re
 import shutil
 import subprocess
 import sys
@@ -16,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
 
 INSTALLATION_GUIDE = Path(__file__).parent.parent.parent / "SKILL_INSTALLATION.md"
+INSTALLATION_GUIDE_ZH = Path(__file__).parent.parent.parent / "SKILL_INSTALLATION.zh-TW.md"
 
 
 @pytest.fixture(scope="module")
@@ -72,8 +77,13 @@ def _write_nine_core_sources(source_root: Path) -> None:
         _write_skill_source(source_root, name)
 
 
-CORE_HELPERS = ("install_core_skills_copy", "install_core_skills_symlink")
+@pytest.fixture(scope="module")
+def installation_guide_zh_text() -> str:
+    assert INSTALLATION_GUIDE_ZH.is_file(), f"missing {INSTALLATION_GUIDE_ZH}"
+    return INSTALLATION_GUIDE_ZH.read_text(encoding="utf-8")
 
+
+CORE_HELPERS = ("install_core_skills_copy", "install_core_skills_symlink")
 
 @pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
 @pytest.mark.parametrize("helper", CORE_HELPERS)
@@ -117,3 +127,34 @@ def test_core_helpers_install_nine_skills_on_valid_source(
     assert result.returncode == 0, result.stdout + result.stderr
     installed = sorted(p.name for p in dest.glob("reflective-*"))
     assert len(installed) == 9, installed
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+@pytest.mark.parametrize("source_kind", ("valid", "no-skill-file"))
+def test_localized_copy_recipe_requires_skill_files(
+    tmp_path: Path, installation_guide_text: str,
+    installation_guide_zh_text: str, source_kind: str,
+):
+    """WLR-02: execute the advertised path, not merely the helper it names."""
+    source_root = tmp_path / "reflective-prompt-library" / "skills"
+    if source_kind == "valid":
+        _write_nine_core_sources(source_root)
+    else:
+        incomplete = source_root / "reflective-brief"
+        incomplete.mkdir(parents=True)
+        (incomplete / "notes.txt").write_text("no skill file\n", encoding="utf-8")
+    section = installation_guide_zh_text.split("## Claude Code\n", 1)[1]
+    recipe = re.search(r"```bash\n(.*?)```", section, re.DOTALL).group(1)
+    helper = _extract_helper(installation_guide_text, "install_core_skills_copy")
+    result = subprocess.run(
+        ["sh"], input=helper + "\n}\n" + recipe, cwd=tmp_path,
+        capture_output=True, text=True, check=False,
+    )
+    dest = tmp_path / ".claude" / "skills"
+    installed = sorted(dest.glob("reflective-*/SKILL.md"))
+    if source_kind == "valid":
+        assert result.returncode == 0, result.stdout + result.stderr
+        assert len(installed) == 9, installed
+    else:
+        assert result.returncode != 0, result.stdout + result.stderr
+        assert not dest.exists(), "rejected source must not publish an installation"

@@ -4,9 +4,9 @@ literals, the ten AF83-* dispositions, the clean-room boundary (agentflow
 vocabulary stays off installed surfaces), that prior adoptions are untouched,
 and the index links.
 
-This delta is record-only under DS-1 (bare survey → no adoption direction):
-nothing was installed, so the clean-room and prior-adoptions-untouched tests are
-the load-bearing ones.
+The ten original AF83-* dispositions remain record-only. The later CA-1
+adoption is recorded separately in the Recent-Inspiration Reflection; clean-room
+boundaries and the earlier AF/EP/AF82 adoptions remain unchanged.
 """
 
 from __future__ import annotations

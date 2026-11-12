@@ -28,7 +28,7 @@ Expected output shape:
 Input:
 
 ```text
-Review this plan and tell me if we are overengineering.
+Review this plan for acceptance and flag overengineering as one angle.
 ```
 
 Expected output shape:
@@ -45,6 +45,7 @@ Mode: Plan/Spec Review
 ## Decision
 ## Residual Risks
 ```
+Note: a complexity-only pass with no acceptance or merge verdict routes to `reflective-minimality` and uses its cut format without implying merge approval; combine both when the ask includes correctness or test adequacy.
 
 
 ## Example 3

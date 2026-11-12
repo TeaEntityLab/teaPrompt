@@ -97,6 +97,7 @@ core-full
 + task-start
 + spec-writer
 + usage-first
++ test-designer
 + task-slicer
 + implementation-agent
 + code-reviewer

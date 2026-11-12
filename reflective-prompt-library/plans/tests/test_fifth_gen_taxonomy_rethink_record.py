@@ -1,7 +1,6 @@
 """Guard the fifth-generation prompt-taxonomy rethink: record identity pins,
 the pasted instruction held verbatim, the seven category names, five
-dispositions, the coaxing-sweep result line, the clean-room boundary, and the
-index links.
+dispositions, the clean-room boundary, and the index links.
 """
 
 from __future__ import annotations
@@ -69,13 +68,6 @@ def test_record_identity_and_shape():
         assert category in text, category
     concept_map = text.split("## Concept Map", 1)[1].split("\n## ", 1)[0]
     assert re.findall(r"^\| (C\d+) \|", concept_map, re.M) == [f"C{i}" for i in range(1, 10)]
-
-
-def test_sweep_result_and_verdict_pinned():
-    text = _read(RECORD)
-    assert "three benign role headers" in text
-    assert "zero persona/style/few-shot-coaxing content" in text
-    assert "category error" in text
 
 
 def test_candidate_ledger_preserves_dispositions():

@@ -14,6 +14,12 @@
 > is already held or is Standing-Non-Goal runtime. Method per the 8.2 coordinator
 > reflection: **coordinator-owned top-level diff, no panel, no probing** (nothing is
 > drafted, so nothing is probed). Guard: `plans/tests/test_agentflow_v83_delta_record.py`.
+> **Header exception 2026-11-12:** the "no installed change, no wording
+> adopted" sentence above describes the 2026-09-21 bare-survey pass only. A
+> 2026-09-22 follow-up section in this file adopted one non-Agentflow lens
+> clarification (CA-1: Local Gap Test attribution in
+> `04-agent/external-adoption-review.md`); the ten AF83-* dispositions remain
+> record-only as written.
 
 ## Research Question and Scope
 
@@ -263,8 +269,10 @@ the record-only/no-execution stance, and prior adopted sentences are unchanged.
   +6,933 / −2,024 — not "~40 files," which approximated only the non-test
   subset (Version and Source Identity).
 - `scripts/delegation-route.js` was **modified +399/−8**, not created new
-  (State Ledger); its test file `delegation-route.test.js` remains the
-  new-file entry.
+  (State Ledger); its test file `delegation-route.test.js` was likewise
+  **modified +240/−8**, not new — corrected 2026-11-12 (DPR-1 closure;
+  originally recorded as "the new-file entry" against the pinned
+  `status=modified +240/−8` compare receipt).
 - The compare citation above now uses the immutable pin
   `fcb6878...0abf416`; the 2026-09-21 observation that it then resolved as
   `main` HEAD (the checked-main facts: `main` at `0abf416`, ahead_by 1)

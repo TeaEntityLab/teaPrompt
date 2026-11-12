@@ -42,10 +42,10 @@ review notes, retro entry.
 Task Start Prompt
 -> Spec Writer
 -> Usage-first
+-> Test Designer
 -> Task Slicer
 -> Implementation Agent
 -> Code Review
--> Test Designer
 -> Retro
 ```
 
@@ -249,6 +249,7 @@ Medium-cost engineering mode:
 AGENTS.md
 + spec-writer
 + usage-first
++ test-designer
 + task-slicer
 + implementation-agent
 + code-reviewer
@@ -260,7 +261,7 @@ High-cost strict mode:
 master-prompt
 + high-risk
 + review-rating-fix
-+ hidden eval
++ hidden eval (host-held test-designer §5 candidates; prompt text cannot withhold them from the implementer)
 + context-handoff
 + retro
 ```
@@ -272,8 +273,8 @@ prompt library
 + skills
 + scripts
 + state files
-+ eval harness
-+ dashboard
++ eval harness (host-provided; out of TeaPrompt scope)
++ dashboard (host-provided; out of TeaPrompt scope)
 ```
 
 ## Practical Principle

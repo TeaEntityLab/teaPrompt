@@ -899,3 +899,152 @@ def test_orchestrator_exercises_declared_oldest_python_runtime(tmp_path: Path):
     result = _run_orch(tmp_path, env, python=OLDEST_PY)
     assert result.returncode == 0, result.stderr
     assert "WORK-X" in (state / "final.md").read_text()
+
+
+# --- WLR-01: raw worker 3/4 remap to branch-failure 5, never a driver hold ---
+
+
+@pytest.mark.parametrize("worker_exit", [1, 3, 4])
+def test_fanout_raw_worker_exits_reach_merged_gate_under_quorum(tmp_path: Path, worker_exit: int):
+    """One failing branch (raw 1/3/4) plus one success under MIN_OK=1 must reach
+    the merged verifier: raw 3/4 are branch failures, not driver holds."""
+    agent = (
+        'printf "%s\\n" "$prompt" >> calls.txt\n'
+        'case "$prompt" in\n'
+        'SYNTH*) echo MERGED-WORK;;\n'
+        f'a) exit {worker_exit};;\n'
+        '*) echo "OUT:$prompt";;\n'
+        'esac\n'
+    )
+    result = _fanout(tmp_path, min_ok="1", agent_body=agent)
+    assert result.returncode == 0, result.stderr
+    assert (tmp_path / "state/final.md").read_text() == "MERGED-WORK\n"
+    log = (tmp_path / "state/flow.log").read_text()
+    assert "merged gate=0" in log
+    assert "propagated" not in log
+    assert (tmp_path / f"state/fan-a.md.failed-{worker_exit}").exists()
+    assert f"exit={worker_exit}" in (tmp_path / "fail-signatures.jsonl").read_text()
+    if worker_exit in (3, 4):
+        assert f"worker gate=5 agent-exit={worker_exit}" in log
+
+
+@pytest.mark.parametrize("worker_exit", [3, 4])
+def test_fanout_strict_raw_worker_hold_codes_fail_as_branch_not_hold(tmp_path: Path, worker_exit: int):
+    """Strict policy still fails when a branch fails raw 3/4 — as branch
+    failure (exit 2), never as a propagated driver hold."""
+    agent = (
+        'case "$prompt" in\n'
+        'SYNTH*) echo invoked > synthesis-ran; echo MERGED-WORK;;\n'
+        f'a) exit {worker_exit};;\n'
+        '*) echo GOOD-WORK;;\n'
+        'esac\n'
+    )
+    result = _fanout(tmp_path, agent_body=agent)
+    assert result.returncode == 2, result.stderr
+    log = (tmp_path / "state/flow.log").read_text()
+    assert "propagated" not in log
+    assert f"worker gate=5 agent-exit={worker_exit}" in log
+    assert not (tmp_path / "synthesis-ran").exists()
+    assert not (tmp_path / "state/final.md").exists()
+
+
+@pytest.mark.parametrize("worker_exit", [3, 4])
+def test_fanout_synthesis_raw_worker_hold_codes_are_branch_failure(tmp_path: Path, worker_exit: int):
+    """The synthesis dispatch uses the same runner: raw 3/4 there exit as branch
+    failure 5 with raw receipts, not as a driver hold."""
+    agent = (
+        'case "$prompt" in\n'
+        f'SYNTH*) exit {worker_exit};;\n'
+        '*) echo "OUT:$prompt";;\n'
+        'esac\n'
+    )
+    result = _fanout(tmp_path, agent_body=agent)
+    assert result.returncode == 5, result.stderr
+    assert (tmp_path / f"state/final.md.failed-{worker_exit}").is_file()
+    assert f"exit={worker_exit}" in (tmp_path / "fail-signatures.jsonl").read_text()
+    log = (tmp_path / "state/flow.log").read_text()
+    assert f"worker gate=5 agent-exit={worker_exit}" in log
+    assert "propagated" not in log
+
+
+def test_fanout_genuine_refusal_still_holds_despite_quorum_peer(tmp_path: Path):
+    """A genuine repeated-failure hold still fails closed under quorum even when
+    a peer branch succeeds: driver 3 is never tally-tolerable."""
+    env = _fanout_fixture(tmp_path, min_ok="1", agent_body=(
+        'printf "%s\\n" "$prompt" >> calls.txt\n'
+        'case "$prompt" in\n'
+        'SYNTH*) echo MERGED-WORK;;\n'
+        'a) exit 1;;\n'
+        '*) echo "OUT:$prompt";;\n'
+        'esac\n'
+    ))
+    first = _run_bash(tmp_path, "fanout.sh", env)
+    assert first.returncode == 0, first.stderr
+    assert (tmp_path / "calls.txt").read_text().count("SYNTH") == 1
+
+    second = _run_bash(tmp_path, "fanout.sh", env)
+    assert second.returncode == 3, second.stderr
+    assert "refuse-identical-retry" in second.stderr
+    assert "propagated" in (tmp_path / "state/flow.log").read_text()
+    assert (tmp_path / "calls.txt").read_text().count("SYNTH") == 1  # synthesis not re-dispatched
+
+
+@pytest.mark.parametrize("worker_exit", [3, 4])
+def test_pipeline_raw_worker_hold_codes_remapped_to_branch_failure(tmp_path: Path, worker_exit: int):
+    """Pipeline worker raw 3/4 exit as branch failure 5 with raw receipts; the
+    recorded signature still refuses a genuine identical redispatch with 3."""
+    env = _pipeline_fixture(tmp_path, agent_body=f'echo CALL >> calls.txt\nexit {worker_exit}\n')
+    first = _run_bash(tmp_path, "pipeline.sh", env)
+    assert first.returncode == 5, first.stderr
+    assert "refuse-identical-retry" not in first.stderr
+    assert f"worker gate=5 agent-exit={worker_exit}" in (tmp_path / "state/flow.log").read_text()
+    assert (tmp_path / f"state/01-spec.md.failed-{worker_exit}").is_file()
+    assert f"exit={worker_exit}" in (tmp_path / "fail-signatures.jsonl").read_text()
+    calls = (tmp_path / "calls.txt").read_text().splitlines()
+
+    second = _run_bash(tmp_path, "pipeline.sh", env)
+    assert second.returncode == 3, second.stderr
+    assert "refuse-identical-retry" in second.stderr
+    assert (tmp_path / "calls.txt").read_text().splitlines() == calls  # zero new dispatches
+
+
+@pytest.mark.parametrize("worker_exit, expected", [(1, 1), (3, 5), (4, 5)])
+def test_router_raw_worker_exits_never_read_as_driver_hold(tmp_path: Path, worker_exit: int, expected: int):
+    """Router classify-worker raw failures stay branch failures: raw 1 passes
+    through, raw 3/4 remap to 5 — never a refusal/preflight hold. A genuine
+    identical redispatch is still refused with 3."""
+    fail = tmp_path / "fail.sh"
+    _executable(fail, f'#!/bin/sh\ncat >/dev/null\necho CALL >> calls.txt\nexit {worker_exit}\n')
+    env = _router_fixture(tmp_path, "BUG\n", agent_cmd=str(fail))
+    result = _run_bash(tmp_path, "router.sh", env, ("input.md",))
+    assert result.returncode == expected, result.stderr
+    assert "refuse-identical-retry" not in result.stderr
+    assert not (tmp_path / "handler-call.txt").exists()
+    assert (tmp_path / f"state/label.txt.failed-{worker_exit}").is_file()
+    assert f"exit={worker_exit}" in (tmp_path / "fail-signatures.jsonl").read_text()
+    if expected == 5:
+        assert f"worker gate=5 agent-exit={worker_exit}" in (tmp_path / "state/flow.log").read_text()
+    calls = (tmp_path / "calls.txt").read_text().splitlines()
+
+    rerun = _run_bash(tmp_path, "router.sh", env, ("input.md",))
+    assert rerun.returncode == 3, rerun.stderr
+    assert "refuse-identical-retry" in rerun.stderr
+    assert (tmp_path / "calls.txt").read_text().splitlines() == calls  # zero new dispatches
+
+
+@pytest.mark.parametrize("worker_exit", [3, 4])
+def test_router_handler_raw_worker_hold_codes_are_branch_failure(tmp_path: Path, worker_exit: int):
+    """Router handler dispatch shares the runner: a classify success followed by
+    a handler worker raw 3/4 exits as branch failure 5 with raw receipts."""
+    stub = tmp_path / "handler-fail.sh"
+    _executable(stub,
+        '#!/bin/sh\nprompt="$(cat)"\ncase "$prompt" in CLASSIFY*) cat label.txt;; '
+        f'*) exit {worker_exit};; esac\n')
+    env = _router_fixture(tmp_path, "BUG\n", agent_cmd=str(stub))
+    result = _run_bash(tmp_path, "router.sh", env, ("input.md",))
+    assert result.returncode == 5, result.stderr
+    assert "refuse-identical-retry" not in result.stderr
+    assert "route gate=0" in (tmp_path / "state/flow.log").read_text()
+    assert (tmp_path / f"state/final.md.failed-{worker_exit}").is_file()
+    assert f"exit={worker_exit}" in (tmp_path / "fail-signatures.jsonl").read_text()
+    assert f"worker gate=5 agent-exit={worker_exit}" in (tmp_path / "state/flow.log").read_text()

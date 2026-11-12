@@ -1,10 +1,12 @@
 Language: [English](METHODOLOGY_MAP.md) | 繁體中文
 
+> **範圍說明**：本文件是繁體中文**精簡版方法論地圖**，不是英文版的逐句翻譯。它保留核心結論、治理面板紀錄、十層分類法、嚴謹度分級與 repo 整合檢查；英文版後期的 addenda（Runtime Trust Boundary 的外部引用論證、Durable Agent Runtime 三契約、Scaffold Provenance、SOP Compiler、Artifact Promotion／Workflow Acquisition、Project-Knowledge）維持英文，不在這裡翻譯。**九個 `reflective-*` workflow skills 是核心分流集合**，十個已註冊 domain packs 是 host 直接呼叫的選配 contracts，不進核心路由；完整路由表以英文 [skills/skill-map.md](skills/skill-map.md) 為準。翻譯管理見 [LANGUAGE_POLICY.md](LANGUAGE_POLICY.md)。
+
 # 方法論地圖
 
 ## 核心結論
 
-TeaPrompt 不應將所有方法整合為單一的 Master Prompt。核心架構應為 **反饋閘門工程工作流 (Feedback-Gated Engineering Workflow)**，而非單一龐大的「反思型工程智能體 (Reflective Engineering Agent)」。
+TeaPrompt 不應將所有方法整合為單一的 Master Prompt。核心架構應為 **反饋閘門工程工作流 (Feedback-Gated Engineering Workflow)**，而非單一龐大的「反思型工程智能體 (Reflective Engineering Agent)」。九個核心 workflow skills 加上選配的已註冊 domain packs 是自然語言 harness policy；本庫不自建 agent runtime。
 
 正確的模式是：
 
@@ -15,7 +17,7 @@ TeaPrompt 不應將所有方法整合為單一的 Master Prompt。核心架構�
 -> 透過品質閘門 (Quality Gates) 用證據進行驗收
 ```
 
-本專案是一個結構化的方法、上下文組件和可組合工作流技能的基底 (substrate)，而非單一的超大指令集。
+本專案是一個結構化的方法、上下文元件和可組合工作流技能的基底 (substrate)，而非單一的超大指令集。
 
 ## 治理面板紀錄
 
@@ -61,8 +63,7 @@ NLAH 論文（明確引用 `SKILL.md` 類型檔案作為直接靈感來源）提
 10. **治理與能力風險層 (Governance / Capability Risk Layer)** (Risk/Compliance): 安全邊界、non-disclosure policies、高風險審查閘門，以及資料、工具、context、side effects 的 runtime trust boundaries。
 
 ## Multi-Agent Panel Consensus Addendum
-
-2026-06-25 多視角 Socratic panel reaffirmed：**九個凍結 workflow skills**、strictness-first routing、evidence-backed evals in CI、`reflective-research` 內 optional multi-voice synthesis —— 不是 swarm runtime。判斷紀錄：[plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md)。
+2026-06-25 多視角 Socratic panel reaffirmed：**九個凍結 workflow skills**、strictness-first routing、evidence-backed evals in CI、`reflective-research` 內 optional multi-voice synthesis —— 不是 swarm runtime。十個已註冊 domain packs 是 host 直接呼叫的選配 contracts，不屬於九技能核心分流。判斷紀錄：[plans/multi-agent-panel-consensus-2026-06-25.md](plans/multi-agent-panel-consensus-2026-06-25.md)。
 
 ## 嚴格度分級
 
@@ -70,9 +71,9 @@ NLAH 論文（明確引用 `SKILL.md` 類型檔案作為直接靈感來源）提
 | --- | --- | --- |
 | 1. 日常低風險 prompt | 低風險、簡短回答、無狀態 | `00-core/daily-minimal.md` |
 | 2. 反思型分析 | 複雜推理或決策 | `reflective-brief` |
-| 3. 工程任務 | 代碼、系統設計、數據流、測試 | `reflective-spec-plan` -> `reflective-implement` |
+| 3. 工程任務 | 程式碼、系統設計、資料流、測試 | `reflective-spec-plan` -> `reflective-implement` |
 | 4. 高風險審查 | 安全、隱私、金流、刪除、生產環境 | `reflective-risk` |
-| 5. 智能體工作流 | 長時間運行、多工具、可恢復的工作 | `reflective-dispatch` + 工作流計畫 |
+| 5. 智能體工作流 | 長時間執行、多工具、可恢復的工作 | `reflective-dispatch` + 工作流計畫 |
 | 6. 策略覆蓋層 | 商業、教育、組織、長期系統 | `05-domain/` prompts 作為覆蓋層 |
 
 ## Level Taxonomy Reference
@@ -141,7 +142,7 @@ NLAH 論文（明確引用 `SKILL.md` 類型檔案作為直接靈感來源）提
 
 ### 多智能體工作流不是單一 Prompt
 
-多智能體任務需要狀態、工具、日誌、驗證和交接產出。Prompt 可以描述模式，但無法取代運行時 (runtime)。
+多智能體任務需要狀態、工具、日誌、驗證和交接產出。Prompt 可以描述模式，但無法取代執行時期 (runtime)。
 
 ## Repo 整合檢查
 
@@ -150,10 +151,10 @@ NLAH 論文（明確引用 `SKILL.md` 類型檔案作為直接靈感來源）提
 | 核心指令層 | 契合 | 完成 | 維持最小化基礎腳印。 |
 | 推理與思考層 | 契合 | 完成 | 保留 `01-thinking/` 底下的 prompt。 |
 | 工程與執行層 | 契合 | 完成 | 保留 `02-engineering/` 底下的 prompt。 |
-| 上下文窗口層 | 契合 | 完成 | 管理窗口大小與 Token 配置 (`03-context/`)。 |
+| 上下文窗口層 | 契合 | 完成 | 管理窗口大小與 Token 設定 (`03-context/`)。 |
 | 工作流與智能體層 | 契合 | 擴充 | 維持 artifact-promotion、external-adoption、workflow-acquisition、SOP compiler、workflow engine 與 runtime-trust-boundary prompts。 |
 | 領域套件層 | 契合 | 完成 | 保留策略提示詞於 `05-domain/`。 |
 | 專案模板層 | 契合 | 擴充 | 維持 `AGENTS.md`、`cursor-rules.md` 與 `PROJECT_KNOWLEDGE.template.md`。 |
-| 技能與動作層 | 契合 | 擴充 | 維持 9 個凍結 workflow skills（含 reflective-minimality gate）以處理反膨脹決策。 |
+| 技能與動作層 | 契合 | 擴充 | 維持 9 個凍結 workflow skills（含 reflective-minimality gate）以處理反膨脹決策；選配的已註冊 domain packs 由 host 直接呼叫，不進核心分流。 |
 | 品質閘門與驗證 | 契合 | 完成 | 標準化技能層級的品質檢查。 |
 | 治理與能力風險 | 契合 | 擴充 | 使用 `reflective-risk` 處理高風險邊界，並用 `04-agent/runtime-trust-boundary.md` 處理 instruction/data/tool authority。 |

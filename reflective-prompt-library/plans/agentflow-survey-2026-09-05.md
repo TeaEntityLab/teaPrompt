@@ -276,10 +276,11 @@ Scratch repository `/tmp/agf-scratch.Qh6P8M/repo` (fresh `git init`, one empty c
 
 ### Evidence vs inference (addendum)
 
-- **Observed:** the prompt-history rows and their working directories; ten lens files (JSON-wrapped markdown, unwrapped and read in full); the sibling coordinator's `node --test` tail (`tests 853 / pass 844 / fail 9`) and grep logs; the coordinator's own re-runs on a scratch clone at the pin (documented 19 files: 853 / 831 / 22; all 26 files: 898 / 876 / 22; failure-set diff empty; +45 from the seven undocumented files, all passing) and the morning survey's 898 / 889 / 9; the runner and validator lines behind SS-1 (result-object literals, the child-not-started helper, the route validator's rejection message, and the tests asserting them); the root and library README host sentences, the install guide banner, the lens line, and the recipe section in this worktree; `git log -S` for the generic word.
-- **Lens-observed, not re-read by this coordinator:** the per-test file evidence behind SS-3 (slice-gap vs host-identity split).
-- **`[INFERENCE]`:** that all thirteen extra coordinator-environment failures share the protected-state-root halt (the assertion text names it for the looper group; not separately confirmed for every one of the thirteen).
-- **Not done:** the user's checkout untouched (scratch clone only); no attendee or author identifier reproduced (one sibling lens recorded the repository's public git author and address — deliberately not carried here).
+- **Observed:** the entry-point packet (`review-packet-agentflow-entry-points-2026-09-05.md`, SHA-256 `7f035123…`, 23,130 bytes; TeaPrompt HEAD `2fc377ba…`, `main`, clean) with 7/7 hub-delivered EP lens reviews, and the zh-TW paste's 23 citation pins (21 line-level, 2 file-level), all re-resolved against the pin — the packet's count of 22 was wrong (Finding 1).
+- **Coordinator-executed:** runs 1–5 in the scratch repository above (`agf.js init` refusal and success paths, `resume-intake.js` JSON intake, `ag-settings.js validate/change`, subcommand inventory); no `npx` install, hook, stream-lifecycle, PTY journey, or provider run.
+- **Author/data, re-resolved:** the paste's glosses — instruction-shaped promotion with extractable quotes (Finding 1); quote the pin, never the paste.
+- **Not done:** live-host hooks, stream lifecycle, providers; no shipped journey script exists on the surveyed side (Finding 6).
+- **Correction 2026-11-12:** this section previously listed sibling-reconciliation inputs; those belong to the Sibling-Session Reconciliation Addendum below. EP-1–EP-10 dispositions are unchanged.
 
 ### Addendum Falsifiability
 

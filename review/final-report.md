@@ -2,9 +2,11 @@
 
 Date: 2026-07-11
 
-> **Historical record.** This report covers the 2026-07-11 session only. It is
-> not current project state — for live verification status see `VERIFY.md` and
-> `features/` at the repo root (generated 2026-09-23).
+> **Append-only delivery history.** The opening section records 2026-07-11; later
+> sections retain their own dates, scope and evidence. No historical receipt is a
+> current runbook. Start at the [latest repair delivery](#whole-library-repair-follow-through-2026-11-12);
+> use `VERIFY.md` and `features/` for verification entry points, and the linked
+> owning records for current decisions and held gates.
 
 ## Summary
 
@@ -9565,3 +9567,485 @@ the five owner-authorized paths above; commit identity belongs in the delivery
 response rather than recursively in this receipt. No additional Human Review
 decision is needed for this documentation-only scope. Push and operational
 adoption are excluded.
+
+
+## Whole-library direction, Plans, Skills and Docs review (2026-11-12)
+
+### Decision and authority
+
+**Request changes to existing delivery surfaces; retain the current product direction.**
+This is a review of `3def51e703c71140907ab466e6b14534a39e7ae9`, not an
+implementation or adoption decision. The high-priority findings are reproducible
+consumer failures, not requests for a tenth core skill or a TeaPrompt runtime.
+Only this review deliverable is appended; Skills, templates, plans, tests,
+registries, operating rules and installation settings are unchanged. No commit,
+push, upstream refresh, installation or model campaign was performed.
+
+Primary mode: Plan/Spec and Methodology Review. Secondary checks: published
+consumer behavior, authority/provenance, navigation, localization and evidence
+integrity. Findings are pre-existing at the review pin, not regressions introduced
+by this review. "Accepted" below means accepted as a review finding; it never means
+the proposed edit has been adopted.
+
+### Findings and required fixes
+
+1. **WLR-01 / P1 — raw worker exit codes collide with driver holds.**
+   `skills/flow-control-generator/TEMPLATES.md:49,127,131-148,213` returns raw
+   worker failures into a namespace reserving 3 for retry refusal and 4 for
+   preflight/configuration holds. With two branches and `MIN_OK=1`, raw exit 1
+   permits the successful branch to reach the merged verifier, but raw exits
+   3/4 abort before it and falsely log driver holds. Genuine refusal and missing
+   preflight controls still return 3/4. Proposed repair: classify worker failures
+   at the shared runner boundary in all three Bash templates, preserving the raw
+   code in logs/signatures and real driver holds. Do not weaken quorum or the
+   merged-result verifier. Only fan-out behavior was executed in this review;
+   the repeated runner bodies were inspected statically.
+2. **WLR-02 / P1 — the published zh-TW installer can report success without
+   installing a skill.** `SKILL_INSTALLATION.zh-TW.md:61-64` and its repeated
+   raw-copy blocks diverge from the canonical English helper. An existing
+   `reflective-*` directory without `SKILL.md` produces exit 0 and no installed
+   skill; the English helper rejects it before creating the destination. The
+   missing-source case returns 1 in both versions and is not the false-success
+   reproduction. Proposed repair: localized instructions invoking the existing
+   validated helper, not another independently maintained copy implementation.
+3. **WLR-03 / P2 — factory assurance claims exceed their evidence.**
+   `plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md:122-138,169-170`
+   and `plans/software-factory-rethink-panel-record-2026-09-28.md:3,24,86`
+   overstate lookup immunity and surviving-mutant proof of vacuity. A lookup
+   implementation passed all 1,000 sampled checks in [-20,20] and failed at 21
+   (0 instead of 441); an equivalent integer mutant survived a test that killed
+   a genuinely wrong mutant. These are illustrative counterexamples, not an
+   upstream factory run. Replace guarantees with scope-qualified coverage;
+   exclude equivalent/out-of-scope mutants before interpreting survival. Treat
+   kill-rate thresholds as task-specific examples and "95% redundancy" as
+   unmeasured qualitative overlap. The <50 ms and <100 ms bounds are not logically
+   contradictory; neither supports universal latency without configuration and
+   measurement evidence. Preserve the no-new-skill decision.
+4. **WLR-04 / P2 — three published workflow descriptions disagree with owners.**
+   `01-thinking/why-what-how-done.md:7,13` places framing before strictness;
+   `skills/skill-map.md:62` assigns task-start to spec-plan rather than its brief
+   phase; `04-agent/workflow-recipes.md:42-49` puts Test Designer after
+   implementation despite `02-engineering/test-designer.md` requiring planning
+   first. Align these existing descriptions without router tuning. Also label
+   hidden-eval/harness/dashboard choices as host capabilities, not delivered
+   TeaPrompt functionality.
+5. **WLR-05 / P2 — tighten contract scope rather than add capability.**
+   `skills/flow-control-generator/SKILL.md:77` describes configurable cap
+   validation universally while `TEMPLATES.md:255` uses fixed orchestrator caps.
+   Clarify fixed-versus-configurable scope, or reuse the existing validation
+   pattern if configurability is actually required. Cheatsheets' minimal trace
+   means compact values in the existing ten fields when dispatch is invoked,
+   not omitted fields. Disambiguate the complexity-only
+   `skills/examples/reflective-review.examples.md:31` example from an
+   acceptance/merge review. Do not impose ten-field routing on trivial answers.
+6. **WLR-06 / P2 — current-state labels need local reconciliation.**
+   The admitted acceptance-join, arm-blinded, golden-benchmark and router-trace
+   proposal files still contain inert/NOT-registered boilerplate. The
+   whole-project plan mixes proposed/record-only items under shipped-state
+   headings and retains a historical five-pack enumeration inside Current State.
+   `PROJECT_KNOWLEDGE.md:45-49` still anchors current direction to Round 68.
+   Correct current-status seats and add successor pointers, preserving historical
+   votes and receipts. The registry, not a historical enumeration, owns the
+   current nine-core/ten-domain-pack inventory. Add the explicit governing
+   delivery supersession beside the old XS-8/XS-9 rows; link the frozen DF-C2
+   design header to its later v3/v3r1 implementation without granting campaign
+   authority. Do not build another live-state catalogue.
+7. **WLR-07 / P2 — repair evidence attribution, not adoption conclusions.**
+   `plans/agentflow-survey-2026-09-05.md:277-282` lists sibling SS inputs in the
+   EP evidence section. `plans/agentflow-8.3-delta-survey-2026-09-21.md:3,231`
+   needs a dated CA-1 exception to its no-adoption header. The typed probability
+   return in `plans/pi-warden-survey-2026-09-20.md:53,89-91` does not by itself
+   establish the parent's logit-derived-margin trigger or production-wire
+   equivalence. Correct these exact evidence seats; retain independently
+   justified PW-1 and unresolved host/runtime holds. The explicitly deferred
+   DPR-1 clause in the 8.3 record still calls `delegation-route.test.js` a new
+   file despite the modified-file receipt cited in its owning review. Correct
+   that bounded statement when repair is authorized; do not mark DPR-1 closed
+   merely because this review recorded it again.
+8. **WLR-08 / P3 — fix bounded citation and scope defects.**
+   Remove literal diff-marker paragraphs and qualify/recover the two truncated
+   old pins in `surveys/ornith-1.0-survey.md:151-210`; do not replace historical
+   pins with live results. Reconcile "12" against the 13 phrases in
+   `plans/self-governance-dogfood-2026-09-24.md:64-72`. Carry the four-directory
+   inspection scope into the banner/completion seats of
+   `plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md`. Add nearby supersession
+   for the agnix license breakdown and describe the minimax trace-map refresh as
+   bounded file/two-anchor comparison, not no re-verification. Name the three
+   corrected provenance rows in
+   `plans/human-cognition-adoption-2026-10-02.md:32-35` only from retained evidence,
+   never by guessing. These are record repairs, not new external verification.
+9. **WLR-09 / P3 — make copied prompts and navigation self-contained.**
+   `05-domain/learning-coach.md:70` refers to a menu outside its copied fence;
+   carry a minimal usable reference into the copied surface. In
+   `04-agent/agent-selection.md:17,62-65`, distinguish host execution layers from
+   skill routes and action authority instead of replacing the taxonomy. Label
+   abridged zh-TW methodology/navigation clearly; full contract translation is
+   not required. The report's opening July-11-only banner also needs a
+   multi-session historical scope notice. Preserve dated bodies and link current
+   owners rather than rewriting all historical PENDING/current language.
+10. **WLR-10 / P3 — preserve the solo qualifier at the next owning checkpoint.**
+    `plans/checkpoint-2026-10-11-runbook.md:76-78` leaves zero-solo/nonzero-paired
+    invocations between its literal branches. Carry the existing zero-solo
+    trigger in the next owning review instruction; preserve the sealed runbook
+    and do not change the adoption/demotion result.
+
+11. **WLR-11 / P3 — the catalogue mixes table schemas.**
+    `plans/external-adoption-case-studies-2026-06-20.md:384` declares
+    `Item / Status / Evidence`, but rows 425–430, 433–440 and 451 use four or
+    six cells. Source prose therefore occupies the Status seat rather than a
+    disposition. Reshape these fifteen rows only, preserving all sources,
+    dispositions and links; verify rendered cell placement when implementing.
+
+Final governance-lens qualifications: the arm-harness proposal already assigns
+clone checking to the caller in its code comment, and the live contract is
+explicit; this is a historical ownership clarification, not a missing live
+final-state equality gate. The router proposal needs its old admission bar
+reconciled with the dated admission basis. The live skill already discloses zero
+observed catches, and canonical policy permits owner-directed domain-pack
+exceptions. Neither an unauthorized admission nor a satisfied recurrence bar
+is established by this review. Checkpoint-successor links are optional navigation,
+not permission to reopen disposed gates.
+
+All paths above except `surveys/` and `review/` are relative to
+`reflective-prompt-library/`. Each item proposes the smallest existing-surface
+repair; none is authorization to implement it.
+
+### Project direction and Skills/Docs recommendations
+
+- **Keep the product a portable prompt/workflow library with bounded routing.**
+  Nine core skills are the present registry, not proof of an optimal number.
+  Missing usage evidence is unknown, not zero demand. This review supplies no
+  recurring unmet task or owner decision warranting another core skill, merging
+  existing skills, a new domain pack, or a host runtime.
+- **Prefer usable consumer paths over more self-consistency machinery.**
+  Fresh-source installation, copied prompt consumption, template error handling,
+  merged acceptance and current-owner navigation are the immediate value targets.
+  Add behavior-level regression coverage when fixing reproduced consumer bugs;
+  do not substitute paragraph-presence tests or another repeated panel.
+- **Keep Plans as evidence, not another instruction layer.** Use existing
+  current-owner pointers to separate shipped, held, proposed and superseded
+  states. Repair contradictory live summaries; do not bulk rewrite sealed
+  history or add a second index. The measured archive weight is a maintenance
+  concern, not proof that deleting records would improve user outcomes.
+- **Use the next already-owned checkpoint to ask the demand-side question.**
+  Which real user completed a task with less error or less effort using this
+  surface? Invocation totals and successful registration are not that evidence.
+  Retain unknowns if no comparable user outcome exists; do not invent demand,
+  schedule paid trials, or reopen held campaigns from this review.
+
+### Disagreements and strongest counterargument
+
+The strongest objection is that the records intentionally preserve history,
+English contracts are canonical, and static tests never promised host enforcement.
+That objection is valid for archive age, translation incompleteness, repeated
+safety clauses and already-disclosed unknowns. It does not explain a successful
+installer with zero skills, a falsely classified worker failure, or contradictory
+current-status labels. Therefore prioritize the two observed consumer failures
+and exact live contradictions; leave optional archive tidying below them.
+
+Rejected or narrowed lens claims are retained, not silently counted as findings:
+
+- Router-linter rationale filling is already delimited by Alias mode; the linter
+  checks declaration completeness, not the substantive truth of a reason.
+- `FAIL_SIGS` write isolation is already a host obligation in the owning skill;
+  sibling placement is not promised to enforce it.
+- The live governed-delivery wrapper does not contain the claimed
+  `sha256sum`/`chmod` contradiction.
+- The current flow snapshot uses literal git exclusions; the old glob caveat is
+  not evidence of a current bug.
+- Prohibiting hidden chain-of-thought does not prohibit structured conclusions.
+- A domain pack must not silently replace a frozen core dispatch route.
+- PB1 already distinguishes the scoped supplemental readiness result from the
+  original UNKNOWN/HELD baseline; this review grants no campaign permission.
+- Craft Anything's export/import row contains two invocations: counting table
+  rows alone does not justify changing eleven scenarios to ten.
+- The July-18 governance panel file exists. Missing private/session receipt
+  access does not prove missing historical execution or authorize oracle export.
+- An old deferred trigger is not automatically fired or overdue. Self-contained
+  safety criteria are not duplication defects without a demonstrated divergence.
+
+Socratic questions that constrain the recommendation:
+1. If all gates pass while two published consumer paths fail, which claim does
+   the gate actually certify? Only its exercised assertions, not user success.
+2. If nine skills were reduced or expanded, which observed task would improve?
+   No comparative outcome in this review establishes either change.
+3. Does a new survey close a local contract gap or merely add another reference?
+   Require the concrete gap before promotion; source novelty is insufficient.
+4. Would a reader with only the copied/installed surface know its dependencies,
+   next action and authority boundary? Where not, repair that surface first.
+
+### Evidence actually checked
+
+The coordinator executed the repository gate with installed Python 3.13.0:
+`env PATH=/Users/teee/.pyenv/versions/3.13.0/bin:$PATH make all`.
+Result: **1,753 tests passed**; link/schema validation scanned 303 files with zero
+errors; skill lint had zero errors/warnings; governance accepted 19 registered
+skills; record hygiene had zero errors and **233 nonblocking warnings**.
+ROUTE-001/002/003 met their thresholds with 100% within-fixture consistency.
+These are repository/covered-consumer results, not proof of general routing,
+installed-host isolation or skill efficacy.
+
+The real prompt composer also completed `--list-slugs`, the `engineering-task`
+template with a task argument, and `core-short code-reviewer --low-token`, all
+exit 0. Observed template output was 16,972 characters; the low-token pair was
+4,204 characters. This is output/ordering evidence, not a model-performance
+comparison or proof that either composition is minimal for every task.
+
+Scratch-only observations comprise four EN/zh-TW installer cases, five fan-out
+failure/control cases, and the two factory counterexamples described above.
+They used the published source, isolated temporary directories and scripted
+workers; no host skill installation or upstream runtime was invoked. Probe
+scratch was removed after receipts were retained. The semantic `find` backend
+failed with HTTP 403 during discovery; literal search/read fallback supplied the
+needed locations. That discovery failure was not evidence of source absence.
+
+### Coverage, evidence provenance and individual rulings
+
+The immutable inventory contains **302 tracked documentation files** (5,986,379
+bytes), including **176 Plans-area files** and **48 Skills-area files**. The
+latter are files, not 48 skills: the live registry has nine core workflows and ten
+domain packs. Nineteen specialist lenses plus the coordinator considered every
+inventory path. The report history was split into two ranges, so 303 assigned
+segments cover 302 unique paths. Model roles are one model-family judgment
+channel, not nineteen independent empirical confirmations.
+
+| Assigned slice | Files or segments |
+| --- | ---: |
+| `CoreWorkflows` | 21 |
+| `FlowGovernancePacks` | 13 |
+| `AssurancePacks` | 14 |
+| `PromptContracts` | 48 |
+| `KnowledgeRoadmaps` | 14 |
+| `NavigationLanguage` | 20 |
+| `DogfoodCampaigns` | 6 |
+| `RuntimeCheckpoints` | 11 |
+| `AgentflowLineage` | 8 |
+| `CognitionSources` | 14 |
+| `PromptSourceProvenance` | 14 |
+| `RecentProductMethods` | 16 |
+| `MainVerification` | 10 |
+| `HarnessSurveys1` | 14 |
+| `HarnessSurveys2` | 13 |
+| `HarnessSurveys3` | 12 |
+| `GovernanceRecords1` | 27 |
+| `GovernanceRecords2` | 26 |
+| `ReportHistoryEarly` | 1 |
+| `ReportHistoryLate` | 1 |
+
+Per-file identities (path, byte count, git blob), assignments, reading depth,
+complete delivered lens sections, Socratic objections, individual dispositions,
+claims ledger and executed probe receipts are retained together in
+the review evidence bundle, `local://whole-library-review-evidence-2026-11-12.json`.
+It is supplemental session provenance, not a fresh-clone dependency or a source
+of operating authority; the decision-bearing observations and limits are stated
+in this report. Per-file clean/finding/unverifiable assessments live in each
+lens's Coverage section; supporting reads are listed separately.
+
+The coordinator adjudicated **84 candidate observations**: 29 accepted as
+findings, 11 partially accepted/narrowed, 33 optional and 11 rejected. These
+include duplicates across lenses and must not be quoted as 84 distinct defects.
+The eleven WLR items consolidate the repair-relevant conclusions. Optional
+navigation/provenance refinements and all dissent remain in the individual
+rulings; they are not mandatory new work.
+
+### Candidate Adoption Ledger — recommendations only
+
+Every candidate is **deferred / not adopted** because this task authorizes review,
+not implementation. The owning surfaces and evidence are in the corresponding
+Finding above; these verification conditions are for a later authorized repair,
+not claims that a repaired version has been tested.
+
+| ID | Status | Evidence basis | Next action / acceptance on authorized repair |
+| --- | --- | --- | --- |
+| WLR-01 | Deferred | Published fan-out + five executed failure/control cases | Worker 1/3/4 handled as branch failures; quorum reaches merged verification; genuine driver 3/4 holds remain; cover all affected runner bodies |
+| WLR-02 | Deferred | Four scratch EN/zh-TW installer cases | Reuse the validated helper; valid install succeeds and incomplete source fails without an accepted install |
+| WLR-03 | Deferred | Source claims + two executed counterexamples | Bound assurance and numeric claims to their measured/illustrative scope; no paragraph-pin substitute |
+| WLR-04 | Deferred | Owning skill/prompt versus map/recipe comparison | One kickoff and one engineering-task walkthrough have consistent phase ordering and unchanged risk/route duties |
+| WLR-05 | Deferred | Declared caps and fixed implementation; trace/example contracts | Declare fixed/configurable scope and preserve existing dispatch ownership; exercise changed cap boundaries if code changes |
+| WLR-06 | Deferred | Current registration, proposal labels and later owner records | A reader can resolve current status/admission basis without treating unknown recurrence as satisfied or historical text as live rules |
+| WLR-07 | Deferred | Mis-seated EP inputs, CA-1, typed-return limit and existing DPR-1 receipt | Correct only supported attribution/status claims; do not clear runtime holds or invent a new trigger receipt |
+| WLR-08 | Deferred | Literal paste artifacts, scoped inventory and recorded tally | Retain original pins; qualify unrecoverable facts; reconcile arithmetic without fabricating excluded cases |
+| WLR-09 | Deferred | Copy-boundary and navigation inspection | Advertised copied surfaces resolve their required choices; translations remain explicitly abridged and owners singular |
+| WLR-10 | Deferred | Runbook branches versus existing zero-solo trigger | Zero-total, paired-only and at-least-one-solo cases classify under the existing next checkpoint owner |
+| WLR-11 | Deferred | Three-column header and fifteen mismatched rows read directly | Preserve dispositions/links while checking the rendered three-column placement |
+
+### Traceability and acceptance status
+
+| Requested criterion | Evidence | Status |
+| --- | --- | --- |
+| All Plans, Skills and documentation considered | Immutable 302-file inventory, exact assignments and per-file depth in retained coverage | Met, with archive depth limit below |
+| Assess direction, not only local consistency | Frame test, demand-side question, counterargument and bounded no-new-surface recommendation | Met; strategic judgment, not efficacy measurement |
+| Identify worthwhile Skills/Docs repairs | WLR-01–11, source seats, observed failures and candidate ledger | Met; no edits adopted |
+| Preserve dissent and distinguish evidence strength | Per-lens rulings, rejected claims and execution/source/judgment separation | Met |
+| Verify significant claims proportionally | Completed gate, real composer and isolated consumer/counterexample probes | Met within stated scope |
+| Review only | Only this report append; no governed-surface edits or authority changes | Met |
+
+### Declined to judge, residual risks and owners
+
+- External-source currency, vendor benchmark truth, legal reuse rights and
+  third-party enforcement: no upstream refresh or legal determination in scope;
+  owner is the relevant survey maintainer/counsel if adoption is reconsidered.
+- Installed host isolation, escaped external effects and production side-effect
+  safety: not exercised; owner is the host/product operator before execution.
+- Comparative skill efficacy, optimal core-skill cardinality and independent
+  user demand: unmeasured; owner is the maintainer at an authorized outcome review.
+- Private oracle/custody contents, model-provider behavior and campaign admission:
+  excluded; owners remain the existing custodian and campaign authority. A green
+  repository gate or this review cannot clear any hold.
+- Some historical inputs/receipts are session-local or owner-held. Their
+  unavailability to a fresh clone limits independent replay, not necessarily
+  the historical claim's truth. Preserve source/date/availability labels;
+  never publish protected inputs just to complete a citation.
+- The large multi-agent consensus archive was reviewed at structure and seals:
+  lines 1–123, 770–815, 3098–3149 plus all section headings. It was not a
+  full-body review; rounds 36–100 were not reread. No current defect or promotion
+  claim is grounded solely in those unread bodies. Main owns any separately
+  commissioned deeper archive audit. A long status-line tail in
+  `plans/skills-september-concepts-review-2026-09-16.md:3` remained display-clipped
+  even with an exact raw read; it is not grounds for any finding. This limit is
+  retained rather than calling every byte fully reviewed.
+
+### Remaining work and Human Review
+
+The review deliverable is complete; the proposed repairs remain unapplied.
+Execution requires a subsequent implementation request. Existing campaign,
+checkpoint, promotion, privacy and host-authority gates remain unchanged.
+No further Human Review is needed to accept this read-only report; changing
+project direction, admitting a skill/runtime, or granting operational authority
+would require its existing explicit owner decision.
+
+
+## Whole-library repair follow-through (2026-11-12)
+
+### Goal and summary
+
+The owner requested “開始實作 直到完成全部” after the whole-library review. This delivery implements WLR-01–WLR-11 on their existing owning surfaces. The reviewed base is `3def51e703c71140907ab466e6b14534a39e7ae9`; the preceding review and its historical verdict remain intact. This is an authorized repair, not a new Skill, runtime, admission, campaign, host grant, commit or push.
+
+**Status: WLR-01–WLR-11 implemented and verified.** Repository checks establish bounded consumer/document behavior, not model efficacy or runtime enforcement.
+
+### Files Changed
+
+55 existing files changed, including the preceding review append. No new repository file or dependency was added. Exact paths:
+
+```text
+README.zh-TW.md
+reflective-prompt-library/01-thinking/why-what-how-done.md
+reflective-prompt-library/04-agent/agent-selection.md
+reflective-prompt-library/04-agent/workflow-recipes.md
+reflective-prompt-library/05-domain/learning-coach.md
+reflective-prompt-library/LANGUAGE_POLICY.md
+reflective-prompt-library/LANGUAGE_POLICY.zh-TW.md
+reflective-prompt-library/METHODOLOGY_MAP.zh-TW.md
+reflective-prompt-library/PROJECT_KNOWLEDGE.md
+reflective-prompt-library/README.md
+reflective-prompt-library/README.zh-TW.md
+reflective-prompt-library/SKILL_INSTALLATION.md
+reflective-prompt-library/SKILL_INSTALLATION.zh-TW.md
+reflective-prompt-library/index.json
+reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md
+reflective-prompt-library/plans/agentflow-survey-2026-09-05.md
+reflective-prompt-library/plans/agnix-agent-skills-hook-survey-2026-08-04.md
+reflective-prompt-library/plans/checkpoint-2026-10-11-outcome.md
+reflective-prompt-library/plans/d025db7-publication-review-2026-10-02.md
+reflective-prompt-library/plans/df-c2-protected-custody-workflow-spec-2026-10-15.md
+reflective-prompt-library/plans/external-adoption-case-studies-2026-06-20.md
+reflective-prompt-library/plans/fifth-gen-prompt-taxonomy-rethink-2026-09-21.md
+reflective-prompt-library/plans/ga-skills-coverage-panel-2026-09-03.md
+reflective-prompt-library/plans/human-cognition-adoption-2026-10-02.md
+reflective-prompt-library/plans/minimax-code-trace-map-survey-2026-09-19.md
+reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md
+reflective-prompt-library/plans/prompt_composer.py
+reflective-prompt-library/plans/proposals/acceptance-join-validator-proposal.md
+reflective-prompt-library/plans/proposals/arm-blinded-eval-harness-proposal.md
+reflective-prompt-library/plans/proposals/golden-benchmark-runner-proposal.md
+reflective-prompt-library/plans/proposals/router-trace-linter-proposal.md
+reflective-prompt-library/plans/roadmap-governed-autonomy-2026-10-13.md
+reflective-prompt-library/plans/roadmap-harness-flow-control-2026-10-13.md
+reflective-prompt-library/plans/roadmap-prompt-cognition-memory-2026-10-13.md
+reflective-prompt-library/plans/roadmap-software-factory-devops-2026-10-13.md
+reflective-prompt-library/plans/self-governance-dogfood-2026-09-24.md
+reflective-prompt-library/plans/software-factory-rethink-panel-record-2026-09-28.md
+reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md
+reflective-prompt-library/plans/tests/test_agentflow_v83_delta_record.py
+reflective-prompt-library/plans/tests/test_fifth_gen_taxonomy_rethink_record.py
+reflective-prompt-library/plans/tests/test_flow_generator_consumers.py
+reflective-prompt-library/plans/tests/test_install_helper_failure_propagation.py
+reflective-prompt-library/plans/tests/test_pi_warden_survey_record.py
+reflective-prompt-library/plans/tests/test_prompt_composer.py
+reflective-prompt-library/plans/tests/test_september_skills_review_record.py
+reflective-prompt-library/plans/whole-project-plan-2026-07-11.md
+reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.md
+reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md
+reflective-prompt-library/skills/examples/flow-control-generator.examples.md
+reflective-prompt-library/skills/examples/reflective-review.examples.md
+reflective-prompt-library/skills/flow-control-generator/SKILL.md
+reflective-prompt-library/skills/flow-control-generator/TEMPLATES.md
+reflective-prompt-library/skills/skill-map.md
+review/final-report.md
+surveys/ornith-1.0-survey.md
+```
+
+### Implementation Summary
+
+The generator now keeps raw worker failure evidence without interpreting worker exits 3/4 as driver refusal/preflight holds. Documentation changes reconcile the actual installation path, workflow ordering, current-versus-historical ownership, source attribution and rendered catalogue cells. Existing adoption/demotion decisions, independent oracle duties and sealed checkpoint history remain unchanged. Affected incidental wording/identity tests were removed rather than re-pinned; behavioral/security tests remain the verification boundary.
+
+Removed affected incidental survey identity/wording tests instead of re-pinning corrected historical prose. Installer tests execute the published localized recipe; no permanent tests assert that a helper name or raw-copy string appears. New generator regressions check accepted/failure artifacts, exit classifications, merged verification and real driver holds.
+
+### Acceptance Criteria Status and traceability
+
+| ID | Repaired surface | Verification / preserved boundary | Status |
+| --- | --- | --- | --- |
+| WLR-01 | Generator worker/driver exit split | Three Bash runners preserve raw evidence; worker 1/3/4 quorum and genuine 3/4 holds passed consumer tests. | Verified |
+| WLR-02 | Single validated installation path | Localized copy recipe executed with the canonical helper: nine valid skills installed; no-SKILL.md source refused before destination creation. | Verified |
+| WLR-03 | Bounded factory assurance claims | Lookup counterexample and equivalent-mutant distinction retained; thresholds/latency/redundancy labeled by their actual evidence scope; no new gate. | Verified |
+| WLR-04 | Strictness, kickoff and test planning | Brief kickoff/map agree; actual composed sequence puts test design before implementation; README and medium-cost recipe twins repaired. | Verified |
+| WLR-05 | Cap and routing/review contracts | Fixed versus configurable caps separated; compact values retain all ten dispatched trace fields; review versus complexity-only example disambiguated. | Verified |
+| WLR-06 | Current ownership and historical status | Four admission records identify their live contracts; shipped/proposed roadmap groupings, current direction, GA supersession and DF-C2 successor made explicit; decisions unchanged. | Verified |
+| WLR-07 | Source and trigger attribution | EP evidence names EP inputs; later CA-1 status preserved; PW-1 no longer depends on an unproven DM-5 trigger; DPR-1 source status corrected. | Verified |
+| WLR-08 | Record precision | Two full Ornith pins match the original receipt; 3+2+3+3+2 = 13; four-directory sweep scope, license count and cognition source names qualified. | Verified |
+| WLR-09 | Copied prompts and localized navigation | Both copied fences resolve their choices; execution-layer mappings are candidates under installed dispatch authority; abridgement and live-owner pointers explicit. | Verified |
+| WLR-10 | Next-checkpoint zero-solo cases | Zero-total and paired-only reach the existing zero-solo review trigger; >=1 solo keeps merge closed; sealed runbook blob unchanged. | Verified |
+| WLR-11 | Catalogue cell placement | Fifteen repaired rows rendered as Item / Status / Evidence; all prior Markdown links retained; screenshots recorded. | Verified |
+
+### Tests / Checks Run
+
+- `generate_index.py`: 243 files (224 prompts, 19 skills); the index-current pytest passed.
+- `make all` using Python 3.13.0: 1,766 collected; **1,765 passed, 1 failed** in 76.21 s. The only failure was a session-only `local://` citation in the preceding review formatted as a repository hyperlink. Receipt: `artifact://3253`.
+- Corrected that report-only URI to inline code; reran only `test_validate_links.py::test_live_repo_has_no_link_errors`: **1 passed** in 0.14 s. No product expectation or validator was changed.
+- Ran the previously unreached `make validate`: **exit 0**; all eight validators and three routing evals passed. Link/schema scan: 303 files, zero errors. Skill lint: zero errors/warnings. Registry: nine core plus ten domain packs. Record hygiene: zero errors, 233 nonblocking warnings. Receipt: `artifact://3256`.
+- ROUTE-001/002/003: 128/138/108 phrases respectively, each 100% fixture consistency; not proof of general semantic routing.
+- Actual composer CLI: exit 0, 16,988 output characters; `core-full → task-start → spec-writer → usage-first → test-designer → task-slicer → implementation-agent → code-reviewer`.
+- Offline Chromium rendering: all fifteen catalogue rows have three correctly seated cells; retained screenshot receipt names the renderer and limits. Current-row comparison preserves the original Markdown-link destinations.
+- Mechanical/source checks: five cross-workflow counts total 13; both recovered Ornith SHAs match the retained October 22 receipt; no bare diff-marker lines remain in that section; the sealed checkpoint runbook blob remains `4f982ecc65a54eea946e4329130fa7e95129eabe`.
+
+The full gate is covered by the original test run, focused repair recheck and remaining validator/eval stage. **This is not a claim that a second one-shot `make all` run exited zero.** Unaffected passing checks were not rerun after the report-only citation correction.
+
+### Consumer and twin coverage
+
+| Consumer class | Disposition |
+| --- | --- |
+| Emitted generator consumers | Covered within stated scope: All three Bash runner bodies, quorum/strict/synthesis paths and genuine driver controls; Python exception-based runners unchanged. |
+| Installed-copy entry points | Covered within stated scope: Canonical English helper, localized calls and incomplete-source failure propagation; scratch-only, no host install. |
+| Composed prompts and routing | Covered within stated scope: Engineering composer plus kickoff/recipe/map; existing strictness/risk/router gates, nine core workflows and ten domain packs remain distinct. |
+| Documentation/index consumers | Covered within stated scope: Historical/current status seats, source-qualified records, rendered three-cell catalogue and regenerated discovery metadata. |
+| Persisted history and owner-held evidence | Covered within stated scope: Sealed runbook preserved; existing protected/private receipts not opened or replaced by current-upstream data. |
+
+TWINS: searched `return "$ec"` in generator Bash runners - found 2 other sites: pipeline and router bodies in `skills/flow-control-generator/TEMPLATES.md`; both repaired alongside fan-out. Python runners use typed exceptions; loop-harness exit meanings do not implement the generator hold tally.
+
+TWINS: searched engineering composition sequences - found 3 other sites: `plans/prompt_composer.py`, `README.md` Engineering task and `04-agent/workflow-recipes.md` medium-cost mode; all aligned with the primary recipe.
+
+Factory-threshold roadmap twins already say illustrative and remain unchanged. The fifth-generation Decision Index twin now carries the four-directory scope. Catalogue rollups retain CA-1/PW-1 dispositions with corrected attribution. No new core route or repeated operational rule was added.
+
+### Failures or Skipped Checks
+
+The initial broken report link was a documentation publication defect, not a generator/installer/composer failure. It was repaired and its failing check passed. The 233 record-hygiene warnings are disclosed, not suppressed or promoted to errors; their wider repair was not part of WLR-01–11. No installed host, provider, private oracle or model campaign was exercised.
+
+### Residual Risks and evidence availability
+
+No model/provider call, upstream refresh, installed-host security test, campaign run or protected-oracle read was performed. Static checks and offline stub-driven consumers establish the documented behavior, not skill efficacy or host isolation. The router-linter record retains the missing real-trace/corpus evidence and no new claim of a specific historical approval sentence. Existing campaign/checkpoint holds and external recurrence unknowns remain with their current owners.
+
+Supplemental session receipts: `local://whole-library-repair-evidence-2026-11-12.json`, `local://whole-library-repair-smoke-2026-11-12.json`, and `local://whole-library-repair-rendering-2026-11-12.json`. These are session-held provenance, not dependencies of a fresh clone. The decision-bearing observations, changed paths, failure and verification scope are stated above.
+
+### Next Action and Human Review
+
+All eleven authorized repairs are complete. No additional repair, adoption, host or campaign decision is required for this delivery. Existing checkpoints, promotion gates and protected-custody obligations remain unchanged. No commit or push was performed.

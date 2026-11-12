@@ -59,9 +59,18 @@ Escalate to `reflective-risk` when the task implies irreversible side effects re
 - Workflow Engine
 - Full Agent System
 
+層級對照（以下是候選搭配，不是固定路由；先依任務選 Strictness 與主要 workflow，以已安裝的 `reflective-dispatch` 契約為準。執行層是 host 能力，路由是 TeaPrompt skill，兩者是不同軸）：
+- Prompt-only → `reflective-brief` 或直接回答
+- Prompt + Artifact → `reflective-brief` / `reflective-spec-plan`
+- Agentic Coding → `reflective-implement` + `reflective-review`
+- Workflow Engine → `reflective-spec-plan`（無碼 workflow 規格）；可執行的 engine 由 host 提供，TeaPrompt 不交付 runtime
+- Full Agent System → 先由 `reflective-dispatch` 選 Strictness 與路由；實際執行屬 host，須經 host 授權
+
 最後給：
-- 建議層級
+- 建議層級（含對應 skill / gate 與 host 執行歸屬）
 - 最小可行做法
 - 不應該過度工程的部分
+
+規則：層級標籤不授權副作用——涉及不可逆行動時，一律先走 `reflective-risk` 並取得 Human Review。
 ```
 

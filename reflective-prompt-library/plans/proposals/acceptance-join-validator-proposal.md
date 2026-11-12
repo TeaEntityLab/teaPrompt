@@ -1,6 +1,6 @@
 ---
 name: acceptance-join-validator
-description: Lint a repo's acceptance surface — every REQ/AC ID in VERIFY.md/features must resolve to a locked executable check, duplicates and dangling IDs flagged, every check command verified runnable. Proposal only; not a registered skill.
+description: Admission record for the registered acceptance-join-validator domain pack; live contract at skills/acceptance-join-validator/SKILL.md. Original proposal body retained below as history.
 license: MIT
 metadata:
   risk_level: low
@@ -13,10 +13,16 @@ metadata:
 
 **Status:** ADOPTED 2026-10-06 — registered domain pack; live contract at `skills/acceptance-join-validator/SKILL.md`. This file is the admission record.
 
-**Status:** proposal artifact — inert until admission review. NOT a registered
-skill; NOT added to `skill-map.md`; no existing file is modified by this
-proposal. Name uses `acceptance-join-validator` for clarity (ticket shorthand
-was `req-ac-oracle-join-validator`).
+> **Supersession 2026-10-06:** the "proposal artifact — inert until admission
+> review / NOT a registered skill" paragraph below is pre-admission text,
+> retained verbatim as history. Authority now lives at the registered pack's
+> `SKILL.md`; this file no longer prohibits registry or skill-map membership.
+
+> Pre-admission text (retained verbatim): **Status:** proposal artifact — inert
+> until admission review. NOT a registered skill; NOT added to `skill-map.md`;
+> no existing file is modified by this proposal. Name uses
+> `acceptance-join-validator` for clarity (ticket shorthand was
+> `req-ac-oracle-join-validator`).
 
 ## Purpose
 

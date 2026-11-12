@@ -55,7 +55,7 @@ Do not use when:
 
 L1 fast path:
 
-- When Strictness is L1 and the task is trivial, answer directly with a minimal route trace instead of routing to `reflective-brief`.
+- When Strictness is L1 and the task is trivial, answer directly with the full ten-field route trace using compact values, instead of routing to `reflective-brief`.
 
 ## `reflective-brief`
 

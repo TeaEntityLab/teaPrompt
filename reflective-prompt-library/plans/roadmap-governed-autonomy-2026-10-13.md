@@ -48,8 +48,10 @@ To prevent the composite self-acceptance antipattern (where a single agent or tr
 ### Horizon 1 — Standing Invariants & Shipped Packs
 - **Shipped Packs:** `agent-governance-scaffold` and `governed-delivery`.
 - **Broker-Exhaustiveness Disclosure:** Governance scaffolds declare any unmediated `model → privileged_tool` path a governance failure, and artifact presence alone is never evidence of broker mediation.
-- **Fail-Closed Gate Bar** *(proposed; record-only)*: Stop-hooks and circuit breakers would state that allow-shaped fail-open behavior under contention is advisory only and not an enforcement bound; no shipped surface carries this wording yet.
 - **Attestation Authentication Boundary:** Emitted preflight checks are disclosed as point-in-time record-coherence checks — they validate coherence, never that events occurred, sealing holds continuously, or delivery is accepted; self-report is not attestation.
+
+### Record-only proposals (not shipped)
+- **Fail-Closed Gate Bar** (GA-05; proposed; record-only): Stop-hooks and circuit breakers would state that allow-shaped fail-open behavior under contention is advisory only and not an enforcement bound; no shipped surface carries this wording yet.
 
 ### Horizon 2 — No New Date-Gated Commitment
 - **GD↔AGS Redundancy Review (R6):** The [checkpoint disposition](checkpoint-2026-10-11-outcome.md#gd-outcome) holds consolidation; independent use remains unknown. Preserve the owning coupled-only-use/shared-contract-divergence trigger rather than inventing a quarterly boilerplate audit.
@@ -79,4 +81,4 @@ This planning summary is wrong or stale if:
 | GA-02 | Governed Delivery Lifecycle & Manifests | Adopted | `skills/governed-delivery/SKILL.md` | None |
 | GA-03 | Broker-Exhaustiveness Invariant | Adopted | `skills/agent-governance-scaffold/SKILL.md` (:49) + `ARTIFACTS.md` (:36, :38) | None |
 | GA-04 | Preflight Coherence vs Auth Disclosure | Adopted | `skills/governed-delivery/SKILL.md` (:54, :177, :227–229) | None |
-| GA-05 | Fail-Closed Stop-Hook Bar | Proposed (Record-only in this roadmap) | This roadmap §Horizon 1 | Re-litigate upon host sandbox integration |
+| GA-05 | Fail-Closed Stop-Hook Bar | Proposed (Record-only in this roadmap) | This roadmap §Record-only proposals (not shipped) | Re-litigate upon host sandbox integration |
