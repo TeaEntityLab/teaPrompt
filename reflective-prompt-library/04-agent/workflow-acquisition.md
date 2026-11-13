@@ -176,3 +176,11 @@ Return:
 6. Human approval boundaries.
 7. Implementation tasks only if the user asks to build the runner or verifier.
 ```
+
+## Optional Worked Reference
+
+[Harness²: selection is not promotion](../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--selection-is-not-promotion)
+distinguishes a generated or selected harness, separately measured baseline
+improvement, experience-library admission, and authorized local promotion.
+The source-qualified example applies the existing replay and promotion gates;
+its scripted demo does not prove model improvement or authorize a Skill write.

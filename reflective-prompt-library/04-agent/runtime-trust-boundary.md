@@ -211,3 +211,9 @@ defaults, direct product changes, computer placement, and active-work limits.
 The pinned source and offline function receipt do not establish live-host
 isolation or authorize installation. This is an optional worked example; the
 prompt contract above is unchanged.
+
+[Four harness sources: acceptance needs relevant evidence](../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--acceptance-needs-relevant-evidence)
+contrasts a structural score with an executed entrypoint, and fresh evidence with
+a requirement-bound validator. The recorded offline observations illustrate
+existing acceptance duties; they are not model-efficacy or containment tests.
+No new rule or runtime adoption is implied.
