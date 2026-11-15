@@ -64,3 +64,10 @@ not a new workflow, release authorization or demonstrated efficacy result.
 If a proposal changes safety controls, use
 [reflective-risk](../skills/reflective-risk/SKILL.md) and its Human Review gate
 before execution.
+
+[Rieseberg: delegating the outcome, not the task](../plans/ambition-prompts-survey-2026-11-14.md#optional-worked-reference--delegating-the-outcome-not-the-task)
+applies the existing job-to-be-done question to one pinned example: asking for a
+result ("keep our apps crash-free") only works after the model can observe,
+reproduce and verify — the verification loop is built first. The QBR ladder
+shows the same promote-only-what-you-can-check shape. This is a source-qualified
+illustration, not a new workflow or a demonstrated efficacy result.

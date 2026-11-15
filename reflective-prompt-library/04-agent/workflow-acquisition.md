@@ -184,3 +184,16 @@ distinguishes a generated or selected harness, separately measured baseline
 improvement, experience-library admission, and authorized local promotion.
 The source-qualified example applies the existing replay and promotion gates;
 its scripted demo does not prove model improvement or authorize a Skill write.
+
+[Goal Engineering: scope by reusable judgment](../plans/goal-engineering-survey-2026-11-15.md#optional-worked-reference--scope-by-reusable-judgment)
+applies the existing replay question to one pinned case study: a scope is right
+when the same correction recurs, and splitting a scope that needs judgment —
+not lookup — to relocate an item relocates the inconsistency, not removes it.
+The source-qualified example adds a falsifiable criterion to the existing
+scope-split guidance; it does not change the prompt contract above.
+
+[Agent trust pyramid: earned auto-merge](../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks)
+shows the promotion gate applied to agent autonomy itself: fuzz-and-fix loops
+and self-merging PRs became viable only after the deterministic and
+verification layers existed. The source-qualified example reinforces that
+promotion follows demonstrated guardrails, not velocity claims.

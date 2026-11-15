@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-13T16:07:48.238571",
+  "generated_at": "2026-11-15T16:57:09.095140",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -37,6 +37,7 @@
             "storm-perspective-discovery-reflection-2026-06-18.md",
             "roadmap-ecosystem-packaging-2026-10-13.md",
             "roadmap-index-surveyed-plans-2026-10-13.md",
+            "goal-engineering-survey-2026-11-15.md",
             "mini-swe-agent-survey-2026-11-09.md",
             "teabrain-concepts-experiments-survey-2026-09-21.md",
             "skills-surface-plan-2026-07-11.md",
@@ -98,6 +99,7 @@
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
+            "agent-trust-pyramid-survey-2026-11-15.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
             "jev-diffusion-eval-survey-2026-09-19.md",
@@ -152,6 +154,7 @@
             "agentflow-8.3.2-delta-survey-2026-09-22.md",
             "token-quota-decomposition-survey-2026-11-09.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
+            "ambition-prompts-survey-2026-11-14.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "addy-osmani-agent-management-survey-2026-11-09.md",
             "ROUTING_CONTRACT.md",
@@ -1551,6 +1554,64 @@
       ],
       "line_count": 93,
       "char_count": 10247
+    },
+    {
+      "path": "reflective-prompt-library/plans/goal-engineering-survey-2026-11-15.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "goal-engineering-survey-2026-11-15",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Goal Engineering Survey — Chase × Actively AI Article and Reader Comments (2026-11-15)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Check: Digest vs Primary Article"
+        },
+        {
+          "level": 2,
+          "text": "Comment Refinements (as supplied; unverified but coherent)"
+        },
+        {
+          "level": 2,
+          "text": "What the Source Adds vs Existing Contracts"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference — Scope by Reusable Judgment"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 88,
+      "char_count": 10021
     },
     {
       "path": "reflective-prompt-library/plans/mini-swe-agent-survey-2026-11-09.md",
@@ -7730,6 +7791,60 @@
       "char_count": 85608
     },
     {
+      "path": "reflective-prompt-library/plans/agent-trust-pyramid-survey-2026-11-15.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-trust-pyramid-survey-2026-11-15",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Trust Pyramid Survey — Lauren Tan \"All Code Is Slop (Except Mine)\" (2026-11-15)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Check: Digest vs Transcript"
+        },
+        {
+          "level": 2,
+          "text": "What the Source Adds vs Existing Contracts"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference — Corrections Become Checks"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 89,
+      "char_count": 10433
+    },
+    {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -12095,6 +12210,9 @@
         "ref_snippet": [],
         "markdown_links": [
           "harness-four-survey-2026-11-13.md",
+          "ambition-prompts-survey-2026-11-14.md",
+          "goal-engineering-survey-2026-11-15.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
           "openmausbot-survey-2026-11-12.md",
           "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
@@ -12194,6 +12312,9 @@
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "harness-four-survey-2026-11-13.md",
+          "ambition-prompts-survey-2026-11-14.md",
+          "goal-engineering-survey-2026-11-15.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -12243,6 +12364,9 @@
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-52-mirror-check--2026-11-12",
           "fable-5-scaffold-provenance-reflection-2026-06-11.md#fable-version-differences-and-reflection--2026-11-12",
           "harness-four-survey-2026-11-13.md",
+          "ambition-prompts-survey-2026-11-14.md",
+          "goal-engineering-survey-2026-11-15.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12412,8 +12536,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 607,
-      "char_count": 138292
+      "line_count": 619,
+      "char_count": 142920
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -13013,6 +13137,60 @@
       ],
       "line_count": 333,
       "char_count": 27037
+    },
+    {
+      "path": "reflective-prompt-library/plans/ambition-prompts-survey-2026-11-14.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ambition-prompts-survey-2026-11-14",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Ambition Prompts Survey — Rieseberg's Altitude/Depth/Range Tutorial (2026-11-14)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Check: Chinese Article vs Primary Essay"
+        },
+        {
+          "level": 2,
+          "text": "What the Source Adds vs Existing Contracts"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference — Delegating the Outcome, Not the Task"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 84,
+      "char_count": 10705
     },
     {
       "path": "reflective-prompt-library/plans/dilinai-nuwa-jiyao-survey-2026-07-13.md",
@@ -19449,7 +19627,8 @@
         "markdown_links": [
           "../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status",
           "../plans/openmausbot-survey-2026-11-12.md#optional-worked-reference--portability-does-not-carry-approval",
-          "../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--acceptance-needs-relevant-evidence"
+          "../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--acceptance-needs-relevant-evidence",
+          "../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks"
         ]
       },
       "structure": [
@@ -19522,8 +19701,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 219,
-      "char_count": 13783
+      "line_count": 225,
+      "char_count": 14234
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -19742,7 +19921,9 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--selection-is-not-promotion"
+          "../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--selection-is-not-promotion",
+          "../plans/goal-engineering-survey-2026-11-15.md#optional-worked-reference--scope-by-reusable-judgment",
+          "../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks"
         ]
       },
       "structure": [
@@ -19815,8 +19996,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 186,
-      "char_count": 8349
+      "line_count": 199,
+      "char_count": 9306
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -21063,7 +21244,8 @@
         "ref_snippet": [],
         "markdown_links": [
           "../plans/cat-wu-product-method-survey-2026-11-09.md#optional-worked-reference-revisit-a-model-dependent-product-bet",
-          "../skills/reflective-risk/SKILL.md"
+          "../skills/reflective-risk/SKILL.md",
+          "../plans/ambition-prompts-survey-2026-11-14.md#optional-worked-reference--delegating-the-outcome-not-the-task"
         ]
       },
       "structure": [
@@ -21096,8 +21278,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 66,
-      "char_count": 1945
+      "line_count": 73,
+      "char_count": 2489
     },
     {
       "path": "reflective-prompt-library/05-domain/high-risk.md",
@@ -23665,5 +23847,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 244
+  "total_files": 247
 }
