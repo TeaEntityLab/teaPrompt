@@ -223,3 +223,8 @@ applies the existing execution-versus-prose precedence to one pinned production
 case: every agent correction is promoted to a deterministic check or an API
 redesign, never to a comment or rule file. The source-qualified example is one
 team's self-reported telemetry, not a transferable benchmark.
+
+[AI coworkers: the trust ladder is the promotion gate](../plans/ai-coworkers-survey-2026-11-16.md#optional-worked-reference--the-trust-ladder-is-the-promotion-gate)
+restates graduated authority in identity terms: a bot earns read, then bounded
+action, then — only where the domain verifies — outcome ownership. The
+source-qualified example calibrates rungs to verifiability, not to confidence.

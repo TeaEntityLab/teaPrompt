@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-15T16:57:09.095140",
+  "generated_at": "2026-11-16T14:20:13.604040",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -85,6 +85,7 @@
             "september-skills-review-2026-09-14.md",
             "rsiagent-survey-2026-09-16.md",
             "self-governance-dogfood-2026-09-24.md",
+            "ai-coworkers-survey-2026-11-16.md",
             "baton-dispatch-survey-2026-07-13.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
             "harness-four-survey-2026-11-13.md",
@@ -6339,6 +6340,65 @@
       "char_count": 8204
     },
     {
+      "path": "reflective-prompt-library/plans/ai-coworkers-survey-2026-11-16.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ai-coworkers-survey-2026-11-16",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agent-trust-pyramid-survey-2026-11-15.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
+          "goal-engineering-survey-2026-11-15.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "AI Coworkers Survey — YC Light Cone: Lauren Tan × Roman Ugarte (2026-11-16)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Version and Source Identity"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Check: Digest vs Independent Sources"
+        },
+        {
+          "level": 2,
+          "text": "What the Source Adds vs Existing Contracts"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference — The Trust Ladder Is the Promotion Gate"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 93,
+      "char_count": 11925
+    },
+    {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -12213,6 +12273,7 @@
           "ambition-prompts-survey-2026-11-14.md",
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
+          "ai-coworkers-survey-2026-11-16.md",
           "openmausbot-survey-2026-11-12.md",
           "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
@@ -12315,6 +12376,7 @@
           "ambition-prompts-survey-2026-11-14.md",
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
+          "ai-coworkers-survey-2026-11-16.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -12367,6 +12429,7 @@
           "ambition-prompts-survey-2026-11-14.md",
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
+          "ai-coworkers-survey-2026-11-16.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12536,8 +12599,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 619,
-      "char_count": 142920
+      "line_count": 623,
+      "char_count": 144405
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -19628,7 +19691,8 @@
           "../plans/craft-anything-survey-2026-11-10.md#optional-worked-reference-acceptance-is-narrower-than-a-terminal-status",
           "../plans/openmausbot-survey-2026-11-12.md#optional-worked-reference--portability-does-not-carry-approval",
           "../plans/harness-four-survey-2026-11-13.md#optional-worked-reference--acceptance-needs-relevant-evidence",
-          "../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks"
+          "../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks",
+          "../plans/ai-coworkers-survey-2026-11-16.md#optional-worked-reference--the-trust-ladder-is-the-promotion-gate"
         ]
       },
       "structure": [
@@ -19701,8 +19765,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 225,
-      "char_count": 14234
+      "line_count": 230,
+      "char_count": 14629
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
@@ -23847,5 +23911,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 247
+  "total_files": 248
 }
