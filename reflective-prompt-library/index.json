@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-16T14:20:13.604040",
+  "generated_at": "2026-11-17T12:54:43.327214",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -96,6 +96,7 @@
             "dormant-work-specs-2026-07-11.md",
             "roadmap-software-factory-devops-2026-10-13.md",
             "eian-video-workflow-survey-2026-11-09.md",
+            "mage-source-survey-2026-11-17.md",
             "craft-anything-survey-2026-11-10.md",
             "checkpoint-2026-10-11-outcome.md",
             "workflow-possibilities-constraints-review-2026-07-06.md",
@@ -114,6 +115,7 @@
             "dogfood-learning-promotion-2026-10-09.md",
             "mattpocock-skills-v131-delta-survey-2026-10-07.md",
             "pstack-survey-2026-09-22.md",
+            "ai-engineer-jobs-survey-2026-11-17.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
             "mgd-form-theory-survey-2026-10-02.md",
@@ -170,6 +172,7 @@
             "product-runtime-ownership-panel-2026-08-25.md",
             "agent-governance-four-power-concepts-2026-07-17.md",
             "checkpoint-2026-10-11-preparation-2026-10-10.md",
+            "crossroads-evaluation-survey-2026-11-17.md",
             "frozen-core-parity-review-2026-07-11.md",
             "df-c2-protected-custody-workflow-spec-2026-10-15.md",
             "openfugu-technical-brief-2026-06-25.md",
@@ -7355,6 +7358,91 @@
       "char_count": 21652
     },
     {
+      "path": "reflective-prompt-library/plans/mage-source-survey-2026-11-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mage-source-survey-2026-11-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/governed-delivery/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../skills/verification-map-generator/SKILL.md",
+          "../skills/reflective-handoff-retro/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../04-agent/external-adoption-review.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MAGE Source Survey — Models, Enforcement, and Evidence (2026-11-17)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Version / Date Context"
+        },
+        {
+          "level": 3,
+          "text": "Different study windows are not interchangeable"
+        },
+        {
+          "level": 2,
+          "text": "What Is Actually Supplied"
+        },
+        {
+          "level": 2,
+          "text": "Bounded Browser Observations"
+        },
+        {
+          "level": 2,
+          "text": "Empirical Findings and Refuters"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference / State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Risks / Unknowns / Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Handoff"
+        }
+      ],
+      "line_count": 141,
+      "char_count": 21479
+    },
+    {
       "path": "reflective-prompt-library/plans/craft-anything-survey-2026-11-10.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -9097,6 +9185,100 @@
       ],
       "line_count": 362,
       "char_count": 30220
+    },
+    {
+      "path": "reflective-prompt-library/plans/ai-engineer-jobs-survey-2026-11-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "ai-engineer-jobs-survey-2026-11-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-review/SKILL.md",
+          "../skills/reflective-brief/SKILL.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals",
+          "../skills/reflective-minimality/SKILL.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "AI Engineering Jobs Survey — Fifteen Portfolio Directions and Actual Requirements (2026-11-17)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Sampling Boundary"
+        },
+        {
+          "level": 3,
+          "text": "Primary Job Register"
+        },
+        {
+          "level": 3,
+          "text": "LinkedIn Retrieval and Exclusions"
+        },
+        {
+          "level": 3,
+          "text": "Reddit: Advertisements Versus Advice"
+        },
+        {
+          "level": 2,
+          "text": "Assessment of All Fifteen Directions"
+        },
+        {
+          "level": 2,
+          "text": "What the Feature List Omits"
+        },
+        {
+          "level": 2,
+          "text": "Portfolio Synthesis — Recommendation, Not Hiring-Outcome Evidence"
+        },
+        {
+          "level": 3,
+          "text": "Project A — Permission-Aware Knowledge and Document Workflow"
+        },
+        {
+          "level": 3,
+          "text": "Project B — Transactional Workflow Agent"
+        },
+        {
+          "level": 3,
+          "text": "Optional Project C — One Target-Role Specialty"
+        },
+        {
+          "level": 3,
+          "text": "Measurement and Resume Evidence"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference and State Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability, Risks, and Handoff"
+        }
+      ],
+      "line_count": 204,
+      "char_count": 41646
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -12274,6 +12456,9 @@
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
           "ai-coworkers-survey-2026-11-16.md",
+          "mage-source-survey-2026-11-17.md",
+          "crossroads-evaluation-survey-2026-11-17.md",
+          "ai-engineer-jobs-survey-2026-11-17.md",
           "openmausbot-survey-2026-11-12.md",
           "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
@@ -12377,6 +12562,9 @@
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
           "ai-coworkers-survey-2026-11-16.md",
+          "mage-source-survey-2026-11-17.md",
+          "crossroads-evaluation-survey-2026-11-17.md",
+          "ai-engineer-jobs-survey-2026-11-17.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -12430,6 +12618,9 @@
           "goal-engineering-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
           "ai-coworkers-survey-2026-11-16.md",
+          "mage-source-survey-2026-11-17.md",
+          "crossroads-evaluation-survey-2026-11-17.md",
+          "ai-engineer-jobs-survey-2026-11-17.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -12599,8 +12790,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 623,
-      "char_count": 144405
+      "line_count": 635,
+      "char_count": 149273
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14529,6 +14720,86 @@
       ],
       "line_count": 470,
       "char_count": 38036
+    },
+    {
+      "path": "reflective-prompt-library/plans/crossroads-evaluation-survey-2026-11-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "crossroads-evaluation-survey-2026-11-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-research/SKILL.md#state-ledger",
+          "../skills/reflective-review/SKILL.md#four-evidence-dimensions",
+          "../skills/flow-loop-harness/SKILL.md",
+          "../skills/governed-delivery/SKILL.md",
+          "coordinate-codex-tasks-eval-survey-2026-09-30.md",
+          "../skills/agent-governance-scaffold/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "agent-trust-pyramid-survey-2026-11-15.md",
+          "../PROJECT_KNOWLEDGE.md#standing-non-goals"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Crossroads Evaluation Survey — RSI, Accountability, and Computer Use (2026-11-17)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 3,
+          "text": "Transcript Acquisition Outcome"
+        },
+        {
+          "level": 2,
+          "text": "Findings and Claim Ledger"
+        },
+        {
+          "level": 3,
+          "text": "1. Evaluation and RSI: Real Engineering, Bounded Conclusions"
+        },
+        {
+          "level": 3,
+          "text": "2. Responsibility, UBI, and Maintainer Authority"
+        },
+        {
+          "level": 3,
+          "text": "3. Computer Use and Code Style: Corrections Apply to Both Texts"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 112,
+      "char_count": 21033
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -23911,5 +24182,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 248
+  "total_files": 251
 }
