@@ -626,3 +626,85 @@ They do not establish review effectiveness. A new source repair or an authorized
 host reproduction can change a corresponding finding, without rewriting the
 historical receipt. Documentation validation establishes discoverability and
 record consistency only; it cannot clear runtime holds.
+
+## Agentflow 9.1.12 delta — 2026-11-17
+
+### Research question and direct recommendation
+
+What changed after v9.1.10, and does it alter TeaPrompt's no-Skill/no-runtime
+decision? The owner's "最近的Survey 還有要更新的嗎" follow-through authorizes
+publication of the November 17 source check in this existing record, the
+catalogue and generated discovery. **AF9112-DOC1 adopts reference documentation
+only.** No new local structural gap was demonstrated. Earlier
+AF/AFP/AF82/AF83/AF841/SFR, AF9, AF916 and AF9110 dispositions remain unchanged;
+Firstmate is outside this delta. No install, model call, commit or push is
+authorized by this supplement.
+
+### Version / date context and evidence used
+
+Checked 2026-11-17: [release v9.1.11](https://api.github.com/repos/agfnow/agentflow/releases/tags/v9.1.11), [release v9.1.12](https://api.github.com/repos/agfnow/agentflow/releases/tags/v9.1.12), [baseline comparison](https://github.com/agfnow/agentflow/compare/39331e372c58ff36f6fce13b29897bb65beeddc8...1e9fc320f6363adb34139563809d4735b34b6845).
+
+| Identity | Checked value |
+| --- | --- |
+| Prior durable baseline | v9.1.10, `39331e372c58ff36f6fce13b29897bb65beeddc8` |
+| Main / HEAD / peeled v9.1.12 | `1e9fc320f6363adb34139563809d4735b34b6845` |
+| Annotated v9.1.12 tag object | `dedce4a2689672e6045f2a9aaa4ae55af571144e` |
+| Intermediate release | v9.1.11, `255bb55243512f09d43d36d729cedba323d95aab`, published `2026-11-15T10:27:45Z` |
+| Stable release publication | v9.1.12 `2026-11-17T08:28:26Z`; draft/prerelease false |
+| Configuration schema | **13 → 14**; publication does not migrate an installed copy |
+
+`git ls-remote` and the exact-tag checkout agreed. Across the two pins,
+`git diff --name-status BASE TIP` yielded 46 records: 42 modified, 4 added
+(`references/spec-out*.md`, `references/ux-prototype.md`,
+`references/verification.md`). The changed script files, the new verification
+and spec-out references, and the configuration/session diff were read; bilingual
+guides and cheatsheets were checked through their diff inventory and change
+summaries, not independently audited line by line. A changed branch, tag or
+release invalidates freshness, not these immutable source observations.
+
+### Evidence vs inference — source-only delta
+
+All paths below were checked 2026-11-17 at `1e9fc320`. **Verified** means the
+stated source change was inspected, not that a model followed it.
+
+| Release / surface | Verified source change | Boundary |
+| --- | --- | --- |
+| v9.1.11 spec-out / go-hunt | New `references/spec-out.md`, `spec-out-template.md`, `spec-out-github.md` add a staged specification procedure (interview → technical/design investigation → consolidation into one contract). `grill-me` is renamed `go-hunt`; the interview method is shared, explicitly bounded, and grants no implementation or publication authority. | Prompt-defined workflow, not filesystem enforcement. Stage-limited requests still stop; source files are treated as data not instructions — a principle TeaPrompt already holds. |
+| v9.1.11 ux-prototype | New `references/ux-prototype.md` bounds prototype work to isolated synthetic data, matching reports and human acceptance. | Synthetic-data isolation is upstream convention; no local prototype procedure exists to compare against. |
+| v9.1.11 `save-evidence` (schema 13, optional) | `configuration.md`/`session.md` add `save-evidence: on|off`, default `off`; storage choice, not a check or approval change. | Record-storage policy, not acceptance evidence. |
+| v9.1.12 schema 14 and `save-evidence` required | `ag.json` → `schema-version: 14`; `feature-common.js` gains a 2-line migration insist + validation key; `looper.js` insists on `save-evidence` on|off before looper work. | Migration adds `off` only when absent and rejects invalid values — host-bounded, no silent flip. |
+| v9.1.12 adaptive verification | New `references/verification.md` shares failure-driven check selection across planning, implementation, ordinary/deep review, acceptance, final audit, brownfield and looper prompts: name a plausible violation, pick the cheapest discriminating check, derive expected results from accepted requirements; alternatives list properties, differential/metamorphic, fuzzing, targeted mutation, integration/faults; inconclusive output is not a pass. `looper.js` inlines this reference into repair/review/acceptance worker prompts. | Explicitly "add[s] no stage, worker, gate or authority" — a prompt-policy layer, not host enforcement. No measured reliability claim; upstream convention. |
+| v9.1.12 review trace and repair bound | Implementation reviews must trace intent and consequential decisions to accepted requirements; verification repairs are bounded by existing authority; machine-facing worker prompts stay English while user-facing text follows configured locale. | Consistent with existing review routing; no new authority granted. |
+
+### Prior findings and unexecuted boundaries
+
+| Prior finding / limit | Source identity at v9.1.12 |
+| --- | --- |
+| Historical blocked-review cleanup inconsistency | `looper-cleanup.js` unchanged: `6695a6ea85ec3be95c99e083f1c4f0e3713922e7` |
+| Restricted-host Trash/process-identity and merge/check/push limits | `feature-merge.js` unchanged: `d788b2da15cf9ab0cd325b306108a11352873697`; `feature-common.js` moved to `4ac408d…` for a 2-line schema-14 hunk only — Trash/process-identity code paths untouched (0 matches in hunk context) |
+| `looper.js` dispatch paths | Moved `d5a96c3…` → `5eeb07a…`: `save-evidence` insist + verification.md prompt injection + locale wording; no merge/check/push logic change |
+
+The earlier restricted-host failures remain `INCOMPLETE_HOST_PRECONDITION` —
+the issue-owning code paths are source-identical; only config validation moved.
+No upstream suite, feature lifecycle, looper journey, model review,
+installed-host journey, efficacy test or cost benchmark ran in this update
+check.
+
+### Candidate Adoption Ledger — v9.1.12
+
+| ID | Disposition / existing coverage | Reopen when |
+| --- | --- | --- |
+| AF9112-DOC1 | **Adopted: documentation only**, this supplement, catalogue and generated index; no new survey or operating surface. | A new pin or contrary source evidence changes the record. |
+| AF9112-SK1 | **No Skill change.** The adaptive-verification alternative list (properties/differential/fuzzing/mutation/integration) maps to named local surfaces: [reflective-review](../skills/reflective-review/SKILL.md) owns evidence tiers and risk escalation; [reflective-implement](../skills/reflective-implement/SKILL.md) owns proportionate verification; the old-bytes differential driver in the 2026-10-01 advisory pass already runs the mutation/differential class; [reflective-spec-plan](../skills/reflective-spec-plan/SKILL.md) owns spec contracts; `spec-out`'s interview-then-contract flow restates [reflective-brief](../skills/reflective-brief/SKILL.md). Upstream command names, schema keys and prompt layouts remain upstream conventions. | A delivered local contract gap or consumer failure is demonstrated; upstream novelty alone is insufficient. |
+| AF9112-RT1 | **No runtime adoption or new authority.** Prior AF9110-RT1, platform holds, runtime non-goal and adoption gates remain; unpinned `npx skills add` and unshipped `eval/`/`release/` paths are unchanged (AF-15/16/17 stands). | Separate owner authority, a local need, and relevant provisioned-host evidence exist. |
+
+### Falsifiability and handoff
+
+The 46-record diff inventory, read method/reference patches, unchanged
+issue-owning blobs and existing local contracts suffice for this bounded
+documentation decision. They do not establish verification effectiveness or
+spec-out quality — these are prompt policies, not measured mechanisms. A new
+source repair or an authorized host reproduction can change a corresponding
+finding, without rewriting the historical receipt. Documentation validation
+establishes discoverability and record consistency only; it cannot clear
+runtime holds.
