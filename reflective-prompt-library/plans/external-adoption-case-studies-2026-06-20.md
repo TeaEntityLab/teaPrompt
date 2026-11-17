@@ -1,5 +1,7 @@
 # External-Adoption Case Studies — 2026-06-20
 
+> Latest digest-fidelity survey — 2026-11-17: [Pi creators livestream](pi-creators-stream-survey-2026-11-17.md) (Pocock × Ronacher × Zechner), checked against the full transcript. `PIC-DOC1` reference only: the zh-TW digest is high-fidelity but overstates dark-factory infeasibility and formalizes a looser triage practice; oracle-driven grinding, reward hacking, and bimodal review map to existing contracts. No Skill or runtime change.
+
 > Latest harness-mechanism survey — 2026-11-13: [Harness², WalkingLabs, Awesome-Agent-Harness, and TrishamBP](harness-four-survey-2026-11-13.md). `H4-DOC1/2` reference and navigation only: structure, fresh evidence, selection, and library admission do not by themselves prove task acceptance, baseline improvement, or promotion authority. Pinned sources and bounded offline observations; no Skill or runtime change.
 
 > Latest ambition-method survey — 2026-11-14: [Rieseberg's Altitude/Depth/Range tutorial](ambition-prompts-survey-2026-11-14.md), via the Business Weekly / Business Next zh-TW syndication. `AMB-DOC1/2` reference and navigation only: all three tactics and the outside-judge rule map to existing contracts; the Range prompt in the zh article is editor-added, and "unreasonable-goal" insistence is rejected (AMB-RULE1). No Skill or runtime change.
