@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-17T12:54:43.327214",
+  "generated_at": "2026-11-17T16:33:45.194924",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -149,6 +149,7 @@
             "managed-skills-learned-survey-2026-10-06.md",
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
+            "pi-creators-stream-survey-2026-11-17.md",
             "governed-delivery-review-2026-09-13.md",
             "cat-wu-product-method-survey-2026-11-09.md",
             "loop-mechanisms-assurance-inference-2026-10-31.md",
@@ -12451,6 +12452,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "pi-creators-stream-survey-2026-11-17.md",
           "harness-four-survey-2026-11-13.md",
           "ambition-prompts-survey-2026-11-14.md",
           "goal-engineering-survey-2026-11-15.md",
@@ -12790,8 +12792,71 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 635,
-      "char_count": 149273
+      "line_count": 637,
+      "char_count": 149712
+    },
+    {
+      "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "pi-creators-stream-survey-2026-11-17",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../06-repo/AGENTS.md",
+          "../skills/reflective-implement/SKILL.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../skills/reflective-dispatch/SKILL.md",
+          "../01-thinking/socratic-reviewer.md",
+          "../skills/reflective-research/SKILL.md",
+          "../skills/reflective-minimality/SKILL.md",
+          "../skills/reflective-review/SKILL.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Pi Creators Stream Survey — Digest Fidelity and Contract Map (2026-11-17)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Digest Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 91,
+      "char_count": 16923
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -24182,5 +24247,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 251
+  "total_files": 252
 }
