@@ -653,6 +653,8 @@ Checked 2026-11-17: [release v9.1.11](https://api.github.com/repos/agfnow/agentf
 | Stable release publication | v9.1.12 `2026-11-17T08:28:26Z`; draft/prerelease false |
 | Configuration schema | **13 → 14**; publication does not migrate an installed copy |
 
+| Freshness re-check (2026-11-19) | `git ls-remote` HEAD still `1e9fc32`; latest GitHub release still v9.1.12 (`2026-11-17T08:28:26Z`) — **source unchanged, no new delta**. All AF9112 dispositions stand. |
+
 `git ls-remote` and the exact-tag checkout agreed. Across the two pins,
 `git diff --name-status BASE TIP` yielded 46 records: 42 modified, 4 added
 (`references/spec-out*.md`, `references/ux-prototype.md`,

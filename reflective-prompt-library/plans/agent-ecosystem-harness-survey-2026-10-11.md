@@ -910,3 +910,78 @@ Workflows, whose source identities are handled separately.
 
 AE-01–AE-16 remain unchanged. A refreshed article or repository ref neither
 admits a dependency nor turns a self-reported number into independent evidence.
+
+## Agent-skills delta — 2026-11-19 (0.6.13 → 0.6.17)
+
+Reference-only update to the `addyosmani/agent-skills` survey under the owner's
+"Survey addyosmani/agent-skills" request. Prior pins `1be8e34` (2026-10-11)
+and `aeac41d` (2026-10-22 refresh), all recorded findings and the
+AE-01–AE-16 non-adoption ledger are preserved. **AGS-DOC1 adopts reference
+documentation only.** No skill, pack, routing, runtime, dependency, oracle or
+commitment change. No upstream program, installer, hook or model was executed;
+the other four repos are out of this slice's scope.
+
+### Version / date context and evidence used
+
+Checked 2026-11-19: `git ls-remote` HEAD `8c99fa36d90068c82d547f7c12a9d67a3e95f4ee`
+(committed 2026-11-18, `chore(release): bump plugin manifests to 0.6.17`);
+tag `0.6.17` peels to the same commit — tag and HEAD coincide. Delta from the
+2026-10-22 pin: **164 commits, 135 files, +3,333 / −214** (`git rev-list
+--count`, `diff --shortstat`/`--name-status` on a full clone; name-status: 90
+modified, 45 added).
+
+### Material source changes (source-read, not executed)
+
+| Surface | Verified change | Boundary |
+| --- | --- | --- |
+| `skills/accessibility-engineering` (new, 26th skill) + `agents/accessibility-auditor.md` persona + `a11y` commands for Claude/Gemini/plugins | WCAG 2.2 AA audit→triage→remediation workflow; routes construction to `frontend-ui-engineering`; axe-core/pa11y automation plus manual testing; eval case + fixtures shipped | Tool-driven workflow; no a11y mandate exists locally and none is implied — domain pack, not harness mechanism |
+| `spec-driven-development` | Spec evolution section: explicit `V[N]` title labels, `## Out of Scope (Deferred)` V2 backlog section, capability map and module specs move under `spec/` (`spec/capability-map.md`, `spec/SPEC-<id>.md`) | Versioned-spec and deferred-backlog conventions are documentation practices; TeaPrompt's spec-plan already requires scope and versioning |
+| `documentation-and-adrs` | New "Documentation Drift" section: `git log -1`/`merge-base --is-ancestor` staleness check, "can't tell" for divergent history, append-only change logs | A doc-freshness check aligned with TeaPrompt's existing index/record-hygiene validators; mechanism is a recipe, not a new rule |
+| `code-review-and-quality` | Fires on pasted diffs "even when the review looks quick"; findings must be checked against callers/guards/tests and dropped if ruled out; base defects labelled separately from regressions; "zero findings is a valid result"; reviewer must confirm clean checkout on reviewed ref before running tests | Strengthens the same review-evidence discipline TeaPrompt's reflective-review requires (caller-verified findings, fresh-context review); upstream convention |
+| `debugging-and-error-recovery` | Fires on pasted diffs/stack traces when cause looks obvious; minimal fix + confirmation instructions required | Same incident-class expansion as review; maps to reflective-implement's root-cause rule |
+| `constraint-driven-development` | New `scripts/quality-gate.mjs` executable check; floor-guard reference updated | Executable gate inside a domain skill — host tooling, not a contract gap |
+| `simplify-ignore` hook | Parse-error path now `exit 0` after warning; fuzzy-match expand path hardened | Operational-risk character unchanged (mask/restore hook still unexercised here); crash/manual recovery still documented |
+| `evals/` | `behavioral-record.js` + `run-evals-test.js`: behavioral runs recorded for historical regrading; new plugin eval pairs (fires/stays-quiet) for pasted-diff/pasted-function triggers | Record-and-regrade infra matches the library's golden-benchmark methodology; upstream observations, not rerun results |
+| Personas / manifests | 5 personas (added `accessibility-auditor`); plugin manifests at 0.6.17; README still carries the #361 single-skill `references/` portability warning | Portable-skill boundary unchanged |
+
+Inventory recheck at `8c99fa3`: 26 skills (was 25), 5 personas (was 4), eval
+case files expanded with plugin eval pairs — **population grew by one skill,
+one persona and the a11y/plugin-eval entries**; all other recorded counts
+unchanged.
+
+### Effect on prior findings
+
+AE-01–AE-16 stand. The new `V[N]` spec-versioning and deferred-backlog rules
+are the same record-versioning class as TeaPrompt's durable-lesson/decision
+records — no gap. The doc-drift `merge-base` recipe is an instance of the
+existing record-hygiene/index validators — no gap. The strengthened review
+finding-discipline (caller-verified, base-vs-regression split, zero-finding
+validity, clean-checkout precondition) restates what reflective-review and the
+trust-boundary already require — no gap, and it *reinforces* AE-06's rejection
+of a blanket later-turn approval rule by keeping findings evidence-bound.
+`accessibility-engineering` is a domain workflow (like `webperf`), not a
+harness mechanism; TeaPrompt's own a11y surface is absent by scope, not by
+omission to fix. The `simplify-ignore` parse-error `exit 0` makes failure
+louder, consistent with the documented recovery model — unexercised here as
+before.
+
+### Candidate Adoption Ledger — 2026-11-19
+
+| ID | Disposition | Reopen when |
+| --- | --- | --- |
+| AGS-DOC1 | **Adopted: documentation only** — this supplement, catalogue row and generated index | A new pin or contrary source evidence changes the record |
+| AGS-SK1 | **No Skill change.** Spec-versioning, doc-drift checking, caller-verified review findings and record-and-regrade evals all map to existing local surfaces (spec-plan, record-hygiene validators, reflective-review, golden-benchmark methodology). `accessibility-engineering` is a domain pack outside TeaPrompt's current domain scope; admission would need the domain-pack gate, not a survey delta | A demonstrated local contract gap or consumer failure; upstream novelty alone is insufficient |
+| AGS-RUN1 | **No runtime/tool adoption.** Hooks remain unexercised (mask/restore operational risk unchanged); `npx skills add` remains the unpinned single-skill-install path flagged by #361 | Separate owner authority and a version-pinned, hook-free installation route |
+
+### Falsifiability and handoff
+
+The 164-commit diff inventory, read skill/script/hook changes and unchanged
+portability/install boundaries suffice for this bounded documentation decision.
+They do not establish a11y-workflow efficacy, spec-evolution usefulness in
+practice, or eval-regrade correctness — these are upstream prompt policies and
+test fixtures, not measured mechanisms. A new pin, a source repair to the
+recorded hook/recovery risks, or an authorized host reproduction can change a
+finding without rewriting the historical receipt. The four other pinned repos
+in this survey (claude-quickstarts, wshobson/agents, knowledge-work-plugins,
+agency-agents) were not re-checked in this slice and retain their 2026-10-22
+refresh status.
