@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-17T16:52:19.384923",
+  "generated_at": "2026-11-19T10:31:53.761019",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -7967,10 +7967,34 @@
         {
           "level": 3,
           "text": "Industrial reference systems: publication refresh, not hidden release claims"
+        },
+        {
+          "level": 2,
+          "text": "Agent-skills delta — 2026-11-19 (0.6.13 → 0.6.17)"
+        },
+        {
+          "level": 3,
+          "text": "Version / date context and evidence used"
+        },
+        {
+          "level": 3,
+          "text": "Material source changes (source-read, not executed)"
+        },
+        {
+          "level": 3,
+          "text": "Effect on prior findings"
+        },
+        {
+          "level": 3,
+          "text": "Candidate Adoption Ledger — 2026-11-19"
+        },
+        {
+          "level": 3,
+          "text": "Falsifiability and handoff"
         }
       ],
-      "line_count": 912,
-      "char_count": 85608
+      "line_count": 987,
+      "char_count": 92497
     },
     {
       "path": "reflective-prompt-library/plans/agent-trust-pyramid-survey-2026-11-15.md",
@@ -12546,6 +12570,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agent-ecosystem-harness-survey-2026-10-11.md#agent-skills-delta--2026-11-19-0613--0617",
           "future-of-work-videos-survey-2026-11-17.md",
           "pi-creators-stream-survey-2026-11-17.md",
           "harness-four-survey-2026-11-13.md",
@@ -12665,6 +12690,7 @@
           "pi-creators-stream-survey-2026-11-17.md",
           "future-of-work-videos-survey-2026-11-17.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9112-delta--2026-11-17",
+          "agent-ecosystem-harness-survey-2026-10-11.md#agent-skills-delta--2026-11-19-0613--0617",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -12890,8 +12916,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 642,
-      "char_count": 152034
+      "line_count": 645,
+      "char_count": 153225
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
