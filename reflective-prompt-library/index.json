@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-20T21:26:30.760301",
+  "generated_at": "2026-11-20T22:55:18.222011",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -123,6 +123,7 @@
             "ai-engineer-jobs-survey-2026-11-17.md",
             "all-skills-panel-record-2026-07-18.md",
             "dormant-items-user-directed-adoption-2026-07-12.md",
+            "dsbot-attention-survey-2026-11-20.md",
             "mgd-form-theory-survey-2026-10-02.md",
             "jev-architecture-synthesis-survey-2026-09-19.md",
             "skill-dogfood-test-plan-2026-10-08.md",
@@ -218,6 +219,7 @@
             "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
+            "code-quality-state-mismatch-survey-2026-11-20.md",
             "software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
             "project-adjustment-reflection-2026-06-11.md",
             "installed-skills-general-lessons-2026-09-05.md"
@@ -9781,6 +9783,51 @@
       "char_count": 4795
     },
     {
+      "path": "reflective-prompt-library/plans/dsbot-attention-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "dsbot-attention-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agent-control-plane-comparison-survey-2026-11-04.md#measuring-attention-without-hiding-failure",
+          "../04-agent/runtime-trust-boundary.md#4a-external-effect-recovery-boundary"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "DS Bot Survey — Fewer Inboxes, Not Fewer Sessions (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "What FeiZ actually reported"
+        },
+        {
+          "level": 2,
+          "text": "What the software supports"
+        },
+        {
+          "level": 2,
+          "text": "What a PR checkbox returns"
+        },
+        {
+          "level": 2,
+          "text": "Does it save attention?"
+        },
+        {
+          "level": 2,
+          "text": "When to try it, and when to go direct"
+        }
+      ],
+      "line_count": 49,
+      "char_count": 10501
+    },
+    {
       "path": "reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -13001,6 +13048,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "dsbot-attention-survey-2026-11-20.md#what-a-pr-checkbox-returns",
+          "code-quality-state-mismatch-survey-2026-11-20.md#count-the-states-not-just-their-sizes",
           "ai-engineer-jobs-survey-2026-11-17.md#interview-practice-2026-11-20",
           "ai-engineer-jobs-survey-2026-11-17.md",
           "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
@@ -13147,6 +13196,8 @@
           "edu-agi-discourse-survey-2026-11-20.md",
           "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
           "ai-engineer-jobs-survey-2026-11-17.md#interview-practice-2026-11-20",
+          "code-quality-state-mismatch-survey-2026-11-20.md#a-compiler-check-and-its-limit",
+          "dsbot-attention-survey-2026-11-20.md#does-it-save-attention",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13372,8 +13423,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 680,
-      "char_count": 166089
+      "line_count": 686,
+      "char_count": 168008
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -20260,6 +20311,47 @@
       "char_count": 28752
     },
     {
+      "path": "reflective-prompt-library/plans/code-quality-state-mismatch-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "code-quality-state-mismatch-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../02-engineering/code-reviewer.md",
+          "mage-source-survey-2026-11-17.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Code Quality Survey — What a Type Can Rule Out (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "What the authors actually said"
+        },
+        {
+          "level": 2,
+          "text": "Count the states, not just their sizes"
+        },
+        {
+          "level": 2,
+          "text": "A compiler check and its limit"
+        },
+        {
+          "level": 2,
+          "text": "Output, maintenance and the TeaPrompt decision"
+        }
+      ],
+      "line_count": 57,
+      "char_count": 7615
+    },
+    {
       "path": "reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -25046,5 +25138,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 264
+  "total_files": 266
 }
