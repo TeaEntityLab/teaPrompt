@@ -219,10 +219,10 @@ existing acceptance duties; they are not model-efficacy or containment tests.
 No new rule or runtime adoption is implied.
 
 [Agent trust pyramid: corrections become checks](../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks)
-applies the existing execution-versus-prose precedence to one pinned production
-case: every agent correction is promoted to a deterministic check or an API
-redesign, never to a comment or rule file. The source-qualified example is one
-team's self-reported telemetry, not a transferable benchmark.
+shows how one team prevents recurring mistakes: change the structure, add a
+check that catches the behavior, or retain short guidance when judgment is
+unavoidable. Its reported revert rate is not a release criterion, and passing
+a check does not grant permission to merge.
 
 [AI coworkers: the trust ladder is the promotion gate](../plans/ai-coworkers-survey-2026-11-16.md#optional-worked-reference--the-trust-ladder-is-the-promotion-gate)
 restates graduated authority in identity terms: a bot earns read, then bounded

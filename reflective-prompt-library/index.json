@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-20T16:53:34.532527",
+  "generated_at": "2026-11-20T20:20:00.747936",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -8183,7 +8183,11 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../skills/verification-map-generator/SKILL.md",
+          "../04-agent/workflow-acquisition.md",
+          "pstack-matt-lauren-survey-2026-10-03.md"
+        ]
       },
       "structure": [
         {
@@ -8221,10 +8225,26 @@
         {
           "level": 2,
           "text": "Standing Non-Goals"
+        },
+        {
+          "level": 2,
+          "text": "CabLate guide (2026-11-20)"
+        },
+        {
+          "level": 3,
+          "text": "Who proposed what"
+        },
+        {
+          "level": 3,
+          "text": "What changed in public pstack"
+        },
+        {
+          "level": 3,
+          "text": "What the numbers establish"
         }
       ],
-      "line_count": 89,
-      "char_count": 10433
+      "line_count": 126,
+      "char_count": 19754
     },
     {
       "path": "reflective-prompt-library/plans/edu-agi-discourse-survey-2026-11-20.md",
@@ -12962,6 +12982,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
           "edu-agi-discourse-survey-2026-11-20.md",
           "model-generation-discourse-survey-2026-11-20.md",
           "grok-bot-automation-survey-2026-11-20.md",
@@ -12979,7 +13000,6 @@
           "harness-four-survey-2026-11-13.md",
           "ambition-prompts-survey-2026-11-14.md",
           "goal-engineering-survey-2026-11-15.md",
-          "agent-trust-pyramid-survey-2026-11-15.md",
           "ai-coworkers-survey-2026-11-16.md",
           "mage-source-survey-2026-11-17.md",
           "crossroads-evaluation-survey-2026-11-17.md",
@@ -13105,6 +13125,7 @@
           "grok-bot-automation-survey-2026-11-20.md",
           "model-generation-discourse-survey-2026-11-20.md",
           "edu-agi-discourse-survey-2026-11-20.md",
+          "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13330,8 +13351,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 678,
-      "char_count": 164883
+      "line_count": 679,
+      "char_count": 165499
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -20859,7 +20880,7 @@
         }
       ],
       "line_count": 230,
-      "char_count": 14629
+      "char_count": 14605
     },
     {
       "path": "reflective-prompt-library/04-agent/retro.md",
