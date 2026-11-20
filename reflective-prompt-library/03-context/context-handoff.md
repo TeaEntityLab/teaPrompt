@@ -44,6 +44,11 @@ Require human confirmation before handoff when irreversible or high-blast-radius
 13. Do Not Do
 14. Human Review Required
 
+若工作卡在一個決定，先分清楚：哪些事在現有授權內可以查證，哪一步確實要等誰答覆。留下任務與版本、要問的問題、原因和建議；建議不等於核准。若已有決定，附上答覆來源、適用範圍和下一步，讓接手者不必重問。未答覆、已否決或範圍已變時，不要把該步驟寫成可以執行。
+
 請只保留接手必要資訊，不要寫流水帳。
 ```
 
+## Optional Worked Reference
+
+[What reaches the next worker?](../plans/archdev-factory-attention-survey-2026-11-21.md) distinguishes notifying someone about a blocker from giving the next worker the owner's answer.

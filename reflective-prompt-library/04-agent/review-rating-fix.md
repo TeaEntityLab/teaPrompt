@@ -60,6 +60,7 @@ Escalate to `reflective-risk` when fixes touch trust boundaries, sensitive data,
 
 ## Step 5: Fix Plan
 請給出最小修正計畫。
+若在複審修正，用原本的呼叫方式檢查修正後的版本，並註明實際驗了哪一版；尚未驗證就保留為待驗。若照建議修改反而會破壞需求，說明為何不應改，不要把「審查意見消失」當成修好了。
 
 ## Step 6: Gate Decision
 - Pass

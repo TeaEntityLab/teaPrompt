@@ -1,5 +1,7 @@
 # External-Adoption Case Studies — 2026-06-20
 
+> Latest software factory survey — 2026-11-21: [compare team attention per accepted feature](archdev-factory-attention-survey-2026-11-21.md#compare-team-attention-per-accepted-feature). A worker asking its overseer is not necessarily interrupting a person; a merged PR is not necessarily an accepted feature.
+
 > Latest agent-memory survey — 2026-11-21: [what the wiki and search baselines measure](agent-memory-survey-2026-11-21.md#what-the-experiments-compared). The [paired handoff example](../skills/examples/reflective-handoff-retro.examples.md#preference-scope-replay) checks whether a correction changes the next poster or only the current one.
 
 > Latest DS Bot survey — 2026-11-20: [what a PR checkbox returns](dsbot-attention-survey-2026-11-20.md#what-a-pr-checkbox-returns). FeiZ puts a few familiar bots in front of many workers. The card records a choice, not a GitHub merge; fewer windows are not a measurement of attention saved. `DSB-DOC1` is a reference case only.
@@ -191,6 +193,7 @@ own promotion gate (≥3 cross-session recurrences); the individual tools did no
 | 2026-11-20 | Brian Cardarella on output and 工業聚 on domain/type alignment | Two post bodies and the quote relationship checked via mirror; original diagram inspected. Boolean states enumerated; Rust compile and transition checks run. Reply attribution and ranking unverified | Code Reviewer already separates violated invariants, observable behavior and maintainability. Equal state sets do not prove the transition or measure change effort | CQM-DOC1 reference only; no Skill or runtime change | [compiler check and counterexample](code-quality-state-mismatch-survey-2026-11-20.md#a-compiler-check-and-its-limit) |
 | 2026-11-20 | FeiZ on using DS Bot to develop DS Bot | Author post and a contrasting user's quote recovered; v0.3.8 threads tested, locked card encoder exercised, pre-post reply path inspected | Existing guidance covers attention spent reviewing and correcting work and the separate authority to merge. The comparable coding study did not test DS Bot or review accuracy | DSB-DOC1 reference only; no Skill, worker quota or runtime change | [evidence and workload comparison](dsbot-attention-survey-2026-11-20.md#does-it-save-attention) |
 | 2026-11-21 | Anthropic, *The components of agent memory*, and Xiaogai's reading notes | Primary figures, product docs, original X article and three direct replies | The existing handoff Skill distinguishes durable lessons from task state; its memory example did not contrast a changed default with a one-task exception | AMEM-DOC1 reference; AMEM-SK1 clarifies the existing Skill and example, not retention policy | [Source comparisons and decisions](agent-memory-survey-2026-11-21.md) |
+| 2026-11-21 | Calvin Grunewald on archdev and Kun Chen's response | Author's articles, weekly PR chart, historical fix-policy comparison and public exchanges | The handoff needs the owner's actual answer; a repair still needs a working consumer | AFAC-DOC1 / AFAC-SK1: documentation and existing workflows only | [Evidence and decisions](archdev-factory-attention-survey-2026-11-21.md) |
 
 ## The Recurring Evaluation Procedure
 
@@ -561,6 +564,7 @@ No method repair is evidence that any 3XA, JS, or CR trigger fired.
 | Crossroads evaluation/accountability survey recorded (2026-11-17) | Recorded; reference documentation only | [Record](crossroads-evaluation-survey-2026-11-17.md): CRS-DOC1 preserves transcript-access limits, publisher versus measurement evidence, primary technical corrections and explicitly unverified social inferences. CRS-SK1/RUN1/RULE1 add no Skill or runtime and reject unsupported general rules from either synopsis or critique. |
 | AI-engineering jobs survey recorded (2026-11-17) | Recorded; reference documentation only | [Record](ai-engineer-jobs-survey-2026-11-17.md): AIJ-DOC1 preserves source classes, seniority and required/preferred distinctions, all fifteen mappings, counterexamples and role-conditioned portfolio evidence. AIJ-SK1/RUN1/RULE1 add no Skill or runtime and reject universal qualification/project-count and concealed-failure rules. |
 | Agent-memory survey and handoff example (2026-11-21) | Adopted in place | [AMEM-DOC1 / AMEM-SK1](agent-memory-survey-2026-11-21.md#candidate-adoption-ledger): check the next task's output in both cases. No memory service or model-efficacy claim. |
+| Archdev factory attention survey (2026-11-21) | In-place guidance | [Adoption ledger](archdev-factory-attention-survey-2026-11-21.md#candidate-adoption-ledger): no local factory, merge authority or measured productivity claim. |
 
 ## Known-reference project refresh — 2026-10-22
 

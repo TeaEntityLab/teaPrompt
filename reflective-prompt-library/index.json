@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T00:41:38.008062",
+  "generated_at": "2026-11-21T00:58:47.529744",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -45,6 +45,7 @@
             "agentic-sop-workflow-reflection-2026-06-13.md",
             "semantica-survey-2026-10-07.md",
             "roadmap-execution-assurance-2026-10-13.md",
+            "archdev-factory-attention-survey-2026-11-21.md",
             "harness-intent-drift-rethink-2026-09-06.md",
             "coordinate-codex-tasks-eval-survey-2026-09-30.md",
             "skills-september-concepts-review-2026-09-16.md",
@@ -2196,6 +2197,56 @@
       ],
       "line_count": 76,
       "char_count": 7155
+    },
+    {
+      "path": "reflective-prompt-library/plans/archdev-factory-attention-survey-2026-11-21.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "archdev-factory-attention-survey-2026-11-21",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "agent-control-plane-comparison-survey-2026-11-04.md#measuring-attention-without-hiding-failure",
+          "../03-context/context-handoff.md",
+          "../04-agent/review-rating-fix.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Archdev Factory Survey — What Reaches the Next Worker? (2026-11-21)"
+        },
+        {
+          "level": 2,
+          "text": "Evidence and attribution"
+        },
+        {
+          "level": 3,
+          "text": "What the discussion adds"
+        },
+        {
+          "level": 2,
+          "text": "Replay the repair, including when to decline"
+        },
+        {
+          "level": 2,
+          "text": "Compare team attention per accepted feature"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        }
+      ],
+      "line_count": 49,
+      "char_count": 7341
     },
     {
       "path": "reflective-prompt-library/plans/harness-intent-drift-rethink-2026-09-06.md",
@@ -13049,6 +13100,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "archdev-factory-attention-survey-2026-11-21.md#compare-team-attention-per-accepted-feature",
           "agent-memory-survey-2026-11-21.md#what-the-experiments-compared",
           "../skills/examples/reflective-handoff-retro.examples.md#preference-scope-replay",
           "dsbot-attention-survey-2026-11-20.md#what-a-pr-checkbox-returns",
@@ -13202,6 +13254,7 @@
           "code-quality-state-mismatch-survey-2026-11-20.md#a-compiler-check-and-its-limit",
           "dsbot-attention-survey-2026-11-20.md#does-it-save-attention",
           "agent-memory-survey-2026-11-21.md",
+          "archdev-factory-attention-survey-2026-11-21.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13259,6 +13312,7 @@
           "crossroads-evaluation-survey-2026-11-17.md",
           "ai-engineer-jobs-survey-2026-11-17.md",
           "agent-memory-survey-2026-11-21.md#candidate-adoption-ledger",
+          "archdev-factory-attention-survey-2026-11-21.md#candidate-adoption-ledger",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9-refresh--2026-10-25",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#firstmate-separate-project-prior-baseline-and-latest-identity",
           "agentic-sop-workflow-reflection-2026-06-13.md",
@@ -13428,8 +13482,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 690,
-      "char_count": 169090
+      "line_count": 694,
+      "char_count": 170020
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -20712,8 +20766,8 @@
           "text": "Step 6: Gate Decision"
         }
       ],
-      "line_count": 72,
-      "char_count": 1622
+      "line_count": 73,
+      "char_count": 1708
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
@@ -21662,7 +21716,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../plans/archdev-factory-attention-survey-2026-11-21.md"
+        ]
       },
       "structure": [
         {
@@ -21688,10 +21744,14 @@
         {
           "level": 2,
           "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 49,
-      "char_count": 1417
+      "line_count": 54,
+      "char_count": 1760
     },
     {
       "path": "reflective-prompt-library/03-context/low-token.md",
@@ -25197,5 +25257,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 267
+  "total_files": 268
 }
