@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-20T16:33:12.173165",
+  "generated_at": "2026-11-20T16:53:34.532527",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -105,6 +105,7 @@
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
             "agent-trust-pyramid-survey-2026-11-15.md",
+            "edu-agi-discourse-survey-2026-11-20.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
             "jev-diffusion-eval-survey-2026-09-19.md",
@@ -8226,6 +8227,60 @@
       "char_count": 10433
     },
     {
+      "path": "reflective-prompt-library/plans/edu-agi-discourse-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "edu-agi-discourse-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Education/AGI Meta-Discourse Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 68,
+      "char_count": 5727
+    },
+    {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -12907,6 +12962,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "edu-agi-discourse-survey-2026-11-20.md",
           "model-generation-discourse-survey-2026-11-20.md",
           "grok-bot-automation-survey-2026-11-20.md",
           "agent-infra-jd-survey-2026-11-20.md",
@@ -13048,6 +13104,7 @@
           "agent-infra-jd-survey-2026-11-20.md",
           "grok-bot-automation-survey-2026-11-20.md",
           "model-generation-discourse-survey-2026-11-20.md",
+          "edu-agi-discourse-survey-2026-11-20.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13273,8 +13330,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 675,
-      "char_count": 163895
+      "line_count": 678,
+      "char_count": 164883
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -24947,5 +25004,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 263
+  "total_files": 264
 }
