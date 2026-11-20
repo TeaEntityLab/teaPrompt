@@ -46,4 +46,4 @@ For example, suppose each workflow delivers one such feature. Two PRs take the o
 
 ## Falsifiability
 
-A successor who asks again despite a current answer, acts on a suggestion as if approved, or applies an old answer to a different release fails the handoff. A repair that silences a finding but breaks a supported caller fails review. A matched comparison that moves time to reviewers or hides failed work does not establish an attention saving.
+Try the [blocked CSV handoff](../skills/examples/reflective-handoff-retro.examples.md#resume-a-blocked-csv-change) with the [Continuation Packet](../skills/reflective-handoff-retro/SKILL.md#continuation-packet) and [code review guidance](../skills/reflective-review/SKILL.md#for-code-review). A repeated question despite a current answer, action on an unapproved proposal, or reuse of an answer outside its scope fails the handoff. A quieter review that breaks the existing importer fails the repair. A matched comparison that moves time to reviewers or hides failed work does not establish an attention saving.

@@ -126,6 +126,7 @@ Prioritize findings by severity:
 - Low: minor clarity or style issue.
 
 - Every reported code defect must name either a reachable failure scenario (triggering input, state, timing, or platform plus the observable wrong result) or a violated invariant supported by code evidence. If reachability or the invariant is not established, label the claim unverified rather than confirmed.
+- When reviewing a repair, exercise the affected caller on the exact revised artifact. Record what the caller observed, or mark the repair unverified. If the proposed fix would remove supported behavior, decline it: the finding disappearing because its subject was deleted is not a successful repair.
 
 Lead with findings. Include file and line references when available.
 

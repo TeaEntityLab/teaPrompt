@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T00:58:47.529744",
+  "generated_at": "2026-11-21T01:02:52.816840",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -2212,7 +2212,10 @@
         "markdown_links": [
           "agent-control-plane-comparison-survey-2026-11-04.md#measuring-attention-without-hiding-failure",
           "../03-context/context-handoff.md",
-          "../04-agent/review-rating-fix.md"
+          "../04-agent/review-rating-fix.md",
+          "../skills/examples/reflective-handoff-retro.examples.md#resume-a-blocked-csv-change",
+          "../skills/reflective-handoff-retro/SKILL.md#continuation-packet",
+          "../skills/reflective-review/SKILL.md#for-code-review"
         ]
       },
       "structure": [
@@ -2246,7 +2249,7 @@
         }
       ],
       "line_count": 49,
-      "char_count": 7341
+      "char_count": 7608
     },
     {
       "path": "reflective-prompt-library/plans/harness-intent-drift-rethink-2026-09-06.md",
@@ -24191,8 +24194,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 197,
-      "char_count": 11813
+      "line_count": 198,
+      "char_count": 12114
     },
     {
       "path": "reflective-prompt-library/skills/router-trace-linter/SKILL.md",
@@ -24826,8 +24829,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 176,
-      "char_count": 8718
+      "line_count": 178,
+      "char_count": 9159
     },
     {
       "path": "reflective-prompt-library/skills/acceptance-join-validator/SKILL.md",

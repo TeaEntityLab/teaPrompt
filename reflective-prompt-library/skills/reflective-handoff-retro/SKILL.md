@@ -84,6 +84,8 @@ A continuation packet carries the spec version, the State Ledger, oracle manifes
 
 It also carries named invalidations — claims or supports refuted, retracted, or superseded since recording, with the decisions or steps depending on them — and includes those invalidations and dependency links in the source-fidelity check.
 
+When a task is waiting for a decision, distinguish work already authorized from the step that must wait. Carry the task and revision, who can decide, why their answer matters, and your recommendation. Give the successor the owner's actual reply from the task record and the next action it covers. Don't ask again if that answer still applies; a suggestion, a refusal, or an answer for a different scope does not authorize the blocked step.
+
 ## Retro Workflow
 
 Use after task completion:
