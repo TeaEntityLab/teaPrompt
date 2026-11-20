@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-19T10:31:53.761019",
+  "generated_at": "2026-11-20T16:33:12.173165",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -54,6 +54,7 @@
             "checkpoint-packaging-decision-2026-10-11.md",
             "agent-control-plane-comparison-survey-2026-11-04.md",
             "agent-engineering-five-source-survey-2026-10-30.md",
+            "agentic-knowledge-graph-survey-2026-11-20.md",
             "agent-governance-scaffold-adoption-2026-07-17.md",
             "openmausbot-survey-2026-11-12.md",
             "roadmap-prompt-cognition-memory-2026-10-13.md",
@@ -87,11 +88,13 @@
             "self-governance-dogfood-2026-09-24.md",
             "ai-coworkers-survey-2026-11-16.md",
             "baton-dispatch-survey-2026-07-13.md",
+            "claude-code-verification-survey-2026-11-20.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
             "harness-four-survey-2026-11-13.md",
             "runtime-skills-workflow-spec-2026-10-06.md",
             "superpowers-v6.4-adoption-2026-10-03.md",
             "flashprove-source-survey-2026-11-04.md",
+            "grok-bot-automation-survey-2026-11-20.md",
             "nimble-survey-2026-09-19.md",
             "dormant-work-specs-2026-07-11.md",
             "roadmap-software-factory-devops-2026-10-13.md",
@@ -114,6 +117,7 @@
             "agent-efficiency-autonomy-learning-survey-2026-11-01.md",
             "dogfood-learning-promotion-2026-10-09.md",
             "mattpocock-skills-v131-delta-survey-2026-10-07.md",
+            "mamu-benchmark-survey-2026-11-20.md",
             "pstack-survey-2026-09-22.md",
             "ai-engineer-jobs-survey-2026-11-17.md",
             "all-skills-panel-record-2026-07-18.md",
@@ -134,6 +138,7 @@
             "system-prompts-leaks-survey-2026-10-07.md",
             "code-recall-survey-2026-08-20.md",
             "whole-project-roadmap-2026-07-11.md",
+            "model-generation-discourse-survey-2026-11-20.md",
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
             "governance-rules-rethink-review-2026-07-11.md",
@@ -141,6 +146,7 @@
             "governed-delivery-adoption-2026-09-03.md",
             "runtime-skills-task001-ticket-2026-10-06.md",
             "agent-harness-convergence-survey-2026-08-25.md",
+            "agent-infra-jd-survey-2026-11-20.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
             "heddle-source-survey-2026-10-12.md",
             "QUALITY_GATES_SUMMARY.md",
@@ -151,6 +157,7 @@
             "agent-tooling-research-2026-06-25.md",
             "external-adoption-case-studies-2026-06-20.md",
             "pi-creators-stream-survey-2026-11-17.md",
+            "multi-agent-patterns-survey-2026-11-20.md",
             "governed-delivery-review-2026-09-13.md",
             "cat-wu-product-method-survey-2026-11-09.md",
             "loop-mechanisms-assurance-inference-2026-10-31.md",
@@ -158,8 +165,10 @@
             "pstack-synthesis-survey-2026-09-22.md",
             "agentflow-8.3.2-delta-survey-2026-09-22.md",
             "token-quota-decomposition-survey-2026-11-09.md",
+            "personal-prompt-inventory-survey-2026-11-20.md",
             "claude-code-system-prompts-survey-2026-07-24.md",
             "ambition-prompts-survey-2026-11-14.md",
+            "yao-shunyu-talk-survey-2026-11-20.md",
             "dilinai-nuwa-jiyao-survey-2026-07-13.md",
             "addy-osmani-agent-management-survey-2026-11-09.md",
             "ROUTING_CONTRACT.md",
@@ -204,6 +213,7 @@
             "roadmap-harness-flow-control-2026-10-13.md",
             "flow-pack-usage-log.md",
             "thorsten-ball-agent-workflow-survey-2026-10-28.md",
+            "perplexity-ai-research-survey-2026-11-20.md",
             "agent-execution-assurance-taxonomy-survey-2026-09-30.md",
             "agnix-agent-skills-hook-survey-2026-08-04.md",
             "graph-engineering-synthesis-survey-2026-09-16.md",
@@ -3559,6 +3569,64 @@
       "char_count": 54373
     },
     {
+      "path": "reflective-prompt-library/plans/agentic-knowledge-graph-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agentic-knowledge-graph-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agentic AI Knowledge Graph Survey — Image Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Visual Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Textual Fidelity (paste's own analysis vs source caption)"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 76,
+      "char_count": 9649
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -5674,8 +5742,8 @@
           "text": "Falsifiability and handoff"
         }
       ],
-      "line_count": 710,
-      "char_count": 71884
+      "line_count": 712,
+      "char_count": 72091
     },
     {
       "path": "reflective-prompt-library/plans/astra-efficiency-rules-survey-2026-09-10.md",
@@ -6538,6 +6606,59 @@
       "char_count": 25277
     },
     {
+      "path": "reflective-prompt-library/plans/claude-code-verification-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "claude-code-verification-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../skills/reflective-review/SKILL.md",
+          "../skills/verification-map-generator"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Claude Code Verification Survey — Team Practice and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Claim Fidelity and Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 65,
+      "char_count": 9725
+    },
+    {
       "path": "reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -6892,6 +7013,60 @@
       ],
       "line_count": 59,
       "char_count": 7610
+    },
+    {
+      "path": "reflective-prompt-library/plans/grok-bot-automation-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "grok-bot-automation-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Grok Bot \"Automate Anything\" Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 73,
+      "char_count": 7028
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -9128,6 +9303,60 @@
       "char_count": 12257
     },
     {
+      "path": "reflective-prompt-library/plans/mamu-benchmark-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mamu-benchmark-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MAMUBench / Worse Together Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 73,
+      "char_count": 8294
+    },
+    {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11093,6 +11322,60 @@
       "char_count": 41994
     },
     {
+      "path": "reflective-prompt-library/plans/model-generation-discourse-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "model-generation-discourse-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "\"Model Generation\" Discourse Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 65,
+      "char_count": 6251
+    },
+    {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -11863,6 +12146,60 @@
       "char_count": 79334
     },
     {
+      "path": "reflective-prompt-library/plans/agent-infra-jd-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "agent-infra-jd-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Agent Infrastructure JD Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 73,
+      "char_count": 7038
+    },
+    {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -12570,6 +12907,16 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "model-generation-discourse-survey-2026-11-20.md",
+          "grok-bot-automation-survey-2026-11-20.md",
+          "agent-infra-jd-survey-2026-11-20.md",
+          "yao-shunyu-talk-survey-2026-11-20.md",
+          "mamu-benchmark-survey-2026-11-20.md",
+          "personal-prompt-inventory-survey-2026-11-20.md",
+          "multi-agent-patterns-survey-2026-11-20.md",
+          "perplexity-ai-research-survey-2026-11-20.md",
+          "agentic-knowledge-graph-survey-2026-11-20.md",
+          "claude-code-verification-survey-2026-11-20.md",
           "agent-ecosystem-harness-survey-2026-10-11.md#agent-skills-delta--2026-11-19-0613--0617",
           "future-of-work-videos-survey-2026-11-17.md",
           "pi-creators-stream-survey-2026-11-17.md",
@@ -12691,6 +13038,16 @@
           "future-of-work-videos-survey-2026-11-17.md",
           "agentflow-8.4.1-delta-survey-2026-09-30.md#agentflow-9112-delta--2026-11-17",
           "agent-ecosystem-harness-survey-2026-10-11.md#agent-skills-delta--2026-11-19-0613--0617",
+          "claude-code-verification-survey-2026-11-20.md",
+          "agentic-knowledge-graph-survey-2026-11-20.md",
+          "perplexity-ai-research-survey-2026-11-20.md",
+          "multi-agent-patterns-survey-2026-11-20.md",
+          "personal-prompt-inventory-survey-2026-11-20.md",
+          "mamu-benchmark-survey-2026-11-20.md",
+          "yao-shunyu-talk-survey-2026-11-20.md",
+          "agent-infra-jd-survey-2026-11-20.md",
+          "grok-bot-automation-survey-2026-11-20.md",
+          "model-generation-discourse-survey-2026-11-20.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -12916,8 +13273,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 645,
-      "char_count": 153225
+      "line_count": 675,
+      "char_count": 163895
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -12983,6 +13340,60 @@
       ],
       "line_count": 91,
       "char_count": 16993
+    },
+    {
+      "path": "reflective-prompt-library/plans/multi-agent-patterns-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "multi-agent-patterns-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Multi-Agent Design Patterns Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity and Substance Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 74,
+      "char_count": 7791
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -13482,6 +13893,60 @@
       "char_count": 20048
     },
     {
+      "path": "reflective-prompt-library/plans/personal-prompt-inventory-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "personal-prompt-inventory-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Personal Prompt Inventory Survey — Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Contract Map — Part 1 (zh-TW reasoning prompts)"
+        },
+        {
+          "level": 2,
+          "text": "Contract Map — Part 2 (English workflow prompts)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 70,
+      "char_count": 7355
+    },
+    {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -13636,6 +14101,60 @@
       ],
       "line_count": 84,
       "char_count": 10705
+    },
+    {
+      "path": "reflective-prompt-library/plans/yao-shunyu-talk-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "yao-shunyu-talk-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Shunyu Yao Talk Notes Survey — Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Ledger"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 89,
+      "char_count": 9091
     },
     {
       "path": "reflective-prompt-library/plans/dilinai-nuwa-jiyao-survey-2026-07-13.md",
@@ -19286,6 +19805,60 @@
       "char_count": 33428
     },
     {
+      "path": "reflective-prompt-library/plans/perplexity-ai-research-survey-2026-11-20.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "perplexity-ai-research-survey-2026-11-20",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Perplexity \"AI Research\" Survey — Content Fidelity and Contract Map (2026-11-20)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question"
+        },
+        {
+          "level": 2,
+          "text": "Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used"
+        },
+        {
+          "level": 2,
+          "text": "Claim Classification"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Risks, Falsifiability, and Handoff"
+        }
+      ],
+      "line_count": 68,
+      "char_count": 7022
+    },
+    {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -24374,5 +24947,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 253
+  "total_files": 263
 }
