@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-20T20:20:00.747936",
+  "generated_at": "2026-11-20T21:26:30.760301",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -9566,7 +9566,10 @@
           "../skills/reflective-implement/SKILL.md",
           "../04-agent/runtime-trust-boundary.md",
           "../PROJECT_KNOWLEDGE.md#standing-non-goals",
-          "../skills/reflective-minimality/SKILL.md"
+          "../skills/reflective-minimality/SKILL.md",
+          "../02-engineering/local-feedback.md",
+          "../03-context/context-engineering.md",
+          "../04-agent/runtime-trust-boundary.md"
         ]
       },
       "structure": [
@@ -9637,10 +9640,26 @@
         {
           "level": 2,
           "text": "Falsifiability, Risks, and Handoff"
+        },
+        {
+          "level": 2,
+          "text": "Interview practice (2026-11-20)"
+        },
+        {
+          "level": 3,
+          "text": "Who said what"
+        },
+        {
+          "level": 3,
+          "text": "Two failure cases to practice"
+        },
+        {
+          "level": 3,
+          "text": "What “90% off” prices"
         }
       ],
-      "line_count": 204,
-      "char_count": 41646
+      "line_count": 235,
+      "char_count": 48305
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -12982,6 +13001,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "ai-engineer-jobs-survey-2026-11-17.md#interview-practice-2026-11-20",
+          "ai-engineer-jobs-survey-2026-11-17.md",
           "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
           "edu-agi-discourse-survey-2026-11-20.md",
           "model-generation-discourse-survey-2026-11-20.md",
@@ -13003,7 +13024,6 @@
           "ai-coworkers-survey-2026-11-16.md",
           "mage-source-survey-2026-11-17.md",
           "crossroads-evaluation-survey-2026-11-17.md",
-          "ai-engineer-jobs-survey-2026-11-17.md",
           "openmausbot-survey-2026-11-12.md",
           "mcode-stack-survey-2026-11-10.md",
           "craft-anything-survey-2026-11-10.md",
@@ -13126,6 +13146,7 @@
           "model-generation-discourse-survey-2026-11-20.md",
           "edu-agi-discourse-survey-2026-11-20.md",
           "agent-trust-pyramid-survey-2026-11-15.md#cablate-guide-2026-11-20",
+          "ai-engineer-jobs-survey-2026-11-17.md#interview-practice-2026-11-20",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13351,8 +13372,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 679,
-      "char_count": 165499
+      "line_count": 680,
+      "char_count": 166089
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
