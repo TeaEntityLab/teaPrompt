@@ -119,6 +119,7 @@ Only institutionalize repeated patterns:
 
 - Quality gate: preserve a memory only when it is future-useful, durable beyond the current task, and self-contained for a reader without the original session. Exclude live task state and facts a routine source lookup can recover.
 - Revalidation: treat recalled memory as a dated lead; re-check changeable facts against the current authoritative source before acting.
+- Scope: distinguish a user's new default from an exception for one task. Only the former changes what a later task in the same scope should do. Check the next task's output, not whether a note was saved.
 - As-of date: every retained item records when it was written (`YYYY-MM-DD`). That date ages the lead; it does not prove the fact is still true.
 
 ## Project-Knowledge Promotion Contract

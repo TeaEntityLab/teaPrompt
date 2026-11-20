@@ -57,5 +57,9 @@ Escalate to `reflective-risk` before promoting executable knowledge (skills, hoo
 - 只保留未來仍可重用、跨任務仍有效，而且脫離原始工作階段也能獨立理解的內容。
 - 排除即時任務狀態，以及可直接從目前原始資料查得的事實。
 - 把記憶視為有日期的線索；會變動的內容在使用前要對照最新權威來源重新驗證。
+- 保留使用者更正的適用範圍：只改這一次，就不要改掉原有預設值。檢查下一個同類任務的產出是否依照仍適用的偏好，而不只是確認筆記已寫入。
 ```
 
+## Optional Worked Reference
+
+The [paired handoff example](../skills/examples/reflective-handoff-retro.examples.md#preference-scope-replay) checks what a fresh reader does with a lasting correction versus a one-task exception. The [agent memory survey](../plans/agent-memory-survey-2026-11-21.md) separates that exercise from Anthropic's reported results.

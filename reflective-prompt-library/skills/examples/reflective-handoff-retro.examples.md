@@ -73,6 +73,19 @@ Expected output shape:
 - dated, changeable claim and its current authoritative source
 ```
 
+### Preference scope replay
+
+The fictional River Museum editor's 2026-11-19 brief sets **red** as the default for the weekly poster series. The palette is red (`#ff0000`) and green (`#008000`). On November 20 the editor asks for a correction. This week's poster is delivered in green in both cases.
+
+Run the cases separately. Give the handoff writer the original brief and **one** correction; ask for a dated project handoff. Give a fresh reader only the original brief and that handoff. In both cases ask: “Render a solid swatch in the series accent for **next week's** poster.” Keep the expected answers below out of both readers' inputs.
+
+| Editor's correction | Expected handoff for this series | Expected next swatch |
+| --- | --- | --- |
+| “Use green for this poster and all future posters in this series.” | The editor changed the series default to green on 2026-11-20. | Green |
+| “Use green for this poster only.” | Red remains the default. The completed exception need not be passed on. | Red |
+
+Inspect the rendered swatch, not the color mentioned in a note. Two green swatches fail the exception case; two red ones fail the change of default. Compare the handoff with the editor's words to tell a lost qualifier from a reader ignoring it. This exercise needs no personal data or persistent store.
+
 ## Example 4
 
 Input:
