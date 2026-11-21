@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T01:03:27.767366",
+  "generated_at": "2026-11-21T23:54:04.319198",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -3682,11 +3682,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 76,
-      "char_count": 9725
+      "char_count": 9727
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -6715,11 +6715,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 65,
-      "char_count": 9350
+      "char_count": 9352
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md",
@@ -7127,11 +7127,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 73,
-      "char_count": 7280
+      "char_count": 7282
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -8360,11 +8360,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 68,
-      "char_count": 6795
+      "char_count": 6797
     },
     {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
@@ -9495,11 +9495,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 73,
-      "char_count": 9027
+      "char_count": 9078
     },
     {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
@@ -9890,10 +9890,18 @@
         {
           "level": 2,
           "text": "When to try it, and when to go direct"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 49,
-      "char_count": 10501
+      "line_count": 60,
+      "char_count": 11525
     },
     {
       "path": "reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md",
@@ -11578,11 +11586,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 65,
-      "char_count": 7129
+      "char_count": 7131
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -12405,11 +12413,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 78,
-      "char_count": 10905
+      "char_count": 10907
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -13621,11 +13629,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 74,
-      "char_count": 8742
+      "char_count": 8744
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14221,11 +14229,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 70,
-      "char_count": 9059
+      "char_count": 9061
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -14436,11 +14444,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 92,
-      "char_count": 12663
+      "char_count": 12665
     },
     {
       "path": "reflective-prompt-library/plans/dilinai-nuwa-jiyao-survey-2026-07-13.md",
@@ -20138,11 +20146,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 68,
-      "char_count": 7292
+      "char_count": 7294
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -20482,10 +20490,18 @@
         {
           "level": 2,
           "text": "Output, maintenance and the TeaPrompt decision"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
         }
       ],
-      "line_count": 57,
-      "char_count": 7615
+      "line_count": 68,
+      "char_count": 8785
     },
     {
       "path": "reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",

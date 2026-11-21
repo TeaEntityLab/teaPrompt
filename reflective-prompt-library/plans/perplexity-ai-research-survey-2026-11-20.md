@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`PAR-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `perplexity.ai/hub/blog/ai-research`. This record reads the full article via an accessible mirror and checks its claims; it is a vendor-published consumer guide, not a research-mechanism disclosure. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`PAR-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `perplexity.ai/hub/blog/ai-research`. This record reads the full article via an accessible mirror and checks its claims; it is a vendor-published consumer guide, not a research-mechanism disclosure. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -61,7 +61,7 @@ Does the article contain transferable mechanisms or claims missing from TeaPromp
 - **Inference (mine):** the "conventional evergreen guide" verdict; the no-gap contract call; the "no adoption" disposition.
 - **Unknown:** exact publication date (not stamped); whether “GPT 6.1-Sol” is a model alias or marketing shorthand; whether the mirror preserved every figure and caption (direct fetch was blocked); whether other archive captures exist.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - A later-edited version of the article (Perplexity rewrites evergreen guides) could change the claims; the mirror fetched 2026-11-20 is the authoritative copy for this record.
 - The linked "Frontier Research" post (`introducing-perplexity-frontier-research`, 2026-11-16) is a separate announcement about autonomous discovery — deliberately out of scope; if the owner intended that post, it is a separate survey.

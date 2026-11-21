@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`PMP-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `local://paste-18.md`-adjacent material — a two-part personal inventory of prompts the author uses with coding agents: ten zh-TW reasoning prompts plus nine English workflow prompts. This is self-authored practice documentation, not an external publication; it is surveyed for coverage against TeaPrompt's existing surfaces. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`PMP-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `local://paste-18.md`-adjacent material — a two-part personal inventory of prompts the author uses with coding agents: ten zh-TW reasoning prompts plus nine English workflow prompts. This is self-authored practice documentation, not an external publication; it is surveyed for coverage against TeaPrompt's existing surfaces. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -63,7 +63,7 @@ Do any of the nineteen prompts describe a mechanism or trigger not already held 
 - **Inference (mine):** the "confirms coverage, no gap" verdict; the PMP-DOC2 deferral; the authorship/personal-inventory classification.
 - **Unknown:** whether the author (the owner) intends these as personal triggers or as publishable prompt patterns — the survey records them as supplied, without claiming external provenance.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - If any of these prompts is later published under the owner's name, the record remains valid; only the provenance line changes.
 - None of the nineteen prompts is a mechanism TeaPrompt lacks; the inventory is a coverage confirmation, not a gap list. With no control group, it claims no measured usage or efficacy for any prompt or Skill.

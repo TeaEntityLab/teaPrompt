@@ -24,7 +24,7 @@
 
 > Latest research-talk survey — 2026-11-20: [22 notes attributed to a Shunyu Yao talk](yao-shunyu-talk-survey-2026-11-20.md). `YSY-DOC1` records what the notes say. Independent sources support some background; without the recording or a transcript, they do not establish Yao's wording or the reported sandbox incident.
 
-> Latest coordination-benchmark survey — 2026-11-20: [“Worse Together” / MAMUBench](mamu-benchmark-survey-2026-11-20.md). Across 25 personal-assistant scenarios, the authors report that the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–67%. The gluten-free order is an example, not the denominator. `MAM-DOC1` is reference only; group score does not establish affected users' consent.
+> Latest coordination-benchmark survey — 2026-11-20: [“Worse Together” / MAMUBench](mamu-benchmark-survey-2026-11-20.md). Across 25 personal-assistant scenarios, the authors report that the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–65%. The gluten-free order is an example, not the denominator. `MAM-DOC1` is reference only; group score does not establish affected users' consent.
 
 > Latest personal-practice survey — 2026-11-20: [19 personal prompts](personal-prompt-inventory-survey-2026-11-20.md). `PMP-DOC1` relates the prompts to library methods and identifies the commands or tools a host would need. A matching document is not evidence of actual use or effectiveness.
 

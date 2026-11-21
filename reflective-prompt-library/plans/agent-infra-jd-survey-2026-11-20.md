@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`AID-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied a structured zh-TW analysis of a real job description — Xiaohongshu RAI Studio "AI Agent Infra Engineer" (REDstar 2027 campus track, Beijing/Shanghai/Hangzhou) — plus a personal assessment that agent-side design space (harness evolution, long-horizon runtime) is less settled than training infra. Verified here: one employer posting exists at the cited URL with the cited title, track, and locations. The six module names are the owner's plausible interpretation, checked against published taxonomies as industry analogy — not six employer-stated modules and not a verified internal architecture. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`AID-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied a structured zh-TW analysis of a real job description — Xiaohongshu RAI Studio "AI Agent Infra Engineer" (REDstar 2027 campus track, Beijing/Shanghai/Hangzhou) — plus a personal assessment that agent-side design space (harness evolution, long-horizon runtime) is less settled than training infra. Verified here: one employer posting exists at the cited URL with the cited title, track, and locations. The six module names are the owner's plausible interpretation, checked against published taxonomies as industry analogy — not six employer-stated modules and not a verified internal architecture. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -69,7 +69,7 @@ TeaPrompt ships the written clauses below. The host supplies execution, durable 
 - **Inference (mine):** contract-map dispositions; the repo-vs-host split; the "no local gap" verdict; AID-DOC2 deferral.
 - **Unknown:** the JD's actual internal architecture vs its public text; whether the modules are one team's framing or company-standard; hiring specifics beyond the posting.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The six-module split is the owner's reading of a hiring document, not the employer's stated architecture and not a measured system; it must not be adopted as a canonical spec.
 - The JD's named technologies (LangGraph, Temporal, E2B, MCP) are references, not required stack; treat them as illustrative.

@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`GKB-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied the full text of Lauren Tan's (@poteto) X long-form article "Automate Anything with Grok Bot" (2026-11-18, ~9 min read) plus `local://paste-19.md`, which contains a *different* Paul Kuo article dissecting the same author's AI Engineer Code Summit talk. This record covers the automation article the owner actually pasted; the paste-19 file is a separate source handled under its own survey if requested. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`GKB-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied the full text of Lauren Tan's (@poteto) X long-form article "Automate Anything with Grok Bot" (2026-11-18, ~9 min read) plus `local://paste-19.md`, which contains a *different* Paul Kuo article dissecting the same author's AI Engineer Code Summit talk. This record covers the automation article the owner actually pasted; the paste-19 file is a separate source handled under its own survey if requested. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -66,7 +66,7 @@ Does the Grok Bot automation guide describe a mechanism not already held by a na
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; GKB-DOC2 deferral.
 - **Unknown:** whether the article's claimed bot capabilities hold in the shipped product; Grok Bot's actual reliability numbers; whether the "restate" prompt is used verbatim or paraphrased.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - This is a product tutorial and positioning piece ("automation for everyone"), not a measured evaluation; its capability claims are vendor statements.
 - The supplied `local://paste-19.md` is a *different* article (Paul Kuo's dissection of the author's AI Engineer Code Summit talk); it is not the same document and should not be conflated with this record.

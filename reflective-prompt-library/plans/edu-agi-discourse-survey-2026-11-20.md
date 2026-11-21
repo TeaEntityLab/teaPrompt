@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`EDU-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `local://paste-23.md`, a zh-TW meta-analysis that (a) frames Western education as three historical paradigms — Liberal Arts / Prussian / Humboldtian — and (b) applies evidence-check, assumption-audit, multi-role and Socratic-questioning lenses to the earlier 《模型一代》 cluster (`paste-20/21/22`). This is a second-order commentary on the same discourse chain, not a new mechanism. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`EDU-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `local://paste-23.md`, a zh-TW meta-analysis that (a) frames Western education as three historical paradigms — Liberal Arts / Prussian / Humboldtian — and (b) applies evidence-check, assumption-audit, multi-role and Socratic-questioning lenses to the earlier 《模型一代》 cluster (`paste-20/21/22`). This is a second-order commentary on the same discourse chain, not a new mechanism. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -61,7 +61,7 @@ Does this meta-analysis describe a method or mechanism not already held by a nam
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; EDU-DOC2 deferral.
 - **Unknown:** the original essay's author and venue; whether its institutional claims (Stanford/MIT oral exams) are current policy or a predicted direction. Human learning outcomes from deliberate-friction practice are likewise unknown: the shipped `learning-coach` options are selective planning aids, not a validated combined intervention, and this text audit cannot establish efficacy.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - This is a meta-commentary built on top of the earlier MGD cluster; its own claims inherit the same reported-anecdote caveat.
 - The three-paradigm and cognitive-science frameworks are mainstream and correctly cited, but they are lenses, not mechanisms TeaPrompt lacks.

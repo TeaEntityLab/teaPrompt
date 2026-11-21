@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`AKG-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `local://paste-17.md` (a zh-TW structured analysis) plus the X reshare `x.com/jithinvraj/status/2121060667545538992`. This record checks the paste's visual and textual claims against the actual image and the original post. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`AKG-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `local://paste-17.md` (a zh-TW structured analysis) plus the X reshare `x.com/jithinvraj/status/2121060667545538992`. This record checks the paste's visual and textual claims against the actual image and the original post. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -69,7 +69,7 @@ The Instagram caption adds only: "Most people are learning Agentic AI in the wro
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; classifying the pink-box claim as fabrication rather than a different-edition variant (the image fetched is the one the Instagram post publishes, and no alternate edition is evidenced).
 - **Unknown:** whether Brij Pandey published a different version of the graphic (e.g., a later "VOL." with the box/annotation) that the paste actually saw; the X reshare was inaccessible, so a slightly different image attached there cannot be fully excluded — but the original post's image is the authoritative one and lacks both claimed details.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - If a later edition of the graphic (e.g., VOL. 03 or a live-teardown variant) contains the pink box and annotation, the fabrication verdict for the visual claims should be re-opened; the supplied X link or a LinkedIn mirror could contain it, but automated access to both was blocked/unsuccessful.
 - The paste's own engineering analysis (pseudo-memory, pseudo-reflection, deterministic guardrails, Occam) is sound and independently defensible — the record preserves it as analysis, not as image-sourced fact.

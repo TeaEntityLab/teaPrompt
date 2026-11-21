@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`MAD-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `local://paste-18.md`, which pairs a zh-TW commentary with an unattributed English "MULTI-AGENT DESIGN PATTERNS — A COST-VALUE BREAKDOWN" post. This record checks the taxonomy against established agentic-pattern sources and maps the claims to TeaPrompt contracts. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`MAD-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `local://paste-18.md`, which pairs a zh-TW commentary with an unattributed English "MULTI-AGENT DESIGN PATTERNS — A COST-VALUE BREAKDOWN" post. This record checks the taxonomy against established agentic-pattern sources and maps the claims to TeaPrompt contracts. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -67,7 +67,7 @@ Is the six-pattern breakdown accurate and faithful to the source, and does it co
 - **Inference (mine):** contract-map dispositions; the "no gap" call; classifying the post as a listicle rather than a primary research source.
 - **Unknown:** the post's original author/platform (not signed); whether the paste author is the same person as the original poster.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The post is a listicle, not a measured study; the cost tiers should never be cited as economics. If the owner wants cost evidence, the source-of-record is a benchmark, not this post.
 - The zh-TW commentary's worked hiring-agent example is a useful concrete instantiation; it is the paste's own analysis and is recorded as such.

@@ -2,7 +2,7 @@
 
 Language: English
 
-**Decision (`CQM-DOC1`): use the order example to review one invariant, not to score a codebase.** Given a stated domain rule, we can check exactly which states a representation admits or excludes. That does not tell us whether the program takes the right action, how quickly it responds, or what the next change will cost.
+> **Status:** reference case (`CQM-DOC1`); no new Skill, review gate or runtime. Decision: use the order example to review one invariant, not to score a codebase. Given a stated domain rule, we can check exactly which states a representation admits or excludes. That does not tell us whether the program takes the right action, how quickly it responds, or what the next change will cost.
 
 ## What the authors actually said
 
@@ -55,3 +55,14 @@ Cardarella’s output questions and the diagram answer different decisions. For 
 The public [ISO/IEC 25010:2023 abstract](https://www.iso.org/standard/78176.html) describes product quality using multiple characteristics, not one score. [Sawada et al.](https://arxiv.org/abs/2605.06464) (original abstract inspected) observed file changes and who made them across agent- and human-authored files. Change frequency is not effort for the same task; the study does not test this type redesign. Neither the posts nor the local example establishes a productivity effect or explains an industry-wide formal-methods trend.
 
 [Code Reviewer](../02-engineering/code-reviewer.md) already distinguishes a reachable defect or violated invariant from a maintainability judgment. The [MAGE survey](mage-source-survey-2026-11-17.md) distinguishes checking a model from checking an implementation and accepting a product. **Reference only:** no new Skill, review gate or runtime. Revisit the attribution with an actual reply permalink, the state model if the domain permits exceptions, and the maintenance claim with comparable change-task evidence.
+
+## Evidence vs Inference
+
+- **Verified (local run):** `rustc 1.97.1` rejected the nonexistent variant (`E0599`) and the binary's paid case passed while the unpaid case produced `PaidAndShipped` — a constructor bound, not a payment attestation.
+- **Verified (sources):** the Curry–Howard and type-soundness citations as quoted; the ISO/IEC 25010:2023 abstract's multi-characteristic quality model; the Sawada et al. abstract as described.
+- **Inference (this record):** the mapping of the order example onto Cardarella's output questions and onto maintainability decisions.
+- **Unknown:** the authors' reply to the attribution request; whether the domain permits exceptions the state model cannot express; any industry-wide formal-methods productivity effect.
+
+## Falsifiability
+
+`CQM-DOC1` fails if the compiler example is rerun and accepts the contradictory variant without `--cfg bad_value`, if a cited source is shown to claim the opposite of the quoted position, or if a comparable change-task measurement demonstrates the state-model refactor costed more accepted-behavior time than the alternative.

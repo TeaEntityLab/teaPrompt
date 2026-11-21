@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`YSY-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied a 22-point zh-TW attendee note set attributed to a talk by Shunyu Yao (ReAct authorship confirmed via author pages; DeepMind affiliation and startup-founding denial as reported in November 2026 coverage). No video or transcript was provided, so this record establishes the note text as recorded, checks it against independently checkable background, and leaves speaker attribution, wording fidelity, and incident truth unverified. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`YSY-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied a 22-point zh-TW attendee note set attributed to a talk by Shunyu Yao (ReAct authorship confirmed via author pages; DeepMind affiliation and startup-founding denial as reported in November 2026 coverage). No video or transcript was provided, so this record establishes the note text as recorded, checks it against independently checkable background, and leaves speaker attribution, wording fidelity, and incident truth unverified. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -84,7 +84,7 @@ The 22 rows report what the attendee wrote. “Background consistent” means ot
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; YSY-DOC2 deferral.
 - **Unknown:** the talk's exact date/venue; whether any claim is a paraphrase or the note-taker's emphasis; whether Yao's affiliation has changed since 2026-11-03; whether the note-9 sandbox behavior occurred as described.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The notes are an attendee summary of unknown fidelity, not a transcript; specific wording (e.g., "Model Hierarchy", the ReAct-on-Llama anecdote) may be paraphrased, and speaker attribution for every item is unverified.
 - Items 14–22 are opinion/experience, not mechanisms; they are classified as such and should not be adopted as rules.

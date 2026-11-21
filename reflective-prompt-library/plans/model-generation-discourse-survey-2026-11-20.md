@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`MGD-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied three linked zh-TW documents forming one discourse cluster: `paste-20` (the original viral essay 《模型一代》, ~13,080 chars, 30+ interviews, 2026-11), `paste-21` (a Silicon Valley response to it), and `paste-22` (a Zhihu discussion thread with three high-vote answers). This is social/cultural commentary about AI's effect on universities, wealth, and meaning — not a technical mechanism. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`MGD-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied three linked zh-TW documents forming one discourse cluster: `paste-20` (the original viral essay 《模型一代》, ~13,080 chars, 30+ interviews, 2026-11), `paste-21` (a Silicon Valley response to it), and `paste-22` (a Zhihu discussion thread with three high-vote answers). This is social/cultural commentary about AI's effect on universities, wealth, and meaning — not a technical mechanism. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -58,7 +58,7 @@ Do any of the three documents describe a mechanism or contract not already held 
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; MGD-DOC2 deferral.
 - **Unknown:** the original essay's publication venue and exact date beyond "10w+ viral, 2026-11"; whether the Zhihu thread's vote counts changed after the snapshot; whether deliberate-exercise practice improves human thinking — the shipped `learning-coach` options are selective planning aids, not a validated combined intervention.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The three documents are commentary and reception; none is a technical source. Claims like "8 vs 80 GPUs" or "Navier-Stokes in 4 days" are reported anecdotes, not verified measurements.
 - The Zhihu critique correctly flags that the original piece's framing is one interpretation among several; treat both as discourse, not as an authoritative verdict on AI's effect on universities.

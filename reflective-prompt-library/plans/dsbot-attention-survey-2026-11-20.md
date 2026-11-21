@@ -2,7 +2,7 @@
 
 Language: English
 
-**Decision (`DSB-DOC1`): try a stable point of contact for recurring, independently verifiable work; do not turn it into a ban on direct sessions.** DS Bot lets a person give out work and receive decisions in one conversation while other bots work elsewhere. That changes who has to follow each session. It does not make the work correct, a checkbox a merge receipt, or an optimal team size known.
+> **Status:** reference case (`DSB-DOC1`); no Skill, runtime, scheduler or merge automation. Decision: try a stable point of contact for recurring, independently verifiable work; do not turn it into a ban on direct sessions. DS Bot lets a person give out work and receive decisions in one conversation while other bots work elsewhere. That changes who has to follow each session. It does not make the work correct, a checkbox a merge receipt, or an optimal team size known.
 
 ## What FeiZ actually reported
 
@@ -47,3 +47,14 @@ Use a fixed inbox for repeatable work with a clear acceptance check. Keep routin
 **A local comparison, not a result:** alternate matched task batches between direct sessions and one assistant inbox. Keep model, worker limit, permissions and acceptance criteria the same. Count all attempts, including deferred, failed and discarded work. Track human minutes spent assigning, inspecting and repairing per accepted change, interruptions requiring action, time a blocker waits, and regressions or useful changes incorrectly discarded. Record perceived effort separately. Fewer open windows with longer blocker delays or more missed defects is not a win.
 
 TeaPrompt's [attention measurement guidance](agent-control-plane-comparison-survey-2026-11-04.md#measuring-attention-without-hiding-failure) and [external-effect boundary](../04-agent/runtime-trust-boundary.md#4a-external-effect-recovery-boundary) already cover the relevant decisions. `DSB-DOC1` is a reference case only: no worker quota, Skill, scheduler, dashboard or merge automation. Revisit efficacy with comparable DS Bot task data; revisit the action path with a card tied to an authorized operation and its actual GitHub result.
+
+## Evidence vs Inference
+
+- **Verified (sources):** the FeiZ launch post and its repository link; the DS-Bot repo's separately authenticated GitHub connector and its issue-triage exclusion of PR merges; the GitHub merge API's expected-head `sha`/`409` behavior; the Long et al. ParallelPilot figures and Mark et al. batching results as reported.
+- **Author-reported:** FeiZ's "~60% of communication" share and personal workflow description.
+- **Inference (this record):** the attention comparison; whether a fixed inbox outperforms direct sessions for a given maintainer.
+- **Unknown:** the tool FeiZ used for reviews; whether either cited study generalizes to DS Bot's audience.
+
+## Falsifiability
+
+`DSB-DOC1` fails if a matched task batch shows the inbox raises interruptions, blocker wait or missed defects versus direct sessions, or if a card tied to an authorized operation returns a GitHub result inconsistent with the reported merge state.

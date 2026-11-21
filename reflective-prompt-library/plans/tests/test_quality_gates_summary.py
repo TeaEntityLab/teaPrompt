@@ -144,7 +144,7 @@ def _pytest_item_count() -> int:
     import subprocess
 
     result = subprocess.run(
-        ["python3", "-m", "pytest", str(Path(__file__).parent), "--collect-only", "-q"],
+        [sys.executable, "-m", "pytest", str(Path(__file__).parent), "--collect-only", "-q"],
         capture_output=True,
         text=True,
         check=True,

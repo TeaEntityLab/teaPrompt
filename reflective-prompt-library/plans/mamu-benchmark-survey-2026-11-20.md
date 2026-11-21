@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`MAM-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied two sources — `alignment.anthropic.com/2026/worse-together/` and `github.com/safety-research/MAMUBench` — plus two zh-TW summaries (one inline, one via `x.com/kingofspace0wzz`). This record verifies every numeric claim against the primary post and the repository. No installs, model calls, Skill changes, commits, or pushes are authorized.
+> **Status:** source-qualified reference record (`MAM-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied two sources — `alignment.anthropic.com/2026/worse-together/` and `github.com/safety-research/MAMUBench` — plus two zh-TW summaries (one inline, one via `x.com/kingofspace0wzz`). This record verifies every numeric claim against the primary post and the repository. No installs, model calls, Skill changes, commits, or pushes are authorized.
 
 ## Research Question
 
@@ -10,7 +10,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 
 ## Direct Recommendation
 
-**Adopt the record only.** The authors report that, across 25 personal-assistant scenarios, the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–67%. Blocking checkout until pending messages were read recovered 62–73% of rerun failures. These measure different things; neither establishes that every affected user agreed. TeaPrompt describes approval and evidence requirements but provides neither a mailbox guard nor a multi-user consent service.
+**Adopt the record only.** The authors report that, across 25 personal-assistant scenarios, the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–65% (Figure 4: Opus 98.6%→65.0%, Sonnet 93.6%→47.1%). Blocking checkout until pending messages were read recovered 62–73% of rerun failures. These measure different things; neither establishes that every affected user agreed. TeaPrompt describes approval and evidence requirements but provides neither a mailbox guard nor a multi-user consent service.
 
 ## Evidence Used
 
@@ -65,7 +65,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; the MAM-DOC2 deferral.
 - **Unknown:** whether the fourth (merge-queue) environment's results differ when run at scale; whether the guard's failure-recovery figure holds under other models or real (non-simulated) DoorDash integrations.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The benchmark's headline numbers are measured, but they are **model- and environment-specific**; the digest's "一個 Agent 單獨協調結果更好" is a finding about these four simulated setups, not a universal claim.
 - The X post's privacy/permission/audit framing is the commentator's own; it accurately paraphrases the paper's discussion but is not a primary source.

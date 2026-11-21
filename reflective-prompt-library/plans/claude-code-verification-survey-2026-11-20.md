@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`VER-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied the Anthropic-published article "How the Claude Code team thinks about verification" (Addy Osmani, claude.dev, 2026-11-16). This record checks its mechanisms against TeaPrompt's existing contracts; it is a single-team practitioner account on a vendor blog, not a measured benchmark. No install, model call, Skill change, commit, or push is authorized.
+> **Status:** source-qualified reference record (`VER-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied the Anthropic-published article "How the Claude Code team thinks about verification" (Addy Osmani, claude.dev, 2026-11-16). This record checks its mechanisms against TeaPrompt's existing contracts; it is a single-team practitioner account on a vendor blog, not a measured benchmark. No install, model call, Skill change, commit, or push is authorized.
 
 ## Research Question
 
@@ -58,7 +58,7 @@ Which mechanisms in the article are already held by named TeaPrompt surfaces, wh
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; the VER-DOC2 deferral call; classifying the diff-trigger checklist as the closest candidate.
 - **Unknown:** whether the 39-item checklist, commit stamps and observe/enforce gate exist in publicly inspectable form; whether the linked internal-test gain survives independent reproduction; whether the mechanisms described match actual Claude Code release behavior (the article describes team practice, not a shipped config).
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - This is vendor-published practitioner advocacy for its own product; treat efficacy figures as marketing-adjacent, not measured. The mechanisms themselves are conventional and independently defensible.
 - AE-05 asks whether a check catches an injected fault. VER-DOC2 asks which check a change should trigger and which past incident justifies it. A mutation test could be the selected check; that does not make a second mutation example evidence of the selection rule.
