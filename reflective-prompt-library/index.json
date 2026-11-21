@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T23:54:04.319198",
+  "generated_at": "2026-11-21T23:54:45.288055",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -9499,7 +9499,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 9078
+      "char_count": 9384
     },
     {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
@@ -13512,7 +13512,7 @@
         }
       ],
       "line_count": 696,
-      "char_count": 167979
+      "char_count": 167975
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",

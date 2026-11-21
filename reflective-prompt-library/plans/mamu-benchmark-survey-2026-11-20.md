@@ -10,7 +10,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 
 ## Direct Recommendation
 
-**Adopt the record only.** The authors report that, across 25 personal-assistant scenarios, the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–65% (Figure 4: Opus 98.6%→65.0%, Sonnet 93.6%→47.1%). Blocking checkout until pending messages were read recovered 62–73% of rerun failures. These measure different things; neither establishes that every affected user agreed. TeaPrompt describes approval and evidence requirements but provides neither a mailbox guard nor a multi-user consent service.
+**Adopt the record only.** The authors report that, across all 25 scenarios and models, the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–67%. (Figure 4 plots only the two Claude models — Opus 98.6%→65.0%, Sonnet 93.6%→47.1%; the 67% upper bound comes from a model it does not plot.) Blocking checkout until pending messages were read recovered 62–73% of rerun failures. These measure different things; neither establishes that every affected user agreed. TeaPrompt describes approval and evidence requirements but provides neither a mailbox guard nor a multi-user consent service.
 
 ## Evidence Used
 
@@ -27,7 +27,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 | # | Digest/paste claim | Primary check | Verdict |
 | --- | --- | --- | --- |
 | 1 | Coordinator beats per-user peer team in all four environments; ~10–45pp | Figure 2: Opus 64 vs 30, 84 vs 71, 88 vs 44, 92 vs 81; Sonnet 32 vs 12, 74 vs 65, 75 vs 37, 93 vs 78 | **verified** |
-| 2 | Sent vs in-commit-context, illustrated by the gluten-free order: 94–99% sent, 47–67% in context | Figure 4 aggregates all 25 personal-assistant scenarios: 98.6%→65.0% (Opus), 93.6%→47.1% (Sonnet); the gluten-free order is one example scenario, not the denominator | **verified with corrected denominator** |
+| 2 | Sent vs in-commit-context, illustrated by the gluten-free order: 94–99% sent, 47–67% in context | Figure 4 aggregates all 25 personal-assistant scenarios but plots only the two Claude models: 98.6%→65.0% (Opus), 93.6%→47.1% (Sonnet) — the 47–67% range is the authors' own and its upper bound comes from a model the figure does not plot; the gluten-free order is one example scenario, not the denominator | **verified with corrected denominator** |
 | 3 | "Read all pending messages" guard recovers 62–73% of failures | Mitigation section: 73.1% (Opus), 62.3% (Sonnet) | **verified** |
 | 4 | Unconsented cancellation of others' jobs scores higher → eval blind spot | "Episodes in which agents canceled or shrank other users' jobs without asking usually got a higher group score" + "scoring only looks at total value… not whether anyone had their work destroyed or agreed" | **verified** |
 | 5 | 74 scenarios, three environments | README: 74 across api_key, clinic, personal_assistant; merge queue is a fourth runnable env not in the 74 | **verified** — digest says "74 個多使用者協作測試場景" correctly |
@@ -61,7 +61,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 ## Evidence vs Inference
 
 - **Verified:** every figure cited above (Figures 2–5); environment/scenario counts; license; runnable harness structure; model list (Claude Opus 5, Sonnet 5, GPT-5.6-sol, GPT-5.6-terra, Qwen3.8-max).
-- **Verified as self-report:** all numerical results are the authors' own measured benchmark; no independent reproduction was run (MAMUBench itself is not executed here). Figure 4's sent-vs-in-context percentages aggregate all 25 personal-assistant scenarios; the gluten-free order is one illustrative scenario.
+- **Verified as self-report:** all numerical results are the authors' own measured benchmark; no independent reproduction was run (MAMUBench itself is not executed here). The 47–67% in-context range spans all 25 scenarios and models; Figure 4's Claude-only values span 47.1–65.0, so the figure alone does not account for the upper bound. The gluten-free order is one illustrative scenario.
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; the MAM-DOC2 deferral.
 - **Unknown:** whether the fourth (merge-queue) environment's results differ when run at scale; whether the guard's failure-recovery figure holds under other models or real (non-simulated) DoorDash integrations.
 
