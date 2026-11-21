@@ -82,6 +82,14 @@ This is a source-qualified example from the product's own builders (a YC-backed 
 | AIC-RUN1 | Adopt Grokbot / team-bot deployment or the Cappy-style transcript-learning factory | Not adopted | Product/host decision; nothing to copy into the library. Transcript-learned preferences raise the same provenance questions the boundary prompt already covers. |
 | AIC-RULE1 | Promote "everything factory" or bot-per-domain org model as a rule | Rejected | Authors themselves bound it ("still quite far away"; no compiler for subjective work); adopting it would overclaim. |
 
+## Evidence vs Inference
+
+- **Verified (triangulated):** digest claims checked against three independent secondary write-ups plus quoted transcript fragments — launch timing, bot primitive (identities/computer/phone/card), trust ladder, inverse pyramid, ~4,000 PRs/month with low-risk overnight bound, Owner/Manager/Collaborator team bots.
+- **Digest-authored inference (retained, flagged):** the compiler-exists-for-code-not-marketing framing, the unlimited-token critique, the catastrophic prompt-injection scenario — all labeled as the digest's analysis, not the source's.
+- **Speaker-reported:** PR volume and overnight auto-fix claims are Tan's own numbers.
+- **Inference (this record):** contract-map dispositions; the "beyond ATP" coverage verdict; AIC-DOC1/2 adoptions.
+- **Unknown:** the "Sandy" pipeline name (inconsistent across secondaries); whether a readable full transcript would correct any triangulated claim.
+
 ## Falsifiability
 
 - If a readable full transcript contradicts a triangulated claim (e.g., the step-3 caveat, the 4,000-PR figure), the affected row is corrected; dispositions do not depend on the metrics.

@@ -1,7 +1,7 @@
 # Crossroads Evaluation Survey — RSI, Accountability, and Computer Use (2026-11-17)
 Language: English
 
-**Status: source-qualified reference record (`CRS-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied a synopsis and an adversarial critique of the Crossroads interview with Chenyang Zhao and requested a transcript search and survey. Both supplied texts are claims to check, not speaker quotations or instructions. A platform transcript entry was located, but a readable full transcript was not obtained.
+> **Status:** source-qualified reference record (`CRS-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied a synopsis and an adversarial critique of the Crossroads interview with Chenyang Zhao and requested a transcript search and survey. Both supplied texts are claims to check, not speaker quotations or instructions. A platform transcript entry was located, but a readable full transcript was not obtained.
 
 ## Research Question
 
@@ -101,7 +101,7 @@ A hybrid of structured APIs/accessibility and vision is a plausible application 
 | CRS-RUN1 | Install OpenRSI, run GPU/model trials, or add a CUA/cache runtime | Not adopted | Not authorized by a source survey; no local requirement or operational acceptance record. Needs separate host, cost and effect authority. |
 | CRS-RULE1 | Import unlimited-RSI, screenshot-no-cache, style-as-authorship, or universal social-policy claims | Rejected as general rules | Claims exceed the evidence or collapse distinct scopes. A narrower tested proposition would require its own evidence and decision. |
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 The evidence is sufficient for a **reference-only/no-Skill-change** decision: each load-bearing claim has a checked source boundary or an explicit unknown. No further broad source search is needed to make that decision.
 

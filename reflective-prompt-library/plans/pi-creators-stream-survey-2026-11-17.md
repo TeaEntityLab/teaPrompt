@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`PIC-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied `local://paste-16.md`, a zh-TW analytical digest of the Matt Pocock livestream "LIVE: Writing code that doesn't suck with the creators of Pi" (2026-11-17). This survey checks the digest against the full auto-generated transcript and pins project/participant identities. Note: the owner's request message additionally contained digests of two other videos (Paul Graham × Amjad Masad; The Skip podcast) that are **not** in `paste-16.md`; this record covers the file's actual content only — the two inline digests are surveyed separately in [future-of-work-videos-survey-2026-11-17.md](future-of-work-videos-survey-2026-11-17.md). No Pi install, model call, Skill change, commit, or push is authorized.
+> **Status:** source-qualified reference record (`PIC-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied `local://paste-16.md`, a zh-TW analytical digest of the Matt Pocock livestream "LIVE: Writing code that doesn't suck with the creators of Pi" (2026-11-17). This survey checks the digest against the full auto-generated transcript and pins project/participant identities. Note: the owner's request message additionally contained digests of two other videos (Paul Graham × Amjad Masad; The Skip podcast) that are **not** in `paste-16.md`; this record covers the file's actual content only — the two inline digests are surveyed separately in [future-of-work-videos-survey-2026-11-17.md](future-of-work-videos-survey-2026-11-17.md). No Pi install, model call, Skill change, commit, or push is authorized.
 
 ## Research Question
 
@@ -83,7 +83,7 @@ Verdicts use `verified` (transcript supports the attributed claim), `verified + 
 - **Inference (mine):** contract-map dispositions; the digest's ~90% fidelity rating; classification of its additions.
 - **Unknown:** whether the triage pipeline enforces a strict reproduce-first ordering (repo workflows show gates exist; ordering internals uninspected); whether the two inline digests in the owner's message were meant to be in paste-16; model-version naming ("Opus 5.5", "5.3") beyond stream wording.
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - The transcript is auto-generated; quoted wording is faithful to the ASR text, not to a human-reviewed transcript. A published corrected transcript could refine quotes but is unlikely to reverse the two corrections.
 - "Verification is overrated" quoted alone would mislead: Mario's full position pairs it with agents-as-reward-hackers, while Armin explicitly relies on verification heavily. The record preserves the pairing.

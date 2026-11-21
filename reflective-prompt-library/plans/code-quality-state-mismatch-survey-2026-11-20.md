@@ -65,4 +65,4 @@ The public [ISO/IEC 25010:2023 abstract](https://www.iso.org/standard/78176.html
 
 ## Falsifiability
 
-`CQM-DOC1` fails if the compiler example is rerun and accepts the contradictory variant without `--cfg bad_value`, if a cited source is shown to claim the opposite of the quoted position, or if a comparable change-task measurement demonstrates the state-model refactor costed more accepted-behavior time than the alternative.
+`CQM-DOC1` fails if rerunning the compiler example with `--cfg bad_value` compiles without `E0599`, or if the unpaid `assert_eq!` passes — either would show the constructor admits a contradictory label. A cited source shown to claim the opposite of the position quoted above would also reopen the record.

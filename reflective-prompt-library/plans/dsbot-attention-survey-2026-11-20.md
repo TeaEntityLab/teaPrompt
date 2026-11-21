@@ -57,4 +57,4 @@ TeaPrompt's [attention measurement guidance](agent-control-plane-comparison-surv
 
 ## Falsifiability
 
-`DSB-DOC1` fails if a matched task batch shows the inbox raises interruptions, blocker wait or missed defects versus direct sessions, or if a card tied to an authorized operation returns a GitHub result inconsistent with the reported merge state.
+`DSB-DOC1` fails if a matched task batch shows the inbox raises interruptions, blocker wait or missed defects versus direct sessions, or if a card tied to an authorized merge operation returns GitHub's actual merge result for the reviewed head `sha` — that would show the card is a real merge receipt, not a checkbox.

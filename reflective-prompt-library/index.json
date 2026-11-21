@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T23:54:45.288055",
+  "generated_at": "2026-11-21T23:58:28.983767",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1624,6 +1624,10 @@
         },
         {
           "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -1631,8 +1635,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 88,
-      "char_count": 10714
+      "line_count": 96,
+      "char_count": 11650
     },
     {
       "path": "reflective-prompt-library/plans/mini-swe-agent-survey-2026-11-09.md",
@@ -6556,6 +6560,10 @@
         },
         {
           "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -6563,8 +6571,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 93,
-      "char_count": 12017
+      "line_count": 101,
+      "char_count": 12945
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -6859,7 +6867,7 @@
         },
         {
           "level": 2,
-          "text": "Evidence vs Inference and Falsifiability"
+          "text": "Falsifiability and Evidence vs Inference"
         }
       ],
       "line_count": 117,
@@ -7706,7 +7714,7 @@
         },
         {
           "level": 2,
-          "text": "Risks / Unknowns / Falsifiability"
+          "text": "Falsifiability, Risks, and Unknowns"
         },
         {
           "level": 2,
@@ -7714,7 +7722,7 @@
         }
       ],
       "line_count": 141,
-      "char_count": 21479
+      "char_count": 21483
     },
     {
       "path": "reflective-prompt-library/plans/craft-anything-survey-2026-11-10.md",
@@ -8284,6 +8292,10 @@
         },
         {
           "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -8307,8 +8319,8 @@
           "text": "What the numbers establish"
         }
       ],
-      "line_count": 126,
-      "char_count": 19754
+      "line_count": 134,
+      "char_count": 20628
     },
     {
       "path": "reflective-prompt-library/plans/edu-agi-discourse-survey-2026-11-20.md",
@@ -9708,6 +9720,10 @@
           "text": "TeaPrompt Contract Map and Disposition"
         },
         {
+          "level": 3,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
           "level": 2,
           "text": "Falsifiability, Risks, and Handoff"
         },
@@ -9728,8 +9744,8 @@
           "text": "What “90% off” prices"
         }
       ],
-      "line_count": 235,
-      "char_count": 48305
+      "line_count": 237,
+      "char_count": 48338
     },
     {
       "path": "reflective-prompt-library/plans/all-skills-panel-record-2026-07-18.md",
@@ -9901,7 +9917,7 @@
         }
       ],
       "line_count": 60,
-      "char_count": 11525
+      "char_count": 11596
     },
     {
       "path": "reflective-prompt-library/plans/mgd-form-theory-survey-2026-10-02.md",
@@ -12956,11 +12972,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 103,
-      "char_count": 15437
+      "char_count": 15439
     },
     {
       "path": "reflective-prompt-library/plans/managed-skills-learned-survey-2026-10-06.md",
@@ -13573,11 +13589,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 91,
-      "char_count": 16993
+      "char_count": 16995
     },
     {
       "path": "reflective-prompt-library/plans/multi-agent-patterns-survey-2026-11-20.md",
@@ -14384,6 +14400,10 @@
         },
         {
           "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -14391,8 +14411,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 84,
-      "char_count": 10816
+      "line_count": 92,
+      "char_count": 11799
     },
     {
       "path": "reflective-prompt-library/plans/yao-shunyu-talk-survey-2026-11-20.md",
@@ -15799,11 +15819,11 @@
         },
         {
           "level": 2,
-          "text": "Risks, Falsifiability, and Handoff"
+          "text": "Falsifiability, Risks, and Handoff"
         }
       ],
       "line_count": 112,
-      "char_count": 21033
+      "char_count": 21035
     },
     {
       "path": "reflective-prompt-library/plans/frozen-core-parity-review-2026-07-11.md",
@@ -20501,7 +20521,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 8785
+      "char_count": 8764
     },
     {
       "path": "reflective-prompt-library/plans/software-factory-sdlc-inner-outer-loop-survey-2026-09-28.md",

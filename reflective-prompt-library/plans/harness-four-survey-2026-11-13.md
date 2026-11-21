@@ -108,7 +108,7 @@ Existing acceptance, replay, provenance, promotion and host-enforcement contract
 | H4-RUN1 | Install upstream runtimes, run model campaigns, or automate experience-to-Skill promotion | Not adopted | Standing runtime non-goal and separate host/authority/evaluation decisions; this record grants none. |
 | H4-RULE1 | Universal three-tier verification, fixed memory caps, ETCSLV-to-strictness mapping, or “local overrides always win” | Rejected | Host-specific advice or unsupported new duties; local scope cannot outrank higher-authority instructions. |
 
-## Evidence vs Inference and Falsifiability
+## Falsifiability and Evidence vs Inference
 
 - **Observed:** pinned source/disclosure text, actual scripted/demo execution, score/exit mismatch, validator contrast, and one sampled citation's limited scope. This is not a four-product benchmark or a directory-wide re-audit.
 - **Author-reported:** paper gains and course anecdotes. The Harness² paper was read only in the sections named above; the eleven-system paper only at abstract level. Neither constitutes independent replication.

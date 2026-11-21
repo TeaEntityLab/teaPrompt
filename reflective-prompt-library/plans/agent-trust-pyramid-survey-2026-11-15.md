@@ -78,6 +78,14 @@ This is a source-qualified example from one team's self-reported metrics (11K PR
 | ATP-RUN1 | Adopt Dune/Bombadil/TLA+/Lean tooling or auto-merge loops | Not adopted | A host would need its own scoped authorization, verifier and recovery path. Another team's telemetry supplies none of these. |
 | ATP-RULE1 | Ban comments/`useEffect`-class APIs, or promote the pyramid ordering, as a TeaPrompt rule | Rejected | Specific bans are codebase decisions. The cost of routine review does not move required Human Review to the end of a high-risk action. |
 
+## Evidence vs Inference
+
+- **Verified (transcript):** every fidelity row checked against the official machine transcript — PR volume (3,000 personal / 11,000 team), ~227 contributors, ~0.5% revert, daily stable cut, banned `useEffect`, 99%-comment ban, TLA+/Lean/Bombadil verification, artifact-shifted review.
+- **Faithful with caveat retained:** her Electron ceiling caveat; the "majority of tokens" line (the 70% figure is Cindy's, quoted by Tan).
+- **Speaker-reported:** all metrics are Tan's self-reported numbers for a team whose product is the workflow — directional, unaudited.
+- **Inference (this record):** contract-map dispositions; the "no missing delivered contract" verdict; the ATP-DOC2 navigation adoption.
+- **Unknown:** comment attributions (Vishal Singh, Minglei, Rigario) unverified; whether any number generalizes beyond Grok Bot's codebase and team.
+
 ## Falsifiability
 
 - If the transcript proves materially different from the talk (ASR garbling a number), the affected row is corrected; dispositions do not depend on the metrics.

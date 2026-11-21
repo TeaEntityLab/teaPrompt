@@ -77,6 +77,14 @@ This is a source-qualified example, not a measured result: Actively's outcome is
 | GE-RUN1 | Any runtime, UX investment, or vendor tooling | Not adopted | Source is an essay + comments; nothing to run. |
 | GE-RULE1 | Adopt "goal engineering replaces prompt/context engineering" or motion-splits as a rule | Rejected | Original says the layers become downstream of goals, not that they stop mattering; motion-split is one company's fit, not a universal scope rule (and Kaya shows its relocated failure mode). |
 
+## Evidence vs Inference
+
+- **Verified (primary article):** digest's core-value, account/motion split, and reviewer-batching claims are faithful to the Chase × Actively AI text; the 「取代」 framing is an overstatement of the article's "titles/layers disappear" prediction.
+- **Retained omissions:** the article's written-vs-tacit context split and the review-UX investment — both compressed out of the digest, restored in the fidelity table.
+- **Supplier-summarized (unverified):** every comment in the refinements table is as-supplied; the X thread was not read.
+- **Inference (this record):** contract-map dispositions; the "no missing delivered contract" verdict; GE-DOC1/2 adoptions; the falsifiability hypothesis (a reuse test on comparable later items, not repeat-correction frequency).
+- **Unknown:** whether the comment attributions are real; whether the article's case-study claims generalize beyond Actively's product interest.
+
 ## Falsifiability
 
 - A transfer test showing whether a persisted correction under TeaPrompt's current scope-split guidance reuses correctly on comparable later items would reopen GE-SK1. A bare repeat-correction frequency — low or otherwise — would not: low frequency may mean the first correction already fixed the scope.

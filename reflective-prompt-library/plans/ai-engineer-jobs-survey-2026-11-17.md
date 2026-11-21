@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`AIJ-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** The owner supplied fifteen project directions and asked for comparison with real job descriptions on LinkedIn, Reddit, and related sources. This record separates employer requirements, anonymous advice, and proposed portfolio evidence. It does not establish labor-market prevalence, current vacancy availability, or hiring success. No applications, outreach, installations, model calls, commit, or push are authorized by this survey.
+> **Status:** source-qualified reference record (`AIJ-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. The owner supplied fifteen project directions and asked for comparison with real job descriptions on LinkedIn, Reddit, and related sources. This record separates employer requirements, anonymous advice, and proposed portfolio evidence. It does not establish labor-market prevalence, current vacancy availability, or hiring success. No applications, outreach, installations, model calls, commit, or push are authorized by this survey.
 
 ## Research Question
 
@@ -187,6 +187,8 @@ Sufficiency reached: every numbered direction has source-bound evidence or an ex
 | Portfolio success must be observable, not feature-count compliance | [Reflective Brief](../skills/reflective-brief/SKILL.md), [Reflective Implement](../skills/reflective-implement/SKILL.md) | Already present: scope, acceptance and consumer-facing evidence |
 | Retries, private memory/calls, authorized testing and failover need host controls | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md), [Standing Non-Goals](../PROJECT_KNOWLEDGE.md#standing-non-goals) | Host/product implementation, not a new prompt rule or TeaPrompt runtime |
 | Prefer coherent artifacts and existing infrastructure over all fifteen demos | [Reflective Minimality](../skills/reflective-minimality/SKILL.md) | Already present; portfolio application is a recommendation, not new policy |
+
+### Candidate Adoption Ledger
 
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |

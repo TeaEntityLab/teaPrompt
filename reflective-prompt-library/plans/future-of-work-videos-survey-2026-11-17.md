@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`FW-DOC1`); no Skill, prompt-body, operating-rule, or runtime change.** Companion to `pi-creators-stream-survey-2026-11-17.md`: the owner's request message embedded two zh-TW digests that were **not** in `local://paste-16.md`; this record surveys them. Video 1 is YC's "How To Build The Future: Paul Graham & Amjad Masad" (`Q78dJ0vkWe8`, 44:15, uploaded 2026-11-07). Video 2 is The Skip's "How to Stay Current, Get Hired, and Last in AI" (`EzzydrPdpDo`, 54:21, uploaded 2026-11-12, host Nikhyl Singhal). Both digests were checked against full auto-generated transcripts. No installs, model calls, Skill changes, commits, or pushes are authorized by this record.
+> **Status:** source-qualified reference record (`FW-DOC1`); no Skill, prompt-body, operating-rule, or runtime change. Companion to `pi-creators-stream-survey-2026-11-17.md`: the owner's request message embedded two zh-TW digests that were **not** in `local://paste-16.md`; this record surveys them. Video 1 is YC's "How To Build The Future: Paul Graham & Amjad Masad" (`Q78dJ0vkWe8`, 44:15, uploaded 2026-11-07). Video 2 is The Skip's "How to Stay Current, Get Hired, and Last in AI" (`EzzydrPdpDo`, 54:21, uploaded 2026-11-12, host Nikhyl Singhal). Both digests were checked against full auto-generated transcripts. No installs, model calls, Skill changes, commits, or pushes are authorized by this record.
 
 ## Research Question
 
@@ -95,7 +95,7 @@ All sources checked **2026-11-17**.
 - **Inference (mine):** contract-map dispositions; the ~full-fidelity rating for Video 1 and the identity-correction list for Video 2; classifying the digest's added readings/analysis.
 - **Unknown:** whether the digests' author intended the ASR names literally or knowingly normalized them; the fourth moat dimension's exact wording (transcript segment partially captured); whether "Delsy" is a prior Skip episode guest (description confirms the podcast exists; the guest identity is plausible).
 
-## Risks, Falsifiability, and Handoff
+## Falsifiability, Risks, and Handoff
 
 - Both transcripts are auto-generated; the Video-2 ASR systematically mislabels JZ ("Jay Z") and Laurel ("Lauren"). A reader trusting the ASR labels verbatim — as the digest partially did — will misattribute speakers. Any future citation should use the corrected names.
 - The business figures in Video 1 (replacement-cost deltas, power-law multipliers, anxiety flip) come from a CEO selling a platform; treat as marketing-adjacent self-report, not measured effect.

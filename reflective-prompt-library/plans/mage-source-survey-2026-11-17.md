@@ -2,7 +2,7 @@
 
 Language: English
 
-**Status: source-qualified reference record (`MAGE-DOC1`); no Skill, prompt-body, operating-rule, or runtime adoption.** The owner requested a survey of `davisjam/model-based-agentic-software-engineering`. This record preserves source identities, executable observations, empirical limits, and the TeaPrompt contract map. It does not authorize plugin installation, hook activation, a model campaign, or deployment.
+> **Status:** source-qualified reference record (`MAGE-DOC1`); no Skill, prompt-body, operating-rule, or runtime adoption. The owner requested a survey of `davisjam/model-based-agentic-software-engineering`. This record preserves source identities, executable observations, empirical limits, and the TeaPrompt contract map. It does not authorize plugin installation, hook activation, a model campaign, or deployment.
 
 ## Research Question
 
@@ -111,7 +111,7 @@ The counterargument to no adoption is substantive: models and counterexamples ca
 | General no-drift, error-free reasoning, causal quality gain, or total-cost savings | needs-qualification | Not established by the inspected material; absolute guarantees rejected |
 | TeaPrompt needs a new Skill or runtime | unverified | No local defect or recurrence demonstrated; existing contracts cover the relevant duties |
 
-## Risks / Unknowns / Falsifiability
+## Falsifiability, Risks, and Unknowns
 
 The main risk is collapsing **representation → model checking → implementation conformance → acceptance → method efficacy** into one green status. Other limits are subjective requirement/model selection, missing or semantically wrong anchors, host-hook authority, changing study denominators, incomplete raw-data availability, and ongoing control-maintenance cost.
 

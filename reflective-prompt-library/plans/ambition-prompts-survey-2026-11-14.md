@@ -73,6 +73,14 @@ This is a source-qualified example, not a new workflow or an efficacy claim: eve
 | AMB-RUN1 | Install or wire anything from the article | Not adopted | Source is an essay; nothing to run. |
 | AMB-RULE1 | Adopt “set unreasonable goals, insist they're reasonable” or the editor-added Range prompt as a rule | Rejected | Unreasonable-goal insistence invites unsupported confident output; contradicts falsifiability. The Range prompt is editorial, not from the primary source. |
 
+## Evidence vs Inference
+
+- **Verified (primary essay):** the zh syndication is a faithful restructured paraphrase — four directions, staged QBR prompts, crash workflow, depth techniques, Range red-team tactic, closing precondition — checked point-by-point against the English original.
+- **Qualified (external check):** the "product manager discovered an exoplanet" detail comes from Gizmodo, not the essay; retained with its hedge. The Range complete prompt block is editor-added and disclosed as such by the zh article itself.
+- **Omitted-not-adjudicated:** Michelangelo/Bannister/Sawe/Inner Game/Linux anecdotes dropped by the syndication; "Sabastian" typo in the primary source retained, not corrected.
+- **Inference (this record):** contract-map dispositions; the "no missing delivered contract" verdict; AMB-DOC1/2 adoptions.
+- **Unknown:** whether the TIC 4206066 candidate is a real discovery; whether the tactics improve outcomes for anyone outside the essay's anecdotes.
+
 ## Falsifiability
 
 - A reproduced local failure where `reflective-brief`'s outcome step provably underperforms a task-level ask would demote AMB-SK1's “no gap” verdict; a single anecdote, a model call, or a translation quibble would not.
