@@ -10,7 +10,7 @@ Which mechanisms in the article are already held by named TeaPrompt surfaces, wh
 
 ## Direct Recommendation
 
-**Adopt the record only.** The article's load-bearing rules — E2E-first verification, agent-verify skills, three-strike human escalation, checks-unmodifiable-by-the-change, diff-triggered checklists, observe→enforce gates, incident-replay rule generation — are all already present in TeaPrompt contracts or are upstream workflow conventions for a hosted agent product. Nothing demonstrates a local structural gap. The most useful transferable detail is the **diff-trigger reliability checklist** (39 items, each with a diff-readable trigger → check → incident link): a compact, evidence-bound instantiation of the review-map pattern worth an optional worked reference if a second recurrence appears.
+**Adopt the record only.** The article describes verification practices for a hosted agent product; some match TeaPrompt methods, others are team-specific. Its most useful example is how the team selects checks: each of its reported 39 checklist items links a pattern visible in a diff to a check and an incident. This is a candidate worked reference, not evidence that TeaPrompt needs or runs that checklist.
 
 ## Evidence Used
 
@@ -46,8 +46,8 @@ Which mechanisms in the article are already held by named TeaPrompt surfaces, wh
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |
 | VER-DOC1 | This dated record + catalogue navigation | **Adopted — reference documentation only** | A corrected article, a linked companion source with divergent claims, or a new digest version |
-| VER-DOC2 | Optional worked reference: a short `REVIEW.md`-style diff-trigger checklist example inside `verification-map-generator`, citing this article | **Deferred — second recurrence not met** | A second independent source or a local need for a diff-trigger checklist example; AE-05's inert mutation candidate and this article's checklist pattern together would satisfy recurrence if the mechanism is the same class |
-| VER-SK1 | Skill or prompt-body change encoding the article's mechanisms | **No change** | A reproduced defect in a named existing surface — every mechanism maps to one |
+| VER-DOC2 | Optional worked reference: a `REVIEW.md`-style checklist in `verification-map-generator`, citing this article | **Deferred** | A second independent source must show a diff pattern selecting a specific check linked to a past incident, or a local review must show a need for that selection rule. A mutation test alone does neither. |
+| VER-SK1 | Skill or prompt-body change encoding the article's mechanisms | **No change** | A reproduced defect in a named local review or verification procedure that the proposed change would address |
 | VER-RULE1 | Numeric thresholds (3 strikes, 39 items, ≥2 incidents, ≥2/3 finders, 90%/10-point figures) as operating rules | **Rejected** | Practitioner tuning values and self-reported vendor metrics; not invariant rules and not locally verified |
 | VER-RUN1 | Reproducing the internal verify/commit-gate pipeline | **Not adopted** | Separate scoped host evaluation; the article is descriptive, not a shipped artifact |
 
@@ -61,5 +61,5 @@ Which mechanisms in the article are already held by named TeaPrompt surfaces, wh
 ## Risks, Falsifiability, and Handoff
 
 - This is vendor-published practitioner advocacy for its own product; treat efficacy figures as marketing-adjacent, not measured. The mechanisms themselves are conventional and independently defensible.
-- The article's strongest transferable artifact — the diff-trigger checklist — could become VER-DOC2 if a second source or a local need demonstrates recurrence; AE-05's inert candidate is the same class but a different mechanism (mutation vs diff-trigger), so it does not alone satisfy a two-source gate.
+- AE-05 asks whether a check catches an injected fault. VER-DOC2 asks which check a change should trigger and which past incident justifies it. A mutation test could be the selected check; that does not make a second mutation example evidence of the selection rule.
 - No Skill/runtime/prompt-body changes; catalogued via the external-adoption case file and `index.json`.

@@ -53,7 +53,7 @@ Note: a complexity-only pass with no acceptance or merge verdict routes to `refl
 Input:
 
 ```text
-Review this PR description: "Refactored the cache layer; all edge cases tested and passing."
+Review this PR description: "Refactored the cache layer and added an eviction test. All edge cases are tested and the suite passes."
 ```
 
 Expected mid-review Claims Ledger shape (illustrative rows showing ledger literals, not proof of this PR):
@@ -62,6 +62,7 @@ Expected mid-review Claims Ledger shape (illustrative rows showing ledger litera
 | Claim | Checked How | Status |
 |---|---|---|
 | cache layer refactored; public API text unchanged (behavior preservation still unproven) | diff read (example); public API text compared | verified |
-| all edge cases tested | test files in diff (example) | refuted (no new tests for eviction path) |
+| this PR added an eviction test | inspected the full diff: only the cache implementation changed | refuted |
+| all edge cases tested | no new eviction test in the diff; inspect existing tests for an assertion about **which key** was evicted. Finding one establishes that case, not all edge cases. | unverifiable |
 | tests passing | CI output read: example run showed suite green on 2026-09-30 (example) | verified |
 ```

@@ -26,7 +26,7 @@ State one replay attempt or operator observation that would prove the acquired w
 Escalate to `reflective-risk` before replaying or automating workflows that can affect credentials, permissions, privacy-sensitive data, billing, deployment, production state, destructive operations, or third-party side effects.
 
 
-```markdown
+````markdown
 You are a Workflow Acquisition Designer. Your job is to specify how an observed process can be captured and replayed before anyone turns it into a skill, verifier, or runner.
 
 ## Source Material
@@ -175,7 +175,7 @@ Return:
 5. Promotion gate status.
 6. Human approval boundaries.
 7. Implementation tasks only if the user asks to build the runner or verifier.
-```
+````
 
 ## Optional Worked Reference
 
@@ -186,11 +186,11 @@ The source-qualified example applies the existing replay and promotion gates;
 its scripted demo does not prove model improvement or authorize a Skill write.
 
 [Goal Engineering: scope by reusable judgment](../plans/goal-engineering-survey-2026-11-15.md#optional-worked-reference--scope-by-reusable-judgment)
-applies the existing replay question to one pinned case study: a scope is right
-when the same correction recurs, and splitting a scope that needs judgment —
-not lookup — to relocate an item relocates the inconsistency, not removes it.
-The source-qualified example adds a falsifiable criterion to the existing
-scope-split guidance; it does not change the prompt contract above.
+poses a question about a proposed boundary: can someone use a recorded
+correction on the next comparable item without having to decide again which
+scope owns it? A high or low count of repeated corrections does not answer
+that question. This is a hypothesis from the case study, not a rule for
+splitting work.
 
 [Agent trust pyramid: earned auto-merge](../plans/agent-trust-pyramid-survey-2026-11-15.md#optional-worked-reference--corrections-become-checks)
 shows the promotion gate applied to agent autonomy itself: fuzz-and-fix loops

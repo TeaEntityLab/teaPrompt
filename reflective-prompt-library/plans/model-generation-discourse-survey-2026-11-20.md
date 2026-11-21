@@ -10,7 +10,7 @@ Do any of the three documents describe a mechanism or contract not already held 
 
 ## Direct Recommendation
 
-**Adopt the record only.** All three pieces are commentary, not mechanism. The original 《模型一代》 is a reported essay on AI reshaping university value hierarchies (income gaps, dropping-out, professor relevance, cheating). The Silicon Valley reply adds color (wealth bubbles, hype events, "first phase ended"). The Zhihu thread is reception — three top answers split between resonance, the "external-evaluation-system collapse" reading, and a rebuttal that the piece manufactures anxiety by overstating the AI industry's representativeness. Nothing here maps to a Skill, contract, or runtime rule; the only candidate worth a second look is the recurring theme "when AI does the work, the human's own thinking gets lazy" as a worked example inside `reflective-brief` or `context-handoff` if it recurs.
+**Adopt the record only.** All three pieces are commentary, not mechanism. The original 《模型一代》 is a reported essay on AI reshaping university value hierarchies (income gaps, dropping-out, professor relevance, cheating). The Silicon Valley reply adds color (wealth bubbles, hype events, "first phase ended"). The Zhihu thread is reception — three top answers split between resonance, the "external-evaluation-system collapse" reading, and a rebuttal that the piece manufactures anxiety by overstating the AI industry's representativeness. Nothing here maps to a Skill, contract, or runtime rule; the only candidate worth a second look is the recurring theme "when AI does the work, the human's own thinking gets lazy" as an illustration inside `05-domain/learning-coach.md` if a source outside this discourse chain uses the same framing. The shipped clauses cover practice without the answer, external-memory limits, and delayed retention/application gates; per `skills/reflective-review/SKILL.md` Four Evidence Dimensions, a text audit does not establish human efficacy, so the metaphor stays commentary and any learning outcome stays unknown.
 
 ## Evidence Used
 
@@ -36,7 +36,7 @@ Do any of the three documents describe a mechanism or contract not already held 
 
 | Discourse theme | Existing surface | Disposition |
 | --- | --- | --- |
-| "AI makes thinking lazy unless you deliberately exercise it" | `reflective-brief` JTBD + `context-handoff` + `reflective-implement` human-in-loop | Already present at the principle level |
+| "AI makes thinking lazy unless you deliberately exercise it" | `05-domain/learning-coach.md` support menu (recall without the answer; external memory must not replace learning) + delayed-retention/application gates; `reflective-review` human-efficacy scope (text audit does not establish human efficacy) | Planning options present; the theme is commentary and any human learning outcome is unknown |
 | "Goal vs process / don't treat the metric as the goal" | `reflective-brief` + `counterargument` | Already present |
 | "External evaluation systems collapse when AI does the work" | `golden-benchmark` (don't worship green gates) + `reflective-risk` | Already present at the method level |
 | "Phase one ended / phase two unpredictable" | Commentary | Reference — not a contract |
@@ -47,7 +47,7 @@ Do any of the three documents describe a mechanism or contract not already held 
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |
 | MGD-DOC1 | This dated record + catalogue navigation | **Adopted — reference documentation only** | A corrected text, a retraction, or a local consumer failure |
-| MGD-DOC2 | Optional worked reference: the "thinking gym" / "don't let the tool do the thinking" metaphor inside `reflective-brief` or `context-handoff` | **Deferred — second recurrence not met** | A second independent source or a local need for this framing |
+| MGD-DOC2 | Optional worked reference: the "thinking gym" / "don't let the tool do the thinking" metaphor as an illustration inside `05-domain/learning-coach.md` | **Deferred — second independent source not met** | A source outside this discourse chain using the same framing (EDU's audit of this cluster is reception, not independence), or a demonstrated local need. Illustration only — no human-efficacy claim |
 | MGD-SK1 | Skill/prompt-body change | **No change** | A demonstrated gap in a named existing surface |
 | MGD-RULE1 | Any single opinion (anxiety critique, phase framing, evaluation-system claim) as an operating rule | **Rejected** | Commentary is not an invariant |
 
@@ -56,7 +56,7 @@ Do any of the three documents describe a mechanism or contract not already held 
 - **Verified:** all three documents are supplied in full; the Zhihu thread exists with the described engagement; the three-doc relationship (original → reply → discussion) is accurate.
 - **Verified as reported/opinion:** every factual and evaluative claim inside the essays and answers is the author's own; no independent measurement was run.
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; MGD-DOC2 deferral.
-- **Unknown:** the original essay's publication venue and exact date beyond "10w+ viral, 2026-11"; whether the Zhihu thread's vote counts changed after the snapshot.
+- **Unknown:** the original essay's publication venue and exact date beyond "10w+ viral, 2026-11"; whether the Zhihu thread's vote counts changed after the snapshot; whether deliberate-exercise practice improves human thinking — the shipped `learning-coach` options are selective planning aids, not a validated combined intervention.
 
 ## Risks, Falsifiability, and Handoff
 

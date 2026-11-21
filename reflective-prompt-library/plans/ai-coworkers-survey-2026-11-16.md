@@ -54,7 +54,7 @@ Name variants retained, not reconciled: "Grok Bot" / "Grokbot" / "Grockbot" all 
 | Trust ladder read→act→own = graduated authority | `agent-governance-scaffold` approval tiers; `reflective-risk` gates; same "earned autonomy" as [ATP auto-merge](agent-trust-pyramid-survey-2026-11-15.md) | None — principle extended to non-code domains |
 | Credential scoping "like onboarding a person" | `agent-governance-scaffold` named-accountability + issued-out-of-band approvals | None |
 | Outer loop: deploy bots where work already happens | Host/product deployment decision | None — out of prompt scope |
-| Adversarial multi-model review overfits without product intent | `parallel-lens-review-packet` multi-role review; library's anti-review-theatre stance | None — worth keeping as a named caveat (recorded) |
+| Adversarial multi-model review overfits without product intent | [Parallel Lens Review](../04-agent/workflow-recipes.md#parallel-lens-review) has reviewers share the question and evidence; the host decides how to run them | A review caveat, not evidence that extra models recover missing intent |
 | Everything-factory boundary: verifiable vs subjective work | `reflective-risk` Human Review triggers; `reflective-brief` falsifiability requirement | None — source's own step-3 caveat is the contract |
 | Zero-EQ social arbitration in group threads | None — open industry problem; no contract claims to solve it | Honest shared gap, recorded |
 | Intent/alignment becomes the bottleneck when execution is cheap | `reflective-brief` JTBD; [GE scope-by-reusable-judgment](goal-engineering-survey-2026-11-15.md) | None — third independent restatement this week |

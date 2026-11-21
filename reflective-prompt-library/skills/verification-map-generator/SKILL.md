@@ -73,7 +73,7 @@ Verification: run a fresh agent against the generated docs on the healthy produc
 
 ## Maintenance Rule
 
-Event-driven, not calendar-driven: re-verify a feature file when its covered source changes; update `source_commit`/`last_verified_at`. A `verification_status: failed` means the product changed — classify before editing the map.
+Event-driven, not calendar-driven: re-verify a feature file when its covered source changes; update `source_commit`/`last_verified_at`. `verification_status: failed` records an outcome, not its cause. Use the four classes above to decide what needs repair. If the drive did not run, say so; the product result is unknown.
 
 ## Never
 

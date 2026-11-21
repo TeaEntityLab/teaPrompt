@@ -7,7 +7,7 @@ Language: English
 
 Does the Goal Engineering article — and the comment refinements summarized in the supplied digest — expose a missing delivered TeaPrompt contract?
 
-**Record the source-qualified map; leave Skills unchanged.** The core heuristic (scope agents around what is easiest to give feedback on) is new as an explicit rule but already expressed inside existing contracts. The strongest comment refinement — "the same kind of judgment each time" plus a measurable repeat-correction rate — is a candidate criterion for scope splits, recorded here rather than wired into a Skill. One headline claim is narrower than the digest suggests.
+**Record the source-qualified map; leave Skills unchanged.** The core heuristic (scope agents around what is easiest to give feedback on) is new as an explicit rule but already expressed inside existing contracts. The strongest attributed comment refinement — Kaya's "the same kind of judgment each time" (unverified summary) — is a candidate hypothesis for scope splits, recorded here as a transfer test rather than wired into a Skill as a criterion: the informative signal is whether a persisted correction reuses correctly on a comparable later item, while recurrence frequency alone, high or low, is inconclusive. One headline claim is narrower than the digest suggests.
 
 ## Version and Source Identity
 
@@ -35,11 +35,11 @@ No upstream code or prompt body is copied into TeaPrompt's operational assets.
 
 | Attributed comment | Content | Assessment |
 | --- | --- | --- |
-| @jacksunny18 (Kaya) | Scope quality ≠ ease of feedback; = **same judgment each time**. Measurable: ratio of repeated correction sentences per reviewer over a week; high repeat = scope right, low = model quality. Motion split **relocates** cross-account inconsistency; needs a cross-motion account identity. Boundary test: "does moving an item from A to B need judgment or just lookup?" If judgment → don't split. Prompt/context titles become downstream of the goal. | Strongest refinement; consistent with the article, adds a falsifiable metric and a failure mode |
+| @jacksunny18 (Kaya) | Scope quality ≠ ease of feedback; = **same judgment each time**. Measurable: ratio of repeated correction sentences per reviewer over a week; high repeat = scope right, low = model quality. Motion split **relocates** cross-account inconsistency; needs a cross-motion account identity. Boundary test: "does moving an item from A to B need judgment or just lookup?" If judgment → don't split. Prompt/context titles become downstream of the goal. | Strongest refinement; consistent with the article, proposes a reuse test and names a failure mode — but frequency alone is inconclusive: low repeat may mean the first correction already worked, so only reuse on a comparable later item is informative |
 | @KevinWeb3Nomad | Each stage needs "what it may do and when to pause for confirmation" | Matches existing Human Review trigger pattern |
 | @raysnote | Keep an ADR per scope/goal split (goal + trade-off) | Matches the repo's own record discipline |
 | @open_is_free | Tacit judgments (brand voice, sales aggression) are the hardest to calibrate | Restates article's point |
-| @JTL19971224 | Granularity question: how fine should goals be? | Open question; Kaya's repeat-rate metric answers it |
+| @JTL19971224 | Granularity question: how fine should goals be? | Open question; Kaya's comment proposes a reuse test for it — frequency alone, including low, is inconclusive |
 | @cybersec/@GuyGoldenberg | Explicit stop conditions to prevent false positives / infinite loops | Already covered by loop-harness budgets |
 | @KimYx0207 | Batch same-type work for review, but annotate the applicability range of feedback | Sound caveat: reused feedback without a stated scope over-generalizes |
 
@@ -47,10 +47,10 @@ No upstream code or prompt body is copied into TeaPrompt's operational assets.
 
 | Idea | Existing TeaPrompt coverage | Gap? |
 | --- | --- | --- |
-| Scope the agent around feedback ease | `reflective-brief` "Scope split" + in/out; `reflective-dispatch` task classification | Partial — no stated **criterion** for a good split; Kaya's repeat-judgment metric and judgment-vs-lookup test are candidates, recorded not adopted |
+| Scope the agent around feedback ease | `reflective-brief` "Scope split" + in/out; `reflective-dispatch` task classification | Partial — no stated **transfer test** for a good split; Kaya's reuse-after-correction hypothesis and judgment-vs-lookup boundary question are candidates, recorded not adopted |
 | Tacit knowledge extracted via repeated human feedback | `flow-loop-harness` human-verifier pattern; `reflective-review` adjudication | None |
 | Review UX as the bottleneck investment | None (host/product concern) | Host scope, not a Skill gap |
-| Motion-vs-account split; cross-motion identity | `03-context/context-handoff` continuity; `durable-objects` identity | None — same problem class |
+| Motion-vs-account split; cross-motion identity | `03-context/context-handoff` continuity guidance (library); identity enforcement is a host-runtime concern — no shipped `durable-objects` Skill in the git tree/registry | None — same problem class; host identity is not a Skill gap |
 | ADR for goal boundaries | Repo convention: adoption ledgers, survey records, `docs/retrospective/06-action-register.md` | None — practiced |
 | Stop conditions | `flow-loop-harness` MAX_ITER/verifier; `reflective-risk` gates | None |
 | "Pause and ask" points | `reflective-brief` Human Review triggers; missing-data audit | None |
@@ -58,12 +58,12 @@ No upstream code or prompt body is copied into TeaPrompt's operational assets.
 
 ## Optional Worked Reference — Scope by Reusable Judgment
 
-Actively's two iterations are the cleanest illustration of an existing TeaPrompt principle plus its missing criterion:
+Actively's co-authors describe two ways they assigned work and what happened to reviewer feedback:
 
 - **v1 — one agent per account** failed not because account context was wrong, but because a reviewer could not give *reusable* feedback: each review was one-off account judgment.
 - **v2 — one agent per motion** grouped similar tasks under one reviewer; one correction ("how aggressive to outbound") applied across every account the motion touched.
 
-The supplied Kaya refinement sharpens the rule into something falsifiable: a scope is right when the same judgment recurs. If moving a work item between two candidate scopes requires a *judgment* rather than a *lookup*, they should not be split. This maps directly to `workflow-acquisition`'s existing question — promote only what can be replayed — and to the library's practice of recording each adoption decision with its trade-off (which is the ADR the comment thread asks for).
+The supplied comment summary attributes this question to Kaya: does moving an item require fresh *judgment*, or just a *lookup*? The reply itself was not verified. One way to test the idea is to record a correction, then see whether a reviewer can apply it correctly to the next comparable item. Repeated corrections might mean earlier feedback did not stick; a single correction might have worked. The count alone does not decide where to split the work.
 
 This is a source-qualified example, not a measured result: Actively's outcome is author-reported by a co-author with a product interest, and the comment refinements are unverified summaries.
 
@@ -72,14 +72,14 @@ This is a source-qualified example, not a measured result: Actively's outcome is
 | ID | Candidate | Disposition | Evidence / reopen trigger |
 | --- | --- | --- | --- |
 | GE-DOC1 | This source-bound record and its catalogue row | Adopted; documentation only | Owner asked to survey the digest. Refresh if the article is revised or the comment thread becomes independently readable. |
-| GE-DOC2 | Optional worked-reference link appended under `workflow-acquisition.md`'s Optional Worked Reference section, outside its prompt fence | Adopted; navigation only | Keeps the scope-by-reusable-judgment example discoverable without changing the prompt's output contract. |
-| GE-SK1 | New Skill or edits to `reflective-brief` scope criteria | No change | The criterion is a one-paragraph heuristic without measured backing; a week-long repeat-rate measurement would be needed first. |
+| GE-DOC2 | Optional worked-reference link appended under `workflow-acquisition.md`'s Optional Worked Reference section, outside its prompt fence | Adopted; navigation only | Keeps the scope-by-reusable-judgment hypothesis discoverable as a transfer test, without changing the prompt's output contract. |
+| GE-SK1 | New Skill or edits to `reflective-brief` scope criteria | No change | The hypothesis is a one-paragraph proposal without measured backing; a reuse-on-comparable-item transfer test would be needed first. |
 | GE-RUN1 | Any runtime, UX investment, or vendor tooling | Not adopted | Source is an essay + comments; nothing to run. |
 | GE-RULE1 | Adopt "goal engineering replaces prompt/context engineering" or motion-splits as a rule | Rejected | Original says the layers become downstream of goals, not that they stop mattering; motion-split is one company's fit, not a universal scope rule (and Kaya shows its relocated failure mode). |
 
 ## Falsifiability
 
-- A measured repeat-correction rate (as Kaya proposes) showing that TeaPrompt's current scope-split guidance produces *low* judgment consistency would reopen GE-SK1.
+- A transfer test showing whether a persisted correction under TeaPrompt's current scope-split guidance reuses correctly on comparable later items would reopen GE-SK1. A bare repeat-correction frequency — low or otherwise — would not: low frequency may mean the first correction already fixed the scope.
 - If the comment summary proves fabricated (X thread readable and shows no such replies), the comment table is corrected but the article-level dispositions stand.
 - Author-product interest (Actively AI co-authored) is retained as a qualifier, not a disqualifier.
 

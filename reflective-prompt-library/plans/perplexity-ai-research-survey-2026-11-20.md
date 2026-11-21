@@ -17,7 +17,7 @@ Does the article contain transferable mechanisms or claims missing from TeaPromp
 | Source | Class | What it supplies |
 | --- | --- | --- |
 | [Perplexity article](https://www.perplexity.ai/hub/blog/ai-research) via `r.jina.ai` mirror | **Primary text** (full markdown retrieved; direct fetch blocked by Cloudflare) | Verbatim basis for every claim classification |
-| Wayback Machine availability check | Archive lookup — **no snapshot exists** for this URL | Records that the copy was not independently archived |
+| Wayback lookups, 2026-11-20 | For `perplexity.ai/hub/blog/ai-research`, the [availability query](https://archive.org/wayback/available?url=perplexity.ai/hub/blog/ai-research) returned `archived_snapshots: {}` and the [CDX query](https://web.archive.org/cdx/search/cdx?url=perplexity.ai/hub/blog/ai-research&output=json&limit=5) returned `[]` | Neither query returned a capture; this does not rule out captures outside those results |
 | Owner-supplied URL | Target | Confirms the intended page, not the newer "Frontier Research" post (`/introducing-perplexity-frontier-research`, 2026-11-16) |
 
 **Access notes:** direct fetch returns HTTP 403 (Cloudflare). The mirror supplies complete article text including image captions and the seven-step framework; rendering artifacts (e.g., the institution table's flattened layout) are cosmetic, not content gaps. Publication date is not stamped on the page; search indexing puts it ~1 month old (mid-October 2026).
@@ -59,7 +59,7 @@ Does the article contain transferable mechanisms or claims missing from TeaPromp
 - **Verified:** article text (full markdown via mirror); all timeline entries; the four-task taxonomy; tool names and capability descriptions; the seven steps.
 - **Verified as cited only:** 257,890 publications (single-report figure), Copilot-sessions study existence.
 - **Inference (mine):** the "conventional evergreen guide" verdict; the no-gap contract call; the "no adoption" disposition.
-- **Unknown:** exact publication date (not stamped); whether "GPT 6.1-Sol" is a real model alias or marketing shorthand; whether the mirror preserved every figure/caption exactly (the direct fetch was blocked, so byte-level comparison wasn't possible).
+- **Unknown:** exact publication date (not stamped); whether “GPT 6.1-Sol” is a model alias or marketing shorthand; whether the mirror preserved every figure and caption (direct fetch was blocked); whether other archive captures exist.
 
 ## Risks, Falsifiability, and Handoff
 

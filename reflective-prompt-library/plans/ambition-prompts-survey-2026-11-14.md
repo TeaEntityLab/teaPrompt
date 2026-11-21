@@ -51,8 +51,8 @@ The zh article is a restructured paraphrase, not a translation of record. Checke
 | Depth question 1–3: what a top professional would do, the **rawest** material, named methods/tools | `reflective-research` source hierarchy / primary-over-digested rule; evidence-first practice | None |
 | Depth question 4: “what, other than you or me, would show the result is right” — outside judge; don't let the model judge itself | `flow-loop-harness` external-verifier requirement; `runtime-trust-boundary` acceptance vs producer; verification-map falsifiers | None — explicit restatement |
 | Unreasonable-goal insistence (“ask for 200ms”) | None — deliberately **not** adopted: it invites confident unsupported output; the library prefers falsifiable bars | Rejected candidate (AMB-RULE1) |
-| Range: nouns→verbs, assemble a cross-field crew incl. an adversarial seat | `reflective-brief` JTBD reframing; `parallel-lens-review-packet` multi-role panels; red-team seats exist | None — vocabulary trick, already expressed |
-| Enabling precondition: model needs a computer + software install + data access before the tactics work | `durable-objects`/`sandbox-sdk` capability boundary; acceptance of “chat-only can't reach raw data” | None — restates a real limit |
+| Range: nouns→verbs, assemble a cross-field crew incl. an adversarial seat | `reflective-brief` reframes the task; [Parallel Lens Review](../04-agent/workflow-recipes.md#parallel-lens-review) describes how to compare independent perspectives | A review method, not a supplied group of agents |
+| Enabling precondition: model needs a computer, software installation and data access | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) separates requested tools and permissions from those the host provides | A host prerequisite; TeaPrompt grants none of this access |
 | Creative-work caveat; “go make money” doesn't work in 2026 | Honest limitation, matches library's falsifiability posture | None |
 
 ## Optional Worked Reference — Delegating the Outcome, Not the Task

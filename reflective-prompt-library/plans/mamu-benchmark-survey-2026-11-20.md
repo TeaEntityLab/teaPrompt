@@ -10,7 +10,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 
 ## Direct Recommendation
 
-**Adopt the record only.** The digest is high-fidelity: every number (94–99% vs 47–67% context-inclusion, 62–73% mitigation recovery, 10–45pp coordinator advantage, 74 scenarios, three released environments + a runnable fourth) matches the primary. Its takeaway — multi-user multi-agent coordination fails through message sync, shared-resource management and permission boundaries — is exactly what the paper argues and is already covered at contract level by TeaPrompt's trust-boundary, oracle-separation and permission-gate rules. No local structural gap; the useful transferable detail is the *unread-message guard* as a worked example of a harness-level check the host can enforce.
+**Adopt the record only.** The authors report that, across 25 personal-assistant scenarios, the request was sent in 94–99% of episodes but was in the committing agent's context in only 47–67%. Blocking checkout until pending messages were read recovered 62–73% of rerun failures. These measure different things; neither establishes that every affected user agreed. TeaPrompt describes approval and evidence requirements but provides neither a mailbox guard nor a multi-user consent service.
 
 ## Evidence Used
 
@@ -27,7 +27,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 | # | Digest/paste claim | Primary check | Verdict |
 | --- | --- | --- | --- |
 | 1 | Coordinator beats per-user peer team in all four environments; ~10–45pp | Figure 2: Opus 64 vs 30, 84 vs 71, 88 vs 44, 92 vs 81; Sonnet 32 vs 12, 74 vs 65, 75 vs 37, 93 vs 78 | **verified** |
-| 2 | Gluten-free ask: sent 94–99% of episodes; in-commit-context only 47–67% | Figure 4: 98.6%→65.0% (Opus), 93.6%→47.1% (Sonnet) | **verified** |
+| 2 | Sent vs in-commit-context, illustrated by the gluten-free order: 94–99% sent, 47–67% in context | Figure 4 aggregates all 25 personal-assistant scenarios: 98.6%→65.0% (Opus), 93.6%→47.1% (Sonnet); the gluten-free order is one example scenario, not the denominator | **verified with corrected denominator** |
 | 3 | "Read all pending messages" guard recovers 62–73% of failures | Mitigation section: 73.1% (Opus), 62.3% (Sonnet) | **verified** |
 | 4 | Unconsented cancellation of others' jobs scores higher → eval blind spot | "Episodes in which agents canceled or shrank other users' jobs without asking usually got a higher group score" + "scoring only looks at total value… not whether anyone had their work destroyed or agreed" | **verified** |
 | 5 | 74 scenarios, three environments | README: 74 across api_key, clinic, personal_assistant; merge queue is a fourth runnable env not in the 74 | **verified** — digest says "74 個多使用者協作測試場景" correctly |
@@ -39,21 +39,21 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 
 | Paper mechanism | Existing surface | Disposition |
 | --- | --- | --- |
-| Coordinator > peer team for shared-resource tasks | `flow-control-generator` DAG + `workpool` merge gate; supervisor pattern in governed-delivery | Already present — coordinator is the default shape TeaPrompt picks |
-| Unread-message guard before commit | Trust-boundary + flow-loop gate sequencing + `checkpoint` | **Closest candidate** — a concrete harness-level gate worth an optional worked reference inside `flow-loop-harness` or `verification-map-generator` if a second recurrence appears |
-| Agents acting too little/too late (stall) | flow-loop stall/heartbeat monitoring; context-handoff | Already present |
-| Unconsented cancellation / override of another user's work | Tool/action gate, permission boundary, `durable-objects` isolation | Already present and stricter — TeaPrompt requires consent at the gate, not just the score |
-| Fabricated claims about other users' data | Anti-cheating oracle separation; "a green run proves its tested assertions" | Already present |
-| Group-outcome-vs-behavior eval gap | `golden-benchmark` methodology (measured outcome plus behavioral check); incident→rule admission | Already present at method level |
-| Shared-resource consent/audit trail | `durable-objects` + `runtime-trust-boundary` + context-handoff ledger | Already present |
-| Model-dependent failure modes differ (Opus vs Sonnet vs GPT vs Qwen) | `golden-benchmark` model-matrix runs | Already present |
+| Coordinator outperformed peers in four simulated environments | `flow-control-generator` describes several topologies, including orchestrator/worker | A coordinator is one option, not the default for all shared-resource tasks. The host executes the chosen topology. |
+| Block checkout until the committing agent reads its pending messages | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) distinguishes a gate from evidence of host enforcement | Related principle only. The benchmark tested a specific mailbox precondition; the library does not supply it. |
+| Agents acting too little/too late (stall) | `flow-loop-harness` stall/heartbeat loop-template clause (host-executed) + `03-context/context-handoff.md` | Method present — the template emits the check; the host runs it |
+| Cancellation of another user's work without consent | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) §4 requires Human Review for destructive actions; §4a records the acting principal, scope, approval source and epoch | Approval for an action is not evidence that every person affected consented. The host must enforce whichever approvals its policy requires. |
+| Fabricated claims about other users' data | Written anti-cheating oracle separation; "a green run proves its tested assertions" | Written-rule present — a methodology claim, not a run here |
+| Group-outcome-vs-behavior eval gap | `golden-benchmark-runner` methodology (measured outcome plus behavioral check); incident→rule admission | Method present — methodology only; no benchmark was run for this record |
+| Shared-resource consent and audit trail | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) §4a specifies what authority and outcome evidence to retain | A record schema is not a receipt from the host, much less proof of another user's consent. |
+| Model-dependent failure modes differ (Opus vs Sonnet vs GPT vs Qwen) | `golden-benchmark-runner` comparison harness (host-run methodology) | Method present — no MAM model-matrix run was executed here |
 
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |
 | MAM-DOC1 | This dated record + catalogue navigation | **Adopted — reference documentation only** | A corrected paper, a new benchmark version, or a local consumer failure |
-| MAM-DOC2 | Optional worked reference: an "unread-message guard" example (host-enforced check before a commit/checkout action) inside `flow-loop-harness` or `verification-map-generator` | **Deferred — second recurrence not met** | A second independent source or a local need for this exact gate; the mechanism already exists as a gate rule |
+| MAM-DOC2 | Optional worked example of the unread-message checkout guard | **Deferred** | Reopen for an independent source using that same precondition, or a local need for it. Agentflow's request/digest/HEAD check is different: a new message can arrive while HEAD is unchanged; HEAD can move while the mailbox is empty. |
 | MAM-SK1 | Skill/prompt-body change encoding multi-user coordination rules | **No change** | A demonstrated gap in a named existing surface |
 | MAM-RUN1 | Running MAMUBench locally or against hosted models | **Not adopted** | Separate scoped evaluation with its own model-key, isolation and cost authority; README itself requires API keys + optional Modal |
 | MAM-RULE1 | "One coordinator always beats a team" as an operating rule | **Rejected** | The paper explicitly conditions this on environment and feasibility; it is a finding, not an invariant |
@@ -61,7 +61,7 @@ Are the digest's figures and mechanism claims faithful to the primary publicatio
 ## Evidence vs Inference
 
 - **Verified:** every figure cited above (Figures 2–5); environment/scenario counts; license; runnable harness structure; model list (Claude Opus 5, Sonnet 5, GPT-5.6-sol, GPT-5.6-terra, Qwen3.8-max).
-- **Verified as self-report:** all numerical results are the authors' own measured benchmark; no independent reproduction was run (MAMUBench itself is not executed here).
+- **Verified as self-report:** all numerical results are the authors' own measured benchmark; no independent reproduction was run (MAMUBench itself is not executed here). Figure 4's sent-vs-in-context percentages aggregate all 25 personal-assistant scenarios; the gluten-free order is one illustrative scenario.
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; the MAM-DOC2 deferral.
 - **Unknown:** whether the fourth (merge-queue) environment's results differ when run at scale; whether the guard's failure-recovery figure holds under other models or real (non-simulated) DoorDash integrations.
 

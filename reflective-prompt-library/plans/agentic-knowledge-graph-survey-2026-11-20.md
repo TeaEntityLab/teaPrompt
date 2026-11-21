@@ -10,7 +10,7 @@ Is the paste's decoded image content faithful to what the graphic actually shows
 
 ## Direct Recommendation
 
-**Adopt the record only.** The paste is mostly faithful on the image's *layer/node taxonomy* but **fabricates two visual details**: a "pink dashed box" grouping five governance nodes plus `Context Graph Traversal`, and a "live teardown on May 20" annotation — neither appears in the image. The paste's red-team conclusions drawn from that imaginary annotation are therefore built on a false visual premise. Everything load-bearing (top-down critique, pseudo-memory/pseudo-reflection, deterministic guardrails, Occam's pruning) is the paste's own sound analysis, not the image's text, and maps to existing TeaPrompt contracts. No local gap; no adoption.
+**Adopt the record only.** The node names match the original Instagram graphic inspected for this survey. The pink dashed box and “live teardown on May 20” annotation do not appear in that image, so it cannot support the paste's conclusion about the box. The X reshare was not available for comparison. The recommendations about memory, evaluation and guardrails are the commentator's, not the graphic's; they do not establish a missing TeaPrompt contract.
 
 ## Evidence Used
 
@@ -48,10 +48,10 @@ The Instagram caption adds only: "Most people are learning Agentic AI in the wro
 | --- | --- | --- |
 | Deterministic-pipeline-over-agent (Occam's pruning) | Strictness ladder + minimal-composition rule in reflective-dispatch | Already present |
 | End-to-end trace before adding memory/self-improvement | Decision/evidence ledgers + context-handoff | Already present |
-| Deterministic guardrails for side-effecting tools (policy gates, allowlists, idempotency, human approval thresholds) | AGENTS tool/action gate table + trust-boundary + durable-objects permissions | Already present and stronger |
-| Pseudo-memory warning (vector DB ≠ long-term memory; salience/trigger/decay/isolation needed) | `memory_edit`/`recall` managed-memory discipline + context hygiene | Already present at practice level |
+| Guardrails for side-effecting tools (allowlists, idempotency, approval) | [Runtime Trust Boundary](../04-agent/runtime-trust-boundary.md) asks who approved the operation and what the receiving system enforces | Written requirements, not evidence that a host enforces them |
+| Pseudo-memory warning (a vector database alone does not govern what is stored or retrieved) | [Artifact Promotion](../04-agent/artifact-promotion.md) requires provenance before a memory becomes a project rule | Related guidance; retention, retrieval and tenant isolation belong to the host |
 | Pseudo-reflection warning (open-loop self-critique without ground-truth oracle) | Anti-cheating + external-verifier rule in reflective-review | Already present — same claim |
-| Diff-trigger reliability checklist / eval-before-memory loop | `verification-map-generator`, golden-benchmark methodology | Already present — same class as VER-DOC2 candidate |
+| Evaluate a result before writing it to memory | Artifact Promotion §4 asks what check supports a candidate for promotion | Not a second [VER-DOC2](claude-code-verification-survey-2026-11-20.md#candidate-adoption-ledger) case: the paste does not select a check from a diff or link that choice to a past incident |
 
 ## Candidate Adoption Ledger
 

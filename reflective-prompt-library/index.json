@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T01:02:52.816840",
+  "generated_at": "2026-11-21T01:03:27.767366",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1632,7 +1632,7 @@
         }
       ],
       "line_count": 88,
-      "char_count": 10021
+      "char_count": 10714
     },
     {
       "path": "reflective-prompt-library/plans/mini-swe-agent-survey-2026-11-09.md",
@@ -3637,7 +3637,11 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/runtime-trust-boundary.md",
+          "../04-agent/artifact-promotion.md",
+          "claude-code-verification-survey-2026-11-20.md#candidate-adoption-ledger"
+        ]
       },
       "structure": [
         {
@@ -3682,7 +3686,7 @@
         }
       ],
       "line_count": 76,
-      "char_count": 9649
+      "char_count": 9725
     },
     {
       "path": "reflective-prompt-library/plans/agent-governance-scaffold-adoption-2026-07-17.md",
@@ -6517,6 +6521,7 @@
           "agent-trust-pyramid-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
           "agent-trust-pyramid-survey-2026-11-15.md",
+          "../04-agent/workflow-recipes.md#parallel-lens-review",
           "goal-engineering-survey-2026-11-15.md"
         ]
       },
@@ -6559,7 +6564,7 @@
         }
       ],
       "line_count": 93,
-      "char_count": 11925
+      "char_count": 12017
     },
     {
       "path": "reflective-prompt-library/plans/baton-dispatch-survey-2026-07-13.md",
@@ -6714,7 +6719,7 @@
         }
       ],
       "line_count": 65,
-      "char_count": 9725
+      "char_count": 9350
     },
     {
       "path": "reflective-prompt-library/plans/agentflow-8.3-delta-survey-2026-09-21.md",
@@ -7083,7 +7088,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/retro.md"
+        ]
       },
       "structure": [
         {
@@ -7124,7 +7131,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 7028
+      "char_count": 7280
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -8314,7 +8321,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/workflow-recipes.md#parallel-lens-review"
+        ]
       },
       "structure": [
         {
@@ -8355,7 +8364,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 5727
+      "char_count": 6795
     },
     {
       "path": "reflective-prompt-library/plans/prime-agent-survey-2026-08-06.md",
@@ -9445,7 +9454,11 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/runtime-trust-boundary.md",
+          "../04-agent/runtime-trust-boundary.md",
+          "../04-agent/runtime-trust-boundary.md"
+        ]
       },
       "structure": [
         {
@@ -9486,7 +9499,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 8294
+      "char_count": 9027
     },
     {
       "path": "reflective-prompt-library/plans/pstack-survey-2026-09-22.md",
@@ -11569,7 +11582,7 @@
         }
       ],
       "line_count": 65,
-      "char_count": 6251
+      "char_count": 7129
     },
     {
       "path": "reflective-prompt-library/plans/p7-pack-routing-decision-2026-07-11.md",
@@ -12352,7 +12365,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../03-context/context-handoff.md",
+          "../04-agent/memory-consolidation.md"
+        ]
       },
       "structure": [
         {
@@ -12373,11 +12389,11 @@
         },
         {
           "level": 2,
-          "text": "Fidelity Ledger"
+          "text": "Fidelity Ledger — Posting Verbs vs Owner Interpretation vs Industry Analogy"
         },
         {
           "level": 2,
-          "text": "TeaPrompt Contract Map"
+          "text": "TeaPrompt Contract Map — Repo-Owned Clauses vs Host-Executed Behavior"
         },
         {
           "level": 2,
@@ -12392,8 +12408,8 @@
           "text": "Risks, Falsifiability, and Handoff"
         }
       ],
-      "line_count": 73,
-      "char_count": 7038
+      "line_count": 78,
+      "char_count": 10905
     },
     {
       "path": "reflective-prompt-library/plans/skills-runtime-legitimacy-panel-record-2026-07-06.md",
@@ -13106,6 +13122,8 @@
           "archdev-factory-attention-survey-2026-11-21.md#compare-team-attention-per-accepted-feature",
           "agent-memory-survey-2026-11-21.md#what-the-experiments-compared",
           "../skills/examples/reflective-handoff-retro.examples.md#preference-scope-replay",
+          "../skills/verification-map-generator/SKILL.md#maintenance-rule",
+          "../skills/examples/reflective-review.examples.md#example-3",
           "dsbot-attention-survey-2026-11-20.md#what-a-pr-checkbox-returns",
           "code-quality-state-mismatch-survey-2026-11-20.md#count-the-states-not-just-their-sizes",
           "ai-engineer-jobs-survey-2026-11-17.md#interview-practice-2026-11-20",
@@ -13485,8 +13503,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 694,
-      "char_count": 170020
+      "line_count": 696,
+      "char_count": 167979
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -13564,7 +13582,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/runtime-trust-boundary.md"
+        ]
       },
       "structure": [
         {
@@ -13605,7 +13625,7 @@
         }
       ],
       "line_count": 74,
-      "char_count": 7791
+      "char_count": 8742
     },
     {
       "path": "reflective-prompt-library/plans/governed-delivery-review-2026-09-13.md",
@@ -14162,7 +14182,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "agentflow-8.4.1-delta-survey-2026-09-30.md"
+        ]
       },
       "structure": [
         {
@@ -14203,7 +14225,7 @@
         }
       ],
       "line_count": 70,
-      "char_count": 7355
+      "char_count": 9059
     },
     {
       "path": "reflective-prompt-library/plans/claude-code-system-prompts-survey-2026-07-24.md",
@@ -14318,7 +14340,10 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../04-agent/workflow-recipes.md#parallel-lens-review",
+          "../04-agent/runtime-trust-boundary.md"
+        ]
       },
       "structure": [
         {
@@ -14359,7 +14384,7 @@
         }
       ],
       "line_count": 84,
-      "char_count": 10705
+      "char_count": 10816
     },
     {
       "path": "reflective-prompt-library/plans/yao-shunyu-talk-survey-2026-11-20.md",
@@ -14372,12 +14397,14 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "../02-engineering/local-feedback.md"
+        ]
       },
       "structure": [
         {
           "level": 1,
-          "text": "Shunyu Yao Talk Notes Survey — Fidelity and Contract Map (2026-11-20)"
+          "text": "Shunyu Yao Attributed-Talk Notes Survey — Fidelity and Contract Map (2026-11-20)"
         },
         {
           "level": 2,
@@ -14393,7 +14420,7 @@
         },
         {
           "level": 2,
-          "text": "Fidelity Ledger"
+          "text": "Consistency Ledger"
         },
         {
           "level": 2,
@@ -14412,8 +14439,8 @@
           "text": "Risks, Falsifiability, and Handoff"
         }
       ],
-      "line_count": 89,
-      "char_count": 9091
+      "line_count": 92,
+      "char_count": 12663
     },
     {
       "path": "reflective-prompt-library/plans/dilinai-nuwa-jiyao-survey-2026-07-13.md",
@@ -20115,7 +20142,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 7022
+      "char_count": 7292
     },
     {
       "path": "reflective-prompt-library/plans/agent-execution-assurance-taxonomy-survey-2026-09-30.md",
@@ -21404,7 +21431,7 @@
         }
       ],
       "line_count": 199,
-      "char_count": 9306
+      "char_count": 9241
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-engine.md",
@@ -24359,7 +24386,7 @@
         }
       ],
       "line_count": 95,
-      "char_count": 7049
+      "char_count": 7142
     },
     {
       "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",

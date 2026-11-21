@@ -10,7 +10,7 @@ Does this meta-analysis describe a method or mechanism not already held by a nam
 
 ## Direct Recommendation
 
-**Adopt the record only.** The piece is a well-formed philosophical/rhetorical analysis: its paradigm split (Paideia vs. industrial-standardized vs. Humboldtian research), cognitive-science anchors (Searle intentionality, embodied cognition, Pearl's ladder, Kahneman System 1/2), and its audit table are all standard and correctly applied to the earlier texts. Its own method labels — assumption audit, evidence check, multi-role, Socratic questioning — map directly to existing TeaPrompt surfaces. The "thinking gym" metaphor now appears a second time, but inside the same discourse chain, so it does not yet meet the second-independent-source bar.
+**Adopt the record only.** The piece is a well-formed philosophical/rhetorical analysis: its paradigm split (Paideia vs. industrial-standardized vs. Humboldtian research), cognitive-science anchors (Searle intentionality, embodied cognition, Pearl's ladder, Kahneman System 1/2), and its audit table are all standard and correctly applied to the earlier texts. Its own method labels — assumption audit, evidence check, multi-role, Socratic questioning — map directly to existing TeaPrompt surfaces. The cognitive-offloading frame maps to `05-domain/learning-coach.md` planning options (practice without the answer, external-memory limits, delayed retention/application gates), not to the human-approval safety rule — and per `skills/reflective-review/SKILL.md` Four Evidence Dimensions, a text audit does not establish human efficacy. The "thinking gym" metaphor now appears a second time, but this piece audits the same MGD cluster, so EDU+MGD are one linked chain (original → reply → reception → audit), not a second independent source.
 
 ## Evidence Used
 
@@ -39,9 +39,9 @@ Does this meta-analysis describe a method or mechanism not already held by a nam
 | --- | --- | --- |
 | Assumption audit (separate claim from framing) | `reflective-brief` + `counterargument` | Already present |
 | Evidence check / source tiering | `reflective-research` source hierarchy | Already present |
-| Multi-role / multi-lens analysis | `parallel-lens-review-packet` | Already present |
+| Multi-role / multi-lens analysis | [Parallel Lens Review](../04-agent/workflow-recipes.md#parallel-lens-review) compares perspectives on the same evidence | Shipped method; additional perspectives are not independent measurements |
 | Socratic questioning | `counterargument` + `socratic-reviewer` | Already present |
-| "Thinking gym" / deliberate friction against cognitive offloading | `reflective-brief` + `context-handoff` + `reflective-implement` human-in-loop | Already present at the principle level |
+| "Thinking gym" / deliberate friction against cognitive offloading | `05-domain/learning-coach.md` support menu (recall without the answer; external memory must not replace learning) + delayed-retention/application gates; `reflective-review` human-efficacy scope (text audit does not establish human efficacy) | Planning options present; the metaphor is commentary and any human learning outcome is unknown |
 | Process-based evaluation vs output metrics | `golden-benchmark` + `reflective-risk` | Already present |
 | Problem-framer / verifier / accountability-holder roles | `reflective-brief` + `golden-benchmark` + `runtime-trust-boundary` | Already present |
 
@@ -50,7 +50,7 @@ Does this meta-analysis describe a method or mechanism not already held by a nam
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |
 | EDU-DOC1 | This dated record + catalogue navigation | **Adopted — reference documentation only** | A corrected text, a retraction, or a local consumer failure |
-| EDU-DOC2 | Optional worked reference: the three-paradigm + cognitive-offloading framing as an illustration inside `reflective-brief` or `context-handoff` | **Deferred — second independent source not met** | A source outside this discourse chain using the same framing |
+| EDU-DOC2 | Optional worked reference: the three-paradigm + cognitive-offloading framing as an illustration inside `05-domain/learning-coach.md` | **Deferred — second independent source not met** | A source outside this discourse chain using the same framing; this audit of the MGD cluster does not count. Illustration only — no human-efficacy claim |
 | EDU-SK1 | Skill/prompt-body change | **No change** | A demonstrated gap in a named existing surface |
 | EDU-RULE1 | Any single paradigm claim, philosophical position, or "thinking gym" metaphor as an operating rule | **Rejected** | Commentary/meta-analysis is not an invariant |
 
@@ -59,7 +59,7 @@ Does this meta-analysis describe a method or mechanism not already held by a nam
 - **Verified:** every philosopher/book/concept attribution; the four audit verdicts applied to the earlier texts are internally consistent.
 - **Verified as analysis/opinion:** the paradigm split is a standard interpretive frame, not a measured claim; the "thinking gym" and "rubber stamp" metaphors are rhetorical.
 - **Inference (mine):** contract-map dispositions; the "no local gap" verdict; EDU-DOC2 deferral.
-- **Unknown:** the original essay's author and venue; whether its institutional claims (Stanford/MIT oral exams) are current policy or a predicted direction.
+- **Unknown:** the original essay's author and venue; whether its institutional claims (Stanford/MIT oral exams) are current policy or a predicted direction. Human learning outcomes from deliberate-friction practice are likewise unknown: the shipped `learning-coach` options are selective planning aids, not a validated combined intervention, and this text audit cannot establish efficacy.
 
 ## Risks, Falsifiability, and Handoff
 

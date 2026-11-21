@@ -10,7 +10,7 @@ Is the six-pattern breakdown accurate and faithful to the source, and does it co
 
 ## Direct Recommendation
 
-**Adopt the record only.** The taxonomy is a conventional, correct restatement of the standard agentic-pattern set — sequential, parallel, hierarchical, generator–critic, human-in-the-loop, composite — matching Google ADK's workflow patterns, the Google Cloud architecture guide, and published multi-agent surveys. The cost-tier labels ($–$$$$) and MCP/A2A separation are the post's own editorial additions, and the paste's zh-TW commentary is faithful to both the original and its own reasoning. The load-bearing advice — "more agents don't automatically mean better results; start simple; add orchestration only when it delivers measurable value" — is already TeaPrompt's minimal-composition and blast-radius rules. No local gap; no adoption.
+**Adopt the record only.** The taxonomy is a conventional, correct restatement of the standard agentic-pattern set — sequential, parallel, hierarchical, generator–critic, human-in-the-loop, composite — matching Google ADK's workflow patterns, the Google Cloud architecture guide, and published multi-agent surveys. The cost-tier labels ($–$$$$) and MCP/A2A separation are the post's own editorial additions, and the paste's zh-TW commentary is faithful to both the original and its own reasoning. The load-bearing advice — "more agents don't automatically mean better results; start simple; add orchestration only when it delivers measurable value" — is already TeaPrompt's minimality-gate and smallest-topology rules. No local gap; no adoption. TeaPrompt supplies the methods and templates methodology-side; the host executes them — this record claims no shipped runtime team.
 
 ## Evidence Used
 
@@ -43,14 +43,14 @@ Is the six-pattern breakdown accurate and faithful to the source, and does it co
 
 | Pattern/post mechanism | Existing surface | Disposition |
 | --- | --- | --- |
-| Sequential (deterministic dependencies) | `flow-control-generator` DAG + strictness ladder | Already present — default execution model |
-| Parallel (independent tasks, merge) | `task` fan-out + `workpool` + merge gate | Already present |
-| Hierarchical (manager delegation, context passing) | `task`/`agent` subagent contracts; supervisor pattern in governed-delivery | Already present — with explicit authority boundaries the post lacks |
-| Generator–Critic | `reflective-review`, `reviewer` agent, socratic lens | Already present — TeaPrompt adds oracle-separation the post only gestures at |
-| Human-in-the-Loop | `ask` tool + Human Review Required + tool/action gate | Already present and stricter |
+| Sequential (deterministic dependencies) | Shipped: `flow-control-generator` DAG template (host-executed script generation) + `reflective-dispatch` Strictness Ladder | Method present — default topology the templates emit; the host executes |
+| Parallel (independent tasks, merge) | Shipped method: `flow-control-generator` parallel fan-out/fan-in template (host-executed); `task` fan-out and `workpool` are host-runtime concerns — no shipped `workpool` pack | Method present — TeaPrompt emits the merge-gate script; it runs no team |
+| Hierarchical (manager delegation, context passing) | Shipped method: `flow-control-generator` orchestrator-worker template + `governed-delivery` supervisor/gate contract (both methodology-side, host-executed); `task`/`agent` invocation is host-runtime | Method present — with explicit authority boundaries the post lacks; TeaPrompt runs no team |
+| Generator–Critic | Shipped: `reflective-review` core skill + `01-thinking/socratic-reviewer.md`; a `reviewer` role is host-assigned, not a shipped agent | Method present — TeaPrompt adds oracle-separation the post only gestures at |
+| Human-in-the-Loop | Written requirement: Human Review gate ([04-agent/runtime-trust-boundary.md](../04-agent/runtime-trust-boundary.md):111) + skill `human_review_required` metadata; the `ask` channel is host-provided | Written-rule present — enforcement is host-owned, not demonstrated here |
 | Composite | Composable prompt/workflow library | Already present — composition is the library's own design |
-| MCP vs A2A protocol distinction | `agents-sdk`, `durable-objects`, MCP bindings | Reference — host-runtime concern, not a prompt contract |
-| "More agents ≠ better; add for measurable value" | Minimal-composition rule, blast-radius, cost/token economics | Already present — same claim |
+| MCP vs A2A protocol distinction | Host-only — no shipped `agents-sdk` or `durable-objects` packs; MCP bindings are host-runtime | Reference — host-runtime concern, not a prompt contract |
+| "More agents ≠ better; add for measurable value" | `reflective-minimality` gate + smallest-topology rule (`flow-control-generator`) + blast-radius gating (`reflective-risk`) | Method present — same claim |
 
 ## Candidate Adoption Ledger
 
