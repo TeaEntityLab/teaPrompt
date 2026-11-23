@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-21T23:58:28.983767",
+  "generated_at": "2026-11-22T16:40:41.915665",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -69,6 +69,7 @@
             "methodology-only-rethink-panel-2026-10-01.md",
             "direction-scope-docs-adoption-2026-09-19.md",
             "durable-skills-flows-panel-2026-08-25.md",
+            "mengto-skills-survey-2026-11-22.md",
             "llm-judge-lifecycle-survey-2026-09-05.md",
             "gpt-instruct-survey-2026-09-10.md",
             "fresh-dogfood-campaign-preregistration-2026-10-14.md",
@@ -4749,6 +4750,60 @@
       ],
       "line_count": 104,
       "char_count": 10794
+    },
+    {
+      "path": "reflective-prompt-library/plans/mengto-skills-survey-2026-11-22.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "mengto-skills-survey-2026-11-22",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "MengTo/Skills Source Survey — Designer Skill Library and Workflow Skills (2026-11-22)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What Was Read"
+        },
+        {
+          "level": 2,
+          "text": "Counts"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 81,
+      "char_count": 14173
     },
     {
       "path": "reflective-prompt-library/plans/llm-judge-lifecycle-survey-2026-09-05.md",
@@ -13300,6 +13355,7 @@
           "dsbot-attention-survey-2026-11-20.md#does-it-save-attention",
           "agent-memory-survey-2026-11-21.md",
           "archdev-factory-attention-survey-2026-11-21.md",
+          "mengto-skills-survey-2026-11-22.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13527,8 +13583,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 696,
-      "char_count": 167975
+      "line_count": 697,
+      "char_count": 168548
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -25323,5 +25379,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 268
+  "total_files": 269
 }
