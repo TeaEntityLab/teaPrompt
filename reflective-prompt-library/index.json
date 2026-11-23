@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-22T16:40:41.915665",
+  "generated_at": "2026-11-23T10:30:20.819477",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -142,6 +142,7 @@
             "system-prompts-leaks-survey-2026-10-07.md",
             "code-recall-survey-2026-08-20.md",
             "whole-project-roadmap-2026-07-11.md",
+            "karpathy-llm-usage-survey-2026-11-23.md",
             "model-generation-discourse-survey-2026-11-20.md",
             "p7-pack-routing-decision-2026-07-11.md",
             "agent-flow-control-research-2026-07-11.md",
@@ -11610,6 +11611,64 @@
       "char_count": 41994
     },
     {
+      "path": "reflective-prompt-library/plans/karpathy-llm-usage-survey-2026-11-23.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "karpathy-llm-usage-survey-2026-11-23",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Karpathy “How I use LLMs” Digest Survey — Fidelity Check and Contract Map (2026-11-23)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "Fidelity Check: Digest vs Transcript"
+        },
+        {
+          "level": 2,
+          "text": "What the Digest Adds, Omits, and Reframes"
+        },
+        {
+          "level": 2,
+          "text": "Contract Map"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 88,
+      "char_count": 10211
+    },
+    {
       "path": "reflective-prompt-library/plans/model-generation-discourse-survey-2026-11-20.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -13356,6 +13415,7 @@
           "agent-memory-survey-2026-11-21.md",
           "archdev-factory-attention-survey-2026-11-21.md",
           "mengto-skills-survey-2026-11-22.md",
+          "karpathy-llm-usage-survey-2026-11-23.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13583,8 +13643,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 697,
-      "char_count": 168548
+      "line_count": 698,
+      "char_count": 169047
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -25379,5 +25439,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 269
+  "total_files": 270
 }
