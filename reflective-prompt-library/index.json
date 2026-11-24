@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-23T10:30:20.819477",
+  "generated_at": "2026-11-24T14:12:31.778105",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -165,6 +165,7 @@
             "multi-agent-patterns-survey-2026-11-20.md",
             "governed-delivery-review-2026-09-13.md",
             "cat-wu-product-method-survey-2026-11-09.md",
+            "uber-autoclean-survey-2026-11-24.md",
             "loop-mechanisms-assurance-inference-2026-10-31.md",
             "agent-memory-survey-2026-11-21.md",
             "cross-survey-rethink-2026-10-07.md",
@@ -11666,7 +11667,7 @@
         }
       ],
       "line_count": 88,
-      "char_count": 10211
+      "char_count": 10228
     },
     {
       "path": "reflective-prompt-library/plans/model-generation-discourse-survey-2026-11-20.md",
@@ -13416,6 +13417,7 @@
           "archdev-factory-attention-survey-2026-11-21.md",
           "mengto-skills-survey-2026-11-22.md",
           "karpathy-llm-usage-survey-2026-11-23.md",
+          "uber-autoclean-survey-2026-11-24.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13643,8 +13645,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 698,
-      "char_count": 169047
+      "line_count": 699,
+      "char_count": 169671
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -13907,6 +13909,60 @@
       ],
       "line_count": 162,
       "char_count": 26464
+    },
+    {
+      "path": "reflective-prompt-library/plans/uber-autoclean-survey-2026-11-24.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "uber-autoclean-survey-2026-11-24",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Uber AutoClean Survey — Agentic Feature-Flag Cleanup (2026-11-24)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What the Article Actually Claims"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 71,
+      "char_count": 8694
     },
     {
       "path": "reflective-prompt-library/plans/loop-mechanisms-assurance-inference-2026-10-31.md",
@@ -25439,5 +25495,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 270
+  "total_files": 271
 }
