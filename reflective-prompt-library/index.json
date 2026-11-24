@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-24T14:12:31.778105",
+  "generated_at": "2026-11-24T16:06:16.865717",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -204,6 +204,7 @@
             "flow-control-pack-panel-record-2026-07-11.md",
             "ai-assisted-team-throughput-review-2026-08-12.md",
             "memory-mechanisms-research-2026-06-25.md",
+            "official-cookbooks-survey-2026-11-24.md",
             "decision-model-survey-2026-09-18.md",
             "flow-coverage-panel-record-2026-07-11.md",
             "skills-and-spec-systems-research-2026-06-25.md",
@@ -13418,6 +13419,7 @@
           "mengto-skills-survey-2026-11-22.md",
           "karpathy-llm-usage-survey-2026-11-23.md",
           "uber-autoclean-survey-2026-11-24.md",
+          "official-cookbooks-survey-2026-11-24.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13645,8 +13647,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 699,
-      "char_count": 169671
+      "line_count": 700,
+      "char_count": 170353
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -18959,6 +18961,60 @@
       ],
       "line_count": 274,
       "char_count": 21388
+    },
+    {
+      "path": "reflective-prompt-library/plans/official-cookbooks-survey-2026-11-24.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "official-cookbooks-survey-2026-11-24",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Official Cookbooks Survey — OpenAI, Anthropic, Gemini (2026-11-24)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What Each Cookbook Actually Contains"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 70,
+      "char_count": 9905
     },
     {
       "path": "reflective-prompt-library/plans/decision-model-survey-2026-09-18.md",
@@ -25495,5 +25551,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 271
+  "total_files": 272
 }
