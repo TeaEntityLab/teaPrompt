@@ -85,7 +85,7 @@ For evidence-heavy artifacts — research documents, benchmark results, vendor r
 | Dimension | Question | Typical failure |
 |---|---|---|
 | Existence | Does the cited source exist and address this claim? | Dead link, wrong paper, fabricated citation |
-| Number / text | Does the source's own body support the exact figure and wording? | Headline says "malicious"; body table says "flawed" |
+| Number / text | Does the source's own body support the exact figure and wording — verbatim and contiguous, not stitched? | Fabricated quote (span absent), frankenquote (words real, seam invented), misattributed (verbatim but wrong source); check the substring deterministically before any model judgment |
 | Attribution / process | Who produced the data, and was its generation independently checked? | Vendor self-reported counts read as neutral measurement |
 | Extrapolation | Does the claim generalize beyond the sampled scope? | One registry's rate quoted as an ecosystem-wide rate |
 

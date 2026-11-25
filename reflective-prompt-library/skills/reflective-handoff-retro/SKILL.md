@@ -71,6 +71,7 @@ success.
 ## Risks
 ## Trust Boundaries / External Data
 ## Blockers
+## Friction Notes — one line each: tried / expected / actual / suggested fix (or "None")
 ## Acceptance Criteria
 ## Commands / Tests Run
 ## Next Recommended Action

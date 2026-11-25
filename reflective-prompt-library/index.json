@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-25T16:16:33.552527",
+  "generated_at": "2026-11-25T16:25:31.690192",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -61,6 +61,7 @@
             "roadmap-prompt-cognition-memory-2026-10-13.md",
             "socratic-change-inquiry-2026-06-11.md",
             "five-layer-agent-sop-reference-record-2026-07-04.md",
+            "skills-update-review-2026-11-25.md",
             "creator-attention-survey-2026-11-04.md",
             "whole-project-plan-2026-07-11.md",
             "skill-optimization-reflection-2026-06-11.md",
@@ -4105,6 +4106,56 @@
       ],
       "line_count": 175,
       "char_count": 17017
+    },
+    {
+      "path": "reflective-prompt-library/plans/skills-update-review-2026-11-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-update-review-2026-11-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skills Update Review — Three-Role Adjudication (2026-11-25)"
+        },
+        {
+          "level": 2,
+          "text": "Verdict Summary"
+        },
+        {
+          "level": 2,
+          "text": "What Landed"
+        },
+        {
+          "level": 2,
+          "text": "What Stayed Deferred and Why"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 61,
+      "char_count": 6807
     },
     {
       "path": "reflective-prompt-library/plans/creator-attention-survey-2026-11-04.md",
@@ -24726,7 +24777,7 @@
         }
       ],
       "line_count": 198,
-      "char_count": 12114
+      "char_count": 12283
     },
     {
       "path": "reflective-prompt-library/skills/router-trace-linter/SKILL.md",
@@ -25261,6 +25312,10 @@
         },
         {
           "level": 2,
+          "text": "Friction Notes — one line each: tried / expected / actual / suggested fix (or \"None\")"
+        },
+        {
+          "level": 2,
           "text": "Acceptance Criteria"
         },
         {
@@ -25360,8 +25415,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 178,
-      "char_count": 9159
+      "line_count": 179,
+      "char_count": 9248
     },
     {
       "path": "reflective-prompt-library/skills/acceptance-join-validator/SKILL.md",
@@ -25791,5 +25846,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 276
+  "total_files": 277
 }
