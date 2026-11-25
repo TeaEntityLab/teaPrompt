@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-25T12:42:18.061382",
+  "generated_at": "2026-11-25T15:52:30.081490",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -107,6 +107,7 @@
             "workflow-possibilities-constraints-review-2026-07-06.md",
             "agent-ecosystem-harness-survey-2026-10-11.md",
             "agent-trust-pyramid-survey-2026-11-15.md",
+            "openspec-survey-2026-11-25.md",
             "edu-agi-discourse-survey-2026-11-20.md",
             "prime-agent-survey-2026-08-06.md",
             "minimax-code-trace-map-survey-2026-09-19.md",
@@ -8383,6 +8384,60 @@
       "char_count": 20628
     },
     {
+      "path": "reflective-prompt-library/plans/openspec-survey-2026-11-25.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "openspec-survey-2026-11-25",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "OpenSpec (Fission-AI) Survey — Fluid Spec-Driven Development (2026-11-25)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Recommendation"
+        },
+        {
+          "level": 2,
+          "text": "Evidence Used and Date Context"
+        },
+        {
+          "level": 2,
+          "text": "What OpenSpec Actually Is"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "TeaPrompt Contract Map and Disposition"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 68,
+      "char_count": 9029
+    },
+    {
       "path": "reflective-prompt-library/plans/edu-agi-discourse-survey-2026-11-20.md",
       "type": "prompt",
       "category": "prompt-library",
@@ -13478,6 +13533,7 @@
           "official-cookbooks-survey-2026-11-24.md",
           "uber-skills-platform-survey-2026-11-24.md",
           "andy-lin-skills-levels-survey-2026-11-25.md",
+          "openspec-survey-2026-11-25.md",
           "agentic-sop-workflow-reflection-2026-06-13.md",
           "../04-agent/sop-compiler.md",
           "../skills/reflective-review/SKILL.md",
@@ -13705,8 +13761,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 702,
-      "char_count": 171855
+      "line_count": 703,
+      "char_count": 172512
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -25671,5 +25727,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 274
+  "total_files": 275
 }
