@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-25T12:36:45.373743",
+  "generated_at": "2026-11-25T12:42:18.061382",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -14633,6 +14633,10 @@
         },
         {
           "level": 2,
+          "text": "Owner Reflection (Verbatim, Recorded 2026-11-25)"
+        },
+        {
+          "level": 2,
           "text": "Falsifiability"
         },
         {
@@ -14640,8 +14644,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 84,
-      "char_count": 9567
+      "line_count": 97,
+      "char_count": 11145
     },
     {
       "path": "reflective-prompt-library/plans/ambition-prompts-survey-2026-11-14.md",

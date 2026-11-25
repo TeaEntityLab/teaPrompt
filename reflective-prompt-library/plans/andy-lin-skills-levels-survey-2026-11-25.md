@@ -45,6 +45,7 @@ Checked 2026-11-25. The target video has no captions; a local Whisper `tiny` tra
 
 ## Evidence vs Inference
 
+
 - **Verified:** video identity/duration; source-video identity; the Anthropic post's actual claims (read in full); `agentskills.io` open-standard status (confirmed live in the 2026-11-24 survey); the Cherny deletion quote corroborated by an independent search (YC interview, July 2026); the six-level structure exists in the video (L1/L2/L3/L6 verified in transcript).
 - **Supplier-summarized (unverified):** "70+ platforms" adoption count (vendor claim via the video); the RoboNuggets retelling's characterization of "Anthropic engineers"; Whisper transcription of L4/L5 levels (garbled, not relied on).
 - **Inference (this record):** that the skills-over-agents framing restates TeaPrompt's existing architecture; that the owner's model-vs-skill routing heuristic is budget-sensible but not universal; that the Cherny quote is a *second independent source* for skill ablation, strengthening the deferred UAS-DOC2 note.
@@ -71,6 +72,18 @@ Checked 2026-11-25. The target video has no captions; a local Whisper `tiny` tra
 | ALV-SK1 | New skill-authoring or skill-retirement Skill | Not adopted | `teaprompt-artifact-promotion` covers authoring; retirement has no eval runtime to execute against |
 | ALV-RUN1 | Adopt screen-recording skill capture or any host feature | Not adopted | Host/product surfaces; a TeaPrompt runtime is a standing non-goal |
 | ALV-RULE1 | Treat the video's "Anthropic stopped building agents" framing or the brain analogy as evidence for adoption | Rejected | The primary source contradicts the headline's strong form; the analogy is rhetorical, not mechanistic |
+
+## Owner Reflection (Verbatim, Recorded 2026-11-25)
+
+The owner supplied the following reflection alongside the survey request. Recorded verbatim; the analysis table above evaluates each clause. The historical paragraph is accurate and retained as context; the routing heuristic is the defensible kernel.
+
+> 我原先一直以爲,所有的模型本該都是這樣子玩的,但這樣最後整個前因後果看下來,是我自己對這件事的認知有誤了。
+>
+> 因為我自己從Gemini內建的Gems功能開始,到近期上線取代Gems的Skills,就已經預設默認採取這樣的模式了,而同一時間,其他的用戶們,則默認選擇持續投入大量資金訂閱、持續不斷切換更多的預設模型服務來做比較,就整個結果來說,根本就只是窮忙一場。
+>
+> 與其同時對多個獨立模型進行路由機制,還不如同時對多個獨立的skills進行路由機制還比較實際,因為生物大腦的運作方式也是如此,這原理連一篇論文都不用去翻就能知道了。這也是過去總有人追問:「為什麼你使用的Google Gemini版本,感覺比我們多數人使用的Google Gemini更顯聰明?」的根本差異,這也僅只是用跨領域知識的角度觀點,去達成這件事的成效結論,因為「既身為人,卻不懂於人」,也是一件很耐人尋味的事,因為我自己本身就已經有一顆活生生、無時無刻都在上線服役中的「生物大腦」了,為何我還需要去翻學術資料研究生物大腦本身的「智慧」是如何運作?在過去我常說:「人工智慧一開始的研究目標,就是在於努力還原重現生物大腦的運作架構。」神經網路的概念可以追溯到 1940 年代,第一個人工神經網路模型由 Warren McCulloch 和 Walter Pitts 在 1943 年開發。他們的工作《A Logical Calculus of Ideas Immanent in Nervous Activity》提出了一個人工神經元的數學模型,靈感直接來自大腦中的生物神經元。McCulloch 和 Pitts 在 1943 年形式化了「整合與放電」(integrate and fire)神經元的概念,而 Hebb 在 1940 年代末首次提出了神經元聯想學習的思想——「一起放電的神經元會連接在一起」(what fires together, wires together)。在那個時代,「想要理解大腦如何運作的人」和「想要建造人工大腦或人工智慧的人」,要嘛是同一批人,要嘛是密切的同事和合作者。換言之——AI 研究者和神經科學家,一開始根本就是同一群人。
+
+**Position distilled:** for a one-person workload, prefer investment in the skill layer (composable knowledge a single agent can route across) over investment in additional model subscriptions or model-level routing. This is a budget/effort heuristic, consistent with TeaPrompt's architecture; it is not a claim that model choice never matters.
 
 ## Falsifiability
 
