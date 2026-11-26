@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T15:03:13.123775",
+  "generated_at": "2026-11-26T17:03:55.028505",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6936,7 +6936,10 @@
         "ref_snippet": [],
         "markdown_links": [
           "../PROJECT_KNOWLEDGE.md",
-          "../skills/governed-delivery/TEMPLATES.md#checker-requirements"
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#interruption-and-recovery-2026-11-26",
+          "../skills/governed-delivery/TEMPLATES.md#checker-requirements",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#diagnostic-scores-and-unit-disposition-2026-11-26"
         ]
       },
       "structure": [
@@ -6998,11 +7001,27 @@
         },
         {
           "level": 2,
+          "text": "Third Owner Round (2026-11-26)"
+        },
+        {
+          "level": 3,
+          "text": "T1-B rerun preregistration (written before any rerun)"
+        },
+        {
+          "level": 3,
+          "text": "T1-B rerun results"
+        },
+        {
+          "level": 3,
+          "text": "X4b interruption and disposition"
+        },
+        {
+          "level": 2,
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 170,
-      "char_count": 21981
+      "line_count": 218,
+      "char_count": 28058
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -12853,6 +12872,7 @@
           "procedural-blind-dogfood-preregistration-2026-10-15.md",
           "skills-survey-corpus-rethink-2026-11-26.md#owner-decisions-and-landing-2026-11-26",
           "skills-survey-corpus-rethink-2026-11-26.md#t1-results",
+          "../skills/headless-agent-cli-contract/SKILL.md",
           "../skills/headless-agent-cli-contract/SKILL.md"
         ]
       },
@@ -12891,6 +12911,10 @@
         },
         {
           "level": 2,
+          "text": "Pilot Configuration (2026-11-26)"
+        },
+        {
+          "level": 2,
           "text": "Execution Steps"
         },
         {
@@ -12903,6 +12927,22 @@
         },
         {
           "level": 2,
+          "text": "Interruption and Recovery (2026-11-26)"
+        },
+        {
+          "level": 2,
+          "text": "Diagnostic Scores and Unit Disposition (2026-11-26)"
+        },
+        {
+          "level": 3,
+          "text": "Blind review and measurement limits"
+        },
+        {
+          "level": 3,
+          "text": "Protocol review adjudication"
+        },
+        {
+          "level": 2,
           "text": "Candidate Adoption Ledger"
         },
         {
@@ -12910,8 +12950,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 98,
-      "char_count": 7344
+      "line_count": 203,
+      "char_count": 24190
     },
     {
       "path": "reflective-prompt-library/plans/heddle-source-survey-2026-10-12.md",
@@ -21408,7 +21448,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "skills-survey-corpus-rethink-2026-11-26.md#t1-b-rerun-results"
+        ]
       },
       "structure": [
         {
@@ -21452,8 +21494,8 @@
           "text": "Completion Ledger"
         }
       ],
-      "line_count": 84,
-      "char_count": 16224
+      "line_count": 87,
+      "char_count": 16793
     },
     {
       "path": "reflective-prompt-library/04-agent/review-rating-fix.md",
@@ -25415,7 +25457,7 @@
         }
       ],
       "line_count": 210,
-      "char_count": 14401
+      "char_count": 14212
     },
     {
       "path": "reflective-prompt-library/skills/reflective-handoff-retro/SKILL.md",

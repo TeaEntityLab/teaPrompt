@@ -10049,3 +10049,76 @@ Supplemental session receipts: `local://whole-library-repair-evidence-2026-11-12
 ### Next Action and Human Review
 
 All eleven authorized repairs are complete. No additional repair, adoption, host or campaign decision is required for this delivery. Existing checkpoints, promotion gates and protected-custody obligations remain unchanged. No commit or push was performed.
+
+## T1-B landing and interrupted X4b diagnostic delivery (2026-11-26)
+
+### Goal and Summary
+
+Land the separately authorized T1-B trim under its preregistered rerun rule, execute the authorized twelve-unit X4b pilot within its envelope, and record evidence without turning missing data or keyword scores into successful tasks.
+
+T1-B landed: corrected-rubric reruns tied 3/3 versus 3/3. The standalone binary check-failure sentence was removed; its could-not-run, repair/escalation and never-edit-the-product duties now reside in the existing harness-failure class. Exit/output reading remains unchanged. The original GL-2 record now points to this tested supersession.
+
+**X4b did not complete.** The host deadline ended the run at 3,600 seconds. There are 125 completed receipts, two dispatched Grok calls with unknown outcomes and seventeen undispatched slots. Recovery made no further provider call. Fifty-seven complete pairs were scored blind; eleven completed orphan outputs remain unscored. All twelve formal unit verdicts are **inconclusive**, with no deletion proposal.
+
+### Files Changed
+
+- `reflective-prompt-library/skills/reflective-implement/SKILL.md` — T1-B trim.
+- `reflective-prompt-library/plans/skills-survey-corpus-rethink-2026-11-26.md` — third-round authority, corrected-rubric rerun result, interrupted-pilot disposition and push scope.
+- `reflective-prompt-library/plans/wgs-x4b-noop-hunt-plan-2026-11-26.md` — frozen configuration, qualification amendments, recovery inventory, per-unit diagnostic matrix, blind review and protocol limits.
+- `reflective-prompt-library/plans/installed-skills-general-lessons-2026-09-05.md` — forward supersession link without rewriting the originating GL-2 adoption.
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md` — Decision Index pointer, not a new authority rule.
+- `reflective-prompt-library/index.json` — regenerated metadata.
+- `review/final-report.md` — this delivery record.
+
+### Acceptance Criteria Status and Traceability
+
+| Requested result | Evidence | Status |
+| --- | --- | --- |
+| Push `8e6b71e` | Prior authorized push receipt retained in the third-round record | Completed earlier; no later push |
+| Record DF direction and delegated X4b envelope | SCR third owner round and pilot configuration | Recorded; DF-C2/DF-PB1 remain held |
+| Rerun T1-B against corrected, preregistered rubric and apply its rule | Six fresh reports plus disposable-repository diffs; trimmed/current 3/3; landed bytes match the probed copy | Verified within that fixture |
+| Freeze twelve units, fixtures, scorers and manifest | All 24 prompt hashes, twelve scorer hashes, wrapper and scaffold match the recorded manifest | Verified; U03/U04 selection-shape defects disclosed |
+| Qualify the requested no-tool mode | Canaries establish transport and tool-free observations, not enforced no-tool configuration | Unverified for both families; further dispatch held |
+| Execute 144 valid pilot slots | 72 Gemini + 53 Grok completed receipts; two unknown dispatched outcomes + seventeen not dispatched | **Incomplete: 125/144** |
+| Blind-score and assign defensible dispositions | 114 candidates from 57 complete pairs; blinded audit before map join; every unit formally inconclusive | Diagnostic stage completed; no efficacy/no-op conclusion |
+| Record plan, SCR and Decision Index | Owning records linked above; per-unit public matrix matches the diagnostic JSON | Verified |
+| Repository consistency | One full `make all`, Python 3.13.0, exit 0 | Verified; not pilot completion evidence |
+
+### Tests / Checks Run
+
+- Earlier T1-B verification: landed skill equals the probed trimmed copy; 25 affected modules, **596 passed**. Six corrected-rubric reruns pass all four criteria; first-round failed-as-written results were not rescored.
+- Offline recovery: 125 per-slot receipts match completed IDs in `pilot/progress.log`; a separate filesystem inventory finds 125 outputs. Snapshot hashes all 500 retained receipt/stdout/stderr/output files and preserves missing/orphan classifications.
+- Original scaffold, fresh diagnostic namespace: **57 complete pairs, 114 scored candidates**, no scorer execution errors, zero arm-token matches in captured scorer output. Frozen scorers and original scores were not changed.
+- Scorer sandbox probe: allowed scorer/candidate reads; denied manifest, recovery inventory, arm output, receipt, writes and network access. This is scorer-path evidence, not model-worker isolation.
+- Blind audit: ten predetermined samples support their scored obligation; the coordinator read both U09 samples before unblinding. One U09 sample fails the unscored task word limit. Static review identifies grader and residual-clause limits; it does not certify all labels.
+- Publication check: all twelve matrix rows match the diagnostic arm counts and actual scored denominators.
+- `PYENV_VERSION=3.13.0 PYTHONDONTWRITEBYTECODE=1 make all`: **exit 0; 1,776 passed in 71.87 s**. Links/schema: 339 files, zero errors. Skill lint and governance pass; project knowledge, record hygiene, benchmark, examples and route fixtures pass. Record hygiene retains 373 warnings. ROUTE-001/002/003 reach 100% fixture consistency, not semantic-routing efficacy.
+
+The full gate preceded this report-only append. The report is not an indexed prompt/skill entry; the final publication check covers its new links separately. Full gate receipt: session-private `x4b-pilot-2026-11-26/make-all-recovery.log`.
+
+### Consumer and Twin Coverage
+
+- Installed implementation contract: existing harness-failure classification retains the moved protection; unchanged exit/output and post-verification-edit duties remain at their current surface.
+- Historical adoption, SCR ledger, pilot record and Decision Index: linked with their distinct historical/current dispositions; no retrospective rubric replacement.
+- Generated discovery metadata: regenerated from the current library. Session-private trial inputs remain frozen and are not overwritten by the later T1-B landing.
+- Pilot-output consumer: complete pairs only; no missing-as-fail or zero-filled three-run verdict. The unused preliminary unblind path remains evidence of a rejected approach, not a shipped runner.
+
+TWINS: searched `first establish whether the failure is in the check itself` - found 1 other site: `plans/installed-skills-general-lessons-2026-09-05.md`; preserved as the historical GL-2 adoption and linked to its supersession.
+
+### Failures or Skipped Checks
+
+The 144-slot execution is incomplete. `cur-U02-control-r1` and `cur-U01-treatment-r1` remain `OUTCOME_UNKNOWN`, `retry_safe: false`; no missing receipt is counted as failed inference or proof of zero quota debit. No provider billing reconciliation or further qualification call was made.
+
+The first shell/stdin scorer-boundary probe returned no receipt content and was reported as a tool issue. A corrected array-form subprocess produced the retained sandbox proof. One record edit batch was rejected on an undisplayed anchor; it was reapplied after reading that anchor. Neither event changed a frozen scorer or trial output.
+
+### Residual Risks and Human Review
+
+Shared user rules and skill lists, surviving contract clauses, vocabulary/window predicates and text-only tasks limit causal interpretation. U03 deletes a heading/template entry and U04 a table row despite the original selection shape. No observed output establishes that a twin sweep, propagation check or repository repair was executed. Grok ZDR status and provider quota debits remain unverified. The protocol review's stronger plan-mode, priming-independence and saturation interpretations were declined in the owning record.
+
+Continuation requires verified no-tool qualification, reconciliation or explicit owner disposition of the two unknown calls, a bounded continuation protocol and an execution path that does not redispatch completed slots. Any stronger future claim needs appropriate task/grader coverage and untouched evaluation inputs. DF-C2 custody and DF-PB1 human-scoring/acceptance gates remain unchanged.
+
+### Next Action
+
+Local-only commit of the verified trim and honest partial-result records; no push or unit deletion.
+
+`PENDING: continue X4b provider dispatch - awaiting your authorization`

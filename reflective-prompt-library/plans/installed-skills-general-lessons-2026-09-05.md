@@ -34,6 +34,9 @@ TeaPrompt already holds the ten lessons that converge across three or more unrel
 
 Sizes after: brief 5,185; implement 12,021; review 9,582; risk 7,587; research 11,411; flow-control-generator 19,580 bytes — all under the 20,000-char lint threshold; lint 0 errors, 1 pre-existing warning. The Small-Change Fast Path is byte-identical.
 
+**GL-2 supersession, 2026-11-26:** the [owner-authorized T1-B rerun](skills-survey-corpus-rethink-2026-11-26.md#t1-b-rerun-results) tied 3/3 versus 3/3 under its corrected, preregistered rubric. Its first diagnostic sentence was retired; the could-not-run, repair/escalation and never-edit-the-product duties moved into the existing harness-failure class. Exit/output reading stays in place. The original adoption and originating masked-exit incident above remain historical evidence; this is a tested replacement on that fixture, not a claim of general equivalence.
+
+
 ## Candidate Adoption Ledger
 
 | Candidate | Source (functional descriptor; families stating it) | Failure defended | Closest existing line and why it does not say this | Smaller alternative rejected | Disposition |
