@@ -90,6 +90,11 @@ Before the recipe is handed to a host harness:
 - Recipes pin observed versions; CLI flag drift invalidates a recipe until re-probed.
 - No recipe covers cost/latency envelopes: host-enforced caps stayed `UNKNOWN` (no budgeted model calls in the dry run) and remain a hard prerequisite before repeated or tool-using runs.
 
+## Demotion Triggers
+
+- CLI flag or version drift → retire the affected recipe until it is re-probed; never patch a recipe from memory.
+- No recorded host use by the next pack evidence review (2027-01-11), or the host CLIs ship an equivalent documented headless contract → fold this pack back into `plans/proposals/headless-agent-cli-contract-proposal.md`. Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live in the installed `<skills-root>/examples/headless-agent-cli-contract.examples.md` tree when examples are co-installed. They show the recipe five-slot shape, strip-list receipts, and the `BLOCKED` verdict format, not provider endorsements.

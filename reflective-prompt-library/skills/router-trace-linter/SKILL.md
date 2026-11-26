@@ -94,6 +94,11 @@ Emit [`lint_route_trace.py`](TEMPLATES.md#template-lint_route_tracepy-python-std
 - Alias mode (machine six-field form) warns instead of failing on absent `Mode`, `Strictness`, and `Next Action`. It still fails closed on a bad confidence value, a deferral without a rationale sentence, or a high-risk signal with no `Human Review`. A gate that needs strictness recorded should require the full ten-field form.
 - Recurrence evidence is still thin: at registration the linter had zero observed misroute catches. Record real failing traces caught pre-release, plus a no-false-positive run over the existing `reflective-dispatch.examples.md` traces, before treating early passes as established practice.
 
+## Demotion Triggers
+
+- A route-trace contract change in `reflective-dispatch` or `plans/ROUTING_CONTRACT.md` → regenerate the linter from this skill rather than patching a copy.
+- The admission residual still unmet at the next pack evidence review (2027-01-11) — fewer than two real failing traces caught before release, or no no-false-positive run over `reflective-dispatch.examples.md` → fold this pack back into `plans/proposals/router-trace-linter-proposal.md`. Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live at `<skills-root>/examples/router-trace-linter.examples.md` when co-installed. They show pass/fail verdict shapes and field-level diff rows, not a judgment that any route was semantically correct.

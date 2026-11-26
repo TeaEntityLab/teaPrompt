@@ -119,6 +119,11 @@ applying.
 - Provider invocations in the pilot ran host-side; a sandboxed *model* worker has zero containment evidence.
 - Discarded-invocation re-runs cost budget: each re-run decrements the ticket's declared invocation cap. Ledger entries without raw receipts invalidate the run note.
 
+## Demotion Triggers
+
+- Contract drift in the emitted scaffold → regenerate it from this skill rather than patching a copy.
+- Still zero observed blinded runs at the next pack evidence review (2027-01-11), or a host eval platform provides an equivalent sealed-scorer path → fold this pack back into `plans/proposals/arm-blinded-eval-harness-proposal.md`. Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live in the installed `<skills-root>/examples/arm-blinded-eval-harness.examples.md` tree when examples are co-installed. They show the blinded-dir shape, the private scoring schedule, the code/data boundary refusals, and the discarded-ledger/hold separation, not proof that a blinded pilot has run.

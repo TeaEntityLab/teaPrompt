@@ -79,7 +79,7 @@ For every non-`no change` candidate, answer:
 - Verification: what check proves it works?
 - Authority class: project-design judgement or agent operating rule?
 - Human approval: required, already granted, or pending?
-- Retirement trigger: when should this artifact be amended or deleted?
+- Retirement trigger: when should this artifact be amended or deleted? Name the recheck events, not only a condition: a host or model generation change the artifact assumes, a measured regression or bypass, superseding wording landed elsewhere, or a cost review.
 
 For every `workflow skill` or `prompt lens` candidate, also answer:
 

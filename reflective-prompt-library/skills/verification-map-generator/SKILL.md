@@ -83,6 +83,11 @@ Event-driven, not calendar-driven: re-verify a feature file when its covered sou
 - Do not add driver/test files inside the product repo during verification — scratch drivers live outside with a path/replace reference.
 - Do not treat a green run as proof the map is right — the map is proven by a fresh agent completing the sweep and by correct failure classification under seeded faults.
 
+## Demotion Triggers
+
+- Contract drift → regenerate the product's `VERIFY.md` and feature map from this skill rather than patching a drifted copy.
+- No product-repo use recorded by the next pack evidence review (2027-01-11), or a host absorbs the verification-map pattern → fold this pack back into its admission evidence (the verification-map lesson and evidence pointer in `PROJECT_KNOWLEDGE.md`). Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live at `<skills-root>/examples/verification-map-generator.examples.md` when co-installed. They show generated-surface shapes and expected fresh-agent verdicts, not proof that code was executed.

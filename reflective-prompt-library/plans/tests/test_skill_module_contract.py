@@ -56,6 +56,15 @@ def test_registered_skill_has_contract_subsections(skill_name: str):
             f"{skill_name} missing {subsection}"
         )
 
+@pytest.mark.parametrize("skill_name", DOMAIN_PACK_SKILLS)
+def test_registered_pack_has_demotion_triggers(skill_name: str):
+    """06-repo/AGENTS.md item 3 requires demotion triggers for every registered pack."""
+    content = (SKILLS_DIR / skill_name / "SKILL.md").read_text(encoding="utf-8")
+    assert "## Demotion Triggers" in content, skill_name
+    section = content.split("## Demotion Triggers", 1)[1].split("\n## ", 1)[0]
+    assert re.search(r"^- \S", section, re.MULTILINE), f"{skill_name} demotion section is empty"
+
+
 @pytest.mark.parametrize("skill_name", CORE_SKILLS)
 def test_core_skill_escalation_routes_to_valid_workflow_skills(skill_name: str):
     """Escalation bullets must name frozen workflow skills, not invented routes."""

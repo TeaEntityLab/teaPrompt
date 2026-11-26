@@ -17,6 +17,8 @@ Expected output shape:
 ## Assumptions
 ## Authority / Missing Data Notes
 ## Scope
+- In:
+- Out:
 ## Inputs / Outputs
 ## Failure Conditions
 ## Acceptance Criteria
@@ -47,6 +49,8 @@ The same brief as Example 1. The ellipsis is not a shorter contract: assumption 
 - missing fields are marked unknown, not inferred, and name an owner
 - before any clarification, name the local evidence checked and the material fork left unresolved
 ## Scope
+- In:
+- Out:
 ## Inputs / Outputs
 ## Failure Conditions
 ## Acceptance Criteria

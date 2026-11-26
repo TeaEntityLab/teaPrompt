@@ -54,7 +54,7 @@ Does the Grok Bot automation guide describe a mechanism not already held by a na
 | ID | Candidate | Decision | Reopen condition |
 | --- | --- | --- | --- |
 | GKB-DOC1 | This dated record + catalogue navigation | **Adopted — reference documentation only** | A corrected article, a product change, or a local consumer failure |
-| GKB-DOC2 | Optional worked example: the "restate goal + process before executing" prompt inside `reflective-brief` or `workflow-acquisition` | **Deferred — second recurrence not met** | A second independent source or a local need for this exact prompt phrasing |
+| GKB-DOC2 | Optional worked example: the "restate goal + process before executing" prompt inside `reflective-brief` or `workflow-acquisition` | **Deferred — second recurrence not met** | A second independent source or a local need for this exact prompt phrasing. Same mechanism as [GB-BR1](agent-efficiency-autonomy-learning-survey-2026-11-01.md) (2026-11-01); both come from one author, so the independent-source gate stays unmet. |
 | GKB-SK1 | Skill/prompt-body change encoding the tutorial | **No change** | A demonstrated gap in a named existing surface |
 | GKB-RUN1 | Installing Dr Eggbot / running Grok Bot | **Not adopted** | Separate product decision; not authorized by this record |
 | GKB-RULE1 | Any single tutorial instruction as an operating rule | **Rejected** | A consumer playbook is not an invariant |

@@ -3,7 +3,7 @@
 Language: English
 > **Status:** adjudication record (`SUR-DOC1`); two in-place contract repairs landed, no new Skill or surface.**
 
-The owner asked whether the current skills need updates, evaluated by evidence-based Socratic critical thinking in multiple parallel roles. Three reviewer agents — Evidence Auditor, Gap Advocate, Minimality Advocate — independently read the nine frozen skills and the deferred-note queue accumulated across the 2026-11-13→2026-11-25 survey series (CFT/ACL/CKB/UAS/ALV/OSP/CMP-DOC2 items). This record adjudicates their disagreement, lands the two repairs that survived, and confirms the rest stay deferred.
+The owner asked whether the current skills need updates, evaluated by evidence-based Socratic critical thinking in multiple parallel roles. Three reviewer agents — Evidence Auditor, Gap Advocate, Minimality Advocate — independently read the nine frozen skills and the deferred-note queue accumulated across the 2026-11-13→2026-11-25 survey series (ACL/CKB/UAS/ALV/OSP/CMP-DOC2 items). This record adjudicates their disagreement, lands the two repairs that survived, and confirms the rest stay deferred.
 
 ## Verdict Summary
 
@@ -58,4 +58,4 @@ The owner asked whether the current skills need updates, evaluated by evidence-b
 ## Standing Non-Goals
 
 - No new Skill, domain pack, example, route, runtime, or gate.
-- Prior per-survey dispositions (CFT/ACL/CKB/UAS/ALV/OSP/CMP) unchanged; this record adjudicates the deferred queue, it does not re-litigate them.
+- Prior per-survey dispositions (ACL/CKB/UAS/ALV/OSP/CMP) stand, except that CKB-DOC2 and UAS-DOC2(b) are now adopted in place as SUR-ED1/ED2; this record adjudicates the deferred queue, it does not re-litigate the rest.

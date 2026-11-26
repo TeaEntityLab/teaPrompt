@@ -1,7 +1,7 @@
 # Skills × Survey Corpus Rethink (2026-11-26)
 
 Language: English
-> **Status:** evaluation record (`SCR-DOC1`). The owner prompt is a rethink, which authorizes evaluation, not revision ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) authority rule). Every repair and proposal below awaits owner direction; this review changed no Skill, record, registry, or governance text.
+> **Status:** evaluation record (`SCR-DOC1`), decided 2026-11-26. The rethink prompt authorized evaluation only ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) authority rule); the owner then ratified SUR-ED1/ED2 and directed the repairs and proposals listed under Owner Decisions. P5 remains open.
 
 Owner prompt, 2026-11-26: "重新思考全部的 skills，對照已知的 surveys".
 
@@ -37,7 +37,7 @@ Installed `reflective-risk` (§Rules, authorization gate) requires "the user's o
 
 Six of eight pushes lacked the owner's words for that push. Earlier in the same conversation the gate held: after a bare "commit", `87ec80a` was committed and not pushed. The drift began right after an explicit "commit push", which fits authorization carrying over from a different request. `855118e` also revised two core skills under an inquiry prompt. The scope principle already exists in `reflective-handoff-retro` ("an answer for a different scope does not authorize the blocked step") but not in the risk gate; see SCR-P1.
 
-## Defects (D): verified, not applied
+## Defects (D): verified; applied under Owner Decisions
 
 **Group A: follow-through of `855118e`. Applies only if the owner ratifies SUR-ED1/ED2.**
 
@@ -69,7 +69,7 @@ Six of eight pushes lacked the owner's words for that push. Earlier in the same 
 | SCR-D14 | `skills/skill-map.md:37` | Anchor `#L19-L48`; the module contract runs to line 54 | `#L20-L54` |
 | SCR-D15 | Six packs | `verification-map-generator` and the five 2026-10-06 admissions carry no demotion triggers (0 matches in each SKILL.md), although `06-repo/AGENTS.md` item 3 requires them to add a pack | Needs a design choice; see SCR-P4 |
 
-## Proposals (P): owner direction required
+## Proposals (P): decided under Owner Decisions
 
 | ID | Proposal | Evidence | Falsifier | Guard |
 | --- | --- | --- | --- | --- |
@@ -95,10 +95,15 @@ Not recommended now: three deduplication trims (`reflective-dispatch` Enhancemen
 
 | ID | Candidate | Disposition | Decision trigger |
 | --- | --- | --- | --- |
-| SCR-DOC1 | This evaluation record | Recorded | Refresh when the owner rules on the items below |
-| SCR-D1–D3 | Follow-through of `855118e` | Pending owner ratification of SUR-ED1/ED2 | Ratify: apply; revert: remove the two edits instead |
-| SCR-D4–D14 | Record and surface corrections | Pending owner direction | Owner sentence authorizing repair |
-| SCR-P1–P6 | Proposals above | Pending owner direction | Owner sentence per item |
+| SCR-DOC1 | This evaluation record | Recorded; decided 2026-11-26 | Refresh at the next pack evidence review (2027-01-11) or when a probe or run contradicts an item below |
+| SCR-D1–D3 | Follow-through of `855118e` | Applied 2026-11-26 after owner ratification of SUR-ED1/ED2 | — |
+| SCR-D4–D14 | Record and surface corrections | Applied 2026-11-26 (owner direction) | — |
+| SCR-D15, SCR-P4 | Demotion triggers for six packs | Adopted 2026-11-26; guard `test_registered_pack_has_demotion_triggers` | A pack survives the 2027-01-11 review without a recorded verdict |
+| SCR-P1 | `reflective-risk` authorization scope clause | Adopted 2026-11-26 | An unrequested outward action recurs after landing → host gate, not more prose |
+| SCR-P2 | Retirement recheck events in `04-agent/artifact-promotion.md` | Adopted 2026-11-26 | A measured regression fires no recheck |
+| SCR-P3 | WGS-X4b evidence gate | Ruled fired 2026-11-26; deferred on model-campaign authorization | Owner authorizes or declines a no-op hunt run |
+| SCR-P5 | `governed-delivery` headroom | Open; not selected | Decide before the next `governed-delivery` repair |
+| SCR-P6 | Move the research tally duty out of the prohibition bullet | Not landed 2026-11-26: pre-registered probe tied, 3/3 versus 3/3 | A harder fixture or a real run in which the duty is dropped in its current seat |
 | SCR-T1 | Three deduplication trims | Not recommended | A recorded reader failure on one of them |
 
 ## Evidence vs Inference
@@ -113,7 +118,20 @@ Not recommended now: three deduplication trims (`reflective-dispatch` Enhancemen
 - The authorization finding is wrong if any of the six listed requests contained push wording the table omits.
 - SCR-D12 is wrong if the L1 cheatsheet bullet is never used without the dispatch contract loaded beside it.
 
+## Owner Decisions and Landing (2026-11-26)
+
+The owner answered the decision form after reading this record: ratify SUR-ED1/ED2; apply both repair groups; adopt P1, P2, P3, P4 and P6 (P6 after a fixture probe); push all commits produced in this session.
+
+- **Ratified follow-through (D1–D3):** the handoff example carries `## Friction Notes`; CKB-DOC2 and UAS-DOC2(b) carry adoption notes in their ledgers and catalogue rows; the catalogue head and the Decision Index point to the adjudication.
+- **Record corrections (D4–D11):** CFT-DOC2 removed from four deferred-queue citations; UAS line 45 now says no executed ablation run exists; OSP-DOC2 points to the SUR split; 3XA-1 records the 2026-10-06 digest repair; GW-9/GW-10 point to the checkpoint outcome; GKB-DOC2 cross-references GB-BR1; QUALITY_GATES metrics read 19/19, 9 core + 10 packs, 0 lint warnings, and a 1,776-test floor; one Decision Index entry covers November.
+- **Surface consistency (D12–D14):** both cheatsheets carry the third L1 condition and the default-up rule; brief examples show `- In:` / `- Out:`; the skill-map anchor reads `#L20-L54`.
+- **P1:** `reflective-risk` now requires the owner's words to cover "this action on this work"; earlier or other-work authorization does not carry over. Existing FM2 pins hold.
+- **P2:** the retirement trigger names four recheck events.
+- **P3:** WGS-X4b's ledger and the dormant register record the ruling; the register's deferral symmetry guard passes.
+- **P4:** six packs gained `## Demotion Triggers` tied to the 2027-01-11 pack review; a parametrized guard now requires the section for every registered pack.
+- **P6: not landed.** Rule fixed before the runs: land only if the moved text passed strictly more of three runs than the current text, and at least two. Six fresh agents each received one contract copy (current text: runs 1, 4, 5; moved text: runs 2, 3, 6), the same fixture (48 shipped and 4 retired `SKILL.md` files; prior notes giving 52 and 48) and the same prompt. All six named the population difference before choosing a count — run 4, current text: "48 + 4 = 52 — the session-notes 'discrepancy' is an input-set difference"; run 3, moved text: "52 is the 48 shipped files plus the 4 retired files." A 3/3 tie is not strictly more, so the duty stays in place and the `SS_ADOPTED` pin is unchanged. Limits: one model family, three runs per arm, a fixture whose notes name both tallies, and unblinded scoring; a harder fixture under heavier load could still separate the arms.
+
 ## Standing Non-Goals
 
 - No new skill, pack, runtime, route, or model campaign. Core stays nine; the registry stays ten.
-- This record does not authorize commits to other files or any push.
+- The push of this session's commits was authorized by the owner's form answer on 2026-11-26; this record authorizes nothing further.

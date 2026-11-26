@@ -52,7 +52,7 @@ Checked 2026-11-24. Blobless clones; only the files named below were fetched and
 | ID | Candidate | Disposition | Evidence / reopen trigger |
 | --- | --- | --- | --- |
 | CKB-DOC1 | This source-bound record and its catalogue row | Adopted; documentation only | Refresh when a pinned HEAD moves materially or a new mechanism doc lands |
-| CKB-DOC2 | Optional worked reference for the verbatim-gate / deterministic-first governance patterns | Deferred | No reproduced local gap; joins the earlier deferred worked-reference queue (CFT-DOC2, ACL-DOC2) |
+| CKB-DOC2 | Optional worked reference for the verbatim-gate / deterministic-first governance patterns | Deferred | No reproduced local gap; joins the earlier deferred worked-reference queue (ACL-DOC2). **Adopted in place 2026-11-25 as SUR-ED1 ([record](skills-update-review-2026-11-25.md)); owner ratified 2026-11-26.** |
 | CKB-SK1 | New citation-gate or cookbook-pattern Skill | Not adopted | No verified local structural gap; duties already in `reflective-review` / `governed-delivery` |
 | CKB-RUN1 | Adopt a managed-agents runtime, TealTiger, or the Decisions API | Not adopted | Host/product surfaces; a TeaPrompt runtime is a standing non-goal |
 | CKB-RULE1 | Treat "calibrated probability" vendor APIs or agentic tutorials as evidence a mechanism works | Rejected | API surface ≠ verified behavior; none of the three cookbooks publishes efficacy data for its governance examples |

@@ -100,6 +100,11 @@ Turn "did the skill layer help?" into a bounded, provider-neutral, locally-runna
 - The `cat`-stub self-run verifies harness mechanics only; it says nothing about model utility.
 - Research-category tasks (e.g. `B005`) have no deterministic oracle; they are `judge-backed` or excluded, never structurally scored.
 
+## Demotion Triggers
+
+- Contract drift → regenerate the harness from this skill rather than patching a copy.
+- No comparative run with a real model recorded by the next pack evidence review (2027-01-11), or a host eval platform absorbs paired baseline-versus-skill runs → fold this pack back into `plans/proposals/golden-benchmark-runner-proposal.md`. Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live at `<skills-root>/examples/golden-benchmark-runner.examples.md` when co-installed. They show ledger, delta-table, and verdict shapes with confound labeling, not proof that a skill effect was measured.

@@ -84,6 +84,11 @@ Build a synthetic repo (three requirement IDs across two `features/` files, `acc
 - **No execution, no evidence.** This validator produces a join report, not verification evidence; observation-with-spec/version/freshness binding is still the driver's and the run-note's job.
 - **Single-repo, stdlib-only scope.** No cross-repo ID resolution, no network, no model calls. Suggested implementation: one Python standard-library script; deterministic; no writes outside the report.
 
+## Demotion Triggers
+
+- Contract drift in the emitted script → regenerate it from this skill rather than patching a copy.
+- No product repo with `REQ-`/`AC-` IDs joined by the next pack evidence review (2027-01-11), or a host provides the requirement-to-check join → fold this pack back into `plans/proposals/acceptance-join-validator-proposal.md`. Missing invocation evidence stays `unknown`; an unrecorded review is itself a demotion trigger, not an observed zero.
+
 ## Examples
 
 Companion examples live at `<skills-root>/examples/acceptance-join-validator.examples.md` when co-installed. They show the join-report shape, the dangling-ID failure, and the unlocked-artifact negative control — report shapes, not executed verification.

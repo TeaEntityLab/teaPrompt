@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T11:12:02.533441",
+  "generated_at": "2026-11-26T11:46:05.839154",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1265,7 +1265,9 @@
         "ref_snippet": [],
         "markdown_links": [
           "september-skills-review-2026-09-14.md",
-          "governed-delivery-review-2026-09-13.md"
+          "governed-delivery-review-2026-09-13.md",
+          "checkpoint-2026-10-11-outcome.md",
+          "checkpoint-2026-10-11-outcome.md"
         ]
       },
       "structure": [
@@ -1299,7 +1301,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 15985
+      "char_count": 16216
     },
     {
       "path": "reflective-prompt-library/plans/ponytail-minimality-reflection-2026-06-17.md",
@@ -4156,7 +4158,7 @@
         }
       ],
       "line_count": 61,
-      "char_count": 6807
+      "char_count": 6877
     },
     {
       "path": "reflective-prompt-library/plans/creator-attention-survey-2026-11-04.md",
@@ -6954,11 +6956,11 @@
         },
         {
           "level": 2,
-          "text": "Defects (D): verified, not applied"
+          "text": "Defects (D): verified; applied under Owner Decisions"
         },
         {
           "level": 2,
-          "text": "Proposals (P): owner direction required"
+          "text": "Proposals (P): decided under Owner Decisions"
         },
         {
           "level": 2,
@@ -6978,11 +6980,15 @@
         },
         {
           "level": 2,
+          "text": "Owner Decisions and Landing (2026-11-26)"
+        },
+        {
+          "level": 2,
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 119,
-      "char_count": 13060
+      "line_count": 137,
+      "char_count": 16569
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -7275,7 +7281,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../04-agent/retro.md"
+          "../04-agent/retro.md",
+          "agent-efficiency-autonomy-learning-survey-2026-11-01.md"
         ]
       },
       "structure": [
@@ -7317,7 +7324,7 @@
         }
       ],
       "line_count": 73,
-      "char_count": 7282
+      "char_count": 7452
     },
     {
       "path": "reflective-prompt-library/plans/nimble-survey-2026-09-19.md",
@@ -7496,6 +7503,7 @@
           "checkpoint-2026-10-11-runbook.md",
           "skill-improvement-plan-2026-07-24.md",
           "skill-improvement-plan-2026-07-24.md",
+          "skills-survey-corpus-rethink-2026-11-26.md",
           "skill-improvement-plan-2026-07-24.md",
           "runtime-governance-learning-plan-2026-06-11.md",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
@@ -7663,7 +7671,7 @@
         }
       ],
       "line_count": 913,
-      "char_count": 65346
+      "char_count": 65467
     },
     {
       "path": "reflective-prompt-library/plans/roadmap-software-factory-devops-2026-10-13.md",
@@ -8511,7 +8519,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "skills-update-review-2026-11-25.md"
+        ]
       },
       "structure": [
         {
@@ -8552,7 +8562,7 @@
         }
       ],
       "line_count": 68,
-      "char_count": 9029
+      "char_count": 9164
     },
     {
       "path": "reflective-prompt-library/plans/edu-agi-discourse-survey-2026-11-20.md",
@@ -8909,7 +8919,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "checkpoint-packaging-decision-2026-10-11.md"
+          "checkpoint-packaging-decision-2026-10-11.md",
+          "skills-survey-corpus-rethink-2026-11-26.md"
         ]
       },
       "structure": [
@@ -9015,7 +9026,7 @@
         }
       ],
       "line_count": 302,
-      "char_count": 27787
+      "char_count": 28036
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-research-record-2026-06-25.md",
@@ -13041,7 +13052,7 @@
         }
       ],
       "line_count": 511,
-      "char_count": 31396
+      "char_count": 31492
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -13279,7 +13290,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "skills-update-review-2026-11-25.md"
+        ]
       },
       "structure": [
         {
@@ -13320,7 +13333,7 @@
         }
       ],
       "line_count": 71,
-      "char_count": 10961
+      "char_count": 11153
     },
     {
       "path": "reflective-prompt-library/plans/managed-skills-learned-survey-2026-10-06.md",
@@ -13487,6 +13500,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
+          "skills-survey-corpus-rethink-2026-11-26.md",
+          "skills-update-review-2026-11-25.md",
           "archdev-factory-attention-survey-2026-11-21.md#compare-team-attention-per-accepted-feature",
           "agent-memory-survey-2026-11-21.md#what-the-experiments-compared",
           "../skills/examples/reflective-handoff-retro.examples.md#preference-scope-replay",
@@ -13879,8 +13894,8 @@
           "text": "Agentflow 9 follow-through — 2026-10-25"
         }
       ],
-      "line_count": 704,
-      "char_count": 173362
+      "line_count": 706,
+      "char_count": 174027
     },
     {
       "path": "reflective-prompt-library/plans/pi-creators-stream-survey-2026-11-17.md",
@@ -19329,7 +19344,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "skills-update-review-2026-11-25.md"
+        ]
       },
       "structure": [
         {
@@ -19370,7 +19387,7 @@
         }
       ],
       "line_count": 70,
-      "char_count": 9905
+      "char_count": 10014
     },
     {
       "path": "reflective-prompt-library/plans/decision-model-survey-2026-09-18.md",
@@ -19884,7 +19901,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "skills-survey-corpus-rethink-2026-11-26.md"
+        ]
       },
       "structure": [
         {
@@ -19961,7 +19980,7 @@
         }
       ],
       "line_count": 337,
-      "char_count": 24373
+      "char_count": 24641
     },
     {
       "path": "reflective-prompt-library/plans/gliner2-survey-2026-09-19.md",
@@ -21872,7 +21891,7 @@
         }
       ],
       "line_count": 129,
-      "char_count": 7474
+      "char_count": 7666
     },
     {
       "path": "reflective-prompt-library/04-agent/workflow-recipes.md",
@@ -23058,7 +23077,7 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "reflective-review/SKILL.md#L19-L48",
+          "reflective-review/SKILL.md#L20-L54",
           "../plans/flow-control-pack-panel-record-2026-07-11.md"
         ]
       },
@@ -23165,7 +23184,7 @@
         }
       ],
       "line_count": 252,
-      "char_count": 13380
+      "char_count": 13524
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -23237,7 +23256,7 @@
         }
       ],
       "line_count": 241,
-      "char_count": 7669
+      "char_count": 7719
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -24272,6 +24291,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -24279,8 +24302,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 115,
-      "char_count": 13674
+      "line_count": 120,
+      "char_count": 14145
     },
     {
       "path": "reflective-prompt-library/skills/arm-blinded-eval-harness/SKILL.md",
@@ -24366,6 +24389,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -24373,8 +24400,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 132,
-      "char_count": 16220
+      "line_count": 137,
+      "char_count": 16694
     },
     {
       "path": "reflective-prompt-library/skills/reflective-brief/SKILL.md",
@@ -24714,6 +24741,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -24721,8 +24752,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 104,
-      "char_count": 10249
+      "line_count": 109,
+      "char_count": 10725
     },
     {
       "path": "reflective-prompt-library/skills/reflective-review/SKILL.md",
@@ -24929,6 +24960,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -24936,8 +24971,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 108,
-      "char_count": 16097
+      "line_count": 113,
+      "char_count": 16683
     },
     {
       "path": "reflective-prompt-library/skills/verification-map-generator/SKILL.md",
@@ -24998,6 +25033,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -25005,8 +25044,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 95,
-      "char_count": 7142
+      "line_count": 100,
+      "char_count": 7661
     },
     {
       "path": "reflective-prompt-library/skills/governed-delivery/SKILL.md",
@@ -25564,6 +25603,10 @@
         },
         {
           "level": 2,
+          "text": "Demotion Triggers"
+        },
+        {
+          "level": 2,
           "text": "Examples"
         },
         {
@@ -25571,8 +25614,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 98,
-      "char_count": 11962
+      "line_count": 103,
+      "char_count": 12430
     },
     {
       "path": "reflective-prompt-library/skills/reflective-risk/SKILL.md",
@@ -25722,7 +25765,7 @@
         }
       ],
       "line_count": 147,
-      "char_count": 7712
+      "char_count": 7954
     },
     {
       "path": "reflective-prompt-library/skills/reflective-spec-plan/SKILL.md",
