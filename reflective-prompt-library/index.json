@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-25T16:25:31.690192",
+  "generated_at": "2026-11-26T11:12:02.533441",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -93,6 +93,7 @@
             "baton-dispatch-survey-2026-07-13.md",
             "claude-code-verification-survey-2026-11-20.md",
             "agentflow-8.3-delta-survey-2026-09-21.md",
+            "skills-survey-corpus-rethink-2026-11-26.md",
             "harness-four-survey-2026-11-13.md",
             "runtime-skills-workflow-spec-2026-10-06.md",
             "superpowers-v6.4-adoption-2026-10-03.md",
@@ -6918,6 +6919,70 @@
       ],
       "line_count": 279,
       "char_count": 25370
+    },
+    {
+      "path": "reflective-prompt-library/plans/skills-survey-corpus-rethink-2026-11-26.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "skills-survey-corpus-rethink-2026-11-26",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "../PROJECT_KNOWLEDGE.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Skills × Survey Corpus Rethink (2026-11-26)"
+        },
+        {
+          "level": 2,
+          "text": "Research Question and Direct Answer"
+        },
+        {
+          "level": 2,
+          "text": "Method"
+        },
+        {
+          "level": 2,
+          "text": "Process Finding: Authorization"
+        },
+        {
+          "level": 2,
+          "text": "Defects (D): verified, not applied"
+        },
+        {
+          "level": 2,
+          "text": "Proposals (P): owner direction required"
+        },
+        {
+          "level": 2,
+          "text": "No-change Rulings (N)"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 119,
+      "char_count": 13060
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -25846,5 +25911,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 277
+  "total_files": 278
 }
