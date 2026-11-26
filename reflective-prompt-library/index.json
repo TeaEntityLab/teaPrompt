@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T19:09:18.519493",
+  "generated_at": "2026-11-26T23:36:25.961218",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6941,7 +6941,9 @@
           "wgs-x4b-noop-hunt-plan-2026-11-26.md",
           "wgs-x4b-noop-hunt-plan-2026-11-26.md#diagnostic-scores-and-unit-disposition-2026-11-26",
           "wgs-x4b-noop-hunt-plan-2026-11-26.md#continuation-authorization-and-preflight-2026-11-26",
-          "wgs-x4b-noop-hunt-plan-2026-11-26.md#offline-qualification-outcome"
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#offline-qualification-outcome",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#host-boundary-qualification-2026-11-26",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#continuation-execution-and-combined-diagnostics-2026-11-26"
         ]
       },
       "structure": [
@@ -7022,8 +7024,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 219,
-      "char_count": 28833
+      "line_count": 221,
+      "char_count": 29781
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -12960,6 +12962,14 @@
           "text": "Offline qualification outcome"
         },
         {
+          "level": 3,
+          "text": "Host boundary qualification (2026-11-26)"
+        },
+        {
+          "level": 3,
+          "text": "Continuation execution and combined diagnostics (2026-11-26)"
+        },
+        {
           "level": 2,
           "text": "Candidate Adoption Ledger"
         },
@@ -12968,8 +12978,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 251,
-      "char_count": 32374
+      "line_count": 303,
+      "char_count": 41856
     },
     {
       "path": "reflective-prompt-library/plans/heddle-source-survey-2026-10-12.md",

@@ -1,7 +1,7 @@
 # WGS-X4b No-Op Hunt — Preregistered Plan (2026-11-26)
 
 Language: English
-> **Status:** interrupted, partial diagnostic evidence (`X4B-RUN1`); the 144-job pilot is not complete. Drafted 2026-11-26 as plan only (`X4B-PLAN1`); the owner's third-round answer ("2. ok, 你自己決定") authorized the pilot and delegated caps, families and unit selection. The fixed configuration and qualification amendments below are retained. A 3,600-second host deadline interrupted execution; current no-tool qualification is unverified. No further provider call, unit deletion, permission widening, commit or push is authorized by this record.
+> **Status:** complete diagnostic cohort; formal dispositions inconclusive. `X4B-RUN1` stopped at 125 of 144 outputs. The owner-authorized continuation (`X4B-CONT1`) ran the 19 missing Grok slots inside a demonstrated host boundary, completing 144/144. Preregistered thresholds are reported only as mechanical outcomes. Under the rule fixed before unblinding, all twelve formal dispositions remain `inconclusive`, and no deletion proposal follows. Drafted 2026-11-26 as plan only (`X4B-PLAN1`); the owner's third-round answer ("2. ok, 你自己決定") authorized the pilot and delegated caps, families and unit selection. This record authorizes no further provider call, unit deletion, permission widening, commit or push.
 
 ## Question
 
@@ -107,9 +107,9 @@ Each step needs the authorization named beside it.
 
 ## Evidence vs Inference
 
-- **Verified:** CLI versions and model lists on 2026-11-26 without inference; the WGS-X4b ruling; DF-C2's whole-skill scope; the P6 tie; the T1 results, including the T1-B rubric defect.
+- **Verified:** CLI versions and model lists on 2026-11-26 without inference; the WGS-X4b ruling; DF-C2's whole-skill scope; the P6 tie; the T1 results, including the T1-B rubric defect; the continuation host boundary (40 probe checks) and its 19 valid receipts.
 - **Inferred:** multi-part fixtures raise sensitivity; two non-host families reduce single-family bias.
-- **Unknown / unverified at resumption:** a host-enforced no-tool configuration, exact quota debit (including two interrupted calls), cohort-wide context stability, and the missing Grok outcomes. Stored successful receipts report token usage for their own calls; they are not provider billing evidence.
+- **Unknown / unverified:** enforced no-tool configuration for the original 125 outputs (only the 19 continuation slots ran inside the host boundary, where server-side tools are detected, not host-prevented); exact quota debit, including the two interrupted calls and their replacements; context stability across the two host strata. Stored successful receipts report token usage for their own calls; they are not provider billing evidence.
 
 ## Falsifiability
 
@@ -138,6 +138,8 @@ The frozen graders run through a separate host launcher under macOS `sandbox-exe
 **Continuation gate:** qualify a no-tool configuration at the pinned CLI version, reconcile the two unknown dispatched outcomes or have the owner explicitly resolve their retry/cost risk, and record a bounded continuation protocol without reusing altered fixtures or graders as if they were the same cohort. DF-C2 and DF-PB1 remain held; this interruption supplies neither custody inputs nor human scoring/acceptance.
 
 ## Diagnostic Scores and Unit Disposition (2026-11-26)
+
+_Interrupted-cohort record, retained as written. The complete-cohort matrix is under [Continuation execution and combined diagnostics](#continuation-execution-and-combined-diagnostics-2026-11-26)._
 
 `C` is the full frozen skill; `T` deletes exactly the selected unit. Each cell is **frozen predicate passes / scored outputs in complete pairs**, not successful tasks out of three intended repetitions. The different Grok denominators are observed missingness, not a changed repeat target. Eleven orphans and nineteen missing slots are excluded as stated above.
 
@@ -206,13 +208,13 @@ A metadata diagnostic inadvertently printed conversation-local encryption fields
 
 ### No-tool qualification remains a prerequisite
 
-Official [CLI permissions](https://cursor.com/docs/cli/reference/permissions), [configuration](https://cursor.com/docs/cli/reference/configuration), [third-party/native hooks](https://cursor.com/docs/reference/third-party-hooks) and [headless behavior](https://cursor.com/docs/cli/headless) were read on 2026-11-26. Permissions support project deny rules for Shell/Read/Write/WebFetch/MCP; generic `preToolUse` can return `permission: deny`. Public documentation alone does not establish coverage in the pinned build.
+Official [CLI permissions](https://cursor.com/docs/cli/reference/permissions), [configuration](https://cursor.com/docs/cli/reference/configuration), [third-party/native hooks](https://cursor.com/docs/reference/third-party-hooks) and [headless behavior](https://cursor.com/docs/cli/headless) were accessed 2026-11-26. Permissions support project deny rules for Shell/Read/Write/WebFetch/MCP; generic `preToolUse` can return `permission: deny`. Public documentation alone does not establish coverage in the pinned build.
 
 An initial scout's negative search missed the relevant lazy chunk. A complete byte scan over all 99 installed JS files (34,619,850 bytes), with `sessionStart`/`executeHookForStep` as positive controls, found `preToolUse` in `9622.index.js`, `index.js` and `connect-pool-worker.js`. The pinned `hooks-exec` module contains the generic rejection gate, streamed/MCP paths, deny-dominant response merging and `failClosed` handling. That refutes the earlier absence inference, not every possible dispatch bypass. An offline qualifier must exercise the actual installed loader/merge/gate logic and identify unmapped or remote tool paths before admission; no guessed JSON setting or tool-free model answer substitutes for it.
 
 An isolated-HOME/config `cursor-agent status` probe requested no inference and reported not logged in. No credential file was copied, linked or read to repair that profile. Any qualified recipe must separately identify ordinary CLI setup/auth/logging and unisolated session hooks rather than claiming those processes are absent.
 
-**Continuation admission: HELD.** Zero new pilot CLI invocations. Host research agents and documentation retrieval are separate from the experimental call count. The offline outcome below does not satisfy the no-tool prerequisite, so neither the canary nor the nineteen slots was dispatched. Any later host-configuration change remains a recorded context change; filling 144 output slots would still not repair the original grader, selection or causal-inference limitations.
+**Admission after the module-level qualification: held.** No pilot CLI invocation occurred during the preflight; host research agents and documentation retrieval are separate from the experimental call count. The offline outcome below did not satisfy the no-tool prerequisite. The [host boundary qualification](#host-boundary-qualification-2026-11-26) later admitted the continuation. Any host-configuration change remains a recorded context change; filling 144 output slots does not repair the original grader, selection or causal-inference limitations.
 
 ### Offline qualification outcome
 
@@ -237,14 +239,64 @@ The remaining gap is complete end-to-end tool coverage, or a separately demonstr
 
 Receipts and runnable module probes remain session-private under `continuation-2026-11-26/qualification/`; the raw qualifier recommendation is retained as advisory, not adopted authority. Their counts, source pins and decision-bearing limits are recorded here so a fresh checkout does not depend on that directory to understand the hold.
 
+### Host boundary qualification (2026-11-26)
+
+After the owner's next **"continue"**, the coordinator took the second route named above: a separately demonstrated host boundary for the residual. Each continuation job runs the pinned Node runtime and `index.js` directly — the pinned wrapper's own exec line, read in full — under a per-job macOS `sandbox-exec` profile, with the frozen deny-all project `hooks.json` in an otherwise empty workspace.
+
+| Invariant | Rule | Probe evidence |
+| --- | --- | --- |
+| B1 reads | No file contents under `/Users`, `/Volumes`, `/private/tmp` or the user temp directory, except the pinned install, the job workspace and temp directory, this job's Cursor chat/project state, named CLI state files, skill directories and Keychains; stat-style metadata stays visible | Denied: the repository, session evidence, sealed maps, an arm output, another chat, Claude settings/config, plugin MCP configs, `~/.ssh`, prompt history, another temp workspace and the user temp directory. Allowed reads succeeded |
+| B2 writes | Only the job temp directory, the install's `.running` markers, this job's chat/project state and four named CLI state files | Writes to home, the workspace, `~/.cursor`, plugins and `/private/tmp` denied; job temp allowed |
+| B3 exec | Only binaries inside the pinned install, plus `/usr/bin/security`, which the CLI spawns during authenticated start-up; no shell | `sh`, `zsh`, `bash`, `curl`, `printf`, `git`, `ps`, `npx` and `osascript` denied; pinned `node`, `rg` and `security` allowed |
+| B4 network | Localhost TCP/UDP denied over IPv4 and IPv6; remote egress remains because the provider needs it | Localhost connects denied; `api2.cursor.sh:443` allowed |
+
+All 40 probe checks matched their expected outcomes. Plugin and Claude configuration is unreadable and shells cannot execute, so plugin MCP servers, plugin/Claude-imported hooks and every shell-based executor are unavailable whichever executor the CLI selects; inside the boundary, `mcp list` reported no MCP servers. Source inspection shows the print-mode stream writer emits a `tool_call` event for every `toolCallStarted` interaction update, whose tool-call union includes web-search, task and glob calls. Server-side tools are therefore detected by the existing zero-tool-event rule, not host-prevented.
+
+Zero-inference checks inside the boundary: authenticated `status` exited 0; with all remote egress also denied, the agent path failed at the same first `api2.cursor.sh:443` connection as an unconfined trace; `create-chat` exited 0; and a full harness dry run with egress denied retained receipts and left the workspace unchanged.
+
+**Canaries.** The first authorized canary exited before any agent request. Cursor's own `--sandbox enabled` shell sandbox cannot nest inside `sandbox-exec` ("Sandbox mode is enabled but not available"). The pinned print path exits on that check before the headless-policy request and agent run, and the stream had zero events. The owner then authorized exactly one replacement with `--sandbox disabled` (form answer `one_more`): CLI starts rise to 21, while model requests stay at most 20. The replacement exited 0 with `Grok 4.7 256K Medium`, zero tool events, a successful non-empty answer and an unchanged workspace. Its kernel-denied operations were CLI start-up scans only: plugin, Claude and other-agent skill roots; symlinked skill targets; `git`/`ps`/`npx` execution; and plugin-marketplace/skills-cursor sync writes. Those classes, frozen before slot dispatch, define the boundary stop rule. Any other sandbox denial during a slot stops the continuation, as do a tool event, model drift, workspace mutation, quota signal or harness failure. Nothing is retried automatically.
+
+**Context stratum.** The boundary changes host context relative to the original 125 outputs. Cursor's shell-sandbox flag is off, because shells cannot execute at all. Plugin context and Claude imports are absent. The nine reflective skills are missing from the injected skill list, because they are symlinks from `~/.agents/skills`, `~/.cursor/skills` and `~/.claude/skills` into the denied repository. Continuation outputs therefore form a separate stratum; a mixed pair combines one original-stratum arm and one boundary-stratum arm.
+
+### Continuation execution and combined diagnostics (2026-11-26)
+
+All 19 slots ran once, sequentially, in the frozen seeded order, with no host deadline: 19 valid, none invalid, no stop and no retry. Every receipt reports exit 0, `Grok 4.7 256K Medium`, zero tool events, a successful non-empty answer, the frozen prompt hash, an unchanged boundary workspace and no quota signal. Every kernel denial fell within the frozen start-up classes, and an independent recheck of all receipts agreed. Slot wall time ranged from 39.2 to 225.1 s (median 96.9 s). The 125 original outputs and all 500 hashed original artifacts stayed byte-identical. The continuation used 21 CLI starts (one canary failing before its agent request, one replacement canary, nineteen slots) and 20 model requests.
+
+Blind scoring reused the unchanged scaffold and frozen scorers, through a separate launcher bound to a fresh `diagnostic-cont/` namespace. It scored only the 15 Grok pairs the continuation completed: eleven mixed pairs (an original orphan plus a boundary arm) and four boundary-only pairs. The 30 outputs produced zero arm tokens and no scorer error. The original 57 pairs kept their frozen labels, and every unit now has twelve scored outputs. U02, U04, U11 and U12 joined U09 with twelve identical labels, all passes. Before unblinding, the coordinator read one new Grok sample per unit in full; each supported its scored obligation. Each unit's second sample is its Gemini output, already checked blind, so the scorer check raised no rubric-defect disposition.
+
+Each cell is frozen predicate passes out of three complete pairs. The analysis code and formal rule were hash-pinned before any continuation output existed.
+
+| Unit | Grok C | Grok T | Gemini C | Gemini T | Mechanical outcome | Grok strata (pairs: C/T passes) |
+| --- | --- | --- | --- | --- | --- | --- |
+| U01 | 3/3 | 0/3 | 1/3 | 0/3 | load-bearing | original 1: 1/0; mixed 2: 2/0 |
+| U02 | 3/3 | 3/3 | 3/3 | 3/3 | no-op candidate | original 1: 1/1; mixed 2: 2/2 |
+| U03 | 3/3 | 0/3 | 3/3 | 0/3 | load-bearing | original 1: 1/0; mixed 2: 2/0 |
+| U04 | 3/3 | 3/3 | 3/3 | 3/3 | no-op candidate | original 1: 1/1; mixed 2: 2/2 |
+| U05 | 3/3 | 0/3 | 3/3 | 0/3 | load-bearing | original 2: 2/0; boundary 1: 1/0 |
+| U06 | 1/3 | 0/3 | 2/3 | 0/3 | load-bearing | original 3: 1/0 |
+| U07 | 3/3 | 0/3 | 3/3 | 0/3 | load-bearing | original 2: 2/0; boundary 1: 1/0 |
+| U08 | 3/3 | 0/3 | 3/3 | 2/3 | load-bearing | original 2: 2/0; mixed 1: 1/0 |
+| U09 | 3/3 | 3/3 | 3/3 | 3/3 | no-op candidate | original 3: 3/3 |
+| U10 | 3/3 | 0/3 | 3/3 | 0/3 | load-bearing | original 2: 2/0; boundary 1: 1/0 |
+| U11 | 3/3 | 3/3 | 3/3 | 3/3 | no-op candidate | original 1: 1/1; mixed 1: 1/1; boundary 1: 1/1 |
+| U12 | 3/3 | 3/3 | 3/3 | 3/3 | no-op candidate | original 2: 2/2; mixed 1: 1/1 |
+
+**Formal dispositions: all twelve remain `inconclusive`; no deletion proposal follows.** This applies the rule pinned before unblinding, not a post-hoc threshold change: 125 of 144 outputs ran without enforced no-tool qualification, Grok cells mix two host-context strata, the grader limits recorded above still apply, and U03/U04 keep their selection-shape defects. The mechanical outcomes describe predicate sensitivity on these fixtures:
+
+- Most of the seven mechanical load-bearing units separate at 3/3 versus 0/3 because their predicates look for wording the deleted unit prescribes, such as U05's verbatim `TWINS: searched` prefix. That shows the text changes emitted output, not that the named behavior was executed.
+- The five mechanical no-op candidates are exactly the units where every output in both arms and both families passes. Five of twelve is not "most units", so the insensitive-fixture falsifier is not triggered for the pilot as a whole. For these units, though, saturation under surviving clauses or keyword predicates cannot separate an unnecessary unit from an insensitive fixture.
+- Within Grok, no mixed or boundary-only stratum reversed the direction of its unit's original-stratum pairs. Each stratum holds one to three pairs, so this is a consistency observation, not a test of stratum independence.
+
+Session-private evidence: `continuation-2026-11-26/` (receipts, boundary files; `cont-snapshot.json` SHA-256 `50a511aa6f2cab78485e775832d9d3f06e4ceed27f933cfd1bb7ff520e915023`) and `diagnostic-cont/` (blinded candidates, sealed map, scores, blind audit; `combined-arm-counts.json` SHA-256 `5a4e9d31aa3cd6248c4d3b9c8aff514f3d71d1e661a27875a31f57dbf5ba20da`). The decision-bearing counts are reproduced here.
+
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Disposition | Next decision |
 | --- | --- | --- | --- |
 | X4B-PLAN1 | This plan | Drafted 2026-11-26; the owner authorized execution the same day | — |
-| X4B-RUN1 | Pilot execution | Interrupted 2026-11-26: 125 completed receipts of 144 intended slots; no completed-cohort verdict | Preserve partial diagnostics; X4B-CONT1 records the later authorized but held continuation |
+| X4B-RUN1 | Pilot execution | Interrupted 2026-11-26: 125 completed receipts of 144 intended slots | Completed by X4B-CONT1; interrupted-cohort diagnostics retained |
 | X4B-DEL1 | Any unit deletion | Not authorized | Per-unit owner approval after verdicts |
-| X4B-CONT1 | Missing-slot continuation | Owner authorized 2026-11-26, including two replacements with accepted duplicate-quota risk; one canary plus nineteen slot invocations; HELD after offline qualification | Demonstrate complete no-tool coverage or a separate host boundary; changing execution mode needs an explicit owner decision |
+| X4B-CONT1 | Missing-slot continuation | Executed 2026-11-26 inside the demonstrated host boundary after one owner-approved replacement canary: 19/19 valid slots, 144/144 outputs; formal dispositions inconclusive | A stronger claim needs a new preregistered cohort with enforced no-tool qualification for every slot, repaired predicates and the selection rule applied as written |
 
 ## Standing Non-Goals
 

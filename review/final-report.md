@@ -10182,3 +10182,59 @@ Engine-side hook-RPC necessity and model-callable reachability of unmapped inter
 Completion still needs a demonstrated end-to-end no-tool boundary, or a separate demonstrated host boundary covering the residual. A changed execution mode needs an explicit owner decision and a bounded safety case, not another generic approval to execute. No missing result is counted as failure. DF-C2 custody and DF-PB1 human-scoring/acceptance gates remain unchanged.
 
 Delivery scope: a local-only commit of these records and generated metadata; no push, unit deletion or permission widening. The private ledger keeps `requested_task_complete: false` and names both held work items.
+
+## X4b bounded continuation completed (2026-11-26)
+
+### Summary and Decision
+
+After the owner's next **"continue"**, the coordinator closed the held gap by the second route recorded above: a separately demonstrated host boundary. The pinned Cursor CLI runs under a per-job macOS `sandbox-exec` profile, together with the frozen deny-all project hooks:
+
+- No shell or binary outside the CLI install except the keychain helper.
+- No user-file reads outside CLI state and skill directories, and no writes outside job state.
+- No localhost access; plugin and Claude configuration is unreadable.
+
+The first canary exited before any agent request, because Cursor's own `--sandbox enabled` cannot nest inside `sandbox-exec`. The owner approved exactly one replacement with `--sandbox disabled`, and it passed. All 19 missing slots then ran valid, completing **144/144** outputs.
+
+Blind scoring of the 15 newly completed Grok pairs reused the frozen scaffold and scorers. The preregistered thresholds mechanically mark seven units load-bearing and five as no-op candidates; all five candidates are fully saturated. The formal rule, hash-pinned before any continuation output existed, keeps **all twelve formal dispositions `inconclusive`**, and no deletion proposal follows.
+
+### Files Changed
+
+- `reflective-prompt-library/plans/wgs-x4b-noop-hunt-plan-2026-11-26.md`: status line, evidence lines, host boundary qualification, continuation execution and combined diagnostics, and ledger rows. Also fixes the access-date wording on the earlier documentation sentence.
+- `reflective-prompt-library/plans/skills-survey-corpus-rethink-2026-11-26.md`: status line and continuation outcome.
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md`: existing Decision Index pointer only.
+- `reflective-prompt-library/index.json`: regenerated.
+- `review/final-report.md`: this section.
+
+No Skill, installed hook, host configuration, frozen scorer, original trial output or original score changed. The boundary profile builder, launcher, probes, continuation runner, namespace-bound scorer launcher and blind/unblind stages are session-private harness files, not a shipped runner.
+
+### Acceptance Criteria Status and Traceability
+
+| Requested result | Evidence | Status |
+| --- | --- | --- |
+| Qualify no-tool execution before dispatch | 40/40 boundary probe outcomes; zero-inference status, egress-denied agent path, `create-chat`, `mcp list` and harness dry run; valid replacement canary | Verified for the continuation slots. Server-side tools are detected through stream events, not host-prevented |
+| Stay inside the owner envelope | 21 CLI starts (one pre-request failure, one approved replacement, 19 slots); 20 model requests; no retry, credits or overage | Verified |
+| Complete only the missing slots | 19/19 valid receipts; frozen prompt hashes; no overlap with the 125 completed jobs | Verified |
+| Preserve original evidence | All 500 original artifact digests, including the 125 outputs, unchanged | Verified |
+| Blind-score in a fresh namespace | 15 pairs, 30 outputs, zero arm tokens; scorer check on the four newly identical units before unblinding | Verified |
+| Assign dispositions with method limits | Combined matrix with Grok strata; formal rule pinned before outputs existed | All twelve inconclusive; no deletion proposal |
+| Update records and verify the repository | Plan, rethink record, Decision Index, index; full gate and focused rerun below | Verified |
+
+### Tests / Checks Run
+
+- **Boundary:** an enforcement probe under the profile matched all 40 expected outcomes for reads, writes, executions and connections. Inside the boundary, authenticated `status` exited 0, the egress-denied agent path failed at the same first `api2.cursor.sh:443` connection as an unconfined trace, `create-chat` exited 0, `mcp list` reported no servers, and a full harness dry run retained receipts with the workspace unchanged.
+- **Canaries:** canary 1 failed before any agent request: zero stream events, and in the pinned print path the exit precedes the headless-policy request and agent run. Canary 2 exited 0 with `Grok 4.7 256K Medium`, zero tool events and an unchanged workspace; its kernel denials were start-up scans only.
+- **Slots:** 19/19 valid in 2,008 s, run sequentially without retries. An independent recheck confirmed prompt hashes, workspace, model, zero tool events, no quota signal and no denial outside the frozen classes, with no leftover workspace or temp directories.
+- **Scoring:** the scaffold accepted the fresh namespace and scored 30 outputs with exits 0/1 only and zero arm tokens. Before unblinding, the coordinator read the four new Grok scorer-check samples in full; each supported its obligation.
+- **Full gate:** `PYENV_VERSION=3.13.0 PYTHONDONTWRITEBYTECODE=1 make all` exited 0, with **1,776 passed in 61.75 s**, 339 files and zero link/lint errors, zero record-hygiene errors, and every routing eval met its threshold. Its one new hygiene warning was an access-date phrase from the previous round; it was rephrased afterwards, and the focused rerun covers the final bytes.
+- **Focused rerun on the final bytes:** index regenerated (279 files). The index, record-hygiene and link tests passed (**23 passed in 0.75 s**), and so did the project-knowledge validator. Record hygiene shows 0 errors and is back to its 373-warning baseline, with none in the edited records.
+
+### Failures, Skipped Checks and Residual Risks
+
+- The original 125 outputs still lack enforced no-tool qualification; they were not rerun. The 72 Gemini outputs needed no continuation, and the later `agy` 1.5.18 update played no part.
+- Remote egress stays open because the provider needs it. `/usr/bin/security` stays executable because the CLI reads its keychain credential through it. With no shell available, shell-based executors cannot reach it; a direct absolute-path executor was not demonstrated.
+- The continuation stratum lacks the reflective skill-list entries, which are symlinks into the denied repository, and lacks plugin context and Claude imports; eleven pairs mix strata. The recorded grader limits and U03/U04 selection-shape defects remain. Mechanical outcomes measure emitted wording, not executed behavior.
+- Provider quota debits for the two original unknown calls and their replacements remain unverified. No billing reconciliation was attempted.
+
+### Next Action and Human Review
+
+No deletion proposal is made; X4B-DEL1 remains unauthorized. A stronger claim would need a new preregistered cohort, with enforced no-tool qualification for every slot, repaired predicates and the selection rule applied as written. That cohort is an owner decision. DF-C2 custody and DF-PB1 human-scoring/acceptance gates remain unchanged. This delivery is a local-only commit, with no push.
