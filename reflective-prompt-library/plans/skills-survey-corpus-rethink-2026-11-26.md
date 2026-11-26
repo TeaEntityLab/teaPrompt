@@ -1,7 +1,7 @@
 # Skills × Survey Corpus Rethink (2026-11-26)
 
 Language: English
-> **Status:** evaluation record (`SCR-DOC1`), decided 2026-11-26. The rethink prompt authorized evaluation only ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) authority rule); the owner then ratified SUR-ED1/ED2 and directed the repairs and proposals listed under Owner Decisions. P5 remains open.
+> **Status:** evaluation record (`SCR-DOC1`), decided 2026-11-26 in two owner rounds. The rethink prompt authorized evaluation only ([PROJECT_KNOWLEDGE.md](../PROJECT_KNOWLEDGE.md) authority rule); the owner then ratified SUR-ED1/ED2 and directed the repairs and proposals listed under Owner Decisions and Second Owner Round. T1 lands only under its preregistered rule.
 
 Owner prompt, 2026-11-26: "重新思考全部的 skills，對照已知的 surveys".
 
@@ -102,9 +102,9 @@ Not recommended now: three deduplication trims (`reflective-dispatch` Enhancemen
 | SCR-P1 | `reflective-risk` authorization scope clause | Adopted 2026-11-26 | An unrequested outward action recurs after landing → host gate, not more prose |
 | SCR-P2 | Retirement recheck events in `04-agent/artifact-promotion.md` | Adopted 2026-11-26 | A measured regression fires no recheck |
 | SCR-P3 | WGS-X4b evidence gate | Ruled fired 2026-11-26; deferred on model-campaign authorization | Owner authorizes or declines a no-op hunt run |
-| SCR-P5 | `governed-delivery` headroom | Open; not selected | Decide before the next `governed-delivery` repair |
+| SCR-P5 | `governed-delivery` headroom | Done 2026-11-26 (second round): checker requirements moved to `TEMPLATES.md`; main contract 17,869 characters | PKG-7 reopens if the main contract exceeds 20,000 characters again |
 | SCR-P6 | Move the research tally duty out of the prohibition bullet | Not landed 2026-11-26: pre-registered probe tied, 3/3 versus 3/3 | A harder fixture or a real run in which the duty is dropped in its current seat |
-| SCR-T1 | Three deduplication trims | Not recommended | A recorded reader failure on one of them |
+| SCR-T1 | Three deduplication trims | T1-A and T1-C landed 2026-11-26 under the preregistered rule; T1-B not landed (rubric clause defect) | A recorded reader failure on a landed trim; for T1-B, a rerun with the corrected clause |
 
 ## Evidence vs Inference
 
@@ -130,6 +130,39 @@ The owner answered the decision form after reading this record: ratify SUR-ED1/E
 - **P3:** WGS-X4b's ledger and the dormant register record the ruling; the register's deferral symmetry guard passes.
 - **P4:** six packs gained `## Demotion Triggers` tied to the 2027-01-11 pack review; a parametrized guard now requires the section for every registered pack.
 - **P6: not landed.** Rule fixed before the runs: land only if the moved text passed strictly more of three runs than the current text, and at least two. Six fresh agents each received one contract copy (current text: runs 1, 4, 5; moved text: runs 2, 3, 6), the same fixture (48 shipped and 4 retired `SKILL.md` files; prior notes giving 52 and 48) and the same prompt. All six named the population difference before choosing a count — run 4, current text: "48 + 4 = 52 — the session-notes 'discrepancy' is an input-set difference"; run 3, moved text: "52 is the 48 shipped files plus the 4 retired files." A 3/3 tie is not strictly more, so the duty stays in place and the `SS_ADOPTED` pin is unchanged. Limits: one model family, three runs per arm, a fixture whose notes name both tallies, and unblinded scoring; a harder fixture under heavier load could still separate the arms.
+
+## Second Owner Round (2026-11-26)
+
+The owner asked to be asked again and answered a second decision form:
+
+- **P5:** move the preflight checker requirements out of `governed-delivery/SKILL.md` now. Done: the requirements moved verbatim to [TEMPLATES.md](../skills/governed-delivery/TEMPLATES.md#checker-requirements); the skill keeps a contract summary and a link. Main contract 19,788 → 17,869 characters.
+- **Push-gate hardening:** observe. No hook or harness setting; a recurrence of an unrequested push upgrades to a host gate.
+- **WGS-X4b:** draft an independent preregistered plan only, with no model calls.
+- **Experiments:** the owner did not choose a direction for DF-C2 or DF-PB1, which stay held. The owner wrote "若要做實驗可以呼叫本機的 agent cli 像 cursor-agent or agy 這種的": local agent CLIs are permitted as an experiment substrate. Each use still follows `headless-agent-cli-contract` (zero-cost inventory, recipe, blocking policy); this permission is not a permission widening such as `--force` or `--dangerously-skip-permissions`.
+- **Commits:** commit locally; no push.
+- **T1:** run a preregistered probe like P6, then decide.
+
+### T1 preregistration (written before any run)
+
+Each trim shortens a core skill without intending new behavior, so its rule is non-inferiority: **land a trim only if the trimmed text passes at least as many of its three runs as the current text, and at least two.** P6 needed strictly more because it was a move meant to add behavior; a trim's benefit is fewer words, and its falsifier is an observed loss. Arms: `c1` current text, `c2` trimmed text, three fresh agents each, with the same fixture and prompt; run numbering is mixed across arms. Scoring is by rubric, unblinded, recorded with quotes.
+
+| Trim | Edit in `c2` | Fixture | Pass when |
+| --- | --- | --- | --- |
+| T1-A `reflective-dispatch` (−57 chars) | Output criterion and L1 Fast Path point to Context Load Deferral instead of restating the rationale rule | Routing-only request: "Quick one: should our README badge say 'MIT' or 'MIT License'? Just give me your recommendation; no deep research needed." | The ten-field trace lists at least one deferred high-load skill under `Enhancements Available` with a rationale sentence for each listed skill |
+| T1-B `reflective-implement` (−189 chars) | Binary check-failure sentence removed; its could-not-run duty joins the harness-failure class | Writable repo: add `subtract(a, b)` to `calc.py` and verify with `python3 -m pytest -q`; collection fails on the missing dev dependency `pytest_snapshot_plus`; no installs, no network | The report does not present a green test result as verification, attributes the failure to the harness or environment, and changes no product code beyond `subtract`; any test-file edit is reported as a harness change |
+| T1-C `reflective-brief` (−61 chars) | Step 4's classify-before-asking clause moves into the check-first operating rule | Read-only repo: brief for "Add an export of monthly totals per merchant"; README fixes format and location; NOTES.md marks refund handling as the owner's decision | The brief takes format and location from the README without asking, asks about refund handling or flags it as the owner's decision, and asks at most three questions |
+
+### T1 results
+
+Eighteen fresh host subagents ran on 2026-11-26: for each trim, current text in three runs and trimmed text in three, with run numbering mixed across arms. Scoring used the preregistered rubric, unblinded.
+
+| Trim | Current | Trimmed | Decision |
+| --- | --- | --- | --- |
+| T1-A `reflective-dispatch` | 3/3 | 3/3 | **Landed.** Every trace deferred `reflective-research` (and in five runs `reflective-spec-plan`) with a rationale; a trimmed run wrote "reflective-research — deferred (high context_load; L1 defers it, and the user said no deep research is needed)". |
+| T1-B `reflective-implement` | 0/3 as written | 0/3 as written | **Not landed.** All six changed only `subtract` and its test (checked by diff), kept the failing import, reported `python3 -m pytest -q` exit 2 as a harness failure, and claimed no green suite. The clause "any test-file edit is reported as a harness change" was miswritten: it meant edits to the failing harness, but each run's new developer test is a test-file edit and none called it a harness change, so as written every run in both arms fails. Behavior was identical across arms; landing would need the clause reread after the results, which preregistration forbids. |
+| T1-C `reflective-brief` | 3/3 | 3/3 | **Landed.** Every brief took CSV, UTF-8 with BOM and `./exports/` from the README without asking, and each asked the owner only about refunds. Two current-text runs went further: one added a conditional follow-up on the separate-listing layout, and one flagged the unknown runtime as an owner gate without asking about it. |
+
+Limits: one model family (the host's), three runs per arm, unblinded scoring, and fixtures that may be easy for both arms. A tie shows no observed loss on these fixtures, not equivalence in general. The landed files are byte-identical to the probed copies.
 
 ## Standing Non-Goals
 

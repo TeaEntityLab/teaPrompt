@@ -47,7 +47,7 @@ Escalation:
 1. Identify the real goal.
 2. Clarify the intended user outcome (job-to-be-done).
 3. Separate problem, symptom, and proposed solution.
-4. State assumptions and unknowns; an unresolved high-impact, irreversible assumption is a Human Review trigger, not a default. Before an unknown becomes a question to the user, classify it: answerable from the repository or tools (look), safe to assume (state it with its status), or the owner's decision (ask); only the last kind is asked.
+4. State assumptions and unknowns; an unresolved high-impact, irreversible assumption is a Human Review trigger, not a default.
 5. Classify inputs as user intent, project instruction, retrieved data, tool result, or unknown.
 6. Define scope in / scope out.
 7. Define inputs and outputs.
@@ -99,7 +99,7 @@ Each assumption carries a status — `open`, `confirmed`, `refuted`, or `stale` 
 ## Operating Rules
 
 - Ask only when missing information changes safety, architecture, cost, privacy, data loss, or irreversibility.
-- Before asking for clarification, make a brief, targeted check of available repository files, documentation, and durable memory. Ask only about a material fork the evidence cannot resolve; stop investigating once the question is specific.
+- Before asking for clarification, make a brief, targeted check of available repository files, documentation, and durable memory. Classify each unknown as answerable there (look), safe to assume (state it with its status), or the owner's decision (ask); only the last kind is asked. Ask only about a material fork the evidence cannot resolve; stop investigating once the question is specific.
 - Missing information is unknown, not negative evidence or permission to infer sensitive facts.
 - If ambiguity is safe, proceed with explicit assumptions.
 - Provide concise reasoning summaries and clean artifacts; the raw-reasoning-token rule is defined once under `Never`.

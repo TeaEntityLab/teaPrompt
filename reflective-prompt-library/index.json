@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T11:46:05.839154",
+  "generated_at": "2026-11-26T15:03:13.123775",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -156,6 +156,7 @@
             "agent-harness-convergence-survey-2026-08-25.md",
             "agent-infra-jd-survey-2026-11-20.md",
             "skills-runtime-legitimacy-panel-record-2026-07-06.md",
+            "wgs-x4b-noop-hunt-plan-2026-11-26.md",
             "heddle-source-survey-2026-10-12.md",
             "QUALITY_GATES_SUMMARY.md",
             "pi-warden-survey-2026-09-20.md",
@@ -6934,7 +6935,8 @@
         "ref_file": [],
         "ref_snippet": [],
         "markdown_links": [
-          "../PROJECT_KNOWLEDGE.md"
+          "../PROJECT_KNOWLEDGE.md",
+          "../skills/governed-delivery/TEMPLATES.md#checker-requirements"
         ]
       },
       "structure": [
@@ -6984,11 +6986,23 @@
         },
         {
           "level": 2,
+          "text": "Second Owner Round (2026-11-26)"
+        },
+        {
+          "level": 3,
+          "text": "T1 preregistration (written before any run)"
+        },
+        {
+          "level": 3,
+          "text": "T1 results"
+        },
+        {
+          "level": 2,
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 137,
-      "char_count": 16569
+      "line_count": 170,
+      "char_count": 21981
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -7504,6 +7518,7 @@
           "skill-improvement-plan-2026-07-24.md",
           "skill-improvement-plan-2026-07-24.md",
           "skills-survey-corpus-rethink-2026-11-26.md",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md",
           "skill-improvement-plan-2026-07-24.md",
           "runtime-governance-learning-plan-2026-06-11.md",
           "../06-repo/AGENTS.md#harness-policy-nine-skills",
@@ -7671,7 +7686,7 @@
         }
       ],
       "line_count": 913,
-      "char_count": 65467
+      "char_count": 65536
     },
     {
       "path": "reflective-prompt-library/plans/roadmap-software-factory-devops-2026-10-13.md",
@@ -8920,7 +8935,8 @@
         "ref_snippet": [],
         "markdown_links": [
           "checkpoint-packaging-decision-2026-10-11.md",
-          "skills-survey-corpus-rethink-2026-11-26.md"
+          "skills-survey-corpus-rethink-2026-11-26.md",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md"
         ]
       },
       "structure": [
@@ -9026,7 +9042,7 @@
         }
       ],
       "line_count": 302,
-      "char_count": 28036
+      "char_count": 28137
     },
     {
       "path": "reflective-prompt-library/plans/openfugu-research-record-2026-06-25.md",
@@ -12817,6 +12833,85 @@
       ],
       "line_count": 179,
       "char_count": 9583
+    },
+    {
+      "path": "reflective-prompt-library/plans/wgs-x4b-noop-hunt-plan-2026-11-26.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "wgs-x4b-noop-hunt-plan-2026-11-26",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": [
+          "skill-improvement-plan-2026-07-24.md",
+          "skill-improvement-plan-2026-07-24.md",
+          "skills-survey-corpus-rethink-2026-11-26.md",
+          "fresh-dogfood-campaign-preregistration-2026-10-14.md",
+          "procedural-blind-dogfood-preregistration-2026-10-15.md",
+          "skills-survey-corpus-rethink-2026-11-26.md#owner-decisions-and-landing-2026-11-26",
+          "skills-survey-corpus-rethink-2026-11-26.md#t1-results",
+          "../skills/headless-agent-cli-contract/SKILL.md"
+        ]
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "WGS-X4b No-Op Hunt — Preregistered Plan (2026-11-26)"
+        },
+        {
+          "level": 2,
+          "text": "Question"
+        },
+        {
+          "level": 2,
+          "text": "Relation to Existing Work"
+        },
+        {
+          "level": 2,
+          "text": "Units and Selection Rule"
+        },
+        {
+          "level": 2,
+          "text": "Arms and Fixtures"
+        },
+        {
+          "level": 2,
+          "text": "Substrate (owner permission, 2026-11-26)"
+        },
+        {
+          "level": 2,
+          "text": "Measurement and Decision Rules"
+        },
+        {
+          "level": 2,
+          "text": "Proposed Budget"
+        },
+        {
+          "level": 2,
+          "text": "Execution Steps"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 98,
+      "char_count": 7344
     },
     {
       "path": "reflective-prompt-library/plans/heddle-source-survey-2026-10-12.md",
@@ -23973,7 +24068,7 @@
         }
       ],
       "line_count": 180,
-      "char_count": 12060
+      "char_count": 12003
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -24524,7 +24619,7 @@
         }
       ],
       "line_count": 122,
-      "char_count": 5258
+      "char_count": 5197
     },
     {
       "path": "reflective-prompt-library/skills/reflective-research/SKILL.md",
@@ -25080,7 +25175,8 @@
           "ARTIFACTS.md#acceptance-record",
           "ARTIFACTS.md#envelope",
           "ARTIFACTS.md#gate-retro",
-          "TEMPLATES.md"
+          "TEMPLATES.md",
+          "TEMPLATES.md#checker-requirements"
         ]
       },
       "prompt_sources": [
@@ -25149,8 +25245,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 177,
-      "char_count": 19788
+      "line_count": 173,
+      "char_count": 17869
     },
     {
       "path": "reflective-prompt-library/skills/reflective-implement/SKILL.md",
@@ -25954,5 +26050,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 278
+  "total_files": 279
 }

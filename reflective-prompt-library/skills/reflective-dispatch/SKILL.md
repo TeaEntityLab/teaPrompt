@@ -40,7 +40,7 @@ Methods:
 
 Output:
 - For routing-only work, output the ten-field trace the router linter checks: `Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, and `Next Action`.
-- A blank `Route Confidence`, a deferred enhancement with no rationale sentence, or a high-risk route whose `Human Review` is blank or `not required` is not a finished trace.
+- A blank `Route Confidence`, a deferral that breaks Context Load Deferral, or a high-risk route whose `Human Review` is blank or `not required` is not a finished trace.
 
 Never:
 - Do not create a large plan, agent swarm, or multi-file process when a smaller workflow can produce the result.
@@ -125,7 +125,7 @@ When **all** of the following are true, skip a separate `reflective-brief` and a
 - The task is trivial or a single obvious action.
 - No high-risk, trust-boundary, or side-effect authority signals appear.
 
-Still emit the full ten-field route trace (`Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow: prompt-only`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`); deferred `context_load: high` skills go under `Enhancements Available` with a one-line rationale. If any Fast Path eligibility signal (strictness, triviality, or a high-risk / trust-boundary / side-effect cue) is ambiguous, default-up to `reflective-brief` instead of silent downgrade; safe content ambiguity after routing is handled by stating assumptions, not by a second default-up.
+Still emit the full ten-field route trace (`Mode`, `Strictness`, `Goal`, `Assumptions`, `Workflow: prompt-only`, `Route Confidence`, `Enhancements Enabled`, `Enhancements Available`, `Human Review`, `Next Action`); deferred skills follow Context Load Deferral. If any Fast Path eligibility signal (strictness, triviality, or a high-risk / trust-boundary / side-effect cue) is ambiguous, default-up to `reflective-brief` instead of silent downgrade; safe content ambiguity after routing is handled by stating assumptions, not by a second default-up.
 
 ## Context Load Deferral
 
