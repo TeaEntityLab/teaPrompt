@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T17:03:55.028505",
+  "generated_at": "2026-11-26T19:09:18.519493",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -6939,7 +6939,9 @@
           "wgs-x4b-noop-hunt-plan-2026-11-26.md#interruption-and-recovery-2026-11-26",
           "../skills/governed-delivery/TEMPLATES.md#checker-requirements",
           "wgs-x4b-noop-hunt-plan-2026-11-26.md",
-          "wgs-x4b-noop-hunt-plan-2026-11-26.md#diagnostic-scores-and-unit-disposition-2026-11-26"
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#diagnostic-scores-and-unit-disposition-2026-11-26",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#continuation-authorization-and-preflight-2026-11-26",
+          "wgs-x4b-noop-hunt-plan-2026-11-26.md#offline-qualification-outcome"
         ]
       },
       "structure": [
@@ -7020,8 +7022,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 218,
-      "char_count": 28058
+      "line_count": 219,
+      "char_count": 28833
     },
     {
       "path": "reflective-prompt-library/plans/harness-four-survey-2026-11-13.md",
@@ -12943,6 +12945,22 @@
         },
         {
           "level": 2,
+          "text": "Continuation Authorization and Preflight (2026-11-26)"
+        },
+        {
+          "level": 3,
+          "text": "Unknown-call reconciliation"
+        },
+        {
+          "level": 3,
+          "text": "No-tool qualification remains a prerequisite"
+        },
+        {
+          "level": 3,
+          "text": "Offline qualification outcome"
+        },
+        {
+          "level": 2,
           "text": "Candidate Adoption Ledger"
         },
         {
@@ -12950,8 +12968,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 203,
-      "char_count": 24190
+      "line_count": 251,
+      "char_count": 32374
     },
     {
       "path": "reflective-prompt-library/plans/heddle-source-survey-2026-10-12.md",

@@ -10122,3 +10122,63 @@ Continuation requires verified no-tool qualification, reconciliation or explicit
 Local-only commit of the verified trim and honest partial-result records; no push or unit deletion.
 
 `PENDING: continue X4b provider dispatch - awaiting your authorization`
+
+## X4b continuation preflight and held delivery (2026-11-26)
+
+### Summary and Decision
+
+The owner's subsequent **"continue"** request and explicit replacement-cost form answered the authorization hold recorded above. They permit one new canary plus nineteen missing-slot CLI invocations, including two replacements with accepted possible duplicate quota debit. They do not waive no-tool qualification. The upper bound counts CLI starts, not opaque provider-internal requests.
+
+**Technical admission remains HELD.** The installed hook machinery denies the tested requests, but the module-level evidence does not establish complete model-tool dispatch coverage. The coordinator declined the qualifier's conditional admission recommendation. No new pilot CLI invocation occurred, no completed original slot was resent, and no fresh scoring run was performed. The requested 144-slot execution remains incomplete at 125 completed receipts; all twelve formal unit verdicts remain inconclusive.
+
+### Files Changed
+
+- `reflective-prompt-library/plans/wgs-x4b-noop-hunt-plan-2026-11-26.md` — authorization, cap units, unknown-call reconciliation, exact source pins, offline results and the held admission decision.
+- `reflective-prompt-library/plans/skills-survey-corpus-rethink-2026-11-26.md` — current continuation disposition without changing earlier T1 results.
+- `reflective-prompt-library/PROJECT_KNOWLEDGE.md` — existing Decision Index pointer updated; no new authority rule.
+- `reflective-prompt-library/index.json` — regenerated discovery metadata.
+- `review/final-report.md` — this continuation delivery record.
+
+No Skill, installed host configuration, frozen oracle, original trial output or original score was changed.
+
+### Acceptance Criteria Status and Traceability
+
+| Requested result | Evidence | Status |
+| --- | --- | --- |
+| Reconcile the two interrupted calls without blind replay | Synthetic Cursor stores and indexing-only worker logs; no local answer recovered | Originals remain `OUTCOME_UNKNOWN`; owner explicitly accepted replacement cost risk |
+| Freeze a bounded missing-slot continuation | Nineteen unique original/new IDs, unchanged prompt digests, original seeded order, no completed-job overlap | Recorded; one canary plus nineteen slots, no automatic retry |
+| Establish no-tool admission | Installed loader/merge/gate probes plus scope review | **Not established** for the complete dispatch surface |
+| Complete missing pilot slots | Admission is held; no new pilot CLI invocation | **HELD: nineteen slots remain** |
+| Blind-score new outputs in a fresh namespace | No new outputs exist | **HELD**, not marked completed or filled with synthetic failures |
+| Preserve original evidence | Frozen manifest and all 500 original artifact digests match; nineteen continuation prompts match | Verified |
+| Deliver current records and scoped verification | Owning plan, SCR, Decision Index and regenerated index | Verified within the checks below; local-only delivery |
+
+### Tests / Checks Run
+
+- The qualifier's retained receipts were inspected against its actual probe code: explicit result fields, rather than process exit or a prose pass count. The [owning outcome](../reflective-prompt-library/plans/wgs-x4b-noop-hunt-plan-2026-11-26.md#offline-qualification-outcome) records the PASS/observation/unasserted-diagnostic split. These are module-level checks, not whole-CLI or OS-isolation proof.
+- Preservation check: **500/500** original receipt/stdout/stderr/output digests unchanged; original manifest SHA-256 unchanged; **19/19** missing-slot prompt digests match; zero overlap with the 125 originally completed jobs; exactly two replacement slots carry explicit authorization.
+- `PYENV_VERSION=3.13.0 PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider plans/tests/test_index_json_current.py plans/tests/test_validate_record_hygiene.py plans/tests/test_validate_links.py`: **23 passed in 0.77 s**.
+- `PYENV_VERSION=3.13.0 python3 plans/validate_project_knowledge.py`: **exit 0**, project-judgment contract satisfied.
+- Discovery metadata regenerated: 279 indexed prompt/skill files. This report is not an indexed prompt/skill entry; its publication check is separate from the preceding source-record checks.
+
+Session-private evidence: `local://x4b-continuation-2026-11-26.json` and `x4b-pilot-2026-11-26/continuation-2026-11-26/{slot-manifest.json,integrity-proof.json,qualification/}`. The public plan carries the decision-bearing counts and limitations; a fresh clone does not require those private files to interpret the hold.
+
+### Consumer Coverage and Declined Claims
+
+- Frozen inputs and original results: covered by digest checks; no rescore, replacement or denominator rewrite.
+- Candidate recipe: hook JSON schema/loading and selected hook behavior covered; full CLI dispatch, project approval/sandbox settings and OS isolation remain unverified. The candidate was not installed.
+- Documentation consumers: plan, SCR, Decision Index and generated discovery metadata updated. Earlier execution and T1 receipts retain their original scope.
+- Raw advisory retained unchanged. Its conditional admission was not adopted; direct calls using 21 tool names do not prove 21 dispatch integrations. The MCP hook shortcut is source-observed, but an unapproved MCP operation or model-facing exploit was not reproduced.
+- A different host, credential/profile migration, CLI source patch, new runtime and relaxed execution protocol are outside this continuation; the owner rules on any separately bounded change.
+
+### Failures or Skipped Checks
+
+No live canary or slot run was attempted because the no-tool prerequisite remains unproven. The full 1,776-test suite was not rerun for these record-only changes; the earlier full gate is historical evidence, not a new result. No new unit verdict or deletion proposal follows.
+
+### Residual Risks, Remaining Work and Human Review
+
+Engine-side hook-RPC necessity and model-callable reachability of unmapped internal executors remain unresolved. Other hook commands and environment changes are not isolated by deny-dominant permission merging. The candidate project's extra approval/sandbox fields do not establish enforcement. Original provider outcomes and quota debits remain unknown; owner acceptance of possible duplicate debit is not evidence of idempotency.
+
+Completion still needs a demonstrated end-to-end no-tool boundary, or a separate demonstrated host boundary covering the residual. A changed execution mode needs an explicit owner decision and a bounded safety case, not another generic approval to execute. No missing result is counted as failure. DF-C2 custody and DF-PB1 human-scoring/acceptance gates remain unchanged.
+
+Delivery scope: a local-only commit of these records and generated metadata; no push, unit deletion or permission widening. The private ledger keeps `requested_task_complete: false` and names both held work items.

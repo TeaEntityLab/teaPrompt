@@ -211,6 +211,7 @@ Fifty-seven complete pairs were scored blind with unchanged graders; eleven comp
 
 The current headless contract requires a verified no-tool configuration. The canaries established tool-free observations, not that boundary; read-only/plan wording and workspace trust do not supply it. Continuation needs that qualification, reconciliation or owner disposition of the two unknown calls, and a bounded continuation envelope. DF-C2 and DF-PB1 stay held for their existing custody/human-acceptance prerequisites. The local delivery records this incomplete outcome; it does not silently mark 144/144 complete.
 
+The subsequent **"continue"** request and explicit unknown-call form authorize the [bounded continuation preflight](wgs-x4b-noop-hunt-plan-2026-11-26.md#continuation-authorization-and-preflight-2026-11-26): at most one canary plus nineteen missing-slot invocations, including two replacements with accepted possible duplicate quota debit. Original unknown outcomes are not rewritten, and no-tool qualification is not waived. The [offline outcome](wgs-x4b-noop-hunt-plan-2026-11-26.md#offline-qualification-outcome) proves selected hook behavior but not complete dispatch coverage; the coordinator declined conditional admission. No new pilot CLI invocation or scoring run occurred. Execution remains held on the technical boundary, not on missing generic execution approval.
 
 ## Standing Non-Goals
 

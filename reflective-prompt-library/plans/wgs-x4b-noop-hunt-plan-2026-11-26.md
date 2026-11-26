@@ -190,13 +190,61 @@ The protocol reviewer independently recounted 72 Gemini completions, 53 Grok com
 
 The operative reason to withhold formal labels is the incomplete/underqualified cohort plus the recorded measurement defects, not a post-hoc rule replacing the preregistered thresholds. A verified no-tool mode, explicit handling of U03/U04's selection shape, acceptable grader/task coverage, stable background context and untouched final-evaluation inputs are prerequisites for a stronger future claim. Grok's ZDR status and exact provider quota debits remain unverified; a successful included-plan call does not establish either.
 
+## Continuation Authorization and Preflight (2026-11-26)
+
+After local commit `7e5841d512`, the owner said **"continue"**. A separate form then explicitly authorized one replacement invocation for each of the two unknown slots, accepting that the original requests may already have consumed quota (`authorize_two_replacements_accept_possible_duplicate_quota`). That resolves the owner's retry/cost disposition, not the original provider outcomes: both originals remain `OUTCOME_UNKNOWN`, and changing invocation IDs does not make them idempotent or prove zero debit.
+
+The continuation envelope is **at most twenty CLI invocations**: one qualification canary, seventeen never-dispatched slots, and two owner-authorized replacements. No automatic slot retries, credits purchase, overage or push. The CLI's opaque internal provider requests/retries are not equated with CLI invocation count. The nineteen slots retain the original Cursor seeded order after filtering out completed slots; prompts and scorer bytes remain frozen. No completed original slot is resent.
+
+Version inventory without inference: `cursor-agent` is still `2026.11.22-e9042b2`; `agy` is now `1.5.18`, versus the original `1.5.17`. The 72 completed Gemini outputs are retained without re-execution. Only the missing Cursor/Grok slots are in the continuation manifest, held in the session-private `continuation-2026-11-26/slot-manifest.json`.
+
+### Unknown-call reconciliation
+
+The canonical `/private/tmp/x4b-ws/...` workspace-to-store MD5 mapping was checked against the known completed Cursor canary, then used to inspect only the two synthetic interrupted conversations. U02 has `hasConversation: false`, an empty latest-root ID, four stored blobs and no stored assistant message. U01 has `hasConversation: false` and no message database. Both worker logs stop at workspace indexing; neither contains a provider result. No final answer was recovered and no replay/resume request was sent. These local observations cannot establish that the original provider request was never accepted or billed.
+
+A metadata diagnostic inadvertently printed conversation-local encryption fields from the synthetic chats. They were not used for authentication or decryption, no account token/API-key file was opened, and subsequent metadata output uses a field allowlist. No user conversation data was deleted or rewritten to conceal the event.
+
+### No-tool qualification remains a prerequisite
+
+Official [CLI permissions](https://cursor.com/docs/cli/reference/permissions), [configuration](https://cursor.com/docs/cli/reference/configuration), [third-party/native hooks](https://cursor.com/docs/reference/third-party-hooks) and [headless behavior](https://cursor.com/docs/cli/headless) were read on 2026-11-26. Permissions support project deny rules for Shell/Read/Write/WebFetch/MCP; generic `preToolUse` can return `permission: deny`. Public documentation alone does not establish coverage in the pinned build.
+
+An initial scout's negative search missed the relevant lazy chunk. A complete byte scan over all 99 installed JS files (34,619,850 bytes), with `sessionStart`/`executeHookForStep` as positive controls, found `preToolUse` in `9622.index.js`, `index.js` and `connect-pool-worker.js`. The pinned `hooks-exec` module contains the generic rejection gate, streamed/MCP paths, deny-dominant response merging and `failClosed` handling. That refutes the earlier absence inference, not every possible dispatch bypass. An offline qualifier must exercise the actual installed loader/merge/gate logic and identify unmapped or remote tool paths before admission; no guessed JSON setting or tool-free model answer substitutes for it.
+
+An isolated-HOME/config `cursor-agent status` probe requested no inference and reported not logged in. No credential file was copied, linked or read to repair that profile. Any qualified recipe must separately identify ordinary CLI setup/auth/logging and unisolated session hooks rather than claiming those processes are absent.
+
+**Continuation admission: HELD.** Zero new pilot CLI invocations. Host research agents and documentation retrieval are separate from the experimental call count. The offline outcome below does not satisfy the no-tool prerequisite, so neither the canary nor the nineteen slots was dispatched. Any later host-configuration change remains a recorded context change; filling 144 output slots would still not repair the original grader, selection or causal-inference limitations.
+
+### Offline qualification outcome
+
+The qualifier exercised installed module factories in a Node process with a bash-backed transport stub and a sentinel executor. This was not an OS-isolated or whole-CLI run. Source pins: `index.js` SHA-256 `860ce5cc5c313fbd6447d00973f0fce087b43fa1e1543cf91c4e4aa065ef8b6a`; `9622.index.js` `5cf1067834cad1a15e7db9eb08de2841408123404829c8c3906499eb12670206`; `696.index.js` `20bd0ad03b5581ada5c18ba8314e23c2cdc12c579fc8fcb774b8373927220720`.
+
+| Receipt | Explicit PASS | Explicit FAIL | OBSERVED | Unasserted diagnostic |
+| --- | --- | --- | --- | --- |
+| Module probe | 36 | 0 | 3 | 4 |
+| Recipe probe | 18 | 0 | 0 | 1 |
+
+The receipts prove that a valid project hook loads, deny dominates a conflicting allow response, six hook-command failure cases deny with `failClosed:true`, and the tested Shell wrapper rejects before its sentinel executes. Empty/nonzero hook output without `failClosed` produces no denial. Invalid project configuration and a symlinked configuration path leave the project hooks absent. Merely passing 21 synthetic tool names directly to the hook does **not** establish coverage of those tools' actual dispatch paths. The probe's process exit is not an admission token; the recorded result fields and residual boundaries control the decision.
+
+The coordinator declined the qualifier's **conditional admission** recommendation:
+
+- The accessor returns an unwrapped executor for an unmapped symbol. Which registered internal executors are model-callable remains unverified; this is not a reproduced model-facing exploit.
+- Necessity of the engine-side hook RPC for Task, subagent, web-search and glob operations was not established. A direct hook call bearing one of those names does not test that integration.
+- The MCP wrapper skips its hook on `smartModeApprovalOnly`. That source branch establishes a hook shortcut, not a demonstrated unapproved MCP operation; the inner operation's behavior and model-facing reachability were not proven.
+- Global/team/plugin hooks remain additive. Permission-result merging is deny-dominant, but that does not isolate their commands or environment changes.
+- Only the candidate `hooks.json` was schema/loader exercised. The candidate's project `cli.json` is not runtime-qualified: official configuration documentation permits only permissions at project scope, so its extra approval/sandbox fields do not establish enforcement. No candidate configuration was installed in the user's host or used for a model call.
+
+The remaining gap is complete end-to-end tool coverage, or a separately demonstrated host boundary that covers the residual. It cannot be closed by another generic execution approval, a tool-free answer, or silently excluding tool classes. A different bounded execution mode would require an explicit owner decision and a newly demonstrated safety boundary. No new scoring namespace was populated; the original 125 outputs, 57 scored complete pairs, eleven unscored orphans and all twelve inconclusive dispositions remain unchanged.
+
+Receipts and runnable module probes remain session-private under `continuation-2026-11-26/qualification/`; the raw qualifier recommendation is retained as advisory, not adopted authority. Their counts, source pins and decision-bearing limits are recorded here so a fresh checkout does not depend on that directory to understand the hold.
+
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Disposition | Next decision |
 | --- | --- | --- | --- |
 | X4B-PLAN1 | This plan | Drafted 2026-11-26; the owner authorized execution the same day | — |
-| X4B-RUN1 | Pilot execution | Interrupted 2026-11-26: 125 completed receipts of 144 intended slots; no completed-cohort verdict | Preserve partial diagnostics; qualify no-tool mode and reconcile unknown calls before a separately bounded continuation |
+| X4B-RUN1 | Pilot execution | Interrupted 2026-11-26: 125 completed receipts of 144 intended slots; no completed-cohort verdict | Preserve partial diagnostics; X4B-CONT1 records the later authorized but held continuation |
 | X4B-DEL1 | Any unit deletion | Not authorized | Per-unit owner approval after verdicts |
+| X4B-CONT1 | Missing-slot continuation | Owner authorized 2026-11-26, including two replacements with accepted duplicate-quota risk; one canary plus nineteen slot invocations; HELD after offline qualification | Demonstrate complete no-tool coverage or a separate host boundary; changing execution mode needs an explicit owner decision |
 
 ## Standing Non-Goals
 
