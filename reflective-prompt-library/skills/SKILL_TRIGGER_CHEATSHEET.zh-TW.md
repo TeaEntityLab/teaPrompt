@@ -68,7 +68,7 @@ L1 快速路徑：
 - 「寫 PRD 前先收斂範圍與假設。」
 - 「選架構前先對齊 stakeholder。」
 - 「寫工單前先對齊 stakeholder 目標。」
-- 「釐清目標再拆工單。」
+- 「先把目標講清楚，再決定要不要拆成工單。」
 
 不要用在：
 
@@ -91,10 +91,10 @@ L1 快速路徑：
 - 「只在紙上比較兩個 API 設計，不要實作。」
 - 「在紙上比較 API 設計，不要動 repository。」
 - 「在紙上比較 API 設計選項，不要動 repository。」
-- 「比較兩個 API 設計方案但不要寫 code。」
-- 「把規格寫出來但不要改程式。」
+- 「兩個 API 方案只做紙上對照，不寫實作。」
+- 「把規格整理成文件，程式先不要動。」
 - 「設計 handoff workflow 規格，但不要寫 runtime code。」
-- 「把這個 idea break down into tickets with acceptance criteria。」
+- 「把這個想法拆成工單並附驗收標準，先不要實作。」
 
 不要用在：
 
@@ -108,16 +108,16 @@ L1 快速路徑：
 
 - 「在 repo 實作這個變更。」
 - 「實作已核准 spec 到 repository。」
-- 「在 repository 實作已核准 spec。」
-- 「落地已核准規格到 codebase。」
+- 「把已核准的規格寫進 repo。」
+- 「把已核准規格合併進程式庫。」
 - 「用驗收標準與測試重構或除錯。」
 - 「交付最小安全修補並附驗證。」
 - 「在程式裡修補這個 trivial null check。」
-- 「幫我 patch 這個 trivial null check and run tests。」
+- 「請直接改掉這個很小的空值檢查，並跑測試。」
 - 「把重複的人工 release 檢查自動化成 repo 裡的確定性測試。」
 - 「持續修到 test/auth 的每個測試都通過。」
 - 「寫一個 bash 迴圈，重跑 agent 直到 verifier 通過。」
-- 「持續修到整個測試套件全綠為止。」
+- 「一直改到整包測試都變綠。」
 
 何時用：
 
@@ -160,7 +160,7 @@ Minimality 訊號掃描（skill 內建）：
 
 - 「審查 README 的清晰度，不是安全性。」
 - 「檢查 diff 的可讀性，不是 production 部署。」
-- 「審查 README 清晰度不是安全風險。」
+- 「看 README 好不好懂，這次不評估安全。」
 - 「merge 前檢查這個 patch 有沒有 regression。」
 
 不要用在：

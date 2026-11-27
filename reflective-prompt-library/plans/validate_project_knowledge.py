@@ -15,7 +15,9 @@ left to validate_links.py; this validator checks only narrow, observable signals
    high-precision guardrail, not proof of semantic authority separation.
 4. Every Durable Lesson has a non-empty `Evidence:` pointer.
 5. Every milestone has a valid `Status:` (active/planned/done).
-6. The Decision Index is non-empty and every entry carries a link pointer.
+6. The Decision Index is non-empty and every entry carries a link pointer. Entries
+   dated on or after DECISION_ENTRY_CAP_FROM stay within DECISION_ENTRY_MAX_CHARS
+   (growth control: the index is a map; detail belongs in the linked record).
 7. Optional warning: governance-surface git commits after the latest Decision
    Index date may lack a matching record (Knowie-style undocumented-decisions
    hint; non-blocking).
@@ -49,6 +51,11 @@ AGENT_DIRECTIVE_PATTERNS = [
 ]
 
 VALID_STATUSES = {"active", "planned", "done"}
+
+# Growth control (2026-11-27, RFT-5): entries dated on or after this day stay map-sized.
+# Earlier entries predate the cap and are left as written.
+DECISION_ENTRY_CAP_FROM = date(2026, 11, 1)
+DECISION_ENTRY_MAX_CHARS = 1000
 
 GOVERNANCE_SURFACE_PATHS = [
     "Makefile",
@@ -185,6 +192,18 @@ class ProjectKnowledgeValidator:
             if not re.search(r"\]\([^)]+\)", entry):
                 self.errors.append(
                     f"Decision Index entry lacks a link pointer -> {entry.strip()!r}"
+                )
+            dated = re.match(r"\s*-\s*(\d{4}-\d{2}-\d{2})\b", entry)
+            if not dated:
+                continue
+            try:
+                entry_date = datetime.strptime(dated.group(1), "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if entry_date >= DECISION_ENTRY_CAP_FROM and len(entry.strip()) > DECISION_ENTRY_MAX_CHARS:
+                self.errors.append(
+                    f"Decision Index entry dated {dated.group(1)} has {len(entry.strip())} chars "
+                    f"(> {DECISION_ENTRY_MAX_CHARS}); keep the index a map and move detail into the linked record"
                 )
 
     def _check_undocumented_governance_commits(self, content: str) -> None:

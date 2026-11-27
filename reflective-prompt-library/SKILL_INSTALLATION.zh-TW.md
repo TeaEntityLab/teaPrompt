@@ -4,7 +4,7 @@ Language: [English](SKILL_INSTALLATION.md) | 繁體中文
 
 # Skills 安裝指南
 
-最後確認日期：2026-09-16
+最後確認日期：2026-11-27
 
 本文件說明如何把 TeaPrompt 的 workflow skills 安裝到：
 
@@ -55,11 +55,11 @@ reflective-prompt-library/skills/
 
 ## 開始之前
 
-前置需求：POSIX `sh`，以及 `cp` 與 `ln`。以下每個 shell 都要做一次：
+前置需求：POSIX `sh`，以及 `cp` 與 `ln`；`install_skills_pinned` 另需 `git`、`tar`、`mktemp`。以下每個 shell 都要做一次：
 
 1. 切到 TeaPrompt 倉庫根目錄。
-2. 從[英文版 Install helpers](SKILL_INSTALLATION.md#install-helpers) 複製六個 helper 定義，貼到目前的 shell 執行。
-3. 再執行下方各平台的 helper 呼叫。Helper 只會安裝含有 `SKILL.md` 的目錄。
+2. 從[英文版 Install helpers](SKILL_INSTALLATION.md#install-helpers) 複製 helper 定義，貼到目前的 shell 執行。
+3. 再執行下方各平台的 helper 呼叫。copy／symlink helper 只會安裝含有 `SKILL.md` 的目錄；`install_skills_pinned` 則以具名 commit 安裝具名條目（skill 目錄、`examples` 目錄、`SKILL_TRIGGER_CHEATSHEET.md` 等檔案），並在 `<目的地>/.teaprompt-pins.tsv` 記錄該 commit。
 
 > 不要用手寫的 `mkdir -p <目的地>` 加 `cp -R reflective-prompt-library/skills/reflective-* <目的地>/` 取代 helper。那組指令在來源不完整（例如 `reflective-*` 目錄存在但沒有 `SKILL.md`）時仍會回傳 0，讓你誤以為安裝成功；helper 會在建立目的地之前先檢查，來源不合要求就回傳非零並拒絕安裝。
 

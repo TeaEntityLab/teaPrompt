@@ -87,6 +87,40 @@ The manifest was re-frozen as SHA-256 `67cd250aaadc8d7c7889e321c319cbc97aa8372b2
 
 **Replacement canary.** `cell-canary-2` qualified. It exited 0 in 13.2 s, was reported as `Grok 4.7 256K Medium`, and made glob, read and edit calls. `note.txt` changed, and the tracking database appeared in the redirected directory. The expected-denial set was then frozen: 14 rules (SHA-256 `b521426f9e962002370edc9fde833200b3c212fd48b7a050f8fc20f2aab363bd`). They cover every canary-2 denial and every canary-1 class except the tracking-database read, which stays unexpected so a failed redirect stops the series. The manifest was re-frozen as `961c2cab8935cc6ec1e0e0148eb58b84ae916d6347f275e6de711b07ee1a7e4e` (31 files).
 
+## Item 2: Commit-Pinned Installs
+
+`SKILL_INSTALLATION.md` keeps one maintained shell helper, `install_skills_pinned <destination> <rev> <entry>...`. It extracts committed bytes, never working-tree bytes, and stamps each entry in `.teaprompt-pins.tsv`. Unknown entries and unpinned real paths are refused before replacement. Each replacement stages the entry and restores its predecessor if the manifest update fails.
+
+`plans/verify_installed_skills.py` is a read-only, stdlib-only verifier. It checks stamped entries against their recorded commit for tampering and against `HEAD`'s entry tree for staleness. It follows aliases to pinned entries; live or dangling TeaPrompt links fail. Unstamped real copies and unrelated entries are not identifiable as TeaPrompt installs and are ignored. This is installed-byte provenance, not evidence that a host obeyed the skill.
+
+The installer/verifier consumer tests passed (23 tests); host conversion follows a commit containing the delivered skill bytes. Only direct symlinks into this repository will be replaced. Unrelated entries and aliases to shared install roots stay untouched.
+
+## Item 3: Routing Measurement Repair
+
+- ROUTE-002/003 count guards now use `>=`, preserving minimum coverage without forbidding expansion. ROUTE-001's existing count contract is unchanged.
+- The English cheatsheet had 46 verbatim matches against the 374 ROUTE-001/002/003 phrases; zh-TW had 9. Both now have 0. Boundary guidance remains, without requiring the eval phrases themselves. R8 and its anti-leak checks also cover every `skills/*/SKILL.md`.
+- ROUTE-004 was written from only the nine core skill descriptions and independently labeled by a second agent. All 63 labels agreed; both agents belong to the same model family, so this is procedural separation, not independent epistemic evidence.
+- The unchanged router matched 35/63 (55.6%). No router keyword, fixture phrase or label was changed to improve it. `make route-holdout` exposes the measurement outside `all`; pytest guards the pre-tuning floor and keeps its phrases out of routed surfaces, router code and other fixtures. Once used to tune a router, it is no longer an untouched holdout.
+
+## Items 4–5: Precedence and Index Growth
+
+- `reflective-dispatch/SKILL.md` now states that higher-authority instructions and applicable global user rules/host routing take precedence, while non-conflicting duties remain. The yielding clause is named in a trace or report. Standing rules and host routing still do not grant outward-action authorization. No exact-paragraph adoption pin was added: this is prompt guidance, not demonstrated host enforcement.
+- The overloaded November Decision Index entry was split into X4b, skills × survey rethink, and survey-series pointers. Existing facts and links remain in the owning records.
+- `validate_project_knowledge.py` caps entries dated from 2026-11-01 at 1,000 characters. Earlier entries are grandfathered. Tests cover an oversized current entry failing, an oversized older entry passing, and a current in-cap entry passing.
+
+## Verification Ledger
+
+| Consumer class | Status | Evidence / boundary |
+| --- | --- | --- |
+| Installer and installed-state verifier | Verified | 23 isolated consumer tests; host conversion pending below |
+| Routing floors, cheatsheets and skill surfaces | Verified | Included in the 140-test focused pass; seeded ROUTE-001/002/003 remain 100% |
+| Independent holdout | Verified, bounded | 35/63 without router tuning; guard and anti-leak tests passed |
+| Dispatch precedence | Delivered wording | No live-host precedence or compliance claim |
+| Decision Index and validator | Verified | Split entries and cap behavior included in the focused pass |
+| Generated metadata and publication gates | Pending | Final index regeneration and repository gate |
+
+The 140-test focused pass used Python 3.13. The first full pytest attempt stopped on documentation drift: 1,802 tests were collected but `QUALITY_GATES_SUMMARY.md` still stated a 1,776 floor. The documented floor was corrected to 1,802; no oracle was weakened.
+
 ## Evidence vs Inference
 
 - **Verified:** the panel counts under Source were re-derived by deterministic scripts. All six calibration snapshots scored as intended. The A1 zero-inference checks and the dry run were observed.
@@ -105,10 +139,10 @@ The manifest was re-frozen as SHA-256 `67cd250aaadc8d7c7889e321c319cbc97aa8372b2
 | ID | Candidate | Disposition | Next decision |
 | --- | --- | --- | --- |
 | RFT-1 | State-observable twin-sweep cell | Preregistered 2026-11-27; amended (A1) after a harness-failure canary; replacement canary qualified | Ten runs, then blind scoring under the rule above |
-| RFT-2 | Commit-pinned skill installs plus installed-state verifier | In progress 2026-11-27 | Tooling tests, then converting host installs |
-| RFT-3 | Route-eval `>=` minimums, cheatsheet de-leak, independent ROUTE-004 holdout | In progress 2026-11-27 | Guard, de-leak and holdout integration |
-| RFT-4 | Precedence between global user rules and skills | Owner-approved, pending | Dispatch wording and guard |
-| RFT-5 | Decision Index split and entry-length cap | Owner-approved, pending | Split entry and validator guard |
+| RFT-2 | Commit-pinned skill installs plus installed-state verifier | Tooling verified 2026-11-27 | Commit skill bytes, convert direct host links, verify installed state |
+| RFT-3 | Route-eval `>=` minimums, cheatsheet de-leak, independent ROUTE-004 holdout | Delivered and verified | Keep ROUTE-004 untuned; 35/63 is a bounded measurement |
+| RFT-4 | Precedence between global user rules and skills | Delivered in dispatch | No host-enforcement or methodology-efficacy claim |
+| RFT-5 | Decision Index split and entry-length cap | Delivered and verified | Keep dated entries map-sized |
 
 ## Standing Non-Goals
 

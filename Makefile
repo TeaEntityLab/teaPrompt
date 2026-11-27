@@ -1,4 +1,4 @@
-.PHONY: test validate all
+.PHONY: test validate all route-holdout verify-installed
 
 PLANS = reflective-prompt-library/plans
 
@@ -19,3 +19,12 @@ validate:
 	python3 $(PLANS)/route_paraphrase_eval.py $(PLANS)/route-003-adversarial-eval.yaml
 
 all: test validate
+
+# Report-only measurements outside `all`: ROUTE-004 is an independent holdout that must never be
+# tuned against (its floor is guarded in pytest); verify-installed inspects this machine's host
+# skill roots, which CI does not have.
+route-holdout:
+	-python3 $(PLANS)/route_paraphrase_eval.py $(PLANS)/route-004-independent-holdout-eval.yaml
+
+verify-installed:
+	python3 $(PLANS)/verify_installed_skills.py

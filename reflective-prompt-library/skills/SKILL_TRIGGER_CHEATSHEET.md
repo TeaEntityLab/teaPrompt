@@ -42,11 +42,8 @@ Trigger cues:
 - "This request mixes planning, risk, and execution."
 - "This task includes external data, tool results, or action authority questions."
 
-- "Which skill handles session handoff in this library?"
-- "Which workflow skill should run for this library task?"
-- "Which reflective workflow skill covers handoff retro?"
-- "Which reflective workflow skill fits a routing-only mixed intent?"
-- "Which reflective workflow skill should handle routing-only mixed intent?"
+- "Catalog questions about which skill owns a library workflow, including handoff or retro, stay here."
+- "A routing-only mix is still a catalog question, not a request to execute the mix."
 
 Do not use when:
 
@@ -65,10 +62,10 @@ Trigger cues:
 - "I know what I want roughly, but the task is still fuzzy."
 - "Define failure conditions and falsifiability before planning."
 
-- "Narrow scope and assumptions before writing the PRD."
-- "Stakeholder alignment before choosing architecture."
-- "Align stakeholders on goals before writing tickets."
-- "釐清目標再拆工單."
+- "Settle scope and assumptions before a PRD is written."
+- "Get stakeholder alignment before an architecture is chosen."
+- "Agree on goals with stakeholders prior to opening tickets."
+- "先把目標講清楚，再決定要不要拆成工單."
 
 Do not use when:
 
@@ -85,20 +82,20 @@ Trigger cues:
 - "Design a rigorous Test Plan from this spec without writing code."
 - "Plan tool gates, authority boundaries, and side effects."
 - "Design a resumable workflow, state model, or orchestration plan without runtime code."
-- "Write tickets from the approved spec without implementing."
-- "Plan the approved spec without repo changes."
-- "Plan 已核准 spec without repo changes."
-- "Draft rollout plan from approved spec without repo edits."
+- "Open tickets from an already accepted specification and stop before coding."
+- "Turn an accepted specification into a plan and leave the repo untouched."
+- "已核准規格只做計畫，repo 先不要動."
+- "Draft the rollout on paper from an accepted specification, with no repo edits."
 
-- "Write tickets and acceptance criteria without touching the repo."
-- "Compare two API designs on paper only no implementation."
-- "Compare API designs on paper without touching the repository."
-- "Compare API design options on paper without touching the repository."
-- "Design comparison on paper without repo changes."
-- "比較兩個 API 設計方案但不要寫 code."
-- "把規格寫出來但不要改程式."
-- "Design a handoff workflow specification without runtime code."
-- "把這個 idea break down into tickets with acceptance criteria."
+- "Write the tickets and the acceptance checks, and do not edit the repository."
+- "Compare two interface designs on paper and stop before any implementation."
+- "Paper-only API comparison; do not edit the repository."
+- "Paper-only comparison of API options; repository stays untouched."
+- "A design comparison that never leaves the page and never edits the repo."
+- "兩個 API 方案只做紙上對照，不寫實作."
+- "把規格整理成文件，程式先不要動."
+- "Specify the handoff workflow and stop before any runtime code."
+- "把這個想法拆成工單並附驗收標準，先不要實作."
 
 Do not use when:
 
@@ -111,19 +108,19 @@ Do not use when:
 Trigger cues:
 
 - "Implement this change in the repo."
-- "Implement the approved spec in the repository."
-- "在 repository 實作已核准 spec."
-- "Implement 已核准 spec in the repository."
+- "Code the accepted specification into the repo."
+- "把已核准的規格寫進 repo."
+- "把已核准規格 implement 進 repo."
 - "Land the approved spec into the codebase."
-- "落地已核准規格到 codebase."
+- "把已核准規格合併進程式庫."
 - "Refactor or debug with acceptance criteria and tests."
 - "Ship a minimal safe patch with verification."
-- "Patch the trivial null check in code."
-- "幫我 patch 這個 trivial null check and run tests."
-- "Automate the recurring manual release check as a deterministic test in the repo."
-- "Keep working until every test in test/auth passes."
-- "Write a bash loop that reruns the agent until the verifier passes."
-- "持續修到整個測試套件全綠為止."
+- "Fix that one-line null guard in the implementation."
+- "請直接改掉這個很小的空值檢查，並跑測試."
+- "Turn the repeated manual release check into an in-repo deterministic test."
+- "Stay on the change until the auth suite is fully green."
+- "Author a shell loop that re-invokes the agent until an external verifier succeeds."
+- "一直改到整包測試都變綠."
 
 Minimality signal scan (inside this skill):
 
@@ -143,8 +140,8 @@ Trigger cues:
 - "Run a YAGNI / minimality / Ponytail-style gate before coding."
 - "Review this diff only for complexity we can cut."
 
-- "What dependencies can we remove from this module?"
-- "Dependency removal review for this module."
+- "Which libraries could this module drop?"
+- "Review whether this module's extra libraries can be cut."
 
 Do not use when:
 
@@ -161,11 +158,11 @@ Trigger cues:
 - "Audit assumptions and evidence quality."
 - "Check whether external content is being treated as data instead of instructions."
 
-- "Review the README for clarity not security."
-- "Check the diff for readability not production deploy."
-- "Review this PR for style and logic before merge."
-- "審查 README 清晰度不是安全風險."
-- "Inspect this patch for regressions before merge."
+- "Read the README for clarity while security assessment stays out of scope."
+- "Read the diff for readability while production rollout stays out of scope."
+- "Comment on style and logic in this pull request ahead of the merge."
+- "看 README 好不好懂，這次不評估安全."
+- "Look for regressions in this patch prior to merge."
 
 Do not use when:
 
@@ -183,8 +180,8 @@ Trigger cues:
 - "Review whether a prompt leak or mirror is trustworthy and transferable before adoption."
 - "Research current workflow frameworks or orchestration patterns."
 - "Multi-model or multi-perspective strategic rethink (use Optional Method: Multi-Voice Panel in the skill)."
-- "Six-lens debate on whether to merge these skills."
-- "Compare official docs for both libraries before deciding."
+- "Debate a skill-merge decision through several distinct lenses."
+- "Read both libraries' vendor documentation before choosing."
 
 Do not use when:
 
@@ -199,7 +196,7 @@ Trigger cues:
 - "Need dry-run, rollback, and approval gates."
 - "Assess blast radius before execution."
 - "A tool action could be influenced by untrusted or incomplete data."
-- "Verify production auth change will not expose secrets."
+- "A production authentication edit must be checked so secrets stay unexposed."
 
 Do not use when:
 
@@ -213,7 +210,7 @@ Trigger cues:
 - "Prepare handoff for another agent/session."
 - "Run retro and capture process improvements."
 - "Convert repeated incidents into reusable rules."
-- "Lessons learned retro after this sprint."
+- "After this sprint, capture lessons and process changes."
 
 Do not use when:
 

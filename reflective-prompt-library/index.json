@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-26T23:36:25.961218",
+  "generated_at": "2026-11-27T10:41:07.730573",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -32,6 +32,7 @@
           "path": "reflective-prompt-library/plans",
           "files": [
             "ga-skills-coverage-panel-2026-09-03.md",
+            "reliability-follow-through-2026-11-27.md",
             "governance-workflow-self-control-adoption-2026-09-14.md",
             "ponytail-minimality-reflection-2026-06-17.md",
             "storm-perspective-discovery-reflection-2026-06-18.md",
@@ -1252,6 +1253,72 @@
       ],
       "line_count": 111,
       "char_count": 12257
+    },
+    {
+      "path": "reflective-prompt-library/plans/reliability-follow-through-2026-11-27.md",
+      "type": "prompt",
+      "category": "prompt-library",
+      "subcategory": "plans",
+      "name": "reliability-follow-through-2026-11-27",
+      "description": "",
+      "frontmatter": {},
+      "dependencies": {
+        "ref_file": [],
+        "ref_snippet": [],
+        "markdown_links": []
+      },
+      "structure": [
+        {
+          "level": 1,
+          "text": "Reliability Panel Follow-Through (2026-11-27)"
+        },
+        {
+          "level": 2,
+          "text": "Source"
+        },
+        {
+          "level": 2,
+          "text": "Item 1: State-Observable Twin-Sweep Cell (Preregistered 2026-11-27)"
+        },
+        {
+          "level": 3,
+          "text": "Amendment A1 (owner-approved 2026-11-27, before any scored run)"
+        },
+        {
+          "level": 2,
+          "text": "Item 2: Commit-Pinned Installs"
+        },
+        {
+          "level": 2,
+          "text": "Item 3: Routing Measurement Repair"
+        },
+        {
+          "level": 2,
+          "text": "Items 4–5: Precedence and Index Growth"
+        },
+        {
+          "level": 2,
+          "text": "Verification Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Evidence vs Inference"
+        },
+        {
+          "level": 2,
+          "text": "Falsifiability"
+        },
+        {
+          "level": 2,
+          "text": "Candidate Adoption Ledger"
+        },
+        {
+          "level": 2,
+          "text": "Standing Non-Goals"
+        }
+      ],
+      "line_count": 151,
+      "char_count": 14605
     },
     {
       "path": "reflective-prompt-library/plans/governance-workflow-self-control-adoption-2026-09-14.md",
@@ -13077,6 +13144,7 @@
           "whole-project-review-2026-10-09.md#post-preparation-evidence-and-ci-reconciliation-2026-10-10",
           "whole-project-review-2026-10-09.md#checkpoint-evidence-advisory-correction-2026-10-10",
           "whole-project-review-2026-10-09.md#source-coverage-residual-correction-2026-10-10",
+          "reliability-follow-through-2026-11-27.md",
           "multi-agent-panel-consensus-2026-06-25.md#recurrence-gated-backlog-not-panel-blockers"
         ]
       },
@@ -13214,8 +13282,8 @@
           "text": "Conclusion"
         }
       ],
-      "line_count": 511,
-      "char_count": 31492
+      "line_count": 512,
+      "char_count": 32104
     },
     {
       "path": "reflective-prompt-library/plans/pi-warden-survey-2026-09-20.md",
@@ -15431,8 +15499,8 @@
           "text": "Related Artifacts"
         }
       ],
-      "line_count": 178,
-      "char_count": 8252
+      "line_count": 186,
+      "char_count": 8954
     },
     {
       "path": "reflective-prompt-library/plans/superpowers-skill-libraries-comparison-survey-2026-11-25.md",
@@ -23348,8 +23416,8 @@
           "text": "Domain packs (host-invoked; not core routing)"
         }
       ],
-      "line_count": 252,
-      "char_count": 13524
+      "line_count": 249,
+      "char_count": 13582
     },
     {
       "path": "reflective-prompt-library/skills/SKILL_TRIGGER_CHEATSHEET.zh-TW.md",
@@ -23421,7 +23489,7 @@
         }
       ],
       "line_count": 241,
-      "char_count": 7719
+      "char_count": 7654
     },
     {
       "path": "reflective-prompt-library/05-domain/creative-template.md",
@@ -24137,8 +24205,8 @@
           "text": "Prompt Sources"
         }
       ],
-      "line_count": 180,
-      "char_count": 12003
+      "line_count": 182,
+      "char_count": 12634
     },
     {
       "path": "reflective-prompt-library/skills/reflective-minimality/SKILL.md",
@@ -26120,5 +26188,5 @@
       "char_count": 11339
     }
   ],
-  "total_files": 279
+  "total_files": 280
 }

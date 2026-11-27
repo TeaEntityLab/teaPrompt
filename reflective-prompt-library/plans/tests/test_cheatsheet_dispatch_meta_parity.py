@@ -38,10 +38,15 @@ ZH_NATIVE_EQUIVALENTS = {
 
 
 
-@pytest.mark.parametrize("cue", DISPATCH_META_SKILL_TRAP_PROBES)
-def test_dispatch_meta_cues_present_in_english_cheatsheet(en_cheatsheet_text: str, cue: str):
-    haystack = en_cheatsheet_text.lower()
-    assert cue.lower() in haystack, f"English cheatsheet missing dispatch-meta cue: {cue!r}"
+EN_DISPATCH_META_RULES = (
+    "Catalog questions about which skill owns a library workflow, including handoff or retro, stay here.",
+    "A routing-only mix is still a catalog question, not a request to execute the mix.",
+)
+
+
+@pytest.mark.parametrize("rule", EN_DISPATCH_META_RULES)
+def test_dispatch_meta_rules_present_in_english_cheatsheet(en_cheatsheet_text: str, rule: str):
+    assert rule in en_cheatsheet_text, f"English cheatsheet missing dispatch-meta rule: {rule!r}"
 
 
 @pytest.mark.parametrize("cue", DISPATCH_META_SKILL_TRAP_PROBES)

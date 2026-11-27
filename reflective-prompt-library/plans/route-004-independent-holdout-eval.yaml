@@ -1,0 +1,127 @@
+# ROUTE-004 independent holdout (2026-11-27).
+# Provenance: 63 requests written by an independent author agent that saw only the nine core
+# skill descriptions (no router code, fixtures or cheatsheets), then labeled blind by a second
+# agent from the same descriptions: 63/63 agreement (Cohen kappa 1.0). Agreement this high also
+# means the items are clear-cut requests, not adversarial boundary probes.
+# Baseline measured once before any tuning: 35/63 (55.6%) routed to the agreed workflow.
+# Rule: never tune route_paraphrase_eval.py, cheatsheets or skill descriptions on these phrases.
+# A tune motivated by a miss here retires the used phrases into ROUTE-002/003 and needs a fresh,
+# independently authored holdout before the change lands (ROUTING_CONTRACT R8).
+version: 1
+id: ROUTE-004
+name: Independent Holdout Routing Eval
+description: Measure routing on independently authored requests that no tuner has seen.
+
+global_expectations:
+  phase1_route_consistency_min: 0.55
+  aspirational_route_consistency_target: 0.90
+  require_route_trace_on_low_confidence: true
+  forbid_silent_downgrade: true
+
+trace_required_fields:
+  - canonical_intent
+  - workflow
+  - confidence
+  - enhancements_enabled
+  - enhancements_available
+  - rationale
+
+holdout_sets:
+  - name: independent_dispatch
+    expected_workflow: reflective-dispatch
+    phrases:
+      - Before we touch anything: for the changelog, do we paste a prompt, write the notes up as a doc, or let an agent file them? I only want that choice.
+      - 這包先別做。幫我判斷只要一段 prompt、寫成一份文件，還是該交給 agent 跑完。
+      - Six system prompts are rotting in a Google Doc. Which ones should become skills, and which stay copy-paste?
+      - 同事只丟了一句「幫我處理這個專案」。先分流，不要直接開工。
+      - Somebody wrote "clean up the labels" and walked away. Don't start. Is that a chat reply, a written record, or an agent run?
+      - 每次 code review 大家都在貼同一段提示詞，要收成 skill，還是繼續手動貼上就好？
+      - Typo in the release notes. Pasting a prompt or handing it to an agent — which one should own a change this small?
+
+  - name: independent_brief
+    expected_workflow: reflective-brief
+    phrases:
+      - Product said "make the app feel more trustworthy." Before any plan, write the real outcome, the assumptions you'll move with, what's out of scope, and the smallest step that would show we're chasing the wrong thing.
+      - 單子上只寫「優化結帳」。先講清楚到底要解決什麼、範圍到哪、怎樣算我們看走眼。先別排時程。
+      - This epic is a junk drawer. One paragraph on the outcome, the assumptions you need, and a single next step. Hold the tickets.
+      - 老闆週會只說下季要「讓人更願意續約」，沒有指標。先寫真正目標、你採用的假設、不碰的部分，以及最小下一步。規劃先停。
+      - Starting the empty-state work. What does done look like, and what would we observe if we aimed wrong? Leave the design alone.
+      - 請求很大，但還可以往下走。把假設寫明白，停在最小下一步，先不要進設計。
+      - The ask is fuzzy and still safe to move on. Say the assumptions out loud and name the minimum next action.
+
+  - name: independent_spec_plan
+    expected_workflow: reflective-spec-plan
+    phrases:
+      - Spec guest checkout from the shopper's steps, then the ugly failure cases, then tasks engineering can mark up. No code.
+      - 訂單要能暫停、隔天再續。把狀態、從哪裡恢復、以及之後怎麼驗證寫成一份可審的規格。先不要實作。
+      - I want a test plan we can walk through on paper before anyone builds refunds. It should make a wrong build obvious.
+      - 寫一份給工程看的規格：管理員怎麼批次停用帳號、失敗時畫面長什麼樣、哪些這輪不做。
+      - The import has to stop halfway through a file and continue the next morning. Write the states, the resume points, and the tickets. Editor stays closed.
+      - 先別寫程式。把推播通知拆成工單，並附上線前可以照著點的測試步驟。
+      - Turn team mentions into a PRD and a plan we can argue about in review. I'm not ready for a pull request.
+
+  - name: independent_implement
+    expected_workflow: reflective-implement
+    phrases:
+      - `formatYen` throws on null. Fix it and add a test.
+      - Safari 上日期會選到隔天，直接在專案裡修掉。
+      - Header sanitizing is copy-pasted across three controllers. Pull it into one helper and keep the behavior.
+      - `notify()` 的重試寫了兩份，抽成同一個地方，呼叫端一起改。
+      - README still says `yarn dev`. Update it to the `pnpm` commands we actually run.
+      - CONTRIBUTING 裡的分支命名跟 repo 現況不符，把文件改到一致。
+      - orders.test.ts went red after the rounding change. Find the break and patch the code.
+
+  - name: independent_minimality
+    expected_workflow: reflective-minimality
+    phrases:
+      - The draft stands up an event bus, a plugin loader, and a registry, all for one email template. What do we cut before anyone writes it?
+      - 一個表單驗證就想上策略模式加工廠。先擋下來，這是不是做太大了？
+      - Look through the new config stack. Point at pieces that aren't paying rent, and note the crude shortcuts we chose on purpose.
+      - 重構做到一半，幫我看哪些抽象可以拆掉，並記下我們故意留白的地方。
+      - The agent sketched a framework around a 40-line cron. Cut the sketch down to the smallest version that still does the job. Don't implement it.
+      - 代理把一個開關拆成三層設定。哪些是多餘的？
+      - Halfway through the settings refactor we've got three layers of wrappers. Where did this get heavier than the page deserves?
+
+  - name: independent_review
+    expected_workflow: reflective-review
+    phrases:
+      - Please review this diff. The early return in `reserveSlot` looks like it skips the inventory lock.
+      - 看一下這個 PR diff，權限檢查是不是漏掉已停用的管理員。
+      - Review the rollout writeup. I'm asking if the go/no-go reasoning holds up, not to run anything.
+      - 規格書退款時序那一節，結論站不站得住，幫我審一遍。
+      - The model wrote up our outage below. Flag sentences the timeline doesn't support.
+      - 我貼的這篇文章說我們的排序是 stable。審文章，標出跟實際行為不符的地方。
+      - Decision note says drop the feature-flag service. Is the reasoning sound?
+
+  - name: independent_research
+    expected_workflow: reflective-research
+    phrases:
+      - What do the current SQLite docs say about WAL mode on a network filesystem? Quote the page.
+      - 查 Next.js 官方文件，確認現在 `revalidateTag` 怎麼運作，附上來源。
+      - Compare Cloudflare Queues and SQS as they work today for delaying a message up to 12 hours. Recommendation with links.
+      - 用 Stripe 和綠界目前的文件比較定期扣款，給有出處的建議，不要憑印象。
+      - Check DeepWiki on the Svelte repo and tell me how `load` functions handle a redirect in the current code.
+      - 這份六十頁的標準草案太長。整理有文件依據的結論，每點標來源。
+      - Synthesize this 80-page vendor whitepaper into the claims that cite a primary source. Group them and keep each citation.
+
+  - name: independent_risk
+    expected_workflow: reflective-risk
+    phrases:
+      - Tonight we delete dormant production accounts and their messages. Before any command: what gets destroyed, how we restore, and who has to say yes.
+      - 正式環境要清掉過期的付款 token。先列出會動到哪些資料、壞了怎麼救、誰點頭才能執行。
+      - This afternoon support gets impersonation rights in prod. Hold the change. Spell out the damage, how we revoke it, and the person who must approve.
+      - 權限一改，外包商就看得到薪資。先別動。寫出風險、復原步驟，以及必須有人放行的關卡。
+      - The migration rewrites live invoice totals and a bad run won't unwind itself. Safety checks, an undo path, and a human stop before it runs.
+      - 這支腳本會在生產環境重算帳單，而且可能真的請款。停在執行前，把後果和復原方式寫出來，等人核准。
+      - About to send a vendor a dump that includes patient phone numbers. Privacy stop: what leaves, how we recall a bad send, and who signs.
+
+  - name: independent_handoff_retro
+    expected_workflow: reflective-handoff-retro
+    phrases:
+      - I'm out tomorrow. Write a handoff the next person can resume from: decisions made, where it's stuck, and what not to redo.
+      - 明天換人續跑。把這段對話收成交接：決定過的事、卡在哪、已經下過的指令。
+      - This thread won't fit in a fresh session. Keep the decisions and open loops, drop the abandoned branches.
+      - 同樣的漏測這季第三次了。把教訓寫成檢查清單，別再靠大家記得。
+      - Third time this month we shipped with the feature flag left off. Write the checklist the next on-call can follow. Writeup only, leave the repo alone.
+      - 這輪先告一段落。做個回顧，把重複的步驟收成以後能照著跑的規則或腳本。
+      - Migration week is over. What slowed us down, and which lessons should become a rule we follow next time?

@@ -144,6 +144,28 @@ def test_decision_index_without_link_fails(tmp_path):
     assert any("link pointer" in e for e in result["errors"])
 
 
+def _with_entry(entry: str) -> str:
+    return VALID_DOC.replace("- 2026-06-17 A decision → [record](plans/some-plan.md)", entry)
+
+
+def test_new_decision_entry_over_length_cap_fails(tmp_path):
+    entry = "- 2026-11-27 Oversized entry " + "detail " * 160 + "→ [record](plans/some-plan.md)"
+    result = _write(tmp_path, _with_entry(entry)).validate()
+    assert not result["valid"]
+    assert any("chars" in e and "2026-11-27" in e for e in result["errors"])
+
+
+def test_pre_cutoff_decision_entry_is_not_capped(tmp_path):
+    entry = "- 2026-10-30 Legacy long entry " + "detail " * 160 + "→ [record](plans/some-plan.md)"
+    result = _write(tmp_path, _with_entry(entry)).validate()
+    assert result["valid"], result["errors"]
+
+
+def test_new_decision_entry_within_cap_passes(tmp_path):
+    result = _write(tmp_path, _with_entry("- 2026-11-27 Short entry → [record](plans/some-plan.md)")).validate()
+    assert result["valid"], result["errors"]
+
+
 def test_done_milestone_in_current_direction_warns(tmp_path):
     doc = VALID_DOC.replace("- Status: active", "- Status: done")
     result = _write(tmp_path, doc).validate()

@@ -83,6 +83,14 @@ This contract applies to:
   in it, not the phrase space.
 - Every probed phrase is recorded: a phrase that fails pre-tune is fixture-backed or written
   down with its reason, never replaced by one that passes.
+- A fixture phrase must not appear verbatim in a routed surface (cheatsheets, skill
+  files), because a phrase present in the routing surface is no longer held out;
+  `plans/tests/test_cheatsheet_boundary_parity.py` enforces this for both.
+- ROUTE-004 (`route-004-independent-holdout-eval.yaml`) is an independent holdout: one agent
+  wrote it from the nine skill descriptions alone and a second agent labeled it blind. It is
+  report-only (`make route-holdout`) and never a tuning target; a miss there is recorded, not
+  fixed with its keywords. `test_route_004_independent_holdout.py` guards its pre-tuning
+  baseline (35/63) as a floor and keeps its phrases out of every routed surface and fixture.
 
 ### R10: Brief-before-plan
 

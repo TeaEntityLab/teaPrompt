@@ -33,8 +33,8 @@ def zh_cheatsheet_text() -> str:
 # zh-TW cheatsheet cues are zh-native where a translation exists — the
 # 2026-09-23 constraint review stopped embedding verbatim English fixture
 # phrases (the eval's answer key) into the production routing surface.
-# Cues not listed here are asserted verbatim (zh/mixed probes already
-# written in zh-TW).
+# Every cue maps to boundary guidance. The cheatsheet must not contain the
+# fixture phrase itself.
 ZH_NATIVE_EQUIVALENTS = {
     "plan the approved spec without repo changes": "規劃已核准 spec，但不要更動 repo",
     "keep working until every test in test/auth passes": "持續修到 test/auth 的每個測試都通過",
@@ -50,13 +50,39 @@ ZH_NATIVE_EQUIVALENTS = {
     "which reflective workflow skill covers handoff retro": "handoff retro 由哪個 reflective workflow skill 涵蓋",
     "align stakeholders on goals before writing tickets": "寫工單前先對齊 stakeholder 目標",
     "automate the recurring manual release check as a deterministic test in the repo": "把重複的人工 release 檢查自動化成 repo 裡的確定性測試",
+    "幫我 patch 這個 trivial null check and run tests": "請直接改掉這個很小的空值檢查，並跑測試",
+    "把這個 idea break down into tickets with acceptance criteria": "把這個想法拆成工單並附驗收標準，先不要實作",
+    "釐清目標再拆工單": "先把目標講清楚，再決定要不要拆成工單",
+    "持續修到整個測試套件全綠為止": "一直改到整包測試都變綠",
 }
 
 
-@pytest.mark.parametrize("cue", ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES)
-def test_route_003_cues_present_in_english_cheatsheet(en_cheatsheet_text: str, cue: str):
-    haystack = en_cheatsheet_text.lower()
-    assert cue.lower() in haystack, f"English cheatsheet missing ROUTE-003 adversarial cue: {cue!r}"
+EN_ROUTE003_BOUNDARY_RULES = (
+    "**Trivial fix not review**",
+    "**Production risk not plain review**",
+    "**Plain review (non-production)**",
+    "**Research not brief**",
+    "**Plan-only (no code)**",
+    "**Brief before plan**",
+    "**Recurring deterministic check**",
+    "Catalog questions about which skill owns a library workflow, including handoff or retro, stay here.",
+    "Run retro and capture process improvements.",
+    "Design a resumable workflow, state model, or orchestration plan without runtime code.",
+    "Compare official docs, third-party mirrors, and community analysis.",
+    "leave the repo untouched",
+    "auth suite is fully green",
+    "external verifier succeeds",
+    "Turn the repeated manual release check into an in-repo deterministic test.",
+    "請直接改掉這個很小的空值檢查，並跑測試",
+    "把這個想法拆成工單並附驗收標準，先不要實作",
+    "先把目標講清楚，再決定要不要拆成工單",
+    "一直改到整包測試都變綠",
+)
+
+
+@pytest.mark.parametrize("rule", EN_ROUTE003_BOUNDARY_RULES)
+def test_route_003_rules_present_in_english_cheatsheet(en_cheatsheet_text: str, rule: str):
+    assert rule in en_cheatsheet_text, f"English cheatsheet missing ROUTE-003 boundary rule: {rule!r}"
 
 
 @pytest.mark.parametrize("cue", ROUTE_003_ADVERSARIAL_CHEATSHEET_CUES)

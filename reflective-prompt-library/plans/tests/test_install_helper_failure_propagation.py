@@ -2,13 +2,16 @@
 
 These tests extract the documented shell helpers from SKILL_INSTALLATION.md
 and exercise consumer-visible behavior: failure propagation, destination
-handling, and non-symlink refusal. They do not assert prose wording.
+handling, and non-symlink refusal. They do not assert prose wording. A later
+block covers the pinned-install helper's failure and replacement rules.
 
 WLR-02 also executes the localized copy recipe with the canonical helper
 loaded, so restoring an unchecked raw-copy path is a consumer-visible failure.
 """
 
+import os
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -158,3 +161,204 @@ def test_localized_copy_recipe_requires_skill_files(
     else:
         assert result.returncode != 0, result.stdout + result.stderr
         assert not dest.exists(), "rejected source must not publish an installation"
+
+
+# --- install_skills_pinned --------------------------------------------------
+
+
+def _extract_pinned_helper(installation_guide_text: str) -> str:
+    return _extract_helper(installation_guide_text, "install_skills_pinned")
+
+
+def _git_env() -> dict:
+    env = dict(os.environ)
+    env.update(
+        GIT_AUTHOR_NAME="TeaPrompt Test",
+        GIT_AUTHOR_EMAIL="teaprompt-test@example.com",
+        GIT_COMMITTER_NAME="TeaPrompt Test",
+        GIT_COMMITTER_EMAIL="teaprompt-test@example.com",
+        GIT_CONFIG_COUNT="1",
+        GIT_CONFIG_KEY_0="commit.gpgsign",
+        GIT_CONFIG_VALUE_0="false",
+    )
+    return env
+
+
+def _git(repo: Path, *args: str) -> "subprocess.CompletedProcess":
+    return subprocess.run(
+        ["git", "-C", str(repo), *args],
+        capture_output=True,
+        text=True,
+        env=_git_env(),
+        check=False,
+    )
+
+
+def _pinned_repo(tmp_path: Path) -> Path:
+    if shutil.which("git") is None:
+        pytest.skip("git not available")
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    result = _git(repo, "init", "-b", "main")
+    assert result.returncode == 0, result.stderr
+    return repo
+
+
+def _commit_skills(repo: Path) -> str:
+    result = _git(repo, "add", "reflective-prompt-library")
+    assert result.returncode == 0, result.stderr
+    result = _git(repo, "commit", "-m", "add skills")
+    assert result.returncode == 0, result.stderr
+    head = _git(repo, "rev-parse", "HEAD")
+    assert head.returncode == 0, head.stderr
+    return head.stdout.strip()
+
+
+def _pinned_script_text(
+    installation_guide_text: str, args, errexit: bool = False
+) -> str:
+    quoted = " ".join(shlex.quote(str(arg)) for arg in args)
+    mode = "set -e" if errexit else "set +e"
+    return (
+        "#!/bin/sh\n"
+        + mode
+        + "\n"
+        + _extract_pinned_helper(installation_guide_text)
+        + "\n}\ninstall_skills_pinned "
+        + quoted
+        + "\n"
+    )
+
+
+def _run_pinned_helper(
+    tmp_path: Path,
+    repo: Path,
+    args,
+    installation_guide_text: str,
+    errexit: bool = False,
+) -> "subprocess.CompletedProcess":
+    script = tmp_path / "install_skills_pinned.sh"
+    script.write_text(
+        _pinned_script_text(installation_guide_text, args, errexit),
+        encoding="utf-8",
+    )
+    return subprocess.run(
+        ["sh", str(script)], cwd=repo, capture_output=True, text=True, check=False
+    )
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+@pytest.mark.parametrize("errexit", (False, True))
+def test_pinned_helper_unknown_entry_returns_nonzero_without_partial_entry(
+    tmp_path: Path, installation_guide_text: str, errexit: bool
+):
+    """An unknown entry fails before anything is written, errexit or not."""
+    repo = _pinned_repo(tmp_path)
+    source_root = repo / "reflective-prompt-library" / "skills"
+    _write_skill_source(source_root, "reflective-brief")
+    _commit_skills(repo)
+    dest = tmp_path / "dest"
+    result = _run_pinned_helper(
+        tmp_path,
+        repo,
+        (dest, "HEAD", "reflective-brief", "no-such-skill"),
+        installation_guide_text,
+        errexit=errexit,
+    )
+    assert result.returncode != 0, result.stdout + result.stderr
+    assert "unknown" in (result.stdout + result.stderr)
+    assert not dest.exists(), "a failed entry must leave no partial install"
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+@pytest.mark.parametrize("kind", ("dir", "file"))
+def test_pinned_helper_refuses_unpinned_real_path_and_preserves_bytes(
+    tmp_path: Path, installation_guide_text: str, kind: str
+):
+    """An unpinned real file/directory is never overwritten."""
+    repo = _pinned_repo(tmp_path)
+    source_root = repo / "reflective-prompt-library" / "skills"
+    _write_skill_source(source_root, "reflective-brief")
+    _commit_skills(repo)
+    dest = tmp_path / "dest"
+    target = dest / "reflective-brief"
+    if kind == "dir":
+        target.mkdir(parents=True)
+        (target / "SKILL.md").write_text("LOCAL-BYTES\n", encoding="utf-8")
+    else:
+        dest.mkdir(parents=True)
+        target.write_text("LOCAL-BYTES\n", encoding="utf-8")
+    result = _run_pinned_helper(
+        tmp_path, repo, (dest, "HEAD", "reflective-brief"), installation_guide_text
+    )
+    assert result.returncode != 0, result.stdout + result.stderr
+    assert "refusing" in (result.stdout + result.stderr)
+    if kind == "dir":
+        assert (target / "SKILL.md").read_text(encoding="utf-8") == "LOCAL-BYTES\n"
+    else:
+        assert target.read_text(encoding="utf-8") == "LOCAL-BYTES\n"
+    assert not (dest / ".teaprompt-pins.tsv").exists()
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+def test_pinned_helper_replaces_symlink_without_touching_target(
+    tmp_path: Path, installation_guide_text: str
+):
+    """Replacing a symlink must not delete the directory it pointed at."""
+    repo = _pinned_repo(tmp_path)
+    source_root = repo / "reflective-prompt-library" / "skills"
+    _write_skill_source(source_root, "reflective-brief")
+    _commit_skills(repo)
+    elsewhere = tmp_path / "elsewhere" / "reflective-brief"
+    elsewhere.mkdir(parents=True)
+    (elsewhere / "keep.md").write_text("KEEP-TARGET\n", encoding="utf-8")
+    dest = tmp_path / "dest"
+    dest.mkdir()
+    (dest / "reflective-brief").symlink_to(elsewhere)
+    result = _run_pinned_helper(
+        tmp_path, repo, (dest, "HEAD", "reflective-brief"), installation_guide_text
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    installed = dest / "reflective-brief"
+    assert installed.is_dir() and not installed.is_symlink()
+    assert (installed / "SKILL.md").is_file()
+    assert (elsewhere / "keep.md").read_text(encoding="utf-8") == "KEEP-TARGET\n"
+    pins = (dest / ".teaprompt-pins.tsv").read_text(encoding="utf-8").splitlines()
+    assert len(pins) == 1 and pins[0].split("\t")[0] == "reflective-brief"
+
+
+@pytest.mark.skipif(shutil.which("sh") is None, reason="POSIX sh not available")
+def test_pinned_helper_repins_keep_one_line_per_name(
+    tmp_path: Path, installation_guide_text: str
+):
+    """Re-pinning updates the commit and keeps one manifest line per name."""
+    repo = _pinned_repo(tmp_path)
+    source_root = repo / "reflective-prompt-library" / "skills"
+    _write_skill_source(source_root, "reflective-brief", "V1")
+    examples = source_root / "examples"
+    examples.mkdir(parents=True)
+    (examples / "demo.md").write_text("demo\n", encoding="utf-8")
+    first = _commit_skills(repo)
+    dest = tmp_path / "dest"
+    result = _run_pinned_helper(
+        tmp_path,
+        repo,
+        (dest, "HEAD", "reflective-brief", "examples"),
+        installation_guide_text,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    _write_skill_source(source_root, "reflective-brief", "V2")
+    second = _commit_skills(repo)
+    assert first != second
+    result = _run_pinned_helper(
+        tmp_path, repo, (dest, "HEAD", "reflective-brief"), installation_guide_text
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    pins = [
+        line.split("\t")
+        for line in (dest / ".teaprompt-pins.tsv").read_text(encoding="utf-8").splitlines()
+        if line
+    ]
+    assert [row[0] for row in pins] == ["examples", "reflective-brief"]
+    assert [row[1] for row in pins] == [first, second]
+    assert "V2" in (dest / "reflective-brief" / "SKILL.md").read_text(encoding="utf-8")

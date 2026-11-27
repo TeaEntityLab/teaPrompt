@@ -2,7 +2,7 @@ Language: English | [繁體中文](SKILL_INSTALLATION.zh-TW.md)
 
 # Skill Installation Guide
 
-Last verified: 2026-09-16
+Last verified: 2026-11-27
 
 This guide explains how to install the nine TeaPrompt core workflow skills—and, when explicitly wanted, the optional registered domain packs—into Claude Code, Codex, Cursor, Google Antigravity CLI / IDE, and OpenCode.
 
@@ -64,7 +64,7 @@ Use one of these scopes:
 
 For this repository, project-local install is the safest default.
 
-**Copy vs symlink:** use `cp -R` for team installs and published repos. Use `ln -s` or `ln -sfn` when you develop TeaPrompt in place and want the host to read skills directly from this checkout (see [Install helpers](#install-helpers) below).
+**Copy vs symlink:** use `cp -R` for team installs and published repos. For user-global installs, use `install_skills_pinned` (see [Install helpers](#install-helpers) below): the installed bytes are exactly one named commit and `<destination>/.teaprompt-pins.tsv` stamps that commit. Use `ln -s` or `ln -sfn` only when you develop TeaPrompt in place — a live, unpinned link into this checkout that `plans/verify_installed_skills.py` flags unless `--allow-live` is given.
 
 ## Choose an Install Tier
 
@@ -114,13 +114,16 @@ Companion examples live under `reflective-prompt-library/skills/examples/` and a
 
 ## Install helpers
 
-Prerequisites: a POSIX `sh` with `cp` and `ln`. Load the definitions below
-once per shell from the TeaPrompt repository root; every helper accepts the
-destination first and an optional TeaPrompt `skills/` source directory second.
-It copies or links only directories containing `SKILL.md`. These definitions
-are the single maintained implementation of the install recipe: the
-Traditional Chinese companion (`SKILL_INSTALLATION.zh-TW.md`) invokes the
-same helpers and keeps no second copy.
+Prerequisites: a POSIX `sh` with `cp` and `ln` (`install_skills_pinned`
+additionally needs `git`, `tar`, and `mktemp`). Load the definitions below
+once per shell from the TeaPrompt repository root. The copy and symlink
+helpers accept the destination first and an optional TeaPrompt `skills/`
+source directory second; they copy or link only directories containing
+`SKILL.md`. `install_skills_pinned` takes a git revision and entry names
+instead. These definitions are the single maintained implementation of the
+install recipe: the Traditional Chinese companion
+(`SKILL_INSTALLATION.zh-TW.md`) invokes the same helpers and keeps no
+second copy.
 
 ```bash
 install_core_skills_copy() {
@@ -227,6 +230,143 @@ install_skill_examples_symlink() {
   fi
   ln -sfn "$source_root/examples" "$dest/examples" || return 1
 }
+
+install_skills_pinned() {
+  local dest="$1"
+  local rev="$2"
+  local repo commit prefix manifest name target stage previous tmp_manifest
+  local work tar_file extracted src_path
+  prefix="reflective-prompt-library/skills"
+  manifest="$dest/.teaprompt-pins.tsv"
+  if [ -z "$dest" ] || [ -z "$rev" ] || [ "$#" -lt 3 ]; then
+    echo "usage: install_skills_pinned <destination> <rev> <entry>..." >&2
+    return 1
+  fi
+  shift 2
+  repo="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+    echo "install_skills_pinned must run inside the TeaPrompt git repository" >&2
+    return 1
+  }
+  commit="$(git -C "$repo" rev-parse --verify --quiet "$rev^{commit}")" || {
+    echo "cannot resolve revision to a commit: $rev" >&2
+    return 1
+  }
+  for name in "$@"; do
+    case "$name" in
+      ""|.*|*[!A-Za-z0-9._-]*)
+        echo "refusing unsafe entry name: $name" >&2
+        return 1
+        ;;
+    esac
+  done
+  for name in "$@"; do
+    if ! git -C "$repo" cat-file -e "$commit:$prefix/$name" 2>/dev/null; then
+      echo "unknown entry at $commit: $prefix/$name" >&2
+      return 1
+    fi
+  done
+  if [ -e "$dest" ] && [ ! -d "$dest" ]; then
+    echo "destination is not a directory: $dest" >&2
+    return 1
+  fi
+  for name in "$@"; do
+    target="$dest/$name"
+    [ -L "$target" ] && continue
+    [ ! -e "$target" ] && continue
+    if [ -f "$manifest" ] && awk -v n="$name" 'BEGIN{FS="\t"; f=0} $1==n{f=1} END{exit !f}' "$manifest"; then
+      continue
+    fi
+    echo "refusing to replace unpinned path: $target" >&2
+    return 1
+  done
+  mkdir -p "$dest" || return 1
+  for name in "$@"; do
+    target="$dest/$name"
+    stage="$dest/.teaprompt-stage-$name"
+    previous="$dest/.teaprompt-prev-$name"
+    work="$(mktemp -d "${TMPDIR:-/tmp}/teaprompt-pinned.XXXXXX")" || return 1
+    tar_file="$work/entry.tar"
+    if ! git -C "$repo" archive --format=tar -o "$tar_file" "$commit" -- "$prefix/$name"; then
+      rm -rf "$work"
+      echo "git archive failed for $prefix/$name at $commit" >&2
+      return 1
+    fi
+    if ! tar -x -f "$tar_file" -C "$work"; then
+      rm -rf "$work"
+      echo "archive extraction failed for $prefix/$name at $commit" >&2
+      return 1
+    fi
+    extracted="$work/$prefix/$name"
+    if [ ! -e "$extracted" ] && [ ! -L "$extracted" ]; then
+      rm -rf "$work"
+      echo "archive missing entry for $prefix/$name at $commit" >&2
+      return 1
+    fi
+    rm -rf "$stage"
+    if ! mv "$extracted" "$stage"; then
+      rm -rf "$work" "$stage"
+      echo "staging failed for $name" >&2
+      return 1
+    fi
+    rm -rf "$work"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      rm -rf "$previous"
+      if ! mv "$target" "$previous"; then
+        rm -rf "$stage"
+        echo "failed to set aside existing entry: $target" >&2
+        return 1
+      fi
+    fi
+    if ! mv "$stage" "$target"; then
+      if [ -e "$previous" ] || [ -L "$previous" ]; then
+        mv -f "$previous" "$target"
+      fi
+      rm -rf "$stage"
+      echo "failed to install pinned entry: $target" >&2
+      return 1
+    fi
+    src_path="$prefix/$name"
+    tmp_manifest="$(mktemp "$dest/.teaprompt-pins.XXXXXX")" || tmp_manifest=""
+    if [ -z "$tmp_manifest" ]; then
+      rm -rf "$target"
+      if [ -e "$previous" ] || [ -L "$previous" ]; then
+        mv -f "$previous" "$target"
+      fi
+      echo "manifest update failed for $name" >&2
+      return 1
+    fi
+    if [ -f "$manifest" ]; then
+      if ! awk -v n="$name" 'BEGIN{FS="\t"} $1 != n' "$manifest" > "$tmp_manifest"; then
+        rm -f "$tmp_manifest"
+        rm -rf "$target"
+        if [ -e "$previous" ] || [ -L "$previous" ]; then
+          mv -f "$previous" "$target"
+        fi
+        echo "manifest update failed for $name" >&2
+        return 1
+      fi
+    fi
+    if ! printf '%s\t%s\t%s\n' "$name" "$commit" "$src_path" >> "$tmp_manifest"; then
+      rm -f "$tmp_manifest"
+      rm -rf "$target"
+      if [ -e "$previous" ] || [ -L "$previous" ]; then
+        mv -f "$previous" "$target"
+      fi
+      echo "manifest update failed for $name" >&2
+      return 1
+    fi
+    if ! mv "$tmp_manifest" "$manifest"; then
+      rm -f "$tmp_manifest"
+      rm -rf "$target"
+      if [ -e "$previous" ] || [ -L "$previous" ]; then
+        mv -f "$previous" "$target"
+      fi
+      echo "manifest update failed for $name" >&2
+      return 1
+    fi
+    rm -rf "$previous"
+  done
+}
 ```
 
 Run these definitions once per shell. Paste them before the first command
@@ -275,6 +415,44 @@ Install one skill directly when needed:
 
 ```bash
 ln -sfn "$(pwd)/reflective-prompt-library/skills/reflective-dispatch" .claude/skills/reflective-dispatch
+```
+
+`install_skills_pinned` is the pinned install path, recommended for
+user-global installs: the installed bytes are exactly one named commit, and
+`<destination>/.teaprompt-pins.tsv` stamps `name`, full commit, and source
+path once per entry. It resolves `<rev>` to a full commit, extracts
+committed bytes via `git archive` — never working-tree bytes — into a temp
+dir, and moves each entry into place so a failure never leaves a
+half-written entry. Named entries may be skill directories, the `examples`
+directory, or files such as `SKILL_TRIGGER_CHEATSHEET.md`,
+`SKILL_TRIGGER_CHEATSHEET.zh-TW.md`, and `skill-map.md`. An existing symlink
+or an entry already recorded as pinned may be replaced; it refuses — prints
+a message, preserves the bytes, exits nonzero — to replace any other real
+file or directory. Unknown entries at that commit, git failures, and copy
+failures all return nonzero, independent of caller `errexit`.
+
+```bash
+install_skills_pinned "$HOME/.claude/skills" v1.2.3 \
+  reflective-brief reflective-dispatch examples SKILL_TRIGGER_CHEATSHEET.md
+```
+
+Verify installed skills with the read-only verifier; it prints a per-root
+summary and exits nonzero on any FAIL. Without `--root`, it checks every
+existing directory among `~/.agents/skills`, `~/.cursor/skills`,
+`~/.claude/skills`, `~/.codex/skills`, `~/.gemini/antigravity/skills`,
+`~/.gemini/skills`, and `~/.grok/skills`, inspecting only TeaPrompt entries:
+symlinks resolving into this checkout, names recorded in
+`.teaprompt-pins.tsv`, and symlinks chaining to either. A live symlink fails
+unless `--allow-live` is passed — and still fails when dangling or when its
+target path has uncommitted changes versus `HEAD`. Pinned entries are
+byte-compared against the stamped commit (tamper fails), then flagged stale
+when that commit's tree for the path differs from `HEAD`'s unless
+`--allow-stale` is passed.
+
+```bash
+python3 reflective-prompt-library/plans/verify_installed_skills.py
+# or for a single destination:
+python3 reflective-prompt-library/plans/verify_installed_skills.py --root "$HOME/.claude/skills"
 ```
 
 ## Claude Code
