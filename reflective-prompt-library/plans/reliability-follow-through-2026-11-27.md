@@ -85,6 +85,8 @@ At n=5 only large differences can reach p ≤ 0.05: 5 versus 0 (p≈0.008), and 
 
 The manifest was re-frozen as SHA-256 `67cd250aaadc8d7c7889e321c319cbc97aa8372b23a5c2e147293c38ce992491` (30 files). Its amendment entry keeps the prior hash.
 
+**Replacement canary.** `cell-canary-2` qualified. It exited 0 in 13.2 s, was reported as `Grok 4.7 256K Medium`, and made glob, read and edit calls. `note.txt` changed, and the tracking database appeared in the redirected directory. The expected-denial set was then frozen: 14 rules (SHA-256 `b521426f9e962002370edc9fde833200b3c212fd48b7a050f8fc20f2aab363bd`). They cover every canary-2 denial and every canary-1 class except the tracking-database read, which stays unexpected so a failed redirect stops the series. The manifest was re-frozen as `961c2cab8935cc6ec1e0e0148eb58b84ae916d6347f275e6de711b07ee1a7e4e` (31 files).
+
 ## Evidence vs Inference
 
 - **Verified:** the panel counts under Source were re-derived by deterministic scripts. All six calibration snapshots scored as intended. The A1 zero-inference checks and the dry run were observed.
@@ -102,7 +104,7 @@ The manifest was re-frozen as SHA-256 `67cd250aaadc8d7c7889e321c319cbc97aa8372b2
 
 | ID | Candidate | Disposition | Next decision |
 | --- | --- | --- | --- |
-| RFT-1 | State-observable twin-sweep cell | Preregistered 2026-11-27; amended (A1) after a harness-failure canary | Replacement canary, ten runs, blind scoring under the rule above |
+| RFT-1 | State-observable twin-sweep cell | Preregistered 2026-11-27; amended (A1) after a harness-failure canary; replacement canary qualified | Ten runs, then blind scoring under the rule above |
 | RFT-2 | Commit-pinned skill installs plus installed-state verifier | In progress 2026-11-27 | Tooling tests, then converting host installs |
 | RFT-3 | Route-eval `>=` minimums, cheatsheet de-leak, independent ROUTE-004 holdout | In progress 2026-11-27 | Guard, de-leak and holdout integration |
 | RFT-4 | Precedence between global user rules and skills | Owner-approved, pending | Dispatch wording and guard |
