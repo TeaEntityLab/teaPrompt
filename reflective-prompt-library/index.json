@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-27T10:53:52.208240",
+  "generated_at": "2026-11-27T11:37:22.584684",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -22414,7 +22414,9 @@
       "dependencies": {
         "ref_file": [],
         "ref_snippet": [],
-        "markdown_links": []
+        "markdown_links": [
+          "workflow-acquisition.md"
+        ]
       },
       "structure": [
         {
@@ -22440,6 +22442,10 @@
         {
           "level": 2,
           "text": "Human Review"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         },
         {
           "level": 2,
@@ -22478,8 +22484,8 @@
           "text": "8. Output"
         }
       ],
-      "line_count": 146,
-      "char_count": 5016
+      "line_count": 177,
+      "char_count": 7028
     },
     {
       "path": "reflective-prompt-library/03-context/small-context.md",

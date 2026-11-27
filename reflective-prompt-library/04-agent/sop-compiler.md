@@ -25,6 +25,37 @@ State what evidence would prove the process should remain ad hoc prompt-only ins
 
 Escalate to `reflective-risk` when the compiled workflow implies irreversible or high-blast-radius side effects.
 
+## Optional Worked Reference
+
+[Asgard's 2026-11-11 meetup slides, pp. 18 and 20](https://drive.google.com/file/d/1FIpOYJoBa-vU5zimBx64N-4_E5DK2VSl/view?usp=sharing)
+describe a safety-stock calculation that uses only warehouse `608` and excludes
+inactive items and item codes ending in `X`. The speaker also describes
+disagreements among staff accounts, UI behavior, and stored records. The slides
+are a speaker report, not an approval record or evidence of deployed controls.
+
+The [GAICONF meetup recap](https://blog.gaiconf.com/p/e73a8d8b-fe6b-4e37-af19-2ce91c3cd466/) summarizes the same talk.
+Asgard's [separate Beyond South deck](https://asgard-ai-platform.github.io/asgard-slides/asgard-ai-enterprise-landing/) and the
+[Business Next EP258 show notes](https://www.bnext.com.tw/podcast/2225/fs-cmu70qtve0ehm010bhu92f8w3)
+provide further context. None independently verifies the reported deployment.
+
+**Illustrative intake, not customer data.** Staff propose the `608` rule for a
+report, but the requester points to the ERP screen's all-warehouse total as the
+expected result. The raw extract also includes inactive items. In the
+[acquisition trace](workflow-acquisition.md) (§2), record the three sources
+separately. What the systems display or store does not determine what counts
+toward this report.
+
+- **Before a decision:** Mark the rule `TBD (disputed)` and keep both proposed
+  interpretations in the draft. Do not automate the affected report. The
+  inventory owner decides which rule applies and records its scope, effective
+  date, and expiry if it is a temporary exception.
+- **If the owner approves the `608` rule for this report:** Replay the
+  calculation with synthetic rows. An active `A100` with 2 units in `608` and 9
+  in `609` contributes 2, not 11. An active `B100X` and an inactive `C100`,
+  both with stock in `608`, are omitted. A query that runs but yields other
+  results fails this replay. Approval of the calculation does not authorize
+  sending the report or updating inventory.
+
 
 ```markdown
 You are a Human SOP Compiler. Your job is to convert human know-how into a workflow specification that can later become a skill pack, runner, gates, tests, or hooks if the task justifies that cost.
