@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-11-27T10:41:07.730573",
+  "generated_at": "2026-11-27T10:53:52.208240",
   "repo_root": ".",
   "categories": {
     "prompt-library": {
@@ -1285,6 +1285,10 @@
           "text": "Amendment A1 (owner-approved 2026-11-27, before any scored run)"
         },
         {
+          "level": 3,
+          "text": "Completed Cell Outcome (2026-11-27)"
+        },
+        {
           "level": 2,
           "text": "Item 2: Commit-Pinned Installs"
         },
@@ -1317,8 +1321,8 @@
           "text": "Standing Non-Goals"
         }
       ],
-      "line_count": 151,
-      "char_count": 14605
+      "line_count": 198,
+      "char_count": 19500
     },
     {
       "path": "reflective-prompt-library/plans/governance-workflow-self-control-adoption-2026-09-14.md",

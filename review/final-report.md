@@ -10238,3 +10238,57 @@ No Skill, installed hook, host configuration, frozen scorer, original trial outp
 ### Next Action and Human Review
 
 No deletion proposal is made; X4B-DEL1 remains unauthorized. A stronger claim would need a new preregistered cohort, with enforced no-tool qualification for every slot, repaired predicates and the selection rule applied as written. That cohort is an owner decision. DF-C2 custody and DF-PB1 human-scoring/acceptance gates remain unchanged. This delivery is a local-only commit, with no push.
+
+## Reliability panel follow-through completed (2026-11-27)
+
+### Goal and Summary
+
+Complete all five owner-approved reliability proposals, items 1–3 first, without treating green repository gates as evidence of skill efficacy. The owning record is [Reliability Panel Follow-Through](../reflective-prompt-library/plans/reliability-follow-through-2026-11-27.md).
+
+The state-observable cell completed ten valid runs, five complete pairs, under its frozen rule and owner-approved amendment A1. Its primary result is **floor**: C 0/5 and T 0/5, Fisher p = 1.0. Both arms repaired the reported bug; neither repaired the tax or shipping twin. Secondary search/report differences remain descriptive. No unit deletion, additional cohort or efficacy generalization follows.
+
+The remaining repairs are delivered: commit-pinned installs and verifier, expandable routing floors with fixture de-leak, independent ROUTE-004 measurement, dispatch precedence, and map-sized Decision Index entries.
+
+### Acceptance Criteria and Spec-to-Code Traceability
+
+| Item | Delivered surface | Observed evidence / limit |
+| --- | --- | --- |
+| RFT-1: state-observable cell | Session-private frozen runner, fixture, hidden state scorer and arm-blinded scaffold; outcome in the owning record | Ten valid runs, five complete pairs; identical-label audit sealed before unblinding; primary floor, not evidence that U05 is inert |
+| RFT-2: installed-state provenance | `SKILL_INSTALLATION.md` / `.zh-TW.md`, `plans/verify_installed_skills.py`, installer and verifier consumer tests, `make verify-installed` | 23 isolated tests; 111 direct links replaced with copies at `b50706993f`; 118 entries verified including aliases; unrelated entries preserved |
+| RFT-3: routing validity | `ROUTING_CONTRACT.md` R8; EN/zh-TW cheatsheets; parity and fixture-floor tests; ROUTE-004 YAML and guards; `make route-holdout` | ROUTE-002/003 permit growth; verbatim cheatsheet matches fall from 46 EN / 9 zh-TW to zero; untuned independent holdout is 35/63, not the seeded fixtures' 100% |
+| RFT-4: instruction precedence | `skills/reflective-dispatch/SKILL.md` | Higher-authority instructions and applicable global rules/host routing take precedence; non-conflicting duties and outward-action gates remain; no host-compliance claim or exact-paragraph prose pin |
+| RFT-5: index growth | `PROJECT_KNOWLEDGE.md`, `plans/validate_project_knowledge.py` and its tests | Old multi-topic entry split; entries dated from 2026-11-01 capped at 1,000 characters, with oversized-current, oversized-legacy and in-cap-current test cases |
+
+### Files Changed
+
+- Installation docs and the new read-only verifier, plus `test_verify_installed_skills.py` and `test_install_helper_failure_propagation.py`.
+- `ROUTING_CONTRACT.md`, both cheatsheets, four cheatsheet parity modules, `test_validate_route_fixture.py`, the new ROUTE-004 fixture and `test_route_004_independent_holdout.py`.
+- Dispatch skill, project knowledge and its validator/test, `Makefile`, `QUALITY_GATES_SUMMARY.md`, the follow-through record, regenerated `index.json`, and this report.
+- Host install copies and `.teaprompt-pins.tsv` manifests changed outside git. The session inventory retains original links and the conversion receipt records each helper exit.
+
+### Tests / Checks Run
+
+- Focused Python 3.13 pass: **140 passed**, including the installer/verifier, routing/anti-leak/holdout, and project-knowledge cap modules.
+- `PYENV_VERSION=3.13.0 PYTHONDONTWRITEBYTECODE=1 make all`: **exit 0; 1,802 passed in 166.13 s**. Link validation scanned 340 files with zero errors; all validators passed; seeded ROUTE-001/002/003 stayed at 100%. Record hygiene retained its pre-existing 373 warnings.
+- `make verify-installed`: **exit 0**, 118 verified entries, zero failures; 143 unrelated or unstamped entries ignored. The 111 direct replacements and seven preserved aliases resolve to pinned copies, not this working tree.
+- Frozen blind scoring: ten scorer exits 1 with H1/H4/H5 passing and H2/H3 failing; no scorer execution errors. Two predetermined candidates were audited before unblinding, without opening the arm map or changing the oracle.
+- Integrity check: **31 local + five external frozen files, zero mismatches**. All ten run receipts are valid and report the same model; each output changed only pricing and its reported-case test.
+- Final doc-only publication receipts are retained in the session delivery ledger; no second full suite is needed for the closing record/index edits.
+
+### Failures, Skipped Checks and Residual Risks
+
+- First canary: its edit landed but the CLI hung on its denied AI-tracking database until the 960 s kill. Preserved as a harness failure. The owner approved one replacement with tracking redirected into the job temp directory; the replacement exited 0 in 13.2 s and qualified.
+- The first full pytest attempt stopped at a stale documented floor (1,776 versus 1,802 collected). The documentation was corrected; no assertion or scoring oracle was weakened.
+- The cell has one fixture, one model and five repetitions per arm. Its floor cannot distinguish fixture difficulty from another recipe or repair-scope limitation. Construct search differed 4/5 versus 0/5, and `TWINS:` appeared 5/5 versus 0/5; these were secondary measurements, not selected efficacy claims.
+- MCP-list queries occurred in two C runs and four T runs. They remain in the denominator under the preregistered deviation rule. No unexpected sandbox denial occurred.
+- The boundary permits remote provider egress and the keychain helper. Twelve model-bearing CLI invocations are observed, including both canaries; provider-internal requests and quota debits were not independently audited.
+- The installed-state verifier cannot identify unstamped real copies as TeaPrompt installs. Pinned provenance does not prove host-agent compliance. ROUTE-004 labels came from procedurally separated agents of one model family.
+- Actual `make route-holdout` surface: 35/63 (55.6%), 100% trace coverage, ten evaluator-classified silent-downgrade incidents. The underlying evaluator exited 1 on that policy gate; Makefile intentionally ignored it because the target is report-only. Its generic failure text incorrectly blames the 55% score threshold. No gate, router rule, label or phrase was changed to make it pass.
+- One publication command selected a nonexistent link-test name and collected no tests. The selector was corrected to `test_live_repo_has_no_link_errors`; index freshness and live-link checks then passed (2 tests), as did project-knowledge and record-hygiene validation.
+- No additional model campaign, remote CI run, skill deletion or push was performed.
+
+### Remaining Work, Next Action and Human Review
+
+No requested implementation item remains. Preserve the floor rather than running another cohort or deleting U05. A broader experiment or any later outward action needs its own authorization. DF-C2 and DF-PB1 gates remain unchanged.
+
+Tooling and delivered skill bytes are committed locally as `b50706993f`; closing evidence records are committed separately. Detailed result, blinded audit and receipt hashes live in the owning record and `local://reliability-follow-through-evidence-2026-11-27.json`.
