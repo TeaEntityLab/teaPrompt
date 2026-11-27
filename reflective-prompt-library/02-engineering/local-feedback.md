@@ -46,3 +46,16 @@ Escalate to `reflective-risk` when rollback or correction implies trust-boundary
 10. Human Review Required?：是否需要人工審查
 ```
 
+## Optional Worked Reference
+
+[Anthropic's performance sprint](https://claude.dev/blog/how-we-made-claude-ai-faster/)
+used instruction counts as CI guards on two hot paths after confirming that
+reducing the counts also reduced elapsed time. The team measured user-journey
+latency separately. [Vercel's Turborepo case](https://vercel.com/blog/making-turborepo-ninety-six-percent-faster-with-agents-sandboxes-and-humans)
+reports a 97% microbenchmark improvement that translated into only a 0.02%
+real-world gain.
+
+For a slow-startup fix, compare time to the first usable screen before and
+after under the same workload. If only the cheap benchmark improves, record
+the proxy gain but leave the user-facing fix unverified. These team reports
+do not set performance thresholds or establish the causal effect of an agent.

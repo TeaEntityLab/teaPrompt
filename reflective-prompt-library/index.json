@@ -631,10 +631,14 @@
         {
           "level": 2,
           "text": "請輸出"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 48,
-      "char_count": 1277
+      "line_count": 61,
+      "char_count": 2094
     },
     {
       "path": "reflective-prompt-library/02-engineering/usage-first.md",
