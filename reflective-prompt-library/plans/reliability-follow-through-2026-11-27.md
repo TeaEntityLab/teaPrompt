@@ -72,11 +72,37 @@ At n=5 only large differences can reach p ≤ 0.05: 5 versus 0 (p≈0.008), and 
 
 **Sequencing rule.** No further text-only efficacy cohort runs before this cell reports. A text-only cohort can show only that wording changes emitted text.
 
+### Amendment A1 (owner-approved 2026-11-27, before any scored run)
+
+**Trigger.** Canary `cell-canary-1` reached the model, which was reported as `Grok 4.7 256K Medium`. It made glob, read and edit calls, and its edit landed: `note.txt` became `status: final`. The CLI then hung until the 960 s kill. After each write, the CLI records AI-code tracking in `~/.cursor/ai-tracking/ai-code-tracking.db`, which the boundary keeps unreadable. The SQLite open failure surfaced as an uncaught exception, so the write tool's tracking promise never settled. The preregistered stop rule (harness failure) fired after 1 of 11 requests, before any run was dispatched.
+
+**Owner answer** (form, 2026-11-27): `redirect`. Changes:
+
+- A `NODE_OPTIONS` preload, `tracking_redirect.cjs`, rewrites only paths under `~/.cursor/ai-tracking` into the job temp dir. A zero-inference check inside the boundary showed three things: the redirected database opened, wrote and closed; the real database still returned `EPERM`; unrelated paths were unchanged. A network-denied dry run with the preload hit the same denial classes as the original dry run.
+- The stream parser counts only `*ToolCall` keys as tool kinds. Keys such as `toolCallId`, `startedAtMs` and hook contexts are recorded separately as metadata. Only descriptive counts are affected.
+- One replacement canary raises the request cap to 12. If it fails, the cell stops and is recorded as held.
+- Correction to the envelope above: the runner's hard timeout is 960 s, a 900 s budget plus 60 s grace.
+
+The manifest was re-frozen as SHA-256 `67cd250aaadc8d7c7889e321c319cbc97aa8372b23a5c2e147293c38ce992491` (30 files). Its amendment entry keeps the prior hash.
+
+## Evidence vs Inference
+
+- **Verified:** the panel counts under Source were re-derived by deterministic scripts. All six calibration snapshots scored as intended. The A1 zero-inference checks and the dry run were observed.
+- **[INFERENCE]:** the A1 hang mechanism is read from the CLI bundle and the canary session log: an uncaught `SQLITE_CANTOPEN`, while the write path awaits tracking. The replacement canary tests it. A redirected tracking database is assumed not to change model-visible behavior, because tracking is post-write bookkeeping the model never sees.
+- **Unknown:** whether the fixture separates the arms at all (ceiling or floor) until the runs report.
+
+## Falsifiability
+
+- A1 is refuted if the replacement canary hangs again, or if its edit leaves no database in the redirected directory.
+- Every RFT-1 outcome is fixed by the decision rule before data. Any verdict other than "behavioral effect detected" leaves U05's behavioral effect unshown on this fixture and model. It does not show the line is inert elsewhere.
+- RFT-3's ROUTE-004 score is meaningful only while no router change is tuned against it.
+- RFT-5 fails if a Decision Index entry dated from 2026-11-01 exceeds the cap and the validator still passes.
+
 ## Candidate Adoption Ledger
 
 | ID | Candidate | Disposition | Next decision |
 | --- | --- | --- | --- |
-| RFT-1 | State-observable twin-sweep cell | Preregistered 2026-11-27 | Canary, ten runs, blind scoring under the rule above |
+| RFT-1 | State-observable twin-sweep cell | Preregistered 2026-11-27; amended (A1) after a harness-failure canary | Replacement canary, ten runs, blind scoring under the rule above |
 | RFT-2 | Commit-pinned skill installs plus installed-state verifier | In progress 2026-11-27 | Tooling tests, then converting host installs |
 | RFT-3 | Route-eval `>=` minimums, cheatsheet de-leak, independent ROUTE-004 holdout | In progress 2026-11-27 | Guard, de-leak and holdout integration |
 | RFT-4 | Precedence between global user rules and skills | Owner-approved, pending | Dispatch wording and guard |
