@@ -66,3 +66,19 @@ Name a test that would fail if the spec's happiest path hides a wrong invariant.
 若時間有限，最少要跑哪些案例？列出選取案例、未涵蓋範圍，以及這組檢查必須拒絕的一個合理錯誤結果，避免誤判為通過；未涵蓋的範圍仍屬未驗證。
 ```
 
+## Optional Worked Reference
+
+The [Modern Web Guidance v1.0.2 dialog guide](https://github.com/GoogleChrome/modern-web-guidance/blob/2b4aa13a72dd47cd135b06ce5abfccd92e19b24f/skills/modern-web-guidance/guides/ui-components/dialog.md#L139)
+reversed [WCAG 2.2 SC 2.4.11](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html):
+a component that receives keyboard focus must not be entirely hidden by
+site-provided content. The [upstream correction](https://github.com/GoogleChrome/modern-web-guidance-src/pull/3684)
+fixed the source, not that release. The [release-pinned dialog grader](https://github.com/GoogleChrome/modern-web-guidance-src/blob/f6d9fc30aff7e177e05a555762808b12eee2c950/guides/ui-components/dialog/targets/daily-grind/grader.ts)
+checks focus restoration after closing a modal, not whether a non-modal
+dialog covers the focused control.
+
+**Illustrative browser test:** Let an opaque non-modal dialog open without
+user action. Use `Tab` to focus an otherwise visible page control in the
+target browser and viewport. Check that focus lands on the intended control
+and that at least part of it is visible in the rendered page. The same check
+must fail if the dialog is moved to cover the control completely, even when
+keyboard focus still lands on it. Checking DOM focus alone misses that failure.

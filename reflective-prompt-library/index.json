@@ -937,10 +937,14 @@
         {
           "level": 2,
           "text": "7. Minimal Test Set"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 68,
-      "char_count": 1481
+      "line_count": 84,
+      "char_count": 2812
     },
     {
       "path": "reflective-prompt-library/06-repo/codex-opencode.md",
