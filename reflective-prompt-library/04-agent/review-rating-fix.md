@@ -71,3 +71,21 @@ Escalate to `reflective-risk` when fixes touch trust boundaries, sensitive data,
 > **Note:** The Gate Decision is an LLM self-assessment and is advisory, not a hard enforcement gate. For production or high-risk artifacts, the Gate should be independently verified by a human or deterministic check.
 ```
 
+## Optional Worked Reference
+
+In [Anthropic's randomized study of expert judgment](https://www.anthropic.com/research/agents-judgment-calls),
+50 professional analysts worked on one task. Across their analytical
+decisions, they matched the agent's assigned preference 86% of the time.
+The study strengthened those preferences on purpose; 86% is not an error rate.
+In [OpenAI's SWE-bench Pro audit](https://openai.com/index/separating-signal-from-noise-coding-evaluations/),
+reviewers made an initial judgment from the task, tests, and reference patch
+before consulting the agent's findings. The audit did not measure whether
+that sequence reduced bias.
+
+**Example:** A reviewer is deciding whether a test is right to require a
+particular output order. To provide an independent check, they read the task
+and test before seeing the agent's verdict. Their initial note: "Undecided.
+I'd call the test too strict if it rejects a different order that satisfies
+the stated requirement." After seeing the agent's reasoning, they can revise
+their decision and record the evidence that changed it. A matching sign-off
+alone does not show that the reviewer reached the decision independently.

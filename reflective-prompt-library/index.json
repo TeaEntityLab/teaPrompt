@@ -21678,10 +21678,14 @@
         {
           "level": 2,
           "text": "Step 6: Gate Decision"
+        },
+        {
+          "level": 2,
+          "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 73,
-      "char_count": 1708
+      "line_count": 91,
+      "char_count": 2890
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
