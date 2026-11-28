@@ -89,3 +89,19 @@ I'd call the test too strict if it rejects a different order that satisfies
 the stated requirement." After seeing the agent's reasoning, they can revise
 their decision and record the evidence that changed it. A matching sign-off
 alone does not show that the reviewer reached the decision independently.
+
+**Comparing review setups:** If two reviewers split the work, one cites the
+ordering requirement and the other cites the test and observed output. Compare
+their merged judgment with a single reviewer who sees both sources under the
+same total budget. In [He et al.’s HiddenBench study (Table 2)](https://arxiv.org/html/2611.32606v1#S5.T2),
+forwarding split facts beat the any-correct baseline for independent attempts
+with partial information at the same output-token budget. A single agent given
+all the facts at the same budget scored nearly as high as the group.
+
+**Checking what changes the decision:** Hold the test and observed output fixed.
+If either order is valid, rejecting the alternate order is too strict. If the
+requirement mandates the order that the test expects, the same assertion is
+justified. Rephrasing either requirement without changing its meaning should
+leave the verdict unchanged. [Akter et al. (Table 5)](https://aclanthology.org/2026.findings-emnlp.539.pdf#page=6)
+distinguish changing an answer from changing it to the expected answer. Here
+the check varies the requirement, not the reviewer’s reasoning text.

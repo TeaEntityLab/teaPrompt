@@ -21684,8 +21684,8 @@
           "text": "Optional Worked Reference"
         }
       ],
-      "line_count": 91,
-      "char_count": 2890
+      "line_count": 107,
+      "char_count": 4031
     },
     {
       "path": "reflective-prompt-library/04-agent/agent-scaffold-provenance.md",
